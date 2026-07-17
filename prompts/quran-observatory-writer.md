@@ -1,77 +1,61 @@
-# Quran Occurrence Observatory Reviewer Prompt
+# Quran Transliteration JSON Reviewer Prompt
 
-Review the script-generated root-level Quran occurrence observatory. The script
-owns packet-backed facts; your job is to resolve explicit review fields and
-check linguistic presentation without recreating occurrence data or implying
-branch activation.
+Supply only the schema-approved linguistic fields needed to render the
+packet-generated Quran observatory. The script owns the observatory itself.
 
 ## Inputs
 
 ```text
 ROOT_ENVELOPE_ID={{ROOT_ENVELOPE_ID}}
 ROOT_PACKET={{ROOT_PACKET}}
-ROOT_BUNDLE={{ROOT_BUNDLE}}
-GENERATED_OBSERVATORY={{GENERATED_OBSERVATORY}}
-OUTPUT_FRAGMENT={{OUTPUT_FRAGMENT}}
+OUTPUT_RECORDS={{OUTPUT_RECORDS}}
 ```
 
-Read `ENTRY_GENERATION_PLAN.md`, `TRANSLITERATION_POLICY.md`,
-`schema/entry.schema.md`, the generated observatory, the full QAC section, all
-ayah contexts, and every attachment row cited by the generated fragment.
+Read `TRANSLITERATION_POLICY.md`, `schema/authored-entry.schema.md`, the packet's
+full QAC section, all ayah contexts, and any cited attachment rows.
 
-## Required output
+## Required records
 
-Copy the generated section beginning exactly:
+Return the exact keyed `quran_form` and `quran_ayah` records required by the
+schema. Each `quran_form` record supplies separate bilingual
+`lemma_transliteration` and `surface_transliteration` fields. Each `quran_ayah`
+transliteration covers the complete ayah. Raw Buckwalter is not reader-facing
+transliteration.
 
-```markdown
-## Quran occurrence observatory
+Do not write `quran_occurrence` records. The renderer generates every
+occurrence row from the packet and reuses the matching exact form group's
+surface transliteration. This is mechanical work, not editorial work.
 
-> These are root-level observations. No occurrence is assigned to a V4 branch.
-```
+## Mechanical boundary
 
-Replace every explicit `REVIEW REQUIRED` field. Return the complete reviewed
-section and preserve its required schema order.
+Do not copy or alter:
 
-## Immutable generated evidence
+- census values, counts, Arabic forms, lemmas, surfaces, or ayah text;
+- POS, morphology, constructions, attachments, join provenance, or ordering;
+- QAC and ayah metadata beyond the stable key required by the schema;
+- any proposed branch assignment, activation, score, probability, or semantic
+  grouping.
 
-Do not retype, summarize, reorder, delete, or alter:
+The renderer joins each keyed transliteration to the packet. Extra packet-owned
+fields are a schema error. If a key or Arabic value is wrong, report a packet
+or renderer defect instead of compensating in JSONL.
 
-- census values;
-- form and lemma groupings or counts;
-- packet morphology;
-- attachment counters and aggregate packet tables;
-- QAC references and occurrence order;
-- Arabic surfaces, lemmas, frames, attachment IDs, join provenance, or context
-  handles;
-- Arabic ayah text or ayah order.
+## Transliteration audit
 
-If a generated fact is wrong, report a script or packet defect. Do not silently
-repair it in prose.
-
-## Review work
-
-1. Supply verified English and Turkish transliterations for every generated
-   Arabic form. Follow `TRANSLITERATION_POLICY.md`; raw Buckwalter is not
-   reader-facing transliteration.
-2. Supply a complete English and Turkish transliteration immediately below each
-   complete Arabic ayah.
-3. Inspect every `join=unresolved` or `join=unique_root_form_in_ayah` label.
-   Preserve the generated label and handles. Add an editorial observation only
-   when the supplied packet supports it, and keep the observation separate from
-   the immutable occurrence cell.
-4. Any optional recurring-pattern prose must cite packet fields or attachment
-   units and remain morphological or constructional. Do not create semantic
-   occurrence groups.
-
-## Forbidden language and actions
-
-Do not write that an occurrence means, activates, favors, ranks, or probably
-belongs to a V4 branch. Do not turn attachment patterns into dictionary senses.
-Do not replace generated provenance with freehand labels such as “request
-frame.” Do not import a conventional target-language Quran translation to fill
-context gaps.
+- Derive each form overlay from its exact vocalized lemma/surface group and
+  morphology; do not copy a transliteration from a visually similar group.
+- Distinguish the isolated packet morpheme surface from its pronunciation in
+  full ayah context, including attached articles, pronouns, and case endings.
+- Use one documented article convention consistently within the English ayah
+  set and the Turkish guide's article convention throughout the Turkish set.
+- Read every complete ayah transliteration against the complete Arabic ayah.
+  Check shadda, hamza, long vowels, case/construct boundaries, suffixes, and
+  repeated same-spelling forms before returning.
+- Do not infer a lexical branch from vocalization, syntax, translation, or
+  context while performing this audit.
 
 ## Output
 
-Return only the complete reviewed observatory section. Do not write branch
-entries, activation commentary, or software changes.
+Write valid JSONL to `OUTPUT_RECORDS`, one schema-conforming object per physical
+line, in packet order. Return no Markdown observatory, prose summary, code
+fence, or duplicated occurrence facts.

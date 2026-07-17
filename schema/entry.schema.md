@@ -1,5 +1,11 @@
 # Root Entry Schema
 
+> Legacy bilingual Markdown schema. New runs use
+> `schema/authored-entry.schema.md` as the canonical editorial contract and
+> `scripts/render_language_entries.py` to generate separate files under
+> `entries/en/` and `entries/tr/`. This document is retained only for the
+> existing scaffold and legacy validator until those tools are retired.
+
 This is the required human-readable structure for an authored root page. It is
 a content schema, not a database schema. The final file remains ordinary
 Markdown so linguists can read and edit it directly.

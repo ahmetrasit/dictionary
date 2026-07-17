@@ -66,49 +66,36 @@ This rule applies to:
 - Quran occurrence examples;
 - and cross-references to another entry.
 
-## Bilingual shared sections
+## Separate language entries
 
-When one shared table or heading cannot naturally use a language-specific
-parenthesis, give separate transliteration fields:
-
-```markdown
-- Arabic: صِرَاط
-- English transliteration: ṣirāṭ
-- Türkçe çevriyazı: ṣirâṭ
-```
-
-Shared lexical-unit tables should use separate columns:
-
-```text
-Arabic | English transliteration | Türkçe çevriyazı
-```
+The canonical editorial JSONL keeps English and Turkish transliterations in
+separate keyed fields. The renderer places only the English transliteration in
+the English entry and only the Turkish transliteration in the Turkish entry.
+There is no shared bilingual publication table.
 
 ## Exact Arabic quotations
 
 Never insert Latin characters into an exact Arabic source quotation. Preserve
-the quotation unchanged, then place both transliterations immediately below
-it:
+the quotation unchanged, then place the appropriate language transliteration
+immediately below it:
 
 ```markdown
 > <exact Arabic quotation>
 
-English transliteration: ...
-
-Türkçe çevriyazı: ...
+Transliteration: ...
 ```
 
 The transliteration must cover the complete quoted phrase, not only the
-headword. The subsequent English and Turkish explanations remain separate from
-the transliteration.
+headword. The subsequent explanation is written in the entry's language.
 
 ## Quran ayah context
 
-For a complete Arabic ayah used in the occurrence observatory, retain:
+For a complete Arabic ayah used in the occurrence observatory, each rendered
+language entry retains:
 
 1. the complete Arabic ayah;
-2. a complete English-oriented transliteration line;
-3. a complete Turkish-oriented transliteration line;
-4. and, when approved, neutral English and Turkish context lines in which the
+2. a complete transliteration in that entry's convention;
+3. and, when approved, a neutral target-language context line in which the
    focus-root token is not given a branch-selecting translation.
 
 Do not treat raw Buckwalter encoding as reader-facing transliteration.

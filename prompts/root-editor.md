@@ -1,134 +1,112 @@
-# Complete Root Page Editor Prompt
+# Complete Root Editorial JSONL Prompt
 
-Assemble and edit one complete bilingual concept-dictionary root page. This is
-a root-wide linguistic consistency pass, not another branch-generation pass.
+Produce or revise one complete authored JSONL artifact for a root envelope.
+This is the final root-wide linguistic consistency pass. It does not assemble
+Markdown and it does not regenerate packet facts.
 
 ## Inputs
 
 ```text
 ROOT_ENVELOPE_ID={{ROOT_ENVELOPE_ID}}
 ROOT_PACKET={{ROOT_PACKET}}
-ROOT_HEADER_SCAFFOLD={{ROOT_HEADER_SCAFFOLD}}
-BRANCH_FRAGMENT_DIR={{BRANCH_FRAGMENT_DIR}}
-OBSERVATORY_FRAGMENT={{OBSERVATORY_FRAGMENT}}
-BIBLIOGRAPHY_CANDIDATES={{BIBLIOGRAPHY_CANDIDATES}}
-FINAL_ENTRY={{FINAL_ENTRY}}
+ROOT_BUNDLE={{ROOT_BUNDLE}}
+BRANCH_BUNDLE_DIR={{BRANCH_BUNDLE_DIR}}
+CANDIDATE_JSONL={{CANDIDATE_JSONL}}
+TARGET_LANGUAGE_SOURCES={{TARGET_LANGUAGE_SOURCES}}
+OUTPUT_JSONL={{OUTPUT_JSONL}}
 ```
 
-Read:
+Read `ENTRY_GENERATION_PLAN.md`, `TRANSLITERATION_POLICY.md`, `spec.md`,
+`schema/authored-entry.schema.md`, the complete packet and bundles, and the
+entire candidate when revising one.
 
-- `ENTRY_GENERATION_PLAN.md`;
-- `TRANSLITERATION_POLICY.md`;
-- `spec.md`;
-- `schema/entry.schema.md`;
-- the frozen branch roster in the packet;
-- the generated root-header scaffold;
-- every reviewed branch fragment;
-- the reviewed Quran observatory fragment;
-- and the generated bibliography candidates.
+## Required result
 
-## Assembly
+Write a complete schema-conforming JSONL file containing every required record
+type and exact packet key. The renderer will produce separate English and
+Turkish encyclopedia entries. Do not write either Markdown file.
 
-Create the final root page in this order:
+Check:
 
-1. the generated schema marker, root title, root identity, and complete branch
-   index, with explicit review fields resolved;
-4. branch blocks in frozen `(root_id, branch_id)` order;
-5. one root-level Quran occurrence observatory;
-6. bibliography and evidence handles, retaining only candidates actually used.
+- exact root envelope and frozen branch roster coverage;
+- one deep `branch` record for every frozen identity;
+- one exact `branch_source` record for every branch/source handle, with a
+  packet-substring selected quotation;
+- one `lexical` identity record for every lexical unit and one
+  `branch_lexical` interpretation for every packet link;
+- exactly one prominent-quality primary gloss and one to three glosses per
+  branch per language;
+- independent English and Turkish concept accounts;
+- complete boundaries, verified contrasts, lexical-unit analyses, and source
+  audits with exact Arabic quotations;
+- complete keyed language-specific transliterations required by the schema;
+- exact transliteration-only `quran_form` and `quran_ayah` key coverage;
+- no authored `quran_occurrence` records: occurrence rows and their surface
+  transliterations are derived mechanically from packet order and the exact
+  form-group overlays;
+- structured `external_source` records, with stable IDs and valid URLs, for
+  target-language or non-packet sources actually used;
+- no QNet-only published distinction, branch activation claim, unsupported
+  source claim, or unresolved placeholder.
 
-Write the result to `FINAL_ENTRY`.
+## Root-wide evidence audit
 
-Do not regenerate packet-backed root, branch, lexical, Quran, attachment, or
-Arabic ayah fields. Preserve them exactly from the generated scaffolds and
-reviewed fragments. If a generated field is wrong, report the upstream defect
-instead of silently editing the evidence.
+Perform these passes over the complete root before accepting a candidate:
 
-## Required checks
+1. **Vocalization and form identity.** Inventory every Arabic unit and every
+   transliteration. Preserve source vocalization; resolve unvocalized text only
+   from inspectable authoritative evidence. Identical consonantal spelling does
+   not prove identical pronunciation, lemma, morphology, lexical category, or
+   meaning. Compare same-spelling units across all branches and lexical records
+   and describe orthographic versus phonological identity accurately.
+2. **Inflection and phrase coverage.** Verify person, number, gender, voice,
+   case, construct state, suffixes, definite-article behavior, and complete
+   quotation coverage. Recheck every reuse rather than fixing a single overlay.
+3. **External-source availability.** Open every non-packet URL and confirm that
+   the specific cited entry content is readable and supports the stated note.
+   Query URLs, snippets, maintenance notices, blocked pages, and empty
+   client-side shells are not evidence. Remove unsupported claims or report a
+   research gap.
+4. **Cross-language independence.** Read English and Turkish fields separately;
+   verify their own transliteration conventions, idiomatic glosses, collision
+   analyses, and Arabic anchors.
+5. **Rendered reading.** Validate the JSONL, render both languages to an
+   isolated preview directory, run renderer `--check`, and read every branch,
+   source-evidence section, lexical unit, Quran form group, and bibliography.
+   Repair the JSONL, never the Markdown.
 
-### Frozen coverage
+When non-packet evidence resolves a vocalization or supports a usage claim,
+include a structured `external_source` record. Do not cite a source that was
+not successfully inspected during the run.
 
-- Compare the packet roster with branch begin/end markers.
-- Every frozen identity must appear exactly once.
-- Do not merge overlapping V4 records.
-- Do not omit a branch because it is rare, source-specific, or absent from
-  obvious Quranic usage.
+## Editorial depth
 
-### Source audit
+The rendered result must read as an encyclopedia entry, not an audit checklist.
+The primary gloss orients the reader immediately, while the concept account,
+scope, exclusions, contrasts, lexical units, source analysis, and gloss-risk
+discussion provide the depth. Do not shorten those fields merely because the
+renderer will structure them.
 
-- Every material source claim has a reference and Arabic phrase or excerpt.
-- Agreement, nuance, explicit disagreement, sole attestation, and absence are
-  distinguished accurately.
-- Silence is never rewritten as disagreement.
-- Source examples stay attributed to their source.
+Every source claim must be traceable to supplied evidence. Preserve exact
+Arabic quotation text. Do not infer disagreement from silence. Keep examples,
+derivations, restrictions, and collocational effects at the level established
+by their source.
 
-### Boundary consistency
+In every free-text English field, pair each Arabic mention with its English
+transliteration. In every free-text Turkish field, pair each Arabic mention
+with its Turkish transliteration. Keyed overlay fields cover Arabic inserted by
+the renderer; they do not repair bare Arabic typed into editorial prose.
 
-- English and Turkish accounts preserve the same Arabic boundary.
-- Sibling entries do not accidentally collapse into identical definitions.
-- Cross-references explain overlap without silently merging identities.
-- QNet-only comparisons are removed or marked as unverified draft material.
+## Mechanical boundary
 
-### Rendering quality
-
-- Each language has one to three renderings for every branch.
-- The most faithful rendering is first and may be multi-word or multi-clause.
-- Mainstream translations and loanwords are secondary and their problems are
-  explicit.
-- Every fit label names the actual lost or added dimensions.
-- Material target-language collisions are explained in both directions across
-  affected entries where possible.
-- A long rendering has not added unsupported sequence, causality, purpose,
-  intensity, agent, or doctrinal content.
-
-### Quran observatory neutrality
-
-- It occurs once, outside branch blocks.
-- It contains the complete QAC occurrence list.
-- Groupings are morphological or constructional, never semantic activation
-  groups.
-- No occurrence is assigned, ranked, scored, or colored by branch.
-- Focus words in any target-language context line remain neutral or masked.
-- Generated census, form rows, aggregate attachment tables, occurrence rows,
-  join provenance, and Arabic ayah contexts remain unchanged.
-
-### Reader clarity
-
-- A reader with no Arabic can understand every essential distinction.
-- Arabic phrases remain available as evidence.
-- Every Arabic unit in English prose has English transliteration; every Arabic
-  unit in Turkish prose has Turkish transliteration.
-- No transliterated Arabic term appears without its Arabic-script anchor.
-- Exact Arabic quotations and full ayah contexts have complete English and
-  Turkish transliteration lines.
-- Jargon is translated or briefly explained.
-- Repetition across sibling entries is reduced with cross-references, without
-  making an entry dependent on hidden knowledge.
-
-## Editing limits
-
-You may improve organization, clarity, consistency, citation presentation,
-cross-references, and target-language naturalness. You may not:
-
-- change the V4 inventory or Arabic boundary;
-- add evidence from memory;
-- resolve an evidence gap silently;
-- assign Quran occurrences to branches;
-- or promote a conventional gloss because it is shorter or more familiar.
-
-If a substantive problem cannot be fixed from supplied evidence, preserve a
-clear editorial note and list it in the completion report.
-
-After writing `FINAL_ENTRY`, run `scripts/validate_entry.py` with the root
-packet and without `--allow-placeholders`. A failed validator result blocks
-completion; it does not authorize deleting the generated field that failed.
+Use only fields permitted by `schema/authored-entry.schema.md`. Do not duplicate
+packet-owned Arabic, identity, ordering, counts, morphology, attachments,
+occurrence cells, ayah text, or bibliography handles. Do not manually repair a
+packet defect. Report it separately and leave `OUTPUT_JSONL` unchanged when it
+prevents a truthful complete artifact.
 
 ## Output
 
-Return the complete final Markdown root page, followed by a short separate
-completion report containing only:
-
-- expected/authored branch count;
-- unresolved evidence gaps;
-- unresolved target-language research gaps;
-- and any schema violation still present.
+Write only valid JSONL to `OUTPUT_JSONL`, one object per physical line in schema
+order. Return a short completion report with expected/authored branch counts,
+Quran-key counts, and unresolved evidence or target-language research gaps.

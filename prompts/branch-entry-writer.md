@@ -1,150 +1,137 @@
-# Branch Encyclopedia Entry Writer Prompt
+# Branch Editorial JSON Writer Prompt
 
-Write one evidence-grounded encyclopedia entry block for one frozen V4 branch.
-The result will later receive a dedicated gloss/collision review and be
-assembled into a complete root page.
+Write the editorial JSONL record bundle for one frozen V4 branch. This is an
+encyclopedia-content task, not Markdown assembly and not packet transcription.
 
 ## Inputs
 
 ```text
+ROOT_ENVELOPE_ID={{ROOT_ENVELOPE_ID}}
 FOCUS_BRANCH={{FOCUS_BRANCH}}
 FOCUS_BUNDLE={{FOCUS_BUNDLE}}
-FOCUS_SCAFFOLD={{FOCUS_SCAFFOLD}}
 ROOT_BUNDLE={{ROOT_BUNDLE}}
 ROOT_PACKET={{ROOT_PACKET}}
-OUTPUT_FRAGMENT={{OUTPUT_FRAGMENT}}
+OUTPUT_RECORDS={{OUTPUT_RECORDS}}
 ```
 
-Read:
-
-- `ENTRY_GENERATION_PLAN.md`;
-- `TRANSLITERATION_POLICY.md`;
-- `schema/entry.schema.md`;
-- the entire focus bundle;
-- the entire generated focus scaffold;
-- and the complete sibling roster in the root bundle.
+Read `ENTRY_GENERATION_PLAN.md`, `TRANSLITERATION_POLICY.md`,
+`schema/authored-entry.schema.md`, the full focus bundle, relevant packet source
+entries, and the complete sibling roster.
 
 ## Task
 
-Copy the generated focus scaffold and replace every explicit `REVIEW REQUIRED`
-field to produce one complete branch block from:
+Return the complete branch-owned record bundle conforming to the authored
+JSONL schema. Write deep, independently composed English and Turkish editorial
+fields. The renderer will create the separate language entries.
 
-```markdown
-<!-- BEGIN BRANCH <root_id>/<branch_id> -->
-```
+The bundle must provide:
 
-through:
+- one `branch` record with keyed identity; image, `what_is_ar`, and
+  `what_is_not_ar` transliterations; concept and scope prose; structured
+  distinctions; glosses; and the target-language note;
+- one to three glosses per language with exactly one `primary`;
+- complete preserves, loses, adds, fit, and confusion analysis per gloss;
+- a full concept account, what belongs, what does not, and target-language
+  distinction note in both languages;
+- evidence-backed structured Arabic contrasts with a neighbor anchor,
+  language-specific transliteration, shared zone, distinguishing axis, and
+  validated evidence references;
+- one `branch_source` record for every source handle in the packet branch,
+  with an exact selected Arabic quotation, relationship, bilingual
+  contribution/explanation/analysis, and complete quotation transliteration;
+- one `lexical` identity record for every linked lexical unit, including
+  expression, Arabic-sense, and source-phrase transliterations;
+- and one `branch_lexical` record for every packet branch/lexical link, with
+  independently written bilingual meaning and analysis.
 
-```markdown
-<!-- END BRANCH <root_id>/<branch_id> -->
-```
+When several branches are assembled, identical `lexical` identity records are
+deduplicated by their stable `(root_id, lexical_unit_id)` key. Their
+branch-specific `branch_lexical` records remain separate.
 
-Follow the schema headings exactly.
+## Mechanical boundary
 
-The scaffold owns packet-backed identity, Arabic boundaries, linked lexical
-rows, source-routing metadata, and evidence-bundle handles. Preserve those
-fields exactly. If one is wrong, report a packet, bundle, or script defect
-instead of silently rewriting it.
+Do not copy packet-owned root data, Arabic branch image, provenance, source
+metadata, lexical metadata, Quran counts, morphology, occurrence rows,
+attachments, or ayah text into the records. `selected_quote_ar` is the only
+intentional selected packet excerpt and must be an exact packet substring.
+Use only keys requested by the
+schema. If a mechanical fact is wrong or unavailable, report the packet defect;
+do not override it in prose or invent a replacement.
 
-## Method
+## Evidence discipline
 
-### 1. Preserve the generated V4 identity
+- Treat the V4 branch as frozen.
+- Derive English and Turkish accounts independently from Arabic evidence.
+- Preserve exact Arabic quotations from supplied sources.
+- Do not infer disagreement from absence or routing failure.
+- QNet may nominate a neighbor; only V4 or dictionary evidence may establish a
+  published contrast.
+- Do not use Quran occurrence distribution as branch evidence.
+- Do not import tafsir, theology, or commentary as lexical evidence.
+- Do not make source claims from memory.
+- Keep collocational meanings at their governed level.
+- In free English prose, pair every Arabic mention with English
+  transliteration. In free Turkish prose, pair every Arabic mention with
+  Turkish transliteration. The keyed transliteration overlays cover renderer-
+  inserted Arabic only; they do not excuse bare Arabic typed inside prose.
 
-Verify the stable root ID, branch ID, Arabic image, English scaffold,
-provenance, source handles, and linked lexical rows against the focus bundle.
-Do not regenerate them. The V4 branch is frozen. Do not debate whether it
-exists, merge it with a sibling, or rewrite its Arabic boundary.
+## Vocalization and form identity
 
-### 2. Read the Arabic boundary before writing target prose
+Run a separate vocalization audit before writing prose or transliteration:
 
-Use `branch_image_ar`, `what_is_ar`, `what_is_not_ar`, `source_phrase_ar`,
-linked lexical units, and the classical source entries. Existing English V4
-text is a scaffold, not final prose.
+1. Inventory every Arabic root, headword, inflected form, quotation, and
+   comparison that will be transliterated.
+2. Preserve vocalization supplied by the source. When packet text is
+   unvocalized, resolve a reading only from an inspectable, authoritative
+   vocalized edition or other supplied evidence. If it cannot be resolved,
+   use consonantal/root notation where the schema permits or report an evidence
+   gap; never manufacture a smooth reading.
+3. Treat identical unvocalized spelling as orthographic identity only. It does
+   not establish identical vowels, pronunciation, lemma, morphology, lexical
+   category, or meaning. Audit same-spelling sibling units independently and
+   state orthographic and phonological relationships separately.
+4. Verify person, number, gender, voice, case, construct state, suffixes, and
+   article behavior across the complete phrase. Do not propagate one unit's
+   transliteration to another merely because their consonants match.
+5. Recheck every reuse of a corrected form across concepts, scope, contrasts,
+   gloss notes, source quotations, lexical records, and branch-specific
+   analysis.
 
-### 3. Write the concept accounts independently
+If a non-packet edition is needed to resolve a reading, it must be successfully
+opened and inspected, and the complete root artifact must include a structured
+`external_source` record for it. A search snippet, inaccessible page, generic
+landing page, or remembered dictionary form is not evidence.
 
-Write:
+## Source availability
 
-- a clear English account for a curious reader who knows no Arabic;
-- and a Turkish account derived independently from the Arabic evidence.
+For every external source used, verify during the run that the URL exposes the
+specific entry content supporting the claim. A maintenance notice, application
+shell without entry data, blocked response, unrelated search page, or URL that
+merely accepts the intended query does not count as inspection. Remove the
+claim, use an accessible reputable source, or report a research gap when the
+entry content cannot be read. Never say a source was checked when only its URL
+or title was available.
 
-Each account must explain the whole concept, its internal image or mechanism,
-and its limits. Do not translate the English paragraph into Turkish or the
-Turkish paragraph into English.
+## Gloss discipline
 
-In English prose, pair every Arabic unit as `Arabic (English
-transliteration)`. In Turkish prose, pair it as `Arabic (Turkish
-transliteration)`. Repeat the pair on every mention. Never use transliteration
-as a substitute for the Arabic anchor.
+The primary gloss is a compact orientation to the whole branch, not a one-word
+requirement or a substitute for the concept account. A multi-word or
+multi-clause primary is preferred when it avoids loss. Mainstream translations
+and loanwords may be `alternative` or `recognition`, never primary merely
+because they are familiar.
 
-### 4. Establish the boundary and contrasts
-
-Use the full sibling roster to explain the material same-root distinctions.
-Use cross-root or form/collocation contrasts only when V4 or dictionary
-evidence establishes them. QNet candidates may tell you what to inspect but
-cannot support the published claim.
-
-For every contrast, state:
-
-- the shared zone;
-- the distinguishing axis;
-- and the evidence handle.
-
-Do not use Quran occurrence distribution as branch evidence.
-
-### 5. Explain lexical units and examples
-
-Attach every relevant V4 lexical unit to the focus branch. Preserve the level
-of bare form, derived form, or governed collocation. Explain source examples in
-plain English and Turkish without promoting a collocational result into another
-branch.
-
-### 6. Write the source audit
-
-For each materially relevant dictionary:
-
-- give the stable source reference;
-- quote the exact Arabic source phrase or excerpt;
-- classify the relationship using the schema vocabulary;
-- explain its contribution in English and Turkish;
-- preserve examples, derivations, and restrictions;
-- distinguish explicit disagreement from nuance, different organization, and
-  silence.
-
-The generated routing status and route note are lookup metadata, not source
-relationship classifications. A `no_match` routing gap does not authorize
-`no_located_attestation`, sole attestation, silence, or disagreement.
-
-Keep an exact Arabic quotation unchanged. On the next lines, give a complete
-English transliteration and a complete Turkish transliteration before the two
-language explanations.
-
-If only one source attests a branch or detail, say so plainly. Do not treat
-single-source support as invalidity.
-
-### 7. Draft renderings without forcing brevity
-
-Supply initial English and Turkish rendering tables so the next reviewer has
-concrete candidates to test. Give one to three candidates per language. The
-first candidate may be a phrase or coordinated clauses and should attempt to
-preserve the entire concept.
-
-Mark familiar mainstream terms and loanwords as `recognition`, not `primary`.
-Do not claim their actual modern-language footprint without evidence.
-
-## Forbidden moves
-
-- No branch activation or branch-specific Quran occurrence claims.
-- No tafsir, theology, or contemporary commentary as lexical evidence.
-- No model-memory source claims.
-- No source quotation that is absent from the supplied evidence.
-- No statement that dictionaries disagree merely because one is silent.
-- No English-to-Turkish relay translation.
-- No one-word requirement for glosses.
-- No bare Arabic or bare Arabic transliteration in target-language prose.
-- No invented target-language collision just to fill a section.
+Allowed roles are `primary`, `alternative`, and `recognition`. Allowed fit
+values are `none`, `narrowing`, `broadening`, `displacement`, and
+`drifted_loanword`.
 
 ## Output
 
-Return only the complete Markdown branch block. Do not return planning notes,
-an evidence summary outside the block, or proposed software changes.
+Write valid JSONL to `OUTPUT_RECORDS`, one object per physical line in schema
+order: `branch`, its `branch_source` records, linked `lexical` records, then
+`branch_lexical` records. Return no Markdown, code fence, planning note, or
+packet fact outside schema-approved fields.
+
+Before returning, perform three explicit self-passes over the complete branch
+bundle: source/quotation fidelity, vocalization/form identity, and independent
+English/Turkish anchor consistency. Correct the records before writing the
+final JSONL; do not leave these checks for the orchestrator.

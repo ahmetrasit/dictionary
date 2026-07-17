@@ -1,63 +1,108 @@
 # Entry Generation Orchestration Spec
 
-This file explains how to turn one frozen V4 root inventory into one complete
-English–Turkish concept-dictionary root page.
+This file is the cold-start runbook for turning one frozen V4 root inventory
+into two encyclopedia entries: one English and one Turkish. The durable
+editorial source is JSONL. Markdown is a deterministic projection and is never
+hand-edited.
 
-Read [ENTRY_GENERATION_PLAN.md](ENTRY_GENERATION_PLAN.md) for the editorial
-principles and [schema/entry.schema.md](schema/entry.schema.md) for the required
-shape of the finished entry. This run spec should not duplicate or weaken those
-documents.
+Read [ENTRY_GENERATION_PLAN.md](ENTRY_GENERATION_PLAN.md) for the linguistic
+principles, [schema/authored-entry.schema.md](schema/authored-entry.schema.md)
+for the JSONL contract, and
+[TRANSLITERATION_POLICY.md](TRANSLITERATION_POLICY.md) for Arabic display and
+target-language transliteration.
 
-Read [TRANSLITERATION_POLICY.md](TRANSLITERATION_POLICY.md) for the hard rule
-that every Arabic unit remains visible and carries a target-language-specific
-transliteration.
+## Responsibility boundary
 
-## Cold-agent start here
+The top-level orchestrator owns the run. It reads this spec, starts and
+monitors agents, runs scripts, reviews rendered output, and decides when
+validation has passed. It must not delegate orchestration to a worker or ask an
+editorial agent to manage other agents. Agent runs use immutable prompt
+snapshots: monitor a running agent without injecting clarification, correction,
+or redirection. Corrections are new runs started only after the current run has
+completed.
 
-This spec is the cold-start contract. A new agent should need only:
+Agents own editorial judgments:
+
+- concept accounts and branch boundaries in explanatory prose;
+- source relationships, contributions, and analysis;
+- verified contrasts and target-language distinction notes;
+- gloss choice, fit analysis, and collision analysis;
+- language-specific transliteration where the schema explicitly requests it;
+- target-language bibliography notes.
+
+Scripts own everything mechanically recoverable from the packet or JSONL:
+
+- root and branch identity, roster, ordering, Arabic images, and provenance;
+- source and lexical-unit keys already present in the packet;
+- Quran census, forms, counts, morphology, attachments, occurrence order,
+  QAC references, Arabic surfaces, lemmas, and Arabic ayah text;
+- validation, language separation, section/table construction, Markdown
+  escaping, generated markers, and deterministic rendering.
+
+An agent must never retype packet-owned occurrence facts merely to fill a
+Markdown table. If the renderer needs a mechanical value, extend the script or
+packet contract. If the value requires linguistic judgment, add only the
+smallest keyed editorial field to JSONL.
+
+Agents never edit rendered files. The top-level orchestrator also never
+manually repairs authored JSONL or rendered Markdown: it sends substantive
+corrections to the producing agent in a fresh run and reruns the renderer. When
+a completed run exposes a general failure mode, update the reusable prompt
+before rerunning. Do not overfit orchestration chat or a prompt to the current
+root's literal forms, branch IDs, or sources.
+
+Do not stop or close an agent without explicit user authorization. A completed
+agent remains available for follow-up review or correction until the user
+authorizes closure.
+
+## Cold start
+
+A run starts with only:
 
 ```text
 working directory: /Volumes/OZTURK/_projects/dictionary
-requested V4 root_id: for example root_001210
+requested V4 root_id: <requested-root-id>
 ```
-
-It must not rely on conversation history.
 
 Read in this order:
 
-1. `spec.md` completely;
-2. `ENTRY_GENERATION_PLAN.md` completely;
-3. `TRANSLITERATION_POLICY.md` completely;
-4. `schema/entry.schema.md` completely;
-5. every prompt named under Prompt sequence before invoking it.
+1. `spec.md`;
+2. `ENTRY_GENERATION_PLAN.md`;
+3. `TRANSLITERATION_POLICY.md`;
+4. `schema/authored-entry.schema.md`;
+5. every prompt used in the run.
 
 Then:
 
-1. Verify that `data/working/furuq_v4.sqlite` and
-   `data/working/qac.sqlite` exist. Run `./scripts/sync_upstream.sh` only when
-   they are missing or upstream refresh is explicitly required.
+1. Verify `data/working/furuq_v4.sqlite` and `data/working/qac.sqlite` exist.
+   Run `./scripts/sync_upstream.sh` only when they are missing or refresh was
+   explicitly requested.
 2. Run `python3 scripts/root_packet.py <requested-root_id>`.
-3. Read the printed `root_envelope_id` and packet paths. A requested root ID
-   may resolve to an envelope containing more than one V4 root record.
+3. Read the resolved `root_envelope_id`. An envelope may contain multiple V4
+   root records.
 4. Run `python3 scripts/build_entry_bundles.py <requested-root_id>`.
-5. Run `python3 scripts/build_entry_scaffolds.py <requested-root_id>`.
-6. Open `data/output/entry_bundles/<root_envelope_id>/INDEX.md` and
-   `data/output/entry_scaffolds/<root_envelope_id>/INDEX.md`, then perform the
-   Required preflight below.
-7. Instantiate `prompts/orchestrator.md` with the resolved paths and execute the
-   complete Prompt sequence.
-8. If delegation is available, independent branch drafts may be delegated with
-   the supplied branch-writer prompt. If it is not available, the same agent
-   performs the prompt roles sequentially. The evidence rules do not change.
-9. Finish only after `scripts/validate_entry.py` passes without
-   `--allow-placeholders` and the final entry exists at
-   `entries/<root_envelope_id>.md`.
+5. Run `python3 scripts/build_entry_scaffolds.py <requested-root_id>` while the
+   legacy scaffold remains useful as a reading aid. It is not an authored
+   output and is not copied into the canonical JSONL.
+6. Perform the preflight below.
+7. Produce independent candidate JSONL files with the requested editorial
+   agents. Every candidate must follow the same schema and see the complete
+   sibling roster. Freeze the prompt snapshot for the duration of each run.
+8. Review candidates for evidence, depth, gloss quality, transliteration, and
+   cross-language independence after their runs finish. General defects update
+   the reusable prompts; then route correction through a fresh run by the
+   candidate's producing agent. A reviewing agent may produce a revised
+   candidate; the orchestrator does not hand-edit it.
+9. Select the reviewed artifact as
+   `entries/source/<root_envelope_id>.jsonl`.
+10. Run the deterministic renderer to create both language entries.
+11. Inspect both rendered files, including deep lexical analysis and the full
+    Quran appendix. After the relevant current run completes, route editorial
+    defects through the producing prompt and renderer defects through the
+    script implementer's reviewed task.
+12. Finish only after focused tests and renderer `--check` pass.
 
-Do not ask for stylistic choices already fixed by the plan or schema. Stop and
-report only when evidence is genuinely missing, target-language usage cannot be
-verified, or a new decision would change the linguistic claim.
-
-Resolve the orchestrator inputs directly from the envelope ID:
+## Paths
 
 ```text
 ROOT_ENVELOPE_ID=<root_envelope_id>
@@ -65,378 +110,217 @@ PACKET_JSON=data/output/root_packets/<root_envelope_id>.json
 ROOT_BUNDLE=data/output/entry_bundles/<root_envelope_id>/ROOT.md
 BRANCH_BUNDLE_DIR=data/output/entry_bundles/<root_envelope_id>/branches
 SCAFFOLD_DIR=data/output/entry_scaffolds/<root_envelope_id>
-ROOT_HEADER_SCAFFOLD=data/output/entry_scaffolds/<root_envelope_id>/ROOT-HEADER.md
-BRANCH_SCAFFOLD_DIR=data/output/entry_scaffolds/<root_envelope_id>/branches
-GENERATED_OBSERVATORY=data/output/entry_scaffolds/<root_envelope_id>/QURAN-OBSERVATORY.md
-BIBLIOGRAPHY_CANDIDATES=data/output/entry_scaffolds/<root_envelope_id>/BIBLIOGRAPHY-CANDIDATES.md
-DRAFT_DIR=data/output/entry_drafts/<root_envelope_id>
-FINAL_ENTRY=entries/<root_envelope_id>.md
+CANDIDATE_DIR=data/output/entry_drafts/<root_envelope_id>__<agent_label>
+AUTHORED_JSONL=entries/source/<root_envelope_id>.jsonl
+ENGLISH_ENTRY=entries/en/<root_envelope_id>.md
+TURKISH_ENTRY=entries/tr/<root_envelope_id>.md
 ```
 
-For each role prompt, derive its file inputs from these paths and the bundle
-index. For `TARGET_LANGUAGE_SOURCES`, use the approved list when one exists; if
-none has yet been fixed, verify claims in reputable monolingual sources, cite
-what was used, and leave an explicit evidence note for anything unverified.
-
-This is a complete cold-agent contract for producing a full draft. It is an
-agent-readable orchestration runbook, not a one-command software pipeline: the
-agent performs the supplied prompt roles, either by delegation or sequentially,
-and checks their combined output. The publication choices listed at the end do
-not block a clearly marked draft.
-
-## Run unit and completion unit
-
-The run unit is one normalized Quranic root envelope. The completion unit is a
-single root page containing every V4 `(root_id, branch_id)` in that envelope.
-
-The filesystem identity is `root_envelope_id`:
-
-```text
-one V4 root record:       root_000123
-multiple alias records:  root_001210--root_001211
-```
-
-It is formed from the ordered V4 root IDs joined with `--`. Arabic root text is
-display and linguistic data only; it is never used as a directory or filename.
-
-Do not move to a new root while the current root contains a polished familiar
-branch and unfinished rare branches.
+The JSONL is the durable machine-readable intellectual artifact. The two
+Markdown files are durable human-readable generated artifacts. Packets,
+bundles, scaffolds, and candidate drafts are replaceable work products.
 
 ## Source authority
 
-Use each source only for the job it owns:
-
 | Source | Use |
 |---|---|
-| V4 | Frozen branch inventory, branch boundary, lexical units, classical source handles and phrases |
+| V4 | Frozen branch inventory, boundary, lexical units, classical source handles and phrases |
 | Classical dictionary entries in V4 | Source audit, examples, derivations, nuances, and explicit disagreement |
 | QAC | Complete positioned root occurrences and morphology |
 | Attachment enrichment | Observable syntax, argument structure, and constructions |
 | QNet | Neighbor discovery only |
-| Target-language dictionaries and corpora | Actual English or Turkish usage and collision/error analysis |
+| Target-language dictionaries and corpora | English or Turkish usage and collision/error analysis |
 
 Quran context, QNet keywords, mainstream translations, and target-language
 usage cannot alter a V4 branch.
 
-## Files used in a run
-
-```text
-ENTRY_GENERATION_PLAN.md
-TRANSLITERATION_POLICY.md
-spec.md
-schema/entry.schema.md
-prompts/orchestrator.md
-prompts/branch-entry-writer.md
-prompts/gloss-collision-reviewer.md
-prompts/quran-observatory-writer.md
-prompts/root-editor.md
-data/output/root_packets/<root_envelope_id>.json
-data/output/entry_bundles/<root_envelope_id>/
-data/output/entry_scaffolds/<root_envelope_id>/
-data/output/entry_drafts/<root_envelope_id>/
-entries/<root_envelope_id>.md
-```
-
-Generated packets, bundles, and drafts are replaceable work products. The
-durable authored artifact is `entries/<root_envelope_id>.md`.
-
-## Preparing a root
-
-Synchronize upstream sources when they have changed:
-
-```bash
-./scripts/sync_upstream.sh
-```
-
-Generate the complete evidence packet:
-
-```bash
-python3 scripts/root_packet.py root_001210
-```
-
-Generate compact root and branch bundles:
-
-```bash
-python3 scripts/build_entry_bundles.py root_001210
-```
-
-Generate deterministic entry scaffolds:
-
-```bash
-python3 scripts/build_entry_scaffolds.py root_001210
-```
-
-The first command writes the full JSON/Markdown evidence packet. The second
-rearranges that packet into convenient reading bundles and records packet and
-file hashes. The third writes packet-backed entry scaffolds. It does not infer
-source relationships, branch activation, transliterations, or target-language
-renderings.
-
 ## Required preflight
 
-Before drafting:
+Before authoring:
 
-1. Read the packet summary and branch roster.
-2. Confirm that the bundle branch count equals the V4 packet branch count.
-3. Confirm that every branch bundle contains `source_phrase_ar`, `source_refs`,
-   linked lexical units, source entries, and its QNet discovery material when
-   available.
-4. Record all V4 root IDs in the root envelope.
+1. Confirm the packet root envelope and ordered V4 root IDs.
+2. Confirm packet, bundle, and scaffold branch counts agree.
+3. Confirm every branch bundle contains its Arabic boundary, source phrase and
+   references, linked lexical units, and routed source entries.
+4. Record the exact frozen `(root_id, branch_id)` roster.
 5. Do not collapse aliases or overlapping V4 records.
-6. Confirm that the Turkish transliteration guide is available at
-   `docs/upstream/turkish-transliteration-guide.md`.
-7. Confirm that both generated manifests exist and that scaffold generation
-   completed without a stale-bundle or output-safety error.
+6. Confirm `docs/upstream/turkish-transliteration-guide.md` is available.
+7. Confirm all generated manifests match the current packet hash.
 
-If packet evidence is unexpectedly absent, repair the packet or source lookup.
-Do not compensate from model memory.
+If evidence is unexpectedly absent, repair the packet or lookup. Do not
+compensate from model memory.
 
-## Prompt sequence
+## Agent sequence
 
-### 1. Orchestrator
+### 1. Top-level orchestrator
 
-Start with `prompts/orchestrator.md`. It owns the branch roster, paths, order,
-and final completeness check. It does not write unsupported linguistic claims.
+The current top-level agent follows `prompts/orchestrator.md` directly. This
+role is not delegated. It owns paths, agent assignments, monitoring, review
+routing, script execution, and final completeness.
 
-The scaffold script creates immutable generated inputs under:
+### 2. Independent editorial candidates
 
-```text
-data/output/entry_scaffolds/<root_envelope_id>/
-```
+When parallel comparison is requested, start independent agents with the
+requested models and reasoning levels. Give each:
 
-The orchestrator creates authored working fragments under:
+- the complete packet and root bundle;
+- every branch bundle and the full sibling roster;
+- the editorial plan, transliteration policy, and authored JSONL schema;
+- the branch, gloss, Quran transliteration, and root-editor prompts;
+- a distinct candidate output path.
 
-```text
-data/output/entry_drafts/<root_envelope_id>/branches/
-data/output/entry_drafts/<root_envelope_id>/quran-observatory.md
-```
+Each agent writes one complete candidate JSONL. Parallel agents must not see or
+edit one another's candidates during independent drafting.
 
-No database or status ledger is needed. Existing branch fragments show what
-has been drafted; the root editor checks the roster before completion.
+### 3. Review
 
-### 2. Branch entry writer
+Use a persistent review agent for scripts and another editorial review pass as
+needed. For script work:
 
-For every V4 branch, run `prompts/branch-entry-writer.md` with:
+1. the script implementer writes code and focused tests;
+2. a code-review agent reviews the actual patch;
+3. findings are sent back to the same implementer;
+4. the implementer applies fixes and reruns tests;
+5. the reviewer checks the revised patch.
 
-- the focus branch bundle;
-- the matching generated branch scaffold;
-- the root bundle and full sibling roster;
-- `ENTRY_GENERATION_PLAN.md`;
-- and `schema/entry.schema.md`.
+For editorial work, findings go to the agent that produced the candidate. The
+reviewer or producer writes the revised JSONL; the orchestrator never patches
+linguistic content manually.
 
-Write one fragment to:
+### 4. Canonical JSONL
 
-```text
-data/output/entry_drafts/<root_envelope_id>/branches/<root_id>--<branch_id>.md
-```
+The root editor returns JSONL records only. It does not assemble Markdown. The
+canonical file contains editorial content and keyed transliterations, never
+duplicated packet facts. It must include exactly the record types and keys
+required by `schema/authored-entry.schema.md`.
 
-The writer produces the source audit, concept accounts, boundary explanation,
-lexical units, and verified Arabic contrasts. It must not assign Quran
-occurrences to the branch.
+### 5. Deterministic rendering
 
-Branches may be drafted independently only when every writer sees the complete
-sibling roster. Parallel drafting never removes the final root-wide review.
-
-### 3. Gloss and collision reviewer
-
-Run `prompts/gloss-collision-reviewer.md` over each branch fragment after the
-concept and source audit are stable.
-
-The reviewer:
-
-- writes one to three English renderings and one to three Turkish renderings;
-- permits multi-word and multi-clause primary glosses;
-- tests what every rendering preserves, loses, and adds;
-- checks sibling and verified cross-root target-language collisions;
-- treats mainstream translations and loanwords as explained secondary
-  recognition terms only;
-- and returns a complete revised branch fragment, not disconnected notes.
-
-Where a claim depends on actual target-language use, cite a reputable English
-or Turkish dictionary, corpus, or documented translation convention. If that
-evidence is unavailable, mark the claim for target-language evidence rather
-than asserting it from intuition.
-
-### 4. Quran occurrence observatory reviewer
-
-Run `prompts/quran-observatory-writer.md` once per root with the generated
-observatory, root bundle, and full packet JSON.
-
-The result belongs at:
-
-```text
-data/output/entry_drafts/<root_envelope_id>/quran-observatory.md
-```
-
-The script, not the agent, owns the complete census, rows, morphology,
-packet-backed constructions, attachment handles, and Arabic ayah contexts. The
-reviewer verifies the flagged joins and supplies only the required reviewed
-transliterations and clearly marked editorial observations. It may not alter a
-packet-backed cell or name, rank, score, color, or imply an activated branch.
-
-### 5. Root editor
-
-Run `prompts/root-editor.md` with:
-
-- the full branch roster;
-- every reviewed branch fragment;
-- the generated root-header scaffold;
-- the reviewed occurrence-observatory fragment;
-- the generated bibliography candidates;
-- the entry schema;
-- and the root packet for fact checking.
-
-The editor assembles:
-
-```text
-entries/<root_envelope_id>.md
-```
-
-The editor may repair clarity, duplication, cross-references, citation shape,
-and target-language consistency. It may not silently change a V4 boundary,
-remove a branch, add a branch, or invent evidence.
-
-After assembly, run:
+Render both entries with:
 
 ```bash
-python3 scripts/validate_entry.py entries/<root_envelope_id>.md \
-  --packet data/output/root_packets/<root_envelope_id>.json --json
+python3 scripts/render_language_entries.py \
+  entries/source/<root_envelope_id>.jsonl \
+  --packet data/output/root_packets/<root_envelope_id>.json \
+  --output-dir entries
 ```
 
-`--allow-placeholders` is only for validating a generated scaffold before
-editorial completion. It is forbidden for the final completion check.
+After corrections, replace renderer-owned files with `--force`. Confirm the
+checked-in projections are current with:
 
-## Source-audit rules during a run
+```bash
+python3 scripts/render_language_entries.py \
+  entries/source/<root_envelope_id>.jsonl \
+  --packet data/output/root_packets/<root_envelope_id>.json \
+  --output-dir entries --check
+```
 
-- Quote the relevant Arabic source phrase exactly.
-- Explain what the quotation contributes in both English and Turkish.
-- Distinguish explicit support, compatible support, additional nuance,
-  explicit disagreement, sole attestation, and no located attestation.
-- Never call absence disagreement.
-- Never infer source silence merely from a missing parsed excerpt.
-- Describe different organization as different organization unless a source
-  explicitly disputes the other position.
-- Keep examples attached to the source that supplies them.
+`--check` is mandatory before completion.
 
-## Contrast rules during a run
+## Human-readable entry requirements
 
-There are two contrast passes:
+English and Turkish are separate encyclopedia entries, not bilingual audit
+dumps. Each file must be readable without the other and must contain:
 
-1. **Arabic contrast:** why this frozen branch is not a sibling or verified
-   semantic neighbor.
-2. **Target-language contrast:** how an English or Turkish rendering may hide
-   that Arabic distinction.
+- root identity and a branch overview;
+- every frozen branch exactly once;
+- a prominent primary gloss immediately below each branch heading;
+- alternatives and their fit/collision analysis;
+- a deep concept account, scope, exclusions, Arabic contrasts, lexical units,
+  source audits with exact Arabic quotations, and target-language notes;
+- one neutral root-level Quran observatory generated from packet facts;
+- complete occurrence and ayah coverage without branch activation claims;
+- bibliography and stable evidence handles.
 
-QNet may nominate the comparison. V4 and dictionary evidence must establish
-the published distinction.
+The primary gloss is orientation, not a substitute for the concept account.
+Depth, source auditability, and accessible prose remain required.
 
-A target-language collision is recorded even when a gloss is reasonable in
-isolation. For example, conventional Turkish `yol` can hide the distinction
-between `ṣirāṭ` and `sabīl`. The entry must explain the verified Arabic
-difference and the misconception created by the shared Turkish label.
+## Linguistic rules
 
-## Gloss rules during a run
+### Source audits
 
-- Give one to three renderings in each target language.
-- Put the most faithful usable rendering first.
-- Do not reward brevity or one-word form.
-- Use a phrase or coordinated clauses whenever the concept requires them.
-- Do not turn explanatory additions into alleged lexical dimensions.
-- Classify internal fit as `none`, `narrowing`, `broadening`, `displacement`,
-  or `drifted_loanword`.
-- Record target-language collision separately; it can coexist with any fit
-  error.
-- State the actual lost, added, or confused dimensions in plain language.
-- A mainstream render or loanword is never the first-class primary rendering.
+- Quote only Arabic text present in supplied evidence.
+- Classify relationships as explicit support, compatible support, additional
+  nuance, explicit disagreement, sole attestation, or no located attestation.
+- Never turn absence or a routing failure into disagreement.
+- Keep examples and claims attached to their source references.
 
-## Citation rules
+### Contrasts
 
-Every material lexicographic statement must point to a V4 source reference or
-classical dictionary entry. Preserve exact Arabic quotation separately from its
-English and Turkish explanation.
+- Distinguish Arabic contrast from target-language collision.
+- QNet may nominate a neighbor; V4 or dictionary evidence must establish the
+  published distinction.
+- Quran occurrence distribution is never branch evidence.
 
-Preserve exact Arabic quotations unchanged, then add complete English and
-Turkish transliteration lines. In ordinary prose, use `Arabic
-(target-language transliteration)` on every mention, including individual
-letters, forms, roots, and both sides of a comparison.
+### Glosses
 
-Target-language usage claims need target-language citations when they are not
-obvious or when they support a criticism of a familiar translation.
+- Give one to three candidates per branch per language and exactly one
+  `primary` candidate.
+- Prefer a phrase or coordinated clauses when one word drops a dimension.
+- Roles are `primary`, `alternative`, or `recognition`.
+- Fit values are `none`, `narrowing`, `broadening`, `displacement`, or
+  `drifted_loanword`.
+- State what each candidate preserves, loses, adds, and may confuse.
+- Familiar translations and loanwords are secondary, never primary by
+  familiarity alone.
 
-Quran observations cite QAC references and ayah references. Attachment claims
-cite the relevant attachment unit or sample reference.
+### Arabic anchors and citations
 
-## Handling evidence gaps
+Every Arabic unit in English prose carries English transliteration; every
+Arabic unit in Turkish prose carries Turkish transliteration. Exact Arabic
+source quotations remain unchanged and receive the language-appropriate full
+transliteration in the rendered entry. Material claims cite packet-backed V4,
+dictionary, QAC, attachment, or verified target-language handles.
 
-The frozen branch remains part of the entry. If the bundle lacks evidence
-needed to explain a source nuance:
+### Quran neutrality
 
-1. check the full packet;
-2. check the copied V4 dictionary entry;
-3. report the missing lookup plainly;
-4. leave a visible draft marker if necessary;
-5. never fill it from memory or quietly omit the branch.
+No occurrence is assigned, ranked, scored, colored, or described as probably
+belonging to a branch. Occurrence tables and ayah contexts are rendered from
+the packet. Editorial JSONL may supply only schema-approved keyed linguistic
+material; it may not copy or override packet fields.
 
-Draft markers must be resolved or explicitly retained as editorial notes before
-the root page is called complete.
+## Completion check
 
-## Root-wide completion check
+The top-level orchestrator must verify:
 
-The editor must verify:
-
-- exact equality between the V4 branch roster and the final branch headings;
-- stable `(root_id, branch_id)` identities;
-- no branch activation claims in the occurrence observatory;
-- no QNet-only published contrasts;
-- source phrases and references for each source audit;
+- exact branch roster equality;
+- complete source-audit and lexical analysis for every branch;
 - independent English and Turkish prose;
-- no bare Arabic or bare Arabic transliteration in target-language prose;
-- complete English and Turkish transliteration lines for source quotations and
-  Arabic ayah contexts;
-- one to three renderings per language for every branch;
-- faithful multi-word rendering first where needed;
-- explicit limitations for every mainstream or loanword rendering;
-- collision checks against siblings and verified neighbors;
-- and accessibility to a reader who knows no Arabic.
+- prominent primary glosses plus full encyclopedia depth;
+- no unsupported, memory-supplied, or QNet-only claims;
+- no branch activation language in Quran material;
+- exact authored form and ayah key coverage, plus complete script-generated
+  packet occurrence coverage using form-derived surface transliterations;
+- correct language-specific transliteration and no bare Arabic anchors;
+- no unresolved placeholders;
+- focused script tests pass;
+- renderer `--check` passes;
+- `git diff --check` passes.
 
-The deterministic validator must additionally pass. An agent's manual count or
-text scan does not replace that result.
+An agent's count or visual scan never replaces deterministic validation. A
+passing validator also never replaces the top-level agent's deep lexical and
+reader-quality review.
 
-## Resuming a root
+## Resuming and correction
 
-Resume by reading the branch roster and listing existing files under
-`data/output/entry_drafts/<root_envelope_id>/branches/`. Continue with the first missing
-or incomplete branch, then rerun the root-wide editor and deterministic
-validator. Regenerate scaffolds only from a current, hash-matched bundle tree;
-never edit generated scaffolds in place. No separate resume state is required.
+Resume from the canonical JSONL, candidate files, active agent IDs, and `git
+status`. Do not regenerate or overwrite a candidate that is under review.
+Do not message or redirect an agent while it is running. Wait for completion,
+classify the defect as root-specific or general, update the reusable prompt for
+general defects, and start a fresh run with a new output path or an explicitly
+owned replacement path.
+Correction ownership is stable:
 
-## First run
+- editorial defect: producing editorial agent;
+- renderer/schema/test defect: original script implementer;
+- packet defect: packet pipeline owner.
 
-The first run is requested as `root_001210` and resolves to
-`root_001210--root_001211`, representing `ق ر ء / ق ر أ`. Preserve both V4 root
-records and all 19 branch records. Use the reading/recitation branch to
-establish voice and the `read/recite/proclaim` and Turkish `oku` analyses, but
-finish every branch before treating the pilot as complete.
+Never repair a generated Markdown file manually. Rerender after its source or
+renderer is corrected.
 
-## Decisions still needed before publication
+## Publication decisions
 
-These do not block the first authored pilot, but they should be settled from
-that pilot rather than guessed in advance:
-
-1. **Neutral occurrence context in English and Turkish.** A zero-Arabic reader
-   needs verse context, but an existing translation of the focus word can bias
-   branch judgment. Preferred direction: show the full Arabic ayah and a
-   target-language context line with focus-root tokens masked or left as Arabic
-   identity labels.
-2. **Target-language source list.** Name the preferred English and Turkish
-   monolingual dictionaries/corpora used to justify gloss-risk claims.
-3. **Citation display.** Decide after the pilot whether public entries use
-   inline source labels, footnotes, or expandable source blocks.
-4. **Gold entry.** Once the first root is approved, preserve it as the style and
-   depth example for later roots.
-5. **Publication attribution and licensing.** Before public release, verify the
-   attribution and reuse terms of the digitized dictionary editions and any
-   target-language corpora quoted.
-
-Do not solve these by adding infrastructure. Record the chosen conventions in
-this file after the pilot.
+The pilot should settle the preferred target-language dictionaries/corpora,
+citation display, neutral translated Quran context policy, gold-entry style,
+and source licensing. These decisions do not justify weakening evidence or
+mixing the two language files.

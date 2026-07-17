@@ -7,8 +7,9 @@ and lets a reader observe the root's Quranic occurrences without being told
 which branch is active in an occurrence.
 
 The work is linguistic and editorial. The repository should remain a simple
-workbench: copied sources, deterministic packet/bundle/scaffold scripts,
-structural validation, and human-readable root entries.
+workbench: copied sources, deterministic packet/bundle scripts, one
+machine-readable editorial JSONL artifact per root, structural validation, and
+separate human-readable English and Turkish root entries rendered by script.
 
 ## Purposes of the dictionary
 
@@ -219,9 +220,10 @@ including:
   phrases;
 - and the full relevant classical dictionary entries.
 
-The authored entry also supplies verified English and Turkish transliterations
-for every Arabic unit; raw QAC or Buckwalter fields are evidence, not
-reader-facing transliteration.
+The authored JSONL supplies only the language-specific transliterations that
+the schema requires, keyed to stable packet identities. The renderer supplies
+the Arabic unit and all other packet-backed columns. Raw QAC or Buckwalter
+fields are evidence, not reader-facing transliteration.
 
 The exact source text matters because a source reference alone cannot show
 whether a dictionary supplies the branch itself, an example, a derivation, a
@@ -305,9 +307,10 @@ Silence is not disagreement. A missing parsed excerpt is also not proof that a
 dictionary is silent. Explicit conflict must be distinguished from absence,
 different organization, and complementary nuance.
 
-## Published unit: one root page
+## Published unit: one root, two language entries
 
-The practical publication unit is one human-readable root page. It contains:
+The practical publication unit is a matched pair of human-readable root
+entries, one English and one Turkish. Each file contains:
 
 1. root identity and orthographic aliases;
 2. a branch index listing every frozen V4 branch;
@@ -317,7 +320,14 @@ The practical publication unit is one human-readable root page. It contains:
 6. and the source bibliography used on that page.
 
 This keeps all branches together so readers can compare them without erasing
-their individual V4 identities.
+their individual V4 identities. It also prevents an English reader from
+traversing Turkish audit fields, or a Turkish reader from traversing English
+ones. Both files share the same script-generated packet skeleton.
+
+The durable authored source is `entries/source/<root_envelope_id>.jsonl`.
+Markdown under `entries/en/` and `entries/tr/` is generated and must never be
+edited directly. The JSONL contains editorial judgment and keyed
+transliterations; mechanically recoverable packet facts remain absent from it.
 
 ## Encyclopedia entry for one branch
 
@@ -334,23 +344,17 @@ adapted for readability, but the substance should remain.
 - associated lexical units, forms, and collocations;
 - and a short reader-facing orientation in English and Turkish.
 
-### English concept account
+### Target-language concept account
 
-Independent English prose explaining the whole concept to a reader with no
-Arabic. It should present the positive concept, internal dimensions, image or
-mechanism, and important limits.
+The English entry contains independent English prose explaining the whole
+concept to a reader with no Arabic. The Turkish entry contains independently
+composed Turkish prose derived from the same Arabic evidence, not a relay
+translation of the English. Each should present the positive concept, internal
+dimensions, image or mechanism, important limits, and language-specific ways
+of packaging or confusing it.
 
-Every Arabic unit in the English account uses the form `Arabic (English
-transliteration)`.
-
-### Turkish concept account
-
-Independent Turkish prose derived from the Arabic evidence. It should not be a
-translation of the English account and should address Turkish-specific ways of
-packaging or confusing the concept.
-
-Every Arabic unit in the Turkish account uses the form `Arabic (Turkish
-transliteration)`.
+Every Arabic unit uses the form `Arabic (target-language transliteration)` in
+the relevant rendered file.
 
 ### Boundary and Arabic contrasts
 
@@ -406,7 +410,9 @@ may be:
 - or several coordinated clauses.
 
 The first gloss should be the most faithful usable rendering, not the shortest
-or most conventional one.
+or most conventional one. The renderer displays it immediately below the
+branch heading and in the branch overview. This prominence orients the reader;
+it does not replace the full concept and lexicographic account.
 
 For each gloss, record:
 
@@ -470,9 +476,9 @@ software system.
 
 ## Quran occurrence observatory
 
-The occurrence observatory belongs to the root page rather than being copied
-under individual branch entries. This avoids implying that an occurrence has
-already been assigned to a branch.
+The occurrence observatory belongs once in each language's root entry rather
+than being copied under individual branch entries. This avoids implying that
+an occurrence has already been assigned to a branch.
 
 It should contain:
 
@@ -484,9 +490,9 @@ It should contain:
 - representative examples chosen for constructional variety;
 - and plain-language notes on recurring deployment patterns.
 
-Complete Arabic ayah contexts carry both a readable English-oriented
-transliteration and a Turkish-oriented transliteration. Buckwalter is not a
-reader-facing substitute.
+Complete Arabic ayah contexts carry an English-oriented transliteration in the
+English entry and a Turkish-oriented transliteration in the Turkish entry.
+Buckwalter is not a reader-facing substitute.
 
 The observatory must not contain:
 
@@ -505,24 +511,34 @@ activation project.
 For each root:
 
 1. Generate the evidence packet with all V4 branches and root-level evidence.
-2. Generate hash-tracked evidence bundles and packet-backed entry scaffolds.
+2. Generate hash-tracked evidence bundles and packet-backed reading scaffolds.
 3. Confirm mechanically that every frozen branch identity and Quran occurrence
    is present.
-4. Read the classical sources and write the editorial source audit for every
-   branch without converting lookup status into source relationship.
+4. Have each requested editorial agent independently write a complete
+   schema-conforming candidate JSONL, without converting lookup status into a
+   source relationship or copying packet facts. Each run uses an immutable,
+   corpus-general prompt snapshot and runs to completion without conversational
+   correction. A general defect updates the reusable prompt before a fresh run.
 5. Establish sibling and verified neighbor contrasts from the frozen boundary
    and source evidence.
-6. Write the English and Turkish concept accounts independently.
-7. Review the script-generated neutral Quran occurrence observatory, resolving
-   transliterations and flagged joins without recreating packet-backed rows.
+6. Write the English and Turkish concept accounts independently in keyed
+   language fields.
+7. Supply only keyed, language-specific Quran transliterations required by the
+   schema; the script generates the neutral observatory and all rows.
 8. Draft one to three glosses per language, allowing multi-word and
    multi-clause renderings.
 9. Test every gloss for internal error and target-language collision.
 10. Add familiar mainstream or loanword renders only as explained secondary
-   recognition terms.
-11. Read the root page as a whole to ensure that every branch remains distinct,
-    present, and equally independent of activation assumptions.
-12. Run deterministic validation without allowing placeholders.
+    recognition terms.
+11. Audit every transliterated unit for source-backed vocalization, inflection,
+    and same-spelling forms that may differ phonologically or lexically. Verify
+    that every cited external entry was actually retrieved and inspected.
+12. Have an editorial agent produce the reviewed canonical JSONL. Never
+    hand-edit linguistic output during orchestration.
+13. Render separate English and Turkish entries mechanically.
+14. Read both entries completely to ensure that every branch remains distinct,
+    present, deep, and independent of activation assumptions.
+15. Run focused tests and deterministic renderer `--check` validation.
 
 Complete one root before beginning the next. This keeps the sibling system
 visible and prevents familiar branches from receiving polished entries while
@@ -530,13 +546,18 @@ rare branches remain placeholders.
 
 ## Linguistic completion check
 
-A root page is ready when:
+A root publication pair is ready when:
 
 - every frozen `(root_id, branch_id)` has an encyclopedia entry;
 - every substantive lexicographic statement has a source reference and Arabic
   phrase or excerpt;
 - agreement, nuance, disagreement, sole attestation, and absence are described
   accurately;
+- every vocalization is supplied by inspectable evidence rather than inferred
+  from bare consonantal spelling;
+- orthographic identity is not mislabeled as phonological or lexical identity;
+- every cited external dictionary or corpus entry was successfully retrieved
+  and read during the run;
 - no Quran occurrence is assigned to a branch;
 - every occurrence is available for reader observation;
 - QNet-derived comparisons have been checked against dictionary evidence;
@@ -553,14 +574,19 @@ A root page is ready when:
   lines;
 - mainstream translations and loanwords are secondary and carry explicit
   problem notes;
-- and a reader with no Arabic can understand the entry without losing access
-  to the Arabic evidence.
+- a reader with no Arabic can understand either language entry without losing
+  access to the Arabic evidence;
+- the canonical JSONL contains no duplicated packet-owned facts;
+- both rendered files share exact packet-backed branch, source, lexical, Quran,
+  ayah, and evidence-handle rosters;
+- and renderer `--check` confirms both files are current.
 
-This is an editorial read-through, not a software certification process.
+This requires both editorial read-through and deterministic validation. Neither
+one substitutes for the other.
 
 ## First pilot: `ق ر ء / ق ر أ`
 
-The first root page will use the normalized `ق ر ء` envelope while preserving
+The first publication pair will use the normalized `ق ر ء` envelope while preserving
 both V4 identities `root_001210` and `root_001211`. In the current source
 snapshot they contain 19 frozen branch records. QAC contains 88 rooted
 morphemes for the normalized root.
@@ -580,7 +606,7 @@ This root is a useful pilot because it exercises:
 
 The reading and recitation branch can establish the prose voice and gloss
 analysis, but the pilot is not complete until all 19 V4 branch records have
-full entries on the same root page.
+full entries in both language files.
 
 ## Simple project shape
 
@@ -595,17 +621,20 @@ data/output/root_packets/      disposable generated evidence packets
 data/output/entry_bundles/     hash-tracked generated reading bundles
 data/output/entry_scaffolds/   immutable packet-backed entry scaffolds
 data/output/entry_drafts/      replaceable authored working fragments
+entries/source/                canonical machine-readable editorial JSONL
+entries/en/                    generated English encyclopedia entries
+entries/tr/                    generated Turkish encyclopedia entries
 scripts/sync_upstream.sh       copy and refresh the source material
 scripts/root_packet.py         collect one root's evidence
 scripts/build_entry_bundles.py build hash-tracked evidence bundles
 scripts/build_entry_scaffolds.py build deterministic entry scaffolds
-scripts/validate_entry.py      check final Markdown against packet facts/schema
-entries/                       authored human-readable root pages
+scripts/render_language_entries.py validate JSONL and render both entries
 ```
 
 No authoring database, workflow engine, confidence scoring system, or complex
 application architecture is required. The durable intellectual product is the
-authored root page and its traceable evidence.
+authored JSONL, its two deterministic human-readable projections, and their
+traceable evidence.
 
 ## Relevant inherited documentation
 
