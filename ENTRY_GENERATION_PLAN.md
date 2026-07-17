@@ -7,8 +7,8 @@ and lets a reader observe the root's Quranic occurrences without being told
 which branch is active in an occurrence.
 
 The work is linguistic and editorial. The repository should remain a simple
-workbench: copied sources, one evidence-packet script, and human-readable root
-entries.
+workbench: copied sources, deterministic packet/bundle/scaffold scripts,
+structural validation, and human-readable root entries.
 
 ## Purposes of the dictionary
 
@@ -505,19 +505,24 @@ activation project.
 For each root:
 
 1. Generate the evidence packet with all V4 branches and root-level evidence.
-2. Confirm that every frozen branch identity is present.
-3. Read the classical sources and write the source audit for every branch.
-4. Establish sibling and verified neighbor contrasts from the frozen boundary
+2. Generate hash-tracked evidence bundles and packet-backed entry scaffolds.
+3. Confirm mechanically that every frozen branch identity and Quran occurrence
+   is present.
+4. Read the classical sources and write the editorial source audit for every
+   branch without converting lookup status into source relationship.
+5. Establish sibling and verified neighbor contrasts from the frozen boundary
    and source evidence.
-5. Write the English and Turkish concept accounts independently.
-6. Build the neutral Quran occurrence observatory from QAC and attachments.
-7. Draft one to three glosses per language, allowing multi-word and
+6. Write the English and Turkish concept accounts independently.
+7. Review the script-generated neutral Quran occurrence observatory, resolving
+   transliterations and flagged joins without recreating packet-backed rows.
+8. Draft one to three glosses per language, allowing multi-word and
    multi-clause renderings.
-8. Test every gloss for internal error and target-language collision.
-9. Add familiar mainstream or loanword renders only as explained secondary
+9. Test every gloss for internal error and target-language collision.
+10. Add familiar mainstream or loanword renders only as explained secondary
    recognition terms.
-10. Read the root page as a whole to ensure that every branch remains distinct,
+11. Read the root page as a whole to ensure that every branch remains distinct,
     present, and equally independent of activation assumptions.
+12. Run deterministic validation without allowing placeholders.
 
 Complete one root before beginning the next. This keeps the sibling system
 visible and prevents familiar branches from receiving polished entries while
@@ -587,8 +592,14 @@ TRANSLITERATION_POLICY.md      Arabic-anchor and per-language romanization rules
 data/upstream/                 copied canonical sources
 data/working/                  hydrated read-only source databases
 data/output/root_packets/      disposable generated evidence packets
+data/output/entry_bundles/     hash-tracked generated reading bundles
+data/output/entry_scaffolds/   immutable packet-backed entry scaffolds
+data/output/entry_drafts/      replaceable authored working fragments
 scripts/sync_upstream.sh       copy and refresh the source material
 scripts/root_packet.py         collect one root's evidence
+scripts/build_entry_bundles.py build hash-tracked evidence bundles
+scripts/build_entry_scaffolds.py build deterministic entry scaffolds
+scripts/validate_entry.py      check final Markdown against packet facts/schema
 entries/                       authored human-readable root pages
 ```
 

@@ -8,8 +8,10 @@ a root-wide linguistic consistency pass, not another branch-generation pass.
 ```text
 ROOT_ENVELOPE_ID={{ROOT_ENVELOPE_ID}}
 ROOT_PACKET={{ROOT_PACKET}}
+ROOT_HEADER_SCAFFOLD={{ROOT_HEADER_SCAFFOLD}}
 BRANCH_FRAGMENT_DIR={{BRANCH_FRAGMENT_DIR}}
 OBSERVATORY_FRAGMENT={{OBSERVATORY_FRAGMENT}}
+BIBLIOGRAPHY_CANDIDATES={{BIBLIOGRAPHY_CANDIDATES}}
 FINAL_ENTRY={{FINAL_ENTRY}}
 ```
 
@@ -20,21 +22,27 @@ Read:
 - `spec.md`;
 - `schema/entry.schema.md`;
 - the frozen branch roster in the packet;
+- the generated root-header scaffold;
 - every reviewed branch fragment;
-- and the Quran observatory fragment.
+- the reviewed Quran observatory fragment;
+- and the generated bibliography candidates.
 
 ## Assembly
 
 Create the final root page in this order:
 
-1. schema marker and root title;
-2. root identity;
-3. complete branch index;
+1. the generated schema marker, root title, root identity, and complete branch
+   index, with explicit review fields resolved;
 4. branch blocks in frozen `(root_id, branch_id)` order;
 5. one root-level Quran occurrence observatory;
-6. bibliography and evidence handles.
+6. bibliography and evidence handles, retaining only candidates actually used.
 
 Write the result to `FINAL_ENTRY`.
+
+Do not regenerate packet-backed root, branch, lexical, Quran, attachment, or
+Arabic ayah fields. Preserve them exactly from the generated scaffolds and
+reviewed fragments. If a generated field is wrong, report the upstream defect
+instead of silently editing the evidence.
 
 ## Required checks
 
@@ -81,6 +89,8 @@ Write the result to `FINAL_ENTRY`.
   groups.
 - No occurrence is assigned, ranked, scored, or colored by branch.
 - Focus words in any target-language context line remain neutral or masked.
+- Generated census, form rows, aggregate attachment tables, occurrence rows,
+  join provenance, and Arabic ayah contexts remain unchanged.
 
 ### Reader clarity
 
@@ -108,6 +118,10 @@ cross-references, and target-language naturalness. You may not:
 
 If a substantive problem cannot be fixed from supplied evidence, preserve a
 clear editorial note and list it in the completion report.
+
+After writing `FINAL_ENTRY`, run `scripts/validate_entry.py` with the root
+packet and without `--allow-placeholders`. A failed validator result blocks
+completion; it does not authorize deleting the generated field that failed.
 
 ## Output
 

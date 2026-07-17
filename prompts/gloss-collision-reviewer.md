@@ -25,6 +25,12 @@ references, V4 identity, and evidence-grounded Arabic boundaries. Improve the
 English/Turkish concept accounts only when needed to make them faithful or
 clear.
 
+Also preserve every packet-backed field copied from the generated branch
+scaffold: marker identity, V4 metadata, linked lexical rows, source-routing
+metadata, evidence-bundle handle, and frozen Arabic inclusion/exclusion lines.
+This review may replace rendering-table review fields and related editorial
+prose; it must not regenerate mechanical evidence.
+
 ## Review each language independently
 
 Do not assume that an English solution works in Turkish or that a Turkish

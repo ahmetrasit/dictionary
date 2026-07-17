@@ -9,6 +9,7 @@ assembled into a complete root page.
 ```text
 FOCUS_BRANCH={{FOCUS_BRANCH}}
 FOCUS_BUNDLE={{FOCUS_BUNDLE}}
+FOCUS_SCAFFOLD={{FOCUS_SCAFFOLD}}
 ROOT_BUNDLE={{ROOT_BUNDLE}}
 ROOT_PACKET={{ROOT_PACKET}}
 OUTPUT_FRAGMENT={{OUTPUT_FRAGMENT}}
@@ -20,11 +21,13 @@ Read:
 - `TRANSLITERATION_POLICY.md`;
 - `schema/entry.schema.md`;
 - the entire focus bundle;
+- the entire generated focus scaffold;
 - and the complete sibling roster in the root bundle.
 
 ## Task
 
-Produce one complete branch block from:
+Copy the generated focus scaffold and replace every explicit `REVIEW REQUIRED`
+field to produce one complete branch block from:
 
 ```markdown
 <!-- BEGIN BRANCH <root_id>/<branch_id> -->
@@ -38,13 +41,19 @@ through:
 
 Follow the schema headings exactly.
 
+The scaffold owns packet-backed identity, Arabic boundaries, linked lexical
+rows, source-routing metadata, and evidence-bundle handles. Preserve those
+fields exactly. If one is wrong, report a packet, bundle, or script defect
+instead of silently rewriting it.
+
 ## Method
 
-### 1. Fix the V4 identity
+### 1. Preserve the generated V4 identity
 
-Copy the stable root ID, branch ID, Arabic image, English scaffold, and
-provenance. The V4 branch is frozen. Do not debate whether it exists, merge it
-with a sibling, or rewrite its Arabic boundary.
+Verify the stable root ID, branch ID, Arabic image, English scaffold,
+provenance, source handles, and linked lexical rows against the focus bundle.
+Do not regenerate them. The V4 branch is frozen. Do not debate whether it
+exists, merge it with a sibling, or rewrite its Arabic boundary.
 
 ### 2. Read the Arabic boundary before writing target prose
 
@@ -101,6 +110,10 @@ For each materially relevant dictionary:
 - preserve examples, derivations, and restrictions;
 - distinguish explicit disagreement from nuance, different organization, and
   silence.
+
+The generated routing status and route note are lookup metadata, not source
+relationship classifications. A `no_match` routing gap does not authorize
+`no_located_attestation`, sole attestation, silence, or disagreement.
 
 Keep an exact Arabic quotation unchanged. On the next lines, give a complete
 English transliteration and a complete Turkish transliteration before the two

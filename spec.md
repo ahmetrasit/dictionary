@@ -40,15 +40,18 @@ Then:
 3. Read the printed `root_envelope_id` and packet paths. A requested root ID
    may resolve to an envelope containing more than one V4 root record.
 4. Run `python3 scripts/build_entry_bundles.py <requested-root_id>`.
-5. Open `data/output/entry_bundles/<root_envelope_id>/INDEX.md` and perform the
+5. Run `python3 scripts/build_entry_scaffolds.py <requested-root_id>`.
+6. Open `data/output/entry_bundles/<root_envelope_id>/INDEX.md` and
+   `data/output/entry_scaffolds/<root_envelope_id>/INDEX.md`, then perform the
    Required preflight below.
-6. Instantiate `prompts/orchestrator.md` with the resolved paths and execute the
+7. Instantiate `prompts/orchestrator.md` with the resolved paths and execute the
    complete Prompt sequence.
-7. If delegation is available, independent branch drafts may be delegated with
+8. If delegation is available, independent branch drafts may be delegated with
    the supplied branch-writer prompt. If it is not available, the same agent
    performs the prompt roles sequentially. The evidence rules do not change.
-8. Finish only after the Root-wide completion check passes and the final entry
-   exists at `entries/<root_envelope_id>.md`.
+9. Finish only after `scripts/validate_entry.py` passes without
+   `--allow-placeholders` and the final entry exists at
+   `entries/<root_envelope_id>.md`.
 
 Do not ask for stylistic choices already fixed by the plan or schema. Stop and
 report only when evidence is genuinely missing, target-language usage cannot be
@@ -61,6 +64,11 @@ ROOT_ENVELOPE_ID=<root_envelope_id>
 PACKET_JSON=data/output/root_packets/<root_envelope_id>.json
 ROOT_BUNDLE=data/output/entry_bundles/<root_envelope_id>/ROOT.md
 BRANCH_BUNDLE_DIR=data/output/entry_bundles/<root_envelope_id>/branches
+SCAFFOLD_DIR=data/output/entry_scaffolds/<root_envelope_id>
+ROOT_HEADER_SCAFFOLD=data/output/entry_scaffolds/<root_envelope_id>/ROOT-HEADER.md
+BRANCH_SCAFFOLD_DIR=data/output/entry_scaffolds/<root_envelope_id>/branches
+GENERATED_OBSERVATORY=data/output/entry_scaffolds/<root_envelope_id>/QURAN-OBSERVATORY.md
+BIBLIOGRAPHY_CANDIDATES=data/output/entry_scaffolds/<root_envelope_id>/BIBLIOGRAPHY-CANDIDATES.md
 DRAFT_DIR=data/output/entry_drafts/<root_envelope_id>
 FINAL_ENTRY=entries/<root_envelope_id>.md
 ```
@@ -124,6 +132,7 @@ prompts/quran-observatory-writer.md
 prompts/root-editor.md
 data/output/root_packets/<root_envelope_id>.json
 data/output/entry_bundles/<root_envelope_id>/
+data/output/entry_scaffolds/<root_envelope_id>/
 data/output/entry_drafts/<root_envelope_id>/
 entries/<root_envelope_id>.md
 ```
@@ -151,9 +160,17 @@ Generate compact root and branch bundles:
 python3 scripts/build_entry_bundles.py root_001210
 ```
 
+Generate deterministic entry scaffolds:
+
+```bash
+python3 scripts/build_entry_scaffolds.py root_001210
+```
+
 The first command writes the full JSON/Markdown evidence packet. The second
-command does not invent or summarize meaning; it only rearranges that packet
-into convenient reading bundles.
+rearranges that packet into convenient reading bundles and records packet and
+file hashes. The third writes packet-backed entry scaffolds. It does not infer
+source relationships, branch activation, transliterations, or target-language
+renderings.
 
 ## Required preflight
 
@@ -168,6 +185,8 @@ Before drafting:
 5. Do not collapse aliases or overlapping V4 records.
 6. Confirm that the Turkish transliteration guide is available at
    `docs/upstream/turkish-transliteration-guide.md`.
+7. Confirm that both generated manifests exist and that scaffold generation
+   completed without a stale-bundle or output-safety error.
 
 If packet evidence is unexpectedly absent, repair the packet or source lookup.
 Do not compensate from model memory.
@@ -179,7 +198,13 @@ Do not compensate from model memory.
 Start with `prompts/orchestrator.md`. It owns the branch roster, paths, order,
 and final completeness check. It does not write unsupported linguistic claims.
 
-The orchestrator creates:
+The scaffold script creates immutable generated inputs under:
+
+```text
+data/output/entry_scaffolds/<root_envelope_id>/
+```
+
+The orchestrator creates authored working fragments under:
 
 ```text
 data/output/entry_drafts/<root_envelope_id>/branches/
@@ -194,6 +219,7 @@ has been drafted; the root editor checks the roster before completion.
 For every V4 branch, run `prompts/branch-entry-writer.md` with:
 
 - the focus branch bundle;
+- the matching generated branch scaffold;
 - the root bundle and full sibling roster;
 - `ENTRY_GENERATION_PLAN.md`;
 - and `schema/entry.schema.md`.
@@ -231,10 +257,10 @@ or Turkish dictionary, corpus, or documented translation convention. If that
 evidence is unavailable, mark the claim for target-language evidence rather
 than asserting it from intuition.
 
-### 4. Quran occurrence observatory writer
+### 4. Quran occurrence observatory reviewer
 
-Run `prompts/quran-observatory-writer.md` once per root with the root bundle and
-full packet JSON.
+Run `prompts/quran-observatory-writer.md` once per root with the generated
+observatory, root bundle, and full packet JSON.
 
 The result belongs at:
 
@@ -242,9 +268,11 @@ The result belongs at:
 data/output/entry_drafts/<root_envelope_id>/quran-observatory.md
 ```
 
-It describes the complete occurrence census, forms, morphology, constructions,
-and attachments. It may group mechanically by form or frame. It may not name,
-rank, score, color, or imply an activated branch.
+The script, not the agent, owns the complete census, rows, morphology,
+packet-backed constructions, attachment handles, and Arabic ayah contexts. The
+reviewer verifies the flagged joins and supplies only the required reviewed
+transliterations and clearly marked editorial observations. It may not alter a
+packet-backed cell or name, rank, score, color, or imply an activated branch.
 
 ### 5. Root editor
 
@@ -252,7 +280,9 @@ Run `prompts/root-editor.md` with:
 
 - the full branch roster;
 - every reviewed branch fragment;
-- the occurrence-observatory fragment;
+- the generated root-header scaffold;
+- the reviewed occurrence-observatory fragment;
+- the generated bibliography candidates;
 - the entry schema;
 - and the root packet for fact checking.
 
@@ -265,6 +295,16 @@ entries/<root_envelope_id>.md
 The editor may repair clarity, duplication, cross-references, citation shape,
 and target-language consistency. It may not silently change a V4 boundary,
 remove a branch, add a branch, or invent evidence.
+
+After assembly, run:
+
+```bash
+python3 scripts/validate_entry.py entries/<root_envelope_id>.md \
+  --packet data/output/root_packets/<root_envelope_id>.json --json
+```
+
+`--allow-placeholders` is only for validating a generated scaffold before
+editorial completion. It is forbidden for the final completion check.
 
 ## Source-audit rules during a run
 
@@ -359,12 +399,16 @@ The editor must verify:
 - collision checks against siblings and verified neighbors;
 - and accessibility to a reader who knows no Arabic.
 
+The deterministic validator must additionally pass. An agent's manual count or
+text scan does not replace that result.
+
 ## Resuming a root
 
 Resume by reading the branch roster and listing existing files under
 `data/output/entry_drafts/<root_envelope_id>/branches/`. Continue with the first missing
-or incomplete branch, then rerun the root-wide editor. No separate resume state
-is required.
+or incomplete branch, then rerun the root-wide editor and deterministic
+validator. Regenerate scaffolds only from a current, hash-matched bundle tree;
+never edit generated scaffolds in place. No separate resume state is required.
 
 ## First run
 

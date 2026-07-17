@@ -12,6 +12,11 @@ ROOT_ENVELOPE_ID={{ROOT_ENVELOPE_ID}}
 PACKET_JSON={{PACKET_JSON}}
 ROOT_BUNDLE={{ROOT_BUNDLE}}
 BRANCH_BUNDLE_DIR={{BRANCH_BUNDLE_DIR}}
+SCAFFOLD_DIR={{SCAFFOLD_DIR}}
+ROOT_HEADER_SCAFFOLD={{ROOT_HEADER_SCAFFOLD}}
+BRANCH_SCAFFOLD_DIR={{BRANCH_SCAFFOLD_DIR}}
+GENERATED_OBSERVATORY={{GENERATED_OBSERVATORY}}
+BIBLIOGRAPHY_CANDIDATES={{BIBLIOGRAPHY_CANDIDATES}}
 DRAFT_DIR={{DRAFT_DIR}}
 FINAL_ENTRY={{FINAL_ENTRY}}
 ```
@@ -24,6 +29,7 @@ Read completely before acting:
 4. `schema/entry.schema.md`
 5. the root bundle
 6. the packet branch roster
+7. every generated scaffold named above
 
 ## Non-negotiable rules
 
@@ -45,10 +51,13 @@ Read completely before acting:
 ## Procedure
 
 1. Read `PACKET_JSON` and record the exact ordered list of branch identities.
-2. Confirm that each identity has one corresponding branch bundle.
+2. Confirm that each identity has one corresponding branch bundle and generated
+   branch scaffold. Do not continue past a bundle-manifest or scaffold preflight
+   failure.
 3. Create `DRAFT_DIR/branches/` if needed.
 4. For every branch, run `prompts/branch-entry-writer.md` with the focus bundle,
-   root bundle, full sibling roster, plan, and schema. Save the result as:
+   matching generated scaffold, root bundle, full sibling roster, plan, and
+   schema. Save the result as:
 
    ```text
    DRAFT_DIR/branches/<root_id>--<branch_id>.md
@@ -56,20 +65,26 @@ Read completely before acting:
 
 5. Run `prompts/gloss-collision-reviewer.md` on every branch fragment. Replace
    the fragment only with the complete reviewed branch block.
-6. Run `prompts/quran-observatory-writer.md` once with the root bundle and full
-   packet. Save the result as `DRAFT_DIR/quran-observatory.md`.
-7. Run `prompts/root-editor.md` with every reviewed branch block, the
-   observatory, packet roster, plan, and schema.
+6. Run `prompts/quran-observatory-writer.md` as a reviewer once with
+   `GENERATED_OBSERVATORY`, the root bundle, and full packet. It may replace
+   explicit review fields but must preserve packet-backed rows. Save the result
+   as `DRAFT_DIR/quran-observatory.md`.
+7. Run `prompts/root-editor.md` with `ROOT_HEADER_SCAFFOLD`, every reviewed
+   branch block, the reviewed observatory, `BIBLIOGRAPHY_CANDIDATES`, packet
+   roster, plan, and schema.
 8. Write the assembled result to `FINAL_ENTRY`.
-9. Compare the final begin/end branch markers to the frozen roster. Completion
-   requires exact equality, not approximate coverage.
-10. Scan the final prose for bare Arabic and bare transliterated Arabic terms;
-    repair both kinds of lost anchor.
+9. Run `python3 scripts/validate_entry.py FINAL_ENTRY --packet PACKET_JSON
+   --json`. Do not use `--allow-placeholders` for this check.
+10. Treat every validator error as incomplete work. Repair the entry and rerun
+    until the validator passes.
+11. Scan the final prose for linguistic problems outside structural validation,
+    including unsupported claims and incorrect transliteration.
 
 Independent branch drafting may run in parallel only if each writer receives
 the complete sibling roster and focus evidence. Gloss review must operate on a
 finished concept/source draft. Root editing always happens after all branches
-and the observatory exist.
+and the reviewed observatory exist. Agents never regenerate packet-backed
+scaffold fields from prose or memory.
 
 ## Evidence-gap behavior
 
@@ -88,6 +103,7 @@ After writing `FINAL_ENTRY`, report only:
 - root envelope ID and V4 root IDs;
 - expected and authored branch counts;
 - Quran occurrence count;
+- deterministic validator result;
 - unresolved evidence or target-language research gaps;
 - and the final entry path.
 

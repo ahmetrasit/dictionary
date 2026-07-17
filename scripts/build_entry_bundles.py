@@ -2,6 +2,7 @@
 """Split one root packet into a root bundle and one bundle per V4 branch."""
 
 import argparse
+import hashlib
 import json
 import unicodedata
 from collections import defaultdict
@@ -16,6 +17,31 @@ def root_key(text):
     return "".join(
         c for c in text
         if not c.isspace() and c != "ـ" and unicodedata.category(c) != "Mn"
+    )
+
+
+def packet_sha256(packet):
+    payload = json.dumps(
+        packet,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode("utf-8")
+    return hashlib.sha256(payload).hexdigest()
+
+
+def selector_matches(packet, selector):
+    if not selector:
+        return True
+    root_rows = packet.get("v4_roots", [])
+    root_ids = {row["root_id"] for row in root_rows}
+    envelope = packet.get("root_envelope_id") or "--".join(
+        row["root_id"] for row in root_rows
+    )
+    return (
+        selector == envelope
+        or selector in root_ids
+        or root_key(selector) == packet.get("root_join_key")
     )
 
 
@@ -199,6 +225,10 @@ def main():
     args = parser.parse_args()
 
     packet_path, packet = load_packet(project, args.root, args.packet)
+    if args.packet and not selector_matches(packet, args.root):
+        raise SystemExit(
+            f"Root selector {args.root!r} does not match explicit packet {packet_path}"
+        )
     root_envelope_id = packet.get("root_envelope_id") or "--".join(
         row["root_id"] for row in packet["v4_roots"]
     )
@@ -238,6 +268,26 @@ def main():
         )
         index.append(f"- [{branch['root_id']}/{branch['branch_id']}](branches/{name})")
     (output_dir / "INDEX.md").write_text("\n".join(index) + "\n", encoding="utf-8")
+    generated_files = [output_dir / "ROOT.md", output_dir / "INDEX.md"] + [
+        branch_dir / f"{branch['root_id']}--{branch['branch_id']}.md"
+        for branch in packet["branches"]
+    ]
+    manifest = {
+        "format": 1,
+        "root_envelope_id": root_envelope_id,
+        "packet": str(packet_path),
+        "packet_sha256": packet_sha256(packet),
+        "branches": [
+            f"{branch['root_id']}/{branch['branch_id']}" for branch in packet["branches"]
+        ],
+        "files": {
+            str(path.relative_to(output_dir)): hashlib.sha256(path.read_bytes()).hexdigest()
+            for path in generated_files
+        },
+    }
+    (output_dir / ".entry-bundle-generated.json").write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
 
     print(f"Wrote {output_dir / 'ROOT.md'}")
     print(f"Wrote {len(packet['branches'])} branch bundles under {branch_dir}")
