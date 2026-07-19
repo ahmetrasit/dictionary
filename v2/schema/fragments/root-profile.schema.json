@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dictionary.local/v2/fragments/root-profile.schema.json",
+  "title": "Root profile writer response",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["root_envelope_id", "language", "root_profile"],
+  "properties": {
+    "root_envelope_id": {
+      "type": "string",
+      "pattern": "^root_[0-9]{6}(--root_[0-9]{6})*$"
+    },
+    "language": { "enum": ["en", "tr"] },
+    "root_profile": { "$ref": "#/$defs/rootProfile" }
+  },
+  "$defs": {
+    "shortText": { "type": "string", "minLength": 2, "maxLength": 500 },
+    "shortProse": { "type": "string", "minLength": 10, "maxLength": 1200 },
+    "rootProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "transliteration",
+        "summary",
+        "polysemy",
+        "organization",
+        "branch_count",
+        "collocation_weight",
+        "collocation_note"
+      ],
+      "properties": {
+        "transliteration": { "$ref": "#/$defs/shortText" },
+        "summary": { "$ref": "#/$defs/shortProse" },
+        "polysemy": { "enum": ["monosemic", "polysemic"] },
+        "organization": {
+          "enum": ["monosemic", "radial", "multi_branch", "mixed", "uncertain"]
+        },
+        "branch_count": { "type": "integer", "minimum": 1 },
+        "collocation_weight": { "enum": ["low", "moderate", "high", "unknown"] },
+        "collocation_note": { "$ref": "#/$defs/shortProse" }
+      }
+    }
+  }
+}

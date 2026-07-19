@@ -10,8 +10,9 @@ import re
 import sys
 import tempfile
 import unicodedata
+from datetime import date
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any, Iterable, Optional
 from urllib.parse import urlparse
 
 
@@ -48,6 +49,44 @@ ROOT_ID_RE = re.compile(r"root_[0-9]{6}(?:--root_[0-9]{6})*\Z")
 EXTERNAL_ID_RE = re.compile(r"[A-Za-z][A-Za-z0-9_.-]*\Z")
 ARABIC_RE = re.compile(r"[\u0600-\u06ff]")
 GENERIC_FILLER = {"resolved", "todo", "tbd", "fixme", "placeholder"}
+VERIFICATION_PLACEHOLDERS = {
+    "-",
+    "n/a",
+    "na",
+    "none",
+    "not applicable",
+    "not available",
+    "not checked",
+    "not yet checked",
+    "not verified",
+    "placeholder entry",
+    "pending",
+    "query",
+    "query pending",
+    "shell",
+    "maintenance",
+    "under maintenance",
+    "unchecked",
+    "unknown",
+    "unavailable",
+    "to be checked",
+    "tbd after access",
+}
+VERIFICATION_STATUS_RE = re.compile(
+    r"(?:"
+    r"(?:to be|not yet) (?:checked|verified|accessed)"
+    r"|unchecked"
+    r"|(?:tbd|todo) after (?:access|verification|review)"
+    r"|placeholder (?:entry|locator|excerpt)"
+    r"|(?:query|shell|maintenance)(?: status)?"
+    r"(?:[: -]+(?:pending|unavailable|failed|error|not available|not checked|unchecked))?"
+    r")\Z"
+)
+SOURCE_LANGUAGE_VALUES = {"ar", "en", "tr"}
+SOURCE_LANGUAGE_DISPLAY = {
+    "en": {"ar": "Arabic", "en": "English", "tr": "Turkish"},
+    "tr": {"ar": "Arapça", "en": "İngilizce", "tr": "Türkçe"},
+}
 
 ROLE_DISPLAY = {
     "en": {"primary": "Primary", "alternative": "Alternative", "recognition": "Recognition"},
@@ -257,6 +296,10 @@ LABELS = {
         "profile": "Profile",
         "source_id": "Source",
         "source_note": "Source note",
+        "accessed_on": "Accessed",
+        "source_language": "Source language",
+        "locator": "Location in source",
+        "verified_excerpt": "Inspected excerpt",
         "none": "None.",
     },
     "tr": {
@@ -274,7 +317,7 @@ LABELS = {
         "glosses": "Karşılık Çözümlemesi",
         "audits": "Kaynak Kanıtları",
         "note": "Türkçe Kullanım Notu",
-        "quran": "Kuran Eki",
+        "quran": "Kur'an Eki",
         "census": "Döküm",
         "forms": "Biçimler ve Sözlük Birimleri",
         "occurrences": "Bütün Geçişler",
@@ -337,6 +380,10 @@ LABELS = {
         "profile": "Görünüm",
         "source_id": "Kaynak",
         "source_note": "Kaynak notu",
+        "accessed_on": "Erişim tarihi",
+        "source_language": "Kaynak dili",
+        "locator": "Kaynaktaki konum",
+        "verified_excerpt": "İncelenen alıntı",
         "none": "Yok.",
     },
 }
@@ -415,6 +462,122 @@ def require_substantive_text(value: Any, context: str) -> str:
     if text.casefold().rstrip(".!") in GENERIC_FILLER:
         fail(f"{context} contains generic filler {text!r}")
     return text
+
+
+def require_verification_text(
+    value: Any,
+    context: str,
+    *,
+    minimum: int,
+    maximum: int,
+    reject_status: bool = True,
+    preserve: bool = False,
+) -> str:
+    if preserve:
+        if not isinstance(value, str) or not value.strip():
+            fail(f"{context} must be a non-empty string")
+        if value != value.strip():
+            fail(f"{context} must not have leading or trailing whitespace")
+        text = value
+        if text.casefold().rstrip(".!") in GENERIC_FILLER:
+            fail(f"{context} contains generic filler {text!r}")
+    else:
+        text = require_substantive_text(value, context)
+    if not minimum <= len(text) <= maximum:
+        fail(f"{context} must be {minimum}-{maximum} characters")
+    if any(unicodedata.category(character).startswith("C") for character in text):
+        fail(f"{context} must not contain control or format characters")
+    normalized = text.casefold().strip(" .,:;_-()[]{}")
+    if reject_status and (
+        normalized in VERIFICATION_PLACEHOLDERS
+        or VERIFICATION_STATUS_RE.fullmatch(normalized)
+    ):
+        fail(f"{context} must identify inspected source content, not a status placeholder")
+    return text
+
+
+def bounded_bilingual_text(
+    value: Any,
+    context: str,
+    *,
+    minimum: int,
+    maximum: int,
+    reject_status: bool = False,
+) -> dict[str, str]:
+    obj = require_object(value, context)
+    if set(obj) != set(LANGUAGES):
+        fail(f"{context} must contain exactly en and tr")
+    return {
+        lang: require_verification_text(
+            obj[lang],
+            f"{context}.{lang}",
+            minimum=minimum,
+            maximum=maximum,
+            reject_status=reject_status,
+        )
+        for lang in LANGUAGES
+    }
+
+
+def validate_verification(value: Any, context: str) -> dict[str, Any]:
+    verification = require_object(value, context)
+    required = {"accessed_on", "source_language", "locator", "excerpt"}
+    missing_required = sorted(required - set(verification))
+    if missing_required:
+        fail(f"{context}: missing " + ", ".join(missing_required))
+    source_language = require_text(
+        verification["source_language"], context + ".source_language"
+    )
+    if source_language not in SOURCE_LANGUAGE_VALUES:
+        fail(f"{context}.source_language must be one of ar, en, tr")
+    expected = required | (
+        {"excerpt_transliteration"} if source_language == "ar" else set()
+    )
+    missing = sorted(expected - set(verification))
+    extra = sorted(set(verification) - expected)
+    if missing or extra:
+        details = []
+        if missing:
+            details.append("missing " + ", ".join(missing))
+        if extra:
+            details.append("extra/forbidden " + ", ".join(extra))
+        fail(f"{context}: " + "; ".join(details))
+    accessed_on = require_text(verification["accessed_on"], context + ".accessed_on")
+    if not re.fullmatch(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", accessed_on):
+        fail(f"{context}.accessed_on must be a YYYY-MM-DD calendar date")
+    try:
+        date.fromisoformat(accessed_on)
+    except ValueError:
+        fail(f"{context}.accessed_on must be a valid calendar date")
+    excerpt = require_verification_text(
+        verification["excerpt"],
+        context + ".excerpt",
+        minimum=1,
+        maximum=500,
+        preserve=True,
+    )
+    if source_language == "ar" and not ARABIC_RE.search(excerpt):
+        fail(f"{context}.excerpt must contain Arabic script for an Arabic source")
+    result = {
+        "accessed_on": accessed_on,
+        "source_language": source_language,
+        "locator": bounded_bilingual_text(
+            verification["locator"],
+            context + ".locator",
+            minimum=3,
+            maximum=300,
+            reject_status=True,
+        ),
+        "excerpt": excerpt,
+    }
+    if source_language == "ar":
+        result["excerpt_transliteration"] = bounded_bilingual_text(
+            verification["excerpt_transliteration"],
+            context + ".excerpt_transliteration",
+            minimum=1,
+            maximum=500,
+        )
+    return result
 
 
 def require_int(value: Any, context: str) -> int:
@@ -742,6 +905,288 @@ def source_matches(
     ]
 
 
+def transliteration_pairs(
+    packet: dict[str, Any], authored: dict[str, Any]
+) -> list[tuple[str, str, dict[str, str], bool]]:
+    """Return exact Arabic/overlay pairs; the boolean enables article checks."""
+    pairs = [
+        (
+            "root.transliteration",
+            str(packet.get("root_join_key") or packet.get("root_norm") or ""),
+            authored["root"]["transliteration"],
+            False,
+        )
+    ]
+    packet_branches = {
+        (row["root_id"], row["branch_id"]): row for row in packet["branches"]
+    }
+    for key, editorial in authored["branches"].items():
+        branch = packet_branches[key]
+        pairs.extend(
+            (
+                f"branch {key!r}.{overlay_field}",
+                str(branch.get(arabic_field) or ""),
+                editorial[overlay_field],
+                True,
+            )
+            for arabic_field, overlay_field in (
+                ("branch_image_ar", "image_transliteration"),
+                ("what_is_ar", "what_is_ar_transliteration"),
+                ("what_is_not_ar", "what_is_not_ar_transliteration"),
+            )
+        )
+        for number, distinction in enumerate(editorial["distinctions"], start=1):
+            pairs.append(
+                (
+                    f"branch {key!r}.distinctions[{number}].transliteration",
+                    distinction["neighbor_ar"],
+                    distinction["transliteration"],
+                    True,
+                )
+            )
+
+    packet_lexical = {
+        (row["root_id"], row["lexical_unit_id"]): row
+        for row in packet["lexical_senses"]
+    }
+    for key, editorial in authored["lexical"].items():
+        sense = packet_lexical[key]
+        pairs.extend(
+            (
+                f"lexical {key!r}.{overlay_field}",
+                str(sense.get(arabic_field) or ""),
+                editorial[overlay_field],
+                True,
+            )
+            for arabic_field, overlay_field in (
+                ("expression_ar", "expression_transliteration"),
+                ("sense_ar", "sense_ar_transliteration"),
+                ("source_phrase_ar", "source_phrase_transliteration"),
+            )
+        )
+    for key, editorial in authored["branch_sources"].items():
+        pairs.append(
+            (
+                f"branch_source {key!r}.quote_transliteration",
+                editorial["selected_quote_ar"],
+                editorial["quote_transliteration"],
+                True,
+            )
+        )
+    forms = {row["ordinal"]: row for row in form_rows(packet)}
+    for ordinal, editorial in authored["quran_form"].items():
+        form = forms[ordinal]
+        pairs.extend(
+            (
+                f"quran_form {ordinal}.{overlay_field}",
+                str(form[arabic_field]),
+                editorial[overlay_field],
+                True,
+            )
+            for arabic_field, overlay_field in (
+                ("lemma_ar", "lemma_transliteration"),
+                ("surface_ar", "surface_transliteration"),
+            )
+        )
+    ayahs = {row["ref"]: row for row in packet["qac"]["ayah_contexts"]}
+    for ref, editorial in authored["quran_ayah"].items():
+        pairs.append(
+            (
+                f"quran_ayah {ref}.transliteration",
+                str(ayahs[ref].get("surface_ar") or ""),
+                editorial["transliteration"],
+                False,
+            )
+        )
+    for source_id, source in authored["external_sources"].items():
+        verification = source["verification"]
+        if verification["source_language"] == "ar":
+            pairs.append(
+                (
+                    f"external_source {source_id!r}.verification.excerpt_transliteration",
+                    verification["excerpt"],
+                    verification["excerpt_transliteration"],
+                    True,
+                )
+            )
+    return [pair for pair in pairs if pair[1]]
+
+
+def substantive_prose_fields(
+    authored: dict[str, Any]
+) -> Iterable[tuple[str, str, str]]:
+    root = authored["root"]
+    for field in ("overview", "quran_note"):
+        for lang in LANGUAGES:
+            yield f"root.{field}.{lang}", lang, root[field][lang]
+    for lang in LANGUAGES:
+        for number, text in enumerate(root["quran_observations"][lang], start=1):
+            yield f"root.quran_observations.{lang}[{number}]", lang, text
+    for key, branch in authored["branches"].items():
+        for field in ("concept", "target_language_note"):
+            for lang in LANGUAGES:
+                yield f"branch {key!r}.{field}.{lang}", lang, branch[field][lang]
+        for field in ("scope_in", "scope_out"):
+            for lang in LANGUAGES:
+                for number, text in enumerate(branch[field][lang], start=1):
+                    yield f"branch {key!r}.{field}.{lang}[{number}]", lang, text
+        for number, distinction in enumerate(branch["distinctions"], start=1):
+            for field in ("shared_zone", "distinction"):
+                for lang in LANGUAGES:
+                    yield (
+                        f"branch {key!r}.distinctions[{number}].{field}.{lang}",
+                        lang,
+                        distinction[field][lang],
+                    )
+        for lang in LANGUAGES:
+            for number, gloss in enumerate(branch["glosses"][lang], start=1):
+                for field in ("text", "preserves", "loses", "adds", "collision"):
+                    yield (
+                        f"branch {key!r}.glosses.{lang}[{number}].{field}",
+                        lang,
+                        gloss[field],
+                    )
+    for key, source in authored["branch_sources"].items():
+        for field in ("contribution", "explanation", "analysis"):
+            for lang in LANGUAGES:
+                yield f"branch_source {key!r}.{field}.{lang}", lang, source[field][lang]
+    for key, lexical in authored["branch_lexical"].items():
+        for field in ("meaning", "analysis"):
+            for lang in LANGUAGES:
+                yield f"branch_lexical {key!r}.{field}.{lang}", lang, lexical[field][lang]
+    for source_id, source in authored["external_sources"].items():
+        for lang in LANGUAGES:
+            yield f"external_source {source_id!r}.note.{lang}", lang, source["note"][lang]
+
+
+UNMISTAKABLE_TRANSLITERATION_MARKS = set(
+    "āīūâîûḥḫṣḍṭẓḳẕġṯʿʾ"
+)
+
+
+def validate_prose_transliteration_anchors(
+    authored: dict[str, Any], pairs: list[tuple[str, str, dict[str, str], bool]]
+) -> None:
+    inventory: dict[str, dict[str, set[str]]] = {lang: {} for lang in LANGUAGES}
+    for _context, arabic, overlays, _article_checked in pairs:
+        for lang in LANGUAGES:
+            transliteration = unicodedata.normalize("NFC", overlays[lang]).strip()
+            if len(transliteration) < 3 or not any(
+                character.casefold() in UNMISTAKABLE_TRANSLITERATION_MARKS
+                for character in transliteration
+            ):
+                continue
+            inventory[lang].setdefault(transliteration, set()).add(
+                unicodedata.normalize("NFC", arabic)
+            )
+
+    for context, lang, text in substantive_prose_fields(authored):
+        normalized_text = unicodedata.normalize("NFC", text)
+        candidates = []
+        for transliteration, arabic_values in inventory[lang].items():
+            pattern = re.compile(
+                rf"(?<!\w){re.escape(transliteration)}(?!\w)"
+            )
+            candidates.extend(
+                (match.start(), match.end(), transliteration, arabic_values)
+                for match in pattern.finditer(normalized_text)
+            )
+        selected = []
+        occupied_until = -1
+        for candidate in sorted(candidates, key=lambda row: (row[0], -(row[1] - row[0]))):
+            if candidate[0] < occupied_until:
+                continue
+            selected.append(candidate)
+            occupied_until = candidate[1]
+        for start, end, transliteration, arabic_values in selected:
+            if any(
+                normalized_text[:start].endswith(arabic + " (")
+                and normalized_text[end:].startswith(")")
+                for arabic in arabic_values
+            ):
+                continue
+            fail(
+                f"{context} reuses known transliteration {transliteration!r} without "
+                "its exact Arabic anchor in Arabic (transliteration) form"
+            )
+
+
+SUN_LETTER_TURKISH = {
+    "ت": "t",
+    "ث": "s",
+    "د": "d",
+    "ذ": "ẕ",
+    "ر": "r",
+    "ز": "z",
+    "س": "s",
+    "ش": "ş",
+    "ص": "ṣ",
+    "ض": "ḍ",
+    "ط": "ṭ",
+    "ظ": "ẓ",
+    "ل": "l",
+    "ن": "n",
+}
+MOON_LETTERS = set("ءاأإآبجحخعغفقكمهوي")
+
+
+def initial_arabic_article_letter(value: str) -> Optional[str]:
+    letters = []
+    started = False
+    for character in unicodedata.normalize("NFC", value):
+        category = unicodedata.category(character)
+        if not started and (character.isspace() or category.startswith("P")):
+            continue
+        started = True
+        if category.startswith("M") or character == "ـ":
+            continue
+        if ARABIC_RE.fullmatch(character):
+            letters.append(character)
+            if len(letters) == 3:
+                break
+        elif letters:
+            break
+        else:
+            return None
+    if len(letters) == 3 and letters[0] in {"ا", "ٱ"} and letters[1] == "ل":
+        return letters[2]
+    return None
+
+
+def transliteration_without_leading_punctuation(value: str) -> str:
+    normalized = unicodedata.normalize("NFC", value).strip()
+    index = 0
+    while index < len(normalized) and (
+        normalized[index].isspace()
+        or unicodedata.category(normalized[index]).startswith("P")
+    ):
+        index += 1
+    return normalized[index:].casefold()
+
+
+def validate_turkish_definite_articles(
+    pairs: list[tuple[str, str, dict[str, str], bool]]
+) -> None:
+    for context, arabic, overlays, article_checked in pairs:
+        if not article_checked:
+            continue
+        article_letter = initial_arabic_article_letter(arabic)
+        if article_letter is None:
+            continue
+        transliteration = transliteration_without_leading_punctuation(overlays["tr"])
+        if article_letter in SUN_LETTER_TURKISH:
+            consonant = SUN_LETTER_TURKISH[article_letter]
+            expected = f"e{consonant}-{consonant}".casefold()
+            description = f"assimilated Turkish article prefix {expected!r}"
+        elif article_letter in MOON_LETTERS:
+            expected = "el-"
+            description = "Turkish moon-letter article prefix 'el-'"
+        else:
+            continue
+        if not transliteration.startswith(expected):
+            fail(f"{context}.tr must begin with {description} for Arabic {arabic!r}")
+
+
 def validate_authored(
     records: list[dict[str, Any]], packet: dict[str, Any]
 ) -> dict[str, Any]:
@@ -762,6 +1207,7 @@ def validate_authored(
         "title",
         "url",
         "note",
+        "verification",
     }
     external_sources = {}
     for record in by_type.get("external_source", []):
@@ -772,7 +1218,9 @@ def validate_authored(
             fail(f"{context}.external_source_id is not a stable authored ID")
         if source_id in external_sources:
             fail(f"duplicate external source ID {source_id!r}")
-        record["title"] = require_substantive_text(record["title"], context + ".title")
+        record["title"] = bounded_bilingual_text(
+            record["title"], context + ".title", minimum=2, maximum=200
+        )
         record["url"] = require_text(record["url"], context + ".url")
         if any(
             character.isspace()
@@ -795,6 +1243,9 @@ def validate_authored(
         ):
             fail(f"{context}.url must be an absolute HTTP(S) URL")
         record["note"] = bilingual_text(record["note"], context + ".note")
+        record["verification"] = validate_verification(
+            record["verification"], context + ".verification"
+        )
         external_sources[source_id] = record
 
     roots = by_type.get("root", [])
@@ -1042,7 +1493,7 @@ def validate_authored(
         assert_exact_roster(record_type, list(found), expected)
         quran_records[record_type] = found
 
-    return {
+    authored = {
         "root": root,
         "branches": branches,
         "branch_sources": branch_sources,
@@ -1051,6 +1502,10 @@ def validate_authored(
         "external_sources": external_sources,
         **quran_records,
     }
+    pairs = transliteration_pairs(packet, authored)
+    validate_turkish_definite_articles(pairs)
+    validate_prose_transliteration_anchors(authored, pairs)
+    return authored
 
 
 def cell(value: Any) -> str:
@@ -1230,7 +1685,9 @@ def evidence_names(
     names = []
     for ref in refs:
         if ref in authored["external_sources"]:
-            name = escape_markdown_inline(authored["external_sources"][ref]["title"])
+            name = escape_markdown_inline(
+                authored["external_sources"][ref]["title"][lang]
+            )
         elif ref in packet_branches:
             branch = packet_branches[ref]
             editorial = authored["branches"][(branch["root_id"], branch["branch_id"])]
@@ -1731,11 +2188,24 @@ def render_entry(packet: dict[str, Any], authored: dict[str, Any], lang: str) ->
     lines += [f"## {labels['bibliography']}", "", f"### {labels['external']}", ""]
     for ordinal, source_id in enumerate(sorted(authored["external_sources"]), start=1):
         source = authored["external_sources"][source_id]
+        verification = source["verification"]
         lines += [
             skeleton_marker("EXTERNAL_SOURCE", ordinal),
-            f"- [{escape_link_label(source['title'])}]({markdown_url(source['url'])}) - "
+            f"- [{escape_link_label(source['title'][lang])}]({markdown_url(source['url'])}) - "
             f"{escape_markdown_inline(publish(source['note'][lang]))}",
+            f"  - **{labels['accessed_on']}:** {verification['accessed_on']}",
+            f"  - **{labels['source_language']}:** "
+            f"{SOURCE_LANGUAGE_DISPLAY[lang][verification['source_language']]}",
+            f"  - **{labels['locator']}:** "
+            f"{escape_markdown_inline(verification['locator'][lang])}",
+            f"  - **{labels['verified_excerpt']}:** "
+            f"{escape_markdown_inline(verification['excerpt'])}",
         ]
+        if verification["source_language"] == "ar":
+            lines.append(
+                f"  - **{labels['transliteration']}:** "
+                f"{escape_markdown_inline(verification['excerpt_transliteration'][lang])}"
+            )
     if not authored["external_sources"]:
         lines.append(f"- {labels['none']}")
     return "\n".join(lines).rstrip() + "\n"

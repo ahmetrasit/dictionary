@@ -33,6 +33,42 @@ English/Turkish transliterations. Bilingual values contain exactly `en` and
 `tr`. Required prose must be substantive; bare `resolved`, `todo`, `tbd`,
 `fixme`, or `placeholder` is rejected.
 
+### Reuse of keyed transliterations in prose
+
+The renderer builds an inventory from every exact Arabic/transliteration pair
+known through the packet and structured authored overlays: root, branch image
+and boundaries, distinction neighbor, lexical expression/sense/source phrase,
+selected branch-source quote, Quran lemma/surface, full ayah, and an Arabic
+external-source verification excerpt. Overlay fields themselves are not prose
+and are not scanned for reuse.
+
+In substantive English or Turkish prose, an exact known transliteration with
+mechanically unmistakable transliteration notation must appear as
+`Arabic (transliteration)`. This applies to every occurrence, including after
+punctuation and repeated occurrences. A longer known overlay takes precedence
+over an overlapping shorter overlay. Prose, keyed transliterations, and exact
+Arabic anchor candidates are normalized to Unicode NFC before matching, so
+canonically equivalent combining-mark spellings do not bypass the rule and
+all match/anchor locations refer to the same normalized text. The mechanical notation set covers
+distinctive scholarly/Turkish transliteration characters such as long-vowel
+marks, under-dotted consonants, and `ʿ`/`ʾ`. Plain ASCII strings and strings
+distinguishable only through ordinary English or Turkish vocabulary are not
+policed: treating those as Arabic terms would require heuristic word lists and
+would create unacceptable false positives.
+
+### Turkish definite articles
+
+For each exact structured pair where the Arabic field itself begins with the
+definite article, the Turkish overlay must follow the repository Turkish
+transliteration policy. Arabic vocalization marks, tatwil, and leading
+punctuation are ignored when identifying the initial letters. Before a sun
+letter (`ت ث د ذ ر ز س ش ص ض ط ظ ل ن`), the overlay begins with the matching
+assimilated form, following the general `eC-C` pattern. Before a moon letter it
+begins with `el-`. Leading punctuation in the overlay is allowed. Material
+after this mechanically checked prefix may retain context-sensitive case,
+construct, or recitation inflection. Fields whose exact Arabic counterpart
+does not begin with the article are not subjected to this check.
+
 Colon-bearing source handles are opaque. The packet branch `source_refs` field
 defines a semicolon-delimited roster, but each extracted handle is thereafter
 compared and rendered byte for byte; it is never split on colons.
@@ -149,6 +185,8 @@ an ayah, never an exact word-position match.
 
 External and target-language sources are structured authored records. IDs are
 ASCII identifiers beginning with a letter; URLs are absolute HTTP(S) URLs.
+`title` is an exact bilingual object with substantive `en` and `tr` strings of
+2-200 characters. Each output uses only its own title and note values.
 URLs containing whitespace, control/format characters, angle brackets, or
 backslashes are rejected. Link labels escape backslashes and brackets, and
 destinations are rendered as angle-delimited Markdown URLs so valid
@@ -156,8 +194,43 @@ parentheses cannot terminate a link early. External notes are escaped as
 literal inline Markdown.
 
 ```json
-{"schema_version":1,"type":"external_source","external_source_id":"en.dictionary.example","title":"Example Dictionary","url":"https://example.org/entry","note":{"en":"...","tr":"..."}}
+{"schema_version":1,"type":"external_source","external_source_id":"en.dictionary.example","title":{"en":"Example Dictionary","tr":"Örnek Sözlük"},"url":"https://example.org/entry","note":{"en":"...","tr":"..."},"verification":{"accessed_on":"2026-07-17","source_language":"en","locator":{"en":"Headword: example","tr":"Madde başı: örnek"},"excerpt":"short exact excerpt inspected by the producer"}}
 ```
+
+`verification` is required. For an English or Turkish source it contains
+exactly the following four fields:
+
+- `accessed_on`: a real calendar date in strict `YYYY-MM-DD` form;
+- `source_language`: exactly `ar`, `en`, or `tr`;
+- `locator`: an exact bilingual `en`/`tr` object whose values are 3-300
+  characters identifying a reader-facing headword, section, page, stable entry
+  label, or comparable location within the source;
+- `excerpt`: 1-500 characters containing the short exact excerpt the producer
+  claims to have inspected.
+
+For an Arabic source, `verification` contains those four fields plus exactly
+one `excerpt_transliteration` field. The Arabic excerpt must contain Arabic
+script, and `excerpt_transliteration` is an exact bilingual `en`/`tr` object
+whose nonempty values are 1-500 characters. It is forbidden when
+`source_language` is `en` or `tr`. The renderer publishes the exact Arabic
+excerpt unchanged and immediately follows it with only the current output
+language's keyed transliteration. The transliteration overlay itself is not
+scanned as prose; the exact Arabic/transliteration pair does join the known
+overlay inventory used to validate later prose reuse.
+
+Title, locator, excerpt, and excerpt-transliteration values are nonempty,
+bounded, and control/format-character-free. Locator and excerpt values
+cannot be maintenance, shell, query, pending, unchecked, `to be checked`,
+`not yet checked`, `TBD after access`, `placeholder entry`, or similar status
+placeholders. Rejection compares the entire case-folded value after trimming
+surrounding punctuation; an incidental status word inside a substantive source
+sentence is not rejected.
+These fields make the authored claim auditable; they do not assert that the
+renderer fetched the URL or independently proved the excerpt. Rendering is
+deterministic and source-independent. Bibliography entries localize and show
+the access date, source language, language-selected locator, and inspected
+excerpt while applying the same literal-Markdown escaping used for external
+notes and transliterations.
 
 The bibliography is derived from all `external_source` records. Contrast
 evidence may cite their IDs. No free-form bibliography or arbitrary evidence

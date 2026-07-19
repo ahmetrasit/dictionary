@@ -109,7 +109,7 @@ Every entry keeps the stable identity:
 Filesystem paths use a V4-derived `root_envelope_id`, never Arabic root text.
 For one V4 root record it is that `root_id`; when normalized aliases share one
 root envelope, their ordered IDs are joined with `--`, for example
-`root_001210--root_001211`. This storage identity does not merge or alter any
+`root_000001--root_000002`. This storage identity does not merge or alter any
 `(root_id, branch_id)` identity inside the entry.
 
 When more than one V4 root record belongs to the same normalized root, all
@@ -135,15 +135,15 @@ published entry.
 In English prose, write Arabic first and then English-oriented transliteration:
 
 ```text
-سَبِيل (sabīl)
-صِرَاط (ṣirāṭ)
+كِتَاب (kitāb)
+قَلَم (qalam)
 ```
 
 In Turkish prose, write Arabic first and then Turkish-oriented transliteration:
 
 ```text
-سَبِيل (sebîl)
-صِرَاط (ṣirâṭ)
+كِتَاب (kitâb)
+قَلَم (ḳalem)
 ```
 
 This applies to every mention, including roots, individual letters, forms,
@@ -414,6 +414,13 @@ or most conventional one. The renderer displays it immediately below the
 branch heading and in the branch overview. This prominence orients the reader;
 it does not replace the full concept and lexicographic account.
 
+Faithful does not mean exhaustive. The primary gloss should compactly express
+the branch's central generative concept in idiomatic target-language wording,
+not enumerate every derivative, source caveat, exception, or audit result.
+Those belong in the concept, scope, lexical-unit, and source sections. A literal
+calque that is not a natural standalone phrase fails even when its individual
+words track the source.
+
 For each gloss, record:
 
 - its role: primary faithful rendering, alternative, or recognition term;
@@ -452,12 +459,12 @@ modern technical associations, or added doctrinal and cultural load.
 A collision occurs when one target-language expression is conventionally used
 for two or more Arabic concepts whose distinction matters.
 
-For example, Turkish `yol` is commonly used in connection with both `ṣirāṭ`
-and `sabīl`. This can hide the fact that the Arabic concepts have different
-boundaries. The `ṣirāṭ` entry must therefore use the verified Furūq evidence to
-explain why `ṣirāṭ` is not `sabīl`, then explain how Turkish `yol` collapses
-that distinction. The corresponding `sabīl` entry should make the reverse
-comparison.
+For example, one target-language word may conventionally translate several
+distinct Arabic concepts. Each entry must first establish its own boundary and
+the relevant Arabic contrast from verified Furūq or dictionary evidence, then
+explain how the target-language rendering collapses that distinction. No
+particular root, familiar translation, or expected collision is built into the
+workflow.
 
 Collision is relational and can coexist with another error. A gloss may, for
 example, be both narrowing and collision-producing.
@@ -518,7 +525,10 @@ For each root:
    schema-conforming candidate JSONL, without converting lookup status into a
    source relationship or copying packet facts. Each run uses an immutable,
    corpus-general prompt snapshot and runs to completion without conversational
-   correction. A general defect updates the reusable prompt before a fresh run.
+   correction. Root IDs and paths are template substitutions; expected forms,
+   readings, glosses, and source conclusions never become per-root prompt
+   instructions. A general defect updates the reusable prompt before a fresh
+   run.
 5. Establish sibling and verified neighbor contrasts from the frozen boundary
    and source evidence.
 6. Write the English and Turkish concept accounts independently in keyed
@@ -526,13 +536,17 @@ For each root:
 7. Supply only keyed, language-specific Quran transliterations required by the
    schema; the script generates the neutral observatory and all rows.
 8. Draft one to three glosses per language, allowing multi-word and
-   multi-clause renderings.
+   multi-clause renderings. Test the primary against the complete
+   source-established branch perimeter, never Quran frequency or familiarity.
 9. Test every gloss for internal error and target-language collision.
 10. Add familiar mainstream or loanword renders only as explained secondary
     recognition terms.
 11. Audit every transliterated unit for source-backed vocalization, inflection,
     and same-spelling forms that may differ phonologically or lexically. Verify
-    that every cited external entry was actually retrieved and inspected.
+    that every cited external entry was actually retrieved and inspected, and
+    record its access date, source language, bilingual display title and
+    locator, and a short exact supporting excerpt. Add keyed English and
+    Turkish transliterations when that excerpt is Arabic.
 12. Have an editorial agent produce the reviewed canonical JSONL. Never
     hand-edit linguistic output during orchestration.
 13. Render separate English and Turkish entries mechanically.
@@ -558,11 +572,16 @@ A root publication pair is ready when:
 - orthographic identity is not mislabeled as phonological or lexical identity;
 - every cited external dictionary or corpus entry was successfully retrieved
   and read during the run;
+- every external title and locator is readable in its target-language file and
+  every Arabic verification excerpt has the corresponding target-language
+  transliteration;
 - no Quran occurrence is assigned to a branch;
 - every occurrence is available for reader observation;
 - QNet-derived comparisons have been checked against dictionary evidence;
 - English and Turkish accounts independently preserve the same Arabic
   boundary;
+- English and Turkish use standard target-language orthography, without
+  ASCII-flattened Turkish prose;
 - each language has one to three glosses, with a faithful rendering first;
 - multi-word glosses are used whenever a one-word gloss would reduce or shift
   the concept;
@@ -584,29 +603,19 @@ A root publication pair is ready when:
 This requires both editorial read-through and deterministic validation. Neither
 one substitutes for the other.
 
-## First pilot: `ق ر ء / ق ر أ`
+## Corpus-wide acceptance profile
 
-The first publication pair will use the normalized `ق ر ء` envelope while preserving
-both V4 identities `root_001210` and `root_001211`. In the current source
-snapshot they contain 19 frozen branch records. QAC contains 88 rooted
-morphemes for the normalized root.
+The workflow is complete only when it handles the full range of packet shapes
+without prompt or code changes for an individual root. Acceptance coverage
+must include envelopes with one or multiple V4 identities, orthographic
+aliases, sparse and dense branch rosters, linked lexical units, explicit
+source agreement and disagreement, source-specific material, roots with no
+Quran occurrence, and roots with multiple Quran forms and constructions.
 
-This root is a useful pilot because it exercises:
-
-- overlapping V4 records and orthographic aliases;
-- collection, recitation, teaching, time, menstrual-cycle, pregnancy, and
-  other distinct branches;
-- source consensus, different organization, explicit nuance, and
-  source-specific material;
-- collocational and lexical-unit evidence;
-- Quran forms such as `قرأ`, `قرآن`, and `قروء`;
-- the English `read/recite/proclaim` field;
-- and the Turkish `oku` problem, including broadening, narrowing, and overall
-  displacement.
-
-The reading and recitation branch can establish the prose voice and gloss
-analysis, but the pilot is not complete until all 19 V4 branch records have
-full entries in both language files.
+One root may be used as an end-to-end acceptance run, but its forms, glosses,
+branches, and sources never become workflow defaults. A successful run proves
+that root's publication and exercises the general contract; it does not permit
+root-specific logic in prompts, schemas, validators, or rendering.
 
 ## Simple project shape
 

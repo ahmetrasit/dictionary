@@ -131,8 +131,9 @@ bundles, scaffolds, and candidate drafts are replaceable work products.
 | QNet | Neighbor discovery only |
 | Target-language dictionaries and corpora | English or Turkish usage and collision/error analysis |
 
-Quran context, QNet keywords, mainstream translations, and target-language
-usage cannot alter a V4 branch.
+Quran context, Quran frequency, QNet keywords, mainstream translations, and
+target-language usage cannot establish, narrow, broaden, rank, or call any V4
+branch meaning dominant. They also cannot select or sharpen a primary gloss.
 
 ## Required preflight
 
@@ -145,7 +146,10 @@ Before authoring:
 4. Record the exact frozen `(root_id, branch_id)` roster.
 5. Do not collapse aliases or overlapping V4 records.
 6. Confirm `docs/upstream/turkish-transliteration-guide.md` is available.
-7. Confirm all generated manifests match the current packet hash.
+7. Confirm all generated manifests match the current packet by running the
+   bundle and scaffold builders successfully. Their manifest hash is computed
+   from canonical JSON serialization via `packet_sha256`; a raw byte hash of
+   the packet file is a different value and must not be compared with it.
 
 If evidence is unexpectedly absent, repair the packet or lookup. Do not
 compensate from model memory.
@@ -170,7 +174,10 @@ requested models and reasoning levels. Give each:
 - a distinct candidate output path.
 
 Each agent writes one complete candidate JSONL. Parallel agents must not see or
-edit one another's candidates during independent drafting.
+edit one another's candidates during independent drafting. Prompt snapshots
+remain corpus-general: the root selector and input/output paths are template
+values, not permission to add root-specific rules, expected readings, glosses,
+or source conclusions.
 
 ### 3. Review
 
@@ -234,6 +241,9 @@ dumps. Each file must be readable without the other and must contain:
 
 The primary gloss is orientation, not a substitute for the concept account.
 Depth, source auditability, and accessible prose remain required.
+The prose in each file must use standard target-language orthography. In
+particular, Turkish prose may not be flattened to ASCII in place of Turkish
+letters and diacritics.
 
 ## Linguistic rules
 
@@ -244,6 +254,11 @@ Depth, source auditability, and accessible prose remain required.
   nuance, explicit disagreement, sole attestation, or no located attestation.
 - Never turn absence or a routing failure into disagreement.
 - Keep examples and claims attached to their source references.
+- Every external-source record identifies the inspected entry location, access
+  date, source language, bilingual display title and locator, and a short exact
+  supporting excerpt. An Arabic excerpt includes separate English and Turkish
+  transliterations. A query shell, maintenance page, snippet, or inaccessible
+  result is not verification.
 
 ### Contrasts
 
@@ -263,6 +278,12 @@ Depth, source auditability, and accessible prose remain required.
 - State what each candidate preserves, loses, adds, and may confuse.
 - Familiar translations and loanwords are secondary, never primary by
   familiarity alone.
+- The primary gloss must orient to the complete source-established perimeter
+  of the branch. Quran frequency or familiarity cannot narrow that perimeter
+  or determine which gloss is primary.
+- Full-perimeter fidelity does not make the primary gloss an inventory. It is a
+  compact, idiomatic orientation to the central concept; derivatives, caveats,
+  and source qualifications belong in the deeper encyclopedia sections.
 
 ### Arabic anchors and citations
 
@@ -275,9 +296,11 @@ dictionary, QAC, attachment, or verified target-language handles.
 ### Quran neutrality
 
 No occurrence is assigned, ranked, scored, colored, or described as probably
-belonging to a branch. Occurrence tables and ayah contexts are rendered from
-the packet. Editorial JSONL may supply only schema-approved keyed linguistic
-material; it may not copy or override packet fields.
+belonging to a branch. Quran forms, contexts, translations, and frequencies
+also cannot establish, sharpen, rank, or label a branch meaning or gloss as
+dominant. Occurrence tables and ayah contexts are rendered from the packet.
+Editorial JSONL may supply only schema-approved keyed linguistic material; it
+may not copy or override packet fields.
 
 ## Completion check
 
@@ -286,12 +309,15 @@ The top-level orchestrator must verify:
 - exact branch roster equality;
 - complete source-audit and lexical analysis for every branch;
 - independent English and Turkish prose;
+- standard English and Turkish orthography, without ASCII-flattened Turkish;
 - prominent primary glosses plus full encyclopedia depth;
 - no unsupported, memory-supplied, or QNet-only claims;
 - no branch activation language in Quran material;
 - exact authored form and ayah key coverage, plus complete script-generated
   packet occurrence coverage using form-derived surface transliterations;
 - correct language-specific transliteration and no bare Arabic anchors;
+- localized external-source titles and locators, with no bare Arabic evidence
+  excerpt in either language projection;
 - no unresolved placeholders;
 - focused script tests pass;
 - renderer `--check` passes;

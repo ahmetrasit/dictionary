@@ -43,6 +43,9 @@ The top-level orchestrator:
 ## Procedure
 
 1. Generate or verify the packet, bundle tree, and scaffold reading aids.
+   Treat successful bundle/scaffold generation as the freshness check. Their
+   manifest uses canonical JSON hashing; never compare it to a raw file-byte
+   SHA-256 value.
 2. Record exact packet-owned identities and Quran keys.
 3. If renderer/schema code changes are needed, assign them to one implementer,
    obtain review from a persistent code-review agent, and return findings to the
@@ -50,7 +53,9 @@ The top-level orchestrator:
 4. Start every requested independent editorial run from the same reviewed
    schema and immutable prompt snapshot. Each run writes a complete candidate
    JSONL in its own directory. Never inject clarifications, corrections, or
-   redirects into a running editorial agent.
+   redirects into a running editorial agent. Keep the snapshot corpus-general:
+   only template inputs and paths vary by root; do not insert expected forms,
+   glosses, branches, or source conclusions for the current root.
 5. Validate each candidate mechanically. Validation failures go to that
    candidate's producer in a fresh run after the current run completes. If a
    failure reveals a reusable workflow defect, fix the prompt before rerunning;
@@ -72,16 +77,31 @@ The top-level orchestrator:
 
 - Preserve every frozen branch exactly once.
 - Never assign a Quran occurrence to a branch.
+- Never use Quran frequency, context, translation, or occurrence distribution
+  to establish, sharpen, rank, or call a branch meaning or primary gloss
+  dominant.
 - QNet proposes neighbors but cannot prove a distinction.
 - Do not fill evidence gaps from model memory.
 - Identical unvocalized spelling never proves identical vocalization, lemma,
   morphology, or lexical identity.
 - A URL or search result is not source verification. The cited entry content
-  must have been successfully retrieved and inspected during the run.
+  must have been successfully retrieved and inspected during the run, and its
+  structured verification must record access date, source language, bilingual
+  display title and entry locator, and a short exact supporting excerpt. An
+  Arabic excerpt also carries separate English and Turkish transliterations.
 - Agents author only schema-approved editorial fields and keyed
   transliterations. Packet facts are script-owned.
 - English and Turkish are independently written and rendered to separate files.
+- Both use standard target-language orthography; Turkish prose is not
+  ASCII-flattened.
 - The primary gloss is prominent but never replaces encyclopedia depth.
+- The primary gloss covers the complete source-established branch perimeter;
+  familiarity and Quran usage cannot narrow or rank it.
+- A primary gloss is still a compact, idiomatic dictionary orientation. It
+  expresses the central concept rather than listing every derivative, source,
+  exception, or audit result; those belong in the deeper entry.
+- Bibliographies contain no bare Arabic excerpt and no English display metadata
+  leaking into the Turkish projection or vice versa.
 
 ## Completion report
 

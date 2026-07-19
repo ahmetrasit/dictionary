@@ -51,8 +51,13 @@ or renderer defect instead of compensating in JSONL.
 - Read every complete ayah transliteration against the complete Arabic ayah.
   Check shadda, hamza, long vowels, case/construct boundaries, suffixes, and
   repeated same-spelling forms before returning.
+- Run a token-integrity pass for accidental internal spaces, dropped letters,
+  inconsistent repeated formulas, and unexplained changes of convention. A
+  complete ayah count does not compensate for a malformed token.
 - Do not infer a lexical branch from vocalization, syntax, translation, or
   context while performing this audit.
+- Do not use forms, contexts, or frequencies to establish, sharpen, rank, or
+  label a branch meaning or gloss as dominant.
 
 ## Output
 

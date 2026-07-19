@@ -44,8 +44,10 @@ Check:
 - no authored `quran_occurrence` records: occurrence rows and their surface
   transliterations are derived mechanically from packet order and the exact
   form-group overlays;
-- structured `external_source` records, with stable IDs and valid URLs, for
-  target-language or non-packet sources actually used;
+- structured `external_source` records, with stable IDs, valid URLs, bilingual
+  display titles and locators, access date, source language, and a short exact
+  supporting excerpt, for target-language or non-packet sources actually used;
+  every Arabic excerpt has keyed English and Turkish transliterations;
 - no QNet-only published distinction, branch activation claim, unsupported
   source claim, or unresolved placeholder.
 
@@ -65,8 +67,12 @@ Perform these passes over the complete root before accepting a candidate:
 3. **External-source availability.** Open every non-packet URL and confirm that
    the specific cited entry content is readable and supports the stated note.
    Query URLs, snippets, maintenance notices, blocked pages, and empty
-   client-side shells are not evidence. Remove unsupported claims or report a
-   research gap.
+   client-side shells are not evidence. Record the actual inspected location
+   and a short exact supporting excerpt in the source's `verification` object.
+   Supply independent English and Turkish display titles and locators. When the
+   excerpt is Arabic, preserve it exactly and supply both required target-
+   language transliterations. Remove unsupported claims or report a research
+   gap.
 4. **Cross-language independence.** Read English and Turkish fields separately;
    verify their own transliteration conventions, idiomatic glosses, collision
    analyses, and Arabic anchors.
@@ -87,6 +93,18 @@ scope, exclusions, contrasts, lexical units, source analysis, and gloss-risk
 discussion provide the depth. Do not shorten those fields merely because the
 renderer will structure them.
 
+Derive each branch concept and primary gloss from its complete source-backed
+perimeter. Quran frequency, contexts, translations, and occurrence patterns
+may not establish, sharpen, rank, or label any branch meaning or gloss as
+dominant.
+
+The primary gloss remains a compact, idiomatic dictionary orientation to the
+central generative concept. Covering the full perimeter does not mean appending
+an inventory of every derivative, source qualification, exception, or audit
+finding to the gloss. Put that depth in the concept, scope, lexical-unit, and
+source sections. Reject literal calques that are not natural standalone English
+or Turkish phrases.
+
 Every source claim must be traceable to supplied evidence. Preserve exact
 Arabic quotation text. Do not infer disagreement from silence. Keep examples,
 derivations, restrictions, and collocational effects at the level established
@@ -96,6 +114,14 @@ In every free-text English field, pair each Arabic mention with its English
 transliteration. In every free-text Turkish field, pair each Arabic mention
 with its Turkish transliteration. Keyed overlay fields cover Arabic inserted by
 the renderer; they do not repair bare Arabic typed into editorial prose.
+Write standard idiomatic English and Turkish. Do not replace Turkish letters
+or required Turkish transliteration diacritics with ASCII approximations.
+Read the rendered bibliography in each language and reject untranslated display
+metadata or bare Arabic excerpts.
+
+The bundle/scaffold preflight validates freshness using the repository's
+canonical JSON packet hash. Do not compare a raw packet file SHA-256 with the
+manifest's canonical hash or report a mismatch on that basis.
 
 ## Mechanical boundary
 

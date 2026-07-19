@@ -17,10 +17,10 @@ In English prose:
 
 Examples:
 
-- سَبِيل (sabīl)
-- صِرَاط (ṣirāṭ)
-- اِهْدِنَا (ihdinā)
-- ه د ي (h-d-y)
+- كِتَاب (kitāb)
+- قَلَم (qalam)
+- اُكْتُبْ (uktub)
+- ك ت ب (k-t-b)
 - ع (ʿ)
 
 In Turkish prose:
@@ -31,10 +31,10 @@ In Turkish prose:
 
 Examples:
 
-- سَبِيل (sebîl)
-- صِرَاط (ṣirâṭ)
-- اِهْدِنَا (ihdinâ)
-- ه د ي (h-d-y)
+- كِتَاب (kitâb)
+- قَلَم (ḳalem)
+- اُكْتُبْ (uktub)
+- ك ت ب (k-t-b)
 - ع (ʿ)
 
 Every mention is paired. Do not introduce the pair once and then use bare
@@ -42,15 +42,15 @@ Arabic or bare transliteration later in the same section.
 
 ## Arabic remains first
 
-Always place Arabic script before transliteration. Do not write only `sabīl`,
-`sebîl`, `ṣirāṭ`, or `ṣirâṭ` when the Arabic unit itself is being discussed.
+Always place Arabic script before transliteration. Do not write only `kitāb`,
+`kitâb`, `qalam`, or `ḳalem` when the Arabic unit itself is being discussed.
 Do not write Arabic script alone inside target-language prose.
 
 For a comparison, anchor both sides:
 
 ```text
-English: سَبِيل (sabīl) is not صِرَاط (ṣirāṭ) ...
-Turkish: سَبِيل (sebîl), صِرَاط (ṣirâṭ) ile aynı kavram değildir ...
+English: كِتَاب (kitāb) is not دَفْتَر (daftar) ...
+Turkish: كِتَاب (kitâb), دَفْتَر (defter) ile aynı kavram değildir ...
 ```
 
 This rule applies to:
@@ -87,6 +87,11 @@ Transliteration: ...
 
 The transliteration must cover the complete quoted phrase, not only the
 headword. The subsequent explanation is written in the entry's language.
+
+This also applies to short exact Arabic excerpts retained in external-source
+verification records and rendered bibliographies. English and Turkish display
+metadata are independent, and each projection shows only its own
+transliteration of the unchanged Arabic excerpt.
 
 ## Quran ayah context
 
@@ -161,6 +166,12 @@ Examples of the distinction-preserving requirement include:
 
 Use `â`, `î`, and `û` for long vowels under the Turkish guide.
 
+Follow the guide's definite-article convention: use `el-` before moon letters
+and assimilate before sun letters (for example, with the transliteration of the
+actual following consonant). This article behavior is required in keyed
+Turkish overlays whenever the paired Arabic unit explicitly begins with the
+definite article. It is not inferred for Arabic units that omit the article.
+
 ## Authoring discipline
 
 - Prefer vocalized Arabic when the source or Quran text supplies it.
@@ -173,6 +184,9 @@ Use `â`, `î`, and `û` for long vowels under the Turkish guide.
   judgment.
 - Keep the same transliteration for the same form within a language unless a
   documented pronunciation or grammatical difference requires a change.
+- Write surrounding Turkish prose in standard Turkish orthography. ASCII
+  substitution for Turkish letters or required transliteration diacritics is
+  not an acceptable alternate convention.
 
 ## Final check
 

@@ -278,9 +278,21 @@ def authored_fixture(packet):
             "schema_version": 1,
             "type": "external_source",
             "external_source_id": "usage.dictionary",
-            "title": "Usage Dictionary",
+            "title": {
+                "en": "EN_SENTINEL_USAGE_DICTIONARY",
+                "tr": "TR_SENTINEL_KULLANIM_SOZLUGU",
+            },
             "url": "https://example.org/usage",
             "note": bilingual("EXTERNAL_NOTE"),
+            "verification": {
+                "accessed_on": "2026-07-17",
+                "source_language": "en",
+                "locator": {
+                    "en": "EN_SENTINEL_HEADWORD_WRITE",
+                    "tr": "TR_SENTINEL_YAZMA_MADDESI",
+                },
+                "excerpt": "to form letters or words on a surface",
+            },
         },
     ]
     for branch in packet["branches"]:
@@ -436,12 +448,12 @@ class LanguageEntryRendererTest(unittest.TestCase):
         row.update(changes)
         return copied
 
-    def assert_contract_error(self, records, pattern=None):
+    def assert_contract_error(self, records, pattern=None, packet=None):
         with tempfile.TemporaryDirectory() as directory:
-            source, packet = self.write_fixture(directory, records)
+            source, packet_path = self.write_fixture(directory, records, packet)
             manager = self.assertRaisesRegex(ContractError, pattern) if pattern else self.assertRaises(ContractError)
             with manager:
-                execute(source, packet, Path(directory) / "entries")
+                execute(source, packet_path, Path(directory) / "entries")
 
     def test_deterministic_pair_skeleton_and_language_isolation(self):
         with tempfile.TemporaryDirectory() as first, tempfile.TemporaryDirectory() as second:
@@ -516,7 +528,7 @@ class LanguageEntryRendererTest(unittest.TestCase):
             _, text = self.render(directory)
             expected_terms = {
                 "en": ("Concept", "Scope", "Lexical", "Distinction", "Gloss", "Source", "Quran"),
-                "tr": ("Kavram", "Kapsam", "Sözlük", "Ayrım", "Karşılık", "Kaynak", "Kuran"),
+                "tr": ("Kavram", "Kapsam", "Sözlük", "Ayrım", "Karşılık", "Kaynak", "Kur'an"),
             }
             for language, document in text.items():
                 document = self.visible(document)
@@ -741,37 +753,448 @@ class LanguageEntryRendererTest(unittest.TestCase):
         del lexical["sense_ar_transliteration"]
         self.assert_contract_error(records, "missing sense_ar_transliteration")
 
+    def test_known_marked_transliterations_require_exact_arabic_anchors(self):
+        records = copy.deepcopy(self.records)
+        lexical = next(
+            row
+            for row in records
+            if row["type"] == "lexical" and row["lexical_unit_id"] == "lu_001"
+        )
+        lexical["expression_transliteration"] = {
+            "en": "kātaba",
+            "tr": "kâtebe",
+        }
+        branch = next(
+            row
+            for row in records
+            if row["type"] == "branch" and row["branch_id"] == "B001"
+        )
+        branch["concept"] = {
+            "en": "The forms كَتَبَ (kātaba), then [كَتَبَ (ka\u0304taba)], recur.",
+            "tr": "كَتَبَ (kâtebe), ardından [كَتَبَ (ka\u0302tebe)], yinelenir.",
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            self.render(directory, records)
+
+        for language, decomposed in (
+            ("en", "ka\u0304taba"),
+            ("tr", "ka\u0302tebe"),
+        ):
+            broken = copy.deepcopy(records)
+            broken_branch = next(
+                row
+                for row in broken
+                if row["type"] == "branch" and row["branch_id"] == "B001"
+            )
+            anchored = "كَتَبَ (" + decomposed + ")"
+            broken_branch["concept"][language] = (
+                f"{anchored}, but {decomposed}; is bare after punctuation."
+            )
+            self.assert_contract_error(
+                broken,
+                rf"concept\.{language} reuses known transliteration .* without its exact Arabic anchor",
+            )
+
+    def test_plain_ascii_overlay_reuse_is_outside_anchor_validation_boundary(self):
+        records = copy.deepcopy(self.records)
+        lexical = next(
+            row
+            for row in records
+            if row["type"] == "lexical" and row["lexical_unit_id"] == "lu_001"
+        )
+        lexical["expression_transliteration"] = {"en": "kataba", "tr": "ketebe"}
+        branch = next(row for row in records if row["type"] == "branch")
+        branch["concept"] = {
+            "en": "The plain ASCII token kataba is mechanically ambiguous.",
+            "tr": "Düz ASCII ketebe dizisi mekanik olarak belirsizdir.",
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            self.render(directory, records)
+
+    def test_turkish_definite_article_policy_is_derived_from_arabic_initials(self):
+        sun_cases = (
+            ("التَّمْر", "et-temr"),
+            ("الثَّوْب", "es-sevb"),
+            ("الدِّين", "ed-dîn"),
+            ("الذِّكْر", "eẕ-ẕikr"),
+            ("الرَّحْمَة", "er-raḥme"),
+            ("الزَّكَاة", "ez-zekât"),
+            ("السَّلَام", "es-selâm"),
+            ("«الشَّمْس»", "“eş-şems”"),
+            ("الصِّدْق", "eṣ-ṣıdḳ"),
+            ("الضَّوْء", "eḍ-ḍavʾ"),
+            ("الطَّرِيق", "eṭ-ṭarîḳ"),
+            ("الظُّلْم", "eẓ-ẓulm"),
+            ("اللَّيْل", "el-leyl"),
+            ("النُّور", "en-nûr"),
+        )
+        for arabic, turkish in sun_cases:
+            with self.subTest(arabic=arabic, turkish=turkish):
+                packet = copy.deepcopy(self.packet)
+                records = copy.deepcopy(self.records)
+                packet["branches"][0]["branch_image_ar"] = arabic
+                next(
+                    row
+                    for row in records
+                    if row["type"] == "branch" and row["branch_id"] == "B001"
+                )["image_transliteration"]["tr"] = turkish
+                with tempfile.TemporaryDirectory() as directory:
+                    self.render(directory, records, packet)
+
+        packet = copy.deepcopy(self.packet)
+        records = copy.deepcopy(self.records)
+        packet["branches"][0]["branch_image_ar"] = "«الْكِتَاب»"
+        branch = next(
+            row
+            for row in records
+            if row["type"] == "branch" and row["branch_id"] == "B001"
+        )
+        branch["image_transliteration"]["tr"] = "“el-kitâb”"
+        packet["branches"][0]["what_is_not_ar"] = "شَمْس"
+        branch["what_is_not_ar_transliteration"]["tr"] = "şems"
+        with tempfile.TemporaryDirectory() as directory:
+            self.render(directory, records, packet)
+
+        branch["image_transliteration"]["tr"] = "eş-şems"
+        self.assert_contract_error(records, "moon-letter article prefix", packet)
+
+    def test_turkish_article_validation_covers_each_exact_overlay_category(self):
+        packet = copy.deepcopy(self.packet)
+        records = copy.deepcopy(self.records)
+        packet_branch = packet["branches"][0]
+        branch = next(
+            row
+            for row in records
+            if row["type"] == "branch" and row["branch_id"] == "B001"
+        )
+        packet_branch["what_is_ar"] = "الشَّمْس"
+        branch["what_is_ar_transliteration"]["tr"] = "eş-şems"
+        branch["distinctions"][0]["neighbor_ar"] = "الرَّحْمَة"
+        branch["distinctions"][0]["transliteration"]["tr"] = "er-raḥme"
+
+        packet_lexical = packet["lexical_senses"][0]
+        lexical = next(
+            row
+            for row in records
+            if row["type"] == "lexical" and row["lexical_unit_id"] == "lu_001"
+        )
+        packet_lexical["expression_ar"] = "النُّور"
+        lexical["expression_transliteration"]["tr"] = "en-nûr"
+        packet_lexical["sense_ar"] = "الْقَمَر"
+        lexical["sense_ar_transliteration"]["tr"] = "el-ḳamer"
+        packet_lexical["source_phrase_ar"] = "الطَّرِيق"
+        lexical["source_phrase_transliteration"]["tr"] = "eṭ-ṭarîḳ"
+
+        packet["dictionary_sources"][0]["entry_text_clean"] = "مقدمة الشَّمْس خاتمة"
+        source = next(
+            row
+            for row in records
+            if row["type"] == "branch_source"
+            and row["source_ref"] == "source:file=x:section=one"
+        )
+        source["selected_quote_ar"] = "الشَّمْس"
+        source["quote_transliteration"]["tr"] = "“eş-şems”"
+
+        for occurrence in packet["qac"]["occurrences"][:2]:
+            occurrence["lemma_ar"] = "الشَّمْس"
+            occurrence["surface_ar"] = "الشَّمْسُ"
+        quran_form = next(
+            row
+            for row in records
+            if row["type"] == "quran_form" and row["form_ordinal"] == 1
+        )
+        quran_form["lemma_transliteration"]["tr"] = "eş-şems"
+        quran_form["surface_transliteration"]["tr"] = "eş-şemsü"
+
+        with tempfile.TemporaryDirectory() as directory:
+            self.render(directory, records, packet)
+
+        invalid_cases = (
+            ("branch boundary", lambda rows: next(row for row in rows if row["type"] == "branch")["what_is_ar_transliteration"].__setitem__("tr", "el-şems")),
+            ("distinction", lambda rows: next(row for row in rows if row["type"] == "branch")["distinctions"][0]["transliteration"].__setitem__("tr", "el-raḥme")),
+            ("lexical expression", lambda rows: next(row for row in rows if row["type"] == "lexical" and row["lexical_unit_id"] == "lu_001")["expression_transliteration"].__setitem__("tr", "el-nûr")),
+            ("source quote", lambda rows: next(row for row in rows if row["type"] == "branch_source" and row["source_ref"] == "source:file=x:section=one")["quote_transliteration"].__setitem__("tr", "el-şems")),
+            ("Quran lemma", lambda rows: next(row for row in rows if row["type"] == "quran_form" and row["form_ordinal"] == 1)["lemma_transliteration"].__setitem__("tr", "el-şems")),
+            ("Quran surface", lambda rows: next(row for row in rows if row["type"] == "quran_form" and row["form_ordinal"] == 1)["surface_transliteration"].__setitem__("tr", "el-şemsü")),
+        )
+        for label, mutate in invalid_cases:
+            with self.subTest(label=label):
+                broken = copy.deepcopy(records)
+                mutate(broken)
+                self.assert_contract_error(
+                    broken, "assimilated Turkish article prefix", packet
+                )
+
     def test_external_sources_are_structured_and_drive_bibliography(self):
         with tempfile.TemporaryDirectory() as directory:
             _, text = self.render(directory)
             self.assertNotIn("usage.dictionary", self.visible(text["en"]))
-            self.assertIn("Usage Dictionary", text["en"])
+            self.assertIn("EN\\_SENTINEL\\_USAGE\\_DICTIONARY", text["en"])
+            self.assertNotIn("TR_SENTINEL_KULLANIM_SOZLUGU", text["en"])
+            self.assertIn("TR\\_SENTINEL\\_KULLANIM\\_SOZLUGU", text["tr"])
+            self.assertNotIn("EN_SENTINEL_USAGE_DICTIONARY", text["tr"])
             self.assertIn("https://example.org/usage", text["tr"])
             self.assertIn("TR\\_SENTINEL\\_EXTERNAL\\_NOTE", text["tr"])
+            self.assertIn("**Accessed:** 2026-07-17", text["en"])
+            self.assertIn("**Source language:** English", text["en"])
+            self.assertIn(
+                "**Location in source:** EN\\_SENTINEL\\_HEADWORD\\_WRITE",
+                text["en"],
+            )
+            self.assertNotIn("TR_SENTINEL_YAZMA_MADDESI", text["en"])
+            self.assertIn(
+                "**Inspected excerpt:** to form letters or words on a surface",
+                text["en"],
+            )
+            self.assertIn("**Erişim tarihi:** 2026-07-17", text["tr"])
+            self.assertIn("**Kaynak dili:** İngilizce", text["tr"])
+            self.assertIn(
+                "**Kaynaktaki konum:** TR\\_SENTINEL\\_YAZMA\\_MADDESI",
+                text["tr"],
+            )
+            self.assertNotIn("EN_SENTINEL_HEADWORD_WRITE", text["tr"])
+            self.assertIn("## Kur'an Eki", text["tr"])
         records = self.mutate_first(self.records, "external_source", url="not-a-url")
         self.assert_contract_error(records, "absolute HTTP")
         records = self.mutate_first(self.records, "external_source", external_source_id="bad id")
         self.assert_contract_error(records, "stable authored ID")
 
+    def test_external_source_title_and_locator_are_strict_bilingual_objects(self):
+        cases = (
+            ("title string", "title", "Single title", "must be an object"),
+            ("title missing", "title", {"en": "English title"}, "exactly en and tr"),
+            (
+                "title extra",
+                "title",
+                {"en": "English title", "tr": "Türkçe başlık", "ar": "عنوان"},
+                "exactly en and tr",
+            ),
+            (
+                "title wrong value",
+                "title",
+                {"en": ["English title"], "tr": "Türkçe başlık"},
+                "non-empty string",
+            ),
+            ("locator string", "locator", "Headword", "must be an object"),
+            (
+                "locator missing",
+                "locator",
+                {"en": "Headword entry"},
+                "exactly en and tr",
+            ),
+            (
+                "locator extra",
+                "locator",
+                {"en": "Headword entry", "tr": "Madde başı", "ar": "المدخل"},
+                "exactly en and tr",
+            ),
+            (
+                "locator wrong value",
+                "locator",
+                {"en": "Headword entry", "tr": 7},
+                "non-empty string",
+            ),
+        )
+        for label, field, value, pattern in cases:
+            with self.subTest(label=label):
+                records = copy.deepcopy(self.records)
+                source = next(
+                    row for row in records if row["type"] == "external_source"
+                )
+                if field == "title":
+                    source[field] = value
+                else:
+                    source["verification"][field] = value
+                self.assert_contract_error(records, pattern)
+
+        for field, value, pattern in (
+            ("title", {"en": "x", "tr": "Geçerli başlık"}, "2-200 characters"),
+            (
+                "title",
+                {"en": "English\u200btitle", "tr": "Geçerli başlık"},
+                "control or format",
+            ),
+            (
+                "locator",
+                {"en": "Headword\u200blabel", "tr": "Geçerli konum"},
+                "control or format",
+            ),
+        ):
+            with self.subTest(field=field, value=value):
+                records = copy.deepcopy(self.records)
+                source = next(
+                    row for row in records if row["type"] == "external_source"
+                )
+                if field == "title":
+                    source[field] = value
+                else:
+                    source["verification"][field] = value
+                self.assert_contract_error(records, pattern)
+
+    def test_arabic_verification_excerpt_requires_and_isolates_transliterations(self):
+        records = copy.deepcopy(self.records)
+        source = next(row for row in records if row["type"] == "external_source")
+        source["verification"].update(
+            {
+                "source_language": "ar",
+                "excerpt": "نَصٌّ مُعَايَن",
+                "excerpt_transliteration": {
+                    "en": "naṣṣun [EN] <inspected>",
+                    "tr": "naṣṣün [TR] <incelenen>",
+                },
+            }
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            _, text = self.render(directory, records)
+
+        for document in text.values():
+            self.assertIn("**Inspected excerpt:** نَصٌّ مُعَايَن", text["en"])
+            self.assertIn("**İncelenen alıntı:** نَصٌّ مُعَايَن", text["tr"])
+        self.assertIn(
+            r"**English transliteration:** naṣṣun \[EN\] \<inspected\>",
+            text["en"],
+        )
+        self.assertNotIn("naṣṣün", text["en"])
+        self.assertIn(
+            r"**Türkçe çevriyazı:** naṣṣün \[TR\] \<incelenen\>",
+            text["tr"],
+        )
+        self.assertNotIn("naṣṣun", text["tr"])
+
+        invalid_cases = (
+            ("missing overlay", lambda verification: verification.pop("excerpt_transliteration"), "missing excerpt_transliteration"),
+            ("non-Arabic excerpt", lambda verification: verification.__setitem__("excerpt", "inspected text"), "must contain Arabic script"),
+            ("wrong overlay type", lambda verification: verification.__setitem__("excerpt_transliteration", "naṣṣ"), "must be an object"),
+            ("missing language", lambda verification: verification.__setitem__("excerpt_transliteration", {"en": "naṣṣ"}), "exactly en and tr"),
+            ("extra language", lambda verification: verification.__setitem__("excerpt_transliteration", {"en": "naṣṣ", "tr": "naṣṣ", "ar": "نص"}), "exactly en and tr"),
+            ("wrong value type", lambda verification: verification.__setitem__("excerpt_transliteration", {"en": 3, "tr": "naṣṣ"}), "non-empty string"),
+        )
+        for label, mutate, pattern in invalid_cases:
+            with self.subTest(label=label):
+                broken = copy.deepcopy(records)
+                verification = next(
+                    row for row in broken if row["type"] == "external_source"
+                )["verification"]
+                mutate(verification)
+                self.assert_contract_error(broken, pattern)
+
+        non_arabic = copy.deepcopy(self.records)
+        next(row for row in non_arabic if row["type"] == "external_source")[
+            "verification"
+        ]["excerpt_transliteration"] = {"en": "text", "tr": "metin"}
+        self.assert_contract_error(
+            non_arabic, "extra/forbidden excerpt_transliteration"
+        )
+
+    def test_arabic_verification_overlay_joins_known_anchor_inventory(self):
+        records = copy.deepcopy(self.records)
+        source = next(row for row in records if row["type"] == "external_source")
+        source["verification"].update(
+            {
+                "source_language": "ar",
+                "excerpt": "نَصّ",
+                "excerpt_transliteration": {"en": "naṣṣ", "tr": "naṣṣ"},
+            }
+        )
+        source["note"] = {
+            "en": "The inspected term نَصّ (naṣṣ) supports this contrast.",
+            "tr": "İncelenen نَصّ (naṣṣ) terimi bu ayrımı destekler.",
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            self.render(directory, records)
+
+        broken = copy.deepcopy(records)
+        next(row for row in broken if row["type"] == "external_source")["note"][
+            "en"
+        ] = "The bare transliteration naṣṣ lacks its Arabic anchor."
+        self.assert_contract_error(broken, "without its exact Arabic anchor")
+
+    def test_external_source_verification_is_exact_bounded_and_substantive(self):
+        source = next(
+            row for row in self.records if row["type"] == "external_source"
+        )
+        missing = copy.deepcopy(self.records)
+        del next(row for row in missing if row["type"] == "external_source")[
+            "verification"
+        ]
+        self.assert_contract_error(missing, "missing verification")
+
+        cases = (
+            ({"accessed_on": "2026-02-30"}, "valid calendar date"),
+            ({"accessed_on": "2026-2-03"}, "YYYY-MM-DD"),
+            ({"accessed_on": 20260717}, "non-empty string"),
+            ({"source_language": "de"}, "one of ar, en, tr"),
+            ({"locator": {"en": "maintenance status: pending", "tr": "Geçerli konum"}}, "status placeholder"),
+            ({"locator": {"en": "to be checked", "tr": "Geçerli konum"}}, "status placeholder"),
+            ({"locator": {"en": "unchecked", "tr": "Geçerli konum"}}, "status placeholder"),
+            ({"locator": {"en": "placeholder entry", "tr": "Geçerli konum"}}, "status placeholder"),
+            ({"locator": {"en": "ab", "tr": "Geçerli konum"}}, "3-300 characters"),
+            ({"locator": {"en": "x" * 301, "tr": "Geçerli konum"}}, "3-300 characters"),
+            ({"excerpt": "query pending"}, "status placeholder"),
+            ({"excerpt": "not yet checked"}, "status placeholder"),
+            ({"excerpt": "TBD after access"}, "status placeholder"),
+            ({"excerpt": ""}, "non-empty string"),
+            ({"excerpt": "x" * 501}, "1-500 characters"),
+            ({"excerpt": "line\nfeed"}, "control or format"),
+        )
+        for changes, pattern in cases:
+            with self.subTest(changes=changes):
+                records = copy.deepcopy(self.records)
+                verification = next(
+                    row for row in records if row["type"] == "external_source"
+                )["verification"]
+                verification.update(changes)
+                self.assert_contract_error(records, pattern)
+
+        extra = copy.deepcopy(self.records)
+        next(row for row in extra if row["type"] == "external_source")[
+            "verification"
+        ]["status"] = "checked"
+        self.assert_contract_error(extra, "extra/forbidden status")
+
+        incidental = copy.deepcopy(self.records)
+        next(row for row in incidental if row["type"] == "external_source")[
+            "verification"
+        ]["excerpt"] = "The entry remained unchecked by later editors."
+        with tempfile.TemporaryDirectory() as directory:
+            self.render(directory, incidental)
+        self.assertEqual(source["verification"]["source_language"], "en")
+
     def test_external_source_markdown_and_url_are_hardened(self):
         records = copy.deepcopy(self.records)
         source = next(row for row in records if row["type"] == "external_source")
-        source["title"] = "Hostile \\ [title] ]( <script>\n## title"
+        source["title"] = {
+            "en": "Hostile \\ [title] ]( <script>",
+            "tr": "Saldırgan \\ [başlık] ]( <betik>",
+        }
         source["url"] = "https://example.org/a_(b)?x=(y)"
         source["note"] = {
             "en": "note [bad](javascript:x) <script> *bold*\n## heading",
             "tr": "not [bad](javascript:x) <script> *kalın*\n## başlık",
         }
+        source["verification"]["locator"] = {
+            "en": "Section [one] <locator>",
+            "tr": "Bölüm [bir] <konum>",
+        }
+        source["verification"]["excerpt"] = "exact [text] <excerpt>"
         with tempfile.TemporaryDirectory() as directory:
             _, text = self.render(directory, records)
-            for document in text.values():
-                self.assertIn(r"\[title\]", document)
+            self.assertIn(r"\[title\]", text["en"])
+            self.assertNotIn("başlık", text["en"])
+            self.assertIn(r"\[başlık\]", text["tr"])
+            self.assertNotIn("title", text["tr"])
+            for language, document in text.items():
                 self.assertIn(
                     "(<https://example.org/a_(b)?x=(y)>)", document
                 )
                 self.assertNotIn("[bad](javascript:x)", document)
                 self.assertNotIn("<script>", document)
+                self.assertIn(r"exact \[text\] \<excerpt\>", document)
                 self.assertNotRegex(document, r"(?m)^## (title|heading|başlık)$")
+            self.assertIn(r"Section \[one\] \<locator\>", text["en"])
+            self.assertNotIn("Bölüm", text["en"])
+            self.assertIn(r"Bölüm \[bir\] \<konum\>", text["tr"])
+            self.assertNotIn("Section", text["tr"])
 
         for unsafe_url in (
             "https://example.org/white space",

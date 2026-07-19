@@ -265,8 +265,8 @@ odaktaki kavramın onlardan neden farklı olduğu.>
 
 Every Arabic focus or neighbor named in these notes retains Arabic script and
 receives the transliteration appropriate to the note language. For example,
-English uses `سَبِيل (sabīl)` and `صِرَاط (ṣirāṭ)`; Turkish uses `سَبِيل
-(sebîl)` and `صِرَاط (ṣirâṭ)`.
+English uses `كِتَاب (kitāb)` and `دَفْتَر (daftar)`; Turkish uses `كِتَاب
+(kitâb)` and `دَفْتَر (defter)`.
 
 If there is no material collision, say so briefly rather than inventing one.
 
