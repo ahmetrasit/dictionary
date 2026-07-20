@@ -10,28 +10,28 @@ kurulan ilişkiyi inceler:
 4. aynı kökün başka ayetlerde kurduğu tersine dönüşler,
 5. birincil anlam ile ikincil rezonansın ayrımı.
 
-| Kök paketi | Hedef | Rapor |
-|---|---|---|
-| `root_001458` | ماء | [root_001458.md](root_001458.md) |
-| `root_000086` | بحر | [root_000086.md](root_000086.md) |
-| `root_001697` | يم | [root_001697.md](root_001697.md) |
-| `root_001455` | موج | [root_001455.md](root_001455.md) |
-| `root_000783` | شرب | [root_000783.md](root_000783.md) |
-| `root_000722` | سقي | [root_000722.md](root_000722.md) |
-| `root_001640` | ورد الماء | [root_001640.md](root_001640.md) |
-| `root_001080` | غرق | [root_001080.md](root_001080.md) |
-| `root_000001` | حميم | [root_000001.md](root_000001.md) |
-| `root_001431` | مطر | [root_001431.md](root_001431.md) |
-| `root_001118` | غيث | [root_001118.md](root_001118.md) |
-| `root_001636` | ودق | [root_001636.md](root_001636.md) |
-| `root_001619` | وابل | [root_001619.md](root_001619.md) |
-| `root_000770` | سيل | [root_000770.md](root_000770.md) |
-| `root_000195` | ثجاج | [root_000195.md](root_000195.md) |
-| `root_001137` | فرات | [root_001137.md](root_001137.md) |
-| `root_000014` | أجاج | [root_000014.md](root_000014.md) |
-| `root_000033` | آسن | [root_000033.md](root_000033.md) |
-| `root_000078` | بئر | [root_000078.md](root_000078.md) |
-| `root_000084` | انبجاس | [root_000084.md](root_000084.md) |
+| Kök paketi | Hedef | Markdown | PDF |
+|---|---|---|---|
+| `root_001458` | ماء | [rapor](root_001458.md) | [PDF](pdf/root_001458.pdf) |
+| `root_000086` | بحر | [rapor](root_000086.md) | [PDF](pdf/root_000086.pdf) |
+| `root_001697` | يم | [rapor](root_001697.md) | [PDF](pdf/root_001697.pdf) |
+| `root_001455` | موج | [rapor](root_001455.md) | [PDF](pdf/root_001455.pdf) |
+| `root_000783` | شرب | [rapor](root_000783.md) | [PDF](pdf/root_000783.pdf) |
+| `root_000722` | سقي | [rapor](root_000722.md) | [PDF](pdf/root_000722.pdf) |
+| `root_001640` | ورد الماء | [rapor](root_001640.md) | [PDF](pdf/root_001640.pdf) |
+| `root_001080` | غرق | [rapor](root_001080.md) | [PDF](pdf/root_001080.pdf) |
+| `root_000001` | حميم | [rapor](root_000001.md) | [PDF](pdf/root_000001.pdf) |
+| `root_001431` | مطر | [rapor](root_001431.md) | [PDF](pdf/root_001431.pdf) |
+| `root_001118` | غيث | [rapor](root_001118.md) | [PDF](pdf/root_001118.pdf) |
+| `root_001636` | ودق | [rapor](root_001636.md) | [PDF](pdf/root_001636.pdf) |
+| `root_001619` | وابل | [rapor](root_001619.md) | [PDF](pdf/root_001619.pdf) |
+| `root_000770` | سيل | [rapor](root_000770.md) | [PDF](pdf/root_000770.pdf) |
+| `root_000195` | ثجاج | [rapor](root_000195.md) | [PDF](pdf/root_000195.pdf) |
+| `root_001137` | فرات | [rapor](root_001137.md) | [PDF](pdf/root_001137.pdf) |
+| `root_000014` | أجاج | [rapor](root_000014.md) | [PDF](pdf/root_000014.pdf) |
+| `root_000033` | آسن | [rapor](root_000033.md) | [PDF](pdf/root_000033.pdf) |
+| `root_000078` | بئر | [rapor](root_000078.md) | [PDF](pdf/root_000078.pdf) |
+| `root_000084` | انبجاس | [rapor](root_000084.md) | [PDF](pdf/root_000084.pdf) |
 
 Her odak ayeti, iki önceki ve iki sonraki ayetle birlikte bağımsız bir pencere
 olarak okunmuştur. Daha geniş anlatı ilişkileri ayrıca belirtilmiş; beş ayetlik
