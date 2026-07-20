@@ -1,0 +1,1418 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff1e5">
+  <meta name="description" content="Kök dosyaları, kök raporları ve ikincil rezonans raporları için sözlük okuyucusu.">
+  <title>Sözlük Okuyucu</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f5f7fb;
+      --surface: rgba(255,255,255,.90);
+      --surface-solid: #ffffff;
+      --text: #142033;
+      --muted: #667085;
+      --border: rgba(16,24,40,.12);
+      --accent: #2f5f8f;
+      --accent-strong: #173f63;
+      --accent-soft: #e8f1f8;
+      --good: #14764f;
+      --warn: #a15c07;
+      --danger: #b42318;
+      --shadow: 0 14px 40px rgba(16,24,40,.10);
+      --code-bg: #0b1220;
+      --code-text: #d6e4ff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #08111f;
+        --surface: rgba(17,27,45,.92);
+        --surface-solid: #101b2d;
+        --text: #eef4fb;
+        --muted: #a6b1c2;
+        --border: rgba(255,255,255,.13);
+        --accent: #9bc7ea;
+        --accent-strong: #d8ecfb;
+        --accent-soft: #17334e;
+        --good: #6bd6a0;
+        --warn: #f3b35f;
+        --danger: #ff938a;
+        --shadow: 0 18px 55px rgba(0,0,0,.35);
+        --code-bg: #07101d;
+        --code-text: #d6e4ff;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 12% -8%, rgba(79,132,177,.19), transparent 34rem),
+        radial-gradient(circle at 92% 5%, rgba(99,102,241,.10), transparent 28rem),
+        var(--bg);
+      color: var(--text);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      padding-bottom: calc(env(safe-area-inset-bottom) + 36px);
+    }
+
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    a { color: var(--accent); }
+
+    .shell {
+      width: min(1180px, calc(100% - 28px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 42px 0 20px;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 820px;
+      font-family: ui-serif, Georgia, serif;
+      font-size: clamp(2.25rem, 8vw, 4.8rem);
+      line-height: .98;
+      letter-spacing: -.045em;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 3vw, 1.16rem);
+      line-height: 1.56;
+    }
+
+    .repo-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: .88rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
+      padding: 10px 0;
+      background: color-mix(in srgb, var(--bg) 86%, transparent);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .search-wrap { position: relative; }
+    .search-wrap span {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      opacity: .62;
+    }
+
+    input[type="search"] {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: var(--surface);
+      color: var(--text);
+      padding: 0 16px 0 43px;
+      outline: none;
+      box-shadow: 0 5px 18px rgba(16,24,40,.04);
+    }
+
+    input[type="search"]:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent);
+    }
+
+    .button, .tab, .icon-button {
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: var(--surface);
+      color: var(--text);
+      min-height: 48px;
+      padding: 0 15px;
+      font-weight: 750;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .button.primary, .tab[aria-selected="true"] {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .button.primary, .tab[aria-selected="true"] { color: #06111f; }
+    }
+
+    .status-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      margin: 12px 0 16px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 4px 0 14px;
+      scrollbar-width: none;
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tab {
+      white-space: nowrap;
+      min-height: 42px;
+      border-radius: 999px;
+      padding: 0 14px;
+      font-size: .92rem;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(178px, 1fr));
+      gap: 10px;
+      margin: 4px 0 18px;
+    }
+
+    .summary-card {
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--surface);
+      box-shadow: 0 5px 18px rgba(16,24,40,.04);
+    }
+    .summary-card strong {
+      display: block;
+      font-size: 1.4rem;
+      letter-spacing: -.025em;
+    }
+    .summary-card span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: .86rem;
+      font-weight: 700;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 390px) minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    @media (max-width: 860px) {
+      .main-grid { grid-template-columns: 1fr; }
+      .viewer-panel { min-height: auto; }
+    }
+
+    .list-panel, .viewer-panel, .notice {
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .list-head, .viewer-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 14px 15px;
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in srgb, var(--surface-solid) 70%, transparent);
+    }
+
+    .list-head strong, .viewer-head strong {
+      font-size: .95rem;
+    }
+
+    .file-list {
+      max-height: calc(100vh - 280px);
+      min-height: 360px;
+      overflow: auto;
+      padding: 8px;
+    }
+
+    @media (max-width: 860px) {
+      .file-list { max-height: 56vh; }
+    }
+
+    .file-row {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 10px;
+      align-items: center;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid transparent;
+      border-radius: 16px;
+      background: transparent;
+      color: var(--text);
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .file-row:hover, .file-row[aria-selected="true"] {
+      border-color: var(--border);
+      background: color-mix(in srgb, var(--accent-soft) 70%, transparent);
+    }
+
+    .file-icon {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-weight: 850;
+      font-size: .82rem;
+      text-transform: uppercase;
+    }
+
+    .file-title {
+      display: block;
+      font-weight: 780;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .file-meta {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: .75rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .viewer-panel {
+      min-height: 610px;
+    }
+
+    .viewer-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .viewer-body {
+      padding: 16px;
+      overflow: auto;
+      max-height: calc(100vh - 245px);
+      min-height: 520px;
+    }
+
+    @media (max-width: 860px) {
+      .viewer-body {
+        max-height: none;
+        min-height: 320px;
+      }
+    }
+
+    .empty, .notice {
+      padding: 22px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .notice {
+      margin: 0 0 16px;
+      box-shadow: none;
+    }
+
+    .warn { color: var(--warn); }
+    .danger { color: var(--danger); }
+
+    .doc-title {
+      margin: 0 0 5px;
+      font-family: ui-serif, Georgia, serif;
+      font-size: clamp(1.5rem, 5vw, 2.45rem);
+      letter-spacing: -.035em;
+      line-height: 1.08;
+      overflow-wrap: anywhere;
+    }
+
+    .doc-path {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: .84rem;
+      overflow-wrap: anywhere;
+    }
+
+    .rendered {
+      line-height: 1.65;
+      overflow-wrap: anywhere;
+    }
+
+    .rendered h1, .rendered h2, .rendered h3 {
+      font-family: ui-serif, Georgia, serif;
+      letter-spacing: -.025em;
+      line-height: 1.15;
+      margin: 1.1em 0 .45em;
+    }
+    .rendered h1 { font-size: 2rem; }
+    .rendered h2 { font-size: 1.55rem; }
+    .rendered h3 { font-size: 1.2rem; }
+
+    .rendered p { margin: .65em 0; }
+    .rendered ul, .rendered ol { padding-left: 1.35rem; }
+    .rendered blockquote {
+      margin: 1rem 0;
+      padding: .8rem 1rem;
+      border-left: 4px solid var(--accent);
+      background: color-mix(in srgb, var(--accent-soft) 56%, transparent);
+      border-radius: 0 14px 14px 0;
+      color: var(--text);
+    }
+
+    pre, code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      overflow: auto;
+      padding: 14px;
+      border-radius: 16px;
+      background: var(--code-bg);
+      color: var(--code-text);
+      line-height: 1.48;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .9rem;
+      background: var(--surface-solid);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+    }
+
+    .pdf-frame {
+      width: 100%;
+      min-height: 72vh;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--surface-solid);
+    }
+
+
+    /* Editorial reader for Markdown documents.
+       This is deliberately FT-inspired, not a copy of FT branding. */
+    .viewer-body.article-mode {
+      background:
+        linear-gradient(180deg, rgba(255,241,229,.78), rgba(255,250,244,.96));
+      color: #26221f;
+      padding: clamp(18px, 4vw, 42px);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .viewer-body.article-mode {
+        background:
+          linear-gradient(180deg, rgba(43,32,26,.92), rgba(20,18,16,.96));
+        color: #f6eadf;
+      }
+    }
+
+    .article-shell {
+      width: min(790px, 100%);
+      margin: 0 auto;
+    }
+
+    .article-kicker {
+      margin: 0 0 12px;
+      color: #8f3e16;
+      font-size: .78rem;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .article-kicker { color: #f0b38c; }
+    }
+
+    .article-title {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: clamp(2.05rem, 7vw, 4.35rem);
+      line-height: .98;
+      letter-spacing: -.045em;
+      color: inherit;
+    }
+
+    .article-deck {
+      margin: 15px 0 0;
+      color: color-mix(in srgb, currentColor 72%, transparent);
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: clamp(1.02rem, 3vw, 1.28rem);
+      line-height: 1.45;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 20px 0 24px;
+      padding-top: 14px;
+      border-top: 1px solid color-mix(in srgb, currentColor 22%, transparent);
+      color: color-mix(in srgb, currentColor 65%, transparent);
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    .article-meta span:not(:last-child)::after {
+      content: "·";
+      margin-left: 8px;
+      color: color-mix(in srgb, currentColor 45%, transparent);
+    }
+
+    .article-body {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: clamp(1.02rem, 2.8vw, 1.18rem);
+      line-height: 1.68;
+      color: inherit;
+    }
+
+    .article-body > p:first-of-type::first-letter {
+      float: left;
+      font-size: 4.2rem;
+      line-height: .82;
+      padding: .07em .08em 0 0;
+      font-weight: 700;
+      color: #8f3e16;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .article-body > p:first-of-type::first-letter {
+        color: #f0b38c;
+      }
+    }
+
+    .article-body h1,
+    .article-body h2,
+    .article-body h3 {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      letter-spacing: -.032em;
+      line-height: 1.08;
+      margin: 1.25em 0 .38em;
+      color: inherit;
+    }
+
+    .article-body h1 { font-size: clamp(1.9rem, 5vw, 3rem); }
+    .article-body h2 {
+      font-size: clamp(1.45rem, 4vw, 2.18rem);
+      border-top: 1px solid color-mix(in srgb, currentColor 20%, transparent);
+      padding-top: .7em;
+    }
+    .article-body h3 { font-size: clamp(1.18rem, 3vw, 1.45rem); }
+
+    .article-body p { margin: .86em 0; }
+    .article-body a {
+      color: inherit;
+      text-decoration-color: #8f3e16;
+      text-decoration-thickness: 2px;
+      text-underline-offset: .18em;
+    }
+
+    .article-body blockquote {
+      margin: 1.2rem 0;
+      padding: .5rem 0 .5rem 1rem;
+      border-left: 4px solid #8f3e16;
+      background: transparent;
+      border-radius: 0;
+      font-size: 1.08em;
+      color: color-mix(in srgb, currentColor 82%, transparent);
+    }
+
+    .article-body code {
+      background: rgba(0,0,0,.08);
+      border-radius: 5px;
+      padding: .08em .28em;
+      font-size: .86em;
+    }
+
+    .article-body pre {
+      background: #111827;
+      color: #e5e7eb;
+      border-radius: 3px;
+      font-size: .86rem;
+      line-height: 1.52;
+    }
+
+    .article-body table {
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: .88rem;
+      background: rgba(255,255,255,.45);
+    }
+
+    .pdf-card {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--surface-solid);
+      margin-bottom: 14px;
+    }
+
+    .pdf-card h3 {
+      margin: 0 0 8px;
+      font-family: ui-serif, Georgia, serif;
+      font-size: 1.2rem;
+    }
+
+    .pdf-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    mark {
+      background: color-mix(in srgb, var(--accent) 22%, transparent);
+      color: inherit;
+      border-radius: 4px;
+      padding: 0 .12em;
+    }
+
+    .arabic {
+      font-family: "Geeza Pro", "Noto Naskh Arabic", "Scheherazade New", serif;
+      direction: rtl;
+      font-size: 1.18em;
+      line-height: 1.9;
+    }
+
+    .footer {
+      color: var(--muted);
+      font-size: .82rem;
+      margin: 18px 0 0;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <p class="eyebrow">Sözlük projesi</p>
+      <h1>Kök Sözlük Okuyucu</h1>
+      <p class="subtitle">
+        Kök dosyalarını, kök raporlarını, ikincil rezonans raporlarını, PDF’leri ve Markdown metinlerini doğrudan GitHub deposundan oku.
+        Markdown dosyaları gazete tarzı bir okuma görünümünde açılır; PDF’ler hem önizleme hem de doğrudan bağlantı olarak sunulur.
+      </p>
+      <a class="repo-pill" id="repoLink" target="_blank" rel="noopener">↗ Repository</a>
+    </header>
+
+    <section class="notice" id="setupNotice">
+      Depo dizini yükleniyor…
+    </section>
+
+    <section class="toolbar" aria-label="Search and refresh">
+      <label class="search-wrap">
+        <span>⌕</span>
+        <input id="searchInput" type="search" placeholder="Kök, yol ve rapor ara…" autocomplete="off">
+      </label>
+      <button class="button" id="refreshButton" type="button">Yenile</button>
+    </section>
+
+    <section class="summary-grid" id="summaryGrid"></section>
+
+    <nav class="tabs" id="tabs" aria-label="File categories"></nav>
+
+    <main class="main-grid">
+      <section class="list-panel" aria-label="Dosyalar">
+        <div class="list-head">
+          <strong id="listTitle">Dosyalar</strong>
+          <span id="listCount" class="file-meta"></span>
+        </div>
+        <div id="fileList" class="file-list"></div>
+      </section>
+
+      <section class="viewer-panel" aria-label="Önizleme">
+        <div class="viewer-head">
+          <strong id="viewerLabel">Önizleme</strong>
+          <div class="viewer-actions">
+            <a class="button" id="githubButton" target="_blank" rel="noopener" style="display:none">GitHub</a>
+            <a class="button" id="rawButton" target="_blank" rel="noopener" style="display:none">Ham dosya</a>
+            <button class="button" id="copyButton" type="button" style="display:none">Bağlantıyı kopyala</button>
+          </div>
+        </div>
+        <div id="viewerBody" class="viewer-body">
+          <div class="empty">
+            Önizlemek için bir dosya seç. Markdown dosyaları editoryal okuyucuda açılır; JSON, TXT, CSV/TSV, HTML ve PDF dosyaları da doğrudan sunulur.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <p class="footer">
+      Statik GitHub Pages uygulaması. Dosya ağacı için herkese açık GitHub API’sini, dosya önizlemeleri için raw.githubusercontent.com adresini kullanır.
+    </p>
+  </div>
+
+  <script>
+    const CONFIG = {
+      uiLanguage: "tr",
+      owner: "ahmetrasit",
+      repo: "dictionary",
+      branch: "main",
+      cacheMinutes: 10,
+      previewSizeLimit: 1_500_000,
+      categories: [
+        {
+          id: "all",
+          label: "Sunulan tüm dosyalar",
+          description: "Gezilebilir metin, Markdown, JSON, tablo, HTML ve PDF dosyalarının tamamı."
+        },
+        {
+          id: "root-dosya",
+          label: "Kök dosyaları",
+          description: "Birincil kök sözlük girdileri ve kök veri dosyaları."
+        },
+        {
+          id: "root-reports",
+          label: "Kök raporları",
+          description: "Tekil köklere veya kök ailelerine odaklanan raporlar."
+        },
+        {
+          id: "secondary-resonance",
+          label: "İkincil rezonans",
+          description: "İkincil rezonans reports and bridge/activation notes."
+        },
+        {
+          id: "other",
+          label: "Diğer belgeler",
+          description: "Üç ana kategoriye girmeyen sunulan dosyalar."
+        }
+      ]
+    };
+
+    const SERVED_EXTENSIONS = new Set([
+      "md", "markdown", "txt", "json", "jsonl", "csv", "tsv", "html", "htm", "pdf", "yaml", "yml"
+    ]);
+
+    const state = {
+      tree: [],
+      dosya: [],
+      filtered: [],
+      activeCategory: "all",
+      activePath: "",
+      repoHtmlUrl: `https://github.com/${CONFIG.owner}/${CONFIG.repo}`,
+      repoApiUrl: `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}`
+    };
+
+    const els = {
+      repoLink: document.getElementById("repoLink"),
+      setupNotice: document.getElementById("setupNotice"),
+      searchInput: document.getElementById("searchInput"),
+      refreshButton: document.getElementById("refreshButton"),
+      summaryGrid: document.getElementById("summaryGrid"),
+      tabs: document.getElementById("tabs"),
+      fileList: document.getElementById("fileList"),
+      listTitle: document.getElementById("listTitle"),
+      listCount: document.getElementById("listCount"),
+      viewerBody: document.getElementById("viewerBody"),
+      viewerLabel: document.getElementById("viewerLabel"),
+      githubButton: document.getElementById("githubButton"),
+      rawButton: document.getElementById("rawButton"),
+      copyButton: document.getElementById("copyButton")
+    };
+
+    function cacheGet(key) {
+      try {
+        const raw = localStorage.getItem(key);
+        if (!raw) return null;
+        const payload = JSON.parse(raw);
+        if (Date.now() - payload.savedAt > CONFIG.cacheMinutes * 60 * 1000) return null;
+        return payload.value;
+      } catch {
+        return null;
+      }
+    }
+
+    function cacheSet(key, value) {
+      try {
+        localStorage.setItem(key, JSON.stringify({ savedAt: Date.now(), value }));
+      } catch {
+        // Ignore storage quota/private mode failures.
+      }
+    }
+
+    async function fetchJson(url) {
+      const response = await fetch(url, {
+        headers: { "Accept": "application/vnd.github+json" }
+      });
+      if (!response.ok) {
+        const text = await response.text().catch(() => "");
+        throw new Error(`GitHub API ${response.status}: ${text || response.statusText}`);
+      }
+      return response.json();
+    }
+
+    async function fetchText(url) {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`Dosya yüklenemedi (${response.status} ${response.statusText})`);
+      return response.text();
+    }
+
+    function rawFileUrl(path) {
+      const encodedPath = path.split("/").map(encodeURIComponent).join("/");
+      return `https://raw.githubusercontent.com/${CONFIG.owner}/${CONFIG.repo}/${encodeURIComponent(CONFIG.branch)}/${encodedPath}`;
+    }
+
+    function githubFileUrl(path) {
+      const encodedPath = path.split("/").map(encodeURIComponent).join("/");
+      return `${state.repoHtmlUrl}/blob/${encodeURIComponent(CONFIG.branch)}/${encodedPath}`;
+    }
+
+    function extensionOf(path) {
+      const name = path.split("/").pop() || "";
+      const idx = name.lastIndexOf(".");
+      return idx >= 0 ? name.slice(idx + 1).toLowerCase() : "";
+    }
+
+    function basename(path) {
+      return path.split("/").pop() || path;
+    }
+
+    function dirname(path) {
+      return path.split("/").slice(0, -1).join("/");
+    }
+
+    function normalizePath(path) {
+      return path.toLowerCase().replace(/[\s.]+/g, "_");
+    }
+
+    function cleanTitleFromFilename(path) {
+      const name = basename(path).replace(/\.[^.]+$/, "");
+      return name
+        .replace(/[_-]+/g, " ")
+        .replace(/\b(root|report|secondary|resonance|file|entry|analysis)\b/gi, m => m.toLowerCase())
+        .replace(/\s+/g, " ")
+        .trim() || basename(path);
+    }
+
+    function extractArabicRoot(path) {
+      const decoded = decodeURIComponent(path);
+      const match = decoded.match(/[\u0621-\u064A]{2,6}/);
+      return match ? match[0] : "";
+    }
+
+    function extractRootLabel(path) {
+      const arabic = extractArabicRoot(path);
+      if (arabic) return arabic;
+
+      const name = basename(path).replace(/\.[^.]+$/, "");
+      const parts = name.split(/[_\-\s]+/).filter(Boolean);
+      const skip = new Set(["root", "roots", "report", "reports", "secondary", "resonance", "analysis", "entry", "file", "json", "md"]);
+      const candidate = parts.find(part => !skip.has(part.toLowerCase()) && part.length <= 18);
+      return candidate || "";
+    }
+
+    function classifyFile(path) {
+      const p = normalizePath(path);
+      const segments = p.split("/");
+
+      const hasRoot = /(^|[_\/-])roots?([_\/-]|$)/.test(p) || p.includes("root_file") || p.includes("rootfile");
+      const hasReport = p.includes("report") || p.includes("analysis");
+      const hasSecondary = p.includes("secondary");
+      const hasResonance = p.includes("resonance");
+      const inRootsDirectory = segments.some(s => ["root", "roots", "root_dosya", "rootdosya", "entries", "lemmas"].includes(s));
+      const topLevelRootLike = !path.includes("/") && /^[\u0621-\u064A\w-]{2,32}\.(md|json|txt|tsv|csv)$/i.test(path);
+
+      if ((hasSecondary && hasResonance) || p.includes("secondary_resonance")) return "secondary-resonance";
+      if (hasRoot && hasReport) return "root-reports";
+      if (inRootsDirectory || topLevelRootLike || (hasRoot && !hasReport && !hasResonance)) return "root-dosya";
+      return "other";
+    }
+
+    function formatBytes(bytes) {
+      if (!Number.isFinite(bytes)) return "";
+      const units = ["B", "KB", "MB", "GB"];
+      let value = bytes;
+      let unit = 0;
+      while (value >= 1024 && unit < units.length - 1) {
+        value /= 1024;
+        unit += 1;
+      }
+      return `${value.toFixed(value >= 10 || unit === 0 ? 0 : 1)} ${units[unit]}`;
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function highlight(text, query) {
+      if (!query) return escapeHtml(text);
+      const safe = escapeHtml(text);
+      const tokens = query.trim().split(/\s+/).filter(Boolean).slice(0, 6);
+      if (!tokens.length) return safe;
+      let output = safe;
+      for (const token of tokens) {
+        const escaped = token.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        output = output.replace(new RegExp(`(${escaped})`, "ig"), "<mark>$1</mark>");
+      }
+      return output;
+    }
+
+    function estimateReadingMinutes(text) {
+      const words = text.trim().split(/\s+/).filter(Boolean).length;
+      return Math.max(1, Math.round(words / 220));
+    }
+
+    function extractMarkdownHeading(text) {
+      const line = text.split(/\r?\n/).find(item => /^#\s+/.test(item.trim()));
+      return line ? line.replace(/^#\s+/, "").trim() : "";
+    }
+
+    function extractMarkdownDeck(text) {
+      const lines = text.split(/\r?\n/);
+      for (const line of lines) {
+        const cleaned = line.trim();
+        if (!cleaned || cleaned.startsWith("#") || cleaned.startsWith("```") || cleaned.startsWith("---")) continue;
+        if (/^[-*]\s+/.test(cleaned)) continue;
+        return cleaned.replace(/^>\s*/, "").slice(0, 260);
+      }
+      return "";
+    }
+
+    function categoryKicker(file) {
+      if (file.category === "root-dosya") return "Kök dosyası";
+      if (file.category === "root-reports") return "Kök raporu";
+      if (file.category === "secondary-resonance") return "İkincil rezonans";
+      return "Sözlük belgesi";
+    }
+
+    function isArabicHeavy(text) {
+      const arabic = (text.match(/[\u0600-\u06FF]/g) || []).length;
+      return arabic > Math.max(8, text.length * .25);
+    }
+
+    async function loadRepositoryTree(force = false) {
+      els.setupNotice.textContent = "Depo dizini yükleniyor…";
+      els.setupNotice.className = "notice";
+      const cacheKey = `dictionary-tree-${CONFIG.owner}-${CONFIG.repo}-${CONFIG.branch}-v3`;
+
+      if (!force) {
+        const cached = cacheGet(cacheKey);
+        if (cached) {
+          state.tree = cached;
+          buildFileIndex();
+          els.setupNotice.textContent = "Yerel önbellekten yüklendi. GitHub’dan güncel depo dizini almak için Yenile’ye dokun.";
+          return;
+        }
+      }
+
+      const branch = await fetchJson(`${state.repoApiUrl}/branches/${encodeURIComponent(CONFIG.branch)}`);
+      const treeSha = branch?.commit?.commit?.tree?.sha || branch?.commit?.sha;
+      if (!treeSha) throw new Error("Depo dosya ağacı SHA değeri çözülemedi.");
+
+      const tree = await fetchJson(`${state.repoApiUrl}/git/trees/${encodeURIComponent(treeSha)}?recursive=1`);
+      if (!Array.isArray(tree.tree)) throw new Error("Depo dosya ağacı yanıtı dosya içermiyordu.");
+
+      state.tree = tree.tree;
+      cacheSet(cacheKey, state.tree);
+      buildFileIndex();
+
+      if (tree.truncated) {
+        els.setupNotice.innerHTML = `<span class="warn">GitHub eksik/kısaltılmış bir dosya ağacı döndürdü.</span> Bazı dosyalar dizinde görünmeyebilir.`;
+      } else {
+        els.setupNotice.textContent = `Loaded ${state.dosya.length.toLocaleString()} served dosya from ${CONFIG.owner}/${CONFIG.repo}.`;
+      }
+    }
+
+    function buildFileIndex() {
+      state.dosya = state.tree
+        .filter(item => item && item.type === "blob" && SERVED_EXTENSIONS.has(extensionOf(item.path)))
+        .map(item => {
+          const category = classifyFile(item.path);
+          const root = extractRootLabel(item.path);
+          return {
+            path: item.path,
+            name: basename(item.path),
+            directory: dirname(item.path),
+            ext: extensionOf(item.path),
+            size: item.size,
+            sha: item.sha,
+            category,
+            root,
+            title: cleanTitleFromFilename(item.path),
+            rawUrl: rawFileUrl(item.path),
+            githubUrl: githubFileUrl(item.path)
+          };
+        })
+        .sort((a, b) => {
+          const cat = a.category.localeCompare(b.category);
+          if (cat) return cat;
+          const root = (a.root || "").localeCompare(b.root || "", undefined, { numeric: true, sensitivity: "base" });
+          if (root) return root;
+          return a.path.localeCompare(b.path, undefined, { numeric: true, sensitivity: "base" });
+        });
+
+      renderTabs();
+      renderSummary();
+      applyFilters();
+    }
+
+    function categoryLabel(id) {
+      return CONFIG.categories.find(c => c.id === id)?.label || id;
+    }
+
+    function categoryCount(id) {
+      if (id === "all") return state.dosya.length;
+      return state.dosya.filter(file => file.category === id).length;
+    }
+
+    function renderTabs() {
+      els.tabs.innerHTML = "";
+      for (const category of CONFIG.categories) {
+        const count = categoryCount(category.id);
+        const button = document.createElement("button");
+        button.className = "tab";
+        button.type = "button";
+        button.setAttribute("role", "tab");
+        button.setAttribute("aria-selected", String(state.activeCategory === category.id));
+        button.textContent = `${category.label} (${count})`;
+        button.addEventListener("click", () => {
+          state.activeCategory = category.id;
+          renderTabs();
+          applyFilters();
+        });
+        els.tabs.append(button);
+      }
+    }
+
+    function renderSummary() {
+      const cards = [
+        ["Sunulan tüm dosyalar", state.dosya.length],
+        ["Kök dosyaları", categoryCount("root-dosya")],
+        ["Kök raporları", categoryCount("root-reports")],
+        ["İkincil rezonans", categoryCount("secondary-resonance")]
+      ];
+      els.summaryGrid.innerHTML = cards.map(([label, value]) => `
+        <div class="summary-card">
+          <strong>${Number(value).toLocaleString()}</strong>
+          <span>${escapeHtml(label)}</span>
+        </div>
+      `).join("");
+    }
+
+    function applyFilters() {
+      const query = els.searchInput.value.trim().toLowerCase();
+      state.filtered = state.dosya.filter(file => {
+        if (state.activeCategory !== "all" && file.category !== state.activeCategory) return false;
+        if (!query) return true;
+        const haystack = [
+          file.path, file.name, file.directory, file.root, file.title, categoryLabel(file.category)
+        ].join(" ").toLowerCase();
+        return query.split(/\s+/).every(token => haystack.includes(token));
+      });
+
+      renderFileList();
+    }
+
+    function renderFileList() {
+      const query = els.searchInput.value.trim();
+      els.listTitle.textContent = categoryLabel(state.activeCategory);
+      els.listCount.textContent = `${state.filtered.length.toLocaleString()} gösteriliyor`;
+
+      if (!state.filtered.length) {
+        els.fileList.innerHTML = `<div class="empty">Bu filtreyle eşleşen dosya yok.</div>`;
+        return;
+      }
+
+      const fragment = document.createDocumentFragment();
+
+      for (const file of state.filtered) {
+        const row = document.createElement("button");
+        row.className = "file-row";
+        row.type = "button";
+        row.setAttribute("aria-selected", String(file.path === state.activePath));
+        row.addEventListener("click", () => openFile(file));
+
+        const icon = document.createElement("span");
+        icon.className = "file-icon";
+        icon.textContent = file.ext || "file";
+
+        const copy = document.createElement("span");
+        const title = document.createElement("span");
+        title.className = "file-title";
+        title.innerHTML = highlight(file.root ? `${file.root} · ${file.title}` : file.title, query);
+
+        const meta = document.createElement("span");
+        meta.className = "file-meta";
+        meta.innerHTML = highlight(`${categoryLabel(file.category)} · ${file.path} · ${formatBytes(file.size)}`, query);
+
+        copy.append(title, meta);
+        row.append(icon, copy);
+        fragment.append(row);
+      }
+
+      els.fileList.innerHTML = "";
+      els.fileList.append(fragment);
+    }
+
+    async function openFile(file) {
+      state.activePath = file.path;
+      renderFileList();
+
+      els.viewerLabel.textContent = categoryLabel(file.category);
+      els.githubButton.href = file.githubUrl;
+      els.rawButton.href = file.rawUrl;
+      els.githubButton.style.display = "";
+      els.rawButton.style.display = "";
+      els.copyButton.style.display = "";
+
+      els.viewerBody.classList.remove("article-mode");
+      els.viewerBody.innerHTML = `
+        <h2 class="doc-title">${escapeHtml(file.root ? `${file.root} · ${file.title}` : file.title)}</h2>
+        <p class="doc-path">${escapeHtml(file.path)} · ${formatBytes(file.size)}</p>
+        <div class="empty">Önizleme yükleniyor…</div>
+      `;
+
+      if (file.ext === "pdf") {
+        els.viewerBody.classList.remove("article-mode");
+        els.viewerBody.innerHTML = `
+          <h2 class="doc-title">${escapeHtml(file.root ? `${file.root} · ${file.title}` : file.title)}</h2>
+          <p class="doc-path">${escapeHtml(file.path)} · ${formatBytes(file.size)}</p>
+          <div class="pdf-card">
+            <h3>PDF belgesi</h3>
+            <p class="file-meta">Önizleme is gösteriliyor below when the browser supports inline PDFs. Use the buttons if the PDF does not render on iPhone.</p>
+            <div class="pdf-actions">
+              <a class="button primary" href="${file.rawUrl}" target="_blank" rel="noopener">PDF’i aç</a>
+              <a class="button" href="${file.githubUrl}" target="_blank" rel="noopener">GitHub’da göster</a>
+              <a class="button" href="${file.rawUrl}" download>PDF’i indir</a>
+            </div>
+          </div>
+          <iframe class="pdf-frame" src="${file.rawUrl}" title="${escapeHtml(file.name)}"></iframe>
+        `;
+        return;
+      }
+
+      if (Number.isFinite(file.size) && file.size > CONFIG.previewSizeLimit) {
+        els.viewerBody.innerHTML = `
+          <h2 class="doc-title">${escapeHtml(file.root ? `${file.root} · ${file.title}` : file.title)}</h2>
+          <p class="doc-path">${escapeHtml(file.path)} · ${formatBytes(file.size)}</p>
+          <div class="empty">
+            Bu dosya yerleşik önizleme sınırından büyük. Açmak için yukarıdaki Ham dosya veya GitHub düğmesini kullan.
+          </div>
+        `;
+        return;
+      }
+
+      try {
+        const text = await fetchText(file.rawUrl);
+        renderÖnizleme(file, text);
+      } catch (error) {
+        els.viewerBody.innerHTML = `
+          <h2 class="doc-title">${escapeHtml(file.root ? `${file.root} · ${file.title}` : file.title)}</h2>
+          <p class="doc-path">${escapeHtml(file.path)} · ${formatBytes(file.size)}</p>
+          <div class="empty danger">${escapeHtml(error.message)}</div>
+        `;
+      }
+    }
+
+    function renderÖnizleme(file, text) {
+      let content = "";
+      if (file.ext === "md" || file.ext === "markdown") {
+        const markdownTitle = extractMarkdownHeading(text) || (file.root ? `${file.root} · ${file.title}` : file.title);
+        const markdownDeck = extractMarkdownDeck(text);
+        const readMinutes = estimateReadingMinutes(text);
+        els.viewerBody.classList.add("article-mode");
+        els.viewerBody.innerHTML = `
+          <article class="article-shell">
+            <p class="article-kicker">${escapeHtml(categoryKicker(file))}</p>
+            <h2 class="article-title">${escapeHtml(markdownTitle)}</h2>
+            ${markdownDeck ? `<p class="article-deck">${escapeHtml(markdownDeck)}</p>` : ""}
+            <div class="article-meta">
+              <span>${escapeHtml(file.path)}</span>
+              <span>${formatBytes(file.size)}</span>
+              <span>${readMinutes} dk okuma</span>
+            </div>
+            <div class="article-body ${isArabicHeavy(text) ? "arabic" : ""}">
+              ${renderMarkdown(text)}
+            </div>
+          </article>
+        `;
+        return;
+      } else if (file.ext === "json") {
+        content = `<pre>${escapeHtml(prettyJson(text))}</pre>`;
+      } else if (file.ext === "jsonl") {
+        content = `<pre>${escapeHtml(prettyJsonl(text))}</pre>`;
+      } else if (file.ext === "csv" || file.ext === "tsv") {
+        content = renderDelimited(text, file.ext === "tsv" ? "\t" : ",");
+      } else if (file.ext === "html" || file.ext === "htm") {
+        content = `<iframe class="pdf-frame" src="${file.rawUrl}" title="${escapeHtml(file.name)}"></iframe>`;
+      } else {
+        content = `<pre class="${isArabicHeavy(text) ? "arabic" : ""}">${escapeHtml(text)}</pre>`;
+      }
+
+      els.viewerBody.classList.remove("article-mode");
+      els.viewerBody.innerHTML = `
+        <h2 class="doc-title">${escapeHtml(file.root ? `${file.root} · ${file.title}` : file.title)}</h2>
+        <p class="doc-path">${escapeHtml(file.path)} · ${formatBytes(file.size)}</p>
+        ${content}
+      `;
+    }
+
+    function prettyJson(text) {
+      try { return JSON.stringify(JSON.parse(text), null, 2); }
+      catch { return text; }
+    }
+
+    function prettyJsonl(text) {
+      const lines = text.split(/\r?\n/).filter(line => line.trim());
+      return lines.map((line, index) => {
+        try { return JSON.stringify(JSON.parse(line), null, 2); }
+        catch { return line; }
+      }).join("\n\n");
+    }
+
+    function renderDelimited(text, delimiter) {
+      const rows = parseDelimited(text, delimiter).slice(0, 250);
+      if (!satır gösteriliyor.length) return `<div class="empty">Boş tablo.</div>`;
+      const [head, ...body] = rows;
+      return `
+        <div class="rendered">
+          <p class="file-meta">İlk ${satır gösteriliyor.length.toLocaleString()} satır gösteriliyor.</p>
+          <table>
+            <thead><tr>${head.map(cell => `<th>${escapeHtml(cell)}</th>`).join("")}</tr></thead>
+            <tbody>
+              ${body.map(row => `<tr>${head.map((_, i) => `<td>${escapeHtml(row[i] || "")}</td>`).join("")}</tr>`).join("")}
+            </tbody>
+          </table>
+        </div>
+      `;
+    }
+
+    function parseDelimited(text, delimiter) {
+      if (delimiter === "\t") return text.split(/\r?\n/).filter(Boolean).map(line => line.split("\t"));
+      // Small CSV parser for quoted cells.
+      const rows = [];
+      let row = [], cell = "", quoted = false;
+      for (let i = 0; i < text.length; i++) {
+        const ch = text[i];
+        const next = text[i + 1];
+        if (ch === '"' && quoted && next === '"') { cell += '"'; i++; }
+        else if (ch === '"') quoted = !quoted;
+        else if (ch === "," && !quoted) { row.push(cell); cell = ""; }
+        else if ((ch === "\n" || ch === "\r") && !quoted) {
+          if (ch === "\r" && next === "\n") i++;
+          row.push(cell); cell = "";
+          if (row.some(v => v.length)) satır gösteriliyor.push(row);
+          row = [];
+        } else cell += ch;
+      }
+      row.push(cell);
+      if (row.some(v => v.length)) satır gösteriliyor.push(row);
+      return rows;
+    }
+
+    function renderMarkdown(text) {
+      const lines = text.split(/\r?\n/);
+      let html = "";
+      let inCode = false;
+      let listType = null;
+      let paragraph = [];
+
+      function flushParagraph() {
+        if (paragraph.length) {
+          html += `<p>${inlineMarkdown(escapeHtml(paragraph.join(" ")))}</p>`;
+          paragraph = [];
+        }
+      }
+
+      function closeList() {
+        if (listType) {
+          html += `</${listType}>`;
+          listType = null;
+        }
+      }
+
+      for (const rawLine of lines) {
+        const line = rawLine.trimEnd();
+
+        if (/^```/.test(line)) {
+          flushParagraph();
+          closeList();
+          if (inCode) {
+            html += `</code></pre>`;
+            inCode = false;
+          } else {
+            html += `<pre><code>`;
+            inCode = true;
+          }
+          continue;
+        }
+
+        if (inCode) {
+          html += escapeHtml(rawLine) + "\n";
+          continue;
+        }
+
+        if (!line.trim()) {
+          flushParagraph();
+          closeList();
+          continue;
+        }
+
+        const heading = line.match(/^(#{1,3})\s+(.+)$/);
+        if (heading) {
+          flushParagraph();
+          closeList();
+          const level = heading[1].length;
+          html += `<h${level}>${inlineMarkdown(escapeHtml(heading[2]))}</h${level}>`;
+          continue;
+        }
+
+        if (/^\s*>\s+/.test(rawLine)) {
+          flushParagraph();
+          closeList();
+          html += `<blockquote>${inlineMarkdown(escapeHtml(line.replace(/^\s*>\s+/, "")))}</blockquote>`;
+          continue;
+        }
+
+        const ul = line.match(/^\s*[-*]\s+(.+)$/);
+        const ol = line.match(/^\s*\d+\.\s+(.+)$/);
+        if (ul || ol) {
+          flushParagraph();
+          const type = ul ? "ul" : "ol";
+          if (listType !== type) {
+            closeList();
+            listType = type;
+            html += `<${type}>`;
+          }
+          html += `<li>${inlineMarkdown(escapeHtml((ul || ol)[1]))}</li>`;
+          continue;
+        }
+
+        paragraph.push(line.trim());
+      }
+
+      flushParagraph();
+      closeList();
+      if (inCode) html += `</code></pre>`;
+      return html;
+    }
+
+    function inlineMarkdown(html) {
+      return html
+        .replace(/`([^`]+)`/g, "<code>$1</code>")
+        .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+        .replace(/\*([^*]+)\*/g, "<em>$1</em>")
+        .replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+    }
+
+    async function copyCurrentLink() {
+      if (!state.activePath) return;
+      const url = `${location.origin}${location.pathname}?file=${encodeURIComponent(state.activePath)}`;
+      try {
+        await navigator.clipboard.writeText(url);
+        els.copyButton.textContent = "Kopyalandı";
+        setTimeout(() => els.copyButton.textContent = "Copy link", 1200);
+      } catch {
+        prompt("Bu bağlantıyı kopyala:", url);
+      }
+    }
+
+    function openFileFromQuery() {
+      const params = new URLSearchParams(location.search);
+      const filePath = params.get("file");
+      if (!filePath) return;
+      const file = state.dosya.find(item => item.path === filePath);
+      if (file) {
+        state.activeCategory = "all";
+        renderTabs();
+        applyFilters();
+        openFile(file);
+      }
+    }
+
+    els.repoLink.href = state.repoHtmlUrl;
+    els.repoLink.textContent = `${CONFIG.owner}/${CONFIG.repo}`;
+
+    els.searchInput.addEventListener("input", applyFilters);
+    els.refreshButton.addEventListener("click", async () => {
+      try { await loadRepositoryTree(true); }
+      catch (error) {
+        els.setupNotice.innerHTML = `<span class="danger">${escapeHtml(error.message)}</span>`;
+      }
+    });
+    els.copyButton.addEventListener("click", copyCurrentLink);
+
+    (async function init() {
+      try {
+        await loadRepositoryTree(false);
+        openFileFromQuery();
+      } catch (error) {
+        els.setupNotice.innerHTML = `
+          <strong class="danger">Depo dizini yüklenemedi.</strong><br>
+          ${escapeHtml(error.message)}<br><br>
+          Deponun herkese açık olduğunu ve bu dosyanın doğru kullanıcı, depo ve dal için ayarlandığını kontrol et.
+        `;
+        els.fileList.innerHTML = `<div class="empty">Depo dizini yüklenmedi.</div>`;
+      }
+    })();
+  </script>
+</body>
+</html>
