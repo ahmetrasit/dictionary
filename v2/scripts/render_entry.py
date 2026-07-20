@@ -115,13 +115,103 @@ LABELS = {
     },
 }
 
+ENUM_LABELS = {
+    "en": {
+        "draft": "draft",
+        "reviewed": "reviewed",
+        "published": "published",
+        "monosemic": "monosemic",
+        "polysemic": "polysemic",
+        "radial": "radial",
+        "multi_branch": "multiple branches",
+        "mixed": "mixed",
+        "uncertain": "uncertain",
+        "low": "low",
+        "moderate": "moderate",
+        "high": "high",
+        "unknown": "unknown",
+        "base_definition": "base definition",
+        "corroboration": "corroboration",
+        "boundary": "boundary",
+        "derivation": "derivation",
+        "example": "example",
+        "disagreement": "disagreement",
+        "sole_attestation": "sole attestation",
+        "reading": "reading",
+        "none": "none",
+        "common": "common",
+        "specialist": "specialist",
+        "narrowing": "narrowing",
+        "broadening": "broadening",
+        "displacement": "displacement",
+        "drifted_loanword": "drifted loanword",
+        "alternative": "alternative",
+        "common_loanword": "common loanword",
+        "confusable": "confusable",
+        "recurrent_pattern": "recurrent pattern",
+        "exception": "exception",
+        "grammar": "grammar",
+        "translation_risk": "translation risk",
+        "other": "other",
+    },
+    "tr": {
+        "draft": "taslak",
+        "reviewed": "incelenmiş",
+        "published": "yayımlanmış",
+        "monosemic": "tek anlamlı",
+        "polysemic": "çok anlamlı",
+        "radial": "radyal",
+        "multi_branch": "çok dallı",
+        "mixed": "karma",
+        "uncertain": "belirsiz",
+        "low": "düşük",
+        "moderate": "orta",
+        "high": "yüksek",
+        "unknown": "bilinmiyor",
+        "base_definition": "temel tanım",
+        "corroboration": "destek",
+        "boundary": "sınır",
+        "derivation": "iştikak",
+        "example": "örnek",
+        "disagreement": "ihtilaf",
+        "sole_attestation": "tek tanıklık",
+        "reading": "okuyuş",
+        "none": "yok",
+        "common": "yaygın",
+        "specialist": "uzmanlık alanı",
+        "narrowing": "daralma",
+        "broadening": "genişleme",
+        "displacement": "yer değiştirme",
+        "drifted_loanword": "anlamı kaymış alıntı",
+        "alternative": "alternatif",
+        "common_loanword": "yaygın alıntı",
+        "confusable": "karışabilir",
+        "recurrent_pattern": "yinelenen örüntü",
+        "exception": "istisna",
+        "grammar": "dilbilgisi",
+        "translation_risk": "çeviri riski",
+        "other": "diğer",
+    },
+}
+
+
+def plain_text(value: Any) -> str:
+    text = " ".join(str(value).replace("\r", " ").replace("\n", " ").split())
+    for character in ("\\", "`", "*", "_", "{", "}", "[", "]", "<", ">", "#"):
+        text = text.replace(character, f"\\{character}")
+    return text
+
+
+def enum_label(language: str, value: str) -> str:
+    return ENUM_LABELS[language].get(value, plain_text(value.replace("_", " ")))
+
 
 def cell(value: Any) -> str:
     return str(value).replace("|", "\\|").replace("\n", "<br>")
 
 
 def codes(values: list[str]) -> str:
-    return "; ".join(f"`{cell(value)}`" for value in values)
+    return "; ".join(f"`{cell(str(value).replace('`', '&#96;'))}`" for value in values)
 
 
 def table(headers: list[str], rows: list[list[Any]]) -> list[str]:
@@ -160,25 +250,26 @@ def render_markdown(entry: dict, packet: dict) -> str:
     packet_branches = {
         (row["root_id"], row["branch_id"]): row for row in packet["branches"]
     }
-    root_text = " / ".join(roots[root_id] for root_id in entry["root_ids"])
+    root_text = " / ".join(plain_text(roots[root_id]) for root_id in entry["root_ids"])
     profile = entry["root_profile"]
     lines = [
         MARKER,
-        f"# {root_text} ({profile['transliteration']}): {label['title']}",
+        f"# {root_text} ({plain_text(profile['transliteration'])}): {label['title']}",
         "",
         f"- **{label['identity']}:** `{entry['entry_id']}`",
         f"- **{label['roots']}:** "
         + ", ".join(f"`{root_id}` (`{roots[root_id]}`)" for root_id in entry["root_ids"]),
-        f"- **{label['status']}:** `{entry['status']}`",
+        f"- **{label['status']}:** {enum_label(language, entry['status'])}",
         "",
         f"## {label['profile']}",
         "",
-        profile["summary"],
+        plain_text(profile["summary"]),
         "",
-        f"- **{label['organization']}:** `{profile['polysemy']}` / `{profile['organization']}`; "
+        f"- **{label['organization']}:** {enum_label(language, profile['polysemy'])} / "
+        f"{enum_label(language, profile['organization'])}; "
         f"{profile['branch_count']} {label['branch'].lower()}",
-        f"- **{label['collocation']}:** `{profile['collocation_weight']}`. "
-        f"{profile['collocation_note']}",
+        f"- **{label['collocation']}:** {enum_label(language, profile['collocation_weight'])}. "
+        f"{plain_text(profile['collocation_note'])}",
         "",
         f"## {label['branches']}",
         "",
@@ -189,8 +280,8 @@ def render_markdown(entry: dict, packet: dict) -> str:
         overview.append(
             [
                 f"`{branch['root_id']}/{branch['branch_id']}`",
-                f"`{frozen['branch_image_ar']}` ({branch['image_transliteration']})",
-                branch["summary"],
+                f"`{plain_text(frozen['branch_image_ar'])}` ({plain_text(branch['image_transliteration'])})",
+                plain_text(branch["summary"]),
             ]
         )
     lines.extend(table([label["branch"], label["image"], label["summary"]], overview))
@@ -201,18 +292,18 @@ def render_markdown(entry: dict, packet: dict) -> str:
         lines.extend(
             [
                 "",
-                f"## {branch['branch_id']}: {frozen['branch_image_ar']}",
+                f"## {branch['branch_id']}: {plain_text(frozen['branch_image_ar'])}",
                 "",
                 f"- **{label['identity']}:** `{branch_key}`",
-                f"- **{label['image']}:** `{frozen['branch_image_ar']}` "
-                f"({branch['image_transliteration']})",
+                f"- **{label['image']}:** `{plain_text(frozen['branch_image_ar'])}` "
+                f"({plain_text(branch['image_transliteration'])})",
                 "",
                 f"### {label['dictionary_basis']}",
                 "",
             ]
         )
         basis = branch["dictionary_basis"]
-        names = ", ".join(source["dictionary_name"] for source in basis["sources"])
+        names = ", ".join(plain_text(source["dictionary_name"]) for source in basis["sources"])
         lines.append(
             label["dictionary_basis_line"].format(
                 dictionaries=basis["dictionary_count"],
@@ -223,9 +314,9 @@ def render_markdown(entry: dict, packet: dict) -> str:
         lines.append("")
         source_rows = [
             [
-                source["dictionary_name"],
-                ", ".join(f"`{role}`" for role in source["roles"]),
-                source["contribution"],
+                plain_text(source["dictionary_name"]),
+                ", ".join(enum_label(language, role) for role in source["roles"]),
+                plain_text(source["contribution"]),
                 codes(source["source_refs"]),
             ]
             for source in basis["sources"]
@@ -238,12 +329,14 @@ def render_markdown(entry: dict, packet: dict) -> str:
         )
 
         discussion = branch["source_discussion"]
-        lines.extend(["", f"### {label['source_discussion']}", "", discussion["discussion"]])
+        lines.extend(
+            ["", f"### {label['source_discussion']}", "", plain_text(discussion["discussion"])]
+        )
         if discussion["examples"]:
             lines.extend(["", f"**{label['examples']}:**", ""])
             for example in discussion["examples"]:
                 lines.append(
-                    f"- `{example['arabic']}`: {example['note']} "
+                    f"- `{plain_text(example['arabic'])}`: {plain_text(example['note'])} "
                     f"({codes(example['source_refs'])})"
                 )
         lines.extend(["", f"**{label['disagreement']}:** "])
@@ -252,7 +345,7 @@ def render_markdown(entry: dict, packet: dict) -> str:
         else:
             disagreement = discussion["disagreement"]
             lines[-1] += (
-                f"{disagreement['summary']} ({codes(disagreement['source_refs'])})"
+                f"{plain_text(disagreement['summary'])} ({codes(disagreement['source_refs'])})"
             )
 
         lines.extend(["", f"### {label['selected']}", ""])
@@ -262,12 +355,12 @@ def render_markdown(entry: dict, packet: dict) -> str:
             selected_rows.append(
                 [
                     gloss["rank"],
-                    f"**{gloss['text']}**",
-                    f"`{gloss['loanword_status']}`",
-                    f"`{error['fit']}`",
-                    error["preserves"],
-                    f"{error['loses']} / {error['adds']}",
-                    error["collision"],
+                    f"**{plain_text(gloss['text'])}**",
+                    enum_label(language, gloss["loanword_status"]),
+                    enum_label(language, error["fit"]),
+                    plain_text(error["preserves"]),
+                    f"{plain_text(error['loses'])} / {plain_text(error['adds'])}",
+                    plain_text(error["collision"]),
                 ]
             )
         lines.extend(
@@ -291,11 +384,12 @@ def render_markdown(entry: dict, packet: dict) -> str:
             error = gloss["error_profile"]
             excluded_rows.append(
                 [
-                    f"**{gloss['text']}**",
-                    f"`{gloss['category']}`",
-                    gloss["exclusion_reason"],
-                    f"`{error['fit']}`; {error['preserves']} {error['loses']} "
-                    f"{error['adds']} {error['collision']}",
+                    f"**{plain_text(gloss['text'])}**",
+                    enum_label(language, gloss["category"]),
+                    plain_text(gloss["exclusion_reason"]),
+                    f"{enum_label(language, error['fit'])}; {plain_text(error['preserves'])} "
+                    f"{plain_text(error['loses'])} {plain_text(error['adds'])} "
+                    f"{plain_text(error['collision'])}",
                 ]
             )
         lines.extend(
@@ -311,10 +405,11 @@ def render_markdown(entry: dict, packet: dict) -> str:
             target = f"{neighbor['neighbor_root_id']}/{neighbor['neighbor_branch_id']}"
             neighbor_rows.append(
                 [
-                    f"`{neighbor['expression_ar']}` ({neighbor['expression_transliteration']}); "
-                    f"**{neighbor['gloss']}** (`{target}`)",
-                    neighbor["shared_zone"],
-                    neighbor["distinction"],
+                    f"`{plain_text(neighbor['expression_ar'])}` "
+                    f"({plain_text(neighbor['expression_transliteration'])}); "
+                    f"**{plain_text(neighbor['gloss'])}** (`{target}`)",
+                    plain_text(neighbor["shared_zone"]),
+                    plain_text(neighbor["distinction"]),
                     codes(neighbor["evidence_refs"]),
                 ]
             )
@@ -330,7 +425,8 @@ def render_markdown(entry: dict, packet: dict) -> str:
     if observations:
         for observation in observations:
             lines.append(
-                f"- **`{observation['category']}`:** {observation['statement']} "
+                f"- **{enum_label(language, observation['category'])}:** "
+                f"{plain_text(observation['statement'])} "
                 f"({codes(observation['evidence_refs'])})"
             )
     else:

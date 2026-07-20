@@ -40,6 +40,11 @@ The packet and occurrence artifact must validate before any agent task starts.
 Their hashes are frozen into the run inputs. A changed input invalidates every
 downstream fragment from that run.
 
+Production entry creation uses only the canonical packet and evidence paths
+shown here. Furuq must be a project-local database. Standalone deterministic
+scripts may inspect alternate paths, but those artifacts cannot enter the
+canonical entry workflow.
+
 ## Artifact Layout
 
 Generated evidence:
@@ -69,6 +74,8 @@ v2/entries/<language>/<root-envelope>.md
 
 `v2/output` is deterministic and replaceable. `v2/work` is resumable staging.
 `v2/entries` contains the validated authored artifact and its rendered form.
+Each branch-evidence tree is built in a sibling staging directory and swapped
+only after every package and the index have been written successfully.
 
 ## Branch Evidence Package
 
@@ -117,9 +124,11 @@ Minimal shape:
 ```
 
 The packager derives dictionary and passage counts. It includes only dictionary
-rows whose exact source handles occur in the frozen branch roster. Both `exact`
-and `variant` routes may therefore be included; root-level `no_match` rows are
-excluded.
+rows whose source handles occur in the frozen branch roster and whose route is
+`exact` or `variant`; every other route state is rejected.
+Focus branches remain visible in deterministic packages for audit, but only
+branches with `status: accepted` and `contaminated: no` may enter agent tasks or
+assembly. Any other focus state stops the entry workflow with `needs_evidence`.
 QNet candidates are discovery prompts; Furuq candidate cards contain stable
 `root_id/branch_id`, branch boundaries, and source references. When the packet
 shortlist is too narrow, the packager adds at most eight direct core-keyword
@@ -245,7 +254,7 @@ branch fragment or occurrence observation.
 | Final field | Owner |
 |---|---|
 | Schema version, entry ID, language, status | assembler |
-| Root envelope, root IDs, packet path and hash | evidence packager / assembler |
+| Root envelope, root IDs, packet, evidence-index and Furuq paths and hashes | evidence packager / assembler |
 | Root profile | root profile writer |
 | Branch root ID and branch ID | evidence packager / assembler |
 | Branch image transliteration and summary | branch writer |
@@ -281,6 +290,17 @@ run manifest is not required. An existing valid fragment is reused only when
 its `inputs_sha256` matches the current canonical task input; missing or stale
 fragments are rerun.
 
+Every agent process runs in a new read-only temporary workspace. Only files
+named by hash-bound task bindings are copied into that workspace; repository
+configuration, project rules, examples, and unrelated branches are not visible.
+Repository reads are denied by an outer `sandbox-exec` profile on macOS or a
+bubblewrap mount boundary on Linux; the run stops when neither tool is present.
+Task bindings are verified before copying, before an agent call, and again at
+assembly. Agent processes have a configurable timeout. A timeout or nonzero
+process exit is an operational failure and is not retried as an editorial
+repair. A fatal task terminates active peer processes before the coordinator
+returns failure.
+
 ## Assembly Rules
 
 `assemble_entry.py` performs a keyed merge; array position from agent output is
@@ -292,7 +312,18 @@ never used as identity.
 - The packager determines source order and immutable source fields.
 - Selected gloss order is the explicit numeric `rank`.
 - The assembler refuses missing, duplicate, extra, or wrong-language fragments.
-- Assembly writes atomically and never overwrites an unmarked authored file.
+- Assembly validates a staged JSON file before publication.
+- The coordinator stages JSON and Markdown, verifies the rendered Markdown,
+  then publishes both outputs with rollback if either replacement fails.
+- Draft generated outputs may be replaced. Reviewed, published, unreadable, or
+  unmarked outputs require the explicit `--force-entry` override.
+- Reviewed and published entries pin their occurrence and shared branch
+  evidence; prepare-only and production runs cannot replace those dependencies
+  without the same explicit override.
+- Standalone occurrence and branch-evidence generators enforce the same pin
+  guard on canonical paths. Their `--check` modes are read-only, alternate
+  output paths are unpinned, and intentional canonical replacement requires
+  the generator's explicit `--force` option.
 
 The assembler produces exactly the shape defined by
 `v2/schema/encyclopedia-entry.schema.json`.

@@ -7,15 +7,22 @@ import argparse
 import json
 import os
 import re
+import sys
 import tempfile
 import unicodedata
 from collections import Counter
 from pathlib import Path
 
-
 PROJECT = Path(__file__).resolve().parents[2]
+if str(PROJECT) not in sys.path:
+    sys.path.insert(0, str(PROJECT))
+
+from v2.scripts.output_protection import protect_pinned_entries
 MARKER = "<!-- generated-by: v2/scripts/render_occurrences.py schema=1 -->"
 FORM_KEY_FIELDS = ("lemma_ar", "surface_ar", "pos", "morph_features")
+ROOT_ID_RE = re.compile(r"root_[0-9]{6}")
+BRANCH_ID_RE = re.compile(r"B[0-9]{3}")
+ENVELOPE_RE = re.compile(r"root_[0-9]{6}(?:--root_[0-9]{6})*")
 
 FORM_HAMZA = str.maketrans(
     {
@@ -92,6 +99,8 @@ LABELS = {
         "preposition": "Preposition",
         "forms_column": "Forms",
         "refs": "Word refs",
+        "status": "Status",
+        "confidence": "Confidence",
         "unresolved": "Unresolved attachment joins",
         "unresolved_note": (
             "Unresolved rows remain visible and receive no guessed attachments."
@@ -144,6 +153,8 @@ LABELS = {
         "preposition": "Edat",
         "forms_column": "Biçimler",
         "refs": "Kelime konumları",
+        "status": "Durum",
+        "confidence": "Güven",
         "unresolved": "Çözülemeyen bağlantı eşlemeleri",
         "unresolved_note": (
             "Çözülemeyen satırlar görünür kalır ve bunlara tahminî bağlantı eklenmez."
@@ -342,7 +353,11 @@ def cell(value: object) -> str:
 
 
 def split_ids(value: str) -> list[str]:
-    return [item.strip() for item in re.split(r"[;,]", value or "") if item.strip()]
+    return [
+        item.strip()
+        for item in re.split(r"[;,]", str(value or ""))
+        if item.strip()
+    ]
 
 
 def normalize_arabic(value: str, *, drop_article: bool = False) -> str:
@@ -428,6 +443,27 @@ def validate_packet(packet: dict) -> None:
     for key in ("root_envelope_id", "root_join_key", "root_norm"):
         if not isinstance(packet.get(key), str) or not packet[key]:
             raise ValueError(f"Packet field {key!r} must be a nonempty string")
+    envelope = packet["root_envelope_id"]
+    if ENVELOPE_RE.fullmatch(envelope) is None:
+        raise ValueError(f"Invalid root envelope ID: {envelope!r}")
+    roots = packet.get("v4_roots", [])
+    if roots:
+        root_ids = [row.get("root_id", "") for row in roots]
+        if any(ROOT_ID_RE.fullmatch(root_id) is None for root_id in root_ids):
+            raise ValueError("Packet contains an invalid root ID")
+        if len(root_ids) != len(set(root_ids)):
+            raise ValueError("Packet contains duplicate root IDs")
+        if envelope != "--".join(root_ids):
+            raise ValueError("Packet root envelope does not match its root roster")
+    branch_keys = []
+    for branch in packet.get("branches", []):
+        root_id = branch.get("root_id", "")
+        branch_id = branch.get("branch_id", "")
+        if ROOT_ID_RE.fullmatch(root_id) is None or BRANCH_ID_RE.fullmatch(branch_id) is None:
+            raise ValueError(f"Packet contains an invalid branch ID: {root_id}/{branch_id}")
+        branch_keys.append((root_id, branch_id))
+    if len(branch_keys) != len(set(branch_keys)):
+        raise ValueError("Packet contains duplicate branch IDs")
     qac = packet.get("qac")
     attachments = packet.get("attachments")
     if not isinstance(qac, dict) or not isinstance(qac.get("occurrences"), list):
@@ -446,6 +482,27 @@ def validate_packet(packet: dict) -> None:
     if len(refs) != len(set(refs)):
         raise ValueError("Packet contains duplicate QAC refs")
 
+    occurrence_order = []
+    for row in qac["occurrences"]:
+        try:
+            position = tuple(
+                int(row[field])
+                for field in ("surah", "ayah", "word_index", "morpheme_index")
+            )
+        except (KeyError, TypeError, ValueError) as error:
+            raise ValueError("Packet contains an invalid QAC occurrence position") from error
+        expected_ref = ":".join(str(value) for value in position)
+        if row.get("qac_ref") != expected_ref:
+            raise ValueError(
+                f"QAC ref {row.get('qac_ref')!r} does not match occurrence position "
+                f"{expected_ref!r}"
+            )
+        if row.get("qac_word_ref") != ":".join(str(value) for value in position[:3]):
+            raise ValueError(f"QAC word ref does not match occurrence {expected_ref}")
+        occurrence_order.append(position)
+    if occurrence_order != sorted(occurrence_order):
+        raise ValueError("QAC occurrences are not in Quran order")
+
     word_refs = {
         word.get("qac_word_ref")
         for ayah in qac["ayah_contexts"]
@@ -456,6 +513,62 @@ def validate_packet(packet: dict) -> None:
     )
     if missing:
         raise ValueError(f"QAC occurrence words are absent from ayah contexts: {missing[:5]}")
+
+    context_order = []
+    context_word_refs = []
+    for ayah in qac["ayah_contexts"]:
+        try:
+            position = (int(ayah["surah"]), int(ayah["ayah"]))
+        except (KeyError, TypeError, ValueError) as error:
+            raise ValueError("Packet contains an invalid ayah context position") from error
+        if ayah.get("ref") != f"{position[0]}:{position[1]}":
+            raise ValueError(f"Ayah context ref does not match position: {ayah.get('ref')!r}")
+        context_order.append(position)
+        context_word_refs.extend(word.get("qac_word_ref") for word in ayah.get("words", []))
+    if context_order != sorted(context_order) or len(context_order) != len(set(context_order)):
+        raise ValueError("Ayah contexts are duplicated or not in Quran order")
+    if any(not ref for ref in context_word_refs) or len(context_word_refs) != len(
+        set(context_word_refs)
+    ):
+        raise ValueError("Ayah contexts contain empty or duplicate QAC word refs")
+
+    expected_summary = {
+        "morpheme_count": len(qac["occurrences"]),
+        "word_count": len({row["qac_word_ref"] for row in qac["occurrences"]}),
+        "ayah_count": len(
+            {(int(row["surah"]), int(row["ayah"])) for row in qac["occurrences"]}
+        ),
+        "surah_count": len({int(row["surah"]) for row in qac["occurrences"]}),
+    }
+    summary = qac.get("summary")
+    if not isinstance(summary, dict):
+        raise ValueError("Packet must contain qac.summary")
+    for field, expected in expected_summary.items():
+        if summary.get(field) != expected:
+            raise ValueError(
+                f"QAC summary {field} is {summary.get(field)!r}; expected {expected}"
+            )
+
+    attachment_rows = attachments["attachments"]
+    attachment_ids = [row.get("unit_id", "") for row in attachment_rows]
+    if any(not unit_id for unit_id in attachment_ids):
+        raise ValueError("Packet contains an attachment row without a unit ID")
+    if len(attachment_ids) != len(set(attachment_ids)):
+        raise ValueError("Packet contains duplicate attachment unit IDs")
+    instance_ids = []
+    referenced_attachment_ids = set()
+    for instance in attachments["noun_instances"] + attachments["verb_instances"]:
+        identity = instance.get("unit_id", "")
+        if not identity:
+            raise ValueError("Packet contains an attachment instance without a unit ID")
+        instance_ids.append(identity)
+        for field, _role in INSTANCE_ATTACHMENT_FIELDS:
+            referenced_attachment_ids.update(split_ids(instance.get(field, "")))
+    if len(instance_ids) != len(set(instance_ids)):
+        raise ValueError("Packet contains duplicate attachment instance IDs")
+    dangling = sorted(referenced_attachment_ids - set(attachment_ids))
+    if dangling:
+        raise ValueError(f"Attachment instances reference missing rows: {dangling[:5]}")
 
 
 def occurrence_unit_id(occurrence: dict) -> str:
@@ -542,6 +655,7 @@ def link_occurrences(packet: dict) -> dict[str, dict]:
                     "reason": "multiple_exact",
                     "instances": exact,
                 }
+                used.update(instance_identity(candidate) for candidate in exact)
 
         pending = [unit for unit in qac_units if unit not in links]
         compatible: dict[str, list[dict]] = {}
@@ -900,8 +1014,8 @@ def render_markdown(packet: dict, packet_path: Path, language: str) -> str:
         "",
         text["patterns_note"],
         "",
-        f"| {text['relation']} | {text['focus_role']} | {text['counterpart']} | {text['preposition']} | {text['count']} | {text['forms_column']} | {text['refs']} |",
-        "|---|---|---|---|---:|---|---|",
+        f"| {text['relation']} | {text['focus_role']} | {text['counterpart']} | {text['preposition']} | {text['status']} | {text['confidence']} | {text['count']} | {text['forms_column']} | {text['refs']} |",
+        "|---|---|---|---|---|---|---:|---|---|",
     ]
     for pattern in patterns:
         detail = pattern["detail"]
@@ -910,9 +1024,18 @@ def render_markdown(packet: dict, packet_path: Path, language: str) -> str:
         counterpart = pattern["counterpart_key"] or detail["other_unit_id"] or "?"
         if detail["other_root"]:
             counterpart += f" ({detail['other_root']})"
+        statuses = ", ".join(
+            STATUS_LABELS[language].get(value, value)
+            for value in sorted(pattern["statuses"])
+        ) or text["none"]
+        confidences = ", ".join(
+            CONFIDENCE_LABELS[language].get(value, value)
+            for value in sorted(pattern["confidences"])
+        ) or text["none"]
         lines.append(
             f"| {cell(relation)} | {cell(role)} | {cell(counterpart)} | "
-            f"{cell(detail['prep_base'] or text['none'])} | {pattern['count']} | "
+            f"{cell(detail['prep_base'] or text['none'])} | {cell(statuses)} | "
+            f"{cell(confidences)} | {pattern['count']} | "
             f"{cell(', '.join(sorted(pattern['forms'])))} | "
             f"{cell(', '.join(pattern['refs']))} |"
         )
@@ -988,6 +1111,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--language", choices=("en", "tr"), default="tr")
     parser.add_argument("--output", type=Path)
     parser.add_argument("--check", action="store_true")
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Allow replacement of canonical evidence pinned by a reviewed entry",
+    )
     return parser.parse_args(argv)
 
 
@@ -996,11 +1124,20 @@ def main(argv: list[str] | None = None) -> int:
     try:
         packet_path, packet = load_packet(PROJECT, args.root, args.packet)
         validate_packet(packet)
-        output = args.output or (
+        canonical_output = (
             PROJECT
             / "v2/output/occurrences"
             / f"{packet['root_envelope_id']}.{args.language}.md"
         )
+        output = (args.output or canonical_output).resolve()
+        if output == canonical_output.resolve():
+            protect_pinned_entries(
+                PROJECT,
+                packet["root_envelope_id"],
+                (args.language,),
+                force=args.force or args.check,
+                scope="canonical occurrence evidence",
+            )
         content = render_markdown(packet, packet_path, args.language)
         write_generated(output, content, check=args.check)
     except (OSError, ValueError, json.JSONDecodeError) as error:

@@ -8,11 +8,16 @@ import hashlib
 import json
 import re
 import sqlite3
+import sys
 from pathlib import Path
 from typing import Any
 
 
 PROJECT = Path(__file__).resolve().parents[2]
+if str(PROJECT) not in sys.path:
+    sys.path.insert(0, str(PROJECT))
+
+from v2.scripts.render_occurrences import validate_packet
 DEFAULT_SCHEMA = PROJECT / "v2/schema/encyclopedia-entry.schema.json"
 DEFAULT_FURUQ = PROJECT / "data/working/furuq_v4.sqlite"
 OCCURRENCE_MARKER = "<!-- generated-by: v2/scripts/render_occurrences.py schema=1 -->"
@@ -146,6 +151,14 @@ def structural_errors(
 
 def split_refs(value: str) -> list[str]:
     return [item.strip() for item in str(value or "").split(";") if item.strip()]
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def project_path(relative: str) -> Path:
@@ -290,6 +303,8 @@ def validate_glosses(branch: dict, path: str) -> list[str]:
                 f"{path}.glosses.selected[{index}]: a common loanword may only be rank 2"
             )
     selected_text = {row["text"].strip().casefold() for row in selected}
+    if len(selected_text) != len(selected):
+        errors.append(f"{path}.glosses.selected: gloss text must be unique")
     excluded = branch["glosses"]["excluded"]
     excluded_text = [row["text"].strip().casefold() for row in excluded]
     if len(excluded_text) != len(set(excluded_text)):
@@ -314,6 +329,7 @@ def furuq_branch(
 def validate_neighbors(
     branch: dict,
     db: sqlite3.Connection,
+    allowed_candidates: dict[tuple[str, str], set[str]],
     path: str,
 ) -> list[str]:
     errors: list[str] = []
@@ -327,6 +343,13 @@ def validate_neighbors(
         if key in seen:
             errors.append(f"{neighbor_path}: duplicate neighbor {key[0]}/{key[1]}")
         seen.add(key)
+        candidate_refs = allowed_candidates.get(key)
+        if candidate_refs is None:
+            errors.append(
+                f"{neighbor_path}: neighbor {key[0]}/{key[1]} is absent from "
+                "the focus branch evidence package"
+            )
+            continue
         row = furuq_branch(db, *key)
         if row is None:
             errors.append(f"{neighbor_path}: unknown Furuq branch {key[0]}/{key[1]}")
@@ -338,12 +361,121 @@ def validate_neighbors(
             )
             continue
         source_refs = set(split_refs(row["source_refs"]))
-        if not source_refs.intersection(neighbor["evidence_refs"]):
+        submitted_refs = set(neighbor["evidence_refs"])
+        extra_candidate_refs = sorted(submitted_refs - candidate_refs)
+        if extra_candidate_refs:
             errors.append(
-                f"{neighbor_path}.evidence_refs: no reference belongs to the neighbor's "
-                "Furuq source roster"
+                f"{neighbor_path}.evidence_refs: references are absent from the "
+                f"packaged candidate roster: {extra_candidate_refs}"
+            )
+        extra_furuq_refs = sorted(submitted_refs - source_refs)
+        if extra_furuq_refs:
+            errors.append(
+                f"{neighbor_path}.evidence_refs: references are absent from the "
+                f"neighbor's Furuq source roster: {extra_furuq_refs}"
             )
     return errors
+
+
+def evidence_candidate_map(entry: dict) -> dict[tuple[str, str], dict[tuple[str, str], set[str]]]:
+    provenance = entry["provenance"]
+    index_path = project_path(provenance["evidence_index_path"])
+    if not index_path.is_file():
+        raise ContractError(f"Missing branch evidence index: {index_path}")
+    digest = sha256_file(index_path)
+    if provenance["evidence_index_sha256"] != digest:
+        raise ContractError(
+            "Branch evidence index digest mismatch: "
+            f"expected {provenance['evidence_index_sha256']}, got {digest}"
+        )
+    index = load_json(index_path)
+    envelope = entry["root_envelope_id"]
+    expected_index_path = f"v2/output/branch_evidence/{envelope}/index.json"
+    if provenance["evidence_index_path"] != expected_index_path:
+        raise ContractError(
+            f"Branch evidence index must use canonical path {expected_index_path}"
+        )
+    if index.get("generated_by") != "v2/scripts/build_branch_evidence.py":
+        raise ContractError(f"Unrecognized branch evidence index: {index_path}")
+    if index.get("root_envelope_id") != envelope:
+        raise ContractError(
+            f"Branch evidence index envelope mismatch: expected {envelope!r}"
+        )
+    if (
+        index.get("packet_path") != provenance["packet_path"]
+        or index.get("packet_sha256") != provenance["packet_sha256"]
+        or index.get("furuq_path") != provenance["furuq_path"]
+        or index.get("furuq_sha256") != provenance["furuq_sha256"]
+    ):
+        raise ContractError("Branch evidence index provenance does not match entry")
+    if index.get("root_ids") != entry["root_ids"]:
+        raise ContractError("Branch evidence index root roster does not match entry")
+    expected_branches = [
+        (branch["root_id"], branch["branch_id"]) for branch in entry["branches"]
+    ]
+    index_branches = [
+        (row.get("root_id"), row.get("branch_id")) for row in index.get("branches", [])
+    ]
+    if index_branches != expected_branches:
+        raise ContractError("Branch evidence index roster does not match entry")
+
+    result: dict[tuple[str, str], dict[tuple[str, str], set[str]]] = {}
+    for row in index.get("branches", []):
+        package_path = (index_path.parent / row["path"]).resolve()
+        try:
+            package_path.relative_to(index_path.parent.resolve())
+        except ValueError as error:
+            raise ContractError(
+                f"Evidence package escapes index directory: {row['path']}"
+            ) from error
+        if not package_path.is_file():
+            raise ContractError(f"Missing branch evidence package: {package_path}")
+        package_digest = sha256_file(package_path)
+        if package_digest != row["sha256"]:
+            raise ContractError(
+                f"Branch evidence digest mismatch for {row['root_id']}/{row['branch_id']}"
+            )
+        package = load_json(package_path)
+        focus = (row["root_id"], row["branch_id"])
+        package_branch = package.get("branch", {})
+        if package.get("generated_by") != "v2/scripts/build_branch_evidence.py":
+            raise ContractError(f"Unrecognized branch evidence package: {package_path}")
+        if (package_branch.get("root_id"), package_branch.get("branch_id")) != focus:
+            raise ContractError(f"Branch evidence package identity mismatch: {package_path}")
+        if (
+            package_branch.get("status") != "accepted"
+            or package_branch.get("contaminated") != "no"
+        ):
+            raise ContractError(
+                "needs_evidence: focus branch is not accepted and uncontaminated: "
+                f"{focus[0]}/{focus[1]}"
+            )
+        for field in (
+            "root_envelope_id",
+            "packet_path",
+            "packet_sha256",
+            "furuq_path",
+            "furuq_sha256",
+            "qnet_path",
+            "qnet_sha256",
+        ):
+            if package.get(field) != index.get(field):
+                raise ContractError(
+                    f"Branch evidence package {field} mismatch: {package_path}"
+                )
+        if focus in result:
+            raise ContractError(f"Duplicate branch evidence package: {focus}")
+        candidates: dict[tuple[str, str], set[str]] = {}
+        for candidate in package.get("furuq_candidates", []):
+            key = (candidate["root_id"], candidate["branch_id"])
+            refs = set(split_refs(candidate.get("source_refs", "")))
+            if key in candidates:
+                raise ContractError(
+                    f"Duplicate Furuq candidate {key[0]}/{key[1]} in {package_path}"
+                )
+            candidates[key] = refs
+        result[focus] = candidates
+    return result
 
 
 def occurrence_evidence_refs(packet: dict) -> set[str]:
@@ -392,6 +524,12 @@ def validate_occurrence(entry: dict, packet: dict) -> list[str]:
             errors.append(
                 "$.occurrence_evidence.artifact_path: file lacks occurrence generator marker"
             )
+        digest = sha256_file(artifact)
+        if occurrence["artifact_sha256"] != digest:
+            errors.append(
+                "$.occurrence_evidence.artifact_sha256: expected "
+                f"{digest}, got {occurrence['artifact_sha256']}"
+            )
     allowed = occurrence_evidence_refs(packet)
     for index, observation in enumerate(occurrence["observations"]):
         unknown = sorted(set(observation["evidence_refs"]) - allowed)
@@ -407,6 +545,7 @@ def validate_semantics(
     entry: dict,
     packet: dict,
     furuq_path: Path,
+    candidate_map: dict[tuple[str, str], dict[tuple[str, str], set[str]]],
 ) -> list[str]:
     errors: list[str] = []
     language = entry["language"]
@@ -458,7 +597,10 @@ def validate_semantics(
                 )
             )
             errors.extend(validate_glosses(branch, path))
-            errors.extend(validate_neighbors(branch, db, path))
+            focus = (branch["root_id"], branch["branch_id"])
+            errors.extend(
+                validate_neighbors(branch, db, candidate_map.get(focus, {}), path)
+            )
     finally:
         db.close()
     errors.extend(validate_occurrence(entry, packet))
@@ -469,7 +611,7 @@ def validate_entry(
     entry_path: Path,
     schema_path: Path = DEFAULT_SCHEMA,
     packet_path: Path | None = None,
-    furuq_path: Path = DEFAULT_FURUQ,
+    furuq_path: Path | None = None,
 ) -> tuple[dict, dict]:
     entry = load_json(entry_path)
     schema = load_json(schema_path)
@@ -485,14 +627,34 @@ def validate_entry(
         )
     if not packet_path.is_file():
         raise ContractError(f"Missing root packet: {packet_path}")
-    digest = hashlib.sha256(packet_path.read_bytes()).hexdigest()
+    digest = sha256_file(packet_path)
     if entry["provenance"]["packet_sha256"] != digest:
         raise ContractError(
             "Packet digest mismatch: "
             f"expected {entry['provenance']['packet_sha256']}, got {digest}"
         )
     packet = load_json(packet_path)
-    errors = validate_semantics(entry, packet, furuq_path)
+    try:
+        validate_packet(packet)
+    except ValueError as error:
+        raise ContractError(f"Invalid root packet: {error}") from error
+    declared_furuq = project_path(entry["provenance"]["furuq_path"])
+    furuq_path = furuq_path.resolve() if furuq_path else declared_furuq
+    if furuq_path != declared_furuq:
+        raise ContractError(
+            f"Explicit Furuq database {furuq_path} does not match declared "
+            f"database {declared_furuq}"
+        )
+    if not furuq_path.is_file():
+        raise ContractError(f"Missing Furuq database: {furuq_path}")
+    furuq_digest = sha256_file(furuq_path)
+    if entry["provenance"]["furuq_sha256"] != furuq_digest:
+        raise ContractError(
+            "Furuq digest mismatch: "
+            f"expected {entry['provenance']['furuq_sha256']}, got {furuq_digest}"
+        )
+    candidates = evidence_candidate_map(entry)
+    errors = validate_semantics(entry, packet, furuq_path, candidates)
     if errors:
         raise ContractError("Evidence validation failed:\n- " + "\n- ".join(errors))
     return entry, packet
@@ -503,7 +665,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("entry", type=Path)
     parser.add_argument("--schema", type=Path, default=DEFAULT_SCHEMA)
     parser.add_argument("--packet", type=Path)
-    parser.add_argument("--furuq", type=Path, default=DEFAULT_FURUQ)
+    parser.add_argument("--furuq", type=Path)
     return parser.parse_args(argv)
 
 
@@ -514,7 +676,7 @@ def main(argv: list[str] | None = None) -> int:
             args.entry.resolve(),
             args.schema.resolve(),
             args.packet,
-            args.furuq.resolve(),
+            args.furuq.resolve() if args.furuq else None,
         )
     except (OSError, ContractError, sqlite3.Error) as error:
         raise SystemExit(str(error)) from error

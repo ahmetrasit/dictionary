@@ -11,6 +11,15 @@ synthesis, gloss judgments, error profiles, verified Arabic distinctions, and
 agent observations. Packet evidence is referenced by stable IDs rather than
 copied wholesale.
 
+The provenance block binds the entry to the canonical packet, branch-evidence
+index, and Furuq database with paths and SHA-256 digests. Occurrence evidence
+also carries the digest of its generated Markdown artifact. Validation rejects
+drift in any of these inputs.
+
+`generated_by: v2/scripts/assemble_entry.py` marks coordinator-produced entry
+JSON. Automatic regeneration replaces only marked drafts; other JSON requires
+an explicit force operation.
+
 ## Required Shape
 
 Each entry contains:

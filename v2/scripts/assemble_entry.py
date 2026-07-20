@@ -20,6 +20,7 @@ if str(PROJECT) not in sys.path:
 from v2.scripts.validate_entry import (
     ContractError,
     load_json,
+    split_refs,
     structural_errors,
     validate_entry,
 )
@@ -75,6 +76,36 @@ def project_relative(path: Path) -> str:
         return str(path.resolve())
 
 
+def task_bindings(value: Any) -> list[dict]:
+    result: list[dict] = []
+    if isinstance(value, dict):
+        if {"path", "sha256"}.issubset(value) and isinstance(value["path"], str):
+            result.append(value)
+        for child in value.values():
+            result.extend(task_bindings(child))
+    elif isinstance(value, list):
+        for child in value:
+            result.extend(task_bindings(child))
+    return result
+
+
+def verify_task_bindings(task: dict) -> None:
+    for item in task_bindings(task):
+        path = Path(item["path"])
+        if not path.is_absolute():
+            path = resolve_project_path(item["path"])
+        else:
+            path = path.resolve()
+        if not path.is_file():
+            raise ContractError(f"Task input is missing: {path}")
+        actual = sha256_file(path)
+        if actual != item["sha256"]:
+            raise ContractError(
+                f"Task input digest mismatch for {path}: expected "
+                f"{item['sha256']}, got {actual}"
+            )
+
+
 def validate_fragment(value: dict, role: str, path: Path) -> None:
     schema = load_json(FRAGMENT_SCHEMAS[role])
     errors = structural_errors(value, schema, schema)
@@ -94,6 +125,7 @@ def load_task_fragment(
     if not fragment_path.is_file():
         raise ContractError(f"Missing {role} fragment: {fragment_path}")
     task = load_json(task_path)
+    verify_task_bindings(task)
     if task.get("role") != role:
         raise ContractError(
             f"{task_path}: expected role {role!r}, got {task.get('role')!r}"
@@ -119,6 +151,15 @@ def load_evidence(index_path: Path) -> tuple[dict, list[tuple[dict, dict, Path]]
     index = load_json(index_path)
     if index.get("generated_by") != "v2/scripts/build_branch_evidence.py":
         raise ContractError(f"Unrecognized branch evidence index: {index_path}")
+    index_relative = project_relative(index_path)
+    expected_index = (
+        f"v2/output/branch_evidence/{index.get('root_envelope_id', '')}/index.json"
+    )
+    if index_relative != expected_index:
+        raise ContractError(
+            f"Branch evidence index must use canonical path {expected_index}: "
+            f"{index_path}"
+        )
     packet_path = resolve_project_path(index["packet_path"])
     furuq_path = resolve_project_path(index["furuq_path"])
     qnet_path = resolve_project_path(index["qnet_path"])
@@ -159,10 +200,17 @@ def load_evidence(index_path: Path) -> tuple[dict, list[tuple[dict, dict, Path]]
         branch = package.get("branch", {})
         if (branch.get("root_id"), branch.get("branch_id")) != key:
             raise ContractError(f"Branch identity mismatch in {package_path}")
+        if branch.get("status") != "accepted" or branch.get("contaminated") != "no":
+            raise ContractError(
+                "needs_evidence: focus branch is not accepted and uncontaminated: "
+                f"{key[0]}/{key[1]}"
+            )
         if package.get("packet_sha256") != index["packet_sha256"]:
             raise ContractError(f"Packet digest mismatch in {package_path}")
         if package.get("qnet_sha256") != index["qnet_sha256"]:
             raise ContractError(f"QNet digest mismatch in {package_path}")
+        if package.get("furuq_sha256") != index["furuq_sha256"]:
+            raise ContractError(f"Furuq digest mismatch in {package_path}")
         packages.append((row, package, package_path))
     return index, packages
 
@@ -192,7 +240,7 @@ def assert_task_identity(
             )
 
 
-def branch_from_fragment(package: dict, fragment: dict) -> dict:
+def branch_from_fragment(package: dict, fragment: dict, path: str) -> dict:
     branch = package["branch"]
     key = (branch["root_id"], branch["branch_id"])
     actual_key = (fragment["root_id"], fragment["branch_id"])
@@ -213,6 +261,29 @@ def branch_from_fragment(package: dict, fragment: dict) -> dict:
             f"{expected_ids}, got {actual_ids}"
         )
     annotation_by_id = {row["source_id"]: row for row in annotations}
+    candidate_refs = {
+        (row["root_id"], row["branch_id"]): set(split_refs(row.get("source_refs", "")))
+        for row in package["furuq_candidates"]
+    }
+    for neighbor in fragment["arabic_neighbor_distinctions"]:
+        neighbor_key = (
+            neighbor["neighbor_root_id"],
+            neighbor["neighbor_branch_id"],
+        )
+        allowed_refs = candidate_refs.get(neighbor_key)
+        if allowed_refs is None:
+            raise ContractError(
+                f"{path}.arabic_neighbor_distinctions: neighbor "
+                f"{neighbor_key[0]}/{neighbor_key[1]} is absent "
+                "from the branch evidence package"
+            )
+        extra_refs = sorted(set(neighbor["evidence_refs"]) - allowed_refs)
+        if extra_refs:
+            raise ContractError(
+                f"{path}.arabic_neighbor_distinctions: neighbor evidence "
+                "references are absent from the "
+                f"packaged candidate roster: {extra_refs}"
+            )
     sources = []
     for source in basis["sources"]:
         annotation = annotation_by_id[source["source_id"]]
@@ -273,7 +344,13 @@ def build_entry(
             or evidence.get("sha256") != row["sha256"]
         ):
             raise ContractError(f"Task evidence binding mismatch: {task_path}")
-        branches.append(branch_from_fragment(package, fragment))
+        branches.append(
+            branch_from_fragment(
+                package,
+                fragment,
+                f"$.branches[{len(branches)}]",
+            )
+        )
         branch_dependencies.append(
             {
                 "root_id": row["root_id"],
@@ -347,6 +424,7 @@ def build_entry(
 
     entry = {
         "schema_version": 2,
+        "generated_by": "v2/scripts/assemble_entry.py",
         "entry_id": f"{envelope}/{language}",
         "language": language,
         "status": "draft",
@@ -355,11 +433,16 @@ def build_entry(
         "provenance": {
             "packet_path": index["packet_path"],
             "packet_sha256": index["packet_sha256"],
+            "evidence_index_path": project_relative(evidence_index.resolve()),
+            "evidence_index_sha256": sha256_file(evidence_index.resolve()),
+            "furuq_path": index["furuq_path"],
+            "furuq_sha256": index["furuq_sha256"],
         },
         "root_profile": root["root_profile"],
         "branches": branches,
         "occurrence_evidence": {
             "artifact_path": occurrence_path,
+            "artifact_sha256": occurrence_binding["sha256"],
             "generator": "v2/scripts/render_occurrences.py",
             "observations": occurrence["observations"],
         },
@@ -384,10 +467,7 @@ def write_validated_entry(
     try:
         with os.fdopen(descriptor, "w", encoding="utf-8", newline="") as handle:
             handle.write(content)
-        validate_entry(
-            temporary,
-            furuq_path=resolve_project_path(index["furuq_path"]),
-        )
+        validate_entry(temporary)
         if check:
             if not output_path.is_file():
                 raise ContractError(f"Missing assembled entry: {output_path}")

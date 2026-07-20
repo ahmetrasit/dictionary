@@ -58,7 +58,7 @@ class EntrySchemaTest(unittest.TestCase):
     def test_branch_roster_and_counts_are_packet_bound(self):
         self.assert_invalid(
             lambda entry: entry["branches"].reverse(),
-            "expected exact packet roster",
+            "index roster does not match entry",
         )
         self.assert_invalid(
             lambda entry: entry["root_profile"].update({"branch_count": 4}),
@@ -134,13 +134,13 @@ class EntrySchemaTest(unittest.TestCase):
             lambda entry: entry["branches"][0]["arabic_neighbor_distinctions"][0].update(
                 {"neighbor_branch_id": "B999"}
             ),
-            "unknown Furuq branch",
+            "absent from the focus branch evidence package",
         )
         self.assert_invalid(
             lambda entry: entry["branches"][0]["arabic_neighbor_distinctions"][0].update(
                 {"evidence_refs": ["unrelated:source"]}
             ),
-            "no reference belongs to the neighbor's Furuq source roster",
+            "absent from the neighbor's Furuq source roster",
         )
 
     def test_occurrence_observations_use_real_generated_evidence(self):

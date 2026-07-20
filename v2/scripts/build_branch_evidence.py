@@ -7,6 +7,8 @@ import argparse
 import hashlib
 import json
 import os
+import re
+import shutil
 import sqlite3
 import sys
 import tempfile
@@ -19,6 +21,7 @@ if str(PROJECT) not in sys.path:
     sys.path.insert(0, str(PROJECT))
 
 from v2.scripts.render_occurrences import load_packet, validate_packet
+from v2.scripts.output_protection import protect_pinned_entries
 from v2.scripts.validate_entry import DICTIONARY_NAMES, split_refs
 
 
@@ -103,8 +106,12 @@ def dictionary_basis(
                 f"Branch {branch['root_id']}/{branch['branch_id']} source is absent "
                 f"from packet dictionary rows: {source_ref}"
             )
-        if source.get("route_status") == "no_match":
-            raise ValueError(f"Branch source cannot use a no_match row: {source_ref}")
+        route_status = source.get("route_status")
+        if route_status not in {"exact", "variant"}:
+            raise ValueError(
+                f"Branch source must use an exact or variant route, got "
+                f"{route_status!r}: {source_ref}"
+            )
         source_id = source["source_id"]
         group = grouped.setdefault(
             source_id,
@@ -274,6 +281,7 @@ def build_packages(
     furuq_path: Path,
     qnet_path: Path = DEFAULT_QNET,
 ) -> tuple[dict, dict[str, dict]]:
+    validate_packet(packet)
     packet_digest = sha256_file(packet_path)
     furuq_digest = sha256_file(furuq_path)
     if not qnet_path.is_file():
@@ -282,7 +290,11 @@ def build_packages(
     source_lookup = packet_sources(packet)
     db = sqlite3.connect(f"file:{furuq_path.resolve()}?mode=ro", uri=True)
     db.row_factory = sqlite3.Row
-    qnet_db = sqlite3.connect(f"file:{qnet_path.resolve()}?mode=ro", uri=True)
+    try:
+        qnet_db = sqlite3.connect(f"file:{qnet_path.resolve()}?mode=ro", uri=True)
+    except Exception:
+        db.close()
+        raise
     qnet_db.row_factory = sqlite3.Row
     packages: dict[str, dict] = {}
     try:
@@ -364,13 +376,90 @@ def write_packages(
     *,
     check: bool,
 ) -> None:
-    for filename, package in packages.items():
-        write_generated(
-            output_dir / "branches" / filename,
-            json_content(package),
-            check=check,
+    output_dir = output_dir.resolve()
+    expected_files = set(packages)
+    for filename in expected_files:
+        if re.fullmatch(r"root_[0-9]{6}--B[0-9]{3}\.json", filename) is None:
+            raise ValueError(f"Invalid branch evidence filename: {filename!r}")
+        target = (output_dir / "branches" / filename).resolve()
+        try:
+            target.relative_to(output_dir)
+        except ValueError as error:
+            raise ValueError(f"Branch evidence path escapes output directory: {filename}") from error
+
+    if output_dir.exists():
+        if not output_dir.is_dir():
+            raise ValueError(f"Evidence output is not a directory: {output_dir}")
+        for path in output_dir.rglob("*"):
+            if path.is_dir():
+                continue
+            relative = path.relative_to(output_dir)
+            valid_location = relative == Path("index.json") or (
+                len(relative.parts) == 2
+                and relative.parts[0] == "branches"
+                and relative.suffix == ".json"
+            )
+            if not valid_location:
+                raise ValueError(f"Refusing to replace unexpected evidence file: {path}")
+            try:
+                current = json.loads(path.read_text(encoding="utf-8"))
+            except json.JSONDecodeError as error:
+                raise ValueError(f"Refusing to replace invalid JSON: {path}") from error
+            if current.get("generated_by") != GENERATOR:
+                raise ValueError(f"Refusing to replace unmarked file: {path}")
+
+    branch_dir = output_dir / "branches"
+    extras = (
+        sorted(path for path in branch_dir.glob("*.json") if path.name not in expected_files)
+        if branch_dir.is_dir()
+        else []
+    )
+    if extras and check:
+        raise ValueError(
+            "Stale extra branch evidence files: "
+            + ", ".join(str(path) for path in extras)
         )
-    write_generated(output_dir / "index.json", json_content(index), check=check)
+
+    if check:
+        for filename, package in packages.items():
+            write_generated(
+                output_dir / "branches" / filename,
+                json_content(package),
+                check=True,
+            )
+        write_generated(output_dir / "index.json", json_content(index), check=True)
+        return
+
+    output_dir.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(
+        prefix=f".{output_dir.name}.stage.", dir=output_dir.parent
+    ) as temporary:
+        stage = Path(temporary) / output_dir.name
+        for filename, package in packages.items():
+            write_generated(
+                stage / "branches" / filename,
+                json_content(package),
+                check=False,
+            )
+        write_generated(stage / "index.json", json_content(index), check=False)
+
+        backup = Path(
+            tempfile.mkdtemp(prefix=f".{output_dir.name}.backup.", dir=output_dir.parent)
+        )
+        backup.rmdir()
+        moved_old = False
+        try:
+            if output_dir.exists():
+                os.replace(output_dir, backup)
+                moved_old = True
+            os.replace(stage, output_dir)
+        except OSError:
+            if moved_old and backup.exists() and not output_dir.exists():
+                os.replace(backup, output_dir)
+            raise
+        else:
+            if backup.exists():
+                shutil.rmtree(backup)
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -381,6 +470,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--qnet", type=Path, default=DEFAULT_QNET)
     parser.add_argument("--output-dir", type=Path)
     parser.add_argument("--check", action="store_true")
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Allow replacement of canonical evidence pinned by a reviewed entry",
+    )
     return parser.parse_args(argv)
 
 
@@ -389,15 +483,24 @@ def main(argv: list[str] | None = None) -> int:
     try:
         packet_path, packet = load_packet(PROJECT, args.root, args.packet)
         validate_packet(packet)
+        canonical_output = (
+            PROJECT / "v2/output/branch_evidence" / packet["root_envelope_id"]
+        )
+        output_dir = (args.output_dir or canonical_output).resolve()
+        if output_dir == canonical_output.resolve():
+            protect_pinned_entries(
+                PROJECT,
+                packet["root_envelope_id"],
+                ("en", "tr"),
+                force=args.force or args.check,
+                scope="canonical branch evidence",
+            )
         furuq_path = args.furuq.resolve()
         if not furuq_path.is_file():
             raise ValueError(f"Missing Furuq database: {furuq_path}")
         qnet_path = args.qnet.resolve()
         index, packages = build_packages(packet, packet_path, furuq_path, qnet_path)
-        output_dir = args.output_dir or (
-            PROJECT / "v2/output/branch_evidence" / packet["root_envelope_id"]
-        )
-        write_packages(output_dir.resolve(), index, packages, check=args.check)
+        write_packages(output_dir, index, packages, check=args.check)
     except (OSError, ValueError, json.JSONDecodeError, sqlite3.Error) as error:
         raise SystemExit(str(error)) from error
     action = "Checked" if args.check else "Wrote"

@@ -83,6 +83,8 @@ def ambiguous_packet():
             "ayah_contexts": [
                 {
                     "ref": "1:1",
+                    "surah": 1,
+                    "ayah": 1,
                     "surface_ar": "كَتَبَ كَتَبَ",
                     "words": words,
                 }
@@ -184,6 +186,15 @@ class RenderOccurrencesTest(unittest.TestCase):
         )
         self.assertTrue(all(len(link["instances"]) == 2 for link in links.values()))
 
+    def test_multiple_exact_candidates_are_not_reused_by_another_word(self):
+        packet = ambiguous_packet()
+        for instance in packet["attachments"]["verb_instances"]:
+            instance["word_unit_id"] = "q:1:1:1"
+        validate_packet(packet)
+        links = link_occurrences(packet)
+        self.assertEqual(links["q:1:1:1"]["method"], "unresolved_ambiguous")
+        self.assertEqual(links["q:1:1:2"]["method"], "no_attachment_instance")
+
     def test_generated_output_is_deterministic_and_protected(self):
         rendered = render_markdown(self.sirat, SIRAT_PACKET, "en")
         self.assertEqual(rendered, render_markdown(self.sirat, SIRAT_PACKET, "en"))
@@ -203,6 +214,31 @@ class RenderOccurrencesTest(unittest.TestCase):
         packet = copy.deepcopy(self.sirat)
         packet["qac"]["occurrences"].append(packet["qac"]["occurrences"][0])
         with self.assertRaises(ValueError):
+            validate_packet(packet)
+
+    def test_validation_rejects_dangling_and_duplicate_attachment_rows(self):
+        packet = copy.deepcopy(self.sirat)
+        instance = packet["attachments"]["noun_instances"][0]
+        instance["dependent_attachment_ids"] = "missing:attachment"
+        with self.assertRaisesRegex(ValueError, "reference missing rows"):
+            validate_packet(packet)
+
+        packet = copy.deepcopy(self.sirat)
+        packet["attachments"]["attachments"].append(
+            copy.deepcopy(packet["attachments"]["attachments"][0])
+        )
+        with self.assertRaisesRegex(ValueError, "duplicate attachment unit IDs"):
+            validate_packet(packet)
+
+    def test_validation_rejects_incorrect_census_and_unsafe_envelope(self):
+        packet = copy.deepcopy(self.sirat)
+        packet["qac"]["summary"]["word_count"] += 1
+        with self.assertRaisesRegex(ValueError, "summary word_count"):
+            validate_packet(packet)
+
+        packet = copy.deepcopy(self.sirat)
+        packet["root_envelope_id"] = "../../unsafe"
+        with self.assertRaisesRegex(ValueError, "Invalid root envelope"):
             validate_packet(packet)
 
     def test_valid_empty_occurrence_packet_renders_without_failure(self):

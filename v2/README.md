@@ -1,5 +1,12 @@
 # Encyclopedia workflow v2
 
+## Project direction
+
+All further encyclopedia workflow development and production entry runs will use
+v2. The legacy root-level workflow remains available as reference material, but
+new features and fixes belong in `v2/` unless an explicit migration dependency
+requires a legacy change.
+
 Version 2 separates deterministic data functions from agent-authored encyclopedia
 content. Each deterministic function gets its own script and generated namespace.
 
@@ -46,6 +53,27 @@ validation failures are routed to their owning role for at most two repair
 rounds. Outputs are written to `v2/entries/<language>/`, while task and fragment
 state stays under `v2/work/entry_creation/`.
 
+Each agent runs in a temporary read-only workspace containing only its
+hash-bound task inputs. The default per-process timeout is 30 minutes; change it
+with `--agent-timeout`. Operational failures stop immediately, while invalid
+agent JSON remains eligible for bounded repair.
+
+The coordinator additionally denies agent reads from the repository with
+`sandbox-exec` on macOS or bubblewrap on Linux. It stops before model execution
+when neither confinement tool is available. A fatal parallel task terminates
+the other active agent processes.
+
+Canonical entry creation accepts only the packet and evidence locations shown
+above. Existing draft outputs may be regenerated, but reviewed or published
+entries and unmarked Markdown require the explicit `--force-entry` override.
+The validated JSON and Markdown are staged together and published as a pair.
+Reviewed and published entries also protect their pinned occurrence and shared
+branch evidence during prepare-only runs. `--force-entry` is required before
+those dependencies can be regenerated.
+
+Only frozen focus branches marked `accepted` and `contaminated: no` can enter an
+agent task or assembled entry. Other branch states stop with `needs_evidence`.
+
 The deterministic functions can also run independently:
 
 ```sh
@@ -53,6 +81,11 @@ python3 v2/scripts/build_branch_evidence.py root_000858
 python3 v2/scripts/assemble_entry.py root_000858 --language tr
 python3 v2/scripts/render_entry.py v2/entries/tr/root_000858.json
 ```
+
+The standalone evidence generators apply the same reviewed/published pin guard
+when writing their canonical default paths. Use `--check` for reproducibility,
+`--output`/`--output-dir` for an unpinned alternate artifact, or explicit
+`--force` when intentionally replacing pinned canonical evidence.
 
 ## Occurrence renderer
 
@@ -87,7 +120,8 @@ python3 v2/scripts/render_occurrences.py "صراط" --language tr
 The default output is
 `v2/output/occurrences/<root-envelope>.<language>.md`. Use `--check` to verify
 that committed output still matches its packet, or `--output` to choose another
-generated file.
+generated file. Canonical output pinned by a reviewed or published entry requires
+`--force`; `--check` never mutates it.
 
 QAC supplies occurrence forms and morphology. The packet's attachment enrichment
 supplies per-instance grammar and syntactic relations. Free-prose attachment

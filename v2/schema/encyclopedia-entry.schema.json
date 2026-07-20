@@ -7,6 +7,7 @@
   "additionalProperties": false,
   "required": [
     "schema_version",
+    "generated_by",
     "entry_id",
     "language",
     "status",
@@ -19,6 +20,7 @@
   ],
   "properties": {
     "schema_version": { "const": 2 },
+    "generated_by": { "const": "v2/scripts/assemble_entry.py" },
     "entry_id": {
       "type": "string",
       "pattern": "^root_[0-9]{6}(--root_[0-9]{6})*/(en|tr)$"
@@ -77,13 +79,37 @@
     "provenance": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["packet_path", "packet_sha256"],
+      "required": [
+        "packet_path",
+        "packet_sha256",
+        "evidence_index_path",
+        "evidence_index_sha256",
+        "furuq_path",
+        "furuq_sha256"
+      ],
       "properties": {
         "packet_path": {
           "type": "string",
           "pattern": "^data/output/root_packets/root_[0-9]{6}(--root_[0-9]{6})*\\.json$"
         },
         "packet_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "evidence_index_path": {
+          "type": "string",
+          "pattern": "^v2/output/branch_evidence/root_[0-9]{6}(--root_[0-9]{6})*/index\\.json$"
+        },
+        "evidence_index_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "furuq_path": {
+          "type": "string",
+          "minLength": 8,
+          "maxLength": 500
+        },
+        "furuq_sha256": {
           "type": "string",
           "pattern": "^[0-9a-f]{64}$"
         }
@@ -329,11 +355,15 @@
     "occurrenceEvidence": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["artifact_path", "generator", "observations"],
+      "required": ["artifact_path", "artifact_sha256", "generator", "observations"],
       "properties": {
         "artifact_path": {
           "type": "string",
           "pattern": "^v2/output/occurrences/root_[0-9]{6}(--root_[0-9]{6})*\\.(en|tr)\\.md$"
+        },
+        "artifact_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
         },
         "generator": { "const": "v2/scripts/render_occurrences.py" },
         "observations": {
