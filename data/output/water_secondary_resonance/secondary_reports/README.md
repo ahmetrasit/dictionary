@@ -25,3 +25,12 @@ ayırmaktır.
 Kapsam, 197 farklı odak ayetini içerir. Bir ayet birden fazla su köküne ait
 olabildiği için kök raporlarındaki ayet bölümlerinin toplamı 238'dir. Aynı ayette
 aynı kökün birden fazla hedef biçimi varsa tek ayet bölümünde birlikte korunur.
+
+Her Markdown raporunun aynı adlı PDF sürümü `pdf/` dizinindedir. PDF'ler şu
+komutla yeniden üretilebilir:
+
+```bash
+python3 scripts/render_water_root_reports.py \
+  --report-dir data/output/water_secondary_resonance/secondary_reports \
+  --stylesheet data/output/water_secondary_resonance/root_reports/report.css
+```

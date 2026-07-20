@@ -21,6 +21,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--report-dir", type=Path, default=DEFAULT_REPORT_DIR)
     parser.add_argument("--output-dir", type=Path)
+    parser.add_argument("--stylesheet", type=Path)
     return parser.parse_args()
 
 
@@ -35,7 +36,7 @@ def main() -> int:
     args = parse_args()
     report_dir = args.report_dir.resolve()
     output_dir = (args.output_dir or report_dir / "pdf").resolve()
-    css_path = report_dir / "report.css"
+    css_path = (args.stylesheet or report_dir / "report.css").resolve()
 
     pandoc = require_command("pandoc")
     weasyprint = require_command("weasyprint")
@@ -63,7 +64,7 @@ def main() -> int:
             subprocess.run(
                 [
                     pandoc,
-                    "--from=gfm",
+                    "--from=gfm+hard_line_breaks",
                     "--to=html5",
                     "--standalone",
                     "--metadata=lang:tr",
