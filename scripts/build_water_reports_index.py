@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import html
 import json
+import re
 import shutil
 import subprocess
 from pathlib import Path
@@ -40,14 +41,29 @@ FAMILY_NAMES = {
     "pouring": "seccâc · bol dökülüş",
 }
 
+VERDICT_LINE = re.compile(
+    r"^\*\*.*(?:—\s*(?:A|B|C|REJECT)\s*—|reddedildi|"
+    r"aday dal yok|ikincil dal yok).*\*\*$",
+    re.IGNORECASE,
+)
+
 
 def rel(path: Path) -> str:
     return path.relative_to(REPO_ROOT).as_posix()
 
 
 def render_markdown(pandoc: str, path: Path) -> str:
+    source_lines = path.read_text(encoding="utf-8").splitlines()
+    separated_lines: list[str] = []
+    for line in source_lines:
+        if VERDICT_LINE.match(line.strip()) and separated_lines[-1:]:
+            if separated_lines[-1].strip():
+                separated_lines.append("")
+        separated_lines.append(line)
+
     result = subprocess.run(
-        [pandoc, "--from=gfm", "--to=html5", str(path)],
+        [pandoc, "--from=gfm", "--to=html5"],
+        input="\n".join(separated_lines),
         check=True,
         capture_output=True,
         text=True,
@@ -230,7 +246,7 @@ PAGE_TEMPLATE = r'''<!doctype html>
 
     .library h1 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 31px;
+      font-size: 27px;
       font-weight: 500;
       line-height: 1.06;
       margin: 8px 0 10px;
@@ -291,7 +307,7 @@ PAGE_TEMPLATE = r'''<!doctype html>
     .root-ar {
       color: var(--claret);
       font-family: "Arial Unicode MS", Arial, sans-serif;
-      font-size: 24px;
+      font-size: 21px;
       font-weight: 700;
       grid-row: 1 / span 2;
       text-align: right;
@@ -357,7 +373,7 @@ PAGE_TEMPLATE = r'''<!doctype html>
 
     .document-title {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 500;
       margin-top: 3px;
     }
@@ -372,8 +388,8 @@ PAGE_TEMPLATE = r'''<!doctype html>
 
     .reader {
       margin: 0 auto;
-      max-width: 860px;
-      padding: 54px 42px 90px;
+      max-width: 920px;
+      padding: 40px 42px 80px;
     }
 
     .reader h1,
@@ -385,36 +401,36 @@ PAGE_TEMPLATE = r'''<!doctype html>
 
     .reader h1 {
       border-bottom: 4px solid var(--orange);
-      font-size: 38px;
+      font-size: 29px;
       line-height: 1.08;
-      margin: 0 0 34px;
-      padding-bottom: 17px;
+      margin: 0 0 26px;
+      padding-bottom: 13px;
     }
 
     .reader h2 {
       border-top: 1px solid var(--rule);
       color: var(--claret);
-      font-size: 25px;
+      font-size: 20px;
       line-height: 1.18;
-      margin: 42px 0 14px;
-      padding-top: 16px;
+      margin: 34px 0 12px;
+      padding-top: 14px;
     }
 
     .reader h3 {
       color: var(--teal);
-      font-size: 19px;
-      margin: 28px 0 10px;
+      font-size: 16px;
+      margin: 24px 0 9px;
     }
 
     .reader p,
     .reader li {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: 17px;
-      line-height: 1.62;
+      font-size: 14px;
+      line-height: 1.55;
     }
 
-    .reader p { margin: 0 0 16px; }
-    .reader li { margin-bottom: 7px; }
+    .reader p { margin: 0 0 12px; }
+    .reader li { margin-bottom: 5px; }
     .reader ul, .reader ol { padding-left: 26px; }
 
     .reader strong { font-weight: 700; }
@@ -446,6 +462,59 @@ PAGE_TEMPLATE = r'''<!doctype html>
 
     .reader th { background: var(--paper-deep); }
 
+    .verdict-guide {
+      border-left: 5px solid var(--teal);
+      background: var(--paper-deep);
+      margin: 0 0 26px;
+      padding: 12px 14px;
+    }
+
+    .verdict-guide strong {
+      color: var(--claret);
+      display: block;
+      font-family: Arial, "Arial Unicode MS", sans-serif;
+      font-size: 11px;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .verdict-guide p {
+      font-family: Arial, "Arial Unicode MS", sans-serif;
+      font-size: 12px;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    .verdict-reject {
+      background: #990f3d;
+      color: #fff;
+      display: inline-block;
+      font-family: Arial, "Arial Unicode MS", sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin: 3px 2px;
+      padding: 3px 6px;
+      text-transform: uppercase;
+    }
+
+    .rejected-candidate {
+      border-left: 4px solid var(--claret);
+      background: rgba(153, 15, 61, .07);
+      padding: 7px 10px;
+    }
+
+    p.rejected-candidate { margin-bottom: 0; }
+
+    .rejected-details {
+      border-left: 4px solid var(--claret);
+      background: rgba(153, 15, 61, .07);
+      margin-top: 0;
+      padding: 2px 14px 9px 34px;
+    }
+
+    .rejection-reason { color: var(--claret); }
+
     .empty-state {
       color: var(--muted);
       font-family: Georgia, "Times New Roman", serif;
@@ -462,7 +531,7 @@ PAGE_TEMPLATE = r'''<!doctype html>
         position: static;
       }
       .library-header { padding: 22px 18px 18px; }
-      .library h1 { font-size: 28px; }
+      .library h1 { font-size: 25px; }
       .search-wrap { padding: 12px 18px; }
       .root-list {
         max-height: 330px;
@@ -478,9 +547,9 @@ PAGE_TEMPLATE = r'''<!doctype html>
       }
       .document-title { font-size: 17px; }
       .reader { padding: 34px 18px 64px; }
-      .reader h1 { font-size: 31px; }
-      .reader h2 { font-size: 23px; }
-      .reader p, .reader li { font-size: 16px; }
+      .reader h1 { font-size: 26px; }
+      .reader h2 { font-size: 19px; }
+      .reader p, .reader li { font-size: 14px; }
     }
 
     @media print {
@@ -532,6 +601,44 @@ PAGE_TEMPLATE = r'''<!doctype html>
     const sourcePath = document.getElementById('source-path');
     const defaultDocument = 'root_001458-secondary';
 
+    function decorateSecondaryVerdicts() {
+      const guide = document.createElement('aside');
+      guide.className = 'verdict-guide';
+      guide.innerHTML = `
+        <strong>Karar anahtarı</strong>
+        <p><b>A</b> güçlü, <b>B</b> destekli, <b>C</b> zayıf/keşifsel öneridir.
+        <b>REJECT</b>, ayetin veya beş ayetlik sürprizin değil, adı verilen
+        <b>ikincil kök dalı önerisinin reddedildiği</b> anlamına gelir.</p>`;
+      reader.prepend(guide);
+
+      [...reader.querySelectorAll('strong')].forEach((marker) => {
+        if (!/REJECT|reddedildi/i.test(marker.textContent)) return;
+        const candidate = marker.textContent
+          .replace(/\s*—\s*REJECT\s*—\s*reddedildi\s*/i, '')
+          .replace(/^REJECT\s*$/i, '')
+          .trim();
+        marker.textContent = candidate
+          ? `REDDEDİLEN DAL ÖNERİSİ · ${candidate}`
+          : 'İKİNCİL DAL ÖNERİSİ REDDEDİLDİ';
+        marker.classList.add('verdict-reject');
+        const candidateItem = marker.closest('li');
+        const candidateBlock = candidateItem || marker.closest('p');
+        if (candidateBlock) candidateBlock.classList.add('rejected-candidate');
+
+        let details = candidateItem;
+        if (!candidateItem && candidateBlock?.nextElementSibling?.tagName === 'UL') {
+          details = candidateBlock.nextElementSibling;
+          details.classList.add('rejected-details');
+        }
+        if (!details) return;
+        [...details.querySelectorAll('strong')].forEach((label) => {
+          if (!/^Neden bu (pencere|derece):?$/i.test(label.textContent.trim())) return;
+          label.textContent = 'Reddedilme gerekçesi:';
+          label.classList.add('rejection-reason');
+        });
+      });
+    }
+
     function showDocument(key, updateHash = true, moveFocus = true) {
       const metadata = documentMap.get(key);
       const template = document.getElementById(`doc-${key}`);
@@ -548,6 +655,7 @@ PAGE_TEMPLATE = r'''<!doctype html>
       }
 
       reader.replaceChildren(template.content.cloneNode(true));
+      if (key.endsWith('-secondary')) decorateSecondaryVerdicts();
       title.textContent = metadata.title;
       kind.textContent = metadata.kind;
       sourcePath.textContent = metadata.source;
