@@ -6,6 +6,13 @@ at surah boundaries.
 
 ## Separation
 
+- `interpretive_report.md` is the reader-facing answer to why each water word is
+  selected and what neighboring words would change.
+- `relationship_*.md` maps the participant and event arcs around the target
+  words: before-state, water event, after-state, reversals, and changes of
+  control.
+- `adjudication/` contains the complete graded candidate tables, the consolidated
+  draft, and an independent calibration audit.
 - `cohort_profiles/` records common primary-context properties without proposing
   secondary resonances.
 - `packets/` contains deterministic Arabic/QAC and branch-evidence inputs.
