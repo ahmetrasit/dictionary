@@ -1,51 +1,19 @@
 #!/usr/bin/env python3
-"""Build the self-contained water-root report reader at repository root."""
+"""Build the self-contained analyzed-root reader at repository root."""
 
 from __future__ import annotations
 
 import html
 import json
-import re
 import shutil
 import subprocess
 from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
-RUN_DIR = REPO_ROOT / "data" / "output" / "water_secondary_resonance"
-MANIFEST_PATH = RUN_DIR / "manifest.json"
-ROOT_REPORT_DIR = RUN_DIR / "root_reports"
-SECONDARY_REPORT_DIR = RUN_DIR / "secondary_reports"
+ENTRY_DIR = REPO_ROOT / "v2" / "entries" / "tr"
+ROOT_PACKET_DIR = REPO_ROOT / "data" / "output" / "root_packets"
 OUTPUT_PATH = REPO_ROOT / "index.html"
-
-FAMILY_NAMES = {
-    "water": "mâ' · su maddesi",
-    "sea": "bahr · deniz alanı",
-    "drink": "şurb · içe alma",
-    "water_give": "saky · su sağlama",
-    "drown": "ğark · boğulma",
-    "hot_water": "hamîm · kaynar su",
-    "rain": "matar · hedefe inen yağmur",
-    "great_water": "yamm · kuşatıcı su",
-    "wave": "mevc · dalga",
-    "life_rain": "ğays · rahatlatan yağmur",
-    "salty_bitter": "ucâc · tuzlu-acı su",
-    "fresh_sweet": "furât · tatlı su",
-    "torrent": "seyl · arazi akışı",
-    "downpour": "vâbil · ağır yağmur",
-    "rain_drop": "vedk · buluttan çıkan yağmur",
-    "water_arrival": "vürûd · suya varış",
-    "stale_water": "âsin · değişen su",
-    "well": "bi'r · kuyu",
-    "split_emergence": "inbicâs · kaynaktan çıkış",
-    "pouring": "seccâc · bol dökülüş",
-}
-
-VERDICT_LINE = re.compile(
-    r"^\*\*.*(?:—\s*(?:A|B|C|REJECT)\s*—|reddedildi|"
-    r"aday dal yok|ikincil dal yok).*\*\*$",
-    re.IGNORECASE,
-)
 
 
 def rel(path: Path) -> str:
@@ -53,17 +21,9 @@ def rel(path: Path) -> str:
 
 
 def render_markdown(pandoc: str, path: Path) -> str:
-    source_lines = path.read_text(encoding="utf-8").splitlines()
-    separated_lines: list[str] = []
-    for line in source_lines:
-        if VERDICT_LINE.match(line.strip()) and separated_lines[-1:]:
-            if separated_lines[-1].strip():
-                separated_lines.append("")
-        separated_lines.append(line)
-
     result = subprocess.run(
         [pandoc, "--from=gfm", "--to=html5"],
-        input="\n".join(separated_lines),
+        input=path.read_text(encoding="utf-8"),
         check=True,
         capture_output=True,
         text=True,
@@ -71,104 +31,116 @@ def render_markdown(pandoc: str, path: Path) -> str:
     return result.stdout.strip()
 
 
+def entry_label(entry: dict, packet: dict, path: Path) -> tuple[str, str, str, str]:
+    root_id = entry["root_envelope_id"]
+    root_norm = packet.get("root_norm") or " / ".join(entry.get("root_ids", [])) or root_id
+    transliteration = entry.get("root_profile", {}).get("transliteration") or ""
+    branch_count = entry.get("root_profile", {}).get("branch_count")
+    label = transliteration or root_id
+    if branch_count is not None:
+        label = f"{label} · {branch_count} dal"
+    title = (
+        f"{root_norm} ({transliteration}): ansiklopedi maddesi"
+        if transliteration
+        else f"{root_norm}: ansiklopedi maddesi"
+    )
+    search = " ".join(
+        item
+        for item in (
+            root_norm,
+            transliteration,
+            root_id,
+            path.stem,
+            entry.get("root_profile", {}).get("summary", ""),
+        )
+        if item
+    )
+    return root_norm, label, title, search
+
+
 def main() -> int:
     pandoc = shutil.which("pandoc")
     if pandoc is None:
         raise SystemExit("Required command not found: pandoc")
 
-    manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
-    families = manifest["family_stats"]
-    if len(families) != 20:
-        raise SystemExit(f"Expected 20 root families, found {len(families)}")
+    entry_paths = sorted(ENTRY_DIR.glob("root_*.md"))
+    if not entry_paths:
+        raise SystemExit(f"No analyzed root entries found: {ENTRY_DIR}")
 
     seen_roots: set[str] = set()
     rows: list[str] = []
     templates: list[str] = []
     documents: list[dict[str, str]] = []
 
-    for family in families:
-        family_id = family["family_id"]
-        root_id = family["root_packet"]
-        label_ar = family["label_ar"]
+    for entry_md in entry_paths:
+        entry_json = entry_md.with_suffix(".json")
+        if not entry_json.is_file():
+            raise SystemExit(f"Missing analyzed root JSON: {entry_json}")
+
+        entry = json.loads(entry_json.read_text(encoding="utf-8"))
+        root_id = entry["root_envelope_id"]
         if root_id in seen_roots:
-            raise SystemExit(f"Duplicate root in manifest: {root_id}")
+            raise SystemExit(f"Duplicate analyzed root entry: {root_id}")
         seen_roots.add(root_id)
 
-        root_md = ROOT_REPORT_DIR / f"{root_id}.md"
-        root_pdf = ROOT_REPORT_DIR / "pdf" / f"{root_id}.pdf"
-        secondary_md = SECONDARY_REPORT_DIR / f"{root_id}.md"
-        secondary_pdf = SECONDARY_REPORT_DIR / "pdf" / f"{root_id}.pdf"
-        for path in (root_md, root_pdf, secondary_md, secondary_pdf):
+        packet_path = ROOT_PACKET_DIR / f"{root_id}.json"
+        for path in (entry_md, entry_json, packet_path):
             if not path.is_file():
-                raise SystemExit(f"Missing report asset: {path}")
+                raise SystemExit(f"Missing analyzed root asset: {path}")
+        packet = json.loads(packet_path.read_text(encoding="utf-8"))
 
-        family_name = FAMILY_NAMES[family_id]
-        search_text = f"{label_ar} {family_name} {root_id} {family_id}"
-        root_key = f"{root_id}-root"
-        secondary_key = f"{root_id}-secondary"
-        root_title = f"{label_ar} · Kök ilişki raporu"
-        secondary_title = f"{label_ar} · Ayet bazlı ikincil rezonans"
+        root_norm, label, title, search_text = entry_label(entry, packet, entry_md)
+        entry_key = f"{root_id}-entry"
 
         rows.append(
             f"""
           <li class="root-item" data-search="{html.escape(search_text.lower())}">
             <div class="root-identity">
-              <span class="root-ar" lang="ar" dir="rtl">{html.escape(label_ar)}</span>
-              <span class="root-name">{html.escape(family_name)}</span>
+              <span class="root-ar" lang="ar" dir="rtl">{html.escape(root_norm)}</span>
+              <span class="root-name">{html.escape(label)}</span>
               <code>{html.escape(root_id)}</code>
             </div>
-            <div class="root-links" aria-label="{html.escape(label_ar)} rapor bağlantıları">
-              <a class="md-link" data-document="{root_key}" href="{html.escape(rel(root_md))}">Kök MD</a>
-              <a class="pdf-link" href="{html.escape(rel(root_pdf))}" target="_blank" rel="noopener">Kök PDF</a>
-              <a class="md-link" data-document="{secondary_key}" href="{html.escape(rel(secondary_md))}">Rezonans MD</a>
-              <a class="pdf-link" href="{html.escape(rel(secondary_pdf))}" target="_blank" rel="noopener">Rezonans PDF</a>
+            <div class="root-links" aria-label="{html.escape(root_norm)} bağlantıları">
+              <a class="md-link" data-document="{entry_key}" href="{html.escape(rel(entry_md))}">Madde</a>
+              <a href="{html.escape(rel(entry_json))}">JSON</a>
+              <a href="{html.escape(rel(packet_path))}">Paket</a>
             </div>
           </li>""".rstrip()
         )
 
-        for key, title, kind, path in (
-            (root_key, root_title, "Kök ilişki raporu", root_md),
-            (
-                secondary_key,
-                secondary_title,
-                "Ayet bazlı ikincil rezonans",
-                secondary_md,
-            ),
-        ):
-            rendered = render_markdown(pandoc, path)
-            templates.append(f'<template id="doc-{key}">\n{rendered}\n</template>')
-            documents.append(
-                {
-                    "key": key,
-                    "title": title,
-                    "kind": kind,
-                    "source": rel(path),
-                    "root": root_id,
-                }
-            )
+        rendered = render_markdown(pandoc, entry_md)
+        templates.append(f'<template id="doc-{entry_key}">\n{rendered}\n</template>')
+        documents.append(
+            {
+                "key": entry_key,
+                "title": title,
+                "kind": "Ansiklopedi maddesi",
+                "source": rel(entry_md),
+                "root": root_id,
+            }
+        )
 
     document_json = json.dumps(documents, ensure_ascii=False).replace("</", "<\\/")
     page = PAGE_TEMPLATE.replace("{{ROOT_ROWS}}", "\n".join(rows))
     page = page.replace("{{DOCUMENT_TEMPLATES}}", "\n".join(templates))
     page = page.replace("{{DOCUMENT_INDEX}}", document_json)
+    page = page.replace("{{ROOT_COUNT}}", str(len(entry_paths)))
     checks = {
         "root rows": page.count('class="root-item"'),
         "Markdown links": page.count('class="md-link"'),
-        "PDF links": page.count('class="pdf-link"'),
         "embedded documents": page.count('<template id="doc-'),
     }
     expected = {
-        "root rows": 20,
-        "Markdown links": 40,
-        "PDF links": 40,
-        "embedded documents": 40,
+        "root rows": len(entry_paths),
+        "Markdown links": len(entry_paths),
+        "embedded documents": len(entry_paths),
     }
     if checks != expected:
         raise SystemExit(f"Generated index failed count checks: {checks}")
     if "https://" in page or "http://" in page or "src=\"//" in page:
         raise SystemExit("Generated index unexpectedly depends on a remote resource")
     OUTPUT_PATH.write_text(page, encoding="utf-8")
-    print(f"Built {OUTPUT_PATH} with 20 roots and 40 embedded reports")
+    print(f"Built {OUTPUT_PATH} with {len(entry_paths)} analyzed root entries")
     return 0
 
 
@@ -179,7 +151,7 @@ PAGE_TEMPLATE = r'''<!doctype html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>Su Kökleri Okuma Arşivi</title>
+  <title>Analiz Edilmiş Kökler</title>
   <style>
     :root {
       --paper: #fff1e5;
@@ -561,15 +533,15 @@ PAGE_TEMPLATE = r'''<!doctype html>
 </head>
 <body>
   <div class="shell">
-    <aside class="library" aria-label="Su kökü raporları">
+    <aside class="library" aria-label="Analiz edilmiş kökler">
       <header class="library-header">
-        <div class="eyebrow">Kur'an su söz varlığı</div>
-        <h1>Su kökleri okuma arşivi</h1>
-        <p class="library-intro">20 kök · 40 Markdown raporu · iki ayrı okuma düzeyi</p>
+        <div class="eyebrow">Kur'an kök söz varlığı</div>
+        <h1>Analiz edilmiş kökler</h1>
+        <p class="library-intro">{{ROOT_COUNT}} kök · gömülü Markdown maddeleri</p>
       </header>
       <div class="search-wrap">
         <label for="root-search">Köklerde ara</label>
-        <input id="root-search" type="search" placeholder="ماء, bahr, root_..." autocomplete="off">
+        <input id="root-search" type="search" placeholder="ح د د, ḥ-d-d, root_..." autocomplete="off">
       </div>
       <nav aria-label="Kök listesi">
         <ul class="root-list" id="root-list">
@@ -599,7 +571,7 @@ PAGE_TEMPLATE = r'''<!doctype html>
     const title = document.getElementById('document-title');
     const kind = document.getElementById('document-kind');
     const sourcePath = document.getElementById('source-path');
-    const defaultDocument = 'root_001458-secondary';
+    const defaultDocument = documents[0]?.key;
 
     function decorateSecondaryVerdicts() {
       const guide = document.createElement('aside');
@@ -659,7 +631,7 @@ PAGE_TEMPLATE = r'''<!doctype html>
       title.textContent = metadata.title;
       kind.textContent = metadata.kind;
       sourcePath.textContent = metadata.source;
-      document.title = `${metadata.title} · Su Kökleri`;
+      document.title = `${metadata.title} · Analiz Edilmiş Kökler`;
       if (updateHash && window.location.hash !== `#${key}`) {
         history.pushState(null, '', `#${key}`);
       }
@@ -698,8 +670,10 @@ PAGE_TEMPLATE = r'''<!doctype html>
 
     const initialKey = window.location.hash.slice(1);
     if (!showDocument(initialKey, false, false)) {
-      showDocument(defaultDocument, false, false);
-      history.replaceState(null, '', `#${defaultDocument}`);
+      if (defaultDocument) {
+        showDocument(defaultDocument, false, false);
+        history.replaceState(null, '', `#${defaultDocument}`);
+      }
     }
   </script>
 </body>
