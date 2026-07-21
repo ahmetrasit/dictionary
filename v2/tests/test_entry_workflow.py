@@ -416,6 +416,10 @@ class EntryWorkflowTest(unittest.TestCase):
             stale["prompt"]["sha256"] = "0" * 64
             with self.assertRaisesRegex(ContractError, "digest mismatch"):
                 materialize_agent_task(stale, directory / "stale")
+            legacy = copy.deepcopy(task)
+            legacy["format"] = 1
+            with self.assertRaisesRegex(ContractError, "Stale or unrecognized agent task"):
+                materialize_agent_task(legacy, directory / "legacy")
 
     def test_publication_pair_rolls_back_when_second_install_fails(self):
         with tempfile.TemporaryDirectory() as temporary:

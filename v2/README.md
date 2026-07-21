@@ -10,6 +10,63 @@ requires a legacy change.
 Version 2 separates deterministic data functions from agent-authored encyclopedia
 content. Each deterministic function gets its own script and generated namespace.
 
+One comprehensive validated entry is the master record. It is projected rather
+than copied wholesale to each consumer:
+
+- translation agents receive branch boundaries, gloss candidates, and
+  preservation/loss/addition/collision notes;
+- the user dictionary receives a one-sentence definition, ranked primary glosses,
+  and the first author-ranked key distinction;
+- the scholar view receives the complete sources, neighbors, morphology,
+  occurrences, and attachments.
+
+## Current corpus checkpoint
+
+As of 2026-07-21, the repository contains 140 Turkish schema-v4 entries, all in
+`draft` status. They validate as master records, but most authored fragments were
+created under the earlier input-heavy workflow and then migrated mechanically.
+Schema validity must not be read as proof that an entry was freshly authored by
+the current minimal-input workflow.
+
+`v2/work/` is resumable local execution state, not master data or production
+provenance. Current agent tasks use task format 2 and minimal evidence format
+`dictionary-v2-agent-branch-evidence-v2`. Format-1 manifests are historical and
+are rejected; rerunning `create_entry.py` in prepare mode replaces them before
+any model call.
+
+## Transitional neighbor-network checkpoint
+
+Dictionary production can start without rebuilding the Quran-SLM global
+networks. The audited corpus-only baseline/Neo pair (10,928 cards) and combined
+Qurʾan/QAC + Furūq baseline/Neo pair (18,781 cards) both omit the same four
+currently accepted, clean focus cards:
+
+- `root_000086/B011`
+- `root_000086/B012`
+- `root_000086/B014`
+- `root_001697/B002`
+
+They are branches inside already represented QAC-attested roots, not missing
+roots or Furūq-only roots. Quran-SLM is an optional semantic nomination lane,
+not a required canonical input to the current entry-creation command, so these
+omissions must not stop initial authoring.
+
+Use QNet as a provenance-labeled discovery fallback, with the actual coverage
+kept explicit: B011 and B012 have exact frozen QNet ports; B002 has an exact
+thematic assignment in Latent Activation's comprehensive `v11` post-fix record
+but not yet in this repository's frozen QNet database; B014 has no exact QNet
+port and can use only indirect root/theme candidates. QNet never counts as a
+dictionary, an indirect candidate never becomes focus-branch evidence, and no
+QNet result may be labeled as a Quran-SLM/Neo score.
+
+After the Quran-SLM catalogs are rebuilt to 10,932 and 18,785 cards, run a
+reviewed manual enrichment pass on these four master-entry branches. Merge new
+semantic candidates by stable `(root_id, branch_id)`, verify every retained
+contrast against current Furūq boundaries, preserve the five-neighbor limit,
+reconsider which distinction belongs first in the user-dictionary projection,
+and revalidate, rerender, and reproject the entry. The full normative policy is
+in `schema/README.md`.
+
 ## Encyclopedia entry schema
 
 `schema/encyclopedia-entry.schema.json` is the canonical v2 authored-entry
@@ -64,6 +121,31 @@ python3 v2/scripts/export_jsonl.py --language tr
 
 Every line is one complete schema-v4 entry. The exporter validates all source
 bindings and rejects duplicate entry IDs or mixed languages before writing.
+
+Project one validated entry without exposing unrelated master fields:
+
+```sh
+python3 v2/scripts/project_entry.py v2/entries/tr/root_000154.json \
+  --projection user_dictionary
+```
+
+Export a bounded projection for the whole language corpus:
+
+```sh
+python3 v2/scripts/export_jsonl.py --language tr --projection translation_agent
+python3 v2/scripts/export_jsonl.py --language tr --projection user_dictionary
+python3 v2/scripts/export_jsonl.py --language tr --projection scholar_view
+```
+
+Shared Arabic evidence is reused across target languages. A new target language
+needs its own branch-writer and root-profile agent fragments because natural
+glosses and their loss, addition, and collision profiles are language-specific;
+it does not need new packets, Furūq discovery, QAC extraction, or attachment
+alignment. Consumer projections require no further model call.
+
+The current machine contracts support `en` and `tr`. Adding another language also
+requires extending the schema enums, transliteration policy, renderer labels, and
+CLI language choices before its language-specific agent pass can run.
 
 Each agent runs in a temporary read-only workspace containing only its
 hash-bound task inputs. The default per-process timeout is 30 minutes; change it

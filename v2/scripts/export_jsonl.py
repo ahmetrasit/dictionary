@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Export validated v2 entries as deterministic one-entry-per-line JSONL."""
+"""Export validated v2 master entries or bounded projections as JSONL."""
 
 from __future__ import annotations
 
@@ -16,9 +16,20 @@ if str(PROJECT) not in sys.path:
     sys.path.insert(0, str(PROJECT))
 
 from v2.scripts.validate_entry import ContractError, validate_entry
+from v2.scripts.project_entry import PROJECTIONS, project_entry
 
 
-def render_jsonl(entries_dir: Path) -> tuple[str, int]:
+EXPORT_NAMES = {
+    "master": "dictionary",
+    "translation_agent": "translation-agent",
+    "user_dictionary": "user-dictionary",
+    "scholar_view": "scholar-view",
+}
+
+
+def render_jsonl(entries_dir: Path, projection: str = "master") -> tuple[str, int]:
+    if projection not in EXPORT_NAMES:
+        raise ContractError(f"Unknown JSONL projection: {projection}")
     paths = sorted(entries_dir.glob("root_*.json"))
     entries: list[dict] = []
     seen: set[str] = set()
@@ -34,7 +45,7 @@ def render_jsonl(entries_dir: Path) -> tuple[str, int]:
             raise ContractError(
                 f"Mixed languages in JSONL export: {language} and {entry['language']}"
             )
-        entries.append(entry)
+        entries.append(entry if projection == "master" else project_entry(entry, projection))
     content = "".join(
         json.dumps(
             entry,
@@ -72,6 +83,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--language", choices=("en", "tr"), required=True)
     parser.add_argument("--entries-dir", type=Path)
     parser.add_argument("--output", type=Path)
+    parser.add_argument(
+        "--projection",
+        choices=("master", *PROJECTIONS),
+        default="master",
+        help="Bounded consumer projection; master preserves the existing full-entry export",
+    )
     parser.add_argument("--check", action="store_true")
     return parser.parse_args()
 
@@ -86,15 +103,19 @@ def main() -> int:
     output = (
         args.output.resolve()
         if args.output
+        else PROJECT
+        / "v2/output/projections"
+        / f"{EXPORT_NAMES[args.projection]}.{args.language}.jsonl"
+        if args.projection != "master"
         else PROJECT / "v2/output" / f"dictionary.{args.language}.jsonl"
     )
     try:
-        content, count = render_jsonl(entries_dir)
+        content, count = render_jsonl(entries_dir, args.projection)
         write_output(output, content, check=args.check)
     except (OSError, ContractError, sqlite3.Error) as error:
         raise SystemExit(str(error)) from error
     verb = "Checked" if args.check else "Exported"
-    print(f"{verb} {count} entries in {output}")
+    print(f"{verb} {count} {args.projection} records in {output}")
     return 0
 
 

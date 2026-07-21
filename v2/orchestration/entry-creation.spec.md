@@ -18,6 +18,8 @@ The workflow covers:
 - deterministic dictionary-source routing and lexical realizations;
 - deterministic QAC morphology, ayahs, attachment alignment, and occurrences;
 - deterministic assembly, validation, Markdown rendering, and JSONL export.
+- deterministic translation-agent, user-dictionary, and scholar projections from
+  the validated master entry.
 
 Occurrence-to-branch assignment is outside this contract. An occurrence layer
 may later choose a branch; the dictionary entry must give it enough material to
@@ -54,6 +56,9 @@ v2/work/entry_creation/<root-envelope>/<language>/fragments/root_profile.json
 v2/entries/<language>/<root-envelope>.json
 v2/entries/<language>/<root-envelope>.md
 v2/output/dictionary.<language>.jsonl
+v2/output/projections/translation-agent.<language>.jsonl
+v2/output/projections/user-dictionary.<language>.jsonl
+v2/output/projections/scholar-view.<language>.jsonl
 ```
 
 The full branch-evidence package is coordinator-only. Before a branch task is
@@ -105,6 +110,11 @@ The writer authors:
 - distinctions for the supplied neighbor roster;
 - neighbor-coverage assessment.
 
+The writer orders published neighbor distinctions by reader-facing importance.
+The first selected distinction is the key contrast used by the compact user
+dictionary projection. This ordering is authored judgment; the projection does
+not summarize or rerank neighbor prose.
+
 The fragment intentionally contains no source references, source IDs,
 dictionary annotations, lexical units, ayahs, morphology, attachments, or
 occurrence claims. The coordinator reconstructs evidence-owned fields by stable
@@ -136,6 +146,7 @@ later by the coordinator.
 | QAC forms, morphology, ayahs, and occurrence rows | coordinator |
 | Attachment-to-QAC alignment and linked attachment detail | coordinator |
 | Markdown and JSONL | deterministic renderers |
+| Consumer projection selection and master hash binding | deterministic projector |
 
 An agent response containing fields outside its schema is rejected. The
 coordinator adds `inputs_sha256` after validation; agents do not author it.
@@ -151,7 +162,8 @@ coordinator adds `inputs_sha256` after validation; agents do not author it.
 6. Add packet, QAC, ayah, morphology, and aligned-attachment data mechanically
 7. Assemble and validate schema-v4 JSON
 8. Render Markdown and verify it with --check
-9. Export validated entries as one-entry-per-line JSONL
+9. Derive bounded consumer projections from the validated master entry
+10. Export master or projected entries as one-entry-per-line JSONL
 ```
 
 Roots with more than 100 occurrences follow the same process. Their occurrence
@@ -200,6 +212,7 @@ A run is complete only when:
 4. Schema and packet-aware validation pass.
 5. Markdown is reproducible under `--check`.
 6. JSONL export validates every entry and preserves one common schema.
+7. Every consumer projection is reproducible and hash-bound to its master entry.
 
 ## Script Boundary
 
@@ -210,5 +223,23 @@ assemble_entry.py          keyed merge and deterministic evidence attachment
 validate_entry.py          schema and evidence validation
 render_occurrences.py      QAC, ayah, morphology, and attachment structures
 render_entry.py            reader-facing Markdown
-export_jsonl.py            one complete validated entry per line
+project_entry.py           bounded, master-hash-bound consumer projections
+export_jsonl.py            validated master or projection records as JSONL
 ```
+
+## Target Languages
+
+Packet construction, dictionary routing, Furūq candidate generation, QAC
+occurrences, and attachment alignment are language-neutral shared evidence. They
+may be reused for every target language and are only revalidated mechanically by
+the coordinator.
+
+Branch-writer and root-profile fragments are language-specific and must be
+authored independently for each target language. Gloss fit, loss, addition,
+collision, applicability, and natural wording cannot be copied from another
+language. Once that language's master entry validates, all three consumer
+projections are deterministic and require no additional agent call.
+
+The current contract supports English (`en`) and Turkish (`tr`). A new language
+code requires an explicit schema, transliteration-policy, renderer-label, and CLI
+extension; shared Arabic evidence still remains reusable after that extension.

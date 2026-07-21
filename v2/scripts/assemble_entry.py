@@ -31,12 +31,14 @@ FRAGMENT_SCHEMAS = {
     "branch_writer": PROJECT / "v2/schema/fragments/branch-writer.schema.json",
     "root_profile_writer": PROJECT / "v2/schema/fragments/root-profile.schema.json",
 }
+TASK_FORMAT = 2
+TASK_GENERATOR = "v2/scripts/create_entry.py"
 
 
 def agent_branch_evidence(package: dict) -> dict:
     branch = package["branch"]
     return {
-        "format": "dictionary-v2-agent-branch-evidence-v1",
+        "format": "dictionary-v2-agent-branch-evidence-v2",
         "branch": {
             "branch_id": branch["branch_id"],
             "branch_image_ar": branch["branch_image_ar"],
@@ -110,6 +112,11 @@ def task_bindings(value: Any) -> list[dict]:
 
 
 def verify_task_bindings(task: dict) -> None:
+    if task.get("format") != TASK_FORMAT or task.get("generated_by") != TASK_GENERATOR:
+        raise ContractError(
+            "Stale or unrecognized agent task; prepare it again with "
+            "v2/scripts/create_entry.py"
+        )
     for item in task_bindings(task):
         path = Path(item["path"])
         if not path.is_absolute():
@@ -245,6 +252,8 @@ def assert_task_identity(
     branch_id: str | None = None,
 ) -> None:
     expected = {
+        "format": TASK_FORMAT,
+        "generated_by": TASK_GENERATOR,
         "role": role,
         "root_envelope_id": envelope,
         "language": language,

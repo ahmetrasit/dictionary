@@ -25,6 +25,22 @@ class ExportJsonlTest(unittest.TestCase):
             self.assertEqual(len(content.splitlines()), 1)
             self.assertEqual(json.loads(content)["entry_id"], "root_000858/tr")
 
+    def test_export_can_emit_bounded_user_projection(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            entries_dir = Path(temporary) / "entries"
+            entries_dir.mkdir()
+            (entries_dir / "root_000858.json").write_text(
+                FIXTURE.read_text(encoding="utf-8"), encoding="utf-8"
+            )
+
+            content, count = render_jsonl(entries_dir, "user_dictionary")
+            projected = json.loads(content)
+
+            self.assertEqual(count, 1)
+            self.assertEqual(projected["projection"], "user_dictionary")
+            self.assertNotIn("occurrence_evidence", projected)
+            self.assertNotIn("dictionary_basis", projected["branches"][0])
+
     def test_check_detects_stale_output(self):
         with tempfile.TemporaryDirectory() as temporary:
             output = Path(temporary) / "entries.jsonl"

@@ -19,6 +19,33 @@ drift in any of these inputs.
 JSON. Automatic regeneration replaces only marked drafts; other JSON requires
 an explicit force operation.
 
+## Master Entry and Consumer Projections
+
+The validated schema-v4 JSON is the single comprehensive master entry. This
+README is its normative human contract, and `encyclopedia-entry.schema.json` is
+its machine shape. Consumer payloads are deterministic projections; they never
+become independent authored records and each carries a SHA-256 binding to its
+master entry.
+
+`v2/scripts/project_entry.py` exposes three projections:
+
+- `translation_agent`: branch identity and Arabic boundaries, the target-language
+  definition, selected and excluded gloss candidates, and each candidate's
+  preservation, loss, addition, fit, applicability, and collision notes. It omits
+  dictionary sources, Arabic-neighbor evidence, morphology, occurrences, and
+  attachments.
+- `user_dictionary`: the one-sentence semantic definition, ranked selected gloss
+  text, and one key Arabic distinction per branch. It omits source apparatus,
+  error profiles, morphology, occurrences, and attachments.
+- `scholar_view`: the complete validated entry, including full sources, neighbors,
+  lexical realizations, morphology, occurrences, and aligned attachments.
+
+The first row of `arabic_neighbor_distinctions` is the key distinction used by
+the compact user projection. Writers order the array by reader-facing importance;
+the remaining rows preserve the fuller comparison set for scholars. Entries
+authored before this ordering rule can be projected mechanically, but their first
+choice remains an editorial review target.
+
 ## Required Shape
 
 Each entry contains:
@@ -92,6 +119,49 @@ The writer assesses the complete packaged candidate roster and includes every
 materially useful distinction, up to five. A single selected neighbor requires
 an explicit `single_sufficient` rationale; migrated legacy minimum selections
 remain visibly marked until that coverage is reviewed.
+
+The candidate roster is built deterministically. It combines packet-carried QNet
+neighbors, up to eight additional cross-root branches sharing the most QNet core
+keywords, and every sibling branch in the same root envelope. Duplicate stable
+`(root_id, branch_id)` identities are merged. The additional core-overlap rows are
+ordered by shared-keyword count, then two-replicate consensus count, then stable
+IDs. A candidate is exposed to the writer only when its Furūq branch exists and
+is both `accepted` and `contaminated: no`. The writer—not the overlap query—decides
+which candidates are materially useful, authors the actual contrast, selects at
+most five, and puts the key reader distinction first.
+
+### Deferred Quran-SLM enrichment (2026-07-21)
+
+Quran-SLM is an optional semantic candidate-nomination lane. Its absence is not
+a failure of the master-entry contract, and it never replaces Furūq verification
+of a published branch distinction. The current corpus-only and combined global
+baseline/Neo catalogs omit `root_000086/B011`, `root_000086/B012`,
+`root_000086/B014`, and `root_001697/B002`. These are missing branch cards in
+already represented QAC-attested roots, not missing roots.
+
+Initial entry work proceeds without rebuilding those networks. QNet may nominate
+fallback candidates, but the fallback level must be understood correctly:
+
+- B011 and B012 have exact branch ports in the frozen QNet snapshot;
+- B002 has an exact thematic assignment in Latent Activation's comprehensive
+  `v11` post-fix record, but not in the currently frozen dictionary QNet DB;
+- B014 has no exact QNet port, so only root/theme-level indirect nomination is
+  available.
+
+An indirect QNet candidate is not evidence about the focus branch and a QNet
+score is never relabeled as Quran-SLM/Neo similarity. Every published contrast
+still resolves to an accepted, uncontaminated Furūq neighbor and uses Furūq
+branch evidence. `neighbor_coverage.assessment` describes the complete roster
+actually packaged for that authoring run; it does not claim that every optional
+future discovery network has been consulted.
+
+After the Quran-SLM rebuild, the four affected entries receive a reviewed manual
+enrichment pass. Merge candidates by stable `(root_id, branch_id)`, discard
+duplicates, retain only materially useful Furūq-verified distinctions, keep at
+most five, and reassess the authorial order because item 0 feeds the compact
+user-dictionary projection. Then revalidate the master JSON, rerender it, and
+regenerate all projections. Do not silently overwrite a reviewed or published
+entry.
 
 ## Occurrence Boundary
 

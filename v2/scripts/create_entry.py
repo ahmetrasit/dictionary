@@ -55,6 +55,7 @@ from v2.scripts.validate_entry import ContractError, load_json
 
 
 GENERATOR = "v2/scripts/create_entry.py"
+TASK_FORMAT = 2
 PROMPTS = {
     "branch_writer": PROJECT / "v2/prompts/branch-writer.md",
     "root_profile_writer": PROJECT / "v2/prompts/root-profile-writer.md",
@@ -134,6 +135,11 @@ def task_bindings(value: Any) -> list[dict]:
 
 
 def verify_task_bindings(task: dict, base_dir: Path = PROJECT) -> None:
+    if task.get("format") != TASK_FORMAT or task.get("generated_by") != GENERATOR:
+        raise ContractError(
+            "Stale or unrecognized agent task; prepare it again with "
+            "v2/scripts/create_entry.py"
+        )
     for item in task_bindings(task):
         path = binding_path(item["path"], base_dir)
         if not path.is_file():
@@ -236,7 +242,7 @@ def write_task(path: Path, task: dict) -> None:
 
 def common_task(role: str, envelope: str, language: str) -> dict:
     return {
-        "format": 1,
+        "format": TASK_FORMAT,
         "generated_by": GENERATOR,
         "role": role,
         "root_envelope_id": envelope,
