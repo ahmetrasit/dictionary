@@ -20,7 +20,7 @@ from v2.scripts.validate_entry import ContractError, project_path, validate_entr
 
 
 GENERATOR = "v2/scripts/render_entry.py"
-MARKER = f"<!-- generated-by: {GENERATOR} schema=2 -->"
+MARKER = f"<!-- generated-by: {GENERATOR} schema=4 -->"
 
 LABELS = {
     "en": {
@@ -36,6 +36,18 @@ LABELS = {
         "organization": "Organization",
         "collocation": "Collocation profile",
         "source_discussion": "Dictionary discussion",
+        "arabic_definition": "Arabic branch definition",
+        "arabic_boundary": "Arabic exclusion boundary",
+        "source_phrase": "Arabic source phrase",
+        "definition": "Semantic definition",
+        "lexical_realizations": "Lexical realizations",
+        "usage_notes": "Structured usage notes",
+        "qualifiers": "Evidence qualifiers",
+        "expression": "Arabic expression",
+        "sense": "Recorded sense",
+        "quran_form": "QAC-linked form",
+        "usage_role": "Usage role",
+        "applicability": "Applicability",
         "examples": "Main source examples",
         "disagreement": "Source disagreement",
         "no_disagreement": "No source disagreement is recorded.",
@@ -57,6 +69,7 @@ LABELS = {
         "category": "Category",
         "reason": "Why excluded",
         "neighbors": "Arabic neighbor distinctions",
+        "neighbor_coverage": "Neighbor coverage",
         "neighbor": "Arabic neighbor (link target)",
         "shared": "Shared zone",
         "distinction": "Significant distinction",
@@ -81,6 +94,18 @@ LABELS = {
         "organization": "Örgütlenme",
         "collocation": "Eşdizim profili",
         "source_discussion": "Sözlük tartışması",
+        "arabic_definition": "Arapça dal tanımı",
+        "arabic_boundary": "Arapça dışlama sınırı",
+        "source_phrase": "Arapça kaynak ifadesi",
+        "definition": "Anlam tanımı",
+        "lexical_realizations": "Sözlüksel gerçekleşmeler",
+        "usage_notes": "Yapılandırılmış kullanım notları",
+        "qualifiers": "Kanıt niteleyicileri",
+        "expression": "Arapça ifade",
+        "sense": "Kaydedilen anlam",
+        "quran_form": "QAC bağlantılı biçim",
+        "usage_role": "Kullanım rolü",
+        "applicability": "Uygulanabilirlik",
         "examples": "Ana kaynak örnekleri",
         "disagreement": "Kaynak ihtilafı",
         "no_disagreement": "Kaynaklar arasında açık bir ihtilaf kaydedilmemiştir.",
@@ -102,6 +127,7 @@ LABELS = {
         "category": "Kategori",
         "reason": "Neden elendi",
         "neighbors": "Arapça komşu ayrımları",
+        "neighbor_coverage": "Komşu kapsamı",
         "neighbor": "Arapça komşu (bağlantı hedefi)",
         "shared": "Ortak alan",
         "distinction": "Belirgin ayrım",
@@ -297,6 +323,56 @@ def render_markdown(entry: dict, packet: dict) -> str:
                 f"- **{label['identity']}:** `{branch_key}`",
                 f"- **{label['image']}:** `{plain_text(frozen['branch_image_ar'])}` "
                 f"({plain_text(branch['image_transliteration'])})",
+                f"- **{label['arabic_definition']}:** `{plain_text(branch['what_is_ar'])}`",
+                f"- **{label['arabic_boundary']}:** `{plain_text(branch['what_is_not_ar'])}`",
+                f"- **{label['source_phrase']}:** `{plain_text(branch['source_phrase_ar'])}`",
+                f"- **{label['definition']}:** "
+                f"{plain_text(branch['glosses']['semantic_definition'])}",
+                "",
+                f"### {label['lexical_realizations']}",
+                "",
+            ]
+        )
+        lexical_rows = []
+        for unit in branch["lexical_realizations"]:
+            quran_form = unit["quran_form"]
+            lexical_rows.append(
+                [
+                    f"`{plain_text(unit['expression_ar'])}`",
+                    plain_text(unit["sense_ar"]),
+                    (
+                        f"`{plain_text(quran_form['stem_ar'])}` ({plain_text(quran_form['tag'])})"
+                        if quran_form
+                        else "-"
+                    ),
+                    codes(unit["evidence_refs"]),
+                ]
+            )
+        if lexical_rows:
+            lines.extend(
+                table(
+                    [label["expression"], label["sense"], label["quran_form"], label["refs"]],
+                    lexical_rows,
+                )
+            )
+        else:
+            lines.append("-")
+        if branch["usage_notes"]:
+            lines.extend(["", f"### {label['usage_notes']}", ""])
+            for note in branch["usage_notes"]:
+                lines.append(
+                    f"- **{enum_label(language, note['kind'])}:** "
+                    f"{plain_text(note['statement'])} ({codes(note['evidence_refs'])})"
+                )
+        if branch["evidence_qualifiers"]:
+            lines.extend(["", f"### {label['qualifiers']}", ""])
+            for qualifier in branch["evidence_qualifiers"]:
+                lines.append(
+                    f"- **{enum_label(language, qualifier['type'])}:** "
+                    f"{plain_text(qualifier['statement'])} ({codes(qualifier['source_refs'])})"
+                )
+        lines.extend(
+            [
                 "",
                 f"### {label['dictionary_basis']}",
                 "",
@@ -312,21 +388,34 @@ def render_markdown(entry: dict, packet: dict) -> str:
             )
         )
         lines.append("")
-        source_rows = [
-            [
-                plain_text(source["dictionary_name"]),
-                ", ".join(enum_label(language, role) for role in source["roles"]),
-                plain_text(source["contribution"]),
-                codes(source["source_refs"]),
+        if any("roles" in source for source in basis["sources"]):
+            source_rows = [
+                [
+                    plain_text(source["dictionary_name"]),
+                    ", ".join(
+                        enum_label(language, role) for role in source.get("roles", [])
+                    ),
+                    plain_text(source.get("contribution", "-")),
+                    codes(source["source_refs"]),
+                ]
+                for source in basis["sources"]
             ]
-            for source in basis["sources"]
-        ]
-        lines.extend(
-            table(
-                [label["dictionary"], label["roles"], label["contribution"], label["refs"]],
-                source_rows,
+            lines.extend(
+                table(
+                    [label["dictionary"], label["roles"], label["contribution"], label["refs"]],
+                    source_rows,
+                )
             )
-        )
+        else:
+            lines.extend(
+                table(
+                    [label["dictionary"], label["refs"]],
+                    [
+                        [plain_text(source["dictionary_name"]), codes(source["source_refs"])]
+                        for source in basis["sources"]
+                    ],
+                )
+            )
 
         discussion = branch["source_discussion"]
         lines.extend(
@@ -357,6 +446,8 @@ def render_markdown(entry: dict, packet: dict) -> str:
                     gloss["rank"],
                     f"**{plain_text(gloss['text'])}**",
                     enum_label(language, gloss["loanword_status"]),
+                    enum_label(language, gloss["usage_role"]),
+                    plain_text(gloss["applicability"]),
                     enum_label(language, error["fit"]),
                     plain_text(error["preserves"]),
                     f"{plain_text(error['loses'])} / {plain_text(error['adds'])}",
@@ -369,6 +460,8 @@ def render_markdown(entry: dict, packet: dict) -> str:
                     label["rank"],
                     label["gloss"],
                     label["loanword"],
+                    label["usage_role"],
+                    label["applicability"],
                     label["fit"],
                     label["preserves"],
                     label["loss_addition"],
@@ -419,6 +512,16 @@ def render_markdown(entry: dict, packet: dict) -> str:
                 neighbor_rows,
             )
         )
+        coverage = branch["neighbor_coverage"]
+        lines.extend(
+            [
+                "",
+                f"**{label['neighbor_coverage']}:** "
+                f"{coverage['candidate_count']}; "
+                f"{enum_label(language, coverage['assessment'])}. "
+                f"{plain_text(coverage['note'])}",
+            ]
+        )
 
     lines.extend(["", f"## {label['occurrence_notes']}", ""])
     observations = entry["occurrence_evidence"]["observations"]
@@ -456,7 +559,9 @@ def write_rendered(path: Path, content: str, *, check: bool) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     if path.exists():
         first = path.read_text(encoding="utf-8").splitlines()[:1]
-        if first != [MARKER]:
+        if not first or not first[0].startswith(
+            f"<!-- generated-by: {GENERATOR} schema="
+        ):
             raise ContractError(f"Refusing to replace unmarked Markdown: {path}")
     descriptor, temporary_name = tempfile.mkstemp(prefix=f".{path.name}.", dir=path.parent)
     temporary = Path(temporary_name)

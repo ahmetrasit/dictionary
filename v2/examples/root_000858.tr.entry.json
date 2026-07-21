@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 4,
   "generated_by": "v2/scripts/assemble_entry.py",
   "entry_id": "root_000858/tr",
   "language": "tr",
@@ -10,9 +10,9 @@
   ],
   "provenance": {
     "packet_path": "data/output/root_packets/root_000858.json",
-    "packet_sha256": "28ec6c51de8805f7e8383deda53141e30e597c490e07ee3b424778adfe901eee",
+    "packet_sha256": "ee7d4e8f5be48c8d5200bf21290984e896a2d40fd2cb71d0c3c4a3696541ba6c",
     "evidence_index_path": "v2/output/branch_evidence/root_000858/index.json",
-    "evidence_index_sha256": "d6a6c6908a898f3892f323a0aa1ddf081f9356365f8bc93c4200e94bd2af9b14",
+    "evidence_index_sha256": "260c9c163b9e77f3b240b814d56612d8866e0137a7fedb276b05043bd9e7a76f",
     "furuq_path": "data/working/furuq_v4.sqlite",
     "furuq_sha256": "1099db0d56515d2eb3e8d72f104f2e338c2c9a8c1fa6abbb046406d3b327e722"
   },
@@ -22,8 +22,8 @@
     "polysemy": "polysemic",
     "organization": "mixed",
     "branch_count": 3,
-    "collocation_weight": "low",
-    "collocation_note": "Mevcut dal envanteri kolokasyon ağırlıklı olmaktan çok farklı biçimler ve sözlük kullanımları çevresinde düzenlenmiştir."
+    "collocation_weight": "unknown",
+    "collocation_note": "Quran oluşum verileri mekanik kanıt katmanında tutulur."
   },
   "branches": [
     {
@@ -39,22 +39,7 @@
           "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2074",
           "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1774"
         ],
-        "examples": [
-          {
-            "arabic": "الصراط والسراط والزراط: الطريق",
-            "note": "Üç ünsüz değişkesi aynı yol tanımı altında birlikte verilir.",
-            "source_refs": [
-              "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2775:headword=%D8%B5%D8%B1%D8%B7:root=%D8%B5%20%D8%B1%20%D8%B7:sha=cb37cabc31ec8035"
-            ]
-          },
-          {
-            "arabic": "الصراط: الطريق المستقيم",
-            "note": "Müfredāt yolun doğruluk niteliğini tanımın görünür parçası yapar.",
-            "source_refs": [
-              "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A850:headword=%D8%B5%D8%B1%D8%B7:root=%D8%B5%20%D8%B1%20%D8%B7:sha=a2c60739a5ace108"
-            ]
-          }
-        ],
+        "examples": [],
         "disagreement": null
       },
       "dictionary_basis": {
@@ -64,40 +49,24 @@
           {
             "source_id": "sihah",
             "dictionary_name": "al-Ṣiḥāḥ",
-            "roles": [
-              "base_definition",
-              "reading"
-            ],
             "source_refs": [
               "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2775:headword=%D8%B5%D8%B1%D8%B7:root=%D8%B5%20%D8%B1%20%D8%B7:sha=cb37cabc31ec8035"
-            ],
-            "contribution": "Yol anlamını ve ṣ, s, z ünsüz değişkelerini birlikte verir."
+            ]
           },
           {
             "source_id": "mufradat",
             "dictionary_name": "al-Mufradāt fī Gharīb al-Qurʾān",
-            "roles": [
-              "base_definition",
-              "corroboration"
-            ],
             "source_refs": [
               "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A850:headword=%D8%B5%D8%B1%D8%B7:root=%D8%B5%20%D8%B1%20%D8%B7:sha=a2c60739a5ace108"
-            ],
-            "contribution": "Yolu özellikle dosdoğru yol niteliğiyle sınırlar ve Kur'anî kullanıma yakın tanım sağlar."
+            ]
           },
           {
             "source_id": "maqayis",
             "dictionary_name": "Maqāyīs al-Lugha",
-            "roles": [
-              "corroboration",
-              "derivation",
-              "reading"
-            ],
             "source_refs": [
               "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2074",
               "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1774"
-            ],
-            "contribution": "Yol biçimini ibdāl kapsamında doğrular ve yol ile yutma arasında ileri sürülen iştikak açıklamasını aktarır."
+            ]
           }
         ]
       },
@@ -113,7 +82,9 @@
               "loses": "Kaynaklardaki daha geniş yalın yol kullanımını gerektiğinden fazla daraltabilir.",
               "adds": "Mecazî bağlamlarda fiziksel bir güzergâh çağrışımını hedef metne taşıyabilir.",
               "collision": "Sebīl ve ṭarīq gibi başka Arapça yol sözleriyle Türkçede yine kısmen çakışır."
-            }
+            },
+            "usage_role": "contextual",
+            "applicability": "Yalnız hata profilinde belirtilen daralma, genişleme ve çağrışımlar somut bağlama uyduğunda kullanılmalıdır."
           },
           {
             "rank": 2,
@@ -125,7 +96,9 @@
               "loses": "Normatif doğruluk ve yönlendiricilik boyutunu zayıflatabilir.",
               "adds": "Türkçedeki engebesiz yüzey veya yataylık çağrışımını ekleyebilir.",
               "collision": "Fiziksel düzlük ile ahlâkî veya yönsel doğruluk arasında belirsizlik yaratır."
-            }
+            },
+            "usage_role": "contextual",
+            "applicability": "Yalnız hata profilinde belirtilen daralma, genişleme ve çağrışımlar somut bağlama uyduğunda kullanılmalıdır."
           }
         ],
         "excluded": [
@@ -165,49 +138,109 @@
               "collision": "Sözlük dalını Türkçedeki dinî terimle özdeşleştirme riski taşır."
             }
           }
-        ]
+        ],
+        "semantic_definition": "صِرَاط (ṣirāṭ), سِرَاط (sirāṭ) ve زِرَاط (zirāṭ) biçimleriyle yolu, kaynaklarda özellikle dosdoğru yolu ifade eder."
       },
       "arabic_neighbor_distinctions": [
         {
           "neighbor_root_id": "root_000672",
           "neighbor_branch_id": "B001",
-          "expression_ar": "سَبِيل",
+          "expression_ar": "طريق ممتد يسلك",
           "expression_transliteration": "sebīl",
           "gloss": "uzanıp gidilen yol veya ulaştıran vasıta",
           "shared_zone": "Her iki dal da üzerinde ilerleme ve bir yere yönelme alanına girer.",
           "distinction": "Sebīl dalı bir şeye eriştiren sebep, bağlantı, çare veya vasıta uzanımını da içerir; ṣirāṭ dalının mevcut sınırı bu genel vasıta boyutunu içermez ve dosdoğru yol imgesini öne çıkarır.",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1731"
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1731",
+            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4914:headword=%D8%B3%D8%A8%D9%84:root=%D8%B3%20%D8%A8%20%D9%84:sha=c6cbea38c4a33da4",
+            "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A757%3Asubentry%3A1%3A%D8%B3%D8%A8%D9%84:headword=%D8%B3%D8%A8%D9%84:root=%D8%B3%20%D8%A8%20%D9%84:sha=e99ad6b4871f02e5",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4052:headword=%D8%B3%D8%A8%D9%84:root=%D8%B3%20%D8%A8%20%D9%84:sha=203281ad80da7ae5",
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D648%3Bsegment_index%3D102:headword=%D8%B3%D8%A8%D9%84:root=%D8%B3%20%D8%A8%20%D9%84:sha=183f7157bea7b9c5",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A664:headword=%D8%B3%D8%A8%D9%84:root=%D8%B3%20%D8%A8%20%D9%84:sha=302bc72136809613"
           ]
         },
         {
           "neighbor_root_id": "root_000932",
           "neighbor_branch_id": "B002",
-          "expression_ar": "طَرِيق",
+          "expression_ar": "المسلك الممتد",
           "expression_transliteration": "ṭarīq",
           "gloss": "güzergâh, yol veya yöntem",
           "shared_zone": "İki dal da fiziksel veya mecazî olarak izlenen bir yolu adlandırabilir.",
           "distinction": "Ṭarīq fiziksel güzergâhtan hâl, din, sünnet, grup ve tabaka gibi daha geniş uzanımlara açılır; ṣirāṭ mevcut kaynak sınırında bu yol-yöntem-tabaka ağını taşımaz.",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2254"
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2254",
+            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3218:headword=%D8%B7%D8%B1%D9%82:root=%D8%B7%20%D8%B1%20%D9%82:sha=1737f99c337c24b3",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3641:headword=%D8%B7%D8%B1%D9%82:root=%D8%B7%20%D8%B1%20%D9%82:sha=6bdc474c2e28b5cb",
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D466%3Bsegment_index%3D10:headword=%D8%B7%D8%B1%D9%82:root=%D8%B7%20%D8%B1%20%D9%82:sha=386a9d89d12eb9e4",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A919:headword=%D8%B7%D8%B1%D9%82:root=%D8%B7%20%D8%B1%20%D9%82:sha=98a9c7ee50e31f1b"
           ]
         },
         {
           "neighbor_root_id": "root_001230",
           "neighbor_branch_id": "B002",
-          "expression_ar": "قَصْد",
+          "expression_ar": "استقامة الطريق والمشي",
           "expression_transliteration": "qaṣd",
           "gloss": "yolun ve yürüyüşün düzgünlüğü",
           "shared_zone": "Her ikisi düzgün, sapmasız ilerleme tasvirine yaklaşabilir.",
           "distinction": "Qaṣd dalında odak yol adının kendisinden çok yolun, yürüyüşün veya işin düzgün ve ölçülü oluşudur; ṣirāṭ ise bu dalda doğrudan yol adıdır.",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
-            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3135:headword=%D9%82%D8%B5%D8%AF:root=%D9%82%20%D8%B5%20%D8%AF:sha=9dd84abb832dbf5c"
+            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3135:headword=%D9%82%D8%B5%D8%AF:root=%D9%82%20%D8%B5%20%D8%AF:sha=9dd84abb832dbf5c",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1390:headword=%D9%82%D8%B5%D8%AF:root=%D9%82%20%D8%B5%20%D8%AF:sha=fa0169d53dd00061",
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D463%3Bsegment_index%3D12:headword=%D9%82%D8%B5%D8%AF:root=%D9%82%20%D8%B5%20%D8%AF:sha=99fcbfa3df9df983",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1220:headword=%D9%82%D8%B5%D8%AF:root=%D9%82%20%D8%B5%20%D8%AF:sha=a97baf1fa33cec23"
           ]
         }
-      ]
+      ],
+      "usage_notes": [],
+      "evidence_qualifiers": [],
+      "neighbor_coverage": {
+        "assessment": "complete",
+        "note": "Paketlenmiş adaylar maddi ayrım bakımından değerlendirilmiş ve yararlı karşılaştırmalar kaydedilmiştir.",
+        "candidate_count": 12
+      },
+      "lexical_realizations": [
+        {
+          "lexical_unit_id": "lu_001",
+          "expression_ar": "الصراط",
+          "unit_kind": "form",
+          "sense_ar": "الطريق، وخاصة الطريق المستقيم",
+          "evidence_refs": [
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2775:headword=%D8%B5%D8%B1%D8%B7:root=%D8%B5%20%D8%B1%20%D8%B7:sha=cb37cabc31ec8035",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A850:headword=%D8%B5%D8%B1%D8%B7:root=%D8%B5%20%D8%B1%20%D8%B7:sha=a2c60739a5ace108",
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2074"
+          ],
+          "quran_form": null
+        },
+        {
+          "lexical_unit_id": "lu_002",
+          "expression_ar": "السراط",
+          "unit_kind": "form",
+          "sense_ar": "الطريق أو الطريق المستقيم",
+          "evidence_refs": [
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2775:headword=%D8%B5%D8%B1%D8%B7:root=%D8%B5%20%D8%B1%20%D8%B7:sha=cb37cabc31ec8035",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A850:headword=%D8%B5%D8%B1%D8%B7:root=%D8%B5%20%D8%B1%20%D8%B7:sha=a2c60739a5ace108",
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1774"
+          ],
+          "quran_form": null
+        },
+        {
+          "lexical_unit_id": "lu_003",
+          "expression_ar": "الزراط",
+          "unit_kind": "form",
+          "sense_ar": "الطريق",
+          "evidence_refs": [
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2775:headword=%D8%B5%D8%B1%D8%B7:root=%D8%B5%20%D8%B1%20%D8%B7:sha=cb37cabc31ec8035"
+          ],
+          "quran_form": null
+        }
+      ],
+      "branch_image_ar": "الطريق المستقيم",
+      "what_is_ar": "يدخل فيه الصراط والسراط والزراط بمعنى الطريق، وخاصة الطريق المستقيم",
+      "what_is_not_ar": "لا يدخل فيه بلع الطعام ولا السيف القاطع إلا من جهة الاشتقاق أو الاشتراك في لفظ السراط عند مقاييس",
+      "source_phrase_ar": "الصراط والسراط والزراط: الطريق (sihah)؛ الصراط: الطريق المستقيم؛ ويقال له سراط (mufradat)؛ صرط من باب الإبدال وقد ذكر في السين وهو الطريق (maqayis 2074)؛ بعض أهل العلم يقول السراط مشتق من ذلك لأن الذاهب فيه يغيب (maqayis 1774)"
     },
     {
       "root_id": "root_000858",
@@ -220,22 +253,7 @@
           "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1774",
           "maqayis:root=%D8%A7%20%D9%84%20%D8%B3%20%D8%B1%20%D8%B7%20%D9%85:headword=%D8%A7%D9%84%D8%B3%D8%B1%D8%B7%D9%85:sha=ba441fcbede715c8"
         ],
-        "examples": [
-          {
-            "arabic": "سرطت الطعام إذا بلعته لأنه إذا سرط غاب",
-            "note": "Yutma eylemi, yutulan şeyin geçiş sırasında görünmez olmasıyla açıklanır.",
-            "source_refs": [
-              "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1774"
-            ]
-          },
-          {
-            "arabic": "السرطم: الواسع الحلق",
-            "note": "Geniş boğaz türevi kökün yutma ve geçiş alanına bağlanır.",
-            "source_refs": [
-              "maqayis:root=%D8%A7%20%D9%84%20%D8%B3%20%D8%B1%20%D8%B7%20%D9%85:headword=%D8%A7%D9%84%D8%B3%D8%B1%D8%B7%D9%85:sha=ba441fcbede715c8"
-            ]
-          }
-        ],
+        "examples": [],
         "disagreement": null
       },
       "dictionary_basis": {
@@ -245,17 +263,10 @@
           {
             "source_id": "maqayis",
             "dictionary_name": "Maqāyīs al-Lugha",
-            "roles": [
-              "base_definition",
-              "derivation",
-              "example",
-              "sole_attestation"
-            ],
             "source_refs": [
               "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1774",
               "maqayis:root=%D8%A7%20%D9%84%20%D8%B3%20%D8%B1%20%D8%B7%20%D9%85:headword=%D8%A7%D9%84%D8%B3%D8%B1%D8%B7%D9%85:sha=ba441fcbede715c8"
-            ],
-            "contribution": "Geçişte kaybolma çekirdeğini, yutma örneğini ve kolay yutulma ile geniş boğaz türevlerini birlikte sağlar."
+            ]
           }
         ]
       },
@@ -271,7 +282,9 @@
               "loses": "Kolay yutulma ve geniş boğaz türevlerini tek başına bütünüyle kapsamaz.",
               "adds": "Doğal bir sözlük karşılığından çok açıklayıcı bir çözümleme görünümü ekler.",
               "collision": "Türkçedeki yerleşik tek sözcüklerle doğrudan çakışmaz fakat kullanımı ağırdır."
-            }
+            },
+            "usage_role": "general",
+            "applicability": "Dal etkin olduğunda doğrudan karşılık adayıdır; hata profilindeki kayıp ve eklemeler bağlamda denetlenmelidir."
           },
           {
             "rank": 2,
@@ -283,7 +296,9 @@
               "loses": "Geçişte kaybolma imgesini ve bağlantılı türev alanını görünmez kılar.",
               "adds": "Türkçedeki mecazî kabullenme ve sineye çekme anlamlarını çağırabilir.",
               "collision": "Balaʿa gibi başka Arapça yutma fiilleriyle hedef dilde birleşir."
-            }
+            },
+            "usage_role": "contextual",
+            "applicability": "Yalnız hata profilinde belirtilen daralma, genişleme ve çağrışımlar somut bağlama uyduğunda kullanılmalıdır."
           }
         ],
         "excluded": [
@@ -323,49 +338,106 @@
               "collision": "Türkçedeki genel kayıp kavramıyla dalı yanlış biçimde özdeşleştirir."
             }
           }
-        ]
+        ],
+        "semantic_definition": "سَرَطَ الطَّعَامَ (saraṭa'ṭ-ṭaʿām), yiyeceği geçiş sırasında gözden kaybolacak biçimde yutmayı; bağlantılı türevler kolay yutulmayı ve geniş boğazı ifade eder."
       },
       "arabic_neighbor_distinctions": [
         {
           "neighbor_root_id": "root_000150",
           "neighbor_branch_id": "B001",
-          "expression_ar": "بَلَعَ",
+          "expression_ar": "ازدراد الشيء وإدخاله في الحلق",
           "expression_transliteration": "balaʿa",
           "gloss": "yutmak veya boğaza indirmek",
           "shared_zone": "İki dal da nesnenin boğaz yoluyla içeri alınmasını anlatabilir.",
           "distinction": "Balaʿa nesneyi, suyu veya yiyeceği boğaza alma eylemini ve yutma yerini kapsar; saraṭa dalı kaynak açıklamasında geçişte kaybolma imgesini, kolay yutulmayı ve geniş boğaz türevlerini birlikte taşır.",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
-            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A845:headword=%D8%A8%D9%84%D8%B9:root=%D8%A8%20%D9%84%20%D8%B9:sha=db030454898955b2"
+            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A845:headword=%D8%A8%D9%84%D8%B9:root=%D8%A8%20%D9%84%20%D8%B9:sha=db030454898955b2",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2926:headword=%D8%A8%D9%84%D8%B9:root=%D8%A8%20%D9%84%20%D8%B9:sha=edb82f6f64c80cc9",
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D177%3Bsegment_index%3D6:headword=%D8%A8%D9%84%D8%B9:root=%D8%A8%20%D9%84%20%D8%B9:sha=99b555c9e7124388",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A144:headword=%D8%A8%D9%84%D8%B9:root=%D8%A8%20%D9%84%20%D8%B9:sha=31719b1953bef9ff",
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:323",
+            "maqayis:root=%D8%A7%20%D9%84%20%D8%A8%20%D9%84%20%D8%B9%20%D9%88%20%D9%85:headword=%D8%A7%D9%84%D8%A8%D9%84%D8%B9%D9%88%D9%85:sha=da41284b60de53d4",
+            "maqayis:root=%D8%A7%20%D9%84%20%D9%87%20%D8%A8%20%D9%84%20%D8%B9:headword=%D8%A7%D9%84%D9%87%D8%A8%D9%84%D8%B9:sha=b25bbf44dbe85764"
           ]
         },
         {
           "neighbor_root_id": "root_000761",
           "neighbor_branch_id": "B001",
-          "expression_ar": "سَاغَ",
+          "expression_ar": "سلاسة المرور في الحلق",
           "expression_transliteration": "sāġa",
           "gloss": "boğazdan kolayca geçmek",
           "shared_zone": "Her iki dal yutulan şeyin boğazdaki geçişiyle ilişkilidir.",
           "distinction": "Sāġa dalında ayırıcı eksen yiyecek veya içeceğin boğazdan pürüzsüz ve kolay inişidir; saraṭa eylem ve kaybolma merkezlidir, kolaylık ise türev uzanımlardan biridir.",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
-            "maqayis:root=%D8%B3%20%D9%88%20%D8%BA:headword=%D8%B3%D9%88%D8%BA:sha=8cd7ceb6587d6f5e"
+            "maqayis:root=%D8%B3%20%D9%88%20%D8%BA:headword=%D8%B3%D9%88%D8%BA:sha=8cd7ceb6587d6f5e",
+            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3078:headword=%D8%B3%D9%88%D8%BA:root=%D8%B3%20%D9%88%20%D8%BA:sha=a527e390ec094b84",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3201:headword=%D8%B3%D9%88%D8%BA:root=%D8%B3%20%D9%88%20%D8%BA:sha=5e6abf8e8a87a13d",
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D418%3Bsegment_index%3D5:headword=%D8%B3%D9%88%D8%BA:root=%D8%B3%20%D9%88%20%D8%BA:sha=8885a3d91cb9c01c",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A751:headword=%D8%B3%D8%A7%D8%BA:root=%D8%B3%20%D8%A7%20%D8%BA:sha=f1f9d0b64378102d"
           ]
         },
         {
           "neighbor_root_id": "root_000636",
           "neighbor_branch_id": "B002",
-          "expression_ar": "زَقَمَ",
+          "expression_ar": "الابتلاع والتلقم",
           "expression_transliteration": "zaqama",
           "gloss": "boğaza ulaştırmak veya lokmalamak",
           "shared_zone": "İki dal da lokma ve yutma hareketini adlandırabilir.",
           "distinction": "Zaqama bir şeyi boğaza ulaştırma, aşırı içme veya hoş olmayan şeyi yutma gibi daha zorlayıcı uzanımlar taşır; saraṭa için zorlama ve nahoşluk bileşenleri zorunlu değildir.",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1515"
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1515",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4505:headword=%D8%B2%D9%82%D9%85:root=%D8%B2%20%D9%82%20%D9%85:sha=28a8fa27afda5c13",
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D465%3Bsegment_index%3D33:headword=%D8%B2%D9%82%D9%85:root=%D8%B2%20%D9%82%20%D9%85:sha=f48f0b3cef6dada2",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A636:headword=%D8%B2%D9%82%D9%85:root=%D8%B2%20%D9%82%20%D9%85:sha=801339a4fc15bcac"
           ]
         }
-      ]
+      ],
+      "usage_notes": [],
+      "evidence_qualifiers": [],
+      "neighbor_coverage": {
+        "assessment": "complete",
+        "note": "Paketlenmiş adaylar maddi ayrım bakımından değerlendirilmiş ve yararlı karşılaştırmalar kaydedilmiştir.",
+        "candidate_count": 17
+      },
+      "lexical_realizations": [
+        {
+          "lexical_unit_id": "lu_004",
+          "expression_ar": "سرط الطعام",
+          "unit_kind": "form",
+          "sense_ar": "بلع الطعام حتى غاب في المرور",
+          "evidence_refs": [
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1774"
+          ],
+          "quran_form": null
+        },
+        {
+          "lexical_unit_id": "lu_005",
+          "expression_ar": "السرطراط",
+          "unit_kind": "form",
+          "sense_ar": "الفالوذ الذي يسترط لسهولة ابتلاعه",
+          "evidence_refs": [
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1774"
+          ],
+          "quran_form": null
+        },
+        {
+          "lexical_unit_id": "lu_006",
+          "expression_ar": "السرطم",
+          "unit_kind": "form",
+          "sense_ar": "الواسع الحلق",
+          "evidence_refs": [
+            "maqayis:root=%D8%A7%20%D9%84%20%D8%B3%20%D8%B1%20%D8%B7%20%D9%85:headword=%D8%A7%D9%84%D8%B3%D8%B1%D8%B7%D9%85:sha=ba441fcbede715c8"
+          ],
+          "quran_form": null
+        }
+      ],
+      "branch_image_ar": "الغيبة في المرور والبلع",
+      "what_is_ar": "يدخل فيه سرط الطعام بمعنى بلعه وغيبته في المرور، وما يتصل بسهولة الابتلاع وسعة الحلق",
+      "what_is_not_ar": "لا يدخل فيه الطريق المستقيم بوصفه طريقا، ولا السيف القاطع",
+      "source_phrase_ar": "أصل صحيح واحد يدل على غيبة في مر وذهاب؛ سرطت الطعام إذا بلعته لأنه إذا سرط غاب؛ السرطراط على فعلال الفالوذ لأنه يسترط (maqayis 1774)؛ السرطم: الواسع الحلق، والميم فيه زائدة، وإنما هو من سرط، إذا بلع (maqayis السرطم)"
     },
     {
       "root_id": "root_000858",
@@ -377,15 +449,7 @@
         "evidence_refs": [
           "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1774"
         ],
-        "examples": [
-          {
-            "arabic": "والسراط السيف القاطع الماضي في الضريبة",
-            "note": "Dal kılıcı yalnız nesne olarak değil, kesip darbede ilerleyen niteliğiyle tanımlar.",
-            "source_refs": [
-              "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1774"
-            ]
-          }
-        ],
+        "examples": [],
         "disagreement": null
       },
       "dictionary_basis": {
@@ -395,15 +459,9 @@
           {
             "source_id": "maqayis",
             "dictionary_name": "Maqāyīs al-Lugha",
-            "roles": [
-              "base_definition",
-              "sole_attestation",
-              "reading"
-            ],
             "source_refs": [
               "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1774"
-            ],
-            "contribution": "Kılıç dalının tek paket tanığını ve kesip darbede ilerleme tasvirini sağlar."
+            ]
           }
         ]
       },
@@ -419,7 +477,9 @@
               "loses": "Arapça tek sözcüğün adlandırma yoğunluğunu açıklayıcı söz grubuna dönüştürür.",
               "adds": "Kaynak imgesini açıklamak için Türkçede daha belirgin bir olay tasviri ekler.",
               "collision": "Başka kılıç adlarından ayrılır fakat doğal bir sözlük başlığı olmaktan çok tanım gibi okunur."
-            }
+            },
+            "usage_role": "explanatory",
+            "applicability": "Anlam alanını açıklamak için uygundur; akıcı çeviride daha doğal bir bağlamsal karşılık tercih edilebilir."
           },
           {
             "rank": 2,
@@ -431,7 +491,9 @@
               "loses": "Darbede ilerleme ve nüfuz boyutunu görünmez kılar.",
               "adds": "Keskinliği kaynak ifadesinden daha genel bir nitelik olarak sunar.",
               "collision": "Birçok farklı Arapça kılıç adını aynı Türkçe karşılığa toplar."
-            }
+            },
+            "usage_role": "contextual",
+            "applicability": "Yalnız hata profilinde belirtilen daralma, genişleme ve çağrışımlar somut bağlama uyduğunda kullanılmalıdır."
           }
         ],
         "excluded": [
@@ -471,39 +533,46 @@
               "collision": "Aynı yazımın B001 yol dalıyla ve Türkçedeki dinî terimle çakışmasına yol açar."
             }
           }
-        ]
+        ],
+        "semantic_definition": "السُّرَاط (es-surāṭ), kesen, nüfuz eden ve darbede ilerleyen kılıç için kullanılan addır."
       },
       "arabic_neighbor_distinctions": [
         {
           "neighbor_root_id": "root_000884",
           "neighbor_branch_id": "B011",
-          "expression_ar": "صَمْصَام",
+          "expression_ar": "السيف القاطع غير المنثني",
           "expression_transliteration": "ṣamṣām",
           "gloss": "eğilmeyen ve kemiği geçen kesici kılıç",
           "shared_zone": "İki dal da güçlü biçimde kesen özel bir kılıç adını ifade eder.",
           "distinction": "Ṣamṣām dalı kılıcın eğilmemesi veya kemiği geçmesi üzerinde durur; surāṭ dalının belirgin kaynak tasviri kılıcın darbede kesip ilerlemesidir.",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
-            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4684:headword=%D8%B5%D9%85:root=%D8%B5%20%D9%85:sha=fb57c9df4ab515f3"
+            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4684:headword=%D8%B5%D9%85:root=%D8%B5%20%D9%85:sha=fb57c9df4ab515f3",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4563:headword=%D8%B5%D9%85%D9%85:root=%D8%B5%20%D9%85%20%D9%85:sha=a3140089ab655545",
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D627%3Bsegment_index%3D4:headword=%D8%B5%D9%85:root=%D8%B5%20%D9%85:sha=daf48bd4080df2a5",
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1961"
           ]
         },
         {
           "neighbor_root_id": "root_000002",
           "neighbor_branch_id": "B005",
-          "expression_ar": "حَدّ",
+          "expression_ar": "الطرف الحاد والنفاذ",
           "expression_transliteration": "ḥadd",
           "gloss": "keskin ağız veya nüfuz eden uç",
           "shared_zone": "Her iki dal kesme, nüfuz ve etkili uç alanına yaklaşır.",
           "distinction": "Ḥadd kılıçla sınırlı değildir; bıçak, mızrak, dil, bakış ve anlayışın keskinliği veya etkisi gibi taşıyıcılara yayılır; surāṭ doğrudan belirli nitelikteki kılıç adıdır.",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675"
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1244:headword=%D8%AD%D8%B0%D8%AF:root=%D8%AD%20%D8%B0%20%D8%AF:sha=dbb73204ac319000",
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D225%3Bsegment_index%3D4:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=b974e506d86126bd",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A299:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=57607146360c2f88"
           ]
         },
         {
           "neighbor_root_id": "root_000258",
           "neighbor_branch_id": "B009",
-          "expression_ar": "جُمَاد",
+          "expression_ar": "سيف جماد صارم",
           "expression_transliteration": "jumād",
           "gloss": "sert ve kesici kılıç",
           "shared_zone": "İki dal da kesiciliği belirgin bir kılıç adını ifade eder.",
@@ -513,45 +582,3350 @@
             "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D547%3Bsegment_index%3D21:headword=%D8%AC%D9%85%D8%AF:root=%D8%AC%20%D9%85%20%D8%AF:sha=5c7aa0a9d6986bad"
           ]
         }
-      ]
+      ],
+      "usage_notes": [],
+      "evidence_qualifiers": [],
+      "neighbor_coverage": {
+        "assessment": "complete",
+        "note": "Paketlenmiş adaylar maddi ayrım bakımından değerlendirilmiş ve yararlı karşılaştırmalar kaydedilmiştir.",
+        "candidate_count": 17
+      },
+      "lexical_realizations": [
+        {
+          "lexical_unit_id": "lu_007",
+          "expression_ar": "السراط",
+          "unit_kind": "form",
+          "sense_ar": "السيف القاطع الماضي في الضربة",
+          "evidence_refs": [
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1774"
+          ],
+          "quran_form": null
+        }
+      ],
+      "branch_image_ar": "السيف القاطع الماضي في الضربة",
+      "what_is_ar": "يدخل فيه إطلاق السراط على السيف القاطع النافذ الماضي في الضريبة",
+      "what_is_not_ar": "لا يدخل فيه الطريق، ولا بلع الطعام أو سعة الحلق",
+      "source_phrase_ar": "والسراط السيف القاطع الماضي في الضريبة (maqayis 1774)"
     }
   ],
   "occurrence_evidence": {
     "artifact_path": "v2/output/occurrences/root_000858.tr.md",
-    "artifact_sha256": "623a979bc6f787ed014046c621fc9d96e6a909fdca9c67b06b583916ea068aeb",
+    "artifact_sha256": "3975c21c88400c4f8854ccd845088752e07967c8f493059aeb9461be77836edf",
     "generator": "v2/scripts/render_occurrences.py",
-    "observations": [
+    "observations": [],
+    "alignment_path": "v2/output/alignments/root_000858.json",
+    "alignment_sha256": "d3156b4a3a463e24b3f71d71e03dbedd31a4848058b6d33768f3ea021a1aed02",
+    "alignment_generator": "v2/scripts/render_occurrences.py",
+    "summary": {
+      "morpheme_count": 45,
+      "word_count": 45,
+      "ayah_count": 45,
+      "surah_count": 25
+    },
+    "forms": [
       {
-        "category": "recurrent_pattern",
-        "statement": "Mustaqīm, 45 oluşumun 33 tanesinde ṣirāṭ ile bağlantılıdır: 31 bağlantı sıfat, 6:126 ve 6:153'teki iki bağlantı ise hâl olarak işaretlenmiştir.",
-        "evidence_refs": [
-          "1:6:2:2",
-          "6:126:2:1",
-          "6:153:3:1"
-        ]
+        "form_id": "F001",
+        "lemma_ar": "صِرَٰط",
+        "stem_ar": "صِّرَٰطَ",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|ACC",
+        "occurrence_count": 3
       },
       {
-        "category": "exception",
-        "statement": "On oluşum mustaqīm veya sawiyy niteleyicilerinden hiçbirini taşımaz; bu nedenle kökün Kur'an'da daima mustaqīm ile geldiği söylenemez.",
-        "evidence_refs": [
-          "1:7:1:1",
-          "7:86:4:1",
-          "14:1:14:1",
-          "22:24:8:1",
-          "23:74:7:2",
-          "34:6:14:1",
-          "36:66:7:2",
-          "37:23:6:1",
-          "38:22:23:2",
-          "42:53:1:1"
-        ]
+        "form_id": "F002",
+        "lemma_ar": "صِرَٰط",
+        "stem_ar": "صِرَٰطَ",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|ACC",
+        "occurrence_count": 2
       },
       {
-        "category": "translation_risk",
-        "statement": "6:153'te ṣirāṭ, subul ve sabīl aynı ayette farklı Arapça seçimler olarak görünür; bunların tamamını açıklamasız biçimde 'yol' yapmak gözlenebilir söz seçimi ayrımını düzleştirebilir.",
-        "evidence_refs": [
-          "6:153:3:1"
-        ]
+        "form_id": "F003",
+        "lemma_ar": "صِرَٰط",
+        "stem_ar": "صِرَٰطٍ",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|GEN",
+        "occurrence_count": 19
+      },
+      {
+        "form_id": "F004",
+        "lemma_ar": "صِرَٰط",
+        "stem_ar": "صِرَٰطٌ",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|NOM",
+        "occurrence_count": 6
+      },
+      {
+        "form_id": "F005",
+        "lemma_ar": "صِرَٰط",
+        "stem_ar": "صِرَٰطًا",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|ACC",
+        "occurrence_count": 5
+      },
+      {
+        "form_id": "F006",
+        "lemma_ar": "صِرَٰط",
+        "stem_ar": "صِرَٰطُ",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|NOM",
+        "occurrence_count": 1
+      },
+      {
+        "form_id": "F007",
+        "lemma_ar": "صِرَٰط",
+        "stem_ar": "صِرَٰطِ",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|NOM",
+        "occurrence_count": 1
+      },
+      {
+        "form_id": "F008",
+        "lemma_ar": "صِرَٰط",
+        "stem_ar": "صِرَٰطِ",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|GEN",
+        "occurrence_count": 5
+      },
+      {
+        "form_id": "F009",
+        "lemma_ar": "صِرَٰط",
+        "stem_ar": "صِّرَٰطِ",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|GEN",
+        "occurrence_count": 3
+      }
+    ],
+    "ayahs": [
+      {
+        "ayah_ref": "1:6",
+        "surface_ar": "ٱهْدِنَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ"
+      },
+      {
+        "ayah_ref": "1:7",
+        "surface_ar": "صِرَٰطَ ٱلَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ ٱلْمَغْضُوبِ عَلَيْهِمْ وَلَا ٱلضَّآلِّينَ"
+      },
+      {
+        "ayah_ref": "2:142",
+        "surface_ar": "سَيَقُولُ ٱلسُّفَهَآءُ مِنَ ٱلنَّاسِ مَا وَلَّىٰهُمْ عَن قِبْلَتِهِمُ ٱلَّتِى كَانُوا۟ عَلَيْهَا قُل لِّلَّهِ ٱلْمَشْرِقُ وَٱلْمَغْرِبُ يَهْدِى مَن يَشَآءُ إِلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ"
+      },
+      {
+        "ayah_ref": "2:213",
+        "surface_ar": "كَانَ ٱلنَّاسُ أُمَّةً وَٰحِدَةً فَبَعَثَ ٱللَّهُ ٱلنَّبِيِّۦنَ مُبَشِّرِينَ وَمُنذِرِينَ وَأَنزَلَ مَعَهُمُ ٱلْكِتَٰبَ بِٱلْحَقِّ لِيَحْكُمَ بَيْنَ ٱلنَّاسِ فِيمَا ٱخْتَلَفُوا۟ فِيهِ وَمَا ٱخْتَلَفَ فِيهِ إِلَّا ٱلَّذِينَ أُوتُوهُ مِنۢ بَعْدِ مَا جَآءَتْهُمُ ٱلْبَيِّنَٰتُ بَغْيًۢا بَيْنَهُمْ فَهَدَى ٱللَّهُ ٱلَّذِينَ ءَامَنُوا۟ لِمَا ٱخْتَلَفُوا۟ فِيهِ مِنَ ٱلْحَقِّ بِإِذْنِهِۦ وَٱللَّهُ يَهْدِى مَن يَشَآءُ إِلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ"
+      },
+      {
+        "ayah_ref": "3:51",
+        "surface_ar": "إِنَّ ٱللَّهَ رَبِّى وَرَبُّكُمْ فَٱعْبُدُوهُ هَٰذَا صِرَٰطٌ مُّسْتَقِيمٌ"
+      },
+      {
+        "ayah_ref": "3:101",
+        "surface_ar": "وَكَيْفَ تَكْفُرُونَ وَأَنتُمْ تُتْلَىٰ عَلَيْكُمْ ءَايَٰتُ ٱللَّهِ وَفِيكُمْ رَسُولُهُۥ وَمَن يَعْتَصِم بِٱللَّهِ فَقَدْ هُدِىَ إِلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ"
+      },
+      {
+        "ayah_ref": "4:68",
+        "surface_ar": "وَلَهَدَيْنَٰهُمْ صِرَٰطًا مُّسْتَقِيمًا"
+      },
+      {
+        "ayah_ref": "4:175",
+        "surface_ar": "فَأَمَّا ٱلَّذِينَ ءَامَنُوا۟ بِٱللَّهِ وَٱعْتَصَمُوا۟ بِهِۦ فَسَيُدْخِلُهُمْ فِى رَحْمَةٍ مِّنْهُ وَفَضْلٍ وَيَهْدِيهِمْ إِلَيْهِ صِرَٰطًا مُّسْتَقِيمًا"
+      },
+      {
+        "ayah_ref": "5:16",
+        "surface_ar": "يَهْدِى بِهِ ٱللَّهُ مَنِ ٱتَّبَعَ رِضْوَٰنَهُۥ سُبُلَ ٱلسَّلَٰمِ وَيُخْرِجُهُم مِّنَ ٱلظُّلُمَٰتِ إِلَى ٱلنُّورِ بِإِذْنِهِۦ وَيَهْدِيهِمْ إِلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ"
+      },
+      {
+        "ayah_ref": "6:39",
+        "surface_ar": "وَٱلَّذِينَ كَذَّبُوا۟ بِـَٔايَٰتِنَا صُمٌّ وَبُكْمٌ فِى ٱلظُّلُمَٰتِ مَن يَشَإِ ٱللَّهُ يُضْلِلْهُ وَمَن يَشَأْ يَجْعَلْهُ عَلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ"
+      },
+      {
+        "ayah_ref": "6:87",
+        "surface_ar": "وَمِنْ ءَابَآئِهِمْ وَذُرِّيَّٰتِهِمْ وَإِخْوَٰنِهِمْ وَٱجْتَبَيْنَٰهُمْ وَهَدَيْنَٰهُمْ إِلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ"
+      },
+      {
+        "ayah_ref": "6:126",
+        "surface_ar": "وَهَٰذَا صِرَٰطُ رَبِّكَ مُسْتَقِيمًا قَدْ فَصَّلْنَا ٱلْءَايَٰتِ لِقَوْمٍ يَذَّكَّرُونَ"
+      },
+      {
+        "ayah_ref": "6:153",
+        "surface_ar": "وَأَنَّ هَٰذَا صِرَٰطِى مُسْتَقِيمًا فَٱتَّبِعُوهُ وَلَا تَتَّبِعُوا۟ ٱلسُّبُلَ فَتَفَرَّقَ بِكُمْ عَن سَبِيلِهِۦ ذَٰلِكُمْ وَصَّىٰكُم بِهِۦ لَعَلَّكُمْ تَتَّقُونَ"
+      },
+      {
+        "ayah_ref": "6:161",
+        "surface_ar": "قُلْ إِنَّنِى هَدَىٰنِى رَبِّىٓ إِلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ دِينًا قِيَمًا مِّلَّةَ إِبْرَٰهِيمَ حَنِيفًا وَمَا كَانَ مِنَ ٱلْمُشْرِكِينَ"
+      },
+      {
+        "ayah_ref": "7:16",
+        "surface_ar": "قَالَ فَبِمَآ أَغْوَيْتَنِى لَأَقْعُدَنَّ لَهُمْ صِرَٰطَكَ ٱلْمُسْتَقِيمَ"
+      },
+      {
+        "ayah_ref": "7:86",
+        "surface_ar": "وَلَا تَقْعُدُوا۟ بِكُلِّ صِرَٰطٍ تُوعِدُونَ وَتَصُدُّونَ عَن سَبِيلِ ٱللَّهِ مَنْ ءَامَنَ بِهِۦ وَتَبْغُونَهَا عِوَجًا وَٱذْكُرُوٓا۟ إِذْ كُنتُمْ قَلِيلًا فَكَثَّرَكُمْ وَٱنظُرُوا۟ كَيْفَ كَانَ عَٰقِبَةُ ٱلْمُفْسِدِينَ"
+      },
+      {
+        "ayah_ref": "10:25",
+        "surface_ar": "وَٱللَّهُ يَدْعُوٓا۟ إِلَىٰ دَارِ ٱلسَّلَٰمِ وَيَهْدِى مَن يَشَآءُ إِلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ"
+      },
+      {
+        "ayah_ref": "11:56",
+        "surface_ar": "إِنِّى تَوَكَّلْتُ عَلَى ٱللَّهِ رَبِّى وَرَبِّكُم مَّا مِن دَآبَّةٍ إِلَّا هُوَ ءَاخِذٌۢ بِنَاصِيَتِهَآ إِنَّ رَبِّى عَلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ"
+      },
+      {
+        "ayah_ref": "14:1",
+        "surface_ar": "الٓر كِتَٰبٌ أَنزَلْنَٰهُ إِلَيْكَ لِتُخْرِجَ ٱلنَّاسَ مِنَ ٱلظُّلُمَٰتِ إِلَى ٱلنُّورِ بِإِذْنِ رَبِّهِمْ إِلَىٰ صِرَٰطِ ٱلْعَزِيزِ ٱلْحَمِيدِ"
+      },
+      {
+        "ayah_ref": "15:41",
+        "surface_ar": "قَالَ هَٰذَا صِرَٰطٌ عَلَىَّ مُسْتَقِيمٌ"
+      },
+      {
+        "ayah_ref": "16:76",
+        "surface_ar": "وَضَرَبَ ٱللَّهُ مَثَلًا رَّجُلَيْنِ أَحَدُهُمَآ أَبْكَمُ لَا يَقْدِرُ عَلَىٰ شَىْءٍ وَهُوَ كَلٌّ عَلَىٰ مَوْلَىٰهُ أَيْنَمَا يُوَجِّههُّ لَا يَأْتِ بِخَيْرٍ هَلْ يَسْتَوِى هُوَ وَمَن يَأْمُرُ بِٱلْعَدْلِ وَهُوَ عَلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ"
+      },
+      {
+        "ayah_ref": "16:121",
+        "surface_ar": "شَاكِرًا لِّأَنْعُمِهِ ٱجْتَبَىٰهُ وَهَدَىٰهُ إِلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ"
+      },
+      {
+        "ayah_ref": "19:36",
+        "surface_ar": "وَإِنَّ ٱللَّهَ رَبِّى وَرَبُّكُمْ فَٱعْبُدُوهُ هَٰذَا صِرَٰطٌ مُّسْتَقِيمٌ"
+      },
+      {
+        "ayah_ref": "19:43",
+        "surface_ar": "يَٰٓأَبَتِ إِنِّى قَدْ جَآءَنِى مِنَ ٱلْعِلْمِ مَا لَمْ يَأْتِكَ فَٱتَّبِعْنِىٓ أَهْدِكَ صِرَٰطًا سَوِيًّا"
+      },
+      {
+        "ayah_ref": "20:135",
+        "surface_ar": "قُلْ كُلٌّ مُّتَرَبِّصٌ فَتَرَبَّصُوا۟ فَسَتَعْلَمُونَ مَنْ أَصْحَٰبُ ٱلصِّرَٰطِ ٱلسَّوِىِّ وَمَنِ ٱهْتَدَىٰ"
+      },
+      {
+        "ayah_ref": "22:24",
+        "surface_ar": "وَهُدُوٓا۟ إِلَى ٱلطَّيِّبِ مِنَ ٱلْقَوْلِ وَهُدُوٓا۟ إِلَىٰ صِرَٰطِ ٱلْحَمِيدِ"
+      },
+      {
+        "ayah_ref": "22:54",
+        "surface_ar": "وَلِيَعْلَمَ ٱلَّذِينَ أُوتُوا۟ ٱلْعِلْمَ أَنَّهُ ٱلْحَقُّ مِن رَّبِّكَ فَيُؤْمِنُوا۟ بِهِۦ فَتُخْبِتَ لَهُۥ قُلُوبُهُمْ وَإِنَّ ٱللَّهَ لَهَادِ ٱلَّذِينَ ءَامَنُوٓا۟ إِلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ"
+      },
+      {
+        "ayah_ref": "23:73",
+        "surface_ar": "وَإِنَّكَ لَتَدْعُوهُمْ إِلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ"
+      },
+      {
+        "ayah_ref": "23:74",
+        "surface_ar": "وَإِنَّ ٱلَّذِينَ لَا يُؤْمِنُونَ بِٱلْءَاخِرَةِ عَنِ ٱلصِّرَٰطِ لَنَٰكِبُونَ"
+      },
+      {
+        "ayah_ref": "24:46",
+        "surface_ar": "لَّقَدْ أَنزَلْنَآ ءَايَٰتٍ مُّبَيِّنَٰتٍ وَٱللَّهُ يَهْدِى مَن يَشَآءُ إِلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ"
+      },
+      {
+        "ayah_ref": "34:6",
+        "surface_ar": "وَيَرَى ٱلَّذِينَ أُوتُوا۟ ٱلْعِلْمَ ٱلَّذِىٓ أُنزِلَ إِلَيْكَ مِن رَّبِّكَ هُوَ ٱلْحَقَّ وَيَهْدِىٓ إِلَىٰ صِرَٰطِ ٱلْعَزِيزِ ٱلْحَمِيدِ"
+      },
+      {
+        "ayah_ref": "36:4",
+        "surface_ar": "عَلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ"
+      },
+      {
+        "ayah_ref": "36:61",
+        "surface_ar": "وَأَنِ ٱعْبُدُونِى هَٰذَا صِرَٰطٌ مُّسْتَقِيمٌ"
+      },
+      {
+        "ayah_ref": "36:66",
+        "surface_ar": "وَلَوْ نَشَآءُ لَطَمَسْنَا عَلَىٰٓ أَعْيُنِهِمْ فَٱسْتَبَقُوا۟ ٱلصِّرَٰطَ فَأَنَّىٰ يُبْصِرُونَ"
+      },
+      {
+        "ayah_ref": "37:23",
+        "surface_ar": "مِن دُونِ ٱللَّهِ فَٱهْدُوهُمْ إِلَىٰ صِرَٰطِ ٱلْجَحِيمِ"
+      },
+      {
+        "ayah_ref": "37:118",
+        "surface_ar": "وَهَدَيْنَٰهُمَا ٱلصِّرَٰطَ ٱلْمُسْتَقِيمَ"
+      },
+      {
+        "ayah_ref": "38:22",
+        "surface_ar": "إِذْ دَخَلُوا۟ عَلَىٰ دَاوُۥدَ فَفَزِعَ مِنْهُمْ قَالُوا۟ لَا تَخَفْ خَصْمَانِ بَغَىٰ بَعْضُنَا عَلَىٰ بَعْضٍ فَٱحْكُم بَيْنَنَا بِٱلْحَقِّ وَلَا تُشْطِطْ وَٱهْدِنَآ إِلَىٰ سَوَآءِ ٱلصِّرَٰطِ"
+      },
+      {
+        "ayah_ref": "42:52",
+        "surface_ar": "وَكَذَٰلِكَ أَوْحَيْنَآ إِلَيْكَ رُوحًا مِّنْ أَمْرِنَا مَا كُنتَ تَدْرِى مَا ٱلْكِتَٰبُ وَلَا ٱلْإِيمَٰنُ وَلَٰكِن جَعَلْنَٰهُ نُورًا نَّهْدِى بِهِۦ مَن نَّشَآءُ مِنْ عِبَادِنَا وَإِنَّكَ لَتَهْدِىٓ إِلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ"
+      },
+      {
+        "ayah_ref": "42:53",
+        "surface_ar": "صِرَٰطِ ٱللَّهِ ٱلَّذِى لَهُۥ مَا فِى ٱلسَّمَٰوَٰتِ وَمَا فِى ٱلْأَرْضِ أَلَآ إِلَى ٱللَّهِ تَصِيرُ ٱلْأُمُورُ"
+      },
+      {
+        "ayah_ref": "43:43",
+        "surface_ar": "فَٱسْتَمْسِكْ بِٱلَّذِىٓ أُوحِىَ إِلَيْكَ إِنَّكَ عَلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ"
+      },
+      {
+        "ayah_ref": "43:61",
+        "surface_ar": "وَإِنَّهُۥ لَعِلْمٌ لِّلسَّاعَةِ فَلَا تَمْتَرُنَّ بِهَا وَٱتَّبِعُونِ هَٰذَا صِرَٰطٌ مُّسْتَقِيمٌ"
+      },
+      {
+        "ayah_ref": "43:64",
+        "surface_ar": "إِنَّ ٱللَّهَ هُوَ رَبِّى وَرَبُّكُمْ فَٱعْبُدُوهُ هَٰذَا صِرَٰطٌ مُّسْتَقِيمٌ"
+      },
+      {
+        "ayah_ref": "48:2",
+        "surface_ar": "لِّيَغْفِرَ لَكَ ٱللَّهُ مَا تَقَدَّمَ مِن ذَنۢبِكَ وَمَا تَأَخَّرَ وَيُتِمَّ نِعْمَتَهُۥ عَلَيْكَ وَيَهْدِيَكَ صِرَٰطًا مُّسْتَقِيمًا"
+      },
+      {
+        "ayah_ref": "48:20",
+        "surface_ar": "وَعَدَكُمُ ٱللَّهُ مَغَانِمَ كَثِيرَةً تَأْخُذُونَهَا فَعَجَّلَ لَكُمْ هَٰذِهِۦ وَكَفَّ أَيْدِىَ ٱلنَّاسِ عَنكُمْ وَلِتَكُونَ ءَايَةً لِّلْمُؤْمِنِينَ وَيَهْدِيَكُمْ صِرَٰطًا مُّسْتَقِيمًا"
+      },
+      {
+        "ayah_ref": "67:22",
+        "surface_ar": "أَفَمَن يَمْشِى مُكِبًّا عَلَىٰ وَجْهِهِۦٓ أَهْدَىٰٓ أَمَّن يَمْشِى سَوِيًّا عَلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ"
+      }
+    ],
+    "occurrences": [
+      {
+        "qac_ref": "1:6:2:2",
+        "qac_word_ref": "1:6:2",
+        "surah": 1,
+        "ayah": 6,
+        "word_index": 2,
+        "morpheme_index": 2,
+        "surface_ar": "صِّرَٰطَ",
+        "stem_ar": "صِّرَٰطَ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|ACC",
+        "ayah_ref": "1:6",
+        "form_id": "F001",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s001:006:noun:2",
+          "attachment_word_unit_id": "q:1:6:2",
+          "qac_char_span": [
+            5,
+            11
+          ],
+          "attachment_char_spans": [
+            [
+              7,
+              11
+            ]
+          ],
+          "source_grammar": "NOUN_ABSTRACT accusative, definite (al-), direct object",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s001:006:pass1:attach:a2",
+              "relation": "direct_object",
+              "focus_role": "dependent",
+              "other_unit_id": "q:1:6:1",
+              "other_surface": "اهْدِنَا",
+              "other_root": "ه د ي",
+              "other_form_tag": "CV",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s001:006:pass1:attach:a3",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:1:6:3",
+              "other_surface": "الْمُسْتَقِيمَ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;case_government"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "1:7:1:1",
+        "qac_word_ref": "1:7:1",
+        "surah": 1,
+        "ayah": 7,
+        "word_index": 1,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطَ",
+        "stem_ar": "صِرَٰطَ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|ACC",
+        "ayah_ref": "1:7",
+        "form_id": "F002",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s001:007:noun:1",
+          "attachment_word_unit_id": "q:1:7:1",
+          "qac_char_span": [
+            0,
+            4
+          ],
+          "attachment_char_spans": [
+            [
+              0,
+              4
+            ]
+          ],
+          "source_grammar": "accusative noun, appositive to al-ṣirāṭ al-mustaqīm in v.6",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s001:007:pass1:attach:a1",
+              "relation": "idafa",
+              "focus_role": "head",
+              "other_unit_id": "q:1:7:2",
+              "other_surface": "الَّذِينَ",
+              "other_root": "ل ل ذ",
+              "other_form_tag": "REL_PRON",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "2:142:20:1",
+        "qac_word_ref": "2:142:20",
+        "surah": 2,
+        "ayah": 142,
+        "word_index": 20,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٍ",
+        "stem_ar": "صِرَٰطٍ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|GEN",
+        "ayah_ref": "2:142",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s002:142:noun:22",
+          "attachment_word_unit_id": "q:2:142:22",
+          "qac_char_span": [
+            81,
+            85
+          ],
+          "attachment_char_spans": [
+            [
+              81,
+              85
+            ]
+          ],
+          "source_grammar": "noun, indefinite, genitive (governed by إِلَى), tanwīn",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s002:142:pass1:attach:a15",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:2:142:18",
+              "other_surface": "يَهْدِي",
+              "other_root": "ه د ي",
+              "other_form_tag": "IV",
+              "prep_base": "إِلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government"
+            },
+            {
+              "attachment_id": "ae:v3:s002:142:pass1:attach:a16",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:2:142:23",
+              "other_surface": "مُسْتَقِيمٍ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "2:213:48:1",
+        "qac_word_ref": "2:213:48",
+        "surah": 2,
+        "ayah": 213,
+        "word_index": 48,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٍ",
+        "stem_ar": "صِرَٰطٍ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|GEN",
+        "ayah_ref": "2:213",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s002:213:noun:57",
+          "attachment_word_unit_id": "q:2:213:57",
+          "qac_char_span": [
+            207,
+            211
+          ],
+          "attachment_char_spans": [
+            [
+              207,
+              211
+            ]
+          ],
+          "source_grammar": "indefinite genitive noun, governed by ilā",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s002:213:pass1:attach:a38",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:2:213:53",
+              "other_surface": "يَهْدِي",
+              "other_root": "ه د ي",
+              "other_form_tag": "IV",
+              "prep_base": "إِلَى",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s002:213:pass1:attach:a39",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:2:213:58",
+              "other_surface": "مُسْتَقِيمٍ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;case_government"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "3:51:7:1",
+        "qac_word_ref": "3:51:7",
+        "surah": 3,
+        "ayah": 51,
+        "word_index": 7,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٌ",
+        "stem_ar": "صِرَٰطٌ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|NOM",
+        "ayah_ref": "3:51",
+        "form_id": "F004",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s003:051:noun:9",
+          "attachment_word_unit_id": "q:3:51:9",
+          "qac_char_span": [
+            25,
+            29
+          ],
+          "attachment_char_spans": [
+            [
+              25,
+              29
+            ]
+          ],
+          "source_grammar": "Noun (ism); indefinite (nakirah); nominative (marfūʿ) as khabar (predicate) of hādhā; the tanwīn marks indefiniteness — \"a path\" not \"the path\"",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s003:051:pass1:attach:a5",
+              "relation": "predication",
+              "focus_role": "dependent",
+              "other_unit_id": "q:3:51:8",
+              "other_surface": "هَذَا",
+              "other_root": "",
+              "other_form_tag": "DEM_PRON_MS",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s003:051:pass1:attach:a6",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:3:51:10",
+              "other_surface": "مُسْتَقِيمٌ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "3:101:16:1",
+        "qac_word_ref": "3:101:16",
+        "surah": 3,
+        "ayah": 101,
+        "word_index": 16,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٍ",
+        "stem_ar": "صِرَٰطٍ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|GEN",
+        "ayah_ref": "3:101",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s003:101:noun:22",
+          "attachment_word_unit_id": "q:3:101:22",
+          "qac_char_span": [
+            68,
+            72
+          ],
+          "attachment_char_spans": [
+            [
+              68,
+              72
+            ]
+          ],
+          "source_grammar": "Noun (NOUN_ABSTRACT), masculine singular; genitive (majrūr) governed by ilā; indefinite (tanwīn) — \"a path\" not \"the path\"; from Aramaic/Syriac strāṭā (Latin: strāta, \"paved road\")",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s003:101:pass1:attach:a13",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:3:101:20",
+              "other_surface": "هُدِيَ",
+              "other_root": "ه د ي",
+              "other_form_tag": "PV_PASS",
+              "prep_base": "إِلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s003:101:pass1:attach:a14",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:3:101:23",
+              "other_surface": "مُسْتَقِيمٍ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "4:68:2:1",
+        "qac_word_ref": "4:68:2",
+        "surah": 4,
+        "ayah": 68,
+        "word_index": 2,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطًا",
+        "stem_ar": "صِرَٰطًا",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|ACC",
+        "ayah_ref": "4:68",
+        "form_id": "F005",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s004:068:noun:4",
+          "attachment_word_unit_id": "q:4:68:4",
+          "qac_char_span": [
+            9,
+            14
+          ],
+          "attachment_char_spans": [
+            [
+              9,
+              13
+            ],
+            [
+              9,
+              14
+            ]
+          ],
+          "source_grammar": "indefinite accusative noun, second object of hadā; tanwīn signals indefiniteness",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s004:068:pass1:attach:a2",
+              "relation": "direct_object",
+              "focus_role": "dependent",
+              "other_unit_id": "q:4:68:3",
+              "other_surface": "وَلَهَدَيْنَاهُمْ",
+              "other_root": "ه د ي",
+              "other_form_tag": "IV",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s004:068:pass1:attach:a3",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:4:68:5",
+              "other_surface": "مُسْتَقِيمَاً",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "4:175:14:1",
+        "qac_word_ref": "4:175:14",
+        "surah": 4,
+        "ayah": 175,
+        "word_index": 14,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطًا",
+        "stem_ar": "صِرَٰطًا",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|ACC",
+        "ayah_ref": "4:175",
+        "form_id": "F005",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s004:175:noun:20",
+          "attachment_word_unit_id": "q:4:175:20",
+          "qac_char_span": [
+            63,
+            68
+          ],
+          "attachment_char_spans": [
+            [
+              63,
+              67
+            ],
+            [
+              63,
+              68
+            ]
+          ],
+          "source_grammar": "noun, abstract, masculine singular, indefinite accusative (ḥāl or second object of yahdī) — from root ṣ-r-ṭ",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s004:175:pass1:attach:a12",
+              "relation": "direct_object",
+              "focus_role": "dependent",
+              "other_unit_id": "q:4:175:18",
+              "other_surface": "وَيَهْدِيهِمْ",
+              "other_root": "ه د ي",
+              "other_form_tag": "IV",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "medium",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s004:175:pass1:attach:a13",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:4:175:21",
+              "other_surface": "مُسْتَقِيمَاً",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "5:16:17:1",
+        "qac_word_ref": "5:16:17",
+        "surah": 5,
+        "ayah": 16,
+        "word_index": 17,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٍ",
+        "stem_ar": "صِرَٰطٍ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|GEN",
+        "ayah_ref": "5:16",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s005:016:noun:20",
+          "attachment_word_unit_id": "q:5:16:20",
+          "qac_char_span": [
+            73,
+            77
+          ],
+          "attachment_char_spans": [
+            [
+              73,
+              77
+            ]
+          ],
+          "source_grammar": "noun, abstract (NOUN_ABSTRACT), genitive (governed by ilā), indefinite, tanwīn",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s005:016:pass1:attach:a15",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:5:16:18",
+              "other_surface": "وَيَهْدِيهِمْ",
+              "other_root": "ه د ي",
+              "other_form_tag": "IV",
+              "prep_base": "إِلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s005:016:pass1:attach:a16",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:5:16:21",
+              "other_surface": "مُسْتَقِيمٍ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "6:39:16:1",
+        "qac_word_ref": "6:39:16",
+        "surah": 6,
+        "ayah": 39,
+        "word_index": 16,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٍ",
+        "stem_ar": "صِرَٰطٍ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|GEN",
+        "ayah_ref": "6:39",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s006:039:noun:20",
+          "attachment_word_unit_id": "q:6:39:20",
+          "qac_char_span": [
+            62,
+            66
+          ],
+          "attachment_char_spans": [
+            [
+              62,
+              66
+            ]
+          ],
+          "source_grammar": "noun, abstract, masculine singular, genitive indefinite (governed by ʿalā), described by mustaqīm",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s006:039:pass1:attach:a12",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:6:39:18",
+              "other_surface": "يَجْعَلْهُ",
+              "other_root": "ج ع ل",
+              "other_form_tag": "IV",
+              "prep_base": "عَلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s006:039:pass1:attach:a13",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:6:39:21",
+              "other_surface": "مُسْتَقِيمٍ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "6:87:8:1",
+        "qac_word_ref": "6:87:8",
+        "surah": 6,
+        "ayah": 87,
+        "word_index": 8,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٍ",
+        "stem_ar": "صِرَٰطٍ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|GEN",
+        "ayah_ref": "6:87",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s006:087:noun:13",
+          "attachment_word_unit_id": "q:6:87:13",
+          "qac_char_span": [
+            48,
+            52
+          ],
+          "attachment_char_spans": [
+            [
+              48,
+              52
+            ]
+          ],
+          "source_grammar": "noun, abstract, genitive indefinite (tanwīn), object of ilā",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s006:087:pass1:attach:a7",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:6:87:11",
+              "other_surface": "وَهَدَيْنَاهُمْ",
+              "other_root": "ه د ي",
+              "other_form_tag": "PV",
+              "prep_base": "إِلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s006:087:pass1:attach:a8",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:6:87:14",
+              "other_surface": "مُسْتَقِيمٍ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "6:126:2:1",
+        "qac_word_ref": "6:126:2",
+        "surah": 6,
+        "ayah": 126,
+        "word_index": 2,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطُ",
+        "stem_ar": "صِرَٰطُ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|NOM",
+        "ayah_ref": "6:126",
+        "form_id": "F006",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s006:126:noun:3",
+          "attachment_word_unit_id": "q:6:126:3",
+          "qac_char_span": [
+            5,
+            9
+          ],
+          "attachment_char_spans": [
+            [
+              5,
+              9
+            ]
+          ],
+          "source_grammar": "definite noun (by iḍāfa), nominative, predicate (khabar), muḍāf to rabbika",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s006:126:pass1:attach:a1",
+              "relation": "predication",
+              "focus_role": "dependent",
+              "other_unit_id": "q:6:126:2",
+              "other_surface": "وَهَذَا",
+              "other_root": "",
+              "other_form_tag": "DEM_PRON",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s006:126:pass1:attach:a2",
+              "relation": "idafa",
+              "focus_role": "head",
+              "other_unit_id": "q:6:126:4",
+              "other_surface": "رَبِّكَ",
+              "other_root": "ر ب ب",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology;case_government"
+            },
+            {
+              "attachment_id": "ae:v3:s006:126:pass1:attach:a3",
+              "relation": "circumstantial",
+              "focus_role": "head",
+              "other_unit_id": "q:6:126:5",
+              "other_surface": "مُسْتَقِيمَاً",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "6:153:3:1",
+        "qac_word_ref": "6:153:3",
+        "surah": 6,
+        "ayah": 153,
+        "word_index": 3,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطِ",
+        "stem_ar": "صِرَٰطِ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|NOM",
+        "ayah_ref": "6:153",
+        "form_id": "F007",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s006:153:noun:4",
+          "attachment_word_unit_id": "q:6:153:4",
+          "qac_char_span": [
+            7,
+            12
+          ],
+          "attachment_char_spans": [
+            [
+              7,
+              11
+            ]
+          ],
+          "source_grammar": "noun, abstract, genitive (iḍāfa with first person singular possessive), pattern fiʿāl",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s006:153:pass1:attach:a2",
+              "relation": "predication",
+              "focus_role": "dependent",
+              "other_unit_id": "q:6:153:2",
+              "other_surface": "وَأَنَّ",
+              "other_root": "",
+              "other_form_tag": "INF_ANNUL_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s006:153:pass1:attach:a3",
+              "relation": "circumstantial",
+              "focus_role": "head",
+              "other_unit_id": "q:6:153:5",
+              "other_surface": "مُسْتَقِيمَاً",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "medium",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "6:161:6:1",
+        "qac_word_ref": "6:161:6",
+        "surah": 6,
+        "ayah": 161,
+        "word_index": 6,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٍ",
+        "stem_ar": "صِرَٰطٍ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|GEN",
+        "ayah_ref": "6:161",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s006:161:noun:6",
+          "attachment_word_unit_id": "q:6:161:6",
+          "qac_char_span": [
+            19,
+            23
+          ],
+          "attachment_char_spans": [
+            [
+              19,
+              23
+            ]
+          ],
+          "source_grammar": "noun (indefinite, genitive after ilā), tanwīn kasra",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s006:161:pass1:attach:a5",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:6:161:3",
+              "other_surface": "هَدَانِي",
+              "other_root": "ه د ي",
+              "other_form_tag": "PV",
+              "prep_base": "إِلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s006:161:pass1:attach:a6",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:6:161:7",
+              "other_surface": "مُسْتَقِيمٍ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s006:161:pass1:attach:a7",
+              "relation": "apposition",
+              "focus_role": "head",
+              "other_unit_id": "q:6:161:8",
+              "other_surface": "دِينَاً",
+              "other_root": "د ي ن",
+              "other_form_tag": "NOUN_ABSTRACT",
+              "prep_base": "",
+              "status": "ambiguous",
+              "confidence": "medium",
+              "evidence": "local_syntax;case_government"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "7:16:6:1",
+        "qac_word_ref": "7:16:6",
+        "surah": 7,
+        "ayah": 16,
+        "word_index": 6,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطَ",
+        "stem_ar": "صِرَٰطَ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|ACC",
+        "ayah_ref": "7:16",
+        "form_id": "F002",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s007:016:noun:10",
+          "attachment_word_unit_id": "q:7:16:10",
+          "qac_char_span": [
+            23,
+            28
+          ],
+          "attachment_char_spans": [
+            [
+              23,
+              27
+            ],
+            [
+              23,
+              28
+            ]
+          ],
+          "source_grammar": "noun (ism), accusative case (manṣūb) — functions as ẓarf makān (adverbial of place), construct state with 2nd person pronoun -ka",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s007:016:pass1:attach:a5",
+              "relation": "adverbial",
+              "focus_role": "dependent",
+              "other_unit_id": "q:7:16:7",
+              "other_surface": "لَأَقْعُدَنَّ",
+              "other_root": "ق ع د",
+              "other_form_tag": "IV",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s007:016:pass1:attach:a6",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:7:16:11",
+              "other_surface": "الْمُسْتَقِيمَ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "7:86:4:1",
+        "qac_word_ref": "7:86:4",
+        "surah": 7,
+        "ayah": 86,
+        "word_index": 4,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٍ",
+        "stem_ar": "صِرَٰطٍ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|GEN",
+        "ayah_ref": "7:86",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s007:086:noun:6",
+          "attachment_word_unit_id": "q:7:86:6",
+          "qac_char_span": [
+            12,
+            16
+          ],
+          "attachment_char_spans": [
+            [
+              12,
+              16
+            ]
+          ],
+          "source_grammar": "noun (ism), genitive case (majrūr, muḍāf ilayhi of kull), indefinite (tankīr)",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s007:086:pass1:attach:a2",
+              "relation": "idafa",
+              "focus_role": "dependent",
+              "other_unit_id": "q:7:86:5",
+              "other_surface": "بِكُلِّ",
+              "other_root": "ك ل ل",
+              "other_form_tag": "NOUN_ABSTRACT",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology;case_government"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "10:25:10:1",
+        "qac_word_ref": "10:25:10",
+        "surah": 10,
+        "ayah": 25,
+        "word_index": 10,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٍ",
+        "stem_ar": "صِرَٰطٍ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|GEN",
+        "ayah_ref": "10:25",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s010:025:noun:12",
+          "attachment_word_unit_id": "q:10:25:12",
+          "qac_char_span": [
+            38,
+            42
+          ],
+          "attachment_char_spans": [
+            [
+              38,
+              42
+            ]
+          ],
+          "source_grammar": "noun, genitive (governed by ilā), indefinite, modified by mustaqīm",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s010:025:pass1:attach:a7",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:10:25:8",
+              "other_surface": "وَيَهْدِي",
+              "other_root": "ه د ي",
+              "other_form_tag": "IV",
+              "prep_base": "إِلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s010:025:pass1:attach:a8",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:10:25:13",
+              "other_surface": "مُسْتَقِيمٍ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "11:56:17:1",
+        "qac_word_ref": "11:56:17",
+        "surah": 11,
+        "ayah": 56,
+        "word_index": 17,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٍ",
+        "stem_ar": "صِرَٰطٍ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|GEN",
+        "ayah_ref": "11:56",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s011:056:noun:19",
+          "attachment_word_unit_id": "q:11:56:19",
+          "qac_char_span": [
+            57,
+            61
+          ],
+          "attachment_char_spans": [
+            [
+              57,
+              61
+            ]
+          ],
+          "source_grammar": "noun, indefinite genitive (governed by ʿalā)",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s011:056:pass1:attach:a11",
+              "relation": "predication",
+              "focus_role": "dependent",
+              "other_unit_id": "q:11:56:16",
+              "other_surface": "إِنَّ",
+              "other_root": "",
+              "other_form_tag": "ANNUL_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s011:056:pass1:attach:a12",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:11:56:17",
+              "other_surface": "رَبِّي",
+              "other_root": "ر ب ب",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "عَلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s011:056:pass1:attach:a13",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:11:56:20",
+              "other_surface": "مُسْتَقِيمٍ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "14:1:14:1",
+        "qac_word_ref": "14:1:14",
+        "surah": 14,
+        "ayah": 1,
+        "word_index": 14,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطِ",
+        "stem_ar": "صِرَٰطِ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|GEN",
+        "ayah_ref": "14:1",
+        "form_id": "F008",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s014:001:noun:16",
+          "attachment_word_unit_id": "q:14:1:16",
+          "qac_char_span": [
+            57,
+            61
+          ],
+          "attachment_char_spans": [
+            [
+              57,
+              61
+            ]
+          ],
+          "source_grammar": "genitive noun governed by ilā, in construct with al-ʿazīzi",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s014:001:pass1:attach:a8",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:14:1:6",
+              "other_surface": "لِتُخْرِجَ",
+              "other_root": "خ ر ج",
+              "other_form_tag": "IV",
+              "prep_base": "إِلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s014:001:pass1:attach:a9",
+              "relation": "idafa",
+              "focus_role": "head",
+              "other_unit_id": "q:14:1:17",
+              "other_surface": "الْعَزِيزِ",
+              "other_root": "ع ز ز",
+              "other_form_tag": "NOUN_PROP",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "15:41:3:1",
+        "qac_word_ref": "15:41:3",
+        "surah": 15,
+        "ayah": 41,
+        "word_index": 3,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٌ",
+        "stem_ar": "صِرَٰطٌ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|NOM",
+        "ayah_ref": "15:41",
+        "form_id": "F004",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s015:041:noun:3",
+          "attachment_word_unit_id": "q:15:41:3",
+          "qac_char_span": [
+            7,
+            11
+          ],
+          "attachment_char_spans": [
+            [
+              7,
+              11
+            ]
+          ],
+          "source_grammar": "noun, abstract, indefinite, nominative (predicate of nominal sentence), singular masculine",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s015:041:pass1:attach:a2",
+              "relation": "predication",
+              "focus_role": "dependent",
+              "other_unit_id": "q:15:41:2",
+              "other_surface": "هَذَا",
+              "other_root": "",
+              "other_form_tag": "DEM_PRON_MS",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "local_syntax;word_order"
+            },
+            {
+              "attachment_id": "ae:v3:s015:041:pass1:attach:a3",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:15:41:4",
+              "other_surface": "",
+              "other_root": "",
+              "other_form_tag": "",
+              "prep_base": "عَلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s015:041:pass1:attach:a4",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:15:41:5",
+              "other_surface": "مُسْتَقِيمٌ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "16:76:28:1",
+        "qac_word_ref": "16:76:28",
+        "surah": 16,
+        "ayah": 76,
+        "word_index": 28,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٍ",
+        "stem_ar": "صِرَٰطٍ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|GEN",
+        "ayah_ref": "16:76",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s016:076:noun:34",
+          "attachment_word_unit_id": "q:16:76:34",
+          "qac_char_span": [
+            103,
+            107
+          ],
+          "attachment_char_spans": [
+            [
+              103,
+              107
+            ]
+          ],
+          "source_grammar": "noun, indefinite genitive (majrūr) after ʿalā, tanwīn",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s016:076:pass1:attach:a16",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:16:76:32",
+              "other_surface": "وَهُوَ",
+              "other_root": "",
+              "other_form_tag": "PRON",
+              "prep_base": "عَلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s016:076:pass1:attach:a17",
+              "relation": "predication",
+              "focus_role": "dependent",
+              "other_unit_id": "q:16:76:32",
+              "other_surface": "وَهُوَ",
+              "other_root": "",
+              "other_form_tag": "PRON",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s016:076:pass1:attach:a18",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:16:76:35",
+              "other_surface": "مُسْتَقِيمٍ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;case_government"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "16:121:6:1",
+        "qac_word_ref": "16:121:6",
+        "surah": 16,
+        "ayah": 121,
+        "word_index": 6,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٍ",
+        "stem_ar": "صِرَٰطٍ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|GEN",
+        "ayah_ref": "16:121",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s016:121:noun:8",
+          "attachment_word_unit_id": "q:16:121:8",
+          "qac_char_span": [
+            28,
+            32
+          ],
+          "attachment_char_spans": [
+            [
+              28,
+              32
+            ]
+          ],
+          "source_grammar": "abstract noun (ism maʿnā), genitive singular indefinite (majrūr) after ilā",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s016:121:pass1:attach:a6",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:16:121:6",
+              "other_surface": "وَهَدَاهُ",
+              "other_root": "ه د ي",
+              "other_form_tag": "PV",
+              "prep_base": "إِلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s016:121:pass1:attach:a7",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:16:121:9",
+              "other_surface": "مُسْتَقِيمٍ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "19:36:7:1",
+        "qac_word_ref": "19:36:7",
+        "surah": 19,
+        "ayah": 36,
+        "word_index": 7,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٌ",
+        "stem_ar": "صِرَٰطٌ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|NOM",
+        "ayah_ref": "19:36",
+        "form_id": "F004",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s019:036:noun:10",
+          "attachment_word_unit_id": "q:19:36:10",
+          "qac_char_span": [
+            26,
+            30
+          ],
+          "attachment_char_spans": [
+            [
+              26,
+              30
+            ]
+          ],
+          "source_grammar": "abstract noun (NOUN_ABSTRACT), indefinite, nominative predicate",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s019:036:pass1:attach:a7",
+              "relation": "predication",
+              "focus_role": "dependent",
+              "other_unit_id": "q:19:36:9",
+              "other_surface": "هَذَا",
+              "other_root": "",
+              "other_form_tag": "DEM_PRON_MS",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s019:036:pass1:attach:a8",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:19:36:11",
+              "other_surface": "مُسْتَقِيمٌ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "19:43:12:1",
+        "qac_word_ref": "19:43:12",
+        "surah": 19,
+        "ayah": 43,
+        "word_index": 12,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطًا",
+        "stem_ar": "صِرَٰطًا",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|ACC",
+        "ayah_ref": "19:43",
+        "form_id": "F005",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s019:043:noun:14",
+          "attachment_word_unit_id": "q:19:43:14",
+          "qac_char_span": [
+            41,
+            46
+          ],
+          "attachment_char_spans": [
+            [
+              41,
+              45
+            ],
+            [
+              41,
+              46
+            ]
+          ],
+          "source_grammar": "noun (NOUN_ABSTRACT), indefinite masculine singular accusative (tanwīn); object of ahdika",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s019:043:pass1:attach:a11",
+              "relation": "direct_object",
+              "focus_role": "dependent",
+              "other_unit_id": "q:19:43:13",
+              "other_surface": "أَهْدِكَ",
+              "other_root": "ه د د",
+              "other_form_tag": "IV",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s019:043:pass1:attach:a12",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:19:43:15",
+              "other_surface": "سَوِيًّا",
+              "other_root": "س و ي",
+              "other_form_tag": "NOUN_ABSTRACT",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "20:135:8:2",
+        "qac_word_ref": "20:135:8",
+        "surah": 20,
+        "ayah": 135,
+        "word_index": 8,
+        "morpheme_index": 2,
+        "surface_ar": "صِّرَٰطِ",
+        "stem_ar": "صِّرَٰطِ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|GEN",
+        "ayah_ref": "20:135",
+        "form_id": "F009",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s020:135:noun:10",
+          "attachment_word_unit_id": "q:20:135:10",
+          "qac_char_span": [
+            31,
+            37
+          ],
+          "attachment_char_spans": [
+            [
+              33,
+              37
+            ]
+          ],
+          "source_grammar": "NOUN_ABSTRACT genitive definite; muḍāf ilaih of aṣḥāb; governed by construct state",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s020:135:pass1:attach:a5",
+              "relation": "idafa",
+              "focus_role": "dependent",
+              "other_unit_id": "q:20:135:9",
+              "other_surface": "أَصْحَابُ",
+              "other_root": "ص ح ب",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology;case_government"
+            },
+            {
+              "attachment_id": "ae:v3:s020:135:pass1:attach:a6",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:20:135:11",
+              "other_surface": "السَّوِيِّ",
+              "other_root": "س و أ",
+              "other_form_tag": "NOUN_RELATIVE",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "22:24:8:1",
+        "qac_word_ref": "22:24:8",
+        "surah": 22,
+        "ayah": 24,
+        "word_index": 8,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطِ",
+        "stem_ar": "صِرَٰطِ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|GEN",
+        "ayah_ref": "22:24",
+        "form_id": "F008",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s022:024:noun:10",
+          "attachment_word_unit_id": "q:22:24:10",
+          "qac_char_span": [
+            29,
+            33
+          ],
+          "attachment_char_spans": [
+            [
+              29,
+              33
+            ]
+          ],
+          "source_grammar": "NOUN_ABSTRACT — genitive (governed by ilā), indefinite in construct state (iḍāfa with al-ḥamīd)",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s022:024:pass1:attach:a4",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:22:24:8",
+              "other_surface": "وَهُدُوا",
+              "other_root": "ه د د",
+              "other_form_tag": "PV_PASS",
+              "prep_base": "إِلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s022:024:pass1:attach:a5",
+              "relation": "idafa",
+              "focus_role": "head",
+              "other_unit_id": "q:22:24:11",
+              "other_surface": "الْحَمِيدِ",
+              "other_root": "ح م د",
+              "other_form_tag": "NOUN_PROP",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology;case_government"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "22:54:20:1",
+        "qac_word_ref": "22:54:20",
+        "surah": 22,
+        "ayah": 54,
+        "word_index": 20,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٍ",
+        "stem_ar": "صِرَٰطٍ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|GEN",
+        "ayah_ref": "22:54",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s022:054:noun:26",
+          "attachment_word_unit_id": "q:22:54:26",
+          "qac_char_span": [
+            83,
+            87
+          ],
+          "attachment_char_spans": [
+            [
+              83,
+              87
+            ]
+          ],
+          "source_grammar": "NOUN_ABSTRACT, genitive (governed by ilā), indefinite",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s022:054:pass1:attach:a14",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:22:54:22",
+              "other_surface": "لَهَادِ",
+              "other_root": "ه د ي",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "إِلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s022:054:pass1:attach:a15",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:22:54:27",
+              "other_surface": "مُسْتَقِيمٍ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;case_government"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "23:73:4:1",
+        "qac_word_ref": "23:73:4",
+        "surah": 23,
+        "ayah": 73,
+        "word_index": 4,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٍ",
+        "stem_ar": "صِرَٰطٍ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|GEN",
+        "ayah_ref": "23:73",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s023:073:noun:6",
+          "attachment_word_unit_id": "q:23:73:6",
+          "qac_char_span": [
+            15,
+            19
+          ],
+          "attachment_char_spans": [
+            [
+              15,
+              19
+            ]
+          ],
+          "source_grammar": "NOUN_ABSTRACT — genitive governed by ʾilā, indefinite (tanwīn)",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s023:073:pass1:attach:a4",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:23:73:4",
+              "other_surface": "لَتَدْعُوهُمْ",
+              "other_root": "د ع و",
+              "other_form_tag": "IV",
+              "prep_base": "إِلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s023:073:pass1:attach:a5",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:23:73:7",
+              "other_surface": "مُسْتَقِيمٍ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;case_government"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "23:74:7:2",
+        "qac_word_ref": "23:74:7",
+        "surah": 23,
+        "ayah": 74,
+        "word_index": 7,
+        "morpheme_index": 2,
+        "surface_ar": "صِّرَٰطِ",
+        "stem_ar": "صِّرَٰطِ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|GEN",
+        "ayah_ref": "23:74",
+        "form_id": "F009",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s023:074:noun:9",
+          "attachment_word_unit_id": "q:23:74:9",
+          "qac_char_span": [
+            26,
+            32
+          ],
+          "attachment_char_spans": [
+            [
+              28,
+              32
+            ]
+          ],
+          "source_grammar": "NOUN_CONCRETE — definite genitive as object of preposition ʿan, with definite article indicating a known/specific path",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s023:074:pass1:attach:a4",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:23:74:11",
+              "other_surface": "لَنَاكِبُونَ",
+              "other_root": "ن ك ب",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "عَن",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "24:46:10:1",
+        "qac_word_ref": "24:46:10",
+        "surah": 24,
+        "ayah": 46,
+        "word_index": 10,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٍ",
+        "stem_ar": "صِرَٰطٍ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|GEN",
+        "ayah_ref": "24:46",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s024:046:noun:12",
+          "attachment_word_unit_id": "q:24:46:12",
+          "qac_char_span": [
+            39,
+            43
+          ],
+          "attachment_char_spans": [
+            [
+              39,
+              43
+            ]
+          ],
+          "source_grammar": "indefinite genitive noun — governed by ilā; object-destination of guidance",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s024:046:pass1:attach:a6",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:24:46:8",
+              "other_surface": "يَهْدِي",
+              "other_root": "ه د ي",
+              "other_form_tag": "IV",
+              "prep_base": "إِلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s024:046:pass1:attach:a7",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:24:46:13",
+              "other_surface": "مُسْتَقِيمٍ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "34:6:14:1",
+        "qac_word_ref": "34:6:14",
+        "surah": 34,
+        "ayah": 6,
+        "word_index": 14,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطِ",
+        "stem_ar": "صِرَٰطِ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|GEN",
+        "ayah_ref": "34:6",
+        "form_id": "F008",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s034:006:noun:16",
+          "attachment_word_unit_id": "q:34:6:16",
+          "qac_char_span": [
+            51,
+            55
+          ],
+          "attachment_char_spans": [
+            [
+              51,
+              55
+            ]
+          ],
+          "source_grammar": "genitive noun as object of ilā; first term of genitive construct with al-ʿazīz al-ḥamīd",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s034:006:pass1:attach:a9",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:34:6:14",
+              "other_surface": "وَيَهْدِي",
+              "other_root": "ه د ي",
+              "other_form_tag": "IV",
+              "prep_base": "إِلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s034:006:pass1:attach:a10",
+              "relation": "idafa",
+              "focus_role": "head",
+              "other_unit_id": "q:34:6:17",
+              "other_surface": "الْعَزِيزِ",
+              "other_root": "ع ز ز",
+              "other_form_tag": "NOUN_PROP",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology;case_government"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "36:4:2:1",
+        "qac_word_ref": "36:4:2",
+        "surah": 36,
+        "ayah": 4,
+        "word_index": 2,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٍ",
+        "stem_ar": "صِرَٰطٍ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|GEN",
+        "ayah_ref": "36:4",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s036:004:noun:2",
+          "attachment_word_unit_id": "q:36:4:2",
+          "qac_char_span": [
+            4,
+            8
+          ],
+          "attachment_char_spans": [
+            [
+              4,
+              8
+            ]
+          ],
+          "source_grammar": "Indefinite noun, genitive case (majrūr) governed by ʿalā. Abstract noun denoting a defined traversable course. The indefinite tanwīn (-in) contrasts with the definite aṣ-ṣirāṭa in 1:6 — this is \"a path\" not \"THE path.\" The tanwīn carries mīm-ikhfāʾ (ṣirāṭim-mustaqīmin) before the mīm of mustaqīm",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s036:004:pass1:attach:a1",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:36:4:1",
+              "other_surface": "عَلَى",
+              "other_root": "ع ل و",
+              "other_form_tag": "PREP",
+              "prep_base": "عَلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s036:004:pass1:attach:a2",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:36:4:3",
+              "other_surface": "مُسْتَقِيمٍ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "36:61:4:1",
+        "qac_word_ref": "36:61:4",
+        "surah": 36,
+        "ayah": 61,
+        "word_index": 4,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٌ",
+        "stem_ar": "صِرَٰطٌ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|NOM",
+        "ayah_ref": "36:61",
+        "form_id": "F004",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s036:061:noun:5",
+          "attachment_word_unit_id": "q:36:61:5",
+          "qac_char_span": [
+            14,
+            18
+          ],
+          "attachment_char_spans": [
+            [
+              14,
+              18
+            ]
+          ],
+          "source_grammar": "Indefinite noun, nominative case (مرفوع, marfūʿ), functioning as predicate (خبر, khabar) of the nominal sentence. The nominative -un marks it as the information being predicated about hādhā. The indefinite form (no al-) parallels 36:4 (ṣirāṭin mustaqīmin, genitive) — both are indefinite, contrasting with the definite aṣ-ṣirāṭa of 1:6",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s036:061:pass1:attach:a3",
+              "relation": "predication",
+              "focus_role": "dependent",
+              "other_unit_id": "q:36:61:4",
+              "other_surface": "هَذَا",
+              "other_root": "ه و ذ",
+              "other_form_tag": "DEM_PRON_MS",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "word_order;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s036:061:pass1:attach:a4",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:36:61:6",
+              "other_surface": "مُسْتَقِيمٌ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "36:66:7:2",
+        "qac_word_ref": "36:66:7",
+        "surah": 36,
+        "ayah": 66,
+        "word_index": 7,
+        "morpheme_index": 2,
+        "surface_ar": "صِّرَٰطَ",
+        "stem_ar": "صِّرَٰطَ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|ACC",
+        "ayah_ref": "36:66",
+        "form_id": "F001",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s036:066:noun:10",
+          "attachment_word_unit_id": "q:36:66:10",
+          "qac_char_span": [
+            31,
+            37
+          ],
+          "attachment_char_spans": [
+            [
+              33,
+              37
+            ]
+          ],
+          "source_grammar": "definite masculine singular noun in accusative; object or goal of ٱسْتَبَقُوا۟",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s036:066:pass1:attach:a3",
+              "relation": "direct_object",
+              "focus_role": "dependent",
+              "other_unit_id": "q:36:66:9",
+              "other_surface": "فَاسْتَبَقُوا",
+              "other_root": "س ب ق",
+              "other_form_tag": "PV",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "37:23:6:1",
+        "qac_word_ref": "37:23:6",
+        "surah": 37,
+        "ayah": 23,
+        "word_index": 6,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطِ",
+        "stem_ar": "صِرَٰطِ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|GEN",
+        "ayah_ref": "37:23",
+        "form_id": "F008",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s037:023:noun:7",
+          "attachment_word_unit_id": "q:37:23:7",
+          "qac_char_span": [
+            20,
+            24
+          ],
+          "attachment_char_spans": [
+            [
+              20,
+              24
+            ]
+          ],
+          "source_grammar": "Masculine singular noun, genitive after ilā, first term of iḍāfa with al-jaḥīm",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s037:023:pass1:attach:a3",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:37:23:5",
+              "other_surface": "فَاهْدُوهُمْ",
+              "other_root": "ه د د",
+              "other_form_tag": "CV",
+              "prep_base": "إِلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s037:023:pass1:attach:a4",
+              "relation": "idafa",
+              "focus_role": "head",
+              "other_unit_id": "q:37:23:8",
+              "other_surface": "الْجَحِيمِ",
+              "other_root": "ج ح م",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology;case_government"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "37:118:2:2",
+        "qac_word_ref": "37:118:2",
+        "surah": 37,
+        "ayah": 118,
+        "word_index": 2,
+        "morpheme_index": 2,
+        "surface_ar": "صِّرَٰطَ",
+        "stem_ar": "صِّرَٰطَ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|ACC",
+        "ayah_ref": "37:118",
+        "form_id": "F001",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s037:118:noun:3",
+          "attachment_word_unit_id": "q:37:118:3",
+          "qac_char_span": [
+            9,
+            15
+          ],
+          "attachment_char_spans": [
+            [
+              11,
+              15
+            ]
+          ],
+          "source_grammar": "Definite masculine singular accusative noun; object, route accusative, or second complement of هَدَيْنَٰهُمَا; modified by ٱلْمُسْتَقِيمَ",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s037:118:pass1:attach:a2",
+              "relation": "direct_object",
+              "focus_role": "dependent",
+              "other_unit_id": "q:37:118:2",
+              "other_surface": "وَهَدَيْنَاهُمَا",
+              "other_root": "ه د ي",
+              "other_form_tag": "PV",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s037:118:pass1:attach:a3",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:37:118:4",
+              "other_surface": "الْمُسْتَقِيمَ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "38:22:23:2",
+        "qac_word_ref": "38:22:23",
+        "surah": 38,
+        "ayah": 22,
+        "word_index": 23,
+        "morpheme_index": 2,
+        "surface_ar": "صِّرَٰطِ",
+        "stem_ar": "صِّرَٰطِ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|GEN",
+        "ayah_ref": "38:22",
+        "form_id": "F009",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s038:022:noun:28",
+          "attachment_word_unit_id": "q:38:22:28",
+          "qac_char_span": [
+            91,
+            97
+          ],
+          "attachment_char_spans": [
+            [
+              93,
+              97
+            ]
+          ],
+          "source_grammar": "Definite noun genitive as second term of iḍāfa after سَوَآءِ; final goal image of the request",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s038:022:pass1:attach:a14",
+              "relation": "idafa",
+              "focus_role": "dependent",
+              "other_unit_id": "q:38:22:27",
+              "other_surface": "سَوَاءِ",
+              "other_root": "س و ي",
+              "other_form_tag": "NOUN_ABSTRACT",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology;case_government"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "42:52:26:1",
+        "qac_word_ref": "42:52:26",
+        "surah": 42,
+        "ayah": 52,
+        "word_index": 26,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٍ",
+        "stem_ar": "صِرَٰطٍ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|GEN",
+        "ayah_ref": "42:52",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s042:052:noun:32",
+          "attachment_word_unit_id": "q:42:52:32",
+          "qac_char_span": [
+            103,
+            107
+          ],
+          "attachment_char_spans": [
+            [
+              103,
+              107
+            ]
+          ],
+          "source_grammar": "indefinite genitive noun governed by ilā; modified by mustaqīm",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s042:052:pass1:attach:a17",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:42:52:30",
+              "other_surface": "لَتَهْدِي",
+              "other_root": "ه د ي",
+              "other_form_tag": "IV",
+              "prep_base": "إِلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government"
+            },
+            {
+              "attachment_id": "ae:v3:s042:052:pass1:attach:a18",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:42:52:33",
+              "other_surface": "مُسْتَقِيمٍ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "42:53:1:1",
+        "qac_word_ref": "42:53:1",
+        "surah": 42,
+        "ayah": 53,
+        "word_index": 1,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطِ",
+        "stem_ar": "صِرَٰطِ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|GEN",
+        "ayah_ref": "42:53",
+        "form_id": "F008",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s042:053:noun:1",
+          "attachment_word_unit_id": "q:42:53:1",
+          "qac_char_span": [
+            0,
+            4
+          ],
+          "attachment_char_spans": [
+            [
+              0,
+              4
+            ]
+          ],
+          "source_grammar": "genitive singular noun in apposition to the preceding object; iḍāfa head before Allāh (Allāh)",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s042:053:pass1:attach:a1",
+              "relation": "idafa",
+              "focus_role": "head",
+              "other_unit_id": "q:42:53:2",
+              "other_surface": "اللَّهِ",
+              "other_root": "أ ل ه",
+              "other_form_tag": "NOUN_PROP",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "43:43:7:1",
+        "qac_word_ref": "43:43:7",
+        "surah": 43,
+        "ayah": 43,
+        "word_index": 7,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٍ",
+        "stem_ar": "صِرَٰطٍ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|GEN",
+        "ayah_ref": "43:43",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s043:043:noun:9",
+          "attachment_word_unit_id": "q:43:43:9",
+          "qac_char_span": [
+            27,
+            31
+          ],
+          "attachment_char_spans": [
+            [
+              27,
+              31
+            ]
+          ],
+          "source_grammar": "indefinite genitive noun governed by عَلَىٰ and qualified by مُسْتَقِيمٍ",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s043:043:pass1:attach:a4",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:43:43:7",
+              "other_surface": "إِنَّكَ",
+              "other_root": "",
+              "other_form_tag": "ANNUL_PART",
+              "prep_base": "عَلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s043:043:pass1:attach:a5",
+              "relation": "predication",
+              "focus_role": "dependent",
+              "other_unit_id": "q:43:43:7",
+              "other_surface": "إِنَّكَ",
+              "other_root": "",
+              "other_form_tag": "ANNUL_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s043:043:pass1:attach:a6",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:43:43:10",
+              "other_surface": "مُسْتَقِيمٍ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "43:61:9:1",
+        "qac_word_ref": "43:61:9",
+        "surah": 43,
+        "ayah": 61,
+        "word_index": 9,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٌ",
+        "stem_ar": "صِرَٰطٌ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|NOM",
+        "ayah_ref": "43:61",
+        "form_id": "F004",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s043:061:noun:14",
+          "attachment_word_unit_id": "q:43:61:14",
+          "qac_char_span": [
+            37,
+            41
+          ],
+          "attachment_char_spans": [
+            [
+              37,
+              41
+            ]
+          ],
+          "source_grammar": "indefinite nominative predicate of hādhā; qualified by mustaqīmun",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s043:061:pass1:attach:a7",
+              "relation": "predication",
+              "focus_role": "dependent",
+              "other_unit_id": "q:43:61:13",
+              "other_surface": "هَذَا",
+              "other_root": "",
+              "other_form_tag": "DEM_PRON_MS",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s043:061:pass1:attach:a8",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:43:61:15",
+              "other_surface": "مُسْتَقِيمٌ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "43:64:8:1",
+        "qac_word_ref": "43:64:8",
+        "surah": 43,
+        "ayah": 64,
+        "word_index": 8,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٌ",
+        "stem_ar": "صِرَٰطٌ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|NOM",
+        "ayah_ref": "43:64",
+        "form_id": "F004",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s043:064:noun:10",
+          "attachment_word_unit_id": "q:43:64:10",
+          "qac_char_span": [
+            27,
+            31
+          ],
+          "attachment_char_spans": [
+            [
+              27,
+              31
+            ]
+          ],
+          "source_grammar": "NOUN_ABSTRACT indefinite nominative predicate",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s043:064:pass1:attach:a5",
+              "relation": "predication",
+              "focus_role": "dependent",
+              "other_unit_id": "q:43:64:9",
+              "other_surface": "هَذَا",
+              "other_root": "",
+              "other_form_tag": "DEM_PRON_MS",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s043:064:pass1:attach:a6",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:43:64:11",
+              "other_surface": "مُسْتَقِيمٌ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "48:2:14:1",
+        "qac_word_ref": "48:2:14",
+        "surah": 48,
+        "ayah": 2,
+        "word_index": 14,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطًا",
+        "stem_ar": "صِرَٰطًا",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|ACC",
+        "ayah_ref": "48:2",
+        "form_id": "F005",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s048:002:noun:18",
+          "attachment_word_unit_id": "q:48:2:18",
+          "qac_char_span": [
+            50,
+            55
+          ],
+          "attachment_char_spans": [
+            [
+              50,
+              54
+            ],
+            [
+              50,
+              55
+            ]
+          ],
+          "source_grammar": "noun, accusative indefinite (second object of yahdiya)",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s048:002:pass1:attach:a17",
+              "relation": "direct_object",
+              "focus_role": "dependent",
+              "other_unit_id": "q:48:2:17",
+              "other_surface": "وَيَهْدِيَكَ",
+              "other_root": "ه د ي",
+              "other_form_tag": "IV",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s048:002:pass1:attach:a18",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:48:2:19",
+              "other_surface": "مُسْتَقِيمَاً",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "48:20:17:1",
+        "qac_word_ref": "48:20:17",
+        "surah": 48,
+        "ayah": 20,
+        "word_index": 17,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطًا",
+        "stem_ar": "صِرَٰطًا",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|ACC",
+        "ayah_ref": "48:20",
+        "form_id": "F005",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s048:020:noun:23",
+          "attachment_word_unit_id": "q:48:20:23",
+          "qac_char_span": [
+            80,
+            85
+          ],
+          "attachment_char_spans": [
+            [
+              80,
+              84
+            ],
+            [
+              80,
+              85
+            ]
+          ],
+          "source_grammar": "accusative indefinite singular noun; second object of yahdiya (doubly transitive: guides you + to a path); cognate with Latin strata",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s048:020:pass1:attach:a15",
+              "relation": "direct_object",
+              "focus_role": "dependent",
+              "other_unit_id": "q:48:20:22",
+              "other_surface": "وَيَهْدِيَكُمْ",
+              "other_root": "ه د ي",
+              "other_form_tag": "IV",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "case_government"
+            },
+            {
+              "attachment_id": "ae:v3:s048:020:pass1:attach:a16",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:48:20:24",
+              "other_surface": "مُسْتَقِيمَاً",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;case_government"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "67:22:11:1",
+        "qac_word_ref": "67:22:11",
+        "surah": 67,
+        "ayah": 22,
+        "word_index": 11,
+        "morpheme_index": 1,
+        "surface_ar": "صِرَٰطٍ",
+        "stem_ar": "صِرَٰطٍ",
+        "lemma_ar": "صِرَٰط",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Sira`T|ROOT:SrT|M|INDEF|GEN",
+        "ayah_ref": "67:22",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s067:022:noun:12",
+          "attachment_word_unit_id": "q:67:22:12",
+          "qac_char_span": [
+            41,
+            45
+          ],
+          "attachment_char_spans": [
+            [
+              41,
+              45
+            ]
+          ],
+          "source_grammar": "noun, genitive singular indefinite (governed by ʿalā)",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s067:022:pass1:attach:a7",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:67:22:9",
+              "other_surface": "يَمْشِي",
+              "other_root": "م ش ي",
+              "other_form_tag": "IV",
+              "prep_base": "عَلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s067:022:pass1:attach:a8",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:67:22:13",
+              "other_surface": "مُسْتَقِيمٍ",
+              "other_root": "ق و م",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
       }
     ]
   }

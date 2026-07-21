@@ -7,6 +7,7 @@ from pathlib import Path
 from unittest import mock
 
 from v2.scripts.assemble_entry import (
+    agent_branch_evidence,
     canonical_sha256,
     assemble,
     json_content,
@@ -53,19 +54,34 @@ def branch_response(branch: dict) -> dict:
         "language": "tr",
         "image_transliteration": branch["image_transliteration"],
         "summary": branch["summary"],
-        "source_discussion": branch["source_discussion"],
-        "dictionary_annotations": [
-            {
-                "source_id": source["source_id"],
-                "roles": source["roles"],
-                "contribution": source["contribution"],
-            }
-            for source in branch["dictionary_basis"]["sources"]
+        "source_summary": branch["source_discussion"]["discussion"],
+        "usage_notes": [
+            {"kind": note["kind"], "statement": note["statement"]}
+            for note in branch["usage_notes"]
+        ],
+        "evidence_qualifiers": [
+            {"type": item["type"], "statement": item["statement"]}
+            for item in branch["evidence_qualifiers"]
         ],
         "glosses": branch["glosses"],
-        "arabic_neighbor_distinctions": branch[
-            "arabic_neighbor_distinctions"
+        "arabic_neighbor_distinctions": [
+            {
+                key: neighbor[key]
+                for key in (
+                    "neighbor_root_id",
+                    "neighbor_branch_id",
+                    "expression_transliteration",
+                    "gloss",
+                    "shared_zone",
+                    "distinction",
+                )
+            }
+            for neighbor in branch["arabic_neighbor_distinctions"]
         ],
+        "neighbor_coverage": {
+            "assessment": branch["neighbor_coverage"]["assessment"],
+            "note": branch["neighbor_coverage"]["note"],
+        },
     }
 
 
@@ -200,12 +216,6 @@ class EntryWorkflowTest(unittest.TestCase):
                 "branch_writer",
                 FIXTURE,
             )
-        occurrence = {
-            "root_envelope_id": self.fixture["root_envelope_id"],
-            "language": "tr",
-            "observations": self.fixture["occurrence_evidence"]["observations"],
-        }
-        validate_fragment(occurrence, "occurrence_observer", FIXTURE)
         root = {
             "root_envelope_id": self.fixture["root_envelope_id"],
             "language": "tr",
@@ -237,16 +247,6 @@ class EntryWorkflowTest(unittest.TestCase):
                 branch_response(final_by_key[(row["root_id"], row["branch_id"])]),
             )
 
-        occurrence_task = work_dir / "tasks/occurrence_observations.json"
-        write_fragment(
-            work_dir / "fragments/occurrence_observations.json",
-            occurrence_task,
-            {
-                "root_envelope_id": self.fixture["root_envelope_id"],
-                "language": "tr",
-                "observations": self.fixture["occurrence_evidence"]["observations"],
-            },
-        )
         root_task = prepare_root_task(index, "tr", work_dir)
         write_fragment(
             work_dir / "fragments/root_profile.json",
@@ -316,7 +316,7 @@ class EntryWorkflowTest(unittest.TestCase):
 
             entry_path.write_text('{"status":"draft"}\n', encoding="utf-8")
             markdown_path.write_text(
-                "<!-- generated-by: v2/scripts/render_entry.py schema=2 -->\n",
+                "<!-- generated-by: v2/scripts/render_entry.py schema=3 -->\n",
                 encoding="utf-8",
             )
             with self.assertRaisesRegex(ContractError, "unmarked entry"):
@@ -371,7 +371,7 @@ class EntryWorkflowTest(unittest.TestCase):
             "from the branch evidence package",
             {"branches": [{}, {}]},
         )
-        self.assertEqual(owners, ({1}, False, False))
+        self.assertEqual(owners, ({1}, False))
 
     def test_agent_task_materialization_exposes_only_bound_copies(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -382,6 +382,19 @@ class EntryWorkflowTest(unittest.TestCase):
             )
             task_path = prepare_initial_tasks(index_path, index, "tr", work_dir)[0]
             task = load_json(task_path)
+            evidence_path = PROJECT / task["evidence"]["path"]
+            evidence = load_json(evidence_path)
+            self.assertEqual(
+                set(evidence["branch"]),
+                {"branch_id", "branch_image_ar", "what_is_ar", "source_phrase_ar"},
+            )
+            self.assertTrue(evidence["neighbors"])
+            self.assertEqual(
+                set(evidence["neighbors"][0]),
+                {"root_id", "branch_id", "branch_image_ar", "what_is_ar"},
+            )
+            _loaded_index, packages = load_evidence(index_path)
+            self.assertEqual(evidence, agent_branch_evidence(packages[0][1]))
             workspace = directory / "isolated"
             isolated = materialize_agent_task(task, workspace)
 
@@ -417,7 +430,7 @@ class EntryWorkflowTest(unittest.TestCase):
                 encoding="utf-8",
             )
             markdown_path.write_text(
-                "<!-- generated-by: v2/scripts/render_entry.py schema=2 -->\nold\n",
+                "<!-- generated-by: v2/scripts/render_entry.py schema=3 -->\nold\n",
                 encoding="utf-8",
             )
             candidate_entry.write_text('{"status":"draft","new":true}\n', encoding="utf-8")
@@ -521,7 +534,7 @@ class EntryWorkflowTest(unittest.TestCase):
             self.assertTrue(slow_started.is_file())
             self.assertLess(time.monotonic() - started, 4)
 
-    def test_stale_fragment_and_wrong_dictionary_roster_are_rejected(self):
+    def test_stale_fragment_and_unbound_agent_field_are_rejected(self):
         with tempfile.TemporaryDirectory() as temporary:
             directory = Path(temporary)
             index_path, work_dir, _root_task, index = self.create_fixture_run(
@@ -543,9 +556,9 @@ class EntryWorkflowTest(unittest.TestCase):
 
             task_path = work_dir / "tasks/branches" / f"{stem}.json"
             response = branch_response(copy.deepcopy(self.fixture["branches"][0]))
-            response["dictionary_annotations"].pop()
+            response["dictionary_annotations"] = []
             write_fragment(fragment_path, task_path, response)
-            with self.assertRaisesRegex(ContractError, "roster mismatch"):
+            with self.assertRaisesRegex(ContractError, "unknown property"):
                 assemble(
                     index_path,
                     work_dir,
@@ -577,23 +590,34 @@ if role == "branch_writer":
         "language": task["language"],
         "image_transliteration": branch["image_transliteration"],
         "summary": branch["summary"],
-        "source_discussion": branch["source_discussion"],
-        "dictionary_annotations": [
-            {
-                "source_id": source["source_id"],
-                "roles": source["roles"],
-                "contribution": source["contribution"],
-            }
-            for source in branch["dictionary_basis"]["sources"]
+        "source_summary": branch["source_discussion"]["discussion"],
+        "usage_notes": [
+            {"kind": note["kind"], "statement": note["statement"]}
+            for note in branch["usage_notes"]
+        ],
+        "evidence_qualifiers": [
+            {"type": item["type"], "statement": item["statement"]}
+            for item in branch["evidence_qualifiers"]
         ],
         "glosses": branch["glosses"],
-        "arabic_neighbor_distinctions": branch["arabic_neighbor_distinctions"],
-    }
-elif role == "occurrence_observer":
-    response = {
-        "root_envelope_id": task["root_envelope_id"],
-        "language": task["language"],
-        "observations": fixture["occurrence_evidence"]["observations"],
+        "arabic_neighbor_distinctions": [
+            {
+                key: neighbor[key]
+                for key in (
+                    "neighbor_root_id",
+                    "neighbor_branch_id",
+                    "expression_transliteration",
+                    "gloss",
+                    "shared_zone",
+                    "distinction",
+                )
+            }
+            for neighbor in branch["arabic_neighbor_distinctions"]
+        ],
+        "neighbor_coverage": {
+            "assessment": branch["neighbor_coverage"]["assessment"],
+            "note": branch["neighbor_coverage"]["note"],
+        },
     }
 else:
     response = {
@@ -675,7 +699,7 @@ output.write_text(json.dumps(response, ensure_ascii=False) + "\n", encoding="utf
             )
             self.assertEqual(load_json(entry_path), self.fixture)
             self.assertTrue(markdown_path.read_text(encoding="utf-8").startswith(
-                "<!-- generated-by: v2/scripts/render_entry.py schema=2 -->"
+                "<!-- generated-by: v2/scripts/render_entry.py schema=4 -->"
             ))
 
 

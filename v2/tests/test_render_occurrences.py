@@ -8,9 +8,11 @@ from pathlib import Path
 from v2.scripts.render_occurrences import (
     MARKER,
     attachment_rows_by_id,
+    build_attachment_crosswalk,
     group_attachment_patterns,
     group_forms,
     link_occurrences,
+    local_source_grammar,
     normalize_pattern_surface,
     occurrence_unit_id,
     render_markdown,
@@ -112,9 +114,7 @@ class RenderOccurrencesTest(unittest.TestCase):
 
         links = link_occurrences(self.sirat)
         methods = Counter(link["method"] for link in links.values())
-        self.assertEqual(
-            methods, Counter({"corroborated_root_form": 39, "exact_word_unit": 6})
-        )
+        self.assertEqual(methods, Counter({"qac_crosswalk": 45}))
         self.assertTrue(selector_matches(self.sirat, "root_000858"))
         self.assertTrue(selector_matches(self.sirat, "ص ر ط"))
         self.assertTrue(selector_matches(self.sirat, "صراط"))
@@ -165,11 +165,9 @@ class RenderOccurrencesTest(unittest.TestCase):
             methods,
             Counter(
                 {
-                    "corroborated_root_form": 57,
-                    "exact_word_unit": 17,
-                    "no_attachment_instance": 9,
-                    "unresolved_ambiguous": 4,
-                    "unresolved_form_mismatch": 1,
+                    "qac_crosswalk": 79,
+                    "no_attachment_instance": 5,
+                    "unresolved_form_mismatch": 4,
                 }
             ),
         )
@@ -177,23 +175,54 @@ class RenderOccurrencesTest(unittest.TestCase):
         self.assertIn("perfect verb", rendered)
         self.assertIn("Unresolved rows remain visible", rendered)
 
-    def test_repeated_same_form_words_remain_ambiguous(self):
+    def test_repeated_same_form_words_align_by_monotonic_order(self):
         packet = ambiguous_packet()
         validate_packet(packet)
         links = link_occurrences(packet)
+        self.assertEqual({link["method"] for link in links.values()}, {"qac_crosswalk"})
         self.assertEqual(
-            {link["method"] for link in links.values()}, {"unresolved_ambiguous"}
+            [links[f"q:1:1:{index}"]["instances"][0]["unit_id"] for index in (1, 2)],
+            ["verb-9", "verb-10"],
         )
-        self.assertTrue(all(len(link["instances"]) == 2 for link in links.values()))
 
-    def test_multiple_exact_candidates_are_not_reused_by_another_word(self):
+    def test_attachment_numeric_ids_are_not_used_as_qac_identity(self):
         packet = ambiguous_packet()
         for instance in packet["attachments"]["verb_instances"]:
             instance["word_unit_id"] = "q:1:1:1"
         validate_packet(packet)
         links = link_occurrences(packet)
-        self.assertEqual(links["q:1:1:1"]["method"], "unresolved_ambiguous")
-        self.assertEqual(links["q:1:1:2"]["method"], "no_attachment_instance")
+        self.assertEqual(links["q:1:1:1"]["method"], "qac_crosswalk")
+        self.assertEqual(links["q:1:1:2"]["method"], "qac_crosswalk")
+
+    def test_same_root_neighbors_align_to_qac_forms_not_source_ids(self):
+        packet = json.loads(
+            (PROJECT / "data/output/root_packets/root_000783.json").read_text(
+                encoding="utf-8"
+            )
+        )
+        rows = {
+            row["qac_word_ref"]: row for row in build_attachment_crosswalk(packet)["rows"]
+        }
+        self.assertEqual(
+            rows["56:55:1"]["attachment_unit_id"], "ae:v3:s056:055:noun:2"
+        )
+        self.assertEqual(
+            rows["56:55:2"]["attachment_unit_id"], "ae:v3:s056:055:noun:3"
+        )
+
+    def test_attachment_grammar_drops_global_count_claims(self):
+        self.assertEqual(
+            local_source_grammar(
+                "NOUN_CONCRETE; ACC predicate; COUNT 12 with diverse forms"
+            ),
+            "NOUN_CONCRETE; ACC predicate",
+        )
+        self.assertNotIn(
+            "62",
+            local_source_grammar(
+                "noun, nominative. The word appears 62 times in the Quran."
+            ),
+        )
 
     def test_generated_output_is_deterministic_and_protected(self):
         rendered = render_markdown(self.sirat, SIRAT_PACKET, "en")

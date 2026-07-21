@@ -5,9 +5,16 @@ import argparse
 import csv
 import json
 import sqlite3
+import sys
 import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
+
+PROJECT = Path(__file__).resolve().parents[1]
+if str(PROJECT) not in sys.path:
+    sys.path.insert(0, str(PROJECT))
+
+from v2.scripts.render_occurrences import local_source_grammar
 
 
 HAMZA = str.maketrans({"أ": "ء", "إ": "ء", "آ": "ء", "ؤ": "ء", "ئ": "ء", "ٱ": "ء"})
@@ -33,10 +40,15 @@ def fetch(db, query, values=()):
 
 def tsv_matches(path, target, fields):
     with path.open(encoding="utf-8", newline="") as handle:
-        return [
-            dict(row) for row in csv.DictReader(handle, delimiter="\t")
-            if any(root_key(row.get(field, "")) == target for field in fields)
-        ]
+        rows = []
+        for source_row in csv.DictReader(handle, delimiter="\t"):
+            if not any(root_key(source_row.get(field, "")) == target for field in fields):
+                continue
+            row = dict(source_row)
+            if "grammar" in row:
+                row["grammar"] = local_source_grammar(row["grammar"])
+            rows.append(row)
+        return rows
 
 
 def find_roots(db, query):

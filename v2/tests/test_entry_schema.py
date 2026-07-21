@@ -95,22 +95,30 @@ class EntrySchemaTest(unittest.TestCase):
             ].append("unrouted:source"),
             "non-branch source refs",
         )
-        self.assert_invalid(
-            lambda entry: entry["branches"][0]["source_discussion"]["examples"][
-                0
-            ].update({"arabic": "عبارة غير موجودة في المصدر"}),
-            "not an exact substring",
-        )
+        def add_unquoted_example(entry):
+            discussion = entry["branches"][0]["source_discussion"]
+            discussion["examples"].append(
+                {
+                    "arabic": "عبارة غير موجودة في المصدر",
+                    "note": "Bu örnek kaynak pasajında bulunmayan bir ifadedir.",
+                    "source_refs": discussion["evidence_refs"][:1],
+                }
+            )
 
-    def test_disagreement_requires_an_identified_disagreeing_source(self):
-        def add_unmarked_disagreement(entry):
+        self.assert_invalid(add_unquoted_example, "not an exact substring")
+
+    def test_disagreement_requires_a_disputed_qualifier(self):
+        def add_unqualified_disagreement(entry):
             branch = entry["branches"][0]
             branch["source_discussion"]["disagreement"] = {
-                "summary": "Bu cümle ihtilaf olduğunu ileri sürer ancak hiçbir kaynak rolü bunu doğrulamaz.",
+                "summary": "Bu cümle ihtilaf olduğunu ileri sürer ancak niteleyici bunu doğrulamaz.",
                 "source_refs": branch["source_discussion"]["evidence_refs"][:1],
             }
 
-        self.assert_invalid(add_unmarked_disagreement, "no cited source is marked")
+        self.assert_invalid(
+            add_unqualified_disagreement,
+            "disputed qualifier and source disagreement",
+        )
 
     def test_common_loanword_can_only_be_second_selected_gloss(self):
         self.assert_invalid(
@@ -129,6 +137,44 @@ class EntrySchemaTest(unittest.TestCase):
 
         self.assert_invalid(move_common_loanword_to_third, "rank 2")
 
+    def test_lexical_realizations_are_packet_backed(self):
+        self.assert_invalid(
+            lambda entry: entry["branches"][0]["lexical_realizations"][0].update(
+                {"expression_ar": "عبارة مختلفة"}
+            ),
+            "packet-backed lexical roster",
+        )
+
+    def test_disagreement_and_disputed_qualifier_move_together(self):
+        def add_disagreement_without_qualifier(entry):
+            branch = entry["branches"][0]
+            branch["source_discussion"]["disagreement"] = {
+                "summary": "Kaynaklar bu kullanımın açıklanışında birbirinden ayrılan iki açık değerlendirme sunar.",
+                "source_refs": branch["source_discussion"]["evidence_refs"][:1],
+            }
+            branch["evidence_qualifiers"] = []
+
+        self.assert_invalid(
+            add_disagreement_without_qualifier,
+            "disputed qualifier and source disagreement",
+        )
+
+    def test_neighbor_candidate_count_is_evidence_bound(self):
+        self.assert_invalid(
+            lambda entry: entry["branches"][0]["neighbor_coverage"].update(
+                {"candidate_count": 999}
+            ),
+            "candidate_count: expected",
+        )
+
+    def test_attachment_alignment_is_required_and_hash_bound(self):
+        self.assert_invalid(
+            lambda entry: entry["occurrence_evidence"].update(
+                {"alignment_sha256": "0" * 64}
+            ),
+            "alignment_sha256: expected",
+        )
+
     def test_neighbor_links_must_exist_and_cite_neighbor_evidence(self):
         self.assert_invalid(
             lambda entry: entry["branches"][0]["arabic_neighbor_distinctions"][0].update(
@@ -143,12 +189,22 @@ class EntrySchemaTest(unittest.TestCase):
             "absent from the neighbor's Furuq source roster",
         )
 
-    def test_occurrence_observations_use_real_generated_evidence(self):
+    def test_occurrence_data_is_mechanically_derived(self):
         self.assert_invalid(
-            lambda entry: entry["occurrence_evidence"]["observations"][0][
-                "evidence_refs"
-            ].append("999:999:999:999"),
-            "unknown references",
+            lambda entry: entry["occurrence_evidence"]["occurrences"][0].update(
+                {"surface_ar": "لفظ مختلف"}
+            ),
+            "differs from deterministic QAC data",
+        )
+        self.assert_invalid(
+            lambda entry: entry["occurrence_evidence"]["observations"].append(
+                {
+                    "category": "grammar",
+                    "statement": "Bu gözlem ajan tarafından üretilmemelidir.",
+                    "evidence_refs": ["1:6:2:1"],
+                }
+            ),
+            "must be mechanically empty",
         )
         self.assert_invalid(
             lambda entry: entry["occurrence_evidence"].update(

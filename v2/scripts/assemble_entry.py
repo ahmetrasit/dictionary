@@ -24,15 +24,35 @@ from v2.scripts.validate_entry import (
     structural_errors,
     validate_entry,
 )
+from v2.scripts.render_occurrences import structured_occurrence_data
 
 
 FRAGMENT_SCHEMAS = {
     "branch_writer": PROJECT / "v2/schema/fragments/branch-writer.schema.json",
-    "occurrence_observer": (
-        PROJECT / "v2/schema/fragments/occurrence-observer.schema.json"
-    ),
     "root_profile_writer": PROJECT / "v2/schema/fragments/root-profile.schema.json",
 }
+
+
+def agent_branch_evidence(package: dict) -> dict:
+    branch = package["branch"]
+    return {
+        "format": "dictionary-v2-agent-branch-evidence-v1",
+        "branch": {
+            "branch_id": branch["branch_id"],
+            "branch_image_ar": branch["branch_image_ar"],
+            "what_is_ar": branch["what_is_ar"],
+            "source_phrase_ar": branch["source_phrase_ar"],
+        },
+        "neighbors": [
+            {
+                "root_id": row["root_id"],
+                "branch_id": row["branch_id"],
+                "branch_image_ar": row["branch_image_ar"],
+                "what_is_ar": row["what_is_ar"],
+            }
+            for row in package["furuq_candidates"]
+        ],
+    }
 
 
 def canonical_json_bytes(value: Any) -> bytes:
@@ -250,19 +270,9 @@ def branch_from_fragment(package: dict, fragment: dict, path: str) -> dict:
         )
 
     basis = package["dictionary_basis"]
-    expected_ids = [row["source_id"] for row in basis["sources"]]
-    annotations = fragment["dictionary_annotations"]
-    actual_ids = [row["source_id"] for row in annotations]
-    if len(actual_ids) != len(set(actual_ids)):
-        raise ContractError(f"{key}: duplicate dictionary annotation source_id")
-    if set(actual_ids) != set(expected_ids):
-        raise ContractError(
-            f"{key}: dictionary annotation roster mismatch; expected "
-            f"{expected_ids}, got {actual_ids}"
-        )
-    annotation_by_id = {row["source_id"]: row for row in annotations}
-    candidate_refs = {
-        (row["root_id"], row["branch_id"]): set(split_refs(row.get("source_refs", "")))
+    branch_refs = split_refs(branch["source_refs"])
+    candidate_by_key = {
+        (row["root_id"], row["branch_id"]): row
         for row in package["furuq_candidates"]
     }
     for neighbor in fragment["arabic_neighbor_distinctions"]:
@@ -270,47 +280,111 @@ def branch_from_fragment(package: dict, fragment: dict, path: str) -> dict:
             neighbor["neighbor_root_id"],
             neighbor["neighbor_branch_id"],
         )
-        allowed_refs = candidate_refs.get(neighbor_key)
-        if allowed_refs is None:
+        if neighbor_key not in candidate_by_key:
             raise ContractError(
                 f"{path}.arabic_neighbor_distinctions: neighbor "
                 f"{neighbor_key[0]}/{neighbor_key[1]} is absent "
                 "from the branch evidence package"
             )
-        extra_refs = sorted(set(neighbor["evidence_refs"]) - allowed_refs)
-        if extra_refs:
-            raise ContractError(
-                f"{path}.arabic_neighbor_distinctions: neighbor evidence "
-                "references are absent from the "
-                f"packaged candidate roster: {extra_refs}"
-            )
-    sources = []
-    for source in basis["sources"]:
-        annotation = annotation_by_id[source["source_id"]]
-        sources.append(
-            {
-                "source_id": source["source_id"],
-                "dictionary_name": source["dictionary_name"],
-                "roles": annotation["roles"],
-                "source_refs": source["source_refs"],
-                "contribution": annotation["contribution"],
-            }
+    coverage = fragment["neighbor_coverage"]
+    selected_neighbor_count = len(fragment["arabic_neighbor_distinctions"])
+    if selected_neighbor_count == 1 and coverage["assessment"] == "complete":
+        raise ContractError(
+            f"{path}.neighbor_coverage: one selected neighbor must be assessed as "
+            "single_sufficient or legacy_minimum_unverified"
         )
+    if selected_neighbor_count > 1 and coverage["assessment"] == "single_sufficient":
+        raise ContractError(
+            f"{path}.neighbor_coverage: single_sufficient requires exactly one neighbor"
+        )
+    sources = [
+        {
+            "source_id": source["source_id"],
+            "dictionary_name": source["dictionary_name"],
+            "source_refs": source["source_refs"],
+        }
+        for source in basis["sources"]
+    ]
+    disputed = next(
+        (
+            qualifier["statement"]
+            for qualifier in fragment["evidence_qualifiers"]
+            if qualifier["type"] == "disputed"
+        ),
+        None,
+    )
     return {
         "root_id": branch["root_id"],
         "branch_id": branch["branch_id"],
+        "branch_image_ar": branch["branch_image_ar"],
+        "what_is_ar": branch["what_is_ar"],
+        "what_is_not_ar": branch["what_is_not_ar"],
+        "source_phrase_ar": branch["source_phrase_ar"],
         "image_transliteration": fragment["image_transliteration"],
         "summary": fragment["summary"],
-        "source_discussion": fragment["source_discussion"],
+        "lexical_realizations": [
+            {
+                "lexical_unit_id": unit["lexical_unit_id"],
+                "expression_ar": unit["expression_ar"],
+                "unit_kind": unit["unit_kind"],
+                "sense_ar": unit["sense_ar"],
+                "evidence_refs": split_refs(unit.get("source_refs", "")),
+                "quran_form": (
+                    {
+                        "stem_ar": unit["resolved_quran_stem_ar"],
+                        "tag": unit["resolved_quran_tag"],
+                    }
+                    if unit.get("resolved_quran_stem_ar")
+                    and unit.get("resolved_quran_tag")
+                    else None
+                ),
+            }
+            for unit in package.get("lexical_units", [])
+        ],
+        "usage_notes": [
+            {**note, "evidence_refs": branch_refs}
+            for note in fragment["usage_notes"]
+        ],
+        "evidence_qualifiers": [
+            {**qualifier, "source_refs": branch_refs}
+            for qualifier in fragment["evidence_qualifiers"]
+        ],
+        "source_discussion": {
+            "discussion": fragment["source_summary"],
+            "evidence_refs": branch_refs,
+            "examples": [],
+            "disagreement": (
+                {"summary": disputed, "source_refs": branch_refs}
+                if disputed
+                else None
+            ),
+        },
         "dictionary_basis": {
             "dictionary_count": basis["dictionary_count"],
             "passage_count": basis["passage_count"],
             "sources": sources,
         },
         "glosses": fragment["glosses"],
-        "arabic_neighbor_distinctions": fragment[
-            "arabic_neighbor_distinctions"
+        "arabic_neighbor_distinctions": [
+            {
+                **neighbor,
+                "expression_ar": candidate_by_key[
+                    (neighbor["neighbor_root_id"], neighbor["neighbor_branch_id"])
+                ]["branch_image_ar"],
+                "basis": "furuq_branch_comparison",
+                "evidence_refs": split_refs(
+                    candidate_by_key[
+                        (neighbor["neighbor_root_id"], neighbor["neighbor_branch_id"])
+                    ]["source_refs"]
+                ),
+            }
+            for neighbor in fragment["arabic_neighbor_distinctions"]
         ],
+        "neighbor_coverage": {
+            "candidate_count": len(package["furuq_candidates"]),
+            "assessment": coverage["assessment"],
+            "note": coverage["note"],
+        },
     }
 
 
@@ -339,11 +413,15 @@ def build_entry(
         if fragment["language"] != language:
             raise ContractError(f"Wrong-language branch fragment: {fragment_path}")
         evidence = task.get("evidence", {})
-        if (
-            evidence.get("path") != project_relative(package_path)
-            or evidence.get("sha256") != row["sha256"]
-        ):
+        expected_evidence_path = work_dir / "inputs/branches" / f"{stem}.json"
+        if evidence.get("path") != project_relative(expected_evidence_path):
             raise ContractError(f"Task evidence binding mismatch: {task_path}")
+        if not expected_evidence_path.is_file():
+            raise ContractError(f"Missing minimal agent evidence: {expected_evidence_path}")
+        if load_json(expected_evidence_path) != agent_branch_evidence(package):
+            raise ContractError(f"Stale minimal agent evidence: {expected_evidence_path}")
+        if evidence.get("sha256") != sha256_file(expected_evidence_path):
+            raise ContractError(f"Task evidence digest mismatch: {task_path}")
         branches.append(
             branch_from_fragment(
                 package,
@@ -360,38 +438,17 @@ def build_entry(
             }
         )
 
-    occurrence_task_path = work_dir / "tasks/occurrence_observations.json"
-    occurrence_fragment_path = work_dir / "fragments/occurrence_observations.json"
-    occurrence_task, occurrence = load_task_fragment(
-        occurrence_task_path,
-        occurrence_fragment_path,
-        "occurrence_observer",
-    )
-    assert_task_identity(
-        occurrence_task,
-        role="occurrence_observer",
-        envelope=envelope,
-        language=language,
-    )
-    if (
-        occurrence["root_envelope_id"] != envelope
-        or occurrence["language"] != language
-    ):
-        raise ContractError(f"Occurrence fragment identity mismatch: {occurrence_fragment_path}")
     occurrence_path = f"v2/output/occurrences/{envelope}.{language}.md"
-    occurrence_binding = occurrence_task.get("occurrence_artifact", {})
-    if occurrence_binding.get("path") != occurrence_path:
-        raise ContractError(f"Occurrence task artifact mismatch: {occurrence_task_path}")
     occurrence_file = resolve_project_path(occurrence_path)
     if not occurrence_file.is_file():
         raise ContractError(f"Missing occurrence artifact: {occurrence_file}")
-    if occurrence_binding.get("sha256") != sha256_file(occurrence_file):
-        raise ContractError(f"Occurrence task artifact digest mismatch: {occurrence_task_path}")
-    if occurrence_task.get("packet") != {
-        "path": index["packet_path"],
-        "sha256": index["packet_sha256"],
-    }:
-        raise ContractError(f"Occurrence task packet binding mismatch: {occurrence_task_path}")
+    alignment_path = f"v2/output/alignments/{envelope}.json"
+    alignment_file = resolve_project_path(alignment_path)
+    if not alignment_file.is_file():
+        raise ContractError(f"Missing attachment alignment: {alignment_file}")
+    packet = load_json(resolve_project_path(index["packet_path"]))
+    alignment = load_json(alignment_file)
+    mechanical_occurrences = structured_occurrence_data(packet, alignment)
 
     root_task_path = work_dir / "tasks/root_profile.json"
     root_fragment_path = work_dir / "fragments/root_profile.json"
@@ -410,10 +467,6 @@ def build_entry(
         raise ContractError(f"Root-profile fragment identity mismatch: {root_fragment_path}")
     expected_dependencies = {
         "branch_fragments": branch_dependencies,
-        "occurrence_fragment": {
-            "path": project_relative(occurrence_fragment_path),
-            "sha256": sha256_file(occurrence_fragment_path),
-        },
     }
     if root_task.get("dependencies") != expected_dependencies:
         raise ContractError(f"Root-profile task dependency mismatch: {root_task_path}")
@@ -423,7 +476,7 @@ def build_entry(
         raise ContractError(f"Root-profile task branch count mismatch: {root_task_path}")
 
     entry = {
-        "schema_version": 2,
+        "schema_version": 4,
         "generated_by": "v2/scripts/assemble_entry.py",
         "entry_id": f"{envelope}/{language}",
         "language": language,
@@ -442,9 +495,13 @@ def build_entry(
         "branches": branches,
         "occurrence_evidence": {
             "artifact_path": occurrence_path,
-            "artifact_sha256": occurrence_binding["sha256"],
+            "artifact_sha256": sha256_file(occurrence_file),
             "generator": "v2/scripts/render_occurrences.py",
-            "observations": occurrence["observations"],
+            "alignment_path": alignment_path,
+            "alignment_sha256": sha256_file(alignment_file),
+            "alignment_generator": "v2/scripts/render_occurrences.py",
+            "observations": [],
+            **mechanical_occurrences,
         },
     }
     return entry, index

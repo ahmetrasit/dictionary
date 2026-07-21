@@ -17,10 +17,15 @@ PROJECT = Path(__file__).resolve().parents[2]
 if str(PROJECT) not in sys.path:
     sys.path.insert(0, str(PROJECT))
 
-from v2.scripts.render_occurrences import validate_packet
+from v2.scripts.render_occurrences import (
+    structured_occurrence_data,
+    validate_attachment_crosswalk,
+    validate_packet,
+)
 DEFAULT_SCHEMA = PROJECT / "v2/schema/encyclopedia-entry.schema.json"
 DEFAULT_FURUQ = PROJECT / "data/working/furuq_v4.sqlite"
 OCCURRENCE_MARKER = "<!-- generated-by: v2/scripts/render_occurrences.py schema=1 -->"
+ARABIC_RE = re.compile(r"[\u0600-\u06ff]")
 
 DICTIONARY_NAMES = {
     "ayn": "Kitāb al-ʿAyn",
@@ -270,23 +275,6 @@ def validate_dictionary_basis(
     unknown = sorted(set(discussion_refs) - set(required_refs))
     if unknown:
         errors.append(f"{path}.source_discussion: non-branch source refs {unknown}")
-    disagreement_roles = {
-        ref
-        for source in basis["sources"]
-        if "disagreement" in source["roles"]
-        for ref in source["source_refs"]
-    }
-    if discussion["disagreement"] is None and disagreement_roles:
-        errors.append(
-            f"{path}: dictionary basis marks disagreement but disagreement is null"
-        )
-    if discussion["disagreement"] is not None:
-        stated_refs = set(discussion["disagreement"]["source_refs"])
-        if not stated_refs.intersection(disagreement_roles):
-            errors.append(
-                f"{path}.source_discussion.disagreement: no cited source is marked "
-                "with the disagreement role"
-            )
     return errors
 
 
@@ -530,6 +518,27 @@ def validate_occurrence(entry: dict, packet: dict) -> list[str]:
                 "$.occurrence_evidence.artifact_sha256: expected "
                 f"{digest}, got {occurrence['artifact_sha256']}"
             )
+    expected_alignment = f"v2/output/alignments/{entry['root_envelope_id']}.json"
+    if occurrence["alignment_path"] != expected_alignment:
+        errors.append(
+            f"$.occurrence_evidence.alignment_path: expected {expected_alignment!r}"
+        )
+    alignment = project_path(occurrence["alignment_path"])
+    alignment_data = None
+    if not alignment.is_file():
+        errors.append(f"$.occurrence_evidence.alignment_path: missing file {alignment}")
+    else:
+        digest = sha256_file(alignment)
+        if occurrence["alignment_sha256"] != digest:
+            errors.append(
+                "$.occurrence_evidence.alignment_sha256: expected "
+                f"{digest}, got {occurrence['alignment_sha256']}"
+            )
+        try:
+            alignment_data = load_json(alignment)
+            validate_attachment_crosswalk(packet, alignment_data)
+        except (OSError, ValueError) as error:
+            errors.append(f"$.occurrence_evidence.alignment_path: {error}")
     allowed = occurrence_evidence_refs(packet)
     for index, observation in enumerate(occurrence["observations"]):
         unknown = sorted(set(observation["evidence_refs"]) - allowed)
@@ -538,6 +547,15 @@ def validate_occurrence(entry: dict, packet: dict) -> list[str]:
                 f"$.occurrence_evidence.observations[{index}].evidence_refs: "
                 f"unknown references {unknown}"
             )
+    if occurrence["observations"]:
+        errors.append("$.occurrence_evidence.observations: must be mechanically empty")
+    if alignment_data is not None:
+        expected_data = structured_occurrence_data(packet, alignment_data)
+        for field in ("summary", "forms", "ayahs", "occurrences"):
+            if occurrence[field] != expected_data[field]:
+                errors.append(
+                    f"$.occurrence_evidence.{field}: differs from deterministic QAC data"
+                )
     return errors
 
 
@@ -581,6 +599,34 @@ def validate_semantics(
     packet_by_branch = {
         (row["root_id"], row["branch_id"]): row for row in packet["branches"]
     }
+    lexical_by_branch: dict[tuple[str, str], list[dict]] = {}
+    sense_by_key = {
+        (row["root_id"], row["lexical_unit_id"]): row
+        for row in packet.get("lexical_senses", [])
+    }
+    for link in packet.get("branch_lexical_links", []):
+        key = (link["root_id"], link["branch_id"])
+        unit = sense_by_key.get((link["root_id"], link["lexical_unit_id"]))
+        if not unit:
+            continue
+        lexical_by_branch.setdefault(key, []).append(
+            {
+                "lexical_unit_id": unit["lexical_unit_id"],
+                "expression_ar": unit["expression_ar"],
+                "unit_kind": unit["unit_kind"],
+                "sense_ar": unit["sense_ar"],
+                "evidence_refs": split_refs(unit.get("source_refs", "")),
+                "quran_form": (
+                    {
+                        "stem_ar": unit["resolved_quran_stem_ar"],
+                        "tag": unit["resolved_quran_tag"],
+                    }
+                    if unit.get("resolved_quran_stem_ar")
+                    and unit.get("resolved_quran_tag")
+                    else None
+                ),
+            }
+        )
     if not furuq_path.is_file():
         raise ContractError(f"Missing Furuq database: {furuq_path}")
     db = sqlite3.connect(f"file:{furuq_path.resolve()}?mode=ro", uri=True)
@@ -591,6 +637,14 @@ def validate_semantics(
             packet_branch = packet_by_branch.get((branch["root_id"], branch["branch_id"]))
             if packet_branch is None:
                 continue
+            for field in (
+                "branch_image_ar",
+                "what_is_ar",
+                "what_is_not_ar",
+                "source_phrase_ar",
+            ):
+                if branch[field] != packet_branch[field]:
+                    errors.append(f"{path}.{field}: differs from frozen branch evidence")
             errors.extend(
                 validate_dictionary_basis(
                     branch, packet_branch, source_map, source_texts, path
@@ -598,8 +652,61 @@ def validate_semantics(
             )
             errors.extend(validate_glosses(branch, path))
             focus = (branch["root_id"], branch["branch_id"])
+            expected_lexical = lexical_by_branch.get(focus, [])
+            if branch["lexical_realizations"] != expected_lexical:
+                errors.append(
+                    f"{path}.lexical_realizations: expected packet-backed lexical roster"
+                )
+            if ARABIC_RE.search(branch["image_transliteration"]):
+                errors.append(f"{path}.image_transliteration: contains Arabic script")
+            for unit_index, unit in enumerate(branch["lexical_realizations"]):
+                if not ARABIC_RE.search(unit["expression_ar"]):
+                    errors.append(
+                        f"{path}.lexical_realizations[{unit_index}].expression_ar: "
+                        "must contain Arabic script"
+                    )
+            for neighbor_index, neighbor in enumerate(
+                branch["arabic_neighbor_distinctions"]
+            ):
+                if not ARABIC_RE.search(neighbor["expression_ar"]):
+                    errors.append(
+                        f"{path}.arabic_neighbor_distinctions[{neighbor_index}]."
+                        "expression_ar: must contain Arabic script"
+                    )
+                if ARABIC_RE.search(neighbor["expression_transliteration"]):
+                    errors.append(
+                        f"{path}.arabic_neighbor_distinctions[{neighbor_index}]."
+                        "expression_transliteration: contains Arabic script"
+                    )
+            branch_refs = {
+                ref
+                for source in branch["dictionary_basis"]["sources"]
+                for ref in source["source_refs"]
+            }
+            for field, ref_field in (("usage_notes", "evidence_refs"), ("evidence_qualifiers", "source_refs")):
+                for item_index, item in enumerate(branch[field]):
+                    unknown = sorted(set(item[ref_field]) - branch_refs)
+                    if unknown:
+                        errors.append(
+                            f"{path}.{field}[{item_index}].{ref_field}: "
+                            f"non-branch source refs {unknown}"
+                        )
+            disputed = any(
+                item["type"] == "disputed" for item in branch["evidence_qualifiers"]
+            )
+            has_disagreement = branch["source_discussion"]["disagreement"] is not None
+            if disputed != has_disagreement:
+                errors.append(
+                    f"{path}.evidence_qualifiers: disputed qualifier and source "
+                    "disagreement must appear together"
+                )
+            allowed = candidate_map.get(focus, {})
+            if branch["neighbor_coverage"]["candidate_count"] != len(allowed):
+                errors.append(
+                    f"{path}.neighbor_coverage.candidate_count: expected {len(allowed)}"
+                )
             errors.extend(
-                validate_neighbors(branch, db, candidate_map.get(focus, {}), path)
+                validate_neighbors(branch, db, allowed, path)
             )
     finally:
         db.close()

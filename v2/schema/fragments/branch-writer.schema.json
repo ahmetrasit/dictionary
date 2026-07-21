@@ -10,10 +10,12 @@
     "language",
     "image_transliteration",
     "summary",
-    "source_discussion",
-    "dictionary_annotations",
+    "source_summary",
+    "usage_notes",
+    "evidence_qualifiers",
     "glosses",
-    "arabic_neighbor_distinctions"
+    "arabic_neighbor_distinctions",
+    "neighbor_coverage"
   ],
   "properties": {
     "root_id": { "$ref": "#/$defs/rootId" },
@@ -21,11 +23,14 @@
     "language": { "enum": ["en", "tr"] },
     "image_transliteration": { "$ref": "#/$defs/shortText" },
     "summary": { "$ref": "#/$defs/shortProse" },
-    "source_discussion": { "$ref": "#/$defs/sourceDiscussion" },
-    "dictionary_annotations": {
+    "source_summary": { "$ref": "#/$defs/prose" },
+    "usage_notes": {
       "type": "array",
-      "minItems": 1,
-      "items": { "$ref": "#/$defs/dictionaryAnnotation" }
+      "items": { "$ref": "#/$defs/usageNote" }
+    },
+    "evidence_qualifiers": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/evidenceQualifier" }
     },
     "glosses": { "$ref": "#/$defs/glossSelection" },
     "arabic_neighbor_distinctions": {
@@ -33,98 +38,45 @@
       "minItems": 1,
       "maxItems": 5,
       "items": { "$ref": "#/$defs/neighborDistinction" }
-    }
+    },
+    "neighbor_coverage": { "$ref": "#/$defs/fragmentNeighborCoverage" }
   },
   "$defs": {
     "rootId": { "type": "string", "pattern": "^root_[0-9]{6}$" },
     "branchId": { "type": "string", "pattern": "^B[0-9]{3}$" },
-    "sourceRef": { "type": "string", "minLength": 3, "maxLength": 1200 },
     "shortText": { "type": "string", "minLength": 2, "maxLength": 500 },
     "shortProse": { "type": "string", "minLength": 10, "maxLength": 1200 },
     "prose": { "type": "string", "minLength": 10, "maxLength": 3000 },
-    "sourceDiscussion": {
+    "usageNote": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["discussion", "evidence_refs", "examples", "disagreement"],
+      "required": ["kind", "statement"],
       "properties": {
-        "discussion": { "$ref": "#/$defs/prose" },
-        "evidence_refs": {
-          "type": "array",
-          "minItems": 1,
-          "uniqueItems": true,
-          "items": { "$ref": "#/$defs/sourceRef" }
+        "kind": {
+          "enum": ["register", "constraint", "technical"]
         },
-        "examples": {
-          "type": "array",
-          "maxItems": 5,
-          "items": { "$ref": "#/$defs/sourceExample" }
-        },
-        "disagreement": {
-          "type": ["object", "null"],
-          "additionalProperties": false,
-          "required": ["summary", "source_refs"],
-          "properties": {
-            "summary": { "$ref": "#/$defs/shortProse" },
-            "source_refs": {
-              "type": "array",
-              "minItems": 1,
-              "uniqueItems": true,
-              "items": { "$ref": "#/$defs/sourceRef" }
-            }
-          }
-        }
+        "statement": { "$ref": "#/$defs/shortProse" }
       }
     },
-    "sourceExample": {
+    "evidenceQualifier": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["arabic", "note", "source_refs"],
+      "required": ["type", "statement"],
       "properties": {
-        "arabic": { "$ref": "#/$defs/shortText" },
-        "note": { "$ref": "#/$defs/shortProse" },
-        "source_refs": {
-          "type": "array",
-          "minItems": 1,
-          "uniqueItems": true,
-          "items": { "$ref": "#/$defs/sourceRef" }
-        }
-      }
-    },
-    "dictionaryAnnotation": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": ["source_id", "roles", "contribution"],
-      "properties": {
-        "source_id": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
-        "roles": {
-          "type": "array",
-          "minItems": 1,
-          "uniqueItems": true,
-          "items": {
-            "enum": [
-              "base_definition",
-              "corroboration",
-              "boundary",
-              "derivation",
-              "example",
-              "disagreement",
-              "sole_attestation",
-              "reading"
-            ]
-          }
-        },
-        "contribution": { "$ref": "#/$defs/shortProse" }
+        "type": { "enum": ["disputed", "rare", "technical"] },
+        "statement": { "$ref": "#/$defs/shortProse" }
       }
     },
     "glossSelection": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["selected", "excluded"],
+      "required": ["semantic_definition", "selected", "excluded"],
       "properties": {
+        "semantic_definition": { "$ref": "#/$defs/shortProse" },
         "selected": {
           "type": "array",
           "minItems": 1,
-          "maxItems": 3,
+          "maxItems": 5,
           "items": { "$ref": "#/$defs/selectedGloss" }
         },
         "excluded": {
@@ -138,11 +90,22 @@
     "selectedGloss": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["rank", "text", "loanword_status", "error_profile"],
+      "required": [
+        "rank",
+        "text",
+        "loanword_status",
+        "usage_role",
+        "applicability",
+        "error_profile"
+      ],
       "properties": {
-        "rank": { "type": "integer", "minimum": 1, "maximum": 3 },
+        "rank": { "type": "integer", "minimum": 1, "maximum": 5 },
         "text": { "$ref": "#/$defs/shortText" },
         "loanword_status": { "enum": ["none", "common", "specialist"] },
+        "usage_role": {
+          "enum": ["general", "contextual", "explanatory", "technical_term", "proper_name"]
+        },
+        "applicability": { "$ref": "#/$defs/shortProse" },
         "error_profile": { "$ref": "#/$defs/errorProfile" }
       }
     },
@@ -177,29 +140,29 @@
       "required": [
         "neighbor_root_id",
         "neighbor_branch_id",
-        "expression_ar",
         "expression_transliteration",
         "gloss",
         "shared_zone",
-        "distinction",
-        "basis",
-        "evidence_refs"
+        "distinction"
       ],
       "properties": {
         "neighbor_root_id": { "$ref": "#/$defs/rootId" },
         "neighbor_branch_id": { "$ref": "#/$defs/branchId" },
-        "expression_ar": { "$ref": "#/$defs/shortText" },
         "expression_transliteration": { "$ref": "#/$defs/shortText" },
         "gloss": { "$ref": "#/$defs/shortText" },
         "shared_zone": { "$ref": "#/$defs/shortProse" },
-        "distinction": { "$ref": "#/$defs/prose" },
-        "basis": { "const": "furuq_branch_comparison" },
-        "evidence_refs": {
-          "type": "array",
-          "minItems": 1,
-          "uniqueItems": true,
-          "items": { "$ref": "#/$defs/sourceRef" }
-        }
+        "distinction": { "$ref": "#/$defs/prose" }
+      }
+    },
+    "fragmentNeighborCoverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["assessment", "note"],
+      "properties": {
+        "assessment": {
+          "enum": ["complete", "single_sufficient", "legacy_minimum_unverified"]
+        },
+        "note": { "$ref": "#/$defs/shortProse" }
       }
     }
   }

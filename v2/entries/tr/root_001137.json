@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 4,
   "generated_by": "v2/scripts/assemble_entry.py",
   "entry_id": "root_001137/tr",
   "language": "tr",
@@ -22,8 +22,8 @@
     "polysemy": "polysemic",
     "organization": "mixed",
     "branch_count": 3,
-    "collocation_weight": "high",
-    "collocation_note": "Üç oluşumun tamamı belirsiz eril tekil sıfattır; ikisi عَذْبٌ (ʿaẕbün), biri مَاءً (mâʾen) öğesine bağımlıdır ve çözülemeyen bağlantı bulunmaz."
+    "collocation_weight": "unknown",
+    "collocation_note": "Quran oluşum verileri mekanik kanıt katmanında tutulur."
   },
   "branches": [
     {
@@ -31,6 +31,45 @@
       "branch_id": "B001",
       "image_transliteration": "mâʾün ʿaẕbün fürâtün",
       "summary": "Suyun tuzlu değil tatlı, hoş ve kolay içilir oluşunu anlatır; niteleme tekil su ve çoğul sularla değişmeden kullanılabilir.",
+      "lexical_realizations": [
+        {
+          "lexical_unit_id": "lu_001",
+          "expression_ar": "فرات",
+          "unit_kind": "form",
+          "sense_ar": "عذب في وصف الماء",
+          "evidence_refs": [
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2750",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A584:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=be34fbeb2279374c",
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D734%3Bsegment_index%3D19:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=97c562adcb52854e",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1130:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=0426058836588e35"
+          ],
+          "quran_form": null
+        },
+        {
+          "lexical_unit_id": "lu_002",
+          "expression_ar": "ماء فرات ومياه فرات",
+          "unit_kind": "collocation",
+          "sense_ar": "ماء عذب، ويقال ذلك للواحد والجمع",
+          "evidence_refs": [
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2750",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A584:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=be34fbeb2279374c",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1130:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=0426058836588e35"
+          ],
+          "quran_form": null
+        },
+        {
+          "lexical_unit_id": "lu_003",
+          "expression_ar": "فرت الماء",
+          "unit_kind": "lexical_unit",
+          "sense_ar": "عذب الماء فصار فراتا",
+          "evidence_refs": [
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D734%3Bsegment_index%3D19:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=97c562adcb52854e"
+          ],
+          "quran_form": null
+        }
+      ],
+      "usage_notes": [],
+      "evidence_qualifiers": [],
       "source_discussion": {
         "discussion": "Dört kaynak dalı tatlı ve içimi hoş su nitelemesinde birleştirir. Maḳâyîs bunu kökün tek ilkesi sayar ve sözün tekil ile çoğul su için değişmediğini belirtir; Ṣıḥâḥ aynı tanımı ve sayı kullanımını doğrular. Tehẕîb niteliğin en tatlı sulara işaret ettiğini ve suyun tatlılaşmasını anlatan fiili kaydeder; Müfredât ise tekil-çoğul kullanımını Kur'an örnekleriyle pekiştirir. Kaynaklar arasında gerçek bir anlam ayrılığı görünmez.",
         "evidence_refs": [
@@ -39,23 +78,7 @@
           "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D734%3Bsegment_index%3D19:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=97c562adcb52854e",
           "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1130:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=0426058836588e35"
         ],
-        "examples": [
-          {
-            "arabic": "الماء الفرات وهو العذب",
-            "note": "el-mâʾü'l-fürâtü ve hüve'l-ʿaẕb ifadesi niteliği doğrudan tatlı suyla açıklar.",
-            "source_refs": [
-              "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2750"
-            ]
-          },
-          {
-            "arabic": "ماء فرات ومياه فرات",
-            "note": "mâʾün fürâtün ve miyâhün fürâtün örnekleri nitelemenin tekil ve çoğul suyla aynı biçimde kaldığını gösterir.",
-            "source_refs": [
-              "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2750",
-              "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A584:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=be34fbeb2279374c"
-            ]
-          }
-        ],
+        "examples": [],
         "disagreement": null
       },
       "dictionary_basis": {
@@ -65,54 +88,30 @@
           {
             "source_id": "maqayis",
             "dictionary_name": "Maqāyīs al-Lugha",
-            "roles": [
-              "base_definition",
-              "boundary",
-              "example"
-            ],
             "source_refs": [
               "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2750"
-            ],
-            "contribution": "Kökü tek bir su niteliği etrafında kurar, bunu tatlılıkla açıklar ve tekil-çoğul kullanım sınırını örnekler."
+            ]
           },
           {
             "source_id": "sihah",
             "dictionary_name": "al-Ṣiḥāḥ",
-            "roles": [
-              "base_definition",
-              "corroboration",
-              "example"
-            ],
             "source_refs": [
               "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A584:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=be34fbeb2279374c"
-            ],
-            "contribution": "Tatlı su tanımını ve değişmeyen tekil-çoğul niteleme örneklerini bağımsız biçimde doğrular."
+            ]
           },
           {
             "source_id": "tahdhib",
             "dictionary_name": "Tahdhīb al-Lugha",
-            "roles": [
-              "base_definition",
-              "derivation",
-              "example"
-            ],
             "source_refs": [
               "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D734%3Bsegment_index%3D19:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=97c562adcb52854e"
-            ],
-            "contribution": "Niteliği suların en tatlısı olarak derecelendirir ve suyun tatlılaşmasını bildiren fiil türevini kaydeder."
+            ]
           },
           {
             "source_id": "mufradat",
             "dictionary_name": "al-Mufradāt fī Gharīb al-Qurʾān",
-            "roles": [
-              "base_definition",
-              "corroboration",
-              "example"
-            ],
             "source_refs": [
               "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1130:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=0426058836588e35"
-            ],
-            "contribution": "Tatlı su tanımını tekil ve çoğula uygulanışıyla verir, ardından iki Kur'an kullanımıyla somutlaştırır."
+            ]
           }
         ]
       },
@@ -128,7 +127,9 @@
               "loses": "Nitelemenin tekil ve çoğul suyla biçim değiştirmediğini tek başına göstermez.",
               "adds": "Türkçedeki hoş sözü öznel bir beğeni tonu ekleyebilir.",
               "collision": "Genel tatlılık ifadeleriyle kesişse de su kaydı dalı sınırlar."
-            }
+            },
+            "usage_role": "explanatory",
+            "applicability": "Anlam alanını açıklamak için uygundur; akıcı çeviride daha doğal bir bağlamsal karşılık tercih edilebilir."
           },
           {
             "rank": 2,
@@ -140,7 +141,9 @@
               "loses": "Kaynakların vurguladığı üstün tat ve kolay içim derecesini zayıflatır.",
               "adds": "Modern coğrafyada bütün tatlı su sınıfını kapsayan teknik bir kategori çağrışımı ekler.",
               "collision": "ع ذ ب (ʿ-ẕ-b; root_000994/B001) dalının daha geniş tatlı ve hoş içimli su alanıyla çarpışır."
-            }
+            },
+            "usage_role": "contextual",
+            "applicability": "Yalnız hata profilinde belirtilen daralma, genişleme ve çağrışımlar somut bağlama uyduğunda kullanılmalıdır."
           }
         ],
         "excluded": [
@@ -168,50 +171,74 @@
               "collision": "İçecek hazırlama dilindeki şekerli su ifadesiyle çarpışır."
             }
           }
-        ]
+        ],
+        "semantic_definition": "Suyun tuzlu değil tatlı, hoş ve kolay içilir oluşunu anlatır; niteleme tekil su ve çoğul sularla değişmeden kullanılabilir."
       },
       "arabic_neighbor_distinctions": [
         {
           "neighbor_root_id": "root_000994",
           "neighbor_branch_id": "B001",
-          "expression_ar": "ماء عذب",
+          "expression_ar": "العذوبة والطيب في الماء والمطعوم",
           "expression_transliteration": "mâʾün ʿaẕbün",
           "gloss": "tatlı ve içilebilir su",
           "shared_zone": "Her iki dal da suyun tuzlu olmayışını, hoşluğunu ve içime elverişliliğini anlatabilir.",
           "distinction": "ع ذ ب (ʿ-ẕ-b) B001 suyun yanında yiyecek ve içeceğin genel hoşluk ve kolay tüketilme niteliğine de uzanır; ف ر ت (f-r-t) B001 ise paket kanıtında özellikle suyu niteleyen, tekil ve çoğulla değişmeden kullanılan daha dar bir su sıfatıdır.",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2445"
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2445",
+            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A735:headword=%D8%B9%D8%B0%D8%A8:root=%D8%B9%20%D8%B0%20%D8%A8:sha=c5261484db5b09af",
+            "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A710%3Asubentry%3A0%3A%D8%B9%D8%B0%D8%A8:headword=%D8%B9%D8%B0%D8%A8:root=%D8%B9%20%D8%B0%20%D8%A8:sha=cedcf183bd258126",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A379:headword=%D8%B9%D8%B0%D8%A8:root=%D8%B9%20%D8%B0%20%D8%A8:sha=f485f251dac7fc8e",
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D162%3Bsegment_index%3D2:headword=%D8%B9%D8%B0%D8%A8:root=%D8%B9%20%D8%B0%20%D8%A8:sha=0506f01fac527754",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A982:headword=%D8%B9%D8%B0%D8%A8:root=%D8%B9%20%D8%B0%20%D8%A8:sha=4e30d6ebb9a1458f"
           ]
         }
-      ]
+      ],
+      "neighbor_coverage": {
+        "candidate_count": 18,
+        "assessment": "legacy_minimum_unverified",
+        "note": "Bu kayıt eski asgari-seçim iş akışından taşınmıştır; mevcut karşılaştırma korunmuş, aday kapsamı henüz yeniden doğrulanmamıştır."
+      },
+      "branch_image_ar": "ماء عذب فرات",
+      "what_is_ar": "يدخل فيه الماء العذب الفرات، ويقال للواحد والجمع: ماء فرات ومياه فرات.",
+      "what_is_not_ar": "ليس اسم نهر مخصوص، وليس ضعف العقل بعد مسكة.",
+      "source_phrase_ar": "الماء الفرات وهو العذب (maqayis)؛ الفرات: الماء العذب (sihah;mufradat)؛ الفرات: أعذب المياه (tahdhib)؛ ماء فرات ومياه فرات (maqayis;sihah)"
     },
     {
       "root_id": "root_001137",
       "branch_id": "B002",
       "image_transliteration": "nehrü'l-Fürât el-müsemmâ",
       "summary": "Sözü genel bir su niteliği olarak değil, Kûfe tarafındaki belirli nehrin özel adı olarak kullanır; ikil biçim ayrıca Fırat ile Düceyl'i birlikte adlandırır.",
+      "lexical_realizations": [
+        {
+          "lexical_unit_id": "lu_004",
+          "expression_ar": "الفرات",
+          "unit_kind": "lexical_unit",
+          "sense_ar": "اسم نهر الكوفة",
+          "evidence_refs": [
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A584:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=be34fbeb2279374c"
+          ],
+          "quran_form": null
+        },
+        {
+          "lexical_unit_id": "lu_005",
+          "expression_ar": "الفراتان",
+          "unit_kind": "lexical_unit",
+          "sense_ar": "الفرات ودجيل",
+          "evidence_refs": [
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A584:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=be34fbeb2279374c"
+          ],
+          "quran_form": null
+        }
+      ],
+      "usage_notes": [],
+      "evidence_qualifiers": [],
       "source_discussion": {
         "discussion": "Bu özel ad dalını tek başına Ṣıḥâḥ açıkça kaydeder. Kaynak önce genel tatlı su niteliğini verdikten sonra aynı biçimi Kûfe nehri için özel ad olarak ayırır; ikil biçimi de Fırat ile Düceyl'in ortak adı diye açıklar. Böylece dalın belirleyici unsuru nehir türü değil, belirli coğrafi gönderimdir; başka bir kaynak bulunmadığından sözlükler arası bir anlaşmazlık ileri sürülemez.",
         "evidence_refs": [
           "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A584:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=be34fbeb2279374c"
         ],
-        "examples": [
-          {
-            "arabic": "الفرات: اسم نهر الكوفة",
-            "note": "el-Fürâtü ismü nehri'l-Kûfe ifadesi sözü Kûfe nehri için özel ad olarak sınırlar.",
-            "source_refs": [
-              "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A584:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=be34fbeb2279374c"
-            ]
-          },
-          {
-            "arabic": "الفراتان: الفرات ودجيل",
-            "note": "el-Fürâtâni el-Fürâtü ve Düceylün açıklaması ikil adlandırmanın iki belirli nehri kapsadığını gösterir.",
-            "source_refs": [
-              "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A584:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=be34fbeb2279374c"
-            ]
-          }
-        ],
+        "examples": [],
         "disagreement": null
       },
       "dictionary_basis": {
@@ -221,16 +248,9 @@
           {
             "source_id": "sihah",
             "dictionary_name": "al-Ṣiḥāḥ",
-            "roles": [
-              "sole_attestation",
-              "base_definition",
-              "boundary",
-              "example"
-            ],
             "source_refs": [
               "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A584:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=be34fbeb2279374c"
-            ],
-            "contribution": "Genel su niteliğinden ayrı olarak Kûfe nehrinin özel adını ve Fırat ile Düceyl'i kapsayan ikil adlandırmayı tek başına belgeler."
+            ]
           }
         ]
       },
@@ -246,7 +266,9 @@
               "loses": "Türkçede yerleşmiş özel adın kısa ve doğrudan tanınabilir biçimini kaybeder.",
               "adds": "Tarafındaki sözü kaynaktaki coğrafi bağı yaklaşık bir konum ifadesine dönüştürür.",
               "collision": "Başka Kûfe nehirleriyle karışabilir; adlandırılmış kaydı bunun özel ad dalı olduğunu belirtir."
-            }
+            },
+            "usage_role": "explanatory",
+            "applicability": "Anlam alanını açıklamak için uygundur; akıcı çeviride daha doğal bir bağlamsal karşılık tercih edilebilir."
           },
           {
             "rank": 2,
@@ -258,7 +280,9 @@
               "loses": "Kaynağın Kûfe merkezli tarihî tanımını ve ikil adlandırma ayrıntısını tek başına göstermez.",
               "adds": "Modern coğrafi adlandırmanın kapsamını ve çağdaş nehir tasavvurunu ekler.",
               "collision": "Fırat sözü bağlamdan yoksun bırakılırsa kişi adıyla veya B001'deki genel su niteliğinin ses iziyle çarpışabilir."
-            }
+            },
+            "usage_role": "technical_term",
+            "applicability": "Yerleşik terimin hedef bağlamda gerçekten etkin olduğu kullanımlarda tercih edilmelidir."
           }
         ],
         "excluded": [
@@ -286,43 +310,62 @@
               "collision": "Genel coğrafya dilindeki bütün nehir çiftleriyle çarpışır."
             }
           }
-        ]
+        ],
+        "semantic_definition": "Sözü genel bir su niteliği olarak değil, Kûfe tarafındaki belirli nehrin özel adı olarak kullanır; ikil biçim ayrıca Fırat ile Düceyl'i birlikte adlandırır."
       },
       "arabic_neighbor_distinctions": [
         {
           "neighbor_root_id": "root_000580",
           "neighbor_branch_id": "B006",
-          "expression_ar": "الرافدان",
+          "expression_ar": "الرافدان النهران",
           "expression_transliteration": "er-râfidân",
           "gloss": "Dicle ile Fırat",
           "shared_zone": "Her iki dal da Mezopotamya'daki belirli nehirleri özel ad veya ortak lakap yoluyla gösterir.",
           "distinction": "ف ر ت (f-r-t) B002 tekil biçimde Fırat'ın kendisini, kendi ikil biçiminde ise Fırat ile Düceyl'i adlandırır; ر ف د (r-f-d) B006 içindeki الرافدان (er-râfidân) ise kaynaklarda Dicle ile Fırat'ın ortak lakabıdır ve tek bir nehrin adı değildir.",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1334"
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1334",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1280:headword=%D8%B1%D9%81%D8%AF:root=%D8%B1%20%D9%81%20%D8%AF:sha=f939780a21cacdc9",
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D35:headword=%D8%B1%D9%81%D8%AF:root=%D8%B1%20%D9%81%20%D8%AF:sha=01c2b15b4a372083",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A580:headword=%D8%B1%D9%81%D8%AF:root=%D8%B1%20%D9%81%20%D8%AF:sha=3f6f10293b1df953"
           ]
         }
-      ]
+      ],
+      "neighbor_coverage": {
+        "candidate_count": 12,
+        "assessment": "legacy_minimum_unverified",
+        "note": "Bu kayıt eski asgari-seçim iş akışından taşınmıştır; mevcut karşılaştırma korunmuş, aday kapsamı henüz yeniden doğrulanmamıştır."
+      },
+      "branch_image_ar": "نهر الفرات المسمى",
+      "what_is_ar": "يدخل فيه الفرات علما على نهر الكوفة، ومعه الفراتان: الفرات ودجيل.",
+      "what_is_not_ar": "ليس مطلق الماء العذب، وليس وصف فرات للواحد والجمع.",
+      "source_phrase_ar": "والفرات: اسم نهر الكوفة؛ والفراتان: الفرات ودجيل (sihah)"
     },
     {
       "root_id": "root_001137",
       "branch_id": "B003",
       "image_transliteration": "ḍaʿfü ʿaḳlin baʿde mesketin",
       "summary": "Bir erkeğin aklının, önceden sahip olduğu tutarlılık ve kavrayıştan sonra zayıflamasını anlatan ayrı bir fiil kullanımını kapsar.",
+      "lexical_realizations": [
+        {
+          "lexical_unit_id": "lu_006",
+          "expression_ar": "فَرِتَ الرجل",
+          "unit_kind": "lexical_unit",
+          "sense_ar": "ضعف عقله بعد مسكة",
+          "evidence_refs": [
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D734%3Bsegment_index%3D19:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=97c562adcb52854e"
+          ],
+          "quran_form": null
+        }
+      ],
+      "usage_notes": [],
+      "evidence_qualifiers": [],
       "source_discussion": {
         "discussion": "Bu dal yalnız Tehẕîb'deki İbnü'l-Aʿrâbî aktarımına dayanır. Aktarım fiilin orta harfinin kesreli okunduğunu belirtir ve anlamı genel bir akılsızlık değil, daha önceki zihinsel tutarlılığın ardından gelen zayıflama olarak sınırlar. Aynı sözlük pasajı suyun tatlılaşması dalını da verdiği halde iki kullanım arasında bir türetim bağı kurmaz; tek kaynak bulunduğundan anlaşmazlık kaydedilmez.",
         "evidence_refs": [
           "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D734%3Bsegment_index%3D19:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=97c562adcb52854e"
         ],
-        "examples": [
-          {
-            "arabic": "فرت الرجل بكسر الراء إذا ضعف عقله بعد مسكة",
-            "note": "ferite'r-racülü bi-kesri'r-râʾi iẕâ ḍaʿufe ʿaḳlühû baʿde mesketin ifadesi hem kesreli okumayı hem de önceki tutarlılıktan sonraki zihinsel düşüşü kaydeder.",
-            "source_refs": [
-              "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D734%3Bsegment_index%3D19:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=97c562adcb52854e"
-            ]
-          }
-        ],
+        "examples": [],
         "disagreement": null
       },
       "dictionary_basis": {
@@ -332,17 +375,9 @@
           {
             "source_id": "tahdhib",
             "dictionary_name": "Tahdhīb al-Lugha",
-            "roles": [
-              "sole_attestation",
-              "base_definition",
-              "reading",
-              "boundary",
-              "example"
-            ],
             "source_refs": [
               "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D734%3Bsegment_index%3D19:headword=%D9%81%D8%B1%D8%AA:root=%D9%81%20%D8%B1%20%D8%AA:sha=97c562adcb52854e"
-            ],
-            "contribution": "Kesreli fiil okumasını tek başına aktarır ve zihinsel zayıflamayı önceki bir tutarlılık durumundan sonra gerçekleşmesiyle sınırlar."
+            ]
           }
         ]
       },
@@ -358,7 +393,9 @@
               "loses": "Fiilin kesreli tarihî okumasını ve öznenin erkek oluşunu gloss içinde göstermez.",
               "adds": "Sonradan sözü değişimin zamanını vurgulayarak anlatımı biraz açıklayıcı hale getirir.",
               "collision": "Genel bilişsel gerileme ifadeleriyle kesişir; önceki tutarlılık kaydı dalı daraltır."
-            }
+            },
+            "usage_role": "general",
+            "applicability": "Dal etkin olduğunda doğrudan karşılık adayıdır; hata profilindeki kayıp ve eklemeler bağlamda denetlenmelidir."
           },
           {
             "rank": 2,
@@ -370,7 +407,9 @@
               "loses": "Kaynağın genel akıl zayıflığı ifadesini modern tutarlılık kavramına daraltır.",
               "adds": "Klinik veya psikolojik bir durum çağrışımı ekleyebilir.",
               "collision": "Modern ruh sağlığı ve bilişsel bozukluk terminolojisiyle çarpışabilir."
-            }
+            },
+            "usage_role": "contextual",
+            "applicability": "Yalnız hata profilinde belirtilen daralma, genişleme ve çağrışımlar somut bağlama uyduğunda kullanılmalıdır."
           }
         ],
         "excluded": [
@@ -398,53 +437,253 @@
               "collision": "Yaşlanma ve gündelik unutkanlık anlatımlarıyla çarpışır."
             }
           }
-        ]
+        ],
+        "semantic_definition": "Bir erkeğin aklının, önceden sahip olduğu tutarlılık ve kavrayıştan sonra zayıflamasını anlatan ayrı bir fiil kullanımını kapsar."
       },
       "arabic_neighbor_distinctions": [
         {
           "neighbor_root_id": "root_001072",
           "neighbor_branch_id": "B002",
-          "expression_ar": "غبن رأيه",
+          "expression_ar": "نقص الرأي والعقل وضعفه",
           "expression_transliteration": "ġabene reʾyehû",
           "gloss": "görüşü ve muhakemesi zayıflamak",
           "shared_zone": "Her iki dal da bir kişinin akıl, görüş veya muhakeme gücündeki zayıflığı anlatır.",
           "distinction": "غ ب ن (ġ-b-n) B002 görüşün veya aklın eksik ve zayıf oluşunu durum olarak kapsar; ف ر ت (f-r-t) B003 ise tanımındaki بعد مسكة (baʿde mesketin) kaydıyla, önceden var olan zihinsel tutarlılıktan sonra gerçekleşen gerilemeyi zorunlu kılar.",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
-            "maqayis:root=%D8%BA%20%D8%A8%20%D9%86:headword=%D8%BA%D8%A8%D9%86:sha=e8d5f3b00a7bc084"
+            "maqayis:root=%D8%BA%20%D8%A8%20%D9%86:headword=%D8%BA%D8%A8%D9%86:sha=e8d5f3b00a7bc084",
+            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3057:headword=%D8%BA%D8%A8%D9%86:root=%D8%BA%20%D8%A8%20%D9%86:sha=37f1d9060e36c7f2",
+            "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A834%3Asubentry%3A1%3A%D8%BA%D8%A8%D9%86:headword=%D8%BA%D8%A8%D9%86:root=%D8%BA%20%D8%A8%20%D9%86:sha=d9095cbf54249166",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5001:headword=%D8%BA%D8%A8%D9%86:root=%D8%BA%20%D8%A8%20%D9%86:sha=4f1cddb2aa42a365",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1068:headword=%D8%BA%D8%A8%D9%86:root=%D8%BA%20%D8%A8%20%D9%86:sha=718e232aa369c22e"
           ]
         }
-      ]
+      ],
+      "neighbor_coverage": {
+        "candidate_count": 11,
+        "assessment": "legacy_minimum_unverified",
+        "note": "Bu kayıt eski asgari-seçim iş akışından taşınmıştır; mevcut karşılaştırma korunmuş, aday kapsamı henüz yeniden doğrulanmamıştır."
+      },
+      "branch_image_ar": "ضعف عقل بعد مسكة",
+      "what_is_ar": "يدخل فيه قولهم: فرت الرجل إذا ضعف عقله بعد مسكة.",
+      "what_is_not_ar": "ليس وصف الماء بالعذوبة، وليس اسم نهر.",
+      "source_phrase_ar": "فرت الرجل بكسر الراء إذا ضعف عقله بعد مسكة (tahdhib)"
     }
   ],
   "occurrence_evidence": {
     "artifact_path": "v2/output/occurrences/root_001137.tr.md",
-    "artifact_sha256": "d40f0a7ff1f38525019d4ef711727023a4f367852a65bba2a3ab4b6bc5760578",
+    "artifact_sha256": "7d59ad8d210565a8fc4d7fcde7354c514d8ddaad01bbc3d45b3fac914d621aaa",
     "generator": "v2/scripts/render_occurrences.py",
-    "observations": [
+    "alignment_path": "v2/output/alignments/root_001137.json",
+    "alignment_sha256": "a63aaf82b7ad5d73c035ba4897e7dcdd9a7e27c6bf06efac4f222b0cbbfb75aa",
+    "alignment_generator": "v2/scripts/render_occurrences.py",
+    "observations": [],
+    "summary": {
+      "morpheme_count": 3,
+      "word_count": 3,
+      "ayah_count": 3,
+      "surah_count": 3
+    },
+    "forms": [
       {
-        "category": "recurrent_pattern",
-        "statement": "F001 biçiminin iki oluşumunda فُرَاتٌ (fürâtün), عَذْبٌ (ʿaẕbün) öğesine bağlı merfu ve belirsiz sıfat olarak yinelenir; çeviri iki niteliğin art arda gelişini korumalıdır.",
-        "evidence_refs": [
-          "ae:v3:s025:053:pass1:attach:a4",
-          "ae:v3:s035:012:pass1:attach:a3"
-        ]
+        "form_id": "F001",
+        "lemma_ar": "فُرَات",
+        "stem_ar": "فُرَاتٌ",
+        "pos": "ADJ",
+        "measure": "",
+        "morph_features": "STEM|POS:ADJ|LEM:furaAt|ROOT:frt|MS|INDEF|NOM",
+        "occurrence_count": 2
       },
       {
-        "category": "grammar",
-        "statement": "77:27'deki tek F002 oluşumu فُرَاتًا (fürâten), مَاءً (mâʾen) öğesini niteleyen mansup ve belirsiz sıfattır; bu durum ilk iki ayetteki merfu F001 biçiminden ayrılır.",
-        "evidence_refs": [
-          "77:27:7:1",
-          "ae:v3:s077:027:pass1:attach:a7"
-        ]
+        "form_id": "F002",
+        "lemma_ar": "فُرَات",
+        "stem_ar": "فُرَاتًا",
+        "pos": "ADJ",
+        "measure": "",
+        "morph_features": "STEM|POS:ADJ|LEM:furaAt|ROOT:frt|MS|INDEF|ACC",
+        "occurrence_count": 1
+      }
+    ],
+    "ayahs": [
+      {
+        "ayah_ref": "25:53",
+        "surface_ar": "وَهُوَ ٱلَّذِى مَرَجَ ٱلْبَحْرَيْنِ هَٰذَا عَذْبٌ فُرَاتٌ وَهَٰذَا مِلْحٌ أُجَاجٌ وَجَعَلَ بَيْنَهُمَا بَرْزَخًا وَحِجْرًا مَّحْجُورًا"
       },
       {
-        "category": "translation_risk",
-        "statement": "Üç oluşumun tamamı morfolojik olarak sıfattır ve başarıyla eşlenen bağlantılarda bir su niteliğine bağımlıdır; bunları bağlam gözetmeden Türkçedeki özel ad Fırat diye vermek sıfat ilişkisini görünmez kılar.",
-        "evidence_refs": [
-          "F001",
-          "F002"
-        ]
+        "ayah_ref": "35:12",
+        "surface_ar": "وَمَا يَسْتَوِى ٱلْبَحْرَانِ هَٰذَا عَذْبٌ فُرَاتٌ سَآئِغٌ شَرَابُهُۥ وَهَٰذَا مِلْحٌ أُجَاجٌ وَمِن كُلٍّ تَأْكُلُونَ لَحْمًا طَرِيًّا وَتَسْتَخْرِجُونَ حِلْيَةً تَلْبَسُونَهَا وَتَرَى ٱلْفُلْكَ فِيهِ مَوَاخِرَ لِتَبْتَغُوا۟ مِن فَضْلِهِۦ وَلَعَلَّكُمْ تَشْكُرُونَ"
+      },
+      {
+        "ayah_ref": "77:27",
+        "surface_ar": "وَجَعَلْنَا فِيهَا رَوَٰسِىَ شَٰمِخَٰتٍ وَأَسْقَيْنَٰكُم مَّآءً فُرَاتًا"
+      }
+    ],
+    "occurrences": [
+      {
+        "qac_ref": "25:53:7:1",
+        "qac_word_ref": "25:53:7",
+        "surah": 25,
+        "ayah": 53,
+        "word_index": 7,
+        "morpheme_index": 1,
+        "surface_ar": "فُرَاتٌ",
+        "stem_ar": "فُرَاتٌ",
+        "lemma_ar": "فُرَات",
+        "source_pos": "ADJ",
+        "pos": "ADJ",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:ADJ|LEM:furaAt|ROOT:frt|MS|INDEF|NOM",
+        "ayah_ref": "25:53",
+        "form_id": "F001",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s025:053:noun:8",
+          "attachment_word_unit_id": "q:25:53:8",
+          "qac_char_span": [
+            24,
+            28
+          ],
+          "attachment_char_spans": [
+            [
+              24,
+              28
+            ]
+          ],
+          "source_grammar": "concrete noun used adjectivally, masculine singular, nominative indefinite; second predicate intensifying ʿadhb",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s025:053:pass1:attach:a4",
+              "relation": "adjective",
+              "focus_role": "dependent",
+              "other_unit_id": "q:25:53:7",
+              "other_surface": "عَذْبٌ",
+              "other_root": "ع ذ ب",
+              "other_form_tag": "ADJ_QUALIT",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "35:12:6:1",
+        "qac_word_ref": "35:12:6",
+        "surah": 35,
+        "ayah": 12,
+        "word_index": 6,
+        "morpheme_index": 1,
+        "surface_ar": "فُرَاتٌ",
+        "stem_ar": "فُرَاتٌ",
+        "lemma_ar": "فُرَات",
+        "source_pos": "ADJ",
+        "pos": "ADJ",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:ADJ|LEM:furaAt|ROOT:frt|MS|INDEF|NOM",
+        "ayah_ref": "35:12",
+        "form_id": "F001",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s035:012:noun:7",
+          "attachment_word_unit_id": "q:35:12:7",
+          "qac_char_span": [
+            22,
+            26
+          ],
+          "attachment_char_spans": [
+            [
+              22,
+              26
+            ]
+          ],
+          "source_grammar": "indefinite adjective/noun in apposition to عَذْبٌ (ʿadhbun)",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s035:012:pass1:attach:a3",
+              "relation": "adjective",
+              "focus_role": "dependent",
+              "other_unit_id": "q:35:12:6",
+              "other_surface": "عَذْبٌ",
+              "other_root": "ع ذ ب",
+              "other_form_tag": "ADJ_QUALIT",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "77:27:7:1",
+        "qac_word_ref": "77:27:7",
+        "surah": 77,
+        "ayah": 27,
+        "word_index": 7,
+        "morpheme_index": 1,
+        "surface_ar": "فُرَاتًا",
+        "stem_ar": "فُرَاتًا",
+        "lemma_ar": "فُرَات",
+        "source_pos": "ADJ",
+        "pos": "ADJ",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:ADJ|LEM:furaAt|ROOT:frt|MS|INDEF|ACC",
+        "ayah_ref": "77:27",
+        "form_id": "F002",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s077:027:noun:9",
+          "attachment_word_unit_id": "q:77:27:9",
+          "qac_char_span": [
+            33,
+            38
+          ],
+          "attachment_char_spans": [
+            [
+              33,
+              37
+            ],
+            [
+              33,
+              38
+            ]
+          ],
+          "source_grammar": "Indefinite accusative adjective/noun qualifying māʾan",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s077:027:pass1:attach:a7",
+              "relation": "adjective",
+              "focus_role": "dependent",
+              "other_unit_id": "q:77:27:8",
+              "other_surface": "مَاءً",
+              "other_root": "م و ه",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
       }
     ]
   }

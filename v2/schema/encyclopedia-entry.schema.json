@@ -19,7 +19,7 @@
     "occurrence_evidence"
   ],
   "properties": {
-    "schema_version": { "const": 2 },
+    "schema_version": { "const": 4 },
     "generated_by": { "const": "v2/scripts/assemble_entry.py" },
     "entry_id": {
       "type": "string",
@@ -74,6 +74,11 @@
     "prose": {
       "type": "string",
       "minLength": 10,
+      "maxLength": 3000
+    },
+    "sourceText": {
+      "type": "string",
+      "minLength": 1,
       "maxLength": 3000
     },
     "provenance": {
@@ -145,18 +150,42 @@
       "required": [
         "root_id",
         "branch_id",
+        "branch_image_ar",
+        "what_is_ar",
+        "what_is_not_ar",
+        "source_phrase_ar",
         "image_transliteration",
         "summary",
+        "lexical_realizations",
+        "usage_notes",
+        "evidence_qualifiers",
         "source_discussion",
         "dictionary_basis",
         "glosses",
-        "arabic_neighbor_distinctions"
+        "arabic_neighbor_distinctions",
+        "neighbor_coverage"
       ],
       "properties": {
         "root_id": { "$ref": "#/$defs/rootId" },
         "branch_id": { "$ref": "#/$defs/branchId" },
+        "branch_image_ar": { "$ref": "#/$defs/sourceText" },
+        "what_is_ar": { "$ref": "#/$defs/sourceText" },
+        "what_is_not_ar": { "$ref": "#/$defs/sourceText" },
+        "source_phrase_ar": { "$ref": "#/$defs/sourceText" },
         "image_transliteration": { "$ref": "#/$defs/shortText" },
         "summary": { "$ref": "#/$defs/shortProse" },
+        "lexical_realizations": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/lexicalRealization" }
+        },
+        "usage_notes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/usageNote" }
+        },
+        "evidence_qualifiers": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/evidenceQualifier" }
+        },
         "source_discussion": { "$ref": "#/$defs/sourceDiscussion" },
         "dictionary_basis": { "$ref": "#/$defs/dictionaryBasis" },
         "glosses": { "$ref": "#/$defs/glossSelection" },
@@ -165,6 +194,72 @@
           "minItems": 1,
           "maxItems": 5,
           "items": { "$ref": "#/$defs/neighborDistinction" }
+        },
+        "neighbor_coverage": { "$ref": "#/$defs/neighborCoverage" }
+      }
+    },
+    "lexicalRealization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "lexical_unit_id",
+        "expression_ar",
+        "unit_kind",
+        "sense_ar",
+        "evidence_refs",
+        "quran_form"
+      ],
+      "properties": {
+        "lexical_unit_id": { "type": "string", "minLength": 3, "maxLength": 100 },
+        "expression_ar": { "$ref": "#/$defs/shortText" },
+        "unit_kind": { "type": "string", "minLength": 2, "maxLength": 100 },
+        "sense_ar": { "$ref": "#/$defs/shortText" },
+        "evidence_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/sourceRef" }
+        },
+        "quran_form": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "required": ["stem_ar", "tag"],
+          "properties": {
+            "stem_ar": { "$ref": "#/$defs/shortText" },
+            "tag": { "type": "string", "minLength": 1, "maxLength": 100 }
+          }
+        }
+      }
+    },
+    "usageNote": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "statement", "evidence_refs"],
+      "properties": {
+        "kind": {
+          "enum": ["morphology", "syntax", "valency", "register", "constraint", "technical"]
+        },
+        "statement": { "$ref": "#/$defs/shortProse" },
+        "evidence_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/sourceRef" }
+        }
+      }
+    },
+    "evidenceQualifier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "statement", "source_refs"],
+      "properties": {
+        "type": { "enum": ["disputed", "rare", "technical"] },
+        "statement": { "$ref": "#/$defs/shortProse" },
+        "source_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/sourceRef" }
         }
       }
     },
@@ -233,7 +328,7 @@
     "dictionarySource": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["source_id", "dictionary_name", "roles", "source_refs", "contribution"],
+      "required": ["source_id", "dictionary_name", "source_refs"],
       "properties": {
         "source_id": {
           "type": "string",
@@ -269,12 +364,13 @@
     "glossSelection": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["selected", "excluded"],
+      "required": ["semantic_definition", "selected", "excluded"],
       "properties": {
+        "semantic_definition": { "$ref": "#/$defs/shortProse" },
         "selected": {
           "type": "array",
           "minItems": 1,
-          "maxItems": 3,
+          "maxItems": 5,
           "items": { "$ref": "#/$defs/selectedGloss" }
         },
         "excluded": {
@@ -288,11 +384,22 @@
     "selectedGloss": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["rank", "text", "loanword_status", "error_profile"],
+      "required": [
+        "rank",
+        "text",
+        "loanword_status",
+        "usage_role",
+        "applicability",
+        "error_profile"
+      ],
       "properties": {
-        "rank": { "type": "integer", "minimum": 1, "maximum": 3 },
+        "rank": { "type": "integer", "minimum": 1, "maximum": 5 },
         "text": { "$ref": "#/$defs/shortText" },
         "loanword_status": { "enum": ["none", "common", "specialist"] },
+        "usage_role": {
+          "enum": ["general", "contextual", "explanatory", "technical_term", "proper_name"]
+        },
+        "applicability": { "$ref": "#/$defs/shortProse" },
         "error_profile": { "$ref": "#/$defs/errorProfile" }
       }
     },
@@ -352,10 +459,34 @@
         }
       }
     },
+    "neighborCoverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate_count", "assessment", "note"],
+      "properties": {
+        "candidate_count": { "type": "integer", "minimum": 1 },
+        "assessment": {
+          "enum": ["complete", "single_sufficient", "legacy_minimum_unverified"]
+        },
+        "note": { "$ref": "#/$defs/shortProse" }
+      }
+    },
     "occurrenceEvidence": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["artifact_path", "artifact_sha256", "generator", "observations"],
+      "required": [
+        "artifact_path",
+        "artifact_sha256",
+        "generator",
+        "alignment_path",
+        "alignment_sha256",
+        "alignment_generator",
+        "observations",
+        "summary",
+        "forms",
+        "ayahs",
+        "occurrences"
+      ],
       "properties": {
         "artifact_path": {
           "type": "string",
@@ -366,10 +497,152 @@
           "pattern": "^[0-9a-f]{64}$"
         },
         "generator": { "const": "v2/scripts/render_occurrences.py" },
+        "alignment_path": {
+          "type": "string",
+          "pattern": "^v2/output/alignments/root_[0-9]{6}(--root_[0-9]{6})*\\.json$"
+        },
+        "alignment_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "alignment_generator": { "const": "v2/scripts/render_occurrences.py" },
         "observations": {
           "type": "array",
           "items": { "$ref": "#/$defs/occurrenceObservation" }
+        },
+        "summary": { "$ref": "#/$defs/occurrenceSummary" },
+        "forms": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/occurrenceForm" }
+        },
+        "ayahs": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/ayahRecord" }
+        },
+        "occurrences": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/occurrenceRecord" }
         }
+      }
+    },
+    "occurrenceSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["morpheme_count", "word_count", "ayah_count", "surah_count"],
+      "properties": {
+        "morpheme_count": { "type": "integer", "minimum": 0 },
+        "word_count": { "type": "integer", "minimum": 0 },
+        "ayah_count": { "type": "integer", "minimum": 0 },
+        "surah_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "occurrenceForm": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["form_id", "lemma_ar", "stem_ar", "pos", "measure", "morph_features", "occurrence_count"],
+      "properties": {
+        "form_id": { "type": "string", "pattern": "^F[0-9]{3}$" },
+        "lemma_ar": { "type": "string" },
+        "stem_ar": { "type": "string" },
+        "pos": { "type": "string" },
+        "measure": { "type": "string" },
+        "morph_features": { "type": "string" },
+        "occurrence_count": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "ayahRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ayah_ref", "surface_ar"],
+      "properties": {
+        "ayah_ref": { "type": "string", "pattern": "^[0-9]+:[0-9]+$" },
+        "surface_ar": { "type": "string", "minLength": 1 }
+      }
+    },
+    "occurrenceRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "qac_ref", "qac_word_ref", "surah", "ayah", "word_index",
+        "morpheme_index", "surface_ar", "stem_ar", "lemma_ar", "source_pos",
+        "pos", "morpheme_role", "measure", "aspect", "mood", "voice",
+        "morph_features", "ayah_ref", "form_id", "alignment"
+      ],
+      "properties": {
+        "qac_ref": { "type": "string", "pattern": "^[0-9]+:[0-9]+:[0-9]+:[0-9]+$" },
+        "qac_word_ref": { "type": "string", "pattern": "^[0-9]+:[0-9]+:[0-9]+$" },
+        "surah": { "type": "integer", "minimum": 1 },
+        "ayah": { "type": "integer", "minimum": 1 },
+        "word_index": { "type": "integer", "minimum": 1 },
+        "morpheme_index": { "type": "integer", "minimum": 1 },
+        "surface_ar": { "type": "string" },
+        "stem_ar": { "type": "string" },
+        "lemma_ar": { "type": "string" },
+        "source_pos": { "type": "string" },
+        "pos": { "type": "string" },
+        "morpheme_role": { "type": "string" },
+        "measure": { "type": "string" },
+        "aspect": { "type": "string" },
+        "mood": { "type": "string" },
+        "voice": { "type": "string" },
+        "morph_features": { "type": "string" },
+        "ayah_ref": { "type": "string", "pattern": "^[0-9]+:[0-9]+$" },
+        "form_id": { "type": "string", "pattern": "^F[0-9]{3}$" },
+        "alignment": { "$ref": "#/$defs/alignmentRecord" }
+      }
+    },
+    "alignmentRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status", "method", "confidence", "attachment_unit_id",
+        "attachment_word_unit_id", "qac_char_span", "attachment_char_spans",
+        "source_grammar", "attachments"
+      ],
+      "properties": {
+        "status": { "enum": ["aligned", "unmatched", "ambiguous"] },
+        "method": { "type": "string" },
+        "confidence": { "type": "string" },
+        "attachment_unit_id": { "type": "string" },
+        "attachment_word_unit_id": { "type": "string" },
+        "qac_char_span": { "$ref": "#/$defs/charSpan" },
+        "attachment_char_spans": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/charSpan" }
+        },
+        "source_grammar": { "type": "string" },
+        "attachments": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/attachmentDetail" }
+        }
+      }
+    },
+    "charSpan": {
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 2,
+      "items": { "type": "integer", "minimum": 0 }
+    },
+    "attachmentDetail": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "attachment_id", "relation", "focus_role", "other_unit_id",
+        "other_surface", "other_root", "other_form_tag", "prep_base",
+        "status", "confidence", "evidence"
+      ],
+      "properties": {
+        "attachment_id": { "type": "string" },
+        "relation": { "type": "string" },
+        "focus_role": { "type": "string" },
+        "other_unit_id": { "type": "string" },
+        "other_surface": { "type": "string" },
+        "other_root": { "type": "string" },
+        "other_form_tag": { "type": "string" },
+        "prep_base": { "type": "string" },
+        "status": { "type": "string" },
+        "confidence": { "type": "string" },
+        "evidence": { "type": "string" }
       }
     },
     "occurrenceObservation": {

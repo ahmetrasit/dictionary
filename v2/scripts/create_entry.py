@@ -26,6 +26,7 @@ if str(PROJECT) not in sys.path:
 
 from v2.scripts.assemble_entry import (
     FRAGMENT_SCHEMAS,
+    agent_branch_evidence,
     canonical_sha256,
     load_task_fragment,
     project_relative,
@@ -41,9 +42,12 @@ from v2.scripts.build_branch_evidence import (
 from v2.scripts.render_entry import MARKER as ENTRY_MARKER
 from v2.scripts.render_entry import render as render_entry
 from v2.scripts.render_occurrences import (
+    build_attachment_crosswalk,
     load_packet,
     render_markdown as render_occurrences,
+    validate_attachment_crosswalk,
     validate_packet,
+    write_crosswalk,
     write_generated as write_occurrences,
 )
 from v2.scripts.output_protection import protect_pinned_entries
@@ -53,7 +57,6 @@ from v2.scripts.validate_entry import ContractError, load_json
 GENERATOR = "v2/scripts/create_entry.py"
 PROMPTS = {
     "branch_writer": PROJECT / "v2/prompts/branch-writer.md",
-    "occurrence_observer": PROJECT / "v2/prompts/occurrence-observer.md",
     "root_profile_writer": PROJECT / "v2/prompts/root-profile-writer.md",
 }
 ENTRY_SCHEMA = PROJECT / "v2/schema/encyclopedia-entry.schema.json"
@@ -272,8 +275,13 @@ def prepare_inputs(
             f"{expected_evidence_dir}, got {evidence_dir.resolve()}"
         )
 
+    alignment_path = PROJECT / "v2/output/alignments" / f"{envelope}.json"
+    crosswalk = build_attachment_crosswalk(packet)
+    validate_attachment_crosswalk(packet, crosswalk)
+    write_crosswalk(alignment_path, crosswalk, check=False)
+
     occurrence_path = PROJECT / "v2/output/occurrences" / f"{envelope}.{language}.md"
-    occurrence_content = render_occurrences(packet, packet_path, language)
+    occurrence_content = render_occurrences(packet, packet_path, language, crosswalk)
     write_occurrences(occurrence_path, occurrence_content, check=False)
 
     index, packages = build_packages(packet, packet_path, furuq_path)
@@ -303,42 +311,24 @@ def prepare_initial_tasks(
                 "needs_evidence: no accepted, uncontaminated Furuq comparison "
                 f"candidate for {row['root_id']}/{row['branch_id']}"
             )
+        stem = f"{row['root_id']}--{row['branch_id']}"
+        agent_evidence_path = work_dir / "inputs/branches" / f"{stem}.json"
+        atomic_write(agent_evidence_path, json_content(agent_branch_evidence(package)))
         task = common_task("branch_writer", index["root_envelope_id"], language)
         task.update(
             {
                 "root_id": row["root_id"],
                 "branch_id": row["branch_id"],
                 "evidence": {
-                    "path": path_ref(evidence_path),
-                    "sha256": row["sha256"],
+                    "path": path_ref(agent_evidence_path),
+                    "sha256": sha256_file(agent_evidence_path),
                 },
             }
         )
-        stem = f"{row['root_id']}--{row['branch_id']}"
         task_path = work_dir / "tasks/branches" / f"{stem}.json"
         write_task(task_path, task)
         task_paths.append(task_path)
 
-    occurrence_path = (
-        PROJECT
-        / "v2/output/occurrences"
-        / f"{index['root_envelope_id']}.{language}.md"
-    )
-    occurrence_task = common_task(
-        "occurrence_observer", index["root_envelope_id"], language
-    )
-    occurrence_task.update(
-        {
-            "packet": {
-                "path": index["packet_path"],
-                "sha256": index["packet_sha256"],
-            },
-            "occurrence_artifact": binding(occurrence_path),
-        }
-    )
-    occurrence_task_path = work_dir / "tasks/occurrence_observations.json"
-    write_task(occurrence_task_path, occurrence_task)
-    task_paths.append(occurrence_task_path)
     return task_paths
 
 
@@ -347,8 +337,6 @@ def fragment_path_for(task_path: Path, work_dir: Path) -> Path:
     role = task["role"]
     if role == "branch_writer":
         return work_dir / "fragments/branches" / task_path.name
-    if role == "occurrence_observer":
-        return work_dir / "fragments/occurrence_observations.json"
     if role == "root_profile_writer":
         return work_dir / "fragments/root_profile.json"
     raise ContractError(f"Unknown task role: {role}")
@@ -369,26 +357,12 @@ def prepare_root_task(index: dict, language: str, work_dir: Path) -> Path:
                 "sha256": sha256_file(fragment_path),
             }
         )
-    occurrence_task = work_dir / "tasks/occurrence_observations.json"
-    occurrence_fragment = work_dir / "fragments/occurrence_observations.json"
-    load_task_fragment(
-        occurrence_task,
-        occurrence_fragment,
-        "occurrence_observer",
-    )
-
     task = common_task("root_profile_writer", index["root_envelope_id"], language)
     task.update(
         {
             "root_ids": index["root_ids"],
             "branch_count": len(index["branches"]),
-            "dependencies": {
-                "branch_fragments": dependencies,
-                "occurrence_fragment": {
-                    "path": path_ref(occurrence_fragment),
-                    "sha256": sha256_file(occurrence_fragment),
-                },
-            },
+            "dependencies": {"branch_fragments": dependencies},
         }
     )
     task_path = work_dir / "tasks/root_profile.json"
@@ -404,16 +378,6 @@ def validate_response_identity(response: dict, task: dict) -> None:
         for field in ("root_id", "branch_id"):
             if response.get(field) != task[field]:
                 raise ContractError(f"branch_writer: response {field} does not match task")
-        evidence_path = Path(task["evidence"]["path"])
-        if not evidence_path.is_absolute():
-            evidence_path = PROJECT / evidence_path
-        package = load_json(evidence_path)
-        expected = [row["source_id"] for row in package["dictionary_basis"]["sources"]]
-        actual = [row["source_id"] for row in response["dictionary_annotations"]]
-        if len(actual) != len(set(actual)) or set(actual) != set(expected):
-            raise ContractError(
-                f"branch_writer: dictionary annotation roster must be {expected}, got {actual}"
-            )
     else:
         if response.get("root_envelope_id") != task["root_envelope_id"]:
             raise ContractError(f"{role}: response root envelope does not match task")
@@ -672,7 +636,7 @@ def run_initial_tasks(
                 raise ContractError(f"Agent task failed: {futures[future]}: {error}") from error
 
 
-def repair_owners(error: str, index: dict) -> tuple[set[int], bool, bool]:
+def repair_owners(error: str, index: dict) -> tuple[set[int], bool]:
     deterministic_markers = (
         ".dictionary_basis",
         "$.provenance",
@@ -684,15 +648,14 @@ def repair_owners(error: str, index: dict) -> tuple[set[int], bool, bool]:
         "source roster mismatch",
     )
     if any(marker in error for marker in deterministic_markers):
-        return set(), False, False
+        return set(), False
     branch_indexes = {
         int(match)
         for match in re.findall(r"\$\.branches\[([0-9]+)\]", error)
         if int(match) < len(index["branches"])
     }
-    occurrence = "$.occurrence_evidence.observations" in error
     root = "$.root_profile" in error
-    return branch_indexes, occurrence, root
+    return branch_indexes, root
 
 
 def repair_fragments(
@@ -706,8 +669,8 @@ def repair_fragments(
     max_repairs: int,
     agent_timeout: int,
 ) -> None:
-    branch_indexes, occurrence, root = repair_owners(error, index)
-    if not branch_indexes and not occurrence and not root:
+    branch_indexes, root = repair_owners(error, index)
+    if not branch_indexes and not root:
         raise ContractError(
             "Validation failure belongs to the deterministic pipeline and cannot "
             f"be repaired by an agent:\n{error}"
@@ -718,17 +681,6 @@ def repair_fragments(
         task_path = work_dir / "tasks/branches" / f"{stem}.json"
         run_agent_task(
             task_path,
-            work_dir,
-            codex_binary=codex_binary,
-            model=model,
-            repair_error=error,
-            force=True,
-            max_repairs=max_repairs,
-            agent_timeout=agent_timeout,
-        )
-    if occurrence:
-        run_agent_task(
-            work_dir / "tasks/occurrence_observations.json",
             work_dir,
             codex_binary=codex_binary,
             model=model,
@@ -776,7 +728,9 @@ def check_output_targets(
             )
     if markdown_path.exists() and not force_entry:
         first = markdown_path.read_text(encoding="utf-8").splitlines()[:1]
-        if first != [ENTRY_MARKER]:
+        if not first or not first[0].startswith(
+            "<!-- generated-by: v2/scripts/render_entry.py schema="
+        ):
             raise ContractError(
                 f"Refusing to replace unmarked Markdown without --force-entry: "
                 f"{markdown_path}"

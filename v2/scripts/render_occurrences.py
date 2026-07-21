@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import difflib
 import json
 import os
 import re
@@ -11,6 +12,7 @@ import sys
 import tempfile
 import unicodedata
 from collections import Counter
+from functools import lru_cache
 from pathlib import Path
 
 PROJECT = Path(__file__).resolve().parents[2]
@@ -91,7 +93,7 @@ LABELS = {
         "patterns": "Grouped attachment patterns",
         "patterns_note": (
             "These are mechanical counts over successfully linked occurrence "
-            "words. They nominate patterns for later agent review."
+            "words. They nominate patterns for downstream analysis."
         ),
         "relation": "Relation",
         "focus_role": "Focus role",
@@ -145,7 +147,7 @@ LABELS = {
         "patterns": "Gruplanmış bağlantı örüntüleri",
         "patterns_note": (
             "Bunlar başarıyla eşlenen oluşum kelimelerinin mekanik sayımlarıdır. "
-            "Daha sonraki ajan incelemesi için örüntü adayı sunarlar."
+            "Sonraki analiz katmanı için örüntü adayı sunarlar."
         ),
         "relation": "İlişki",
         "focus_role": "Odağın rolü",
@@ -275,6 +277,7 @@ ROLE_LABELS = {
 
 JOIN_LABELS = {
     "en": {
+        "qac_crosswalk": "QAC crosswalk",
         "exact_word_unit": "exact word-unit",
         "corroborated_root_form": "corroborated root/form",
         "no_attachment_instance": "no attachment instance",
@@ -282,6 +285,7 @@ JOIN_LABELS = {
         "unresolved_ambiguous": "unresolved ambiguity",
     },
     "tr": {
+        "qac_crosswalk": "QAC çapraz eşlemesi",
         "exact_word_unit": "tam kelime kimliği",
         "corroborated_root_form": "kök/biçim doğrulamalı",
         "no_attachment_instance": "bağlantı oluşumu yok",
@@ -562,6 +566,11 @@ def validate_packet(packet: dict) -> None:
         if not identity:
             raise ValueError("Packet contains an attachment instance without a unit ID")
         instance_ids.append(identity)
+        grammar = " ".join(str(instance.get("grammar", "")).split())
+        if local_source_grammar(grammar) != grammar:
+            raise ValueError(
+                f"Attachment instance {identity} contains a corpus-wide count claim"
+            )
         for field, _role in INSTANCE_ATTACHMENT_FIELDS:
             referenced_attachment_ids.update(split_ids(instance.get(field, "")))
     if len(instance_ids) != len(set(instance_ids)):
@@ -596,6 +605,9 @@ def qac_word_forms(rows: list[dict]) -> set[str]:
             normalized = normalize_arabic(row.get(field, ""), drop_article=True)
             if normalized:
                 values.add(normalized)
+        contextual = normalize_arabic(row.get("_context_surface", ""), drop_article=True)
+        if contextual:
+            values.add(contextual)
     return values
 
 
@@ -618,13 +630,114 @@ def instance_identity(instance: dict) -> str:
     return str(instance.get("unit_id") or instance.get("word_unit_id") or id(instance))
 
 
-def link_occurrences(packet: dict) -> dict[str, dict]:
-    """Join QAC word units to attachment instances without ambiguous guessing."""
+def attachment_pos_compatible(qac_rows: list[dict], instance: dict) -> bool:
+    qac_pos = {str(row.get("pos", "")) for row in qac_rows}
+    tag = str(instance.get("form_tag", ""))
+    if "V" in qac_pos:
+        return tag in {"PV", "IMPV"} or tag.startswith("VERB")
+    return tag not in {"PV", "IMPV"} and not tag.startswith("VERB")
+
+
+def alignment_quality(qac_rows: list[dict], instance: dict) -> int | None:
+    """Score a lexical match without treating source word numbers as identities."""
+    if not roots_match(qac_rows, instance):
+        return None
+    qac_forms = qac_word_forms(qac_rows)
+    attachment_forms = instance_forms(instance)
+    qac_span = tuple(qac_rows[0].get("_qac_char_span", ()))
+    span_match = any(
+        qac_span
+        and start < qac_span[1]
+        and end > qac_span[0]
+        for start, end in instance.get("_qac_char_spans", [])
+    )
+    if qac_forms.intersection(attachment_forms):
+        base = 500 if span_match else 300
+        return base if attachment_pos_compatible(qac_rows, instance) else base - 100
+    if span_match:
+        return 400 if attachment_pos_compatible(qac_rows, instance) else 300
+    similarity = max(
+        (
+            difflib.SequenceMatcher(None, qac_form, attachment_form).ratio()
+            for qac_form in qac_forms
+            for attachment_form in attachment_forms
+        ),
+        default=0.0,
+    )
+    if similarity < 0.55:
+        return None
+    return int(similarity * 100) + (
+        100 if attachment_pos_compatible(qac_rows, instance) else 0
+    )
+
+
+def ordered_alignment(
+    qac_units: list[tuple[str, list[dict]]], instances: list[dict]
+) -> tuple[tuple[tuple[int, int], ...], bool]:
+    """Return the best monotonic lexical alignment and whether it is ambiguous."""
+    qualities = [
+        [alignment_quality(rows, instance) for instance in instances]
+        for _unit, rows in qac_units
+    ]
+
+    @lru_cache(maxsize=None)
+    def solve(i: int, j: int) -> tuple[tuple[int, int], tuple[tuple[tuple[int, int], ...], ...]]:
+        if i == len(qac_units) or j == len(instances):
+            return (0, 0), ((),)
+        options = [solve(i + 1, j), solve(i, j + 1)]
+        quality = qualities[i][j]
+        if quality is not None:
+            score, paths = solve(i + 1, j + 1)
+            options.append(
+                (
+                    (score[0] + 1, score[1] + quality),
+                    tuple((((i, j),) + path) for path in paths),
+                )
+            )
+        best_score = max(score for score, _paths in options)
+        unique_paths: list[tuple[tuple[int, int], ...]] = []
+        for score, paths in options:
+            if score != best_score:
+                continue
+            for path in paths:
+                if path not in unique_paths:
+                    unique_paths.append(path)
+                if len(unique_paths) == 2:
+                    return best_score, tuple(unique_paths)
+        return best_score, tuple(unique_paths)
+
+    _score, paths = solve(0, 0)
+    return paths[0], len(paths) > 1
+
+
+def build_attachment_crosswalk(packet: dict) -> dict:
+    """Build a deterministic attachment-to-QAC map with QAC as canonical identity."""
+    ayah_text: dict[tuple[str, str], str] = {}
+    word_metadata: dict[str, dict] = {}
+    for ayah in packet["qac"]["ayah_contexts"]:
+        ayah_key = (str(ayah["surah"]), str(ayah["ayah"]))
+        cursor = 0
+        pieces = []
+        for word in ayah.get("words", []):
+            normalized = normalize_arabic(word.get("surface_ar", ""))
+            start = cursor
+            cursor += len(normalized)
+            pieces.append(normalized)
+            word_metadata[word["qac_word_ref"]] = {
+                "surface_ar": word.get("surface_ar", ""),
+                "char_span": (start, cursor),
+            }
+        ayah_text[ayah_key] = "".join(pieces)
+
     qac_by_ayah: dict[tuple[str, str], dict[str, list[dict]]] = {}
     for occurrence in packet["qac"]["occurrences"]:
         ayah_key = (str(occurrence["surah"]), str(occurrence["ayah"]))
         unit = occurrence_unit_id(occurrence)
-        qac_by_ayah.setdefault(ayah_key, {}).setdefault(unit, []).append(occurrence)
+        enriched = dict(occurrence)
+        metadata = word_metadata.get(occurrence["qac_word_ref"], {})
+        enriched["_context_surface"] = metadata.get("surface_ar", "")
+        enriched["_qac_char_span"] = metadata.get("char_span", ())
+        qac_by_ayah.setdefault(ayah_key, {}).setdefault(unit, []).append(enriched)
 
     instances_by_ayah: dict[tuple[str, str], list[dict]] = {}
     for instance in (
@@ -632,99 +745,175 @@ def link_occurrences(packet: dict) -> dict[str, dict]:
         + packet["attachments"].get("noun_instances", [])
     ):
         key = (str(instance.get("sura", "")), str(instance.get("ayah", "")))
-        instances_by_ayah.setdefault(key, []).append(instance)
+        enriched = dict(instance)
+        text = ayah_text.get(key, "")
+        spans = set()
+        for form in instance_forms(instance):
+            start = text.find(form)
+            while start >= 0:
+                spans.add((start, start + len(form)))
+                start = text.find(form, start + 1)
+        enriched["_qac_char_spans"] = sorted(spans)
+        instances_by_ayah.setdefault(key, []).append(enriched)
 
-    links: dict[str, dict] = {}
+    rows: list[dict] = []
     for ayah_key, qac_units in qac_by_ayah.items():
-        candidates = instances_by_ayah.get(ayah_key, [])
-        used: set[str] = set()
-
-        for qac_unit, rows in qac_units.items():
-            exact = [
-                candidate
-                for candidate in candidates
-                if candidate.get("word_unit_id") == qac_unit
-                and roots_match(rows, candidate)
-            ]
-            if len(exact) == 1:
-                links[qac_unit] = {"method": "exact_word_unit", "instances": exact}
-                used.add(instance_identity(exact[0]))
-            elif len(exact) > 1:
-                links[qac_unit] = {
-                    "method": "unresolved_ambiguous",
-                    "reason": "multiple_exact",
-                    "instances": exact,
-                }
-                used.update(instance_identity(candidate) for candidate in exact)
-
-        pending = [unit for unit in qac_units if unit not in links]
-        compatible: dict[str, list[dict]] = {}
-        for qac_unit in pending:
-            rows = qac_units[qac_unit]
-            forms = qac_word_forms(rows)
-            compatible[qac_unit] = [
-                candidate
-                for candidate in candidates
-                if instance_identity(candidate) not in used
-                and roots_match(rows, candidate)
-                and bool(forms & instance_forms(candidate))
-            ]
-
-        while True:
-            assignments: list[tuple[str, dict]] = []
-            candidate_owners = Counter(
-                instance_identity(candidate)
-                for unit in pending
-                for candidate in compatible[unit]
+        ordered_qac = list(qac_units.items())
+        source_candidates = instances_by_ayah.get(ayah_key, [])
+        candidates = [
+            row
+            for _index, row in sorted(
+                enumerate(source_candidates),
+                key=lambda item: (
+                    int(item[1].get("wid"))
+                    if str(item[1].get("wid", "")).isdigit()
+                    else item[0],
+                    item[0],
+                ),
             )
-            for unit in pending:
-                options = compatible[unit]
-                if len(options) == 1 and candidate_owners[instance_identity(options[0])] == 1:
-                    assignments.append((unit, options[0]))
-            if not assignments:
-                break
-            assigned_units = set()
-            for unit, candidate in assignments:
-                links[unit] = {
-                    "method": "corroborated_root_form",
-                    "instances": [candidate],
-                }
-                used.add(instance_identity(candidate))
-                assigned_units.add(unit)
-            pending = [unit for unit in pending if unit not in assigned_units]
-            for unit in pending:
-                compatible[unit] = [
-                    candidate
-                    for candidate in compatible[unit]
-                    if instance_identity(candidate) not in used
-                ]
-
-        for qac_unit in pending:
-            rows = qac_units[qac_unit]
-            root_candidates = [
-                candidate
-                for candidate in candidates
-                if instance_identity(candidate) not in used and roots_match(rows, candidate)
+        ]
+        pairs, ambiguous = ordered_alignment(ordered_qac, candidates)
+        paired_qac = {qac_index for qac_index, _instance_index in pairs}
+        for qac_index, instance_index in pairs:
+            qac_unit, qac_rows = ordered_qac[qac_index]
+            instance = candidates[instance_index]
+            quality = alignment_quality(qac_rows, instance)
+            qac_span = list(qac_rows[0].get("_qac_char_span", ()))
+            attachment_spans = [
+                list(span)
+                for span in instance.get("_qac_char_spans", [])
+                if qac_span and span[0] < qac_span[1] and span[1] > qac_span[0]
             ]
-            options = compatible[qac_unit]
-            if options:
-                links[qac_unit] = {
-                    "method": "unresolved_ambiguous",
-                    "reason": "ambiguous_form",
-                    "instances": options,
+            compatible_ids = [
+                instance_identity(candidate)
+                for candidate in candidates
+                if alignment_quality(qac_rows, candidate) is not None
+            ]
+            rows.append(
+                {
+                    "qac_word_ref": qac_unit.removeprefix("q:"),
+                    "qac_unit_id": qac_unit,
+                    "attachment_unit_id": instance_identity(instance),
+                    "attachment_word_unit_id": str(instance.get("word_unit_id", "")),
+                    "status": "ambiguous" if ambiguous else "aligned",
+                    "method": (
+                        "qac_character_span_root_form_monotonic"
+                        if attachment_spans
+                        else "root_form_monotonic"
+                    ),
+                    "confidence": "medium" if ambiguous or (quality or 0) < 400 else "high",
+                    "qac_char_span": qac_span,
+                    "attachment_char_spans": attachment_spans,
+                    **(
+                        {"candidate_attachment_unit_ids": compatible_ids}
+                        if ambiguous
+                        else {}
+                    ),
                 }
-            elif root_candidates:
-                links[qac_unit] = {
-                    "method": "unresolved_form_mismatch",
-                    "reason": "form_mismatch",
-                    "instances": root_candidates,
+            )
+        for qac_index, (qac_unit, qac_rows) in enumerate(ordered_qac):
+            if qac_index in paired_qac:
+                continue
+            root_candidates = [
+                instance_identity(instance)
+                for instance in candidates
+                if roots_match(qac_rows, instance)
+            ]
+            rows.append(
+                {
+                    "qac_word_ref": qac_unit.removeprefix("q:"),
+                    "qac_unit_id": qac_unit,
+                    "attachment_unit_id": "",
+                    "attachment_word_unit_id": "",
+                    "status": "unmatched",
+                    "method": "no_compatible_form",
+                    "confidence": "high",
+                    "qac_char_span": list(qac_rows[0].get("_qac_char_span", ())),
+                    "attachment_char_spans": [],
+                    "candidate_attachment_unit_ids": root_candidates,
                 }
-            else:
-                links[qac_unit] = {
-                    "method": "no_attachment_instance",
-                    "reason": "no_instance",
-                    "instances": [],
-                }
+            )
+    rows.sort(key=lambda row: tuple(int(value) for value in row["qac_word_ref"].split(":")))
+    return {
+        "format": 1,
+        "generated_by": "v2/scripts/render_occurrences.py",
+        "canonical_identity": "qac_word_ref",
+        "rows": rows,
+    }
+
+
+def validate_attachment_crosswalk(packet: dict, crosswalk: dict) -> None:
+    if crosswalk.get("canonical_identity") != "qac_word_ref":
+        raise ValueError("Attachment crosswalk must use qac_word_ref as canonical identity")
+    expected = list(
+        dict.fromkeys(occurrence_unit_id(row) for row in packet["qac"]["occurrences"])
+    )
+    rows = crosswalk.get("rows")
+    if not isinstance(rows, list):
+        raise ValueError("Attachment crosswalk rows must be an array")
+    actual = [row.get("qac_unit_id") for row in rows]
+    if actual != expected:
+        raise ValueError("Attachment crosswalk QAC roster or order differs from packet")
+    attachment_ids = {
+        instance_identity(instance)
+        for instance in (
+            packet["attachments"].get("verb_instances", [])
+            + packet["attachments"].get("noun_instances", [])
+        )
+    }
+    aligned = []
+    for row in rows:
+        expected_ref = str(row.get("qac_unit_id", "")).removeprefix("q:")
+        if row.get("qac_word_ref") != expected_ref:
+            raise ValueError(f"Crosswalk QAC identity mismatch: {row}")
+        attachment_id = row.get("attachment_unit_id", "")
+        if attachment_id:
+            if attachment_id not in attachment_ids:
+                raise ValueError(f"Crosswalk references unknown attachment: {attachment_id}")
+            aligned.append(attachment_id)
+    if len(aligned) != len(set(aligned)):
+        raise ValueError("Attachment crosswalk reuses an attachment instance")
+
+
+def link_occurrences(packet: dict, crosswalk: dict | None = None) -> dict[str, dict]:
+    """Resolve attachment instances through the QAC-keyed crosswalk."""
+    crosswalk = crosswalk or build_attachment_crosswalk(packet)
+    validate_attachment_crosswalk(packet, crosswalk)
+    instances = {
+        instance_identity(instance): instance
+        for instance in (
+            packet["attachments"].get("verb_instances", [])
+            + packet["attachments"].get("noun_instances", [])
+        )
+    }
+    links: dict[str, dict] = {}
+    for row in crosswalk["rows"]:
+        qac_unit = row["qac_unit_id"]
+        attachment_id = row.get("attachment_unit_id", "")
+        if row["status"] == "aligned" and attachment_id in instances:
+            links[qac_unit] = {
+                "method": "qac_crosswalk",
+                "instances": [instances[attachment_id]],
+            }
+        elif row["status"] == "ambiguous":
+            candidates = [
+                instances[candidate]
+                for candidate in row.get("candidate_attachment_unit_ids", [attachment_id])
+                if candidate in instances
+            ]
+            links[qac_unit] = {
+                "method": "unresolved_ambiguous",
+                "reason": "ambiguous_form",
+                "instances": candidates,
+            }
+        else:
+            candidate_ids = row.get("candidate_attachment_unit_ids", [])
+            candidates = [instances[value] for value in candidate_ids if value in instances]
+            links[qac_unit] = {
+                "method": "unresolved_form_mismatch" if candidates else "no_attachment_instance",
+                "reason": "form_mismatch" if candidates else "no_instance",
+                "instances": candidates,
+            }
     return links
 
 
@@ -809,10 +998,117 @@ def linked_source_grammar(link: dict) -> str:
         return ""
     values = []
     for instance in link.get("instances", []):
-        grammar = cell(instance.get("grammar", ""))
+        grammar = cell(local_source_grammar(instance.get("grammar", "")))
         if grammar and grammar not in values:
             values.append(grammar)
     return "; ".join(values)
+
+
+def structured_occurrence_data(packet: dict, crosswalk: dict) -> dict:
+    """Build normalized machine evidence without exposing ayahs to an agent."""
+    validate_attachment_crosswalk(packet, crosswalk)
+    links = link_occurrences(packet, crosswalk)
+    rows_by_id = attachment_rows_by_id(packet)
+    alignment_by_unit = {row["qac_unit_id"]: row for row in crosswalk["rows"]}
+    forms = group_forms(packet["qac"]["occurrences"])
+    form_by_ref: dict[str, str] = {}
+    form_rows = []
+    for form in forms:
+        first = form["occurrences"][0]
+        for occurrence in form["occurrences"]:
+            form_by_ref[occurrence["qac_ref"]] = form["id"]
+        form_rows.append(
+            {
+                "form_id": form["id"],
+                "lemma_ar": first.get("lemma_ar", ""),
+                "stem_ar": first.get("stem_ar", ""),
+                "pos": first.get("pos", ""),
+                "measure": first.get("measure", ""),
+                "morph_features": first.get("morph_features", ""),
+                "occurrence_count": len(form["occurrences"]),
+            }
+        )
+
+    records = []
+    qac_fields = (
+        "qac_ref",
+        "qac_word_ref",
+        "surah",
+        "ayah",
+        "word_index",
+        "morpheme_index",
+        "surface_ar",
+        "stem_ar",
+        "lemma_ar",
+        "source_pos",
+        "pos",
+        "morpheme_role",
+        "measure",
+        "aspect",
+        "mood",
+        "voice",
+        "morph_features",
+    )
+    for occurrence in packet["qac"]["occurrences"]:
+        unit = occurrence_unit_id(occurrence)
+        alignment = alignment_by_unit[unit]
+        link = links[unit]
+        record = {field: occurrence.get(field, "") for field in qac_fields}
+        record["ayah_ref"] = f"{occurrence['surah']}:{occurrence['ayah']}"
+        record["form_id"] = form_by_ref[occurrence["qac_ref"]]
+        record["alignment"] = {
+            "status": alignment["status"],
+            "method": alignment["method"],
+            "confidence": alignment["confidence"],
+            "attachment_unit_id": alignment.get("attachment_unit_id", ""),
+            "attachment_word_unit_id": alignment.get("attachment_word_unit_id", ""),
+            "qac_char_span": alignment.get("qac_char_span", []),
+            "attachment_char_spans": alignment.get("attachment_char_spans", []),
+            "source_grammar": linked_source_grammar(link),
+            "attachments": linked_attachment_details(link, rows_by_id),
+        }
+        records.append(record)
+
+    summary = packet["qac"].get("summary", {})
+    return {
+        "summary": {
+            "morpheme_count": summary.get("morpheme_count", len(records)),
+            "word_count": summary.get(
+                "word_count", len({row["qac_word_ref"] for row in records})
+            ),
+            "ayah_count": summary.get(
+                "ayah_count", len({row["ayah_ref"] for row in records})
+            ),
+            "surah_count": summary.get(
+                "surah_count", len({row["surah"] for row in records})
+            ),
+        },
+        "forms": form_rows,
+        "ayahs": [
+            {"ayah_ref": row["ref"], "surface_ar": row["surface_ar"]}
+            for row in packet["qac"]["ayah_contexts"]
+        ],
+        "occurrences": records,
+    }
+
+
+GLOBAL_GRAMMAR_CLAIMS = (
+    re.compile(r"(?:^|;\s*)COUNT\s+\d+[^.;]*", re.IGNORECASE),
+    re.compile(r"\bThe word appears\s+\d+\s+times?\s+in\s+the\s+Quran[^.]*\.?", re.IGNORECASE),
+    re.compile(r"\s*[—-]\s*always appears[^.;]*\(\d+\s+occurrences?\)", re.IGNORECASE),
+    re.compile(
+        r"(?:^|(?<=[.;]))\s*[^.;]*\b\d+\s+(?:Quranic\s+)?occurrences?\b[^.;]*[.;]?",
+        re.IGNORECASE,
+    ),
+)
+
+
+def local_source_grammar(value: object) -> str:
+    """Keep local grammar while removing unverified corpus-wide assertions."""
+    text = " ".join(str(value or "").split())
+    for pattern in GLOBAL_GRAMMAR_CLAIMS:
+        text = pattern.sub("", text)
+    return text.strip(" ;.—-")
 
 
 def morphology_label(occurrence: dict, language: str) -> str:
@@ -929,11 +1225,16 @@ def group_attachment_patterns(
     )
 
 
-def render_markdown(packet: dict, packet_path: Path, language: str) -> str:
+def render_markdown(
+    packet: dict,
+    packet_path: Path,
+    language: str,
+    crosswalk: dict | None = None,
+) -> str:
     text = LABELS[language]
     occurrences = packet["qac"]["occurrences"]
     forms = group_forms(occurrences)
-    links = link_occurrences(packet)
+    links = link_occurrences(packet, crosswalk)
     rows_by_id = attachment_rows_by_id(packet)
     surfaces = word_surface_map(packet)
     form_by_unit: dict[str, set[str]] = {}
@@ -1101,6 +1402,30 @@ def write_generated(path: Path, content: str, *, check: bool) -> None:
             temporary.unlink()
 
 
+def write_crosswalk(path: Path, crosswalk: dict, *, check: bool) -> None:
+    content = json.dumps(crosswalk, ensure_ascii=False, indent=2) + "\n"
+    if check:
+        if not path.is_file():
+            raise ValueError(f"Missing generated crosswalk: {path}")
+        if path.read_text(encoding="utf-8") != content:
+            raise ValueError(f"Stale generated crosswalk: {path}")
+        return
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if path.exists():
+        existing = json.loads(path.read_text(encoding="utf-8"))
+        if existing.get("generated_by") != crosswalk["generated_by"]:
+            raise ValueError(f"Refusing to replace unmarked crosswalk: {path}")
+    descriptor, temporary_name = tempfile.mkstemp(prefix=f".{path.name}.", dir=path.parent)
+    temporary = Path(temporary_name)
+    try:
+        with os.fdopen(descriptor, "w", encoding="utf-8", newline="") as handle:
+            handle.write(content)
+        os.replace(temporary, path)
+    finally:
+        if temporary.exists():
+            temporary.unlink()
+
+
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -1130,6 +1455,8 @@ def main(argv: list[str] | None = None) -> int:
             / f"{packet['root_envelope_id']}.{args.language}.md"
         )
         output = (args.output or canonical_output).resolve()
+        crosswalk = build_attachment_crosswalk(packet)
+        validate_attachment_crosswalk(packet, crosswalk)
         if output == canonical_output.resolve():
             protect_pinned_entries(
                 PROJECT,
@@ -1138,7 +1465,11 @@ def main(argv: list[str] | None = None) -> int:
                 force=args.force or args.check,
                 scope="canonical occurrence evidence",
             )
-        content = render_markdown(packet, packet_path, args.language)
+            alignment_output = (
+                PROJECT / "v2/output/alignments" / f"{packet['root_envelope_id']}.json"
+            )
+            write_crosswalk(alignment_output, crosswalk, check=args.check)
+        content = render_markdown(packet, packet_path, args.language, crosswalk)
         write_generated(output, content, check=args.check)
     except (OSError, ValueError, json.JSONDecodeError) as error:
         raise SystemExit(str(error)) from error

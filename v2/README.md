@@ -19,7 +19,9 @@ English and Turkish are authored and validated separately.
 The packet-bound validator checks the machine shape plus exact root and branch
 rosters, packet hashes, exhaustive per-branch dictionary bases, dictionary and
 passage counts, gloss ordering, common-loanword placement, Furuq neighbor links,
-source quotations, and occurrence evidence references:
+packet-backed lexical realizations, evidence qualifiers, neighbor coverage, and
+deterministically reproduced QAC morphology, ayahs, occurrences, and attachment
+alignment:
 
 ```sh
 python3 v2/scripts/validate_entry.py v2/examples/root_000858.tr.entry.json
@@ -31,8 +33,9 @@ not a published lexical decision.
 
 The minimal agent workflow, branch evidence package, fragment ownership map,
 retry rules, and acceptance criteria are defined in
-`orchestration/entry-creation.spec.md`. The baseline uses only three agent roles:
-branch writer, occurrence observer, and root profile writer.
+`orchestration/entry-creation.spec.md`. The baseline uses two agent roles:
+one branch writer per branch and one root profile writer per entry. Agents never
+receive Quran ayahs, occurrence data, QAC morphology, or attachment records.
 
 Prepare deterministic evidence and resumable task manifests without making any
 model calls:
@@ -52,6 +55,15 @@ The same command resumes hash-matching fragments. Stale fragments are rerun;
 validation failures are routed to their owning role for at most two repair
 rounds. Outputs are written to `v2/entries/<language>/`, while task and fragment
 state stays under `v2/work/entry_creation/`.
+
+Export all validated entries as deterministic, one-entry-per-line JSONL:
+
+```sh
+python3 v2/scripts/export_jsonl.py --language tr
+```
+
+Every line is one complete schema-v4 entry. The exporter validates all source
+bindings and rejects duplicate entry IDs or mixed languages before writing.
 
 Each agent runs in a temporary read-only workspace containing only its
 hash-bound task inputs. The default per-process timeout is 30 minutes; change it
@@ -101,6 +113,12 @@ For every exact QAC occurrence form, it emits:
   and confidence;
 - mechanical grouped attachment patterns; and
 - unresolved or missing joins without guessed replacements.
+
+Attachment word numbers belong to their own source and are never interpreted as
+QAC references. The renderer first writes a deterministic crosswalk under
+`v2/output/alignments/`; downstream occurrence rows retain `qac_word_ref` as
+their canonical identity. Corpus-wide counts come only from the QAC census, not
+from attachment grammar prose.
 
 Build the input packet separately when it does not exist:
 
