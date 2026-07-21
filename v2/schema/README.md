@@ -121,14 +121,16 @@ an explicit `single_sufficient` rationale; migrated legacy minimum selections
 remain visibly marked until that coverage is reviewed.
 
 The candidate roster is built deterministically. It combines packet-carried QNet
-neighbors, up to eight additional cross-root branches sharing the most QNet core
-keywords, and every sibling branch in the same root envelope. Duplicate stable
-`(root_id, branch_id)` identities are merged. The additional core-overlap rows are
-ordered by shared-keyword count, then two-replicate consensus count, then stable
-IDs. A candidate is exposed to the writer only when its Furūq branch exists and
-is both `accepted` and `contaminated: no`. The writer—not the overlap query—decides
-which candidates are materially useful, authors the actual contrast, selects at
-most five, and puts the key reader distinction first.
+neighbors, raw core overlap, raw bridge overlap, branch-theme overlap, and every
+sibling branch in the same root envelope. The four cross-root lanes are sampled
+round-robin into at most eight unique stable `(root_id, branch_id)` candidates;
+siblings are then appended, and duplicate identities and discovery bases are
+merged. Keyword rows are ranked by overlap count and replicate consensus; theme
+rows are ranked by shared-theme count and two-replicate support. A candidate is
+exposed to the writer only when its Furūq branch exists and is both `accepted`
+and `contaminated: no`. The writer—not the discovery query—decides which
+candidates are materially useful, authors the actual contrast, selects at most
+five, and puts the key reader distinction first.
 
 ### Deferred Quran-SLM enrichment (2026-07-21)
 
@@ -143,8 +145,8 @@ Initial entry work proceeds without rebuilding those networks. QNet may nominate
 fallback candidates, but the fallback level must be understood correctly:
 
 - B011 and B012 have exact branch ports in the frozen QNet snapshot;
-- B002 has an exact thematic assignment in Latent Activation's comprehensive
-  `v11` post-fix record, but not in the currently frozen dictionary QNet DB;
+- B002 has an exact thematic assignment in the frozen copy of Latent
+  Activation's comprehensive `v11` post-fix record;
 - B014 has no exact QNet port, so only root/theme-level indirect nomination is
   available.
 
@@ -176,14 +178,22 @@ remain explicit.
 
 ## Agent Fragments
 
-`fragments/` contains the two strict response schemas used by the coordinator:
+`fragments/` contains the strict authored-fragment schemas used by the
+coordinator:
 
-- `branch-writer.schema.json` for one target-language branch;
+- `branch-writer.schema.json` for one target-language branch-shaped fragment;
 - `root-profile.schema.json` for the final short root profile.
 
-Branch agents receive only `branch_id`, `branch_image_ar`, `what_is_ar`, and
-`source_phrase_ar` for the focus branch. Each neighbor is projected to
-`root_id`, `branch_id`, `branch_image_ar`, and `what_is_ar`. Agent responses do
-not contain deterministic counts, names, source rosters, QAC data, ayahs,
-attachments, or the coordinator's `inputs_sha256`. The coordinator validates a
-response, adds the task hash, and restores evidence-owned fields by stable key.
+Production authoring uses one root-level writer invocation per root envelope and
+target language, but the authored content remains branch-shaped. For each focus
+branch, the writer receives only `root_id`, `branch_id`, `branch_image_ar`,
+`what_is_ar`, and `source_phrase_ar`. Each neighbor is projected to `root_id`,
+`branch_id`, `branch_image_ar`, and `what_is_ar`. The root response is a thin
+transport envelope containing branch fragments and the root profile; it is not a
+new master data schema.
+
+Agent responses do not contain deterministic counts, names, source rosters, QAC
+data, ayahs, attachments, or the coordinator's `inputs_sha256`. The coordinator
+validates a response, adds the task hash, and restores evidence-owned fields by
+stable key. The master entry schema and orchestration spec are coordinator-only
+contracts and are not part of the model-facing authoring package.

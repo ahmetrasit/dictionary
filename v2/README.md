@@ -52,12 +52,12 @@ not a required canonical input to the current entry-creation command, so these
 omissions must not stop initial authoring.
 
 Use QNet as a provenance-labeled discovery fallback, with the actual coverage
-kept explicit: B011 and B012 have exact frozen QNet ports; B002 has an exact
-thematic assignment in Latent Activation's comprehensive `v11` post-fix record
-but not yet in this repository's frozen QNet database; B014 has no exact QNet
-port and can use only indirect root/theme candidates. QNet never counts as a
-dictionary, an indirect candidate never becomes focus-branch evidence, and no
-QNet result may be labeled as a Quran-SLM/Neo score.
+kept explicit: B011 and B012 have exact frozen QNet ports; B002 uses the frozen
+copy of Latent Activation's comprehensive `v11` post-fix thematic assignment;
+B014 has no exact QNet port and can use only indirect root/theme candidates.
+QNet never counts as a dictionary, an indirect candidate never becomes
+focus-branch evidence, and no QNet result may be labeled as a Quran-SLM/Neo
+score.
 
 After the Quran-SLM catalogs are rebuilt to 10,932 and 18,785 cards, run a
 reviewed manual enrichment pass on these four master-entry branches. Merge new
@@ -66,6 +66,9 @@ contrast against current Furūq boundaries, preserve the five-neighbor limit,
 reconsider which distinction belongs first in the user-dictionary projection,
 and revalidate, rerender, and reproject the entry. The full normative policy is
 in `schema/README.md`.
+
+For the exact cold-start commands and first production pilot, use
+[`PRODUCTION_RUNBOOK.md`](PRODUCTION_RUNBOOK.md).
 
 ## Encyclopedia entry schema
 
@@ -90,9 +93,17 @@ not a published lexical decision.
 
 The minimal agent workflow, branch evidence package, fragment ownership map,
 retry rules, and acceptance criteria are defined in
-`orchestration/entry-creation.spec.md`. The baseline uses two agent roles:
-one branch writer per branch and one root profile writer per entry. Agents never
-receive Quran ayahs, occurrence data, QAC morphology, or attachment records.
+`orchestration/entry-creation.spec.md`. The production contract uses one
+root-level writer invocation per root envelope and target language. That
+invocation sees the minimal evidence for all accepted branches and returns
+branch-shaped fragments plus the short root profile. Agents never receive Quran
+ayahs, occurrence data, QAC morphology, attachment records, full branch
+packages, the master entry schema, or the orchestration spec.
+
+Implementation note: older task-format-2 work directories may still contain
+branch-per-agent manifests. Do not treat those stale manifests as production
+authoring state. The runner must prepare a root-writer task matching the
+orchestration spec before `--run-agents` is used for new production entries.
 
 Prepare deterministic evidence and resumable task manifests without making any
 model calls:
@@ -108,10 +119,10 @@ its Markdown form:
 python3 v2/scripts/create_entry.py root_000858 --language tr --run-agents
 ```
 
-The same command resumes hash-matching fragments. Stale fragments are rerun;
-validation failures are routed to their owning role for at most two repair
-rounds. Outputs are written to `v2/entries/<language>/`, while task and fragment
-state stays under `v2/work/entry_creation/`.
+The same command resumes a hash-matching root-writer response. Stale responses
+are rerun; validation failures are routed back to the writer for at most two
+repair rounds. Outputs are written to `v2/entries/<language>/`, while task and
+fragment state stays under `v2/work/entry_creation/`.
 
 Export all validated entries as deterministic, one-entry-per-line JSONL:
 
@@ -138,24 +149,23 @@ python3 v2/scripts/export_jsonl.py --language tr --projection scholar_view
 ```
 
 Shared Arabic evidence is reused across target languages. A new target language
-needs its own branch-writer and root-profile agent fragments because natural
-glosses and their loss, addition, and collision profiles are language-specific;
-it does not need new packets, Furūq discovery, QAC extraction, or attachment
-alignment. Consumer projections require no further model call.
+needs its own root-writer pass because natural glosses and their loss, addition,
+and collision profiles are language-specific; it does not need new packets,
+Furūq discovery, QAC extraction, QNet nomination, or attachment alignment.
+Consumer projections require no further model call.
 
 The current machine contracts support `en` and `tr`. Adding another language also
 requires extending the schema enums, transliteration policy, renderer labels, and
 CLI language choices before its language-specific agent pass can run.
 
-Each agent runs in a temporary read-only workspace containing only its
+Each root writer runs in a temporary read-only workspace containing only its
 hash-bound task inputs. The default per-process timeout is 30 minutes; change it
 with `--agent-timeout`. Operational failures stop immediately, while invalid
 agent JSON remains eligible for bounded repair.
 
 The coordinator additionally denies agent reads from the repository with
 `sandbox-exec` on macOS or bubblewrap on Linux. It stops before model execution
-when neither confinement tool is available. A fatal parallel task terminates
-the other active agent processes.
+when neither confinement tool is available.
 
 Canonical entry creation accepts only the packet and evidence locations shown
 above. Existing draft outputs may be regenerated, but reviewed or published

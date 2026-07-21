@@ -3,21 +3,23 @@
 Status: normative orchestration contract for entry schema version 4.
 
 This workflow creates one encyclopedia entry for one root envelope and one
-target language. Agents author small lexical fragments. The coordinator owns
-all evidence routing, occurrence data, assembly, validation, and rendering.
-No agent edits a shared entry document.
+target language. One writing invocation receives the minimal evidence for all
+accepted branches in that root and returns branch-shaped fragments plus the
+short root profile. The coordinator owns all evidence routing, occurrence data,
+assembly, validation, and rendering. No agent edits a shared entry document.
 
 ## Scope
 
 The workflow covers:
 
-- one branch-writer task per accepted branch;
-- one root-profile task after all branch fragments are complete;
+- one root-writer task per root envelope and target language;
+- branch-shaped authored fragments for every accepted branch;
+- one short root profile authored from the same branch set;
 - selected and excluded target-language glosses with error profiles;
 - Furuq-verified Arabic-neighbor distinctions;
 - deterministic dictionary-source routing and lexical realizations;
 - deterministic QAC morphology, ayahs, attachment alignment, and occurrences;
-- deterministic assembly, validation, Markdown rendering, and JSONL export.
+- deterministic assembly, validation, Markdown rendering, and JSONL export;
 - deterministic translation-agent, user-dictionary, and scholar projections from
   the validated master entry.
 
@@ -33,6 +35,8 @@ Canonical production inputs are:
 data/output/root_packets/<root-envelope>.json
 data/working/furuq_v4.sqlite
 data/upstream/qnet/incidence_full/raw_keyword_incidence.sqlite
+data/upstream/qnet/bridge_theme_full/bridge_theme_staging.sqlite
+data/upstream/qnet/bridge_theme_full/latent_v11_qac_qnet_fix_manifest.json
 v2/output/occurrences/<root-envelope>.<language>.md
 v2/output/alignments/<root-envelope>.json
 v2/schema/encyclopedia-entry.schema.json
@@ -41,16 +45,25 @@ TRANSLITERATION_POLICY.md
 
 The coordinator validates and hash-binds these inputs. Agents do not receive
 the packet, occurrence Markdown, alignment file, Quran ayahs, QAC morphology,
-attachment records, dictionary source metadata, or full branch packages.
+attachment records, dictionary source metadata, full branch packages, the master
+entry schema, or this orchestration spec. The model-facing package contains only
+the role prompt, a thin root response schema, the minimal root evidence
+projection, and any compact policy notes needed for the target language.
+
+The QNet candidate roster is balanced across packet-carried neighbors, raw core
+overlap, raw bridge overlap, and branch-theme overlap. At most eight unique
+cross-root candidates are retained across those lanes, followed by every sibling
+branch in the focus root. If an exact theme port is absent, the builder may use
+the represented root's themes as an explicitly labeled indirect fallback.
 
 ## Artifact Layout
 
 ```text
 v2/output/branch_evidence/<root-envelope>/index.json
 v2/output/branch_evidence/<root-envelope>/branches/<root-id>--<branch-id>.json
-v2/work/entry_creation/<root-envelope>/<language>/inputs/branches/<root-id>--<branch-id>.json
-v2/work/entry_creation/<root-envelope>/<language>/tasks/branches/<root-id>--<branch-id>.json
-v2/work/entry_creation/<root-envelope>/<language>/tasks/root_profile.json
+v2/work/entry_creation/<root-envelope>/<language>/inputs/root_evidence.json
+v2/work/entry_creation/<root-envelope>/<language>/tasks/root_writer.json
+v2/work/entry_creation/<root-envelope>/<language>/fragments/root_writer.json
 v2/work/entry_creation/<root-envelope>/<language>/fragments/branches/<root-id>--<branch-id>.json
 v2/work/entry_creation/<root-envelope>/<language>/fragments/root_profile.json
 v2/entries/<language>/<root-envelope>.json
@@ -61,16 +74,18 @@ v2/output/projections/user-dictionary.<language>.jsonl
 v2/output/projections/scholar-view.<language>.jsonl
 ```
 
-The full branch-evidence package is coordinator-only. Before a branch task is
-created, the coordinator writes a minimal projection under `inputs/branches/`
-and binds only that projection to the agent task.
+The full branch-evidence package is coordinator-only. Before a root task is
+created, the coordinator writes one minimal projection under `inputs/` and binds
+only that projection to the agent task. The root response is only a transport
+envelope; the authoritative authored units remain branch fragments.
 
 ## Agent Evidence Projection
 
-The focus branch contains exactly:
+Each focus branch contains exactly:
 
 ```json
 {
+  "root_id": "root_001697",
   "branch_id": "B001",
   "branch_image_ar": "...",
   "what_is_ar": "...",
@@ -89,16 +104,21 @@ Each neighbor contains exactly:
 }
 ```
 
-The task manifest carries the focus `root_id`, `branch_id`, language, prompt,
-response schema, and policy bindings. Those are control metadata, not lexical
-evidence. The agent cannot browse the repository and receives no other root or
-occurrence data.
+The root evidence may deduplicate repeated neighbor cards in a shared registry
+and let focus branches point to neighbor IDs. That is an input-size optimization
+only; it is not a root-centric data model. Semantically, the agent sees only the
+focus branch cards and the permitted neighbor branch cards.
+
+The task manifest carries the root envelope, language, prompt, response schema,
+and compact policy bindings. Those are control metadata, not lexical evidence.
+The agent cannot browse the repository and receives no occurrence data.
 
 ## Agent Roles
 
-### Branch Writer
+### Root Writer
 
-Run once per branch. Branch tasks may run in parallel.
+Run once per root envelope and target language. The response contains one
+branch-shaped fragment per accepted branch and one short root profile.
 
 The writer authors:
 
@@ -108,7 +128,8 @@ The writer authors:
 - disputed, rare, or technical qualifiers;
 - selected and excluded natural glosses with error profiles;
 - distinctions for the supplied neighbor roster;
-- neighbor-coverage assessment.
+- neighbor-coverage assessment;
+- root-level semantic organization.
 
 The writer orders published neighbor distinctions by reader-facing importance.
 The first selected distinction is the key contrast used by the compact user
@@ -120,12 +141,6 @@ dictionary annotations, lexical units, ayahs, morphology, attachments, or
 occurrence claims. The coordinator reconstructs evidence-owned fields by stable
 IDs after accepting the fragment.
 
-### Root Profile Writer
-
-Run once after all branch fragments are complete. It receives only immutable
-root identity, branch count, and the completed branch fragments. It receives no
-ayahs, QAC morphology, attachment data, or occurrence artifact.
-
 The writer summarizes root-level semantic organization. Occurrence-dependent
 collocation fields remain `unknown`; deterministic occurrence data is attached
 later by the coordinator.
@@ -135,11 +150,11 @@ later by the coordinator.
 | Final field | Owner |
 |---|---|
 | Schema version, IDs, language, status, provenance | coordinator |
-| Root profile prose and semantic organization | root profile writer |
+| Root profile prose and semantic organization | root writer |
 | Frozen Arabic branch fields | packet / coordinator |
-| Image transliteration, summary, source synthesis | branch writer |
-| Glosses, error profiles, qualifiers, permitted usage notes | branch writer |
-| Neighbor prose and coverage assessment | branch writer |
+| Image transliteration, summary, source synthesis | root writer, per branch |
+| Glosses, error profiles, qualifiers, permitted usage notes | root writer, per branch |
+| Neighbor prose and coverage assessment | root writer, per branch |
 | Neighbor Arabic image, basis, references, candidate count | Furuq package / coordinator |
 | Dictionary counts, names, source roster, references | packet / coordinator |
 | Lexical realizations | packet / coordinator |
@@ -156,9 +171,9 @@ coordinator adds `inputs_sha256` after validation; agents do not author it.
 ```text
 1. Validate packet and deterministic occurrence/alignment artifacts
 2. Build full coordinator-side branch evidence
-3. Project and hash-bind minimal branch evidence
-4. Run one branch writer per branch in parallel
-5. Run the root profile writer from completed branch fragments
+3. Project and hash-bind one minimal root evidence package
+4. Run one root writer for the target language
+5. Split the accepted response into branch fragments and root profile
 6. Add packet, QAC, ayah, morphology, and aligned-attachment data mechanically
 7. Assemble and validate schema-v4 JSON
 8. Render Markdown and verify it with --check
@@ -168,7 +183,7 @@ coordinator adds `inputs_sha256` after validation; agents do not author it.
 
 Roots with more than 100 occurrences follow the same process. Their occurrence
 arrays are built deterministically after agent work, so occurrence count does
-not increase branch-writer or root-profile context.
+not increase root-writer context.
 
 ## Isolation and Resumption
 
@@ -177,10 +192,9 @@ named by its hash-bound task. Repository reads are denied with `sandbox-exec`
 on macOS or bubblewrap on Linux. A run stops if neither confinement mechanism
 is available.
 
-A valid fragment is reused only when its `inputs_sha256` matches the canonical
-task. Missing or stale fragments are rerun. Timeouts and nonzero process exits
-are operational failures and are not retried as editorial repairs. A fatal
-parallel task terminates active peers.
+A valid root-writer response is reused only when its `inputs_sha256` matches the
+canonical task. Missing or stale responses are rerun. Timeouts and nonzero
+process exits are operational failures and are not retried as editorial repairs.
 
 ## Assembly and Validation
 
@@ -194,7 +208,7 @@ parallel task terminates active peers.
 - QAC and attachment structures are recomputed and compared exactly;
 - missing, duplicate, extra, stale, or wrong-language fragments are rejected.
 
-Only branch-writer or root-profile fields are eligible for agent repair.
+Only root-writer fields are eligible for agent repair.
 Dictionary routing, provenance, morphology, alignment, ayahs, and occurrence
 errors are deterministic pipeline failures and are never sent to an agent.
 
@@ -234,11 +248,12 @@ occurrences, and attachment alignment are language-neutral shared evidence. They
 may be reused for every target language and are only revalidated mechanically by
 the coordinator.
 
-Branch-writer and root-profile fragments are language-specific and must be
-authored independently for each target language. Gloss fit, loss, addition,
-collision, applicability, and natural wording cannot be copied from another
-language. Once that language's master entry validates, all three consumer
-projections are deterministic and require no additional agent call.
+Root-writer output is language-specific and must be authored independently for
+each target language. Gloss fit, loss, addition, collision, applicability, and
+natural wording cannot be copied from another language. Shared Arabic evidence
+does not need to be rebuilt for each language. Once that language's master entry
+validates, all three consumer projections are deterministic and require no
+additional agent call.
 
 The current contract supports English (`en`) and Turkish (`tr`). A new language
 code requires an explicit schema, transliteration-policy, renderer-label, and CLI
