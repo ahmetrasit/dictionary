@@ -914,6 +914,72 @@
       }
     }
 
+    async function loadEntryManifest() {
+      if (window.location.protocol === "file:") {
+        renderGeneratedList();
+        setStatus("Select the v2 folder to scan root outputs.");
+        return;
+      }
+      try {
+        setStatus("Loading completed roots...");
+        const manifestResponse = await fetch("v2/entries/index.json", { cache: "no-store" });
+        if (!manifestResponse.ok) {
+          throw new Error(`${manifestResponse.status} ${manifestResponse.statusText}`);
+        }
+        const manifest = await manifestResponse.json();
+        if (manifest?.format !== "dictionary-v2-entry-manifest-v1") {
+          throw new Error("unsupported manifest format");
+        }
+
+        const found = [];
+        let skipped = 0;
+        for (const descriptor of asArray(manifest.entries)) {
+          const sourceName = sourceKey(descriptor?.path);
+          if (!sourceName.startsWith("v2/") || sourceName.includes("..")) {
+            skipped += 1;
+            continue;
+          }
+          try {
+            const response = await fetch(sourceName, { cache: "no-store" });
+            if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+            const entry = await response.json();
+            if (validateEntryShape(entry)) {
+              skipped += 1;
+              continue;
+            }
+            found.push({
+              sourceName,
+              entry,
+              root: rootLabel(entry),
+              language: languageLabel(entry),
+              kind: artifactLabel(entry),
+              branches: asArray(entry.branches).length
+            });
+          } catch (_error) {
+            skipped += 1;
+          }
+        }
+
+        found.sort((a, b) => (
+          a.root.localeCompare(b.root)
+          || a.language.localeCompare(b.language)
+          || a.kind.localeCompare(b.kind)
+          || a.sourceName.localeCompare(b.sourceName)
+        ));
+        state.library = found;
+        renderGeneratedList();
+        if (found.length) {
+          setEntry(found[0].entry, found[0].sourceName);
+          setStatus(`Loaded ${found.length} completed roots${skipped ? `; ignored ${skipped}` : ""}.`);
+        } else {
+          setStatus(`No completed roots found in the manifest${skipped ? `; ignored ${skipped}` : ""}.`, true);
+        }
+      } catch (error) {
+        renderGeneratedList();
+        setStatus(`Could not load completed roots: ${error.message}. Select v2 to scan locally.`, true);
+      }
+    }
+
     async function collectDirectoryFiles(handle, prefix = "") {
       const files = [];
       for await (const [name, child] of handle.entries()) {
@@ -1486,7 +1552,7 @@
       loadFile(event.dataTransfer.files[0]);
     });
 
-    renderGeneratedList();
+    loadEntryManifest();
   </script>
 </body>
 </html>
