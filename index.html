@@ -633,14 +633,14 @@
           <button class="secondary" id="clearButton" type="button">Clear</button>
         </div>
         <div class="folder-row">
-          <input class="file-input" id="folderInput" type="file" webkitdirectory directory multiple aria-label="Scan generated roots folder">
-          <button class="secondary" id="folderButton" type="button">Scan</button>
+          <input class="file-input" id="folderInput" type="file" webkitdirectory directory multiple aria-label="Scan v2 root output folders">
+          <button class="secondary" id="folderButton" type="button">Scan v2</button>
         </div>
         <div class="path-row">
           <input class="path-input" id="pathInput" value="v2/work/entry_creation/root_001697/tr/fragments/root_001697_entry.json" aria-label="Entry or writer JSON path">
           <button id="loadPathButton" type="button">Load</button>
         </div>
-        <div class="status" id="status">Ready.</div>
+        <div class="status" id="status">Select the v2 folder to scan root outputs.</div>
       </section>
 
       <div class="rail-section-title">Generated Roots</div>
@@ -834,6 +834,10 @@
       return filePath(file).toLowerCase().endsWith(".json");
     }
 
+    function isRootOutputPath(path) {
+      return /(^|\/)output\/root_[^/]+\.json$/i.test(sourceKey(path));
+    }
+
     function readJsonFile(file) {
       return new Promise((resolve, reject) => {
         const readerApi = new FileReader();
@@ -851,7 +855,7 @@
 
     function renderGeneratedList() {
       if (!state.library.length) {
-        generatedList.innerHTML = `<li class="generated-path">Select a folder to scan generated root artifacts.</li>`;
+        generatedList.innerHTML = `<li class="generated-path">Select v2 to scan every subfolder for root outputs.</li>`;
         return;
       }
       const active = sourceKey(state.sourceName);
@@ -869,7 +873,7 @@
     }
 
     async function scanFolder(files) {
-      const candidates = Array.from(files || []).filter(isJsonFile);
+      const candidates = Array.from(files || []).filter((file) => isJsonFile(file) && isRootOutputPath(filePath(file)));
       const found = [];
       let skipped = 0;
       setStatus(`Scanning ${candidates.length} JSON files...`);
@@ -1487,7 +1491,7 @@
       syncTabs();
       render();
       renderGeneratedList();
-      setStatus("Ready.");
+      setStatus("Select the v2 folder to scan root outputs.");
     });
 
     window.addEventListener("dragover", (event) => {
@@ -1501,7 +1505,7 @@
       loadFile(event.dataTransfer.files[0]);
     });
 
-    loadPath(pathInput.value);
+    renderGeneratedList();
   </script>
 </body>
 </html>
