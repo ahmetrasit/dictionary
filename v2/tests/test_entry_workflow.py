@@ -546,7 +546,7 @@ class EntryWorkflowTest(unittest.TestCase):
             with self.assertRaisesRegex(ContractError, "editorial_review"):
                 accept_root_review(review_task, raw, directory / "rejected-review.json")
 
-    def test_proper_name_is_coordinator_reviewed_and_substituted(self):
+    def test_proper_name_queue_is_writer_completed_and_substituted(self):
         with tempfile.TemporaryDirectory() as temporary:
             directory = Path(temporary)
             index_path, _index, work_dir, task_path, response = self.prepare_run(
@@ -571,6 +571,7 @@ class EntryWorkflowTest(unittest.TestCase):
                 write_root_writer_splits(index_path, work_dir, "tr")
             review_path = work_dir / "inputs/name_review.json"
             review = load_json(review_path)
+            self.assertIn("Root writer completion queue", review["instructions"])
             self.assertEqual(len(review["items"]), 4)
             self.assertTrue(all(item["value"] == "" for item in review["items"]))
             values = {
@@ -727,7 +728,7 @@ class EntryWorkflowTest(unittest.TestCase):
             with self.assertRaisesRegex(ContractError, "unknown property"):
                 assemble(index_path, work_dir, "tr", directory / "extra.json")
 
-    def test_used_transliterations_are_a_separate_resumable_review_gate(self):
+    def test_used_transliterations_are_a_resumable_writer_completion_queue(self):
         with tempfile.TemporaryDirectory() as temporary:
             directory = Path(temporary)
             work_dir = directory / "work"
@@ -745,6 +746,7 @@ class EntryWorkflowTest(unittest.TestCase):
             with self.assertRaisesRegex(ContractError, "needs_transliteration_review"):
                 write_root_writer_splits(index_path, work_dir, "tr")
             review = load_json(work_dir / "inputs/transliteration_review.json")
+            self.assertIn("Root writer completion queue", review["instructions"])
             self.assertTrue(review["items"])
             self.assertTrue(all(item["status"] == "pending" for item in review["items"]))
             selected_count = sum(
@@ -952,7 +954,11 @@ class EntryWorkflowTest(unittest.TestCase):
         )
         self.assertEqual(
             classify("needs_transliteration_review: pending", task)["repairable_by"],
-            "deterministic_pipeline",
+            "root_writer",
+        )
+        self.assertEqual(
+            classify("needs_name_review: pending", task)["repairable_by"],
+            "root_writer",
         )
 
     def test_repair_preserves_unaffected_branches(self):

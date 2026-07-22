@@ -824,8 +824,9 @@ def _write_name_review_queue(
         "root_envelope_id": envelope,
         "language": language,
         "instructions": (
-            "Approve the target-language surface form for each protected proper "
-            "name. These values replace writer placeholders mechanically."
+            "Root writer completion queue: approve the target-language surface "
+            "form for each protected proper name. These values replace writer "
+            "placeholders mechanically."
         ),
         "items": items,
     }
@@ -904,8 +905,9 @@ def _write_transliteration_review_queue(
         "root_envelope_id": envelope,
         "language": language,
         "instructions": (
-            "Review only these used Arabic anchors. Set status to approved and "
-            "supply value; rerunning entry creation reuses the root-writer response."
+            "Root writer completion queue: review only these used Arabic anchors. "
+            "Set status to approved and supply value; rerunning finalization "
+            "reuses the accepted root-writer response."
         ),
         "items": items,
     }
@@ -1024,7 +1026,7 @@ def expand_root_writer_response(
             existing=existing_review,
         )
         pending.append(
-            "needs_transliteration_review: approve used anchors in "
+            "needs_transliteration_review: writer must complete used anchors in "
             f"{transliteration_review_path}: {missing}"
         )
     if missing_names:
@@ -1036,7 +1038,7 @@ def expand_root_writer_response(
             existing=existing_name_review,
         )
         pending.append(
-            "needs_name_review: approve protected forms in "
+            "needs_name_review: writer must complete protected forms in "
             f"{name_review_path}: {missing_names}"
         )
     if pending:

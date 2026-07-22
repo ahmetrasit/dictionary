@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Classify an assembly error into deterministic or root-writer repair scope."""
+"""Classify an assembly/finalization error into deterministic or writer-owned scope."""
 
 from __future__ import annotations
 
@@ -27,8 +27,6 @@ DETERMINISTIC_MARKERS = (
     "evidence index",
     "digest mismatch",
     "source roster mismatch",
-    "needs_transliteration_review",
-    "needs_name_review",
     "semantic_review_editorial_review",
 )
 

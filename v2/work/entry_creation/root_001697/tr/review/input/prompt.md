@@ -17,10 +17,6 @@ Check only publication-relevant semantics:
 - the definition preserves the core without promoting dependent material;
 - source synthesis covers distinctive examples, disagreements, restrictions,
   derivations, implications, and sole attestations with the right claim IDs;
-- every source-detail row resolves through its claim IDs to exactly one supplied
-  dictionary, contains prose unique to that dictionary, and would not repeat
-  shared or comparative text under multiple dictionary codes; aggregated
-  multi-source contrasts remain source-neutral in `common_summary`;
 - the concept gloss represents the core map, while contextual and lexical
   glosses remain natural for their stated roles;
 - no Arabic/source-language loanword replaces an explanation;

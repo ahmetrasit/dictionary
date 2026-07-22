@@ -51,33 +51,21 @@ never use its own ordinary lexical-unit token as a surrogate name.
 ## 2. Synthesize source claims
 
 - `source_synthesis` is the only source-discussion output. Put genuinely shared
-  material and source-neutral synthesis of aggregated multi-source claims in
-  `common_summary`. Use `supporting_claim_ids` for shared evidence already
-  represented elsewhere that needs no separate source prose.
-- A `source_details` row becomes a dictionary-keyed `source_note`, so use one
-  only for a distinctive example, disagreement, restriction, extension,
-  implication, derivation, or sole attestation whose claim IDs resolve to
-  exactly one dictionary in the supplied evidence. Check the union of their
-  `source_ids` before creating the row. Never place a shared multi-dictionary
-  example or summary there: it would be repeated under every supporting code.
-- When one aggregated claim contains differences among several dictionaries
-  but has no source-specific claim IDs, summarize the contrast without naming
-  dictionaries in `common_summary` and bind the claim in `common_claim_ids`.
-  Do not invent source attribution or copy the same comparative prose into
-  multiple dictionary notes.
+  material in `common_summary`. Put an example, disagreement, restriction,
+  extension, implication, derivation, or sole attestation in a source-detail row
+  with its exact claim IDs.
 - Do not repeat dictionary names or codes in prose. The coordinator converts
   claim IDs into the compact `sources` roster and dictionary-keyed
   `source_note`; exact references remain internal.
-- Make every eligible source-detail summary concise, reader-facing, and unique
-  to its one supporting dictionary. The final entry omits the internal detail
-  category.
+- When sources differ, make each source-detail summary stand on its own as
+  concise reader-facing prose. The final entry groups that prose under the
+  supporting dictionary code and omits the internal detail category.
 - Account for every supplied claim exactly once across `common_claim_ids`,
   source-detail `claim_ids`, `supporting_claim_ids`, and `duplicate_claims`.
   `supporting` means relevant evidence that need not be stated separately;
   `duplicate` is allowed only when the claim adds no content beyond the named
   claim. Never omit a distinctive example, dispute, restriction, derivation, or
-  implication merely for brevity; disposition a shared or unattributable one in
-  common/supporting evidence instead of a dictionary-keyed detail.
+  implication merely for brevity.
 
 ## 3. Write distinct kinds of gloss
 

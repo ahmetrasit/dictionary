@@ -709,7 +709,7 @@
     }
 
     function formatInline(value) {
-      return escapeHtml(value).replace(/\{\{(lu_[0-9]+)\}\}/g, '<span class="placeholder-token">{{$1}}</span>');
+      return escapeHtml(value).replace(/\{\{lu_[0-9]+\}\}/g, '<span class="placeholder-token">Name pending</span>');
     }
 
     function text(value, fallback = "Not recorded") {
@@ -1143,15 +1143,13 @@
         <p>${formatInline(text(map.definition || branch.summary))}</p>
           <div class="table-wrap">
             <table>
-              <thead><tr><th>Facet</th><th>Role</th><th>Statement</th><th>Claims</th></tr></thead>
+              <thead><tr><th>Role</th><th>Statement</th></tr></thead>
               <tbody>${facets.map((facet) => `
                 <tr>
-                  <td>${escapeHtml(facet.facet_id)}</td>
                   <td>${escapeHtml(facet.role)}</td>
                   <td>${formatInline(facet.statement)}</td>
-                  <td>${chips(facet.claim_ids)}</td>
                 </tr>
-              `).join("") || `<tr><td colspan="4" class="muted">None recorded.</td></tr>`}</tbody>
+              `).join("") || `<tr><td colspan="2" class="muted">None recorded.</td></tr>`}</tbody>
             </table>
           </div>
         </section>
@@ -1207,17 +1205,16 @@
           <h3>${isWriter ? "Lexical Glosses" : "Lexical Realizations"}</h3>
           <div class="table-wrap">
             <table>
-              <thead><tr><th>ID</th><th>${isWriter ? "Rendering" : "Expression"}</th><th>Kind</th><th>Sense</th><th>Target</th><th>Quran Form</th></tr></thead>
+              <thead><tr><th>${isWriter ? "Rendering" : "Expression"}</th><th>Kind</th><th>Sense</th><th>Target</th><th>Quran Form</th></tr></thead>
               <tbody>${rows.map((row) => `
                 <tr>
-                  <td>${escapeHtml(row.lexical_unit_id)}</td>
                   <td ${row.expression_ar ? 'dir="rtl"' : ""}>${escapeHtml(row.expression_ar || row.rendering_kind)}</td>
                   <td>${escapeHtml(row.unit_kind || row.rendering_kind)}</td>
                   <td ${row.sense_ar ? 'dir="rtl"' : ""}>${escapeHtml(row.sense_ar || "")}</td>
                   <td>${formatInline(row.target_gloss)}</td>
                   <td>${escapeHtml(row.quran_form ? `${row.quran_form.stem_ar} ${row.quran_form.tag}` : "")}</td>
                 </tr>
-              `).join("") || `<tr><td colspan="6" class="muted">None recorded.</td></tr>`}</tbody>
+              `).join("") || `<tr><td colspan="5" class="muted">None recorded.</td></tr>`}</tbody>
             </table>
           </div>
         </section>
@@ -1251,7 +1248,6 @@
       return `
         <p><strong>${escapeHtml(gloss.text)}</strong></p>
         <p>${formatInline(gloss.applicability)}</p>
-        ${chips(asArray(gloss.facet_ids))}
       `;
     }
 
@@ -1264,26 +1260,11 @@
             <div class="panel">
               <h4>Common Summary</h4>
               <p>${formatInline(text(synthesis.common_summary))}</p>
-              ${chips(asArray(synthesis.common_claim_ids))}
             </div>
             <div class="panel">
-              <h4>Coverage</h4>
-              ${fact("Supporting Claims", asArray(synthesis.supporting_claim_ids).join(", ") || "None")}
-              ${fact("Duplicate Claims", asArray(synthesis.duplicate_claims).map((row) => `${row.claim_id} -> ${row.merged_into}`).join(", ") || "None")}
-              ${fact("Dictionary Codes", asArray(branch.sources).join(", ") || "None")}
+              <h4>Dictionaries</h4>
+              ${chips(asArray(branch.sources)) || `<p class="muted">None recorded.</p>`}
             </div>
-          </div>
-          <div class="table-wrap">
-            <table>
-              <thead><tr><th>Kind</th><th>Claims</th><th>Summary</th></tr></thead>
-              <tbody>${asArray(synthesis.source_details).map((detail) => `
-                <tr>
-                  <td>${escapeHtml(detail.kind)}</td>
-                  <td>${chips(detail.claim_ids)}</td>
-                  <td>${formatInline(detail.summary)}</td>
-                </tr>
-              `).join("") || `<tr><td colspan="3" class="muted">No separate details.</td></tr>`}</tbody>
-            </table>
           </div>
           ${renderSourceNotes(branch)}
         </section>

@@ -105,11 +105,12 @@ ignored: prepare mode writes one current `tasks/root_writer.json`, one
 deduplicated `inputs/root_evidence.json`, and coordinator-only review state
 before any model call. The evidence contains compact source claims and lexical
 unit IDs, not raw passages. A reviewed coordinator policy classifies every
-lexical unit as ordinary or proper-name before the writer runs. Transliteration
-never enters writer context; protected proper names use placeholders. Missing
-used anchors or name forms pause assembly in
-`inputs/transliteration_review.json` or `inputs/name_review.json` without
-invalidating or rerunning the writer.
+lexical unit as ordinary or proper-name before the writer runs. Initial writer
+prose uses placeholders for protected proper names. If assembly discovers
+missing used transliterations or protected-name forms, it creates
+`inputs/transliteration_review.json` or `inputs/name_review.json`; the same
+writer completes those generated queues without invalidating or rewriting the
+accepted entry response.
 
 Prepare deterministic evidence and resumable task manifests without making any
 model calls:

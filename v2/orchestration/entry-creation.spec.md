@@ -5,11 +5,13 @@ Status: normative orchestration contract for entry schema version 4.
 This workflow creates one encyclopedia entry for one root envelope and one
 target language. One writing invocation receives the minimal evidence for all
 accepted branches in that root and returns branch-shaped fragments plus the
-short root profile. A top-level orchestration agent owns the run: it starts and
-monitors the writer, controls the global repair budget, pauses for review, and
-resumes the workflow. Deterministic scripts own evidence routing, response
-acceptance, occurrence data, assembly, validation, and rendering. No agent edits
-a shared entry document.
+short root profile. If finalization discovers missing used transliterations or
+protected proper-name target forms, the same writer completes only the generated
+surface-form queues and finalization resumes without human review. A top-level
+orchestration agent owns the run: it starts and monitors the writer, controls
+the global repair budget, and resumes the workflow. Deterministic scripts own
+evidence routing, response acceptance, occurrence data, assembly, validation,
+and rendering. No agent edits a shared entry document.
 
 No Python script invokes an agent or decides whether to retry one. The
 orchestrator follows `v2/prompts/entry-orchestrator.md` and invokes the scripts
@@ -159,11 +161,12 @@ claim also carries a reviewed, coordinator-owned `rendering_policy` of
 exactly before a writer task can be created. The writer dispositions every claim
 and copies that rendering policy; acceptance checks both exact rosters.
 
-Transliteration values, draft suggestions, and unresolved anchors remain
-coordinator-only and never appear in root-writer evidence. After the writer has
-selected neighbors, the coordinator computes the exact used-anchor set. Missing
-values produce a small resumable `transliteration_review.json` gate; approving it
-and rerunning assembly reuses the unchanged root-writer response.
+Transliteration values, draft suggestions, and unresolved anchors remain outside
+the initial root-writer evidence. After the writer has selected neighbors, the
+coordinator computes the exact used-anchor set. Missing values produce a small
+resumable `transliteration_review.json` queue. The same writer completes only
+the generated queue rows, and rerunning assembly reuses the unchanged
+root-writer response.
 
 The task manifest carries the root envelope, language, prompt, response schema,
 and compact policy bindings. Those are control metadata, not lexical evidence.
@@ -193,10 +196,11 @@ The writer authors:
 - a neighbor-coverage explanation;
 - root-level semantic organization.
 
-The writer never supplies, reviews, or repeats transliterations or proper-name
-spellings. It follows the coordinator's protected-name classifications and uses
-stable placeholders only for those IDs; reviewed target-language forms are
-substituted mechanically.
+In its initial entry response, the writer does not supply or repeat
+transliterations or proper-name spellings. It follows the coordinator's
+protected-name classifications and uses stable placeholders only for those IDs;
+target-language forms are substituted mechanically after the same writer
+completes the generated surface-form queues.
 
 The writer orders published neighbor distinctions by reader-facing importance.
 When the selection is nonempty, its first distinction is the key contrast used
@@ -239,8 +243,10 @@ review instead of automatic repair.
 | Neighbor selection, verified relation type, asymmetry, prose, and coverage explanation | root writer, per branch |
 | Semantic publication verdict and bounded issue scope | semantic reviewer |
 | Proper-name classification | reviewed coordinator policy |
-| Proper-name target forms | separate review gate / coordinator |
-| Transliteration catalog, used-anchor review queue, and restoration | coordinator / separate review gate |
+| Proper-name target forms | root writer, through generated surface-form queue |
+| Transliteration catalog and used-anchor queue generation | coordinator |
+| Used transliteration values | root writer, through generated surface-form queue |
+| Proper-name and transliteration restoration | coordinator |
 | Branch summary copied from definition; ranks; counts; coverage enum; collocation defaults | coordinator |
 | Neighbor Arabic image, basis, references, candidate count | Furuq package / coordinator |
 | Dictionary counts, names, source roster, references | packet / coordinator |
@@ -353,10 +359,11 @@ owned and routed as follows:
 |---|---|---|
 | Writer/reviewer schema or semantic-contract error | Same active agent | Keep the actual output; edit only the fields named by the exact error; rerun `validation.command` |
 | Evidence-grounded semantic-review issue | Same root writer | Restage the previous response, exact issue, and generated scope; change only permitted fields; validate again |
-| Missing or stale protected-name policy | Coordinator / human review | Complete the exact lexical-unit classification roster; do not let a writer infer policy |
+| Missing or stale protected-name policy | Coordinator | Complete the exact lexical-unit classification roster; do not let a writer infer policy |
+| Missing used transliterations or protected-name target forms | Same root writer | Fill only the generated queue rows with approved target-language values; do not change the accepted entry response |
 | Stale task/hash or staged-path mismatch | Orchestrator plus deterministic script | Restage canonical files; do not alter authored prose or bless a stale raw response |
 | Evidence build, assembly, rendering, or publication failure | Orchestrator plus owning script | Repair or regenerate the deterministic artifact; never route it as a lexical rewrite |
-| Scope conflict or evidence ambiguity | Human editorial review | Preserve all artifacts and pause without broadening the correction |
+| Scope conflict or evidence ambiguity | Same owning writer or reviewer | Preserve protected artifacts and report the conflict without broadening the correction |
 
 The orchestrator never edits agent-authored JSON. It may invoke validators,
 classifiers, staging, acceptance, and deterministic build commands, and it sends
@@ -375,7 +382,7 @@ explicitly decides otherwise.
 - the evidence package determines source and neighbor identity;
 - the concept gloss and contextual glosses stay distinct; compatibility ranks
   are derived mechanically;
-- reviewed proper-name placeholders are substituted mechanically;
+- writer-completed proper-name placeholders are substituted mechanically;
 - lexical target glosses join by exact lexical-unit ID;
 - source claim IDs expand to precise source names and references;
 - branch summaries, excluded-gloss display reasons, coverage enums, branch
@@ -401,7 +408,7 @@ A run is complete only when:
 3. Split branch and root-profile fragments reproduce from that response.
 4. Minimal semantic evidence matches its coordinator-side packages, every
    lexical unit has reviewed rendering policy, and every used transliteration
-   and protected proper-name form is reviewed through its separate gate.
+   and protected proper-name form has a writer-completed queue value.
 5. Schema and packet-aware validation pass.
 6. Markdown is reproducible under `--check`.
 7. JSONL export validates every entry and preserves one common schema.

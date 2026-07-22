@@ -67,9 +67,10 @@ the command stops after preserving the valid writer response and creates:
 v2/work/entry_creation/root_001697/tr/inputs/transliteration_review.json
 ```
 
-Review only the listed used anchors, set each accepted row to
-`"status": "approved"`, supply its `value`, and tell the same orchestrator to
-resume. The writer is not called again.
+Return only that generated queue to the same writer. The writer reviews only the
+listed used anchors, sets each accepted row to `"status": "approved"`, supplies
+its `value`, and the orchestrator reruns finalization. The accepted entry
+response is not changed.
 
 Protected person and place names use the parallel queue:
 
@@ -77,8 +78,9 @@ Protected person and place names use the parallel queue:
 v2/work/entry_creation/root_001697/tr/inputs/name_review.json
 ```
 
-Approve target-language surface forms there. Writer prose contains stable
-placeholders until the coordinator substitutes those approved forms.
+Return that generated queue to the same writer as well. The writer approves
+target-language surface forms there. Writer prose contains stable placeholders
+until the coordinator substitutes those writer-completed forms mechanically.
 
 ## 3. Check the master and projections
 

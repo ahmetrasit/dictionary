@@ -43,8 +43,11 @@ it for either agent's declared output path.
    `accept_root_review.py`. A `repair` verdict produces a bounded writer repair;
    `editorial_review` pauses for user judgment; `pass` permits finalization.
 6. Run `finalize_entry.py`. If it reports `needs_transliteration_review` or
-   `needs_name_review`, stop and request review of the generated queue. Resume
-   finalization without calling the writer again after approval.
+   `needs_name_review`, keep the accepted entry response unchanged and return
+   only the generated queue files to the same root-writer agent. The writer fills
+   those rows with target-language values, marks them `approved`, and writes only
+   the queue files. Then rerun `finalize_entry.py`. Do not request human review
+   for those surface-form queues and do not spawn a replacement writer.
 7. If the coordinator recheck still finds a worker-owned validation error, do
    not delete, move, or replace the response and do not spawn a fresh writer.
    Return the exact error to the same writer agent, which corrects the existing
@@ -75,6 +78,14 @@ python3 v2/scripts/stage_root_reviewer.py <review-task>
 <reviewer writes review/output/root_review.json, validates, and fixes in place>
 python3 v2/scripts/validate_agent_output.py <review/input/task.json>
 python3 v2/scripts/accept_root_review.py <review-task>
+python3 v2/scripts/finalize_entry.py <root-envelope> --language <language>
+```
+
+If finalization creates writer-completion queues, route them to the same writer:
+
+```text
+<same writer reads only the exact generated queue files named in finalize_error.txt>
+<same writer sets each pending queue row to status approved with a non-Arabic target-language value>
 python3 v2/scripts/finalize_entry.py <root-envelope> --language <language>
 ```
 
@@ -110,6 +121,11 @@ or enlarge the reviewer scope.
   and root-level occurrence/attachment evidence into that same named entry
   artifact and its canonical fragment. Exact references remain internal. The
   orchestrator and writer never author or copy these injected fields.
+- If finalization reports missing used transliterations or protected proper-name
+  forms, the coordinator-owned queue shape remains protected but the same writer
+  owns the target-language `value` fields and `approved` statuses. This is not a
+  semantic rewrite: do not change `output/<root-envelope>_entry.json`, canonical
+  fragments, review artifacts, Arabic anchors, keys, or generated suggestions.
 - A semantic-review repair uses the generated scope without expansion. The same
   writer receives the previous response, issue, and scope; protected branches
   and root fields must remain unchanged.
