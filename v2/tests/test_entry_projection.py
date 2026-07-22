@@ -56,10 +56,14 @@ class EntryProjectionTest(unittest.TestCase):
         self.assertEqual(projected["projection"], "user_dictionary")
         self.assertEqual(branch["definition"], source["glosses"]["semantic_definition"])
         self.assertEqual(
-            branch["primary_glosses"],
+            branch["concept_gloss"]["text"],
+            source["glosses"]["selected"][0]["text"],
+        )
+        self.assertEqual(
+            branch["contextual_glosses"],
             [
-                {"rank": gloss["rank"], "text": gloss["text"]}
-                for gloss in source["glosses"]["selected"]
+                {"text": gloss["text"]}
+                for gloss in source["glosses"]["selected"][1:]
             ],
         )
         self.assertEqual(
@@ -89,6 +93,24 @@ class EntryProjectionTest(unittest.TestCase):
         self.assertEqual(projected["entry"], self.entry)
         self.assertIn("dictionary_basis", projected["entry"]["branches"][0])
         self.assertIn("occurrences", projected["entry"]["occurrence_evidence"])
+
+    def test_user_dictionary_carries_verified_relation_type_when_present(self):
+        entry = copy.deepcopy(self.entry)
+        entry["branches"][0]["arabic_neighbor_distinctions"][0][
+            "relation_type"
+        ] = "near_synonym"
+        projected = user_dictionary_projection(entry)
+        self.assertEqual(
+            projected["branches"][0]["key_distinction"]["relation_type"],
+            "near_synonym",
+        )
+
+    def test_user_dictionary_uses_null_when_no_neighbor_is_useful(self):
+        entry = copy.deepcopy(self.entry)
+        entry["branches"][0]["arabic_neighbor_distinctions"] = []
+        entry["branches"][0]["neighbor_coverage"]["assessment"] = "none_useful"
+        projected = user_dictionary_projection(entry)
+        self.assertIsNone(projected["branches"][0]["key_distinction"])
 
     def test_every_projection_is_bound_to_the_same_master(self):
         expected = master_binding(self.entry)

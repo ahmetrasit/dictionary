@@ -1,4 +1,7 @@
-# Root profile writer
+# Legacy root-profile writer (not used by current production orchestration)
+
+Current production authors the root profile inside `root-writer.md`. This file
+remains only for historical fragment compatibility.
 
 Write the short target-language root profile after reading all completed branch
 fragments named by the task. Return only the JSON object required by the response

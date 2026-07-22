@@ -36,6 +36,10 @@ ambiguous root IDs:      22
 Primary files:
 
 - `bridge_theme_staging.sqlite`: queryable staging DB.
+- `latent_v11_qac_qnet_fix_manifest.json`: frozen comprehensive Latent v11
+  post-fix assignment overlay for branch ports absent from this older staging
+  DB; the entry workflow hash-binds and applies its 448 assignments at query
+  time.
 - `selected_roots.tsv` and `nodes.tsv`: the full staged root/branch underlay.
 - `silent_nodes.tsv`: branches with no bridge-theme evidence in this snapshot.
 - `theme_keyword_nodes.tsv`: theme/raw-keyword evidence at branch level.

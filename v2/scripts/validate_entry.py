@@ -272,6 +272,15 @@ def validate_dictionary_basis(
             )
     if discussion["disagreement"]:
         discussion_refs.extend(discussion["disagreement"]["source_refs"])
+    for detail in discussion.get("details", []):
+        discussion_refs.extend(detail["source_refs"])
+        expected_ids = sorted(
+            {source_ref.split(":", 1)[0] for source_ref in detail["source_refs"]}
+        )
+        if detail["source_ids"] != expected_ids:
+            errors.append(
+                f"{path}.source_discussion.details: source IDs do not match references"
+            )
     unknown = sorted(set(discussion_refs) - set(required_refs))
     if unknown:
         errors.append(f"{path}.source_discussion: non-branch source refs {unknown}")
@@ -290,6 +299,33 @@ def validate_glosses(branch: dict, path: str) -> list[str]:
             errors.append(
                 f"{path}.glosses.selected[{index}]: a common loanword may only be rank 2"
             )
+    if "concept" in branch["glosses"]:
+        for index, gloss in enumerate(selected):
+            profile = gloss["error_profile"]
+            if profile["fit"] == "none" and (
+                profile["loses"] is not None or profile["adds"] is not None
+            ):
+                errors.append(
+                    f"{path}.glosses.selected[{index}]: fit none requires null loses/adds"
+                )
+            if profile["fit"] == "narrowing" and profile["loses"] is None:
+                errors.append(
+                    f"{path}.glosses.selected[{index}]: narrowing requires a loss"
+                )
+            if profile["fit"] == "broadening" and profile["adds"] is None:
+                errors.append(
+                    f"{path}.glosses.selected[{index}]: broadening requires an addition"
+                )
+        if branch["glosses"]["concept"] != selected[0]:
+            errors.append(f"{path}.glosses.concept: must equal selected rank 1")
+        if branch["glosses"].get("contextual") != selected[1:]:
+            errors.append(f"{path}.glosses.contextual: must equal selected rows after rank 1")
+        if selected[0].get("selection_role") != "primary_concept_gloss":
+            errors.append(f"{path}.glosses.selected[0]: must be the primary concept gloss")
+        if any(
+            row.get("selection_role") != "contextual_gloss" for row in selected[1:]
+        ):
+            errors.append(f"{path}.glosses.contextual: invalid selection role")
     selected_text = {row["text"].strip().casefold() for row in selected}
     if len(selected_text) != len(selected):
         errors.append(f"{path}.glosses.selected: gloss text must be unique")
@@ -322,6 +358,24 @@ def validate_neighbors(
 ) -> list[str]:
     errors: list[str] = []
     focus = (branch["root_id"], branch["branch_id"])
+    selected_count = len(branch["arabic_neighbor_distinctions"])
+    assessment = branch["neighbor_coverage"]["assessment"]
+    if selected_count == 0 and assessment != "none_useful":
+        errors.append(
+            f"{path}.neighbor_coverage: zero selected neighbors require none_useful"
+        )
+    if selected_count > 0 and assessment == "none_useful":
+        errors.append(
+            f"{path}.neighbor_coverage: none_useful requires zero selected neighbors"
+        )
+    if selected_count == 1 and assessment == "complete":
+        errors.append(
+            f"{path}.neighbor_coverage: one selected neighbor cannot be complete"
+        )
+    if selected_count > 1 and assessment == "single_sufficient":
+        errors.append(
+            f"{path}.neighbor_coverage: single_sufficient requires one selected neighbor"
+        )
     seen: set[tuple[str, str]] = set()
     for index, neighbor in enumerate(branch["arabic_neighbor_distinctions"]):
         neighbor_path = f"{path}.arabic_neighbor_distinctions[{index}]"
@@ -446,6 +500,10 @@ def evidence_candidate_map(entry: dict) -> dict[tuple[str, str], dict[tuple[str,
             "furuq_sha256",
             "qnet_path",
             "qnet_sha256",
+            "qnet_theme_path",
+            "qnet_theme_sha256",
+            "qnet_fix_manifest_path",
+            "qnet_fix_manifest_sha256",
         ):
             if package.get(field) != index.get(field):
                 raise ContractError(
@@ -632,6 +690,7 @@ def validate_semantics(
     db = sqlite3.connect(f"file:{furuq_path.resolve()}?mode=ro", uri=True)
     db.row_factory = sqlite3.Row
     try:
+        current_root_contract = "root_task_sha256" in entry["provenance"]
         for index, branch in enumerate(entry["branches"]):
             path = f"$.branches[{index}]"
             packet_branch = packet_by_branch.get((branch["root_id"], branch["branch_id"]))
@@ -651,9 +710,94 @@ def validate_semantics(
                 )
             )
             errors.extend(validate_glosses(branch, path))
+            if current_root_contract:
+                for field in ("concept_map",):
+                    if field not in branch:
+                        errors.append(f"{path}: current root contract requires {field}")
+                if "concept" not in branch["glosses"] or "contextual" not in branch["glosses"]:
+                    errors.append(
+                        f"{path}.glosses: current root contract requires separate concept/contextual glosses"
+                    )
+                if "details" not in branch["source_discussion"]:
+                    errors.append(
+                        f"{path}.source_discussion: current root contract requires details"
+                    )
+                if any(
+                    "target_gloss" not in unit or "target_rendering_kind" not in unit
+                    for unit in branch["lexical_realizations"]
+                ):
+                    errors.append(
+                        f"{path}.lexical_realizations: current root contract requires target renderings"
+                    )
+                if any(
+                    any(
+                        field not in neighbor
+                        for field in ("boundary_match", "focus_only", "neighbor_only")
+                    )
+                    for neighbor in branch["arabic_neighbor_distinctions"]
+                ):
+                    errors.append(
+                        f"{path}.arabic_neighbor_distinctions: current root contract requires boundary asymmetry"
+                    )
+                for neighbor_index, neighbor in enumerate(
+                    branch["arabic_neighbor_distinctions"]
+                ):
+                    relation = neighbor["relation_type"]
+                    match = neighbor.get("boundary_match")
+                    asymmetry = (
+                        neighbor.get("focus_only") is not None
+                        or neighbor.get("neighbor_only") is not None
+                    )
+                    relation_path = (
+                        f"{path}.arabic_neighbor_distinctions[{neighbor_index}]"
+                    )
+                    if relation == "synonym" and (match != "exact" or asymmetry):
+                        errors.append(
+                            f"{relation_path}: synonym requires exact boundary and no asymmetry"
+                        )
+                    if relation == "near_synonym" and (
+                        match != "partial" or not asymmetry
+                    ):
+                        errors.append(
+                            f"{relation_path}: near_synonym requires partial boundary and asymmetry"
+                        )
+                    if relation in {"antonym", "polarity_pair"} and match != "opposed":
+                        errors.append(
+                            f"{relation_path}: opposed relation requires opposed boundary"
+                        )
+                    if relation == "same_field" and match != "field_only":
+                        errors.append(
+                            f"{relation_path}: same_field requires field_only boundary"
+                        )
+                    if relation == "thematic" and match != "thematic_only":
+                        errors.append(
+                            f"{relation_path}: thematic requires thematic_only boundary"
+                        )
+                if "concept_map" in branch and (
+                    branch["concept_map"]["definition"]
+                    != branch["glosses"]["semantic_definition"]
+                    or branch["summary"] != branch["concept_map"]["definition"]
+                ):
+                    errors.append(
+                        f"{path}.concept_map.definition: must equal semantic definition and summary"
+                    )
             focus = (branch["root_id"], branch["branch_id"])
             expected_lexical = lexical_by_branch.get(focus, [])
-            if branch["lexical_realizations"] != expected_lexical:
+            frozen_lexical = [
+                {
+                    key: unit[key]
+                    for key in (
+                        "lexical_unit_id",
+                        "expression_ar",
+                        "unit_kind",
+                        "sense_ar",
+                        "evidence_refs",
+                        "quran_form",
+                    )
+                }
+                for unit in branch["lexical_realizations"]
+            ]
+            if frozen_lexical != expected_lexical:
                 errors.append(
                     f"{path}.lexical_realizations: expected packet-backed lexical roster"
                 )
@@ -665,6 +809,28 @@ def validate_semantics(
                         f"{path}.lexical_realizations[{unit_index}].expression_ar: "
                         "must contain Arabic script"
                     )
+                if "target_gloss" in unit and ARABIC_RE.search(unit["target_gloss"]):
+                    errors.append(
+                        f"{path}.lexical_realizations[{unit_index}].target_gloss: "
+                        "contains Arabic script"
+                    )
+            if "concept_map" in branch:
+                lexical_ids = {
+                    unit["lexical_unit_id"] for unit in branch["lexical_realizations"]
+                }
+                facet_ids = [facet["facet_id"] for facet in branch["concept_map"]["facets"]]
+                if facet_ids != [f"F{number:03d}" for number in range(1, len(facet_ids) + 1)]:
+                    errors.append(f"{path}.concept_map.facets: IDs must be sequential")
+                if not any(
+                    facet["role"] == "core" for facet in branch["concept_map"]["facets"]
+                ):
+                    errors.append(f"{path}.concept_map.facets: requires a core facet")
+                for facet_index, facet in enumerate(branch["concept_map"]["facets"]):
+                    unknown = sorted(set(facet["claim_ids"]) - lexical_ids)
+                    if unknown:
+                        errors.append(
+                            f"{path}.concept_map.facets[{facet_index}]: unknown claims {unknown}"
+                        )
             for neighbor_index, neighbor in enumerate(
                 branch["arabic_neighbor_distinctions"]
             ):

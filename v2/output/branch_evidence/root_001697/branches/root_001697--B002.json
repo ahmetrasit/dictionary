@@ -1,5 +1,5 @@
 {
-  "format": 1,
+  "format": 2,
   "generated_by": "v2/scripts/build_branch_evidence.py",
   "root_envelope_id": "root_001697",
   "packet_path": "data/output/root_packets/root_001697.json",
@@ -8,6 +8,10 @@
   "furuq_sha256": "1099db0d56515d2eb3e8d72f104f2e338c2c9a8c1fa6abbb046406d3b327e722",
   "qnet_path": "data/upstream/qnet/incidence_full/raw_keyword_incidence.sqlite",
   "qnet_sha256": "a5262b568203bff7ec04e6ca905781125beec83f90d62a5cf0cd6ff61049eee8",
+  "qnet_theme_path": "data/upstream/qnet/bridge_theme_full/bridge_theme_staging.sqlite",
+  "qnet_theme_sha256": "e4f590a111376e372eefef6d03b8694837ec9989017ce721d56db9828b2a734e",
+  "qnet_fix_manifest_path": "data/upstream/qnet/bridge_theme_full/latent_v11_qac_qnet_fix_manifest.json",
+  "qnet_fix_manifest_sha256": "b0ae3c19450a8019825321f6dc1e9f4c336249950f50267ed84eb3258756502c",
   "branch": {
     "root_id": "root_001697",
     "branch_id": "B002",
@@ -83,7 +87,326 @@
   ],
   "qnet_candidates": [],
   "qnet_core_overlap_candidates": [],
+  "qnet_bridge_overlap_candidates": [],
+  "qnet_theme_overlap_candidates": [
+    {
+      "root_id": "root_000556",
+      "branch_id": "B003",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 3,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "plant_vegetation"
+      ]
+    },
+    {
+      "root_id": "root_000883",
+      "branch_id": "B005",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 3,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "plant_vegetation"
+      ]
+    },
+    {
+      "root_id": "root_000010",
+      "branch_id": "B001",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 3,
+      "votes2_keyword_count": 1,
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "plant_vegetation"
+      ]
+    },
+    {
+      "root_id": "root_000500",
+      "branch_id": "B002",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 3,
+      "votes2_keyword_count": 1,
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "plant_vegetation"
+      ]
+    },
+    {
+      "root_id": "root_000508",
+      "branch_id": "B005",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 3,
+      "votes2_keyword_count": 1,
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "earth_geology"
+      ]
+    },
+    {
+      "root_id": "root_000572",
+      "branch_id": "B003",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 3,
+      "votes2_keyword_count": 1,
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "plant_vegetation"
+      ]
+    },
+    {
+      "root_id": "root_000757",
+      "branch_id": "B009",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 3,
+      "votes2_keyword_count": 1,
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "plant_vegetation"
+      ]
+    },
+    {
+      "root_id": "root_000792",
+      "branch_id": "B006",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 3,
+      "votes2_keyword_count": 1,
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "plant_vegetation"
+      ]
+    }
+  ],
+  "qnet_focus_coverage": {
+    "raw_keyword_exact_port": false,
+    "snapshot_exact_port": false,
+    "postfix_exact_port": true,
+    "theme_scope": "branch",
+    "focus_themes": [
+      "anatomy",
+      "body",
+      "earth_geology",
+      "plant_vegetation"
+    ]
+  },
   "furuq_candidates": [
+    {
+      "root_id": "root_000556",
+      "branch_id": "B003",
+      "root_norm": "ر د ف",
+      "branch_image_ar": "الردف والكفل وما وراء الشيء",
+      "what_is_ar": "يدخل فيه ردف المرأة وعجيزتها، والكفل والعجز، والموضع الخلفي الذي يركبه الرديف، وما وصفته المصادر من رواكيب النخل.",
+      "what_is_not_ar": "لا يدخل فيه فعل الاتباع أو التتابع، ولا منصب الردافة، ولا الراكب نفسه إلا من جهة موضعه الخلفي.",
+      "source_phrase_ar": "سميت العجيزة ردفا (maqayis); الردف الكفل والعجز (sihah); الردف الكفل (tahdhib); ردف المرأة عجيزتها (mufradat); الرداف موضع مركب الردف (maqayis); الروادف رواكيب النخلة (sihah)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1471;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3310:headword=%D8%B1%D8%AF%D9%81:root=%D8%B1%20%D8%AF%20%D9%81:sha=74b592b8989d00ee;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D33:headword=%D8%B1%D8%AF%D9%81:root=%D8%B1%20%D8%AF%20%D9%81:sha=b9f86af69e41a761;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A554:headword=%D8%B1%D8%AF%D9%81:root=%D8%B1%20%D8%AF%20%D9%81:sha=722545a8717682e1",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "plant_vegetation"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000883",
+      "branch_id": "B005",
+      "root_norm": "ص م ع",
+      "branch_image_ar": "دقة الكعوب والعقد وضمورها",
+      "what_is_ar": "يدخل فيه صمع الكعوب ولطافة عقد القناة وضمور قوائم الحيوان والظبي المؤلل القرنين",
+      "what_is_not_ar": "ليس صغر الأذن ولا رأس الصومعة ولا الريش المتلطخ",
+      "source_phrase_ar": "الكلاب صمع الكعوب أي صغارها ولطافها (maqayis)؛ الكلاب صمع الكعوب أي صغار الكعوب (sihah)؛ الصمع في الكعوب لطافتها واستواؤها وقناة صمعاء الكعوب وقوائم الثور الوحشي صمع الكعوب وظبي مصمع مؤلل القرنين (tahdhib)؛ كلاب صمع الكعوب ليسوا بأجوفها (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2008;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3042:headword=%D8%B5%D9%85%D8%B9:root=%D8%B5%20%D9%85%20%D8%B9:sha=27b4a982a44e818f;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D114%3Bsegment_index%3D5:headword=%D8%B5%D9%85%D8%B9:root=%D8%B5%20%D9%85%20%D8%B9:sha=6bc15010ac4c7445;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A871:headword=%D8%B5%D9%85%D8%B9:root=%D8%B5%20%D9%85%20%D8%B9:sha=38502a9c0c00b6c6",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "plant_vegetation"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000010",
+      "branch_id": "B001",
+      "root_norm": "ء ث ث",
+      "branch_image_ar": "الكثرة والتكاثف",
+      "what_is_ar": "النبات والشعر وما يشبههما إذا كثر وتكاثف أو التف، وامتلاء اللحم في النساء بلفظ أثائث",
+      "what_is_not_ar": "الأثاث بمعنى متاع البيت والمال",
+      "source_phrase_ar": "أث النبت إذا كثر (maqayis)؛ أث النبت إذا كثر والتف والنبت أثيث والشعر أثيث (jamhara)؛ أث النبات أي كثر والتف ونبات أثيث وشعر أثيث ونساء أثائث (sihah)؛ أث النبات فهو أثيث ويوصف به الشعر الكثير والنبات الملتف (tahdhib)؛ أث أي كثر وتكاثف ونساء أثايث (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A2:headword=%D8%A3%20%D8%AB%20%D8%AB:root=%D8%A1%20%D8%AB%20%D8%AB:sha=1cff13e497f9c3f8;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A629:headword=%D8%A3%D8%AB%D8%AB:root=%D8%A1%20%D8%AB%20%D8%AB:sha=be3272da23f365d5;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D780%3Bsegment_index%3D11:headword=%D8%A3%D8%AB%D8%AB:root=%D8%A3%20%D8%AB%20%D8%AB:sha=cc21a2df03371660;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A8:headword=%D8%A3%D8%AB:root=%D8%A1%20%D8%AB:sha=e07b2b4bad099841",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "plant_vegetation"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000500",
+      "branch_id": "B002",
+      "root_norm": "د و ل",
+      "branch_image_ar": "يبس وبلاء واسترخاء بعد قوة",
+      "what_is_ar": "يدخل فيه الدويل من النبت اليابس أو العامي، وبلاء الثوب أو الود، واسترخاء البطن.",
+      "what_is_not_ar": "ليس هو تداول المال أو الحرب، ولا الدولة بمعنى النوبة، ولا الداهية.",
+      "source_phrase_ar": "الدويل من النبت ما يبس لعامه (maqayis;sihah)؛ دال الثوب يدول إذا بلي وقد جعل وده يدول أي يبلى (maqayis;sihah)؛ اندال بطنه أي استرخى (maqayis;sihah)؛ الكلأ الدويل الذي أتت عليه سنتان فهو لا خير فيه (tahdhib)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1142;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4009:headword=%D8%AF%D9%88%D9%84:root=%D8%AF%20%D9%88%20%D9%84:sha=0688b04198381ae8;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D723%3Bsegment_index%3D6:headword=%D8%AF%D9%88%D9%84:root=%D8%AF%20%D9%88%20%D9%84:sha=4a11b85879b497e6",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "plant_vegetation"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000508",
+      "branch_id": "B005",
+      "root_norm": "ذ ب ح",
+      "branch_image_ar": "ذُباح الأصابع",
+      "what_is_ar": "يدخل فيه الشقوق والتحزز والتشقق في أصول الأصابع أو باطنها، وخاصة بين أصابع الصبيان من التراب",
+      "what_is_not_ar": "ليس داء الحلق، ولا نبات الذباح",
+      "source_phrase_ar": "الذباح شقوق في أصول الأصابع (maqayis)؛ أخذه الذباح وهو تشقف بين أصابع الصبيان من التراب (ayn)؛ الذباح شقوق تكون في باطن الأصابع في الرجل (sihah)؛ الذباح حز في باطن أصابع الرجل عرضا (tahdhib)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1235;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1679:headword=%D8%B0%D8%A8%D8%AD:root=%D8%B0%20%D8%A8%20%D8%AD:sha=56882909abe08c37;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A958:headword=%D8%B0%D8%A8%D8%AD:root=%D8%B0%20%D8%A8%20%D8%AD:sha=2553fad5d6804097;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D73:headword=%D8%B0%D8%A8%D8%AD:root=%D8%B0%20%D8%A8%20%D8%AD:sha=e17dec7fc24701d2",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "earth_geology"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000572",
+      "branch_id": "B003",
+      "root_norm": "ر ع ب",
+      "branch_image_ar": "قطع السنام وشطبته",
+      "what_is_ar": "قطع الشيء أو السنام، والقطعة والشطيبة من السنام، وما شبه بها من الجارية الشطبة البيضاء وأصل الطلعة، مع وصف السنام بالدسم والسمن في هذا الباب",
+      "what_is_not_ar": "ليس الخوف والفزع، ولا ملء الحوض والوادي، ولا شدة صوت الحمام",
+      "source_phrase_ar": "للشيء المقطع مرعب (maqayis)؛ الترعيب شطائب السنام إذا قطعت مستطيلة (jamhara)؛ السنام المرعب المقطع والترعيبة القطعة من السنام (sihah)؛ رعبت السنام قطعته (mufradat)؛ القطعة من السنام رعبوبة (maqayis;tahdhib)؛ جارية رعبوبة شطبة بيضاء (maqayis;sihah;tahdhib;mufradat)؛ أصل الطلعة رعبوبة أيضا (tahdhib)؛ سنام مرعوب يقطر دسما وسنام رعيب ممتلئ شحما (maqayis;sihah)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1310;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A726%3Asubentry%3A2%3A%D8%B1%D8%B9%D8%A8:headword=%D8%B1%D8%B9%D8%A8:root=%D8%B1%20%D8%B9%20%D8%A8:sha=529a468dccdb4475;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A285:headword=%D8%B1%D8%B9%D8%A8:root=%D8%B1%20%D8%B9%20%D8%A8:sha=b11404aa3f19ed60;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D173%3Bsegment_index%3D4:headword=%D8%B1%D8%B9%D8%A8:root=%D8%B1%20%D8%B9%20%D8%A8:sha=35c15004a72b5ff0;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A570:headword=%D8%B1%D8%B9%D8%A8:root=%D8%B1%20%D8%B9%20%D8%A8:sha=6fe41cc1d253dd05",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "plant_vegetation"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000757",
+      "branch_id": "B009",
+      "root_norm": "س و د",
+      "branch_image_ar": "سويداء القلب وحبته",
+      "what_is_ar": "يدخل فيه سواد القلب وسويداؤه وحبته، وحبة الشونيز أو الشينيز المسماة سويداء.",
+      "what_is_not_ar": "لا يدخل فيه سواد اللون العام ولا سواد الجماعة.",
+      "source_phrase_ar": "سواد القلب وسويداؤه وهي حبته (maqayis)؛ السويداء حبة الشونيز وسواد القلب حبته (ayn)؛ سواد القلب حبته وكذلك أسوده وسوداؤه وسويداؤه (sihah)؛ السويداء حبة الشينيز؛ سواد قلبه (tahdhib)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1703;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4945:headword=%D8%B3%D9%88%D8%AF:root=%D8%B3%20%D9%88%20%D8%AF:sha=1804dd97b4585812;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1309:headword=%D8%B3%D9%88%D8%AF:root=%D8%B3%20%D9%88%20%D8%AF:sha=9f323777c29ad088;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D654%3Bsegment_index%3D2:headword=%D8%B3%D9%88%D8%AF:root=%D8%B3%20%D9%88%20%D8%AF:sha=98f87e65049d3200",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "plant_vegetation"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000792",
+      "branch_id": "B006",
+      "root_norm": "ش ر ي",
+      "branch_image_ar": "الشِّريان عود القسي والعروق",
+      "what_is_ar": "الشِّريان شجر يتخذ منه القسي، والشرايين عروق في جسد الإنسان",
+      "what_is_not_ar": "الشَّري الحنظل والشرى الموضع",
+      "source_phrase_ar": "الشريان من شجر القسى (maqayis); الشريان شجر يتخذ منه القسى (sihah); الشريان واحد الشرايين وهي العروق النابضة (sihah); الشريان من الشجر الذي يتخذ منه القسي (tahdhib); الشريانات عروق رقاق في جسد الإنسان (tahdhib)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1943;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5388:headword=%D8%B4%D8%B1%D9%89:root=%D8%B4%20%D8%B1%20%D9%8A:sha=e3945379bcd5ed7e;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D598%3Bsegment_index%3D2:headword=%D8%B4%D8%B1%D9%8A:root=%D8%B4%20%D8%B1%20%D9%8A:sha=66e869207c9ff4ca",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "plant_vegetation"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
     {
       "root_id": "root_001697",
       "branch_id": "B001",
@@ -98,7 +421,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_001697",
@@ -114,7 +440,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_001697",
@@ -130,7 +459,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_001697",
@@ -146,7 +478,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     }
   ]
 }

@@ -13,10 +13,10 @@ content. Each deterministic function gets its own script and generated namespace
 One comprehensive validated entry is the master record. It is projected rather
 than copied wholesale to each consumer:
 
-- translation agents receive branch boundaries, gloss candidates, and
+- translation agents receive concept-complete branch boundaries, gloss candidates, and
   preservation/loss/addition/collision notes;
-- the user dictionary receives a one-sentence definition, ranked primary glosses,
-  and the first author-ranked key distinction;
+- the user dictionary receives the concept-map definition, one faithful concept
+  gloss, separate contextual glosses, and the first semantically typed key distinction;
 - the scholar view receives the complete sources, neighbors, morphology,
   occurrences, and attachments.
 
@@ -29,10 +29,10 @@ Schema validity must not be read as proof that an entry was freshly authored by
 the current minimal-input workflow.
 
 `v2/work/` is resumable local execution state, not master data or production
-provenance. Current agent tasks use task format 2 and minimal evidence format
-`dictionary-v2-agent-branch-evidence-v2`. Format-1 manifests are historical and
-are rejected; rerunning `create_entry.py` in prepare mode replaces them before
-any model call.
+provenance. Current root-writer tasks use task format 4 and minimal evidence
+format `dictionary-v2-agent-root-evidence-v3`. Older manifests are historical
+and are ignored; rerunning `create_entry.py` in prepare mode writes the current
+task before any model call.
 
 ## Transitional neighbor-network checkpoint
 
@@ -100,10 +100,14 @@ branch-shaped fragments plus the short root profile. Agents never receive Quran
 ayahs, occurrence data, QAC morphology, attachment records, full branch
 packages, the master entry schema, or the orchestration spec.
 
-Implementation note: older task-format-2 work directories may still contain
-branch-per-agent manifests. Do not treat those stale manifests as production
-authoring state. The runner must prepare a root-writer task matching the
-orchestration spec before `--run-agents` is used for new production entries.
+Older work directories may still contain branch-per-agent manifests. They are
+ignored: prepare mode writes one current `tasks/root_writer.json`, one
+deduplicated `inputs/root_evidence.json`, and coordinator-only review state
+before any model call. The evidence contains compact source claims and lexical
+unit IDs, not raw passages. Transliteration never enters writer context;
+protected proper names use placeholders. Missing used anchors or names pause
+assembly in `inputs/transliteration_review.json` or `inputs/name_review.json`
+without invalidating or rerunning the writer.
 
 Prepare deterministic evidence and resumable task manifests without making any
 model calls:
@@ -112,16 +116,24 @@ model calls:
 python3 v2/scripts/create_entry.py root_000858 --language tr
 ```
 
-Run the prepared workflow with Codex, assemble and validate the entry, and render
-its Markdown form:
+Hand the prepared task to the top-level orchestration agent defined in
+`prompts/entry-orchestrator.md`. The orchestrator invokes the root writer, then
+an evidence-bound semantic reviewer, and finally the deterministic publication
+scripts. The reviewer reports issues but never rewrites prose; uncertain issues
+pause for editorial judgment. There is intentionally no
+`--run-agents` script option:
 
-```sh
-python3 v2/scripts/create_entry.py root_000858 --language tr --run-agents
+```text
+Run the v2 entry orchestrator for root_000858/tr.
 ```
 
-The same command resumes a hash-matching root-writer response. Stale responses
-are rerun; validation failures are routed back to the writer for at most two
-repair rounds. Outputs are written to `v2/entries/<language>/`, while task and
+The orchestrator resumes hash-matching writer and review responses and reruns
+stale output. Each worker writes to its real repository output, runs the exact
+read-only validator carried by its staged task, and corrects that same file in
+place until it passes. A failed response is not discarded or replaced by a new
+candidate. At most two later repair continuations return to the same writer;
+bounded repairs cannot change unaffected branches and invalidate the earlier
+semantic review. Outputs are written to `v2/entries/<language>/`, while task and
 fragment state stays under `v2/work/entry_creation/`.
 
 Export all validated entries as deterministic, one-entry-per-line JSONL:
@@ -158,14 +170,17 @@ The current machine contracts support `en` and `tr`. Adding another language als
 requires extending the schema enums, transliteration policy, renderer labels, and
 CLI language choices before its language-specific agent pass can run.
 
-Each root writer runs in a temporary read-only workspace containing only its
-hash-bound task inputs. The default per-process timeout is 30 minutes; change it
-with `--agent-timeout`. Operational failures stop immediately, while invalid
-agent JSON remains eligible for bounded repair.
-
-The coordinator additionally denies agent reads from the repository with
-`sandbox-exec` on macOS or bubblewrap on Linux. It stops before model execution
-when neither confinement tool is available.
+Each root writer receives the regular
+`v2/work/entry_creation/<root>/<language>/input/` package and is instructed not
+to inspect any other path. It writes only
+`v2/work/entry_creation/<root>/<language>/output/root_writer.json`. The
+semantic reviewer receives only `review/input/` and writes only
+`review/output/root_review.json`. Both agents validate and, when necessary,
+repair those files in place before returning. The
+orchestration agent owns timeouts and process monitoring. Operational failures
+stop immediately, while invalid agent JSON remains preserved for correction.
+The existing plural `inputs/` directory is coordinator-only state; it is not
+part of the writer package.
 
 Canonical entry creation accepts only the packet and evidence locations shown
 above. Existing draft outputs may be regenerated, but reviewed or published

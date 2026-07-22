@@ -1,21 +1,13 @@
 #!/usr/bin/env python3
-"""Prepare or run the minimal resumable agent workflow for one v2 entry."""
+"""Prepare deterministic evidence and one root-writer task for an orchestrator."""
 
 from __future__ import annotations
 
 import argparse
-import concurrent.futures
-import contextlib
-import copy
 import json
 import os
-import re
-import signal
-import shutil
-import subprocess
 import sys
 import tempfile
-import threading
 from pathlib import Path
 from typing import Any
 
@@ -26,21 +18,18 @@ if str(PROJECT) not in sys.path:
 
 from v2.scripts.assemble_entry import (
     FRAGMENT_SCHEMAS,
-    agent_branch_evidence,
-    canonical_sha256,
-    load_task_fragment,
+    agent_root_evidence,
     project_relative,
     sha256_file,
-    validate_fragment,
-    assemble,
 )
 from v2.scripts.build_branch_evidence import (
     DEFAULT_FURUQ,
+    DEFAULT_QNET,
+    DEFAULT_QNET_FIX_MANIFEST,
+    DEFAULT_QNET_THEME,
     build_packages,
     write_packages,
 )
-from v2.scripts.render_entry import MARKER as ENTRY_MARKER
-from v2.scripts.render_entry import render as render_entry
 from v2.scripts.render_occurrences import (
     build_attachment_crosswalk,
     load_packet,
@@ -55,18 +44,19 @@ from v2.scripts.validate_entry import ContractError, load_json
 
 
 GENERATOR = "v2/scripts/create_entry.py"
-TASK_FORMAT = 2
+TASK_FORMAT = 4
 PROMPTS = {
-    "branch_writer": PROJECT / "v2/prompts/branch-writer.md",
-    "root_profile_writer": PROJECT / "v2/prompts/root-profile-writer.md",
+    "root_writer": PROJECT / "v2/prompts/root-writer.md",
+    "root_reviewer": PROJECT / "v2/prompts/root-reviewer.md",
 }
-ENTRY_SCHEMA = PROJECT / "v2/schema/encyclopedia-entry.schema.json"
-ORCHESTRATION_SPEC = PROJECT / "v2/orchestration/entry-creation.spec.md"
-TRANSLITERATION_POLICY = PROJECT / "TRANSLITERATION_POLICY.md"
 
 
 def json_content(value: Any) -> str:
     return json.dumps(value, ensure_ascii=False, indent=2) + "\n"
+
+
+def compact_json_content(value: Any) -> str:
+    return json.dumps(value, ensure_ascii=False, separators=(",", ":")) + "\n"
 
 
 def path_ref(path: Path) -> str:
@@ -152,86 +142,6 @@ def verify_task_bindings(task: dict, base_dir: Path = PROJECT) -> None:
             )
 
 
-def materialize_agent_task(task: dict, workspace: Path) -> dict:
-    verify_task_bindings(task)
-    result = copy.deepcopy(task)
-    inputs_dir = workspace / "inputs"
-    inputs_dir.mkdir(parents=True, exist_ok=True)
-    copied: dict[tuple[str, str], str] = {}
-    ordinal = 0
-
-    def visit(value: Any) -> None:
-        nonlocal ordinal
-        if isinstance(value, dict):
-            if set(("path", "sha256")).issubset(value) and isinstance(value["path"], str):
-                source = binding_path(value["path"])
-                key = (str(source), value["sha256"])
-                relative = copied.get(key)
-                if relative is None:
-                    ordinal += 1
-                    name = re.sub(r"[^A-Za-z0-9._-]+", "_", source.name) or "input"
-                    destination = inputs_dir / f"{ordinal:03d}-{name}"
-                    shutil.copyfile(source, destination)
-                    if sha256_file(destination) != value["sha256"]:
-                        raise ContractError(f"Copied task input changed: {source}")
-                    relative = str(destination.relative_to(workspace))
-                    copied[key] = relative
-                value["path"] = relative
-            for child in value.values():
-                visit(child)
-        elif isinstance(value, list):
-            for child in value:
-                visit(child)
-
-    visit(result)
-    return result
-
-
-def confined_agent_command(command: list[str], workspace: Path) -> list[str]:
-    sandbox_exec = shutil.which("sandbox-exec")
-    if sandbox_exec:
-        escaped_project = str(PROJECT.resolve()).replace("\\", "\\\\").replace(
-            '"', '\\"'
-        )
-        profile = workspace / "repository-read.sb"
-        atomic_write(
-            profile,
-            "(version 1)\n"
-            "(allow default)\n"
-            f'(deny file-read* (subpath "{escaped_project}"))\n',
-        )
-        return [sandbox_exec, "-f", str(profile), *command]
-
-    bubblewrap = shutil.which("bwrap")
-    if bubblewrap:
-        return [
-            bubblewrap,
-            "--ro-bind",
-            "/",
-            "/",
-            "--tmpfs",
-            str(PROJECT.resolve()),
-            "--chdir",
-            str(workspace),
-            "--",
-            *command,
-        ]
-    raise ContractError(
-        "No supported repository read-confinement tool found; install "
-        "sandbox-exec (macOS) or bubblewrap before running agents"
-    )
-
-
-def stop_process(process: subprocess.Popen, *, kill: bool = False) -> None:
-    if process.poll() is not None:
-        return
-    sig = signal.SIGKILL if kill else signal.SIGTERM
-    try:
-        os.killpg(process.pid, sig)
-    except ProcessLookupError:
-        pass
-
-
 def write_task(path: Path, task: dict) -> None:
     if path.exists():
         current = load_json(path)
@@ -249,11 +159,6 @@ def common_task(role: str, envelope: str, language: str) -> dict:
         "language": language,
         "prompt": binding(PROMPTS[role]),
         "response_schema": binding(FRAGMENT_SCHEMAS[role]),
-        "entry_contract": {
-            "schema": binding(ENTRY_SCHEMA),
-            "orchestration_spec": binding(ORCHESTRATION_SPEC),
-            "transliteration_policy": binding(TRANSLITERATION_POLICY),
-        },
     }
 
 
@@ -265,6 +170,9 @@ def prepare_inputs(
     evidence_dir: Path | None,
     *,
     force_entry: bool = False,
+    qnet_path: Path = DEFAULT_QNET,
+    qnet_theme_path: Path = DEFAULT_QNET_THEME,
+    qnet_fix_manifest_path: Path = DEFAULT_QNET_FIX_MANIFEST,
 ) -> tuple[Path, dict, Path, dict]:
     packet_path, packet = load_canonical_packet(selector, packet_argument)
     envelope = packet["root_envelope_id"]
@@ -290,10 +198,147 @@ def prepare_inputs(
     occurrence_content = render_occurrences(packet, packet_path, language, crosswalk)
     write_occurrences(occurrence_path, occurrence_content, check=False)
 
-    index, packages = build_packages(packet, packet_path, furuq_path)
+    index, packages = build_packages(
+        packet,
+        packet_path,
+        furuq_path,
+        qnet_path,
+        qnet_theme_path,
+        qnet_fix_manifest_path,
+    )
     evidence_dir = expected_evidence_dir
     write_packages(evidence_dir, index, packages, check=False)
     return packet_path, packet, evidence_dir / "index.json", index
+
+
+def _observed_transliterations(
+    language: str,
+) -> tuple[
+    dict[tuple[str, str, str], set[str]],
+    dict[tuple[str, str, str], set[str]],
+]:
+    reviewed: dict[tuple[str, str, str], set[str]] = {}
+    suggestions: dict[tuple[str, str, str], set[str]] = {}
+
+    def add(
+        target: dict[tuple[str, str, str], set[str]],
+        kind: str,
+        ref: str,
+        arabic: str,
+        value: str,
+    ) -> None:
+        if arabic and isinstance(value, str) and value.strip():
+            target.setdefault((kind, ref, arabic), set()).add(value.strip())
+
+    paths = sorted((PROJECT / "v2/entries" / language).glob("*.json"))
+    paths.extend(sorted((PROJECT / "v2/examples").glob(f"*.{language}.entry.json")))
+    for path in paths:
+        try:
+            entry = load_json(path)
+        except (OSError, ContractError):
+            continue
+        if entry.get("language") != language:
+            continue
+        target = (
+            reviewed
+            if entry.get("status") in {"reviewed", "published"}
+            else suggestions
+        )
+        envelope = entry.get("root_envelope_id", "")
+        profile = entry.get("root_profile", {})
+        add(target, "root", envelope, envelope, profile.get("transliteration", ""))
+        for branch in entry.get("branches", []):
+            ref = f"{branch.get('root_id', '')}/{branch.get('branch_id', '')}"
+            add(
+                target,
+                "branch",
+                ref,
+                branch.get("branch_image_ar", ""),
+                branch.get("image_transliteration", ""),
+            )
+            for neighbor in branch.get("arabic_neighbor_distinctions", []):
+                neighbor_ref = (
+                    f"{neighbor.get('neighbor_root_id', '')}/"
+                    f"{neighbor.get('neighbor_branch_id', '')}"
+                )
+                add(
+                    target,
+                    "neighbor",
+                    neighbor_ref,
+                    neighbor.get("expression_ar", ""),
+                    neighbor.get("expression_transliteration", ""),
+                )
+    return reviewed, suggestions
+
+
+def build_transliteration_inputs(
+    index: dict, packages: list[dict], language: str
+) -> dict:
+    reviewed, observed_suggestions = _observed_transliterations(language)
+    values: dict[str, str] = {}
+    suggestions: dict[str, str] = {}
+    gaps: list[dict] = []
+
+    def resolve(key: str, arabic: str, candidates: list[tuple[str, str, str]]) -> None:
+        for kind, ref, lookup_arabic in candidates:
+            found = reviewed.get((kind, ref, lookup_arabic), set())
+            if len(found) == 1:
+                values[key] = next(iter(found))
+                return
+            if found:
+                break
+        for kind, ref, lookup_arabic in candidates:
+            found = observed_suggestions.get((kind, ref, lookup_arabic), set())
+            if len(found) == 1:
+                suggestions[key] = next(iter(found))
+                break
+            if found:
+                break
+        gaps.append({"key": key, "arabic": arabic})
+
+    packet_path = Path(index["packet_path"])
+    if not packet_path.is_absolute():
+        packet_path = PROJECT / packet_path
+    packet = load_json(packet_path)
+    envelope = index["root_envelope_id"]
+    resolve(
+        "root_profile",
+        packet.get("root_norm", " / ".join(index.get("root_ids", []))),
+        [("root", envelope, envelope)],
+    )
+    seen_neighbors: set[str] = set()
+    for package in packages:
+        focus = package["branch"]
+        ref = f"{focus['root_id']}/{focus['branch_id']}"
+        resolve(
+            f"branch:{ref}",
+            focus["branch_image_ar"],
+            [
+                ("branch", ref, focus["branch_image_ar"]),
+                ("neighbor", ref, focus["branch_image_ar"]),
+            ],
+        )
+        for candidate in package["furuq_candidates"]:
+            neighbor_ref = f"{candidate['root_id']}/{candidate['branch_id']}"
+            if neighbor_ref in seen_neighbors:
+                continue
+            seen_neighbors.add(neighbor_ref)
+            resolve(
+                f"neighbor:{neighbor_ref}",
+                candidate["branch_image_ar"],
+                [
+                    ("branch", neighbor_ref, candidate["branch_image_ar"]),
+                    ("neighbor", neighbor_ref, candidate["branch_image_ar"]),
+                ],
+            )
+    return {
+        "format": "dictionary-v2-transliteration-inputs-v1",
+        "root_envelope_id": envelope,
+        "language": language,
+        "values": values,
+        "suggestions": suggestions,
+        "gaps": gaps,
+    }
 
 
 def prepare_initial_tasks(
@@ -302,410 +347,47 @@ def prepare_initial_tasks(
     language: str,
     work_dir: Path,
 ) -> list[Path]:
-    task_paths = []
+    packages = []
     for row in index["branches"]:
         evidence_path = (index_path.parent / row["path"]).resolve()
         package = load_json(evidence_path)
         focus = package.get("branch", {})
+        ref = f"{row['root_id']}/{row['branch_id']}"
         if focus.get("status") != "accepted" or focus.get("contaminated") != "no":
             raise ContractError(
                 "needs_evidence: focus branch is not accepted and uncontaminated: "
-                f"{row['root_id']}/{row['branch_id']}"
+                + ref
             )
         if not package.get("furuq_candidates"):
             raise ContractError(
                 "needs_evidence: no accepted, uncontaminated Furuq comparison "
-                f"candidate for {row['root_id']}/{row['branch_id']}"
+                f"candidate for {ref}"
             )
-        stem = f"{row['root_id']}--{row['branch_id']}"
-        agent_evidence_path = work_dir / "inputs/branches" / f"{stem}.json"
-        atomic_write(agent_evidence_path, json_content(agent_branch_evidence(package)))
-        task = common_task("branch_writer", index["root_envelope_id"], language)
-        task.update(
-            {
-                "root_id": row["root_id"],
-                "branch_id": row["branch_id"],
-                "evidence": {
-                    "path": path_ref(agent_evidence_path),
-                    "sha256": sha256_file(agent_evidence_path),
-                },
-            }
-        )
-        task_path = work_dir / "tasks/branches" / f"{stem}.json"
-        write_task(task_path, task)
-        task_paths.append(task_path)
+        packages.append(package)
 
-    return task_paths
-
-
-def fragment_path_for(task_path: Path, work_dir: Path) -> Path:
-    task = load_json(task_path)
-    role = task["role"]
-    if role == "branch_writer":
-        return work_dir / "fragments/branches" / task_path.name
-    if role == "root_profile_writer":
-        return work_dir / "fragments/root_profile.json"
-    raise ContractError(f"Unknown task role: {role}")
-
-
-def prepare_root_task(index: dict, language: str, work_dir: Path) -> Path:
-    dependencies = []
-    for row in index["branches"]:
-        stem = f"{row['root_id']}--{row['branch_id']}"
-        task_path = work_dir / "tasks/branches" / f"{stem}.json"
-        fragment_path = work_dir / "fragments/branches" / f"{stem}.json"
-        _task, _fragment = load_task_fragment(task_path, fragment_path, "branch_writer")
-        dependencies.append(
-            {
-                "root_id": row["root_id"],
-                "branch_id": row["branch_id"],
-                "path": path_ref(fragment_path),
-                "sha256": sha256_file(fragment_path),
-            }
-        )
-    task = common_task("root_profile_writer", index["root_envelope_id"], language)
+    transliterations = build_transliteration_inputs(index, packages, language)
+    transliteration_path = work_dir / "inputs/transliterations.json"
+    atomic_write(transliteration_path, json_content(transliterations))
+    evidence_path = work_dir / "inputs/root_evidence.json"
+    atomic_write(
+        evidence_path,
+        compact_json_content(agent_root_evidence(packages)),
+    )
+    task = common_task("root_writer", index["root_envelope_id"], language)
     task.update(
         {
-            "root_ids": index["root_ids"],
-            "branch_count": len(index["branches"]),
-            "dependencies": {"branch_fragments": dependencies},
+            "branch_roster": [
+                f"{row['root_id']}/{row['branch_id']}" for row in index["branches"]
+            ],
+            "evidence": binding(evidence_path),
+            "coordinator": {
+                "evidence_index": binding(index_path),
+            },
         }
     )
-    task_path = work_dir / "tasks/root_profile.json"
+    task_path = work_dir / "tasks/root_writer.json"
     write_task(task_path, task)
-    return task_path
-
-
-def validate_response_identity(response: dict, task: dict) -> None:
-    role = task["role"]
-    if response.get("language") != task["language"]:
-        raise ContractError(f"{role}: response language does not match task")
-    if role == "branch_writer":
-        for field in ("root_id", "branch_id"):
-            if response.get(field) != task[field]:
-                raise ContractError(f"branch_writer: response {field} does not match task")
-    else:
-        if response.get("root_envelope_id") != task["root_envelope_id"]:
-            raise ContractError(f"{role}: response root envelope does not match task")
-        if role == "root_profile_writer":
-            profile = response["root_profile"]
-            if profile["branch_count"] != task["branch_count"]:
-                raise ContractError(
-                    "root_profile_writer: response branch_count does not match task"
-                )
-
-
-def task_prompt(
-    task: dict,
-    repair_error: str | None,
-    base_dir: Path = PROJECT,
-) -> str:
-    prompt_binding = task["prompt"]
-    prompt_path = binding_path(prompt_binding["path"], base_dir)
-    instructions = prompt_path.read_text(encoding="utf-8")
-    sections = [
-        instructions.rstrip(),
-        "\n## Task manifest\n",
-        "```json\n" + json.dumps(task, ensure_ascii=False, indent=2) + "\n```",
-        (
-            "Read only the files named by the task. The task manifest and those "
-            "files are the complete authority for this response."
-        ),
-    ]
-    if repair_error:
-        sections.extend(
-            [
-                "\n## Required repair\n",
-                (
-                    "The previous response failed validation. Correct only the "
-                    "owned fields implicated by this error:\n\n" + repair_error
-                ),
-            ]
-        )
-    return "\n".join(sections).rstrip() + "\n"
-
-
-def preserve_failure(
-    work_dir: Path,
-    task_path: Path,
-    attempt: int,
-    message: str,
-    output: str = "",
-) -> None:
-    stem = task_path.stem.replace("--", "-")
-    failure_dir = work_dir / "failures"
-    failure = failure_dir / f"{stem}.attempt-{attempt}.txt"
-    ordinal = 1
-    while failure.exists():
-        ordinal += 1
-        failure = failure_dir / f"{stem}.attempt-{attempt}.{ordinal}.txt"
-    atomic_write(failure, f"{message}\n\n{output}".rstrip() + "\n")
-
-
-def run_agent_task(
-    task_path: Path,
-    work_dir: Path,
-    *,
-    codex_binary: str,
-    model: str | None,
-    repair_error: str | None = None,
-    force: bool = False,
-    max_repairs: int = 2,
-    agent_timeout: int = 1800,
-    active_processes: set[Any] | None = None,
-    process_lock: threading.Lock | None = None,
-    stop_event: threading.Event | None = None,
-) -> Path:
-    task = load_json(task_path)
-    verify_task_bindings(task)
-    role = task["role"]
-    fragment_path = fragment_path_for(task_path, work_dir)
-    if fragment_path.is_file() and not force:
-        try:
-            _stored_task, response = load_task_fragment(
-                task_path, fragment_path, role
-            )
-            validate_response_identity(response, task)
-            return fragment_path
-        except (ContractError, OSError, KeyError, TypeError):
-            pass
-
-    last_error = repair_error
-    for attempt in range(1, max_repairs + 2):
-        if stop_event is not None and stop_event.is_set():
-            raise ContractError(f"{role} cancelled after another agent task failed")
-        fragment_path.parent.mkdir(parents=True, exist_ok=True)
-        descriptor, output_name = tempfile.mkstemp(
-            prefix=f".{fragment_path.stem}.",
-            suffix=".response.json",
-            dir=fragment_path.parent,
-        )
-        os.close(descriptor)
-        output_path = Path(output_name)
-        try:
-            with tempfile.TemporaryDirectory(prefix="dictionary-v2-agent-") as directory:
-                workspace = Path(directory)
-                agent_task = materialize_agent_task(task, workspace)
-                schema_path = binding_path(
-                    agent_task["response_schema"]["path"], workspace
-                )
-                agent_output = workspace / "response.json"
-                command = [
-                    codex_binary,
-                    "exec",
-                    "--ephemeral",
-                    "--ignore-user-config",
-                    "--ignore-rules",
-                    "--skip-git-repo-check",
-                    "--sandbox",
-                    "read-only",
-                    "-C",
-                    str(workspace),
-                    "--output-schema",
-                    str(schema_path),
-                    "--output-last-message",
-                    str(agent_output),
-                    "-",
-                ]
-                if model:
-                    command[2:2] = ["--model", model]
-                command = confined_agent_command(command, workspace)
-                process = None
-                try:
-                    process = subprocess.Popen(
-                        command,
-                        stdin=subprocess.PIPE,
-                        stdout=subprocess.PIPE,
-                        stderr=subprocess.PIPE,
-                        text=True,
-                        cwd=workspace,
-                        start_new_session=True,
-                    )
-                    if active_processes is not None and process_lock is not None:
-                        with process_lock:
-                            if stop_event is not None and stop_event.is_set():
-                                stop_process(process)
-                            else:
-                                active_processes.add(process)
-                    stdout, stderr = process.communicate(
-                        input=task_prompt(agent_task, last_error, workspace),
-                        timeout=agent_timeout,
-                    )
-                except subprocess.TimeoutExpired as error:
-                    if process is not None:
-                        stop_process(process, kill=True)
-                        process.communicate()
-                    message = (
-                        f"{role} timed out after {agent_timeout} seconds; "
-                        "operational failures are not retried"
-                    )
-                    preserve_failure(work_dir, task_path, attempt, message)
-                    raise ContractError(message) from error
-                finally:
-                    if (
-                        process is not None
-                        and active_processes is not None
-                        and process_lock is not None
-                    ):
-                        with process_lock:
-                            active_processes.discard(process)
-                if process.returncode != 0:
-                    message = (
-                        f"codex exec exited {process.returncode}; operational failures "
-                        "are not retried: "
-                        f"{stderr.strip() or stdout.strip()}"
-                    )
-                    preserve_failure(work_dir, task_path, attempt, message)
-                    raise ContractError(message)
-                shutil.copyfile(agent_output, output_path)
-            response = load_json(output_path)
-            if not isinstance(response, dict):
-                raise ContractError(f"{role}: response must be a JSON object")
-            validate_fragment(response, role, output_path)
-            validate_response_identity(response, task)
-            stored = {"inputs_sha256": canonical_sha256(task), **response}
-            atomic_write(fragment_path, json_content(stored))
-            return fragment_path
-        except (OSError, KeyError, TypeError) as error:
-            last_error = str(error)
-            raw = ""
-            if output_path.is_file():
-                raw = output_path.read_text(encoding="utf-8", errors="replace")
-            preserve_failure(work_dir, task_path, attempt, last_error, raw)
-            if attempt > max_repairs:
-                raise ContractError(
-                    f"{role} failed after {attempt} attempts: {last_error}"
-                ) from error
-        except ContractError as error:
-            if "operational failures are not retried" in str(error):
-                raise
-            last_error = str(error)
-            raw = ""
-            if output_path.is_file():
-                raw = output_path.read_text(encoding="utf-8", errors="replace")
-            preserve_failure(work_dir, task_path, attempt, last_error, raw)
-            if attempt > max_repairs:
-                raise ContractError(
-                    f"{role} failed after {attempt} attempts: {last_error}"
-                ) from error
-        finally:
-            if output_path.exists():
-                output_path.unlink()
-    raise AssertionError("unreachable")
-
-
-def run_initial_tasks(
-    task_paths: list[Path],
-    work_dir: Path,
-    *,
-    codex_binary: str,
-    model: str | None,
-    workers: int,
-    max_repairs: int,
-    agent_timeout: int,
-) -> None:
-    active_processes: set[Any] = set()
-    process_lock = threading.Lock()
-    stop_event = threading.Event()
-    with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
-        futures = {
-            executor.submit(
-                run_agent_task,
-                task,
-                work_dir,
-                codex_binary=codex_binary,
-                model=model,
-                max_repairs=max_repairs,
-                agent_timeout=agent_timeout,
-                active_processes=active_processes,
-                process_lock=process_lock,
-                stop_event=stop_event,
-            ): task
-            for task in task_paths
-        }
-        for future in concurrent.futures.as_completed(futures):
-            try:
-                future.result()
-            except Exception as error:
-                stop_event.set()
-                for pending in futures:
-                    pending.cancel()
-                with process_lock:
-                    running = list(active_processes)
-                for process in running:
-                    stop_process(process)
-                for process in running:
-                    try:
-                        process.wait(timeout=2)
-                    except subprocess.TimeoutExpired:
-                        stop_process(process, kill=True)
-                raise ContractError(f"Agent task failed: {futures[future]}: {error}") from error
-
-
-def repair_owners(error: str, index: dict) -> tuple[set[int], bool]:
-    deterministic_markers = (
-        ".dictionary_basis",
-        "$.provenance",
-        ".artifact_path",
-        ".artifact_sha256",
-        "exact packet roster",
-        "evidence index",
-        "digest mismatch",
-        "source roster mismatch",
-    )
-    if any(marker in error for marker in deterministic_markers):
-        return set(), False
-    branch_indexes = {
-        int(match)
-        for match in re.findall(r"\$\.branches\[([0-9]+)\]", error)
-        if int(match) < len(index["branches"])
-    }
-    root = "$.root_profile" in error
-    return branch_indexes, root
-
-
-def repair_fragments(
-    error: str,
-    index: dict,
-    language: str,
-    work_dir: Path,
-    *,
-    codex_binary: str,
-    model: str | None,
-    max_repairs: int,
-    agent_timeout: int,
-) -> None:
-    branch_indexes, root = repair_owners(error, index)
-    if not branch_indexes and not root:
-        raise ContractError(
-            "Validation failure belongs to the deterministic pipeline and cannot "
-            f"be repaired by an agent:\n{error}"
-        )
-    for branch_index in sorted(branch_indexes):
-        row = index["branches"][branch_index]
-        stem = f"{row['root_id']}--{row['branch_id']}"
-        task_path = work_dir / "tasks/branches" / f"{stem}.json"
-        run_agent_task(
-            task_path,
-            work_dir,
-            codex_binary=codex_binary,
-            model=model,
-            repair_error=error,
-            force=True,
-            max_repairs=max_repairs,
-            agent_timeout=agent_timeout,
-        )
-    root_task = prepare_root_task(index, language, work_dir)
-    run_agent_task(
-        root_task,
-        work_dir,
-        codex_binary=codex_binary,
-        model=model,
-        repair_error=error if root else "A dependency changed after validation repair.",
-        force=True,
-        max_repairs=max_repairs,
-        agent_timeout=agent_timeout,
-    )
+    return [task_path]
 
 
 def check_output_targets(
@@ -807,114 +489,21 @@ def publish_pair(
                 backup.unlink()
 
 
-def run_workflow(
-    index_path: Path,
-    index: dict,
-    language: str,
-    work_dir: Path,
-    entry_path: Path,
-    markdown_path: Path,
-    task_paths: list[Path],
-    *,
-    codex_binary: str,
-    model: str | None,
-    workers: int,
-    max_repairs: int,
-    force_entry: bool = False,
-    agent_timeout: int = 1800,
-) -> None:
-    check_output_targets(entry_path, markdown_path, force_entry=force_entry)
-    run_initial_tasks(
-        task_paths,
-        work_dir,
-        codex_binary=codex_binary,
-        model=model,
-        workers=workers,
-        max_repairs=max_repairs,
-        agent_timeout=agent_timeout,
-    )
-    root_task = prepare_root_task(index, language, work_dir)
-    run_agent_task(
-        root_task,
-        work_dir,
-        codex_binary=codex_binary,
-        model=model,
-        max_repairs=max_repairs,
-        agent_timeout=agent_timeout,
-    )
-
-    entry_path.parent.mkdir(parents=True, exist_ok=True)
-    markdown_path.parent.mkdir(parents=True, exist_ok=True)
-    with contextlib.ExitStack() as stack:
-        entry_stage = Path(
-            stack.enter_context(
-                tempfile.TemporaryDirectory(
-                    prefix=f".{entry_path.name}.publication.", dir=entry_path.parent
-                )
-            )
-        ) / entry_path.name
-        markdown_stage = Path(
-            stack.enter_context(
-                tempfile.TemporaryDirectory(
-                    prefix=f".{markdown_path.name}.publication.",
-                    dir=markdown_path.parent,
-                )
-            )
-        ) / markdown_path.name
-        for repair_round in range(max_repairs + 1):
-            try:
-                assemble(
-                    index_path,
-                    work_dir,
-                    language,
-                    entry_stage,
-                )
-                break
-            except ContractError as error:
-                if repair_round >= max_repairs:
-                    raise
-                repair_fragments(
-                    str(error),
-                    index,
-                    language,
-                    work_dir,
-                    codex_binary=codex_binary,
-                    model=model,
-                    max_repairs=max_repairs,
-                    agent_timeout=agent_timeout,
-                )
-        render_entry(entry_stage, markdown_stage)
-        render_entry(entry_stage, markdown_stage, check=True)
-        publish_pair(
-            entry_stage,
-            markdown_stage,
-            entry_path,
-            markdown_path,
-            force_entry=force_entry,
-        )
-
-
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("root", help="Root ID, envelope, Arabic root, or Arabic word")
     parser.add_argument("--language", choices=("en", "tr"), required=True)
     parser.add_argument("--packet", type=Path)
     parser.add_argument("--furuq", type=Path, default=DEFAULT_FURUQ)
+    parser.add_argument("--qnet", type=Path, default=DEFAULT_QNET)
+    parser.add_argument("--qnet-theme", type=Path, default=DEFAULT_QNET_THEME)
+    parser.add_argument(
+        "--qnet-fix-manifest", type=Path, default=DEFAULT_QNET_FIX_MANIFEST
+    )
     parser.add_argument("--evidence-dir", type=Path)
     parser.add_argument("--work-dir", type=Path)
     parser.add_argument("--entry", type=Path)
     parser.add_argument("--markdown", type=Path)
-    parser.add_argument("--run-agents", action="store_true")
-    parser.add_argument("--codex-binary", default="codex")
-    parser.add_argument("--model")
-    parser.add_argument("--workers", type=int, default=4)
-    parser.add_argument("--max-repairs", type=int, default=2)
-    parser.add_argument(
-        "--agent-timeout",
-        type=int,
-        default=1800,
-        help="Maximum seconds for one Codex process (default: 1800)",
-    )
     parser.add_argument(
         "--force-entry",
         action="store_true",
@@ -925,12 +514,6 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
-    if args.workers < 1:
-        raise SystemExit("--workers must be at least 1")
-    if args.max_repairs < 0:
-        raise SystemExit("--max-repairs cannot be negative")
-    if args.agent_timeout < 1:
-        raise SystemExit("--agent-timeout must be at least 1")
     try:
         _preview_packet_path, preview_packet = load_canonical_packet(
             args.root, args.packet
@@ -968,35 +551,17 @@ def main(argv: list[str] | None = None) -> int:
             args.furuq.resolve(),
             args.evidence_dir.resolve() if args.evidence_dir else None,
             force_entry=args.force_entry,
+            qnet_path=args.qnet.resolve(),
+            qnet_theme_path=args.qnet_theme.resolve(),
+            qnet_fix_manifest_path=args.qnet_fix_manifest.resolve(),
         )
-        task_paths = prepare_initial_tasks(index_path, index, args.language, work_dir)
-        if not args.run_agents:
-            print(
-                f"Prepared {len(task_paths)} initial tasks in {work_dir}. "
-                "No model calls were made; add --run-agents to execute them."
-            )
-            return 0
-        codex_binary = shutil.which(args.codex_binary)
-        if not codex_binary:
-            raise ContractError(f"Codex executable not found: {args.codex_binary}")
-        run_workflow(
-            index_path,
-            index,
-            args.language,
-            work_dir,
-            entry_path,
-            markdown_path,
-            task_paths,
-            codex_binary=codex_binary,
-            model=args.model,
-            workers=args.workers,
-            max_repairs=args.max_repairs,
-            force_entry=args.force_entry,
-            agent_timeout=args.agent_timeout,
-        )
+        prepare_initial_tasks(index_path, index, args.language, work_dir)
     except (OSError, ContractError, ValueError, KeyError, TypeError) as error:
         raise SystemExit(str(error)) from error
-    print(f"Completed {entry_path} and {markdown_path}")
+    print(
+        f"Prepared one root-writer task in {work_dir}. No model call was made; "
+        "hand control to the v2 orchestration agent."
+    )
     return 0
 
 

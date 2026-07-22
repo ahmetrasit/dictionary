@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dictionary.local/v2/fragments/root-reviewer.schema.json",
+  "title": "Root semantic review response",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["verdict", "summary", "issues"],
+  "properties": {
+    "verdict": { "enum": ["pass", "repair", "editorial_review"] },
+    "summary": { "$ref": "#/$defs/prose" },
+    "issues": {
+      "type": "array",
+      "maxItems": 20,
+      "items": { "$ref": "#/$defs/issue" }
+    }
+  },
+  "$defs": {
+    "prose": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 2000,
+      "pattern": "^[^\\u0600-\\u06FF]*$"
+    },
+    "claimId": {
+      "type": "string",
+      "pattern": "^lu_[0-9]{3,}$"
+    },
+    "issue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "target_ref",
+        "field",
+        "severity",
+        "confidence",
+        "claim_ids",
+        "evidence_conflict",
+        "smallest_correction"
+      ],
+      "properties": {
+        "target_ref": {
+          "type": "string",
+          "pattern": "^(root_[0-9]{6}/B[0-9]{3}|root_profile)$"
+        },
+        "field": {
+          "enum": [
+            "concept_map",
+            "source_synthesis",
+            "concept_gloss",
+            "contextual_glosses",
+            "lexical_glosses",
+            "neighbor_distinctions",
+            "root_profile"
+          ]
+        },
+        "severity": { "enum": ["blocker", "major", "minor"] },
+        "confidence": { "enum": ["high", "medium", "low"] },
+        "claim_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/claimId" }
+        },
+        "evidence_conflict": { "$ref": "#/$defs/prose" },
+        "smallest_correction": { "$ref": "#/$defs/prose" }
+      }
+    }
+  }
+}

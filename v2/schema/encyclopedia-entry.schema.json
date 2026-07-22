@@ -117,6 +117,10 @@
         "furuq_sha256": {
           "type": "string",
           "pattern": "^[0-9a-f]{64}$"
+        },
+        "root_task_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
         }
       }
     },
@@ -174,6 +178,7 @@
         "source_phrase_ar": { "$ref": "#/$defs/sourceText" },
         "image_transliteration": { "$ref": "#/$defs/shortText" },
         "summary": { "$ref": "#/$defs/shortProse" },
+        "concept_map": { "$ref": "#/$defs/conceptMap" },
         "lexical_realizations": {
           "type": "array",
           "items": { "$ref": "#/$defs/lexicalRealization" }
@@ -192,7 +197,7 @@
         "arabic_neighbor_distinctions": {
           "type": "array",
           "description": "Author-ordered by reader-facing importance; item 0 is the key distinction used by compact dictionary projections.",
-          "minItems": 1,
+          "minItems": 0,
           "maxItems": 5,
           "items": { "$ref": "#/$defs/neighborDistinction" }
         },
@@ -215,6 +220,8 @@
         "expression_ar": { "$ref": "#/$defs/shortText" },
         "unit_kind": { "type": "string", "minLength": 2, "maxLength": 100 },
         "sense_ar": { "$ref": "#/$defs/shortText" },
+        "target_gloss": { "$ref": "#/$defs/shortText" },
+        "target_rendering_kind": { "enum": ["ordinary", "proper_name"] },
         "evidence_refs": {
           "type": "array",
           "minItems": 1,
@@ -281,6 +288,10 @@
           "maxItems": 5,
           "items": { "$ref": "#/$defs/sourceExample" }
         },
+        "details": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/sourceDetail" }
+        },
         "disagreement": {
           "type": ["object", "null"],
           "additionalProperties": false,
@@ -294,6 +305,75 @@
               "items": { "$ref": "#/$defs/sourceRef" }
             }
           }
+        }
+      }
+    },
+    "sourceDetail": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "summary", "source_ids", "source_refs"],
+      "properties": {
+        "kind": {
+          "enum": [
+            "example",
+            "disagreement",
+            "restriction",
+            "extension",
+            "implication",
+            "derivation",
+            "sole_attestation"
+          ]
+        },
+        "summary": { "$ref": "#/$defs/shortProse" },
+        "source_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" }
+        },
+        "source_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/sourceRef" }
+        }
+      }
+    },
+    "conceptMap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["definition", "facets"],
+      "properties": {
+        "definition": { "$ref": "#/$defs/shortProse" },
+        "facets": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/conceptFacet" }
+        }
+      }
+    },
+    "conceptFacet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["facet_id", "role", "statement", "claim_ids"],
+      "properties": {
+        "facet_id": { "type": "string", "pattern": "^F[0-9]{3}$" },
+        "role": {
+          "enum": [
+            "core",
+            "specialization",
+            "extension",
+            "associated_use",
+            "example",
+            "source_variant"
+          ]
+        },
+        "statement": { "$ref": "#/$defs/shortProse" },
+        "claim_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^lu_[0-9]{3,}$" }
         }
       }
     },
@@ -368,6 +448,12 @@
       "required": ["semantic_definition", "selected", "excluded"],
       "properties": {
         "semantic_definition": { "$ref": "#/$defs/shortProse" },
+        "concept": { "$ref": "#/$defs/selectedGloss" },
+        "contextual": {
+          "type": "array",
+          "maxItems": 4,
+          "items": { "$ref": "#/$defs/selectedGloss" }
+        },
         "selected": {
           "type": "array",
           "minItems": 1,
@@ -400,6 +486,15 @@
         "usage_role": {
           "enum": ["general", "contextual", "explanatory", "technical_term", "proper_name"]
         },
+        "selection_role": {
+          "enum": ["primary_concept_gloss", "contextual_gloss"]
+        },
+        "facet_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^F[0-9]{3}$" }
+        },
         "applicability": { "$ref": "#/$defs/shortProse" },
         "error_profile": { "$ref": "#/$defs/errorProfile" }
       }
@@ -424,9 +519,9 @@
           "enum": ["none", "narrowing", "broadening", "displacement", "drifted_loanword"]
         },
         "preserves": { "$ref": "#/$defs/shortProse" },
-        "loses": { "$ref": "#/$defs/shortProse" },
-        "adds": { "$ref": "#/$defs/shortProse" },
-        "collision": { "$ref": "#/$defs/shortProse" }
+        "loses": { "type": ["string", "null"], "minLength": 10, "maxLength": 1200 },
+        "adds": { "type": ["string", "null"], "minLength": 10, "maxLength": 1200 },
+        "collision": { "type": ["string", "null"], "minLength": 10, "maxLength": 1200 }
       }
     },
     "neighborDistinction": {
@@ -446,6 +541,24 @@
       "properties": {
         "neighbor_root_id": { "$ref": "#/$defs/rootId" },
         "neighbor_branch_id": { "$ref": "#/$defs/branchId" },
+        "relation_type": {
+          "description": "Primary semantic relation verified from the compared branch concepts; network signals are nomination evidence only.",
+          "enum": [
+            "synonym",
+            "near_synonym",
+            "antonym",
+            "polarity_pair",
+            "near_neighbor",
+            "same_field",
+            "thematic",
+            "other"
+          ]
+        },
+        "boundary_match": {
+          "enum": ["exact", "partial", "opposed", "field_only", "thematic_only"]
+        },
+        "focus_only": { "type": ["string", "null"], "minLength": 10, "maxLength": 1200 },
+        "neighbor_only": { "type": ["string", "null"], "minLength": 10, "maxLength": 1200 },
         "expression_ar": { "$ref": "#/$defs/shortText" },
         "expression_transliteration": { "$ref": "#/$defs/shortText" },
         "gloss": { "$ref": "#/$defs/shortText" },
@@ -467,7 +580,12 @@
       "properties": {
         "candidate_count": { "type": "integer", "minimum": 1 },
         "assessment": {
-          "enum": ["complete", "single_sufficient", "legacy_minimum_unverified"]
+          "enum": [
+            "none_useful",
+            "complete",
+            "single_sufficient",
+            "legacy_minimum_unverified"
+          ]
         },
         "note": { "$ref": "#/$defs/shortProse" }
       }

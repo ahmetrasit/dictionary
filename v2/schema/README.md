@@ -6,9 +6,10 @@ an agent never fills both languages in the same record.
 
 The root packet owns Arabic branch identity, branch boundaries, dictionary
 passages, lexical units, Quran occurrences, grammar, attachments, and QNet
-discovery data. Agents own target-language explanation, source synthesis, gloss
-judgments, error profiles, and Arabic-neighbor comparison prose. The coordinator
-attaches all stable IDs, references, QAC data, ayahs, and attachment data.
+discovery data. Agents own target-language concept-map synthesis, source
+discussion, gloss judgments, error profiles, verified neighbor-relation types,
+and Arabic-neighbor comparison prose. The coordinator attaches all stable IDs,
+references, QAC data, ayahs, and attachment data.
 
 The provenance block binds the entry to the canonical packet, branch-evidence
 index, and Furuq database with paths and SHA-256 digests. Occurrence evidence
@@ -34,14 +35,14 @@ master entry.
   preservation, loss, addition, fit, applicability, and collision notes. It omits
   dictionary sources, Arabic-neighbor evidence, morphology, occurrences, and
   attachments.
-- `user_dictionary`: the one-sentence semantic definition, ranked selected gloss
-  text, and one key Arabic distinction per branch. It omits source apparatus,
+- `user_dictionary`: the concept-map definition, one faithful concept gloss,
+  separate contextual gloss text, and one key Arabic distinction per branch. It omits source apparatus,
   error profiles, morphology, occurrences, and attachments.
 - `scholar_view`: the complete validated entry, including full sources, neighbors,
   lexical realizations, morphology, occurrences, and aligned attachments.
 
-The first row of `arabic_neighbor_distinctions` is the key distinction used by
-the compact user projection. Writers order the array by reader-facing importance;
+When `arabic_neighbor_distinctions` is nonempty, its first row is the key
+distinction used by the compact user projection. Writers order the array by reader-facing importance;
 the remaining rows preserve the fuller comparison set for scholars. Entries
 authored before this ordering rule can be projected mechanically, but their first
 choice remains an editorial review target.
@@ -59,17 +60,20 @@ Each entry contains:
 5. A dictionary basis showing how many distinct dictionaries and passages
    support the branch, which dictionaries they are, and their exact source
    references.
-6. A semantic definition plus one to five usable target-language glosses with
+6. A concept-complete semantic definition plus one to five usable target-language glosses with
    usage roles, applicability notes, and error profiles, followed by one to
    three genuinely rejected or confusable alternatives.
-7. One to five Furuq-verified Arabic-neighbor distinctions carrying explicit
-   `neighbor_root_id` and `neighbor_branch_id` fields.
+7. Zero to five Furuq-verified Arabic-neighbor distinctions carrying a primary
+   semantic `relation_type` and explicit `neighbor_root_id` and
+   `neighbor_branch_id` fields.
 8. A reference to the deterministic occurrence artifact plus structured QAC
    forms, morphology, ayahs, occurrences, and aligned attachment detail.
-9. Packet-backed lexical realizations and source-grounded structured notes for
-   register, constraints, and technical usage.
-10. Explicit disputed, rare, or technical evidence qualifiers. The contract
-    does not classify a dictionary branch as Quranic or non-Quranic.
+9. Packet-backed lexical realizations and source-aware discussion prose that
+   preserves explicitly attributed examples, disputes, restrictions, and
+   implications.
+10. Optional structured notes only when their source ownership is supplied
+    upstream; the root writer does not invent a second note roster from the
+    already synthesized source phrase.
 
 ## Dictionary Basis
 
@@ -91,22 +95,46 @@ the count before the source table.
 
 ## Gloss Rules
 
-`semantic_definition` anchors the full branch meaning and is not expected to
-serve as natural running prose. Selected glosses are ordered explicitly by
-`rank`, starting at 1 without gaps. A common loanword can only occupy rank 2;
-it can never be the primary gloss. A gloss may be a word or a word group.
+New root-writer entries store a structured `concept_map`. Its facets distinguish
+core meaning, specialization, extension, associated use, example, and source
+variant; `semantic_definition` remains the reader-facing rendering of that map.
+For a guidance branch that includes showing a path, bringing someone onto it,
+and enabling progress along it, the core must retain all three rather than
+collapse them to “lead to the right path.” The concept gloss is separate from
+contextual running-text glosses. Compatibility ranks are derived only for legacy
+consumers. A common loanword
+may remain in legacy entries, but the current root-writer contract accepts only
+`loanword_status: none`. A gloss may be a word or a word group.
 Contextually valid natural translations remain selected candidates; their
 narrowing or additions belong in the error profile rather than exclusion.
+Internal conditions remain explicit: an offered indication is not identical to
+its acceptance or realized result, and a human guide's capacity need not equal
+an evidence-supported divine or causative use. Applicability and error profiles
+state which part of that conditioned map each gloss can carry.
 
-Every selected and excluded gloss carries the same error-profile fields:
-what it preserves, loses, and adds; its fit category; and its collision risk
-in the target language. An excluded row additionally explains why it was not
-selected.
+All authored definitions, source discussions, glosses, root summaries, and
+neighbor prose use clear ordinary target-language wording. Arabic script,
+transliterated Arabic, and borrowed Arabic technical labels cannot substitute
+for explanation. This is a clarity rule, not an attempt to purge historically
+naturalized vocabulary from the target language: it rejects terms used as
+unexplained source-language shorthand, such as Turkish `tevfik` or `hidayet` in
+place of describing what is enabled or how guidance operates. A rejected
+loanword may remain in the scholar-facing excluded-gloss apparatus solely to
+document why it is unsuitable; it is never a selected gloss or a substitute for
+the concept explanation.
+
+Every selected and excluded gloss carries the same error-profile fields. Loss,
+addition, and collision are null when absent instead of forcing boilerplate.
+Per-lexical-unit target renderings are stored separately from branch concept and
+contextual glosses.
 
 ## Arabic Neighbors
 
-QNet may nominate a neighbor, but the published distinction must be verified
-against Furuq branch boundaries. The visible downstream link is derived as:
+QNet, Neo, and other network layers may nominate a neighbor, but the published
+relation and distinction must be verified against the supplied Furuq branch
+concepts. The primary `relation_type` is one of `synonym`, `near_synonym`,
+`antonym`, `polarity_pair`, `near_neighbor`, `same_field`, `thematic`, or
+`other`. The visible downstream link is derived as:
 
 ```text
 (neighbor_root_id/neighbor_branch_id)
@@ -116,9 +144,10 @@ The focus branch and neighbor branch may share a root, but they cannot be the
 same branch. Evidence references remain opaque strings.
 
 The writer assesses the complete packaged candidate roster and includes every
-materially useful distinction, up to five. A single selected neighbor requires
-an explicit `single_sufficient` rationale; migrated legacy minimum selections
-remain visibly marked until that coverage is reviewed.
+materially useful distinction, up to five. If none sharpens the branch boundary,
+the distinction array is empty and coverage is `none_useful`. A single selected
+neighbor requires an explicit `single_sufficient` rationale; migrated legacy
+minimum selections remain visibly marked until that coverage is reviewed.
 
 The candidate roster is built deterministically. It combines packet-carried QNet
 neighbors, raw core overlap, raw bridge overlap, branch-theme overlap, and every
@@ -181,19 +210,29 @@ remain explicit.
 `fragments/` contains the strict authored-fragment schemas used by the
 coordinator:
 
+- `root-writer.schema.json` for the reduced one-call production response;
+- `root-reviewer.schema.json` for evidence-grounded semantic issues or pass;
 - `branch-writer.schema.json` for one target-language branch-shaped fragment;
 - `root-profile.schema.json` for the final short root profile.
 
 Production authoring uses one root-level writer invocation per root envelope and
 target language, but the authored content remains branch-shaped. For each focus
-branch, the writer receives only `root_id`, `branch_id`, `branch_image_ar`,
-`what_is_ar`, and `source_phrase_ar`. Each neighbor is projected to `root_id`,
+branch, the writer receives the branch identity and boundary plus a compact
+claim roster projected from accepted lexical units. Each neighbor is projected to `root_id`,
 `branch_id`, `branch_image_ar`, and `what_is_ar`. The root response is a thin
 transport envelope containing branch fragments and the root profile; it is not a
 new master data schema.
 
-Agent responses do not contain deterministic counts, names, source rosters, QAC
-data, ayahs, attachments, or the coordinator's `inputs_sha256`. The coordinator
-validates a response, adds the task hash, and restores evidence-owned fields by
-stable key. The master entry schema and orchestration spec are coordinator-only
-contracts and are not part of the model-facing authoring package.
+The response carries stable claim and lexical-unit IDs but omits numeric ranks, branch
+counts, duplicated branch summaries, coverage enums, collocation defaults,
+known transliterations, and excluded-gloss display reasons. The coordinator
+derives these, splits the accepted response into strict branch/root-profile
+fragments, and restores evidence-owned fields by stable key. Claim IDs expand to
+precise source names and references. The writer receives no transliteration or
+approved name values. Missing used anchors and protected proper names enter
+separate resumable review files.
+
+Agent responses do not contain deterministic names, source rosters, QAC data,
+ayahs, attachments, or the coordinator's `inputs_sha256`. The master entry
+schema, full transliteration policy, and orchestration spec are coordinator-only
+contracts and are not part of the model-facing package.

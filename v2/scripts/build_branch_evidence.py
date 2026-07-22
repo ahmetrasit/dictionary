@@ -30,6 +30,13 @@ DEFAULT_FURUQ = PROJECT / "data/working/furuq_v4.sqlite"
 DEFAULT_QNET = (
     PROJECT / "data/upstream/qnet/incidence_full/raw_keyword_incidence.sqlite"
 )
+DEFAULT_QNET_THEME = (
+    PROJECT / "data/upstream/qnet/bridge_theme_full/bridge_theme_staging.sqlite"
+)
+DEFAULT_QNET_FIX_MANIFEST = (
+    PROJECT
+    / "data/upstream/qnet/bridge_theme_full/latent_v11_qac_qnet_fix_manifest.json"
+)
 
 
 def sha256_bytes(content: bytes) -> str:
@@ -174,18 +181,39 @@ def furuq_candidate_cards(
     packet: dict,
     branch: dict,
     qnet_rows: list[dict],
-    supplemental_rows: list[dict],
+    core_rows: list[dict],
+    bridge_rows: list[dict],
+    theme_rows: list[dict],
+    *,
+    cross_root_limit: int = 8,
 ) -> list[dict]:
     bases: dict[tuple[str, str], list[str]] = defaultdict(list)
-    shared_keywords: dict[tuple[str, str], list[str]] = {}
+    shared_core: dict[tuple[str, str], set[str]] = defaultdict(set)
+    shared_bridge: dict[tuple[str, str], set[str]] = defaultdict(set)
+    shared_themes: dict[tuple[str, str], set[str]] = defaultdict(set)
+    theme_scopes: dict[tuple[str, str], set[str]] = defaultdict(set)
     for neighbor in qnet_rows:
         key = (neighbor["root_id"], neighbor["branch_id"])
         bases[key].append("qnet_packet")
-        shared_keywords[key] = neighbor.get("shared_consensus_core", [])
-    for neighbor in supplemental_rows:
+        shared_core[key].update(neighbor.get("shared_consensus_core", []))
+    for neighbor in core_rows:
         key = (neighbor["root_id"], neighbor["branch_id"])
         bases[key].append("qnet_core_overlap")
-        shared_keywords[key] = neighbor["shared_core_keywords"]
+        shared_core[key].update(neighbor["shared_core_keywords"])
+    for neighbor in bridge_rows:
+        key = (neighbor["root_id"], neighbor["branch_id"])
+        bases[key].append("qnet_bridge_overlap")
+        shared_bridge[key].update(neighbor["shared_bridge_keywords"])
+    for neighbor in theme_rows:
+        key = (neighbor["root_id"], neighbor["branch_id"])
+        basis = (
+            "qnet_theme_overlap"
+            if neighbor["focus_scope"] == "branch"
+            else "qnet_root_theme_fallback"
+        )
+        bases[key].append(basis)
+        shared_themes[key].update(neighbor["shared_themes"])
+        theme_scopes[key].add(neighbor["focus_scope"])
     for sibling in packet["branches"]:
         key = (sibling["root_id"], sibling["branch_id"])
         if key != (branch["root_id"], branch["branch_id"]):
@@ -203,7 +231,7 @@ def furuq_candidate_cards(
         "status",
         "contaminated",
     )
-    result = []
+    cards: dict[tuple[str, str], dict] = {}
     for (root_id, branch_id), discovery_basis in bases.items():
         row = db.execute(
             "SELECT root_id, branch_id, root_norm, branch_image_ar, what_is_ar, "
@@ -216,26 +244,66 @@ def furuq_candidate_cards(
         if row["status"] != "accepted" or row["contaminated"] != "no":
             continue
         card = {field: row[field] for field in fields}
-        card["discovery_basis"] = discovery_basis
-        card["shared_consensus_core"] = shared_keywords.get((root_id, branch_id), [])
-        result.append(card)
-    return result
+        card["discovery_basis"] = list(dict.fromkeys(discovery_basis))
+        card["shared_consensus_core"] = sorted(shared_core[(root_id, branch_id)])
+        card["shared_bridge_keywords"] = sorted(shared_bridge[(root_id, branch_id)])
+        card["shared_themes"] = sorted(shared_themes[(root_id, branch_id)])
+        card["theme_focus_scopes"] = sorted(theme_scopes[(root_id, branch_id)])
+        cards[(root_id, branch_id)] = card
+
+    lane_keys = [
+        [(row["root_id"], row["branch_id"]) for row in rows]
+        for rows in (qnet_rows, core_rows, bridge_rows, theme_rows)
+    ]
+    selected_cross: list[tuple[str, str]] = []
+    offsets = [0] * len(lane_keys)
+    while len(selected_cross) < cross_root_limit:
+        progressed = False
+        for lane_index, keys in enumerate(lane_keys):
+            while offsets[lane_index] < len(keys):
+                key = keys[offsets[lane_index]]
+                offsets[lane_index] += 1
+                if key[0] == branch["root_id"] or key not in cards:
+                    continue
+                if key not in selected_cross:
+                    selected_cross.append(key)
+                    progressed = True
+                break
+            if len(selected_cross) == cross_root_limit:
+                break
+        if not progressed:
+            break
+
+    sibling_keys = [
+        (row["root_id"], row["branch_id"])
+        for row in packet["branches"]
+        if (row["root_id"], row["branch_id"])
+        != (branch["root_id"], branch["branch_id"])
+        and (row["root_id"], row["branch_id"]) in cards
+    ]
+    ordered_keys = selected_cross + [
+        key for key in sibling_keys if key not in selected_cross
+    ]
+    return [cards[key] for key in ordered_keys]
 
 
-def qnet_core_overlap_candidates(
+def qnet_keyword_overlap_candidates(
     db: sqlite3.Connection,
     branch: dict,
     packet_candidates: list[dict],
     *,
+    keyword_type: str,
     limit: int = 8,
 ) -> list[dict]:
+    if keyword_type not in {"core", "bridge"}:
+        raise ValueError(f"Unsupported QNet keyword type: {keyword_type}")
     excluded = {
         (row["root_id"], row["branch_id"]) for row in packet_candidates
     }
     rows = db.execute(
         "WITH focus AS ("
         " SELECT keyword, replicate_votes FROM branch_keywords"
-        " WHERE root_id=? AND branch_id=? AND keyword_type='core'"
+        " WHERE root_id=? AND branch_id=? AND keyword_type=?"
         ")"
         " SELECT other.root_id, other.branch_id,"
         " COUNT(*) AS shared_keyword_count,"
@@ -244,12 +312,18 @@ def qnet_core_overlap_candidates(
         "   AS consensus_keyword_count,"
         " GROUP_CONCAT(other.keyword, char(31)) AS shared_keywords"
         " FROM focus JOIN branch_keywords AS other"
-        "   ON other.keyword=focus.keyword AND other.keyword_type='core'"
+        "   ON other.keyword=focus.keyword AND other.keyword_type=?"
         " WHERE other.root_id<>?"
         " GROUP BY other.root_id, other.branch_id"
         " ORDER BY shared_keyword_count DESC, consensus_keyword_count DESC,"
         " other.root_id, other.branch_id",
-        (branch["root_id"], branch["branch_id"], branch["root_id"]),
+        (
+            branch["root_id"],
+            branch["branch_id"],
+            keyword_type,
+            keyword_type,
+            branch["root_id"],
+        ),
     ).fetchall()
     result = []
     for row in rows:
@@ -260,10 +334,10 @@ def qnet_core_overlap_candidates(
             {
                 "root_id": row["root_id"],
                 "branch_id": row["branch_id"],
-                "route": "raw_core_overlap",
+                "route": f"raw_{keyword_type}_overlap",
                 "shared_keyword_count": row["shared_keyword_count"],
                 "consensus_keyword_count": row["consensus_keyword_count"],
-                "shared_core_keywords": sorted(
+                f"shared_{keyword_type}_keywords": sorted(
                     keyword
                     for keyword in str(row["shared_keywords"] or "").split("\x1f")
                     if keyword
@@ -275,39 +349,201 @@ def qnet_core_overlap_candidates(
     return result
 
 
+def qnet_core_overlap_candidates(
+    db: sqlite3.Connection,
+    branch: dict,
+    packet_candidates: list[dict],
+    *,
+    limit: int = 8,
+) -> list[dict]:
+    return qnet_keyword_overlap_candidates(
+        db,
+        branch,
+        packet_candidates,
+        keyword_type="core",
+        limit=limit,
+    )
+
+
+def qnet_bridge_overlap_candidates(
+    db: sqlite3.Connection,
+    branch: dict,
+    packet_candidates: list[dict],
+    *,
+    limit: int = 6,
+) -> list[dict]:
+    return qnet_keyword_overlap_candidates(
+        db,
+        branch,
+        packet_candidates,
+        keyword_type="bridge",
+        limit=limit,
+    )
+
+
+def load_postfix_theme_assignments(path: Path) -> dict[tuple[str, str], set[str]]:
+    value = json.loads(path.read_text(encoding="utf-8"))
+    assignments: dict[tuple[str, str], set[str]] = {}
+    for row in value.get("assignments", []):
+        key = (row.get("root_id", ""), row.get("branch_id", ""))
+        if not re.fullmatch(r"root_[0-9]{6}", key[0]) or not re.fullmatch(
+            r"B[0-9]{3}", key[1]
+        ):
+            raise ValueError(f"Invalid QNet post-fix assignment identity: {key}")
+        if key in assignments:
+            raise ValueError(f"Duplicate QNet post-fix assignment: {key}")
+        themes = {str(theme) for theme in row.get("themes", []) if str(theme)}
+        if not themes:
+            raise ValueError(f"QNet post-fix assignment has no themes: {key}")
+        assignments[key] = themes
+    if not assignments:
+        raise ValueError(f"QNet post-fix manifest has no assignments: {path}")
+    return assignments
+
+
+def qnet_theme_overlap_candidates(
+    db: sqlite3.Connection,
+    branch: dict,
+    postfix_assignments: dict[tuple[str, str], set[str]],
+    *,
+    limit: int = 8,
+) -> tuple[list[dict], dict]:
+    focus_key = (branch["root_id"], branch["branch_id"])
+    snapshot_rows = db.execute(
+        "SELECT theme, votes2_keyword_count FROM branch_theme_inventory "
+        "WHERE root_id=? AND branch_id=? ORDER BY theme",
+        focus_key,
+    ).fetchall()
+    focus_themes = {row["theme"] for row in snapshot_rows}
+    focus_themes.update(postfix_assignments.get(focus_key, set()))
+    exact = bool(focus_themes)
+    if not exact:
+        root_rows = db.execute(
+            "SELECT theme FROM branch_theme_inventory WHERE root_id=? "
+            "GROUP BY theme ORDER BY theme",
+            (branch["root_id"],),
+        ).fetchall()
+        focus_themes.update(row["theme"] for row in root_rows)
+        for (root_id, _branch_id), themes in postfix_assignments.items():
+            if root_id == branch["root_id"]:
+                focus_themes.update(themes)
+
+    coverage = {
+        "snapshot_exact_port": bool(snapshot_rows),
+        "postfix_exact_port": focus_key in postfix_assignments,
+        "theme_scope": (
+            "branch" if exact else ("root_fallback" if focus_themes else "unavailable")
+        ),
+        "focus_themes": sorted(focus_themes),
+    }
+    if not focus_themes:
+        return [], coverage
+
+    placeholders = ",".join("?" for _ in focus_themes)
+    rows = db.execute(
+        "SELECT root_id, branch_id, theme, votes2_keyword_count "
+        "FROM branch_theme_inventory "
+        f"WHERE theme IN ({placeholders}) AND root_id<>? "
+        "ORDER BY root_id, branch_id, theme",
+        (*sorted(focus_themes), branch["root_id"]),
+    ).fetchall()
+    candidate_themes: dict[tuple[str, str], set[str]] = defaultdict(set)
+    candidate_votes2: dict[tuple[str, str], int] = defaultdict(int)
+    for row in rows:
+        key = (row["root_id"], row["branch_id"])
+        candidate_themes[key].add(row["theme"])
+        candidate_votes2[key] += int(row["votes2_keyword_count"])
+    for key, themes in postfix_assignments.items():
+        if key[0] == branch["root_id"]:
+            continue
+        candidate_themes[key].update(themes & focus_themes)
+
+    ranked = sorted(
+        (key for key, themes in candidate_themes.items() if themes),
+        key=lambda key: (
+            -len(candidate_themes[key]),
+            -candidate_votes2[key],
+            key[0],
+            key[1],
+        ),
+    )
+    result = []
+    for root_id, branch_id in ranked[:limit]:
+        key = (root_id, branch_id)
+        result.append(
+            {
+                "root_id": root_id,
+                "branch_id": branch_id,
+                "route": (
+                    "theme_overlap" if exact else "root_theme_fallback"
+                ),
+                "focus_scope": "branch" if exact else "root",
+                "shared_theme_count": len(candidate_themes[key]),
+                "votes2_keyword_count": candidate_votes2[key],
+                "shared_themes": sorted(candidate_themes[key]),
+            }
+        )
+    return result, coverage
+
+
 def build_packages(
     packet: dict,
     packet_path: Path,
     furuq_path: Path,
     qnet_path: Path = DEFAULT_QNET,
+    qnet_theme_path: Path = DEFAULT_QNET_THEME,
+    qnet_fix_manifest_path: Path = DEFAULT_QNET_FIX_MANIFEST,
 ) -> tuple[dict, dict[str, dict]]:
     validate_packet(packet)
     packet_digest = sha256_file(packet_path)
     furuq_digest = sha256_file(furuq_path)
     if not qnet_path.is_file():
         raise ValueError(f"Missing QNet incidence database: {qnet_path}")
+    if not qnet_theme_path.is_file():
+        raise ValueError(f"Missing QNet theme database: {qnet_theme_path}")
+    if not qnet_fix_manifest_path.is_file():
+        raise ValueError(
+            f"Missing QNet post-fix manifest: {qnet_fix_manifest_path}"
+        )
     qnet_digest = sha256_file(qnet_path)
+    qnet_theme_digest = sha256_file(qnet_theme_path)
+    qnet_fix_manifest_digest = sha256_file(qnet_fix_manifest_path)
+    postfix_assignments = load_postfix_theme_assignments(qnet_fix_manifest_path)
     source_lookup = packet_sources(packet)
     db = sqlite3.connect(f"file:{furuq_path.resolve()}?mode=ro", uri=True)
     db.row_factory = sqlite3.Row
     try:
         qnet_db = sqlite3.connect(f"file:{qnet_path.resolve()}?mode=ro", uri=True)
+        qnet_theme_db = sqlite3.connect(
+            f"file:{qnet_theme_path.resolve()}?mode=ro", uri=True
+        )
     except Exception:
         db.close()
         raise
     qnet_db.row_factory = sqlite3.Row
+    qnet_theme_db.row_factory = sqlite3.Row
     packages: dict[str, dict] = {}
     try:
         for branch in packet["branches"]:
             branch_ref = f"{branch['root_id']}/{branch['branch_id']}"
             qnet = packet["qnet"].get(branch_ref, {})
             qnet_rows = qnet.get("neighbors", [])
-            supplemental_rows = qnet_core_overlap_candidates(
+            core_rows = qnet_core_overlap_candidates(
                 qnet_db, branch, qnet_rows
             )
+            bridge_rows = qnet_bridge_overlap_candidates(
+                qnet_db, branch, qnet_rows
+            )
+            theme_rows, theme_coverage = qnet_theme_overlap_candidates(
+                qnet_theme_db, branch, postfix_assignments
+            )
+            raw_port = qnet_db.execute(
+                "SELECT 1 FROM nodes WHERE root_id=? AND branch_id=?",
+                (branch["root_id"], branch["branch_id"]),
+            ).fetchone()
             filename = f"{branch['root_id']}--{branch['branch_id']}.json"
             package = {
-                "format": 1,
+                "format": 2,
                 "generated_by": GENERATOR,
                 "root_envelope_id": packet["root_envelope_id"],
                 "packet_path": relative_path(packet_path),
@@ -316,6 +552,10 @@ def build_packages(
                 "furuq_sha256": furuq_digest,
                 "qnet_path": relative_path(qnet_path),
                 "qnet_sha256": qnet_digest,
+                "qnet_theme_path": relative_path(qnet_theme_path),
+                "qnet_theme_sha256": qnet_theme_digest,
+                "qnet_fix_manifest_path": relative_path(qnet_fix_manifest_path),
+                "qnet_fix_manifest_sha256": qnet_fix_manifest_digest,
                 "branch": {
                     field: branch.get(field, "")
                     for field in (
@@ -333,18 +573,31 @@ def build_packages(
                 "dictionary_basis": dictionary_basis(branch, source_lookup),
                 "lexical_units": lexical_units(packet, branch),
                 "qnet_candidates": qnet_rows,
-                "qnet_core_overlap_candidates": supplemental_rows,
+                "qnet_core_overlap_candidates": core_rows,
+                "qnet_bridge_overlap_candidates": bridge_rows,
+                "qnet_theme_overlap_candidates": theme_rows,
+                "qnet_focus_coverage": {
+                    "raw_keyword_exact_port": bool(raw_port),
+                    **theme_coverage,
+                },
                 "furuq_candidates": furuq_candidate_cards(
-                    db, packet, branch, qnet_rows, supplemental_rows
+                    db,
+                    packet,
+                    branch,
+                    qnet_rows,
+                    core_rows,
+                    bridge_rows,
+                    theme_rows,
                 ),
             }
             packages[filename] = package
     finally:
         db.close()
         qnet_db.close()
+        qnet_theme_db.close()
 
     index = {
-        "format": 1,
+        "format": 2,
         "generated_by": GENERATOR,
         "root_envelope_id": packet["root_envelope_id"],
         "root_ids": [row["root_id"] for row in packet["v4_roots"]],
@@ -354,6 +607,10 @@ def build_packages(
         "furuq_sha256": furuq_digest,
         "qnet_path": relative_path(qnet_path),
         "qnet_sha256": qnet_digest,
+        "qnet_theme_path": relative_path(qnet_theme_path),
+        "qnet_theme_sha256": qnet_theme_digest,
+        "qnet_fix_manifest_path": relative_path(qnet_fix_manifest_path),
+        "qnet_fix_manifest_sha256": qnet_fix_manifest_digest,
         "branches": [],
     }
     for filename, package in packages.items():
@@ -468,6 +725,10 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--packet", type=Path)
     parser.add_argument("--furuq", type=Path, default=DEFAULT_FURUQ)
     parser.add_argument("--qnet", type=Path, default=DEFAULT_QNET)
+    parser.add_argument("--qnet-theme", type=Path, default=DEFAULT_QNET_THEME)
+    parser.add_argument(
+        "--qnet-fix-manifest", type=Path, default=DEFAULT_QNET_FIX_MANIFEST
+    )
     parser.add_argument("--output-dir", type=Path)
     parser.add_argument("--check", action="store_true")
     parser.add_argument(
@@ -499,7 +760,16 @@ def main(argv: list[str] | None = None) -> int:
         if not furuq_path.is_file():
             raise ValueError(f"Missing Furuq database: {furuq_path}")
         qnet_path = args.qnet.resolve()
-        index, packages = build_packages(packet, packet_path, furuq_path, qnet_path)
+        qnet_theme_path = args.qnet_theme.resolve()
+        qnet_fix_manifest_path = args.qnet_fix_manifest.resolve()
+        index, packages = build_packages(
+            packet,
+            packet_path,
+            furuq_path,
+            qnet_path,
+            qnet_theme_path,
+            qnet_fix_manifest_path,
+        )
         write_packages(output_dir, index, packages, check=args.check)
     except (OSError, ValueError, json.JSONDecodeError, sqlite3.Error) as error:
         raise SystemExit(str(error)) from error

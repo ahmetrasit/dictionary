@@ -21,7 +21,7 @@ if str(PROJECT) not in sys.path:
 from v2.scripts.validate_entry import ContractError, validate_entry
 
 
-PROJECTION_VERSION = 1
+PROJECTION_VERSION = 2
 PROJECTIONS = ("translation_agent", "user_dictionary", "scholar_view")
 
 
@@ -76,6 +76,19 @@ def translation_agent_projection(entry: dict) -> dict:
             "what_is_not_ar": branch["what_is_not_ar"],
             "image_transliteration": branch["image_transliteration"],
             "summary": branch["summary"],
+            **(
+                {"concept_map": copy.deepcopy(branch["concept_map"])}
+                if "concept_map" in branch
+                else {}
+            ),
+            "lexical_glosses": [
+                {
+                    "lexical_unit_id": unit["lexical_unit_id"],
+                    "target_gloss": unit.get("target_gloss"),
+                }
+                for unit in branch["lexical_realizations"]
+                if "target_gloss" in unit
+            ],
             "gloss_candidates": copy.deepcopy(branch["glosses"]),
         }
         for branch in entry["branches"]
@@ -95,32 +108,48 @@ def user_dictionary_projection(entry: dict) -> dict:
     }
     branches = []
     for branch in entry["branches"]:
-        # Neighbor distinctions are author-ordered. The first row is the normative
-        # key distinction for compact reader projections.
-        neighbor = branch["arabic_neighbor_distinctions"][0]
+        # Neighbor distinctions are author-ordered. When present, the first row is
+        # the normative key distinction for compact reader projections.
+        distinctions = branch["arabic_neighbor_distinctions"]
+        key_distinction = None
+        if distinctions:
+            neighbor = distinctions[0]
+            key_distinction = {
+                "neighbor_root_id": neighbor["neighbor_root_id"],
+                "neighbor_branch_id": neighbor["neighbor_branch_id"],
+                **(
+                    {"relation_type": neighbor["relation_type"]}
+                    if "relation_type" in neighbor
+                    else {}
+                ),
+                "expression_ar": neighbor["expression_ar"],
+                "expression_transliteration": neighbor[
+                    "expression_transliteration"
+                ],
+                "gloss": neighbor["gloss"],
+                "distinction": neighbor["distinction"],
+            }
         branches.append(
             {
                 "root_id": branch["root_id"],
                 "branch_id": branch["branch_id"],
                 "branch_image_ar": branch["branch_image_ar"],
                 "image_transliteration": branch["image_transliteration"],
-                "definition": branch["glosses"]["semantic_definition"],
-                "primary_glosses": [
-                    {"rank": gloss["rank"], "text": gloss["text"]}
-                    for gloss in sorted(
-                        branch["glosses"]["selected"], key=lambda row: row["rank"]
+                "definition": branch.get("concept_map", {}).get(
+                    "definition", branch["glosses"]["semantic_definition"]
+                ),
+                "concept_gloss": {
+                    "text": branch["glosses"].get(
+                        "concept", branch["glosses"]["selected"][0]
+                    )["text"]
+                },
+                "contextual_glosses": [
+                    {"text": gloss["text"]}
+                    for gloss in branch["glosses"].get(
+                        "contextual", branch["glosses"]["selected"][1:]
                     )
                 ],
-                "key_distinction": {
-                    "neighbor_root_id": neighbor["neighbor_root_id"],
-                    "neighbor_branch_id": neighbor["neighbor_branch_id"],
-                    "expression_ar": neighbor["expression_ar"],
-                    "expression_transliteration": neighbor[
-                        "expression_transliteration"
-                    ],
-                    "gloss": neighbor["gloss"],
-                    "distinction": neighbor["distinction"],
-                },
+                "key_distinction": key_distinction,
             }
         )
     result["branches"] = branches

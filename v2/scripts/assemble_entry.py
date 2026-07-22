@@ -7,6 +7,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import sys
 import tempfile
 from pathlib import Path
@@ -28,32 +29,75 @@ from v2.scripts.render_occurrences import structured_occurrence_data
 
 
 FRAGMENT_SCHEMAS = {
+    "root_writer": PROJECT / "v2/schema/fragments/root-writer.schema.json",
+    "root_reviewer": PROJECT / "v2/schema/fragments/root-reviewer.schema.json",
     "branch_writer": PROJECT / "v2/schema/fragments/branch-writer.schema.json",
     "root_profile_writer": PROJECT / "v2/schema/fragments/root-profile.schema.json",
 }
-TASK_FORMAT = 2
+TASK_FORMAT = 4
 TASK_GENERATOR = "v2/scripts/create_entry.py"
 
 
-def agent_branch_evidence(package: dict) -> dict:
-    branch = package["branch"]
-    return {
-        "format": "dictionary-v2-agent-branch-evidence-v2",
-        "branch": {
-            "branch_id": branch["branch_id"],
-            "branch_image_ar": branch["branch_image_ar"],
-            "what_is_ar": branch["what_is_ar"],
-            "source_phrase_ar": branch["source_phrase_ar"],
-        },
-        "neighbors": [
-            {
-                "root_id": row["root_id"],
-                "branch_id": row["branch_id"],
-                "branch_image_ar": row["branch_image_ar"],
-                "what_is_ar": row["what_is_ar"],
+def branch_ref(root_id: str, branch_id: str) -> str:
+    return f"{root_id}/{branch_id}"
+
+
+def agent_root_evidence(packages: list[dict]) -> dict:
+    """Project deduplicated semantic evidence and compact source claims."""
+    neighbor_registry: list[dict] = []
+    neighbor_by_ref: dict[str, dict] = {}
+    branches = []
+    for package in packages:
+        focus = package["branch"]
+        refs = []
+        for candidate in package["furuq_candidates"]:
+            ref = branch_ref(candidate["root_id"], candidate["branch_id"])
+            card = {
+                "neighbor_ref": ref,
+                "branch_image_ar": candidate["branch_image_ar"],
+                "what_is_ar": candidate["what_is_ar"],
             }
-            for row in package["furuq_candidates"]
-        ],
+            existing = neighbor_by_ref.get(ref)
+            if existing is not None and existing != card:
+                raise ContractError(f"Conflicting minimal neighbor cards for {ref}")
+            if existing is None:
+                neighbor_by_ref[ref] = card
+                neighbor_registry.append(card)
+            refs.append(ref)
+        source_claims = []
+        for unit in package.get("lexical_units", []):
+            source_refs = split_refs(unit.get("source_refs", ""))
+            source_claims.append(
+                {
+                    "claim_id": unit["lexical_unit_id"],
+                    "lexical_unit_id": unit["lexical_unit_id"],
+                    "unit_kind": unit["unit_kind"],
+                    "expression_ar": unit["expression_ar"],
+                    "sense_ar": unit["sense_ar"],
+                    "source_phrase_ar": unit["source_phrase_ar"],
+                    "source_ids": sorted(
+                        {source_ref.split(":", 1)[0] for source_ref in source_refs}
+                    ),
+                }
+            )
+        if not source_claims:
+            raise ContractError(
+                "Root-writer evidence requires at least one lexical source claim for "
+                f"{focus['root_id']}/{focus['branch_id']}"
+            )
+        branches.append(
+            {
+                "branch_ref": branch_ref(focus["root_id"], focus["branch_id"]),
+                "branch_image_ar": focus["branch_image_ar"],
+                "what_is_ar": focus["what_is_ar"],
+                "source_claims": source_claims,
+                "neighbor_refs": refs,
+            }
+        )
+    return {
+        "format": "dictionary-v2-agent-root-evidence-v3",
+        "branches": branches,
+        "neighbor_registry": neighbor_registry,
     }
 
 
@@ -190,10 +234,18 @@ def load_evidence(index_path: Path) -> tuple[dict, list[tuple[dict, dict, Path]]
     packet_path = resolve_project_path(index["packet_path"])
     furuq_path = resolve_project_path(index["furuq_path"])
     qnet_path = resolve_project_path(index["qnet_path"])
+    qnet_theme_path = resolve_project_path(index["qnet_theme_path"])
+    qnet_fix_manifest_path = resolve_project_path(index["qnet_fix_manifest_path"])
     for label, path, expected in (
         ("packet", packet_path, index["packet_sha256"]),
         ("Furuq database", furuq_path, index["furuq_sha256"]),
         ("QNet incidence database", qnet_path, index["qnet_sha256"]),
+        ("QNet theme database", qnet_theme_path, index["qnet_theme_sha256"]),
+        (
+            "QNet post-fix manifest",
+            qnet_fix_manifest_path,
+            index["qnet_fix_manifest_sha256"],
+        ),
     ):
         if not path.is_file():
             raise ContractError(f"Missing {label}: {path}")
@@ -236,6 +288,12 @@ def load_evidence(index_path: Path) -> tuple[dict, list[tuple[dict, dict, Path]]
             raise ContractError(f"Packet digest mismatch in {package_path}")
         if package.get("qnet_sha256") != index["qnet_sha256"]:
             raise ContractError(f"QNet digest mismatch in {package_path}")
+        if package.get("qnet_theme_sha256") != index["qnet_theme_sha256"]:
+            raise ContractError(f"QNet theme digest mismatch in {package_path}")
+        if package.get("qnet_fix_manifest_sha256") != index[
+            "qnet_fix_manifest_sha256"
+        ]:
+            raise ContractError(f"QNet post-fix digest mismatch in {package_path}")
         if package.get("furuq_sha256") != index["furuq_sha256"]:
             raise ContractError(f"Furuq digest mismatch in {package_path}")
         packages.append((row, package, package_path))
@@ -279,7 +337,6 @@ def branch_from_fragment(package: dict, fragment: dict, path: str) -> dict:
         )
 
     basis = package["dictionary_basis"]
-    branch_refs = split_refs(branch["source_refs"])
     candidate_by_key = {
         (row["root_id"], row["branch_id"]): row
         for row in package["furuq_candidates"]
@@ -297,6 +354,15 @@ def branch_from_fragment(package: dict, fragment: dict, path: str) -> dict:
             )
     coverage = fragment["neighbor_coverage"]
     selected_neighbor_count = len(fragment["arabic_neighbor_distinctions"])
+    if selected_neighbor_count == 0 and coverage["assessment"] != "none_useful":
+        raise ContractError(
+            f"{path}.neighbor_coverage: zero selected neighbors must be assessed "
+            "as none_useful"
+        )
+    if selected_neighbor_count > 0 and coverage["assessment"] == "none_useful":
+        raise ContractError(
+            f"{path}.neighbor_coverage: none_useful requires zero selected neighbors"
+        )
     if selected_neighbor_count == 1 and coverage["assessment"] == "complete":
         raise ContractError(
             f"{path}.neighbor_coverage: one selected neighbor must be assessed as "
@@ -314,14 +380,68 @@ def branch_from_fragment(package: dict, fragment: dict, path: str) -> dict:
         }
         for source in basis["sources"]
     ]
-    disputed = next(
-        (
-            qualifier["statement"]
-            for qualifier in fragment["evidence_qualifiers"]
-            if qualifier["type"] == "disputed"
-        ),
-        None,
-    )
+    units = {
+        unit["lexical_unit_id"]: unit for unit in package.get("lexical_units", [])
+    }
+    lexical_glosses = {
+        row["lexical_unit_id"]: row for row in fragment["lexical_glosses"]
+    }
+
+    def claim_refs(claim_ids: list[str]) -> list[str]:
+        refs = {
+            source_ref
+            for claim_id in claim_ids
+            for source_ref in split_refs(units[claim_id].get("source_refs", ""))
+        }
+        return sorted(refs)
+
+    synthesis = fragment["source_synthesis"]
+    source_details = [
+        {
+            "kind": detail["kind"],
+            "summary": detail["summary"],
+            "source_refs": claim_refs(detail["claim_ids"]),
+            "source_ids": sorted(
+                {
+                    source_ref.split(":", 1)[0]
+                    for source_ref in claim_refs(detail["claim_ids"])
+                }
+            ),
+        }
+        for detail in synthesis["source_details"]
+    ]
+    disputed_details = [
+        detail for detail in source_details if detail["kind"] == "disagreement"
+    ]
+    disagreement = None
+    if disputed_details:
+        disagreement = {
+            "summary": " ".join(detail["summary"] for detail in disputed_details),
+            "source_refs": sorted(
+                {
+                    source_ref
+                    for detail in disputed_details
+                    for source_ref in detail["source_refs"]
+                }
+            ),
+        }
+    usage_notes = [
+        {
+            "kind": "constraint",
+            "statement": detail["summary"],
+            "evidence_refs": detail["source_refs"],
+        }
+        for detail in source_details
+        if detail["kind"] == "restriction"
+    ]
+    evidence_qualifiers = [
+        {
+            "type": "disputed",
+            "statement": detail["summary"],
+            "source_refs": detail["source_refs"],
+        }
+        for detail in disputed_details
+    ]
     return {
         "root_id": branch["root_id"],
         "branch_id": branch["branch_id"],
@@ -331,12 +451,19 @@ def branch_from_fragment(package: dict, fragment: dict, path: str) -> dict:
         "source_phrase_ar": branch["source_phrase_ar"],
         "image_transliteration": fragment["image_transliteration"],
         "summary": fragment["summary"],
+        "concept_map": fragment["concept_map"],
         "lexical_realizations": [
             {
                 "lexical_unit_id": unit["lexical_unit_id"],
                 "expression_ar": unit["expression_ar"],
                 "unit_kind": unit["unit_kind"],
                 "sense_ar": unit["sense_ar"],
+                "target_gloss": lexical_glosses[unit["lexical_unit_id"]][
+                    "target_gloss"
+                ],
+                "target_rendering_kind": lexical_glosses[unit["lexical_unit_id"]][
+                    "rendering_kind"
+                ],
                 "evidence_refs": split_refs(unit.get("source_refs", "")),
                 "quran_form": (
                     {
@@ -350,23 +477,14 @@ def branch_from_fragment(package: dict, fragment: dict, path: str) -> dict:
             }
             for unit in package.get("lexical_units", [])
         ],
-        "usage_notes": [
-            {**note, "evidence_refs": branch_refs}
-            for note in fragment["usage_notes"]
-        ],
-        "evidence_qualifiers": [
-            {**qualifier, "source_refs": branch_refs}
-            for qualifier in fragment["evidence_qualifiers"]
-        ],
+        "usage_notes": usage_notes,
+        "evidence_qualifiers": evidence_qualifiers,
         "source_discussion": {
-            "discussion": fragment["source_summary"],
-            "evidence_refs": branch_refs,
+            "discussion": synthesis["common_summary"],
+            "evidence_refs": claim_refs(synthesis["common_claim_ids"]),
+            "details": source_details,
             "examples": [],
-            "disagreement": (
-                {"summary": disputed, "source_refs": branch_refs}
-                if disputed
-                else None
-            ),
+            "disagreement": disagreement,
         },
         "dictionary_basis": {
             "dictionary_count": basis["dictionary_count"],
@@ -397,54 +515,630 @@ def branch_from_fragment(package: dict, fragment: dict, path: str) -> dict:
     }
 
 
+def _excluded_reason(error_profile: dict) -> str:
+    parts = [
+        error_profile[field].strip()
+        for field in ("loses", "adds", "collision")
+        if isinstance(error_profile.get(field), str) and error_profile[field].strip()
+    ]
+    return " ".join(parts) or error_profile["preserves"]
+
+
+NAME_TOKEN_RE = re.compile(r"\{\{(lu_[0-9]+)\}\}")
+
+
+def _approved_name_review(
+    path: Path,
+    *,
+    envelope: str,
+    language: str,
+) -> tuple[dict[str, str], dict[str, dict]]:
+    if not path.is_file():
+        return {}, {}
+    review = load_json(path)
+    if review.get("format") != "dictionary-v2-name-review-v1":
+        raise ContractError(f"Unrecognized name review file: {path}")
+    if review.get("root_envelope_id") != envelope or review.get("language") != language:
+        raise ContractError(f"Name review identity mismatch: {path}")
+    approved: dict[str, str] = {}
+    existing: dict[str, dict] = {}
+    for item in review.get("items", []):
+        key = item.get("key")
+        if not isinstance(key, str) or key in existing:
+            raise ContractError(f"Invalid or duplicate name review key: {key!r}")
+        existing[key] = item
+        if item.get("status") != "approved":
+            continue
+        value = item.get("value")
+        if not isinstance(value, str) or len(value.strip()) < 2:
+            raise ContractError(f"Approved name form lacks a value for {key}")
+        if any("\u0600" <= character <= "\u06ff" for character in value):
+            raise ContractError(f"Approved name form contains Arabic script for {key}")
+        approved[key] = value.strip()
+    return approved, existing
+
+
+def _write_name_review_queue(
+    path: Path,
+    *,
+    envelope: str,
+    language: str,
+    required: dict[str, str],
+    existing: dict[str, dict],
+) -> None:
+    items = []
+    for key, arabic in sorted(required.items()):
+        previous = existing.get(key, {})
+        items.append(
+            {
+                "key": key,
+                "arabic": arabic,
+                "status": previous.get("status", "pending"),
+                "value": previous.get("value", ""),
+            }
+        )
+    value = {
+        "format": "dictionary-v2-name-review-v1",
+        "root_envelope_id": envelope,
+        "language": language,
+        "instructions": (
+            "Approve the target-language surface form for each protected proper "
+            "name. These values replace writer placeholders mechanically."
+        ),
+        "items": items,
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    descriptor, name = tempfile.mkstemp(prefix=f".{path.name}.", dir=path.parent)
+    temporary = Path(name)
+    try:
+        with os.fdopen(descriptor, "w", encoding="utf-8", newline="") as handle:
+            handle.write(json_content(value))
+        os.replace(temporary, path)
+    finally:
+        if temporary.exists():
+            temporary.unlink()
+
+
+def _approved_transliteration_review(
+    path: Path,
+    *,
+    envelope: str,
+    language: str,
+) -> tuple[dict[str, str], dict[str, dict]]:
+    if not path.is_file():
+        return {}, {}
+    review = load_json(path)
+    if review.get("format") != "dictionary-v2-transliteration-review-v1":
+        raise ContractError(f"Unrecognized transliteration review file: {path}")
+    if review.get("root_envelope_id") != envelope or review.get("language") != language:
+        raise ContractError(f"Transliteration review identity mismatch: {path}")
+    approved: dict[str, str] = {}
+    existing: dict[str, dict] = {}
+    for item in review.get("items", []):
+        key = item.get("key")
+        if not isinstance(key, str) or key in existing:
+            raise ContractError(f"Invalid or duplicate transliteration review key: {key!r}")
+        existing[key] = item
+        if item.get("status") != "approved":
+            continue
+        value = item.get("value")
+        if not isinstance(value, str) or len(value.strip()) < 2:
+            raise ContractError(f"Approved transliteration lacks a value for {key}")
+        if any("\u0600" <= character <= "\u06ff" for character in value):
+            raise ContractError(f"Approved transliteration contains Arabic script for {key}")
+        approved[key] = value.strip()
+    return approved, existing
+
+
+def _write_transliteration_review_queue(
+    path: Path,
+    *,
+    envelope: str,
+    language: str,
+    missing: list[str],
+    transliterations: dict,
+    existing: dict[str, dict],
+) -> None:
+    anchors = {
+        item["key"]: item["arabic"] for item in transliterations.get("gaps", [])
+    }
+    suggestions = transliterations.get("suggestions", {})
+    items = []
+    for key in missing:
+        previous = existing.get(key, {})
+        items.append(
+            {
+                "key": key,
+                "arabic": anchors.get(key, previous.get("arabic", "")),
+                "suggested_value": suggestions.get(
+                    key, previous.get("suggested_value", "")
+                ),
+                "status": previous.get("status", "pending"),
+                "value": previous.get("value", ""),
+            }
+        )
+    value = {
+        "format": "dictionary-v2-transliteration-review-v1",
+        "root_envelope_id": envelope,
+        "language": language,
+        "instructions": (
+            "Review only these used Arabic anchors. Set status to approved and "
+            "supply value; rerunning entry creation reuses the root-writer response."
+        ),
+        "items": items,
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    descriptor, name = tempfile.mkstemp(prefix=f".{path.name}.", dir=path.parent)
+    temporary = Path(name)
+    try:
+        with os.fdopen(descriptor, "w", encoding="utf-8", newline="") as handle:
+            handle.write(json_content(value))
+        os.replace(temporary, path)
+    finally:
+        if temporary.exists():
+            temporary.unlink()
+
+
+def expand_root_writer_response(
+    response: dict,
+    packages: list[dict],
+    transliterations: dict,
+    language: str,
+    envelope: str,
+    transliteration_review_path: Path,
+    name_review_path: Path,
+) -> tuple[list[dict], dict]:
+    """Restore coordinator-owned fields around a reduced root-writer response."""
+    expected_refs = [
+        branch_ref(package["branch"]["root_id"], package["branch"]["branch_id"])
+        for package in packages
+    ]
+    authored = response["branches"]
+    authored_refs = [row["branch_ref"] for row in authored]
+    if authored_refs != expected_refs:
+        raise ContractError(
+            "root_writer: branch roster must match task order exactly: "
+            f"expected {expected_refs}, got {authored_refs}"
+        )
+
+    values = dict(transliterations.get("values", {}))
+    approved, existing_review = _approved_transliteration_review(
+        transliteration_review_path,
+        envelope=envelope,
+        language=language,
+    )
+    gap_anchors = {
+        item["key"]: item["arabic"] for item in transliterations.get("gaps", [])
+    }
+    for key in approved:
+        if key not in gap_anchors or existing_review[key].get("arabic") != gap_anchors[key]:
+            raise ContractError(
+                f"Stale transliteration review anchor for {key}: "
+                f"{transliteration_review_path}"
+            )
+    values.update(approved)
+
+    approved_names, existing_name_review = _approved_name_review(
+        name_review_path,
+        envelope=envelope,
+        language=language,
+    )
+
+    required_transliterations = {"root_profile"}
+    selected_by_branch: list[list[tuple[str, dict]]] = []
+    for package, row in zip(packages, authored):
+        focus_ref = row["branch_ref"]
+        required_transliterations.add(f"branch:{focus_ref}")
+        candidates = {
+            branch_ref(candidate["root_id"], candidate["branch_id"]): candidate
+            for candidate in package["furuq_candidates"]
+        }
+        selected = []
+        for distinction in row["neighbor_distinctions"]:
+            ref = distinction["neighbor_ref"]
+            if ref not in candidates:
+                raise ContractError(
+                    f"root_writer: {focus_ref} selected absent neighbor {ref}"
+                )
+            required_transliterations.add(f"neighbor:{ref}")
+            selected.append((ref, candidates[ref]))
+        selected_by_branch.append(selected)
+
+    required_names: dict[str, str] = {}
+    name_tokens: dict[str, str] = {}
+    for package, row in zip(packages, authored):
+        units = {
+            unit["lexical_unit_id"]: unit for unit in package.get("lexical_units", [])
+        }
+        for lexical in row["lexical_glosses"]:
+            if lexical["rendering_kind"] != "proper_name":
+                continue
+            lexical_id = lexical["lexical_unit_id"]
+            key = f"name:{row['branch_ref']}:{lexical_id}"
+            required_names[key] = units[lexical_id]["expression_ar"]
+            reviewed = existing_name_review.get(key)
+            if key in approved_names and (
+                reviewed is None or reviewed.get("arabic") != required_names[key]
+            ):
+                raise ContractError(f"Stale name review anchor for {key}: {name_review_path}")
+            if key in approved_names:
+                existing_value = name_tokens.get(lexical_id)
+                if existing_value is not None and existing_value != approved_names[key]:
+                    raise ContractError(
+                        f"Conflicting reviewed name forms for placeholder {lexical_id}"
+                    )
+                name_tokens[lexical_id] = approved_names[key]
+
+    missing = sorted(required_transliterations - set(values))
+    missing_names = sorted(set(required_names) - set(approved_names))
+    pending = []
+    if missing:
+        _write_transliteration_review_queue(
+            transliteration_review_path,
+            envelope=envelope,
+            language=language,
+            missing=missing,
+            transliterations=transliterations,
+            existing=existing_review,
+        )
+        pending.append(
+            "needs_transliteration_review: approve used anchors in "
+            f"{transliteration_review_path}: {missing}"
+        )
+    if missing_names:
+        _write_name_review_queue(
+            name_review_path,
+            envelope=envelope,
+            language=language,
+            required=required_names,
+            existing=existing_name_review,
+        )
+        pending.append(
+            "needs_name_review: approve protected forms in "
+            f"{name_review_path}: {missing_names}"
+        )
+    if pending:
+        raise ContractError("; ".join(pending))
+
+    def transliteration(key: str) -> str:
+        value = values.get(key)
+        if not isinstance(value, str) or len(value.strip()) < 2:
+            raise ContractError(f"Missing reviewed transliteration for {key}")
+        return value.strip()
+
+    def substitute_names(value: str) -> str:
+        def replacement(match: re.Match[str]) -> str:
+            lexical_id = match.group(1)
+            if lexical_id not in name_tokens:
+                raise ContractError(
+                    f"Unresolved or undeclared protected-name token {match.group(0)}"
+                )
+            return name_tokens[lexical_id]
+
+        return NAME_TOKEN_RE.sub(replacement, value)
+
+    fragments = []
+    for package, row, selected in zip(packages, authored, selected_by_branch):
+        focus = package["branch"]
+        focus_ref = row["branch_ref"]
+        concept = row["concept_gloss"]
+        selected_glosses = [
+            {
+                "rank": 1,
+                "text": substitute_names(concept["text"]),
+                "loanword_status": "none",
+                "usage_role": "explanatory",
+                "selection_role": "primary_concept_gloss",
+                "applicability": substitute_names(concept["applicability"]),
+                "facet_ids": concept["facet_ids"],
+                "error_profile": {
+                    key: substitute_names(value) if isinstance(value, str) else value
+                    for key, value in concept["error_profile"].items()
+                },
+            }
+        ]
+        for rank, gloss in enumerate(row["contextual_glosses"], start=2):
+            selected_glosses.append(
+                {
+                    "rank": rank,
+                    "text": substitute_names(gloss["text"]),
+                    "loanword_status": "none",
+                    "usage_role": gloss["usage_role"],
+                    "selection_role": "contextual_gloss",
+                    "applicability": substitute_names(gloss["applicability"]),
+                    "facet_ids": gloss["facet_ids"],
+                    "error_profile": {
+                        key: substitute_names(value) if isinstance(value, str) else value
+                        for key, value in gloss["error_profile"].items()
+                    },
+                }
+            )
+        excluded_glosses = []
+        for gloss in row["excluded_glosses"]:
+            error_profile = {
+                key: substitute_names(value) if isinstance(value, str) else value
+                for key, value in gloss["error_profile"].items()
+            }
+            excluded_glosses.append(
+                {
+                    "text": substitute_names(gloss["text"]),
+                    "category": gloss["category"],
+                    "exclusion_reason": _excluded_reason(error_profile),
+                    "error_profile": error_profile,
+                }
+            )
+
+        distinctions = []
+        for authored_distinction, (neighbor_ref, _candidate) in zip(
+            row["neighbor_distinctions"], selected
+        ):
+            neighbor_root_id, neighbor_branch_id = neighbor_ref.split("/", 1)
+            distinctions.append(
+                {
+                    "neighbor_root_id": neighbor_root_id,
+                    "neighbor_branch_id": neighbor_branch_id,
+                    "relation_type": authored_distinction["relation_type"],
+                    "boundary_match": authored_distinction["boundary_match"],
+                    "focus_only": (
+                        substitute_names(authored_distinction["focus_only"])
+                        if authored_distinction["focus_only"] is not None
+                        else None
+                    ),
+                    "neighbor_only": (
+                        substitute_names(authored_distinction["neighbor_only"])
+                        if authored_distinction["neighbor_only"] is not None
+                        else None
+                    ),
+                    "expression_transliteration": transliteration(
+                        f"neighbor:{neighbor_ref}"
+                    ),
+                    "gloss": substitute_names(authored_distinction["gloss"]),
+                    "shared_zone": substitute_names(authored_distinction["shared_zone"]),
+                    "distinction": substitute_names(authored_distinction["distinction"]),
+                }
+            )
+
+        concept_map = {
+            "definition": substitute_names(row["concept_map"]["definition"]),
+            "facets": [
+                {
+                    **facet,
+                    "statement": substitute_names(facet["statement"]),
+                }
+                for facet in row["concept_map"]["facets"]
+            ],
+        }
+        source_synthesis = {
+            **row["source_synthesis"],
+            "common_summary": substitute_names(
+                row["source_synthesis"]["common_summary"]
+            ),
+            "source_details": [
+                {
+                    **detail,
+                    "summary": substitute_names(detail["summary"]),
+                }
+                for detail in row["source_synthesis"]["source_details"]
+            ],
+        }
+        lexical_glosses = []
+        for lexical in row["lexical_glosses"]:
+            lexical_glosses.append(
+                {
+                    "lexical_unit_id": lexical["lexical_unit_id"],
+                    "rendering_kind": lexical["rendering_kind"],
+                    "target_gloss": (
+                        name_tokens[lexical["lexical_unit_id"]]
+                        if lexical["rendering_kind"] == "proper_name"
+                        else substitute_names(lexical["target_gloss"])
+                    ),
+                }
+            )
+        semantic_definition = concept_map["definition"]
+        fragment = {
+            "root_id": focus["root_id"],
+            "branch_id": focus["branch_id"],
+            "language": language,
+            "image_transliteration": transliteration(f"branch:{focus_ref}"),
+            "summary": semantic_definition,
+            "concept_map": concept_map,
+            "source_summary": source_synthesis["common_summary"],
+            "source_synthesis": source_synthesis,
+            "usage_notes": [],
+            "evidence_qualifiers": [],
+            "lexical_glosses": lexical_glosses,
+            "glosses": {
+                "semantic_definition": semantic_definition,
+                "concept": selected_glosses[0],
+                "contextual": selected_glosses[1:],
+                "selected": selected_glosses,
+                "excluded": excluded_glosses,
+            },
+            "arabic_neighbor_distinctions": distinctions,
+            "neighbor_coverage": {
+                "assessment": (
+                    "none_useful"
+                    if not distinctions
+                    else "single_sufficient"
+                    if len(distinctions) == 1
+                    else "complete"
+                ),
+                "note": row["neighbor_coverage_note"],
+            },
+        }
+        validate_fragment(fragment, "branch_writer", Path(focus_ref))
+        fragments.append(fragment)
+
+    root_profile = {
+        "root_envelope_id": envelope,
+        "language": language,
+        "root_profile": {
+            "transliteration": transliteration("root_profile"),
+            "summary": response["root_profile"]["summary"],
+            "polysemy": response["root_profile"]["polysemy"],
+            "organization": response["root_profile"]["organization"],
+            "branch_count": len(packages),
+            "collocation_weight": "unknown",
+            "collocation_note": (
+                "Kur'an eşdizim verileri mekanik oluşum katmanında tutulur."
+                if language == "tr"
+                else "Quran collocation data is retained in the mechanical occurrence layer."
+            ),
+        },
+    }
+    validate_fragment(root_profile, "root_profile_writer", Path(envelope))
+    return fragments, root_profile
+
+
+def _root_writer_material(
+    evidence_index: Path,
+    work_dir: Path,
+    language: str,
+) -> tuple[dict, list[tuple[dict, dict, Path]], dict, list[dict], dict]:
+    index, packages = load_evidence(evidence_index.resolve())
+    envelope = index["root_envelope_id"]
+    task_path = work_dir / "tasks/root_writer.json"
+    response_path = work_dir / "fragments/root_writer.json"
+    task, response = load_task_fragment(task_path, response_path, "root_writer")
+    assert_task_identity(
+        task,
+        role="root_writer",
+        envelope=envelope,
+        language=language,
+    )
+    package_values = [package for _row, package, _path in packages]
+    transliteration_path = work_dir / "inputs/transliterations.json"
+    root_evidence_path = work_dir / "inputs/root_evidence.json"
+    if not transliteration_path.is_file():
+        raise ContractError(f"Missing coordinator transliterations: {transliteration_path}")
+    transliterations = load_json(transliteration_path)
+    if transliterations.get("format") != "dictionary-v2-transliteration-inputs-v1":
+        raise ContractError(f"Unrecognized coordinator transliterations: {transliteration_path}")
+    if (
+        transliterations.get("root_envelope_id") != envelope
+        or transliterations.get("language") != language
+    ):
+        raise ContractError(f"Coordinator transliteration identity mismatch: {transliteration_path}")
+    expected_evidence = agent_root_evidence(package_values)
+    if not root_evidence_path.is_file() or load_json(root_evidence_path) != expected_evidence:
+        raise ContractError(f"Stale minimal root evidence: {root_evidence_path}")
+    if task.get("evidence") != {
+        "path": project_relative(root_evidence_path),
+        "sha256": sha256_file(root_evidence_path),
+    }:
+        raise ContractError(f"Root-writer evidence binding mismatch: {task_path}")
+    coordinator = task.get("coordinator", {})
+    if coordinator.get("evidence_index") != {
+        "path": project_relative(evidence_index.resolve()),
+        "sha256": sha256_file(evidence_index.resolve()),
+    }:
+        raise ContractError(f"Coordinator evidence-index binding mismatch: {task_path}")
+    if task.get("branch_roster") != [
+        branch_ref(row["root_id"], row["branch_id"]) for row, _package, _path in packages
+    ]:
+        raise ContractError(f"Root-writer task branch roster mismatch: {task_path}")
+    fragments, root_profile = expand_root_writer_response(
+        response,
+        package_values,
+        transliterations,
+        language,
+        envelope,
+        work_dir / "inputs/transliteration_review.json",
+        work_dir / "inputs/name_review.json",
+    )
+    return index, packages, task, fragments, root_profile
+
+
+def _write_split_values(
+    packages: list[tuple[dict, dict, Path]],
+    task: dict,
+    fragments: list[dict],
+    root_profile: dict,
+    work_dir: Path,
+    *,
+    check: bool,
+) -> None:
+    task_hash = canonical_sha256(task)
+    outputs = []
+    for (row, _package, _path), fragment in zip(packages, fragments):
+        stem = f"{row['root_id']}--{row['branch_id']}"
+        outputs.append(
+            (
+                work_dir / "fragments/branches" / f"{stem}.json",
+                {"root_inputs_sha256": task_hash, **fragment},
+            )
+        )
+    outputs.append(
+        (
+            work_dir / "fragments/root_profile.json",
+            {"root_inputs_sha256": task_hash, **root_profile},
+        )
+    )
+    for path, value in outputs:
+        content = json_content(value)
+        if check:
+            if not path.is_file() or path.read_text(encoding="utf-8") != content:
+                raise ContractError(f"Stale root-writer split fragment: {path}")
+        else:
+            path.parent.mkdir(parents=True, exist_ok=True)
+            descriptor, name = tempfile.mkstemp(prefix=f".{path.name}.", dir=path.parent)
+            temporary = Path(name)
+            try:
+                with os.fdopen(descriptor, "w", encoding="utf-8", newline="") as handle:
+                    handle.write(content)
+                os.replace(temporary, path)
+            finally:
+                if temporary.exists():
+                    temporary.unlink()
+
+
+def write_root_writer_splits(
+    evidence_index: Path,
+    work_dir: Path,
+    language: str,
+    *,
+    check: bool = False,
+) -> None:
+    _index, packages, task, fragments, root_profile = _root_writer_material(
+        evidence_index, work_dir, language
+    )
+    _write_split_values(
+        packages,
+        task,
+        fragments,
+        root_profile,
+        work_dir,
+        check=check,
+    )
+
+
 def build_entry(
     evidence_index: Path,
     work_dir: Path,
     language: str,
+    *,
+    check_splits: bool = False,
 ) -> tuple[dict, dict]:
-    index, packages = load_evidence(evidence_index.resolve())
+    index, packages, task, fragments, root = _root_writer_material(
+        evidence_index, work_dir, language
+    )
+    _write_split_values(
+        packages,
+        task,
+        fragments,
+        root,
+        work_dir,
+        check=check_splits,
+    )
     envelope = index["root_envelope_id"]
     branches = []
-    branch_dependencies = []
-    for row, package, package_path in packages:
-        stem = f"{row['root_id']}--{row['branch_id']}"
-        task_path = work_dir / "tasks/branches" / f"{stem}.json"
-        fragment_path = work_dir / "fragments/branches" / f"{stem}.json"
-        task, fragment = load_task_fragment(task_path, fragment_path, "branch_writer")
-        assert_task_identity(
-            task,
-            role="branch_writer",
-            envelope=envelope,
-            language=language,
-            root_id=row["root_id"],
-            branch_id=row["branch_id"],
-        )
-        if fragment["language"] != language:
-            raise ContractError(f"Wrong-language branch fragment: {fragment_path}")
-        evidence = task.get("evidence", {})
-        expected_evidence_path = work_dir / "inputs/branches" / f"{stem}.json"
-        if evidence.get("path") != project_relative(expected_evidence_path):
-            raise ContractError(f"Task evidence binding mismatch: {task_path}")
-        if not expected_evidence_path.is_file():
-            raise ContractError(f"Missing minimal agent evidence: {expected_evidence_path}")
-        if load_json(expected_evidence_path) != agent_branch_evidence(package):
-            raise ContractError(f"Stale minimal agent evidence: {expected_evidence_path}")
-        if evidence.get("sha256") != sha256_file(expected_evidence_path):
-            raise ContractError(f"Task evidence digest mismatch: {task_path}")
+    for (_row, package, _package_path), fragment in zip(packages, fragments):
         branches.append(
             branch_from_fragment(
                 package,
                 fragment,
                 f"$.branches[{len(branches)}]",
             )
-        )
-        branch_dependencies.append(
-            {
-                "root_id": row["root_id"],
-                "branch_id": row["branch_id"],
-                "path": project_relative(fragment_path),
-                "sha256": sha256_file(fragment_path),
-            }
         )
 
     occurrence_path = f"v2/output/occurrences/{envelope}.{language}.md"
@@ -458,31 +1152,6 @@ def build_entry(
     packet = load_json(resolve_project_path(index["packet_path"]))
     alignment = load_json(alignment_file)
     mechanical_occurrences = structured_occurrence_data(packet, alignment)
-
-    root_task_path = work_dir / "tasks/root_profile.json"
-    root_fragment_path = work_dir / "fragments/root_profile.json"
-    root_task, root = load_task_fragment(
-        root_task_path,
-        root_fragment_path,
-        "root_profile_writer",
-    )
-    assert_task_identity(
-        root_task,
-        role="root_profile_writer",
-        envelope=envelope,
-        language=language,
-    )
-    if root["root_envelope_id"] != envelope or root["language"] != language:
-        raise ContractError(f"Root-profile fragment identity mismatch: {root_fragment_path}")
-    expected_dependencies = {
-        "branch_fragments": branch_dependencies,
-    }
-    if root_task.get("dependencies") != expected_dependencies:
-        raise ContractError(f"Root-profile task dependency mismatch: {root_task_path}")
-    if root_task.get("root_ids") != index["root_ids"]:
-        raise ContractError(f"Root-profile task root roster mismatch: {root_task_path}")
-    if root_task.get("branch_count") != len(packages):
-        raise ContractError(f"Root-profile task branch count mismatch: {root_task_path}")
 
     entry = {
         "schema_version": 4,
@@ -499,6 +1168,7 @@ def build_entry(
             "evidence_index_sha256": sha256_file(evidence_index.resolve()),
             "furuq_path": index["furuq_path"],
             "furuq_sha256": index["furuq_sha256"],
+            "root_task_sha256": canonical_sha256(task),
         },
         "root_profile": root["root_profile"],
         "branches": branches,
@@ -559,7 +1229,12 @@ def assemble(
     check: bool = False,
     force: bool = False,
 ) -> dict:
-    entry, index = build_entry(evidence_index, work_dir, language)
+    entry, index = build_entry(
+        evidence_index,
+        work_dir,
+        language,
+        check_splits=check,
+    )
     write_validated_entry(
         entry,
         index,

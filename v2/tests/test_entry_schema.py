@@ -189,6 +189,36 @@ class EntrySchemaTest(unittest.TestCase):
             "absent from the neighbor's Furuq source roster",
         )
 
+    def test_neighbor_relation_type_uses_the_concept_map_vocabulary(self):
+        self.assert_invalid(
+            lambda entry: entry["branches"][0]["arabic_neighbor_distinctions"][0].update(
+                {"relation_type": "network_similarity"}
+            ),
+            "relation_type",
+        )
+
+    def test_zero_useful_neighbors_requires_explicit_assessment(self):
+        entry = copy.deepcopy(self.entry)
+        branch = entry["branches"][0]
+        branch["arabic_neighbor_distinctions"] = []
+        branch["neighbor_coverage"]["assessment"] = "none_useful"
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary) / "zero-neighbors.json"
+            path.write_text(json.dumps(entry, ensure_ascii=False), encoding="utf-8")
+            validate_entry(path)
+
+        self.assert_invalid(
+            lambda candidate: (
+                candidate["branches"][0].update(
+                    {"arabic_neighbor_distinctions": []}
+                ),
+                candidate["branches"][0]["neighbor_coverage"].update(
+                    {"assessment": "complete"}
+                ),
+            ),
+            "zero selected neighbors require none_useful",
+        )
+
     def test_occurrence_data_is_mechanically_derived(self):
         self.assert_invalid(
             lambda entry: entry["occurrence_evidence"]["occurrences"][0].update(

@@ -10,9 +10,12 @@
     "language",
     "image_transliteration",
     "summary",
+    "concept_map",
     "source_summary",
+    "source_synthesis",
     "usage_notes",
     "evidence_qualifiers",
+    "lexical_glosses",
     "glosses",
     "arabic_neighbor_distinctions",
     "neighbor_coverage"
@@ -23,7 +26,9 @@
     "language": { "enum": ["en", "tr"] },
     "image_transliteration": { "$ref": "#/$defs/shortText" },
     "summary": { "$ref": "#/$defs/shortProse" },
+    "concept_map": { "type": "object" },
     "source_summary": { "$ref": "#/$defs/prose" },
+    "source_synthesis": { "type": "object" },
     "usage_notes": {
       "type": "array",
       "items": { "$ref": "#/$defs/usageNote" }
@@ -32,11 +37,12 @@
       "type": "array",
       "items": { "$ref": "#/$defs/evidenceQualifier" }
     },
+    "lexical_glosses": { "type": "array", "minItems": 1 },
     "glosses": { "$ref": "#/$defs/glossSelection" },
     "arabic_neighbor_distinctions": {
       "type": "array",
       "description": "Order by reader-facing importance; item 0 is the key distinction for the compact user dictionary.",
-      "minItems": 1,
+      "minItems": 0,
       "maxItems": 5,
       "items": { "$ref": "#/$defs/neighborDistinction" }
     },
@@ -71,9 +77,15 @@
     "glossSelection": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["semantic_definition", "selected", "excluded"],
+      "required": ["semantic_definition", "concept", "contextual", "selected", "excluded"],
       "properties": {
         "semantic_definition": { "$ref": "#/$defs/shortProse" },
+        "concept": { "$ref": "#/$defs/selectedGloss" },
+        "contextual": {
+          "type": "array",
+          "maxItems": 4,
+          "items": { "$ref": "#/$defs/selectedGloss" }
+        },
         "selected": {
           "type": "array",
           "minItems": 1,
@@ -82,7 +94,7 @@
         },
         "excluded": {
           "type": "array",
-          "minItems": 1,
+          "minItems": 0,
           "maxItems": 3,
           "items": { "$ref": "#/$defs/excludedGloss" }
         }
@@ -96,7 +108,9 @@
         "text",
         "loanword_status",
         "usage_role",
+        "selection_role",
         "applicability",
+        "facet_ids",
         "error_profile"
       ],
       "properties": {
@@ -106,7 +120,16 @@
         "usage_role": {
           "enum": ["general", "contextual", "explanatory", "technical_term", "proper_name"]
         },
+        "selection_role": {
+          "enum": ["primary_concept_gloss", "contextual_gloss"]
+        },
         "applicability": { "$ref": "#/$defs/shortProse" },
+        "facet_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^F[0-9]{3}$" }
+        },
         "error_profile": { "$ref": "#/$defs/errorProfile" }
       }
     },
@@ -130,9 +153,9 @@
           "enum": ["none", "narrowing", "broadening", "displacement", "drifted_loanword"]
         },
         "preserves": { "$ref": "#/$defs/shortProse" },
-        "loses": { "$ref": "#/$defs/shortProse" },
-        "adds": { "$ref": "#/$defs/shortProse" },
-        "collision": { "$ref": "#/$defs/shortProse" }
+        "loses": { "type": ["string", "null"], "minLength": 10, "maxLength": 1200 },
+        "adds": { "type": ["string", "null"], "minLength": 10, "maxLength": 1200 },
+        "collision": { "type": ["string", "null"], "minLength": 10, "maxLength": 1200 }
       }
     },
     "neighborDistinction": {
@@ -141,6 +164,10 @@
       "required": [
         "neighbor_root_id",
         "neighbor_branch_id",
+        "relation_type",
+        "boundary_match",
+        "focus_only",
+        "neighbor_only",
         "expression_transliteration",
         "gloss",
         "shared_zone",
@@ -149,6 +176,23 @@
       "properties": {
         "neighbor_root_id": { "$ref": "#/$defs/rootId" },
         "neighbor_branch_id": { "$ref": "#/$defs/branchId" },
+        "relation_type": {
+          "enum": [
+            "synonym",
+            "near_synonym",
+            "antonym",
+            "polarity_pair",
+            "near_neighbor",
+            "same_field",
+            "thematic",
+            "other"
+          ]
+        },
+        "boundary_match": {
+          "enum": ["exact", "partial", "opposed", "field_only", "thematic_only"]
+        },
+        "focus_only": { "type": ["string", "null"], "minLength": 10, "maxLength": 1200 },
+        "neighbor_only": { "type": ["string", "null"], "minLength": 10, "maxLength": 1200 },
         "expression_transliteration": { "$ref": "#/$defs/shortText" },
         "gloss": { "$ref": "#/$defs/shortText" },
         "shared_zone": { "$ref": "#/$defs/shortProse" },
@@ -161,7 +205,12 @@
       "required": ["assessment", "note"],
       "properties": {
         "assessment": {
-          "enum": ["complete", "single_sufficient", "legacy_minimum_unverified"]
+          "enum": [
+            "none_useful",
+            "complete",
+            "single_sufficient",
+            "legacy_minimum_unverified"
+          ]
         },
         "note": { "$ref": "#/$defs/shortProse" }
       }

@@ -40,11 +40,14 @@ LABELS = {
         "arabic_boundary": "Arabic exclusion boundary",
         "source_phrase": "Arabic source phrase",
         "definition": "Semantic definition",
+        "concept_map": "Concept-map facets",
+        "facet_role": "Facet role",
         "lexical_realizations": "Lexical realizations",
         "usage_notes": "Structured usage notes",
         "qualifiers": "Evidence qualifiers",
         "expression": "Arabic expression",
         "sense": "Recorded sense",
+        "target_gloss": "Target-language rendering",
         "quran_form": "QAC-linked form",
         "usage_role": "Usage role",
         "applicability": "Applicability",
@@ -69,6 +72,7 @@ LABELS = {
         "category": "Category",
         "reason": "Why excluded",
         "neighbors": "Arabic neighbor distinctions",
+        "no_useful_neighbors": "No materially useful neighbor distinction was selected.",
         "neighbor_coverage": "Neighbor coverage",
         "neighbor": "Arabic neighbor (link target)",
         "shared": "Shared zone",
@@ -98,11 +102,14 @@ LABELS = {
         "arabic_boundary": "Arapça dışlama sınırı",
         "source_phrase": "Arapça kaynak ifadesi",
         "definition": "Anlam tanımı",
+        "concept_map": "Kavram haritası öğeleri",
+        "facet_role": "Öğe rolü",
         "lexical_realizations": "Sözlüksel gerçekleşmeler",
         "usage_notes": "Yapılandırılmış kullanım notları",
         "qualifiers": "Kanıt niteleyicileri",
         "expression": "Arapça ifade",
         "sense": "Kaydedilen anlam",
+        "target_gloss": "Hedef dil anlatımı",
         "quran_form": "QAC bağlantılı biçim",
         "usage_role": "Kullanım rolü",
         "applicability": "Uygulanabilirlik",
@@ -127,6 +134,7 @@ LABELS = {
         "category": "Kategori",
         "reason": "Neden elendi",
         "neighbors": "Arapça komşu ayrımları",
+        "no_useful_neighbors": "Anlam sınırını belirginleştiren yararlı bir komşu ayrımı seçilmedi.",
         "neighbor_coverage": "Komşu kapsamı",
         "neighbor": "Arapça komşu (bağlantı hedefi)",
         "shared": "Ortak alan",
@@ -178,6 +186,14 @@ ENUM_LABELS = {
         "exception": "exception",
         "grammar": "grammar",
         "translation_risk": "translation risk",
+        "synonym": "synonym",
+        "near_synonym": "near synonym",
+        "antonym": "antonym",
+        "polarity_pair": "polarity pair",
+        "near_neighbor": "near neighbor",
+        "same_field": "same field",
+        "thematic": "thematic",
+        "none_useful": "none useful",
         "other": "other",
     },
     "tr": {
@@ -216,6 +232,14 @@ ENUM_LABELS = {
         "exception": "istisna",
         "grammar": "dilbilgisi",
         "translation_risk": "çeviri riski",
+        "synonym": "eş anlamlı",
+        "near_synonym": "yakın anlamlı",
+        "antonym": "karşıt anlamlı",
+        "polarity_pair": "kutupsal karşıt",
+        "near_neighbor": "yakın komşu",
+        "same_field": "aynı anlam alanı",
+        "thematic": "tematik",
+        "none_useful": "yararlı ayrım yok",
         "other": "diğer",
     },
 }
@@ -328,11 +352,24 @@ def render_markdown(entry: dict, packet: dict) -> str:
                 f"- **{label['source_phrase']}:** `{plain_text(branch['source_phrase_ar'])}`",
                 f"- **{label['definition']}:** "
                 f"{plain_text(branch['glosses']['semantic_definition'])}",
-                "",
-                f"### {label['lexical_realizations']}",
-                "",
             ]
         )
+        if "concept_map" in branch:
+            lines.extend(["", f"### {label['concept_map']}", ""])
+            lines.extend(
+                table(
+                    [label["facet_role"], label["summary"], label["refs"]],
+                    [
+                        [
+                            enum_label(language, facet["role"]),
+                            plain_text(facet["statement"]),
+                            ", ".join(facet["claim_ids"]),
+                        ]
+                        for facet in branch["concept_map"]["facets"]
+                    ],
+                )
+            )
+        lines.extend(["", f"### {label['lexical_realizations']}", ""])
         lexical_rows = []
         for unit in branch["lexical_realizations"]:
             quran_form = unit["quran_form"]
@@ -340,6 +377,7 @@ def render_markdown(entry: dict, packet: dict) -> str:
                 [
                     f"`{plain_text(unit['expression_ar'])}`",
                     plain_text(unit["sense_ar"]),
+                    plain_text(unit.get("target_gloss", "-")),
                     (
                         f"`{plain_text(quran_form['stem_ar'])}` ({plain_text(quran_form['tag'])})"
                         if quran_form
@@ -351,7 +389,13 @@ def render_markdown(entry: dict, packet: dict) -> str:
         if lexical_rows:
             lines.extend(
                 table(
-                    [label["expression"], label["sense"], label["quran_form"], label["refs"]],
+                    [
+                        label["expression"],
+                        label["sense"],
+                        label["target_gloss"],
+                        label["quran_form"],
+                        label["refs"],
+                    ],
                     lexical_rows,
                 )
             )
@@ -421,6 +465,16 @@ def render_markdown(entry: dict, packet: dict) -> str:
         lines.extend(
             ["", f"### {label['source_discussion']}", "", plain_text(discussion["discussion"])]
         )
+        source_names = {
+            source["source_id"]: plain_text(source["dictionary_name"])
+            for source in branch["dictionary_basis"]["sources"]
+        }
+        for detail in discussion.get("details", []):
+            lines.append(
+                f"- **{enum_label(language, detail['kind'])}:** "
+                f"[{', '.join(source_names[source_id] for source_id in detail['source_ids'])}] "
+                f"{plain_text(detail['summary'])} ({codes(detail['source_refs'])})"
+            )
         if discussion["examples"]:
             lines.extend(["", f"**{label['examples']}:**", ""])
             for example in discussion["examples"]:
@@ -450,8 +504,9 @@ def render_markdown(entry: dict, packet: dict) -> str:
                     plain_text(gloss["applicability"]),
                     enum_label(language, error["fit"]),
                     plain_text(error["preserves"]),
-                    f"{plain_text(error['loses'])} / {plain_text(error['adds'])}",
-                    plain_text(error["collision"]),
+                    f"{plain_text(error['loses']) if error['loses'] else '-'} / "
+                    f"{plain_text(error['adds']) if error['adds'] else '-'}",
+                    plain_text(error["collision"]) if error["collision"] else "-",
                 ]
             )
         lines.extend(
@@ -481,8 +536,9 @@ def render_markdown(entry: dict, packet: dict) -> str:
                     enum_label(language, gloss["category"]),
                     plain_text(gloss["exclusion_reason"]),
                     f"{enum_label(language, error['fit'])}; {plain_text(error['preserves'])} "
-                    f"{plain_text(error['loses'])} {plain_text(error['adds'])} "
-                    f"{plain_text(error['collision'])}",
+                    f"{plain_text(error['loses']) if error['loses'] else ''} "
+                    f"{plain_text(error['adds']) if error['adds'] else ''} "
+                    f"{plain_text(error['collision']) if error['collision'] else ''}",
                 ]
             )
         lines.extend(
@@ -496,22 +552,35 @@ def render_markdown(entry: dict, packet: dict) -> str:
         neighbor_rows = []
         for neighbor in branch["arabic_neighbor_distinctions"]:
             target = f"{neighbor['neighbor_root_id']}/{neighbor['neighbor_branch_id']}"
+            relation = (
+                f"; {enum_label(language, neighbor['relation_type'])}"
+                if "relation_type" in neighbor
+                else ""
+            )
             neighbor_rows.append(
                 [
                     f"`{plain_text(neighbor['expression_ar'])}` "
                     f"({plain_text(neighbor['expression_transliteration'])}); "
-                    f"**{plain_text(neighbor['gloss'])}** (`{target}`)",
+                    f"**{plain_text(neighbor['gloss'])}** (`{target}`{relation})",
                     plain_text(neighbor["shared_zone"]),
                     plain_text(neighbor["distinction"]),
                     codes(neighbor["evidence_refs"]),
                 ]
             )
-        lines.extend(
-            table(
-                [label["neighbor"], label["shared"], label["distinction"], label["refs"]],
-                neighbor_rows,
+        if neighbor_rows:
+            lines.extend(
+                table(
+                    [
+                        label["neighbor"],
+                        label["shared"],
+                        label["distinction"],
+                        label["refs"],
+                    ],
+                    neighbor_rows,
+                )
             )
-        )
+        else:
+            lines.append(label["no_useful_neighbors"])
         coverage = branch["neighbor_coverage"]
         lines.extend(
             [
