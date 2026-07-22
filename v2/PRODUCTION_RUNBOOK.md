@@ -10,7 +10,9 @@ from the repository root.
 
 - Python 3 and an orchestration-agent runtime are available;
 - the canonical root packet and the three QNet inputs listed in
-  `orchestration/entry-creation.spec.md` exist.
+  `orchestration/entry-creation.spec.md` exist;
+- `v2/policy/protected_names/<root-envelope>.json` has reviewed, exact coverage
+  of the root's lexical-unit roster.
 
 The first production pilot is `root_001697/tr`. Its five branches include B002,
 which exercises the Latent v11 post-fix theme overlay without requiring the
@@ -29,7 +31,7 @@ python3 v2/scripts/create_entry.py root_001697 --language tr
 Expected result: one root-writer task under
 `v2/work/entry_creation/root_001697/tr/`, with all five accepted branches in its
 minimal evidence package. The orchestrator stages the writer-visible files in
-`input/`; the writer writes only `output/root_writer.json`, runs the staged
+`input/`; the writer writes only `output/root_001697_entry.json`, runs the staged
 read-only validator, and corrects that file in place until it passes. Check the
 decisive fallback directly:
 
@@ -92,7 +94,16 @@ python3 v2/scripts/project_entry.py v2/entries/tr/root_001697.json \
 python3 v2/scripts/project_entry.py v2/entries/tr/root_001697.json \
   --projection scholar_view \
   --output v2/work/entry_creation/root_001697/tr/verification/root_001697.scholar.json
+jq '{occurrences:(.occurrence_evidence.occurrences|length), \
+     attachments:([.occurrence_evidence.occurrences[].alignment.attachments[]?]|length)}' \
+  v2/entries/tr/root_001697.json
 ```
+
+The pilot master must report 11 occurrences and 11 aligned attachment details.
+Arabic `branch_image_ar`, `what_is_ar`, `source_phrase_ar`, compact `sources`,
+and dictionary-keyed `source_note` must also appear in both downstream branch
+projections without exact source references. Occurrences
+remain root-level rather than being assigned to a branch without evidence.
 
 Review the five structured concept maps rather than treating their definitions
 as headword paraphrases. Confirm that core, extension, associated use, example,

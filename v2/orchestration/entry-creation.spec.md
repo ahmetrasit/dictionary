@@ -54,6 +54,7 @@ data/upstream/qnet/bridge_theme_full/latent_v11_qac_qnet_fix_manifest.json
 v2/output/occurrences/<root-envelope>.<language>.md
 v2/output/alignments/<root-envelope>.json
 v2/schema/encyclopedia-entry.schema.json
+v2/policy/protected_names/<root-envelope>.json
 TRANSLITERATION_POLICY.md
 ```
 
@@ -75,6 +76,7 @@ the represented root's themes as an explicitly labeled indirect fallback.
 ```text
 v2/output/branch_evidence/<root-envelope>/index.json
 v2/output/branch_evidence/<root-envelope>/branches/<root-id>--<branch-id>.json
+v2/policy/protected_names/<root-envelope>.json
 v2/work/entry_creation/<root-envelope>/<language>/inputs/root_evidence.json
 v2/work/entry_creation/<root-envelope>/<language>/inputs/transliterations.json
 v2/work/entry_creation/<root-envelope>/<language>/inputs/transliteration_review.json
@@ -85,7 +87,7 @@ v2/work/entry_creation/<root-envelope>/<language>/input/task.json
 v2/work/entry_creation/<root-envelope>/<language>/input/prompt.md
 v2/work/entry_creation/<root-envelope>/<language>/input/response.schema.json
 v2/work/entry_creation/<root-envelope>/<language>/input/evidence.json
-v2/work/entry_creation/<root-envelope>/<language>/output/root_writer.json
+v2/work/entry_creation/<root-envelope>/<language>/output/<root-envelope>_entry.json
 v2/work/entry_creation/<root-envelope>/<language>/output/validation_error.txt
 v2/work/entry_creation/<root-envelope>/<language>/output/finalize_error.txt
 v2/work/entry_creation/<root-envelope>/<language>/output/repair_scope.json
@@ -96,7 +98,7 @@ v2/work/entry_creation/<root-envelope>/<language>/review/input/response.schema.j
 v2/work/entry_creation/<root-envelope>/<language>/review/input/evidence.json
 v2/work/entry_creation/<root-envelope>/<language>/review/input/writer_response.json
 v2/work/entry_creation/<root-envelope>/<language>/review/output/root_review.json
-v2/work/entry_creation/<root-envelope>/<language>/fragments/root_writer.json
+v2/work/entry_creation/<root-envelope>/<language>/fragments/<root-envelope>_entry.json
 v2/work/entry_creation/<root-envelope>/<language>/fragments/root_review.json
 v2/work/entry_creation/<root-envelope>/<language>/fragments/branches/<root-id>--<branch-id>.json
 v2/work/entry_creation/<root-envelope>/<language>/fragments/root_profile.json
@@ -132,7 +134,8 @@ Each focus branch contains:
       "expression_ar": "...",
       "sense_ar": "...",
       "source_phrase_ar": "...",
-      "source_ids": ["maqayis", "sihah"]
+      "source_ids": ["maqayis", "sihah"],
+      "rendering_policy": "ordinary"
     }
   ],
   "neighbor_refs": ["root_000672/B001"]
@@ -150,8 +153,11 @@ Repeated neighbor cards are stored once in `neighbor_registry`:
 ```
 
 The compact source-claim roster is projected deterministically from accepted
-lexical units. It supplies complete claim coverage without raw passages. The
-writer dispositions every claim, and acceptance checks the exact roster.
+lexical units. It supplies complete claim coverage without raw passages. Every
+claim also carries a reviewed, coordinator-owned `rendering_policy` of
+`ordinary` or `proper_name`; policy coverage must match the lexical roster
+exactly before a writer task can be created. The writer dispositions every claim
+and copies that rendering policy; acceptance checks both exact rosters.
 
 Transliteration values, draft suggestions, and unresolved anchors remain
 coordinator-only and never appear in root-writer evidence. After the writer has
@@ -162,7 +168,7 @@ and rerunning assembly reuses the unchanged root-writer response.
 The task manifest carries the root envelope, language, prompt, response schema,
 and compact policy bindings. Those are control metadata, not lexical evidence.
 The writer is explicitly instructed to read only the named files in `input/`,
-write only `output/root_writer.json`, and avoid every other path. It receives no
+write only `output/<root-envelope>_entry.json`, and avoid every other path. It receives no
 occurrence data.
 
 ## Agent Roles
@@ -188,8 +194,9 @@ The writer authors:
 - root-level semantic organization.
 
 The writer never supplies, reviews, or repeats transliterations or proper-name
-spellings. It marks proper-name units and uses stable placeholders; reviewed
-target-language forms are substituted mechanically.
+spellings. It follows the coordinator's protected-name classifications and uses
+stable placeholders only for those IDs; reviewed target-language forms are
+substituted mechanically.
 
 The writer orders published neighbor distinctions by reader-facing importance.
 When the selection is nonempty, its first distinction is the key contrast used
@@ -231,6 +238,7 @@ review instead of automatic repair.
 | Concept, contextual, lexical, and excluded gloss text and risk | root writer, per branch |
 | Neighbor selection, verified relation type, asymmetry, prose, and coverage explanation | root writer, per branch |
 | Semantic publication verdict and bounded issue scope | semantic reviewer |
+| Proper-name classification | reviewed coordinator policy |
 | Proper-name target forms | separate review gate / coordinator |
 | Transliteration catalog, used-anchor review queue, and restoration | coordinator / separate review gate |
 | Branch summary copied from definition; ranks; counts; coverage enum; collocation defaults | coordinator |
@@ -242,8 +250,9 @@ review instead of automatic repair.
 | Markdown and JSONL | deterministic renderers |
 | Consumer projection selection and master hash binding | deterministic projector |
 
-An agent response containing fields outside its schema is rejected. The
-coordinator adds `inputs_sha256` after validation; agents do not author it.
+An agent's raw response containing fields outside its schema is rejected. After
+validation, the coordinator adds `inputs_sha256` and the deterministic evidence
+layer; agents do not author either.
 Arabic script in an authored target-language field is rejected by the response
 schema. The schema also restricts every selected gloss to
 `loanword_status: none`; plain-language quality beyond those mechanical checks
@@ -256,11 +265,11 @@ remains part of semantic review.
 2. Build full coordinator-side branch evidence
 3. Deduplicate neighbor cards and hash-bind one minimal semantic root evidence package
 4. Orchestrator invokes one root writer for the target language
-5. Writer validates and corrects its actual output in place; coordinator rechecks and hash-binds it
-6. Orchestrator invokes one semantic reviewer bound to that exact response
+5. Writer validates and corrects its actual output in place; coordinator rechecks, enriches, and hash-binds it
+6. Orchestrator invokes one semantic reviewer on an authored-only view bound to that exact enriched response
 7. Route bounded repair or editorial review; review every repaired response again
 8. Resolve catalogued transliterations and protected proper names through separate gates
-9. Split branch fragments and add packet, QAC, ayah, morphology, and aligned-attachment data mechanically
+9. Split branch fragments and resolve reviewed names and transliterations mechanically
 10. Assemble and validate schema-v4 JSON
 11. Render Markdown and verify it with --check
 12. Derive bounded consumer projections from the validated master entry
@@ -268,8 +277,25 @@ remains part of semantic review.
 ```
 
 Roots with more than 100 occurrences follow the same process. Their occurrence
-arrays are built deterministically after agent work, so occurrence count does
-not increase root-writer context.
+arrays are built deterministically after writer work and omitted from the
+reviewer's authored-only view, so occurrence count does not increase either
+agent's context.
+
+The internal validated master retains exact dictionary references for
+verification. The accepted and downstream entry artifacts expose only
+`branch_image_ar`, `what_is_ar`, `source_phrase_ar`, compact `sources`, and
+dictionary-keyed `source_note`. These fields are restored from frozen
+packet/evidence data, never rewritten by an agent. Occurrences remain root-level because this workflow does not infer an
+occurrence-to-branch assignment. Each occurrence carries its QAC morphology and
+mechanically aligned attachment details; downstream projections may expose the
+full layer or a compact summary without relocating it into a branch.
+
+The accepted `<root-envelope>_entry.json` also exposes `sources` and
+`source_note` on every branch. `sources` is the coordinator-mapped short-code
+roster of dictionaries supporting the concept map. `source_note` maps only a
+dictionary code to concise prose for its distinctive addition, variant, or
+dispute and is `{}` when no such note exists. Exact references, paths, source
+detail categories, and claim IDs remain internal validation data.
 
 ## Input, Output, and Resumption
 
@@ -277,8 +303,11 @@ Each writer uses the regular resumable `input/` and `output/` folders in its
 root/language work directory. `input/` contains only the staged prompt, thin
 schema, compact evidence, task, and instructions. The instructions prohibit
 reading any other file or directory. The raw response is written only to
-`output/root_writer.json`; deterministic acceptance validates and copies it into
-the hash-bound canonical fragment. The reviewer follows the same rule with
+`output/<root-envelope>_entry.json`; deterministic acceptance validates it,
+injects the coordinator-owned Arabic/source and occurrence/attachment layer
+into that same file, and stores the enriched hash-bound canonical fragment.
+The reviewer receives a compact authored-only view, so the mechanically added
+layer does not increase reviewer context. The reviewer follows the same rule with
 `review/input/` and `review/output/root_review.json`. Neither agent may use an
 operating-system or runtime temporary directory, including as an intermediate
 output location. Repair errors and their mechanically classified scope remain
@@ -324,6 +353,7 @@ owned and routed as follows:
 |---|---|---|
 | Writer/reviewer schema or semantic-contract error | Same active agent | Keep the actual output; edit only the fields named by the exact error; rerun `validation.command` |
 | Evidence-grounded semantic-review issue | Same root writer | Restage the previous response, exact issue, and generated scope; change only permitted fields; validate again |
+| Missing or stale protected-name policy | Coordinator / human review | Complete the exact lexical-unit classification roster; do not let a writer infer policy |
 | Stale task/hash or staged-path mismatch | Orchestrator plus deterministic script | Restage canonical files; do not alter authored prose or bless a stale raw response |
 | Evidence build, assembly, rendering, or publication failure | Orchestrator plus owning script | Repair or regenerate the deterministic artifact; never route it as a lexical rewrite |
 | Scope conflict or evidence ambiguity | Human editorial review | Preserve all artifacts and pause without broadening the correction |
@@ -369,9 +399,9 @@ A run is complete only when:
 1. One root-writer response matches the hash-bound task and exact branch roster.
 2. A semantic-review pass is bound to that exact accepted response.
 3. Split branch and root-profile fragments reproduce from that response.
-4. Minimal semantic evidence matches its coordinator-side packages, and every
-   used transliteration and protected proper name is reviewed through its
-   separate gate.
+4. Minimal semantic evidence matches its coordinator-side packages, every
+   lexical unit has reviewed rendering policy, and every used transliteration
+   and protected proper-name form is reviewed through its separate gate.
 5. Schema and packet-aware validation pass.
 6. Markdown is reproducible under `--check`.
 7. JSONL export validates every entry and preserves one common schema.

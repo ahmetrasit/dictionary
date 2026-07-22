@@ -21,6 +21,7 @@ from v2.scripts.assemble_entry import (
     agent_root_evidence,
     project_relative,
     sha256_file,
+    load_rendering_policy,
 )
 from v2.scripts.build_branch_evidence import (
     DEFAULT_FURUQ,
@@ -45,6 +46,7 @@ from v2.scripts.validate_entry import ContractError, load_json
 
 GENERATOR = "v2/scripts/create_entry.py"
 TASK_FORMAT = 4
+PROTECTED_NAME_POLICY_DIR = PROJECT / "v2/policy/protected_names"
 PROMPTS = {
     "root_writer": PROJECT / "v2/prompts/root-writer.md",
     "root_reviewer": PROJECT / "v2/prompts/root-reviewer.md",
@@ -365,13 +367,19 @@ def prepare_initial_tasks(
             )
         packages.append(package)
 
+    name_policy_path = (
+        PROTECTED_NAME_POLICY_DIR / f"{index['root_envelope_id']}.json"
+    )
+    rendering_policy = load_rendering_policy(
+        name_policy_path, index["root_envelope_id"], packages
+    )
     transliterations = build_transliteration_inputs(index, packages, language)
     transliteration_path = work_dir / "inputs/transliterations.json"
     atomic_write(transliteration_path, json_content(transliterations))
     evidence_path = work_dir / "inputs/root_evidence.json"
     atomic_write(
         evidence_path,
-        compact_json_content(agent_root_evidence(packages)),
+        compact_json_content(agent_root_evidence(packages, rendering_policy)),
     )
     task = common_task("root_writer", index["root_envelope_id"], language)
     task.update(
@@ -382,6 +390,7 @@ def prepare_initial_tasks(
             "evidence": binding(evidence_path),
             "coordinator": {
                 "evidence_index": binding(index_path),
+                "name_policy": binding(name_policy_path),
             },
         }
     )

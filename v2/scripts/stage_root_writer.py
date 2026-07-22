@@ -17,7 +17,12 @@ PROJECT = Path(__file__).resolve().parents[2]
 if str(PROJECT) not in sys.path:
     sys.path.insert(0, str(PROJECT))
 
-from v2.scripts.assemble_entry import canonical_sha256, sha256_file
+from v2.scripts.assemble_entry import (
+    authored_root_writer_response,
+    canonical_sha256,
+    root_entry_filename,
+    sha256_file,
+)
 from v2.scripts.create_entry import binding_path, path_ref, verify_task_bindings
 from v2.scripts.validate_entry import ContractError, load_json
 
@@ -76,11 +81,12 @@ def stage(
     staged["canonical_task_sha256"] = task_hash
     output_dir = input_dir.parent / "output"
     output_dir.mkdir(parents=True, exist_ok=True)
+    entry_filename = root_entry_filename(task["root_envelope_id"])
     repair_arguments = (previous_path, repair_error_path, repair_scope_path)
     is_repair = all(repair_arguments)
     if previous_task_hash != task_hash and not is_repair:
         for name in (
-            "root_writer.json",
+            entry_filename,
             "validation_error.txt",
             "finalize_error.txt",
             "repair_scope.json",
@@ -88,7 +94,7 @@ def stage(
             path = output_dir / name
             if path.exists():
                 path.unlink()
-    staged["output"] = {"path": "../output/root_writer.json"}
+    staged["output"] = {"path": f"../output/{entry_filename}"}
     staged["validation"] = {
         "command": [
             "python3",
@@ -121,8 +127,7 @@ def stage(
         previous = load_json(previous_path)
         if not isinstance(previous, dict):
             raise ContractError("Previous root-writer response must be a JSON object")
-        previous = dict(previous)
-        previous.pop("inputs_sha256", None)
+        previous = authored_root_writer_response(previous)
         scope = load_json(repair_scope_path)
         if not isinstance(scope, dict) or scope.get("repairable_by") != "root_writer":
             raise ContractError("Repair scope is not owned by the root writer")

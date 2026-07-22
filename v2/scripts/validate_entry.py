@@ -36,6 +36,15 @@ DICTIONARY_NAMES = {
     "tahdhib": "Tahdhīb al-Lugha",
 }
 
+DICTIONARY_CODES = {
+    "ayn": "AY",
+    "jamhara": "JA",
+    "maqayis": "MQ",
+    "mufradat": "MU",
+    "sihah": "SI",
+    "tahdhib": "TA",
+}
+
 
 class ContractError(ValueError):
     """Raised when an entry violates the structural or evidence contract."""
@@ -275,7 +284,11 @@ def validate_dictionary_basis(
     for detail in discussion.get("details", []):
         discussion_refs.extend(detail["source_refs"])
         expected_ids = sorted(
-            {source_ref.split(":", 1)[0] for source_ref in detail["source_refs"]}
+            {
+                sources[(root_id, source_ref)]
+                for source_ref in detail["source_refs"]
+                if (root_id, source_ref) in sources
+            }
         )
         if detail["source_ids"] != expected_ids:
             errors.append(

@@ -20,6 +20,7 @@ if str(PROJECT) not in sys.path:
 
 from v2.scripts.validate_entry import (
     ContractError,
+    DICTIONARY_CODES,
     load_json,
     split_refs,
     structural_errors,
@@ -36,13 +37,114 @@ FRAGMENT_SCHEMAS = {
 }
 TASK_FORMAT = 4
 TASK_GENERATOR = "v2/scripts/create_entry.py"
+ROOT_ENTRY_ARTIFACT_FORMAT = "dictionary-v2-root-entry-draft-v1"
+ROOT_ENTRY_ARTIFACT_GENERATOR = "v2/scripts/accept_root_writer.py"
+ROOT_ENTRY_BRANCH_FIELDS = {
+    "branch_image_ar",
+    "what_is_ar",
+    "source_phrase_ar",
+    "sources",
+    "source_note",
+}
 
 
 def branch_ref(root_id: str, branch_id: str) -> str:
     return f"{root_id}/{branch_id}"
 
 
-def agent_root_evidence(packages: list[dict]) -> dict:
+def root_entry_filename(envelope: str) -> str:
+    return f"{envelope}_entry.json"
+
+
+def authored_root_writer_response(value: dict) -> dict:
+    """Return the agent-owned portion of an accepted enriched root entry."""
+    result = dict(value)
+    result.pop("inputs_sha256", None)
+    if (
+        result.get("artifact_format") != ROOT_ENTRY_ARTIFACT_FORMAT
+        or result.get("generated_by") != ROOT_ENTRY_ARTIFACT_GENERATOR
+    ):
+        return result
+    for field in (
+        "artifact_format",
+        "generated_by",
+        "root_envelope_id",
+        "language",
+        "occurrence_evidence",
+    ):
+        result.pop(field, None)
+    branches = []
+    for branch in result.get("branches", []):
+        authored = dict(branch)
+        for field in ROOT_ENTRY_BRANCH_FIELDS:
+            authored.pop(field, None)
+        branches.append(authored)
+    result["branches"] = branches
+    return result
+
+
+def dictionary_source_ids(basis: dict, source_refs: list[str]) -> list[str]:
+    """Resolve source IDs from the branch's exact dictionary reference roster."""
+    source_by_ref = {
+        source_ref: source["source_id"]
+        for source in basis["sources"]
+        for source_ref in source["source_refs"]
+    }
+    unknown = sorted(set(source_refs) - set(source_by_ref))
+    if unknown:
+        raise ContractError(
+            "Source references are absent from the branch dictionary roster: "
+            f"{unknown}"
+        )
+    return sorted({source_by_ref[source_ref] for source_ref in source_refs})
+
+
+def load_rendering_policy(
+    path: Path,
+    envelope: str,
+    packages: list[dict],
+) -> dict[tuple[str, str], str]:
+    if not path.is_file():
+        raise ContractError(
+            "needs_name_policy: missing reviewed coordinator policy " + str(path)
+        )
+    value = load_json(path)
+    if (
+        value.get("format") != "dictionary-v2-protected-name-policy-v1"
+        or value.get("root_envelope_id") != envelope
+        or value.get("status") != "reviewed"
+    ):
+        raise ContractError(f"needs_name_policy: invalid or unreviewed policy {path}")
+    policy: dict[tuple[str, str], str] = {}
+    for item in value.get("items", []):
+        key = (item.get("root_id"), item.get("lexical_unit_id"))
+        kind = item.get("rendering_kind")
+        if (
+            not all(isinstance(part, str) for part in key)
+            or kind not in {"ordinary", "proper_name"}
+            or key in policy
+        ):
+            raise ContractError(f"needs_name_policy: invalid or duplicate item {item!r}")
+        policy[key] = kind
+    expected = {
+        (package["branch"]["root_id"], unit["lexical_unit_id"])
+        for package in packages
+        for unit in package.get("lexical_units", [])
+    }
+    if set(policy) != expected:
+        missing = sorted(expected - set(policy))
+        extra = sorted(set(policy) - expected)
+        raise ContractError(
+            f"needs_name_policy: roster mismatch in {path}; "
+            f"missing={missing}, extra={extra}"
+        )
+    return policy
+
+
+def agent_root_evidence(
+    packages: list[dict],
+    rendering_policy: dict[tuple[str, str], str],
+) -> dict:
     """Project deduplicated semantic evidence and compact source claims."""
     neighbor_registry: list[dict] = []
     neighbor_by_ref: dict[str, dict] = {}
@@ -65,8 +167,15 @@ def agent_root_evidence(packages: list[dict]) -> dict:
                 neighbor_registry.append(card)
             refs.append(ref)
         source_claims = []
+        basis = package["dictionary_basis"]
         for unit in package.get("lexical_units", []):
             source_refs = split_refs(unit.get("source_refs", ""))
+            policy_key = (focus["root_id"], unit["lexical_unit_id"])
+            if policy_key not in rendering_policy:
+                raise ContractError(
+                    "Missing coordinator rendering policy for "
+                    f"{policy_key[0]}/{policy_key[1]}"
+                )
             source_claims.append(
                 {
                     "claim_id": unit["lexical_unit_id"],
@@ -75,9 +184,8 @@ def agent_root_evidence(packages: list[dict]) -> dict:
                     "expression_ar": unit["expression_ar"],
                     "sense_ar": unit["sense_ar"],
                     "source_phrase_ar": unit["source_phrase_ar"],
-                    "source_ids": sorted(
-                        {source_ref.split(":", 1)[0] for source_ref in source_refs}
-                    ),
+                    "source_ids": dictionary_source_ids(basis, source_refs),
+                    "rendering_policy": rendering_policy[policy_key],
                 }
             )
         if not source_claims:
@@ -95,7 +203,7 @@ def agent_root_evidence(packages: list[dict]) -> dict:
             }
         )
     return {
-        "format": "dictionary-v2-agent-root-evidence-v3",
+        "format": "dictionary-v2-agent-root-evidence-v4",
         "branches": branches,
         "neighbor_registry": neighbor_registry,
     }
@@ -210,8 +318,14 @@ def load_task_fragment(
             f"{fragment_path}: stale task hash; expected {expected_hash}, "
             f"got {stored['inputs_sha256']}"
         )
-    response = dict(stored)
-    response.pop("inputs_sha256")
+    if role == "root_writer":
+        validate_enriched_root_writer_response(stored, task, fragment_path)
+    response = (
+        authored_root_writer_response(stored)
+        if role == "root_writer"
+        else dict(stored)
+    )
+    response.pop("inputs_sha256", None)
     validate_fragment(response, role, fragment_path)
     return task, response
 
@@ -298,6 +412,137 @@ def load_evidence(index_path: Path) -> tuple[dict, list[tuple[dict, dict, Path]]
             raise ContractError(f"Furuq digest mismatch in {package_path}")
         packages.append((row, package, package_path))
     return index, packages
+
+
+def mechanical_occurrence_evidence(index: dict, language: str) -> dict:
+    """Load and bind the deterministic occurrence and attachment layer."""
+    envelope = index["root_envelope_id"]
+    occurrence_path = f"v2/output/occurrences/{envelope}.{language}.md"
+    occurrence_file = resolve_project_path(occurrence_path)
+    if not occurrence_file.is_file():
+        raise ContractError(f"Missing occurrence artifact: {occurrence_file}")
+    alignment_path = f"v2/output/alignments/{envelope}.json"
+    alignment_file = resolve_project_path(alignment_path)
+    if not alignment_file.is_file():
+        raise ContractError(f"Missing attachment alignment: {alignment_file}")
+    packet = load_json(resolve_project_path(index["packet_path"]))
+    alignment = load_json(alignment_file)
+    return {
+        "artifact_path": occurrence_path,
+        "artifact_sha256": sha256_file(occurrence_file),
+        "generator": "v2/scripts/render_occurrences.py",
+        "alignment_path": alignment_path,
+        "alignment_sha256": sha256_file(alignment_file),
+        "alignment_generator": "v2/scripts/render_occurrences.py",
+        "observations": [],
+        **structured_occurrence_data(packet, alignment),
+    }
+
+
+def enrich_root_writer_response(response: dict, task: dict) -> dict:
+    """Mechanically add Arabic, source, occurrence, and attachment evidence."""
+    coordinator = task.get("coordinator", {})
+    index_binding = coordinator.get("evidence_index", {})
+    index_value = index_binding.get("path")
+    if not isinstance(index_value, str):
+        raise ContractError("Root-writer task lacks coordinator evidence index")
+    index_path = resolve_project_path(index_value)
+    index, package_rows = load_evidence(index_path)
+    envelope = task["root_envelope_id"]
+    language = task["language"]
+    if index["root_envelope_id"] != envelope:
+        raise ContractError("Root-writer evidence index identity mismatch")
+    if index_binding != {
+        "path": project_relative(index_path),
+        "sha256": sha256_file(index_path),
+    }:
+        raise ContractError("Root-writer evidence-index binding mismatch")
+
+    packages = {
+        branch_ref(row["root_id"], row["branch_id"]): package
+        for row, package, _path in package_rows
+    }
+    enriched_branches = []
+    for authored in response["branches"]:
+        ref = authored["branch_ref"]
+        package = packages.get(ref)
+        if package is None:
+            raise ContractError(f"Root-writer branch lacks evidence package: {ref}")
+        focus = package["branch"]
+        basis = package["dictionary_basis"]
+        units = {
+            unit["lexical_unit_id"]: unit
+            for unit in package.get("lexical_units", [])
+        }
+
+        def claim_refs(claim_ids: list[str]) -> list[str]:
+            return sorted(
+                {
+                    source_ref
+                    for claim_id in claim_ids
+                    for source_ref in split_refs(units[claim_id].get("source_refs", ""))
+                }
+            )
+
+        synthesis = authored["source_synthesis"]
+        source_note_parts: dict[str, list[str]] = {}
+        for detail in synthesis["source_details"]:
+            refs = claim_refs(detail["claim_ids"])
+            for source_id in dictionary_source_ids(basis, refs):
+                code = DICTIONARY_CODES.get(source_id)
+                if code is None:
+                    raise ContractError(
+                        f"No stable dictionary code is defined for {source_id!r}"
+                    )
+                source_note_parts.setdefault(code, []).append(detail["summary"].strip())
+        sources = []
+        for source in basis["sources"]:
+            code = DICTIONARY_CODES.get(source["source_id"])
+            if code is None:
+                raise ContractError(
+                    f"No stable dictionary code is defined for {source['source_id']!r}"
+                )
+            sources.append(code)
+        enriched_branches.append(
+            {
+                **authored,
+                "branch_image_ar": focus["branch_image_ar"],
+                "what_is_ar": focus["what_is_ar"],
+                "source_phrase_ar": focus["source_phrase_ar"],
+                "sources": sources,
+                "source_note": {
+                    code: " ".join(parts) for code, parts in source_note_parts.items()
+                },
+            }
+        )
+    return {
+        "artifact_format": ROOT_ENTRY_ARTIFACT_FORMAT,
+        "generated_by": ROOT_ENTRY_ARTIFACT_GENERATOR,
+        "root_envelope_id": envelope,
+        "language": language,
+        "branches": enriched_branches,
+        "root_profile": response["root_profile"],
+        "occurrence_evidence": {
+            key: value
+            for key, value in mechanical_occurrence_evidence(index, language).items()
+            if key in {"summary", "forms", "ayahs", "occurrences"}
+        },
+    }
+
+
+def validate_enriched_root_writer_response(value: dict, task: dict, path: Path) -> None:
+    """Reject stale or edited coordinator-owned fields in an accepted entry."""
+    if value.get("artifact_format") != ROOT_ENTRY_ARTIFACT_FORMAT:
+        return
+    expected = {
+        "inputs_sha256": canonical_sha256(task),
+        **enrich_root_writer_response(authored_root_writer_response(value), task),
+    }
+    if value != expected:
+        raise ContractError(
+            f"{path}: coordinator-owned Arabic, source, occurrence, or attachment "
+            "fields are stale or modified"
+        )
 
 
 def assert_task_identity(
@@ -401,11 +646,8 @@ def branch_from_fragment(package: dict, fragment: dict, path: str) -> dict:
             "kind": detail["kind"],
             "summary": detail["summary"],
             "source_refs": claim_refs(detail["claim_ids"]),
-            "source_ids": sorted(
-                {
-                    source_ref.split(":", 1)[0]
-                    for source_ref in claim_refs(detail["claim_ids"])
-                }
+            "source_ids": dictionary_source_ids(
+                basis, claim_refs(detail["claim_ids"])
             ),
         }
         for detail in synthesis["source_details"]
@@ -998,7 +1240,7 @@ def _root_writer_material(
     index, packages = load_evidence(evidence_index.resolve())
     envelope = index["root_envelope_id"]
     task_path = work_dir / "tasks/root_writer.json"
-    response_path = work_dir / "fragments/root_writer.json"
+    response_path = work_dir / "fragments" / root_entry_filename(envelope)
     task, response = load_task_fragment(task_path, response_path, "root_writer")
     assert_task_identity(
         task,
@@ -1019,7 +1261,16 @@ def _root_writer_material(
         or transliterations.get("language") != language
     ):
         raise ContractError(f"Coordinator transliteration identity mismatch: {transliteration_path}")
-    expected_evidence = agent_root_evidence(package_values)
+    coordinator = task.get("coordinator", {})
+    name_policy_binding = coordinator.get("name_policy", {})
+    name_policy_value = name_policy_binding.get("path")
+    if not isinstance(name_policy_value, str):
+        raise ContractError(f"Missing coordinator name-policy binding: {task_path}")
+    name_policy_path = resolve_project_path(name_policy_value)
+    rendering_policy = load_rendering_policy(
+        name_policy_path, envelope, package_values
+    )
+    expected_evidence = agent_root_evidence(package_values, rendering_policy)
     if not root_evidence_path.is_file() or load_json(root_evidence_path) != expected_evidence:
         raise ContractError(f"Stale minimal root evidence: {root_evidence_path}")
     if task.get("evidence") != {
@@ -1027,7 +1278,6 @@ def _root_writer_material(
         "sha256": sha256_file(root_evidence_path),
     }:
         raise ContractError(f"Root-writer evidence binding mismatch: {task_path}")
-    coordinator = task.get("coordinator", {})
     if coordinator.get("evidence_index") != {
         "path": project_relative(evidence_index.resolve()),
         "sha256": sha256_file(evidence_index.resolve()),
@@ -1141,18 +1391,6 @@ def build_entry(
             )
         )
 
-    occurrence_path = f"v2/output/occurrences/{envelope}.{language}.md"
-    occurrence_file = resolve_project_path(occurrence_path)
-    if not occurrence_file.is_file():
-        raise ContractError(f"Missing occurrence artifact: {occurrence_file}")
-    alignment_path = f"v2/output/alignments/{envelope}.json"
-    alignment_file = resolve_project_path(alignment_path)
-    if not alignment_file.is_file():
-        raise ContractError(f"Missing attachment alignment: {alignment_file}")
-    packet = load_json(resolve_project_path(index["packet_path"]))
-    alignment = load_json(alignment_file)
-    mechanical_occurrences = structured_occurrence_data(packet, alignment)
-
     entry = {
         "schema_version": 4,
         "generated_by": "v2/scripts/assemble_entry.py",
@@ -1172,16 +1410,7 @@ def build_entry(
         },
         "root_profile": root["root_profile"],
         "branches": branches,
-        "occurrence_evidence": {
-            "artifact_path": occurrence_path,
-            "artifact_sha256": sha256_file(occurrence_file),
-            "generator": "v2/scripts/render_occurrences.py",
-            "alignment_path": alignment_path,
-            "alignment_sha256": sha256_file(alignment_file),
-            "alignment_generator": "v2/scripts/render_occurrences.py",
-            "observations": [],
-            **mechanical_occurrences,
-        },
+        "occurrence_evidence": mechanical_occurrence_evidence(index, language),
     }
     return entry, index
 

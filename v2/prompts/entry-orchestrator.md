@@ -9,15 +9,18 @@ Keep every agent package and every agent-produced artifact inside the current
 root/language directory under `v2/work/entry_creation/`. Never direct an agent
 to write to `/tmp`, `/private/tmp`, an operating-system temporary directory, or
 an orchestration-runtime scratch path. The writer's only output is the staged
-`output/root_writer.json`; the reviewer's only output is the staged
+`output/<root-envelope>_entry.json`; the reviewer's only output is the staged
 `review/output/root_review.json`. If a mechanical operation needs short-lived
 staging, place it under the same repository work directory and never substitute
 it for either agent's declared output path.
 
 ## Responsibilities
 
-1. Run `create_entry.py` in prepare-only mode.
-2. Reuse a canonical `fragments/root_writer.json` only when
+1. Run `create_entry.py` in prepare-only mode. If it reports
+   `needs_name_policy`, stop before agent work and request completion of the
+   coordinator-owned lexical rendering-policy roster; do not ask the writer to
+   infer it.
+2. Reuse a canonical `fragments/<root-envelope>_entry.json` only when
    `check_root_writer.py` confirms that its task hash, schema, and roster match.
 3. Otherwise stage the task with `stage_root_writer.py`. It refreshes the regular
    resumable `input/` package and creates its sibling `output/` folder. Invoke
@@ -27,7 +30,7 @@ it for either agent's declared output path.
    worker from the repository root so it can execute the exact read-only
    validator command carried by `task.json`.
 4. Require the worker to write its raw JSON only to
-   `output/root_writer.json`, run its validator, and correct that same file in
+   `output/<root-envelope>_entry.json`, run its validator, and correct that same file in
    place until validation passes. After the worker returns, run the same
    validator once as a coordinator check, then pass the unchanged file to
    `accept_root_writer.py`; never add hashes or patch authored JSON yourself.
@@ -63,7 +66,7 @@ The mechanical command sequence is:
 python3 v2/scripts/create_entry.py <root> --language <language>
 python3 v2/scripts/check_root_writer.py <task> <fragment>       # if fragment exists
 python3 v2/scripts/stage_root_writer.py <task>
-<writer writes output/root_writer.json, runs task validation.command, and fixes in place>
+<writer writes output/<root-envelope>_entry.json, runs task validation.command, and fixes in place>
 python3 v2/scripts/validate_agent_output.py <input/task.json>
 python3 v2/scripts/accept_root_writer.py <task>
 python3 v2/scripts/prepare_root_review.py <task> <fragment>
@@ -80,7 +83,7 @@ For a writer-owned repair, use only regular work-tree files:
 ```text
 python3 v2/scripts/repair_scope.py <task> --error-file <output/error> --output <output/repair_scope.json>
 python3 v2/scripts/stage_root_writer.py <task> --previous <fragment> --repair-error <output/error> --repair-scope <output/repair_scope.json>
-<same writer agent reads the bounded repair files, corrects output/root_writer.json, and validates it>
+<same writer agent reads the bounded repair files, corrects output/<root-envelope>_entry.json, and validates it>
 python3 v2/scripts/validate_agent_output.py <input/task.json>
 python3 v2/scripts/accept_root_writer.py <task> --previous <fragment> --repair-scope <output/repair_scope.json>
 <prepare and run a fresh semantic review bound to the repaired fragment>
@@ -102,6 +105,11 @@ or enlarge the reviewer scope.
 - Deterministic task, hash, path, evidence-generation, assembly, and publication
   failures belong to the orchestrator and scripts. Restage or rerun the bounded
   mechanical step; do not ask a writer to compensate in prose.
+- After writer validation, `accept_root_writer.py` injects the frozen Arabic
+  branch fields, compact dictionary-code roster, dictionary-keyed prose notes,
+  and root-level occurrence/attachment evidence into that same named entry
+  artifact and its canonical fragment. Exact references remain internal. The
+  orchestrator and writer never author or copy these injected fields.
 - A semantic-review repair uses the generated scope without expansion. The same
   writer receives the previous response, issue, and scope; protected branches
   and root fields must remain unchanged.

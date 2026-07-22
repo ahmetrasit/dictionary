@@ -47,6 +47,26 @@ the remaining rows preserve the fuller comparison set for scholars. Entries
 authored before this ordering rule can be projected mechanically, but their first
 choice remains an editorial review target.
 
+## Accepted Writer Entry
+
+The writer writes its schema-thin response to
+`output/<root-envelope>_entry.json`. Acceptance validates the authored portion
+and then mechanically enriches that same artifact. Each branch gains
+`branch_image_ar`, `what_is_ar`, `source_phrase_ar`, `sources`, and
+`source_note`; the root gains the complete
+root-level `occurrence_evidence` layer, including aligned attachments. These
+fields are recomputed and exact-compared whenever the accepted artifact is
+reused. They are not agent output fields.
+
+`sources` is the stable short-code roster of dictionaries supporting the branch
+concept map. `source_note` is a simple code-to-prose object containing only
+dictionary-specific additions, variants, or disputes; it is `{}` when none are
+recorded. Exact references and source-detail categories remain internal
+validation data and are not exposed in the accepted entry.
+
+The current central code map is `AY` (ʿAyn), `JA` (Jamhara), `MQ` (Maqāyīs),
+`MU` (Mufradāt), `SI` (Ṣiḥāḥ), and `TA` (Tahdhīb).
+
 ## Required Shape
 
 Each entry contains:
@@ -229,10 +249,16 @@ known transliterations, and excluded-gloss display reasons. The coordinator
 derives these, splits the accepted response into strict branch/root-profile
 fragments, and restores evidence-owned fields by stable key. Claim IDs expand to
 precise source names and references. The writer receives no transliteration or
-approved name values. Missing used anchors and protected proper names enter
-separate resumable review files.
+approved name values. Each claim does receive its reviewed coordinator-owned
+`rendering_policy`, which the writer must copy exactly. Missing used anchors and
+protected proper-name forms enter separate resumable review files.
 
 Agent responses do not contain deterministic names, source rosters, QAC data,
 ayahs, attachments, or the coordinator's `inputs_sha256`. The master entry
 schema, full transliteration policy, and orchestration spec are coordinator-only
 contracts and are not part of the model-facing package.
+
+The assembled master restores `branch_image_ar`, `what_is_ar`,
+`source_phrase_ar`, and dictionary sources on every branch. QAC occurrences and
+their attachment alignments are restored once at root level; they are not
+silently assigned to dictionary branches.

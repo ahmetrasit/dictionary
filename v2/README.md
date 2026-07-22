@@ -30,7 +30,7 @@ the current minimal-input workflow.
 
 `v2/work/` is resumable local execution state, not master data or production
 provenance. Current root-writer tasks use task format 4 and minimal evidence
-format `dictionary-v2-agent-root-evidence-v3`. Older manifests are historical
+format `dictionary-v2-agent-root-evidence-v4`. Older manifests are historical
 and are ignored; rerunning `create_entry.py` in prepare mode writes the current
 task before any model call.
 
@@ -104,10 +104,12 @@ Older work directories may still contain branch-per-agent manifests. They are
 ignored: prepare mode writes one current `tasks/root_writer.json`, one
 deduplicated `inputs/root_evidence.json`, and coordinator-only review state
 before any model call. The evidence contains compact source claims and lexical
-unit IDs, not raw passages. Transliteration never enters writer context;
-protected proper names use placeholders. Missing used anchors or names pause
-assembly in `inputs/transliteration_review.json` or `inputs/name_review.json`
-without invalidating or rerunning the writer.
+unit IDs, not raw passages. A reviewed coordinator policy classifies every
+lexical unit as ordinary or proper-name before the writer runs. Transliteration
+never enters writer context; protected proper names use placeholders. Missing
+used anchors or name forms pause assembly in
+`inputs/transliteration_review.json` or `inputs/name_review.json` without
+invalidating or rerunning the writer.
 
 Prepare deterministic evidence and resumable task manifests without making any
 model calls:
@@ -173,7 +175,10 @@ CLI language choices before its language-specific agent pass can run.
 Each root writer receives the regular
 `v2/work/entry_creation/<root>/<language>/input/` package and is instructed not
 to inspect any other path. It writes only
-`v2/work/entry_creation/<root>/<language>/output/root_writer.json`. The
+`v2/work/entry_creation/<root>/<language>/output/<root>_entry.json`. After raw
+response validation, deterministic acceptance enriches that same file with
+Arabic fields, compact source codes, dictionary-keyed prose notes, and
+root-level occurrence/attachment evidence. Exact references remain internal. The
 semantic reviewer receives only `review/input/` and writes only
 `review/output/root_review.json`. Both agents validate and, when necessary,
 repair those files in place before returning. The
@@ -181,6 +186,17 @@ orchestration agent owns timeouts and process monitoring. Operational failures
 stop immediately, while invalid agent JSON remains preserved for correction.
 The existing plural `inputs/` directory is coordinator-only state; it is not
 part of the writer package.
+
+Every validated branch retains its frozen Arabic branch image, Arabic boundary,
+and Arabic source phrase. Downstream consumers receive compact dictionary codes
+and dictionary-keyed prose notes; exact references remain internal.
+The accepted work artifact exposes the dictionary code roster and concise
+dictionary-keyed notes for any distinctive additions, variants, or disputes.
+The master also carries root-level QAC occurrences with morphology and aligned
+attachment details. Occurrences are not placed under branches unless a separate
+evidence layer later establishes that assignment. The translation-agent
+projection exposes the full mechanical occurrence layer; the compact user
+dictionary exposes its summary and artifact link.
 
 Canonical entry creation accepts only the packet and evidence locations shown
 above. Existing draft outputs may be regenerated, but reviewed or published

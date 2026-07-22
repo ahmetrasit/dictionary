@@ -18,10 +18,10 @@ PROJECT = Path(__file__).resolve().parents[2]
 if str(PROJECT) not in sys.path:
     sys.path.insert(0, str(PROJECT))
 
-from v2.scripts.validate_entry import ContractError, validate_entry
+from v2.scripts.validate_entry import ContractError, DICTIONARY_CODES, validate_entry
 
 
-PROJECTION_VERSION = 2
+PROJECTION_VERSION = 3
 PROJECTIONS = ("translation_agent", "user_dictionary", "scholar_view")
 
 
@@ -55,6 +55,25 @@ def projection_identity(entry: dict, projection: str) -> dict:
     }
 
 
+def branch_source_attribution(branch: dict) -> tuple[list[str], dict[str, str]]:
+    source_by_ref = {
+        source_ref: DICTIONARY_CODES[source["source_id"]]
+        for source in branch["dictionary_basis"]["sources"]
+        for source_ref in source["source_refs"]
+    }
+    sources = [
+        DICTIONARY_CODES[source["source_id"]]
+        for source in branch["dictionary_basis"]["sources"]
+    ]
+    note_parts: dict[str, list[str]] = {}
+    for detail in branch["source_discussion"].get("details", []):
+        for code in sorted({source_by_ref[ref] for ref in detail["source_refs"]}):
+            note_parts.setdefault(code, []).append(detail["summary"].strip())
+    return sources, {
+        code: " ".join(parts) for code, parts in note_parts.items()
+    }
+
+
 def translation_agent_projection(entry: dict) -> dict:
     """Expose branch boundaries, gloss candidates, and translation-risk notes."""
 
@@ -67,13 +86,18 @@ def translation_agent_projection(entry: dict) -> dict:
         "organization": profile["organization"],
         "branch_count": profile["branch_count"],
     }
-    result["branches"] = [
-        {
+    result["branches"] = []
+    for branch in entry["branches"]:
+        sources, source_note = branch_source_attribution(branch)
+        result["branches"].append({
             "root_id": branch["root_id"],
             "branch_id": branch["branch_id"],
             "branch_image_ar": branch["branch_image_ar"],
             "what_is_ar": branch["what_is_ar"],
             "what_is_not_ar": branch["what_is_not_ar"],
+            "source_phrase_ar": branch["source_phrase_ar"],
+            "sources": sources,
+            "source_note": source_note,
             "image_transliteration": branch["image_transliteration"],
             "summary": branch["summary"],
             **(
@@ -90,9 +114,12 @@ def translation_agent_projection(entry: dict) -> dict:
                 if "target_gloss" in unit
             ],
             "gloss_candidates": copy.deepcopy(branch["glosses"]),
-        }
-        for branch in entry["branches"]
-    ]
+        })
+    result["occurrence_evidence"] = {
+        key: copy.deepcopy(value)
+        for key, value in entry["occurrence_evidence"].items()
+        if key in {"summary", "forms", "ayahs", "occurrences"}
+    }
     return result
 
 
@@ -108,6 +135,7 @@ def user_dictionary_projection(entry: dict) -> dict:
     }
     branches = []
     for branch in entry["branches"]:
+        sources, source_note = branch_source_attribution(branch)
         # Neighbor distinctions are author-ordered. When present, the first row is
         # the normative key distinction for compact reader projections.
         distinctions = branch["arabic_neighbor_distinctions"]
@@ -134,6 +162,10 @@ def user_dictionary_projection(entry: dict) -> dict:
                 "root_id": branch["root_id"],
                 "branch_id": branch["branch_id"],
                 "branch_image_ar": branch["branch_image_ar"],
+                "what_is_ar": branch["what_is_ar"],
+                "source_phrase_ar": branch["source_phrase_ar"],
+                "sources": sources,
+                "source_note": source_note,
                 "image_transliteration": branch["image_transliteration"],
                 "definition": branch.get("concept_map", {}).get(
                     "definition", branch["glosses"]["semantic_definition"]
@@ -153,6 +185,10 @@ def user_dictionary_projection(entry: dict) -> dict:
             }
         )
     result["branches"] = branches
+    occurrence = entry["occurrence_evidence"]
+    result["occurrence_evidence"] = {
+        "summary": copy.deepcopy(occurrence["summary"]),
+    }
     return result
 
 

@@ -9,7 +9,7 @@ from v2.scripts.project_entry import (
     translation_agent_projection,
     user_dictionary_projection,
 )
-from v2.scripts.validate_entry import ContractError, validate_entry
+from v2.scripts.validate_entry import ContractError, DICTIONARY_CODES, validate_entry
 
 
 PROJECT = Path(__file__).resolve().parents[2]
@@ -31,21 +31,35 @@ class EntryProjectionTest(unittest.TestCase):
     def setUpClass(cls):
         cls.entry, _packet = validate_entry(FIXTURE)
 
-    def test_translation_agent_receives_gloss_risk_without_scholar_evidence(self):
+    def test_translation_agent_receives_arabic_sources_and_mechanical_occurrences(self):
         projected = translation_agent_projection(self.entry)
         source = self.entry["branches"][0]
         branch = projected["branches"][0]
 
         self.assertEqual(projected["projection"], "translation_agent")
         self.assertEqual(branch["what_is_ar"], source["what_is_ar"])
+        self.assertEqual(branch["source_phrase_ar"], source["source_phrase_ar"])
+        self.assertEqual(
+            branch["sources"],
+            [
+                DICTIONARY_CODES[row["source_id"]]
+                for row in source["dictionary_basis"]["sources"]
+            ],
+        )
+        self.assertIn("source_note", branch)
         self.assertEqual(branch["gloss_candidates"], source["glosses"])
         self.assertIn("loses", branch["gloss_candidates"]["selected"][0]["error_profile"])
+        self.assertEqual(
+            set(projected["occurrence_evidence"]),
+            {"summary", "forms", "ayahs", "occurrences"},
+        )
+        self.assertNotIn("artifact_path", projected["occurrence_evidence"])
         keys = set(nested_keys(projected))
         self.assertNotIn("dictionary_basis", keys)
         self.assertNotIn("source_discussion", keys)
         self.assertNotIn("arabic_neighbor_distinctions", keys)
-        self.assertNotIn("occurrence_evidence", keys)
-        self.assertNotIn("attachments", keys)
+        self.assertIn("occurrence_evidence", keys)
+        self.assertIn("attachments", keys)
 
     def test_user_dictionary_is_compact_and_uses_first_authored_distinction(self):
         projected = user_dictionary_projection(self.entry)
@@ -54,6 +68,10 @@ class EntryProjectionTest(unittest.TestCase):
         first_neighbor = source["arabic_neighbor_distinctions"][0]
 
         self.assertEqual(projected["projection"], "user_dictionary")
+        self.assertEqual(branch["branch_image_ar"], source["branch_image_ar"])
+        self.assertEqual(branch["what_is_ar"], source["what_is_ar"])
+        self.assertEqual(branch["source_phrase_ar"], source["source_phrase_ar"])
+        self.assertTrue(branch["sources"])
         self.assertEqual(branch["definition"], source["glosses"]["semantic_definition"])
         self.assertEqual(
             branch["concept_gloss"]["text"],
@@ -81,12 +99,14 @@ class EntryProjectionTest(unittest.TestCase):
             "dictionary_basis",
             "source_discussion",
             "error_profile",
-            "occurrence_evidence",
             "evidence_refs",
-            "source_refs",
             "attachments",
         ):
             self.assertNotIn(forbidden, keys)
+        self.assertEqual(
+            projected["occurrence_evidence"]["summary"],
+            self.entry["occurrence_evidence"]["summary"],
+        )
 
     def test_scholar_view_contains_the_complete_master(self):
         projected = scholar_view_projection(self.entry)

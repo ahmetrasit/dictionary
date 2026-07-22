@@ -3,8 +3,11 @@
 Write one target-language concept map for every focus branch in the bound root
 evidence. Write only the JSON object required by the response schema to the
 `output.path` named in the task; do not modify any other file.
-`output.path` is the repository-local sibling `output/root_writer.json`. Write
-there directly. Do not write to `/tmp`, `/private/tmp`, any operating-system
+`output.path` is the repository-local sibling
+`output/{root_envelope_id}_entry.json`. Write there directly. The coordinator
+will inject Arabic fields, dictionary attribution, source agreement/dispute
+metadata, occurrences, and attachments into that same accepted artifact. Do
+not write to `/tmp`, `/private/tmp`, any operating-system
 temporary directory, or any runtime scratch path, even as an intermediate copy.
 After writing, run the exact argv in `task.json.validation.command` from the
 repository root. If it fails, preserve and correct that same output file using
@@ -13,16 +16,17 @@ the exact error, then rerun the validator. Return only after it passes.
 Use clear, ordinary task-language wording. Do not use Arabic script,
 transliterated Arabic, or an Arabic/source-language loanword as a shortcut for
 explaining a concept. Source titles may remain names. Never invent, normalize,
-or transliterate a person or place name. For an evidence claim whose lexical
-unit is a proper name, set its lexical rendering to `proper_name`, leave
-`target_gloss` null, and refer to it in authored prose only with its exact token
-`{{lexical_unit_id}}`, for example `{{lu_014}}`. The coordinator replaces that
-token only after separate name-form review.
+or transliterate a person or place name. Each source claim carries the
+coordinator-owned `rendering_policy`; copy it exactly into `rendering_kind`. For
+a `proper_name` claim, leave `target_gloss` null and refer to it in authored
+prose only with its exact token `{{lexical_unit_id}}`, for example `{{lu_014}}`.
+The coordinator replaces that token only after separate name-form review.
 Placeholder tokens are allowed only for lexical units declared `proper_name`.
 Never write the token of an ordinary derivation, collocation, or example merely
 because its expression contains a protected name. Explain the ordinary unit in
-plain language and use only the underlying proper-name token when it is truly
-needed.
+plain language. It may reference the underlying coordinator-protected name token
+when identity is required, including inside an ordinary target gloss; it must
+never use its own ordinary lexical-unit token as a surrogate name.
 
 ## 1. Build the concept map
 
@@ -49,8 +53,12 @@ needed.
   material in `common_summary`. Put an example, disagreement, restriction,
   extension, implication, derivation, or sole attestation in a source-detail row
   with its exact claim IDs.
-- Do not repeat dictionary names in prose. The coordinator restores official
-  source names and exact references from claim IDs.
+- Do not repeat dictionary names or codes in prose. The coordinator converts
+  claim IDs into the compact `sources` roster and dictionary-keyed
+  `source_note`; exact references remain internal.
+- When sources differ, make each source-detail summary stand on its own as
+  concise reader-facing prose. The final entry groups that prose under the
+  supporting dictionary code and omits the internal detail category.
 - Account for every supplied claim exactly once across `common_claim_ids`,
   source-detail `claim_ids`, `supporting_claim_ids`, and `duplicate_claims`.
   `supporting` means relevant evidence that need not be stated separately;
@@ -93,6 +101,11 @@ contrasts. Put the likeliest reader confusion first. Copy `neighbor_ref` exactly
 - `thematic`: they participate in the same scenario with little semantic
   overlap.
 - `antonym` and `polarity_pair` require a shared semantic axis.
+
+`boundary_match: exact` is valid only with `relation_type: synonym` and both
+asymmetry fields null. A boundary-level extra scope, participant, condition, or
+specialized domain requires `near_synonym`/`partial`; a merely dependent example
+or derivation does not by itself defeat synonymy.
 
 QNet, Neo, and other networks nominate candidates only. Verify every published
 relation from the supplied focus and neighbor cards. If none sharpens the

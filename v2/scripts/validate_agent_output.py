@@ -23,7 +23,11 @@ from v2.scripts.accept_root_writer import (
     validate_identity,
     validate_semantic_contract,
 )
-from v2.scripts.assemble_entry import canonical_sha256, validate_fragment
+from v2.scripts.assemble_entry import (
+    canonical_sha256,
+    root_entry_filename,
+    validate_fragment,
+)
 from v2.scripts.create_entry import verify_task_bindings
 from v2.scripts.validate_entry import ContractError, load_json
 
@@ -36,10 +40,12 @@ def _work_dir(task_path: Path, role: str) -> Path:
     raise ContractError(f"Unsupported staged agent role: {role!r}")
 
 
-def _expected_output(task_path: Path, role: str) -> Path:
+def _expected_output(task_path: Path, role: str, task: dict) -> Path:
     work_dir = _work_dir(task_path, role)
     if role == "root_writer":
-        return (work_dir / "output/root_writer.json").resolve()
+        return (work_dir / "output" / root_entry_filename(
+            task["root_envelope_id"]
+        )).resolve()
     return (work_dir / "review/output/root_review.json").resolve()
 
 
@@ -78,7 +84,7 @@ def validate(task_path: Path) -> tuple[str, Path, dict]:
     if not isinstance(declared, str):
         raise ContractError("Staged agent task has no output.path")
     response_path = (task_path.parent / declared).resolve()
-    expected_output = _expected_output(task_path, role)
+    expected_output = _expected_output(task_path, role, task)
     if response_path != expected_output:
         raise ContractError(
             f"Agent output must remain at {expected_output}, got {response_path}"

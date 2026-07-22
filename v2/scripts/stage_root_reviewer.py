@@ -15,7 +15,12 @@ PROJECT = Path(__file__).resolve().parents[2]
 if str(PROJECT) not in sys.path:
     sys.path.insert(0, str(PROJECT))
 
-from v2.scripts.assemble_entry import canonical_sha256, sha256_file
+from v2.scripts.assemble_entry import (
+    authored_root_writer_response,
+    canonical_sha256,
+    json_content,
+    sha256_file,
+)
 from v2.scripts.create_entry import (
     atomic_write,
     binding_path,
@@ -78,7 +83,6 @@ def stage(task_path: Path) -> dict:
         "prompt": input_dir / "prompt.md",
         "response_schema": input_dir / "response.schema.json",
         "evidence": input_dir / "evidence.json",
-        "writer_response": input_dir / "writer_response.json",
     }
     for key, destination in destinations.items():
         source = binding_path(staged[key]["path"])
@@ -86,6 +90,19 @@ def stage(task_path: Path) -> dict:
         if sha256_file(destination) != staged[key]["sha256"]:
             raise ContractError(f"Copied reviewer input changed: {source}")
         staged[key]["path"] = destination.name
+    writer_source = binding_path(staged["writer_response"]["path"])
+    writer_value = load_json(writer_source)
+    if not isinstance(writer_value, dict):
+        raise ContractError(f"Writer response must be a JSON object: {writer_source}")
+    writer_destination = input_dir / "writer_response.json"
+    atomic_write(
+        writer_destination,
+        json_content(authored_root_writer_response(writer_value)),
+    )
+    staged["writer_response"] = {
+        "path": writer_destination.name,
+        "sha256": sha256_file(writer_destination),
+    }
     atomic_write(
         input_dir / "task.json",
         json.dumps(staged, ensure_ascii=False, indent=2) + "\n",

@@ -14,7 +14,13 @@ PROJECT = Path(__file__).resolve().parents[2]
 if str(PROJECT) not in sys.path:
     sys.path.insert(0, str(PROJECT))
 
-from v2.scripts.assemble_entry import canonical_sha256, validate_fragment
+from v2.scripts.assemble_entry import (
+    authored_root_writer_response,
+    canonical_sha256,
+    enrich_root_writer_response,
+    root_entry_filename,
+    validate_fragment,
+)
 from v2.scripts.create_entry import (
     atomic_write,
     binding_path,
@@ -128,10 +134,24 @@ def validate_semantic_contract(response: dict, task: dict) -> None:
             raise ContractError(
                 f"{path}.lexical_glosses: expected exact lexical roster {expected_claims}"
             )
-        protected = set()
+        rendering_policy = {
+            row["lexical_unit_id"]: row["rendering_policy"]
+            for row in supplied["source_claims"]
+        }
+        protected = {
+            lexical_id
+            for lexical_id, kind in rendering_policy.items()
+            if kind == "proper_name"
+        }
         for row in lexical:
+            expected_kind = rendering_policy[row["lexical_unit_id"]]
+            if row["rendering_kind"] != expected_kind:
+                raise ContractError(
+                    f"{path}.lexical_glosses: {row['lexical_unit_id']} must use "
+                    f"coordinator rendering policy {expected_kind!r}, got "
+                    f"{row['rendering_kind']!r}"
+                )
             if row["rendering_kind"] == "proper_name":
-                protected.add(row["lexical_unit_id"])
                 if row["target_gloss"] is not None:
                     raise ContractError(
                         f"{path}.lexical_glosses: proper name target_gloss must be null"
@@ -158,6 +178,10 @@ def validate_semantic_contract(response: dict, task: dict) -> None:
             relation_type = relation["relation_type"]
             match = relation["boundary_match"]
             asymmetry = relation["focus_only"] is not None or relation["neighbor_only"] is not None
+            if match == "exact" and (relation_type != "synonym" or asymmetry):
+                raise ContractError(
+                    f"{relation_path}: exact boundary requires synonym and no asymmetry"
+                )
             if relation_type == "synonym" and (match != "exact" or asymmetry):
                 raise ContractError(
                     f"{relation_path}: synonym requires exact boundary and no asymmetry"
@@ -196,9 +220,7 @@ def response_body(path: Path) -> dict:
     value = load_json(path)
     if not isinstance(value, dict):
         raise ContractError("root_writer: response must be a JSON object")
-    value = dict(value)
-    value.pop("inputs_sha256", None)
-    return value
+    return authored_root_writer_response(value)
 
 
 def accept(
@@ -230,8 +252,16 @@ def accept(
                 editable_branch_indexes=editable,
                 root_editable=root_editable,
             )
-    stored = {"inputs_sha256": canonical_sha256(task), **response}
+    enriched = enrich_root_writer_response(response, task)
+    stored = {"inputs_sha256": canonical_sha256(task), **enriched}
     atomic_write(output_path, json_content(stored))
+    expected_agent_output = (
+        task_path.parent.parent
+        / "output"
+        / root_entry_filename(task["root_envelope_id"])
+    ).resolve()
+    if response_path.resolve() == expected_agent_output:
+        atomic_write(expected_agent_output, json_content(stored))
     return stored
 
 
@@ -242,7 +272,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         "response",
         nargs="?",
         type=Path,
-        help="default: the task's sibling output/root_writer.json",
+        help="default: the task's sibling output/{root_envelope_id}_entry.json",
     )
     parser.add_argument("--output", type=Path)
     parser.add_argument("--previous", type=Path)
@@ -261,10 +291,12 @@ def main(argv: list[str] | None = None) -> int:
     if not args.previous and (args.editable_branch_index or args.root_editable):
         raise SystemExit("repair scope options require --previous")
     task = args.task.resolve()
-    response = args.response or task.parent.parent / "output/root_writer.json"
+    task_value = load_json(task)
+    filename = root_entry_filename(task_value["root_envelope_id"])
+    response = args.response or task.parent.parent / "output" / filename
     output = args.output
     if output is None:
-        output = task.parent.parent / "fragments/root_writer.json"
+        output = task.parent.parent / "fragments" / filename
     error_output = task.parent.parent / "output/validation_error.txt"
     editable_branch_indexes = set(args.editable_branch_index)
     root_editable = args.root_editable

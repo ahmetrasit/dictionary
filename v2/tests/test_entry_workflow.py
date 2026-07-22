@@ -51,7 +51,7 @@ from v2.scripts.validate_entry import ContractError, load_json, validate_entry
 
 
 PROJECT = Path(__file__).resolve().parents[2]
-SOURCE_ENTRY = PROJECT / "v2/entries/tr/root_001697.json"
+SOURCE_ENTRY = PROJECT / "v2/examples/root_000858.tr.entry.json"
 ARABIC_RUN_RE = re.compile(r"[\u0600-\u06FF]+")
 
 
@@ -73,102 +73,95 @@ def write_response(path: Path, task_path: Path, response: dict) -> None:
     )
 
 
-def reduced_root_response(entry: dict, task: dict, evidence: dict) -> dict:
-    branch_evidence = {row["branch_ref"]: row for row in evidence["branches"]}
+def reduced_root_response(task: dict, evidence: dict) -> dict:
     branches = []
-    for branch in entry["branches"]:
-        ref = f"{branch['root_id']}/{branch['branch_id']}"
-        supplied = branch_evidence[ref]
-        allowed = set(supplied["neighbor_refs"])
+    for index, supplied in enumerate(evidence["branches"], start=1):
+        ref = supplied["branch_ref"]
         claim_ids = [row["claim_id"] for row in supplied["source_claims"]]
-        distinctions = []
-        for neighbor in branch["arabic_neighbor_distinctions"]:
-            neighbor_ref = (
-                f"{neighbor['neighbor_root_id']}/{neighbor['neighbor_branch_id']}"
-            )
-            if neighbor_ref not in allowed:
-                continue
-            distinctions.append(
-                {
-                    "neighbor_ref": neighbor_ref,
-                    "relation_type": neighbor.get("relation_type", "near_neighbor"),
-                    "boundary_match": "partial",
-                    "focus_only": neighbor["distinction"],
-                    "neighbor_only": None,
-                    "gloss": neighbor["gloss"],
-                    "shared_zone": neighbor["shared_zone"],
-                    "distinction": neighbor["distinction"],
-                }
-            )
-        if not distinctions:
-            raise AssertionError(f"Test source has no retained neighbor for {ref}")
-        selected = [
-            gloss
-            for gloss in branch["glosses"]["selected"]
-            if gloss["loanword_status"] == "none"
-        ]
-
-        def reduced_gloss(gloss):
-            profile = copy.deepcopy(gloss["error_profile"])
-            if profile["fit"] == "none":
-                profile["loses"] = None
-                profile["adds"] = None
-            return {
-                "text": gloss["text"],
-                "applicability": gloss["applicability"],
-                "error_profile": profile,
-                "facet_ids": ["F001"],
-            }
+        neighbor_ref = supplied["neighbor_refs"][0]
+        distinction = {
+            "neighbor_ref": neighbor_ref,
+            "relation_type": "near_neighbor",
+            "boundary_match": "partial",
+            "focus_only": "Bu dal kendi anlam çekirdeğini ve kullanım sınırını korur.",
+            "neighbor_only": None,
+            "gloss": "Yakın alandaki başka bir anlam dalıdır.",
+            "shared_zone": "İki dal aynı geniş anlam alanında buluşur.",
+            "distinction": "Odak dalın çekirdeği komşu dalın çekirdeğiyle aynı değildir.",
+        }
+        definition = (
+            f"Bu dal, {index}. kanıt kümesindeki ortak anlam çekirdeğini ve onun "
+            "sınırlarını birlikte açıklar."
+        )
+        concept_gloss = {
+            "text": f"{index}. dalın ortak anlam çekirdeği",
+            "applicability": "Dalın genel kavram haritasını açıklamak için kullanılır.",
+            "error_profile": {
+                "fit": "none",
+                "preserves": "Ortak anlam çekirdeğini korur.",
+                "loses": None,
+                "adds": None,
+                "collision": None,
+            },
+            "facet_ids": ["F001"],
+        }
 
         branches.append(
             {
                 "branch_ref": ref,
                 "concept_map": {
-                    "definition": branch["glosses"]["semantic_definition"],
+                    "definition": definition,
                     "facets": [
                         {
                             "facet_id": "F001",
                             "role": "core",
-                            "statement": branch["glosses"]["semantic_definition"],
+                            "statement": definition,
                             "claim_ids": claim_ids,
                         }
                     ],
                 },
                 "source_synthesis": {
-                    "common_summary": branch["source_discussion"]["discussion"],
+                    "common_summary": (
+                        "Kaynak iddiaları bu dalın ortak anlam çekirdeğini ve "
+                        "kullanım sınırını birlikte destekler."
+                    ),
                     "common_claim_ids": claim_ids,
                     "source_details": [],
                     "supporting_claim_ids": [],
                     "duplicate_claims": [],
                 },
-                "concept_gloss": reduced_gloss(selected[0]),
-                "contextual_glosses": [
-                    {
-                        **reduced_gloss(gloss),
-                        "usage_role": gloss["usage_role"]
-                        if gloss["usage_role"] in {"general", "contextual", "explanatory"}
-                        else "contextual",
-                    }
-                    for gloss in selected[1:]
-                ],
+                "concept_gloss": concept_gloss,
+                "contextual_glosses": [],
                 "lexical_glosses": [
                     {
                         "lexical_unit_id": claim["lexical_unit_id"],
-                        "rendering_kind": "ordinary",
-                        "target_gloss": plain_target_fixture(claim["sense_ar"]),
+                        "rendering_kind": claim["rendering_policy"],
+                        "target_gloss": (
+                            None
+                            if claim["rendering_policy"] == "proper_name"
+                            else plain_target_fixture(claim["sense_ar"])
+                        ),
                     }
                     for claim in supplied["source_claims"]
                 ],
                 "excluded_glosses": [
                     {
-                        key: value
-                        for key, value in gloss.items()
-                        if key != "exclusion_reason"
+                        "text": "genel ve belirsiz yönelim",
+                        "category": "confusable",
+                        "error_profile": {
+                            "fit": "displacement",
+                            "preserves": "Yönelme düşüncesinin bir bölümünü korur.",
+                            "loses": "Dalın ayırt edici anlam çekirdeğini siler.",
+                            "adds": None,
+                            "collision": "Başka anlam dallarıyla kolayca karışır.",
+                        },
                     }
-                    for gloss in branch["glosses"]["excluded"]
                 ],
-                "neighbor_distinctions": distinctions,
-                "neighbor_coverage_note": branch["neighbor_coverage"]["note"],
+                "neighbor_distinctions": [distinction],
+                "neighbor_coverage_note": (
+                    "Adaylar değerlendirildi ve bu komşu sınırı açıklamak için "
+                    "yeterli bulundu."
+                ),
             }
         )
     response = {
@@ -178,11 +171,11 @@ def reduced_root_response(entry: dict, task: dict, evidence: dict) -> dict:
                 "Beş donmuş dal, kasıtlı yönelme ve ritüel uzmanlaşma ile su, "
                 "kuş ve özel ad dallarını karma bir yapı içinde birleştirir."
             ),
-            "polysemy": entry["root_profile"]["polysemy"],
-            "organization": entry["root_profile"]["organization"],
+            "polysemy": "polysemic",
+            "organization": "multi_branch",
         },
     }
-    validate_fragment(response, "root_writer", SOURCE_ENTRY)
+    validate_fragment(response, "root_writer", Path("synthetic-root-response.json"))
     self_roster = [row["branch_ref"] for row in branches]
     if self_roster != task["branch_roster"]:
         raise AssertionError((self_roster, task["branch_roster"]))
@@ -191,33 +184,26 @@ def reduced_root_response(entry: dict, task: dict, evidence: dict) -> dict:
 
 def write_approved_transliteration_review(
     path: Path,
-    entry: dict,
     response: dict,
     transliterations: dict,
 ) -> None:
-    values = {"root_profile": entry["root_profile"]["transliteration"]}
-    neighbor_values = {}
-    for branch in entry["branches"]:
-        ref = f"{branch['root_id']}/{branch['branch_id']}"
-        values[f"branch:{ref}"] = branch["image_transliteration"]
-        for neighbor in branch["arabic_neighbor_distinctions"]:
-            neighbor_ref = (
-                f"{neighbor['neighbor_root_id']}/{neighbor['neighbor_branch_id']}"
-            )
-            neighbor_values[neighbor_ref] = neighbor["expression_transliteration"]
+    values = {"root_profile": "Deneme kökü"}
     required = {"root_profile"}
-    for branch in response["branches"]:
+    for branch_index, branch in enumerate(response["branches"], start=1):
         required.add(f"branch:{branch['branch_ref']}")
-        for neighbor in branch["neighbor_distinctions"]:
+        values[f"branch:{branch['branch_ref']}"] = f"Deneme dalı {branch_index}"
+        for neighbor_index, neighbor in enumerate(
+            branch["neighbor_distinctions"], start=1
+        ):
             key = f"neighbor:{neighbor['neighbor_ref']}"
             required.add(key)
-            values[key] = neighbor_values[neighbor["neighbor_ref"]]
+            values[key] = f"Deneme komşusu {branch_index}-{neighbor_index}"
     anchors = {row["key"]: row["arabic"] for row in transliterations["gaps"]}
     required -= set(transliterations.get("values", {}))
     review = {
         "format": "dictionary-v2-transliteration-review-v1",
-        "root_envelope_id": entry["root_envelope_id"],
-        "language": entry["language"],
+        "root_envelope_id": transliterations["root_envelope_id"],
+        "language": transliterations["language"],
         "items": [
             {
                 "key": key,
@@ -230,6 +216,36 @@ def write_approved_transliteration_review(
         ],
     }
     atomic_write(path, json_content(review))
+
+
+def write_approved_name_review(path: Path, evidence: dict) -> None:
+    items = []
+    for branch in evidence["branches"]:
+        for claim in branch["source_claims"]:
+            if claim["rendering_policy"] != "proper_name":
+                continue
+            items.append(
+                {
+                    "key": (
+                        f"name:{branch['branch_ref']}:"
+                        f"{claim['lexical_unit_id']}"
+                    ),
+                    "arabic": claim["expression_ar"],
+                    "status": "approved",
+                    "value": f"Test adı {claim['lexical_unit_id']}",
+                }
+            )
+    atomic_write(
+        path,
+        json_content(
+            {
+                "format": "dictionary-v2-name-review-v1",
+                "root_envelope_id": "root_001697",
+                "language": "tr",
+                "items": items,
+            }
+        ),
+    )
 
 
 def write_pass_review(work_dir: Path, writer_task: Path, writer_response: Path) -> None:
@@ -254,6 +270,7 @@ class EntryWorkflowTest(unittest.TestCase):
     def setUpClass(cls):
         cls.source = load_json(SOURCE_ENTRY)
         cls.packet_path, cls.packet = load_packet(PROJECT, "root_001697", None)
+        _source_path, cls.source_packet = load_packet(PROJECT, "root_000858", None)
 
     def prepare_run(self, directory: Path):
         work_dir = directory / "work"
@@ -263,16 +280,19 @@ class EntryWorkflowTest(unittest.TestCase):
         task_path = prepare_initial_tasks(index_path, index, "tr", work_dir)[0]
         task = load_json(task_path)
         evidence = load_json(work_dir / "inputs/root_evidence.json")
-        response = reduced_root_response(self.source, task, evidence)
-        write_response(work_dir / "fragments/root_writer.json", task_path, response)
+        response = reduced_root_response(task, evidence)
+        write_response(work_dir / "fragments/root_001697_entry.json", task_path, response)
         write_pass_review(
-            work_dir, task_path, work_dir / "fragments/root_writer.json"
+            work_dir, task_path, work_dir / "fragments/root_001697_entry.json"
         )
         write_approved_transliteration_review(
             work_dir / "inputs/transliteration_review.json",
-            self.source,
             response,
             load_json(work_dir / "inputs/transliterations.json"),
+        )
+        write_approved_name_review(
+            work_dir / "inputs/name_review.json",
+            evidence,
         )
         write_root_writer_splits(index_path, work_dir, "tr")
         return index_path, index, work_dir, task_path, response
@@ -325,8 +345,15 @@ class EntryWorkflowTest(unittest.TestCase):
             self.assertNotIn("entry_contract", task)
             evidence = load_json(work_dir / "inputs/root_evidence.json")
             self.assertEqual(len(evidence["branches"]), 5)
-            self.assertEqual(evidence["format"], "dictionary-v2-agent-root-evidence-v3")
+            self.assertEqual(evidence["format"], "dictionary-v2-agent-root-evidence-v4")
             self.assertTrue(all(row["source_claims"] for row in evidence["branches"]))
+            policies = {
+                claim["lexical_unit_id"]: claim["rendering_policy"]
+                for branch in evidence["branches"]
+                for claim in branch["source_claims"]
+            }
+            self.assertEqual(policies["lu_014"], "proper_name")
+            self.assertEqual(policies["lu_017"], "ordinary")
             self.assertNotIn("transliteration_gaps", evidence)
             self.assertNotIn("transliterations", task["coordinator"])
             total_refs = sum(len(row["neighbor_refs"]) for row in evidence["branches"])
@@ -354,7 +381,7 @@ class EntryWorkflowTest(unittest.TestCase):
             self.assertTrue((workspace / "instructions.md").is_file())
             self.assertTrue((work_dir / "output").is_dir())
             self.assertEqual(
-                isolated["output"]["path"], "../output/root_writer.json"
+                isolated["output"]["path"], "../output/root_001697_entry.json"
             )
             self.assertEqual(
                 isolated["validation"]["command"][:2],
@@ -391,7 +418,7 @@ class EntryWorkflowTest(unittest.TestCase):
                 directory
             )
             stage(task_path)
-            raw = work_dir / "output/root_writer.json"
+            raw = work_dir / "output/root_001697_entry.json"
             atomic_write(raw, json_content(response))
             role, path, checked = validate_agent_output(work_dir / "input/task.json")
             self.assertEqual(role, "root_writer")
@@ -528,8 +555,8 @@ class EntryWorkflowTest(unittest.TestCase):
             branch = response["branches"][4]
             lexical = branch["lexical_glosses"][0]
             self.assertEqual(lexical["lexical_unit_id"], "lu_014")
-            lexical["rendering_kind"] = "proper_name"
-            lexical["target_gloss"] = None
+            self.assertEqual(lexical["rendering_kind"], "proper_name")
+            self.assertIsNone(lexical["target_gloss"])
             branch["concept_map"]["definition"] = (
                 "Bu dal, {{lu_014}} adı çevresindeki kişi ve yer kullanımlarını anlatır."
             )
@@ -538,15 +565,24 @@ class EntryWorkflowTest(unittest.TestCase):
             )
             raw = directory / "proper-name-response.json"
             raw.write_text(json_content(response), encoding="utf-8")
-            accept(task_path, raw, work_dir / "fragments/root_writer.json")
+            accept(task_path, raw, work_dir / "fragments/root_001697_entry.json")
+            (work_dir / "inputs/name_review.json").unlink()
             with self.assertRaisesRegex(ContractError, "needs_name_review"):
                 write_root_writer_splits(index_path, work_dir, "tr")
             review_path = work_dir / "inputs/name_review.json"
             review = load_json(review_path)
-            self.assertEqual(len(review["items"]), 1)
-            self.assertEqual(review["items"][0]["value"], "")
-            review["items"][0]["status"] = "approved"
-            review["items"][0]["value"] = "Yemame"
+            self.assertEqual(len(review["items"]), 4)
+            self.assertTrue(all(item["value"] == "" for item in review["items"]))
+            values = {
+                "lu_014": "Yemame",
+                "lu_015": "Yemame",
+                "lu_016": "Yime",
+                "lu_018": "Yemame Ovası",
+            }
+            for item in review["items"]:
+                lexical_id = item["key"].rsplit(":", 1)[-1]
+                item["status"] = "approved"
+                item["value"] = values[lexical_id]
             atomic_write(review_path, json_content(review))
             write_root_writer_splits(index_path, work_dir, "tr")
             fragment = load_json(
@@ -572,9 +608,20 @@ class EntryWorkflowTest(unittest.TestCase):
                     ),
                 }
             ]
-            write_response(work_dir / "fragments/root_writer.json", task_path, response)
+            fragment_path = work_dir / "fragments/root_001697_entry.json"
+            write_response(fragment_path, task_path, response)
+            accepted = accept(task_path, fragment_path, fragment_path)
+            self.assertEqual(
+                accepted["branches"][4]["source_note"],
+                {
+                    "SI": (
+                        "Bu kaynak, yer adına bağlı kişi veya şeyi anlatan ayrı "
+                        "bir biçim verir."
+                    )
+                },
+            )
             write_pass_review(
-                work_dir, task_path, work_dir / "fragments/root_writer.json"
+                work_dir, task_path, fragment_path
             )
             entry = assemble(index_path, work_dir, "tr", directory / "entry.json")
             detail = entry["branches"][4]["source_discussion"]["details"][0]
@@ -604,7 +651,7 @@ class EntryWorkflowTest(unittest.TestCase):
                 ),
                 encoding="utf-8",
             )
-            fragment_path = work_dir / "fragments/root_writer.json"
+            fragment_path = work_dir / "fragments/root_001697_entry.json"
             staged = stage(
                 task_path,
                 previous_path=fragment_path,
@@ -653,7 +700,7 @@ class EntryWorkflowTest(unittest.TestCase):
                 "Adayların tümü değerlendirildi; hiçbiri kavram sınırını yararlı "
                 "biçimde belirginleştirmedi."
             )
-            write_response(work_dir / "fragments/root_writer.json", task_path, response)
+            write_response(work_dir / "fragments/root_001697_entry.json", task_path, response)
             entry_path = directory / "zero.json"
             entry = assemble(index_path, work_dir, "tr", entry_path)
             self.assertEqual(entry["branches"][0]["arabic_neighbor_distinctions"], [])
@@ -668,7 +715,7 @@ class EntryWorkflowTest(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             directory = Path(temporary)
             index_path, _index, work_dir, task_path, response = self.prepare_run(directory)
-            response_path = work_dir / "fragments/root_writer.json"
+            response_path = work_dir / "fragments/root_001697_entry.json"
             stored = load_json(response_path)
             stored["inputs_sha256"] = "0" * 64
             atomic_write(response_path, json_content(stored))
@@ -692,9 +739,9 @@ class EntryWorkflowTest(unittest.TestCase):
             evidence = load_json(work_dir / "inputs/root_evidence.json")
             self.assertNotIn("transliteration_gaps", evidence)
             self.assertNotIn("transliterations", task["coordinator"])
-            response = reduced_root_response(self.source, task, evidence)
+            response = reduced_root_response(task, evidence)
             self.assertNotIn("transliteration_resolutions", response)
-            write_response(work_dir / "fragments/root_writer.json", task_path, response)
+            write_response(work_dir / "fragments/root_001697_entry.json", task_path, response)
             with self.assertRaisesRegex(ContractError, "needs_transliteration_review"):
                 write_root_writer_splits(index_path, work_dir, "tr")
             review = load_json(work_dir / "inputs/transliteration_review.json")
@@ -712,25 +759,24 @@ class EntryWorkflowTest(unittest.TestCase):
                 directory
             )
             response["branches"][0]["concept_map"]["definition"] = "هذا تعريف عربي كامل."
-            write_response(work_dir / "fragments/root_writer.json", task_path, response)
+            write_response(work_dir / "fragments/root_001697_entry.json", task_path, response)
             with self.assertRaisesRegex(ContractError, "does not match"):
                 load_task_fragment(
                     task_path,
-                    work_dir / "fragments/root_writer.json",
+                    work_dir / "fragments/root_001697_entry.json",
                     "root_writer",
                 )
 
             response = reduced_root_response(
-                self.source,
                 load_json(task_path),
                 load_json(work_dir / "inputs/root_evidence.json"),
             )
             response["branches"][0]["concept_gloss"]["loanword_status"] = "common"
-            write_response(work_dir / "fragments/root_writer.json", task_path, response)
+            write_response(work_dir / "fragments/root_001697_entry.json", task_path, response)
             with self.assertRaisesRegex(ContractError, "unknown property 'loanword_status'"):
                 load_task_fragment(
                     task_path,
-                    work_dir / "fragments/root_writer.json",
+                    work_dir / "fragments/root_001697_entry.json",
                     "root_writer",
                 )
 
@@ -744,17 +790,48 @@ class EntryWorkflowTest(unittest.TestCase):
             tasks = prepare_initial_tasks(index_path, index, "tr", work_dir)
             task = load_json(tasks[0])
             evidence = load_json(work_dir / "inputs/root_evidence.json")
-            response = reduced_root_response(self.source, task, evidence)
+            response = reduced_root_response(task, evidence)
             write_approved_transliteration_review(
                 work_dir / "inputs/transliteration_review.json",
-                self.source,
                 response,
                 load_json(work_dir / "inputs/transliterations.json"),
             )
-            response_file = directory / "response.json"
+            write_approved_name_review(
+                work_dir / "inputs/name_review.json",
+                evidence,
+            )
+            response_file = work_dir / "output/root_001697_entry.json"
+            response_file.parent.mkdir(parents=True, exist_ok=True)
             response_file.write_text(json_content(response), encoding="utf-8")
-            fragment_path = work_dir / "fragments/root_writer.json"
-            accept(tasks[0], response_file, fragment_path)
+            fragment_path = work_dir / "fragments/root_001697_entry.json"
+            accepted = accept(tasks[0], response_file, fragment_path)
+            self.assertEqual(load_json(response_file), accepted)
+            self.assertEqual(
+                accepted["artifact_format"], "dictionary-v2-root-entry-draft-v1"
+            )
+            branch = accepted["branches"][0]
+            self.assertEqual(branch["branch_image_ar"], "قصد الشيء وتعمده")
+            self.assertTrue(branch["what_is_ar"])
+            self.assertTrue(branch["source_phrase_ar"])
+            self.assertEqual(branch["sources"], ["MQ", "JA", "SI"])
+            self.assertEqual(branch["source_note"], {})
+            self.assertNotIn("dictionary_basis", branch)
+            self.assertNotIn("source_refs", json.dumps(branch, ensure_ascii=False))
+            self.assertNotIn("artifact_path", accepted["occurrence_evidence"])
+            self.assertEqual(len(accepted["occurrence_evidence"]["occurrences"]), 11)
+            self.assertEqual(
+                sum(
+                    len(row["alignment"]["attachments"])
+                    for row in accepted["occurrence_evidence"]["occurrences"]
+                ),
+                11,
+            )
+            tampered_path = directory / "tampered-entry.json"
+            tampered = copy.deepcopy(accepted)
+            tampered["branches"][0]["branch_image_ar"] = "مبدل"
+            atomic_write(tampered_path, json_content(tampered))
+            with self.assertRaisesRegex(ContractError, "stale or modified"):
+                check_root_writer(tasks[0], tampered_path)
             self.assertEqual(len(check_root_writer(tasks[0], fragment_path)["branches"]), 5)
             write_pass_review(work_dir, tasks[0], fragment_path)
             entry_path = directory / "entry.json"
@@ -780,6 +857,54 @@ class EntryWorkflowTest(unittest.TestCase):
             raw.write_text(json_content(response), encoding="utf-8")
             with self.assertRaisesRegex(ContractError, "roster/order mismatch"):
                 accept(task_path, raw, work_dir / "fragments/rejected.json")
+
+    def test_coordinator_rendering_policy_and_exact_boundary_are_enforced(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary)
+            _index_path, _index, work_dir, task_path, response = self.prepare_run(
+                directory
+            )
+            raw = directory / "response.json"
+
+            response["branches"][4]["lexical_glosses"][3][
+                "rendering_kind"
+            ] = "proper_name"
+            response["branches"][4]["lexical_glosses"][3]["target_gloss"] = None
+            raw.write_text(json_content(response), encoding="utf-8")
+            with self.assertRaisesRegex(
+                ContractError,
+                "lu_017 must use coordinator rendering policy 'ordinary'",
+            ):
+                accept(task_path, raw, directory / "misclassified.json")
+
+            response = reduced_root_response(
+                load_json(task_path),
+                load_json(work_dir / "inputs/root_evidence.json"),
+            )
+            relation = response["branches"][0]["neighbor_distinctions"][0]
+            relation["relation_type"] = "near_neighbor"
+            relation["boundary_match"] = "exact"
+            relation["focus_only"] = "Odak dalında ek bir koşul vardır."
+            raw.write_text(json_content(response), encoding="utf-8")
+            with self.assertRaisesRegex(
+                ContractError,
+                "exact boundary requires synonym and no asymmetry",
+            ):
+                accept(task_path, raw, directory / "bad-exact.json")
+
+            response = reduced_root_response(
+                load_json(task_path),
+                load_json(work_dir / "inputs/root_evidence.json"),
+            )
+            response["branches"][4]["lexical_glosses"][3][
+                "target_gloss"
+            ] = "{{lu_015}} ile ilişkili veya o yerden olan"
+            raw.write_text(json_content(response), encoding="utf-8")
+            accepted = accept(task_path, raw, directory / "protected-reference.json")
+            self.assertIn(
+                "{{lu_015}}",
+                accepted["branches"][4]["lexical_glosses"][3]["target_gloss"],
+            )
 
     def test_output_protection_and_atomic_publication(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -858,7 +983,7 @@ class EntryWorkflowTest(unittest.TestCase):
         entry["root_profile"]["summary"] = (
             "<script>alert(1)</script> [unsafe](https://example.invalid) # heading"
         )
-        rendered = render_markdown(entry, self.packet)
+        rendered = render_markdown(entry, self.source_packet)
         self.assertNotIn("<script>", rendered)
         self.assertNotIn("[unsafe](https://example.invalid)", rendered)
 
