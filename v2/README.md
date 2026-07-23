@@ -20,6 +20,36 @@ than copied wholesale to each consumer:
 - the scholar view receives the complete sources, neighbors, morphology,
   occurrences, and attachments.
 
+## Agent entry point
+
+The current production orchestration is
+[`orchestration/entry-creation.spec.md`](orchestration/entry-creation.spec.md).
+An agent controlling a run must begin with
+[`orchestration/README.md`](orchestration/README.md), then read the normative
+spec and [`prompts/entry-orchestrator.md`](prompts/entry-orchestrator.md).
+[`PRODUCTION_RUNBOOK.md`](PRODUCTION_RUNBOOK.md) contains the exact
+repository-root commands.
+
+Start one root by giving a single top-level controller an instruction such as:
+
+```text
+Read v2/orchestration/README.md and run the current v2 entry orchestration for
+root_000858 in tr. Writer workers: <model and reasoning profile>. Reviewer
+workers: <model and reasoning profile>. Worker cap: <optional N>.
+```
+
+Use the same form with an explicit envelope list, `first <N> packet envelopes`,
+or a through/until boundary for a campaign. Replace placeholders before the run
+or name an existing campaign configuration that supplies them. The controller
+must not infer worker model, reasoning, service tier, or concurrency settings.
+
+There is no orchestration CLI and intentionally no `--run-agents` option. The
+controller runs `create_entry.py` and every other deterministic command itself,
+and uses native delegation only for the staged root writer and independent
+semantic reviewer. Do not create script-runner agents, per-root controllers, or
+nested workers. Do not launch `root-writer.md` or `root-reviewer.md` directly;
+the staging scripts create their hash-bound packages and exact output paths.
+
 ## Current corpus checkpoint
 
 As of 2026-07-21, the repository contains 140 Turkish schema-v4 entries, all in

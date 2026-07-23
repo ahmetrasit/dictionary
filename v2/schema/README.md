@@ -4,6 +4,13 @@
 envelope in one target language. English and Turkish are separate documents;
 an agent never fills both languages in the same record.
 
+This README defines entry fields and ownership; it is not an orchestration
+prompt. A top-level controller starts at
+[`../orchestration/README.md`](../orchestration/README.md) and follows the
+normative orchestration spec. Root writers and reviewers do not bootstrap from
+this file or traverse the repository documentation; they receive and follow
+only their staged, hash-bound packages.
+
 The root packet owns Arabic branch identity, branch boundaries, dictionary
 passages, lexical units, Quran occurrences, grammar, attachments, and QNet
 discovery data. Agents own target-language concept-map synthesis, source
