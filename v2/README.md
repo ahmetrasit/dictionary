@@ -34,6 +34,21 @@ format `dictionary-v2-agent-root-evidence-v4`. Older manifests are historical
 and are ignored; rerunning `create_entry.py` in prepare mode writes the current
 task before any model call.
 
+Current production campaigns queue Quran-corpus roots from
+`data/output/root_packets/root_*.json`, not from guessed numeric IDs. The queue
+is sorted by root envelope, packet gaps are skipped, and combined envelopes such
+as `root_000099--root_000100` are processed as one root workflow. Campaign
+orchestration uses only the worker capacity allowed by both the explicit run
+configuration and the runtime. The top-level controller runs every deterministic
+command itself and delegates only root authorship and independent semantic
+review. Workers have `SUBAGENTS: forbidden`; they do not launch agents or
+operate root workflows. The writer session identity is retained through review
+and finalization for bounded repair or surface-form completion. After process
+resumption without that handle, one tightly staged continuation may repair the
+protected response or fill exact generated queues; it may not create a new full
+candidate. Blocked roots park without stopping the rest of the queue. Packet
+creation is coordinator-side deterministic preparation, not a worker session.
+
 ## Transitional neighbor-network checkpoint
 
 Dictionary production can start without rebuilding the Quran-SLM global
@@ -67,7 +82,7 @@ reconsider which distinction belongs first in the user-dictionary projection,
 and revalidate, rerender, and reproject the entry. The full normative policy is
 in `schema/README.md`.
 
-For the exact cold-start commands and first production pilot, use
+For the exact cold-start commands and campaign procedure, use
 [`PRODUCTION_RUNBOOK.md`](PRODUCTION_RUNBOOK.md).
 
 ## Encyclopedia entry schema
@@ -94,36 +109,39 @@ not a published lexical decision.
 The minimal agent workflow, branch evidence package, fragment ownership map,
 retry rules, and acceptance criteria are defined in
 `orchestration/entry-creation.spec.md`. The production contract uses one
-root-level writer invocation per root envelope and target language. That
+initial root-level writer invocation per root envelope and target language. That
 invocation sees the minimal evidence for all accepted branches and returns
-branch-shaped fragments plus the short root profile. Agents never receive Quran
-ayahs, occurrence data, QAC morphology, attachment records, full branch
-packages, the master entry schema, or the orchestration spec.
+branch-shaped fragments plus the short root profile. Semantic workers never
+receive Quran ayahs, occurrence data, QAC morphology, attachment records, full
+branch packages, the master entry schema, or the orchestration spec.
 
 Older work directories may still contain branch-per-agent manifests. They are
 ignored: prepare mode writes one current `tasks/root_writer.json`, one
 deduplicated `inputs/root_evidence.json`, and coordinator-only review state
 before any model call. The evidence contains compact source claims and lexical
-unit IDs, not raw passages. A reviewed coordinator policy classifies every
-lexical unit as ordinary or proper-name before the writer runs. Initial writer
-prose uses placeholders for protected proper names. If assembly discovers
-missing used transliterations or protected-name forms, it creates
+unit IDs, not raw passages. A coordinator policy classifies every lexical unit
+as ordinary or proper-name before the writer runs; the policy may be reviewed or
+the generated all-ordinary fallback. Initial writer prose uses placeholders for
+protected proper names. If assembly discovers missing used transliterations or
+protected-name forms, it creates
 `inputs/transliteration_review.json` or `inputs/name_review.json`; the same
 writer completes those generated queues without invalidating or rewriting the
 accepted entry response.
 
-Prepare deterministic evidence and resumable task manifests without making any
-model calls:
+The top-level controller begins by preparing deterministic evidence and
+resumable task manifests directly, without delegating and without making a model
+call:
 
 ```sh
 python3 v2/scripts/create_entry.py root_000858 --language tr
 ```
 
-Hand the prepared task to the top-level orchestration agent defined in
-`prompts/entry-orchestrator.md`. The orchestrator invokes the root writer, then
-an evidence-bound semantic reviewer, and finally the deterministic publication
-scripts. The reviewer reports issues but never rewrites prose; uncertain issues
-pause for editorial judgment. There is intentionally no
+The controller follows `prompts/entry-orchestrator.md`, runs staging and every
+other deterministic command directly, delegates one root writer and one
+independent semantic reviewer when their artifacts are needed, and publishes
+only after mechanical gates pass. There is no separate handoff operator or
+per-root orchestration worker. The reviewer reports issues but never rewrites
+prose; uncertain issues pause for editorial judgment. There is intentionally no
 `--run-agents` script option:
 
 ```text
@@ -134,10 +152,12 @@ The orchestrator resumes hash-matching writer and review responses and reruns
 stale output. Each worker writes to its real repository output, runs the exact
 read-only validator carried by its staged task, and corrects that same file in
 place until it passes. A failed response is not discarded or replaced by a new
-candidate. At most two later repair continuations return to the same writer;
-bounded repairs cannot change unaffected branches and invalidate the earlier
-semantic review. Outputs are written to `v2/entries/<language>/`, while task and
-fragment state stays under `v2/work/entry_creation/`.
+candidate. Campaign mode permits one semantic repair with the same writer and
+one rebound review; if the rebound review still fails, the root is parked
+and the queue continues. Bounded repairs cannot change unaffected branches and
+invalidate the earlier semantic review. Outputs are written to
+`v2/entries/<language>/`, while task and fragment state stays under
+`v2/work/entry_creation/`.
 
 Export all validated entries as deterministic, one-entry-per-line JSONL:
 
@@ -181,10 +201,11 @@ response validation, deterministic acceptance enriches that same file with
 Arabic fields, compact source codes, dictionary-keyed prose notes, and
 root-level occurrence/attachment evidence. Exact references remain internal. The
 semantic reviewer receives only `review/input/` and writes only
-`review/output/root_review.json`. Both agents validate and, when necessary,
-repair those files in place before returning. The
-orchestration agent owns timeouts and process monitoring. Operational failures
-stop immediately, while invalid agent JSON remains preserved for correction.
+`review/output/root_review.json`. Both semantic workers validate and, when
+necessary, repair those files in place before returning. The orchestration
+controller owns timeouts, process monitoring, and every deterministic command.
+Operational failures park the affected root, while invalid worker JSON remains
+preserved for correction by its owning worker.
 The existing plural `inputs/` directory is coordinator-only state; it is not
 part of the writer package.
 
@@ -207,8 +228,10 @@ Reviewed and published entries also protect their pinned occurrence and shared
 branch evidence during prepare-only runs. `--force-entry` is required before
 those dependencies can be regenerated.
 
-Only frozen focus branches marked `accepted` and `contaminated: no` can enter an
-agent task or assembled entry. Other branch states stop with `needs_evidence`.
+The root packet and deterministic branch evidence define the branch roster for
+an agent task and assembled entry. Packet gaps, missing source claims, missing
+source references, or unsafe corpus-wide count claims stop the affected root as
+evidence blockers; they do not stop the campaign queue.
 
 The deterministic functions can also run independently:
 

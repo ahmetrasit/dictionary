@@ -101,7 +101,7 @@ def review_error(review: dict) -> str:
     return "\n".join(lines) + "\n"
 
 
-def check_pass(task_path: Path, fragment_path: Path) -> dict:
+def check_review(task_path: Path, fragment_path: Path) -> dict:
     task = load_json(task_path)
     verify_task_bindings(task)
     stored = load_json(fragment_path)
@@ -111,6 +111,11 @@ def check_pass(task_path: Path, fragment_path: Path) -> dict:
     response.pop("inputs_sha256", None)
     validate_fragment(response, "root_reviewer", fragment_path)
     validate_review(response, task)
+    return response
+
+
+def check_pass(task_path: Path, fragment_path: Path) -> dict:
+    response = check_review(task_path, fragment_path)
     if response["verdict"] != "pass":
         raise ContractError(
             f"semantic_review_{response['verdict']}: root review has not passed"

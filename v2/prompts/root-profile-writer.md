@@ -1,19 +1,9 @@
-# Legacy root-profile writer (not used by current production orchestration)
+# Retired prompt: root-profile writer
 
-Current production authors the root profile inside `root-writer.md`. This file
-remains only for historical fragment compatibility.
+Do not use this file as an agent prompt.
 
-Write the short target-language root profile after reading all completed branch
-fragments named by the task. Return only the JSON object required by the response
-schema.
-
-Follow the transliteration policy named in the task's entry contract.
-
-The summary is 1-2 sentences. State whether the root is monosemic or polysemic, how
-many frozen branches it has, and whether their relation is radial, multi-branch,
-mixed, or uncertain. Use `unknown` for the collocation fields; the coordinator
-adds Quran occurrence evidence after agent work.
-
-Do not rewrite branch content or change the branch count. You receive no Quran
-ayahs, morphology, or attachments. Keep uncertainty explicit and use the requested
-target language.
+The separate root-profile worker is not part of v2 production. The root writer
+authors the profile in the same response as every accepted branch. Do not resume
+or adapt a historical task that names this prompt; regenerate a current task
+with `v2/scripts/create_entry.py` and follow
+`v2/orchestration/entry-creation.spec.md`.

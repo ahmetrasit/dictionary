@@ -26,6 +26,7 @@ from v2.scripts.build_branch_evidence import (
     write_packages,
 )
 from v2.scripts.create_entry import (
+    PROMPTS,
     atomic_write,
     check_output_targets,
     check_pinned_evidence,
@@ -36,8 +37,12 @@ from v2.scripts.create_entry import (
 from v2.scripts.accept_root_writer import accept, validate_repair_preservation
 from v2.scripts.accept_root_review import (
     accept as accept_root_review,
+    check_pass as check_root_review_pass,
+    check_review,
+    main as accept_root_review_main,
     repair_scope as semantic_repair_scope,
 )
+from v2.scripts.check_root_review import main as check_root_review_main
 from v2.scripts.check_root_writer import check as check_root_writer
 from v2.scripts.finalize_entry import finalize
 from v2.scripts.repair_scope import classify
@@ -339,6 +344,7 @@ class EntryWorkflowTest(unittest.TestCase):
                 "root_001697", "tr", None, DEFAULT_FURUQ, None
             )
             tasks = prepare_initial_tasks(index_path, index, "tr", work_dir)
+            self.assertEqual(set(PROMPTS), {"root_writer", "root_reviewer"})
             self.assertEqual(tasks, [work_dir / "tasks/root_writer.json"])
             task = load_json(tasks[0])
             self.assertEqual(task["role"], "root_writer")
@@ -358,6 +364,19 @@ class EntryWorkflowTest(unittest.TestCase):
             self.assertNotIn("transliterations", task["coordinator"])
             total_refs = sum(len(row["neighbor_refs"]) for row in evidence["branches"])
             self.assertLess(len(evidence["neighbor_registry"]), total_refs)
+
+    def test_production_prompts_are_role_bounded_and_root_generic(self):
+        writer = PROMPTS["root_writer"].read_text(encoding="utf-8")
+        reviewer = PROMPTS["root_reviewer"].read_text(encoding="utf-8")
+        orchestrator = (
+            PROJECT / "v2/prompts/entry-orchestrator.md"
+        ).read_text(encoding="utf-8")
+
+        self.assertNotRegex(writer, r"(?:root|lu)_[0-9]{3,6}")
+        self.assertIn("Do not delegate, spawn another agent", writer)
+        self.assertIn("Do not delegate, spawn another agent", reviewer)
+        self.assertIn("Never spawn a worker merely to run a command", orchestrator)
+        self.assertIn("Run every deterministic or operational task yourself", orchestrator)
 
     def test_regular_writer_input_has_only_bounded_contracts(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -407,6 +426,14 @@ class EntryWorkflowTest(unittest.TestCase):
             )
             self.assertIn(
                 "correct it from the exact error",
+                (workspace / "instructions.md").read_text(encoding="utf-8"),
+            )
+            self.assertIn(
+                "Do not delegate, spawn another agent",
+                (workspace / "instructions.md").read_text(encoding="utf-8"),
+            )
+            self.assertIn(
+                "Run no command except the exact argv",
                 (workspace / "instructions.md").read_text(encoding="utf-8"),
             )
             write_root_writer_splits(index_path, work_dir, "tr", check=True)
@@ -469,6 +496,14 @@ class EntryWorkflowTest(unittest.TestCase):
                 "Do not use `/tmp`",
                 (review_input / "instructions.md").read_text(encoding="utf-8"),
             )
+            self.assertIn(
+                "Do not delegate, spawn another agent",
+                (review_input / "instructions.md").read_text(encoding="utf-8"),
+            )
+            self.assertIn(
+                "Run no command except the exact argv",
+                (review_input / "instructions.md").read_text(encoding="utf-8"),
+            )
             raw = work_dir / "review/output/root_review.json"
             atomic_write(
                 raw,
@@ -521,9 +556,11 @@ class EntryWorkflowTest(unittest.TestCase):
                 ),
                 encoding="utf-8",
             )
-            accepted = accept_root_review(
-                review_task, raw, directory / "accepted-review.json"
-            )
+            accepted_path = directory / "accepted-review.json"
+            accepted = accept_root_review(review_task, raw, accepted_path)
+            self.assertEqual(check_review(review_task, accepted_path)["verdict"], "repair")
+            with self.assertRaisesRegex(ContractError, "semantic_review_repair"):
+                check_root_review_pass(review_task, accepted_path)
             self.assertEqual(
                 semantic_repair_scope(accepted, task),
                 {
@@ -532,6 +569,56 @@ class EntryWorkflowTest(unittest.TestCase):
                     "root_editable": False,
                 },
             )
+
+            canonical_review = work_dir / "fragments/root_review.json"
+            review_output = work_dir / "review/output/root_review.json"
+            review_output.parent.mkdir(parents=True, exist_ok=True)
+            review_output.write_text(raw.read_text(encoding="utf-8"), encoding="utf-8")
+            with mock.patch("builtins.print"):
+                self.assertEqual(
+                    accept_root_review_main(
+                        [
+                            str(review_task),
+                            str(review_output),
+                            "--output",
+                            str(canonical_review),
+                        ]
+                    ),
+                    0,
+                )
+            sidecars = (
+                work_dir / "review/output/semantic_review_error.txt",
+                work_dir / "review/output/repair_scope.json",
+            )
+            for path in sidecars:
+                self.assertTrue(path.is_file())
+                path.unlink()
+            with mock.patch("builtins.print"):
+                self.assertEqual(
+                    accept_root_review_main(
+                        [
+                            str(review_task),
+                            str(canonical_review),
+                            "--output",
+                            str(canonical_review),
+                        ]
+                    ),
+                    0,
+                )
+            for path in sidecars:
+                self.assertTrue(path.is_file())
+            with mock.patch("builtins.print"):
+                self.assertEqual(
+                    check_root_review_main(
+                        [
+                            str(review_task),
+                            str(canonical_review),
+                            "--any-verdict",
+                        ]
+                    ),
+                    0,
+                )
+
             issue["confidence"] = "low"
             raw.write_text(
                 json_content(

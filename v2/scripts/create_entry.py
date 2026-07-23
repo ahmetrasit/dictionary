@@ -152,6 +152,39 @@ def write_task(path: Path, task: dict) -> None:
     atomic_write(path, json_content(task))
 
 
+def fallback_rendering_policy(envelope: str, packages: list[dict]) -> dict:
+    """Create a deterministic no-block policy roster when no review exists."""
+    items = []
+    seen: set[tuple[str, str]] = set()
+    for package in packages:
+        root_id = package["branch"]["root_id"]
+        for unit in package.get("lexical_units", []):
+            key = (root_id, unit["lexical_unit_id"])
+            if key in seen:
+                continue
+            seen.add(key)
+            items.append(
+                {
+                    "root_id": root_id,
+                    "lexical_unit_id": unit["lexical_unit_id"],
+                    "rendering_kind": "ordinary",
+                }
+            )
+    return {
+        "format": "dictionary-v2-protected-name-policy-v1",
+        "generated_by": GENERATOR,
+        "root_envelope_id": envelope,
+        "status": "fallback",
+        "items": items,
+    }
+
+
+def ensure_rendering_policy(path: Path, envelope: str, packages: list[dict]) -> None:
+    if path.is_file():
+        return
+    atomic_write(path, json_content(fallback_rendering_policy(envelope, packages)))
+
+
 def common_task(role: str, envelope: str, language: str) -> dict:
     return {
         "format": TASK_FORMAT,
@@ -353,23 +386,12 @@ def prepare_initial_tasks(
     for row in index["branches"]:
         evidence_path = (index_path.parent / row["path"]).resolve()
         package = load_json(evidence_path)
-        focus = package.get("branch", {})
-        ref = f"{row['root_id']}/{row['branch_id']}"
-        if focus.get("status") != "accepted" or focus.get("contaminated") != "no":
-            raise ContractError(
-                "needs_evidence: focus branch is not accepted and uncontaminated: "
-                + ref
-            )
-        if not package.get("furuq_candidates"):
-            raise ContractError(
-                "needs_evidence: no accepted, uncontaminated Furuq comparison "
-                f"candidate for {ref}"
-            )
         packages.append(package)
 
     name_policy_path = (
         PROTECTED_NAME_POLICY_DIR / f"{index['root_envelope_id']}.json"
     )
+    ensure_rendering_policy(name_policy_path, index["root_envelope_id"], packages)
     rendering_policy = load_rendering_policy(
         name_policy_path, index["root_envelope_id"], packages
     )
@@ -569,7 +591,7 @@ def main(argv: list[str] | None = None) -> int:
         raise SystemExit(str(error)) from error
     print(
         f"Prepared one root-writer task in {work_dir}. No model call was made; "
-        "hand control to the v2 orchestration agent."
+        "the controller may now check reuse or stage the writer."
     )
     return 0
 

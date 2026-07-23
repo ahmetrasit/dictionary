@@ -3,26 +3,103 @@
 Status: normative orchestration contract for entry schema version 4.
 
 This workflow creates one encyclopedia entry for one root envelope and one
-target language. One writing invocation receives the minimal evidence for all
-accepted branches in that root and returns branch-shaped fragments plus the
-short root profile. If finalization discovers missing used transliterations or
-protected proper-name target forms, the same writer completes only the generated
-surface-form queues and finalization resumes without human review. A top-level
-orchestration agent owns the run: it starts and monitors the writer, controls
-the global repair budget, and resumes the workflow. Deterministic scripts own
-evidence routing, response acceptance, occurrence data, assembly, validation,
-and rendering. No agent edits a shared entry document.
+target language. One initial writing invocation receives the minimal evidence
+for all accepted branches in that root and returns branch-shaped fragments plus
+the short root profile. If finalization discovers missing used transliterations
+or protected proper-name target forms, the same writer assignment completes
+only the generated surface-form queues and finalization resumes without human
+review.
 
-No Python script invokes an agent or decides whether to retry one. The
-orchestrator follows `v2/prompts/entry-orchestrator.md` and invokes the scripts
-only for bounded mechanical operations.
+One top-level orchestration controller owns the run end to end. It enumerates the
+queue, runs every deterministic command directly, launches and resumes the
+bounded semantic workers, monitors them, checks every gate, controls the repair
+budget, and reports terminal state. There is no separate campaign operator and
+no per-root orchestration agent. Deterministic scripts own evidence routing,
+response acceptance, occurrence data, assembly, validation, rendering,
+publication, and projection. Semantic workers never edit shared or published
+entry documents.
 
-All agent-readable packages and all agent-produced artifacts live in the
+## Dispatch Boundary
+
+The controller must use the least expensive capable executor:
+
+| Work | Executor |
+|---|---|
+| Queue enumeration, path inspection, script execution, polling, staging, validation, acceptance, assembly, rendering, publication, projection, export, and status tracking | Top-level controller, directly |
+| Root response authorship, bounded writer repair, and target-language surface-form choices | One root-writer worker per root/language |
+| Independent evidence-bound semantic judgment | One semantic-reviewer worker per accepted response |
+| Ambiguous editorial decisions and destructive replacement authorization | User/editor |
+
+A deterministic task is never delegated merely because it can be described as a
+task. In particular, the controller must not spawn an agent to run
+`scripts/root_packet.py`, `v2/scripts/create_entry.py`, a staging or check
+script, a validator, an acceptance script, a renderer, a projector, an exporter,
+a file operation, a wait loop, or a status check. Long-running controller
+commands remain controller commands: the controller waits for or polls the same
+process.
+
+Only the top-level controller may launch workers, using the orchestration
+runtime's native delegation facility. It must not launch them through Python,
+shell, `codex exec`, or a worker. A writer or reviewer may not delegate, spawn,
+or manage another agent. The only command a semantic worker may run is the exact
+read-only `task.json.validation.command` for its own authored output. The
+controller reruns that command before acceptance.
+
+Production campaigns run this same root-level workflow repeatedly. The campaign
+queue is built from canonical Quran-corpus root packets under
+`data/output/root_packets/`, sorted by numeric root envelope. Missing numeric
+IDs are skipped, and combined envelopes such as `root_000099--root_000100` are
+treated as one queue item. Each semantic worker owns exactly one root envelope,
+one target language, and one declared artifact or explicitly generated
+surface-form queue set per turn. "First N roots" counts N sorted packet
+envelopes; a combined envelope counts once. "Through root N" includes envelopes
+whose first numeric component is at most N and never splits a combined envelope.
+The controller may run workers for different roots concurrently up to runtime
+capacity, further limited by any explicit lower campaign cap. It must not assume
+a fixed slot count, split one root across competing writers, or run a same-root
+writer, reviewer, or repair concurrently.
+
+Packet generation is not a production worker workflow. If canonical root
+packets are missing or stale, the coordinator runs deterministic packet
+preparation outside the worker pool before the campaign queue is built. Do not
+spend semantic-worker capacity on packet generation or any other mechanical
+operation. No Python script invokes a worker or decides whether to retry one.
+The controller follows `v2/prompts/entry-orchestrator.md`.
+
+All semantic-worker-readable packages and worker-produced artifacts live in the
 repository work tree under
-`v2/work/entry_creation/<root-envelope>/<language>/`. Agents never read from or
-write to `/tmp`, `/private/tmp`, another operating-system temporary directory,
-or a runtime-managed scratch workspace. Agent output is durable and resumable at
-the declared repository-local path before any acceptance or publication step.
+`v2/work/entry_creation/<root-envelope>/<language>/`. Semantic workers never
+read from or write to `/tmp`, `/private/tmp`, another operating-system temporary
+directory, or a runtime-managed scratch workspace. Worker output is durable and
+resumable at the declared repository-local path before any acceptance or
+publication step.
+
+## Worker Session Boundary
+
+Worker authorship uses the controller's native delegation facility, not nested
+agent-launching commands. Each worker handoff binds:
+
+```text
+ROLE: root writer or independent semantic reviewer
+MODEL/REASONING: explicit user or campaign configuration
+SESSION: new writer, new reviewer, or continuation of the mapped writer
+SUBAGENTS: forbidden
+INPUT: exact staged instructions path
+OUTPUT: exact staged repository-local output path
+```
+
+Model, reasoning level, service tier, and concurrency are run configuration, not
+normative lexical policy. The controller must not silently invent or substitute
+them. It retains the writer session identity until the root publishes or parks
+because review repair or surface-form completion may need a continuation. A
+reviewer is always independent of the writer and receives only its staged
+review package. The reviewer may be released after validation and acceptance; a
+repaired response receives a fresh reviewer. When orchestration resumes without
+the original writer handle, the controller may launch one bounded continuation
+for a staged repair or exact generated queue; this is not a new full candidate.
+If the controller cannot start a required worker continuation, the root parks
+with `worker_session_required` and the exact staged input/output paths; it must
+not invent an external operator or work around the gate with a nested launch.
 
 ## Scope
 
@@ -60,12 +137,20 @@ v2/policy/protected_names/<root-envelope>.json
 TRANSLITERATION_POLICY.md
 ```
 
-The coordinator validates and hash-binds these inputs. Agents do not receive
-the packet, occurrence Markdown, alignment file, Quran ayahs, QAC morphology,
-attachment records, dictionary source metadata, full branch packages, the master
-entry schema, or this orchestration spec. The model-facing package contains only
-the role prompt, a thin root response schema, the minimal root evidence
-projection, and any compact policy notes needed for the target language.
+The coordinator validates and hash-binds these inputs. Semantic workers do not
+receive the packet, occurrence Markdown, alignment file, Quran ayahs, QAC
+morphology, attachment records, dictionary source metadata, full branch
+packages, the master entry schema, or this orchestration spec. The controller
+does read this spec. A worker-facing package contains only the role prompt, a
+thin root response schema, the minimal root evidence projection, and any compact
+policy notes needed for the target language.
+
+`v2/policy/protected_names/<root-envelope>.json` may be a reviewed policy or a
+coordinator-generated fallback policy. The fallback classifies every lexical
+unit as `ordinary` and is acceptable for orchestration when no protected-name
+review exists. A reviewed policy should replace the fallback when proper-name
+classification is materially needed, but missing review alone is not a blocker
+for running the root workflow.
 
 The QNet candidate roster is balanced across packet-carried neighbors, raw core
 overlap, raw bridge overlap, and branch-theme overlap. At most eight unique
@@ -114,12 +199,12 @@ v2/output/projections/scholar-view.<language>.jsonl
 
 The full branch-evidence package is coordinator-only. Before a root task is
 created, the coordinator writes one minimal projection under `inputs/` and binds
-only that projection to the agent task. `input/` is the complete writer package;
-the neighboring plural `inputs/` directory is coordinator state and is not given
-to the writer. The root response is only a transport envelope; the authoritative
-authored units remain branch fragments.
+only that projection to the semantic worker task. `input/` is the complete
+writer package; the neighboring plural `inputs/` directory is coordinator state
+and is not given to the writer. The root response is only a transport envelope;
+the authoritative authored units remain branch fragments.
 
-## Agent Evidence Projection
+## Semantic Worker Evidence Projection
 
 Each focus branch contains:
 
@@ -156,10 +241,11 @@ Repeated neighbor cards are stored once in `neighbor_registry`:
 
 The compact source-claim roster is projected deterministically from accepted
 lexical units. It supplies complete claim coverage without raw passages. Every
-claim also carries a reviewed, coordinator-owned `rendering_policy` of
-`ordinary` or `proper_name`; policy coverage must match the lexical roster
-exactly before a writer task can be created. The writer dispositions every claim
-and copies that rendering policy; acceptance checks both exact rosters.
+claim also carries a coordinator-owned `rendering_policy` of `ordinary` or
+`proper_name`; the policy status is either `reviewed` or `fallback`. Policy
+coverage must match the lexical roster exactly before a writer task can be
+created. The writer dispositions every claim and copies that rendering policy;
+acceptance checks both exact rosters.
 
 Transliteration values, draft suggestions, and unresolved anchors remain outside
 the initial root-writer evidence. After the writer has selected neighbors, the
@@ -174,7 +260,7 @@ The writer is explicitly instructed to read only the named files in `input/`,
 write only `output/<root-envelope>_entry.json`, and avoid every other path. It receives no
 occurrence data.
 
-## Agent Roles
+## Semantic Worker Roles
 
 ### Root Writer
 
@@ -242,7 +328,7 @@ review instead of automatic repair.
 | Concept, contextual, lexical, and excluded gloss text and risk | root writer, per branch |
 | Neighbor selection, verified relation type, asymmetry, prose, and coverage explanation | root writer, per branch |
 | Semantic publication verdict and bounded issue scope | semantic reviewer |
-| Proper-name classification | reviewed coordinator policy |
+| Proper-name classification | coordinator policy, reviewed or fallback |
 | Proper-name target forms | root writer, through generated surface-form queue |
 | Transliteration catalog and used-anchor queue generation | coordinator |
 | Used transliteration values | root writer, through generated surface-form queue |
@@ -256,9 +342,9 @@ review instead of automatic repair.
 | Markdown and JSONL | deterministic renderers |
 | Consumer projection selection and master hash binding | deterministic projector |
 
-An agent's raw response containing fields outside its schema is rejected. After
+Worker raw responses containing fields outside their schema are rejected. After
 validation, the coordinator adds `inputs_sha256` and the deterministic evidence
-layer; agents do not author either.
+layer; semantic workers do not author either.
 Arabic script in an authored target-language field is rejected by the response
 schema. The schema also restricts every selected gloss to
 `loanword_status: none`; plain-language quality beyond those mechanical checks
@@ -267,34 +353,33 @@ remains part of semantic review.
 ## Execution Order
 
 ```text
-1. Validate packet and deterministic occurrence/alignment artifacts
-2. Build full coordinator-side branch evidence
-3. Deduplicate neighbor cards and hash-bind one minimal semantic root evidence package
-4. Orchestrator invokes one root writer for the target language
-5. Writer validates and corrects its actual output in place; coordinator rechecks, enriches, and hash-binds it
-6. Orchestrator invokes one semantic reviewer on an authored-only view bound to that exact enriched response
-7. Route bounded repair or editorial review; review every repaired response again
-8. Resolve catalogued transliterations and protected proper names through separate gates
-9. Split branch fragments and resolve reviewed names and transliterations mechanically
-10. Assemble and validate schema-v4 JSON
-11. Render Markdown and verify it with --check
-12. Derive bounded consumer projections from the validated master entry
-13. Export master or projected entries as one-entry-per-line JSONL
+1. Controller validates packet and deterministic occurrence/alignment artifacts
+2. Controller builds full branch evidence and one hash-bound minimal projection
+3. Controller reuses a checked writer fragment or launches one root writer
+4. Writer authors and self-validates its output; controller revalidates and accepts it
+5. Controller reuses a checked review pass or launches one independent reviewer
+6. Controller validates and accepts the review, then inspects its explicit verdict
+7. Controller routes one bounded writer repair or parks for editorial review
+8. Every repaired response receives a fresh independent semantic review
+9. Same writer completes generated transliteration/name queues when required
+10. Controller finalizes, validates, renders, and atomically publishes JSON/Markdown
+11. Controller derives requested projections and exports without another worker
 ```
 
 Roots with more than 100 occurrences follow the same process. Their occurrence
 arrays are built deterministically after writer work and omitted from the
 reviewer's authored-only view, so occurrence count does not increase either
-agent's context.
+semantic worker's context.
 
 The internal validated master retains exact dictionary references for
 verification. The accepted and downstream entry artifacts expose only
 `branch_image_ar`, `what_is_ar`, `source_phrase_ar`, compact `sources`, and
 dictionary-keyed `source_note`. These fields are restored from frozen
-packet/evidence data, never rewritten by an agent. Occurrences remain root-level because this workflow does not infer an
-occurrence-to-branch assignment. Each occurrence carries its QAC morphology and
-mechanically aligned attachment details; downstream projections may expose the
-full layer or a compact summary without relocating it into a branch.
+packet/evidence data, never rewritten by a semantic worker. Occurrences remain
+root-level because this workflow does not infer an occurrence-to-branch
+assignment. Each occurrence carries its QAC morphology and mechanically aligned
+attachment details; downstream projections may expose the full layer or a
+compact summary without relocating it into a branch.
 
 The accepted `<root-envelope>_entry.json` also exposes `sources` and
 `source_note` on every branch. `sources` is the coordinator-mapped short-code
@@ -303,28 +388,65 @@ dictionary code to concise prose for its distinctive addition, variant, or
 dispute and is `{}` when no such note exists. Exact references, paths, source
 detail categories, and claim IDs remain internal validation data.
 
+### Required State Transitions
+
+The controller tracks one explicit state per root/language:
+
+```text
+queued -> preparing -> writer_ready -> writer_running -> writer_accepted
+       -> review_ready -> review_running -> pass -> finalizing -> published
+                                      -> repair -> writer_repair_ready
+                                                -> writer_running
+                                                -> review_ready
+                                      -> editorial_review -> parked
+
+finalizing -> surface_forms_ready -> writer_running -> finalizing
+```
+
+`parked` is reachable from any failed gate and is terminal for that campaign
+unless the user explicitly resumes it. `published` is the only successful
+terminal state. The controller may skip `writer_running` or `review_running`
+only when the corresponding check script proves a canonical artifact valid and
+task-bound. A checked stored non-pass review resumes at its verdict route; it
+does not launch another reviewer. The controller may skip `surface_forms_ready`
+when finalization requests no queue.
+
+Worker prose such as "done" or "validated" never advances state. A transition
+requires the expected artifact plus a zero exit from its check, validation, or
+acceptance command. A zero exit from `accept_root_review.py` stores the review
+but does not imply `pass`; the controller must read and route the verdict.
+Likewise, an existing filename or JSON parse success never proves task-hash,
+roster, review-binding, or publication validity.
+
+The controller runs every transition command itself. It may batch independent
+controller commands and run semantic workers for different roots concurrently,
+but it must preserve same-root order. It never creates a worker whose job is to
+operate this state machine.
+
 ## Input, Output, and Resumption
 
 Each writer uses the regular resumable `input/` and `output/` folders in its
 root/language work directory. `input/` contains only the staged prompt, thin
-schema, compact evidence, task, and instructions. The instructions prohibit
-reading any other file or directory. The raw response is written only to
-`output/<root-envelope>_entry.json`; deterministic acceptance validates it,
+schema, compact evidence, task, and instructions. During entry and repair, the
+instructions prohibit reading any other input. A later surface-form continuation
+may authorize only the exact generated queue paths. The raw response is written
+only to `output/<root-envelope>_entry.json`; deterministic acceptance validates it,
 injects the coordinator-owned Arabic/source and occurrence/attachment layer
 into that same file, and stores the enriched hash-bound canonical fragment.
 The reviewer receives a compact authored-only view, so the mechanically added
 layer does not increase reviewer context. The reviewer follows the same rule with
-`review/input/` and `review/output/root_review.json`. Neither agent may use an
-operating-system or runtime temporary directory, including as an intermediate
-output location. Repair errors and their mechanically classified scope remain
-in `output/`; a repair restage copies only the exact error, previous response,
-and scope into `input/`.
+`review/input/` and `review/output/root_review.json`. Neither semantic worker may
+use an operating-system or runtime temporary directory, including as an
+intermediate output location. Validation or review errors and their mechanically
+classified scope remain under the owning `output/` or `review/output/`
+directory; a repair restage copies only the exact error, previous response, and
+scope into `input/`.
 
 Deterministic scripts may use hidden atomic staging files or directories only
 beside their repository-local destination. If some other short-lived mechanical
 artifact is necessary, it belongs under the current root/language work directory
 (for example `temporary/`) and must be removed after use. Such mechanical
-staging is never an agent package and never an agent output target.
+staging is never a semantic worker package or output target.
 
 The staging commands derive `input/`, `output/`, `review/input/`, and
 `review/output/` from the canonical task location. They do not accept an
@@ -332,23 +454,52 @@ alternate input-directory or output-directory override.
 
 Every staged task carries an exact `validation.command`. The writer and reviewer
 run that read-only command from the repository root after writing their declared
-output. On failure, the agent keeps the complete response at the same path,
+output. On failure, the worker keeps the complete response at the same path,
 corrects it from the exact validator error, and reruns validation until it
 passes. Validation never deletes, moves, truncates, or accepts the response. The
-orchestrator runs the same command once more before canonical acceptance.
+controller runs the same command once more before canonical acceptance.
 
 A valid root-writer response is reused only when its `inputs_sha256` matches the
-canonical task. The orchestrator reruns missing or stale responses. A validation
-failure is returned first to the same active agent, which repairs the same raw
-output; it is not grounds for discarding the response or spawning a competing
-candidate. Timeouts and nonzero process exits are operational failures and are
-not retried as editorial repairs. One run permits one initial writer turn plus
-two orchestrator-mediated repair continuations with that writer. Self-validation
-iterations within a turn do not consume the repair budget. A semantic repair
-receives the previous accepted response, and deterministic acceptance rejects
-any change to branches or root fields outside the routed repair ownership.
-A semantic-review pass is reusable only while its task remains bound to that
-exact accepted writer response. Any repair invalidates the earlier review.
+canonical task and `check_root_writer.py` succeeds. A valid semantic-review pass
+is reused only when `check_root_review.py` proves that it is bound to that exact
+accepted response. For resumption, `check_root_review.py --any-verdict` also
+validates bound `repair` and `editorial_review` artifacts so the controller can
+route them without launching a duplicate reviewer. Reaccepting a checked
+canonical non-pass review as both response and output is an idempotent way to
+regenerate missing error/scope sidecars. The controller checks staged raw output
+before launching a worker, so a valid resumable artifact does not cause a
+duplicate model call.
+
+A validation failure bound to the current task is returned to the same mapped
+worker, which repairs the same raw output; it is not grounds for discarding the
+response or spawning a competing candidate. The controller never edits or
+copies authored JSON to make two artifacts agree. It runs the owning staging,
+validation, and acceptance commands and inspects their exit status. A stale
+artifact from a different task is never blessed or silently repaired as though
+it were current.
+
+Timeouts and nonzero worker exits are operational failures and do not consume a
+semantic repair. A run permits one initial writer turn and one semantic-review
+repair continuation with that writer. The repaired response
+receives a fresh independent review; if that rebound verdict is `repair` or
+`editorial_review`, the root parks. Self-validation iterations within a worker
+turn and at most two controller-mediated corrections of the same schema-invalid
+artifact do not consume the semantic repair budget. Exceeding that structural
+correction limit parks the root rather than looping indefinitely.
+
+A semantic repair receives the previous accepted response, exact review issue,
+and generated scope. Deterministic acceptance rejects any change to branches or
+root fields outside that scope. Any repair invalidates the earlier review.
+
+Finalization may request the transliteration queue and protected-name queue on
+separate passes. Each request continues the retained writer session when
+available. After process resumption, the controller may launch one bounded
+writer continuation authorized only for the exact generated queue paths. This
+explicit continuation supersedes the initial input-directory read restriction
+only for those named files. The worker must not change the accepted entry
+response. A queue receives at most two controller-mediated correction
+continuations before the root parks. Other finalization failures are mechanical
+and never go to a semantic worker.
 
 ## Surgical Correction Protocol
 
@@ -357,21 +508,21 @@ owned and routed as follows:
 
 | Failure or finding | Corrector | Required action |
 |---|---|---|
-| Writer/reviewer schema or semantic-contract error | Same active agent | Keep the actual output; edit only the fields named by the exact error; rerun `validation.command` |
-| Evidence-grounded semantic-review issue | Same root writer | Restage the previous response, exact issue, and generated scope; change only permitted fields; validate again |
-| Missing or stale protected-name policy | Coordinator | Complete the exact lexical-unit classification roster; do not let a writer infer policy |
-| Missing used transliterations or protected-name target forms | Same root writer | Fill only the generated queue rows with approved target-language values; do not change the accepted entry response |
-| Stale task/hash or staged-path mismatch | Orchestrator plus deterministic script | Restage canonical files; do not alter authored prose or bless a stale raw response |
-| Evidence build, assembly, rendering, or publication failure | Orchestrator plus owning script | Repair or regenerate the deterministic artifact; never route it as a lexical rewrite |
-| Scope conflict or evidence ambiguity | Same owning writer or reviewer | Preserve protected artifacts and report the conflict without broadening the correction |
+| Writer/reviewer schema or semantic-contract error | Same mapped worker | Keep the actual output; edit only the fields named by the exact error; rerun `validation.command` |
+| Evidence-grounded semantic-review issue | Same mapped root writer | Restage the previous response, exact issue, and generated scope; change only permitted fields; validate again |
+| Missing or stale protected-name policy | Coordinator | Use the generated all-ordinary fallback policy or replace it with an exact reviewed roster; do not let a writer infer policy |
+| Missing used transliterations or protected-name target forms | Same mapped root writer | Fill only the generated queue rows with approved target-language values; do not change the accepted entry response |
+| Stale task/hash or staged-path mismatch | Controller, running the owning script directly | Restage canonical files; do not alter authored prose or bless a stale raw response |
+| Evidence build, assembly, rendering, or publication failure | Controller, running the owning script directly | Repair or regenerate a clearly owned deterministic prerequisite; never route it as a lexical rewrite |
+| Scope conflict or evidence ambiguity | User/editor after worker report | Preserve protected artifacts and park without broadening the correction |
 
-The orchestrator never edits agent-authored JSON. It may invoke validators,
-classifiers, staging, acceptance, and deterministic build commands, and it sends
-their exact bounded result to the owning agent. A surgical correction must not
-regenerate valid branches, reorder unaffected content, rephrase unrelated prose,
-or change protected root fields. Validation failures remain at their declared
-repository output path until the same agent fixes them or editorial review
-explicitly decides otherwise.
+The controller never edits worker-authored JSON. It directly invokes validators,
+classifiers, staging, acceptance, and deterministic build commands, then sends
+an exact bounded error only to the worker that owns the affected authored field.
+A surgical correction must not regenerate valid branches, reorder unaffected
+content, rephrase unrelated prose, or change protected root fields. Validation
+failures remain at their declared repository output path until the mapped worker
+fixes them or editorial review explicitly decides otherwise.
 
 ## Assembly and Validation
 
@@ -391,9 +542,9 @@ explicitly decides otherwise.
 - QAC and attachment structures are recomputed and compared exactly;
 - missing, duplicate, extra, stale, or wrong-language fragments are rejected.
 
-Only root-writer fields are eligible for agent repair.
+Only root-writer fields are eligible for semantic worker repair.
 Dictionary routing, provenance, morphology, alignment, ayahs, and occurrence
-errors are deterministic pipeline failures and are never sent to an agent.
+errors are deterministic pipeline failures and are never sent to a semantic worker.
 
 Draft generated JSON and Markdown are staged, validated, and published as a
 pair. Reviewed or published outputs and their pinned evidence require explicit
@@ -401,18 +552,24 @@ force flags before replacement.
 
 ## Acceptance Criteria
 
-A run is complete only when:
+A root workflow is complete only when:
 
 1. One root-writer response matches the hash-bound task and exact branch roster.
 2. A semantic-review pass is bound to that exact accepted response.
 3. Split branch and root-profile fragments reproduce from that response.
 4. Minimal semantic evidence matches its coordinator-side packages, every
-   lexical unit has reviewed rendering policy, and every used transliteration
-   and protected proper-name form has a writer-completed queue value.
+   lexical unit has exact reviewed or fallback rendering policy, and every used
+   transliteration and protected proper-name form has a writer-completed queue
+   value.
 5. Schema and packet-aware validation pass.
 6. Markdown is reproducible under `--check`.
-7. JSONL export validates every entry and preserves one common schema.
-8. Every consumer projection is reproducible and hash-bound to its master entry.
+
+Only then may the controller mark the root `published`. A campaign export is a
+separate deterministic completion gate: when requested, the controller directly
+runs JSONL export and required projections after all eligible roots are
+terminal. That export is complete only when every record validates, one common
+schema is preserved, and every projection is reproducible and hash-bound to its
+master entry. Projection or export never requires another semantic worker.
 
 ## Script Boundary
 
@@ -423,7 +580,7 @@ stage_root_writer.py       refresh regular input/ and output/ writer folders
 check_root_writer.py       verify that a stored response is safely reusable
 accept_root_writer.py      validate, scope-check, hash-bind, and store returned JSON
 prepare_root_review.py     bind semantic review to accepted evidence and response
-check_root_review.py       verify a reusable pass bound to the current response
+check_root_review.py       verify a bound review; require pass unless --any-verdict
 stage_root_reviewer.py     refresh regular review input/output folders
 validate_agent_output.py   read-only staged writer/reviewer output validation
 accept_root_review.py      validate verdict/issues and produce bounded repair scope
@@ -437,6 +594,9 @@ project_entry.py           bounded, master-hash-bound consumer projections
 export_jsonl.py            validated master or projection records as JSONL
 ```
 
+The controller runs every script in this table directly and checks its exit
+status. The table is not a worker-role roster.
+
 ## Target Languages
 
 Packet construction, dictionary routing, Furūq candidate generation, QAC
@@ -449,7 +609,7 @@ each target language. Gloss fit, loss, addition, collision, applicability, and
 natural wording cannot be copied from another language. Shared Arabic evidence
 does not need to be rebuilt for each language. Once that language's master entry
 validates, all three consumer projections are deterministic and require no
-additional agent call.
+additional worker call.
 
 The current contract supports English (`en`) and Turkish (`tr`). A new language
 code requires an explicit schema, transliteration-policy, renderer-label, and CLI
