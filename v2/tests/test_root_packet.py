@@ -3,6 +3,7 @@ import unittest
 from pathlib import Path
 
 from scripts.root_packet import (
+    prepare_output_paths,
     referenced_attachment_ids,
     root_key,
     tsv_matches,
@@ -10,6 +11,27 @@ from scripts.root_packet import (
 
 
 class RootPacketTest(unittest.TestCase):
+    def test_existing_packet_outputs_require_force(self):
+        with tempfile.TemporaryDirectory() as directory:
+            output_dir = Path(directory)
+            expected = (
+                output_dir / "root_000001.json",
+                output_dir / "root_000001.md",
+            )
+            self.assertEqual(
+                prepare_output_paths(output_dir, "root_000001", force=False),
+                expected,
+            )
+            expected[0].write_text("{}\n", encoding="utf-8")
+
+            with self.assertRaisesRegex(SystemExit, "Rerun with --force"):
+                prepare_output_paths(output_dir, "root_000001", force=False)
+
+            self.assertEqual(
+                prepare_output_paths(output_dir, "root_000001", force=True),
+                expected,
+            )
+
     def test_attachment_selection_closes_over_instance_references(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "attachments.tsv"

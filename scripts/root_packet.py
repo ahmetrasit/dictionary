@@ -69,6 +69,20 @@ def referenced_attachment_ids(instances):
     }
 
 
+def prepare_output_paths(output_dir, root_envelope_id, *, force):
+    output_dir.mkdir(parents=True, exist_ok=True)
+    json_path = output_dir / f"{root_envelope_id}.json"
+    md_path = output_dir / f"{root_envelope_id}.md"
+    existing = [path for path in (json_path, md_path) if path.exists()]
+    if existing and not force:
+        names = ", ".join(str(path) for path in existing)
+        raise SystemExit(
+            f"Refusing to replace existing root packet output(s): {names}. "
+            "Rerun with --force."
+        )
+    return json_path, md_path
+
+
 def find_roots(db, query):
     roots = fetch(db, "SELECT * FROM roots ORDER BY root_id")
     if query.startswith("root_"):
@@ -240,6 +254,11 @@ def main():
     parser.add_argument("root", help="Arabic root, spaced or unspaced; or a V4 root_id")
     parser.add_argument("--top-neighbors", type=int, default=8)
     parser.add_argument("--output-dir", type=Path, default=project / "data/output/root_packets")
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="replace an existing JSON or Markdown packet",
+    )
     args = parser.parse_args()
 
     furuq = open_db(project / "data/working/furuq_v4.sqlite")
@@ -250,6 +269,11 @@ def main():
     target, root_rows = find_roots(furuq, args.root)
     root_ids = [row["root_id"] for row in root_rows]
     root_envelope_id = "--".join(root_ids)
+    json_path, md_path = prepare_output_paths(
+        args.output_dir,
+        root_envelope_id,
+        force=args.force,
+    )
     marks = ",".join("?" for _ in root_ids)
 
     branches = fetch(furuq, f"""SELECT root_id, branch_id, branch_image_ar,
@@ -357,9 +381,6 @@ def main():
         "qnet": qnet_for_branches(qnet_db, branches, branch_lookup, args.top_neighbors),
     }
 
-    args.output_dir.mkdir(parents=True, exist_ok=True)
-    json_path = args.output_dir / f"{root_envelope_id}.json"
-    md_path = args.output_dir / f"{root_envelope_id}.md"
     validate_packet(packet)
     json_path.write_text(json.dumps(packet, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     md_path.write_text(render(packet), encoding="utf-8")
