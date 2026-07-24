@@ -21,9 +21,9 @@
       "maxLength": 2000,
       "pattern": "^[^\\u0600-\\u06FF]*$"
     },
-    "claimId": {
+    "evidenceId": {
       "type": "string",
-      "pattern": "^lu_[0-9]{3,}$"
+      "pattern": "^(bc_[0-9]{3}|lu_[0-9]{3,})$"
     },
     "issue": {
       "type": "object",
@@ -45,6 +45,8 @@
         "field": {
           "enum": [
             "concept_map",
+            "identity_judgment",
+            "lexicalization_scope",
             "source_synthesis",
             "concept_gloss",
             "contextual_glosses",
@@ -58,7 +60,7 @@
         "claim_ids": {
           "type": "array",
           "uniqueItems": true,
-          "items": { "$ref": "#/$defs/claimId" }
+          "items": { "$ref": "#/$defs/evidenceId" }
         },
         "evidence_conflict": { "$ref": "#/$defs/prose" },
         "smallest_correction": { "$ref": "#/$defs/prose" }

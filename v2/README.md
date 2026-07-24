@@ -60,7 +60,9 @@ the current minimal-input workflow.
 
 `v2/work/` is resumable local execution state, not master data or production
 provenance. Current root-writer tasks use task format 4 and minimal evidence
-format `dictionary-v2-agent-root-evidence-v4`. Older manifests are historical
+format `dictionary-v2-agent-root-evidence-v5`. V5 carries authoritative
+branch claims separately from optional lexical attestations and includes a
+mechanical bare/collocation profile. Older manifests are historical
 and are ignored; rerunning `create_entry.py` in prepare mode writes the current
 task before any model call.
 

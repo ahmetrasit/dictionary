@@ -12,7 +12,11 @@ PROJECT = Path(__file__).resolve().parents[2]
 if str(PROJECT) not in sys.path:
     sys.path.insert(0, str(PROJECT))
 
-from v2.scripts.assemble_entry import canonical_sha256, validate_fragment
+from v2.scripts.assemble_entry import (
+    ROOT_EVIDENCE_FORMAT,
+    canonical_sha256,
+    validate_fragment,
+)
 from v2.scripts.create_entry import atomic_write, binding_path, json_content, verify_task_bindings
 from v2.scripts.validate_entry import ContractError, load_json
 
@@ -30,9 +34,19 @@ def validate_review(response: dict, task: dict) -> None:
         )
     roster = task["branch_roster"]
     evidence = load_json(binding_path(task["evidence"]["path"]))
-    claims_by_ref = {
+    if evidence.get("format") != ROOT_EVIDENCE_FORMAT:
+        raise ContractError(
+            f"root_reviewer: expected evidence format {ROOT_EVIDENCE_FORMAT!r}"
+        )
+    branch_claims_by_ref = {
         branch["branch_ref"]: {
-            claim["claim_id"] for claim in branch["source_claims"]
+            claim["claim_id"] for claim in branch["branch_claims"]
+        }
+        for branch in evidence["branches"]
+    }
+    lexical_ids_by_ref = {
+        branch["branch_ref"]: {
+            unit["lexical_unit_id"] for unit in branch["lexical_units"]
         }
         for branch in evidence["branches"]
     }
@@ -48,10 +62,16 @@ def validate_review(response: dict, task: dict) -> None:
             raise ContractError(
                 f"root_reviewer.issues[{index}]: target is outside branch roster"
             )
-        unknown = set(issue["claim_ids"]) - claims_by_ref[target]
+        allowed_ids = (
+            lexical_ids_by_ref[target]
+            if issue["field"] == "lexical_glosses"
+            else branch_claims_by_ref[target]
+        )
+        unknown = set(issue["claim_ids"]) - allowed_ids
         if unknown:
             raise ContractError(
-                f"root_reviewer.issues[{index}]: unknown claim IDs {sorted(unknown)}"
+                f"root_reviewer.issues[{index}]: evidence IDs are outside the "
+                f"{issue['field']} roster: {sorted(unknown)}"
             )
 
 

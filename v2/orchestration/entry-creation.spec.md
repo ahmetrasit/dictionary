@@ -157,6 +157,9 @@ overlap, raw bridge overlap, and branch-theme overlap. At most eight unique
 cross-root candidates are retained across those lanes, followed by every sibling
 branch in the focus root. If an exact theme port is absent, the builder may use
 the represented root's themes as an explicitly labeled indirect fallback.
+The resulting roster may be empty; in that case the coordinator records
+`candidate_count: 0` and the writer assesses the supplied empty roster without
+inventing a neighbor.
 
 ## Artifact Layout
 
@@ -213,15 +216,28 @@ Each focus branch contains:
   "branch_ref": "root_001697/B001",
   "branch_image_ar": "...",
   "what_is_ar": "...",
-  "source_claims": [
+  "what_is_not_ar": "...",
+  "branch_claims": [
     {
-      "claim_id": "lu_001",
+      "claim_id": "bc_001",
+      "source_phrase_ar": "...",
+      "source_ids": ["maqayis", "sihah"]
+    }
+  ],
+  "lexicalization_profile": {
+    "branch_kind": "bare",
+    "has_non_bare": false,
+    "has_collocation": false,
+    "unit_kind_counts": {"form": 1},
+    "basis": "furuq.lexical_unit_senses.unit_kind"
+  },
+  "lexical_units": [
+    {
       "lexical_unit_id": "lu_001",
       "unit_kind": "form",
       "expression_ar": "...",
       "sense_ar": "...",
       "source_phrase_ar": "...",
-      "source_ids": ["maqayis", "sihah"],
       "rendering_policy": "ordinary"
     }
   ],
@@ -239,13 +255,23 @@ Repeated neighbor cards are stored once in `neighbor_registry`:
 }
 ```
 
-The compact source-claim roster is projected deterministically from accepted
-lexical units. It supplies complete claim coverage without raw passages. Every
-claim also carries a coordinator-owned `rendering_policy` of `ordinary` or
-`proper_name`; the policy status is either `reviewed` or `fallback`. Policy
-coverage must match the lexical roster exactly before a writer task can be
-created. The writer dispositions every claim and copies that rendering policy;
-acceptance checks both exact rosters.
+The exact branch `source_phrase_ar` is projected as one deterministic aggregate
+`bc_*` branch claim and is authoritative for branch identity. The compact
+`branch_image_ar`, `what_is_ar`, and `what_is_not_ar` fields are provisional
+comparison aids. The writer may correct or qualify their framing in authored
+entry fields, but never mutates the frozen Arabic evidence or source database.
+Concept facets and source synthesis bind only to the branch claim.
+
+Lexical units are a separate, optional attestation roster. A branch with no
+accepted lexical units is still writable and receives `lexical_units: []` plus
+an `unresolved` lexicalization profile. Lexical source references remain
+coordinator-side provenance: they may extend beyond the branch dictionary basis
+when they resolve in the packet-wide dictionary roster, and are neither unioned
+into branch authority nor silently discarded. Every lexical unit carries a
+coordinator-owned `rendering_policy` of `ordinary` or `proper_name`; the policy
+status is either `reviewed` or `fallback`. Policy coverage must match the
+lexical roster exactly. Acceptance checks the branch-claim roster, lexical
+roster, and rendering policy independently.
 
 Transliteration values, draft suggestions, and unresolved anchors remain outside
 the initial root-writer evidence. After the writer has selected neighbors, the
@@ -269,6 +295,12 @@ branch-shaped fragment per accepted branch and one short root profile.
 
 The writer authors:
 
+- an explicit identity judgment grounded in authoritative
+  `source_phrase_ar`, including supported qualification or reframing in the
+  entry rather than the source data;
+- an authored lexicalization-scope note whose `branch_kind` exactly echoes the
+  coordinator's mechanical profile and prevents construction-bound senses from
+  being generalized into bare meanings;
 - a claim-ID-bound synthesis that separates common material from distinctive
   examples, disagreements, restrictions, extensions, implications, derivations,
   and sole attestations;
@@ -308,6 +340,22 @@ stable IDs after accepting the fragment.
 The writer summarizes root-level semantic organization. Occurrence-dependent
 collocation fields remain `unknown`; deterministic occurrence data is attached
 later by the coordinator.
+Branch lexicalization status is also coordinator-owned. The coordinator derives
+`lexicalization_profile` from Furuq lexical-unit `unit_kind` values already
+bound to each branch, so any branch containing collocation or other non-form
+units is flagged as non-bare without semantic-worker inference. The writer must
+echo its `branch_kind` in `lexicalization_scope` and obey these semantic limits:
+`bare` excludes collocation-only readings; `collocation` stays explicitly
+construction-bound; `mixed_non_bare` separates bare and non-bare facets;
+`non_bare` preserves lexical restriction; and `unresolved` never licenses an
+assumption of bare meaning.
+
+The writer also returns `identity_judgment.status` as `accepted`, `qualified`,
+`reframed`, or `structural_review_required`. The first three preserve the
+prepared branch roster while recording the authored correction. Structural
+review means a faithful entry would require a split, merge, deletion, or
+reassignment. The coordinator parks that root before semantic review and
+refuses assembly or publication.
 
 ### Semantic Reviewer
 
@@ -324,6 +372,9 @@ review instead of automatic repair.
 | Schema version, IDs, language, status, provenance | coordinator |
 | Root profile prose and semantic organization | root writer |
 | Frozen Arabic branch fields | packet / coordinator |
+| Branch identity judgment and supported target-language correction | root writer, per branch |
+| Mechanical lexicalization class | Furuq / coordinator |
+| Authored lexicalization scope note | root writer, constrained by mechanical class |
 | Concept-map facets, definitions, and claim-bound source synthesis | root writer, per branch |
 | Concept, contextual, lexical, and excluded gloss text and risk | root writer, per branch |
 | Neighbor selection, verified relation type, asymmetry, prose, and coverage explanation | root writer, per branch |
@@ -336,7 +387,7 @@ review instead of automatic repair.
 | Branch summary copied from definition; ranks; counts; coverage enum; collocation defaults | coordinator |
 | Neighbor Arabic image, basis, references, candidate count | Furuq package / coordinator |
 | Dictionary counts, names, source roster, references | packet / coordinator |
-| Lexical realizations | packet / coordinator |
+| Lexical realizations and branch lexicalization profile | packet / Furuq / coordinator |
 | QAC forms, morphology, ayahs, and occurrence rows | coordinator |
 | Attachment-to-QAC alignment and linked attachment detail | coordinator |
 | Markdown and JSONL | deterministic renderers |
@@ -357,13 +408,14 @@ remains part of semantic review.
 2. Controller builds full branch evidence and one hash-bound minimal projection
 3. Controller reuses a checked writer fragment or launches one root writer
 4. Writer authors and self-validates its output; controller revalidates and accepts it
-5. Controller reuses a checked review pass or launches one independent reviewer
-6. Controller validates and accepts the review, then inspects its explicit verdict
-7. Controller routes one bounded writer repair or parks for editorial review
-8. Every repaired response receives a fresh independent semantic review
-9. Same writer completes generated transliteration/name queues when required
-10. Controller finalizes, validates, renders, and atomically publishes JSON/Markdown
-11. Controller derives requested projections and exports without another worker
+5. Controller parks any `structural_review_required` branch before semantic review
+6. Controller reuses a checked review pass or launches one independent reviewer
+7. Controller validates and accepts the review, then inspects its explicit verdict
+8. Controller routes one bounded writer repair or parks for editorial review
+9. Every repaired response receives a fresh independent semantic review
+10. Same writer completes generated transliteration/name queues when required
+11. Controller finalizes, validates, renders, and atomically publishes JSON/Markdown
+12. Controller derives requested projections and exports without another worker
 ```
 
 Roots with more than 100 occurrences follow the same process. Their occurrence
@@ -373,20 +425,21 @@ semantic worker's context.
 
 The internal validated master retains exact dictionary references for
 verification. The accepted and downstream entry artifacts expose only
-`branch_image_ar`, `what_is_ar`, `source_phrase_ar`, compact `sources`, and
-dictionary-keyed `source_note`. These fields are restored from frozen
-packet/evidence data, never rewritten by a semantic worker. Occurrences remain
-root-level because this workflow does not infer an occurrence-to-branch
-assignment. Each occurrence carries its QAC morphology and mechanically aligned
-attachment details; downstream projections may expose the full layer or a
-compact summary without relocating it into a branch.
+the frozen Arabic fields `branch_image_ar`, `what_is_ar`, `what_is_not_ar`, and
+`source_phrase_ar` plus compact source attribution. These Arabic fields are
+restored from frozen packet/evidence data, never rewritten by a semantic worker.
+Occurrences remain root-level because this workflow does not infer an
+occurrence-to-branch assignment. Each occurrence carries its QAC morphology and
+mechanically aligned attachment details; downstream projections may expose the
+full layer or a compact summary without relocating it into a branch.
 
-The accepted `<root-envelope>_entry.json` also exposes `sources` and
-`source_note` on every branch. `sources` is the coordinator-mapped short-code
-roster of dictionaries supporting the concept map. `source_note` maps only a
-dictionary code to concise prose for its distinctive addition, variant, or
-dispute and is `{}` when no such note exists. Exact references, paths, source
-detail categories, and claim IDs remain internal validation data.
+The accepted `<root-envelope>_entry.json` also exposes `identity_judgment`,
+`lexicalization_scope`, `sources`, and `source_note` on every branch. `sources`
+is the coordinator-mapped short-code roster of dictionaries supporting the
+authoritative branch claim. `source_note` maps only a dictionary code to concise
+prose for its distinctive addition, variant, or dispute and is `{}` when no
+such note exists. Exact references, paths, source detail categories, and claim
+IDs remain internal validation data.
 
 ### Required State Transitions
 
@@ -401,6 +454,7 @@ queued -> preparing -> writer_ready -> writer_running -> writer_accepted
                                       -> editorial_review -> parked
 
 finalizing -> surface_forms_ready -> writer_running -> finalizing
+writer_accepted -> structural_review_required -> parked
 ```
 
 `parked` is reachable from any failed gate and is terminal for that campaign
@@ -431,8 +485,9 @@ schema, compact evidence, task, and instructions. During entry and repair, the
 instructions prohibit reading any other input. A later surface-form continuation
 may authorize only the exact generated queue paths. The raw response is written
 only to `output/<root-envelope>_entry.json`; deterministic acceptance validates it,
-injects the coordinator-owned Arabic/source and occurrence/attachment layer
-into that same file, and stores the enriched hash-bound canonical fragment.
+injects the coordinator-owned Arabic/source, branch lexicalization, and
+occurrence/attachment layer into that same file, and stores the enriched
+hash-bound canonical fragment.
 The reviewer receives a compact authored-only view, so the mechanically added
 layer does not increase reviewer context. The reviewer follows the same rule with
 `review/input/` and `review/output/root_review.json`. Neither semantic worker may
@@ -535,7 +590,7 @@ fixes them or editorial review explicitly decides otherwise.
   are derived mechanically;
 - writer-completed proper-name placeholders are substituted mechanically;
 - lexical target glosses join by exact lexical-unit ID;
-- source claim IDs expand to precise source names and references;
+- branch claim IDs expand to precise branch-basis source names and references;
 - branch summaries, excluded-gloss display reasons, coverage enums, branch
   counts, and collocation defaults are restored mechanically;
 - source references are attached to authored claims mechanically;
@@ -558,9 +613,10 @@ A root workflow is complete only when:
 2. A semantic-review pass is bound to that exact accepted response.
 3. Split branch and root-profile fragments reproduce from that response.
 4. Minimal semantic evidence matches its coordinator-side packages, every
-   lexical unit has exact reviewed or fallback rendering policy, and every used
-   transliteration and protected proper-name form has a writer-completed queue
-   value.
+   branch has authoritative branch-claim coverage and exact mechanical
+   lexicalization scope, every supplied lexical unit has exact reviewed or
+   fallback rendering policy, and every used transliteration and protected
+   proper-name form has a writer-completed queue value.
 5. Schema and packet-aware validation pass.
 6. Markdown is reproducible under `--check`.
 

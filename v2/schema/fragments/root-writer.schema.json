@@ -19,7 +19,11 @@
       "type": "string",
       "pattern": "^root_[0-9]{6}/B[0-9]{3}$"
     },
-    "claimId": {
+    "branchClaimId": {
+      "type": "string",
+      "pattern": "^bc_[0-9]{3}$"
+    },
+    "lexicalUnitId": {
       "type": "string",
       "pattern": "^lu_[0-9]{3,}$"
     },
@@ -56,6 +60,8 @@
       "additionalProperties": false,
       "required": [
         "branch_ref",
+        "identity_judgment",
+        "lexicalization_scope",
         "concept_map",
         "source_synthesis",
         "concept_gloss",
@@ -67,6 +73,8 @@
       ],
       "properties": {
         "branch_ref": { "$ref": "#/$defs/branchRef" },
+        "identity_judgment": { "$ref": "#/$defs/identityJudgment" },
+        "lexicalization_scope": { "$ref": "#/$defs/lexicalizationScope" },
         "concept_map": { "$ref": "#/$defs/conceptMap" },
         "source_synthesis": { "$ref": "#/$defs/sourceSynthesis" },
         "concept_gloss": { "$ref": "#/$defs/conceptGloss" },
@@ -78,7 +86,7 @@
         },
         "lexical_glosses": {
           "type": "array",
-          "minItems": 1,
+          "minItems": 0,
           "items": { "$ref": "#/$defs/lexicalGloss" }
         },
         "excluded_glosses": {
@@ -94,6 +102,40 @@
           "items": { "$ref": "#/$defs/neighborDistinction" }
         },
         "neighbor_coverage_note": { "$ref": "#/$defs/shortProse" }
+      }
+    },
+    "identityJudgment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "rationale", "boundary_note"],
+      "properties": {
+        "status": {
+          "enum": [
+            "accepted",
+            "qualified",
+            "reframed",
+            "structural_review_required"
+          ]
+        },
+        "rationale": { "$ref": "#/$defs/prose" },
+        "boundary_note": { "$ref": "#/$defs/shortProse" }
+      }
+    },
+    "lexicalizationScope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["branch_kind", "note"],
+      "properties": {
+        "branch_kind": {
+          "enum": [
+            "bare",
+            "collocation",
+            "mixed_non_bare",
+            "non_bare",
+            "unresolved"
+          ]
+        },
+        "note": { "$ref": "#/$defs/shortProse" }
       }
     },
     "conceptMap": {
@@ -130,7 +172,7 @@
           "type": "array",
           "minItems": 1,
           "uniqueItems": true,
-          "items": { "$ref": "#/$defs/claimId" }
+          "items": { "$ref": "#/$defs/branchClaimId" }
         }
       }
     },
@@ -148,9 +190,9 @@
         "common_summary": { "$ref": "#/$defs/prose" },
         "common_claim_ids": {
           "type": "array",
-          "minItems": 1,
+          "minItems": 0,
           "uniqueItems": true,
-          "items": { "$ref": "#/$defs/claimId" }
+          "items": { "$ref": "#/$defs/branchClaimId" }
         },
         "source_details": {
           "type": "array",
@@ -159,7 +201,7 @@
         "supporting_claim_ids": {
           "type": "array",
           "uniqueItems": true,
-          "items": { "$ref": "#/$defs/claimId" }
+          "items": { "$ref": "#/$defs/branchClaimId" }
         },
         "duplicate_claims": {
           "type": "array",
@@ -176,7 +218,7 @@
           "type": "array",
           "minItems": 1,
           "uniqueItems": true,
-          "items": { "$ref": "#/$defs/claimId" }
+          "items": { "$ref": "#/$defs/branchClaimId" }
         },
         "kind": {
           "enum": [
@@ -197,8 +239,8 @@
       "additionalProperties": false,
       "required": ["claim_id", "merged_into"],
       "properties": {
-        "claim_id": { "$ref": "#/$defs/claimId" },
-        "merged_into": { "$ref": "#/$defs/claimId" }
+        "claim_id": { "$ref": "#/$defs/branchClaimId" },
+        "merged_into": { "$ref": "#/$defs/branchClaimId" }
       }
     },
     "conceptGloss": {
@@ -239,7 +281,7 @@
       "additionalProperties": false,
       "required": ["lexical_unit_id", "rendering_kind", "target_gloss"],
       "properties": {
-        "lexical_unit_id": { "$ref": "#/$defs/claimId" },
+        "lexical_unit_id": { "$ref": "#/$defs/lexicalUnitId" },
         "rendering_kind": { "enum": ["ordinary", "proper_name"] },
         "target_gloss": {
           "type": ["string", "null"],

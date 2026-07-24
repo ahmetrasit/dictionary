@@ -35,11 +35,11 @@ Use clear, ordinary task-language wording. Do not use Arabic script,
 transliterated Arabic, or an Arabic/source-language loanword as a shortcut for
 explaining a concept. Source titles may remain names. In the initial entry
 response, never invent, normalize, or transliterate a person or place name. Each
-source claim carries the coordinator-owned `rendering_policy`; copy it exactly
-into `rendering_kind`. For a `proper_name` claim, leave `target_gloss` null and
-refer to it in authored prose only with its exact token `{{lexical_unit_id}}`,
-as supplied by the current evidence. The coordinator replaces that token after
-the generated proper-name queue is completed.
+lexical unit carries the coordinator-owned `rendering_policy`; copy it exactly
+into `rendering_kind`. For a `proper_name` lexical unit, leave `target_gloss`
+null and refer to it in authored prose only with its exact token
+`{{lexical_unit_id}}`, as supplied by the current evidence. The coordinator
+replaces that token after the generated proper-name queue is completed.
 Placeholder tokens are allowed only for lexical units declared `proper_name`.
 Never write the token of an ordinary derivation, collocation, or example merely
 because its expression contains a protected name. Explain the ordinary unit in
@@ -49,9 +49,24 @@ never use its own ordinary lexical-unit token as a surrogate name.
 
 ## 1. Build the concept map
 
-- Use `branch_image_ar` as the compact semantic image and `what_is_ar` as the
-  branch boundary. Use the compact `source_claims` as the complete lexical and
-  source-detail roster; do not import meanings from siblings or outside files.
+- Treat the branch claim's exact `source_phrase_ar` as the authoritative
+  semantic evidence for branch identity. `branch_image_ar`, `what_is_ar`, and
+  `what_is_not_ar` are provisional aids: compare them with the source phrase
+  instead of assuming they are correct. Do not rewrite any supplied Arabic
+  field. Put a supported correction or qualification in `identity_judgment`,
+  the concept-map definition and facets, and the target-language glosses.
+- Return one `identity_judgment` per branch. Use `accepted` when the supplied
+  branch framing faithfully represents the source phrase; `qualified` when it
+  is usable only with an explicit boundary qualification; `reframed` when the
+  same branch can be retained but its authored definition must correct the
+  provisional framing; and `structural_review_required` when faithful treatment
+  requires splitting, merging, deleting, or reassigning a branch or lexical
+  unit. For structural review, explain the conflict, select no neighbors, and
+  do not hide it by forcing a normal definition.
+- Use `branch_claims` as the complete branch-level claim roster. Bind
+  concept-map facets and source synthesis only to those `bc_*` IDs. Use
+  `lexical_units` only for their separate lexical renderings; they are optional
+  attestations and must not replace or override the authoritative branch phrase.
 - Create facets before writing the definition. Mark each facet as `core`,
   `specialization`, `extension`, `associated_use`, `example`, or
   `source_variant`, and bind it to the supporting claim IDs.
@@ -65,6 +80,17 @@ never use its own ordinary lexical-unit token as a surrogate name.
 - Preserve every condition and participant distinction stated by the supplied
   claims. Do not collapse a process into its result, one stage into another, or
   one construction's scope into the whole branch.
+- Copy the mechanical
+  `lexicalization_profile.branch_kind` exactly into
+  `lexicalization_scope.branch_kind`, then state how it constrains the authored
+  definition. Apply these boundaries:
+  - `bare`: define the bare branch and do not import a collocation-only reading;
+  - `collocation`: keep the definition explicitly bound to the supplied
+    construction and never generalize it to a bare-root meaning;
+  - `mixed_non_bare`: distinguish bare and construction-bound facets instead of
+    blending their scope;
+  - `non_bare`: preserve the supplied lexical restriction;
+  - `unresolved`: do not assume that the branch is bare.
 
 ## 2. Synthesize source claims
 
@@ -78,7 +104,7 @@ never use its own ordinary lexical-unit token as a surrogate name.
   exactly one dictionary in the supplied evidence. Check the union of their
   `source_ids` before creating the row. Never place a shared multi-dictionary
   example or summary there: it would be repeated under every supporting code.
-- When one aggregated claim contains differences among several dictionaries
+- When the aggregate branch claim contains differences among several dictionaries
   but has no source-specific claim IDs, summarize the contrast without naming
   dictionaries in `common_summary` and bind the claim in `common_claim_ids`.
   Do not invent source attribution or copy the same comparative prose into
@@ -109,7 +135,9 @@ never use its own ordinary lexical-unit token as a surrogate name.
 - `lexical_glosses` cover the exact lexical-unit roster separately. For an
   ordinary unit, provide a plain target-language rendering of its attested sense.
   For a proper name, use the protected-name procedure above. Do not force a
-  name-derived form into the branch-level concept gloss.
+  name-derived form into the branch-level concept gloss. Return an empty array
+  when the supplied lexical-unit roster is empty. A collocation's lexical gloss
+  remains construction-bound and is never evidence for a bare branch meaning.
 - Every error profile states what survives. Use null for a loss, addition, or
   collision that does not exist. `fit: none` permits no constitutive loss or
   addition; `narrowing` requires a real loss; `broadening` requires a real
@@ -141,6 +169,10 @@ or derivation does not by itself defeat synonymy.
 QNet, Neo, and other networks nominate candidates only. Verify every published
 relation from the supplied focus and neighbor cards. If none sharpens the
 boundary, return no distinctions and explain why.
+
+If `identity_judgment.status` is `structural_review_required`, return no
+neighbor distinctions. Neighbor comparison is not stable until branch-graph
+curation resolves the identity problem.
 
 Write the root profile from the complete branch set in one or two sentences. Do
 not make occurrence or collocation claims.
@@ -192,7 +224,9 @@ occurrences, provenance, and the generated queue shape. You own only the
 target-language values in generated surface-form queues.
 
 In entry or repair mode, before writing output, confirm exact branch order;
-sequential facet IDs within each branch; exact claim and lexical-unit coverage;
-deliberate concept versus contextual gloss separation; proper-name placeholders
-only in the initial entry response; and relation labels consistent with
+sequential facet IDs within each branch; exact branch-claim and lexical-unit
+coverage; an identity judgment grounded in `source_phrase_ar`; exact mechanical
+lexicalization scope with no collocation-to-bare generalization; deliberate
+concept versus contextual gloss separation; proper-name placeholders only in
+the initial entry response; and relation labels consistent with
 boundary/asymmetry fields.

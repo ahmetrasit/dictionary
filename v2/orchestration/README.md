@@ -93,6 +93,12 @@ running a command; never pass the brackets literally.
   concurrently, but a root never has competing writer, review, or repair turns.
 - Retain the writer session through review and finalization so bounded repair or
   generated surface-form queues return to the same assignment.
+- Treat each branch's staged `source_phrase_ar` as branch authority. Lexical
+  units are optional attestations, and their source roster is not the branch
+  dictionary basis. The writer must echo the mechanical bare/collocation class
+  and may record a supported reframing without altering frozen Arabic evidence.
+- Park `structural_review_required` identity judgments before semantic review,
+  assembly, or publication.
 - Never manually edit or copy worker JSON to bypass a gate. Route structural
   errors to the owning worker and run deterministic fixes in the controller.
 - Never use `--force-entry` or another destructive override without explicit

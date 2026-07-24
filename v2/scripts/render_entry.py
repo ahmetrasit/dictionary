@@ -16,6 +16,7 @@ PROJECT = Path(__file__).resolve().parents[2]
 if str(PROJECT) not in sys.path:
     sys.path.insert(0, str(PROJECT))
 
+from v2.scripts.branch_lexicalization import branch_lexicalization_profile
 from v2.scripts.validate_entry import ContractError, project_path, validate_entry
 
 
@@ -39,7 +40,12 @@ LABELS = {
         "arabic_definition": "Arabic branch definition",
         "arabic_boundary": "Arabic exclusion boundary",
         "source_phrase": "Arabic source phrase",
+        "identity_judgment": "Branch identity judgment",
+        "identity_boundary": "Authored identity boundary",
         "definition": "Semantic definition",
+        "lexicalization": "Lexicalization",
+        "lexicalization_scope": "Authored lexicalization scope",
+        "non_bare": "non-bare",
         "concept_map": "Concept-map facets",
         "facet_role": "Facet role",
         "lexical_realizations": "Lexical realizations",
@@ -101,7 +107,12 @@ LABELS = {
         "arabic_definition": "Arapça dal tanımı",
         "arabic_boundary": "Arapça dışlama sınırı",
         "source_phrase": "Arapça kaynak ifadesi",
+        "identity_judgment": "Dal kimliği kararı",
+        "identity_boundary": "Yazılmış kimlik sınırı",
         "definition": "Anlam tanımı",
+        "lexicalization": "Sözlüksel yapı",
+        "lexicalization_scope": "Yazılmış sözlüksel kapsam",
+        "non_bare": "çıplak olmayan",
         "concept_map": "Kavram haritası öğeleri",
         "facet_role": "Öğe rolü",
         "lexical_realizations": "Sözlüksel gerçekleşmeler",
@@ -195,6 +206,15 @@ ENUM_LABELS = {
         "thematic": "thematic",
         "none_useful": "none useful",
         "other": "other",
+        "bare": "bare",
+        "collocation": "collocation",
+        "mixed_non_bare": "mixed non-bare",
+        "non_bare": "non-bare",
+        "unresolved": "unresolved",
+        "accepted": "accepted",
+        "qualified": "qualified",
+        "reframed": "reframed",
+        "structural_review_required": "structural review required",
     },
     "tr": {
         "draft": "taslak",
@@ -241,6 +261,15 @@ ENUM_LABELS = {
         "thematic": "tematik",
         "none_useful": "yararlı ayrım yok",
         "other": "diğer",
+        "bare": "çıplak",
+        "collocation": "eşdizim",
+        "mixed_non_bare": "karma çıplak olmayan",
+        "non_bare": "çıplak olmayan",
+        "unresolved": "çözümlenmemiş",
+        "accepted": "kabul edildi",
+        "qualified": "kayıtlı kabul",
+        "reframed": "yeniden çerçevelendi",
+        "structural_review_required": "yapısal inceleme gerekli",
     },
 }
 
@@ -339,6 +368,9 @@ def render_markdown(entry: dict, packet: dict) -> str:
     for branch in entry["branches"]:
         frozen = packet_branches[(branch["root_id"], branch["branch_id"])]
         branch_key = f"{branch['root_id']}/{branch['branch_id']}"
+        lexicalization_profile = branch.get(
+            "lexicalization_profile"
+        ) or branch_lexicalization_profile(branch["lexical_realizations"])
         lines.extend(
             [
                 "",
@@ -352,8 +384,30 @@ def render_markdown(entry: dict, packet: dict) -> str:
                 f"- **{label['source_phrase']}:** `{plain_text(branch['source_phrase_ar'])}`",
                 f"- **{label['definition']}:** "
                 f"{plain_text(branch['glosses']['semantic_definition'])}",
+                f"- **{label['lexicalization']}:** "
+                f"{enum_label(language, lexicalization_profile['branch_kind'])}; "
+                f"{label['non_bare']}="
+                f"{str(lexicalization_profile['has_non_bare']).lower()}",
             ]
         )
+        identity = branch.get("identity_judgment")
+        if identity:
+            lines.extend(
+                [
+                    f"- **{label['identity_judgment']}:** "
+                    f"{enum_label(language, identity['status'])}. "
+                    f"{plain_text(identity['rationale'])}",
+                    f"- **{label['identity_boundary']}:** "
+                    f"{plain_text(identity['boundary_note'])}",
+                ]
+            )
+        lexicalization_scope = branch.get("lexicalization_scope")
+        if lexicalization_scope:
+            lines.append(
+                f"- **{label['lexicalization_scope']}:** "
+                f"{enum_label(language, lexicalization_scope['branch_kind'])}. "
+                f"{plain_text(lexicalization_scope['note'])}"
+            )
         if "concept_map" in branch:
             lines.extend(["", f"### {label['concept_map']}", ""])
             lines.extend(

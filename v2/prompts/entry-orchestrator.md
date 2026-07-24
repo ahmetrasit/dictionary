@@ -111,6 +111,37 @@ safe, deterministic prerequisite that you can repair directly. Never add
 `--force-entry` unless the user explicitly authorized replacement of protected
 output.
 
+Classify preparation failures by ownership before deciding whether to retry:
+
+- An attachment grammar count claim indicates a stale packet that predates
+  deterministic grammar sanitization. Regenerate the canonical root packet
+  directly with `scripts/root_packet.py` and its `--force` replacement flag,
+  then retry preparation once.
+- Attachment instances that reference missing rows indicate an incomplete
+  packet attachment closure. Regenerate the canonical packet with the current
+  packet builder and its `--force` replacement flag; the builder must include
+  every explicitly referenced attachment row. If the regenerated packet still
+  fails, park it as an upstream attachment evidence failure.
+- A branch can instantiate a writer task with no lexical units. Its exact
+  `source_phrase_ar` and branch dictionary basis are the branch-level authority;
+  lexical units are a separate, optional attestation roster. A lexical source
+  reference may therefore be outside that branch basis when it exists in the
+  packet-wide dictionary source roster. Do not union it into the branch basis
+  or drop it.
+- Park before staging only when branch authority itself is missing or
+  inconsistent (`source_phrase_ar`, branch source references, or exact
+  dictionary basis), or when a lexical attestation references a source absent
+  from the packet-wide dictionary roster. Do not synthesize evidence to make
+  either contract pass.
+- A disagreement between the authoritative source phrase and provisional
+  branch image/boundary fields is writer-owned identity judgment, not a
+  preparation failure. The writer records a supported correction in the entry
+  without editing frozen Arabic evidence or the database.
+
+These are controller/evidence gates, not writer validation failures. A retry
+after deterministic packet regeneration does not consume a writer turn or a
+semantic repair.
+
 ### 2. Reuse or run the writer
 
 If `WRITER_FRAGMENT` exists, run:
@@ -168,6 +199,12 @@ After writer acceptance, run:
 ```text
 python3 v2/scripts/prepare_root_review.py WRITER_TASK WRITER_FRAGMENT
 ```
+
+If this command reports `structural_identity_review_required`, park the root for
+branch-graph curation. Do not stage a semantic reviewer, repair the response,
+assemble, or finalize it. This status means the writer found that faithful use
+of `source_phrase_ar` requires a split, merge, deletion, or reassignment that
+would invalidate the prepared branch, lexical, or neighbor rosters.
 
 If `REVIEW_FRAGMENT` exists, run:
 
@@ -309,6 +346,9 @@ park the root with the latest exact finalizer error.
 Any other finalization failure is deterministic. Do not send it to a semantic
 worker and do not edit generated JSON or Markdown manually. Repair a clearly
 owned mechanical prerequisite directly or park the root with the exact error.
+In particular, `neighbor_coverage.candidate_count` is derived from the evidence
+package and is never writer-owned; zero is valid when the supplied candidate
+roster is empty.
 
 After finalization succeeds, verify directly:
 

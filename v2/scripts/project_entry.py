@@ -18,6 +18,7 @@ PROJECT = Path(__file__).resolve().parents[2]
 if str(PROJECT) not in sys.path:
     sys.path.insert(0, str(PROJECT))
 
+from v2.scripts.branch_lexicalization import branch_lexicalization_profile
 from v2.scripts.validate_entry import ContractError, DICTIONARY_CODES, validate_entry
 
 
@@ -74,6 +75,13 @@ def branch_source_attribution(branch: dict) -> tuple[list[str], dict[str, str]]:
     }
 
 
+def projected_lexicalization_profile(branch: dict) -> dict:
+    return copy.deepcopy(
+        branch.get("lexicalization_profile")
+        or branch_lexicalization_profile(branch["lexical_realizations"])
+    )
+
+
 def translation_agent_projection(entry: dict) -> dict:
     """Expose branch boundaries, gloss candidates, and translation-risk notes."""
 
@@ -100,6 +108,25 @@ def translation_agent_projection(entry: dict) -> dict:
             "source_note": source_note,
             "image_transliteration": branch["image_transliteration"],
             "summary": branch["summary"],
+            "lexicalization_profile": projected_lexicalization_profile(branch),
+            **(
+                {
+                    "identity_judgment": copy.deepcopy(
+                        branch["identity_judgment"]
+                    )
+                }
+                if "identity_judgment" in branch
+                else {}
+            ),
+            **(
+                {
+                    "lexicalization_scope": copy.deepcopy(
+                        branch["lexicalization_scope"]
+                    )
+                }
+                if "lexicalization_scope" in branch
+                else {}
+            ),
             **(
                 {"concept_map": copy.deepcopy(branch["concept_map"])}
                 if "concept_map" in branch
@@ -167,6 +194,25 @@ def user_dictionary_projection(entry: dict) -> dict:
                 "sources": sources,
                 "source_note": source_note,
                 "image_transliteration": branch["image_transliteration"],
+                "lexicalization_profile": projected_lexicalization_profile(branch),
+                **(
+                    {
+                        "identity_judgment": copy.deepcopy(
+                            branch["identity_judgment"]
+                        )
+                    }
+                    if "identity_judgment" in branch
+                    else {}
+                ),
+                **(
+                    {
+                        "lexicalization_scope": copy.deepcopy(
+                            branch["lexicalization_scope"]
+                        )
+                    }
+                    if "lexicalization_scope" in branch
+                    else {}
+                ),
                 "definition": branch.get("concept_map", {}).get(
                     "definition", branch["glosses"]["semantic_definition"]
                 ),

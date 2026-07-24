@@ -26,6 +26,7 @@ from v2.scripts.validate_entry import (
     structural_errors,
     validate_entry,
 )
+from v2.scripts.branch_lexicalization import branch_lexicalization_profile
 from v2.scripts.render_occurrences import structured_occurrence_data
 
 
@@ -39,9 +40,12 @@ TASK_FORMAT = 4
 TASK_GENERATOR = "v2/scripts/create_entry.py"
 ROOT_ENTRY_ARTIFACT_FORMAT = "dictionary-v2-root-entry-draft-v1"
 ROOT_ENTRY_ARTIFACT_GENERATOR = "v2/scripts/accept_root_writer.py"
+ROOT_EVIDENCE_FORMAT = "dictionary-v2-agent-root-evidence-v5"
+BRANCH_CLAIM_ID = "bc_001"
 ROOT_ENTRY_BRANCH_FIELDS = {
     "branch_image_ar",
     "what_is_ar",
+    "what_is_not_ar",
     "source_phrase_ar",
     "sources",
     "source_note",
@@ -99,6 +103,44 @@ def dictionary_source_ids(basis: dict, source_refs: list[str]) -> list[str]:
     return sorted({source_by_ref[source_ref] for source_ref in source_refs})
 
 
+def branch_source_claims(package: dict) -> list[dict]:
+    """Project the frozen branch phrase as the branch's semantic authority."""
+    focus = package["branch"]
+    source_refs = split_refs(focus.get("source_refs", ""))
+    source_phrase = focus.get("source_phrase_ar", "").strip()
+    if not source_phrase or not source_refs:
+        raise ContractError(
+            "Root-writer branch evidence requires source_phrase_ar and source refs "
+            f"for {focus['root_id']}/{focus['branch_id']}"
+        )
+    return [
+        {
+            "claim_id": BRANCH_CLAIM_ID,
+            "source_phrase_ar": source_phrase,
+            "source_ids": dictionary_source_ids(
+                package["dictionary_basis"], source_refs
+            ),
+        }
+    ]
+
+
+def branch_claim_ref_map(package: dict) -> dict[str, list[str]]:
+    """Return deterministic source references for each branch-level claim."""
+    claims = branch_source_claims(package)
+    refs = sorted(set(split_refs(package["branch"].get("source_refs", ""))))
+    return {claim["claim_id"]: refs for claim in claims}
+
+
+def structural_identity_refs(response: dict) -> list[str]:
+    """Return branches whose writer judgment requires branch-graph curation."""
+    return [
+        branch["branch_ref"]
+        for branch in response.get("branches", [])
+        if branch.get("identity_judgment", {}).get("status")
+        == "structural_review_required"
+    ]
+
+
 def load_rendering_policy(
     path: Path,
     envelope: str,
@@ -145,7 +187,7 @@ def agent_root_evidence(
     packages: list[dict],
     rendering_policy: dict[tuple[str, str], str],
 ) -> dict:
-    """Project deduplicated semantic evidence and compact source claims."""
+    """Project branch authority, lexical attestations, and neighbor evidence."""
     neighbor_registry: list[dict] = []
     neighbor_by_ref: dict[str, dict] = {}
     branches = []
@@ -166,44 +208,40 @@ def agent_root_evidence(
                 neighbor_by_ref[ref] = card
                 neighbor_registry.append(card)
             refs.append(ref)
-        source_claims = []
-        basis = package["dictionary_basis"]
+        lexical_units = []
         for unit in package.get("lexical_units", []):
-            source_refs = split_refs(unit.get("source_refs", ""))
             policy_key = (focus["root_id"], unit["lexical_unit_id"])
             if policy_key not in rendering_policy:
                 raise ContractError(
                     "Missing coordinator rendering policy for "
                     f"{policy_key[0]}/{policy_key[1]}"
                 )
-            source_claims.append(
+            lexical_units.append(
                 {
-                    "claim_id": unit["lexical_unit_id"],
                     "lexical_unit_id": unit["lexical_unit_id"],
                     "unit_kind": unit["unit_kind"],
                     "expression_ar": unit["expression_ar"],
                     "sense_ar": unit["sense_ar"],
                     "source_phrase_ar": unit["source_phrase_ar"],
-                    "source_ids": dictionary_source_ids(basis, source_refs),
                     "rendering_policy": rendering_policy[policy_key],
                 }
-            )
-        if not source_claims:
-            raise ContractError(
-                "Root-writer evidence requires at least one lexical source claim for "
-                f"{focus['root_id']}/{focus['branch_id']}"
             )
         branches.append(
             {
                 "branch_ref": branch_ref(focus["root_id"], focus["branch_id"]),
                 "branch_image_ar": focus["branch_image_ar"],
                 "what_is_ar": focus["what_is_ar"],
-                "source_claims": source_claims,
+                "what_is_not_ar": focus["what_is_not_ar"],
+                "branch_claims": branch_source_claims(package),
+                "lexicalization_profile": branch_lexicalization_profile(
+                    package.get("lexical_units", [])
+                ),
+                "lexical_units": lexical_units,
                 "neighbor_refs": refs,
             }
         )
     return {
-        "format": "dictionary-v2-agent-root-evidence-v4",
+        "format": ROOT_EVIDENCE_FORMAT,
         "branches": branches,
         "neighbor_registry": neighbor_registry,
     }
@@ -470,17 +508,14 @@ def enrich_root_writer_response(response: dict, task: dict) -> dict:
             raise ContractError(f"Root-writer branch lacks evidence package: {ref}")
         focus = package["branch"]
         basis = package["dictionary_basis"]
-        units = {
-            unit["lexical_unit_id"]: unit
-            for unit in package.get("lexical_units", [])
-        }
+        claim_refs_by_id = branch_claim_ref_map(package)
 
         def claim_refs(claim_ids: list[str]) -> list[str]:
             return sorted(
                 {
                     source_ref
                     for claim_id in claim_ids
-                    for source_ref in split_refs(units[claim_id].get("source_refs", ""))
+                    for source_ref in claim_refs_by_id[claim_id]
                 }
             )
 
@@ -508,6 +543,7 @@ def enrich_root_writer_response(response: dict, task: dict) -> dict:
                 **authored,
                 "branch_image_ar": focus["branch_image_ar"],
                 "what_is_ar": focus["what_is_ar"],
+                "what_is_not_ar": focus["what_is_not_ar"],
                 "source_phrase_ar": focus["source_phrase_ar"],
                 "sources": sources,
                 "source_note": {
@@ -582,6 +618,7 @@ def branch_from_fragment(package: dict, fragment: dict, path: str) -> dict:
         )
 
     basis = package["dictionary_basis"]
+    claim_refs_by_id = branch_claim_ref_map(package)
     candidate_by_key = {
         (row["root_id"], row["branch_id"]): row
         for row in package["furuq_candidates"]
@@ -625,9 +662,6 @@ def branch_from_fragment(package: dict, fragment: dict, path: str) -> dict:
         }
         for source in basis["sources"]
     ]
-    units = {
-        unit["lexical_unit_id"]: unit for unit in package.get("lexical_units", [])
-    }
     lexical_glosses = {
         row["lexical_unit_id"]: row for row in fragment["lexical_glosses"]
     }
@@ -636,11 +670,21 @@ def branch_from_fragment(package: dict, fragment: dict, path: str) -> dict:
         refs = {
             source_ref
             for claim_id in claim_ids
-            for source_ref in split_refs(units[claim_id].get("source_refs", ""))
+            for source_ref in claim_refs_by_id[claim_id]
         }
         return sorted(refs)
 
     synthesis = fragment["source_synthesis"]
+    synthesis_claim_ids = [
+        *synthesis["common_claim_ids"],
+        *(
+            claim_id
+            for detail in synthesis["source_details"]
+            for claim_id in detail["claim_ids"]
+        ),
+        *synthesis["supporting_claim_ids"],
+        *(row["claim_id"] for row in synthesis["duplicate_claims"]),
+    ]
     source_details = [
         {
             "kind": detail["kind"],
@@ -684,6 +728,31 @@ def branch_from_fragment(package: dict, fragment: dict, path: str) -> dict:
         }
         for detail in disputed_details
     ]
+    lexical_realizations = [
+        {
+            "lexical_unit_id": unit["lexical_unit_id"],
+            "expression_ar": unit["expression_ar"],
+            "unit_kind": unit["unit_kind"],
+            "sense_ar": unit["sense_ar"],
+            "target_gloss": lexical_glosses[unit["lexical_unit_id"]][
+                "target_gloss"
+            ],
+            "target_rendering_kind": lexical_glosses[unit["lexical_unit_id"]][
+                "rendering_kind"
+            ],
+            "evidence_refs": split_refs(unit.get("source_refs", "")),
+            "quran_form": (
+                {
+                    "stem_ar": unit["resolved_quran_stem_ar"],
+                    "tag": unit["resolved_quran_tag"],
+                }
+                if unit.get("resolved_quran_stem_ar")
+                and unit.get("resolved_quran_tag")
+                else None
+            ),
+        }
+        for unit in package.get("lexical_units", [])
+    ]
     return {
         "root_id": branch["root_id"],
         "branch_id": branch["branch_id"],
@@ -694,36 +763,17 @@ def branch_from_fragment(package: dict, fragment: dict, path: str) -> dict:
         "image_transliteration": fragment["image_transliteration"],
         "summary": fragment["summary"],
         "concept_map": fragment["concept_map"],
-        "lexical_realizations": [
-            {
-                "lexical_unit_id": unit["lexical_unit_id"],
-                "expression_ar": unit["expression_ar"],
-                "unit_kind": unit["unit_kind"],
-                "sense_ar": unit["sense_ar"],
-                "target_gloss": lexical_glosses[unit["lexical_unit_id"]][
-                    "target_gloss"
-                ],
-                "target_rendering_kind": lexical_glosses[unit["lexical_unit_id"]][
-                    "rendering_kind"
-                ],
-                "evidence_refs": split_refs(unit.get("source_refs", "")),
-                "quran_form": (
-                    {
-                        "stem_ar": unit["resolved_quran_stem_ar"],
-                        "tag": unit["resolved_quran_tag"],
-                    }
-                    if unit.get("resolved_quran_stem_ar")
-                    and unit.get("resolved_quran_tag")
-                    else None
-                ),
-            }
-            for unit in package.get("lexical_units", [])
-        ],
+        "identity_judgment": fragment["identity_judgment"],
+        "lexicalization_scope": fragment["lexicalization_scope"],
+        "lexicalization_profile": branch_lexicalization_profile(
+            lexical_realizations
+        ),
+        "lexical_realizations": lexical_realizations,
         "usage_notes": usage_notes,
         "evidence_qualifiers": evidence_qualifiers,
         "source_discussion": {
             "discussion": synthesis["common_summary"],
-            "evidence_refs": claim_refs(synthesis["common_claim_ids"]),
+            "evidence_refs": claim_refs(synthesis_claim_ids),
             "details": source_details,
             "examples": [],
             "disagreement": disagreement,
@@ -1186,6 +1236,19 @@ def expand_root_writer_response(
             "image_transliteration": transliteration(f"branch:{focus_ref}"),
             "summary": semantic_definition,
             "concept_map": concept_map,
+            "identity_judgment": {
+                **row["identity_judgment"],
+                "rationale": substitute_names(
+                    row["identity_judgment"]["rationale"]
+                ),
+                "boundary_note": substitute_names(
+                    row["identity_judgment"]["boundary_note"]
+                ),
+            },
+            "lexicalization_scope": {
+                **row["lexicalization_scope"],
+                "note": substitute_names(row["lexicalization_scope"]["note"]),
+            },
             "source_summary": source_synthesis["common_summary"],
             "source_synthesis": source_synthesis,
             "usage_notes": [],
@@ -1250,6 +1313,13 @@ def _root_writer_material(
         envelope=envelope,
         language=language,
     )
+    structural_refs = structural_identity_refs(response)
+    if structural_refs:
+        raise ContractError(
+            "structural_identity_review_required: branch identity changes would "
+            "invalidate lexical links or neighbor evidence: "
+            f"{structural_refs}"
+        )
     package_values = [package for _row, package, _path in packages]
     transliteration_path = work_dir / "inputs/transliterations.json"
     root_evidence_path = work_dir / "inputs/root_evidence.json"
@@ -1409,6 +1479,7 @@ def build_entry(
             "furuq_path": index["furuq_path"],
             "furuq_sha256": index["furuq_sha256"],
             "root_task_sha256": canonical_sha256(task),
+            "root_evidence_format": ROOT_EVIDENCE_FORMAT,
         },
         "root_profile": root["root_profile"],
         "branches": branches,

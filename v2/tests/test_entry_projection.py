@@ -2,6 +2,7 @@ import copy
 import unittest
 from pathlib import Path
 
+from v2.scripts.branch_lexicalization import branch_lexicalization_profile
 from v2.scripts.project_entry import (
     master_binding,
     project_entry,
@@ -48,6 +49,11 @@ class EntryProjectionTest(unittest.TestCase):
         )
         self.assertIn("source_note", branch)
         self.assertEqual(branch["gloss_candidates"], source["glosses"])
+        self.assertEqual(
+            branch["lexicalization_profile"],
+            source.get("lexicalization_profile")
+            or branch_lexicalization_profile(source["lexical_realizations"]),
+        )
         self.assertIn("loses", branch["gloss_candidates"]["selected"][0]["error_profile"])
         self.assertEqual(
             set(projected["occurrence_evidence"]),
@@ -72,6 +78,11 @@ class EntryProjectionTest(unittest.TestCase):
         self.assertEqual(branch["what_is_ar"], source["what_is_ar"])
         self.assertEqual(branch["source_phrase_ar"], source["source_phrase_ar"])
         self.assertTrue(branch["sources"])
+        self.assertEqual(
+            branch["lexicalization_profile"],
+            source.get("lexicalization_profile")
+            or branch_lexicalization_profile(source["lexical_realizations"]),
+        )
         self.assertEqual(branch["definition"], source["glosses"]["semantic_definition"])
         self.assertEqual(
             branch["concept_gloss"]["text"],

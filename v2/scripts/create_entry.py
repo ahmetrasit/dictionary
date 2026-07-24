@@ -41,7 +41,7 @@ from v2.scripts.render_occurrences import (
     write_generated as write_occurrences,
 )
 from v2.scripts.output_protection import protect_pinned_entries
-from v2.scripts.validate_entry import ContractError, load_json
+from v2.scripts.validate_entry import ContractError, load_json, split_refs
 
 
 GENERATOR = "v2/scripts/create_entry.py"
@@ -197,6 +197,58 @@ def common_task(role: str, envelope: str, language: str) -> dict:
     }
 
 
+def validate_root_writer_source_packages(
+    packages: dict[str, dict] | list[dict],
+    packet: dict,
+) -> None:
+    """Validate separate branch authority and lexical-attestation evidence."""
+    package_values = packages.values() if isinstance(packages, dict) else packages
+    packet_refs = {
+        (source.get("root_id"), source.get("source_ref"))
+        for source in packet.get("dictionary_sources", [])
+        if source.get("source_ref") and source.get("source_ref") != "-"
+    }
+    for package in package_values:
+        focus = package["branch"]
+        branch_ref = f"{focus['root_id']}/{focus['branch_id']}"
+        if not focus.get("source_phrase_ar", "").strip():
+            raise ContractError(
+                f"Root-writer branch authority {branch_ref} has no source_phrase_ar"
+            )
+        branch_source_refs = set(split_refs(focus.get("source_refs", "")))
+        packaged_branch_refs = {
+            source_ref
+            for source in package["dictionary_basis"]["sources"]
+            for source_ref in source["source_refs"]
+        }
+        if not branch_source_refs or branch_source_refs != packaged_branch_refs:
+            raise ContractError(
+                f"Root-writer branch authority {branch_ref} has inconsistent source "
+                "references and dictionary basis"
+            )
+        for unit in package.get("lexical_units", []):
+            unit_ref = f"{branch_ref}/{unit['lexical_unit_id']}"
+            source_refs = set(split_refs(unit.get("source_refs", "")))
+            if not source_refs:
+                raise ContractError(
+                    f"Root-writer lexical attestation {unit_ref} has no source refs"
+                )
+            if not unit.get("source_phrase_ar", "").strip():
+                raise ContractError(
+                    f"Root-writer lexical attestation {unit_ref} has no source_phrase_ar"
+                )
+            unknown = sorted(
+                source_ref
+                for source_ref in source_refs
+                if (focus["root_id"], source_ref) not in packet_refs
+            )
+            if unknown:
+                raise ContractError(
+                    f"Root-writer lexical attestation {unit_ref} references sources "
+                    f"absent from the packet dictionary roster: {unknown}"
+                )
+
+
 def prepare_inputs(
     selector: str,
     language: str,
@@ -227,11 +279,9 @@ def prepare_inputs(
     alignment_path = PROJECT / "v2/output/alignments" / f"{envelope}.json"
     crosswalk = build_attachment_crosswalk(packet)
     validate_attachment_crosswalk(packet, crosswalk)
-    write_crosswalk(alignment_path, crosswalk, check=False)
 
     occurrence_path = PROJECT / "v2/output/occurrences" / f"{envelope}.{language}.md"
     occurrence_content = render_occurrences(packet, packet_path, language, crosswalk)
-    write_occurrences(occurrence_path, occurrence_content, check=False)
 
     index, packages = build_packages(
         packet,
@@ -241,6 +291,10 @@ def prepare_inputs(
         qnet_theme_path,
         qnet_fix_manifest_path,
     )
+    validate_root_writer_source_packages(packages, packet)
+
+    write_crosswalk(alignment_path, crosswalk, check=False)
+    write_occurrences(occurrence_path, occurrence_content, check=False)
     evidence_dir = expected_evidence_dir
     write_packages(evidence_dir, index, packages, check=False)
     return packet_path, packet, evidence_dir / "index.json", index

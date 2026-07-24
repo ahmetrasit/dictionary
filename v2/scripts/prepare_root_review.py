@@ -12,7 +12,11 @@ PROJECT = Path(__file__).resolve().parents[2]
 if str(PROJECT) not in sys.path:
     sys.path.insert(0, str(PROJECT))
 
-from v2.scripts.assemble_entry import canonical_sha256, load_task_fragment
+from v2.scripts.assemble_entry import (
+    canonical_sha256,
+    load_task_fragment,
+    structural_identity_refs,
+)
 from v2.scripts.accept_root_writer import validate_identity, validate_semantic_contract
 from v2.scripts.create_entry import binding, common_task, write_task
 from v2.scripts.validate_entry import ContractError, load_json
@@ -24,6 +28,12 @@ def prepare(writer_task_path: Path, writer_response_path: Path, output_path: Pat
     )
     validate_identity(response, writer_task)
     validate_semantic_contract(response, writer_task)
+    structural_refs = structural_identity_refs(response)
+    if structural_refs:
+        raise ContractError(
+            "structural_identity_review_required: park for branch-graph curation "
+            f"before semantic review: {structural_refs}"
+        )
     task = common_task(
         "root_reviewer",
         writer_task["root_envelope_id"],

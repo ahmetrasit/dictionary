@@ -4,7 +4,13 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from v2.scripts.validate_entry import ContractError, load_json, validate_entry
+from v2.scripts.branch_lexicalization import branch_lexicalization_profile
+from v2.scripts.validate_entry import (
+    ContractError,
+    load_json,
+    structural_errors,
+    validate_entry,
+)
 
 
 PROJECT = Path(__file__).resolve().parents[2]
@@ -53,6 +59,22 @@ class EntrySchemaTest(unittest.TestCase):
         self.assert_invalid(
             lambda entry: entry.update({"unexpected": "value"}),
             "unknown property 'unexpected'",
+        )
+
+    def test_schema_allows_a_zero_candidate_neighbor_roster(self):
+        schema = load_json(SCHEMA)
+        coverage = {
+            "candidate_count": 0,
+            "assessment": "none_useful",
+            "note": "No supplied candidate sharpens this branch boundary.",
+        }
+        self.assertEqual(
+            structural_errors(
+                coverage,
+                schema["$defs"]["neighborCoverage"],
+                schema,
+            ),
+            [],
         )
 
     def test_branch_roster_and_counts_are_packet_bound(self):
@@ -143,6 +165,20 @@ class EntrySchemaTest(unittest.TestCase):
                 {"expression_ar": "عبارة مختلفة"}
             ),
             "packet-backed lexical roster",
+        )
+
+    def test_branch_lexicalization_profile_is_mechanically_derived(self):
+        def corrupt_profile(entry):
+            branch = entry["branches"][0]
+            profile = branch_lexicalization_profile(
+                branch["lexical_realizations"]
+            )
+            profile["has_non_bare"] = not profile["has_non_bare"]
+            branch["lexicalization_profile"] = profile
+
+        self.assert_invalid(
+            corrupt_profile,
+            "expected deterministic Furuq unit-kind profile",
         )
 
     def test_disagreement_and_disputed_qualifier_move_together(self):

@@ -14,7 +14,12 @@ PROJECT = Path(__file__).resolve().parents[1]
 if str(PROJECT) not in sys.path:
     sys.path.insert(0, str(PROJECT))
 
-from v2.scripts.render_occurrences import local_source_grammar
+from v2.scripts.render_occurrences import (
+    INSTANCE_ATTACHMENT_FIELDS,
+    local_source_grammar,
+    split_ids,
+    validate_packet,
+)
 
 
 HAMZA = str.maketrans({"أ": "ء", "إ": "ء", "آ": "ء", "ؤ": "ء", "ئ": "ء", "ٱ": "ء"})
@@ -38,17 +43,30 @@ def fetch(db, query, values=()):
     return [dict(row) for row in db.execute(query, values)]
 
 
-def tsv_matches(path, target, fields):
+def tsv_matches(path, target, fields, *, unit_ids=()):
+    required_unit_ids = set(unit_ids)
     with path.open(encoding="utf-8", newline="") as handle:
         rows = []
         for source_row in csv.DictReader(handle, delimiter="\t"):
-            if not any(root_key(source_row.get(field, "")) == target for field in fields):
+            root_match = any(
+                root_key(source_row.get(field, "")) == target for field in fields
+            )
+            if not root_match and source_row.get("unit_id", "") not in required_unit_ids:
                 continue
             row = dict(source_row)
             if "grammar" in row:
                 row["grammar"] = local_source_grammar(row["grammar"])
             rows.append(row)
         return rows
+
+
+def referenced_attachment_ids(instances):
+    return {
+        attachment_id
+        for instance in instances
+        for field, _role in INSTANCE_ATTACHMENT_FIELDS
+        for attachment_id in split_ids(instance.get(field, ""))
+    }
 
 
 def find_roots(db, query):
@@ -292,11 +310,23 @@ def main():
     }
 
     attachments_dir = project / "data/upstream/attachments/final_v3"
+    verb_instances = tsv_matches(
+        attachments_dir / "verb_instances.tsv", target, ("root_norm",)
+    )
+    noun_instances = tsv_matches(
+        attachments_dir / "noun_instances.tsv", target, ("root_norm",)
+    )
+    required_attachment_ids = referenced_attachment_ids(
+        verb_instances + noun_instances
+    )
     attachments = {
-        "verb_instances": tsv_matches(attachments_dir / "verb_instances.tsv", target, ("root_norm",)),
-        "noun_instances": tsv_matches(attachments_dir / "noun_instances.tsv", target, ("root_norm",)),
+        "verb_instances": verb_instances,
+        "noun_instances": noun_instances,
         "attachments": tsv_matches(
-            attachments_dir / "attachments.tsv", target, ("dep_root_norm", "head_root_norm")
+            attachments_dir / "attachments.tsv",
+            target,
+            ("dep_root_norm", "head_root_norm"),
+            unit_ids=required_attachment_ids,
         ),
         "verb_valency_frames": tsv_matches(
             attachments_dir / "verb_valency_frames.tsv", target, ("root_norm",)
@@ -330,6 +360,7 @@ def main():
     args.output_dir.mkdir(parents=True, exist_ok=True)
     json_path = args.output_dir / f"{root_envelope_id}.json"
     md_path = args.output_dir / f"{root_envelope_id}.md"
+    validate_packet(packet)
     json_path.write_text(json.dumps(packet, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     md_path.write_text(render(packet), encoding="utf-8")
     print(f"Wrote {md_path}\nWrote {json_path}")

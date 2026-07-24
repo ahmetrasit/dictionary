@@ -251,14 +251,16 @@ the same queue.
 
 ## Known Prepare Blockers
 
-Park the root and continue the campaign when preparation reports:
+An empty lexical roster is valid, and lexical provenance may extend beyond the
+branch dictionary basis when the reference exists in the packet-wide dictionary
+roster. Neither condition is a reason to park.
 
-- no canonical root packet;
-- missing source references in the branch dictionary roster;
-- a branch with no lexical source claim;
-- attachment grammar containing corpus-wide count claims.
-
-These are input or evidence issues, not reasons to spawn replacement writers.
+For corpus-wide attachment count claims or dangling attachment rows, regenerate
+the canonical packet once with the current packet builder and retry preparation.
+Park the root only when regeneration still fails, no canonical packet exists,
+branch authority lacks an exact `source_phrase_ar`/source basis, or a lexical
+attestation cites a reference absent from the packet-wide dictionary roster.
+These are controller/evidence issues, not reasons to spawn replacement writers.
 
 ## Projections
 

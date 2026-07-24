@@ -15,6 +15,7 @@ if str(PROJECT) not in sys.path:
     sys.path.insert(0, str(PROJECT))
 
 from v2.scripts.assemble_entry import (
+    ROOT_EVIDENCE_FORMAT,
     authored_root_writer_response,
     canonical_sha256,
     enrich_root_writer_response,
@@ -66,14 +67,43 @@ def _claim_coverage(source: dict) -> list[str]:
 
 def validate_semantic_contract(response: dict, task: dict) -> None:
     evidence = load_json(binding_path(task["evidence"]["path"]))
+    if evidence.get("format") != ROOT_EVIDENCE_FORMAT:
+        raise ContractError(
+            f"root_writer: expected evidence format {ROOT_EVIDENCE_FORMAT!r}"
+        )
     evidence_by_ref = {row["branch_ref"]: row for row in evidence["branches"]}
     neighbor_refs = {row["neighbor_ref"] for row in evidence["neighbor_registry"]}
     for branch_index, branch in enumerate(response["branches"]):
         path = f"$.branches[{branch_index}]"
         branch_ref = branch["branch_ref"]
         supplied = evidence_by_ref[branch_ref]
-        expected_claims = [row["claim_id"] for row in supplied["source_claims"]]
+        expected_claims = [row["claim_id"] for row in supplied["branch_claims"]]
         expected_set = set(expected_claims)
+        claim_sources = {
+            row["claim_id"]: set(row["source_ids"])
+            for row in supplied["branch_claims"]
+        }
+        expected_lexical = [
+            row["lexical_unit_id"] for row in supplied["lexical_units"]
+        ]
+
+        expected_branch_kind = supplied["lexicalization_profile"]["branch_kind"]
+        actual_branch_kind = branch["lexicalization_scope"]["branch_kind"]
+        if actual_branch_kind != expected_branch_kind:
+            raise ContractError(
+                f"{path}.lexicalization_scope.branch_kind: expected mechanical "
+                f"value {expected_branch_kind!r}, got {actual_branch_kind!r}"
+            )
+        if (
+            branch["identity_judgment"]["status"]
+            == "structural_review_required"
+            and branch["neighbor_distinctions"]
+        ):
+            raise ContractError(
+                f"{path}.neighbor_distinctions: structural identity review requires "
+                "an empty neighbor selection because the supplied branch boundary "
+                "is not stable"
+            )
 
         covered = _claim_coverage(branch["source_synthesis"])
         if len(covered) != len(set(covered)):
@@ -91,6 +121,19 @@ def validate_semantic_contract(response: dict, task: dict) -> None:
             if duplicate["claim_id"] == duplicate["merged_into"]:
                 raise ContractError(
                     f"{path}.source_synthesis.duplicate_claims: claim cannot merge into itself"
+                )
+        for detail_index, detail in enumerate(
+            branch["source_synthesis"]["source_details"]
+        ):
+            source_ids = {
+                source_id
+                for claim_id in detail["claim_ids"]
+                for source_id in claim_sources[claim_id]
+            }
+            if len(source_ids) != 1:
+                raise ContractError(
+                    f"{path}.source_synthesis.source_details[{detail_index}]: "
+                    "source detail must resolve to exactly one dictionary"
                 )
 
         facets = branch["concept_map"]["facets"]
@@ -130,13 +173,14 @@ def validate_semantic_contract(response: dict, task: dict) -> None:
 
         lexical = branch["lexical_glosses"]
         actual_lexical = [row["lexical_unit_id"] for row in lexical]
-        if actual_lexical != expected_claims:
+        if actual_lexical != expected_lexical:
             raise ContractError(
-                f"{path}.lexical_glosses: expected exact lexical roster {expected_claims}"
+                f"{path}.lexical_glosses: expected exact lexical roster "
+                f"{expected_lexical}"
             )
         rendering_policy = {
             row["lexical_unit_id"]: row["rendering_policy"]
-            for row in supplied["source_claims"]
+            for row in supplied["lexical_units"]
         }
         protected = {
             lexical_id

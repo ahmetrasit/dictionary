@@ -17,6 +17,7 @@ PROJECT = Path(__file__).resolve().parents[2]
 if str(PROJECT) not in sys.path:
     sys.path.insert(0, str(PROJECT))
 
+from v2.scripts.branch_lexicalization import branch_lexicalization_profile
 from v2.scripts.render_occurrences import (
     structured_occurrence_data,
     validate_attachment_crosswalk,
@@ -26,6 +27,8 @@ DEFAULT_SCHEMA = PROJECT / "v2/schema/encyclopedia-entry.schema.json"
 DEFAULT_FURUQ = PROJECT / "data/working/furuq_v4.sqlite"
 OCCURRENCE_MARKER = "<!-- generated-by: v2/scripts/render_occurrences.py schema=1 -->"
 ARABIC_RE = re.compile(r"[\u0600-\u06ff]")
+ROOT_EVIDENCE_FORMAT = "dictionary-v2-agent-root-evidence-v5"
+BRANCH_CLAIM_ID = "bc_001"
 
 DICTIONARY_NAMES = {
     "ayn": "Kitāb al-ʿAyn",
@@ -704,6 +707,10 @@ def validate_semantics(
     db.row_factory = sqlite3.Row
     try:
         current_root_contract = "root_task_sha256" in entry["provenance"]
+        branch_claim_contract = (
+            entry["provenance"].get("root_evidence_format")
+            == ROOT_EVIDENCE_FORMAT
+        )
         for index, branch in enumerate(entry["branches"]):
             path = f"$.branches[{index}]"
             packet_branch = packet_by_branch.get((branch["root_id"], branch["branch_id"]))
@@ -814,6 +821,42 @@ def validate_semantics(
                 errors.append(
                     f"{path}.lexical_realizations: expected packet-backed lexical roster"
                 )
+            expected_profile = branch_lexicalization_profile(frozen_lexical)
+            actual_profile = branch.get("lexicalization_profile")
+            if actual_profile is not None and actual_profile != expected_profile:
+                errors.append(
+                    f"{path}.lexicalization_profile: expected deterministic "
+                    "Furuq unit-kind profile"
+                )
+            if branch_claim_contract:
+                for field in (
+                    "identity_judgment",
+                    "lexicalization_scope",
+                    "lexicalization_profile",
+                ):
+                    if field not in branch:
+                        errors.append(
+                            f"{path}: {ROOT_EVIDENCE_FORMAT} requires {field}"
+                        )
+                identity = branch.get("identity_judgment")
+                if (
+                    identity
+                    and identity.get("status") == "structural_review_required"
+                ):
+                    errors.append(
+                        f"{path}.identity_judgment.status: unresolved structural "
+                        "review cannot be assembled or published"
+                    )
+                scope = branch.get("lexicalization_scope")
+                if (
+                    scope
+                    and scope.get("branch_kind") != expected_profile["branch_kind"]
+                ):
+                    errors.append(
+                        f"{path}.lexicalization_scope.branch_kind: expected "
+                        f"{expected_profile['branch_kind']!r} from deterministic "
+                        "Furuq unit-kind profile"
+                    )
             if ARABIC_RE.search(branch["image_transliteration"]):
                 errors.append(f"{path}.image_transliteration: contains Arabic script")
             for unit_index, unit in enumerate(branch["lexical_realizations"]):
@@ -831,6 +874,11 @@ def validate_semantics(
                 lexical_ids = {
                     unit["lexical_unit_id"] for unit in branch["lexical_realizations"]
                 }
+                allowed_claim_ids = (
+                    {BRANCH_CLAIM_ID}
+                    if branch_claim_contract
+                    else lexical_ids
+                )
                 facet_ids = [facet["facet_id"] for facet in branch["concept_map"]["facets"]]
                 if facet_ids != [f"F{number:03d}" for number in range(1, len(facet_ids) + 1)]:
                     errors.append(f"{path}.concept_map.facets: IDs must be sequential")
@@ -839,7 +887,9 @@ def validate_semantics(
                 ):
                     errors.append(f"{path}.concept_map.facets: requires a core facet")
                 for facet_index, facet in enumerate(branch["concept_map"]["facets"]):
-                    unknown = sorted(set(facet["claim_ids"]) - lexical_ids)
+                    unknown = sorted(
+                        set(facet["claim_ids"]) - allowed_claim_ids
+                    )
                     if unknown:
                         errors.append(
                             f"{path}.concept_map.facets[{facet_index}]: unknown claims {unknown}"
