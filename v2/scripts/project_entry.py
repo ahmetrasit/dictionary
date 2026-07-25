@@ -44,7 +44,7 @@ def master_binding(entry: dict) -> dict:
 
 
 def projection_identity(entry: dict, projection: str) -> dict:
-    return {
+    result = {
         "projection": projection,
         "projection_version": PROJECTION_VERSION,
         "master": master_binding(entry),
@@ -54,6 +54,7 @@ def projection_identity(entry: dict, projection: str) -> dict:
         "root_envelope_id": entry["root_envelope_id"],
         "root_ids": copy.deepcopy(entry["root_ids"]),
     }
+    return result
 
 
 def branch_source_attribution(branch: dict) -> tuple[list[str], dict[str, str]]:

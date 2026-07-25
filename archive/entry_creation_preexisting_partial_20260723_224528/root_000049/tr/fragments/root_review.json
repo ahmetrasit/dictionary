@@ -1,0 +1,42 @@
+{
+  "inputs_sha256": "824e6df350efc9f4918af372c7f54c88c2ee45206f0899a291e1654312afed0e",
+  "verdict": "repair",
+  "summary": "B002'de cekirdek ile somut kaynak kullanimi ters siralanmis ve kavram karsiligi bu terslik nedeniyle korumadigi bir yuzle eslestirilmistir. B003'te ise komsu karttaki tugla ornegi, anlamsal siniri daraltan bir kosul gibi yorumlanmistir.",
+  "issues": [
+    {
+      "target_ref": "root_000049/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_002",
+        "lu_003"
+      ],
+      "evidence_conflict": "Dal karti cekirdegi bir seyde gevseklik, zayiflik veya gucsuzluk bulunmamasi olarak verir. Yazar ise tam doldurulmamis kaptaki olumlu gevsekligi F001'de cekirdek, bu niteliklerin olumsuzlanmasini F002'de uzanti yaparak kanitin hiyerarsisini tersine cevirmistir.",
+      "smallest_correction": "F002'deki yokluk anlamini cekirdek yapin ve tanimi bununla baslatin; lu_002 ile desteklenen tam doldurulmamis kaptaki olumlu gevsekligi uzmanlasmis veya iliskili somut kullanim olarak siniflandirin."
+    },
+    {
+      "target_ref": "root_000049/B002",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_002",
+        "lu_003"
+      ],
+      "evidence_conflict": "Kavram karsiligi gevseklik veya zayiflik bulunmamasini dogru olarak anlatir, ancak fit degerini kusursuz sayip olumlu gevsekligin bulundugu lu_002/F001 yuzunu de korudugunu bildirir. Yokluk karsiligi, gevsekligin varligini ayni anda temsil etmez.",
+      "smallest_correction": "Cekirdek hiyerarsisi duzeltildikten sonra facet_ids ve hata profilini yalniz yokluk karsiliginin gercekten korudugu yuzlerle sinirlayin; lu_002'deki olumlu kap gevsekligini bu karsiligin kapsaminda gostermeyin."
+    },
+    {
+      "target_ref": "root_000049/B003",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005"
+      ],
+      "evidence_conflict": "root_000950/B007 kartinin cekirdegi de hizer ve takdir, yani miktari kestirip belirlemedir. Karttaki yapida gereken tugla sayisi yalniz bir ornektir; yazar bu ornegi komsunun zorunlu ve dar kapsami sayarak iliskiyi near_synonym/partial yapmistir.",
+      "smallest_correction": "Iliskiyi synonym/exact olarak duzeltin ve tugla sayisi kullanimini sinir farki degil, ortak kestirme cekirdeginin bagimli bir ornegi olarak aciklayin."
+    }
+  ]
+}

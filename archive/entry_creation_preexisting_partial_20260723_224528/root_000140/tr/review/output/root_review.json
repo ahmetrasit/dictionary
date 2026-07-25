@@ -1,0 +1,75 @@
+{
+  "verdict": "repair",
+  "summary": "Yanit genel olarak dal ayrimlarini koruyor, ancak kaynak dagilimini ortak anlammis gibi sunan iki sentez, belirli bir yer adinin ayirt edici bilgisini kaybeden karsiliklar ve kurak yil dalinin kaynakta izin verilen bolluk-kitlik birlikteligini dislayan cekirdek tanimi yayina engeldir.",
+  "issues": [
+    {
+      "target_ref": "root_000140/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003",
+        "lu_019"
+      ],
+      "evidence_conflict": "Sentez, lu_003'teki kayitlari genel bir insan toplulugunun ten gorunusune gore adlandirilmasina indirger; oysa kanitlar tutsaklar, koleler veya hizmetciler arasinda ve beyazlik, sari-beyaz gorunum, kirmizilik-siyahlik ya da renk karisikligi gerekceleri arasinda degisir. Lu_019'da da bir kayit kokle dogrudan bag ile ses degismesi arasinda tereddut ederken digeri uc soyleyisi ayni anlamda esitler; bu ikinci kaynak tutumu aktarilmaz.",
+      "smallest_correction": "Common_summary icinde kaynak adlari vermeden, lu_003 icin adlandirilan grubun ve renk gerekcesinin kayitlara gore degistigini, lu_019 icin de bir kaydin kokeni tartistigini digerinin bicimleri anlamca esitledigini kisaca belirtin."
+    },
+    {
+      "target_ref": "root_000140/B003",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_010"
+      ],
+      "evidence_conflict": "Lu_010 belirli olarak Medine'deki mezarligi bildirir; target_gloss bunu yalnizca belirsiz bir 'kent gomutlugu'na cevirerek yerin ayirt edici kimligini kaybeder.",
+      "smallest_correction": "Lu_010 target_gloss'unu 'Medine'de, adini eskiden yetisen dikenli calilardan alan mezarlik' gibi Medine kisitini koruyan siradan bir aciklamayla degistirin."
+    },
+    {
+      "target_ref": "root_000140/B003",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_010"
+      ],
+      "evidence_conflict": "'Agaclikli eski gomutluk' karsiligi, kanittaki 'eskiden dikenli calilarin yetistigi yerdi' bilgisini mezarligin eski ve halen agaclikli oldugu iddiasina donusturur; kanit bu iki niteligi vermiyor.",
+      "smallest_correction": "Karsiligi, gecmis bitki ortusunu dogru niteleyen ve Medine'yi koruyan 'Medine'de, eskiden dikenli calilarin yetistigi mezarlik' benzeri bir aciklamayla degistirin."
+    },
+    {
+      "target_ref": "root_000140/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011"
+      ],
+      "evidence_conflict": "Common_summary, cetin bela ile isleri iyi kavrayan kisiyi kaynaklarin ortak anlatimi olarak sunuyor. Kanitta bela aciklamasi bir kaynak grubunda, dahi veya isleri bilen kisi aciklamasi ise baska kayitlarda yer alir; iki anlam her kaynagin ortak tanimi degildir.",
+      "smallest_correction": "Common_summary'yi kaynaklarin iki kullanima ayrildigini soyleyen kaynak-notr bir karsilastirma olarak yazin; her iki anlami ortaklasilan tek tanim gibi nitelemeyin."
+    },
+    {
+      "target_ref": "root_000140/B007",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_020",
+        "lu_021"
+      ],
+      "evidence_conflict": "Definition ve F001, dalin cekirdegini yagmurun kesildigi ve topragin urun vermedigi yil olarak mutlaklastiriyor. Lu_020 kurak yili bildirirken ayni yil icinde bolluk ile kitligin bir arada bulunabilecegini de acikca korur; hic yagmur olmamasi ise yalniz lu_021'in daha dar kaydidir.",
+      "smallest_correction": "Cekirdegi 'kurak veya kitlikla nitelenen yil' olarak genisletin; hic yagmur yagmamasini lu_021'e bagli specialization olarak birakin ve lu_020'deki bolluk-kitlik birlikteligini kaynak varyanti olarak koruyun."
+    },
+    {
+      "target_ref": "root_000140/B007",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_020",
+        "lu_021"
+      ],
+      "evidence_conflict": "'Yagmursuz ve urunsuz gecen kurak yil' gloss'u, lu_021'in hic yagmur olmayan ozel yilini butun dala yayar ve lu_020'nin ayni yil icinde bolluk ile kitligin bulunabilmesi kaydini dislar. Error_profile'in bu olasiligi korudugu iddiasi bu nedenle gloss metniyle uyusmaz.",
+      "smallest_correction": "Concept gloss'u 'kuraklik veya kitlikla nitelenen yil' gibi lu_020'yi dislamayan bir cekirdege cekin; hic yagmur ve urunsuzluk ayrintilarini ilgili baglamsal ya da lexical karsiliklarda tutun."
+    }
+  ]
+}

@@ -1,58 +1,236 @@
 {
-  "inputs_sha256": "bd979b0e102db2126bcef103fc6e15ca451e27e92de053ff2f3f4adc31e66820",
+  "root_inputs_sha256": "7edac1eab06a02163a5754d7004c941747116ca73affe7d1681133469dd32f1a",
   "root_id": "root_001697",
   "branch_id": "B004",
   "language": "tr",
-  "image_transliteration": "Erişilemiyor",
-  "summary": "Görev dosyaları okunamadığı için kanıta dayalı dal yazılamadı.",
-  "source_summary": "Kaynak ifade okunamadı.",
+  "image_transliteration": "Güvercin türü veya güvercine benzer kuş",
+  "summary": "Güvercin türü ya da güvercine benzer bir kuştur. Kaynaklarda yabani, evlerde üreyen veya çeşitli renklerde olup üzüm yiyen kuş biçiminde farklı sınırlar çizilir.",
+  "concept_map": {
+    "definition": "Güvercin türü ya da güvercine benzer bir kuştur. Kaynaklarda yabani, evlerde üreyen veya çeşitli renklerde olup üzüm yiyen kuş biçiminde farklı sınırlar çizilir.",
+    "facets": [
+      {
+        "facet_id": "F001",
+        "role": "core",
+        "statement": "Güvercin türünden sayılan veya güvercine benzeyen bir kuş ve bu kuşun tek bireyi anlatılır.",
+        "claim_ids": [
+          "lu_012",
+          "lu_013"
+        ]
+      },
+      {
+        "facet_id": "F002",
+        "role": "source_variant",
+        "statement": "Kuş kimi kaynakta yabani, kimi kaynakta ise evlerde yaşayan veya üreyen güvercin olarak sınırlandırılır.",
+        "claim_ids": [
+          "lu_012"
+        ]
+      },
+      {
+        "facet_id": "F003",
+        "role": "source_variant",
+        "statement": "Bir başka betimleme, kuşun çeşitli renklerde olduğunu ve üzüm yediğini belirtir.",
+        "claim_ids": [
+          "lu_012"
+        ]
+      }
+    ]
+  },
+  "source_summary": "Kaynaklar bunun bir kuş olduğu konusunda birleşir. Kuşun güvercin ya da güvercinle ilişkili bir tür sayılması, yabani veya evlerde yaşayan ve üreyen oluşu, çeşitli renklerde olup üzüm yemesi kaynaklara göre değişen sınırlamalardır; tekil biçim bu kuşlardan bir bireyi gösterir.",
+  "source_synthesis": {
+    "common_summary": "Kaynaklar bunun bir kuş olduğu konusunda birleşir. Kuşun güvercin ya da güvercinle ilişkili bir tür sayılması, yabani veya evlerde yaşayan ve üreyen oluşu, çeşitli renklerde olup üzüm yemesi kaynaklara göre değişen sınırlamalardır; tekil biçim bu kuşlardan bir bireyi gösterir.",
+    "common_claim_ids": [
+      "lu_012",
+      "lu_013"
+    ],
+    "source_details": [],
+    "supporting_claim_ids": [],
+    "duplicate_claims": []
+  },
   "usage_notes": [],
   "evidence_qualifiers": [],
+  "lexical_glosses": [
+    {
+      "lexical_unit_id": "lu_012",
+      "rendering_kind": "ordinary",
+      "target_gloss": "güvercin türü veya güvercine benzer kuş"
+    },
+    {
+      "lexical_unit_id": "lu_013",
+      "rendering_kind": "ordinary",
+      "target_gloss": "bu türden tek bir kuş, bir güvercin"
+    }
+  ],
   "glosses": {
-    "semantic_definition": "Kanıt dosyasına erişilemediğinden anlam güvenilir biçimde belirlenemedi.",
+    "semantic_definition": "Güvercin türü ya da güvercine benzer bir kuştur. Kaynaklarda yabani, evlerde üreyen veya çeşitli renklerde olup üzüm yiyen kuş biçiminde farklı sınırlar çizilir.",
+    "concept": {
+      "rank": 1,
+      "text": "güvercin türü veya güvercine benzer kuş",
+      "loanword_status": "none",
+      "usage_role": "explanatory",
+      "selection_role": "primary_concept_gloss",
+      "applicability": "Kaynaklara göre yabani ya da evcil sayılabilen, güvercin türünden veya güvercine benzer kuşu genel sınırıyla karşılar.",
+      "facet_ids": [
+        "F001",
+        "F002"
+      ],
+      "error_profile": {
+        "fit": "none",
+        "preserves": "Kuş çekirdeğini, güvercinle tür veya benzerlik bağını ve kaynaklar arasındaki sınır değişkenliğini korur.",
+        "loses": null,
+        "adds": null,
+        "collision": null
+      }
+    },
+    "contextual": [
+      {
+        "rank": 2,
+        "text": "evlerde üreyen güvercin türü",
+        "loanword_status": "none",
+        "usage_role": "contextual",
+        "selection_role": "contextual_gloss",
+        "applicability": "Kuşun evlere alışması veya evlerde yavrulaması özellikle belirtilen kaynak bağlamında kullanılır.",
+        "facet_ids": [
+          "F002"
+        ],
+        "error_profile": {
+          "fit": "narrowing",
+          "preserves": "Güvercin bağlantısını ve kuşun evlerde yaşayıp üreme özelliğini korur.",
+          "loses": "Yabani güvercin ve yalnızca güvercine benzer kuş biçimindeki öteki kaynak sınırlarını dışarıda bırakır.",
+          "adds": null,
+          "collision": null
+        }
+      },
+      {
+        "rank": 3,
+        "text": "çeşitli renklerde, üzüm yiyen kuş",
+        "loanword_status": "none",
+        "usage_role": "explanatory",
+        "selection_role": "contextual_gloss",
+        "applicability": "Renk çeşitliliği ve üzüm yeme özelliğini veren özel kaynak betimlemesi açıklanırken kullanılır.",
+        "facet_ids": [
+          "F003"
+        ],
+        "error_profile": {
+          "fit": "narrowing",
+          "preserves": "Kuş oluşunu, çeşitli renklerini ve üzümle beslenme özelliğini korur.",
+          "loses": "Güvercin türü olma veya yabani ve evcil sınırlandırmalarını tek başına göstermez.",
+          "adds": null,
+          "collision": null
+        }
+      }
+    ],
     "selected": [
       {
         "rank": 1,
-        "text": "belirlenemedi",
+        "text": "güvercin türü veya güvercine benzer kuş",
         "loanword_status": "none",
         "usage_role": "explanatory",
-        "applicability": "Yalnızca görev dosyasına erişilememesi durumunu bildirir.",
+        "selection_role": "primary_concept_gloss",
+        "applicability": "Kaynaklara göre yabani ya da evcil sayılabilen, güvercin türünden veya güvercine benzer kuşu genel sınırıyla karşılar.",
+        "facet_ids": [
+          "F001",
+          "F002"
+        ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Kanıt bulunmadığı gerçeğini korur.",
-          "loses": "Asıl Arapça anlamın tamamını kaybeder.",
-          "adds": "Bir erişim hatası açıklaması ekler.",
-          "collision": "Sözlük anlamı olarak kullanılmamalıdır."
+          "preserves": "Kuş çekirdeğini, güvercinle tür veya benzerlik bağını ve kaynaklar arasındaki sınır değişkenliğini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        }
+      },
+      {
+        "rank": 2,
+        "text": "evlerde üreyen güvercin türü",
+        "loanword_status": "none",
+        "usage_role": "contextual",
+        "selection_role": "contextual_gloss",
+        "applicability": "Kuşun evlere alışması veya evlerde yavrulaması özellikle belirtilen kaynak bağlamında kullanılır.",
+        "facet_ids": [
+          "F002"
+        ],
+        "error_profile": {
+          "fit": "narrowing",
+          "preserves": "Güvercin bağlantısını ve kuşun evlerde yaşayıp üreme özelliğini korur.",
+          "loses": "Yabani güvercin ve yalnızca güvercine benzer kuş biçimindeki öteki kaynak sınırlarını dışarıda bırakır.",
+          "adds": null,
+          "collision": null
+        }
+      },
+      {
+        "rank": 3,
+        "text": "çeşitli renklerde, üzüm yiyen kuş",
+        "loanword_status": "none",
+        "usage_role": "explanatory",
+        "selection_role": "contextual_gloss",
+        "applicability": "Renk çeşitliliği ve üzüm yeme özelliğini veren özel kaynak betimlemesi açıklanırken kullanılır.",
+        "facet_ids": [
+          "F003"
+        ],
+        "error_profile": {
+          "fit": "narrowing",
+          "preserves": "Kuş oluşunu, çeşitli renklerini ve üzümle beslenme özelliğini korur.",
+          "loses": "Güvercin türü olma veya yabani ve evcil sınırlandırmalarını tek başına göstermez.",
+          "adds": null,
+          "collision": null
         }
       }
     ],
     "excluded": [
       {
-        "text": "tahmini anlam",
+        "text": "yalnızca yabani güvercin",
         "category": "alternative",
-        "exclusion_reason": "Kaynak kanıt okunmadan anlam tahmin etmek güvenilir değildir.",
+        "exclusion_reason": "Evlerde yaşayan veya üreyen kuş ile çeşitli renklerde olup üzüm yiyen kuş biçimindeki öteki kaynak sınırlarını dışarıda bırakır. Tek bir kaynak varyantını bütün dalın değişmez sınırı sanmaya yol açar.",
         "error_profile": {
-          "fit": "displacement",
-          "preserves": "Hiçbir doğrulanmış anlamı korumaz.",
-          "loses": "Kaynağa bağlı kesinliği kaybeder.",
-          "adds": "Desteksiz bir anlam yükler.",
-          "collision": "Gerçek dal anlamıyla çakışabilir."
+          "fit": "narrowing",
+          "preserves": "Kuş ve güvercin bağlantısını, ayrıca bir kaynakta verilen yabani olma sınırını korur.",
+          "loses": "Evlerde yaşayan veya üreyen kuş ile çeşitli renklerde olup üzüm yiyen kuş biçimindeki öteki kaynak sınırlarını dışarıda bırakır.",
+          "adds": null,
+          "collision": "Tek bir kaynak varyantını bütün dalın değişmez sınırı sanmaya yol açar."
         }
       }
     ]
   },
   "arabic_neighbor_distinctions": [
     {
-      "neighbor_root_id": "root_001697",
-      "neighbor_branch_id": "B004",
-      "expression_transliteration": "Erişilemiyor",
-      "gloss": "karşılaştırma yapılamadı",
-      "shared_zone": "Komşu kayıtları okunamadı.",
-      "distinction": "Paketlenmiş komşu kayıtlarına erişilemediğinden güvenilir bir ayrım yayımlanamaz."
+      "neighbor_root_id": "root_000001",
+      "neighbor_branch_id": "B012",
+      "relation_type": "near_synonym",
+      "boundary_match": "partial",
+      "focus_only": "Çeşitli renklerde olup üzüm yeme betimlemesi ve farklı kaynakların yabani-evcil ayrımı bu dala özgüdür.",
+      "neighbor_only": "Bütün güvercinleri, boyun halkası ve ötüş gibi daha geniş ayırıcılarla sınıflandırma komşu dalın alanıdır.",
+      "expression_transliteration": "Güvercin kuşu",
+      "gloss": "güvercin",
+      "shared_zone": "Her iki dal da güvercinleri veya güvercin türünden sayılan kuşları kapsar.",
+      "distinction": "Komşu dal güvercinin genel kuş adı ve geniş sınıflandırmasıdır; bu dal ise kaynakların yabani, evcil veya benzer kuş diye değişik biçimde belirlediği özel bir kuş adıdır."
+    },
+    {
+      "neighbor_root_id": "root_000707",
+      "neighbor_branch_id": "B011",
+      "relation_type": "near_synonym",
+      "boundary_match": "partial",
+      "focus_only": "Türün toplu adı ve erkek-dişi ayrımı olmaksızın tek bireyi bu dalda kapsanır.",
+      "neighbor_only": "Güvercin için başka bir ad olup bazı açıklamalarda özellikle dişiyi göstermesi komşu dalın alanıdır.",
+      "expression_transliteration": "Güvercin için başka bir ad",
+      "gloss": "güvercin için başka bir ad",
+      "shared_zone": "Her iki dal güvercin türünden tek bir kuşu gösterebilir.",
+      "distinction": "Komşu dal güvercini genel olarak adlandırabilir ve kimi açıklamada dişiye daralabilir; bu dal ise toplu kuş adı ile onun tekil biçimini taşır ve kuşun sınırları kaynaklara göre değişir."
+    },
+    {
+      "neighbor_root_id": "root_000468",
+      "neighbor_branch_id": "B009",
+      "relation_type": "same_field",
+      "boundary_match": "field_only",
+      "focus_only": "Güvercin türü veya güvercine benzer kuş bu dalın konusudur.",
+      "neighbor_only": "Ayrı bir kuş türü ile onun rengi ve yürüyüşü komşu dalın konusudur.",
+      "expression_transliteration": "Turaç kuşu",
+      "gloss": "ayrı bir kuş türü",
+      "shared_zone": "İki dal da belirli bir kuş türünün adını ve kaynaklardaki görünüş betimlemelerini içerir.",
+      "distinction": "Ortak alan yalnızca kuş adlandırmasıdır; gösterdikleri kuş türleri ve ayırıcı özellikler farklıdır."
     }
   ],
   "neighbor_coverage": {
-    "assessment": "legacy_minimum_unverified",
-    "note": "Komşu kadrosu dosya erişim hatası nedeniyle doğrulanamadı."
+    "assessment": "complete",
+    "note": "Adayların tümü değerlendirildi; yalnızca genel güvercin, dişi güvercin ve başka bir kuş türüyle sınırı belirginleştiren üç ilişki yayımlandı."
   }
 }

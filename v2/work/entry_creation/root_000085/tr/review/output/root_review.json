@@ -1,0 +1,97 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın ana anlam ayrımları ve komşu sınırları genel olarak kanıtla uyumludur; ancak bazı facet rolleri çekirdek ile türetim ayrımını yanlış kuruyor ve birkaç açıklama kanıtta bulunmayan katılımcı, numara ya da tortu koşulu ekliyor. Bu noktalar ilgili alanlarda dar kapsamlı düzeltmeler gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_000085/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_014"
+      ],
+      "evidence_conflict": "Kanıt yalnızca toprakla oynanan belirli bir oyundan söz eder; source_details özeti bunu çocuk oyunu diye daraltarak kanıtta bulunmayan bir oyuncu grubu ekliyor.",
+      "smallest_correction": "İlgili özetteki çocuk nitelemesini kaldırıp kullanımı yalnızca toprakla oynanan belirli bir oyun olarak verin."
+    },
+    {
+      "target_ref": "root_000085/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_004",
+        "lu_005",
+        "lu_006",
+        "lu_007"
+      ],
+      "evidence_conflict": "Bu kanıtlar daha dar bir anlam alanı kurmuyor; aynı sorup araştırma çekirdeğini türemiş eylem biçimleri ve farklı nesne kuruluşlarıyla gerçekleştiriyor. F002'nin specialization rolü biçimsel çeşitleri anlamsal uzmanlaşma gibi gösteriyor.",
+      "smallest_correction": "F002'yi associated_use olarak yeniden sınıflandırın ve ifadesini aynı çekirdeğin türemiş biçimleri ile kuruluşları olduğunu belirtecek şekilde daraltın."
+    },
+    {
+      "target_ref": "root_000085/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_016"
+      ],
+      "evidence_conflict": "Kanıt belirli bir bölüme, ikiyüzlüleri ve gizlerini açığa çıkarması nedeniyle verilen adı aktarır; bölümün dokuzuncu olduğu bilgisi sağlanan kanıtta yer almıyor.",
+      "smallest_correction": "Source detail özetinden dokuzuncu nitelemesini kaldırın; bölümün açığa çıkarma gerekçesiyle aldığı adı koruyun."
+    },
+    {
+      "target_ref": "root_000085/B002",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_016"
+      ],
+      "evidence_conflict": "lu_016 için lexical gloss, kanıtın vermediği dokuzuncu bölüm numarasını ekliyor. Kanıt yalnızca adın verildiği bölümü ve adlandırma gerekçesini belirtiyor.",
+      "smallest_correction": "Target gloss içindeki dokuzuncu nitelemesini kaldırıp adlandırma gerekçesini kanıttaki kapsamıyla bırakın."
+    },
+    {
+      "target_ref": "root_000085/B004",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_019"
+      ],
+      "evidence_conflict": "Kişinin ya da bırakılanın nerede olduğunun bilinmemesi, kanıttaki kalıplaşmış sözün doğrudan anlam sınırıdır; F002 bunu çekirdeğe bağlı bir extension olarak sınıflandırıyor.",
+      "smallest_correction": "F002'deki konumun bilinmemesi unsurunu F001'in çekirdeğine katın ve ayrı extension sınıflandırmasını kaldırın."
+    },
+    {
+      "target_ref": "root_000085/B005",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_021"
+      ],
+      "evidence_conflict": "Kanıt yalnızca sudaki bulanıklığı bildirir; definition ve F002 bulanıklığın suda asılı kalan maddelerden doğduğunu söyleyerek kanıtta belirtilmeyen bir oluşum koşulu ekliyor.",
+      "smallest_correction": "Definition ve F002'yi neden belirtmeden yalnızca sudaki bulanıklık diye ifade edin."
+    },
+    {
+      "target_ref": "root_000085/B005",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_021"
+      ],
+      "evidence_conflict": "Bağlamsal karşılıktaki tortulu nitelemesi ve applicability içindeki asılı madde açıklaması, genel sudaki bulanıklık kanıtını belirli bir maddesel nedene daraltıyor.",
+      "smallest_correction": "Karşılığı sudaki bulanıklık olarak verin ve applicability açıklamasından tortu ya da asılı madde nedenini çıkarın."
+    },
+    {
+      "target_ref": "root_000085/B005",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_021"
+      ],
+      "evidence_conflict": "lu_021 kanıtı sudaki bulanıklığı verir; target gloss içindeki tortulu görünüm eşlemesi bunu kanıtlanmamış özel bir bulanıklık türüne daraltıyor.",
+      "smallest_correction": "Target glossu yalnızca sudaki bulanıklık olarak bırakın."
+    }
+  ]
+}

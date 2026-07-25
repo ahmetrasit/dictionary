@@ -1,0 +1,339 @@
+{
+  "branches": [
+    {
+      "branch_ref": "root_000044/B001",
+      "concept_map": {
+        "definition": "Bir şeyi miktar bakımından azaltmak veya bir kimsenin hakkını ya da emeğinin karşılığını eksiltmektir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Bir fail, bir şeyi önceki ya da hak edilen miktarından daha aza indirir.",
+            "claim_ids": [
+              "lu_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Azaltılan şey bir kimsenin hakkı veya yaptığı işlerin karşılığı olabilir.",
+            "claim_ids": [
+              "lu_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Anlamın ortak çekirdeği, bir şeyi eksiltmek ve özellikle bir kimseye ait hakkı ya da yaptığı işlerin karşılığını tam vermeyerek azaltmaktır.",
+        "common_claim_ids": [
+          "lu_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "bir şeyi veya hakkı eksiltmek",
+        "applicability": "Hem genel bir miktarın azaltılmasını hem de bir kimsenin hakkının ya da emeğinin karşılığının eksik bırakılmasını kapsar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Bir failin bir şeyi veya hak edilen miktarı azaltması ilişkisini bütünüyle korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "hakkını kısmak",
+          "usage_role": "contextual",
+          "applicability": "Azaltılan miktar bir kimsenin hakkı olduğunda doğal bir kullanım sağlar.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Bir failin başkasına ait hak edilen miktarı azaltmasını korur.",
+            "loses": "Haktan bağımsız herhangi bir şeyin miktarını azaltma kapsamını dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "karşılığını eksik vermek",
+          "usage_role": "contextual",
+          "applicability": "Yapılan işin karşılığının tam verilmemesi söz konusu olduğunda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Hak edilen iş karşılığının bir fail tarafından azaltılmasını korur.",
+            "loses": "İş karşılığı dışındaki şeyleri veya hakları eksiltme kapsamını dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_001",
+          "rendering_kind": "ordinary",
+          "target_gloss": "bir şeyi ya da birinin hakkını eksiltmek"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "azalmak",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Bir miktarın daha az hale gelmesi düşüncesini korur.",
+            "loses": "Bir failin bir şeyi veya bir kimsenin hakkını azaltması ilişkisini kaybeder.",
+            "adds": "Değişimin nesnenin kendisinde gerçekleştiği geçişsiz bir süreç anlamını ekler.",
+            "collision": null
+          }
+        },
+        {
+          "text": "alıkoymak",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Bir kimsenin elde edeceği şeyden yoksun kalabilmesi sonucunu kısmen korur.",
+            "loses": "Bir şeyin veya hakkın miktarını azaltma işlemini kaybeder.",
+            "adds": "Bir kimsenin hareketini ya da yönelişini engelleme anlamını ekler.",
+            "collision": "Kökün yolundan alıkoyma ve geri çevirme anlamındaki diğer dalıyla karışır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001389/B002",
+          "relation_type": "synonym",
+          "boundary_match": "exact",
+          "focus_only": null,
+          "neighbor_only": null,
+          "gloss": "bir şeyi veya hakkı eksiltmek",
+          "shared_zone": "Her iki dal da bir şeyi ya da bir kimsenin hakkını bir failin eksiltmesini anlatır.",
+          "distinction": "Verilen sınırlarda iki dal arasında anlam ayrımı yoktur; aynı azaltma ilişkisini ve hak üzerindeki uygulamasını paylaşırlar."
+        },
+        {
+          "neighbor_ref": "root_000409/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bir failin bir şeyi veya bir kimsenin hakkını eksiltmesini özellikle anlatır.",
+          "neighbor_only": "Kendiliğinden azalma ve değerin genel olarak düşmesi gibi daha geniş durumları da kapsar.",
+          "gloss": "genel olarak azalmak veya eksilmek",
+          "shared_zone": "Her iki dalda ortak bölge, bir şeyin önceki miktarından ya da değerinden daha aza inmesidir.",
+          "distinction": "Odak dal geçişli bir azaltma ilişkisini ve hak edilen miktarın eksiltilmesini öne çıkarır; komşu dal ise fail gerektirmeyen genel azalma ve değer kaybını da içine alır."
+        },
+        {
+          "neighbor_ref": "root_001621/B003",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Herhangi bir şeyi azaltmanın yanı sıra bir kimsenin hakkını veya iş karşılığını eksiltir.",
+          "neighbor_only": "Bir kimseyi hakkı, ailesi veya malı bakımından kayba uğratmayı özellikle kapsar.",
+          "gloss": "hakkından veya malından eksiltmek",
+          "shared_zone": "İki dal da bir failin başkasına ait bir hakkı ya da değeri azaltarak onu kayba uğratmasını anlatır.",
+          "distinction": "Hak veya iş karşılığını eksiltme alanında yakındırlar; komşu dal aile ve mal üzerinden uğratılan kaybı da sınırına alırken odak dal genel bir nesnenin azaltılmasına da uzanır."
+        },
+        {
+          "neighbor_ref": "root_001120/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bir failin bir şeyi ya da hak edilen miktarı eksiltmesi merkezde yer alır.",
+          "neighbor_only": "Suyun, fiyatın veya başka bir şeyin azalması ve seyrekleşmesi gibi geçişsiz durumları da kapsar.",
+          "gloss": "azalmak, azalmasına yol açmak",
+          "shared_zone": "Bir şeyin miktarını düşürme anlamında iki dal birbiriyle örtüşür.",
+          "distinction": "Komşu dal hem kendiliğinden azalmayı hem de azaltmayı geniş bir nesne alanında anlatır; odak dal ise failin nesneyi veya hakkı eksiltmesine dayanır."
+        },
+        {
+          "neighbor_ref": "root_000314/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bir failin nesneyi veya hak edilen miktarı azaltmasını bildirir.",
+          "neighbor_only": "Tamamlanma ya da artıştan sonra ortaya çıkan eksilmeyi ve yaşlanmaya bağlı küçülmeyi anlatır.",
+          "gloss": "tamlıktan sonra eksilmek",
+          "shared_zone": "Her iki dal da bir şeyin miktar veya bütünlük bakımından daha az hale gelmesi alanındadır.",
+          "distinction": "Odak dal dışarıdan gerçekleştirilen azaltmayı anlatırken komşu dal tamamlanmış ya da büyümüş bir şeyde sonradan görülen eksilmeyi süreç olarak anlatır."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi. Pay veya ceza payı, ağırlık ve ölçü alanındaki dallar azaltma eyleminin sınırını keskinleştirmedi; aynı kökün alıkoyma dalıysa miktarı azaltmak yerine hareketi engellediği için ayrı tutuldu."
+    },
+    {
+      "branch_ref": "root_000044/B002",
+      "concept_map": {
+        "definition": "Bir kimseyi yöneldiği yoldan alıkoymak ve onu gitmek istediği yönden geri çevirmektir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Bir fail, bir kimsenin yöneldiği yolda ilerlemesini engelleyerek onu alıkoyar.",
+            "claim_ids": [
+              "lu_002"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "core",
+            "statement": "Fail, alıkoyduğu kimseyi yöneldiği yoldan başka yana çevirir veya geri döndürür.",
+            "claim_ids": [
+              "lu_002"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Anlam, bir kimsenin ilerleyişini durdurmakla yetinmeyip onu yöneldiği yoldan çevirmeyi de içerir.",
+        "common_claim_ids": [
+          "lu_002"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "yolundan alıkoyup geri çevirmek",
+        "applicability": "Bir kimsenin yöneldiği yolda ilerlemesinin engellendiği ve yönünün değiştirildiği durumların tamamına uygulanır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Hem ilerleyişi engelleme hem de yöneldiği yoldan çevirme işlemlerini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "gitmesine engel olmak",
+          "usage_role": "contextual",
+          "applicability": "Bağlamda asıl vurgu bir kimsenin ilerlemesinin durdurulması üzerindeyse kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Bir failin başka bir kimsenin ilerlemesini engellemesini korur.",
+            "loses": "Engellenen kimsenin yöneldiği yoldan başka yana çevrilmesi aşamasını belirtmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "yolundan çevirmek",
+          "usage_role": "contextual",
+          "applicability": "Bağlamda kişinin yönünün değiştirilmesi öne çıktığında doğal bir karşılık sağlar.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Bir kimsenin yöneldiği yoldan bir fail tarafından çevrilmesini korur.",
+            "loses": "Yön değiştirmeden önce veya onunla birlikte gerçekleşen alıkoyma işlemini açıkça belirtmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_002",
+          "rendering_kind": "ordinary",
+          "target_gloss": "birini yolundan alıkoyup geri çevirmek"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "alıkoymak",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Bir kimsenin ilerlemesini bir failin engellemesi anlamını korur.",
+            "loses": "Engellenen kimseyi yöneldiği yoldan çevirme işlemini belirtmez.",
+            "adds": null,
+            "collision": null
+          }
+        },
+        {
+          "text": "yol değiştirmek",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Başlangıçtaki yönelişten başka bir yöne geçilmesi sonucunu korur.",
+            "loses": "Başka bir failin kişiyi alıkoyması ve yolundan çevirmesi ilişkisini kaybeder.",
+            "adds": "Kişinin kendi isteğiyle yönünü değiştirebilmesi anlamını ekler.",
+            "collision": null
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001389/B003",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bir kimseyi yöneldiği yoldan alıkoyup çevirmekle sınırlıdır.",
+          "neighbor_only": "Bir kimseyi bir işten çevirme ve genel olarak bir şeyi alıkoyma kapsamını da içerir.",
+          "gloss": "yolundan alıkoyup çevirmek",
+          "shared_zone": "Her iki dal da bir kimseyi yöneldiği yoldan alıkoyma, engelleme ve çevirme işlemlerini birlikte anlatır.",
+          "distinction": "Verilen sınırlarda iki dal arasında anlam ayrımı yoktur; alıkoyma ile yönünden çevirme aynı çekirdeğin parçalarıdır."
+        },
+        {
+          "neighbor_ref": "root_001038/B002",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bir kimsenin yöneldiği yoldan alıkonup çevrilmesini anlatır.",
+          "neighbor_only": "Kişilerin yanı sıra şeylerin de alıkonup engellenebilmesini kapsar.",
+          "gloss": "alıkoymak, engellemek ve yolundan çevirmek",
+          "shared_zone": "İki dal da kişi veya şeyin ilerleyişini durdurup yöneldiği yoldan çevirmeyi anlatır.",
+          "distinction": "Verilen anlam sınırları aynı engelleme ve yön değiştirtme çekirdeğini taşır; nesne örneklerindeki genişlik ayrı bir kurucu anlam oluşturmaz."
+        },
+        {
+          "neighbor_ref": "root_001061/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bir kimseyi yöneldiği yolda doğrudan alıkoyup başka yana çevirmeyi bildirir.",
+          "neighbor_only": "Amaca ulaşmayı geciktiren engelleri ve insanları iyilikten sürekli alıkoyan kişiyi de kapsar.",
+          "gloss": "amacından alıkoymak veya önünü kesmek",
+          "shared_zone": "Her iki dalda bir fail ya da engel, kişinin istediği yöne veya amaca ilerlemesini önler.",
+          "distinction": "Odak dal doğrudan alıkoyma ve yolundan çevirme eylemidir; komşu dal nesnel engelleri, gecikmeyi ve alışkanlık halindeki engelleyiciliği de kapsar."
+        },
+        {
+          "neighbor_ref": "root_000194/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bir kimsenin yöneldiği yoldan alıkonup başka yana çevrilmesini anlatır.",
+          "neighbor_only": "Bir işten uzaklaştırmayı, o işi yapmaktan vazgeçirmeyi ve hastalığın kişiyi uzun süre tutmasını kapsar.",
+          "gloss": "bir işi yapmaktan alıkoymak",
+          "shared_zone": "İki dal da bir kimsenin yapmakta veya ilerlemekte olduğu şeyi sürdürmesini engeller.",
+          "distinction": "Odak dal yön ve yol üzerinde alıkoyup çevirmeye dayanır; komşu dal eylemden vazgeçirme, oyalama ve hastalıkla tutulma gibi iş merkezli durumlara uzanır."
+        },
+        {
+          "neighbor_ref": "root_000376/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Başka bir fail kişiyi alıkoyar ve yöneldiği yoldan çevirir.",
+          "neighbor_only": "Kişi korku, çekinme veya kaçınma nedeniyle kendisi yoldan sapar ya da yana çekilir.",
+          "gloss": "yoldan sapmak veya yana çekilmek",
+          "shared_zone": "Her iki dalda başlangıçta izlenen yol veya yön terk edilir.",
+          "distinction": "Odak dal dışarıdan uygulanan engelleme ve yön değiştirtmedir; komşu dal öznenin kendi hareketiyle yoldan ayrılmasını ve kaçınmasını anlatır."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi. Bir işten geri çevirme ve bir şeyden uzaklaşma dalları daha dar eylem alanları sundu; yolda önüne çıkma fiziksel bir araya girme ilişkisi kurdu; aynı kökün öteki dalıysa hareketi değil miktarı azalttığı için ek karşılaştırma olarak yayımlanmadı."
+    }
+  ],
+  "root_profile": {
+    "summary": "Kök, bir şeyi ya da hakkı eksiltme ile bir kimseyi yöneldiği yoldan alıkoyup geri çevirme anlamlarını taşır. İki dal, birini beklediği sonuçtan yoksun bırakabilse de biri miktar azaltmaya, diğeri hareketi engelleyip yön değiştirtmeye dayanır.",
+    "polysemy": "polysemic",
+    "organization": "multi_branch"
+  }
+}

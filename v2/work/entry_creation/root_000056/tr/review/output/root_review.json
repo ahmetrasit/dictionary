@@ -1,0 +1,97 @@
+{
+  "verdict": "repair",
+  "summary": "B001'de türemiş durum ve çoğul biçimleri çekirdeğe yükseltilmiş, bu nedenle çekirdekçe eş anlamlı bir komşu gereksiz yere yakın eş anlamlı gösterilmiştir. B003'te ise lu_012'nin köle kadın adından türeyen nisbe okuması kavram haritasından, kaynak sentezinden ve temel karşılıklardan çıkarılmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_000056/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002",
+        "lu_003"
+      ],
+      "evidence_conflict": "Dalın çekirdeği lu_001'deki özgür kadının karşıtı olan köle kadındır. lu_002 bu kişiden türeyen kölelik durumunu, lu_003 ise adın çoğul biçimlerini verir; mevcut tanım ve facet rolleri bu bağımlı malzemeyi çekirdekle eş düzeye çıkarıyor.",
+      "smallest_correction": "Tanımı köle kadın çekirdeğine indirgeyin; F002'yi çekirdek dışı türemiş durum anlamı, F003'ü de çoğul biçim varyantları olarak yeniden sınıflandırın."
+    },
+    {
+      "target_ref": "root_000056/B001",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002"
+      ],
+      "evidence_conflict": "Kavram karşılığı olan \"köle kadın ve kadın köleliği\", lu_002'deki türemiş durum adını lu_001'deki kişi çekirdeğinin zorunlu bir parçası gibi sunuyor.",
+      "smallest_correction": "Kavram karşılığını \"köle kadın\" yapın; kadın köleliği karşılığını yalnız lu_002'nin bağlamsal ve sözcüksel gösteriminde tutun."
+    },
+    {
+      "target_ref": "root_000056/B001",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002",
+        "lu_003"
+      ],
+      "evidence_conflict": "root_000053/B014 sınır kartı da köle kadın çekirdeğini verir. Mevcut ayrım, yalnız lu_002'deki türemiş durum adı ile lu_003'teki çoğul biçimleri gerekçe göstererek çekirdek eş anlamlılığını near_synonym ve partial düzeyine indiriyor.",
+      "smallest_correction": "Bu ilişkiyi çekirdekler için relation_type \"synonym\" ve boundary_match \"exact\" olarak düzeltin; türemiş durum adıyla çoğul biçimlerin eş anlamlılık sınırını değiştirmediğini ayrım metninde belirtin."
+    },
+    {
+      "target_ref": "root_000056/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "lu_012, nisbe biçimlerini yalnız kişi, kabile veya soy koluna değil, köle kadın adına da bağlar. Mevcut tanım ile F002 bu ilk dayanağı bütünüyle atlayıp dalı özel adlara bağlı aidiyetle sınırlar.",
+      "smallest_correction": "Tanıma ve F002'ye köle kadın adından türeyen ilişki sıfatını ekleyin; özel kişi ve topluluk adlarına bağlı aidiyet okumalarını bunun yanında koruyun."
+    },
+    {
+      "target_ref": "root_000056/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "Kaynak sentezi lu_012'yi yalnız erkek, kabile ve soy kolu adlarına bağlanan bir aidiyet sıfatı gibi özetliyor; aynı id'nin köle kadın adından türetme bilgisini aktarmıyor.",
+      "smallest_correction": "Ortak özete, nisbe biçiminin köle kadın adından da türeyebildiğini kaynak-yansız biçimde ekleyin."
+    },
+    {
+      "target_ref": "root_000056/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "Mevcut kavram karşılığı yalnız özel ad ile ona bağlı aidiyet sıfatını temsil ediyor; lu_012'deki köle kadın adına ilişkin nisbe okumasını kaybediyor.",
+      "smallest_correction": "Kavram karşılığını, köle kadına ilişkin olma ile kişi, kabile veya soy koluna mensup olma okumalarının ikisini de kapsayacak biçimde genişletin."
+    },
+    {
+      "target_ref": "root_000056/B003",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "lu_012 için \"ilgili kişi, kabile veya soy koluna mensup\" karşılığı, kanıtta açıkça bulunan köle kadın adından türeme seçeneğini vermiyor.",
+      "smallest_correction": "lu_012 karşılığını \"köle kadına ilişkin veya ilgili kişi, kabile ya da soy koluna mensup\" anlamlarını ayırarak verecek şekilde düzeltin."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök özeti B003'ü köle kadın alanından bütünüyle ayrı ve yalnız özel ada dayalı gösteriyor; oysa B003'ün bir nisbe okuması doğrudan köle kadın adına bağlıdır.",
+      "smallest_correction": "Özette B003'ün hem köle kadın adına hem de özel kişi ve topluluk adlarına dayanan nisbe biçimlerini içerdiğini belirtin ve bu dalı bütünüyle ayrı diye nitelemeyin."
+    }
+  ]
+}

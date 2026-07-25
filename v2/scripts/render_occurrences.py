@@ -1093,11 +1093,17 @@ def structured_occurrence_data(packet: dict, crosswalk: dict) -> dict:
 
 
 GLOBAL_GRAMMAR_CLAIMS = (
-    re.compile(r"(?:^|;\s*)COUNT\s+\d+[^.;]*", re.IGNORECASE),
+    re.compile(
+        r"(?:^|(?<=[.;]))\s*[^.;]*\bCOUNT\s*[:=]?\s*\d+[^.;]*[.;]?",
+        re.IGNORECASE,
+    ),
+    re.compile(r"\s*\([^)]*\bCOUNT\s*[:=]?\s*\d+[^)]*\)", re.IGNORECASE),
     re.compile(r"\bThe word appears\s+\d+\s+times?\s+in\s+the\s+Quran[^.]*\.?", re.IGNORECASE),
+    re.compile(r"[^.;]*\bappears\s+only\s+here\s+in\s+the\s+entire\s+Quran[.;]?", re.IGNORECASE),
+    re.compile(r"[^.;]*\boccurs\s+ONLY\s+here\s+in\s+the\s+entire\s+Quran[.;]?", re.IGNORECASE),
     re.compile(r"\s*[—-]\s*always appears[^.;]*\(\d+\s+occurrences?\)", re.IGNORECASE),
     re.compile(
-        r"(?:^|(?<=[.;]))\s*[^.;]*\b\d+\s+(?:Quranic\s+)?occurrences?\b[^.;]*[.;]?",
+        r"(?:^|(?<=[.;]))\s*[^.;]*\b\d+\s+(?:total\s+)?(?:(?:Quranic|Quran-wide)\s+)?occurrences?\b[^.;]*[.;]?",
         re.IGNORECASE,
     ),
 )
@@ -1108,7 +1114,7 @@ def local_source_grammar(value: object) -> str:
     text = " ".join(str(value or "").split())
     for pattern in GLOBAL_GRAMMAR_CLAIMS:
         text = pattern.sub("", text)
-    return text.strip(" ;.—-")
+    return text.strip(" ;.—")
 
 
 def morphology_label(occurrence: dict, language: str) -> str:
@@ -1461,7 +1467,7 @@ def main(argv: list[str] | None = None) -> int:
             protect_pinned_entries(
                 PROJECT,
                 packet["root_envelope_id"],
-                (args.language,),
+                ("en", "tr"),
                 force=args.force or args.check,
                 scope="canonical occurrence evidence",
             )

@@ -1,0 +1,639 @@
+{
+  "inputs_sha256": "2bc1415947029f7b086eef471004fae4a838f16af0a842ba858ed90dfe5deb22",
+  "artifact_format": "dictionary-v2-root-entry-draft-v1",
+  "generated_by": "v2/scripts/accept_root_writer.py",
+  "root_envelope_id": "root_000442",
+  "language": "tr",
+  "branches": [
+    {
+      "branch_ref": "root_000442/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Yetkili kaynak sözü, bilinen hayvanı doğrudan adlandırır ve aynı hayvan adının çokluk biçimini bir davranış karşılaştırmasında kullanır. Karşılaştırmadaki eylem, hayvan adının bu daldaki kimliğini değiştirmez.",
+        "boundary_note": "Bu dal hayvanın adıdır; hayvana benzer biçimde davranma eylemini kapsamaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalnızca yalın hayvan adına ve onun sayı biçimlerine dayanır; karşılaştırmada geçen davranış anlamı bu dala taşınmaz."
+      },
+      "concept_map": {
+        "definition": "Bilinen domuz hayvanını bir veya birden çok birey olarak adlandırır. Çokluk biçiminin domuzların davranışını örnekleyen bir karşılaştırmada kullanılması, bu dalı davranış bildiren eylem dalına dönüştürmez.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Dalın çekirdeği, bilinen domuz hayvanının adıdır; sayı değişimi gönderimi değiştirmez.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "example",
+            "statement": "Çokluk biçimi, domuzların yaptığı gibi davranmayı anlatan bir karşılaştırmada örneklenir; eylem bu ad dalının anlamı değildir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kanıtın bütünü, bilinen domuz hayvanının adını verir; çokluk biçimini ise domuzların yaptığı gibi davranma karşılaştırması içinde gösterir.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "domuz",
+        "applicability": "Hayvanın kendisini sayı bakımından sınırlamadan adlandıran temel karşılıktır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Hayvanın bilinen tür kimliğini ve adlandırma işlevini eksiksiz korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "domuzlar",
+          "usage_role": "contextual",
+          "applicability": "Birden çok hayvandan söz edilen bağlamlarda adın doğal çokluk karşılığıdır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Hayvan türünü ve birden çok bireye gönderimde bulunulduğunu eksiksiz korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_003",
+          "rendering_kind": "ordinary",
+          "target_gloss": "domuzlar"
+        },
+        {
+          "lexical_unit_id": "lu_004",
+          "rendering_kind": "ordinary",
+          "target_gloss": "domuz"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "domuz gibi davranmak",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Domuzla kurulan anlam bağını korur.",
+            "loses": "Hayvanın kendisini adlandırma işlevini yitirir.",
+            "adds": "Bir davranış ve benzetme olayı ekler.",
+            "collision": "İkinci dalın eylem anlamıyla çakışır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001030/B015",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Cinsiyet ve erginlik bakımından sınırlanmamış genel hayvan adıdır.",
+          "neighbor_only": "Yalnız erkek, bazı anlatımlarda ise özellikle damızlık erkek bireyi belirtir.",
+          "gloss": "erkek domuz",
+          "shared_zone": "İki dal da aynı hayvan türünden bir bireyi adlandırır.",
+          "distinction": "Bu dal türün genel adıdır ve dişi ya da erkek bütün bireyleri kapsayabilir; komşu dal ise gönderimi erkek bireyle sınırlar."
+        },
+        {
+          "neighbor_ref": "root_000442/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Hayvanın kendisini adlandırır; davranma ya da benzemeyi bildirmez.",
+          "neighbor_only": "Birinin domuzların yaptığı gibi davranmasını veya onlara benzemesini bildirir.",
+          "gloss": "domuz gibi davranma",
+          "shared_zone": "İki dal da domuz kavramını temel alır.",
+          "distinction": "Bu dal bir varlık adıdır; komşu dal ise o varlığın davranışını örnek alan bir eylemi anlatır ve hayvanın adı yerine kullanılamaz."
+        }
+      ],
+      "neighbor_coverage_note": "Dokuz adayın tümü değerlendirildi. Erkek domuzu belirten dal ile aynı kökün davranış dalı sınırı doğrudan keskinleştirir; kalan genel hayvan ve başka tür adları yalnızca geniş bir canlılık alanını paylaştığından yayımlanmadı.",
+      "branch_image_ar": "الخنزير المعروف",
+      "what_is_ar": "اسم الحيوان المعروف الخنزير؛ وجمعه الخنازير",
+      "what_is_not_ar": "فعل التشبه بالخنازير",
+      "source_phrase_ar": "الخنزير معروف (tahdhib)؛ كما تخنزر الخنازير (ayn)",
+      "sources": [
+        "TA",
+        "AY"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_000442/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Yetkili kaynak sözü, bir kişiyi özne yaparak onun domuzların yaptığı gibi davranmasını açıkça anlatır. Bu, hazırlanan dalın benzetmeye dayalı eylem kimliğiyle doğrudan örtüşür.",
+        "boundary_note": "Dal domuzun adını değil, domuz davranışını örnek alan bir kişinin eylemini bildirir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Dal, hem genel eylem biçimini hem de kişi öznesiyle kurulan özel söyleyişi kapsar; özel söyleyişteki kişi ve benzetme sınırı bütün köke yayılmaz."
+      },
+      "concept_map": {
+        "definition": "Temel eylem, domuzların yaptığı gibi davranmak veya davranış bakımından onlara benzemektir. Kişi öznesiyle kurulan özel söyleyiş, bu eylemi belirli bir kişinin davranışı olarak anlatır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Eylemin çekirdeği, domuzların yaptığı gibi davranmak ve bu davranış yönünden onlara benzemektir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Kişi öznesiyle kurulan söyleyiş, domuzlara benzer davranışı belirli bir kişiye yükler.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Bu dal için birden çok kaynak arasında ortaklaştırılacak ayrı bir anlatım yoktur.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek tanıklık, bir kişinin domuzların yaptığı gibi davranmasını anlatır ve eylemi bu benzetme sınırında kurar."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "domuz gibi davranmak",
+        "applicability": "Domuzların davranışını örnek alan eylemin genel ve doğal karşılığıdır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Davranma eylemini, domuzların örnek alınmasını ve benzetme ilişkisini eksiksiz korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "birinin domuz gibi davranması",
+          "usage_role": "contextual",
+          "applicability": "Eylemin belirli bir kişiye yüklendiği adlaştırılmış anlatımlarda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Belirli kişi öznesini, davranışı ve domuzlarla kurulan benzetmeyi eksiksiz korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_001",
+          "rendering_kind": "ordinary",
+          "target_gloss": "birinin davranışında veya görünüşünde domuzlara benzemesi"
+        },
+        {
+          "lexical_unit_id": "lu_002",
+          "rendering_kind": "ordinary",
+          "target_gloss": "domuzların yaptığı gibi davranmak veya onlara benzemek"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "domuzlaşmak",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Domuzla ilişkilendirilen davranış yönünü korur.",
+            "loses": "Örneğe benzer biçimde davranma ilişkisini açıkça vermez.",
+            "adds": "Kabalaşma, yozlaşma veya bir değişim süreci çağrışımı ekler.",
+            "collision": "Ahlaki yargı ve dönüşüm anlamlarıyla çakışır."
+          }
+        },
+        {
+          "text": "taklit etmek",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Başka bir örneğe göre davranma yönünü korur.",
+            "loses": "Örnek alınan varlığın domuz olması koşulunu yitirir.",
+            "adds": "Her türlü kişi, davranış veya biçimi örnek alma alanını ekler.",
+            "collision": null
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000918/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Benzemeyi domuzların davranışına ve onu yapan kişiye bağlar.",
+          "neighbor_only": "Her türlü biçim, söz veya davranış benzerliğini ve kimi karşılıklı ilişkileri kapsayabilir.",
+          "gloss": "benzemek ve aynı biçimi almak",
+          "shared_zone": "İki dal da bir varlığın başka bir örneğe benzerlik göstermesini anlatır.",
+          "distinction": "Bu dal domuzların yaptığı gibi davranmayla sınırlıdır; komşu dal ise örnek alınan varlığı ve benzerliğin türünü sınırlamayan genel bir benzeşme alanına sahiptir."
+        },
+        {
+          "neighbor_ref": "root_000018/B009",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Domuz davranışını örnek alan, hayvana özgü bir benzetme kurar.",
+          "neighbor_only": "Bir topluluğun gidişini, biçimini, huylarını veya yolunu benimsemeyi anlatır.",
+          "gloss": "bir topluluğun tutumunu benimsemek",
+          "shared_zone": "İki dal da başka bir örneğin davranış veya biçimine uymayı içerir.",
+          "distinction": "Bu dalın örneği domuzlardır ve odak kişinin onlar gibi davranmasıdır; komşu dal insan topluluğunun yolunu ya da özelliklerini benimsemeye yönelir."
+        },
+        {
+          "neighbor_ref": "root_000442/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Domuzların davranışını örnek alan bir eylemi bildirir.",
+          "neighbor_only": "Davranış veya benzetme bildirmeden hayvanın kendisini adlandırır.",
+          "gloss": "domuz",
+          "shared_zone": "İki dal da aynı hayvan kavramına dayanır.",
+          "distinction": "Bu dal hayvanı bir davranış örneği olarak kullanır; komşu dal ise yalnızca hayvanın adıdır ve eylem yerine kullanılamaz."
+        }
+      ],
+      "neighbor_coverage_note": "Dokuz adayın tümü değerlendirildi. Genel benzerlik, bir topluluğun tutumunu benimseme ve aynı kökün hayvan adı dalları gerçek sınır farklarını gösterir; yürüyüş, yılan hareketi, baba huyu, koyun yumuşaklığı, acele etme örneği ve örnek alınan model dalları yalnızca uzak alan veya senaryo ortaklığı taşıdığından yayımlanmadı.",
+      "branch_image_ar": "التَّخَنْزُر كفعل الخنازير",
+      "what_is_ar": "خنزر فلان خنزرة أي فعل فعل الخنازير أو تشبه بها",
+      "what_is_not_ar": "اسم الحيوان الخنزير",
+      "source_phrase_ar": "خنزر فلان خنزرة كما تخنزر الخنازير",
+      "sources": [
+        "AY"
+      ],
+      "source_note": {
+        "AY": "Tek tanıklık, bir kişinin domuzların yaptığı gibi davranmasını anlatır ve eylemi bu benzetme sınırında kurar."
+      }
+    }
+  ],
+  "root_profile": {
+    "summary": "Bu kök iki bağlantılı dal oluşturur: ilki domuz hayvanını adlandırır, ikincisi domuzların davranışını örnek alan bir eylemi bildirir. Düzen, hayvan adından benzetmeye dayalı eylem anlamına uzanan türetimsel bir ilişkidir.",
+    "polysemy": "polysemic",
+    "organization": "radial"
+  },
+  "occurrence_evidence": {
+    "summary": {
+      "morpheme_count": 5,
+      "word_count": 5,
+      "ayah_count": 5,
+      "surah_count": 4
+    },
+    "forms": [
+      {
+        "form_id": "F001",
+        "lemma_ar": "خِنزِير",
+        "stem_ar": "خِنزِيرِ",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:xinziyr|ROOT:xnzr|M|GEN",
+        "occurrence_count": 3
+      },
+      {
+        "form_id": "F002",
+        "lemma_ar": "خِنزِير",
+        "stem_ar": "خَنَازِيرَ",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:xinziyr|ROOT:xnzr|MP|ACC",
+        "occurrence_count": 1
+      },
+      {
+        "form_id": "F003",
+        "lemma_ar": "خِنزِير",
+        "stem_ar": "خِنزِيرٍ",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:xinziyr|ROOT:xnzr|M|INDEF|GEN",
+        "occurrence_count": 1
+      }
+    ],
+    "ayahs": [
+      {
+        "ayah_ref": "2:173",
+        "surface_ar": "إِنَّمَا حَرَّمَ عَلَيْكُمُ ٱلْمَيْتَةَ وَٱلدَّمَ وَلَحْمَ ٱلْخِنزِيرِ وَمَآ أُهِلَّ بِهِۦ لِغَيْرِ ٱللَّهِ فَمَنِ ٱضْطُرَّ غَيْرَ بَاغٍ وَلَا عَادٍ فَلَآ إِثْمَ عَلَيْهِ إِنَّ ٱللَّهَ غَفُورٌ رَّحِيمٌ"
+      },
+      {
+        "ayah_ref": "5:3",
+        "surface_ar": "حُرِّمَتْ عَلَيْكُمُ ٱلْمَيْتَةُ وَٱلدَّمُ وَلَحْمُ ٱلْخِنزِيرِ وَمَآ أُهِلَّ لِغَيْرِ ٱللَّهِ بِهِۦ وَٱلْمُنْخَنِقَةُ وَٱلْمَوْقُوذَةُ وَٱلْمُتَرَدِّيَةُ وَٱلنَّطِيحَةُ وَمَآ أَكَلَ ٱلسَّبُعُ إِلَّا مَا ذَكَّيْتُمْ وَمَا ذُبِحَ عَلَى ٱلنُّصُبِ وَأَن تَسْتَقْسِمُوا۟ بِٱلْأَزْلَٰمِ ذَٰلِكُمْ فِسْقٌ ٱلْيَوْمَ يَئِسَ ٱلَّذِينَ كَفَرُوا۟ مِن دِينِكُمْ فَلَا تَخْشَوْهُمْ وَٱخْشَوْنِ ٱلْيَوْمَ أَكْمَلْتُ لَكُمْ دِينَكُمْ وَأَتْمَمْتُ عَلَيْكُمْ نِعْمَتِى وَرَضِيتُ لَكُمُ ٱلْإِسْلَٰمَ دِينًا فَمَنِ ٱضْطُرَّ فِى مَخْمَصَةٍ غَيْرَ مُتَجَانِفٍ لِّإِثْمٍ فَإِنَّ ٱللَّهَ غَفُورٌ رَّحِيمٌ"
+      },
+      {
+        "ayah_ref": "5:60",
+        "surface_ar": "قُلْ هَلْ أُنَبِّئُكُم بِشَرٍّ مِّن ذَٰلِكَ مَثُوبَةً عِندَ ٱللَّهِ مَن لَّعَنَهُ ٱللَّهُ وَغَضِبَ عَلَيْهِ وَجَعَلَ مِنْهُمُ ٱلْقِرَدَةَ وَٱلْخَنَازِيرَ وَعَبَدَ ٱلطَّٰغُوتَ أُو۟لَٰٓئِكَ شَرٌّ مَّكَانًا وَأَضَلُّ عَن سَوَآءِ ٱلسَّبِيلِ"
+      },
+      {
+        "ayah_ref": "6:145",
+        "surface_ar": "قُل لَّآ أَجِدُ فِى مَآ أُوحِىَ إِلَىَّ مُحَرَّمًا عَلَىٰ طَاعِمٍ يَطْعَمُهُۥٓ إِلَّآ أَن يَكُونَ مَيْتَةً أَوْ دَمًا مَّسْفُوحًا أَوْ لَحْمَ خِنزِيرٍ فَإِنَّهُۥ رِجْسٌ أَوْ فِسْقًا أُهِلَّ لِغَيْرِ ٱللَّهِ بِهِۦ فَمَنِ ٱضْطُرَّ غَيْرَ بَاغٍ وَلَا عَادٍ فَإِنَّ رَبَّكَ غَفُورٌ رَّحِيمٌ"
+      },
+      {
+        "ayah_ref": "16:115",
+        "surface_ar": "إِنَّمَا حَرَّمَ عَلَيْكُمُ ٱلْمَيْتَةَ وَٱلدَّمَ وَلَحْمَ ٱلْخِنزِيرِ وَمَآ أُهِلَّ لِغَيْرِ ٱللَّهِ بِهِۦ فَمَنِ ٱضْطُرَّ غَيْرَ بَاغٍ وَلَا عَادٍ فَإِنَّ ٱللَّهَ غَفُورٌ رَّحِيمٌ"
+      }
+    ],
+    "occurrences": [
+      {
+        "qac_ref": "2:173:7:2",
+        "qac_word_ref": "2:173:7",
+        "surah": 2,
+        "ayah": 173,
+        "word_index": 7,
+        "morpheme_index": 2,
+        "surface_ar": "خِنزِيرِ",
+        "stem_ar": "خِنزِيرِ",
+        "lemma_ar": "خِنزِير",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:xinziyr|ROOT:xnzr|M|GEN",
+        "ayah_ref": "2:173",
+        "form_id": "F001",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s002:173:noun:9",
+          "attachment_word_unit_id": "q:2:173:9",
+          "qac_char_span": [
+            27,
+            34
+          ],
+          "attachment_char_spans": [
+            [
+              29,
+              34
+            ]
+          ],
+          "source_grammar": "noun, definite with al-, genitive (muḍāf ilayhi in iḍāfa with laḥm), quadriliteral root",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s002:173:pass1:attach:a7",
+              "relation": "idafa",
+              "focus_role": "dependent",
+              "other_unit_id": "q:2:173:8",
+              "other_surface": "وَلَحْمَ",
+              "other_root": "ل ح م",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology;case_government"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "5:3:6:2",
+        "qac_word_ref": "5:3:6",
+        "surah": 5,
+        "ayah": 3,
+        "word_index": 6,
+        "morpheme_index": 2,
+        "surface_ar": "خِنزِيرِ",
+        "stem_ar": "خِنزِيرِ",
+        "lemma_ar": "خِنزِير",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:xinziyr|ROOT:xnzr|M|GEN",
+        "ayah_ref": "5:3",
+        "form_id": "F001",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s005:003:noun:8",
+          "attachment_word_unit_id": "q:5:3:8",
+          "qac_char_span": [
+            24,
+            31
+          ],
+          "attachment_char_spans": [
+            [
+              26,
+              31
+            ]
+          ],
+          "source_grammar": "Definite noun, masculine singular, genitive (second term of iḍāfah with laḥm). Quadriliteral root",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s005:003:pass1:attach:a5",
+              "relation": "idafa",
+              "focus_role": "dependent",
+              "other_unit_id": "q:5:3:7",
+              "other_surface": "وَلَحْمُ",
+              "other_root": "ل ح م",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "5:60:18:3",
+        "qac_word_ref": "5:60:18",
+        "surah": 5,
+        "ayah": 60,
+        "word_index": 18,
+        "morpheme_index": 3,
+        "surface_ar": "خَنَازِيرَ",
+        "stem_ar": "خَنَازِيرَ",
+        "lemma_ar": "خِنزِير",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:xinziyr|ROOT:xnzr|MP|ACC",
+        "ayah_ref": "5:60",
+        "form_id": "F002",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s005:060:noun:21",
+          "attachment_word_unit_id": "q:5:60:21",
+          "qac_char_span": [
+            63,
+            72
+          ],
+          "attachment_char_spans": [
+            [
+              63,
+              72
+            ],
+            [
+              66,
+              72
+            ]
+          ],
+          "source_grammar": "Concrete noun (NOUN_CONCRETE), accusative, definite, broken plural of khinzīr -- \"the swine\"",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s005:060:pass1:attach:a16",
+              "relation": "conjoined",
+              "focus_role": "dependent",
+              "other_unit_id": "q:5:60:19",
+              "other_surface": "الْقِرَدَةَ",
+              "other_root": "ق ر د",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "parallelism;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "6:145:21:1",
+        "qac_word_ref": "6:145:21",
+        "surah": 6,
+        "ayah": 145,
+        "word_index": 21,
+        "morpheme_index": 1,
+        "surface_ar": "خِنزِيرٍ",
+        "stem_ar": "خِنزِيرٍ",
+        "lemma_ar": "خِنزِير",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:xinziyr|ROOT:xnzr|M|INDEF|GEN",
+        "ayah_ref": "6:145",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s006:145:noun:21",
+          "attachment_word_unit_id": "q:6:145:21",
+          "qac_char_span": [
+            66,
+            71
+          ],
+          "attachment_char_spans": [
+            [
+              66,
+              71
+            ]
+          ],
+          "source_grammar": "noun, concrete, genitive indefinite (muḍāf ilayhi in construct with laḥma); specifies the animal whose flesh is prohibited",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s006:145:pass1:attach:a12",
+              "relation": "idafa",
+              "focus_role": "dependent",
+              "other_unit_id": "q:6:145:20",
+              "other_surface": "لَحْمَ",
+              "other_root": "ل ح م",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "16:115:7:2",
+        "qac_word_ref": "16:115:7",
+        "surah": 16,
+        "ayah": 115,
+        "word_index": 7,
+        "morpheme_index": 2,
+        "surface_ar": "خِنزِيرِ",
+        "stem_ar": "خِنزِيرِ",
+        "lemma_ar": "خِنزِير",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:xinziyr|ROOT:xnzr|M|GEN",
+        "ayah_ref": "16:115",
+        "form_id": "F001",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s016:115:noun:9",
+          "attachment_word_unit_id": "q:16:115:9",
+          "qac_char_span": [
+            27,
+            34
+          ],
+          "attachment_char_spans": [
+            [
+              29,
+              34
+            ]
+          ],
+          "source_grammar": "noun (ism), definite with al-, genitive (jarr) as second term of iḍāfa with laḥm",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s016:115:pass1:attach:a5",
+              "relation": "idafa",
+              "focus_role": "dependent",
+              "other_unit_id": "q:16:115:8",
+              "other_surface": "وَلَحْمَ",
+              "other_root": "ل ح م",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology;case_government"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

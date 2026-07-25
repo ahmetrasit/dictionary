@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak çekirdek anlamları ve komşu sınırlarını koruyor; ancak bir kaynak varyantını türetme diye sunuyor, deveye özgü bir kullanımı bütün hayvanlara genişletiyor ve tek kaynağa özgü zırh örneğini ortak özete taşıyor.",
+  "issues": [
+    {
+      "target_ref": "root_000060/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_006"
+      ],
+      "evidence_conflict": "lu_006, ilgili biçimin sıradan bir türetme değil, ses değişimi yoluyla kökün başka bir biçiminden oluşmuş kaynak varyantı olduğunu açıklar. Kaynak ayrıntısı bunu yalnızca türetme diye sunarak ayırt edici varyant bilgisini kaybediyor.",
+      "smallest_correction": "lu_006 kaynak ayrıntısını, ilk dönem anlamını koruyarak biçimin ses değişimiyle oluşmuş bir kaynak varyantı olduğunu belirtecek şekilde düzeltin."
+    },
+    {
+      "target_ref": "root_000060/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011"
+      ],
+      "evidence_conflict": "lu_011 yalnızca burnu yular nedeniyle yaralanıp acıyla boyun eğen deveyi bildirir. Tanım bunu burun acısıyla yönlendirilen herhangi bir hayvana genişleterek katılımcı sınırını aşar.",
+      "smallest_correction": "Tanımdaki bu kullanımı genel hayvan yerine deveyle sınırlandırın."
+    },
+    {
+      "target_ref": "root_000060/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_028"
+      ],
+      "evidence_conflict": "Yeni zırh örneği yalnızca lu_028 ile ve tek bir kaynakta tanıklanır; buna rağmen ortak özette, lu_028 ortak iddia kimlikleri arasında bulunmadan ortak çekirdeğin örneklerinden biri olarak tekrarlanır. Bu, tekil tanıklığın kaynak sınırını belirsizleştirir.",
+      "smallest_correction": "Ortak özetten yeni zırh örneğini çıkarın ve bu bilgiyi mevcut tek-kaynak ayrıntısında bırakın."
+    }
+  ]
+}

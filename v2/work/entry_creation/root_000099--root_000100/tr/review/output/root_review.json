@@ -1,0 +1,100 @@
+{
+  "verdict": "editorial_review",
+  "summary": "Yanıt genel olarak çekirdek anlamları koruyor; ancak iki dalda kaynak kökenli terim açıklamanın yerini alıyor, avcı siperi dallarına kanıtsız koku gizleme kapsamı ekleniyor ve bazı kaynak ayrımları doğru gösterilmiyor. Ayrıca root_000100/B004 sınırındaki üçüncü kişiden ilişiksizlik kapsamı dal kartında bulunmasına rağmen hiçbir kaynak iddiasıyla desteklenmediğinden bu nokta kanıt sahibi tarafından karara bağlanmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_000099/B004",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_016"
+      ],
+      "evidence_conflict": "\"Borçtan ibra etmek\" karşılığı, ordinary politikalı kaynak biriminin kaynak dil kökenli adını açıklama yerine kullanıyor; lu_016'nın anlamı borç veya güvence yükünü kaldırmaktır.",
+      "smallest_correction": "Bu bağlamsal karşılığı \"borç veya güvence yükünü kaldırmak\" gibi doğrudan Türkçe bir açıklamayla değiştir."
+    },
+    {
+      "target_ref": "root_000100/B004",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_013"
+      ],
+      "evidence_conflict": "\"Borçtan ibra etmek\" karşılığı, ordinary politikalı lu_013'ün anlamını açıklamak yerine kaynak dil kökenli terimi yeniden kullanıyor.",
+      "smallest_correction": "Bu bağlamsal karşılığı \"borç veya güvence yükünü kaldırmak\" gibi açıklayıcı bir Türkçe ifadeyle değiştir."
+    },
+    {
+      "target_ref": "root_000099/B007",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_026",
+        "lu_027"
+      ],
+      "evidence_conflict": "lu_026 ve lu_027 avcının içinde gizlendiği siperi ve onun çoğulunu destekler; avcının kokusunu avdan gizleme amacı bu dalın iddialarında bulunmaz. Tanım bu kapsamı komşu root_001199/B002 kartından almış görünüyor.",
+      "smallest_correction": "Tanımdan kanıtsız \"ve kokusunu\" kapsamını çıkar ve kavram haritasını avcının kendisini gizlediği siper veya çukurla sınırla."
+    },
+    {
+      "target_ref": "root_000100/B007",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_018",
+        "lu_019"
+      ],
+      "evidence_conflict": "lu_018 ve lu_019 avcının içine saklandığı siperi ve çoğul biçimini verir; kokuyu gizleme işlevini desteklemez. Buna rağmen tanım ve uygulanabilirlik metni kokuyu dalın çekirdeğine katıyor.",
+      "smallest_correction": "Tanım ve uygulanabilirlik metninden koku gizleme kapsamını çıkar; yalnız avcının kendisini gizlediği siper veya çukuru koru."
+    },
+    {
+      "target_ref": "root_000099/B007",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_026",
+        "lu_027"
+      ],
+      "evidence_conflict": "root_001199/B002 kartı avcının kendisini veya kokusunu gizlemesini ve ev ya da kuyu biçimlerini kapsarken lu_026-lu_027 yalnız avcının içinde gizlendiği siper ve çoğulunu verir. Bu ek amaç ve biçim kapsamı exact sınır eşleşmesini engeller.",
+      "smallest_correction": "İlişkiyi near_synonym/partial olarak değiştir; komşuya özgü koku gizleme ile ev veya kuyu kapsamını neighbor_only alanında belirt."
+    },
+    {
+      "target_ref": "root_000100/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011",
+        "lu_012",
+        "lu_013",
+        "lu_014"
+      ],
+      "evidence_conflict": "lu_011 yalnız Tahdhib'e, lu_012-lu_014 ise yalnız Maqayis'e aittir. Boş source_details dizisi, borçtan kurtulma ile hak terki, yük kaldırma ve karşılıklı ayrılmanın ayrı tek-kaynak tanıklıkları olduğunu gizliyor.",
+      "smallest_correction": "lu_011 için Tahdhib'e çözülen, lu_012-lu_014 için Maqayis'e çözülen iki sole_attestation ayrıntısı ekle; ortak özeti kaynaklar arasında ortak anlam izlenimi vermeyecek biçimde koru."
+    },
+    {
+      "target_ref": "root_000100/B006",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_016"
+      ],
+      "evidence_conflict": "lu_016'da hem Maqayis hem Tahdhib son gece adını verir, fakat ayın güneşten ayrılması açıklaması yalnız Tahdhib aktarımındadır. \"Kaynaklar ... verir ve bunu ... açıklar\" cümlesi açıklamayı iki kaynağa birden yüklüyor.",
+      "smallest_correction": "Ortak özeti, kaynakların son gece adında birleştiğini ve bir aktarımın bunu ayın güneşten ayrılmasıyla açıkladığını belirtecek biçimde düzelt."
+    },
+    {
+      "target_ref": "root_000100/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "Dal kartı üçüncü bir kişiden ilişiksizliği muhataba bildirmeyi kapsama alıyor, ancak lu_012 yalnız muhatabın hakkından vazgeçmeyi destekliyor ve diğer iddialar da üçüncü kişiyi içermiyor. Bu nedenle tanımdaki son kapsam için kurulabilecek kanıtlı bir facet yok.",
+      "smallest_correction": "Kanıt sahibi üçüncü kişiden ilişiksizlik için ayrı bir kaynak iddiası sağlamalı veya bu kapsamı dal kartından çıkarmalı; ardından tanım ve facetler aynı karara göre hizalanmalıdır."
+    }
+  ]
+}

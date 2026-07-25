@@ -1,0 +1,103 @@
+{
+  "inputs_sha256": "bc274d577eb6c01ae470e76fce9b5483fcd49dc5ff708f1527008e0a1c7223f7",
+  "verdict": "repair",
+  "summary": "Ana anlam örgüsü büyük ölçüde kanıtla uyumludur; ancak bazı ayırt edici kaynak ayrıntıları atlanmış, ayrı kullanımlar arasında kanıtlanmayan neden ilişkileri kurulmuş ve bir kaynak varyantı anlam genişlemesi gibi sunulmuştur.",
+  "issues": [
+    {
+      "target_ref": "root_000202/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_007"
+      ],
+      "evidence_conflict": "lu_007, kişinin kendi günahlarının yanı sıra saptırdığı kimselerin günah yüklerini de açıkça anıyor. Ortak özet yalnızca genel suç ve yanlış yükünü vererek bu ayırt edici ek sorumluluk kapsamını atlıyor.",
+      "smallest_correction": "common_summary içine, kaynak adı vermeden, yükün kişinin saptırdığı kimselerin günahlarını da kapsayabildiğini belirten kısa bir cümle ekleyin."
+    },
+    {
+      "target_ref": "root_000202/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_009"
+      ],
+      "evidence_conflict": "lu_009 bir anlatımda ölçüyü özellikle altın için kullanılan bir ağırlık birimi olarak sınırlar, başka bir anlatımda ise her tartı ağırlığına geneller. Özet genel ölçü çekirdeğini veriyor fakat altın örneğini ve bu kapsam farkını aktarmıyor.",
+      "smallest_correction": "common_summary içinde, kaynak adı vermeden, terimin hem genel tartı ağırlığını hem de altın için kullanılan belirli ağırlık birimini gösterebildiğini belirtin."
+    },
+    {
+      "target_ref": "root_000202/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_014",
+        "lu_015",
+        "lu_016"
+      ],
+      "evidence_conflict": "Sentez, lu_014'teki korunmuş deve kuşu yumurtalarından gelişme açıklamasını, lu_015'teki insanlar ile görünmeyen varlıklar ve Tanrı'nın kitabı ile Peygamber'in ailesi yorumlarını, ayrıca lu_016'da ağır söz için verilen Tanrı bildirisi örneğini soyutlaştırarak atlıyor.",
+      "smallest_correction": "lu_014 ve lu_015 ayrıntılarını kaynak adı vermeyen karşılaştırmalı cümlelerle common_summary içine ekleyin; lu_016 için mevcut sole_attestation özetine Tanrı bildirisi örneğini katın."
+    },
+    {
+      "target_ref": "root_000202/B006",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_021",
+        "lu_022"
+      ],
+      "evidence_conflict": "F004, gücünü aşan yük altında kalmayı yavaşlama ve ayağı güçlükle basmanın nedeni yapıyor. lu_021 aşırı yüklenmiş olan ile yavaş hayvanı ayrı seçenekler olarak verir; lu_022 de yavaşlama ve basıştaki ağırlığı bildirir, fakat aralarında bu neden ilişkisini kurmaz.",
+      "smallest_correction": "Aşırı yük altında kalma ile yavaş veya ağır basarak hareket etme kullanımlarını ayrı facet'lere bölün ve birinin ötekine yol açtığını söylemeyin."
+    },
+    {
+      "target_ref": "root_000202/B006",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_017",
+        "lu_018",
+        "lu_019",
+        "lu_020",
+        "lu_021",
+        "lu_022"
+      ],
+      "evidence_conflict": "common_summary bütün ağırlık, bitkinlik ve yavaşlama kullanımlarını kişi veya hayvanın gücünün aşılmasından doğan tek bir sonuç dizisine bağlıyor. Kanıt bunları yemek, uyku, hastalık, aşırı yük ve yavaş hareket çevresindeki ilişkili fakat ayrı kullanımlar olarak sunuyor.",
+      "smallest_correction": "Ortak özeti tek bir neden zinciri yerine ilişkili kullanımların tarafsız dökümü olarak kurun; gücün aşılması ifadesini yalnızca lu_021'in ilgili seçeneğiyle sınırlayın."
+    },
+    {
+      "target_ref": "root_000202/B008",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_025"
+      ],
+      "evidence_conflict": "F002, oturuştaki ağırbaşlılığı bedensel dolgunluk görüntüsünden gelişen bir extension olarak sunuyor. lu_025 bu bağıntıyı veya gelişme yönünü kanıtlamıyor; ağırbaşlı oturuşu yalnızca aynı biçim için verilen ayrı bir kaynak karşılığı olarak gösteriyor.",
+      "smallest_correction": "F002 rolünü source_variant olarak değiştirin ve ifadeyi bedensel anlamdan türediğini ileri sürmeyen tarafsız bir alternatif karşılık olarak yazın."
+    },
+    {
+      "target_ref": "root_000202/B008",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_025"
+      ],
+      "evidence_conflict": "common_summary, ağırbaşlı oturuş karşılığını bedensel açıklamanın anlam genişlemesi olarak bağlıyor. Kanıt yalnızca bedensel niteleme ile ağırbaşlı oturuş karşılığını yan yana veriyor ve aralarında gelişme yönü kurmuyor.",
+      "smallest_correction": "İkinci cümleyi, aynı biçimin ağırbaşlı oturan kadın için de verildiğini söyleyen kaynak tarafsız bir varyant cümlesine dönüştürün."
+    },
+    {
+      "target_ref": "root_000202/B009",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_026"
+      ],
+      "evidence_conflict": "lu_026 yalnızca tek bir sözlükte tanıklanmasına rağmen common_claim_ids içinde ortak kanıt gibi sunuluyor ve source_details boş bırakılıyor; böylece dalın tek kaynaklı oluşu yayıma yansımıyor.",
+      "smallest_correction": "lu_026 için sole_attestation türünde bir source_details satırı ekleyin ve claim'i ortak kanıt gibi çoğaltmadan tek kaynaklı işitme güçlüğü kullanımını özetleyin."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B008 needs a source-synthesis repair. The entry otherwise tracks the supplied claims well, but one source-detail row uses an aggregated two-source claim while reporting source-specific distinctions, which conflicts with the reviewer prompt requirement for source-detail rows.",
+  "issues": [
+    {
+      "target_ref": "root_000178/B008",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_021"
+      ],
+      "evidence_conflict": "The source-detail row for lu_021 says one source gives a non-articled place name and another gives a Yemen valley, but lu_021 is an aggregated claim with two source_ids. The prompt requires each source-detail row to resolve through its claim IDs to exactly one supplied dictionary and not mix source-specific prose under one aggregated row.",
+      "smallest_correction": "Remove this source-detail row or make the B008 synthesis source-neutral for lu_021, for example by saying only that the claim names a place or valley. Do not present separate dictionary-specific details unless the row can resolve to a single supplied dictionary."
+    }
+  ]
+}

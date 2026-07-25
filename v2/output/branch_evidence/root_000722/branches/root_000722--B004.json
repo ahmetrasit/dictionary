@@ -1,13 +1,17 @@
 {
-  "format": 1,
+  "format": 2,
   "generated_by": "v2/scripts/build_branch_evidence.py",
   "root_envelope_id": "root_000722",
   "packet_path": "data/output/root_packets/root_000722.json",
-  "packet_sha256": "0b729bb6b5763687b6fe0d9d1e142c477fd650819b7bf4044002f0e938f3f743",
+  "packet_sha256": "54c161e23bf7a9c077c58d5a4cb3db865dbb74476d8fbc58606fa48a17bd5bb3",
   "furuq_path": "data/working/furuq_v4.sqlite",
   "furuq_sha256": "1099db0d56515d2eb3e8d72f104f2e338c2c9a8c1fa6abbb046406d3b327e722",
   "qnet_path": "data/upstream/qnet/incidence_full/raw_keyword_incidence.sqlite",
   "qnet_sha256": "a5262b568203bff7ec04e6ca905781125beec83f90d62a5cf0cd6ff61049eee8",
+  "qnet_theme_path": "data/upstream/qnet/bridge_theme_full/bridge_theme_staging.sqlite",
+  "qnet_theme_sha256": "e4f590a111376e372eefef6d03b8694837ec9989017ce721d56db9828b2a734e",
+  "qnet_fix_manifest_path": "data/upstream/qnet/bridge_theme_full/latent_v11_qac_qnet_fix_manifest.json",
+  "qnet_fix_manifest_sha256": "b0ae3c19450a8019825321f6dc1e9f4c336249950f50267ed84eb3258756502c",
   "branch": {
     "root_id": "root_000722",
     "branch_id": "B004",
@@ -179,7 +183,308 @@
   ],
   "qnet_candidates": [],
   "qnet_core_overlap_candidates": [],
+  "qnet_bridge_overlap_candidates": [],
+  "qnet_theme_overlap_candidates": [
+    {
+      "root_id": "root_000351",
+      "branch_id": "B008",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "physiology",
+        "water_hydrology"
+      ]
+    },
+    {
+      "root_id": "root_000773",
+      "branch_id": "B005",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "physiology",
+        "water_hydrology"
+      ]
+    },
+    {
+      "root_id": "root_001077",
+      "branch_id": "B004",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 1,
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "physiology",
+        "water_hydrology"
+      ]
+    },
+    {
+      "root_id": "root_000906",
+      "branch_id": "B006",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 0,
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "physiology",
+        "water_hydrology"
+      ]
+    },
+    {
+      "root_id": "root_000360",
+      "branch_id": "B001",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 3,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "physiology"
+      ]
+    },
+    {
+      "root_id": "root_000515",
+      "branch_id": "B002",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 3,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "physiology"
+      ]
+    },
+    {
+      "root_id": "root_000715",
+      "branch_id": "B007",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 3,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "physiology"
+      ]
+    },
+    {
+      "root_id": "root_001193",
+      "branch_id": "B002",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 3,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "physiology"
+      ]
+    }
+  ],
+  "qnet_focus_coverage": {
+    "raw_keyword_exact_port": false,
+    "snapshot_exact_port": false,
+    "postfix_exact_port": true,
+    "theme_scope": "branch",
+    "focus_themes": [
+      "anatomy",
+      "body",
+      "physiology",
+      "water_hydrology"
+    ]
+  },
   "furuq_candidates": [
+    {
+      "root_id": "root_000351",
+      "branch_id": "B008",
+      "root_norm": "ح ل ل",
+      "branch_image_ar": "إحليل المخرج",
+      "what_is_ar": "يدخل فيه الإحليل مخرج البول ومخرج اللبن من الضرع أو الثدي",
+      "what_is_not_ar": "لا يدخل فيه نزول اللبن في الضرع نفسه",
+      "source_phrase_ar": "الإحليل مخرج البول ومخرج اللبن من الضرع (maqayis;ayn;sihah); الإحليل مخرج اللبن وإحليل الذكر ثقبه الذي يخرج منه البول (tahdhib); الإحليل مخرج البول لكونه محلول العقدة (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:686;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1355:headword=%D8%AD%D9%84:root=%D8%AD%20%D9%84:sha=8bf95b211037914a;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3967:headword=%D8%AD%D9%84%D9%84:root=%D8%AD%20%D9%84%20%D9%84:sha=dc45adc5271fda1d;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D231%3Bsegment_index%3D2:headword=%D8%AD%D9%84:root=%D8%AD%20%D9%84:sha=d46cabb73ab1e5c3;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A351:headword=%D8%AD%D9%84:root=%D8%AD%20%D9%84:sha=aafe3d9d1c76c6fe",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "physiology",
+        "water_hydrology"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000773",
+      "branch_id": "B005",
+      "root_norm": "ش ء ن",
+      "branch_image_ar": "شؤون الرأس ومجاري الدمع",
+      "what_is_ar": "يدخل فيه الشؤون والشأنان في الرأس من مواصل قبائل الرأس وملتقاها وخطوط الجمجمة ومجاري الدمع والعرقان إلى العينين",
+      "what_is_not_ar": "لا يدخل فيه الأمر والحال ولا القصد والطلب",
+      "source_phrase_ar": "الشؤون فما بين قبائل الرأس الواحد شأن وإنما سميت بذلك لأنها مجاري الدمع (maqayis)؛ الشؤون نمانم في الجمجمة بين القبائل أي خطوط بين القبائل الأربع (ayn)؛ الشأن واحد الشؤون وهي مواصل قبائل الرأس وملتقاها ومنها تجيء الدموع (sihah)؛ الشأنان عرقان ينحدران من الرأس إلى الحاجبين ثم إلى العينين (sihah)؛ شأن الرأس جمعه شئون وهو الوصلة بين متقابلاته (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1886;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4507:headword=%D8%B4%D8%A3%D9%86:root=%D8%B4%20%D8%A1%20%D9%86:sha=9591c0cd2946f045;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4941:headword=%D8%B4%D8%A3%D9%86:root=%D8%B4%20%D8%A1%20%D9%86:sha=0c75a25e79ae7572;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A826:headword=%D8%B4%D8%A3%D9%86:root=%D8%B4%20%D8%A1%20%D9%86:sha=3408f137239b42ed",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "physiology",
+        "water_hydrology"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_001077",
+      "branch_id": "B004",
+      "root_norm": "غ ر ب",
+      "branch_image_ar": "مجاري الدمع وأطراف العين",
+      "what_is_ar": "يدخل فيه غرب الدمع وغروب العين والغربان لمقدم العين ومؤخرها وسيلان العين الذي لا ينقطع والغرب للورم أو العرق أو الخراج في العين",
+      "what_is_not_ar": "لا يدخل فيه غروب الأسنان ولا الماء المنصب عند البئر ولا الغربان جمع غراب",
+      "source_phrase_ar": "الغربان من العين مقدمها ومؤخرها؛ الغروب مجاري العين؛ الغرب الورم في المأق؛ الغرب عرق يسقي ولا ينقطع (maqayis)؛ كل فيضة من الدمع غرب؛ فاضت غروب العين؛ الغربان مؤخر العين ومقدمها؛ الغرب خراج يخرج في العين (ayn)؛ غرب الدمع مسيله؛ الغرب بثرة تكون في العين (jamhara)؛ الغروب مجاري الدمع؛ لعينه غرب إذا كانت تسيل ولا تنقطع دموعها؛ الغرب عرق في مجرى الدمع (sihah)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2595;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3030:headword=%D8%BA%D8%B1%D8%A8:root=%D8%BA%20%D8%B1%20%D8%A8:sha=3d4b2c6be94f2eb1;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A727%3Asubentry%3A4%3A%D8%BA%D8%B1%D8%A8:headword=%D8%BA%D8%B1%D8%A8:root=%D8%BA%20%D8%B1%20%D8%A8:sha=ce57055ffbed0866;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A400:headword=%D8%BA%D8%B1%D8%A8:root=%D8%BA%20%D8%B1%20%D8%A8:sha=3dc540c346202d56",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "physiology",
+        "water_hydrology"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000360",
+      "branch_id": "B001",
+      "root_norm": "ح ن ج ر",
+      "branch_image_ar": "الحَنْجَرة موضع الحلق",
+      "what_is_ar": "يدخل فيه الحَنْجَرة والحناجر والحنجور بمعنى جوف الحلقوم أو رأس الغلصمة",
+      "what_is_not_ar": "-",
+      "source_phrase_ar": "الحَنْجَرة جوف الحلقوم والحنجور الحنجرة (ayn)؛ جمع حنجرة وهي رأس الغلصمة من خارج (mufradat)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1885:headword=%D8%AD%D9%86%D8%AC%D8%B1:root=%D8%AD%20%D9%86%20%D8%AC%20%D8%B1:sha=8606efc400b7e46d;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A366:headword=%D8%AD%D9%86%D8%AC%D8%B1:root=%D8%AD%20%D9%86%20%D8%AC%20%D8%B1:sha=49e42ee87ebf1328",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "physiology"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000515",
+      "branch_id": "B002",
+      "root_norm": "ذ ق ن",
+      "branch_image_ar": "طَرَفُ الحُلْقُومِ النَّاتِئُ",
+      "what_is_ar": "الذاقنة في طرف الحلقوم الناتئ",
+      "what_is_not_ar": "الذقن مجمع اللحيين؛ الذواقن في المثل المختلف فيه",
+      "source_phrase_ar": "والذاقنة طرف الحلقوم الناتىء (maqayis)؛ والذاقنة طرف الحلقوم الناتئ (sihah)؛ الذاقنة طرف الحلقوم (tahdhib)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1209;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4889:headword=%D8%B0%D9%82%D9%86:root=%D8%B0%20%D9%82%20%D9%86:sha=fa2ebc3a9b99d986;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D466%3Bsegment_index%3D102:headword=%D8%B0%D9%82%D9%86:root=%D8%B0%20%D9%82%20%D9%86:sha=dfa13144306265a9",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "physiology"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000715",
+      "branch_id": "B007",
+      "root_norm": "س ف ل",
+      "branch_image_ar": "السافلة للمقعدة والدبر",
+      "what_is_ar": "يدخل فيه السافلة بمعنى المقعدة والدبر.",
+      "what_is_not_ar": "ليس المراد المكان الأسفل العام ولا السفلة الاجتماعية ولا قوائم البعير.",
+      "source_phrase_ar": "السافلة المقعدة والدبر (sihah)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4067:headword=%D8%B3%D9%81%D9%84:root=%D8%B3%20%D9%81%20%D9%84:sha=b1c1b6a968336bed",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "physiology"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_001193",
+      "branch_id": "B002",
+      "root_norm": "ف ي ل",
+      "branch_image_ar": "الفائل في الورك",
+      "what_is_ar": "يدخل فيه الفائل، وهو لحم على خربة الورك أو عرق في الفخذ",
+      "what_is_not_ar": "لا يدخل فيه ضعف الرأي ولا الفيل الحيوان ولا المفايلة",
+      "source_phrase_ar": "الفائل اللحم الذي على خربة الورك (maqayis;sihah)؛ يجعل الفائل عرقا (maqayis;sihah)؛ عرق في خربة الورك أو لحم عليها (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2695;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4179:headword=%D9%81%D9%8A%D9%84:root=%D9%81%20%D9%8A%20%D9%84:sha=e79018abd9c416a8;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1180:headword=%D9%81%D9%8A%D9%84:root=%D9%81%20%D9%8A%20%D9%84:sha=b7e385b896b85e6e",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "physiology"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
     {
       "root_id": "root_000722",
       "branch_id": "B001",
@@ -194,7 +499,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000722",
@@ -210,7 +518,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000722",
@@ -226,7 +537,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000722",
@@ -242,7 +556,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000722",
@@ -258,7 +575,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000722",
@@ -274,7 +594,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000722",
@@ -290,7 +613,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000722",
@@ -306,7 +632,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000722",
@@ -322,7 +651,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     }
   ]
 }

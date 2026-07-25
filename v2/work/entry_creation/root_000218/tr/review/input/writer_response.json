@@ -1,0 +1,933 @@
+{
+  "branches": [
+    {
+      "branch_ref": "root_000218/B001",
+      "concept_map": {
+        "definition": "Yenilen peynir maddesini, onun daha özel parça veya tür adını ve sütün peynir gibi kesilip yoğunlaşmasını kapsar.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Temel anlam yenilebilir peynir maddesidir.",
+            "claim_ids": [
+              "lu_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Aynı yiyeceğin daha özel bir parçası veya türü ayrıca adlandırılır.",
+            "claim_ids": [
+              "lu_002"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "extension",
+            "statement": "Sütün peynir gibi bir kıvama dönüşmesi bu yiyecek anlamından türeyen bir süreçtir.",
+            "claim_ids": [
+              "lu_003"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynakların ortak çekirdeği yenilen peynir maddesidir; ayrıca sütün peynir kıvamına gelmesi bu çekirdeğe bağlı bir oluş süreci olarak verilir.",
+        "common_claim_ids": [
+          "lu_001",
+          "lu_003"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_002"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Bir kaynak, yiyecek adının daha özel parça veya tür biçimini ayrıca kaydeder."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "yenilebilir peynir",
+        "applicability": "Yiyecek maddesi olarak peynir ve ona bağlı peynirleşme süreci için uygundur.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Yenilen peynir çekirdeğini ve yiyecek alanını korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "peynir",
+          "usage_role": "general",
+          "applicability": "Doğrudan yenilen yiyecek maddesi veya onun özel parçası anlatıldığında kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Yiyecek maddesi olan peynir anlamını korur.",
+            "loses": "Sütün peynir kıvamına gelme sürecini tek başına göstermez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "peynir gibi kesilmek",
+          "usage_role": "contextual",
+          "applicability": "Sütün peynir benzeri bir kıvama dönüşmesi bağlamında kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Sütün peynir kıvamına dönüşmesini korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_001",
+          "rendering_kind": "ordinary",
+          "target_gloss": "yenilen peynir"
+        },
+        {
+          "lexical_unit_id": "lu_002",
+          "rendering_kind": "ordinary",
+          "target_gloss": "peynirin özel parçası veya türü"
+        },
+        {
+          "lexical_unit_id": "lu_003",
+          "rendering_kind": "ordinary",
+          "target_gloss": "sütün peynir gibi kesilip koyulaşması"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "süt ürünü",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Peynirin sütle ilişkisini korur.",
+            "loses": null,
+            "adds": "Peynir dışındaki süt ürünlerini de kapsar.",
+            "collision": null
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000620/B002",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Peynir maddesi ve sütün peynir gibi kesilmesi bu dala özgüdür.",
+          "neighbor_only": "Sütten çıkan yağlı tereyağı veya kaymak benzeri ürün komşu dala özgüdür.",
+          "gloss": "peynir / tereyagi",
+          "shared_zone": "İki dal da sütten elde edilen yiyecekler alanındadır.",
+          "distinction": "Bu dal sütün peynirleşmiş yenilebilir maddesine yönelir; komşu dal ise sütün yağlı kısmından çıkan başka bir yiyecek türünü anlatır."
+        },
+        {
+          "neighbor_ref": "root_000252/B009",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Peynirin kendisi veya sütün peynir kıvamına gelişi bu daldadır.",
+          "neighbor_only": "Taze süte katılıp onu mayalayan başlatıcı madde komşu daldadır.",
+          "gloss": "peynir / maya",
+          "shared_zone": "İki dal da sütün işlenmesi ve kıvam değiştirmesi çevresinde buluşur.",
+          "distinction": "Bu dal sonuçtaki peynir maddesini veya peynirleşme halini verir; komşu dal ise sütün bu hale gelmesini başlatan katkıya odaklanır."
+        }
+      ],
+      "neighbor_coverage_note": "Süt ve yiyecek alanındaki komşular anlam sınırını keskinleştirir; aynı kökün öbür dalları ise yazılış akrabalığı taşısa da bu yiyecek çekirdeğini paylaşmaz."
+    },
+    {
+      "branch_ref": "root_000218/B002",
+      "concept_map": {
+        "definition": "İleri atılmaktan alıkoyan korkaklık niteliğini, bu niteliği taşıyan kişiyi, birini korkak bulmayı veya korkaklıkla nitelemeyi kapsar. Çocukla ilgili kullanımda çocuk, babanın korkaklığına ve cimriliğine sebep olan unsur olarak görülür.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Temel çekirdek, cesur davranıştan geri bırakan korkaklık niteliğidir.",
+            "claim_ids": [
+              "lu_004",
+              "lu_005",
+              "lu_006"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "extension",
+            "statement": "Nitelik kadın, erkek ve çoğul insan biçimlerine uygulanır.",
+            "claim_ids": [
+              "lu_007",
+              "lu_008",
+              "lu_009",
+              "lu_010"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "associated_use",
+            "statement": "Bir kişiyi korkak saymak, korkak bulmak veya korkaklıkla nitelemek bu çekirdeğe bağlıdır.",
+            "claim_ids": [
+              "lu_011",
+              "lu_012"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "associated_use",
+            "statement": "Çocuk, babayı korkaklaştıran ve cimrileştiren sebep olarak anlatılır.",
+            "claim_ids": [
+              "lu_013",
+              "lu_014"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Ortak çekirdek, kişideki korkaklık niteliği ve bu niteliği taşıyan kimseyi adlandırmaktır; kaynaklar ayrıca birini korkak bulma ve çocuğun babada korkaklık sebebi sayılması kullanımlarını bu çekirdeğe bağlar.",
+        "common_claim_ids": [
+          "lu_004",
+          "lu_005",
+          "lu_006",
+          "lu_011",
+          "lu_013"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_007",
+              "lu_008",
+              "lu_009"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Bir kaynak, kadın ve çoğul insan biçimlerini ayrıca kaydeder."
+          },
+          {
+            "claim_ids": [
+              "lu_010"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Bir kaynak, farklı söyleyişe bağlı ayrı bir korkak kişi biçimi verir."
+          },
+          {
+            "claim_ids": [
+              "lu_012"
+            ],
+            "kind": "derivation",
+            "summary": "Bir kaynak, bir kişiyi korkaklıkla niteleme eylemini ayrı türetim olarak belirtir."
+          },
+          {
+            "claim_ids": [
+              "lu_014"
+            ],
+            "kind": "implication",
+            "summary": "Bir kaynak, muhatapların başkalarında korkaklığa sebep olması yorumunu çocuk bağlamına bağlar."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "korkaklik",
+        "applicability": "Kişinin cesaretten geri duran niteliği ve buna bağlı kişi, değerlendirme ve sebep kullanımları için uygundur.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Korkaklık niteliğini ve kişiye uygulanmasını korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003",
+          "F004"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "korkak",
+          "usage_role": "contextual",
+          "applicability": "Niteliği taşıyan erkek, kadın veya çoğul kişiler anlatıldığında kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Korkaklık niteliğinin kişiye uygulanmasını korur.",
+            "loses": "Soyut nitelik, niteleme eylemi ve çocuk sebebi kullanımını dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "korkak bulmak",
+          "usage_role": "contextual",
+          "applicability": "Bir kimseyi korkak sayma veya öyle değerlendirme eylemi için kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Birini korkak bulma değerlendirmesini korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        },
+        {
+          "text": "korkakliga sebep olmak",
+          "usage_role": "explanatory",
+          "applicability": "Çocuğun babada korkaklık doğuran sebep sayıldığı kullanımda uygundur.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Bir unsurun kişide korkaklığa sebep olması ilişkisini korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F004"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_004",
+          "rendering_kind": "ordinary",
+          "target_gloss": "korkaklık niteliği"
+        },
+        {
+          "lexical_unit_id": "lu_005",
+          "rendering_kind": "ordinary",
+          "target_gloss": "adamın korkak olması"
+        },
+        {
+          "lexical_unit_id": "lu_006",
+          "rendering_kind": "ordinary",
+          "target_gloss": "korkak kişi"
+        },
+        {
+          "lexical_unit_id": "lu_007",
+          "rendering_kind": "ordinary",
+          "target_gloss": "korkak kadın"
+        },
+        {
+          "lexical_unit_id": "lu_008",
+          "rendering_kind": "ordinary",
+          "target_gloss": "korkak erkekler"
+        },
+        {
+          "lexical_unit_id": "lu_009",
+          "rendering_kind": "ordinary",
+          "target_gloss": "korkak kadınlar"
+        },
+        {
+          "lexical_unit_id": "lu_010",
+          "rendering_kind": "ordinary",
+          "target_gloss": "korkak kişi için varyant biçim"
+        },
+        {
+          "lexical_unit_id": "lu_011",
+          "rendering_kind": "ordinary",
+          "target_gloss": "onu korkak saymak veya korkak bulmak"
+        },
+        {
+          "lexical_unit_id": "lu_012",
+          "rendering_kind": "ordinary",
+          "target_gloss": "onu korkaklıkla nitelemek"
+        },
+        {
+          "lexical_unit_id": "lu_013",
+          "rendering_kind": "ordinary",
+          "target_gloss": "çocuğun babayı korkak ve cimri kılması"
+        },
+        {
+          "lexical_unit_id": "lu_014",
+          "rendering_kind": "ordinary",
+          "target_gloss": "muhatapların korkaklığa sebep olması"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "korku",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Korkuyla ilgili duygusal alanı korur.",
+            "loses": null,
+            "adds": "Salt korku duygusunu da kapsar, oysa dal kişinin korkaklık niteliğine yönelir.",
+            "collision": null
+          }
+        },
+        {
+          "text": "çekingenlik",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "İleri atılmaktan geri durmayı kısmen korur.",
+            "loses": "Korkak kişi ve korkaklıkla niteleme sertliğini azaltır.",
+            "adds": "Utangaçlık veya toplumsal çekilme çağrışımı ekler.",
+            "collision": null
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001625/B005",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal korkaklık niteliğini, kişi adlarını ve korkak bulma eylemini içerir.",
+          "neighbor_only": "Komşu dal korkaklığı daha doğrudan panik veya ürküntü alanıyla birlikte verir.",
+          "gloss": "korkaklik / urku",
+          "shared_zone": "İki dal da korkuya bağlı cesaretsizlik alanında örtüşür.",
+          "distinction": "Bu dal yerleşik bir kişilik niteliği ve ona bağlı türetimleri anlatır; komşu dal ise korku ve ürküntü olayına daha yakındır."
+        },
+        {
+          "neighbor_ref": "root_001122/B004",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Korkaklık niteliği ve birini korkak sayma işlemi bu dala özgüdür.",
+          "neighbor_only": "Kalbin zayıf veya yok gibi olması komşu dalın imgesidir.",
+          "gloss": "korkaklik / yurek zayifligi",
+          "shared_zone": "İki dal da cesaretsizliği insanın iç durumu üzerinden anlatır.",
+          "distinction": "Bu dal doğrudan korkak kişi niteliğini verir; komşu dal aynı sonuca kalp zayıflığı imgesiyle yaklaşır."
+        },
+        {
+          "neighbor_ref": "root_001533/B014",
+          "relation_type": "polarity_pair",
+          "boundary_match": "opposed",
+          "focus_only": "Eylemden geri bırakan korkaklık bu dala özgüdür.",
+          "neighbor_only": "Ruh gücü, yücelik, dayanıklılık ve yüksek istek komşu dala özgüdür.",
+          "gloss": "korkaklik / ruh gucu",
+          "shared_zone": "İki dal insanın iç niteliği ve davranış eğilimi alanındadır.",
+          "distinction": "Bu dal cesaretsizlik ekseninin olumsuz ucunu gösterir; komşu dal aynı eksende güç, dayanıklılık ve yüksek ruh halini taşır."
+        }
+      ],
+      "neighbor_coverage_note": "Korku, yürek zayıflığı ve ruh gücü komşuları sınırı açıklaştırır; aynı kökteki yiyecek, yüz, yer ve deyim dalları anlamca ayrı kaldığı için yayımlanmadı."
+    },
+    {
+      "branch_ref": "root_000218/B003",
+      "concept_map": {
+        "definition": "Alnın sağında ve solunda, şakaklar arasında kalan yan kenarları kapsar; insanda bu iki yan ayrı ayrı düşünülebilir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Temel anlam alnın şakaklara yakın yan kenarıdır.",
+            "claim_ids": [
+              "lu_015"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "İnsanda alnı iki yandan kuşatan sağ ve sol parça çift olarak adlandırılır.",
+            "claim_ids": [
+              "lu_016"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar, anlamı alnın iki yanında ve şakaklar arasında kalan yan bölge olarak toplar; tekil kullanım her bir yan parça, ikil kullanım ise sağ ve sol taraf içindir.",
+        "common_claim_ids": [
+          "lu_015",
+          "lu_016"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "alnin yan kenari",
+        "applicability": "Alnın sağ ve sol yanında, şakaklara yakın bölgeyi anlatmak için uygundur.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Alnın yan kenarı ve çift taraflı oluşunu korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "alnin iki yani",
+          "usage_role": "contextual",
+          "applicability": "Sağ ve sol parçalar birlikte söz konusu olduğunda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Alnı iki yandan kuşatan parçaları korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "sakağa yakın alın kenarı",
+          "usage_role": "explanatory",
+          "applicability": "Tek bir yan parça açıklanırken daha açıklayıcı karşılık olarak uygundur.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Tek yan kenarın şakakla ilişkisini korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_015",
+          "rendering_kind": "ordinary",
+          "target_gloss": "alnın şakaklara yakın yan kenarı"
+        },
+        {
+          "lexical_unit_id": "lu_016",
+          "rendering_kind": "ordinary",
+          "target_gloss": "alnın sağ ve sol yanları"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "alin",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Yüzün alın bölgesiyle ilgiyi korur.",
+            "loses": null,
+            "adds": "Alnın tamamını kapsar, oysa dal yalnız yan kenarlara yönelir.",
+            "collision": null
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000219/B001",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Alnın iki yan kenarı bu dala özgüdür.",
+          "neighbor_only": "Alnın kendisi ve alın kemiğinin belirginliği komşu dala özgüdür.",
+          "gloss": "alin yani / alin",
+          "shared_zone": "İki dal da yüzün alın bölgesiyle ilgilidir.",
+          "distinction": "Bu dal alnın merkezini değil yan kenarlarını anlatır; komşu dal doğrudan alın bölgesinin kendisini verir."
+        },
+        {
+          "neighbor_ref": "root_000262/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Yalnız alın çevresindeki iki yan parça bu dala özgüdür.",
+          "neighbor_only": "Gövde, hayvan, vadi, ordu veya ev çevresindeki yan ve taraf anlamları komşu dala özgüdür.",
+          "gloss": "alin yani / taraf",
+          "shared_zone": "İki dalda da bir şeyin yanı veya kenarı fikri bulunur.",
+          "distinction": "Bu dal yanlık fikrini belirli bir yüz parçasına bağlar; komşu dal ise yan ve taraf anlamını çok daha genel alanlara yayar."
+        },
+        {
+          "neighbor_ref": "root_000185/B003",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Alındaki anatomik yan parçayı adlandırmak bu dala özgüdür.",
+          "neighbor_only": "Birini yüzü veya alın yanı üzerine yıkmak komşu dala özgüdür.",
+          "gloss": "alin yani / yikmak",
+          "shared_zone": "İki dal da yüzün ön kısmı ile temas edebilir.",
+          "distinction": "Bu dal sabit bir beden parçasıdır; komşu dal ise düşürme veya yere çarpma olayını anlatır."
+        }
+      ],
+      "neighbor_coverage_note": "Alın, genel yanlık ve yüz üstü düşürme komşuları sınırı açıklaştırır; göz çevresi, omuz ve sakal yanı adayları daha uzak kaldı."
+    },
+    {
+      "branch_ref": "root_000218/B004",
+      "concept_map": {
+        "definition": "Açık, geniş kır veya çöl alanını ve bu yer adının çoğul biçimini kapsar; bazı kaynaklarda biçimler yorumsuz aktarılır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Temel anlam açık ve geniş kır ya da çöl alanıdır.",
+            "claim_ids": [
+              "lu_017",
+              "lu_018"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "extension",
+            "statement": "Aynı yer adının çoğul biçimi geniş alanlar veya çöller için kullanılır.",
+            "claim_ids": [
+              "lu_019"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Dal, açık ve geniş kara parçası anlamındaki yer adını toplar; çoğul biçim de aynı tür alanların çokluğu için kullanılır.",
+        "common_claim_ids": [
+          "lu_018",
+          "lu_019"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_017"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Bir kaynak, aynı yer anlamı için ayrıca tekil bir erkek biçimi kaydeder."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "genis acik kir alani",
+        "applicability": "Çöl, kır veya geniş açık kara parçası anlamındaki yer adı için uygundur.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Geniş açık yer ve kara alanı çekirdeğini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "çöl",
+          "usage_role": "contextual",
+          "applicability": "Yer susuz veya ıssız geniş alan olarak çevrildiğinde uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Açık kara alanı anlamını korur.",
+            "loses": "Daha genel kır veya geniş açık yer kapsamını daraltır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "açık arazi",
+          "usage_role": "general",
+          "applicability": "Çöl vurgusu gerekmediğinde geniş ve açık yer anlamını verir.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Geniş açık kara alanı anlamını korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_017",
+          "rendering_kind": "ordinary",
+          "target_gloss": "geniş açık kır veya çöl alanı"
+        },
+        {
+          "lexical_unit_id": "lu_018",
+          "rendering_kind": "ordinary",
+          "target_gloss": "geniş açık arazi"
+        },
+        {
+          "lexical_unit_id": "lu_019",
+          "rendering_kind": "ordinary",
+          "target_gloss": "geniş açık alanlar veya çöller"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "mezarlik",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Açık yer çağrışımını kısmen koruyabilir.",
+            "loses": "Kaynaklardaki geniş kır veya çöl anlamını değiştirir.",
+            "adds": "Türkçedeki ayrı mezarlık anlamını ekler.",
+            "collision": "Modern Türkçede bu biçim başka bir yer türünü çağrıştırabilir."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000104/B005",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal belirli yer adının açık kır veya çöl anlamıyla sınırlıdır.",
+          "neighbor_only": "Komşu dal kara ile deniz karşıtlığını ve karaya çıkma kullanımını da taşır.",
+          "gloss": "acik arazi / kara",
+          "shared_zone": "İki dal da açık kara alanı ve kır çevresinde örtüşür.",
+          "distinction": "Bu dal geniş açık alan adıdır; komşu dal kara, bozkır ve çöl anlamlarını daha geniş bir karşıtlık içinde toplar."
+        },
+        {
+          "neighbor_ref": "root_000167/B002",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal açık alan adının tekil ve çoğul biçimlerine odaklanır.",
+          "neighbor_only": "Komşu dal ıssız, düz veya seyrek bitkili bozkır imgesini ve ona bağlı türevleri taşır.",
+          "gloss": "acik arazi / bozkir",
+          "shared_zone": "İki dal da geniş ve açık kara alanını anlatabilir.",
+          "distinction": "Bu dal yer adını genel açık alan olarak verir; komşu dal boşluk, düzlük ve bitki azlığı vurgusuyla daha belirli bir bozkır tipine yaklaşır."
+        },
+        {
+          "neighbor_ref": "root_000664/B008",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Geniş açık kır veya çöl adı bu dala özgüdür.",
+          "neighbor_only": "Susuz ve yoldaşsız uzak boş arazi komşu dala özgüdür.",
+          "gloss": "acik arazi / issiz col",
+          "shared_zone": "İki dal da geniş ve zorlu dış arazi alanındadır.",
+          "distinction": "Bu dal açıklık ve genişliği öne çıkarır; komşu dal susuzluk, uzaklık ve insansızlık şartlarını çekirdeğe alır."
+        }
+      ],
+      "neighbor_coverage_note": "Kara, bozkır ve ıssız geniş arazi komşuları sınırı açıklaştırır; öteki yer adayları aynı alanı paylaşsa da daha az ayırt edicidir."
+    },
+    {
+      "branch_ref": "root_000218/B005",
+      "concept_map": {
+        "definition": "Bir adamın bedence kalınlaşması veya kaba şekilde irileşmesi anlamındaki tek eylem kullanımını kapsar.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Temel anlam bir erkeğin kalın veya iri hale gelmesidir.",
+            "claim_ids": [
+              "lu_020"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Dal tek bir tanıklığa dayanır ve kişide kalınlaşma ya da irileşme durumunu eylem olarak verir.",
+        "common_claim_ids": [
+          "lu_020"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "bedence kalinlasmak",
+        "applicability": "Bir kişinin kalın veya iri hale gelmesini anlatan eylem için uygundur.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Kişide gerçekleşen kalınlaşma olayını korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "irileşmek",
+          "usage_role": "contextual",
+          "applicability": "Kalınlaşmanın bedensel irileşme olarak çevrildiği bağlamda uygundur.",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Bedenin büyüyüp ağırlaşması fikrini korur.",
+            "loses": null,
+            "adds": "Her irileşme kalınlaşma anlamı taşımayabilir.",
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_020",
+          "rendering_kind": "ordinary",
+          "target_gloss": "adamın kalınlaşıp irileşmesi"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "şişmanlamak",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Bedende artış olmasını kısmen korur.",
+            "loses": "Kalınlaşma veya kaba irilik vurgusunu yağlanmaya kaydırır.",
+            "adds": "Yağlanma ve kilo alma anlamı ekler.",
+            "collision": null
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000217/B003",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bir adamın kalın hale gelmesi eylemi bu dala özgüdür.",
+          "neighbor_only": "Beden, deri, kemik, baş derisi veya hörgüçte genel kalınlık komşu dala özgüdür.",
+          "gloss": "kalinlasmak / kalin yapi",
+          "shared_zone": "İki dal da kalınlık ve kaba beden yapısı alanında örtüşür.",
+          "distinction": "Bu dal kişide gerçekleşen oluş eylemidir; komşu dal ise daha geniş biçimde kalın yaratılış veya kalın nesne niteliğini anlatır."
+        },
+        {
+          "neighbor_ref": "root_000096/B004",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Kalınlaşma eylemi bu dala özgüdür.",
+          "neighbor_only": "Bedenin iri, şişman veya dolgun olması komşu dala özgüdür.",
+          "gloss": "kalinlasmak / sismanlik",
+          "shared_zone": "İki dal da beden büyüklüğü ve hacim alanındadır.",
+          "distinction": "Bu dal kalınlaşma sonucuna odaklanır; komşu dal ise şişmanlık ve bedensel dolgunluğu çekirdeğe alır."
+        }
+      ],
+      "neighbor_coverage_note": "Kalın yapı ve beden büyüklüğü komşuları sınırı açıklaştırır; hayvan, bitki veya organ kalınlığı adayları bu tek insan eylemine göre daha uzaktır."
+    },
+    {
+      "branch_ref": "root_000218/B006",
+      "concept_map": {
+        "definition": "Köpeği bile saldırgan olmayan kimse denilerek sahibinin cömertlikte en uç dereceye vardığını anlatan deyimsel kullanımı kapsar.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Temel kullanım, köpeğin korkaklığı üzerinden sahibin aşırı cömertliğini anlatan deyimdir.",
+            "claim_ids": [
+              "lu_021"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Dal tek deyimsel tanıklığa dayanır: köpeğin saldırgan olmaması, ev sahibinin konuklara alışık ve çok cömert olmasının işareti gibi kullanılır.",
+        "common_claim_ids": [
+          "lu_021"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "son derece comert",
+        "applicability": "Köpeğin korkaklığı üzerinden sahibin aşırı cömertliğini anlatan deyim için uygundur.",
+        "error_profile": {
+          "fit": "narrowing",
+          "preserves": "Cömertliğin en ileri derece olduğunu korur.",
+          "loses": "Köpek üzerinden kurulan deyimsel işareti tek başına göstermez.",
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "kapisi herkese acik",
+          "usage_role": "explanatory",
+          "applicability": "Deyimin misafirperver ve çok cömert kişi anlamını açıklamak için uygundur.",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Cömert ve misafirperver kişi fikrini korur.",
+            "loses": null,
+            "adds": "Genel misafirperverlik ekler ve köpek imgesini açıkça taşımaz.",
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_021",
+          "rendering_kind": "ordinary",
+          "target_gloss": "köpeğinin uysallığıyla cömertliği anlaşılan kişi"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "korkak kopek",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Deyimin yüzeyindeki köpek ve korkaklık unsurunu korur.",
+            "loses": "Asıl anlam olan sahibin son derece cömert olması kaybolur.",
+            "adds": "Gerçekten korkak bir hayvan anlatımı ekler.",
+            "collision": null
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001326/B006",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Cömertliği köpeğin korkaklığıyla anlatan deyim bu dala özgüdür.",
+          "neighbor_only": "Doğrudan cömert ve soylu kişi adı komşu dala özgüdür.",
+          "gloss": "deyimsel comert / comert kisi",
+          "shared_zone": "İki dal da cömert kişi övgüsünde örtüşür.",
+          "distinction": "Bu dal cömertliği dolaylı ve deyimsel bir işaretle verir; komşu dal cömert kişiyi doğrudan adlandırır."
+        },
+        {
+          "neighbor_ref": "root_001503/B010",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Köpek üzerinden kurulan cömertlik deyimi bu dala özgüdür.",
+          "neighbor_only": "Soyut cömertlik ve kerem niteliği komşu dala özgüdür.",
+          "gloss": "deyimsel comertlik / kerem",
+          "shared_zone": "İki dal da cömertlik ve verme erdemi alanındadır.",
+          "distinction": "Bu dal tek bir deyimin sosyal işaretine bağlıdır; komşu dal cömertlik niteliğini ve soylu davranışı daha doğrudan anlatır."
+        },
+        {
+          "neighbor_ref": "root_000084/B002",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Sahibin cömertliğini köpeğin uysallığından çıkaran deyim bu dala özgüdür.",
+          "neighbor_only": "Bir kişiden bol hayır taşması komşu dala özgüdür.",
+          "gloss": "comert deyim / bol iyilik",
+          "shared_zone": "İki dal da kişiden gelen bol iyilik ve cömertlik alanındadır.",
+          "distinction": "Bu dal cömertliği belirli bir ev ve köpek imgesiyle ima eder; komşu dal kişideki iyilik bolluğunu doğrudan söyler."
+        }
+      ],
+      "neighbor_coverage_note": "Cömert kişi, soyut cömertlik ve bol iyilik komşuları sınırı açıklaştırır; uzak ad, yakınlık ve haksızlık adayları bu deyimin çekirdeğine girmez."
+    }
+  ],
+  "root_profile": {
+    "summary": "Bu kök çok dallıdır: peynir ve peynirleşme, korkaklık, alnın yan kenarı, geniş açık arazi, bedensel kalınlaşma ve cömertlik bildiren bir deyim ayrı çekirdekler oluşturur. Dallar arasında bazı ses veya yazım yakınlıkları bulunsa da anlam organizasyonu tek bir merkezden yayılmaktan çok ayrı kullanımların yan yana durmasıdır.",
+    "polysemy": "polysemic",
+    "organization": "multi_branch"
+  }
+}

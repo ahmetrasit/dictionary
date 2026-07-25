@@ -1,0 +1,52 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtı düzenli biçimde yansıtıyor; ancak bir çekirdek faset kanıtta bulunmayan işlev üstlenme şartını ekliyor, göğüs eti dalındaki kaynak varyantı iki ayrı alanda dalın genel sınırı gibi sunuluyor ve tek kaynağa özgü satıcı anlamının münferit tanıklığı kaynak sentezinde belirtilmiyor.",
+  "issues": [
+    {
+      "target_ref": "root_000095/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002",
+        "lu_003"
+      ],
+      "evidence_conflict": "F001, yerine geçen varlığın öncekinin gördüğü işi üstlenmesini çekirdeğin şartı yapıyor. Kanıt ise yalnızca bir şeyin başka bir şeyin yerini tutmasını veya onun yerine geçmesini bildiriyor; aynı işlevi üstlenme şartı vermiyor.",
+      "smallest_correction": "F001'i işlev üstlenme şartını kaldırarak bir varlığın başka bir varlığın yerini tutması veya onun yerine geçmesi biçiminde düzeltin."
+    },
+    {
+      "target_ref": "root_000095/B003",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "lu_012 için hedef karşılık yalnızca boyun ile köprücük kemiği arasındaki göğüs etini veriyor. Oysa kanıtın ortak anlamı genel olarak göğüs etidir; bu anatomik daraltma kaynaklardan yalnızca birinin varyantıdır.",
+      "smallest_correction": "lu_012 hedef karşılığını genel çekirdeği koruyan 'göğüs eti' olarak değiştirin; dar anatomik açıklamayı yalnızca bağlamsal karşılıkta bırakın."
+    },
+    {
+      "target_ref": "root_000095/B003",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "Yayımlanan üç komşuluk satırındaki focus_only ve distinction metinleri odak dalı boyun ile köprücük kemiği arasındaki etle sınırlandırıyor. Kanıtta dalın çekirdeği genel göğüs etidir; söz konusu konum yalnızca bir kaynak varyantıdır ve bütün dalın sınırı olarak kullanılamaz.",
+      "smallest_correction": "Komşuluk metinlerinde odak dalın genel sınırını 'göğüs eti' olarak koruyun; boyun-köprücük kemiği konumunu yalnızca kaynaklara bağlı dar bir varyant olarak belirtin ve karşılaştırmaları bu ayrımla yeniden kurun."
+    },
+    {
+      "target_ref": "root_000095/B005",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_016"
+      ],
+      "evidence_conflict": "lu_016 yalnızca tahdhib kaynağında tanıklanmasına rağmen source_details boş bırakılmış ve sentez bu anlamın tek sözlüğe özgü tanıklığını göstermiyor.",
+      "smallest_correction": "lu_016 ile çözümlenen, bu satıcı anlamının tahdhib'e özgü tek kaynak tanıklığı olduğunu belirten kısa bir source_details satırı ekleyin."
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "verdict": "repair",
+  "summary": "B003, koyunlara özgü hastalık anlatımıyla genel çiçek hastalığı aktarımını aynı dar çekirdekte birleştiriyor. B005 ise kanıttaki bir iş konusunda karşılıklı söz verme veya anlaşmaya bağlanma anlamını, kanıtta bulunmayan görev ve sorumluluk yükleme kavramlarıyla değiştiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_000055/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_007",
+        "lu_008",
+        "lu_011"
+      ],
+      "evidence_conflict": "lu_007 koyunlarda çıkan kabarcıklı hastalığı bildirirken lu_008 herhangi bir koyun sınırlaması olmadan doğrudan çiçek hastalığını verir; lu_011 de hastalık adının insana yöneltilen kötü dilekteki kullanımını açıklar. Tanım ve F001, lu_008'i de koyun hastalığı sınırına sokarak genel hastalık aktarımını daraltıyor.",
+      "smallest_correction": "Çekirdekte genel çiçek hastalığı aktarımını koruyun; koyunlarda görülen kabarcıklı türü lu_007'ye bağlı bir özelleşme, insana yöneltilen kötü dileği de lu_011'e bağlı ilişkili kullanım olarak ayırın."
+    },
+    {
+      "target_ref": "root_000055/B003",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_007",
+        "lu_008",
+        "lu_011"
+      ],
+      "evidence_conflict": "Kavram karşılığı yalnızca koyunlardaki kabarcıklı hastalığı temsil ediyor ve hata profilinde kayıp olmadığını söylüyor. Bu karşılık, lu_008'deki genel çiçek hastalığını ve lu_011'de insana yönelen hastalık kullanımını karşılamıyor.",
+      "smallest_correction": "Kavram karşılığını genel çiçek hastalığı çekirdeğini de kapsayacak biçimde genişletin ve koyun sınırlamasını bağlamsal karşılığa taşıyın; hata profilini buna göre düzeltin."
+    },
+    {
+      "target_ref": "root_000055/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_019"
+      ],
+      "evidence_conflict": "lu_019, belirli bir iş konusunda bir tarafın ötekine söz vermesini veya onu bir anlaşmaya bağlamasını ve karşı tarafın da aynı karşılığı vermesini aktarır. Kanıt görev verme, sorumluluk yükleme ya da iki tarafın aynı tür görevi üstlenmesi unsurlarını söylemez; tanım ve F001 bu unsurları çekirdeğe ekliyor.",
+      "smallest_correction": "Tanımı ve çekirdek faseti, belirli bir iş konusunda karşılıklı söz verme veya karşılıklı anlaşmaya bağlanma olarak kurun; görev ve sorumluluk yükleme ifadelerini kaldırın."
+    },
+    {
+      "target_ref": "root_000055/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_019"
+      ],
+      "evidence_conflict": "Ortak özet tek kaynaklı lu_019'u karşılıklı sorumluluk verme diye yorumluyor. Sağlanan aktarım karşılıklı söz veya anlaşma ilişkisini destekliyor, fakat sorumluluk verme ayrıntısını desteklemiyor.",
+      "smallest_correction": "Özeti, belirli bir iş konusunda bir tarafın ötekine söz vermesi ve ötekinin de karşılık vermesi biçiminde yeniden kurun."
+    },
+    {
+      "target_ref": "root_000055/B005",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_019"
+      ],
+      "evidence_conflict": "Bir işte karşılıklı sorumluluk yüklenme karşılığı, lu_019'un verdiği karşılıklı söz veya anlaşmaya bağlanma anlamını görev ilişkisine dönüştürüyor. Hata profilindeki tam uyum değerlendirmesi bu ek anlam nedeniyle doğru değil.",
+      "smallest_correction": "Kavram karşılığını bir iş konusunda karşılıklı söz verme veya karşılıklı anlaşmaya bağlanma olarak değiştirin ve hata profilini yeni karşılığa göre güncelleyin."
+    },
+    {
+      "target_ref": "root_000055/B005",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_019"
+      ],
+      "evidence_conflict": "Birbirine görev vermek karşılığı, kanıtta yer almayan görevli kılma ilişkisini ekliyor ve karşılıklı söz verme anlamını kaybediyor.",
+      "smallest_correction": "Bağlamsal karşılığı bir iş konusunda birbirine söz vermek veya karşılıklı anlaşmak biçiminde düzeltin."
+    },
+    {
+      "target_ref": "root_000055/B005",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_019"
+      ],
+      "evidence_conflict": "Sözcüksel karşılıktaki ona sorumluluk verdim anlatımı lu_019'un karşılıklı söz veya anlaşma anlamını desteklenmeyen bir sorumluluk devrine çeviriyor.",
+      "smallest_correction": "Karşılığı bir iş konusunda ona söz verdim veya onunla anlaştım, o da bana karşılık verdi anlamını doğal Türkçeyle ifade edin."
+    },
+    {
+      "target_ref": "root_000055/B005",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_019"
+      ],
+      "evidence_conflict": "root_001662/B004 ile ayrım, bu dalda görev ve sorumluluk devri bulunduğu iddiasına dayanıyor. lu_019 bu ek sınırı desteklemediği için iki dalın karşılıklı söz verme çekirdekleri arasındaki gerçek örtüşme olduğundan az gösteriliyor.",
+      "smallest_correction": "Komşuluk kararını görev devri varsayımı olmadan yeniden değerlendirin; ayrım korunacaksa yalnızca bu dalın belirli bir iş bağlamıyla sınırlı oluşuna dayandırın."
+    }
+  ]
+}

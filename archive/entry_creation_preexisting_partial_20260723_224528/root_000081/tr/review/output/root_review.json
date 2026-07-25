@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "İkinci dalın tek kaynaklı tanıklığı ortak kaynak bulgusu gibi sunulduğu için kaynak sentezi yayıma hazır değildir.",
+  "issues": [
+    {
+      "target_ref": "root_000081/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_009"
+      ],
+      "evidence_conflict": "lu_009 yalnızca sihah kaynağında tanıklanır; buna rağmen common_claim_ids içinde gösterilmiş ve source_details altında sole_attestation olarak kaydedilmemiştir.",
+      "smallest_correction": "lu_009'u ortak kaynak iddiasından çıkarıp yalnız bu kaynağa özgü bir özetle source_details içinde sole_attestation olarak gösterin."
+    }
+  ]
+}

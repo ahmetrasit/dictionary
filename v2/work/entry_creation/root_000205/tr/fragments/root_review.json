@@ -1,0 +1,30 @@
+{
+  "inputs_sha256": "95eecfdee80624134090749d483a1cbf279ce4dcc5b98958253ece69b9a3d9f7",
+  "verdict": "repair",
+  "summary": "B003 dalının çekirdek anlamı korunmuştur; ancak bir kaynak örneğinde kişi yanlış aktarılmış, aynı hata kaynak sentezine taşınmış ve Müslümana özgü akıl nitelemesi gereğinden fazla genelleştirilmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_000205/B003",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_010"
+      ],
+      "evidence_conflict": "F002, gönlün ürünü örneğini çocuğa bağlar; oysa lu_010 için sağlanan kaynak ifadesi gönlün ürünü olarak babayı veya ebeveyni gösterir.",
+      "smallest_correction": "F002 içindeki “çocuğun gönlün ürünü sayılması” bölümünü “babanın gönlün ürünü sayılması” olarak değiştirin."
+    },
+    {
+      "target_ref": "root_000205/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_010",
+        "lu_011"
+      ],
+      "evidence_conflict": "Ortak özet lu_010'daki baba veya ebeveyn örneğini çocuk olarak aktarır. lu_011'e bağlı kaynak ayrıntısı da Müslümana özgü nitelemeyi bütün inançlı kişilere genişletir.",
+      "smallest_correction": "Ortak özette “çocuğun” sözünü “babanın” olarak düzeltin; lu_011 ayrıntısında “inançlı kişinin” yerine “Müslümanın” ifadesini kullanın."
+    }
+  ]
+}

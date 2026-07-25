@@ -1,0 +1,969 @@
+{
+  "format": 2,
+  "generated_by": "v2/scripts/build_branch_evidence.py",
+  "root_envelope_id": "root_000551",
+  "packet_path": "data/output/root_packets/root_000551.json",
+  "packet_sha256": "9078663f7000617d10ad7d62cea54562cf856974c3b9fdce7408be2754734013",
+  "furuq_path": "data/working/furuq_v4.sqlite",
+  "furuq_sha256": "1099db0d56515d2eb3e8d72f104f2e338c2c9a8c1fa6abbb046406d3b327e722",
+  "qnet_path": "data/upstream/qnet/incidence_full/raw_keyword_incidence.sqlite",
+  "qnet_sha256": "a5262b568203bff7ec04e6ca905781125beec83f90d62a5cf0cd6ff61049eee8",
+  "qnet_theme_path": "data/upstream/qnet/bridge_theme_full/bridge_theme_staging.sqlite",
+  "qnet_theme_sha256": "e4f590a111376e372eefef6d03b8694837ec9989017ce721d56db9828b2a734e",
+  "qnet_fix_manifest_path": "data/upstream/qnet/bridge_theme_full/latent_v11_qac_qnet_fix_manifest.json",
+  "qnet_fix_manifest_sha256": "b0ae3c19450a8019825321f6dc1e9f4c336249950f50267ed84eb3258756502c",
+  "branch": {
+    "root_id": "root_000551",
+    "branch_id": "B008",
+    "branch_image_ar": "عون الرحلة",
+    "what_is_ar": "معاونة المرء على رحلته أو إعطاؤه راحلة أو طلب ذلك",
+    "what_is_not_ar": "ليس شد الرَّحْل على البعير ولا إظعان الشخص كرها",
+    "source_phrase_ar": "راحل فلان فلانا إذا عاونه على رحلته وأرحله أعطاه راحلة (maqayis)؛ راحلت فلانا إذا عاونته على رحلته وأرحلته إذا أعطيته راحلة واسترحله أي سأله أن يرحل له (sihah)؛ أرحلته أنا (tahdhib)؛ راحله عاونه على رحلته (mufradat)",
+    "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1461;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4022:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=52449fd6b20e2031;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D86:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=71b6746305f9f9df;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A550:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=82b8d40016023eee",
+    "status": "accepted",
+    "contaminated": "no"
+  },
+  "dictionary_basis": {
+    "dictionary_count": 4,
+    "passage_count": 4,
+    "sources": [
+      {
+        "source_id": "maqayis",
+        "dictionary_name": "Maqāyīs al-Lugha",
+        "source_refs": [
+          "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1461"
+        ],
+        "passages": [
+          {
+            "source_ref": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1461",
+            "headword": "رحل",
+            "route_status": "exact",
+            "entry_text_clean": "| ( رحل ) الراء ~~والحاء واللام أصل واحد يدل على مضي في سفر | يقال رحل يرحل رحلة | وجمل ~~رحيل ذو رحلة إذا كان قويا على الرحلة | والرحلة الارتحال | فأما الرحل في ~~قولك هذا رحل الرجل لمنزله ومأواه فهو من هذا لأن ذلك إنما يقال في السفر ~~لأسبابه التي إذا سافر كانت معه يرتحل بها وإليها عند النزول | هذا هو ~~الأصل ثم قيل لمأوى الرجل في حضره هو رحلة | فأما قولهم لما ابيض ظهره من ~~الدواب أرحل فهو من هذا أيضا لأنه ms0459 يشبه بالدابة التي على ظهرها رحالة | ~~والرحالة السرج | ويقال في الاستعارة إن فلانا يرحل فلانا بما يكره | ~~والمرحل ضرب من برود اليمن وتكون عليه صور الرحال | ويقال أرحلت الإبل سمنت ~~بعد هزال فأطاقت الرحلة | والرحال الطنافس الحيرية | قال : # % نشرت عليه برودها ورحالها % % والراحلة المركب من الإبل ذكرا كان أو ~~أنثى | ويقال راحل فلان فلانا إذا عاونه على رحلته | ورحله إذا أظعنه من ~~مكانه | وأرحله أعطاه PageV02P497 @498@ راحلة | ورجل مرحل كثير الرواحل | ~~ويقولون في القذف يا ابن ملقى أرحل الركبان يشيرون به إلى أمر قبيح | ( رحم ~~) الراء والحاء والميم أصل واحد يدل على الرقة والعطف والرأفة | يقال من ~~ذلك رحمه يرحمه إذا رق له وتعطف عليه | والرحم والمرحمة والرحمة بمعنى | ~~والرحم علاقة القرابة ثم سميت رحم الأنثى رحما من هذا لأن منها ما يكون ما ~~يرحم ويرق له من ولد | ويقال شاة رحوم إذا اشتكت رحمها بعد النتاج وقد رحمت ~~رحامة ورحمت رحما | وقال الأصمعي كان أبو عمرو بن العلاء ينشد بيت زهير : # % ومن ضريبته التقوى ويعصمه % % من سيئ العثرات الله والرحم % % قال ولم ~~اسمع هذا الحرف إلا في هذا البيت | وكان يقرأ : ^ ( وأقرب رحما الكهف81 ) ^ ~~وكأن أبا عمرو ذهب إلى أن الرحم الرحمة | ويقال إن مكة كانت تسمى أم رحم | ~~( رحى ) الراء والحاء والحرف المعتل أصل واحد وهي الرحى الدائرة | ثم يتفرع ~~منها ما يقاربها في المعنى | من ذلك رحى الحرب وهي حومتها | والرحى رحى ~~السحاب وهو مستداره | ورحى القوم سيدهم | وسمي بذلك PageV02P498 @499@ لأن ~~مدارهم عليه | والرحى سعدانة البعير لأنها مستديرة | قال : # % رحى حيزومها كرحى الطحين % % قال الخليل الرحى والرحيان | وثلاث أرح | ~~والأرحاء الكثيرة | والأرحية كأنه جمع الجمع | والأرحاء الأضراس | وهذا على ~~التشبيه أي كأنها تطحن الطعام | ويقال على التشبيه أيضا للقطعة من الأرض ~~الناشزة على ما حولها مثل النجفة رحى | وناس من أهل اللغة يقولون رحى ~~ورحوان قالوا والعرب تقول رحت الحية ترحو إذا استدارت",
+            "origin_corpus": "quranic",
+            "section_path": "-",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      },
+      {
+        "source_id": "sihah",
+        "dictionary_name": "al-Ṣiḥāḥ",
+        "source_refs": [
+          "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4022:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=52449fd6b20e2031"
+        ],
+        "passages": [
+          {
+            "source_ref": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4022:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=52449fd6b20e2031",
+            "headword": "رحل",
+            "route_status": "exact",
+            "entry_text_clean": "### | [رحل] # الرحل: مسكن الرجل وما يستصحبه من الاثاث. PageV04P1706 # والرحل أيضا: ms1183 رحل البعير، وهو أصغر من القتب. والجمع الرحال، وثلاثة ~~أرحل. ومنه قولهم في القذف: يا ابن ملقى أرحل الركبان! والرحال أيضا: ~~الطنافس الحيرية، ومنه قول الشاعر (1) : # نشرت عليه برودها ورحالها (2) * ومرط مرحل: إزار خز فيه علم. ورحلت ~~البعير أرحله رحلا، إذا شددت على ظهره الرحل. قال الأعشى: رحلت سمية غدوة ~~أجمالها غضبى عليك فما تقول بدالها وقال المثقب العبدى: إذا ما قمت أرحلها ~~بليل تأوه آهة الرجل الحزين ويقال: رحلت له نفسي، إذا صبرت على أذاه. ورحل ~~فلان وارتحل وترحل بمعنى، والاسم الرحيل. واسترحله، أي سأله أن يرحل له. ~~أبو عمرو: الرحلة بالضم: الوجه الذى تريده. PageV04P1707 # يقال: أنتم رحلتي، أي الذين أرتحل إليهم. والرحلة بالكسر: الارتحال، ~~يقال: دنت رحلتنا. وأرحلت الإبل، إذا سمنت بعد هزال فأطاقت الرحلة. وراحلت ~~فلانا، إذا عاونته على رحلته. وأرحلته، إذا أعطيته راحلة. ورحلته بالتشديد، ~~إذا أظعنته من مكانه وأرسلته. ورجل مرحل، أي له رواحل كثيرة، كما يقال ~~معرب، إذا كان له خيل عراب. عن أبى عبيد. وناقة رحلية، أي شديدة قوية على ~~السير، وكذلك جمل رحيل. عن أبى عمرو. قال: وإنها لذات رحلة، بالضم. ~~والراحلة: الناقة التي تصلح لأن ترحل. وكذلك الرحول. ويقال: الراحلة: ~~المركب من الإبل، ذكرا كان أو أنثى. والأرحل من الخيل: الأبيض الظهر، ومن ~~الغنم: الأسود الظهر. قال أبو الغوث: الرحلاء من الشاء: التي ابيض ظهرها ~~واسود سائرها. قال: وكذلك إذا اسو ظهرها وابيض سائرها. قال ومن الخيل التى ~~ابيض ظهرها لا غير. والرحالة: سرج من جلود ليس فيه خشب، # PageV04P1707 # كانوا يتخذونه للركض الشديد. والجمع الرحائل. قال عامر بن الطفيل: ومقطع ~~حلق الرحالة سابح باد نواجذه عن الاظراب (1) وقال عنترة: إذ لا أزال على ~~رحالة سائج نهد تعاوره الكماة مكلم وإذا عجل الرجل إلى صاحبه بالشر قيل: ~~استقدمت رحالتك. وأما قول امرئ القيس يخاطب امرأة: فإما ترينى في رحالة ~~جابر على حرج (2) كالقر تخفق أكفاني فيقال: إنما أراد به الحرج، وليس ثم ~~رحالة في الحقيقة. وهذا كما يقال: جاء فلان على ناقة، ms1184 يعنون به النعل. ~~وجابر: اسم رجل نجار. والمرحلة: واحدة المراحل، يقال: بينه وبين كذا مرحلة ~~أو مر حلتان. PageV04P1708",
+            "origin_corpus": "quranic",
+            "section_path": "heading:4022",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      },
+      {
+        "source_id": "tahdhib",
+        "dictionary_name": "Tahdhīb al-Lugha",
+        "source_refs": [
+          "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D86:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=71b6746305f9f9df"
+        ],
+        "passages": [
+          {
+            "source_ref": "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D86:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=71b6746305f9f9df",
+            "headword": "رحل",
+            "route_status": "exact",
+            "entry_text_clean": "# رحل : قال الليث : الرحل : مركب للبعير . والرحالة نحوه ، كل ذلك من ~~مراكب النساء . قلت : الرحل في كلام العرب على وجوه . قال شمر : قال أبو ~~عبيدة : الرحل بجميع ربضه وحقبه وحلسه وجميع أغرضه . قال : ويقولون أيضا ~~لأعواد الرحل بغير أداة رحل ، وأنشد : # كأن رحلي وأداة رحلي # على حزاب كأتان الضحل # قلت وهذا كما قال ms1225 أبو عبيدة . وهو من مراكب الرجال دون النساء . # وأما الرحالة فهي أكبر من السرج وتغشى بالجلود تكون للخيل والنجائب من ~~الإبل ومنه قول الطرماح : # قتروا النجائب عند ذ # لك بالرحال وبالرحائل # وقال عنترة فجعلها سرجا : # إذ لا أزال على رحالة سابح # نهد مراكله نبيل المحزم # قلت : فقد صح أن الرحل والرحالة من مراكب الرجال دون النساء . # والرحل في غير هذا منزل الرجل ومسكنه وبيته ، يقال : دخلت على الرجل رحله ~~أي منزله وفي حديث يزيد بن شجرة : ( أنه خطب الناس في بعث كان هو قائدهم ، ~~فحثهم على الجهاد وقال إنكم ترون ما أرى من بين أصفر وأحمر ، وفي الرحال ما ~~فيها ، فاتقوا الله ولا تخزوا الحور العين ) يقول : معكم من زهرة الدنيا ~~وزخرفها ما يوجب عليكم ذكر نعمة الله عليكم واتقاء سخطه ، وأن تصدقوا العدو ~~القتال وتجاهدوهم حق الجهاد ، فاتقوا الله ولا تركنوا إلى الدنيا وزخرفها ، ~~ولا تولوا عن عدوكم إذا التقيتم ولا تخزوا الحور العين بأن لا تبلوا ولا ~~تجتهدوا وتفشلوا عن العدو فيولين ، يعني الحور العين عنكم بخزاية واستحياء ~~لكم . وقد فسر الخزاية في موضعها . # وقال الليث : رحل الرجل : مسكنه . وإنه لخصيب الرحل . وانتهينا إلى ~~رحالنا : أي إلى منازلنا . وروي عن النبي صلى الله عليه وسلم أنه قال : ~~PageV05P005 ( إذا ابتلت النعال فالصلاة في الرحال ) . وقد مر تفسيره في ~~كتاب العين . # ويقال : إن فلانا يرحل فلانا بما يكره ، أي يركبه . # ويقال : رحلت البعير أرحله رحلا : إذا شددت عليه الرحل . # ويقال : رحلت فلانا بسيفي أرحله رحلا : إذا علوته . # وقال أبو زيد : أرحل الرجل البعير ، وهو رجل مرحل . وذلك إذا أخذ بعيرا ~~صعبا فجعله راحلة . وفي الحديث عند اقتراب الساعة ( تخرج نار من قصر عدن ~~ترحل الناس ) رواه شعبة قال : ومعنى ترحل أي تنزل معهم إذا نزلوا وتقيل إذا ~~قالوا . جاء به متصلا بالحديث قال شمر : وقيل معنى ترحلهم أي تنزلهم ~~المراحل . قال : والترحيل والإرحال بمعنى الإشخاص والإزعاج يقال : رحل ~~الرجل إذا سار وأرحلته أنا . # والمرحلة : المنزل يرتحل منها . وما بين المنزلين ms1226 مرحلة . # ورجل رحول ، وقوم رحل : أي يرتحلون كثيرا ، وجمل رحيل وناقة رحيلة بمعنى ~~النجيب والظهير . # وقال أبو عبيد : الرحول من الإبل الذي يصلح لأن يرحل . وبعير ذو رحلة : ~~إذا كان قويا على أن يرحل . والراحول : الرحل ، وفي حديث الجعدي : أن ابن ~~الزبير أمر له براحلة رحيل . قال المبرد : راحلة رحيل أي قوي على الرحلة ، ~~كما يقال : فحل فحيل : ذو فحلة . # وروي عن النبي صلى الله عليه وسلم أنه قال : ( تجدون الناس كإبل مائة ليس ~~فيها راحلة ) قال ابن قتيبة : الراحلة هي الناقة يختارها الرجل لمركبه ~~ورحله على النجابة وتمام الخلق وحسن المنظر ، وإذا كانت في جماعة الإبل ~~تبينت وعرفت . يقول : فالناس متساوون ، ليس لأحد منهم على أحد فضل في النسب ~~، ولكنهم أشباه كإبل مائة ليست فيها راحلة تتبين فيها وتتميز منها بالتمام ~~وحسن المنظر . # قلت : غلط ابن قتيبة في شيئين : في تفسير هذا الحديث ، أحدهما أنه جعل ~~الراحلة الناقة ، وليس الجمل عنده راحلة . والراحلة عند العرب كل بعير نجيب ~~جواد سواء كان ذكرا أو أنثى ، وليست الناقة أولى باسم الراحلة من الجمل ، ~~تقول العرب للجمل إذا كان نجيبا : راحلة وجمعه رواحل ، ودخول الهاء في ~~الراحلة للمبالغة في الصفة ، كما يقال : رجل داهية وباقعة وعلامة . وقيل : ~~إنها سميت راحلة لأنها ترحل ، كما قال الله { فهو فى عيشة } ( الحاقة : 21 ~~) أي مرضية ، و { خلق * خلق من مآء دافق } ( الطارق : 6 ) أي مدفوق . وقيل ~~: سميت راحلة لأنها ذات رحل ، وكذلك عيشة راضية : ذات رضى . وماء دافق ذو ~~دفق . # وأما قوله : إن النبي صلى الله عليه وسلم أراد أن الناس متساوون في الفضل ~~ليس لأحد منهم فضل على الآخر ولكنهم أشباه كإبل مائة ليس PageV05P006 فيها ~~راحلة ، فليس المعنى ما ذهب إليه . والذي عندي فيه أن الله تبارك وتعالى ذم ~~الدنيا وركون الخلق إليها وحذر عباده سوء مغبتها ، وزهدهم في اقتنائها ~~وزخرفها وضرب لهم فيها الأمثال ليعوها ويعتبروا بها ، فقال : { الجحيم * ~~اعلمو صلى الله عليه وسلم # 1764 ا أنما الحيواة الدنيا لعب ولهو وزينة وتفاخر ms1227 بينكم وتكاثر فى ~~الاموال والاولاد كمثل غيث أعجب الكفار نباته ثم يهيج } ( الحديد : 20 ) ~~الآية . وكان النبي صلى الله عليه وسلم يحذر أصحابه بما حذرهم الله من ذميم ~~عواقبها وينهاهم عن التبقر فيها ويزهدهم فيما زهدهم الله فيه منها ، فرغب ~~أكثر أصحابه عليه السلام بعده فيها ، وتشاحوا عليها وتنافسوا في اقتنائها ~~حتى كان الزهد في النادر القليل منهم ، فقال النبي صلى الله عليه وسلم ( ~~تجدون الناس بعدي كإبل مائة ليس فيها راحلة ) ولم يرد بهذا تساويهم في الشر ~~ولكنه أراد أن الكامل في الخير والزاهد في الدنيا مع رغبته في الآخرة ~~والعمل لها قليل ، كما أن الراحلة النجيبة نادر في الإبل الكثير . # وسمعت غير واحد من مشايخنا يقول : إن زهاد أصحاب رسول الله صلى الله عليه ~~وسلم لم يتتاموا عشرة مع وفور عددهم وكثرة خيرهم ، وسبقهم الأمة إلى ما ~~يستوجبون به كريم المآب برحمة الله إياهم ورضوانه عليهم فكيف من بعدهم وقد ~~شاهدوا التنزيل وعاينوا الرسول وكانوا مع الرغبة التي ظهرت منهم في الدنيا ~~خير هذه الأمة التي وصفها الله جل وعز فقال : { كنتم خير أمة أخرجت للناس } ~~( آل عمران : 110 ) وواجب على من بعدهم الاستغفار لهم والترحم عليهم وأن ~~يسألوا الله ألا يجعل في قلوبهم غلا لهم ولا يذكروا أحدا بما فيه منقصة لهم ~~، والله يرحمنا وإياهم ويتغمد زللنا بفضله ورحمته إنه هو الغفور الرحيم . # أبو عبيد عن أبي عمرو : ناقة رحيلة : شديدة قوية على السير ، وجمل رحيل ~~مثله ، وإنها لذات رحلة . وقال الأموي ناقة حضار إذا جمعت قوة ورحلة يعني ~~جودة السير . # وقال شمر : ارتحلت البعير إذا شددت الرحل عليه وارتحلته إذا ركبته بقتب ~~أواعروريته وقال الجعدي : # وما عصيت أميرا غير متهم # عندي ولكن أمر المرء ما ارتحلا # أي يرتحل الأمر ، يركبه . # قال شمر : ولو أن رجلا صرع آخر وقعد على ظهره لقلت رأيته مرتحله . ومرتحل ~~البعير : موضع رحله من ظهره وهو مرحله ، قال : وبعير ذو رحلة وذو رحلة ~~وبعير مرحل ورحيل إذا كان قويا . # الحراني عن ابن ms1228 السكيت : قال الفراء : رحلة ورحلة بمعنى واحد ، قال وقال ~~أبو عمرو الرحلة : الارتحال ، والرحلة بالضم : الوجه الذي تريده . تقول : ~~أنتم رحلتي . قال وقال أبو زيد نحوا منه . # ويقال للراحلة التي ريضت وأدبت : قد أرحلت إرحالا وأمهرت إمهارا إذا ~~جعلها الرائض مهرية وراحلة . PageV05P007 # وفي ( نوادر الأعراب ) : ناقة رحيلة ورحيل ومرحلة ومسترحلة أي نجيبة . ~~وبعير مرحل إذا كان سمينا وإن لم يكن نجيبا . # وقال الليث : ارتحل القوم ارتحالا . والرحلة : اسم ارتحال القوم للمسير . ~~قال : والمرتحل نقيض المحل . وأنشد قول الأعشى : # إن محلا وإن مرتحلا # يريد إن ارتحالا وإن حلولا . # قال : وقد يكون المرتحل اسم الموضع الذي تحل فيه . قال : والترحل : ~~ارتحال في مهلة . # والمرحل : ضرب من برود اليمن ، وقيل سمي مرحلا لما عليه من تصاوير الرحل ~~وما ضاهاه . قال : وراحيل اسم أم يوسف ابن يعقوب . والعرب تكني عن القذف ~~للرجل بقولهم ( يا ابن ملقى أرحل الركبان ) ويفسر قول زهير : # ومن لا يزل يسترحل الناس نفسه # ولا يعفها يوما من الذل يندم # تفسيرين : أحدهما أنه يذل لهم حتى يركبوه بالأذى ويستذلوه ، والثاني : ~~أنه يسألهم أن يحملوا عنه كله وثقله ومؤونته ومن قال هذا القول روى البيت ( ~~ولا يعفها يوما من الناس يسأم ) وقال ذلك كله ابن السكيت في كتابه في ~~المعاني . # وقال أبو عبيدة في شيات الخيل : إذا كان الفرس أبيض الظهر فهو أرحل ، وإن ~~كان أبيض العجز فهو آزر . وقال أبو زيد في شيات الغنم إن ابيص طول النعجة ~~غير موضع الراكب منها فهي رحلاء ، فإن ابيضت إحدى رجليها فهي رجلاء . وقال ~~الفرزدق : # عليهن راحولات كل قطيفة # من الخز أو من قيصران علامها # قال : الراحولات : المرحل الموشي على فاعولات . قال وقيصران ضرب من ~~الثياب الموشية . # ويقال : ارتحل فلان فلانا : إذا علا ظهره وركبه . ومنه حديث النبي صلى ~~الله عليه وسلم ( أنه سجد فركبه الحسن فأبطأ في سجوده ، وقال : إن ابني ~~ارتحلني فكرهت أن أعجله ) . # ( ح ر ن ) # حرن ، حنر ، نخر ، رنح : مستعملة",
+            "origin_corpus": "quranic",
+            "section_path": "parent_entry_id=237;segment_index=86",
+            "page_or_volume_ref": "PageV05P005-PageV05P007"
+          }
+        ]
+      },
+      {
+        "source_id": "mufradat",
+        "dictionary_name": "al-Mufradāt fī Gharīb al-Qurʾān",
+        "source_refs": [
+          "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A550:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=82b8d40016023eee"
+        ],
+        "passages": [
+          {
+            "source_ref": "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A550:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=82b8d40016023eee",
+            "headword": "رحل",
+            "route_status": "exact",
+            "entry_text_clean": "### | رحل # الرحل ما يوضع على البعير للركوب، ثم يعبر به تارة عن البعير، وتارة عما ~~يجلس عليه في المنزل، وجمعه رحال. وقال لفتيانه اجعلوا بضاعتهم في رحالهم # [يوسف/ 62] ، والرحلة: الارتحال. قال تعالى: رحلة الشتاء والصيف # [قريش/ 2] ، وأرحلت البعير: # وضعت عليه الرحل، وأرحل البعير: سمن، كأنه صار على ظهره رحل لسمنه ~~وسنامه، ورحلته: # أظعنته، أي: أزلته عن مكانه. والراحلة: البعير الذي يصلح للارتحال. ~~وراحله: عاونه على رحلته، والمرحل برد عليه صورة الرحال.",
+            "origin_corpus": "quranic",
+            "section_path": "heading:550",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      }
+    ]
+  },
+  "lexical_units": [
+    {
+      "lexical_unit_id": "lu_025",
+      "expression_ar": "راحل فلانا",
+      "unit_kind": "form",
+      "sense_ar": "عاونه على رحلته",
+      "source_phrase_ar": "راحل فلان فلانا إذا عاونه على رحلته (maqayis)؛ راحلت فلانا إذا عاونته على رحلته (sihah)؛ راحله عاونه على رحلته (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1461;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4022:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=52449fd6b20e2031;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A550:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=82b8d40016023eee",
+      "branch_source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1461;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4022:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=52449fd6b20e2031;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D86:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=71b6746305f9f9df;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A550:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=82b8d40016023eee",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "accepted"
+    },
+    {
+      "lexical_unit_id": "lu_026",
+      "expression_ar": "أرحله",
+      "unit_kind": "form",
+      "sense_ar": "أعطاه راحلة",
+      "source_phrase_ar": "أرحله أعطاه راحلة (maqayis)؛ أرحلته إذا أعطيته راحلة (sihah)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1461;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4022:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=52449fd6b20e2031",
+      "branch_source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1461;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4022:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=52449fd6b20e2031;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D86:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=71b6746305f9f9df;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A550:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=82b8d40016023eee",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "accepted"
+    },
+    {
+      "lexical_unit_id": "lu_027",
+      "expression_ar": "استرحله",
+      "unit_kind": "form",
+      "sense_ar": "سأله أن يرحل له",
+      "source_phrase_ar": "استرحله أي سأله أن يرحل له (sihah)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4022:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=52449fd6b20e2031",
+      "branch_source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1461;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4022:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=52449fd6b20e2031;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D86:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=71b6746305f9f9df;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A550:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=82b8d40016023eee",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "accepted"
+    }
+  ],
+  "qnet_candidates": [
+    {
+      "root_id": "root_000021",
+      "branch_id": "B005",
+      "root_norm": "ء د ي",
+      "branch_image_ar": "إعانة وتقوية",
+      "what_is_ar": "إعانة غيره وتقويته على أمر، ومنه الاستعداء بالسلطان على الخصم",
+      "what_is_not_ar": "الأداة المادية؛ أداء الحق؛ الحيلة الخفية",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5205:headword=%D8%A3%D8%AF%D8%A7:root=%D8%A1%20%D8%AF%20%D8%A7:sha=47966bbb3beca139;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D727%3Bsegment_index%3D19:headword=%D8%A3%D8%AF%D9%89:root=%D8%A3%20%D8%AF%20%D9%89:sha=dce8d054a26c3d5a;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A22:headword=%D8%A3%D8%AF%D9%89:root=%D8%A1%20%D8%AF%20%D9%8A:sha=4eb27592a932062c",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "assistance",
+        "support"
+      ]
+    },
+    {
+      "root_id": "root_000580",
+      "branch_id": "B001",
+      "root_norm": "ر ف د",
+      "branch_image_ar": "المعاونة بالعطاء",
+      "what_is_ar": "المعونة والعطاء والصلة والإعانة والتعاون والاستعانة وما يعطى شيئا بعد شيء ورفادة الحاج",
+      "what_is_not_ar": "القدح والإناء وخشب السقف ورفادة السرج",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1334;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1280:headword=%D8%B1%D9%81%D8%AF:root=%D8%B1%20%D9%81%20%D8%AF:sha=f939780a21cacdc9;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D35:headword=%D8%B1%D9%81%D8%AF:root=%D8%B1%20%D9%81%20%D8%AF:sha=01c2b15b4a372083;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A580:headword=%D8%B1%D9%81%D8%AF:root=%D8%B1%20%D9%81%20%D8%AF:sha=3f6f10293b1df953",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "assistance",
+        "support"
+      ]
+    },
+    {
+      "root_id": "root_000653",
+      "branch_id": "B001",
+      "root_norm": "ز و د",
+      "branch_image_ar": "حمل الزاد للانتقال",
+      "what_is_ar": "الزاد طعام أو مدخر يتخذ للسفر والحضر؛ والتزود أخذ الزاد أو حمل ما ينتقل به من خير أو عمل أو كسب؛ وزودت الرجل جعلت له زادا",
+      "what_is_not_ar": "زيادة الشيء في نفسه ليست من هذا الفرع إلا ما اتصل بالزاد",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1558;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A5151:headword=%D8%B2%D9%88%D8%AF:root=%D8%B2%20%D9%88%20%D8%AF:sha=1a922f95c58358cd;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1293:headword=%D8%B2%D9%88%D8%AF:root=%D8%B2%20%D9%88%20%D8%AF:sha=b7a24e87cae698ff;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D677%3Bsegment_index%3D3:headword=%D8%B2%D9%88%D8%AF:root=%D8%B2%20%D9%88%20%D8%AF:sha=6a05c8d3830c491b;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A650:headword=%D8%B2%D8%A7%D8%AF:root=%D8%B2%20%D8%A7%20%D8%AF:sha=0c76998629c45fa2",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "journey",
+        "provision"
+      ]
+    },
+    {
+      "root_id": "root_000707",
+      "branch_id": "B002",
+      "root_norm": "س ع د",
+      "branch_image_ar": "المساعدة والمتابعة",
+      "what_is_ar": "المساعدة والمعاونة والمتابعة في الأمر وصيغة سعديك في الطاعة أو الدعاء بالإسعاد",
+      "what_is_not_ar": "السعادة المجردة؛ الإسعاد الخاص بالبكاء؛ الساعد العضو",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1623;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1303:headword=%D8%B3%D8%B9%D8%AF:root=%D8%B3%20%D8%B9%20%D8%AF:sha=4c5ee6dfea4bbf24;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D116%3Bsegment_index%3D4:headword=%D8%B3%D8%B9%D8%AF:root=%D8%B3%20%D8%B9%20%D8%AF:sha=0ce871c686d7d1f7;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A700:headword=%D8%B3%D8%B9%D8%AF:root=%D8%B3%20%D8%B9%20%D8%AF:sha=f06298d1f04a1fbe",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "assistance",
+        "support"
+      ]
+    },
+    {
+      "root_id": "root_001062",
+      "branch_id": "B008",
+      "root_norm": "ع و ل",
+      "branch_image_ar": "عيال تمونهم وتحمل مؤنتهم",
+      "what_is_ar": "يدخل فيه عال عياله بمعنى قاتهم وأنفق عليهم وكفاهم معاشهم، وعاله بمعنى تحمل ثقل مؤنته، والعيال، وكثرة العيال في أعال.",
+      "what_is_not_ar": "ليس هو عيلة الفاقة والحاجة في نفس المحتاج، ولا مجرد الاعتماد على غير، ولا الظلة المسماة عالة.",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4148:headword=%D8%B9%D9%88%D9%84:root=%D8%B9%20%D9%88%20%D9%84:sha=041f4f4f99e64882;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1061:headword=%D8%B9%D9%88%D9%84:root=%D8%B9%20%D9%88%20%D9%84:sha=aaf28d3fdebf86a9",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "provision",
+        "support"
+      ]
+    },
+    {
+      "root_id": "root_001064",
+      "branch_id": "B001",
+      "root_norm": "ع و ن",
+      "branch_image_ar": "الإعانة والمظاهرة",
+      "what_is_ar": "العون والمعونة والإعانة والاستعانة والتعاون والتظاهر على الأمر",
+      "what_is_not_ar": "ليس العوان في السن ولا العانة",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1037:headword=%D8%B9%D9%88%D9%86:root=%D8%B9%20%D9%88%20%D9%86:sha=8d812ace648c62ec;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4998:headword=%D8%B9%D9%88%D9%86:root=%D8%B9%20%D9%88%20%D9%86:sha=9f98d0a71ec1eff5;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D199%3Bsegment_index%3D2:headword=%D8%B9%D9%88%D9%86:root=%D8%B9%20%D9%88%20%D9%86:sha=a94764ede71706eb;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1064:headword=%D8%B9%D9%88%D9%86:root=%D8%B9%20%D9%88%20%D9%86:sha=4408f290020374ab",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "assistance",
+        "support"
+      ]
+    },
+    {
+      "root_id": "root_001067",
+      "branch_id": "B002",
+      "root_norm": "ع ي ش",
+      "branch_image_ar": "المعيشة والمعاش",
+      "what_is_ar": "يدخل المعيشة والمعاش والمعايش وما يقوم به العيش من مطعم ومشرب وسبب وموضع، وما يقال في التعيش والبلغة من العيش.",
+      "what_is_not_ar": "لا يدخل نفس الحياة ولا وصف العيشة بأنها راضية أو ضنك.",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2390;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A920:headword=%D8%B9%D9%8A%D8%B4:root=%D8%B9%20%D9%8A%20%D8%B4:sha=bedca333d52f6b8f;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2470:headword=%D8%B9%D9%8A%D8%B4:root=%D8%B9%20%D9%8A%20%D8%B4:sha=9f008ed48abdbe6b;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D187%3Bsegment_index%3D3:headword=%D8%B9%D9%8A%D8%B4:root=%D8%B9%20%D9%8A%20%D8%B4:sha=68cb549bc5adb009;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1059:headword=%D8%B9%D9%8A%D8%B4:root=%D8%B9%20%D9%8A%20%D8%B4:sha=35c8881ea37ba708",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "provision",
+        "support"
+      ]
+    },
+    {
+      "root_id": "root_001133",
+      "branch_id": "B004",
+      "root_norm": "ف ج و",
+      "branch_image_ar": "التوسعة في النفقة على العيال",
+      "what_is_ar": "يدخل فيه أفجى بمعنى وسع على عياله في النفقة.",
+      "what_is_not_ar": "لا يدخل فيه كل اتساع حسي في المكان أو القوس أو الرجلين إلا من جهة الصورة العامة للتوسعة.",
+      "source_refs": "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D559%3Bsegment_index%3D6:headword=%D9%81%D8%AC%D8%A3:root=%D9%81%20%D8%AC%20%D8%A3:sha=a533f066c484e185",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "provision",
+        "support"
+      ]
+    }
+  ],
+  "qnet_core_overlap_candidates": [
+    {
+      "root_id": "root_000855",
+      "branch_id": "B003",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 4,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "aid",
+        "assistance",
+        "help",
+        "support"
+      ]
+    },
+    {
+      "root_id": "root_000027",
+      "branch_id": "B001",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "aid",
+        "assistance",
+        "support"
+      ]
+    },
+    {
+      "root_id": "root_000943",
+      "branch_id": "B004",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "aid",
+        "assistance",
+        "provision"
+      ]
+    },
+    {
+      "root_id": "root_000970",
+      "branch_id": "B006",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "aid",
+        "assistance",
+        "support"
+      ]
+    },
+    {
+      "root_id": "root_001062",
+      "branch_id": "B006",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "aid",
+        "assistance",
+        "support"
+      ]
+    },
+    {
+      "root_id": "root_001459",
+      "branch_id": "B003",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "aid",
+        "provision",
+        "support"
+      ]
+    },
+    {
+      "root_id": "root_001510",
+      "branch_id": "B001",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "aid",
+        "assistance",
+        "support"
+      ]
+    },
+    {
+      "root_id": "root_001693",
+      "branch_id": "B016",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "assistance",
+        "help",
+        "support"
+      ]
+    }
+  ],
+  "qnet_bridge_overlap_candidates": [
+    {
+      "root_id": "root_000656",
+      "branch_id": "B004",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 4,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "charity",
+        "hospitality",
+        "provision",
+        "travel"
+      ]
+    },
+    {
+      "root_id": "root_000885",
+      "branch_id": "B003",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 4,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "assistance",
+        "charity",
+        "patronage",
+        "support"
+      ]
+    },
+    {
+      "root_id": "root_001459",
+      "branch_id": "B003",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 4,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "charity",
+        "patronage",
+        "provision",
+        "support"
+      ]
+    },
+    {
+      "root_id": "root_000240",
+      "branch_id": "B006",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "charity",
+        "patronage",
+        "provision"
+      ]
+    },
+    {
+      "root_id": "root_000345",
+      "branch_id": "B003",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "provision",
+        "transport",
+        "travel"
+      ]
+    },
+    {
+      "root_id": "root_000452",
+      "branch_id": "B005",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "charity",
+        "hospitality",
+        "patronage"
+      ]
+    }
+  ],
+  "qnet_theme_overlap_candidates": [
+    {
+      "root_id": "root_000644",
+      "branch_id": "B002",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "social_relations",
+        "support_dependence",
+        "transport",
+        "travel"
+      ]
+    },
+    {
+      "root_id": "root_001032",
+      "branch_id": "B004",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "hospitality_welfare",
+        "provision_resource",
+        "social_relations",
+        "support_dependence"
+      ]
+    },
+    {
+      "root_id": "root_001005",
+      "branch_id": "B002",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "hospitality_welfare",
+        "social_relations",
+        "support_dependence",
+        "travel"
+      ]
+    },
+    {
+      "root_id": "root_001119",
+      "branch_id": "B001",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "hospitality_welfare",
+        "provision_resource",
+        "support_dependence",
+        "travel"
+      ]
+    },
+    {
+      "root_id": "root_001068",
+      "branch_id": "B002",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 1,
+      "shared_themes": [
+        "hospitality_welfare",
+        "provision_resource",
+        "social_relations",
+        "support_dependence"
+      ]
+    },
+    {
+      "root_id": "root_001471",
+      "branch_id": "B001",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 1,
+      "shared_themes": [
+        "provision_resource",
+        "social_relations",
+        "support_dependence",
+        "transport"
+      ]
+    },
+    {
+      "root_id": "root_001005",
+      "branch_id": "B009",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 0,
+      "shared_themes": [
+        "hospitality_welfare",
+        "social_relations",
+        "support_dependence",
+        "transport"
+      ]
+    },
+    {
+      "root_id": "root_000230",
+      "branch_id": "B005",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 3,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "social_relations",
+        "support_dependence",
+        "travel"
+      ]
+    }
+  ],
+  "qnet_focus_coverage": {
+    "raw_keyword_exact_port": true,
+    "snapshot_exact_port": true,
+    "postfix_exact_port": false,
+    "theme_scope": "branch",
+    "focus_themes": [
+      "hospitality_welfare",
+      "provision_resource",
+      "social_relations",
+      "support_dependence",
+      "transport",
+      "travel"
+    ]
+  },
+  "furuq_candidates": [
+    {
+      "root_id": "root_000021",
+      "branch_id": "B005",
+      "root_norm": "ء د ي",
+      "branch_image_ar": "إعانة وتقوية",
+      "what_is_ar": "إعانة غيره وتقويته على أمر، ومنه الاستعداء بالسلطان على الخصم",
+      "what_is_not_ar": "الأداة المادية؛ أداء الحق؛ الحيلة الخفية",
+      "source_phrase_ar": "آداه على كذا إذا قواه عليه وأعانه (sihah)؛ استأديت الأمير على فلان فآداني عليه بمعنى استعديته فأعداني عليه (sihah)؛ استأديت السلطان على فلان أي استعديت فآداني عليه أي أعداني وأعانني (tahdhib)؛ استأديت على فلان نحو استعديت (mufradat)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5205:headword=%D8%A3%D8%AF%D8%A7:root=%D8%A1%20%D8%AF%20%D8%A7:sha=47966bbb3beca139;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D727%3Bsegment_index%3D19:headword=%D8%A3%D8%AF%D9%89:root=%D8%A3%20%D8%AF%20%D9%89:sha=dce8d054a26c3d5a;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A22:headword=%D8%A3%D8%AF%D9%89:root=%D8%A1%20%D8%AF%20%D9%8A:sha=4eb27592a932062c",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_packet"
+      ],
+      "shared_consensus_core": [
+        "assistance",
+        "support"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000855",
+      "branch_id": "B003",
+      "root_norm": "ص ر خ",
+      "branch_image_ar": "الإغاثة والإجابة",
+      "what_is_ar": "الإغاثة والإعانة عند النداء: المصرخ والمغيث وأصرخته إذا أغثته والصريخ أو الصارخة عند من جعلهما بمعنى الإغاثة",
+      "what_is_not_ar": "ليس الصارخ بمعنى المستغيث عند الجمهور ولا مجرد الصوت ولا اسم الطاووس",
+      "source_phrase_ar": "المغيث مصرخ (maqayis); المصرخ المغيث وأصرختهم أعنتهم (ayn); الصريخ المغيث وما أنا بمصرخكم أي لا أغيثكم واستصرخت فلانا فأصرخني إذا أغاثني (jamhara); المصرخ المغيث واستصرخني فأصرخته (sihah); المصرخ المغيث وما أنا بمغيثكم والصارخة الإغاثة (tahdhib)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2072;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A2614:headword=%D8%B5%D8%B1%D8%AE:root=%D8%B5%20%D8%B1%20%D8%AE:sha=f1d18196625d96cc;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1532%3Asubentry%3A6%3A%D8%B5%D8%B1%D8%AE:headword=%D8%B5%D8%B1%D8%AE:root=%D8%B5%20%D8%B1%20%D8%AE:sha=1df0444fe30c94cb;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1152:headword=%D8%B5%D8%B1%D8%AE:root=%D8%B5%20%D8%B1%20%D8%AE:sha=d174e0af36d034a7;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D350%3Bsegment_index%3D45:headword=%D8%B5%D8%B1%D8%AE:root=%D8%B5%20%D8%B1%20%D8%AE:sha=4718396e6c526309",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_core_overlap"
+      ],
+      "shared_consensus_core": [
+        "aid",
+        "assistance",
+        "help",
+        "support"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000656",
+      "branch_id": "B004",
+      "root_norm": "ز ي ت",
+      "branch_image_ar": "الزيت أدمًا وزادًا وهبة",
+      "what_is_ar": "يدخل فيه جعل الزيت أدمًا للقوم أو زادًا لهم أو استيهابه",
+      "what_is_not_ar": "ليس مجرد صب الزيت في الطعام ولا الادهان به",
+      "source_phrase_ar": "زت القوم جعلت أدمهم الزيت؛ زيتهم إذا زودتهم الزيت؛ جاءوا يستزيتون أي يستوهبون الزيت",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A551:headword=%D8%B2%D9%8A%D8%AA:root=%D8%B2%20%D9%8A%20%D8%AA:sha=a52eb45dca181bf0",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_bridge_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [
+        "charity",
+        "hospitality",
+        "provision",
+        "travel"
+      ],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000644",
+      "branch_id": "B002",
+      "root_norm": "ز م ل",
+      "branch_image_ar": "الرِّدف والمعادلة على البعير",
+      "what_is_ar": "الزميل الرديف على البعير أو الدابة والمزاملة أو المعادلة على البعير",
+      "what_is_not_ar": "ليس حمل المتاع نفسه ولا الزملة بمعنى الرفقة",
+      "source_phrase_ar": "المزاملة المعادلة على البعير (maqayis); الزميل الرديف على البعير والدابة (ayn;tahdhib); الزميل الرديف (sihah); زملت الرجل على البعير فهو زميل ومزمول إذا أردفته وزاملته عادلته (tahdhib)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1538;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A5136:headword=%D8%B2%D9%85%D9%84:root=%D8%B2%20%D9%85%20%D9%84:sha=2693a2e37bd6acaf;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4047:headword=%D8%B2%D9%85%D9%84:root=%D8%B2%20%D9%85%20%D9%84:sha=32105827c8a3fc62;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D674%3Bsegment_index%3D18:headword=%D8%B2%D9%85%D9%84:root=%D8%B2%20%D9%85%20%D9%84:sha=8c1738808eff508a",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "social_relations",
+        "support_dependence",
+        "transport",
+        "travel"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000580",
+      "branch_id": "B001",
+      "root_norm": "ر ف د",
+      "branch_image_ar": "المعاونة بالعطاء",
+      "what_is_ar": "المعونة والعطاء والصلة والإعانة والتعاون والاستعانة وما يعطى شيئا بعد شيء ورفادة الحاج",
+      "what_is_not_ar": "القدح والإناء وخشب السقف ورفادة السرج",
+      "source_phrase_ar": "المعاونة والمظاهرة بالعطاء وغيره (maqayis); الرفد العطاء والصلة والإعانة والمرافدة المعاونة والترافد التعاون والاسترفاد الاستعانة (sihah); الرفد المعونة بالعطاء وسقي اللبن والقول وكل شيء (tahdhib); الرفد المعونة والعطية وترافدوا تعاونوا والرفادة معاونة للحاج (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1334;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1280:headword=%D8%B1%D9%81%D8%AF:root=%D8%B1%20%D9%81%20%D8%AF:sha=f939780a21cacdc9;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D35:headword=%D8%B1%D9%81%D8%AF:root=%D8%B1%20%D9%81%20%D8%AF:sha=01c2b15b4a372083;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A580:headword=%D8%B1%D9%81%D8%AF:root=%D8%B1%20%D9%81%20%D8%AF:sha=3f6f10293b1df953",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_packet"
+      ],
+      "shared_consensus_core": [
+        "assistance",
+        "support"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000027",
+      "branch_id": "B001",
+      "root_norm": "ء ز ر",
+      "branch_image_ar": "القوّة والمساندة",
+      "what_is_ar": "يدخل فيه الأَزر بمعنى القوّة والشدة وشدّ الأزر وتقوية غيره ومعاونته ومؤازرته",
+      "what_is_not_ar": "ليس الإزار اللباس ولا اسم آزر",
+      "source_phrase_ar": "الأزر القوة (maqayis;sihah;tahdhib;mufradat)؛ الهمزة والزاء والراء أصل واحد وهو القوة والشدة (maqayis)؛ آزره أي ظاهره وعاونه (ayn)؛ آزرت فلانا أي عاونته (sihah)؛ أزرت فلانا آزره أزرا قويته وآزرته عاونته (tahdhib)؛ آزره أعانه وقواه (mufradat)",
+      "source_refs": "maqayis:root=%D8%A1%20%D8%B2%20%D8%B1:headword=%D8%A3%D8%B2%D8%B1:sha=cbddf97a3be302ca;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A5167:headword=%D8%A3%D8%B2%D8%B1:root=%D8%A1%20%D8%B2%20%D8%B1:sha=538c9f29bd693829;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1525:headword=%D8%A3%D8%B2%D8%B1:root=%D8%A1%20%D8%B2%20%D8%B1:sha=48bd8e926e91a239;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D678%3Bsegment_index%3D16:headword=%D8%A3%D8%B2%D8%B1:root=%D8%A3%20%D8%B2%20%D8%B1:sha=bb36cdac01e130ed;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A32:headword=%D8%A3%D8%B2%D8%B1:root=%D8%A1%20%D8%B2%20%D8%B1:sha=655edfd96cc0ebf8",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_core_overlap"
+      ],
+      "shared_consensus_core": [
+        "aid",
+        "assistance",
+        "support"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000885",
+      "branch_id": "B003",
+      "root_norm": "ص ن ع",
+      "branch_image_ar": "الصنيعة من المعروف",
+      "what_is_ar": "يدخل فيه الصنيعة والمعروف المسدى إلى غيرك، وصنع إليه معروفا، والإعانة إذا قيل أصنع الرجل.",
+      "what_is_not_ar": "لا يدخل فيه الصناعة والحرفة، ولا فعل الشر إلا من جهة الفعل العام.",
+      "source_phrase_ar": "الصنيعة ما اصطنعته من خير (maqayis)؛ الصنيعة ما اصطنعت من خير إلى غيرك (ayn)؛ صنع إليه معروفا واصطنعت عند فلان صنيعة (sihah)؛ الصنيعة ما أعطيته وأسديته من معروف وأصنع الرجل إذا أعان آخر (tahdhib)؛ الصنيعة ما اصطنعته من خير (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2015;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A415:headword=%D8%B5%D9%86%D8%B9:root=%D8%B5%20%D9%86%20%D8%B9:sha=d68a6888374f4ce5;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3043:headword=%D8%B5%D9%86%D8%B9:root=%D8%B5%20%D9%86%20%D8%B9:sha=ddc0076d3771f1c5;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D111%3Bsegment_index%3D7:headword=%D8%B5%D9%86%D8%B9:root=%D8%B5%20%D9%86%20%D8%B9:sha=baa56d4fbf77ebb8;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A872:headword=%D8%B5%D9%86%D8%B9:root=%D8%B5%20%D9%86%20%D8%B9:sha=01d67ab7949212b9",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_bridge_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [
+        "assistance",
+        "charity",
+        "patronage",
+        "support"
+      ],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001032",
+      "branch_id": "B004",
+      "root_norm": "ع ف و",
+      "branch_image_ar": "قصد المعروف وطلب الرزق",
+      "what_is_ar": "يدخل فيه العفاة والمعتفون والعافية من الناس والدواب والطير وكل طالب معروف أو رزق",
+      "what_is_not_ar": "لا يدخل فيه المعروف المعطى نفسه ولا العافية بمعنى السلامة",
+      "source_phrase_ar": "العفاة طلاب المعروف وهم المعتفون (maqayis;ayn)؛ اعتفيت فلانا طلبت معروفه (maqayis;ayn)؛ العافية كل طالب رزق (sihah;tahdhib;mufradat)؛ العفو القصد لتناول الشيء (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2304;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1046:headword=%D8%B9%D9%81%D9%88:root=%D8%B9%20%D9%81%20%D9%88:sha=d7abe8e22d513ea3;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5455:headword=%D8%B9%D9%81%D8%A7:root=%D8%B9%20%D9%81%20%D8%A7:sha=4a448548b3db09ec;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D200%3Bsegment_index%3D2:headword=%D8%B9%D9%81%D8%A7:root=%D8%B9%20%D9%81%20%D8%A7:sha=3d4b716f2a611917;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1023:headword=%D8%B9%D9%81%D8%A7:root=%D8%B9%20%D9%81%20%D8%A7:sha=45b5c321e8a281bf",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "hospitality_welfare",
+        "provision_resource",
+        "social_relations",
+        "support_dependence"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000551",
+      "branch_id": "B001",
+      "root_norm": "ر ح ل",
+      "branch_image_ar": "المضي في سفر",
+      "what_is_ar": "الارتحال والرحيل والسير إلى وجهة",
+      "what_is_not_ar": "ليس الرَّحْل الموضوع على البعير ولا المنزل ولا الثوب الموشى",
+      "source_phrase_ar": "أصل واحد يدل على مضي في سفر (maqayis)؛ ارتحل البعير رحلة أي سار فمضى (ayn)؛ أردت الرحلة إلى موضع أي الارتحال (jamhara)؛ رحل فلان وارتحل وترحل بمعنى والاسم الرحيل (sihah)؛ الرحلة اسم ارتحال القوم للمسير (tahdhib)؛ الرحلة الارتحال (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1461;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1689:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=60592aed673bb7a3;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1389%3Asubentry%3A0%3A%D8%B1%D8%AD%D9%84:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=56c673e964b10947;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4022:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=52449fd6b20e2031;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D86:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=71b6746305f9f9df;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A550:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=82b8d40016023eee",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000551",
+      "branch_id": "B002",
+      "root_norm": "ر ح ل",
+      "branch_image_ar": "الرَّحْل على ظهر البعير",
+      "what_is_ar": "الرَّحْل وما يشبهه من مركب البعير والرحالة والرحائل",
+      "what_is_not_ar": "ليس الرحلة ولا المنزل ولا الراحلة نفسها",
+      "source_phrase_ar": "الرحالة السرج (maqayis)؛ الراحلة المركب من الإبل (ayn)؛ الرحل معروف رحل البعير (jamhara)؛ الرحل أيضا رحل البعير وهو أصغر من القتب (sihah)؛ الرحل مركب للبعير والرحالة نحوه (tahdhib)؛ الرحل ما يوضع على البعير للركوب (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1461;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1689:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=60592aed673bb7a3;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1389%3Asubentry%3A0%3A%D8%B1%D8%AD%D9%84:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=56c673e964b10947;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4022:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=52449fd6b20e2031;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D86:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=71b6746305f9f9df;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A550:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=82b8d40016023eee",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000551",
+      "branch_id": "B003",
+      "root_norm": "ر ح ل",
+      "branch_image_ar": "شد الرَّحْل",
+      "what_is_ar": "شد الرَّحْل على البعير أو وضعه عليه",
+      "what_is_not_ar": "ليس نفس السفر ولا الراحلة النجيبة ولا إعطاء الراحلة",
+      "source_phrase_ar": "رحلت بعيري أرحله رحلا (ayn)؛ رحلت البعير أرحله رحلا أي جعلت عليه رحلا (jamhara)؛ رحلت البعير أرحله رحلا إذا شددت على ظهره الرحل (sihah)؛ رحلت البعير أرحله رحلا إذا شددت عليه الرحل (tahdhib)؛ أرحلت البعير وضعت عليه الرحل (mufradat)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1689:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=60592aed673bb7a3;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1389%3Asubentry%3A0%3A%D8%B1%D8%AD%D9%84:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=56c673e964b10947;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4022:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=52449fd6b20e2031;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D86:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=71b6746305f9f9df;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A550:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=82b8d40016023eee",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000551",
+      "branch_id": "B004",
+      "root_norm": "ر ح ل",
+      "branch_image_ar": "الرَّحْل موضع النزول",
+      "what_is_ar": "منزل الرجل ومسكنه وبيته وما يستصحبه من أثاث ومتاع",
+      "what_is_not_ar": "ليس الرَّحْل الذي يشد على البعير وحده ولا نفس الارتحال",
+      "source_phrase_ar": "هذا رحل الرجل لمنزله ومأواه (maqayis)؛ رحل الرجل منزله ومسكنه (ayn)؛ رحل الرجل منزله (jamhara)؛ الرحل مسكن الرجل وما يستصحبه من الاثاث (sihah)؛ الرحل في غير هذا منزل الرجل ومسكنه وبيته (tahdhib)؛ يعبر به عما يجلس عليه في المنزل وجمعه رحال (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1461;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1689:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=60592aed673bb7a3;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1389%3Asubentry%3A0%3A%D8%B1%D8%AD%D9%84:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=56c673e964b10947;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4022:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=52449fd6b20e2031;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D86:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=71b6746305f9f9df;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A550:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=82b8d40016023eee",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000551",
+      "branch_id": "B005",
+      "root_norm": "ر ح ل",
+      "branch_image_ar": "راحلة صالحة للرحلة",
+      "what_is_ar": "الراحلة والرحول والجمل أو الناقة النجيبة القوية وما صار صالحا للرحلة بعد الهزال",
+      "what_is_not_ar": "ليس الرَّحْل نفسه ولا مرحلة الطريق",
+      "source_phrase_ar": "الراحلة المركب من الإبل ذكرا كان أو أنثى وأرحلت الإبل سمنت بعد هزال فأطاقت الرحلة (maqayis)؛ بعير رحيل إذا كان قويا على حمل الرحل (jamhara)؛ الراحلة الناقة التي تصلح لأن ترحل وكذلك الرحول (sihah)؛ الراحلة كل بعير نجيب جواد سواء كان ذكرا أو أنثى (tahdhib)؛ الراحلة البعير الذي يصلح للارتحال (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1461;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1689:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=60592aed673bb7a3;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1389%3Asubentry%3A0%3A%D8%B1%D8%AD%D9%84:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=56c673e964b10947;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4022:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=52449fd6b20e2031;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D86:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=71b6746305f9f9df;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A550:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=82b8d40016023eee",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000551",
+      "branch_id": "B006",
+      "root_norm": "ر ح ل",
+      "branch_image_ar": "منزل بين رحلتين",
+      "what_is_ar": "المرحلة والمنزل الذي ينزل به ثم يرتحل عنه وما بين المنزلين",
+      "what_is_not_ar": "ليس منزل الرجل الخاص ولا الرحلة نفسها",
+      "source_phrase_ar": "قد يكون المرتحل اسم الموضع الذي تحل فيه (ayn)؛ المرحلة الموضع الذي تنزل به من حيث ترتحل (jamhara)؛ المرحلة واحدة المراحل بينه وبين كذا مرحلة (sihah)؛ المرحلة المنزل يرتحل منها وما بين المنزلين مرحلة (tahdhib)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1689:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=60592aed673bb7a3;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1389%3Asubentry%3A0%3A%D8%B1%D8%AD%D9%84:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=56c673e964b10947;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4022:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=52449fd6b20e2031;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D86:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=71b6746305f9f9df",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000551",
+      "branch_id": "B007",
+      "root_norm": "ر ح ل",
+      "branch_image_ar": "إظعان من المكان",
+      "what_is_ar": "ترحيل الشخص أو إرحاله وإشخاصه وإزعاجه وإزالته من مكانه",
+      "what_is_not_ar": "ليس المعاونة على الرحلة ولا إعطاء الراحلة",
+      "source_phrase_ar": "رحله إذا أظعنه من مكانه (maqayis)؛ رحلته بالتشديد إذا أظعنته من مكانه وأرسلته (sihah)؛ الترحيل والإرحال بمعنى الإشخاص والإزعاج (tahdhib)؛ رحلته أظعنته أي أزلته عن مكانه (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1461;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4022:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=52449fd6b20e2031;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D86:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=71b6746305f9f9df;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A550:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=82b8d40016023eee",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000551",
+      "branch_id": "B009",
+      "root_norm": "ر ح ل",
+      "branch_image_ar": "ركوب بالأذى",
+      "what_is_ar": "ركوب الإنسان أو علوه على ظهره أو تحميله مكروها وأذى",
+      "what_is_not_ar": "ليس الرَّحْل الحسي ولا السفر ولا الراحلة",
+      "source_phrase_ar": "يرحل فلانا بما يكره (maqayis)؛ رحلته بمكروه أرحله أي ركبته بها (ayn)؛ رحلت له نفسي إذا صبرت على أذاه (sihah)؛ رحلت فلانا بسيفي إذا علوته وارتحل فلان فلانا إذا علا ظهره وركبه (tahdhib)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1461;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1689:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=60592aed673bb7a3;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4022:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=52449fd6b20e2031;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D86:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=71b6746305f9f9df",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000551",
+      "branch_id": "B010",
+      "root_norm": "ر ح ل",
+      "branch_image_ar": "وشي بصورة الرِّحال",
+      "what_is_ar": "الثوب أو البرد أو الطنافس الموسومة بصور الرِّحال وما يشبهها",
+      "what_is_not_ar": "ليس الرحل المركب على البعير ولا الارتحال",
+      "source_phrase_ar": "المرحل ضرب من برود اليمن وتكون عليه صور الرحال والرحال الطنافس الحيرية (maqayis)؛ المرحل ضرب من برود اليمن لأن عليه تصاوير رحل (ayn)؛ الرحال أيضا الطنافس الحيرية ومرط مرحل إزار خز فيه علم (sihah)؛ المرحل ضرب من برود اليمن لما عليه من تصاوير الرحل (tahdhib)؛ المرحل برد عليه صورة الرحال (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1461;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1689:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=60592aed673bb7a3;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4022:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=52449fd6b20e2031;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D86:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=71b6746305f9f9df;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A550:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=82b8d40016023eee",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000551",
+      "branch_id": "B011",
+      "root_norm": "ر ح ل",
+      "branch_image_ar": "بياض موضع الرَّحْل",
+      "what_is_ar": "الأرحل والرحلاء في الدواب حين يخالف لون الظهر أو موضع الراكب سائر اللون",
+      "what_is_not_ar": "ليس قوة السير ولا الرحالة ولا الثوب المرحل",
+      "source_phrase_ar": "لما ابيض ظهره من الدواب أرحل (maqayis)؛ فرس أرحل إذا كان في موضع ملبده بياض من البلق (jamhara)؛ الأرحل من الخيل الأبيض الظهر ومن الغنم الأسود الظهر والرحلاء من الشاء (sihah)؛ إذا كان الفرس أبيض الظهر فهو أرحل (tahdhib)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1461;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1389%3Asubentry%3A0%3A%D8%B1%D8%AD%D9%84:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=56c673e964b10947;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4022:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=52449fd6b20e2031;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D86:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=71b6746305f9f9df",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000551",
+      "branch_id": "B012",
+      "root_norm": "ر ح ل",
+      "branch_image_ar": "كناية بأرحل الركبان",
+      "what_is_ar": "العبارة الكنائية في القذف بقولهم يا ابن ملقى أرحل الركبان",
+      "what_is_not_ar": "ليس معنى السفر العام ولا الرحل الحسي إلا في صورة الكناية",
+      "source_phrase_ar": "في القذف يا ابن ملقى أرحل الركبان (maqayis)؛ تقذف أحدهم وتكني فتقول يا ابن ملقى أرحل الركبان (ayn)؛ منه قولهم في القذف يا ابن ملقى أرحل الركبان (sihah)؛ العرب تكني عن القذف للرجل بقولهم يا ابن ملقى أرحل الركبان (tahdhib)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1461;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1689:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=60592aed673bb7a3;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4022:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=52449fd6b20e2031;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D86:headword=%D8%B1%D8%AD%D9%84:root=%D8%B1%20%D8%AD%20%D9%84:sha=71b6746305f9f9df",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    }
+  ]
+}

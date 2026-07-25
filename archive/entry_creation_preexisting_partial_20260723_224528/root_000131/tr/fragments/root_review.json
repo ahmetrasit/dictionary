@@ -1,0 +1,73 @@
+{
+  "inputs_sha256": "7f1c5368db2b43b63a32f6bcd00c74d853233ae363be766fbdf622d20d8865a0",
+  "verdict": "repair",
+  "summary": "B007 adds an unsupported long-duration condition to two glosses. B008 repeatedly recasts deep, penetrating, resolute judgment as foresight, which the supplied evidence does not state. The remaining reviewed semantics are publication-ready.",
+  "issues": [
+    {
+      "target_ref": "root_000131/B007",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_016"
+      ],
+      "evidence_conflict": "The contextual gloss \"uzun aralarla görüşmek\" requires long intervals, while lu_016 supports meeting after a time or at intermittent intervals without specifying that every interval is long.",
+      "smallest_correction": "Replace \"uzun aralarla görüşmek\" with \"aralıklarla görüşmek\" or another rendering that preserves interruption and recurrence without imposing interval length."
+    },
+    {
+      "target_ref": "root_000131/B007",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_016"
+      ],
+      "evidence_conflict": "The lexical rendering begins with \"uzun aralarla\", but lu_016 states only \"bir süre sonra\" or intermittent occurrence; it does not establish long duration as a lexical requirement.",
+      "smallest_correction": "Change \"uzun aralarla; kesilip yeniden başlayarak\" to \"aralıklarla; kesilip yeniden başlayarak\"."
+    },
+    {
+      "target_ref": "root_000131/B008",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_017"
+      ],
+      "evidence_conflict": "The definition and core facet make seeing the future a constitutive feature. Lu_017 supplies sound judgment, firmness, depth, and penetrating judgment, but no future-oriented foresight.",
+      "smallest_correction": "Remove the future-foresight wording and define the core as deep, penetrating, sound, and resolute judgment."
+    },
+    {
+      "target_ref": "root_000131/B008",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_017"
+      ],
+      "evidence_conflict": "The gloss \"derin görüşlü ve ileri görüşlü olma\" and its applicability promote foresight, whereas lu_017 describes depth, firmness, and penetrating judgment.",
+      "smallest_correction": "Use a gloss such as \"derin, nüfuzlu ve sağlam görüşlü olma\" and remove the claim about seeing ahead."
+    },
+    {
+      "target_ref": "root_000131/B008",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_017"
+      ],
+      "evidence_conflict": "The lexical rendering \"derin görüşlü, ileri görüşlü ve kararlı kimse\" adds future foresight to lu_017, whose stated qualities are judgment, firmness, depth, and penetration.",
+      "smallest_correction": "Replace \"ileri görüşlü\" with a natural Turkish expression for penetrating or sound judgment, retaining depth and resolve."
+    },
+    {
+      "target_ref": "root_000131/B008",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_017"
+      ],
+      "evidence_conflict": "The distinctions against root_000599/B008 and root_001245/B005 rely on \"ileriye uzanan kavrayış\" and \"ileri görüşlülük\" as focus-only properties, but lu_017 does not supply a future-oriented boundary.",
+      "smallest_correction": "Restate those focus-only boundaries using the evidenced combination of depth, penetrating judgment, and firmness while preserving the existing contrasts with balanced opinion and a process of deep inquiry."
+    }
+  ]
+}

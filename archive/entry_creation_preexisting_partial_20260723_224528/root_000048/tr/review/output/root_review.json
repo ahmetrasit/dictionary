@@ -1,0 +1,59 @@
+{
+  "verdict": "repair",
+  "summary": "B005 promotes a description supplied only by one source into the shared branch core, synthesis, and concept gloss. B001 also omits a directly overlapping neighbor while claiming the remaining candidates belong to different semantic areas.",
+  "issues": [
+    {
+      "target_ref": "root_000048/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_018",
+        "lu_019",
+        "lu_020",
+        "lu_021"
+      ],
+      "evidence_conflict": "The evidence supports 'a kind of tree' across the branch forms, but only the Sihah portion of lu_018 describes the tree as beautiful in appearance and bitter in taste. The definition and core facet make those source-specific properties necessary parts of the branch core.",
+      "smallest_correction": "Define the core as a kind of tree and move the beautiful-appearance and bitter-taste description to a source-specific associated facet supported by lu_018."
+    },
+    {
+      "target_ref": "root_000048/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_018"
+      ],
+      "evidence_conflict": "The common summary presents the beautiful appearance and bitter taste as part of the shared record. In lu_018, Jamhara supplies only 'a kind of tree', whereas the appearance and taste description occurs only in the Sihah portion.",
+      "smallest_correction": "Limit the shared synthesis to agreement that the expression denotes a kind of tree, and state without implying cross-source agreement that one source additionally describes its appearance and taste."
+    },
+    {
+      "target_ref": "root_000048/B005",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_018",
+        "lu_019",
+        "lu_020",
+        "lu_021"
+      ],
+      "evidence_conflict": "The concept gloss makes beautiful appearance and bitter taste the branch-wide representation even though the evidence attaches those properties only to the Sihah portion of lu_018; the other supplied forms establish only the tree-kind meaning and singular derivations.",
+      "smallest_correction": "Use a core gloss equivalent to 'a kind of tree' and retain the appearance and taste description only in a source-specific or contextual gloss with appropriately limited applicability."
+    },
+    {
+      "target_ref": "root_000048/B001",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002",
+        "lu_005",
+        "lu_006"
+      ],
+      "evidence_conflict": "The coverage note says all unpublished candidates concern different actions or domains, but root_000076/B008 explicitly has the boundary 'shortcoming, slackness, and weakness', including negated non-shortcoming. That directly overlaps B001's shortcoming, slowing, and negated effort uses more closely than the note acknowledges.",
+      "smallest_correction": "Add root_000076/B008 as a synonym or near-synonym relation, using partial boundaries if its weakness component is treated as extra scope, and revise the coverage note accordingly."
+    }
+  ]
+}

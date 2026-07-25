@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": "10caa52418f1e719d8a543ede348eb6e6af1227e31124ee783636d7ae9b68b21",
+  "verdict": "repair",
+  "summary": "Anlam dalları ve kaynak bireşimi genel olarak kanıtla uyumludur. B005 dalındaki komşuluk notu, aynı komşu için yayımlanan kısmi yakınlık sınıflandırmasıyla çeliştiğinden küçük bir düzeltme gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_000055/B005",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_019"
+      ],
+      "evidence_conflict": "Komşu kapsama notu root_001662/B004 dalının tam örtüştüğünü söylerken yayımlanan ayrım aynı dalı near_synonym ve partial olarak, bağlayıcı ahit ile karşılıklı vaat farkına dayanarak tanımlar. lu_019 belirli bir işte karşılıklı ahitleşmeyi destekler; bu iki sınıflama aynı anda doğru olamaz.",
+      "smallest_correction": "neighbor_coverage_note içindeki tam örtüşür ifadesini en yakın sınırı oluşturur biçiminde değiştirerek notu near_synonym ve partial sınıflandırmasıyla uyumlu hale getirin."
+    }
+  ]
+}

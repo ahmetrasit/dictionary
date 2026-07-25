@@ -1,0 +1,41 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtla uyumlu olsa da bir kaynak ayrıntısı atlanmış, çoğalma dalında uğur bütün kullanımlara zorunlu kılınmış ve bir komşu sınırında kaynak varyantı zorunlu özellik olarak sunulmuştur.",
+  "issues": [
+    {
+      "target_ref": "root_000051/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_014"
+      ],
+      "evidence_conflict": "lu_014 için tek kaynak tanıklığı, toplumun çekindiği yetkilileri dört sınıf olarak ele alır. Kaynak ayrıntısı bu ayırt edici sayısal sınırlamayı aktarmadan yalnızca yetkili kesimlerin birlikte anıldığını söylüyor.",
+      "smallest_correction": "lu_014 kaynak ayrıntısına, tanıklığın bu yetkilileri dört sınıf olarak ele aldığını ekleyin; kanıtta bulunmayan sınıf adları eklemeyin."
+    },
+    {
+      "target_ref": "root_000051/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_016",
+        "lu_017",
+        "lu_018"
+      ],
+      "evidence_conflict": "lu_017 ve lu_018 yalın çoğalma ve artışı bildirirken lu_016 bereket ve uğur yönünü ayrıca taşır. Tanım ile F001, her artışı uğur ve bolluk olarak görülmekle birleştirerek kaynaklara göre değişen bu yönü zorunlu çekirdeğe yükseltiyor.",
+      "smallest_correction": "Tanım ile F001'de yalın çoğalma ve gelişmeyi bereket veya uğur kullanımından ayırın; lu_017 ve lu_018 için uğuru zorunlu kılmadan ikinci yönü ayrı ya da seçenekli biçimde gösterin."
+    },
+    {
+      "target_ref": "root_000051/B008",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_032"
+      ],
+      "evidence_conflict": "lu_032 görüş zayıflığını ortak çekirdek olarak verir; herkese danışma ve her söze uyma ise ayrı kaynak betimlemeleridir. root_000041/B006 karşılaştırmasındaki focus_only bu iki davranışın odak dalında zorunlu olduğunu söyleyerek varyantları bütün kullanımların sınırı haline getiriyor.",
+      "smallest_correction": "focus_only ve distinction metinlerinde zorunluluk bildiren ifadeyi kaldırın; herkese danışma ve her söze uymayı bazı kaynak betimlemelerinde öne çıkan ayırt edici yönler olarak sunun."
+    }
+  ]
+}

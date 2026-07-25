@@ -27,7 +27,7 @@ EXPORT_NAMES = {
 }
 
 
-def render_jsonl(entries_dir: Path, projection: str = "master") -> tuple[str, int]:
+def render_jsonl(entries_dir: Path, projection: str = "master") -> tuple[str, int, str | None]:
     if projection not in EXPORT_NAMES:
         raise ContractError(f"Unknown JSONL projection: {projection}")
     paths = sorted(entries_dir.glob("root_*.json"))
@@ -56,7 +56,7 @@ def render_jsonl(entries_dir: Path, projection: str = "master") -> tuple[str, in
         + "\n"
         for entry in entries
     )
-    return content, len(entries)
+    return content, len(entries), language
 
 
 def write_output(path: Path, content: str, *, check: bool) -> None:
@@ -110,7 +110,12 @@ def main() -> int:
         else PROJECT / "v2/output" / f"dictionary.{args.language}.jsonl"
     )
     try:
-        content, count = render_jsonl(entries_dir, args.projection)
+        content, count, exported_language = render_jsonl(entries_dir, args.projection)
+        if exported_language is not None and exported_language != args.language:
+            raise ContractError(
+                f"Export language mismatch: --language {args.language}, "
+                f"entries are {exported_language}"
+            )
         write_output(output, content, check=args.check)
     except (OSError, ContractError, sqlite3.Error) as error:
         raise SystemExit(str(error)) from error

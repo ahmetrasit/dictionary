@@ -1,0 +1,73 @@
+{
+  "verdict": "repair",
+  "summary": "İlk dalda hayvanları tedavi etme anlamı birkaç alanda sonuç garantileyen iyileştirme anlamına yükseltilmiş. Üçüncü dalın bir komşu ayrımında da yön bulamama kapsamı odak dala taşınmış. Bunların dışında dalların çekirdekleri, kaynak kapsamı, sözlüksel karşılıkları ve komşu ilişki türleri kanıtla uyumlu.",
+  "issues": [
+    {
+      "target_ref": "root_000125/B001",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003",
+        "lu_004",
+        "lu_005",
+        "lu_006"
+      ],
+      "evidence_conflict": "lu_003-lu_006 hayvanları tedavi eden kişiyi ve tedavi işini genel anlam olarak verir; yalnız lu_004 içindeki kaynaklardan biri iyileştirme sonucunu ayrıca söyler. Tanım ile F002-F003, genel anlamı hayvanı mutlaka iyileştirme olarak sunarak bu özel ayrıntıyı çekirdeğe yükseltiyor.",
+      "smallest_correction": "Tanım ile F002-F003 içindeki \"iyileştiren\" ve \"iyileştirme\" anlatımlarını \"tedavi eden\" ve \"tedavi etme\" olarak değiştir; yarma eylemiyle kurulan adlandırma bağını koru."
+    },
+    {
+      "target_ref": "root_000125/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003",
+        "lu_004",
+        "lu_005",
+        "lu_006"
+      ],
+      "evidence_conflict": "Ortak özet, lu_003-lu_006 kapsamındaki genel tedavi anlamını \"hastalıktan iyileştiren\" diye sonuç garantileyen bir anlamla veriyor. İyileştirme ifadesi yalnız lu_004 içindeki kaynaklardan birine özgüyken diğer kayıtlar tedavi etmeyi bildiriyor.",
+      "smallest_correction": "Ortak özetteki \"hastalıktan iyileştiren kişi\" ifadesini \"hasta hayvanları tedavi eden kişi\" olarak daralt."
+    },
+    {
+      "target_ref": "root_000125/B001",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003",
+        "lu_004",
+        "lu_005",
+        "lu_006"
+      ],
+      "evidence_conflict": "Kavram karşılığının metni \"hayvan sağaltımı\" ile kanıta uyuyor; ancak hata profilindeki korunan anlam, lu_003-lu_006 için hayvanları \"iyileştiren\" kişiyi genelleştiriyor. Kanıtın ortak çekirdeği başarılı iyileştirme değil, tedavi etmedir.",
+      "smallest_correction": "Hata profilindeki \"hayvanları iyileştiren kişiyi\" sözünü \"hayvanları tedavi eden kişiyi\" olarak değiştir; kavram karşılığının metnini koru."
+    },
+    {
+      "target_ref": "root_000125/B001",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003",
+        "lu_004",
+        "lu_005",
+        "lu_006"
+      ],
+      "evidence_conflict": "Bağlamsal karşılıkların başlıkları uygundur; fakat açıklamalar kişiyi hayvanı \"iyileştiren\", işi de hayvanı \"hastalıktan kurtaran\" uygulama diye tanımlıyor. lu_003-lu_006 genel olarak tedavi eden kişi ve tedavi işini destekler, başarılı sonucu zorunlu kılmaz.",
+      "smallest_correction": "İlgili uygulanabilirlik ve korunan anlam cümlelerinde iyileştirme veya hastalıktan kurtarma yerine hayvanı tedavi etme anlatımını kullan."
+    },
+    {
+      "target_ref": "root_000125/B003",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_013"
+      ],
+      "evidence_conflict": "lu_013 odak dalı şaşkınlık ve bocalama olarak sınırlar. root_000377/B001 kartında yönün kaybolması, bakışın şaşması ve yolun çıkışını bilememe komşuya özgü kapsamdır; buna karşın ortak alan cümlesi hangi yöne gidileceğini bilememeyi iki dala birden yüklüyor. Odak alanındaki \"ani\" nitelemesi de lu_013 tarafından desteklenmiyor.",
+      "smallest_correction": "root_000377/B001 ayrımında ortak alanı şaşkınlık ve bocalamayla sınırla; yön veya yol bulamama ayrıntısını yalnız komşu alanda tut ve odak alanından \"ani\" nitelemesini çıkar."
+    }
+  ]
+}

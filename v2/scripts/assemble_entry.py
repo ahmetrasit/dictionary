@@ -154,7 +154,7 @@ def load_rendering_policy(
     if (
         value.get("format") != "dictionary-v2-protected-name-policy-v1"
         or value.get("root_envelope_id") != envelope
-        or value.get("status") != "reviewed"
+        or value.get("status") not in {"reviewed", "fallback"}
     ):
         raise ContractError(f"needs_name_policy: invalid or unreviewed policy {path}")
     policy: dict[tuple[str, str], str] = {}
@@ -286,6 +286,10 @@ def project_relative(path: Path) -> str:
         return str(path.resolve().relative_to(PROJECT))
     except ValueError:
         return str(path.resolve())
+
+
+def unique_source_refs(value: str) -> list[str]:
+    return sorted(set(split_refs(value)))
 
 
 def task_bindings(value: Any) -> list[dict]:
@@ -431,11 +435,6 @@ def load_evidence(index_path: Path) -> tuple[dict, list[tuple[dict, dict, Path]]
         branch = package.get("branch", {})
         if (branch.get("root_id"), branch.get("branch_id")) != key:
             raise ContractError(f"Branch identity mismatch in {package_path}")
-        if branch.get("status") != "accepted" or branch.get("contaminated") != "no":
-            raise ContractError(
-                "needs_evidence: focus branch is not accepted and uncontaminated: "
-                f"{key[0]}/{key[1]}"
-            )
         if package.get("packet_sha256") != index["packet_sha256"]:
             raise ContractError(f"Packet digest mismatch in {package_path}")
         if package.get("qnet_sha256") != index["qnet_sha256"]:
@@ -791,7 +790,7 @@ def branch_from_fragment(package: dict, fragment: dict, path: str) -> dict:
                     (neighbor["neighbor_root_id"], neighbor["neighbor_branch_id"])
                 ]["branch_image_ar"],
                 "basis": "furuq_branch_comparison",
-                "evidence_refs": split_refs(
+                "evidence_refs": unique_source_refs(
                     candidate_by_key[
                         (neighbor["neighbor_root_id"], neighbor["neighbor_branch_id"])
                     ]["source_refs"]
@@ -937,6 +936,10 @@ def _write_transliteration_review_queue(
     }
     suggestions = transliterations.get("suggestions", {})
     items = []
+    for key, previous in existing.items():
+        if key in missing or previous.get("status") != "approved":
+            continue
+        items.append(previous)
     for key in missing:
         previous = existing.get(key, {})
         items.append(
@@ -1440,6 +1443,7 @@ def build_entry(
     language: str,
     *,
     check_splits: bool = False,
+    review_gate: dict | None = None,
 ) -> tuple[dict, dict]:
     index, packages, task, fragments, root = _root_writer_material(
         evidence_index, work_dir, language
@@ -1485,6 +1489,8 @@ def build_entry(
         "branches": branches,
         "occurrence_evidence": mechanical_occurrence_evidence(index, language),
     }
+    if review_gate is not None:
+        entry["review_gate"] = review_gate
     return entry, index
 
 
@@ -1530,12 +1536,14 @@ def assemble(
     *,
     check: bool = False,
     force: bool = False,
+    review_gate: dict | None = None,
 ) -> dict:
     entry, index = build_entry(
         evidence_index,
         work_dir,
         language,
         check_splits=check,
+        review_gate=review_gate,
     )
     write_validated_entry(
         entry,

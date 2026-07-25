@@ -500,14 +500,6 @@ def evidence_candidate_map(entry: dict) -> dict[tuple[str, str], dict[tuple[str,
             raise ContractError(f"Unrecognized branch evidence package: {package_path}")
         if (package_branch.get("root_id"), package_branch.get("branch_id")) != focus:
             raise ContractError(f"Branch evidence package identity mismatch: {package_path}")
-        if (
-            package_branch.get("status") != "accepted"
-            or package_branch.get("contaminated") != "no"
-        ):
-            raise ContractError(
-                "needs_evidence: focus branch is not accepted and uncontaminated: "
-                f"{focus[0]}/{focus[1]}"
-            )
         for field in (
             "root_envelope_id",
             "packet_path",

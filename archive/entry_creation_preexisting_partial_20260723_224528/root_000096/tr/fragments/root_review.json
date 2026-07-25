@@ -1,0 +1,77 @@
+{
+  "inputs_sha256": "1ff1dbb3f7fa11f37d93f242d89e92a14ff4b93e2d18ab1d71f9b8a5a0c3a845",
+  "verdict": "repair",
+  "summary": "Zirh dali iki bicimin sinirlarini kisalik kosulunda birlestiriyor; kurbanlik hayvan dali ise butun kullanimlara ortak olmayan kutsal yer kosulunu cekirdege tasiyor. Etkilenen kavram haritalari, kaynak sentezleri ve kavram/bağlamsal karsiliklar dar kapsamli duzeltme gerektiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_000096/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003",
+        "lu_004"
+      ],
+      "evidence_conflict": "Tanim, daldaki her zirhi hem bedeni saran hem de kisa bir zirh olarak sunuyor. lu_003 kisa zirhi desteklerken lu_004 yalnizca beden uzerinde bulundugu icin bu adla anilan zirhi bildiriyor ve kisalik kosulu getirmiyor.",
+      "smallest_correction": "Tanimi iki kaydi secenekli verecek bicimde, kisa zirh veya beden uzerinde bulundugu icin bu adla anilan zirh olarak duzeltin; kisaligi yalniz lu_003'e baglayin."
+    },
+    {
+      "target_ref": "root_000096/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003",
+        "lu_004"
+      ],
+      "evidence_conflict": "Ortak ozet, kisaligi kaynaklarin ortak cekirdegi sayiyor. Oysa lu_003 icindeki bir aciklama adi bedeni sarmaya baglayip kisaligi belirtmiyor; lu_004 de zirhin beden uzerindeki konumundan turetilen adi kaydediyor.",
+      "smallest_correction": "Ortak cekirdegi bedenle iliskili zirh olarak verin; kisa zirh betimlemesini ve beden uzerinde bulunmaya dayali adlandirmayi ortak zorunluluklar yerine ayri kaynak ayrintilari olarak belirtin."
+    },
+    {
+      "target_ref": "root_000096/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003",
+        "lu_004"
+      ],
+      "evidence_conflict": "\"Kisa govde zirhi\" karsiligi, lu_004'teki beden uzerinde bulundugu icin adlandirilan zirhi da zorunlu olarak kisa gosteriyor. Bu nedenle karsilik, kavram haritasindaki iki kaynak varyantinin tamamini temsil etmiyor.",
+      "smallest_correction": "Kavram karsiligini \"kisa zirh veya beden uzerinde tasinan zirh\" gibi iki varyanti koruyan bir ifadeyle degistirin ve uygulanabilirlik ile hata profilini buna gore duzeltin."
+    },
+    {
+      "target_ref": "root_000096/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005"
+      ],
+      "evidence_conflict": "F001, hayvanin mutlaka kutsal bir yere sunulup kesilmesini cekirdek kosul yapiyor. lu_005 ise Kabe veya Mekke'ye sunma kayitlari yaninda hedy ve bayram kurbani kullanimini da kapsiyor; kurban olma her durumda kutsal bir yere goturulme kosulunu gerektirmiyor.",
+      "smallest_correction": "F001'i hedy veya kurban olarak ayrilip kesilecek deve ya da sigir cekirdegiyle sinirlayin; kutsal yere sunulmayi yalniz bunu acikca bildiren kaynak kullanimlarina bagli bir ozellestirme yapin."
+    },
+    {
+      "target_ref": "root_000096/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005",
+        "lu_006"
+      ],
+      "evidence_conflict": "Ortak ozet, kaynaklarin kutsal yere armagan edilip kesilme kosulunu paylastigini soyluyor. Kanit ise Kabe veya Mekke'ye sunma anlatimlariyla daha genis hedy ve bayram kurbani anlatimlarini bir arada veriyor; yer siniri ortak degil.",
+      "smallest_correction": "Ortak ozeti sunu veya kurban icin ayrilan deve ya da sigir cekirdegine indirin ve kutsal yere sunma ile daha genis hedy ve kurban kapsamini kaynaklar arasindaki fark olarak kaynak-tarafsiz bicimde aciklayin."
+    },
+    {
+      "target_ref": "root_000096/B003",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005"
+      ],
+      "evidence_conflict": "\"Adaklik buyukbas hayvan\" karsiligi deve ile sigir sinirini acikca korumaz ve kanitta bulunmayan baska buyuk hayvanlari kapsayabilir. lu_005'in tur siniri deve veya sigirdir.",
+      "smallest_correction": "Bu baglamsal karsiligi \"adaklik deve veya sigir\" ya da ayni tur sinirini acikca koruyan dogal bir ifadeyle degistirin."
+    }
+  ]
+}

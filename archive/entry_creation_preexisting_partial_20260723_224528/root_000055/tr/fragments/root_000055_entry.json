@@ -1,0 +1,859 @@
+{
+  "inputs_sha256": "3a0969bd059b219351771a5a4601e895114bbffa7674f56e7ee703337ca157d5",
+  "artifact_format": "dictionary-v2-root-entry-draft-v1",
+  "generated_by": "v2/scripts/accept_root_writer.py",
+  "root_envelope_id": "root_000055",
+  "language": "tr",
+  "branches": [
+    {
+      "branch_ref": "root_000055/B001",
+      "concept_map": {
+        "definition": "Bir şeyi zihinde tutamayıp unutma veya ondan habersiz kalma durumudur. Bu durum, aklın kişinin yanında değilmiş gibi işlemesi ölçüsüne vardığında kişiyi niteleyen bir söze de dönüşür.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Temel anlam, bir şeyin zihinden çıkmasıyla oluşan unutma ve dalgınlıktır.",
+            "claim_ids": [
+              "lu_001",
+              "lu_002",
+              "lu_003"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "extension",
+            "statement": "Zihinsel durum, aklı başında olmayan kişiyi niteleyen bir kullanıma uzanır.",
+            "claim_ids": [
+              "lu_004"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynakların ortak çekirdeği unutma ve dalgınlıktır; hem yalın ad hem de bir şeyi unutmayı bildiren eylem biçimleriyle gösterilir. Bunun yanında, zihinsel yetisi yanında değilmiş gibi görülen kişi için bir niteleme de aktarılır.",
+        "common_claim_ids": [
+          "lu_001",
+          "lu_002",
+          "lu_003"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_004"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek bir kaynak, bu kökten gelen bir biçimi aklı başında olmayan kişi için kullanır."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "unutma ve zihinsel dalgınlık",
+        "applicability": "Bir şeyin zihinden çıkmasını ve bunun oluşturduğu dalgınlık durumunu birlikte anlatan genel karşılıktır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Unutma eylemini ve ona eşlik eden zihinsel dalgınlığı birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "unutmak",
+          "usage_role": "contextual",
+          "applicability": "Bir kişinin belirli bir şeyi zihninde tutamamasını bildiren eylem bağlamlarında kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Belirli bir şeyin zihinden çıkması eylemini korur.",
+            "loses": "Genel dalgınlık durumunu ve kişiyi niteleyen zihinsel uzantıyı dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "aklı başında olmamak",
+          "usage_role": "explanatory",
+          "applicability": "Zihinsel yetisi yanında değilmiş gibi nitelenen kişi için açıklayıcı karşılıktır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Kişideki ileri zihinsel dağınıklık ve akıl eksikliği görünümünü korur.",
+            "loses": "Sıradan bir şeyi unutma eylemini doğrudan anlatmaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_001",
+          "rendering_kind": "ordinary",
+          "target_gloss": "unutma ve dalgınlık"
+        },
+        {
+          "lexical_unit_id": "lu_002",
+          "rendering_kind": "ordinary",
+          "target_gloss": "unuttu"
+        },
+        {
+          "lexical_unit_id": "lu_003",
+          "rendering_kind": "ordinary",
+          "target_gloss": "bir şeyi unuttum"
+        },
+        {
+          "lexical_unit_id": "lu_004",
+          "rendering_kind": "ordinary",
+          "target_gloss": "aklı başında olmayan"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "dikkatsizlik",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Uyanıklığın azalmasıyla ilgili dalgınlık yönünü kısmen korur.",
+            "loses": null,
+            "adds": "Unutma gerçekleşmeden yapılan özensiz davranışları da kapsar.",
+            "collision": "Dikkat eksikliğini unutmanın kendisiyle karıştırabilir."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001501/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Aklı yanında değilmiş gibi görülen kişiyi niteleyen özel uzantı bu dalda bulunur.",
+          "neighbor_only": "Hatırlanan bir şeyin sonradan zihinden çıkması, emanet edilen bilgiyi koruyamama ve başkasına unutturma açıkça kapsanır.",
+          "gloss": "unutma ve zihinden çıkma",
+          "shared_zone": "Her iki dal da bir şeyin zihinde tutulamaması ve unutulması alanında büyük ölçüde örtüşür.",
+          "distinction": "Bu dal unutma ile dalgınlığı ve bunların kişi niteliğine uzanmasını verir; komşu dal ise önceki hatırlamanın kaybı, bilginin korunamaması ve başkasına unutturma gibi daha belirgin süreçleri kapsar."
+        },
+        {
+          "neighbor_ref": "root_001097/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bir şeyin doğrudan unutulması ve aklı başında olmayan kişiye uzanan niteleme vardır.",
+          "neighbor_only": "Yeterince sakınmama ve uyanık olmama yüzünden bir şeyi gözden kaçırma koşulu belirgindir.",
+          "gloss": "dalgınlıkla gözden kaçırma",
+          "shared_zone": "Her ikisi de uyanıklığın azalması sonucu bir şeyin bilinç alanı dışında kalmasını anlatabilir.",
+          "distinction": "Bu dalın çekirdeği unutma ve genel zihinsel dalgınlıktır; komşu dalda ise korunaklı ve uyanık davranmama nedeniyle bir şeyi gözden kaçırma öne çıkar."
+        },
+        {
+          "neighbor_ref": "root_000523/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Unutmanın özel bir dış sebebe bağlı olması gerekmez ve kişiyi niteleyen zihinsel uzantı bulunur.",
+          "neighbor_only": "Meşguliyet, korku veya üzüntü gibi bir etkenin kişiyi bir şeyden uzaklaştırması belirgindir.",
+          "gloss": "bir etkiyle akıldan çıkma",
+          "shared_zone": "İki dalda da bir şey zihinsel dikkatin dışına çıkar ve unutulmuş görünebilir.",
+          "distinction": "Bu dal sebepten bağımsız unutmayı adlandırır; komşu dal ise çoğunlukla başka bir uğraşın ya da güçlü duygunun kişiyi o şeyden uzaklaştırdığı zihinsel kopuşu anlatır."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar incelendi; unutma, dikkatsizce gözden kaçırma ve dış etkenle zihinden uzaklaşma arasındaki sınırı en iyi gösteren üç komşu yayımlandı. Akıl, gönül ve aynı kökün öteki anlam dalları yalnızca alan ya da biçim yakınlığı taşıdığı için ayrıca eklenmedi.",
+      "branch_image_ar": "الأَمَه والنسيان",
+      "what_is_ar": "يدخل فيه الأَمَه بمعنى النسيان وفعل أمه وأمهت إذا نسي، ووصف المأموه لمن ليس عقله معه",
+      "source_phrase_ar": "الأمه النسيان وقد أمه يأمه أمها أي نسي (ayn)؛ ألأمه النسيان تقول منه أمه بالكسر (sihah)؛ الأمه النسيان يقال أمه يأمه أمها (tahdhib)؛ أمه الرجل فهو مأموه وهو الذي ليس عقله معه (tahdhib)؛ أمهت إذا نسيت (maqayis)",
+      "sources": [
+        "MQ",
+        "AY",
+        "SI",
+        "TA"
+      ],
+      "source_note": {
+        "TA": "Tek bir kaynak, bu kökten gelen bir biçimi aklı başında olmayan kişi için kullanır."
+      }
+    },
+    {
+      "branch_ref": "root_000055/B002",
+      "concept_map": {
+        "definition": "Bir olguyu ya da kişinin kendi aleyhindeki bir durumu kabul edip açıkça söylemesidir. Özellikle ceza gerektiren bir konuda baskıyla sınanan kişinin kabulde bulunması bağlamında görülür.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Temel anlam, bir gerçeği veya kişinin kendi yaptığını kabul ederek açıkça bildirmesidir.",
+            "claim_ids": [
+              "lu_005",
+              "lu_006"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Kullanım, ceza gerektiren bir konuda sınanan ve kabulde bulunmaya zorlanan kişi bağlamında özelleşir.",
+            "claim_ids": [
+              "lu_006"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "source_variant",
+            "statement": "Bu anlam yaygın bir dil kullanımı olarak değil, sınırlı bir haber bağlamından aktarılan seyrek bir kullanım olarak sunulur.",
+            "claim_ids": [
+              "lu_005"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar anlamı, bir gerçeği ya da suçu kabul edip açıkça söyleme olarak verir. Kullanımın yaygın olmadığı ve özellikle ceza gerektiren bir konuda sınama veya cezalandırma yoluyla kabul sağlama anlatısında geçtiği belirtilir.",
+        "common_claim_ids": [
+          "lu_005",
+          "lu_006"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "kabul edip açıkça söyleme",
+        "applicability": "Bir kişinin bir gerçeği ya da kendi aleyhindeki durumu benimseyip sözle bildirdiği bağlamların genel karşılığıdır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Hem içeriği kabul etme hem de bunu sözle açığa vurma işlemlerini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "suçunu kabul etmek",
+          "usage_role": "contextual",
+          "applicability": "Ceza gerektiren bir fiil hakkında sınanan kişinin kendi yaptığını kabul ettiği bağlamda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Kişinin kendi aleyhindeki bir fiili kabul edip bildirmesini korur.",
+            "loses": "Suç dışındaki gerçeklerin kabul edilmesini ve genel kullanım alanını dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_005",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kabul etme ve açıkça söyleme"
+        },
+        {
+          "lexical_unit_id": "lu_006",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kabul edip açıkça söyledi"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "onaylama",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Bir içeriği doğru veya geçerli sayma yönünü kısmen korur.",
+            "loses": null,
+            "adds": "Kişinin kendi aleyhine bir şeyi açığa vurmadığı sıradan uygun bulma durumlarını da kapsar.",
+            "collision": "Bir öneriyi uygun bulma ile kişinin gerçeği açıkça kabul etmesini karıştırabilir."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001002/B009",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Seyrek bir haber kullanımı ve ceza konusunda sınamayla kabul sağlama bağlamı öne çıkar.",
+          "neighbor_only": "Boyun eğme ve alçalma yönü bazı kullanımlarda anlamın parçası olabilir.",
+          "gloss": "gerçeği veya borcu kabul etme",
+          "shared_zone": "Her iki dal da kişinin bir gerçeği, suçu veya kendi üzerindeki yükümlülüğü kabul edip bildirmesini kapsar.",
+          "distinction": "Bu dal belirli ve seyrek bir anlatıda, özellikle ceza konusunda sınanan kişinin kabulünü aktarır; komşu dalın alanı daha geniştir ve kabulün yanında boyun eğme yönünü de taşıyabilir."
+        },
+        {
+          "neighbor_ref": "root_001215/B007",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Ceza gerektiren konuda sınamayla kişiden kabul alma bağlamı belirgindir.",
+          "neighbor_only": "Bir şeyi veya haberi sağlamlaştırıp kesin duruma getirme ve başkasını kabul ettirme ayrıca kapsanır.",
+          "gloss": "doğrulayıp kabul etme",
+          "shared_zone": "İki dal da bir gerçeğin veya hakkın kişi tarafından kabul edilip açıkça belirtilmesi alanında örtüşür.",
+          "distinction": "Bu dal kişinin kendi kabul bildirimine ve özel sınama bağlamına bağlıdır; komşu dal ise doğrulama, sabitleme ve bir başkasını kabule yöneltme gibi daha geniş işlemleri içerir."
+        },
+        {
+          "neighbor_ref": "root_000088/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Kabul edip bildirme çekirdeği, boyun eğme anlamını zorunlu kılmaz.",
+          "neighbor_only": "Zorlama altında hakka boyun eğme, itaat ve isteksizlik açıkça anlam alanındadır.",
+          "gloss": "baskı altında kabul ve boyun eğme",
+          "shared_zone": "Her iki dalda da baskı veya zorluk ortamında kişinin bir hakkı ya da kendi üzerindeki durumu kabul etmesi bulunabilir.",
+          "distinction": "Bu dalda baskı özel bağlamı oluşturur ama çekirdek açık kabul bildirimidir; komşu dalda zorlama altında boyun eğme ve itaat daha kurucu bir yer tutar."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; kabul bildiriminin geniş alanı, doğrulama ve baskı altında boyun eğmeyle sınırını gösteren üç komşu seçildi. Yemin, gizliyi açma, yalan ve aynı kökün ilgisiz dalları çekirdek anlamı yeterince paylaşmadığı için yayımlanmadı.",
+      "branch_image_ar": "الأَمَه والإقرار",
+      "what_is_ar": "يدخل فيه الأَمَه بمعنى الإقرار والاعتراف في خبر الزهري وما قارب سياقه",
+      "source_phrase_ar": "أمه بمعنى أقر واعترف فهي لغة غير مشهورة (sihah)؛ الأمه الإقرار (tahdhib)؛ لم أسمع الأمه الإقرار إلا في هذا الحديث (tahdhib)",
+      "sources": [
+        "SI",
+        "TA"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_000055/B003",
+      "concept_map": {
+        "definition": "Koyunlarda çıkan, kabarcıklarla görülen ve çiçek ya da kızamık benzeri sayılan bir hastalıktır. Hastalığa yakalanan sürü ve hayvan için türemiş nitelemelerle, insana bu hastalığın gelmesini dileyen kötü sözde de kullanılır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Temel anlam, koyunlarda kabarcık çıkaran çiçek veya kızamık benzeri bir hastalıktır.",
+            "claim_ids": [
+              "lu_007",
+              "lu_008"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "associated_use",
+            "statement": "Hastalığın sürüye bulaşması ve hastalıklı hayvanın nitelenmesi ayrı eylem ve niteleme biçimleriyle anlatılır.",
+            "claim_ids": [
+              "lu_009",
+              "lu_010"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "associated_use",
+            "statement": "Hastalık adı, bir insana hastalık gelmesini dileyen kalıplaşmış kötü sözün parçası olur.",
+            "claim_ids": [
+              "lu_011"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar koyunlarda kabarcık çıkaran, kızamık veya çiçek hastalığına benzetilen bir hastalığı anlatır. Sürünün bu hastalığa yakalanması, hayvanın hastalıklı diye nitelenmesi ve hastalığın insana yöneltilen kötü bir dilekte anılması da ortak anlatımda yer alır.",
+        "common_claim_ids": [
+          "lu_007",
+          "lu_009",
+          "lu_010",
+          "lu_011"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_008"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek bir kaynak, aynı kökteki başka bir ad biçimini doğrudan çiçek hastalığı anlamında verir."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "koyunlarda kabarcıklı çiçek hastalığı",
+        "applicability": "Koyunlarda kabarcıklarla ortaya çıkan ve çiçek hastalığına benzetilen hayvan hastalığının bütün çekirdeğini karşılar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Hayvan türünü, kabarcıklı görünümü ve çiçek hastalığı niteliğini birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "sürü bu hastalığa yakalandı",
+          "usage_role": "contextual",
+          "applicability": "Hastalığın koyun sürüsünde ortaya çıkmasını bildiren eylem biçiminin doğal cümle karşılığıdır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Hastalığın sürüde ortaya çıkması ve hayvanları etkilemesi olayını korur.",
+            "loses": "Hastalığın kabarcıklı görünümünü ve özel adlandırmasını tek başına belirtmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "başına bu hastalık gelsin",
+          "usage_role": "contextual",
+          "applicability": "Bir insana hastalık gelmesini dileyen kalıplaşmış kötü sözün bağlama uygun karşılığıdır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Hastalık adının bir insana yöneltilen kötü dilekteki işlevini korur.",
+            "loses": "Koyun hastalığının belirtilerini ve hastalıklı hayvan nitelemesini dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_007",
+          "rendering_kind": "ordinary",
+          "target_gloss": "koyunlarda çıkan kabarcıklı çiçek hastalığı"
+        },
+        {
+          "lexical_unit_id": "lu_008",
+          "rendering_kind": "ordinary",
+          "target_gloss": "çiçek hastalığı"
+        },
+        {
+          "lexical_unit_id": "lu_009",
+          "rendering_kind": "ordinary",
+          "target_gloss": "koyunlar bu hastalığa yakalandı"
+        },
+        {
+          "lexical_unit_id": "lu_010",
+          "rendering_kind": "ordinary",
+          "target_gloss": "bu hastalığa yakalanmış koyun"
+        },
+        {
+          "lexical_unit_id": "lu_011",
+          "rendering_kind": "ordinary",
+          "target_gloss": "insana hastalık gelsin diye söylenen kötü dilek"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "kızamık",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Kabarcıklı döküntü görünümüne yapılan benzetmeyi korur.",
+            "loses": null,
+            "adds": "İnsanlarda bilinen ayrı hastalığı ve onun bütün kullanım alanını çağrıştırır.",
+            "collision": "Benzetme amacıyla anılan hastalığı bu koyun hastalığıyla özdeşleştirir."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000325/B005",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Hastalık özellikle koyunlara bağlanır ve çiçek hastalığına da benzetilir.",
+          "neighbor_only": "Bilinen kızamık hastalığı ve bedende ya da böğürde çıkan döküntüler daha genel biçimde kapsanır.",
+          "gloss": "kızamık ve döküntü",
+          "shared_zone": "Her iki dal da bedende çıkan kabarcık veya döküntü görünümündeki hastalıkları anlatır.",
+          "distinction": "Bu dal koyunlarda görülen özel bir hayvan hastalığıdır; komşu dal ise kızamığın kendisini ve daha genel bedensel döküntüyü adlandırır."
+        },
+        {
+          "neighbor_ref": "root_000336/B006",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Koyun sürüsünde görülen çiçek benzeri bulaşıcı hastalık ve buna bağlı türemiş kullanımlar vardır.",
+          "neighbor_only": "Yüzde veya göz çevresinde beliren küçük tekil kabarcıklar öne çıkar.",
+          "gloss": "yüzde küçük kabarcık",
+          "shared_zone": "İki dal da deride kabarcık oluşmasıyla görünür hale gelen rahatsızlıklar alanındadır.",
+          "distinction": "Bu dal hayvan türü ve hastalık bütünüyle tanımlanır; komşu dal ise belirli bir beden bölgesindeki küçük kabarcık türünü anlatır."
+        },
+        {
+          "neighbor_ref": "root_000589/B010",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Kabarcık çıkaran ve çiçek hastalığına benzeyen bir deri hastalığıdır.",
+          "neighbor_only": "Koyunların sırtlarını tutan başka bir hastalık türüdür.",
+          "gloss": "koyunlarda sırt hastalığı",
+          "shared_zone": "Her ikisi de özellikle koyunları etkileyen adlandırılmış hayvan hastalıklarıdır.",
+          "distinction": "Ortak hayvan türüne rağmen belirtiler ve hastalığın yeri ayrıdır: bu dal kabarcıklı çiçek benzeri hastalığı, komşu dal sırtı tutan hastalığı anlatır."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar incelendi; kızamık benzeri döküntü, küçük deri kabarcığı ve koyunlara özgü başka hastalıkla sınırı gösteren üç komşu seçildi. Ateş, karın rahatsızlığı, deri yanması ve aynı kökün öteki dalları yalnızca geniş hastalık alanını ya da biçim yakınlığını paylaştığı için eklenmedi.",
+      "branch_image_ar": "الأُمَيْهَة والجدري",
+      "what_is_ar": "يدخل فيه الأميهة بثر أو جدري يصيب الغنم، والدعاء على الإنسان بآهة وأميهة حين تكون الأميهة هي الجدري",
+      "source_phrase_ar": "الأميهة بثر تخرج بالغنم كالحصبة أو الجدري (sihah)؛ أمهت الغنم تؤمه أمها فهي مأموهة (sihah)؛ آهة وأميهة (sihah;tahdhib)؛ الأميهة الجدري (tahdhib)",
+      "sources": [
+        "SI",
+        "TA"
+      ],
+      "source_note": {
+        "TA": "Tek bir kaynak, aynı kökteki başka bir ad biçimini doğrudan çiçek hastalığı anlamında verir."
+      }
+    },
+    {
+      "branch_ref": "root_000055/B004",
+      "concept_map": {
+        "definition": "Bir yavruyu doğuran dişiyi, özellikle anneyi anlatır. Bu çekirdeğe, anne sözünün asıl biçimi sayılan eski şekiller, insan ve insan dışı varlıklar için kullanılan çoğullar, küçültme biçimi ve kendine anne edinme eylemi bağlanır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Temel anlam, yavruyu doğuran dişi ve özellikle annedir.",
+            "claim_ids": [
+              "lu_012"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "source_variant",
+            "statement": "Anne sözünün kökeni açıklanırken iki eski biçim asıl ya da asla yakın şekiller olarak aktarılır.",
+            "claim_ids": [
+              "lu_013",
+              "lu_014"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "specialization",
+            "statement": "Çoğul biçimlerden biri özellikle insan anneleri için, öteki ise bazı açıklamalarda insan dışı dişiler için kullanılır.",
+            "claim_ids": [
+              "lu_015",
+              "lu_016"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "associated_use",
+            "statement": "Kökte bulunduğu kabul edilen sesin geri getirilmesiyle anne sözünün bir küçültme biçimi kurulur.",
+            "claim_ids": [
+              "lu_017"
+            ]
+          },
+          {
+            "facet_id": "F005",
+            "role": "extension",
+            "statement": "Annelik ilişkisi doğurmanın ötesine uzanarak kişinin kendisine birini anne edinmesini de anlatır.",
+            "claim_ids": [
+              "lu_018"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar çekirdek anlamı doğuran dişi, yani anne olarak verir. Anne sözünün aslı sayılan eski biçimler ile iki çoğul biçim aktarılır; çoğullardan birinin insan annelerine, diğerinin kimi anlatımlarda insan dışı dişilere ayrıldığı belirtilir.",
+        "common_claim_ids": [
+          "lu_012",
+          "lu_013",
+          "lu_014",
+          "lu_015",
+          "lu_016"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_017"
+            ],
+            "kind": "derivation",
+            "summary": "Tek bir kaynak, anne sözünün kök biçimine dönülerek yapılan özel küçültme biçimini doğru sayar."
+          },
+          {
+            "claim_ids": [
+              "lu_018"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek bir kaynak, kişinin kendisine birini anne edinmesini bildiren eylem kalıbını aktarır."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "anne ve ona bağlı söz biçimleri",
+        "applicability": "Doğuran dişi çekirdeğini, bu çekirdeğe bağlı köken biçimlerini, çoğulları ve türemiş kullanımları birlikte temsil eder.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Anne anlamını ve bu anlam çevresindeki biçimsel aileyi birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003",
+          "F004",
+          "F005"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "anne",
+          "usage_role": "general",
+          "applicability": "Bir yavruyu doğuran dişiyi, özellikle insan annesini doğrudan adlandıran temel karşılıktır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Doğuran dişi ve insan annesi çekirdeğini tam olarak korur.",
+            "loses": "Eski kök biçimlerini, çoğul ayrımını, küçültmeyi ve anne edinme eylemini dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "kendine anne edinmek",
+          "usage_role": "contextual",
+          "applicability": "Kişinin birini kendisi için anne konumuna getirdiğini bildiren eylem bağlamında kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Annelik ilişkisinin seçilerek kurulması yönünü korur.",
+            "loses": "Doğuran anne çekirdeğini ve sözcüğün diğer biçimlerini tek başına anlatmaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F005"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_012",
+          "rendering_kind": "ordinary",
+          "target_gloss": "anne, doğuran dişi"
+        },
+        {
+          "lexical_unit_id": "lu_013",
+          "rendering_kind": "ordinary",
+          "target_gloss": "anne sözünün asıl biçimi olarak anılan şekil"
+        },
+        {
+          "lexical_unit_id": "lu_014",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kimi açıklamalarda anne sözünün aslı sayılan şekil"
+        },
+        {
+          "lexical_unit_id": "lu_015",
+          "rendering_kind": "ordinary",
+          "target_gloss": "anneler, özellikle insan anneleri"
+        },
+        {
+          "lexical_unit_id": "lu_016",
+          "rendering_kind": "ordinary",
+          "target_gloss": "anneler; kimi kullanımda insan dışı dişiler"
+        },
+        {
+          "lexical_unit_id": "lu_017",
+          "rendering_kind": "ordinary",
+          "target_gloss": "anne sözünün köke döndürülmüş küçültme biçimi"
+        },
+        {
+          "lexical_unit_id": "lu_018",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kendine anne edinmek"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "anaç",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Annelik ve yavruyla kurulan bakım ilişkisini çağrıştırır.",
+            "loses": null,
+            "adds": "Doğurmamış olsa da koruyucu davranan kişiyi veya damızlık dişiyi de anlatabilir.",
+            "collision": "Doğuran anne anlamını davranışsal koruyuculukla karıştırabilir."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000053/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Anne sözünün köken biçimleri, özel küçültmesi ve kendine anne edinme kalıbı bu dalda belirgindir.",
+          "neighbor_only": "Uzak anne, besleyip büyüten anne benzeri kişi, kadının anne oluşu ve övgü ya da yergi kalıpları daha geniş biçimde kapsanır.",
+          "gloss": "anne, doğuran ve büyüten kadın",
+          "shared_zone": "Her iki dalın merkezinde doğuran kadın olarak anne ve anne sözünün çoğul biçimleri bulunur.",
+          "distinction": "Çekirdek anne anlamında güçlü örtüşme vardır; bu dal biçimlerin köken açıklamasına yoğunlaşırken komşu dal doğurma dışındaki bakım, uzak soy ve kalıplaşmış söz kullanımlarına genişler."
+        },
+        {
+          "neighbor_ref": "root_000007/B001",
+          "relation_type": "polarity_pair",
+          "boundary_match": "opposed",
+          "focus_only": "Doğuran dişi ve annelik ilişkisi merkezde yer alır.",
+          "neighbor_only": "Baba, babalık ve çocuğun varlığına ya da yetişmesine neden olan erkek veya bakıcı merkezde yer alır.",
+          "gloss": "baba ve babalık",
+          "shared_zone": "İki dal ebeveynlik, doğum bağı ve çocuğu besleyip büyütme alanını paylaşır.",
+          "distinction": "Ortak eksen ebeveynliktir; bu dal anne yönünü, komşu dal baba yönünü ve babaya bağlı yetiştirme işlevini adlandırır."
+        },
+        {
+          "neighbor_ref": "root_001059/B003",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Annelik kalıcı bir doğurma ilişkisi ve genel bir ad olarak verilir.",
+          "neighbor_only": "Doğumdan hemen sonraki günlerde yavrusunun yanında kalan dişinin geçici durumu anlatılır.",
+          "gloss": "yeni doğurmuş dişi",
+          "shared_zone": "Her iki dal doğurmuş dişi ile yavrusu arasındaki yakın ilişkiyi anlatır.",
+          "distinction": "Bu dal genel ve kalıcı anne ilişkisini adlandırır; komşu dal ise özellikle doğumdan sonraki kısa dönemdeki dişiyi ve yavrusuna bağlı kalışını niteler."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; doğrudan anne dalı, baba karşıtı ve yeni doğurmuş dişiyle sınırı gösteren üç komşu yayımlandı. Çocuk, gebelik, soy tohumu ve torun dalları aynı aile alanında olsa da anne kavramıyla daha zayıf örtüştüğü için eklenmedi.",
+      "branch_image_ar": "الأُمّ والأُمَّهَة",
+      "what_is_ar": "يدخل فيه الأم الوالدة، والأمهة أو الأمة على أنها أصل قولهم أم، وجمع أمهات وأمات",
+      "source_phrase_ar": "الأم هي الوالدة والجميع الأمهات (ayn)؛ تفسير الأم في كل معانيها أمة لأن تأسيسه من حرفين صحيحين والهاء فيه أصلية (ayn)؛ الامهة أصل قولهم أم (sihah)؛ ربما قالوا أمهة وتجمع أمهات (tahdhib)؛ الهاء زائدة في الأمهات (tahdhib)",
+      "sources": [
+        "AY",
+        "SI",
+        "TA"
+      ],
+      "source_note": {
+        "AY": "Tek bir kaynak, anne sözünün kök biçimine dönülerek yapılan özel küçültme biçimini doğru sayar. Tek bir kaynak, kişinin kendisine birini anne edinmesini bildiren eylem kalıbını aktarır."
+      }
+    },
+    {
+      "branch_ref": "root_000055/B005",
+      "concept_map": {
+        "definition": "İki kişinin bir iş konusunda birbirine görev, sorumluluk veya bağlılık yükleyip bunu karşılıklı olarak üstlenmesidir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Bir kişi belirli bir iş için karşısındakine sorumluluk verir, karşısındaki de aynı biçimde ona sorumluluk yükler.",
+            "claim_ids": [
+              "lu_019"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Aktarılan kalıp, belirli bir iş konusunda bir kişiye sorumluluk verme ve onun da karşılık olarak aynı türden bir sorumluluk vermesi anlamındadır.",
+        "common_claim_ids": [
+          "lu_019"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "bir işte karşılıklı sorumluluk yüklenme",
+        "applicability": "İki tarafın belirli bir iş için birbirine bağlılık veya sorumluluk verdiği karşılıklı ilişkiyi tam olarak karşılar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Belirli işi, iki tarafı ve sorumluluğun karşılıklı verilmesini birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "birbirine görev vermek",
+          "usage_role": "contextual",
+          "applicability": "Tarafların aynı iş konusunda birbirini görevli kıldığı bir olay anlatımında kullanılabilir.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Görevin iki taraf arasında karşılıklı verilmesi işlemini korur.",
+            "loses": "Göreve eşlik eden bağlılık ve üstlenme yönünü daha zayıf ifade eder.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_019",
+          "rendering_kind": "ordinary",
+          "target_gloss": "bir iş için ona sorumluluk verdim, o da bana verdi"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "sözleşmek",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "İki taraf arasında karşılıklı bağlılık kurulmasını korur.",
+            "loses": null,
+            "adds": "Belirli bir işte karşılıklı görev verme bulunmayan her türlü anlaşmayı da kapsar.",
+            "collision": "Genel anlaşma yapmayı özel sorumluluk verme ilişkisiyle karıştırabilir."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001662/B004",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Belirli bir işin iki tarafa karşılıklı sorumluluk olarak verilmesi öne çıkar.",
+          "neighbor_only": "Tarafların birbirine geleceğe dönük söz vermesi, görev devri olmadan da gerçekleşebilir.",
+          "gloss": "karşılıklı söz verme",
+          "shared_zone": "Her iki dalda iki taraf arasında karşılıklı bir bağlılık kurulması vardır.",
+          "distinction": "Bu dal bir iş için karşılıklı sorumluluk yüklemeyi anlatır; komşu dalın çekirdeği ise tarafların birbirine söz vermesidir ve görev verme koşulu taşımaz."
+        },
+        {
+          "neighbor_ref": "root_001681/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Sorumluluk iki yönde kurulur ve her iki taraf da diğerine yükümlülük verir.",
+          "neighbor_only": "Bir kişi kendi işini tek yönlü olarak bir başkasına bırakır ve onu temsilci kılar.",
+          "gloss": "işi başkasına bırakma",
+          "shared_zone": "İki dalda da bir işin sorumluluğu başka bir kişiye verilir.",
+          "distinction": "Bu dal karşılıklı sorumluluk doğurur; komşu dal ise işi ve yetkiyi tek yönde başkasına bırakma işlemidir."
+        },
+        {
+          "neighbor_ref": "root_000291/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Belirli işte iki tarafın birbirine karşılıklı sorumluluk vermesi anlatılır.",
+          "neighbor_only": "Güvence, koruma, komşuluk hakkı ve ilişki bağı gibi daha geniş bağlılık türleri kapsanır.",
+          "gloss": "güvence ve bağlılık bağı",
+          "shared_zone": "Her iki dal tarafları birbirine bağlayan bir sorumluluk veya güven ilişkisi kurabilir.",
+          "distinction": "Bu dalın sınırı belirli işteki karşılıklı yüklemedir; komşu dal güvence, koruma ve ilişkiyi sürdüren her türlü bağa genişler."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar incelendi; karşılıklı söz verme, tek yönlü görev bırakma ve geniş güvence bağıyla sınırı gösteren üç komşu seçildi. Yönetime bağlılık, yemin, karar yetkisi ve aynı kökün öteki dalları çekirdekle daha az örtüştüğü için yayımlanmadı.",
+      "branch_image_ar": "المعاهدة في الأمر",
+      "what_is_ar": "يدخل فيه قولهم أمهت إليه في أمر فأمه إلي بمعنى عهدت إليه فعهد إلي",
+      "source_phrase_ar": "أمهت إليه في أمر فأمه إلي أي عهدت إليه فعهد إلي (tahdhib)",
+      "sources": [
+        "TA"
+      ],
+      "source_note": {}
+    }
+  ],
+  "root_profile": {
+    "summary": "Kök, birbirinden belirgin biçimde ayrılan beş anlam alanı taşır: unutma ve zihinsel dalgınlık, bir gerçeği kabul edip söyleme, koyunlarda kabarcıklı hastalık, anne ve ona bağlı söz biçimleri, bir işte karşılıklı sorumluluk yüklenme. Dallar arasında ortak bir kavram çekirdeği kurulamadığından yapı, tarihsel biçim yakınlığı altında toplanmış çok anlamlı ve karışık bir örgü gösterir.",
+    "polysemy": "polysemic",
+    "organization": "mixed"
+  },
+  "occurrence_evidence": {
+    "summary": {
+      "morpheme_count": 0,
+      "word_count": 0,
+      "ayah_count": 0,
+      "surah_count": 0
+    },
+    "forms": [],
+    "ayahs": [],
+    "occurrences": []
+  }
+}

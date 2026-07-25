@@ -1,0 +1,53 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın ana anlam ayrımları büyük ölçüde kanıtla uyumludur; ancak iki dalda kaynaklara ortak olmayan ayrıntılar ortak açıklama gibi sunulmuş, diş dalında ise paralel anlamlar arasında kanıtlanmayan bir sonuç ilişkisi kurulmuş ve çekirdek kavram karşılığının kapsamı olduğundan geniş gösterilmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_000035/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001"
+      ],
+      "evidence_conflict": "lu_001 içindeki kaynak dökümünde ortak çekirdek taşkın şımarıklık anlamıdır; hevese göre sevinme bir açıklamada, acelecilik ve sertlik ise başka bir açıklamada belirginleşir. common_summary bu ayrı ayrıntıların tümünü kaynakların ortak çizgisi gibi sunuyor.",
+      "smallest_correction": "common_summary içinde ortak çekirdeği taşkın şımarıklıkla sınırlandırın; hevese bağlı sevinci ve aceleci sertliği kaynak adı vermeden farklı açıklamaların eklediği ayrıntılar olarak ayırın."
+    },
+    {
+      "target_ref": "root_000035/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005",
+        "lu_006"
+      ],
+      "evidence_conflict": "lu_005 dişleri çentip uçlarını sivriltme işlemini, lu_006 ise dişte bulunan çizgi, çentik veya keskinliği ayrı ayrı verir. Kanıt, lu_006 kapsamındaki görünümün mutlaka lu_005 işleminin sonucu olduğunu söylemez; definition ise bunu doğrudan işlemin oluşturduğu sonuç olarak bağlıyor.",
+      "smallest_correction": "definition içindeki sonuç bildiren bağı kaldırın ve dişteki çentikli ya da keskin görünümü işlem anlamına paralel, ayrı bir kapsam olarak ifade edin."
+    },
+    {
+      "target_ref": "root_000035/B002",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_004",
+        "lu_005",
+        "lu_006"
+      ],
+      "evidence_conflict": "Kavram karşılığı metni ve facet_ids yalnızca lu_004 ile temsil edilen diş uçlarındaki incelik ve keskinlik çekirdeğini karşılıyor. applicability ve preserves ise bu metnin lu_005 işlem anlamını ve lu_006 kapsamındaki görünümü de koruduğunu ileri sürerek gerçek kapsamını genişletiyor.",
+      "smallest_correction": "Kavram karşılığı metnini ve facet_ids değerini koruyun; applicability ile preserves açıklamalarını yalnızca diş uçlarındaki incelik ve keskinlik çekirdeğiyle sınırlandırın."
+    },
+    {
+      "target_ref": "root_000035/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_010"
+      ],
+      "evidence_conflict": "lu_010 dökümünde dişi deve bütün kaynaklarda yer alırken at kapsamı ve söz biçiminin eril ile dişil için değişmemesi yalnızca bir kaynak ifadesinde bulunur. common_summary bunları ortak açıklamanın parçaları gibi sunuyor.",
+      "smallest_correction": "Ortak kısmı dişi deve nitelemesiyle sınırlandırın; at kapsamını ve biçimin eril ile dişilde değişmemesini kaynak adı vermeden bir kaynağın eklediği ayrıntılar olarak belirtin."
+    }
+  ]
+}

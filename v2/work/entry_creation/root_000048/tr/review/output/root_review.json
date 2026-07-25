@@ -1,0 +1,111 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın ana kol ayrımları ve komşu sınırlarının çoğu kanıtla uyumludur. Ancak bazı ayırt edici kaynak ayrıntıları sentezde kaybolmuş, B001'de kanıtsız bir kullanım alanı eklenmiş ve B005'te tek kaynağa özgü nitelikler ile ayrı bir ağaç adı aynı türün çekirdeğiymiş gibi sunulmuştur. Bu alanlar sınırlı düzeltme gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_000048/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003",
+        "lu_004"
+      ],
+      "evidence_conflict": "Sentez, lu_003'te niteliği taşıyan kişi adının dişil ve çoğul biçimlerinin verildiğini ve lu_004'te kısaltılmış olumsuz biçimin vurmayı sürdürme örneği içinde geçtiğini aktarmıyor. Bunlar kanıttaki ayırt edici türetim ve kullanım örneğidir.",
+      "smallest_correction": "lu_003 için dişil ve çoğul biçimlerin de kaydedildiğini, lu_004 içinse kısaltılmış biçimin vurmayı sürdürme örneğinde kullanıldığını kaynak sentezine kısa bir ayrıntı olarak ekleyin."
+    },
+    {
+      "target_ref": "root_000048/B001",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_002",
+        "lu_003"
+      ],
+      "evidence_conflict": "İkinci bağlamsal karşılığın uygulanabilirlik açıklaması, kanıttaki öğüt ve çaba alanına ek olarak yardım alanını da ileri sürüyor. lu_002 öğüdü, lu_003 ise öğüt veya çabayı destekler; yardım kullanımı bu iddialarda verilmez.",
+      "smallest_correction": "Uygulanabilirlik açıklamasındaki yardım sözünü çaba ile değiştirerek kapsamı lu_002 ve lu_003 ile sınırlayın."
+    },
+    {
+      "target_ref": "root_000048/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_013"
+      ],
+      "evidence_conflict": "lu_013 yalnızca yemin adını değil, bu adın çoğul biçimini de açıkça verir. Sentez üç ad biçiminden söz ederken bu türetimi bütünüyle atlıyor.",
+      "smallest_correction": "lu_013 ile desteklenen adın çoğul biçiminin de kaynakta kaydedildiğini senteze ekleyin."
+    },
+    {
+      "target_ref": "root_000048/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_017"
+      ],
+      "evidence_conflict": "lu_017, tekil biçimin farklı bir ünlüyle söylenebildiğini ve ye harfiyle yazılabildiğini de bildirir. Sentez yalnız tekil-çoğul ayrımını vererek bu kaynak varyantını kaybediyor.",
+      "smallest_correction": "Tekil biçim için lu_017'de verilen alternatif söyleyiş ve ye harfli yazımı kaynak sentezinde kısa bir varyant notuyla belirtin."
+    },
+    {
+      "target_ref": "root_000048/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_018"
+      ],
+      "evidence_conflict": "lu_018'de iki kaynağın ortak desteği yalnız bir ağaç türü olmasına uzanır; güzel görünüm ve acı tat tek kaynakta verilen betimleyici ayrıntılardır. Tanım ve çekirdek facet bu ayrıntıları türün zorunlu, ayırt edici çekirdeğine yükseltiyor.",
+      "smallest_correction": "Tanımı ve çekirdeği belirli bir ağaç türüyle sınırlayın; güzel görünüm ile acı tadı lu_018'e bağlı, çekirdeğe bağımlı bir betimleyici facet olarak ayırın."
+    },
+    {
+      "target_ref": "root_000048/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_020",
+        "lu_021"
+      ],
+      "evidence_conflict": "lu_020 ve lu_021 başka bir ağaç adı ile onun tekilini verir; bunların lu_018 ve lu_019'daki ağaçla aynı türün ikinci adı olduğu söylenmez. F003 bu kanıtsız tür özdeşliğini source_variant olarak kuruyor.",
+      "smallest_correction": "F003'ü aynı türün ikinci adı diye sunmayın; yalnız ayrıca kaydedilen bir ağaç adı ve onun tekil biçimi olduğunu belirtin."
+    },
+    {
+      "target_ref": "root_000048/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_019",
+        "lu_020",
+        "lu_021"
+      ],
+      "evidence_conflict": "Tek-kaynak ayrıntısı, lu_020 ve lu_021'i lu_019'daki ağacın ikinci ad çifti gibi birleştiriyor. Kanıt yalnız lu_019'u ilk adın tekili, lu_020 ve lu_021'i ise ayrıca bir ağaç adı ve onun tekili olarak verir; ayrıca lu_019 ile lu_021 arasındaki uzun-kısa biçim ayrımını da kaydeder.",
+      "smallest_correction": "Kaynak ayrıntısını ilk ağaç adının tekili ile ayrıca verilen diğer ağaç adı ve tekili olarak yeniden kurun; lu_019 ve lu_021'deki uzun-kısa biçim ayrımını da koruyun."
+    },
+    {
+      "target_ref": "root_000048/B005",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_018"
+      ],
+      "evidence_conflict": "Kavram karşılığı güzel görünüm ve acı tadı bütün kolun eksiksiz çekirdeği sayıyor ve fit değerini none veriyor. lu_018'de bu nitelikler yalnız bir kaynağın betimlemesidir; kaynakların ortak kavram çekirdeği ağaç türüdür.",
+      "smallest_correction": "Kavram karşılığını belirli bir ağaç türünü gösterecek biçimde daraltın; görünüm ve tat niteliklerini uygulanabilirlikte kaynakla sınırlı betimleyici ayrıntılar olarak koruyun."
+    },
+    {
+      "target_ref": "root_000048/B005",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_020",
+        "lu_021"
+      ],
+      "evidence_conflict": "lu_020 için aynı ağaç türünün ikinci adı, lu_021 için de ikinci adla anılan tek bir ağaç denmesi, bu iki birimi lu_018'deki türle özdeşleştiriyor. Kanıt yalnız bir ağaç adı ve onun tekil biçimini destekler.",
+      "smallest_correction": "lu_020'yi bir ağaç türünün adı, lu_021'i de bu adın tekil biçimi olarak karşılayın; lu_018 ile aynı tür olduklarını ileri sürmeyin."
+    }
+  ]
+}

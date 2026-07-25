@@ -1,0 +1,247 @@
+{
+  "branches": [
+    {
+      "branch_ref": "root_000171/B001",
+      "concept_map": {
+        "definition": "Bir eylemin bir kez gerçekleşmesini veya önceki gerçekleşmesinden sonra yeniden oluşunu, özellikle ardışık tekrarlar içindeki her bir oluşu bildirir. Türemiş eylem biçimi, bir şeyi art arda yeniden yapmayı anlatır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Bir eylemin tek bir gerçekleşmesini ya da önceki gerçekleşmesinden sonra bir kez daha oluşunu belirtir.",
+            "claim_ids": [
+              "lu_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "associated_use",
+            "statement": "Ardışık kullanımı, aynı eylemin birbiri ardından tekrar tekrar gerçekleştiğini bildirir.",
+            "claim_ids": [
+              "lu_002"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "specialization",
+            "statement": "İki çoğul biçim, birbirini izleyen birden çok gerçekleşmeyi veya tekrarı topluca belirtir.",
+            "claim_ids": [
+              "lu_003",
+              "lu_006"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "source_variant",
+            "statement": "Bir yüzey biçimi, temel biçimin son öğesi düşürülmüş çeşididir ve aynı tek gerçekleşme ya da yeniden oluş anlamını taşır.",
+            "claim_ids": [
+              "lu_004"
+            ]
+          },
+          {
+            "facet_id": "F005",
+            "role": "extension",
+            "statement": "Türemiş eylem, bir şeyi yalnızca bir kez geri getirmeyi değil, onu art arda yeniden yapmayı anlatır.",
+            "claim_ids": [
+              "lu_005"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Temel kullanım, bir eylemin bir kez gerçekleşmesini ya da daha önceki bir gerçekleşmenin ardından yeniden oluşunu bildirir. Bu nedenle anlatım, hem tek bir oluşu hem de ardışık tekrar dizisindeki yeni bir oluşu bağlama göre karşılayabilir.",
+        "common_claim_ids": [
+          "lu_001"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_002"
+            ],
+            "kind": "example",
+            "summary": "Ardışık sözcük öbeği, eylemin birbiri ardından tekrar tekrar yapıldığını anlatır."
+          },
+          {
+            "claim_ids": [
+              "lu_003",
+              "lu_006"
+            ],
+            "kind": "derivation",
+            "summary": "İki ayrı çoğul biçim kaydedilir; bunlardan biri daha uzun bir çoğul biçimin kısalmış şekli olarak açıklanır."
+          },
+          {
+            "claim_ids": [
+              "lu_004"
+            ],
+            "kind": "derivation",
+            "summary": "Temel biçimin son öğesi düşürülerek kullanılan bir yüzey çeşidi de aynı anlamla kaydedilir; yas ve yıkım bildiren sözlerin dönüşümlü kullanımında örneklenir."
+          },
+          {
+            "claim_ids": [
+              "lu_005"
+            ],
+            "kind": "derivation",
+            "summary": "Türemiş eylem biçimi, bir şeyi art arda yeniden yapma anlamına gelir."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "bir kez ya da bir kez daha",
+        "applicability": "Tek bir gerçekleşmenin veya önceki gerçekleşmeden sonraki yeni oluşun söz konusu olduğu genel kullanımı karşılar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Tek gerçekleşme ile yeniden oluş arasındaki bağlama bağlı ayrımı korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "bir keresinde",
+          "usage_role": "contextual",
+          "applicability": "Eylemin belirli bir tek gerçekleşmesine gönderme yapılan anlatı bağlamlarında kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Eylemin tek bir gerçekleşme olarak sunulmasını korur.",
+            "loses": "Önceki bir gerçekleşmeden sonra yeniden oluş anlamını taşımaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "bir kez daha",
+          "usage_role": "contextual",
+          "applicability": "Eylemin önceki bir gerçekleşmeden sonra yeniden oluşunu belirten bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Önceki oluşun ardından gelen yeni gerçekleşmeyi korur.",
+            "loses": "Yalnızca tek bir oluşu bildiren ve önceki oluş varsaymayan kullanımı dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "tekrar tekrar",
+          "usage_role": "contextual",
+          "applicability": "Aynı eylemin birbiri ardınca yinelendiği öbek ve türemiş eylem bağlamlarında kullanılır.",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Ardışık yeniden oluşları ve bir şeyi art arda yeniden yapmayı korur.",
+            "loses": null,
+            "adds": "Tek bir gerçekleşmenin ötesinde birden çok yineleme bulunduğunu zorunlu kılar.",
+            "collision": null
+          },
+          "facet_ids": [
+            "F002",
+            "F005"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_001",
+          "rendering_kind": "ordinary",
+          "target_gloss": "bir kez; bir kez daha"
+        },
+        {
+          "lexical_unit_id": "lu_002",
+          "rendering_kind": "ordinary",
+          "target_gloss": "tekrar tekrar"
+        },
+        {
+          "lexical_unit_id": "lu_003",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kezler; defalar"
+        },
+        {
+          "lexical_unit_id": "lu_004",
+          "rendering_kind": "ordinary",
+          "target_gloss": "bir kez; bir kez daha"
+        },
+        {
+          "lexical_unit_id": "lu_005",
+          "rendering_kind": "ordinary",
+          "target_gloss": "onu art arda yeniden yaptı"
+        },
+        {
+          "lexical_unit_id": "lu_006",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kezler; defalar"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "nöbet",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Sıra içinde geri gelen bir zaman veya görev düşüncesini kısmen korur.",
+            "loses": "Bir eylemin tek gerçekleşmesini ya da yeniden oluşunu doğrudan bildirmez.",
+            "adds": "Kişiye ayrılmış görev süresi veya sıra anlamı ekler.",
+            "collision": "Görev sırası ve vardiya anlamlarıyla karışır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001414/B002",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Önceki bir gerçekleşmeden sonraki yeniden oluşu ayrıca öne çıkarır ve türemiş eylemde art arda yeniden yapmayı kapsar.",
+          "neighbor_only": "Bir, iki veya çok sayıda gerçekleşmenin yanı sıra kimi kullanımlarda bir zaman bölümünü de kapsar.",
+          "gloss": "kez ve gerçekleşme sayısı",
+          "shared_zone": "Her ikisi de bir eylemin tek veya yinelenen gerçekleşmelerini sayılabilir oluşlar olarak sunabilir.",
+          "distinction": "Odak dal, tek bir oluş ile önceki oluşun ardından gelen yeni oluş arasında bağlamsal bir geçiş kurar. Komşu dal ise gerçekleşme sayısını daha geniş biçimde kapsar ve zamanın bir bölümüne uzanabilir; bu yüzden yalnızca bazı bağlamlarda birbirlerinin yerine geçebilirler."
+        },
+        {
+          "neighbor_ref": "root_001292/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bir eylemin tek bir oluşunu veya ardışık tekrar dizisindeki yeni bir oluşu adlandırabilir.",
+          "neighbor_only": "Ayrılış ya da kaçıştan sonra geri dönmeyi, saldırıya yeniden girişmeyi ve bir konuda kararsız gidip gelmeyi kapsar.",
+          "gloss": "geri dönüş ve yineleme",
+          "shared_zone": "Her iki dalda da önceki durumdan sonra geri gelme veya bir eylemi yeniden gerçekleştirme düşüncesi bulunur.",
+          "distinction": "Odak dal, gerçekleşmeyi sayılabilir bir kez ya da bir kez daha olarak çerçeveler. Komşu dalın çekirdeği ise hareketin veya eylemin geri dönüşü ve yinelenmesidir; ayrıca saldırı ve kararsızlık gibi odakta bulunmayan kullanımlara uzanır."
+        },
+        {
+          "neighbor_ref": "root_001562/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Tek bir gerçekleşmeyi, alışkanlık veya dönüşümlü sıra gerektirmeden bildirebilir.",
+          "neighbor_only": "Bir yere alışkanlıkla dönmeyi, ziyaret etmeyi, sıra ve dönüşümlü yapmayı kapsar.",
+          "gloss": "yinelenen dönüş ve sıra",
+          "shared_zone": "Her ikisi de bir şeyin yeniden ortaya çıkmasını veya eylemin birden çok kez gerçekleşmesini içerebilir.",
+          "distinction": "Odak dalın merkezi, her bir oluşu bir kez veya bir kez daha olarak belirtmektir. Komşu dal düzenli geri dönüşü, alışkanlığı ve kişiler arasındaki sırayı öne çıkarır; bu ek koşullar odak dalın genel anlamında zorunlu değildir."
+        },
+        {
+          "neighbor_ref": "root_000090/B002",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Bir başlangıcı belirtmeden tek gerçekleşmeyi veya sonraki yeniden oluşu ifade eder.",
+          "neighbor_only": "Başlangıç ile geri dönüşü ya da yeniden yapmayı aynı yapıda eşleştirir.",
+          "gloss": "başlama ve yeniden yapma",
+          "shared_zone": "Her iki dal da bir eylemin yeniden gerçekleşmesi veya yeniden yapılması alanına girer.",
+          "distinction": "Odak dalda başlangıç kurucu bir unsur değildir; söz konusu olan bir oluşun tekliği veya önceki oluşun ardından gelmesidir. Komşu dalın ayırt edici yapısı ise başlama ile geri dönüşü birlikte sunmasıdır."
+        }
+      ],
+      "neighbor_coverage_note": "Sekiz adayın tümü değerlendirildi. Gerçekleşme sayısı, geri dönüş, alışkanlık ve başlangıçla eşleşen yeniden yapma sınırı açıklayan dört aday yayımlandı; başlatma ile yeniden yapmayı birlikte kapsayan aday sayılabilir tek oluş sınırıyla yeterince örtüşmediği için, tamamlanmış zaman, yakın geçmişte başlama ve belirsiz süre bildiren adaylar da yeterli anlamsal örtüşme sağlamadığı için dışarıda bırakıldı."
+    }
+  ],
+  "root_profile": {
+    "summary": "Kök, bir eylemin tek bir gerçekleşmesini veya önceki gerçekleşmeden sonra yeniden oluşunu merkez alan tek bir anlam dalında örgütlenir. Ardışık kullanım, çoğullar, yüzey çeşidi ve türemiş tekrarlı eylem bu çekirdeğe bağlıdır.",
+    "polysemy": "monosemic",
+    "organization": "monosemic"
+  }
+}

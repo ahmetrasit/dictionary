@@ -1,5 +1,5 @@
 {
-  "inputs_sha256": "45635d587bb59d15ec7b7a3f18d8e4c5fd94ff8034e93aba38626a9d37281015",
+  "inputs_sha256": "7edac1eab06a02163a5754d7004c941747116ca73affe7d1681133469dd32f1a",
   "artifact_format": "dictionary-v2-root-entry-draft-v1",
   "generated_by": "v2/scripts/accept_root_writer.py",
   "root_envelope_id": "root_001697",
@@ -8,12 +8,12 @@
     {
       "branch_ref": "root_001697/B001",
       "concept_map": {
-        "definition": "Bir şeyi ya da kişiyi bilerek seçip ona yönelmek ve onu özellikle gözetmektir. Ok veya mızrak kullanımında, başkalarını değil belirli bir kişiyi hedef alma biçiminde gerçekleşir.",
+        "definition": "Bir şeyi ya da kişiyi bilerek amaç edinip ona yönelmektir; özellikle ok veya mızrağın başkasına değil belirli bir kişiye doğrultulmasını kapsar. Bundan türeyen bir niteleme, aradığını elde eden ya da kendisine iyilik yöneltilen kimseyi anlatır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir şeyi bilerek amaç edinme, ona yönelme ve onu özellikle gözetme eylemidir.",
+            "statement": "Bir şey veya kişi bilinçli biçimde amaç edinilir ve ona yönelinir.",
             "claim_ids": [
               "lu_001",
               "lu_002"
@@ -22,15 +22,16 @@
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Ok veya mızrakla başkalarını dışarıda bırakıp belirli bir kişiyi hedef alma biçiminde özelleşir.",
+            "statement": "Ok veya mızrak, başkaları dışarıda bırakılarak belirli bir kişiye doğrultulur.",
             "claim_ids": [
+              "lu_002",
               "lu_003"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "associated_use",
-            "statement": "Bir kimseyi her aradığını bulan, yüksek talihli veya iyilik için yönelinen biri olarak niteler.",
+            "role": "extension",
+            "statement": "Bir kimse, her aradığını elde etmesi ya da kendisine iyilik yöneltilmesi bakımından nitelenir.",
             "claim_ids": [
               "lu_004"
             ]
@@ -38,36 +39,30 @@
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak çekirdek, bir şeyi rastlantıyla değil bilerek seçmek, onu gözetmek ve doğrudan ona yönelmektir.",
+        "common_summary": "Ortak çekirdek, bir hedefi bilerek seçip ona yönelmektir. Bu anlam, belirli bir kişiyi özellikle amaç edinmeye ve ok ya da mızrağı başkasına değil o kişiye doğrultmaya kadar özelleşir.",
         "common_claim_ids": [
           "lu_001",
-          "lu_002"
+          "lu_002",
+          "lu_003"
         ],
         "source_details": [
-          {
-            "claim_ids": [
-              "lu_003"
-            ],
-            "kind": "example",
-            "summary": "Ok ya da mızrakla belirli bir kişiyi diğerlerinden ayırarak hedef alma, bu yönelmenin somut bir örneğidir."
-          },
           {
             "claim_ids": [
               "lu_004"
             ],
             "kind": "sole_attestation",
-            "summary": "Tek başına aktarılan bir niteleme, her aradığını bulan, talihi yüksek veya iyilik için yönelinen kişiyi anlatır."
+            "summary": "Tek bir kaynak, sözü her aradığını elde eden ya da kendisine iyilik yöneltilen kimsenin niteliği olarak da verir."
           }
         ],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "bilerek seçip yönelme",
-        "applicability": "Dalın genel çekirdeğini, bilinçli seçim ile doğrudan yönelmeyi birlikte koruyarak karşılar.",
+        "text": "bir şeyi bilerek amaçlayıp ona yönelme",
+        "applicability": "Bir hedefin bilinçli biçimde seçilmesi ve yönelişin o hedefe çevrilmesi söz konusu olduğunda kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Bilinçli seçim, özel olarak gözetme ve seçilene yönelme bileşenlerini korur.",
+          "preserves": "Bilinçli amaç seçimini ve seçilen hedefe yönelmeyi birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -78,28 +73,13 @@
       },
       "contextual_glosses": [
         {
-          "text": "özellikle ona yönelmek",
+          "text": "özellikle onu hedef alma",
           "usage_role": "contextual",
-          "applicability": "Bir kişi veya şeyin başkalarından ayrılarak seçildiği genel anlatımlarda kullanılır.",
+          "applicability": "Bir kişi başkalarından ayrılarak ok ya da mızrağın özel hedefi yapıldığında doğal bir karşılıktır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Belirli bir hedefi seçme ve doğrudan ona yönelme anlamını korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        },
-        {
-          "text": "mızrakla onu hedef almak",
-          "usage_role": "contextual",
-          "applicability": "Silahla belirli bir kişinin başkaları arasından seçilip hedef alındığı bağlama özgüdür.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Silahı belirli bir kişiye yöneltme ve diğerlerini dışarıda bırakma ayrıntısını korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Bilinçli seçimi ve yönelişin belirli bir hedef üzerinde toplanmasını korur.",
+            "loses": "Silah kullanılmayan genel amaç edinme ve yönelme durumlarını dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
@@ -112,25 +92,37 @@
         {
           "lexical_unit_id": "lu_001",
           "rendering_kind": "ordinary",
-          "target_gloss": "onu bilerek seçip ona yöneldi"
+          "target_gloss": "onu amaçlayıp bilerek ona yöneldi"
         },
         {
           "lexical_unit_id": "lu_002",
           "rendering_kind": "ordinary",
-          "target_gloss": "özellikle onu seçip ona yöneldi"
+          "target_gloss": "onu özellikle hedef aldı"
         },
         {
           "lexical_unit_id": "lu_003",
           "rendering_kind": "ordinary",
-          "target_gloss": "mızrağını başkasına değil ona yöneltti"
+          "target_gloss": "mızrağını başkasına değil ona doğrulttu"
         },
         {
           "lexical_unit_id": "lu_004",
           "rendering_kind": "ordinary",
-          "target_gloss": "her aradığını bulan veya iyilik için yönelinen kişi"
+          "target_gloss": "aradığını elde eden veya kendisine iyilik yöneltilen kimse"
         }
       ],
-      "excluded_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "rastgele yönelme",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Bir hedefe doğru hareket veya yön değişikliği düşüncesini kısmen korur.",
+            "loses": "Bilinçli amaç edinme ve seçilmiş hedefe yönelme koşulunu kaybeder.",
+            "adds": "Yönelişin amaçsız veya rastlantısal olabileceği anlamını ekler.",
+            "collision": "Dalı yalnızca fiziksel ve amaçsız bir yön değişimi sanmaya yol açar."
+          }
+        }
+      ],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000053/B012",
@@ -138,32 +130,42 @@
           "boundary_match": "exact",
           "focus_only": null,
           "neighbor_only": null,
-          "gloss": "bilerek yönelme",
-          "shared_zone": "İki dal da bilinçli yönelmeyi ve ok ya da mızrağı seçilmiş bir hedefe çevirmeyi kapsar.",
-          "distinction": "Çekirdek, kapsam ve silahla hedef alma örneği aynı sınırı kurduğu için olağan kullanımlarda birbirlerinin yerine geçebilirler."
+          "gloss": "bilerek amaçlayıp yönelme",
+          "shared_zone": "Her iki dal da bir şeyi bilinçli biçimde amaç edinmeyi, ona yönelmeyi ve silahı seçilmiş hedefe doğrultmayı kapsar.",
+          "distinction": "Çekirdek anlam ve dal sınırı bakımından yer değiştirmeyi engelleyen bir ayrım yoktur."
+        },
+        {
+          "neighbor_ref": "root_001697/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Genel olarak herhangi bir şeyi bilerek amaçlama ve belirli bir kişiyi silahla hedef alma bu dala özgüdür.",
+          "neighbor_only": "Namaz amacıyla temiz toprağa yönelme ve yüz ile elleri toprakla silme uygulaması komşu dala özgüdür.",
+          "gloss": "namaz için toprakla temizlenme",
+          "shared_zone": "İki dal, bilinçli biçimde belirli bir şeye yönelme düşüncesinde tarihsel ve anlamsal olarak buluşur.",
+          "distinction": "Bu dal genel amaç edinme ve hedeflemeyi anlatırken komşu dal belirli bir dinsel uygulamanın adı ve işlemleriyle sınırlıdır."
         },
         {
           "neighbor_ref": "root_000305/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Bu dal, bir hedefi başkalarından ayırarak özellikle seçmeyi ve silahla hedef almayı açıkça içerir.",
-          "neighbor_only": "Komşu dal, bir işte çaba ve ciddiyet gösterme kapsamını ayrıca içerir.",
-          "gloss": "bir şeye yönelme",
-          "shared_zone": "Her iki dalda da bir şeyi amaç edinerek ona doğru yönelme bulunur.",
-          "distinction": "Komşu dal yönelmeyi işle sınırlı olmayan bir çaba alanına genişletirken bu dal bilinçli seçme ve belirli hedefi gözetme üzerinde durur."
+          "focus_only": "Başkaları arasından tek hedef seçme ve ok ya da mızrağı ona doğrultma özelleşmesi bu dalda belirgindir.",
+          "neighbor_only": "Bir işte ciddi ve kararlı davranma kapsamı komşu dalda ayrıca bulunur.",
+          "gloss": "bir şeyi amaçlayıp ona yönelme",
+          "shared_zone": "Her iki dalın merkezinde bir şeyi amaç edinme ve yönelişi ona çevirme vardır.",
+          "distinction": "Komşu dal ciddi çabayı da kapsarken bu dal bilinçli hedef seçimini ve özellikle silahla hedeflemeyi öne çıkarır."
         },
         {
           "neighbor_ref": "root_001230/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Bu dalda bilerek seçme ve gerektiğinde tek bir kişiyi silahla hedef alma belirgindir.",
-          "neighbor_only": "Komşu dal, hedefe gitme, ona varma ve onu akılda tutma gibi daha geniş yönelme aşamalarını kapsar.",
-          "gloss": "hedefe doğru yönelme",
-          "shared_zone": "İki dal, seçilen bir şeye yönelme çekirdeğinde geniş ölçüde örtüşür.",
-          "distinction": "Bu dal seçimin bilinçli ve ayırt edici oluşunu öne çıkarır; komşu dal ise yönelmenin yanı sıra gitme ve zihinde tutma biçimlerini de içine alır."
+          "focus_only": "Belirli bir kişiyi başkaları arasından seçip silahla hedefleme bu dalın açık özelleşmesidir.",
+          "neighbor_only": "Hedefe fiilen gitme, varma ve onu zihinde tutma komşu dalın daha geniş yöneliş alanındadır.",
+          "gloss": "bir şeye doğru yönelme",
+          "shared_zone": "Her iki dal da bir hedefi amaç edinip yönelişi o hedefe çevirir.",
+          "distinction": "Bu dal bilinçli amaç ve hedef seçimine odaklanır; komşu dal ise hedefe doğru gitme ve onu zihinde tutma aşamalarını da kapsar."
         }
       ],
-      "neighbor_coverage_note": "On iki komşunun tamamı değerlendirildi; en yakın üç anlam sınırı yayımlandı, kalanlar yalnızca seçim, yön değiştirme veya aynı kökteki ilgisiz dallarla tematik bağ kurduğu için elendi.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; yalnızca aynı amaç ve yöneliş çekirdeğini paylaşan ya da dinsel özelleşmeyle doğrudan karışabilecek dört komşu ayırt edici bulundu.",
       "branch_image_ar": "قصد الشيء وتعمده",
       "what_is_ar": "يدخل فيه يممته وتيممته بمعنى قصدته وتعمدته وتوخيته، ومنه توجيه السهم أو الرمح إلى شخص بعينه.",
       "source_phrase_ar": "كلمة تدل على قصد الشيء وتعمده وقصده؛ تيممت فلانا بسهمي ورمحي إذا قصدته دون من سواه (maqayis)؛ يممت الرجل إذا قصدته (jamhara)؛ يممته قصدته؛ تيممته تقصدته؛ أصله التعمد والتوخي (sihah)",
@@ -173,27 +175,26 @@
         "SI"
       ],
       "source_note": {
-        "MQ": "Ok ya da mızrakla belirli bir kişiyi diğerlerinden ayırarak hedef alma, bu yönelmenin somut bir örneğidir. Tek başına aktarılan bir niteleme, her aradığını bulan, talihi yüksek veya iyilik için yönelinen kişiyi anlatır.",
-        "SI": "Ok ya da mızrakla belirli bir kişiyi diğerlerinden ayırarak hedef alma, bu yönelmenin somut bir örneğidir."
+        "MQ": "Tek bir kaynak, sözü her aradığını elde eden ya da kendisine iyilik yöneltilen kimsenin niteliği olarak da verir."
       }
     },
     {
       "branch_ref": "root_001697/B002",
       "concept_map": {
-        "definition": "Namaz için temiz toprağa yönelip yüzü ve elleri toprakla silerek yapılan dinsel arınma uygulamasıdır. Bir hastaya bu uygulamayı yaptırma ya da onun adına doğrudan uygulama da bu özel kullanıma bağlıdır.",
+        "definition": "Namaz amacıyla temiz toprağa yönelme ve yüz ile elleri toprakla silme uygulamasıdır. Hasta bir kimseye bu uygulamanın yaptırılması ya da işlemin ona uygulanması da bu çekirdeğe bağlıdır.",
         "facets": [
           {
             "facet_id": "F001",
-            "role": "core",
-            "statement": "Namaz amacıyla temiz toprağa bilinçli biçimde yönelmeyi içerir.",
+            "role": "specialization",
+            "statement": "Namaz amacıyla temiz toprağa bilinçli biçimde yönelinir.",
             "claim_ids": [
               "lu_005"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Yüzü ve elleri toprakla silerek yerine getirilen özel arınma uygulamasıdır.",
+            "role": "core",
+            "statement": "Yüz ve eller, namaz amacıyla toprak kullanılarak silinir.",
             "claim_ids": [
               "lu_006"
             ]
@@ -201,7 +202,7 @@
           {
             "facet_id": "F003",
             "role": "associated_use",
-            "statement": "Bir hastanın uygulamayı yapmasını sağlama veya işlemi onun için gerçekleştirme kullanımını kapsar.",
+            "statement": "Hasta bir kimseye bu uygulama yaptırılır ya da işlem doğrudan ona uygulanır.",
             "claim_ids": [
               "lu_007"
             ]
@@ -209,7 +210,7 @@
         ]
       },
       "source_synthesis": {
-        "common_summary": "Namaz bağlamındaki özel kullanım, temiz toprağa yönelme ile yüzü ve elleri toprakla silme işlemini birbirine bağlar.",
+        "common_summary": "Dal, namaz için temiz toprağa yönelme ile yüzü ve elleri toprakla silme işlemini aynı özel uygulamanın iki bağlı yönü olarak birleştirir.",
         "common_claim_ids": [
           "lu_005",
           "lu_006"
@@ -220,18 +221,18 @@
               "lu_007"
             ],
             "kind": "sole_attestation",
-            "summary": "Tek başına aktarılan ettirgen kullanım, hastaya bu uygulamayı yaptırmayı veya işlemi onun için doğrudan yapmayı anlatır."
+            "summary": "Hasta bir kimsenin uygulamayı yapmasının sağlanması veya işlemin doğrudan ona uygulanması ayrıca belirtilir."
           }
         ],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "namaz için yüzü ve elleri toprakla silme",
-        "applicability": "Temiz toprağa yönelme amacını ve uygulamanın yüz ile eller üzerindeki temel işlemini birlikte anlatır.",
+        "text": "namaz için temiz toprağa yönelip yüzü ve elleri onunla silme",
+        "applicability": "Temiz toprağa yönelme ile yüz ve elleri toprakla silme işlemlerinin namaz amacıyla birlikte yapıldığı uygulamayı karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Namaz amacı, toprak kullanımı ve yüz ile elleri silme işlemlerini korur.",
+          "preserves": "Amacı, temiz toprağa yönelişi ve yüz ile ellerin toprakla silinmesini birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -243,28 +244,13 @@
       },
       "contextual_glosses": [
         {
-          "text": "temiz toprağa yönelmek",
+          "text": "hastaya toprakla temizlenme işlemini uygulama",
           "usage_role": "explanatory",
-          "applicability": "Uygulamanın eski yönelme bileşeninin özellikle anlatıldığı namaz bağlamında kullanılır.",
+          "applicability": "Hasta kişinin uygulamayı yapmasının sağlandığı veya işlemin doğrudan ona yapıldığı bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Namaz için temiz toprağı seçip ona yönelme bileşenini korur.",
-            "loses": "Yüzü ve elleri toprakla silme biçimindeki tamamlanmış uygulamayı tek başına bildirmez.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        },
-        {
-          "text": "hastaya toprakla arınma yaptırmak",
-          "usage_role": "contextual",
-          "applicability": "Bir hastanın namaz için yapılan topraklı arınmayı gerçekleştirmesinin sağlandığı bağlama özgüdür.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Hastayı katılımcı yapma ve uygulamayı ona yaptırma ilişkisini korur.",
-            "loses": null,
+            "preserves": "Uygulamanın hasta bir katılımcıya yaptırılması veya onun üzerinde gerçekleştirilmesi yönünü korur.",
+            "loses": "Uygulamanın kişi tarafından kendi başına yapılabildiği genel durumu dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
@@ -287,23 +273,35 @@
         {
           "lexical_unit_id": "lu_007",
           "rendering_kind": "ordinary",
-          "target_gloss": "hastaya namaz için toprakla arınma yaptırdı veya bunu onun için uyguladı"
+          "target_gloss": "hastaya namaz için yüzünü ve ellerini toprakla sildirdi veya bu işlemi ona uyguladı"
         }
       ],
-      "excluded_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "toprakla yıkanma",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Toprağın temizlenmeyle ilişkili bir araç olması yönünü kısmen korur.",
+            "loses": "Namaz amacını, temiz toprağa yönelmeyi ve yüz ile elleri silme işlemini kaybeder.",
+            "adds": "Suyla yapılan yıkamaya benzer, bedeni toprakla yıkama işlemi anlamını ekler.",
+            "collision": "Silme uygulamasını farklı katılımcıları ve aşamaları olan bir yıkanma işlemiyle karıştırır."
+          }
+        }
+      ],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_001697/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Bu dal namaz, temiz toprak, yüz ve elleri silme koşullarından oluşan özel bir uygulamadır.",
-          "neighbor_only": "Komşu dal herhangi bir şey veya kişiye bilerek yönelmeyi ve onu hedef almayı genel olarak anlatır.",
-          "gloss": "toprakla yapılan namaz arınması",
-          "shared_zone": "Temiz toprağı seçip ona yönelme, genel bilinçli yönelme çekirdeğini taşır.",
-          "distinction": "Genel yönelme yalnızca başlangıçtaki seçimi açıklar; bu dalın sınırı namaz amacıyla yüz ve eller üzerinde yapılan özel işlemi de zorunlu kılar."
+          "focus_only": "Namaz amacı, temiz toprak ve yüz ile elleri toprakla silme işlemi yalnızca bu dalın sınırındadır.",
+          "neighbor_only": "Herhangi bir hedefi bilerek amaç edinme ve bir kişiyi ok ya da mızrakla hedef alma komşu dalın genel alanıdır.",
+          "gloss": "bilerek amaçlayıp yönelme",
+          "shared_zone": "Temiz toprağa bilinçli yöneliş, komşu daldaki genel amaç edinme çekirdeğiyle bağlantı kurar.",
+          "distinction": "Bu dal belirli bir namaz uygulamasını ve onun fiziksel işlemlerini anlatır; komşu dal ise nesnesi ve bağlamı sınırlanmamış bilinçli hedeflemeyi anlatır."
         }
       ],
-      "neighbor_coverage_note": "On iki komşunun tamamı değerlendirildi; yalnızca genel bilinçli yönelme dalı uzmanlaşmanın kaynağını açıklayacak ölçüde yakındır, öteki adaylar konu ve yapı bakımından ilgisizdir.",
+      "neighbor_coverage_note": "Adayların tamamı değerlendirildi; rastlantısal ağ adayları sınırı aydınlatmadığı için yalnızca genel yönelme anlamıyla doğrudan bağlantılı dal yayımlandı.",
       "branch_image_ar": "التيمم للصلاة بمسح الوجه واليدين بالتراب",
       "what_is_ar": "يدخل فيه الاستعمال الصلاتي المتخصص: تيمم الصعيد الطيب للصلاة، وما صار إليه لفظ التيمم بكثرة الاستعمال من مسح الوجه واليدين بالتراب.",
       "source_phrase_ar": "تيممت الصعيد للصلاة وأصله التعمد والتوخي؛ أي اقصدوا لصعيد طيب؛ صار التيمم مسح الوجه واليدين بالتراب (sihah)",
@@ -311,18 +309,18 @@
         "SI"
       ],
       "source_note": {
-        "SI": "Tek başına aktarılan ettirgen kullanım, hastaya bu uygulamayı yaptırmayı veya işlemi onun için doğrudan yapmayı anlatır."
+        "SI": "Hasta bir kimsenin uygulamayı yapmasının sağlanması veya işlemin doğrudan ona uygulanması ayrıca belirtilir."
       }
     },
     {
       "branch_ref": "root_001697/B003",
       "concept_map": {
-        "definition": "Dibi veya kıyısı erişilemeyecek ölçüde büyük bir su kütlesi, çoğunlukla deniz ya da denizin açık ve derin kesimidir; kullanım büyük bir tatlı su ırmağına da uzanır. İçine düşüp boğulma ve suyun kıyıyı yükselerek basması buna bağlı kullanımlardır.",
+        "definition": "Deniz, denizin engin bölümü ya da çok büyük bir su kütlesidir; kimi kullanımda büyük bir tatlı su akarsuyunu da kapsar. Bu suya düşüp boğulma ve suyun kabarıp kıyıyı basması, çekirdeğe bağlı olaylardır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Deniz, denizin açık ve derin kesimi veya çok büyük su kütlesini belirtir.",
+            "statement": "Deniz, denizin engin ve derin bölümü veya çok büyük bir su kütlesi anlatılır.",
             "claim_ids": [
               "lu_008"
             ]
@@ -330,7 +328,7 @@
           {
             "facet_id": "F002",
             "role": "source_variant",
-            "statement": "Kapsam bir aktarımda tuzlu deniz suyunun yanında büyük tatlı su ırmağını da içine alır; kök bağı konusunda ayrıca çekince vardır.",
+            "statement": "Kapsam, bir kaynak yorumunda büyük ve tatlı sulu akarsuya kadar genişler.",
             "claim_ids": [
               "lu_008"
             ]
@@ -338,7 +336,7 @@
           {
             "facet_id": "F003",
             "role": "associated_use",
-            "statement": "Bir kişinin bu büyük suya düşüp boğulmasını veya denize atılmasını anlatır.",
+            "statement": "Bir kişi bu suya düşer veya atılır ve boğulur; sonuçtaki durumu da ayrıca nitelenir.",
             "claim_ids": [
               "lu_009",
               "lu_010"
@@ -347,7 +345,7 @@
           {
             "facet_id": "F004",
             "role": "associated_use",
-            "statement": "Büyük suyun yükselip kıyıyı basması ve kaplaması için kullanılır.",
+            "statement": "Büyük su kabarıp kıyının üzerine çıkar ve kıyıyı basar.",
             "claim_ids": [
               "lu_011"
             ]
@@ -355,36 +353,23 @@
         ]
       },
       "source_synthesis": {
-        "common_summary": "Aktarımların çoğu bir kişinin büyük suya düşüp orada boğulmasını verir; Sihah ise boğulma sonucunu açıkça belirtmeden denize atılmayı aktarır.",
+        "common_summary": "Tanımlar deniz, denizin engin bölümü ve çok büyük su üzerinde birleşir; kapsamın büyük tatlı su akarsuyuna uzanıp uzanmadığı değişir ve bir kaynak bu anlamı kökün ana örüntüsünün dışında sayar. Bağlı kullanımlar, kişinin bu suya düşmesi ya da atılması sonucunda boğulmasını, boğulmuş durumunu ve kabaran suyun kıyıyı basmasını anlatır.",
         "common_claim_ids": [
+          "lu_008",
           "lu_009",
-          "lu_010"
+          "lu_010",
+          "lu_011"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_008"
-            ],
-            "kind": "disagreement",
-            "summary": "Ana açıklamalar deniz ve onun derin, engin kesiminde birleşir; bir aktarım adı büyük tatlı su ırmağına genişletirken bir başkası deniz anlamının kök örüntüsüne bağlı olmadığını belirtir."
-          },
-          {
-            "claim_ids": [
-              "lu_011"
-            ],
-            "kind": "sole_attestation",
-            "summary": "İki aktarımda suyun yükselerek kıyıyı basması ve ona üstün gelmesi için özel bir kullanım verilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "deniz ya da çok büyük su kütlesi",
-        "applicability": "Deniz çekirdeğini, derin ve engin su görünümünü ve büyük tatlı su ırmağına uzanan kapsamı birlikte karşılar.",
+        "text": "deniz, denizin engin bölümü veya büyük akarsu",
+        "applicability": "Denizin bütünü ya da engin bölümü kastedildiğinde ve kapsamın büyük akarsuya uzandığı kaynak yorumunda kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Deniz, engin su ve büyük tatlı su ırmağı seçeneklerinin oluşturduğu tam referans alanını korur.",
+          "preserves": "Deniz çekirdeğini, engin su görünümünü ve büyük akarsuya uzanan kaynak varyantını korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -396,27 +381,12 @@
       },
       "contextual_glosses": [
         {
-          "text": "engin deniz",
+          "text": "denize düşüp boğulma",
           "usage_role": "contextual",
-          "applicability": "Dibine veya kıyısına erişilemeyen deniz ya da denizin açık ve derin kesimi anlatılırken kullanılır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Büyük, derin ve sınırları erişilmez deniz görünümünü korur.",
-            "loses": "Büyük tatlı su ırmağına uzanan kaynak varyantını dışarıda bırakır.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        },
-        {
-          "text": "denize düşüp boğulmak",
-          "usage_role": "contextual",
-          "applicability": "Bir kişinin büyük suya düşüp boğulduğu veya denize atıldığı olay bağlamında kullanılır.",
+          "applicability": "Bir kişinin denize düşmesi veya atılması ve bunun sonucunda boğulması anlatıldığında kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Düşme anlatımlarındaki boğulma sonucunu ve ayrı denize atılma aktarımını korur.",
+            "preserves": "Suya giriş olayını, etkilenen kişiyi ve boğulma sonucunu birlikte korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -426,12 +396,12 @@
           ]
         },
         {
-          "text": "suyun kıyıyı basması",
+          "text": "denizin kabarıp kıyıyı basması",
           "usage_role": "contextual",
-          "applicability": "Büyük su yükselip kıyının üzerine çıktığında ve onu kapladığında kullanılır.",
+          "applicability": "Büyük suyun yükselerek kıyının üzerine çıkması ve kıyıya üstün gelmesi anlatıldığında kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Suyun yükselmesi, kıyıyı aşması ve kaplaması aşamalarını korur.",
+            "preserves": "Suyun kabarmasını, kıyının üzerine çıkmasını ve kıyıyı basma sonucunu korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -445,68 +415,80 @@
         {
           "lexical_unit_id": "lu_008",
           "rendering_kind": "ordinary",
-          "target_gloss": "deniz, engin su veya büyük tatlı su ırmağı"
+          "target_gloss": "deniz, denizin engin bölümü veya büyük akarsu"
         },
         {
           "lexical_unit_id": "lu_009",
           "rendering_kind": "ordinary",
-          "target_gloss": "büyük suya düşüp boğuldu veya denize atıldı"
+          "target_gloss": "denize düştü veya atıldı ve boğuldu"
         },
         {
           "lexical_unit_id": "lu_010",
           "rendering_kind": "ordinary",
-          "target_gloss": "büyük suya düşüp boğulmuş veya denize atılmış kişi"
+          "target_gloss": "denize düşmüş veya atılmış ve boğulmuş kimse"
         },
         {
           "lexical_unit_id": "lu_011",
           "rendering_kind": "ordinary",
-          "target_gloss": "su yükselip kıyıyı bastı"
+          "target_gloss": "deniz kabarıp kıyıyı bastı"
         }
       ],
-      "excluded_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "göl",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Büyük ve sürekli bir su kütlesi olma yönünü kısmen korur.",
+            "loses": "Deniz, denizin engin bölümü ve büyük akarsu sınırlarını kaybeder.",
+            "adds": "Kapalı ve durgun bir iç su kütlesi olma anlamını ekler.",
+            "collision": "Gölü açıkça kapsayan komşu geniş su anlamıyla karışır."
+          }
+        }
+      ],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000086/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Bu dal denizin açık ve derin kesimini, suya düşüp boğulmayı ve kıyının su altında kalmasını ayrıca kapsar.",
-          "neighbor_only": "Komşu dal küçük veya büyük gölü de kapsamına alır.",
-          "gloss": "geniş ve çok büyük su",
-          "shared_zone": "Deniz ve büyük ırmak gibi geniş, bol su kütleleri iki dalın ortak alanıdır.",
-          "distinction": "Komşu dal suyun genişliği ve çokluğu üzerinden göle kadar uzanır; bu dal deniz ve derin su görünümüne bağlı olay kullanımlarını da taşır."
+          "focus_only": "Denizin engin bölümü ile denize düşüp boğulma ve kabaran suyun kıyıyı basması bu dalda ayrıca yer alır.",
+          "neighbor_only": "Küçük ya da büyük gölün de aynı su adı altında açıkça kapsanması komşu dala özgüdür.",
+          "gloss": "geniş ve bol su",
+          "shared_zone": "İki dal da denizi, çok büyük suyu ve büyük akarsuyu adlandırabilir.",
+          "distinction": "Komşu dal gölleri de açıkça kapsayan genel bir bol su alanına sahiptir; bu dal ise deniz ve engin deniz görünümünü merkez alıp ona bağlı boğulma ve kıyı basma olaylarını taşır."
         },
         {
           "neighbor_ref": "root_001344/B002",
-          "relation_type": "near_neighbor",
+          "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Bu dal bütün denizi veya büyük tatlı su ırmağını adlandırabilir ve boğulma ile kıyı basmasını içerir.",
-          "neighbor_only": "Komşu dal özellikle denizin ortasındaki derin, dalgalı kesimi ve geminin oraya girmesini anlatır.",
-          "gloss": "denizin açık ve derin kesimi",
-          "shared_zone": "Denizin kıyıdan uzak, derin ve engin kesimi iki dalda ortaklaşır.",
-          "distinction": "Komşu yalnızca denizin belirli bir kesimine odaklanır; bu dal tüm denizi ve başka büyük suları adlandırabilecek daha geniş bir referansa sahiptir."
+          "focus_only": "Denizin bütünü ve bazı yorumlarda büyük tatlı su akarsuyu bu dalın daha geniş adlandırma alanındadır.",
+          "neighbor_only": "Dalga çalkantısı ve geminin engin deniz bölümüne girmesi komşu dalda belirginleşir.",
+          "gloss": "denizin engin ve derin bölümü",
+          "shared_zone": "Her iki dal da denizin engin, derin ve kıyıdan uzak su bölümünü karşılayabilir.",
+          "distinction": "Komşu dal özellikle denizin engin bölümüne ve dalga hareketine odaklanır; bu dal denizin tamamını ve kimi yorumda büyük akarsuyu da kapsar."
         },
         {
           "neighbor_ref": "root_001105/B001",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Bu dal büyük su kütlesini adlandırır ve içine düşüp boğulma olayını da türetir.",
-          "neighbor_only": "Komşu dal suyun yükselerek bir şeyi örtmesi ve içine alma durumunu çekirdeğe yerleştirir.",
-          "gloss": "örten çok su",
-          "shared_zone": "Çok miktardaki suyun bir yeri veya kişiyi kaplaması iki dalda buluşur.",
-          "distinction": "Bu dalda kaplama kıyı basmasına bağlı bir kullanımdır; komşu dalda yükselip örtme büyük suyun temel tanımlayıcı özelliğidir."
-        },
-        {
-          "neighbor_ref": "root_001040/B005",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Bu dal büyük tatlı su ırmağını ve suya düşüp boğulma ile kıyıyı basma kullanımlarını kapsar.",
-          "neighbor_only": "Komşu dal çok su içeren bir kuyuyu da adlandırabilir.",
-          "gloss": "çok su bulunan deniz",
-          "shared_zone": "Denizi büyük ve çok su içeren bir kütle olarak adlandırma iki dalda ortaktır.",
-          "distinction": "Komşu dal kuyuya uzanan su bolluğunu içerir; bu dal ise engin denizden büyük ırmağa uzanır ve suyla ilgili olay biçimleri geliştirir."
+          "focus_only": "Belirli bir büyük su kütlesinin adı ile ona düşüp boğulma bu dalda yer alır.",
+          "neighbor_only": "Suyun yükselerek nesneleri örtmesi ve içine alma süreci komşu dalın genel çekirdeğidir.",
+          "gloss": "örten çok miktarda su",
+          "shared_zone": "İki dal da çok miktarda suyu ve suyun çevresini kaplayacak ölçüde yükselmesini anlatır.",
+          "distinction": "Bu dal deniz veya büyük su kütlesini adlandırır; komşu dal ise suyun çokluğu, yükselmesi ve örtmesi niteliğini merkez alır."
+        },
+        {
+          "neighbor_ref": "root_000227/B006",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Deniz veya büyük su kütlesi ile suyun kabarıp kıyıyı basması bu dalın alanındadır.",
+          "neighbor_only": "Suyun kara ile birleştiği kenarın kendisi komşu dalın çekirdeğidir.",
+          "gloss": "su kıyısı",
+          "shared_zone": "Büyük suyun kıyıya ulaşması ve kıyıyla kurduğu fiziksel ilişki aynı sahneyi oluşturur.",
+          "distinction": "Bu dal su kütlesini ve onun kıyıyı basma olayını anlatır; komşu dal ise olaydan bağımsız olarak kıyı çizgisini adlandırır."
         }
       ],
-      "neighbor_coverage_note": "On iki komşunun tamamı değerlendirildi; büyük su alanını doğrudan kesen dört aday yayımlandı, kıyı, ırmak ağzı, su dönencesi, vadi kıvrımı ve aynı kökün ilgisiz dalları yalnızca alan veya olay bağı taşıdığı için elendi.",
+      "neighbor_coverage_note": "Bütün adaylar gözden geçirildi; deniz, büyük su, engin deniz ve kıyı sınırlarını gerçekten açıklayan dört komşu yayımlandı.",
       "branch_image_ar": "اليم ماء عظيم",
       "what_is_ar": "يدخل فيه اليم بمعنى البحر أو لجته أو الماء العظيم، وما يتصل به من الوقوع فيه والغرق وطغيان الماء على الساحل، مع اتساع التهذيب للنهر الكبير العذب.",
       "source_phrase_ar": "فأما البحر فليس من هذا القياس؛ يم الرجل فهو ميموم إذا وقع في اليم فغرق (maqayis)؛ اليم البحر الذي لا يدرك قعره ولا شطاه؛ اليم لجته؛ يم الساحل إذا طما عليه اليم (ayn)؛ اليم فسروه في التنزيل البحر (jamhara)؛ اليم البحر؛ يم الرجل فهو ميموم إذا طرح في البحر (sihah)؛ يقع اسم اليم على ما كان ماؤه ملحا زعافا وعلى النهر الكبير العذب الماء (tahdhib)",
@@ -517,68 +499,56 @@
         "SI",
         "TA"
       ],
-      "source_note": {
-        "AY": "Ana açıklamalar deniz ve onun derin, engin kesiminde birleşir; bir aktarım adı büyük tatlı su ırmağına genişletirken bir başkası deniz anlamının kök örüntüsüne bağlı olmadığını belirtir. İki aktarımda suyun yükselerek kıyıyı basması ve ona üstün gelmesi için özel bir kullanım verilir.",
-        "JA": "Ana açıklamalar deniz ve onun derin, engin kesiminde birleşir; bir aktarım adı büyük tatlı su ırmağına genişletirken bir başkası deniz anlamının kök örüntüsüne bağlı olmadığını belirtir.",
-        "MQ": "Ana açıklamalar deniz ve onun derin, engin kesiminde birleşir; bir aktarım adı büyük tatlı su ırmağına genişletirken bir başkası deniz anlamının kök örüntüsüne bağlı olmadığını belirtir.",
-        "SI": "Ana açıklamalar deniz ve onun derin, engin kesiminde birleşir; bir aktarım adı büyük tatlı su ırmağına genişletirken bir başkası deniz anlamının kök örüntüsüne bağlı olmadığını belirtir.",
-        "TA": "Ana açıklamalar deniz ve onun derin, engin kesiminde birleşir; bir aktarım adı büyük tatlı su ırmağına genişletirken bir başkası deniz anlamının kök örüntüsüne bağlı olmadığını belirtir. İki aktarımda suyun yükselerek kıyıyı basması ve ona üstün gelmesi için özel bir kullanım verilir."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_001697/B004",
       "concept_map": {
-        "definition": "Güvercinlerden bir kuşu veya güvercine benzeyen bir kuş türünü topluca, tekil biçimiyle de bu topluluğun bir üyesini belirtir. Aktarımlar kuşu evcil ya da yabani sayma, çeşitli renklerde olma ve üzüm yeme ayrıntılarında ayrılır.",
+        "definition": "Güvercin türü ya da güvercine benzer bir kuştur. Kaynaklarda yabani, evlerde üreyen veya çeşitli renklerde olup üzüm yiyen kuş biçiminde farklı sınırlar çizilir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Güvercinlerden olan veya güvercine benzeyen bir kuş türünü topluca belirtir.",
+            "statement": "Güvercin türünden sayılan veya güvercine benzeyen bir kuş ve bu kuşun tek bireyi anlatılır.",
             "claim_ids": [
-              "lu_012"
+              "lu_012",
+              "lu_013"
             ]
           },
           {
             "facet_id": "F002",
             "role": "source_variant",
-            "statement": "Kuşun evlerde üreyen evcil tür mü, yabani tür mü, yoksa çeşitli renklerde üzüm yiyen daha geniş bir kuş mu olduğu konusunda aktarımlar ayrılır.",
+            "statement": "Kuş kimi kaynakta yabani, kimi kaynakta ise evlerde yaşayan veya üreyen güvercin olarak sınırlandırılır.",
             "claim_ids": [
               "lu_012"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "specialization",
-            "statement": "Tekil biçim, bu kuş topluluğunun bir üyesini veya bir güvercini belirtir.",
+            "role": "source_variant",
+            "statement": "Bir başka betimleme, kuşun çeşitli renklerde olduğunu ve üzüm yediğini belirtir.",
             "claim_ids": [
-              "lu_013"
+              "lu_012"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Tekil biçim, topluluk adıyla gösterilen kuşlardan birini ve kaynakların açık eşleştirmesinde bir güvercini anlatır.",
+        "common_summary": "Kaynaklar bunun bir kuş olduğu konusunda birleşir. Kuşun güvercin ya da güvercinle ilişkili bir tür sayılması, yabani veya evlerde yaşayan ve üreyen oluşu, çeşitli renklerde olup üzüm yemesi kaynaklara göre değişen sınırlamalardır; tekil biçim bu kuşlardan bir bireyi gösterir.",
         "common_claim_ids": [
+          "lu_012",
           "lu_013"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_012"
-            ],
-            "kind": "disagreement",
-            "summary": "Kuşun güvercinlerden olduğu genel olarak korunurken bazı aktarımlar onu evlerde üreyen evcil, bazıları yabani, biri de çeşitli renklerde olup üzüm yiyen bir kuş olarak sınırlar."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "güvercin ya da güvercine benzer kuş",
-        "applicability": "Kuşun güvercin oluşunu ve daha geniş benzer kuş yorumunu, evcil-yabani ayrılığını zorlamadan karşılar.",
+        "text": "güvercin türü veya güvercine benzer kuş",
+        "applicability": "Kaynaklara göre yabani ya da evcil sayılabilen, güvercin türünden veya güvercine benzer kuşu genel sınırıyla karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Güvercin çekirdeğini, benzer kuş olasılığını ve türün toplu anlatımını korur.",
+          "preserves": "Kuş çekirdeğini, güvercinle tür veya benzerlik bağını ve kaynaklar arasındaki sınır değişkenliğini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -590,28 +560,28 @@
       },
       "contextual_glosses": [
         {
-          "text": "güvercinler",
+          "text": "evlerde üreyen güvercin türü",
           "usage_role": "contextual",
-          "applicability": "Topluluk adı doğrudan güvercin kuşlarını gösterdiğinde doğal çoğul karşılıktır.",
+          "applicability": "Kuşun evlere alışması veya evlerde yavrulaması özellikle belirtilen kaynak bağlamında kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Kuşların güvercin grubundan oluştuğu temel yorumu korur.",
-            "loses": "Güvercine yalnızca benzeyen daha geniş kuş yorumu ile kaynak ayrıntılarını dışarıda bırakır.",
+            "preserves": "Güvercin bağlantısını ve kuşun evlerde yaşayıp üreme özelliğini korur.",
+            "loses": "Yabani güvercin ve yalnızca güvercine benzer kuş biçimindeki öteki kaynak sınırlarını dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F002"
           ]
         },
         {
-          "text": "bir güvercin",
-          "usage_role": "contextual",
-          "applicability": "Topluluk içindeki tek bir kuşun gösterildiği tekil kullanımda geçerlidir.",
+          "text": "çeşitli renklerde, üzüm yiyen kuş",
+          "usage_role": "explanatory",
+          "applicability": "Renk çeşitliliği ve üzüm yeme özelliğini veren özel kaynak betimlemesi açıklanırken kullanılır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Topluluğun tek bir üyesini ve güvercin kimliğini birlikte korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Kuş oluşunu, çeşitli renklerini ve üzümle beslenme özelliğini korur.",
+            "loses": "Güvercin türü olma veya yabani ve evcil sınırlandırmalarını tek başına göstermez.",
             "adds": null,
             "collision": null
           },
@@ -624,48 +594,60 @@
         {
           "lexical_unit_id": "lu_012",
           "rendering_kind": "ordinary",
-          "target_gloss": "güvercinler veya güvercine benzer kuşlar"
+          "target_gloss": "güvercin türü veya güvercine benzer kuş"
         },
         {
           "lexical_unit_id": "lu_013",
           "rendering_kind": "ordinary",
-          "target_gloss": "bir güvercin veya bu kuş türünün tek üyesi"
+          "target_gloss": "bu türden tek bir kuş, bir güvercin"
         }
       ],
-      "excluded_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "yalnızca yabani güvercin",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Kuş ve güvercin bağlantısını, ayrıca bir kaynakta verilen yabani olma sınırını korur.",
+            "loses": "Evlerde yaşayan veya üreyen kuş ile çeşitli renklerde olup üzüm yiyen kuş biçimindeki öteki kaynak sınırlarını dışarıda bırakır.",
+            "adds": null,
+            "collision": "Tek bir kaynak varyantını bütün dalın değişmez sınırı sanmaya yol açar."
+          }
+        }
+      ],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000001/B012",
-          "relation_type": "synonym",
-          "boundary_match": "exact",
-          "focus_only": null,
-          "neighbor_only": null,
-          "gloss": "güvercin kuşu",
-          "shared_zone": "Güvercin ve onun tekil kuşu iki dalın doğrudan ortak alanıdır.",
-          "distinction": "İki dalın topluluk ve tekil güvercin çekirdeği olağan kullanımda aynı sınırı kurar; kaynaklardaki evcil-yabani, renk, beslenme, görünüş ve ses ayrıntıları bu sınırı değiştirmeyen bağımlı betimlemelerdir."
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Çeşitli renklerde olup üzüm yeme betimlemesi ve farklı kaynakların yabani-evcil ayrımı bu dala özgüdür.",
+          "neighbor_only": "Bütün güvercinleri, boyun halkası ve ötüş gibi daha geniş ayırıcılarla sınıflandırma komşu dalın alanıdır.",
+          "gloss": "güvercin",
+          "shared_zone": "Her iki dal da güvercinleri veya güvercin türünden sayılan kuşları kapsar.",
+          "distinction": "Komşu dal güvercinin genel kuş adı ve geniş sınıflandırmasıdır; bu dal ise kaynakların yabani, evcil veya benzer kuş diye değişik biçimde belirlediği özel bir kuş adıdır."
         },
         {
           "neighbor_ref": "root_000707/B011",
-          "relation_type": "near_neighbor",
+          "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Bu dal kuş türünün topluluğunu ve onun tekil üyesini, cinsiyet zorunluluğu olmadan belirtir.",
-          "neighbor_only": "Komşu dal özellikle bir güvercin adı veya dişi güvercin adı olarak sınırlanır.",
-          "gloss": "dişi güvercin",
-          "shared_zone": "Tek bir güvercini adlandırma alanında iki dal buluşur.",
-          "distinction": "Komşu ad dişi kuşa özgü olabilir; bu dalın tekil biçimi ise topluluğun herhangi bir üyesini gösterir ve topluluk adıyla birlikte işler."
+          "focus_only": "Türün toplu adı ve erkek-dişi ayrımı olmaksızın tek bireyi bu dalda kapsanır.",
+          "neighbor_only": "Güvercin için başka bir ad olup bazı açıklamalarda özellikle dişiyi göstermesi komşu dalın alanıdır.",
+          "gloss": "güvercin için başka bir ad",
+          "shared_zone": "Her iki dal güvercin türünden tek bir kuşu gösterebilir.",
+          "distinction": "Komşu dal güvercini genel olarak adlandırabilir ve kimi açıklamada dişiye daralabilir; bu dal ise toplu kuş adı ile onun tekil biçimini taşır ve kuşun sınırları kaynaklara göre değişir."
         },
         {
           "neighbor_ref": "root_000468/B009",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "Bu dal güvercin veya güvercine benzer kuşları belirtir.",
-          "neighbor_only": "Komşu dal ayrı bir kuş türünü, rengi ve yürüyüşü gibi özelliklerle belirtir.",
-          "gloss": "başka bir kuş türü",
-          "shared_zone": "Her iki dal belirli kuş türlerinin adlandırılması alanındadır.",
-          "distinction": "Ortaklık yalnızca kuş adları alanındadır; gösterdikleri kuş türleri farklı olduğundan olağan bağlamda birbirlerinin yerine kullanılamazlar."
+          "focus_only": "Güvercin türü veya güvercine benzer kuş bu dalın konusudur.",
+          "neighbor_only": "Ayrı bir kuş türü ile onun rengi ve yürüyüşü komşu dalın konusudur.",
+          "gloss": "ayrı bir kuş türü",
+          "shared_zone": "İki dal da belirli bir kuş türünün adını ve kaynaklardaki görünüş betimlemelerini içerir.",
+          "distinction": "Ortak alan yalnızca kuş adlandırmasıdır; gösterdikleri kuş türleri ve ayırıcı özellikler farklıdır."
         }
       ],
-      "neighbor_coverage_note": "On iki komşunun tamamı değerlendirildi; güvercin çekirdeğini veya kuş sınıfını açıklayan üçü yayımlandı, tüy, renk, başka hayvan ve aynı kökün ilgisiz dalları sınırı keskinleştirmediği için elendi.",
+      "neighbor_coverage_note": "Adayların tümü değerlendirildi; yalnızca genel güvercin, dişi güvercin ve başka bir kuş türüyle sınırı belirginleştiren üç ilişki yayımlandı.",
       "branch_image_ar": "اليمام طير",
       "what_is_ar": "يدخل فيه اليمام واليمامة للطير، مع اختلاف المصادر بين الحمام الوحشي، والحمام الذي يألف البيوت، وضرب من الحمام أو طير على ألوان شتى.",
       "source_phrase_ar": "اليمام طائر؛ الطير الذي يستفرخ في البيوت (maqayis)؛ اليمامة الحمامة واليمام طير على ألوان شتى (ayn)؛ اليمام ضرب من الطير الواحدة يمامة (jamhara)؛ اليمام الحمام الوحشي؛ هي التي تألف البيوت (sihah)؛ اليمام من الحمام التي تكون في البيوت؛ ضرب من الحمام بري (tahdhib)",
@@ -676,23 +658,17 @@
         "SI",
         "TA"
       ],
-      "source_note": {
-        "AY": "Kuşun güvercinlerden olduğu genel olarak korunurken bazı aktarımlar onu evlerde üreyen evcil, bazıları yabani, biri de çeşitli renklerde olup üzüm yiyen bir kuş olarak sınırlar.",
-        "JA": "Kuşun güvercinlerden olduğu genel olarak korunurken bazı aktarımlar onu evlerde üreyen evcil, bazıları yabani, biri de çeşitli renklerde olup üzüm yiyen bir kuş olarak sınırlar.",
-        "MQ": "Kuşun güvercinlerden olduğu genel olarak korunurken bazı aktarımlar onu evlerde üreyen evcil, bazıları yabani, biri de çeşitli renklerde olup üzüm yiyen bir kuş olarak sınırlar.",
-        "SI": "Kuşun güvercinlerden olduğu genel olarak korunurken bazı aktarımlar onu evlerde üreyen evcil, bazıları yabani, biri de çeşitli renklerde olup üzüm yiyen bir kuş olarak sınırlar.",
-        "TA": "Kuşun güvercinlerden olduğu genel olarak korunurken bazı aktarımlar onu evlerde üreyen evcil, bazıları yabani, biri de çeşitli renklerde olup üzüm yiyen bir kuş olarak sınırlar."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_001697/B005",
       "concept_map": {
-        "definition": "{{lu_014}} bir kadın adıdır; {{lu_015}} bu kadından adını alan bir ülke ya da yerleşimdir, {{lu_016}} ve {{lu_018}} ise başka yer adlarıdır. {{lu_015}} ile bağlantılı bölge sıfatı ve çok keskin görüşü anlatan kalıplaşmış karşılaştırma da bu ad alanına bağlıdır.",
+        "definition": "Bu dal, {{lu_014}} adlı kadın ile onun adını taşıdığı anlatılan {{lu_015}} bölgesini, {{lu_016}} adlı yeri ve {{lu_018}} yer adını kapsayan özel adlar kümesidir. Bölgeye bağlı aidiyet sözü ile {{lu_014}}'ün olağanüstü keskin görüşünü anlatan kalıplaşmış karşılaştırma da bu adlara bağlıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "{{lu_014}} bir kadın adıdır ve {{lu_015}} adlı ülke veya yerleşimin bu kadından adını aldığı aktarılır.",
+            "statement": "{{lu_014}} bir kadın adıdır ve {{lu_015}} adlı bölgenin bu kadının adını aldığı anlatılır.",
             "claim_ids": [
               "lu_014",
               "lu_015"
@@ -701,31 +677,24 @@
           {
             "facet_id": "F002",
             "role": "core",
-            "statement": "{{lu_016}} bilinen bir yerin özel adıdır.",
+            "statement": "{{lu_016}} ve {{lu_018}}, belirli yerleri gösteren özel adlardır.",
             "claim_ids": [
-              "lu_016"
+              "lu_016",
+              "lu_018"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "associated_use",
-            "statement": "Bölgeye bağlı kişi veya şeyi gösteren sıfat {{lu_015}} yer adından türetilir.",
+            "role": "extension",
+            "statement": "{{lu_015}} ile bağlantılı olmayı veya o bölgeden gelmeyi bildiren bir aidiyet sözü vardır.",
             "claim_ids": [
               "lu_017"
             ]
           },
           {
             "facet_id": "F004",
-            "role": "core",
-            "statement": "{{lu_018}}, {{lu_015}} ile bağlantılı başka bir yer adıdır.",
-            "claim_ids": [
-              "lu_018"
-            ]
-          },
-          {
-            "facet_id": "F005",
-            "role": "example",
-            "statement": "{{lu_015}} ile anılan mavi gözlü bir kadına dayanan karşılaştırma, olağanüstü keskin görüşü anlatır.",
+            "role": "associated_use",
+            "statement": "{{lu_014}}'ün çok uzakları görebildiği anlatısına dayanan, olağanüstü keskin görüşü belirten kalıplaşmış bir karşılaştırma vardır.",
             "claim_ids": [
               "lu_019"
             ]
@@ -733,7 +702,7 @@
         ]
       },
       "source_synthesis": {
-        "common_summary": "{{lu_014}} kadın adı olarak verilir ve {{lu_015}} adlı ülke veya yerleşimin adının bu kadından geldiği aktarılır.",
+        "common_summary": "{{lu_014}} bir kadın adı, {{lu_015}} ise daha önce başka bir ad taşıdığı ve bu kadının adıyla anılmaya başladığı bildirilen bölge veya yerleşim adıdır; bir kaynak burayı merkez yerleşimi Hacer olan köy diye sınırlar.",
         "common_claim_ids": [
           "lu_014",
           "lu_015"
@@ -744,57 +713,56 @@
               "lu_016"
             ],
             "kind": "sole_attestation",
-            "summary": "{{lu_016}} tek başına bilinen bir yer adı olarak kaydedilir."
+            "summary": "{{lu_016}}, tek bir kaynakta bilinen bir yerin özel adı olarak kaydedilir."
           },
           {
             "claim_ids": [
               "lu_017"
             ],
             "kind": "derivation",
-            "summary": "Bölgeye bağlı kişi veya şeyi gösteren sıfatın {{lu_015}} yer adından kurulduğu belirtilir."
+            "summary": "{{lu_015}} bölgesinden olmayı veya o bölgeye ait bulunmayı bildiren aidiyet biçimi ayrıca verilir."
           },
           {
             "claim_ids": [
               "lu_018"
             ],
             "kind": "sole_attestation",
-            "summary": "{{lu_018}}, {{lu_015}} ile bağlantılı ayrı bir yer adı olarak aktarılır."
+            "summary": "{{lu_018}}, tek bir kaynakta {{lu_015}} ile bağlantılı bir yer adı olarak geçer."
           },
           {
             "claim_ids": [
               "lu_019"
             ],
             "kind": "example",
-            "summary": "Üç günlük uzaklıktaki yolcuyu görebildiği söylenen mavi gözlü bir kadına dayalı karşılaştırma, görüş keskinliğinin örneği olarak verilir."
+            "summary": "{{lu_014}}'ün üç günlük yol uzaklığındaki yolcuyu görebildiği anlatısı, çok keskin görüş için kalıplaşmış bir karşılaştırmaya temel olur."
           }
         ],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "kişi ve yer adları",
-        "applicability": "Dalın çekirdeğindeki kadın adını, ondan türeyen ülke veya yerleşim adını ve diğer yer adlarını sınıflandırır.",
+        "text": "{{lu_014}}, {{lu_015}}, {{lu_016}} ve {{lu_018}} özel adları",
+        "applicability": "Kadın ve yer adlarını tek dalda toplarken her adın özel ad niteliğini ve birbirinden farklı gösterimini korumak için kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Özel kişi adı ile birbirinden ayrı yer adlarının oluşturduğu adlandırma çekirdeğini korur.",
+          "preserves": "Daldaki korumalı kadın ve yer adlarının tamamını özel ad olarak ayrı ayrı gösterir.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
           "F001",
-          "F002",
-          "F004"
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "{{lu_015}} bölgesinden olan",
+          "text": "{{lu_015}} bölgesinden olan veya oraya ait",
           "usage_role": "contextual",
-          "applicability": "Bir kişi veya şeyin {{lu_015}} adlı bölgeye bağlılığını belirten türemiş sıfat bağlamında kullanılır.",
+          "applicability": "Bir kişi ya da şeyin {{lu_015}} adlı bölgeyle köken veya aidiyet ilişkisi belirtilirken kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Yer adı ile ona bağlı kişi veya şey arasındaki türetme ilişkisini korur.",
+            "preserves": "Korumalı yer adıyla kurulan köken ve aidiyet ilişkisini açıkça korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -804,18 +772,18 @@
           ]
         },
         {
-          "text": "görüşü olağanüstü keskin",
+          "text": "{{lu_014}}'ünkinden bile keskin görüşlü",
           "usage_role": "contextual",
-          "applicability": "Mavi gözlü kadınla yapılan kalıplaşmış karşılaştırmanın kişide çok güçlü görme yetisi anlattığı bağlamda kullanılır.",
+          "applicability": "Birinin olağanüstü uzak veya keskin görüşlü olduğu kalıplaşmış bir karşılaştırmayla anlatıldığında kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Karşılaştırmanın olağanüstü uzaklığı görebilme ve keskin görüş bildiren sonucunu korur.",
+            "preserves": "Korumalı kişiyle karşılaştırmayı ve olağanüstü keskin görüş anlamını birlikte korur.",
             "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F005"
+            "F004"
           ]
         }
       ],
@@ -838,7 +806,7 @@
         {
           "lexical_unit_id": "lu_017",
           "rendering_kind": "ordinary",
-          "target_gloss": "{{lu_015}} bölgesinden olan"
+          "target_gloss": "{{lu_015}} bölgesinden olan veya oraya ait"
         },
         {
           "lexical_unit_id": "lu_018",
@@ -848,33 +816,24 @@
         {
           "lexical_unit_id": "lu_019",
           "rendering_kind": "ordinary",
-          "target_gloss": "görüşü {{lu_015}} bölgesinin mavi gözlü kadını kadar keskin"
+          "target_gloss": "{{lu_014}}'ünkinden daha keskin görüşlü"
         }
       ],
-      "excluded_glosses": [],
-      "neighbor_distinctions": [
+      "excluded_glosses": [
         {
-          "neighbor_ref": "root_001342/B012",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Bu dal belirli bir kadın adı, ondan ad alan bölge, başka yer adları, bölge sıfatı ve görüş karşılaştırmasını kapsar.",
-          "neighbor_only": "Komşu dal başka kişilerin, yerlerin ve dağların özel adlarını kapsar.",
-          "gloss": "kişi ve yer özel adları",
-          "shared_zone": "Her iki dal kişi ve yerleri anlamla değil özel ad olarak gösterir.",
-          "distinction": "Ortaklık yalnızca özel ad sınıfındadır; adlandırılan kişiler ve yerler bütünüyle farklı olduğundan sözcükler birbirinin yerine geçmez."
-        },
-        {
-          "neighbor_ref": "root_001469/B005",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Bu dal kadın adından türeyen bölge adını, başka yer adlarını ve bunlara bağlı kullanımları içerir.",
-          "neighbor_only": "Komşu dal birbirinden farklı başka yer adlarının bir listesini kapsar.",
-          "gloss": "özel yer adları",
-          "shared_zone": "İki dalın ortak alanı, belirli yerleri özel adlarla göstermektir.",
-          "distinction": "Ad türü aynıdır ama gösterilen yerler farklıdır; bu nedenle ilişki anlam yakınlığı değil yalnızca aynı adlandırma alanıdır."
+          "text": "güvercin",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Sözcük biçiminin kuş dalıyla kurduğu yüzeysel benzerliği korur.",
+            "loses": "Kadın ve yer özel adlarını, bunların birbirinden ayrı gösterimlerini ve adlara bağlı kullanımları kaybeder.",
+            "adds": "Belirli bir kuş türünü gösteren ortak ad anlamını ekler.",
+            "collision": "Özel adlar dalını aynı kökün güvercin türü kuş dalıyla karıştırır."
+          }
         }
       ],
-      "neighbor_coverage_note": "On iki komşunun tamamı değerlendirildi; özel kişi ve yer adı sınıfını açıklayan iki aday yayımlandı, kalan özel adlar farklı referentlere sahip olduğu ve aynı kökün öteki dalları anlamca ilgisiz kaldığı için elendi.",
+      "neighbor_distinctions": [],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; bunlar yalnızca kişi veya yer adı alanını paylaşan, gösterimleri farklı özel ad kümeleri olduğundan yayımlanacak bir anlam karşıtlığı bulunmadı.",
       "branch_image_ar": "اليمامة واليمة أسماء مواضع وأعلام",
       "what_is_ar": "يدخل فيه اليمامة اسما لامرأة وبلاد أو قرية، واليمة موضعا معروفا، وما يتصل بزرقاء اليمامة والنسبة يمامي.",
       "source_phrase_ar": "اليمامة موضع من محلة العرب؛ سميت بامرأة اسمها يمامة (ayn)؛ اليمة موضع معروف (jamhara)؛ سميت اليمامة بامرأة كان لها حديث (jamhara)؛ اليمامة اسم جارية زرقاء؛ اليمامة بلاد؛ النسبة إلى اليمامة يمامي (sihah)؛ اليمامة القرية التي قصبتها حجر؛ سميت يمامة باسم امرأة (tahdhib)",
@@ -885,13 +844,13 @@
         "TA"
       ],
       "source_note": {
-        "JA": "{{lu_016}} tek başına bilinen bir yer adı olarak kaydedilir.",
-        "SI": "Bölgeye bağlı kişi veya şeyi gösteren sıfatın {{lu_015}} yer adından kurulduğu belirtilir. {{lu_018}}, {{lu_015}} ile bağlantılı ayrı bir yer adı olarak aktarılır. Üç günlük uzaklıktaki yolcuyu görebildiği söylenen mavi gözlü bir kadına dayalı karşılaştırma, görüş keskinliğinin örneği olarak verilir."
+        "JA": "{{lu_016}}, tek bir kaynakta bilinen bir yerin özel adı olarak kaydedilir.",
+        "SI": "{{lu_015}} bölgesinden olmayı veya o bölgeye ait bulunmayı bildiren aidiyet biçimi ayrıca verilir. {{lu_018}}, tek bir kaynakta {{lu_015}} ile bağlantılı bir yer adı olarak geçer. {{lu_014}}'ün üç günlük yol uzaklığındaki yolcuyu görebildiği anlatısı, çok keskin görüş için kalıplaşmış bir karşılaştırmaya temel olur."
       }
     }
   ],
   "root_profile": {
-    "summary": "Kök, bilerek seçip yönelme çekirdeğinden namaz için toprakla yapılan özel arınmaya uzanan iki ilişkili dalın yanında büyük su, bir güvercin türü ve kişi ile yer adlarından oluşan bağımsız dallar taşır. Bu yapı hem anlam genişlemesini hem de köken bakımından ayrı görünen adlandırmaları bir araya getirir.",
+    "summary": "Kök, bir şeyi bilerek amaçlayıp ona yönelme çekirdeğinden namaz için toprağa yönelip yüz ve elleri silen özel uygulamaya uzanır; ayrıca deniz veya büyük su, güvercin türü kuş ve kadın ya da yer özel adları olarak birbirinden bağımsız dallara sahiptir.",
     "polysemy": "polysemic",
     "organization": "mixed"
   },

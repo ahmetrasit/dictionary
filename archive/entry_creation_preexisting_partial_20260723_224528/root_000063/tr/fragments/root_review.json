@@ -1,0 +1,87 @@
+{
+  "inputs_sha256": "2619db22f3781595296849671755dab976a777f9d7510b8da59c90f6132f956d",
+  "verdict": "repair",
+  "summary": "Yanıtın genel dal ayrımı ve hedef dil karşılıkları sağlamdır; ancak çekirdek anlamların birleştirilmesi, kaynak varyantlarının kapsanması ve iki bağıntı ifadesinde yayıma engel olan sınırlı anlamsal düzeltmeler gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_000063/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005",
+        "lu_007"
+      ],
+      "evidence_conflict": "Sentez, bir kişiyi acele ettirmeyip bekleme anlamını verirken aynı biçimin kişiyi yavaş bulma anlamına da gelebileceğini; kadın nitelemesinde ise yumuşak huyluluğun yanında uğurlu veya bereketli olma kaydını dışarıda bırakır.",
+      "smallest_correction": "Bu iki ikincil kaynak varyantını ortak özete kaynak yansız biçimde ekleyin; çok kaynaklı iddialar için tek kaynak ayrıntı satırı oluşturmayın."
+    },
+    {
+      "target_ref": "root_000063/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005"
+      ],
+      "evidence_conflict": "Yakın anlamlı komşuyla ayrımda odak dala 'birini bekletme' yükleniyor. Kanıt ise kişiyi bekletmeyi değil, onu acele ettirmemeyi ve onun için beklemeyi bildirir; katılımcı ilişkisi ters çevrilmiştir.",
+      "smallest_correction": "İlgili odak ve ayrım ifadesindeki 'birini bekletme' sözünü 'birini acele ettirmeyip onun için bekleme' olarak değiştirin."
+    },
+    {
+      "target_ref": "root_000063/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_009"
+      ],
+      "evidence_conflict": "Kaynaklar gece saatinin tekil biçimleri konusunda aynı dökümü vermez; kanıtta bir aktarım diğerlerinde bulunmayan üçüncü bir tekil biçim bildirir. Sentez bu ayırt edici kaynak varyantını kapsamaz.",
+      "smallest_correction": "Ortak özete, tekil biçimlerin sayısı veya dökümünün aktarımlar arasında değiştiğini kaynak yansız bir cümleyle ekleyin."
+    },
+    {
+      "target_ref": "root_000063/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011",
+        "lu_012",
+        "lu_017"
+      ],
+      "evidence_conflict": "Tanım ve çekirdek facet, vaktin gelmesi ile olgunlaşma veya tamamlanmayı birlikte gerçekleşmesi gereken tek bir bileşim gibi kurar. Kanıt, yalnızca vaktin gelmesi veya yaklaşmasını bildiren kullanımları da, erişme ve olgunlaşma bildiren kullanımları da ayrı ayrı destekler.",
+      "smallest_correction": "Tanımı ve çekirdek facet'i ayrık kapsamla kurun: bir şeyin vaktinin gelmesi ya da beklenen erişme, olgunluk veya tamamlanma düzeyine varması; saf zaman kullanımına olgunlaşma şartı yüklemeyin."
+    },
+    {
+      "target_ref": "root_000063/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011"
+      ],
+      "evidence_conflict": "Ortak özet, kaynakların uygun zaman, olgunlaşma ve tamamlanmayı aynı çekirdekte birleştirdiğini söyler. Kanıtın kaynak ifadeleri ise kimi aktarımda zaman, kiminde olgunlaşma, kiminde erişme yönünü öne çıkarır; bu fark birleşme iddiasıyla silinmiştir.",
+      "smallest_correction": "Ortak özeti, bazı aktarımların zamanı, bazılarının erişme veya olgunlaşmayı öne çıkardığını belirten kaynak yansız bir karşılaştırmaya çevirin."
+    },
+    {
+      "target_ref": "root_000063/B004",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_019"
+      ],
+      "evidence_conflict": "Tekil adın çoğulu ve çoğulun çoğulu yalnızca biçimbilgisel türetim bilgisidir; yeni bir ilişkili kavramsal kullanım değildir. Bunun tanımın ikinci cümlesine ve associated_use facet'ine taşınması bağımlı biçim bilgisini kavram haritasına yükseltir.",
+      "smallest_correction": "Çoğul bilgisini tanımdan ve kavramsal facet'lerden çıkarın; mevcut kaynak sentezi ve lexical gloss içinde biçim bilgisi olarak koruyun."
+    },
+    {
+      "target_ref": "root_000063/B005",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_022"
+      ],
+      "evidence_conflict": "Tek kaynak ayrıntısı, karşıdaki kişinin geldiği yön ile konuşanın geleceği yönün aynı olduğunu ekler. Kanıt yalnızca 'hangi yönden bana gelirsen sana gelirim' koşulunu verir; cevap eylemine aynı yön şartı koymaz.",
+      "smallest_correction": "Ayrıntıyı, 'karşıdaki kişi hangi yönden gelirse konuşanın da ona geleceği' biçiminde düzeltin ve 'o yönden' eklemesini kaldırın."
+    }
+  ]
+}

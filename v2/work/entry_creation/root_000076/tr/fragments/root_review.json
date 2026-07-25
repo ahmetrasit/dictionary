@@ -1,0 +1,38 @@
+{
+  "inputs_sha256": "9e0038d546f86335c538cb41a873cba53fb0e9f36bb7559ed2a1ac9990e58ada",
+  "verdict": "editorial_review",
+  "summary": "Yanıtın büyük bölümü kanıtla uyumludur; ancak bir bitki adının zakkumla özdeşliği hedef karşılıkta kaybolmuş, gecikme dalındaki kaynak içi anlam ayrımı çözümsüz biçimde tek anlama indirilmiş ve kök özeti engelleme dalını dışarıda bırakmıştır. Gecikme dalındaki kanıt çatışması editöryal karar gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_000076/B005",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011"
+      ],
+      "evidence_conflict": "lu_011'in kaynak cümlesi bu bitki adını zakkumla özdeşleştirirken hedef karşılık onu yalnızca zakkumla birlikte kaydedilen belirsiz bir ad olarak veriyor; böylece bitki kimliği kayboluyor.",
+      "smallest_correction": "lu_011 hedef karşılığını, zakkum için kaydedilen bir bitki adı olduğunu açıkça belirtecek biçimde düzeltin."
+    },
+    {
+      "target_ref": "root_000076/B013",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "low",
+      "claim_ids": [
+        "lu_030"
+      ],
+      "evidence_conflict": "lu_030'un özet anlamı iki biçimi de gecikme altında toplarken kaynak cümlesi ilk biçimi gecikmeyle, ikinci biçimi ise kibirlenmeyle açıklar. Yanıt iki biçimi de yalnızca gecikme olarak sunarak kanıtın kendi içindeki anlam ayrımını görünmez kılıyor.",
+      "smallest_correction": "Önce lu_030'daki iki biçimin B013'e nasıl ayrılacağına editöryal karar verin; ardından kaynak sentezinde gecikme okumasını yalnız desteklenen biçime bağlayıp öteki okumayı kaynak ayrıntısı olarak kaydedin."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök özeti on beş dalı topluca tanıtırken bağımsız engelleme ve alıkoyma dalını hiç anmıyor; bu dal ne sayımda ne de ilişkilendirilen eylem kümesinde temsil ediliyor.",
+      "smallest_correction": "Kök profili özetindeki anlam alanları arasına engelleme ve alıkoymayı ekleyin."
+    }
+  ]
+}

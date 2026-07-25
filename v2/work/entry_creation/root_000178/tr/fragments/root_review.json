@@ -1,0 +1,62 @@
+{
+  "inputs_sha256": "dc322a29267493902720746556264e92d813713780d4cb8ccdc271ac37732f3b",
+  "verdict": "repair",
+  "summary": "Yanıtın temel örgüsü tutarlı olsa da bir çekirdek anlamın daraltılması, kaynak karşıtlığının eksik aktarılması, bir söz kalıbının kullanım kaybı ve iki komşuluk sınırındaki yanlış dışlayıcılık giderilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000178/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_002"
+      ],
+      "evidence_conflict": "lu_002, sözü hem yerin kendisi hem de toprağın kendisi anlamında verir. Tanım ve F001 ise bunu yalnızca yer yüzeyindeki maddeye ve bir yerin toprak yapısına indirger; yerin kendisi olan çekirdek karşılık kaybolur.",
+      "smallest_correction": "F001 ve tanıma yerin kendisi anlamını açıkça ekleyin ve bunu toprak maddesi ile bir yerin toprak yapısından ayırın."
+    },
+    {
+      "target_ref": "root_000178/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_002"
+      ],
+      "evidence_conflict": "lu_002 kapsamındaki kaynak anlatımları yerin kendisi ile toprağın kendisi arasında belirgin biçimde ayrılır. common_summary bu karşıtlığı aktarmayıp bütün anlatımları toprak maddesi ve toprak niteliği altında birleştirir.",
+      "smallest_correction": "Kaynaklar arasındaki yerin kendisi ve toprağın kendisi karşıtlığını common_summary içinde kaynak kodu vermeden açıkça belirtin."
+    },
+    {
+      "target_ref": "root_000178/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_008"
+      ],
+      "evidence_conflict": "lu_008 hedef dalda mezarı kapsar; root_000862/B004 sınır kartı da mezarı açıkça kapsar. Buna rağmen bu komşulukta gömü yeri focus_only içinde hedefe özgü gösterilmiştir.",
+      "smallest_correction": "Mezarı focus_only alanından çıkarıp shared_zone alanına taşıyın; hedefe ve komşuya gerçekten özgü kalan kapsamları buna göre yeniden ifade edin."
+    },
+    {
+      "target_ref": "root_000178/B002",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "lu_012, görünüşte yoksulluk dileği olan kalıp sözün uyarı yanında övgü için de kullanılabildiğini belirtir. Sözcüksel karşılık yalnızca gerçek olmayan dilek, uyarı ve vurgu işlevlerini verir; övgü kullanımını dışarıda bırakır.",
+      "smallest_correction": "lu_012 target_gloss metnine gerçek dilek taşımayan övgü kullanımını da ekleyin."
+    },
+    {
+      "target_ref": "root_000178/B005",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_016"
+      ],
+      "evidence_conflict": "lu_016 hedef dalın göğüs kaburgalarını da kapsadığını gösterir; root_000263/B005 sınır kartı da göğüs kaburgalarını kapsar. Mevcut neighbor_only ve distinction metinleri kaburgaları komşuya özgü göstererek gerçek örtüşmeyi daraltır.",
+      "smallest_correction": "Göğüs kaburgalarını shared_zone içinde gösterin; komşuya özgü kısmı kaburga başlarının göğüs ortasında birleşmesi ve ağır yük altında kırılma kullanımıyla sınırlandırın."
+    }
+  ]
+}

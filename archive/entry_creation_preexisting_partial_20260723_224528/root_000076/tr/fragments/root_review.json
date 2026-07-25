@@ -1,0 +1,78 @@
+{
+  "inputs_sha256": "7a2a9203a7dae8c7cc41a99c963b0d8795af07c976b5b8f3a243d798f45901b0",
+  "verdict": "repair",
+  "summary": "Dort dalda yayina engel anlamsal sorunlar vardir: iki tanim bagimli bir kullanim alanini cekirdege tasiyor, verme dali genel verme ile armagani gereksizce tek bir kosula indiriyor ve gecikme dalinin kaynak varyanti kavram haritasinda yer almiyor.",
+  "issues": [
+    {
+      "target_ref": "root_000076/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_009",
+        "lu_011"
+      ],
+      "evidence_conflict": "lu_009 her mevsim yesil kalan ve tabaklamada kullanilan agaci verirken lu_011 zakkumla birlikte anilan ayri bir bitki adini kaydeder. Tanimdaki \"veya onunla iliskilendirilen bitki turu\" ibaresi, F002'de dogru bicimde kaynak varyanti sayilan bu bagimli malzemeyi cekirdek tanima tasiyor.",
+      "smallest_correction": "Tanimdan bitki varyantina ait son ibareyi cikarin; tanimi lu_009'daki hepyesil tabaklama agaciyla sinirlayip lu_011'i yalnizca F002'de tutun."
+    },
+    {
+      "target_ref": "root_000076/B010",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_022",
+        "lu_024"
+      ],
+      "evidence_conflict": "lu_022'nin cekirdegi yogun caba ve gayret gostermedir; hicbir cabayi birakmama ise lu_024'teki kaliplasmis olumsuz kullanimdir ve haritada F002 uzantisi olarak ayrilmistir. Tanim bu uzantiya ait eksiltmeme ve hicbir gayreti esirgememe kosulunu cekirdegin zorunlu parcasi yapiyor.",
+      "smallest_correction": "Tanimi bir is icin yogun caba ve gayret gostermeyle sinirlayin; hicbir cabayi esirgememe anlamini yalnizca lu_024'e bagli F002'de birakin."
+    },
+    {
+      "target_ref": "root_000076/B010",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_022",
+        "lu_024"
+      ],
+      "evidence_conflict": "\"Hicbir cabayi esirgememe\" karsiligi lu_024'teki ozel kalibi iyi yansitir, ancak lu_022'nin genel yogun caba cekirdegini daha dar bir tamlik kosuluna indirger. Bu nedenle hem F001'i temsil etmesi hem de hata profilinde kayipsiz sayilmasi dogru degildir.",
+      "smallest_correction": "Kavram karsiligini \"yogun caba gosterme\" gibi F001'i dogrudan temsil eden bir ifadeyle degistirin; mevcut karsiligi lu_024'e ozgu baglamsal karsilik olarak tutun."
+    },
+    {
+      "target_ref": "root_000076/B012",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_028",
+        "lu_029"
+      ],
+      "evidence_conflict": "lu_028 armagan niteligindeki verilen seyi ve genel verme eylemini birlikte bildirir; lu_029 da bir kilici verme eylemini ornekler. Tanim ise eylemin tamamini armagan veya bagis olarak verme kosuluna baglayarak genel verme tarafini daraltiyor.",
+      "smallest_correction": "Tanimi \"bir seyi verme eylemi ve verilen sey veya armagan\" anlamini koruyacak bicimde duzeltin; verme eylemine karsiliksiz armagan kosulu eklemeyin."
+    },
+    {
+      "target_ref": "root_000076/B012",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_028",
+        "lu_029"
+      ],
+      "evidence_conflict": "\"Armagan verme\" karsiligi lu_028'deki verilen armagan adini ve genel verme eylemini tek bir dar eylemde birlestiriyor; lu_029'daki yalnizca verme kullanimi da bu karsilikla kapsanmiyor. Buna ragmen hata profili karsiligi kayipsiz gosteriyor.",
+      "smallest_correction": "Kavram karsiligini \"armagan ve verme\" gibi iki degeri de gosteren bir ifadeyle degistirin veya mevcut karsiligin daralttigini hata profilinde acikca belirtin."
+    },
+    {
+      "target_ref": "root_000076/B013",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_030"
+      ],
+      "evidence_conflict": "lu_030 gecikme anlaminin yaninda bir bicim icin buyukluk taslama anlamini da aktarir. Kaynak ozeti ve sozbirimsel karsilik bu farkli anlami kaydettigi halde kavram haritasinda onu gosteren hicbir kaynak varyanti veya uzanti yuzeyi yoktur.",
+      "smallest_correction": "lu_030'a bagli, buyukluk taslama anlamini ayri tutan bir source_variant yuzeyi ekleyin; gecikme cekirdegini ve tanimi degistirmeyin."
+    }
+  ]
+}

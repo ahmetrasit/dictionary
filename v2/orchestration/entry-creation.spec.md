@@ -603,7 +603,9 @@ errors are deterministic pipeline failures and are never sent to a semantic work
 
 Draft generated JSON and Markdown are staged, validated, and published as a
 pair. Reviewed or published outputs and their pinned evidence require explicit
-force flags before replacement.
+force flags before replacement. Entry/Markdown replacement and shared evidence
+replacement are separate authorizations; `--force-entry` must not be treated as
+permission to rewrite branch, occurrence, or alignment evidence.
 
 ## Acceptance Criteria
 

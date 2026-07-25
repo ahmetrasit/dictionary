@@ -1,0 +1,63 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın dal ayrımları ve temel anlamları genel olarak sağlamdır; ancak kaynaklara özgü iki ayrıntı ortaklaştırılmış veya atlanmış, bir çoğul biçimler girdisi anlam çoğulu gibi çevrilmiş, uygunluk dalında özel uygulama çekirdeğe katılmış ve yerleşiklik dalının komşu kapsamı kendi notuyla uyuşmamıştır. Bu sınırlı alanlar düzeltilmeden metin yayıma hazır değildir.",
+  "issues": [
+    {
+      "target_ref": "root_000064/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003"
+      ],
+      "evidence_conflict": "Ortak özet ev halkını yalnızca genel konut kullanımı olarak verir. Oysa lu_003 içindeki kaynak dökümü, çoğu aktarımda ev sakinleri anlamını verirken mufradat aktarımının bunu Peygamber ailesine özgü kullanıma da taşıdığını gösterir; bu ayırt edici kaynak uygulaması sentezde yer almamıştır.",
+      "smallest_correction": "Ortak özete, kaynak adı çoğaltmadan, bir aktarımın ev halkı sözünü Peygamber ailesi için de kullandığını belirten kısa bir kaynak varyantı cümlesi ekleyin."
+    },
+    {
+      "target_ref": "root_000064/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005"
+      ],
+      "evidence_conflict": "lu_005 bir topluluğun kendisini değil, topluluk adının çeşitli çoğul biçimlerini kaydeder. \"bağlı topluluklar\" karşılığı bu biçimbilimsel işlevi görünmez kılar ve girdiyi sıradan bir anlam çoğulu gibi gösterir.",
+      "smallest_correction": "lu_005 hedef karşılığını, yabancı biçimleri ödünçlemeden, \"topluluk adının çeşitli çoğul biçimleri\" gibi biçimlerin işlevini açıkça anlatan bir ifadeyle değiştirin."
+    },
+    {
+      "target_ref": "root_000064/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_008"
+      ],
+      "evidence_conflict": "Özet, öte dünyada hem eş hem yakınlık çevresi verilmesini bütün kaynakların ortak açıklaması gibi sunar. lu_008 dökümünde eş verilmesi ortak eksendir; yakınlık çevresi kurulması yalnız mufradat aktarımında açıkça eklenir, tahdhib ise ayrıca cennete girdirilmeyi söyler. Böylece bir kaynak ayrıntısı ortaklaştırılmış, başka bir ayırt edici ayrıntı atlanmıştır.",
+      "smallest_correction": "lu_008 sentezini kaynak yansız bir karşılaştırma olarak yeniden kurun: eş verilmesini ortak eksen sayın, bir aktarımın yakınlık çevresi kurmayı, başka bir aktarımın cennete girdirilmeyi eklediğini ayrı ayrı belirtin."
+    },
+    {
+      "target_ref": "root_000064/B003",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_009",
+        "lu_010"
+      ],
+      "evidence_conflict": "F001, genel uygunluk ve layıklık çekirdeği olan lu_009 ile metnin kendisinin \"özel kullanım\" diye tanımladığı lu_010 uygulamasını aynı core fasetinde birleştirir. Bu sınıflama, kendisinden sakınılma ve bağışlama bağlamını genel dal sınırının zorunlu parçası gibi gösterir.",
+      "smallest_correction": "F001'i lu_009 ile genel uygunluk ve layıklık çekirdeğine ayırın; lu_010'u aynı çekirdeğin özel dinsel uygulamasını gösteren specialization veya example fasetine taşıyın."
+    },
+    {
+      "target_ref": "root_000064/B004",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_016",
+        "lu_017"
+      ],
+      "evidence_conflict": "Kapsama notu genel alışmayı üç ana sınırdan biri olarak seçtiğini söyler, fakat yayımlanan iki ilişkide genel alışma komşusu root_000045/B005 yoktur. Bu komşu, lu_016 ve lu_017 ile doğrudan kesişen alışma ve yakınlık alanını taşır; mevcut satırlar yalnız bayındırlaştırma ile sürekli oturmayı ayırır.",
+      "smallest_correction": "root_000045/B005 için, odak dalın yerin yerleşilmiş niteliği ile insan çevresine alışmışlığına karşı komşunun kişi, şey veya yere yönelik genel alışma ve yakınlık kapsamını belirten bir near-neighbor satırı ekleyin; aksi halde kapsama notunu yayımlanan iki sınıra göre düzeltin."
+    }
+  ]
+}

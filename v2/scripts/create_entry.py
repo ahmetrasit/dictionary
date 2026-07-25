@@ -204,7 +204,7 @@ def validate_root_writer_source_packages(
     """Validate separate branch authority and lexical-attestation evidence."""
     package_values = packages.values() if isinstance(packages, dict) else packages
     packet_refs = {
-        (source.get("root_id"), source.get("source_ref"))
+        source.get("source_ref")
         for source in packet.get("dictionary_sources", [])
         if source.get("source_ref") and source.get("source_ref") != "-"
     }
@@ -240,7 +240,7 @@ def validate_root_writer_source_packages(
             unknown = sorted(
                 source_ref
                 for source_ref in source_refs
-                if (focus["root_id"], source_ref) not in packet_refs
+                if source_ref not in packet_refs
             )
             if unknown:
                 raise ContractError(
@@ -257,13 +257,14 @@ def prepare_inputs(
     evidence_dir: Path | None,
     *,
     force_entry: bool = False,
+    force_evidence: bool = False,
     qnet_path: Path = DEFAULT_QNET,
     qnet_theme_path: Path = DEFAULT_QNET_THEME,
     qnet_fix_manifest_path: Path = DEFAULT_QNET_FIX_MANIFEST,
 ) -> tuple[Path, dict, Path, dict]:
     packet_path, packet = load_canonical_packet(selector, packet_argument)
     envelope = packet["root_envelope_id"]
-    check_pinned_evidence(envelope, language, force_entry=force_entry)
+    check_pinned_evidence(envelope, language, force_evidence=force_evidence)
     furuq_path = require_project_path(furuq_path, "Furuq database")
     if not furuq_path.is_file():
         raise ContractError(f"Missing Furuq database: {furuq_path}")
@@ -514,18 +515,18 @@ def check_pinned_evidence(
     envelope: str,
     language: str,
     *,
-    force_entry: bool,
+    force_evidence: bool,
 ) -> None:
     try:
         protect_pinned_entries(
             PROJECT,
             envelope,
             ("en", "tr"),
-            force=force_entry,
+            force=force_evidence,
             scope="shared branch or occurrence evidence",
         )
     except ValueError as error:
-        message = str(error).replace("--force", "--force-entry")
+        message = str(error).replace("--force", "--force-evidence")
         raise ContractError(message) from error
 
 
@@ -594,6 +595,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         action="store_true",
         help="Explicitly allow replacement of reviewed, published, invalid, or unmarked outputs",
     )
+    parser.add_argument(
+        "--force-evidence",
+        action="store_true",
+        help="Explicitly allow replacement of shared evidence pinned by reviewed or published entries",
+    )
     return parser.parse_args(argv)
 
 
@@ -627,7 +633,7 @@ def main(argv: list[str] | None = None) -> int:
         check_pinned_evidence(
             envelope,
             args.language,
-            force_entry=args.force_entry,
+            force_evidence=args.force_evidence,
         )
         _packet_path, packet, index_path, index = prepare_inputs(
             args.root,
@@ -636,6 +642,7 @@ def main(argv: list[str] | None = None) -> int:
             args.furuq.resolve(),
             args.evidence_dir.resolve() if args.evidence_dir else None,
             force_entry=args.force_entry,
+            force_evidence=args.force_evidence,
             qnet_path=args.qnet.resolve(),
             qnet_theme_path=args.qnet_theme.resolve(),
             qnet_fix_manifest_path=args.qnet_fix_manifest.resolve(),

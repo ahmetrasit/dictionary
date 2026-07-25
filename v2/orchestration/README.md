@@ -101,8 +101,9 @@ running a command; never pass the brackets literally.
   assembly, or publication.
 - Never manually edit or copy worker JSON to bypass a gate. Route structural
   errors to the owning worker and run deterministic fixes in the controller.
-- Never use `--force-entry` or another destructive override without explicit
-  user authorization.
+- Never use `--force-entry`, `--force-evidence`, or another destructive
+  override without explicit user authorization for that exact replacement
+  class.
 - A root is terminal only as `published` or `parked`. A parked root does not
   stop an otherwise runnable campaign.
 

@@ -18,6 +18,31 @@ the controller to:
 Do not start from a historical work manifest or invoke the retired branch-writer
 or root-profile-writer prompts.
 
+## Root packet preparation
+
+Root packet generation is deterministic coordinator work, not agent work. The
+current v4 packet preparation script is:
+
+```sh
+python3 scripts/prepare_missing_root_packets.py
+```
+
+The script enumerates v4 root envelopes from `data/working/furuq_v4.sqlite` as
+1,679 Quranic branch-backed envelopes plus 1,770 non-Quranic `furuq`
+dictionary-backed envelopes. It calls:
+
+```sh
+python3 scripts/root_packet.py <root_id>
+```
+
+for each missing representative root. `scripts/root_packet.py` skips an
+envelope when its JSON packet already exists, unless `--force` is passed.
+
+The all-v4 completion run using this deterministic script completed with 3,449
+total v4 envelopes, 3,449 existing packet JSON files, 0 failed subprocesses,
+and 0 remaining missing packet JSON files. Re-running the same command is safe
+because existing packet JSONs are skipped.
+
 ## Start an orchestration
 
 Start the workflow by instructing one top-level controller agent. There is

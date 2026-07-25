@@ -109,7 +109,8 @@ Do not delegate this command. On nonzero exit, do not start a worker. Park the
 root with the exact diagnostic unless the failure is a clearly identified,
 safe, deterministic prerequisite that you can repair directly. Never add
 `--force-entry` unless the user explicitly authorized replacement of protected
-output.
+JSON/Markdown output. Never add `--force-evidence` unless the user explicitly
+authorized replacement of shared branch, occurrence, or alignment evidence.
 
 Classify preparation failures by ownership before deciding whether to retry:
 
@@ -400,7 +401,8 @@ complete while commands or workers needed for it are still running.
   canonical fragments.
 - Finalization and renderers own published JSON and Markdown.
 - The user owns decisions marked `editorial_review` and authorization for
-  destructive force flags.
+  destructive force flags. Entry replacement (`--force-entry`) and shared
+  evidence replacement (`--force-evidence`) are separate authorizations.
 
 Never make a workflow "move forward" by manually editing an artifact owned by
 another role, copying a response over a canonical fragment, treating a nonzero

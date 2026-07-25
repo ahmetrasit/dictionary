@@ -1,0 +1,119 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın genel dal ayrımları sağlamdır; ancak B001'de ayırt edici bir kaynak sınırlaması atlanmış, B002'de özel bir koşul çekirdeğe taşınmış ve insan kullanımı daraltılmış, B006'da keşiş anlamı fazla geniş karşılanmış, B008'de ise yer kayıtlarının ayrılığı ve komşuluk türü kanıtı aşmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_000006/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001"
+      ],
+      "evidence_conflict": "lu_001 içindeki ayırt edici anlatımlardan biri, bu topluluk adının uygulanabildiği en küçük deve topluluğunu ayrıca sınırlar; ortak özet yalnız topluluk adı olmayı aktararak bu sınırlamayı bütünüyle atlıyor.",
+      "smallest_correction": "common_summary içine, kaynak adı vermeden, bir anlatımın adın uygulanabildiği en küçük deve topluluğunu ayrıca belirlediğini ekleyin."
+    },
+    {
+      "target_ref": "root_000006/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_006",
+        "lu_007"
+      ],
+      "evidence_conflict": "Bulunduğu yerden ayrılmama yalnız lu_007'deki tekil nitelemenin özelliğidir; lu_006'nın temel susuz yetinme anlamında bu koşul yoktur. Tanım, iki özelliği birlikte zorunluymuş gibi kurarak uzmanlaşmış ayrıntıyı dal çekirdeğine taşıyor.",
+      "smallest_correction": "Tanımda çekirdeği taze bitkiyle su içmeden yetinme olarak bırakın; yerinden ayrılmamayı yalnız F002'de tekil kullanıma özgü özellik olarak belirtin."
+    },
+    {
+      "target_ref": "root_000006/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "lu_009"
+      ],
+      "evidence_conflict": "lu_009'un düzenlenmiş anlamı kadından uzak durmayı bildirirken kaynak anlatımlarının bir bölümü bunu özellikle eş üzerinden kurar. Tanım ve F004 yalnız 'eş' diyerek daha geniş kadın ifadesini dışarıda bırakıyor.",
+      "smallest_correction": "Tanım ile F004'ü 'kadınla, özellikle eşiyle, cinsel yakınlıktan uzak durma' kapsamını koruyacak biçimde genişletin."
+    },
+    {
+      "target_ref": "root_000006/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "medium",
+      "claim_ids": [
+        "lu_009"
+      ],
+      "evidence_conflict": "Kaynak kanıtında genel kadın ifadesi ile eşe özgü anlatımlar birlikte bulunur; common_summary bunların tamamını yalnız eşle yakınlıktan kaçınma diye birleştirerek kapsam farkını görünmez kılıyor.",
+      "smallest_correction": "common_summary içinde kaynakların genel kadın ve özellikle eş anlatımları arasında değiştiğini kaynak adı vermeden belirtin."
+    },
+    {
+      "target_ref": "root_000006/B002",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "lu_009"
+      ],
+      "evidence_conflict": "lu_009 için 'eşiyle cinsel yakınlıktan kaçınmak' karşılığı, kanıttaki genel kadın kapsamını yalnız eşe indiriyor.",
+      "smallest_correction": "lu_009 karşılığını kadın kapsamını koruyup eş kullanımını da gösterecek biçimde, örneğin 'kadınla, özellikle eşiyle, cinsel yakınlıktan uzak durmak' olarak düzeltin."
+    },
+    {
+      "target_ref": "root_000006/B006",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_017"
+      ],
+      "evidence_conflict": "lu_017'nin ilgili kaynak varyantı manastır yaşamına bağlı din kişisini, yani keşişi bildirir. Tanım ile F002'deki 'manastır görevlisi' sözü herhangi bir manastır çalışanını kapsayabilecek kadar geniştir.",
+      "smallest_correction": "Tanım ve F002'de 'manastır görevlisi' yerine keşişliği açıklayan 'manastır yaşamına bağlı Hristiyan din görevlisi' gibi sınırlı bir karşılık kullanın."
+    },
+    {
+      "target_ref": "root_000006/B006",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_017"
+      ],
+      "evidence_conflict": "Kavram karşılığındaki 'Hristiyan manastır görevlisi' ifadesi keşişlik sınırını korumuyor ve din dışı manastır çalışanlarını da kapsayabiliyor.",
+      "smallest_correction": "Kavram karşılığının ilk unsurunu 'manastır yaşamına bağlı Hristiyan din görevlisi' veya doğal Türkçedeki eşdeğer açıklamayla daraltın."
+    },
+    {
+      "target_ref": "root_000006/B006",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_017"
+      ],
+      "evidence_conflict": "lu_017'nin sözlüksel karşılığı keşiş varyantını 'manastır görevlisi' diye genişletiyor; bu, kanıttaki dinî yaşam ve kişi türünü korumuyor.",
+      "smallest_correction": "lu_017 karşılığında keşiş varyantını 'manastır yaşamına bağlı Hristiyan din görevlisi' biçiminde açıklayın; yönetici ve çan çalan görevli varyantlarını aynen ayırın."
+    },
+    {
+      "target_ref": "root_000006/B008",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_019",
+        "lu_020"
+      ],
+      "evidence_conflict": "Kanıt iki yer adı kaydı verir, fakat bunların aynı mı farklı mı yere işaret ettiğini söylemez. error_profile içindeki 'ayrı yerler olarak sunulması' ifadesi iki ayrı göndergeyi kanıtsız biçimde kesinleştiriyor.",
+      "smallest_correction": "Karşılığı 'iki yer adı kaydı' olarak kurun ve error_profile ile applicability içinde bu kayıtların aynı ya da farklı yere ait olduğunun bilinmediğini koruyun."
+    },
+    {
+      "target_ref": "root_000006/B008",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_019",
+        "lu_020"
+      ],
+      "evidence_conflict": "root_000227/B014 başka özel yer adlarını kaydeder; odak daldaki adlarla aynı göndergeyi veya olağan kullanımda birbirinin yerine geçebilen bir çekirdeği paylaşmaz. Bu nedenle near_synonym/partial ilişkisi uygun değildir.",
+      "smallest_correction": "root_000227/B014 ilişkisini same_field/field_only olarak değiştirin ve ortaklığı yalnız yer adı olma alanıyla sınırlandırın."
+    }
+  ]
+}

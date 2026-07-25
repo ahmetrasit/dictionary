@@ -1,0 +1,610 @@
+{
+  "branches": [
+    {
+      "branch_ref": "root_000050/B001",
+      "concept_map": {
+        "definition": "Bir şeyin ulaştığı sınır ve son noktadır; süre söz konusu olduğunda ömrün ya da belirlenmiş zamanın sona erdiği sınırı bildirir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Bir şeyin eriştiği sınırı ve sona erdiği noktayı gösterir.",
+            "claim_ids": [
+              "lu_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "İnsan ömrünün veya verilmiş sürenin bittiği son sınırı gösterebilir.",
+            "claim_ids": [
+              "lu_001",
+              "lu_002"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "extension",
+            "statement": "Bir süreyi uzunluğundan çok sahip olduğu son sınır bakımından ele alır.",
+            "claim_ids": [
+              "lu_001"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "specialization",
+            "statement": "At yarışında atların ulaşmak için yarıştığı varış sınırını belirtir.",
+            "claim_ids": [
+              "lu_003"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Ortak çekirdek, bir şeyin sınırı ve son noktasıdır. Bu anlam ömrün veya sürenin bittiği yere uygulanır; mutlak kullanımda bu son sınır bilinmeyebilir, belirli bir şeye bağlandığında ise sınırlandırılabilir.",
+        "common_claim_ids": [
+          "lu_001",
+          "lu_002"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_003"
+            ],
+            "kind": "sole_attestation",
+            "summary": "At yarışında varış sınırı, atların ulaşmak için yarıştığı son nokta olarak kullanılır."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "bir şeyin sınırı ve son noktası",
+        "applicability": "Nesne, süre, ömür veya yarış gibi bir sürecin eriştiği bitiş sınırını bütün olarak karşılar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Hem sınır düşüncesini hem de o sınırdaki sona erişi korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003",
+          "F004"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "ömrün sonu",
+          "usage_role": "contextual",
+          "applicability": "İnsan yaşamının veya verilmiş yaşam süresinin bittiği sınırdan söz edilirken kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Son sınıra ulaşma ve bitiş düşüncesini korur.",
+            "loses": "Ömür dışındaki süreleri ve yarışın varış sınırını kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "belirlenmiş sürenin sonu",
+          "usage_role": "contextual",
+          "applicability": "Bir sürenin kendi sınırı ve bitiş noktası öne çıkarıldığında doğal bir karşılıktır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Süreyi son sınırı bakımından ele alma özelliğini korur.",
+            "loses": "Süre dışındaki genel son noktayı ve yarıştaki varış çizgisini kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F003"
+          ]
+        },
+        {
+          "text": "varış çizgisi",
+          "usage_role": "contextual",
+          "applicability": "At yarışında yarışmacıların ulaşmaya çalıştığı son sınır için kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Yarışın ulaşılan son sınırını açıkça korur.",
+            "loses": "Ömür, süre ve genel son nokta kullanımlarını dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F004"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_001",
+          "rendering_kind": "ordinary",
+          "target_gloss": "sınır, son nokta; son sınırı bakımından ele alınan süre"
+        },
+        {
+          "lexical_unit_id": "lu_002",
+          "rendering_kind": "ordinary",
+          "target_gloss": "Ömrünün sonu ne zaman?"
+        },
+        {
+          "lexical_unit_id": "lu_003",
+          "rendering_kind": "ordinary",
+          "target_gloss": "at yarışındaki varış sınırı"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001116/B009",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Süreyi, ömrü ve yarışın varışını kendi son sınırı bakımından adlandırır.",
+          "neighbor_only": "Bir şeyin en uç derecesini ve nitelikte erişilen en yüksek düzeyi de kapsar.",
+          "gloss": "en uç nokta ve erişilen son",
+          "shared_zone": "Her ikisi de bir şeyin ulaştığı sınırı ve son noktayı gösterebilir.",
+          "distinction": "Komşu dal en uç dereceyi ve nitelik bakımından erişilen düzeyi de kapsarken bu dal özellikle sona erme sınırına, süreye, ömre ve yarışın varışına uzanır."
+        },
+        {
+          "neighbor_ref": "root_000016/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Genel son noktayı ve yarışın varış sınırını da adlandırabilir.",
+          "neighbor_only": "Ölüm, borç veya başka bir iş için önceden konmuş süreyi ve ertelemeyi kapsar.",
+          "gloss": "önceden belirlenmiş bitiş süresi",
+          "shared_zone": "Her iki dal da bir sürenin bittiği sınırı ifade edebilir.",
+          "distinction": "Bu dal son sınırı genel bir kavram olarak verir; komşu dal ise bir iş, borç veya ölüm için konmuş süre ve erteleme düzenini öne çıkarır."
+        },
+        {
+          "neighbor_ref": "root_001560/B002",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Ömür ve sınırlı süreyi bitiş sınırı bakımından ele alır.",
+          "neighbor_only": "Bir haberin, okun veya iletinin hedefe ulaşması ile ulaştırma eylemini de kapsar.",
+          "gloss": "ulaşılan son ve hedef",
+          "shared_zone": "İki dal da bir şeyin eriştiği son sınırı gösterebilir.",
+          "distinction": "Komşu dal hedefe ulaşma ve ulaştırma olaylarını da içerir; bu dalın çekirdeği ise sınırın ve sona erişilen noktanın kendisidir."
+        },
+        {
+          "neighbor_ref": "root_001671/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "field_only",
+          "focus_only": "Sürenin kendisini değil, onun sona erdiği sınırı adlandırır.",
+          "neighbor_only": "Bilinen bir zamanı, saati veya bir iş için hesaplanan zaman dilimini adlandırır.",
+          "gloss": "belirli zaman",
+          "shared_zone": "Her ikisi de zamanın sınırlandırılmasıyla ilgili bağlamlarda görülebilir.",
+          "distinction": "Komşu dal belirlenmiş zamanın kendisini bildirir; bu dal ise o zamanın veya sürenin ulaştığı bitiş sınırını bildirir."
+        },
+        {
+          "neighbor_ref": "root_000968/B005",
+          "relation_type": "near_neighbor",
+          "boundary_match": "field_only",
+          "focus_only": "Ömür dışında başka şeylerin ve sürelerin son sınırını da kapsar.",
+          "neighbor_only": "Doğumdan ölüme kadar yaşamın niceliğini ve kalan ömrün azlığını anlatır.",
+          "gloss": "ömrün uzunluğu",
+          "shared_zone": "Her iki dal insan yaşamı ve onun sonu hakkında kullanılabilir.",
+          "distinction": "Komşu dal yaşamın uzunluğunu ölçü olarak ele alır; bu dal ise yaşamın sona erdiği sınırı, daha geniş bir son nokta kavramının özel uygulaması olarak verir."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün komşu adaylar değerlendirildi; sınır, belirli süre, hedefe ulaşma ve ömür ölçüsüyle en kolay karışan beş dal yayımlandı, eş biçimli fakat anlamsal olarak ayrı dallar ile daha uzak adaylar elendi."
+    },
+    {
+      "branch_ref": "root_000050/B002",
+      "concept_map": {
+        "definition": "Bir kişide ortaya çıkan öfke durumunu ve bu öfkenin başka bir kişiye yönelmesini bildirir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Kişide bulunan öfke durumunu adlandırır.",
+            "claim_ids": [
+              "lu_004"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Öfkenin belirli bir kişiye yöneldiği durumda o kişiye öfkelenmeyi anlatır.",
+            "claim_ids": [
+              "lu_005"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kullanım, bir kişinin başka bir kişiye öfkelenmesini anlatır; yönelinen kişi, öfkenin hedefidir.",
+        "common_claim_ids": [
+          "lu_005"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_004"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Aynı biçimin eylemden bağımsız olarak öfke durumunu adlandırdığı da kaydedilir."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "öfke ve birine öfkelenme",
+        "applicability": "Hem öfke durumunu hem de öfkenin belirli bir kişiye yönelmesini birlikte karşılar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Öfke durumunu ve hedef kişiye yönelişi birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "öfke",
+          "usage_role": "contextual",
+          "applicability": "Duygu durumunun kendisi adlandırıldığında kullanılan kısa karşılıktır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Kişide ortaya çıkan öfke durumunu korur.",
+            "loses": "Öfkenin belirli bir kişiye yönelmesini açıkça bildirmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "ona öfkelendi",
+          "usage_role": "contextual",
+          "applicability": "Öfkenin belirli bir kişiye yöneldiği eylem bağlamında kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Öfkenin hedef kişiye yönelmesini korur.",
+            "loses": "Bağımsız ad olarak öfke durumunu karşılamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_004",
+          "rendering_kind": "ordinary",
+          "target_gloss": "öfke"
+        },
+        {
+          "lexical_unit_id": "lu_005",
+          "rendering_kind": "ordinary",
+          "target_gloss": "ona öfkelendi"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000004/B009",
+          "relation_type": "synonym",
+          "boundary_match": "exact",
+          "focus_only": null,
+          "neighbor_only": null,
+          "gloss": "öfke ve birine öfkelenme",
+          "shared_zone": "Her iki dal da öfke durumunu ve öfkenin bir kişiye yönelmesini karşılar.",
+          "distinction": "Verilen sınırlar bakımından iki dal aynı öfke durumunu ve aynı hedefe yönelme ilişkisini anlatır; ayrımı gerektiren ek bir kapsam yoktur."
+        },
+        {
+          "neighbor_ref": "root_000686/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Öfkeyi ve bir kişiye öfkelenmeyi hoşnutsuzluk koşulu olmadan bildirir.",
+          "neighbor_only": "Hoşnut olmama, bir şeyi beğenmeme ve ondan nefret etme alanlarını da kapsar.",
+          "gloss": "hoşnutsuzluk ve öfke",
+          "shared_zone": "Her iki dal öfke duygusunu ve bir şeye yönelen kızgınlığı kapsayabilir.",
+          "distinction": "Komşu dal öfkeyi hoşnutsuzluk ve beğenmeme karşıtlığı içinde genişletir; bu dal yalnız öfke durumunu ve kişiye yönelişini verir."
+        },
+        {
+          "neighbor_ref": "root_001626/B005",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Öfkenin belirli bir kişiye yönelmesini açık bir kullanım olarak içerir.",
+          "neighbor_only": "İçte duyulan gücenme ve kızgınlık anlamını özellikle öne çıkarır.",
+          "gloss": "gücenmeyle duyulan öfke",
+          "shared_zone": "İki dal da kişide bulunan öfke ve kızgınlık durumunu anlatır.",
+          "distinction": "Komşu dal içte duyulan gücenme tonunu öne çıkarırken bu dal nötr biçimde öfkeyi ve bir kişiye öfkelenme ilişkisini bildirir."
+        },
+        {
+          "neighbor_ref": "root_000358/B003",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Yalnız öfke durumunu ve onun bir kişiye yönelmesini gerektirir.",
+          "neighbor_only": "Gurur, onur duygusu ve kendini savunma coşkusunu öfkeyle birlikte kapsar.",
+          "gloss": "onurdan doğan kızgınlık",
+          "shared_zone": "Her ikisinde de kişide kabaran öfke veya kızgınlık bulunabilir.",
+          "distinction": "Komşu dal öfkeyi onur ve kendini savunma duygusuyla bağlar; bu dalda böyle bir neden veya duygu bileşeni gerekli değildir."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; tam eşleşen öfke dalı ile hoşnutsuzluk, gücenme ve onur kaynaklı kızgınlık sınırlarını açıklayan dört ilişki yayımlandı, yalnız aynı senaryoda bulunan veya daha uzak adaylar elendi."
+    },
+    {
+      "branch_ref": "root_000050/B003",
+      "concept_map": {
+        "definition": "Bir şeyin içinin iyilik veya kötülük sayılan içerikle dolmuş olmasıdır; yüklü gemi bunun özel bir uygulamasıdır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Bir şeyin iyilik ya da kötülük sayılan içerikle dolu olmasını bildirir.",
+            "claim_ids": [
+              "lu_006"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "example",
+            "statement": "Yükle doldurulmuş bir gemi, bu doluluk durumunun özel örneğidir.",
+            "claim_ids": [
+              "lu_007"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Çekirdek anlam, bir şeyin iyi veya kötü sayılan içerikle dolu olmasıdır; içerik türü olumlu ya da olumsuz olabilir.",
+        "common_claim_ids": [
+          "lu_006"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_007"
+            ],
+            "kind": "example",
+            "summary": "Yükle doldurulmuş gemi, doluluk niteliğinin somut bir örneği olarak verilir."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "iyilikle ya da kötülükle dolu olma",
+        "applicability": "İçeriğin olumlu veya olumsuz değer taşıyabildiği genel doluluk durumunu karşılar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Doluluk durumunu ve içeriğin iyi ya da kötü olabilmesini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "dolu",
+          "usage_role": "general",
+          "applicability": "Bağlam içeriğin ne olduğunu ve olumlu ya da olumsuz değerini zaten gösterdiğinde kullanılabilir.",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Bir şeyin içeriğinin dolu olması durumunu korur.",
+            "loses": null,
+            "adds": "İçeriğin iyi veya kötü oluşuyla sınırlanmayan her türlü doluluğu da kapsar.",
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "yüklü gemi",
+          "usage_role": "contextual",
+          "applicability": "Geminin yükle doldurulmuş olduğu özel kullanımda doğal karşılıktır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Geminin içinin yükle dolu olması durumunu korur.",
+            "loses": "Gemi dışındaki şeyleri ve iyi ya da kötü içerikle genel doluluğu kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_006",
+          "rendering_kind": "ordinary",
+          "target_gloss": "iyilikle ya da kötülükle dolu"
+        },
+        {
+          "lexical_unit_id": "lu_007",
+          "rendering_kind": "ordinary",
+          "target_gloss": "yüklü gemi"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001304/B007",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Ortaya çıkmış doluluk durumunu ve içeriğin iyi ya da kötü olabilmesini anlatır.",
+          "neighbor_only": "Bir şeyi doldurma eylemini ve doluncaya kadar yapılan işlemi anlatır.",
+          "gloss": "bir şeyi doldurmak",
+          "shared_zone": "Her iki dal da bir kabın veya şeyin içerikle dolu hale gelmesiyle ilgilidir.",
+          "distinction": "Komşu dal doldurma eylemini bildirir; bu dal ise eylemin sonucundaki dolu niteliğini, içerik değerini de belirterek anlatır."
+        },
+        {
+          "neighbor_ref": "root_000926/B003",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "İçeriğin iyi veya kötü sayılabilmesini belirtir ve tam ağza kadar dolmayı gerektirmez.",
+          "neighbor_only": "Kabın daha fazlasını alamayacak ölçüde son sınırına kadar dolmasını gerektirir.",
+          "gloss": "ağzına kadar dolu",
+          "shared_zone": "Her iki dal da bir şeyin içinin dolu olması durumunu anlatır.",
+          "distinction": "Komşu dal en yüksek doluluk derecesini şart koşar; bu dalda temel olan dolu olma ve içeriğin olumlu ya da olumsuz niteliğidir."
+        },
+        {
+          "neighbor_ref": "root_000945/B007",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "İyi veya kötü içerik ayrımını taşır ve belirli bir alanı bütünüyle kaplamayı gerektirmez.",
+          "neighbor_only": "Bir alanı tümüyle kaplayan veya kabı eksiksiz dolduran kapsamlı doluluğu öne çıkarır.",
+          "gloss": "bütünüyle dolu",
+          "shared_zone": "İki dal da bir kabın ya da alanın içerikle dolu olmasını ifade eder.",
+          "distinction": "Komşu dal içeriğin alanı bütünüyle kaplamasını öne çıkarır; bu dal ise dolu niteliğini içeriğin iyi veya kötü oluşuyla sınırlar."
+        },
+        {
+          "neighbor_ref": "root_000590/B003",
+          "relation_type": "near_neighbor",
+          "boundary_match": "field_only",
+          "focus_only": "Her tür şeyin iyi veya kötü içerikle dolu niteliğini kapsar.",
+          "neighbor_only": "Özellikle doluluğu yüzünden ağır ve yerinden oynamaz görünen büyük yemek kabını niteler.",
+          "gloss": "doluluktan ağır kap",
+          "shared_zone": "Her iki dal dolu bir şeyin ortaya çıkan durumunu niteleyebilir.",
+          "distinction": "Komşu dal belirli bir kapta doluluğun ağırlık ve durağanlık sonucunu öne çıkarır; bu dalda kap türü, ağırlık ve durağanlık gerekli değildir."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; doldurma eylemi, en yüksek doluluk, bütünüyle kaplama ve doluluktan ağırlaşma ile sınırı gösteren dört aday yayımlandı, yalnız örnek veya uzak benzerlik taşıyan adaylar elendi."
+    },
+    {
+      "branch_ref": "root_000050/B004",
+      "concept_map": {
+        "definition": "Belirli bir kenti adlandıran özel yer adıdır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Tanınmış bir kentin özel adı olarak kullanılır.",
+            "claim_ids": [
+              "lu_008"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "associated_use",
+            "statement": "Adlandırılan kentin sınır bölgelerinde bulunduğu belirtilir.",
+            "claim_ids": [
+              "lu_008"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Ortak payda, bu birimin bir kent adı olmasıdır. Kaynak ayrıntıları kentin tanınmışlığı ile sınır bölgelerinde bulunması bilgisini ayrı ayrı verir.",
+        "common_claim_ids": [
+          "lu_008"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "sınır bölgesindeki tanınmış bir kentin adı",
+        "applicability": "Bir yer adı olarak kentin kimliğini ve kaynaklarda verilen sınır bölgesi niteliğini birlikte açıklar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Özel yer adı işlevini ve kentin sınır bölgesinde bulunması bilgisini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "tanınmış bir kent",
+          "usage_role": "explanatory",
+          "applicability": "Yer adının yüzey biçimi ayrıca sağlandığında, onun ne tür bir yeri adlandırdığını açıklamak için kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Adlandırılan yerin tanınmış bir kent olması bilgisini korur.",
+            "loses": "Kentin sınır bölgesinde bulunduğu bilgisini açıkça vermez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_008",
+          "rendering_kind": "ordinary",
+          "target_gloss": "sınır bölgelerinde bulunan tanınmış bir kentin adı"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000050/B001",
+          "relation_type": "other",
+          "boundary_match": "field_only",
+          "focus_only": "Belirli bir kenti adlandıran özel yer adı işlevindedir.",
+          "neighbor_only": "Bir şeyin, sürenin, ömrün veya yarışın ulaştığı son sınırı bildirir.",
+          "gloss": "son sınır ve bitiş noktası",
+          "shared_zone": "Dallar yalnız aynı sözlük biçimi altında yer alır; anlamsal çekirdekleri ortak değildir.",
+          "distinction": "Bu dal bir kentin özel adıdır; komşu dal ise şeylerin ve sürelerin ulaştığı son sınırı anlatan genel bir kavramdır."
+        },
+        {
+          "neighbor_ref": "root_000050/B002",
+          "relation_type": "other",
+          "boundary_match": "field_only",
+          "focus_only": "Bir kentin özel adı olarak yer kimliği sağlar.",
+          "neighbor_only": "Kişide ortaya çıkan öfkeyi ve birine öfkelenmeyi bildirir.",
+          "gloss": "öfke ve öfkelenme",
+          "shared_zone": "Dallar yalnız aynı sözlük biçimi altında yer alır; anlamsal ortaklık taşımaz.",
+          "distinction": "Bu dal yer adı olarak bir kenti gösterir; komşu dal kişideki öfke durumunu ve bunun bir hedefe yönelmesini anlatır."
+        },
+        {
+          "neighbor_ref": "root_000050/B003",
+          "relation_type": "other",
+          "boundary_match": "field_only",
+          "focus_only": "Tanınmış bir kentin özel adı olarak kullanılır.",
+          "neighbor_only": "Bir şeyin iyi ya da kötü içerikle dolu olmasını niteler.",
+          "gloss": "iyi ya da kötü içerikle dolu",
+          "shared_zone": "Dallar yalnız yakın sözlük biçimleriyle bağlantılıdır; anlam alanları ayrıdır.",
+          "distinction": "Bu dal belirli bir kenti adlandırır; komşu dal ise bir şeyin içeriğinin dolu olması niteliğini bildirir."
+        },
+        {
+          "neighbor_ref": "root_000487/B004",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Sınır bölgesinde bulunduğu belirtilen farklı bir kenti adlandırır.",
+          "neighbor_only": "Başka bir kentin özel adını taşır ve onu Şam bölgesiyle ilişkilendirir.",
+          "gloss": "başka bir kent adı",
+          "shared_zone": "Her iki dal da bir kentin özel adı olarak yer adları alanında bulunur.",
+          "distinction": "İki dalın ortaklığı yalnız kent adı olmalarıdır; farklı yerleri adlandırdıkları için birbirlerinin yerine kullanılamazlar."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; aynı sözlük biçimindeki üç ayrı anlamla karışmayı ve başka kent adlarıyla yalnız tür ortaklığını gösteren dört ilişki yayımlandı, diğer yer adları aynı ayrımı tekrarladığı için elendi."
+    }
+  ],
+  "root_profile": {
+    "summary": "Kök, birbirinden ayrılan dört anlam alanında düzenlenir: son sınır ve bitiş noktası, öfke, iyi ya da kötü içerikle doluluk ve bir kentin özel adı. İlk dal kendi içinde süre, ömür ve yarış varışına açılırken diğer üç dal onunla anlamsal bağ kurmayan ayrı kollardır.",
+    "polysemy": "polysemic",
+    "organization": "mixed"
+  }
+}

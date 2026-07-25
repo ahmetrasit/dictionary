@@ -1,0 +1,83 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın ana anlam ayrımları ve komşu sınırları büyük ölçüde kanıtla uyumludur. Ancak bazı ayırt edici kaynak ayrıntıları özetlerde eksik ya da belirsiz bırakılmış, ayrıca bir dizgin kullanımı üç alanda başlık olarak aktarılmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_000033/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001"
+      ],
+      "evidence_conflict": "lu_001, suyun kötü kokusu yüzünden kimsenin içmeyeceği duruma gelmesini ayırt edici bir sınır olarak verir. Kaynak özeti yalnızca kötü kokma ve tat bozulmasını bildirerek bu içilemezlik sınırını dışarıda bırakır.",
+      "smallest_correction": "Ortak özete, değişmenin suyu kötü kokusu nedeniyle içilemeyecek duruma kadar götürebileceğini belirten kısa bir cümle ekleyin."
+    },
+    {
+      "target_ref": "root_000033/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_007"
+      ],
+      "evidence_conflict": "lu_007'deki düzeltme görüşü belirsiz bir ünsüz değişimi değildir; son ünsüzün n değil r olması ve r'li biçimin doğru sayılmasıdır. Kaynak özeti hangi ünsüzün söz konusu olduğunu belirtmez.",
+      "smallest_correction": "Düzeltme görüşünü, son ünsüzü r olan biçimin doğru sayıldığı biçiminde açıklaştırın."
+    },
+    {
+      "target_ref": "root_000033/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_008"
+      ],
+      "evidence_conflict": "lu_008, baştaki hemzenin ayn sesinden dönüştüğünü ve ayn sesli biçimin de kullanıldığını bildirir. Kaynak özeti bunu yalnızca ilk sessizi farklı iki biçim diye vererek değişimin yönünü ve seslerin kimliğini kaybeder.",
+      "smallest_correction": "Özette, hemzenin ayn sesinden dönüştüğü ve ayn sesli varyantın da kaydedildiği bilgisini açıkça belirtin."
+    },
+    {
+      "target_ref": "root_000033/B005",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "lu_012, birlikte örülen deri şeritlerin karın bağı veya dizgin yapıldığını belirtir. F003 ise ikinci kullanımı hayvan başlığı olarak aktarır; başlık, dizginin yerini tutmaz.",
+      "smallest_correction": "F003'teki hayvan başlığı ifadesini dizgin olarak değiştirin."
+    },
+    {
+      "target_ref": "root_000033/B005",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "lu_012'de örülü şeritlerin kullanım sonuçları karın bağı ve dizgindir. Kaynak özeti bunlardan ikincisini başlık diye verdiği için kullanım nesnesini değiştirir.",
+      "smallest_correction": "Kaynak özetindeki başlık ifadesini dizgin ile değiştirin."
+    },
+    {
+      "target_ref": "root_000033/B005",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "Örgülü deri kayışın uygulanabilirlik açıklaması, lu_012'deki karın bağı veya dizgin kullanımını karın bağı veya başlık olarak verir. Bu açıklama da dizgini farklı bir koşum parçasına dönüştürür.",
+      "smallest_correction": "Uygulanabilirlik açıklamasında başlık yerine dizgin yazın."
+    },
+    {
+      "target_ref": "root_000033/B007",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_015"
+      ],
+      "evidence_conflict": "lu_015 yalnızca tek sözlükte kayıtlıdır. Kaynak özeti anlamı doğru verse de bunun tek kaynaklı bir tanıklık olduğunu belirtmeyerek ayırt edici kaynak durumunu kaybeder.",
+      "smallest_correction": "Özeti tek kayıt olduğunu belirtecek biçimde açın veya lu_015'i tek tanıklık olarak kaynak ayrıntısında gösterin."
+    }
+  ]
+}

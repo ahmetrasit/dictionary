@@ -1,13 +1,17 @@
 {
-  "format": 1,
+  "format": 2,
   "generated_by": "v2/scripts/build_branch_evidence.py",
   "root_envelope_id": "root_000098",
   "packet_path": "data/output/root_packets/root_000098.json",
-  "packet_sha256": "dbfa1b349e9eed5c64e33b0e4892b2e0c4cd075bd21dccdc9168efb25da55be0",
+  "packet_sha256": "a64933cbba530968c8c6d28602b442d71a2b8d972c082285478a2109a5c3e747",
   "furuq_path": "data/working/furuq_v4.sqlite",
   "furuq_sha256": "1099db0d56515d2eb3e8d72f104f2e338c2c9a8c1fa6abbb046406d3b327e722",
   "qnet_path": "data/upstream/qnet/incidence_full/raw_keyword_incidence.sqlite",
   "qnet_sha256": "a5262b568203bff7ec04e6ca905781125beec83f90d62a5cf0cd6ff61049eee8",
+  "qnet_theme_path": "data/upstream/qnet/bridge_theme_full/bridge_theme_staging.sqlite",
+  "qnet_theme_sha256": "e4f590a111376e372eefef6d03b8694837ec9989017ce721d56db9828b2a734e",
+  "qnet_fix_manifest_path": "data/upstream/qnet/bridge_theme_full/latent_v11_qac_qnet_fix_manifest.json",
+  "qnet_fix_manifest_sha256": "b0ae3c19450a8019825321f6dc1e9f4c336249950f50267ed84eb3258756502c",
   "branch": {
     "root_id": "root_000098",
     "branch_id": "B006",
@@ -222,6 +226,209 @@
       ]
     }
   ],
+  "qnet_bridge_overlap_candidates": [
+    {
+      "root_id": "root_000358",
+      "branch_id": "B006",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 4,
+      "consensus_keyword_count": 2,
+      "shared_bridge_keywords": [
+        "color",
+        "decay",
+        "impurity",
+        "water"
+      ]
+    },
+    {
+      "root_id": "root_000354",
+      "branch_id": "B001",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 4,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "decay",
+        "environment",
+        "impurity",
+        "water"
+      ]
+    },
+    {
+      "root_id": "root_000598",
+      "branch_id": "B003",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 4,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "color",
+        "environment",
+        "impurity",
+        "water"
+      ]
+    },
+    {
+      "root_id": "root_000287",
+      "branch_id": "B006",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 2,
+      "shared_bridge_keywords": [
+        "color",
+        "decay",
+        "impurity"
+      ]
+    },
+    {
+      "root_id": "root_000086",
+      "branch_id": "B004",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "environment",
+        "hydrology",
+        "water"
+      ]
+    },
+    {
+      "root_id": "root_000369",
+      "branch_id": "B002",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "color",
+        "purity",
+        "transformation"
+      ]
+    }
+  ],
+  "qnet_theme_overlap_candidates": [
+    {
+      "root_id": "root_000354",
+      "branch_id": "B001",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "growth_decay",
+        "habitat_ecology",
+        "purity_cleansing",
+        "water_hydrology"
+      ]
+    },
+    {
+      "root_id": "root_000358",
+      "branch_id": "B006",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "growth_decay",
+        "purity_cleansing",
+        "visual_appearance",
+        "water_hydrology"
+      ]
+    },
+    {
+      "root_id": "root_000598",
+      "branch_id": "B003",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "habitat_ecology",
+        "purity_cleansing",
+        "visual_appearance",
+        "water_hydrology"
+      ]
+    },
+    {
+      "root_id": "root_001588",
+      "branch_id": "B002",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "change_transition",
+        "growth_decay",
+        "habitat_ecology",
+        "water_hydrology"
+      ]
+    },
+    {
+      "root_id": "root_000620",
+      "branch_id": "B003",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "growth_decay",
+        "habitat_ecology",
+        "visual_appearance",
+        "water_hydrology"
+      ]
+    },
+    {
+      "root_id": "root_001691",
+      "branch_id": "B001",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "change_transition",
+        "growth_decay",
+        "habitat_ecology",
+        "water_hydrology"
+      ]
+    },
+    {
+      "root_id": "root_001162",
+      "branch_id": "B006",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 3,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "change_transition",
+        "purity_cleansing",
+        "water_hydrology"
+      ]
+    },
+    {
+      "root_id": "root_000109",
+      "branch_id": "B008",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 3,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "habitat_ecology",
+        "visual_appearance",
+        "water_hydrology"
+      ]
+    }
+  ],
+  "qnet_focus_coverage": {
+    "raw_keyword_exact_port": true,
+    "snapshot_exact_port": true,
+    "postfix_exact_port": false,
+    "theme_scope": "branch",
+    "focus_themes": [
+      "change_transition",
+      "growth_decay",
+      "habitat_ecology",
+      "purity_cleansing",
+      "visual_appearance",
+      "water_hydrology"
+    ]
+  },
   "furuq_candidates": [
     {
       "root_id": "root_001115",
@@ -240,64 +447,10 @@
       "shared_consensus_core": [
         "alteration",
         "change"
-      ]
-    },
-    {
-      "root_id": "root_001119",
-      "branch_id": "B003",
-      "root_norm": "غ ي ر",
-      "branch_image_ar": "تغيير الصورة أو إبدال الشيء بغيره",
-      "what_is_ar": "يدخل فيه تغيير الشيء فتغيره، وتغير الحال، وتبديل الشيء بغيره، ودفع المنكر بغيره من الحق، والمبادلة والبدل.",
-      "what_is_not_ar": "لا يدخل فيه غير النحوية بمعنى سوى أو لا إلا إذا كان الكلام في الإبدال بغيره، ولا يدخل فيه الغَيْر للدية إلا من جهة التعليل.",
-      "source_phrase_ar": "الاسم من قولك غيرت الشيء فتغير (sihah)؛ تغير فلان عن حاله (tahdhib)؛ تغيير صورة الشيء دون ذاته (mufradat)؛ تبديله بغيره (mufradat)؛ يدفعون ذلك المنكر بغيره من الحق (tahdhib)؛ قود فغير إلى الدية (maqayis)؛ غايرت الرجل أي عارضته بالبيع وبادلته والغيار البدال (sihah)",
-      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1844:headword=%D8%BA%D9%8A%D8%B1:root=%D8%BA%20%D9%8A%20%D8%B1:sha=5a2c9fd2e21892dc;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D426%3Bsegment_index%3D9:headword=%D8%BA%D9%8A%D8%B1:root=%D8%BA%20%D9%8A%20%D8%B1:sha=b7984f3239e69dac;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1108:headword=%D8%BA%D9%8A%D8%B1:root=%D8%BA%20%D9%8A%20%D8%B1:sha=60096484874e6f1d;0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2561",
-      "status": "accepted",
-      "contaminated": "no",
-      "discovery_basis": [
-        "qnet_packet"
       ],
-      "shared_consensus_core": [
-        "alteration",
-        "change"
-      ]
-    },
-    {
-      "root_id": "root_001384",
-      "branch_id": "B002",
-      "root_norm": "ل و ح",
-      "branch_image_ar": "أثر الحر وما يغير اللون",
-      "what_is_ar": "يدخل فيه تغيير اللون أو الهيئة بسبب الحر والشمس والنار والسموم والسفر والبرد والسقم والحزن، وما يترك أثرا ظاهرا في الجسد أو الشيء.",
-      "what_is_not_ar": "ليس هو العطش نفسه كحالة مستقلة، ولا اللوح المكتوب، ولا مجرد اللمعان.",
-      "source_phrase_ar": "لوحه الحر حرقه وسوده حتى لاح (maqayis)؛ لاحه العطش ولوحه إذا غيره ولاحه البرد والسقم والحزن (ayn)؛ لاحته السموم والنار إذا غيره (jamhara)؛ لاحه السفر غيره ولوحته الشمس غيرته وسفعت وجهه (sihah)؛ لوحه الحر غيره (mufradat)",
-      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3146;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1838:headword=%D9%84%D9%88%D8%AD:root=%D9%84%20%D9%88%20%D8%AD:sha=c95b70b7daee48ee;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1487%3Asubentry%3A1%3A%D9%84%D9%88%D8%AD:headword=%D9%84%D9%88%D8%AD:root=%D9%84%20%D9%88%20%D8%AD:sha=c9601e5f0e8beaeb;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1064:headword=%D9%84%D9%88%D8%AD:root=%D9%84%20%D9%88%20%D8%AD:sha=ef996e15e739f9cf;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1374:headword=%D9%84%D9%88%D8%AD:root=%D9%84%20%D9%88%20%D8%AD:sha=a863e204b8599cc3",
-      "status": "accepted",
-      "contaminated": "no",
-      "discovery_basis": [
-        "qnet_packet"
-      ],
-      "shared_consensus_core": [
-        "alteration",
-        "discoloration"
-      ]
-    },
-    {
-      "root_id": "root_001495",
-      "branch_id": "B005",
-      "root_norm": "ن س خ",
-      "branch_image_ar": "تحويل يغير الشيء عن حاله",
-      "what_is_ar": "يضم تغيير الشيء أو تبديله حتى يصير غير ما كان أو تزول صورته، كنسخ الريح آثار الدار أو استعمال نسخ بمعنى مسخ.",
-      "what_is_not_ar": "ليس نقل الشيء وهو هو، ولا نسخ الكتاب مع بقاء الأصل، ولا مجرد تعاقب الورثة أو الأزمنة.",
-      "source_phrase_ar": "تحويل شيء إلى شيء (maqayis)؛ نسخت الريح آثار الدار غيرتها (sihah)؛ تبديل الشيء من الشيء وهو غيره (tahdhib)؛ مسخه الله قردا ونسخه قردا بمعنى واحد (tahdhib)",
-      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3600;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1188:headword=%D9%86%D8%B3%D8%AE:root=%D9%86%20%D8%B3%20%D8%AE:sha=1bd78c5b0ca33a10;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D350%3Bsegment_index%3D84:headword=%D9%86%D8%B3%D8%AE:root=%D9%86%20%D8%B3%20%D8%AE:sha=2d2678803c87cbb1",
-      "status": "accepted",
-      "contaminated": "no",
-      "discovery_basis": [
-        "qnet_packet"
-      ],
-      "shared_consensus_core": [
-        "alteration",
-        "change"
-      ]
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_001497",
@@ -317,7 +470,96 @@
         "alteration",
         "change",
         "discoloration"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000358",
+      "branch_id": "B006",
+      "root_norm": "ح م ي",
+      "branch_image_ar": "الحمأة والطين الأسود",
+      "what_is_ar": "الحمأ والحمأة والطين الأسود المنتن وما في البئر والعين الحمئة",
+      "what_is_not_ar": "ليس حمى الموضع المحظور ولا الحُمَة السم",
+      "source_phrase_ar": "الحمأ الطين الأسود المنتن (ayn)؛ يسمى الطين الذي نبث من النهر الحمأة (ayn)؛ عين حمئة أي ذات حمأة (ayn;mufradat)؛ الحمأة والحمأ طين أسود منتن (mufradat)؛ حمأت البئر أخرجت حمأتها وأحمأتها جعلت فيها حما (mufradat)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1863:headword=%D8%AD%D9%85%D9%89:root=%D8%AD%20%D9%85%20%D9%8A:sha=9283a75f6d7f3a06;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A363:headword=%D8%AD%D9%85%D9%89:root=%D8%AD%20%D9%85%20%D9%8A:sha=2df5f9e72e438838",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_bridge_overlap",
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [
+        "color",
+        "decay",
+        "impurity",
+        "water"
+      ],
+      "shared_themes": [
+        "growth_decay",
+        "purity_cleansing",
+        "visual_appearance",
+        "water_hydrology"
+      ],
+      "theme_focus_scopes": [
+        "branch"
       ]
+    },
+    {
+      "root_id": "root_000354",
+      "branch_id": "B001",
+      "root_norm": "ح م ء",
+      "branch_image_ar": "الحمأة السوداء في الماء",
+      "what_is_ar": "الحمأ والحمأة والطين الأسود المنتن، والعين أو البئر إذا صارت ذات حمأة، وإخراج الحمأة منها أو إلقاؤها فيها",
+      "what_is_not_ar": "ليس الحرارة ولا الحماية ولا الحمى",
+      "source_phrase_ar": "الحمأ الطين الأسود المنتن (ayn;mufradat)؛ الحمأ الطين الاسود (sihah)؛ عين حمئة أي ذات حمأة (ayn;tahdhib;mufradat)؛ حمأت البئر إذا نزعت حمأتها وأحمأتها إذا ألقيت فيها الحمأة (sihah;tahdhib)؛ حمئت فهي حمئة إذا صارت فيها الحمأة (tahdhib)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1863:headword=%D8%AD%D9%85%D9%89:root=%D8%AD%20%D9%85%20%D9%8A:sha=9283a75f6d7f3a06;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A41:headword=%D8%AD%D9%85%D8%A3:root=%D8%AD%20%D9%85%20%D8%A1:sha=a32c41709791b06c;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D257%3Bsegment_index%3D3:headword=%D8%AD%D9%85%D8%A3:root=%D8%AD%20%D9%85%20%D8%A3:sha=2520c5f8d1492c9d;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A363:headword=%D8%AD%D9%85%D9%89:root=%D8%AD%20%D9%85%20%D9%8A:sha=2df5f9e72e438838",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_bridge_overlap",
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [
+        "decay",
+        "environment",
+        "impurity",
+        "water"
+      ],
+      "shared_themes": [
+        "growth_decay",
+        "habitat_ecology",
+        "purity_cleansing",
+        "water_hydrology"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_001119",
+      "branch_id": "B003",
+      "root_norm": "غ ي ر",
+      "branch_image_ar": "تغيير الصورة أو إبدال الشيء بغيره",
+      "what_is_ar": "يدخل فيه تغيير الشيء فتغيره، وتغير الحال، وتبديل الشيء بغيره، ودفع المنكر بغيره من الحق، والمبادلة والبدل.",
+      "what_is_not_ar": "لا يدخل فيه غير النحوية بمعنى سوى أو لا إلا إذا كان الكلام في الإبدال بغيره، ولا يدخل فيه الغَيْر للدية إلا من جهة التعليل.",
+      "source_phrase_ar": "الاسم من قولك غيرت الشيء فتغير (sihah)؛ تغير فلان عن حاله (tahdhib)؛ تغيير صورة الشيء دون ذاته (mufradat)؛ تبديله بغيره (mufradat)؛ يدفعون ذلك المنكر بغيره من الحق (tahdhib)؛ قود فغير إلى الدية (maqayis)؛ غايرت الرجل أي عارضته بالبيع وبادلته والغيار البدال (sihah)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1844:headword=%D8%BA%D9%8A%D8%B1:root=%D8%BA%20%D9%8A%20%D8%B1:sha=5a2c9fd2e21892dc;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D426%3Bsegment_index%3D9:headword=%D8%BA%D9%8A%D8%B1:root=%D8%BA%20%D9%8A%20%D8%B1:sha=b7984f3239e69dac;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1108:headword=%D8%BA%D9%8A%D8%B1:root=%D8%BA%20%D9%8A%20%D8%B1:sha=60096484874e6f1d;0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2561",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_packet"
+      ],
+      "shared_consensus_core": [
+        "alteration",
+        "change"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000033",
@@ -336,7 +578,32 @@
       "shared_consensus_core": [
         "alteration",
         "water"
-      ]
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001384",
+      "branch_id": "B002",
+      "root_norm": "ل و ح",
+      "branch_image_ar": "أثر الحر وما يغير اللون",
+      "what_is_ar": "يدخل فيه تغيير اللون أو الهيئة بسبب الحر والشمس والنار والسموم والسفر والبرد والسقم والحزن، وما يترك أثرا ظاهرا في الجسد أو الشيء.",
+      "what_is_not_ar": "ليس هو العطش نفسه كحالة مستقلة، ولا اللوح المكتوب، ولا مجرد اللمعان.",
+      "source_phrase_ar": "لوحه الحر حرقه وسوده حتى لاح (maqayis)؛ لاحه العطش ولوحه إذا غيره ولاحه البرد والسقم والحزن (ayn)؛ لاحته السموم والنار إذا غيره (jamhara)؛ لاحه السفر غيره ولوحته الشمس غيرته وسفعت وجهه (sihah)؛ لوحه الحر غيره (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3146;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1838:headword=%D9%84%D9%88%D8%AD:root=%D9%84%20%D9%88%20%D8%AD:sha=c95b70b7daee48ee;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1487%3Asubentry%3A1%3A%D9%84%D9%88%D8%AD:headword=%D9%84%D9%88%D8%AD:root=%D9%84%20%D9%88%20%D8%AD:sha=c9601e5f0e8beaeb;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1064:headword=%D9%84%D9%88%D8%AD:root=%D9%84%20%D9%88%20%D8%AD:sha=ef996e15e739f9cf;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1374:headword=%D9%84%D9%88%D8%AD:root=%D9%84%20%D9%88%20%D8%AD:sha=a863e204b8599cc3",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_packet"
+      ],
+      "shared_consensus_core": [
+        "alteration",
+        "discoloration"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000095",
@@ -355,83 +622,10 @@
       "shared_consensus_core": [
         "alteration",
         "change"
-      ]
-    },
-    {
-      "root_id": "root_000287",
-      "branch_id": "B006",
-      "root_norm": "ح ب ر",
-      "branch_image_ar": "صفرة الأسنان",
-      "what_is_ar": "صفرة تعلو الأسنان والقلح",
-      "what_is_not_ar": "المداد والحبور والجمال المحمود",
-      "source_phrase_ar": "الحبر صفرة تعلو الأسنان؛ الحبر صفرة تقع على الأسنان؛ حبرت أسنانه إذا اصفرت صفرة غليظة؛ الحبرة القلح في الأسنان؛ الحبر صفرة تركب الإنسان وهي الحبرة أيضا",
-      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:842;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1701:headword=%D8%AD%D8%A8%D8%B1:root=%D8%AD%20%D8%A8%20%D8%B1:sha=aead707b6cdad2f8;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A652%3Asubentry%3A1%3A%D8%AD%D8%A8%D8%B1:headword=%D8%AD%D8%A8%D8%B1:root=%D8%AD%20%D8%A8%20%D8%B1:sha=7aa1c4ee4d773ee8;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1613:headword=%D8%AD%D8%A8%D8%B1:root=%D8%AD%20%D8%A8%20%D8%B1:sha=7dcd367f014c0a87;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D238%3Bsegment_index%3D7:headword=%D8%AD%D8%A8%D8%B1:root=%D8%AD%20%D8%A8%20%D8%B1:sha=12d9769ed79346fa",
-      "status": "accepted",
-      "contaminated": "no",
-      "discovery_basis": [
-        "qnet_core_overlap"
       ],
-      "shared_consensus_core": [
-        "discoloration",
-        "yellowing"
-      ]
-    },
-    {
-      "root_id": "root_000371",
-      "branch_id": "B008",
-      "root_norm": "ح و ش",
-      "branch_image_ar": "التحويش بمعنى التحويل",
-      "what_is_ar": "يدخل فيه التحويش حين يفسر بالتحويل",
-      "what_is_not_ar": "ليس احتواش القوم فلانا في الوسط ولا حاشا للاستثناء",
-      "source_phrase_ar": "التحويش التحويل (ayn)",
-      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1761:headword=%D8%AD%D8%B4%D9%88:root=%D8%AD%20%D8%B4%20%D9%88:sha=e7f9005cbee6d7f5",
-      "status": "accepted",
-      "contaminated": "no",
-      "discovery_basis": [
-        "qnet_core_overlap"
-      ],
-      "shared_consensus_core": [
-        "alteration",
-        "change"
-      ]
-    },
-    {
-      "root_id": "root_000373",
-      "branch_id": "B001",
-      "root_norm": "ح و ل",
-      "branch_image_ar": "تحول الشيء عن حاله",
-      "what_is_ar": "تحرك الشيء أو الشخص وتحوله من موضع إلى موضع أو من حال إلى حال وتغيره أو اعوجاجه بعد استواء والوثوب على متن الفرس حيث نصت المصادر",
-      "what_is_not_ar": "ليس هو الحول بمعنى السنة ولا الحيلة ولا الحائل بين شيئين",
-      "source_phrase_ar": "أصل واحد وهو تحرك في دور (maqayis); حال الشخص يحول إذا تحرك وكذلك كل متحول عن حالة (maqayis); حال الرجل في متن فرسه يحول حولا وحؤولا إذا وثب عليه (maqayis;sihah); حال الشيء يحول حؤولا يكون تغييرا ويكون تحويلا (ayn); حال إلى مكان آخر أي تحول وحال الشخص أي تحرك (sihah); أصل الحول تغير الشيء وانفصاله عن غيره (mufradat)",
-      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:830;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1837:headword=%D8%AD%D9%88%D9%84:root=%D8%AD%20%D9%88%20%D9%84:sha=087b738c7dccff99;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3969:headword=%D8%AD%D9%88%D9%84:root=%D8%AD%20%D9%88%20%D9%84:sha=589525ca7f2b5439;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A385:headword=%D8%AD%D9%88%D9%84:root=%D8%AD%20%D9%88%20%D9%84:sha=d59a5f8cba43fbd2",
-      "status": "accepted",
-      "contaminated": "no",
-      "discovery_basis": [
-        "qnet_core_overlap"
-      ],
-      "shared_consensus_core": [
-        "alteration",
-        "change"
-      ]
-    },
-    {
-      "root_id": "root_000433",
-      "branch_id": "B007",
-      "root_norm": "خ ل ف",
-      "branch_image_ar": "حال الشيء تتغير وتفسد",
-      "what_is_ar": "يدخل فيه تغير ريح الفم أو الطعام واللبن، وفساد الشيء أو بلى الثوب وإصلاحه من موضع الخلق، وميل البعير من داء.",
-      "what_is_not_ar": "ليس مجرد الاختلاف بين شخصين، ولا إخلاف الوعد إلا من جهة مجازية مذكورة في بابه.",
-      "source_phrase_ar": "الثالث التغير؛ خلف فوه إذا تغير؛ الخليف الثوب يبلى وسطه؛ البعير الأخلف (maqayis)؛ خلوف فم الصائم نكهته؛ خلف ريح فمه أي تغير (ayn)؛ خلف فوه خلوفة وخلوفا؛ خلف اللبن خلوفا إذا حمض؛ خلفت نفسه عن الشيء (jamhara)؛ خلف فم الصائم خلوفا؛ خلف اللبن والطعام إذا تغير؛ خلفت الثوب (sihah)؛ خلف خلافة فسد؛ لمن فسد كلامه أو كان فاسدا في نفسه (mufradat)",
-      "source_refs": "maqayis:root=%D8%AE%20%D9%84%20%D9%81:headword=%D8%AE%D9%84%D9%81:sha=6b3296874ae8a9e0;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A2767:headword=%D8%AE%D9%84%D9%81:root=%D8%AE%20%D9%84%20%D9%81:sha=497a96ac0580887e;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1632%3Asubentry%3A0%3A%D8%AE%D9%84%D9%81:headword=%D8%AE%D9%84%D9%81:root=%D8%AE%20%D9%84%20%D9%81:sha=d7da5f0a5f876d34;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3293:headword=%D8%AE%D9%84%D9%81:root=%D8%AE%20%D9%84%20%D9%81:sha=c12bd58a5760efd0;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A439:headword=%D8%AE%D9%84%D9%81:root=%D8%AE%20%D9%84%20%D9%81:sha=70c90cb78df70560",
-      "status": "accepted",
-      "contaminated": "no",
-      "discovery_basis": [
-        "qnet_core_overlap"
-      ],
-      "shared_consensus_core": [
-        "change",
-        "staleness"
-      ]
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000098",
@@ -447,7 +641,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000098",
@@ -463,7 +660,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000098",
@@ -479,7 +679,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000098",
@@ -495,7 +698,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000098",
@@ -511,7 +717,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000098",
@@ -527,7 +736,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     }
   ]
 }

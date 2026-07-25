@@ -1,0 +1,67 @@
+{
+  "verdict": "repair",
+  "summary": "B002, isteksizlik kosulunu genel boyun egme cekirdegine yaydigi icin kavram haritasi, kaynak sentezi ve karsiliklarda daraltilmistir. B004'te ise turemis sonuc durumu cekirdek eylemden ayrilmalidir.",
+  "issues": [
+    {
+      "target_ref": "root_000088/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_006",
+        "lu_008",
+        "lu_010"
+      ],
+      "evidence_conflict": "F002 ve tanim, boyun egmeyi baski veya guclu isteksizlik kosuluna bagli genel bir cekirdek olarak sunuyor. Oysa lu_006 ve lu_010 kosulsuz hak kabulü ve boyun egmeyi destekler; lu_008 de siddet veya isteksizlikli kullanimla birlikte genel itaat anlatimini kapsar.",
+      "smallest_correction": "Boyun egme ve itaati kosulsuz cekirdek olarak ifade edin; baski veya guclu isteksizligi yalniz lu_008'e bagli bir kisit ya da kaynak ozelligi olarak ayirin."
+    },
+    {
+      "target_ref": "root_000088/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_007",
+        "lu_008"
+      ],
+      "evidence_conflict": "Ortak ozet, hakki kabul etme ile boyun egmeyi tek bir ortak anlatim gibi birlestiriyor. lu_007 yalniz hakki kabul etmeyi, lu_008 ise itaati ve bazi kayitlarda siddet ya da isteksizlik kosulunu verir; bu ayrim sentezde gorunmez hale gelmistir.",
+      "smallest_correction": "Ortak ozeti kabul ve itaatin ayri kullanimlar oldugunu, yalniz bazi itaat kayitlarinin siddet veya isteksizlik ekledigini belirten kaynak-tarafsiz bir karsilastirma olarak duzeltin."
+    },
+    {
+      "target_ref": "root_000088/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_006",
+        "lu_008",
+        "lu_010"
+      ],
+      "evidence_conflict": "Kavram karsiligi boyun egme secenegini yalniz istemeyerek yapilan davranis olarak verir. Bu, lu_006 ve lu_010'daki kosulsuz boyun egmeyi ve lu_008'in daha genis itaat kapsamini disarida birakir.",
+      "smallest_correction": "Kavram karsiligini hakki kabul etmek veya boyun egip itaat etmek seklinde genisletin; isteksizligi baglamsal bir daralma olarak koruyun."
+    },
+    {
+      "target_ref": "root_000088/B002",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_008"
+      ],
+      "evidence_conflict": "lu_008 icin verilen karsilik yalniz istemeyerek boyun egmeyi aktarir. Kanit, itaati ve uymayi genel olarak verir; siddet veya isteksizlik bunun her kayitta zorunlu olmayan ek kosuludur.",
+      "smallest_correction": "lu_008 karsiligini buyruğa boyun egip uymak olarak genisletin ve guclu isteksizlik ihtimalini gerekiyorsa baglamsal aciklamada belirtin."
+    },
+    {
+      "target_ref": "root_000088/B004",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_015",
+        "lu_016"
+      ],
+      "evidence_conflict": "Tanim ve F001, boyun kemigini kesme eylemiyle lu_016'daki bu eylemden tureyen kesilmis hayvan nitelemesini ayni cekirdek duzeyine yerlestiriyor. lu_016 bagimsiz bir cekirdek degil, lu_015'in sonuc durumudur.",
+      "smallest_correction": "Cekirdek tanim ve facet'i lu_015'teki kesme eylemiyle sinirlayin; lu_016'yi bu eyleme bagli sonuc ya da turemis niteleme olarak ayri bir facet'te tutun."
+    }
+  ]
+}

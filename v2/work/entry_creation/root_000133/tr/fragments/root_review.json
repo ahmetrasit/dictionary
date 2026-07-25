@@ -1,0 +1,19 @@
+{
+  "inputs_sha256": "84c03e268ad4fa46568a62f17a7b52a3d9812d6eb03bfee6e829c3ad1737d646",
+  "verdict": "repair",
+  "summary": "B001 yayına hazırdır; B002 ise temel anlamı doğru kurmasına rağmen lu_006 ve lu_007 içindeki belirgin kaynak ayrımlarını ortak bir anlatı gibi sunduğu için kaynak sentezinde onarım gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_000133/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_006",
+        "lu_007"
+      ],
+      "evidence_conflict": "Ortak özet bütün kaynakların küçük, uçan, ısırıcı ve zararlı bir böcek üzerinde birleştiğini düşündürüyor. Oysa lu_006 ve lu_007 içinde ayn yazın ısırıp zarar veren böceği belirtir, sihah çoğul adı başka bir böcek terimiyle özdeşleştirir, mufradat adlandırmayı gövdenin küçüklüğüne bağlar, maqayis ile tahdhib ise yalnızca bilinen böcek ve çoğul bilgisini verir. Bu ayırt edici kaynak varyantları sentezde kaybolmuştur.",
+      "smallest_correction": "common_summary metnini ortak çekirdeği kaynakların farklı nitelemelerinden ayıracak biçimde düzeltin ve ısırma, başka böcek terimiyle özdeşleştirme ve küçüklüğe dayalı adlandırma açıklamasını kaynaklar arası tarafsız bir karşılaştırma olarak ekleyin. lu_006 ve lu_007 birden çok sözlüğe çözüldüğü için bu karşılaştırmayı tek sözlüğe özgü source_details satırlarına bölmeyin."
+    }
+  ]
+}

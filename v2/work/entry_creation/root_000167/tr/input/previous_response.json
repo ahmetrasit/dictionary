@@ -1,0 +1,538 @@
+{
+  "branches": [
+    {
+      "branch_ref": "root_000167/B001",
+      "concept_map": {
+        "definition": "Bir şeyin yok olacak ölçüde sona ermesi, ortadan kalkması ya da dağılıp gitmesi; geçişli kullanımda ise bir etkenin başka bir şeyi yok etmesidir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Bir şey kendiliğinden sona erer, yok olur ya da parçaları birbirinden ayrılıp dağılır.",
+            "claim_ids": [
+              "lu_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Geçişli biçimde bir etken, başka bir varlığı yok eder veya ortadan kaldırır.",
+            "claim_ids": [
+              "lu_002"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar, bir şeyin yok olması, sona ermesi veya dağılıp gitmesi anlamında birleşir. Aynı anlam alanının geçişli biçimi, bir başkasını yok etmeyi ya da ortadan kaldırmayı bildirir.",
+        "common_claim_ids": [
+          "lu_001",
+          "lu_002"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "yok olup gitmek; yok etmek",
+        "applicability": "Hem bir şeyin kendisinin sona ermesini veya dağılmasını hem de bir etkenin onu ortadan kaldırmasını birlikte temsil eden üst anlatımdır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Kendiliğinden yok olmayı, dağılıp gitmeyi ve geçişli yok etme kullanımını birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "yok olmak",
+          "usage_role": "contextual",
+          "applicability": "Öznenin sona erdiği veya ortadan kalktığı, fakat dağılma biçiminin öne çıkarılmadığı bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Bir şeyin kendiliğinden ortadan kalkmasını açıkça korur.",
+            "loses": "Dağılıp gitme ayrıntısını ve bir başkasını yok eden geçişli kullanımı dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "dağılıp gitmek",
+          "usage_role": "contextual",
+          "applicability": "Bir şeyin parçalanarak veya farklı yönlere ayrılarak ortadan kalktığı bağlamlarda doğal karşılıktır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Yok oluşun dağılma yoluyla gerçekleşmesini korur.",
+            "loses": "Dağılma içermeyen yalın yok oluşu ve geçişli yok etme kullanımını dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "ortadan kaldırmak",
+          "usage_role": "contextual",
+          "applicability": "Bir etkenin başka bir varlığın varlığını sona erdirdiği geçişli bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Bir etkenin başka bir şeyi yok etmesi yönündeki geçişli anlamı korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_001",
+          "rendering_kind": "ordinary",
+          "target_gloss": "yok olmak, sona ermek veya dağılıp gitmek"
+        },
+        {
+          "lexical_unit_id": "lu_002",
+          "rendering_kind": "ordinary",
+          "target_gloss": "yok etmek, ortadan kaldırmak"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "ölmek",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Canlı bir varlığın yaşamının sona ermesi durumunda yok oluş sonucunu korur.",
+            "loses": "Cansız şeylerin yok olmasını, dağılıp gitmeyi ve geçişli yok etme kullanımını dışarıda bırakır.",
+            "adds": null,
+            "collision": "Anlamı özellikle canlıların yaşamının sona ermesiyle karıştırır."
+          }
+        },
+        {
+          "text": "kaybolmak",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Bir şeyin artık ortada görünmemesi sonucunu kısmen korur.",
+            "loses": "Gerçek yok oluşu, dağılmayı ve geçişli yok etmeyi kesin biçimde anlatmaz.",
+            "adds": "Varlığını sürdürdüğü halde yalnızca bulunamama olasılığını ekler.",
+            "collision": "Bulunamama ile varlığın sona ermesini birbirine karıştırabilir."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001637/B004",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal, yok oluşun yanında açıkça dağılıp gitmeyi de kapsar.",
+          "neighbor_only": null,
+          "gloss": "yok olup gitme",
+          "shared_zone": "Her iki dal da bir şeyin sona erip yok olmasını ve başka bir etken tarafından yok edilmesini kapsar.",
+          "distinction": "Çekirdekler büyük ölçüde örtüşür; ancak odak dalın dağılma kapsamı öteki dalın sınırında açıkça yer almaz."
+        },
+        {
+          "neighbor_ref": "root_001181/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal, önceden sürüp gelme koşulu aramadan yok olmayı ve dağılıp gitmeyi kapsar.",
+          "neighbor_only": "Komşu dal, bir süre varlığını sürdürdükten sonra kesilip gitmeyi ve karşılıklı yok oluşu ayrıca kapsar.",
+          "gloss": "sona erip yok olma",
+          "shared_zone": "Her iki dalda da bir şeyin varlığının kesilmesi ve ortadan kalkması merkezîdir.",
+          "distinction": "Komşu dal süreklilikten sonra kesilmeyi öne çıkarırken odak dal doğrudan yok olma, dağılma ve geçişli yok etme çevresinde kurulur."
+        },
+        {
+          "neighbor_ref": "root_000487/B002",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal, bütünüyle silip süpürme derecesine varmayan yok oluşu ve dağılıp gitmeyi de kapsar.",
+          "neighbor_only": "Komşu dal, kökünü kazırcasına bütünüyle yok etme derecesini özellikle öne çıkarır.",
+          "gloss": "yok etme",
+          "shared_zone": "İki dal da bir varlığın ortadan kalkması veya bir etken tarafından ortadan kaldırılması alanında buluşur.",
+          "distinction": "Odak dal genel yok oluşu ve dağılmayı anlatabilir; komşu dal ise daha dar biçimde tam ve kökten yok oluşu gerektirir."
+        },
+        {
+          "neighbor_ref": "root_000651/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal, iz kalmaması şart olmadan sona ermeyi ve dağılıp gitmeyi de anlatır.",
+          "neighbor_only": "Komşu dal, izin kesilmesini, geçersizleşmeyi ve canın çıkmasını ayrıca kapsar.",
+          "gloss": "iz bırakmadan yok olma",
+          "shared_zone": "Her iki dal, bir şeyin giderek varlığını yitirmesi ve ortadan kalkması sonucunu paylaşır.",
+          "distinction": "Komşu dal iz ve geçerlilik kaybını sınırına alır; odak dalın ayırıcı genişliği ise dağılma ve genel geçişli yok etmedir."
+        },
+        {
+          "neighbor_ref": "root_001607/B006",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal, dağılma sonucunu ve bir etkenin başkasını yok etmesini açıkça kapsar.",
+          "neighbor_only": null,
+          "gloss": "yok olma",
+          "shared_zone": "Her iki dalın çekirdeğinde bir şeyin varlığının sona ermesi ve yok olup gitmesi bulunur.",
+          "distinction": "Yalın yok oluşta güçlü bir örtüşme vardır; odak dalın dağılma ve geçişli kullanım alanları tam eşdeğerliği engeller."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar dal sınırları bakımından değerlendirildi; en yakın beş aday, yok oluşun dağılma, kökten silinme, iz bırakmama ve geçişlilik ayrımlarını gösterdiği için yayımlandı."
+    },
+    {
+      "branch_ref": "root_000167/B002",
+      "concept_map": {
+        "definition": "Üzerinde çok az ağaç bulunan ya da hiçbir şey bulunmayan, açık, düz ve ıssız kara parçasıdır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Geniş, açık ve düz olan bu yer, bitki veya ağaç örtüsünün azlığı ve ıssızlığıyla belirginleşir.",
+            "claim_ids": [
+              "lu_003"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "associated_use",
+            "statement": "Bu yer adının birden çok böyle alanı gösteren özel bir çoğul biçimi vardır.",
+            "claim_ids": [
+              "lu_004"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "associated_use",
+            "statement": "Bu ıssız arazide yaşayan yaban dişi eşeği de buraya bağlı ayrı bir adla anılır.",
+            "claim_ids": [
+              "lu_005"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar çekirdek yeri açık, düz, ıssız ve bitki örtüsü çok seyrek bir arazi olarak tanımlar. Ayrıca bu yer adının çoğul biçimini ve orada yaşayan yaban dişi eşeğine verilen bağlantılı adı birlikte aktarırlar.",
+        "common_claim_ids": [
+          "lu_003",
+          "lu_004",
+          "lu_005"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "çıplak ve ıssız düzlük",
+        "applicability": "Açık, düz, ağaçsız veya çok az ağaçlı ve ıssız kara parçasını tek bir doğal anlatımla karşılar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Arazinin düzlüğünü, açıklığını, seyrek örtüsünü ve ıssızlığını birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "ıssız ve ağaçsız geniş düzlük",
+          "usage_role": "explanatory",
+          "applicability": "Yer biçiminin ve örtü azlığının okur için açıkça belirtilmesi gereken betimleyici bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Genişliği, düzlüğü, ıssızlığı ve ağaç örtüsünün bulunmamasını açıkça korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_003",
+          "rendering_kind": "ordinary",
+          "target_gloss": "çıplak ve ıssız düzlük"
+        },
+        {
+          "lexical_unit_id": "lu_004",
+          "rendering_kind": "ordinary",
+          "target_gloss": "çıplak ve ıssız düzlükler"
+        },
+        {
+          "lexical_unit_id": "lu_005",
+          "rendering_kind": "ordinary",
+          "target_gloss": "ıssız düzlükte yaşayan yaban dişi eşeği"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "çöl",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Issızlık ve seyrek bitki örtüsü özelliklerini büyük ölçüde korur.",
+            "loses": "Düz ve açık yer biçimini zorunlu bir özellik olarak korumaz.",
+            "adds": "Kuraklık, sıcaklık ve kumlu arazi çağrışımlarını gereksiz yere ekleyebilir.",
+            "collision": "Her çıplak düzlük çöl olmadığı için ikisini aynı yer türü gibi gösterebilir."
+          }
+        },
+        {
+          "text": "bozkır",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Açık, geniş ve ağaç örtüsü seyrek arazi görünümünü korur.",
+            "loses": "Tam ıssızlık ve çıplaklık derecesini zorunlu olarak taşımaz.",
+            "adds": "Belirli bir otluk kara iklimi alanı çağrışımını ekler.",
+            "collision": "Genel ıssız düzlüğü belirli bir bitki örtüsü bölgesiyle karıştırabilir."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000778/B005",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal, yerin düzlüğünü ve ağaç örtüsünün azlığını özellikle sınırına alır.",
+          "neighbor_only": "Komşu dal, alanın geniş ve tümüyle boş olmasını daha güçlü biçimde öne çıkarır.",
+          "gloss": "geniş ve boş kır",
+          "shared_zone": "İki dal da geniş, çıplak, ıssız ve üzerinde pek bir şey bulunmayan açık araziyi anlatır.",
+          "distinction": "Odak dal için düzlük ve seyrek ağaç örtüsü belirgindir; komşu dalın baskın ölçütleri ise genişlik ve tam boşluktur."
+        },
+        {
+          "neighbor_ref": "root_000664/B008",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal, düzlüğü ve ağaç örtüsünün azlığını belirginleştirir.",
+          "neighbor_only": "Komşu dal, uzaklığı, susuzluğu ve insansızlığı açık koşullar olarak ekler.",
+          "gloss": "uzak ve susuz ıssız arazi",
+          "shared_zone": "Her iki dal geniş, boş ve yerleşimden uzak açık kara alanlarını kapsar.",
+          "distinction": "Komşu dal susuz ve insansız olmayı gerektirirken odak dalın sınırı düz, çıplak ve az ağaçlı olmaya dayanır."
+        },
+        {
+          "neighbor_ref": "root_000871/B005",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal, ıssız ve geniş kır niteliğini taşır; yüzeyin kaygan gibi pürüzsüz olması gerekmez.",
+          "neighbor_only": "Komşu dal, yer yüzeyinin düzlüğünün yanında pürüzsüz ve otsuz olmasını özellikle öne çıkarır.",
+          "gloss": "düz ve pürüzsüz çıplak yer",
+          "shared_zone": "İki dal da düz, açık ve bitki örtüsü bulunmayan ya da çok az olan araziyi anlatabilir.",
+          "distinction": "Odak dalın çekirdeği ıssız açık arazi türüdür; komşu dal ise yüzey biçimi ve pürüzsüzlüğü üzerine daha dar kuruludur."
+        },
+        {
+          "neighbor_ref": "root_001614/B005",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal, susuzluk koşulu olmadan düz, açık ve az ağaçlı ıssız araziyi kapsar.",
+          "neighbor_only": "Komşu dal için su bulunmaması ayırıcı ve zorunlu özelliktir.",
+          "gloss": "susuz ıssız arazi",
+          "shared_zone": "Her iki dal yerleşimsiz, çıplak ve geçilmesi güç olabilen açık kara alanlarını gösterir.",
+          "distinction": "Komşu dalın sınırını su yokluğu belirler; odak dalda ise düz ve seyrek örtülü arazi görünümü yeterlidir."
+        },
+        {
+          "neighbor_ref": "root_000104/B005",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal, özellikle ıssız, düz ve çıplak bir kara parçasını gösterir.",
+          "neighbor_only": "Komşu dal bütün karayı suyun karşıtı olarak kapsar ve karada yolculuk gibi kullanımlara da uzanır.",
+          "gloss": "kara ve kır alanı",
+          "shared_zone": "Her iki dal açık kara, kır ve yerleşim dışındaki alanları gösterebilir.",
+          "distinction": "Odak dal belirli bir ıssız arazi türüdür; komşu dal ise su karşısındaki kara alanının çok daha geniş kavramıdır."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; yayımlanan beş ayrım, bu yer türünü genel kara, susuz arazi, boş kır ve yüzeyi düz çıplak yer gibi en yakın alanlardan ayırır."
+    },
+    {
+      "branch_ref": "root_000167/B003",
+      "concept_map": {
+        "definition": "Önceki yargıya bir sınırlama veya aykırılık ekleyerek “ancak” ya da “ne var ki” anlamı kuran bağlayıcı sözdür; tek kaynaklı başka bir yorumda “şu da var ki” değerindedir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Önceki sözün ardından ona karşı bir sınırlama veya ayrı tutulan bir durum ekler.",
+            "claim_ids": [
+              "lu_006"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "source_variant",
+            "statement": "Tek bir kaynakta, önceki yargıyı koruyup ardından ek bir kayıt getiren “şu da var ki” biçiminde yorumlanır.",
+            "claim_ids": [
+              "lu_007"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Ortak anlatım, bağlayıcının önceki söze aykırı veya onu sınırlayan bir yargı ekleyerek “ancak” ve “ne var ki” değerinde kullanılmasını gösterir.",
+        "common_claim_ids": [
+          "lu_006"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_007"
+            ],
+            "kind": "disagreement",
+            "summary": "Tek kaynaktaki başka çözümleme, bağlayıcıya önceki yargının ardından ek kayıt getiren “şu da var ki” değerini verir."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "ancak; ne var ki",
+        "applicability": "Önceki yargıya karşı bir sınırlama, ayrı tutulan durum veya aykırı ek getiren temel bağlayıcı kullanımını karşılar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Önceki sözü sınırlayan ve ona aykırı bir ek getiren bağlayıcı işlevi korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "ancak",
+          "usage_role": "general",
+          "applicability": "Önceki yargının geçerliliğini sınırlayan veya ona aykırı bir durumu kısa biçimde ekleyen bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Sınırlayıcı ve aykırılık bildiren temel bağlayıcı işlevi korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "şu da var ki",
+          "usage_role": "contextual",
+          "applicability": "Tek kaynaktaki ayrı yorum uyarınca, önceki yargıyı koruyarak ardından ek bir kayıt sunulan bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Önceki sözün ardından ek kayıt getiren kaynak yorumunu doğrudan korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_006",
+          "rendering_kind": "ordinary",
+          "target_gloss": "ancak, ne var ki"
+        },
+        {
+          "lexical_unit_id": "lu_007",
+          "rendering_kind": "ordinary",
+          "target_gloss": "şu da var ki"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "bunun dışında",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Bir öğeyi önceki kapsamın dışında tutma ilişkisini koruyabilir.",
+            "loses": "İki yargıyı bağlayan aykırılık ve sınırlama işlevini doğal biçimde taşımaz.",
+            "adds": "Bağlayıcı söz yerine yer veya kapsam dışılığı bildiren adlaşmış bir yapı ekler.",
+            "collision": "Yargılar arası bağlantıyı bir öğenin kapsam dışında kalmasıyla karıştırır."
+          }
+        },
+        {
+          "text": "oysa",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Önceki yargıya aykırı bir sonraki yargı getirilmesini korur.",
+            "loses": "Ayrı tutma ve sınırlama değerini yeterince korumaz.",
+            "adds": "İki yargı arasında daha güçlü bir karşıtlık beklentisi ekler.",
+            "collision": "Sınırlayıcı bağlantıyı doğrudan karşıtlık bildiren bağlantıyla karıştırabilir."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001373/B002",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal, önceki yargıdan bir durumu ayrı tutan sınırlayıcı değeri de kapsar.",
+          "neighbor_only": "Komşu dal, önceki sözden geri dönüp onu düzeltme ve belirli cümle kuruluşlarını yönetme işlevlerini ayrıca taşır.",
+          "gloss": "ama, ne var ki",
+          "shared_zone": "Her iki dal önceki yargının ardından ona aykırı veya onu sınırlayan bir yargı bağlayabilir.",
+          "distinction": "Odak dal sınırlama ve ayrı tutma çevresindedir; komşu dal düzeltme, geri dönüş ve cümle kuruluşuna ilişkin daha geniş işlevler taşır."
+        },
+        {
+          "neighbor_ref": "root_001459/B005",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": null,
+          "neighbor_only": "Komşu dal, ortak sınırlayıcı ve ekleyici değerlerin yanında neden bildiren bir kullanımı da kapsar.",
+          "gloss": "sesçe değişik eş bağlayıcı",
+          "shared_zone": "İki dal aynı tür sınırlayıcı veya ek kayıt getiren bağlayıcı değerlerde büyük ölçüde örtüşür.",
+          "distinction": "Komşu dal sesçe değişik bir biçimdir ve ek olarak neden bildirebilir; bu ek kapsam tam eşdeğerliği engeller."
+        },
+        {
+          "neighbor_ref": "root_001390/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal iki yargıyı bağlayarak sınırlama veya aykırılık kurar.",
+          "neighbor_only": "Komşu dal olumsuzluk bildiren bir eylemle bir adı genel kümenin dışında bırakır.",
+          "gloss": "dışarıda bırakma",
+          "shared_zone": "Her iki dal, önceki kapsamdan bir durumun veya öğenin ayrı tutulması ilişkisini kurabilir.",
+          "distinction": "Odak bir bağlayıcı sözle yargılar arasında ilişki kurar; komşu ise ayrı bir cümle kuruluşunda belirli bir öğeyi kümeden çıkarır."
+        },
+        {
+          "neighbor_ref": "root_000152/B008",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal önceki sözü bütünüyle geçersiz kılmadan ona sınırlayıcı veya aykırı bir ek getirir.",
+          "neighbor_only": "Komşu dal önceki sözden dönüp onu keserek başka bir yargıya geçebilir.",
+          "gloss": "tersine dönüp düzeltme",
+          "shared_zone": "İki dal da söylemin yönünü değiştirerek önceki yargının ardından farklı bir yargı getirir.",
+          "distinction": "Odak dal önceki yargıyı koruyup sınırlar; komşu dal onu bırakma veya düzeltme yönünde daha keskin bir söylem dönüşü yapar."
+        },
+        {
+          "neighbor_ref": "root_000208/B008",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Odak dal, yargılar arasında sınırlayıcı karşıtlık kuran bir bağlayıcı işlevdir.",
+          "neighbor_only": "Komşu dal, bir parçayı genel bir yargının, sözleşmenin veya satılan bütünün kapsamından çıkarma işlemidir.",
+          "gloss": "bir parçayı kapsam dışında tutma",
+          "shared_zone": "Her iki dalda da daha genel bir kapsamın içinden bir durumun veya parçanın ayrı tutulması düşüncesi bulunur.",
+          "distinction": "Paylaşılan alan dışarıda tutmadır; odak dal söylemsel bir bağ kurarken komşu dal somut bir kapsamdan çıkarma işlemini adlandırır."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar gözden geçirildi; yayımlanan beş ilişki, bağlayıcı işlevi düzeltme, ayrı tutma, kapsamdan çıkarma ve sesçe değişik eş biçimlerden ayıran en yararlı karşılaştırmalardır."
+    }
+  ],
+  "root_profile": {
+    "summary": "Kök, bir şeyin yok olup gitmesi, ıssız ve çıplak düzlük adı ve önceki söze sınırlayıcı karşıtlık ekleyen bir bağlayıcı arasında üç ayrı anlam kolu kurar. İlk iki kol arasında yokluk düşüncesi sezilse de üçüncü kol dil bilgisel bir işlev taşır; bütün yapı belirgin biçimde çok kolludur.",
+    "polysemy": "polysemic",
+    "organization": "multi_branch"
+  }
+}

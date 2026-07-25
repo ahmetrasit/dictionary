@@ -1,0 +1,53 @@
+{
+  "inputs_sha256": "5098f724e0e36aeb47c74d1163b5ef15587cd7cb54b467fd95b9b42d9a3d082e",
+  "verdict": "repair",
+  "summary": "B001'de çekirdek anlamın iki alternatif açıklaması tek bir daraltıcı koşulda birleştirilmiş; bu hata kavram haritasına, kaynak sentezine ve sözlüksel karşılığa yansımıştır. B005'in tanımı ayrıca kanıtta bulunmayan bir alışkanlık koşulu eklemektedir.",
+  "issues": [
+    {
+      "target_ref": "root_000198/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002",
+        "lu_027"
+      ],
+      "evidence_conflict": "lu_001 çekirdek anlamı nemli toprak veya ıslatıldığında yapışkan çamur olmayan toprak biçiminde iki alternatifle verir; lu_002 ve lu_027 de nemli araziyi yapışmama koşulu olmadan kaydeder. Tanım ile F001 ise nemlilik ve yapışmama özelliklerini aynı zorunlu sınırda birleştirerek anlamı daraltır.",
+      "smallest_correction": "Tanım ile F001'de iki açıklamayı 'veya' ile ayırın; nemli olmayı ve ıslanınca yapışkan çamur olmamayı bütün örneklerde birlikte aranan koşullar olarak sunmayın."
+    },
+    {
+      "target_ref": "root_000198/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001"
+      ],
+      "evidence_conflict": "lu_001'in kaynak anlatımı nemli toprak açıklaması ile ıslatıldığında yapışkan çamur olmayan toprak açıklamasını ayrı seçenekler olarak verir. common_summary bunları 'nemli fakat yapışkan çamur olmayan' biçiminde tek ve ortak bir tanıma dönüştürür.",
+      "smallest_correction": "common_summary içinde iki açıklamayı kaynak kodu belirtmeden alternatifli bir karşıtlık olarak aktarın ve ortak bir birleşik koşul gibi göstermeyin."
+    },
+    {
+      "target_ref": "root_000198/B001",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001"
+      ],
+      "evidence_conflict": "lu_001 için verilen 'ıslanınca yapışkan çamura dönüşmeyen nemli toprak' karşılığı, kanıttaki 'nemli toprak veya ıslatıldığında yapışkan çamur olmayan toprak' ayrımını kesişime çevirerek sözlüksel birimin kapsamını daraltır.",
+      "smallest_correction": "lu_001 karşılığını iki kanıt seçeneğini 'veya' ile koruyacak biçimde düzeltin."
+    },
+    {
+      "target_ref": "root_000198/B005",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_024"
+      ],
+      "evidence_conflict": "lu_024 yalnızca söz verip sözünü yerine getirmeyen kişiyi bildirir; davranışın tekrarlanarak alışkanlık haline gelmesini şart koşmaz. Tanımdaki 'bunu alışkanlık edinmiş' ifadesi kanıtta bulunmayan bir sıklık koşulu ekler.",
+      "smallest_correction": "Tanımdan alışkanlık koşulunu çıkarın ve deyişin söz verip yerine getirmeyen kişiyi nitelediğini belirtmekle yetinin."
+    }
+  ]
+}

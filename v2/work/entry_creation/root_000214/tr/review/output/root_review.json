@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "The repaired response is mostly aligned with the supplied evidence, but B011 has a publication-facing semantic typo that changes the evidence's foam comparison into a dog comparison.",
+  "issues": [
+    {
+      "target_ref": "root_000214/B011",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_029"
+      ],
+      "evidence_conflict": "Claim lu_029 supports a foam-like layer on camel milk or at a waterskin mouth, not a dog-like comparison. The B011 definition says it is 'kopege benzeyen', which changes the meaning.",
+      "smallest_correction": "In the B011 definition, replace the comparison with 'kopuge benzeyen' or 'kopuk benzeri' while preserving the camel-milk and waterskin-mouth boundary."
+    },
+    {
+      "target_ref": "root_000214/B011",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_029"
+      ],
+      "evidence_conflict": "Claim lu_029 describes something like foam that rises on camel milk or gathers at the waterskin mouth. The common_summary repeats 'kopege benzeyen bir sey', again making the comparison dog-like rather than foam-like.",
+      "smallest_correction": "In B011 source_synthesis.common_summary, change the comparison to 'kopuge benzeyen' or 'kopuk benzeri' and keep the note that it is not true butter foam."
+    }
+  ]
+}

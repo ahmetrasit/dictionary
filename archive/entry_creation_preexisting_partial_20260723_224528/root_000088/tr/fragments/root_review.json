@@ -1,0 +1,75 @@
+{
+  "inputs_sha256": "1804f437415dc32557df60368c5bb2496d476fe415d70b9335a66e57e417008c",
+  "verdict": "repair",
+  "summary": "Yanit genel olarak kanitla uyumludur; ancak uc dalin kavram anlatiminda ayri kullanimlar tek ve zorunlu bir eylem dizisine donusturulmus, bir dalda da tek sozluge dayanan ana veriler ortak kaynak malzemesi gibi sunulmustur.",
+  "issues": [
+    {
+      "target_ref": "root_000088/B001",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002",
+        "lu_003",
+        "lu_004"
+      ],
+      "evidence_conflict": "\"Kendini tüketip öldürmek\" ifadesi, öldürme sonucunu ve öldürmeye varmayan tükenme uzantisini ardisik ve birlikte zorunlu iki eylem gibi gosterir. Oysa ilk uc iddia kisinin kendisini oldurmesini, lu_004 ise duygusal yukün kisiyi yalnizca tüketmesini bildirir.",
+      "smallest_correction": "Kavram karsiligini iki sonucu secenekli verecek bicimde, ornegin \"yogun duygunun etkisiyle kendini oldurmek ya da tükenmek\" olarak duzeltin; applicability ve error_profile metnini de bu ayrima uydurun."
+    },
+    {
+      "target_ref": "root_000088/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005",
+        "lu_006",
+        "lu_007",
+        "lu_008"
+      ],
+      "evidence_conflict": "Tanim, hakki kabul etmeyi ve baski altinda boyun egmeyi tek olayda birlikte zorunlu kiliyor. lu_005 ile lu_007 yalnizca kisinin kendi aleyhine olani veya baskasinin hakkini kabul etmesini, lu_008 ise buyruğa boyun egip uymayi destekler; yalniz lu_006 kabul ile boyun egmeyi ayni kullanimda birlestirir.",
+      "smallest_correction": "Tanimda kabul ve boyun egme kullanimlarini alternatif cekirdekler olarak ayirin; bunlarin birlesmesini yalniz lu_006 ile desteklenen kullanimla sinirlayin."
+    },
+    {
+      "target_ref": "root_000088/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005",
+        "lu_006",
+        "lu_007",
+        "lu_008"
+      ],
+      "evidence_conflict": "\"Baski altinda kabul edip boyun egmek\" karsiligi hem baskiyi bütün kabul kullanimlarina yayiyor hem de kabul ile boyun egmeyi zorunlu birlesim yapiyor. lu_005 ve lu_007 baski veya boyun egme kosulu olmadan kabulü, lu_008 ise kabul bildirimi olmadan boyun egmeyi kapsar.",
+      "smallest_correction": "Kavram karsiligini \"hakki kabul etmek veya isteksizce boyun egmek\" gibi alternatifli kurun ve applicability ile error_profile alanlarindaki birlikte bulunma iddiasini kaldirin."
+    },
+    {
+      "target_ref": "root_000088/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011",
+        "lu_012",
+        "lu_013",
+        "lu_014"
+      ],
+      "evidence_conflict": "\"Gücünü ya da icindekileri sonuna dek tüketmek\" ifadesinde ayni yüklem her iki nesneye baglanarak lu_012'deki topragin icindekilerini cikarip aciga alma eylemini tüketme olarak degistiriyor. Diger iddialar gücün veya topragin üretme kapasitesinin tüketilmesini destekler, lu_012 ise cikarmayi destekler.",
+      "smallest_correction": "Karsiligi iki yüklemle, ornegin \"gücünü sonuna dek tüketmek ya da icindekileri bütünüyle cikarip almak\" biciminde kurun."
+    },
+    {
+      "target_ref": "root_000088/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_015",
+        "lu_016"
+      ],
+      "evidence_conflict": "Boyun kemigini kesme eylemi ile kesilmis hayvan durumu yalnizca maqayis tarafindan kaydedildigi halde common_summary ve common_claim_ids icinde ortak malzeme gibi sunuluyor. Source_details yalniz lu_017'nin tek kaynakli oldugunu belirttigi icin ana eylem ve sonuc durumunun sole attestation niteligini kapsamiyor.",
+      "smallest_correction": "lu_015 ve lu_016'yi maqayis'a özgü tek bir sole_attestation ayrintisinda toplayin ve common_summary ile common_claim_ids alanlarini bu tek-kaynak niteligini yanlis gostermeyecek bicimde duzeltin."
+    }
+  ]
+}

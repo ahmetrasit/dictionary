@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Temel anlam haritaları ve karşılıkların çoğu kanıtla uyumludur; ancak bir eş anlamlı kardeş dal ilişkisi ile iki ayırt edici kaynak ayrıntısı yayına hazırlık için tamamlanmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_000090/B007",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_020"
+      ],
+      "evidence_conflict": "lu_020 dalı çıkıntılı ve görünür parmak eklemleriyle sınırlar; adaylar arasındaki root_000091/B006 da aynı eklem kümesini, aynı görünürlük gerekçesini ve tekil biçimi verir. Kapsamlar olağan kullanımda birbirinin yerine geçebildiği halde bu kardeş dal için ilişki satırı yoktur; kapsama notu da eş anlamlı kardeş dalın incelendiğini söylemektedir.",
+      "smallest_correction": "root_000091/B006 için synonym ve exact değerleriyle bir komşu ilişkisi ekleyin; odak ve komşuya özgü ek kapsam bulunmadığını belirtin. Koordinatörün asimetrik aday listesi nedeniyle yalnızca bu dalı değiştirin."
+    },
+    {
+      "target_ref": "root_000090/B008",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_021"
+      ],
+      "evidence_conflict": "lu_021 yalnızca kuyunun dönemsel tanımını değil, bu tür kuyunun koruma alanını yirmi beş arşın olarak bildiren hadis örneğini de taşır. Sentez tanımı aktarıyor fakat bu ayırt edici ölçülü kullanımı bütünüyle atlıyor.",
+      "smallest_correction": "Kaynak sentezine, bu kuyu türünün koruma alanını yirmi beş arşın olarak veren hadis örneğini lu_021 ile ve Sihah'a özgü ayrıntı olarak ekleyin."
+    },
+    {
+      "target_ref": "root_000090/B010",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_023"
+      ],
+      "evidence_conflict": "lu_023 iki kaynakta hastalığa tutulma anlamını destekler; fakat kaynaklardan biri kullanımı kökün genel başlangıç anlamından ayrık sayar ve türeyişini belirsiz bırakır. Mevcut sentez yalnızca ortak hastalık anlamını verdiği için bu önemli kaynak çekincesi görünmez kalır.",
+      "smallest_correction": "Ortak özeti koruyup kaynaklardan birinin kullanımı ayrık gördüğünü ve türeyişi konusunda kesin hüküm vermediğini kaynak adı çoğaltmadan, lu_023'e bağlı kaynak-nötr bir cümleyle ekleyin."
+    }
+  ]
+}

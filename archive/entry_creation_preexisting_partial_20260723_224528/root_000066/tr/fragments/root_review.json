@@ -1,0 +1,87 @@
+{
+  "inputs_sha256": "a49de24237c2fc9c8d900db410162396e1e826501e05bf6d3544dcf97718168d",
+  "verdict": "repair",
+  "summary": "B003 dalında tek kaynağa özgü bozkır sınırlaması ortak çekirdeğe taşınmış, kaynaklar arasındaki iki ayırt edici ayrıntı kaybolmuş ve farklı göstergeleri olan bir komşuyla tam eş anlamlılık kurulmuştur. B001 dalındaki ışığın eğilmesi anlatımı da kanıtı aşmaktadır.",
+  "issues": [
+    {
+      "target_ref": "root_000066/B001",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005"
+      ],
+      "evidence_conflict": "F005, gün sonuna doğru ışığın eğildiğini söylüyor. Kanıt ise günün son bölümünün ilerlemesini ve bu bölümün gölgelerinin doğuya geri dönüp yönelmesini bildiriyor; ışığın kendisinin eğilmesini bildirmiyor.",
+      "smallest_correction": "F005'teki ışığın eğilmesi ifadesini kaldırıp uzantıyı günün sonuna yaklaşılması ve gölgelerin doğuya geri yönelmesi olarak anlatın."
+    },
+    {
+      "target_ref": "root_000066/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "Tanım ve F003, yer adı kullanımının çekirdeğini bozkırdaki bir yerle sınırlandırıyor. Oysa bir kaynak yalnızca yer derken öteki kaynak bozkırdaki yer ayrıntısını veriyor; bu ayrıntı ortak uzmanlaşma değil kaynak varyantıdır.",
+      "smallest_correction": "Tanımda çekirdeği yalnızca bir yer adı olarak verin; F003'ü kaynak varyantı yaparak bozkır sınırlamasının yalnızca bir kaynakta bulunduğunu belirtin."
+    },
+    {
+      "target_ref": "root_000066/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011",
+        "lu_012"
+      ],
+      "evidence_conflict": "Ortak özet iki kaynağın da bozkırdaki belirli bir yer bildirdiğini söylüyor, ancak bozkır sınırlaması yalnızca bir kaynakta bulunuyor. Ayrıca kabile adının eğilme anlamından türemiş olabileceğine ilişkin tek kaynaktaki ihtimal hiç sentezlenmiyor.",
+      "smallest_correction": "Ortak yer bilgisi için yalnızca yer adı deyin ve ortak özette kaynakları adlandırmadan bir kaynağın yeri bozkırla sınırladığını, bir kaynağın da kabile adı için olası türetim bağlantısı kurduğunu belirtin."
+    },
+    {
+      "target_ref": "root_000066/B003",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "Kavram karşılığının uygulanabilirlik ve koruma açıklamaları yer kullanımını bozkırdaki yer olarak sunuyor. Kavram karşılığı ortak çekirdek haritayı temsil etmelidir; bozkır ayrıntısı yalnızca bir kaynakta vardır.",
+      "smallest_correction": "Uygulanabilirlik ve koruma açıklamalarındaki bozkır sınırlamasını kaldırıp genel olarak belirli bir yer adı deyin."
+    },
+    {
+      "target_ref": "root_000066/B003",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "Yer adına ayrılan bağlamsal karşılık ve uygulanabilirlik açıklaması bozkır sınırlamasını bütün kullanıma yayıyor. Kanıtın ortak kısmı yalnızca yer adıdır.",
+      "smallest_correction": "Karşılığı bir yerin adı biçimine getirin ve uygulanabilirliği belirli bir yeri adlandıran bağlamlarla sınırlayın; bozkır ayrıntısını ortak bağlamsal karşılığa katmayın."
+    },
+    {
+      "target_ref": "root_000066/B003",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "lu_012 için bozkırdaki bir yerin adı karşılığı, yalnızca bir kaynağın verdiği sınırlamayı bütün sözlük biriminin tek karşılığı yapıyor; diğer kaynak yalnızca yer bildiriyor.",
+      "smallest_correction": "Karşılığı bir yerin adı yapın veya kaynak farkını doğal biçimde bir yerin adı; bir kaynakta bozkırdaki bir yerin adı diye koruyun."
+    },
+    {
+      "target_ref": "root_000066/B003",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011",
+        "lu_012",
+        "lu_013"
+      ],
+      "evidence_conflict": "root_000302/B009 ile synonym ve exact ilişkisi, sıradan kullanımda ikame edilebilirlik koşulunu karşılamıyor. Odak dal belirli bir kabileyi, erkeği ve yeri adlandıran tek söz biçimini içerirken komşu kart başka bir söz malzemesindeki kabile, kişi ve yer adlarını genel olarak kapsıyor; göstergeler ve kapsam aynı değil.",
+      "smallest_correction": "İlişkiyi same_field ve field_only olarak değiştirin; iki dalın yalnızca özel ad türlerini paylaştığını, söz biçimlerinin ve gösterdikleri varlıkların farklı olduğunu yazın."
+    }
+  ]
+}

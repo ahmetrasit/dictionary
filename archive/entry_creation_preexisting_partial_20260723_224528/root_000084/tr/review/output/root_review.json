@@ -1,0 +1,41 @@
+{
+  "verdict": "repair",
+  "summary": "B001 genel olarak kanıtı doğru bir anlam haritasında topluyor; ancak dar çıkışa ilişkin kullanım eğilimini akış gücü hakkında nedensel bir iddiaya dönüştürüyor ve topraktan su gözelerinin çıkmasını, doğrudan fiziksel çekirdeğin örneği olduğu halde uzantı olarak sınıflandırıyor. B002 ve kök profili yayıma hazırdır.",
+  "issues": [
+    {
+      "target_ref": "root_000084/B001",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003"
+      ],
+      "evidence_conflict": "F002, dar açıklık bulunduğunda akışın güçlü gerçekleştiğini söylüyor. Kanıt ise bu biçimin dar bir şeyden çıkan su için daha çok kullanıldığını ve suyun fışkırıp çıktığını bildirir; açıklığın darlığı ile akışın gücü arasında nedensel ya da dereceli bir ilişki kurmaz.",
+      "smallest_correction": "F002'yi, bu biçimin özellikle dar bir açıklıktan fışkırıp çıkan su için kullanıldığını söyleyecek şekilde değiştirin; darlığın akışı güçlendirdiği iddiasını kaldırın."
+    },
+    {
+      "target_ref": "root_000084/B001",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_007"
+      ],
+      "evidence_conflict": "F005 ve tanımın ikinci cümlesi, toprakta su gözelerinin belirmesini araziye aktarılmış bir uzantı olarak sunuyor. Oysa lu_001 fiziksel çekirdeğin içinde toprağın yarılıp içinden su çıkmasını açıkça kapsar; lu_007 bu çekirdeğin doğrudan arazi örneğidir.",
+      "smallest_correction": "F005'in rolünü \"example\" yapın ve ifadesini fiziksel çekirdeğin arazi örneği olarak düzenleyin; tanımda da topraktan su gözelerinin çıkmasını aktarılmış uzantılar arasından çıkarıp doğrudan çekirdeğe bağlayın."
+    },
+    {
+      "target_ref": "root_000084/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_007"
+      ],
+      "evidence_conflict": "lu_007 için kaynak ayrıntısı \"extension\" türünü kullanıyor, fakat aynı kaynak kümesindeki lu_001 toprağın yarılıp su çıkarmasını temel fiziksel anlamın parçası olarak verir. Bu nedenle su gözeleri çıkaran arazi aktarılmış bir anlam değil, doğrudan bir örnektir.",
+      "smallest_correction": "lu_007 kaynak ayrıntısının türünü \"example\" olarak değiştirin ve özetini fiziksel çekirdeğin arazi örneği olduğunu belirtecek biçimde daraltın."
+    }
+  ]
+}

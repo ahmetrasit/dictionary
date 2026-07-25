@@ -1,0 +1,44 @@
+{
+  "inputs_sha256": "8e14af05562efee226326549a7a8afaea4e82d5a5f87c6ca0ee64fe946f95ee1",
+  "verdict": "repair",
+  "summary": "Yanıtın dal ayrımı, sözlük karşılıkları ve komşu sınırlarının büyük bölümü yayıma uygundur. Ancak edinme dalında kanıtlanmayan bir ettirgen anlam eklenmiş, bir kaynak özeti kendiliğindenlik yorumu katmış ve ilk dalın kaynak sentezi kaynaklar arasındaki kapsam farklarını yeterince korumamıştır.",
+  "issues": [
+    {
+      "target_ref": "root_000056/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_004",
+        "lu_005",
+        "lu_008",
+        "lu_009"
+      ],
+      "evidence_conflict": "Geçişli biçimlerin tümü bir kadını köle olarak edinme anlamını verir; bir kadını köle durumuna getirme anlamını ayrıca doğrulamaz. Tanım ve F001 bu ikinci anlamı edinmeye eş düzeyde ekleyerek dal sınırını genişletmektedir.",
+      "smallest_correction": "Tanımdan ve F001'den bir kadını köle durumuna getirme seçeneğini çıkarın; geçişli çekirdeği yalnız bir kadını köle olarak edinme şeklinde bırakın. Kadının köle durumuna geçmesi F002'de ayrı kalmalıdır."
+    },
+    {
+      "target_ref": "root_000056/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_006"
+      ],
+      "evidence_conflict": "Tekil kaynak ayrıntısı kadının kendiliğinden köle durumuna geçtiğini söyler. Kanıt yalnız kadının köle olduğunu veya bu duruma geçtiğini bildirir; olayın kendiliğinden gerçekleştiğini belirtmez.",
+      "smallest_correction": "Bu kaynak ayrıntısından kendiliğinden sözünü çıkarıp biçimin kadının köle durumuna geçmesini bildirdiğini söyleyin."
+    },
+    {
+      "target_ref": "root_000056/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_002",
+        "lu_003"
+      ],
+      "evidence_conflict": "Ortak özet, soyut durum adını ve çoğul biçimlerini kaynakların birlikte aktardığı izlenimini verir. Oysa soyut ad yalnız iki kaynakta yer alır; çoğul kanıtında da üç sayısıyla kullanım örneği ve yalnız bir kaynakta geçen ek çoğul biçimi gibi ayırt edici ayrıntılar vardır.",
+      "smallest_correction": "Ortak özeti kaynak kapsamını genelleştirmeyecek biçimde düzeltin ve tek bir sözlüğe çözülemeyen karşılaştırmalı ayrıntıları kaynak kodu altında yinelemeden, kaynaklar arası kapsam farkı olarak ortak özette kısaca belirtin."
+    }
+  ]
+}

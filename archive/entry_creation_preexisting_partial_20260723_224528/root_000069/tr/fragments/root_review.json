@@ -1,0 +1,67 @@
+{
+  "inputs_sha256": "c29c33c14a5fc9ab7f9c04c7f8329d8987a554a45878d2800afdbed4eae853c1",
+  "verdict": "repair",
+  "summary": "B001 ve B002'de yayini etkileyen sinirli anlamsal sorunlar var. B001, lu_007 icin kanitta bulunmayan bir kisalik ve ses dusmesi cozumu ekliyor. B002 ise bagimli anlamlari tanim ve kavram karsiliginda cekirdege yukseltiyor ve ayri kaynak aciklamalarini tek bir baglamsal karsilikta birlestiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_000069/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_007"
+      ],
+      "evidence_conflict": "lu_007 yalnizca inleme sesinin bir bicimi olarak ve bir bicimler dizisi icinde veriliyor. Kaynak ayrintisindaki son sesin dusuruldugu ve bicimin kisa oldugu aciklamalari saglanan kanitta yer almiyor.",
+      "smallest_correction": "Ayrintiyi, bir kaynagin inleme sesinin baska bir bicimini de siraladigini soyleyecek sekilde duzelt; ses dusmesi ve kisalik yorumlarini kaldir."
+    },
+    {
+      "target_ref": "root_000069/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_007"
+      ],
+      "evidence_conflict": "lu_007 icin verilen 'kisa inleme sesi' karsiligi, kanitin belirtmedigi bir kisalik ozelligi ekliyor; kanit yalnizca bunun inleme sesinin bicimlerinden biri oldugunu bildiriyor.",
+      "smallest_correction": "Karsiligi 'inleme sesinin bir bicimi' gibi, kanitta bulunan bicim olma bilgisiyle sinirli bir aciklamayla degistir."
+    },
+    {
+      "target_ref": "root_000069/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_010",
+        "lu_011",
+        "lu_012",
+        "lu_013"
+      ],
+      "evidence_conflict": "Tanim, lu_011'deki cokca yakarma ve iyilik icin dua etme cekirdegine lu_010'daki inleme ve korku gorunumunu, lu_012'deki bagli boyun egis uzmanlasmasini ve yalniz bir kaynakta verilen lu_013 merhamet ve yumusaklik uzantisini es duzeyli kisi nitelikleri olarak katiyor. Boylece facet rolleri dogru ayrilmis olsa da tanim bagimli malzemeyi cekirdege yukseltiyor.",
+      "smallest_correction": "Tanimi cokca yakaran veya iyilik icin dua eden kisi cekirdegiyle sinirla; inleme ve korkuyu uzmanlasma, bagli boyun egisi uzmanlasma, merhamet ve yumusakligi uzanti olarak yalniz ilgili facetlerde tut."
+    },
+    {
+      "target_ref": "root_000069/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011",
+        "lu_013"
+      ],
+      "evidence_conflict": "'Cokca yakaran, icli ve esirgeyici kisi' karsiligi, lu_013'te yalniz bir kaynakta verilen merhamet ve yumusaklik uzantisini lu_011'deki yakarici cekirdegin zorunlu parcasi gibi gosteriyor. Uygulanabilirlik ve hata profili de bu ozelliklerin birlikte tek bir anlami kurdugunu soyluyor.",
+      "smallest_correction": "Kavram karsiligini cokca yakaran veya iyilik icin dua eden kisi cekirdegine indir; esirgeyiciligi bagimsiz uzanti olarak birak ve hata profilini buna gore duzelt."
+    },
+    {
+      "target_ref": "root_000069/B002",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_013",
+        "lu_014"
+      ],
+      "evidence_conflict": "'Yumusak yurekli, inancli kisi' karsiligi iki ayri aciklama cizgisini tek bir birlesik nitelik haline getiriyor. lu_013 merhametli veya yumusak kisiyi, lu_014 ise inancli kisi ya da bilgin gorusunu verir; saglanan kanit ayni kullanimda hem yumusak yurekli hem inancli olma birlesimini desteklemiyor.",
+      "smallest_correction": "Bu birlesik karsiligi kaldir veya yumusak yurekli kisi ile inancli kisi ya da bilgin aciklamalarini kendi claim kapsamlarina bagli ayri baglamsal karsiliklar olarak ver."
+    }
+  ]
+}

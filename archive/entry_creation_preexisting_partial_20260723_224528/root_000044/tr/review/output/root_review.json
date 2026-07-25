@@ -1,0 +1,15 @@
+{
+  "verdict": "repair",
+  "summary": "Dal içerikleri kanıtla uyumludur; ancak kök özeti ikinci dala kanıtta bulunmayan yeni bir hedef yön eklemektedir.",
+  "issues": [
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök özeti, ikinci dalı kişiyi yolundan alıkoyup başka yöne çevirme diye sunar. lu_002 yalnızca kişiyi yöneldiği taraftan alıkoyup o taraftan çevirmeyi destekler; başka bir hedef yöne yöneltme sonucu vermez. Bu ifade, dalın excluded_glosses kaydında da kanıtsız ekleme olarak doğru biçimde dışlanmıştır.",
+      "smallest_correction": "Kök özetindeki \"başka yöne çevirme\" sözünü \"yöneldiği taraftan çevirme\" olarak değiştirin."
+    }
+  ]
+}

@@ -667,14 +667,18 @@ class EntryWorkflowTest(unittest.TestCase):
             self.assertEqual(check_review(review_task, accepted_path)["verdict"], "repair")
             with self.assertRaisesRegex(ContractError, "semantic_review_repair"):
                 check_root_review_pass(review_task, accepted_path)
+            scope = semantic_repair_scope(accepted, task)
+            self.assertEqual(scope["repairable_by"], "root_writer")
+            self.assertEqual(scope["editable_branch_indexes"], [0])
+            self.assertEqual(scope["editable_branch_fields"], {"0": ["concept_gloss"]})
+            self.assertFalse(scope["root_editable"])
+            self.assertEqual(scope["writer_task_sha256"], task["writer_task_sha256"])
             self.assertEqual(
-                semantic_repair_scope(accepted, task),
-                {
-                    "repairable_by": "root_writer",
-                    "editable_branch_indexes": [0],
-                    "root_editable": False,
-                },
+                scope["previous_response_sha256"],
+                task["writer_response"]["sha256"],
             )
+            self.assertIn("review_inputs_sha256", scope)
+            self.assertIn("review_sha256", scope)
 
             canonical_review = work_dir / "fragments/root_review.json"
             review_output = work_dir / "review/output/root_review.json"

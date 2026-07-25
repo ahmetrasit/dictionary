@@ -1,0 +1,29 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yaniti genel olarak uc dali dogru ayiriyor; ancak ikinci dalda bir kavram rolu ve bir komsu siniri yayin oncesinde duzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000057/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_004"
+      ],
+      "evidence_conflict": "F002, eylemin daha dar bir turunu degil, eylemden etkilenen kisiyi niteleyen edilgen sonuc kullanimini aktarir. Bu nedenle specialization rolu, verilen bicimin kavramsal islevini yanlis siniflandirir.",
+      "smallest_correction": "F002'nin ifadesini koruyup rolunu associated_use olarak degistirin."
+    },
+    {
+      "target_ref": "root_000057/B002",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003",
+        "lu_004"
+      ],
+      "evidence_conflict": "root_001533/B003 karsilastirmasi komsu dali solukla kurulan ozel bir kavrayis olarak acikliyor. Verilen sinir karti solukla kavramsal bir bag kurmuyor; kem gozun baska bir adla anilmasini, hedefin bu adla etkilenmesini ve etkileyen kisinin adlandirilmasini bildiriyor. Mevcut neighbor_only ve distinction bu yuzden desteklenmeyen bir sinir uretiyor.",
+      "smallest_correction": "Soluk yorumunu kaldirin; komsuya ozgu tarafi kem gozun ayri bir adla anilmasi ve etkileyen kisinin de bu adlandirmadan turetilen bir ifadeyle belirtilmesi olarak aciklayin."
+    }
+  ]
+}

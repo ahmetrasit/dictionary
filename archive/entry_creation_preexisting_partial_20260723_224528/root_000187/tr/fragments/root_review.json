@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": "99c3be6a868906df5a0de28de6f08e2b74feae602645e1ea91e1068720a51c07",
+  "verdict": "repair",
+  "summary": "The repaired entry is mostly publication-ready, but B008 has one semantic rendering error in contextual glosses: the blood sense is rendered as red dye.",
+  "issues": [
+    {
+      "target_ref": "root_000187/B008",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_030"
+      ],
+      "evidence_conflict": "Claim lu_030 lists the word as blood, wine, or saffron. The first contextual gloss says red dye while its applicability says the bodily red liquid is intended, so it replaces the blood sense with a dye sense not supplied for that contextual slot.",
+      "smallest_correction": "Change that contextual gloss text from red dye to blood, keeping wine and saffron as the other two contextual glosses."
+    }
+  ]
+}

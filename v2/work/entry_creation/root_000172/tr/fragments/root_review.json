@@ -1,0 +1,31 @@
+{
+  "inputs_sha256": "42b9d291f7dd610a50788aa88d9b7b9e291073c3dcd88e36f92790c53f557b66",
+  "verdict": "repair",
+  "summary": "B001 dalında tek kaynağa özgü sürme ayrıntısı çekirdek anlama yükseltilmiş ve kavram karşılığının kapsam açıklamasına da yanlış biçimde taşınmış. Diğer dallar yayın düzeyinde semantik sorun göstermiyor.",
+  "issues": [
+    {
+      "target_ref": "root_000172/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002"
+      ],
+      "evidence_conflict": "Kayıp içinde sürme bileşeni lu_001 ve lu_002 içinde yalnız Mufradat açıklamasında bulunurken diğer kaynaklar kayıp ve yok oluşu destekliyor. Buna rağmen tanım ile F001 bu tek kaynaklı ayrıntıyı temel anlamın eş düzeyli bir parçası yapıyor.",
+      "smallest_correction": "Tanımı ve F001'i kayıp ile yok oluş çekirdeğiyle sınırlandırın; kayıp içinde sürme ayrıntısını aynı claim ID'lerle ayrı bir source_variant facetine taşıyın."
+    },
+    {
+      "target_ref": "root_000172/B001",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002"
+      ],
+      "evidence_conflict": "Kavram karşılığının metni yalnız kayba uğrama ve yok olmayı veriyor; ancak applicability ve preserves alanları tek kaynaklı sürme ayrıntısını da koruduğunu söylüyor. Karşılık metni bu ayrıntıyı ifade etmiyor ve ayrıntı dalın ortak çekirdeği değil.",
+      "smallest_correction": "Karşılık metnini koruyun; applicability ve preserves alanlarından sürme bileşenini çıkararak açıklamaları kayıp ve yok oluş çekirdeğiyle uyumlu hale getirin."
+    }
+  ]
+}

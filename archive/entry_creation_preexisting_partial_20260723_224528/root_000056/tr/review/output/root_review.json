@@ -1,0 +1,51 @@
+{
+  "verdict": "repair",
+  "summary": "B001 ile köle kadın anlamındaki komşu dalın çekirdekleri eşdeğer olduğu halde, bağımlı durum adı ve çoğul biçimleri sınır farkı sayılarak ilişki gereksiz yere yakın anlamlıya indirilmiş. B002'de ise edinme ve kadının kendisinin köle duruma geçmesi dışında, kanıtlanmayan ettirgen bir anlam iki alana eklenmiş.",
+  "issues": [
+    {
+      "target_ref": "root_000056/B001",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002",
+        "lu_003"
+      ],
+      "evidence_conflict": "root_000053/B014 sınır kartı da çekirdekte kölelik statüsündeki kadını adlandırır. Yanıt, yalnız odak dalda listelenen soyut durum adını ve çoğul biçimlerini dal sınırını genişleten özellikler sayarak ilişkiyi near_synonym ve partial olarak vermiştir; oysa lu_002 ile lu_003, lu_001'in çekirdek referentini değiştirmeyen bağımlı biçimlerdir. Komşu için eklenen genç nitelemesi de kartta desteklenmez.",
+      "smallest_correction": "root_000053/B014 ilişkisini synonym ve exact olarak ayarlayın; genç nitelemesini kaldırın ve soyut ad ile çoğulların çekirdek eşdeğerliğini bozmadığını belirtin."
+    },
+    {
+      "target_ref": "root_000056/B002",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_004",
+        "lu_005",
+        "lu_006",
+        "lu_007",
+        "lu_008",
+        "lu_009"
+      ],
+      "evidence_conflict": "Kavram karşılığının error_profile.preserves metni edinmenin yanında köle duruma getirme yönünü de koruduğunu söyler. Verilen iddialar yalnız bir kadını köle olarak edinme ile kadının kendisinin köle duruma geçmesini veya olmasını tanıtlar; ayrı bir ettirgen duruma getirme anlamı tanıtlamaz.",
+      "smallest_correction": "error_profile.preserves içindeki veya duruma getirme ifadesini kaldırın; metni yalnız edinme ile kadının kendi durum değişimini ayıracak biçimde bırakın."
+    },
+    {
+      "target_ref": "root_000056/B002",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_004",
+        "lu_005",
+        "lu_006",
+        "lu_007",
+        "lu_008",
+        "lu_009"
+      ],
+      "evidence_conflict": "root_000056/B001 karşılaştırmasının focus_only metni köle duruma getirmeyi odak dala ekler. İddialar geçişli olarak köle kadın edinmeyi ve geçişsiz olarak kadının köle olmasını verir; bir kadını köle duruma getirmeyi vermez.",
+      "smallest_correction": "focus_only metninden köle duruma getirme seçeneğini çıkarın ve sınırı yalnız köle kadın edinme ile kadının köle duruma geçmesi olarak ifade edin."
+    }
+  ]
+}

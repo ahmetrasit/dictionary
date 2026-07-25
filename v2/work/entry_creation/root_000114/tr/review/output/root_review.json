@@ -1,0 +1,146 @@
+{
+  "verdict": "repair",
+  "summary": "Dal ayrımları ve ana anlamlar genel olarak tutarlıdır; ancak B004'te deveye özgü kullanım bütün hayvanlara genişletilmiş, B005'te bağımsız adlandırmalar kaynak varyantı sayılmış, Sind kısıtı silinmiş ve hastalık açıklamasına kanıtsız bir patoloji eklenmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_000114/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_015"
+      ],
+      "evidence_conflict": "lu_015 dişi deveye zorla çiftleşen erkek deve kullanımını verir; tanım ile F002 bunu erkek hayvanın herhangi bir dişiye yönelmesi biçiminde bütün hayvan türlerine genişletiyor.",
+      "smallest_correction": "Tanım ve F002'deki özel kullanımı erkek devenin dişi deveyi zorla çiftleşmeye mecbur etmesiyle sınırla."
+    },
+    {
+      "target_ref": "root_000114/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_015"
+      ],
+      "evidence_conflict": "lu_015 yalnız erkek deve ile dişi deveyi belirtirken ortak özet ve tekil aktarım ayrıntısı bunu erkek ve dişi hayvanların geneline yayıyor.",
+      "smallest_correction": "lu_015'e dayanan iki cümlede erkek hayvan ve dişi yerine erkek deve ve dişi deve kullan."
+    },
+    {
+      "target_ref": "root_000114/B004",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_015"
+      ],
+      "evidence_conflict": "Bağlamsal karşılığın uygulanabilirlik açıklaması herhangi bir erkek ve dişi hayvanı kapsıyor; lu_015'in nesnesi açıkça dişi devedir.",
+      "smallest_correction": "Bağlamsal karşılığı ve uygulanabilirlik açıklamasını erkek deve ile dişi deve bağlamına özgüleştir."
+    },
+    {
+      "target_ref": "root_000114/B004",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_015"
+      ],
+      "evidence_conflict": "lu_015 için verilen karşılık herhangi bir erkek hayvanın herhangi bir dişiyi zorlamasını kapsıyor; kanıt erkek deve ile dişi deveye özgüdür.",
+      "smallest_correction": "lu_015 karşılığını erkek devenin dişi deveyi zorla çiftleşmeye mecbur etmesi olarak daralt."
+    },
+    {
+      "target_ref": "root_000114/B004",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_015"
+      ],
+      "evidence_conflict": "Komşu ayrımlarındaki odak-dala özgü kapsam bütün hayvanlarda zorla çiftleşmeyi içeriyor; lu_015 yalnız deve çiftini destekliyor.",
+      "smallest_correction": "Komşu ayrımlarındaki hayvan kullanımını erkek devenin dişi deveyi zorlamasıyla sınırla; ilişki türlerini değiştirme."
+    },
+    {
+      "target_ref": "root_000114/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_027",
+        "lu_028",
+        "lu_030",
+        "lu_031",
+        "lu_032"
+      ],
+      "evidence_conflict": "F002, F003, F005, F006 ve F007 kaynaklar arasındaki biçim veya anlam varyantları değil, dalda toplanmış ayrı adlandırmalardır; ayrıca lu_027, lu_028 ve lu_030 birden çok kaynakta aktarılır. Bu nedenle source_variant rolleri kavramsal statülerini yanlış gösteriyor.",
+      "smallest_correction": "F002, F003, F005 ve F006'yı bağımsız ilişkili kullanımlar olarak sınıflandır; lu_032'nin tazelik anlamından türetilen kişi adı oluşunu extension olarak göster. F004'ün specialization rolünü koru."
+    },
+    {
+      "target_ref": "root_000114/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_028",
+        "lu_030"
+      ],
+      "evidence_conflict": "lu_028 topluluğu Sind halkından, lu_030 yaz yağmurunu da Sind halkına özgü olarak sınırlar; F003 ve F005 yalnız belirsiz bir bölgeden söz ederek ayırt edici coğrafi kısıtı kaybediyor.",
+      "smallest_correction": "F003'te topluluğun Sind halkından olduğunu, F005'te yağmurun Sind halkına yazın düştüğünü açıkça belirt."
+    },
+    {
+      "target_ref": "root_000114/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_028",
+        "lu_030"
+      ],
+      "evidence_conflict": "Ortak özet, hem ücretli savaşçı topluluğunda hem yaz yağmurunda kanıtın verdiği Sind kısıtını genel bir bölge ifadesine dönüştürüyor.",
+      "smallest_correction": "Ortak özette topluluğu Sind halkından diye, yaz yağmurunu da Sind halkına özgü diye tanımla."
+    },
+    {
+      "target_ref": "root_000114/B005",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_027"
+      ],
+      "evidence_conflict": "lu_027 yalnız bilinen bir hastalığı ve makat ile burun içindeki yerlerini bildirir; damar şişmesi niteliği sunulan kanıtta bulunmaz.",
+      "smallest_correction": "Hastalık karşılığından damar şişmesi nitelemesini çıkar ve onu makatta veya burun içinde görülebilen bilinen bir hastalık olarak açıkla."
+    },
+    {
+      "target_ref": "root_000114/B005",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_028",
+        "lu_030"
+      ],
+      "evidence_conflict": "lu_028 ve lu_030 için bağlamsal karşılıklar ayırt edici Sind kısıtını bölgesel sözüyle belirsizleştiriyor.",
+      "smallest_correction": "Topluluk ve yağmur karşılıklarında bölgesel yerine Sind halkına ilişkin açık coğrafi tanımlamayı kullan."
+    },
+    {
+      "target_ref": "root_000114/B005",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_027"
+      ],
+      "evidence_conflict": "lu_027'nin sözlüksel karşılığı kanıtta bulunmayan damar şişmesi tanısını ekliyor; kanıt yalnız bunun bilinen bir hastalık olduğunu ve görüldüğü yerleri verir.",
+      "smallest_correction": "lu_027 karşılığından damar şişmesi ifadesini çıkar."
+    },
+    {
+      "target_ref": "root_000114/B005",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_028",
+        "lu_030"
+      ],
+      "evidence_conflict": "lu_028 ve lu_030 karşılıkları kanıttaki Sind halkı kısıtını belirsiz bir bölge halkına indiriyor.",
+      "smallest_correction": "lu_028'i Sind halkından ücretli savaşçı topluluk, lu_030'u Sind halkına yazın düşen ve süren yağmur olarak açıkla."
+    }
+  ]
+}

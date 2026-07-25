@@ -1,0 +1,19 @@
+{
+  "inputs_sha256": "4489e21c30bfd621c91c22159d699c913dce6d56ec15990c71331aef97b92a68",
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtla uyumludur; ancak bir bağlamsal karşılık yanlış anlam yüzüne bağlanmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_000147/B001",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_010",
+        "lu_011"
+      ],
+      "evidence_conflict": "\"Ağlayan kimse\" karşılığı yalnızca F003 yüzüne bağlanmıştır; oysa lu_010 ile desteklenen F003 sıradan ağlayan kişiyi değil, çok ağlayan kişiyi belirtir. Sıradan ağlayan kişi lu_011 ile desteklenen F004 içindedir.",
+      "smallest_correction": "Bu bağlamsal karşılığın facet_ids değerini F003 yerine F004 yapın."
+    }
+  ]
+}

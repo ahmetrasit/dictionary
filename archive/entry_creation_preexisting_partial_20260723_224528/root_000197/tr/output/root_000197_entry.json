@@ -1,0 +1,831 @@
+{
+  "inputs_sha256": "69ea13cf62ab8adb50327b16b8309fe3330c6b76740b85eba2a925f079a66050",
+  "artifact_format": "dictionary-v2-root-entry-draft-v1",
+  "generated_by": "v2/scripts/accept_root_writer.py",
+  "root_envelope_id": "root_000197",
+  "language": "tr",
+  "branches": [
+    {
+      "branch_ref": "root_000197/B001",
+      "concept_map": {
+        "definition": "Bir kimseyi işlediği suçtan dolayı kınamadır; bu kınama azarlama, ayıplama, suçu yüzüne vurma ve suçlarını tek tek sayma yoğunluğuna ulaşabilir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "İşlenmiş bir suç veya kötü davranış yüzünden kınama, azarlama, ayıplama ve suçu yüzüne vurma eylemidir.",
+            "claim_ids": [
+              "lu_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "associated_use",
+            "statement": "Olumsuz bir söz kalıbında, kişiye yönelik kınamanın, azarlamanın ve suçları sayıp dökmenin bulunmadığını bildirir.",
+            "claim_ids": [
+              "lu_002"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "associated_use",
+            "statement": "Birine yönelen eylem olarak kullanıldığında onu azarlar, suçlarını yüzüne vurur ve yaptığı işi kötü gösterir.",
+            "claim_ids": [
+              "lu_006"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "specialization",
+            "statement": "Aynı anlam alanındaki türemiş biçimler azarlama eylemini, bu eylemi yapan kişiyi veya kınayan kişiyi anlatır.",
+            "claim_ids": [
+              "lu_007",
+              "lu_008",
+              "lu_009"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynakların ortak çekirdeği, bir kişiyi işlediği suçtan dolayı kınamak, azarlamak, ayıplamak ve suçu yüzüne vurmaktır. Kınamayı kaldıran söz kalıbı suçları sayıp dökmenin ve azarlamanın bulunmadığını bildirir; kişiye yönelen fiil kullanımı ise onun kusurlarını saymayı ve yaptığı işi kötü göstermeyi öne çıkarır.",
+        "common_claim_ids": [
+          "lu_001",
+          "lu_002",
+          "lu_006"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_007",
+              "lu_008"
+            ],
+            "kind": "derivation",
+            "summary": "Tek bir kaynak, azarlamak anlamındaki ayrı bir fiil biçimi ile azarlayan kişi adını ayrıca kaydeder."
+          },
+          {
+            "claim_ids": [
+              "lu_009"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek bir kaynak, kınayan veya azarlayan kişiyi anlatan başka bir türemiş biçimi bağışlama bağlamında örnekler."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "suçu yüzüne vurup sayıp dökerek kınama",
+        "applicability": "Suç nedeniyle kınama, azarlama, ayıplama ve suçları tek tek sayma bileşenlerini birlikte taşıyan en kapsamlı karşılıktır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Suçun yüzüne vurulmasını, ayrıntılı biçimde sayılmasını ve bunun kınayıcı bir eylem olmasını birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "kınama ve azarlama",
+          "usage_role": "general",
+          "applicability": "Bağlam suçların tek tek sayılmasını ayrıca belirtmiyorsa, eylemin genel kınama ve azarlama yönünü doğal biçimde verir.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Bir kişiye suçu yüzünden yöneltilen kınama ve azarlama çekirdeğini korur.",
+            "loses": "Suçları tek tek sayıp dökme ve kusuru ayrıntılı biçimde yüzüne vurma yoğunluğunu açıkça taşımaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "başına kakma yok",
+          "usage_role": "contextual",
+          "applicability": "Kınamanın bulunmadığını bildiren olumsuz söz kalıbında, geçmiş suçların yeniden yüzüne vurulmayacağını anlatır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Geçmiş kusurları yüzüne vurmanın kaldırıldığı olumsuz bağlamı korur.",
+            "loses": "Azarlama ve suçları tek tek sayma bileşenlerini ayrı ayrı belirtmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "suçlarını yüzüne vurmak",
+          "usage_role": "contextual",
+          "applicability": "Eylemin belirli bir kişiye yöneldiği ve onun kusurlarının sayıldığı fiil bağlamlarında kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Kişiye yönelmeyi ve işlediği suçları yüzüne vurmayı korur.",
+            "loses": "Yaptığı işi kötü gösterme ve azarlama yoğunluğunu zorunlu olarak belirtmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_001",
+          "rendering_kind": "ordinary",
+          "target_gloss": "suçu yüzüne vurup sayıp dökerek kınama"
+        },
+        {
+          "lexical_unit_id": "lu_002",
+          "rendering_kind": "ordinary",
+          "target_gloss": "sana ya da size kınama ve başa kakma yok"
+        },
+        {
+          "lexical_unit_id": "lu_006",
+          "rendering_kind": "ordinary",
+          "target_gloss": "birini azarlayıp suçlarını yüzüne vurmak"
+        },
+        {
+          "lexical_unit_id": "lu_007",
+          "rendering_kind": "ordinary",
+          "target_gloss": "azarlamak"
+        },
+        {
+          "lexical_unit_id": "lu_008",
+          "rendering_kind": "ordinary",
+          "target_gloss": "azarlayan kişi"
+        },
+        {
+          "lexical_unit_id": "lu_009",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kınayan veya azarlayan kişi"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "sitem",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Kınayıcı söz yönünü kısmen korur.",
+            "loses": "İşlenmiş suçu yüzüne vurma, azarlama ve suçları tek tek sayma yoğunluğunu dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001386/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Suçu yüzüne vurma, azarlama ve suçları ayrıntılı biçimde sayıp dökme yoğunluğu taşır.",
+          "neighbor_only": "Genel kınamayı, karşılıklı kınamayı, kınayan kişiyi ve kınanmaya konu olan şeyi de kapsar.",
+          "gloss": "genel kınama ve ayıplama",
+          "shared_zone": "Her iki dal da bir kişiyi yaptığı bir şey yüzünden kınama alanında buluşur.",
+          "distinction": "Odak dal, işlenmiş suçu kişinin yüzüne vurma ve gerekirse suçları tek tek sayma biçimindeki sert kınamadır. Komşu dal ise kınamayı daha genel ele alır ve karşılıklı kınama ile kınayan veya kınanan kişi gibi katılımcı uzantılarını da içerir."
+        },
+        {
+          "neighbor_ref": "root_000977/B005",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "İşlenmiş suçu sayıp dökerek yüzüne vurma ve bu yolla sertçe kınama öne çıkar.",
+          "neighbor_only": "Hoşnutsuzluğun karşılıklı siteme dönüşmesi ve sitemin etkili olup olmaması gibi konuşma ilişkilerini kapsar.",
+          "gloss": "hoşnutsuzlukla sitem etme",
+          "shared_zone": "İki dal da hoş görülmeyen bir davranış üzerine kişiye yöneltilen kınayıcı sözü kapsar.",
+          "distinction": "Odak dalın sınırı suçun kişiye yüklenmesi, yüzüne vurulması ve sayılmasıdır. Komşu dalda ise hoşnutsuzluğun sitemli bir konuşmayla dışa vurulması ve tarafların karşılıklı sitemi belirleyicidir."
+        },
+        {
+          "neighbor_ref": "root_001179/B003",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Kişinin suçlarını yüzüne vurup onu azarlamayı ve ayıplamayı anlatır.",
+          "neighbor_only": "Kınama yoluyla kişinin görüşünü zayıf göstermek veya onu düşünce yetersizliğiyle ilişkilendirmek öne çıkar.",
+          "gloss": "görüşünü küçümseyerek kınama",
+          "shared_zone": "Her iki dalda da kişiye yönelen olumsuz değerlendirme ve kınama bulunur.",
+          "distinction": "Odak dal, işlenmiş suçun yüzüne vurulmasına dayanır; komşu dal ise özellikle görüşün zayıflatılması veya kişinin düşünce yetersizliğiyle nitelenmesi sonucuna yönelir. Bu nedenle olağan bağlamlarda birbirlerinin yerine geçmezler."
+        },
+        {
+          "neighbor_ref": "root_000197/B004",
+          "relation_type": "other",
+          "boundary_match": "field_only",
+          "focus_only": "Bir kişiyi suçu nedeniyle azarlama, ayıplama ve suçlarını yüzüne vurma anlamını taşır.",
+          "neighbor_only": "Bir şeyi bozma, düzenini dağıtma veya öğelerini birbirine karıştırma anlamını taşır.",
+          "gloss": "aynı biçimin ayrı kaynak yorumu",
+          "shared_zone": "İki dal aynı söz biçimine kaynaklarda verilen farklı anlam açıklamalarına dayanır.",
+          "distinction": "Buradaki dal kişiler arası kınama eylemidir; komşu dal ise bozma ve karıştırma sonucunu anlatır. Ortak biçim, bu iki ayrı anlam sınırını birleştirmez."
+        }
+      ],
+      "neighbor_coverage_note": "Adayların tamamı değerlendirildi; yayımlananlar kınama alanındaki en yakın sınırları ve aynı biçime verilen ayrı yorumu gösterir. Özür kabulü, hırsızlık isnadı, sözle yaralama, iftira, beden bölümü ve yer adı dalları ayrı çekirdekler taşıdığı için eklenmedi.",
+      "branch_image_ar": "اللوم على الذنب",
+      "what_is_ar": "يدخل فيه التثريب بمعنى اللوم والتوبيخ والتقريع والتعيير وتعداد الذنوب والاستقصاء في اللوم.",
+      "source_phrase_ar": "التثريب اللوم والأخذ على الذنب (maqayis)؛ التثريب الأخذ على الذنب (jamhara)؛ التثريب كالتأنيب والتعيير والاستقصاء في اللوم (sihah)؛ لا تعداد للذنوب عليكم ولا توبيخ، ثرب إذا وبخ (tahdhib)؛ التثريب التقريع والتقرير بالذنب (mufradat)",
+      "sources": [
+        "MQ",
+        "JA",
+        "SI",
+        "TA",
+        "MU"
+      ],
+      "source_note": {
+        "TA": "Tek bir kaynak, azarlamak anlamındaki ayrı bir fiil biçimi ile azarlayan kişi adını ayrıca kaydeder.",
+        "SI": "Tek bir kaynak, kınayan veya azarlayan kişiyi anlatan başka bir türemiş biçimi bağışlama bağlamında örnekler."
+      }
+    },
+    {
+      "branch_ref": "root_000197/B002",
+      "concept_map": {
+        "definition": "İşkembeyi ve bağırsakları dıştan kaplayan ince yağ tabakasıdır; çoğul biçimi aynı yapıların birden çok örneğini anlatır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "İşkembe ile bağırsakların üzerinde bulunan ve onları örten ince yağ tabakasıdır.",
+            "claim_ids": [
+              "lu_004"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Çoğul biçim, işkembe ve bağırsakları örten bu ince yağ tabakalarının birden çok örneğini anlatır.",
+            "claim_ids": [
+              "lu_005"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar, işkembe ile bağırsakların üzerinde bulunan ince bir yağ tabakası konusunda birleşir. Bazı açıklamalar yalnızca işkembe üzerindeki konumu kısaca belirtirken ortak sınır iki iç yapıyı da örten ince yağı kapsar; çoğul biçim de ayrıca kaydedilir.",
+        "common_claim_ids": [
+          "lu_004",
+          "lu_005"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "işkembe ve bağırsakları örten ince yağ tabakası",
+        "applicability": "Yapının inceliğini, yağ niteliğini ve hem işkembeyi hem bağırsakları örtmesini eksiksiz belirten temel karşılıktır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "İnce bir yağ tabakası oluşunu ve işkembe ile bağırsakları dıştan örtmesini birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "karın iç yağı",
+          "usage_role": "general",
+          "applicability": "Anatomik ayrıntının önemli olmadığı genel anlatımda, karın içindeki yağ dokusunu doğal bir üst adla karşılar.",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Karın içinde bulunan bir yağ dokusu olmasını korur.",
+            "loses": null,
+            "adds": "İşkembe ve bağırsakları örtmeyen başka karın içi yağlarını da kapsayabilir.",
+            "collision": "Daha geniş karın içi yağ dokusu sınıfıyla karışabilir."
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "işkembe yağı",
+          "usage_role": "contextual",
+          "applicability": "Bağlam yalnızca işkembe üzerindeki konumu öne çıkarıyorsa kısa ve doğal bir karşılık olarak kullanılabilir.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Yağ dokusunu ve işkembe üzerindeki konumunu korur.",
+            "loses": "Bağırsakları da örten ince tabaka oluşunu açıkça belirtmez.",
+            "adds": null,
+            "collision": "İşkembe çevresindeki başka yağ dokularıyla karışabilir."
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_004",
+          "rendering_kind": "ordinary",
+          "target_gloss": "işkembe ve bağırsakları örten ince yağ tabakası"
+        },
+        {
+          "lexical_unit_id": "lu_005",
+          "rendering_kind": "ordinary",
+          "target_gloss": "işkembe ve bağırsakları örten ince yağ tabakaları"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "iç yağı",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Yağ dokusu olmasını genel olarak korur.",
+            "loses": "İşkembe ve bağırsakları örten ince tabaka olmasını belirtmez.",
+            "adds": "Karın içindeki başka yağ dokularını da kapsayabilecek daha geniş bir anlam ekler.",
+            "collision": null
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001585/B003",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "İnce yağ tabakasının hem işkembeyi hem de bağırsakları örttüğünü açıkça sınırlar.",
+          "neighbor_only": "Bölgesel bir adlandırmayla karın yağını daha geniş biçimde anlatabilen bir kullanım taşır.",
+          "gloss": "işkembe veya karın yağı",
+          "shared_zone": "Her iki dal da işkembe çevresinde veya karın içinde bulunan yağ dokusunu gösterir.",
+          "distinction": "Odak dal, işkembe ile bağırsakları örten ince tabakayı birlikte belirtir. Komşu dal aynı yapıya yaklaşsa da bölgesel kullanımı ve daha geniş karın yağı açıklaması nedeniyle sınırı tam olarak örtüşmez."
+        },
+        {
+          "neighbor_ref": "root_001117/B007",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "İşkembe ve bağırsakları örten ince tabakayı hayvan türünü sınırlamadan anlatır.",
+          "neighbor_only": "Aynı tür yağ dokusunu özellikle koyuna bağlayan daha dar bir adlandırmadır.",
+          "gloss": "koyunun karın içi örtü yağı",
+          "shared_zone": "Her iki dal da işkembe çevresindeki ince karın içi yağ dokusunu konu eder.",
+          "distinction": "Odak dalın anatomik sınırı işkembe ile bağırsakların örtülmesidir ve belirli bir hayvanla sınırlanmaz. Komşu dal ise bu yağ dokusunu özellikle koyuna ait bir yapı olarak adlandırır."
+        },
+        {
+          "neighbor_ref": "root_001148/B013",
+          "relation_type": "near_neighbor",
+          "boundary_match": "field_only",
+          "focus_only": "İşkembe ile bağırsakların üzerinde yer alan ince örtü yağını anlatır.",
+          "neighbor_only": "Böbreğin veya böbreklerin çevresindeki yağı anlatır.",
+          "gloss": "böbrek yağı",
+          "shared_zone": "Her iki dal da karın boşluğundaki belirli organlarla ilişkili yağ dokusunu adlandırır.",
+          "distinction": "İki dal yağ dokusu bakımından aynı alandadır, ancak bağlı oldukları organlar farklıdır. Odak dal sindirim yapılarını örten tabakayı, komşu dal böbrek çevresindeki yağı gösterir."
+        },
+        {
+          "neighbor_ref": "root_000374/B003",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Bağırsakları dıştan örten ince yağ tabakasını gösterir.",
+          "neighbor_only": "Bağırsakların kendisini ve karın içindeki kıvrımlı iç yapıları gösterir.",
+          "gloss": "bağırsaklar ve iç kıvrımlar",
+          "shared_zone": "İki dal karın içindeki sindirim yapılarıyla ilgili anatomik adlandırmalar içerir.",
+          "distinction": "Odak dal bağırsakların kendisi değil, onları örten yağ tabakasıdır. Komşu dal ise bağırsakları ve benzeri iç kıvrımları doğrudan adlandırır."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; yayımlananlar aynı yağ dokusuna yaklaşan adları ve en kolay karışan komşu anatomik yapıları ayırır. Zar, doğumla çıkan doku, genel et, sırt eti, kınama ve yer adı dalları farklı yapılara veya alanlara ait olduğundan eklenmedi.",
+      "branch_image_ar": "الشحم الرقيق على الكرش والأمعاء",
+      "what_is_ar": "يدخل فيه الثرب، وهو الشحم الرقيق الذي يغشي الكرش والأمعاء، وجمعه ثروب.",
+      "source_phrase_ar": "الثرب شحم قد غشي الكرش والأمعاء رقيق والجمع ثروب (maqayis)؛ الثرب الشحم الذي على الكرش (jamhara)؛ الثرب شحم قد غشى الكرش والأمعاء رقيق (sihah)؛ الثرب شحم رقيق يغشي الكرش والأمعاء وجمعه ثروب (tahdhib)؛ الثرب وهو شحمة رقيقة (mufradat)",
+      "sources": [
+        "MQ",
+        "JA",
+        "SI",
+        "TA",
+        "MU"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_000197/B003",
+      "concept_map": {
+        "definition": "Medine'nin adı, bu ada bağlı Medine halkı ifadesi ve Medine'ye aidiyet bildiren biçimler ile Şam bölgesindeki ayrı bir yer adını kapsayan özel ad alanıdır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Belirli bir sözcük, Medine'nin adı olarak kullanılır.",
+            "claim_ids": [
+              "lu_011"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "associated_use",
+            "statement": "Medine adıyla kurulan söz öbeği, Medine halkını anlatır.",
+            "claim_ids": [
+              "lu_012"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "specialization",
+            "statement": "İki ayrı türemiş biçim, Medine'ye ait veya Medine ile ilişkili olmayı bildirir.",
+            "claim_ids": [
+              "lu_013",
+              "lu_014"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "extension",
+            "statement": "Ayrı bir sözcük, Şam bölgesindeki bir yerin adı olarak kullanılır.",
+            "claim_ids": [
+              "lu_015"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynakların ortak çekirdeği, sözcüğün Medine'nin adı olarak kullanılmasıdır. Medine adıyla kurulan halk ifadesi, Medine'ye aidiyet bildiren iki türemiş biçim ve Şam bölgesindeki ayrı bir yer adı, tek kaynaklara özgü ek kayıtlar olarak anlam alanını genişletir.",
+        "common_claim_ids": [
+          "lu_011"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_012"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek bir kaynak, Medine adıyla kurulan söz öbeğinin Medine halkını anlattığını belirtir."
+          },
+          {
+            "claim_ids": [
+              "lu_013",
+              "lu_014"
+            ],
+            "kind": "derivation",
+            "summary": "Tek bir kaynak, Medine'ye aidiyet bildiren iki ayrı türemiş biçimi birlikte kaydeder."
+          },
+          {
+            "claim_ids": [
+              "lu_015"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek bir kaynak, Şam bölgesinde bulunan ayrı bir yer adını ayrıca kaydeder."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "yer adları ve bunlardan birine bağlı aidiyet biçimleri",
+        "applicability": "Kent adını, bu ada bağlı halk ve aidiyet kullanımlarını ve ayrı bir yer adını birlikte kapsayan açıklayıcı üst karşılıktır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Birden çok yer adını ve bunlardan birine bağlı halk ile aidiyet biçimlerini birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003",
+          "F004"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "kentin adı",
+          "usage_role": "contextual",
+          "applicability": "Sözcük belirli kenti doğrudan adlandırdığında, özel adı yeniden üretmeden işlevini açıklayan karşılıktır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Bir sözcüğün belirli bir kentin özel adı olmasını korur.",
+            "loses": "Bu ada bağlı halk ve aidiyet biçimleriyle başka bölgedeki ayrı yer adını kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "o kentten olan",
+          "usage_role": "contextual",
+          "applicability": "Türemiş biçimlerden biri bir nesnenin veya kişinin söz konusu kentle aidiyet ilişkisini bildirdiğinde kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Belirli kente aidiyet veya o kentle ilişki kurma anlamını korur.",
+            "loses": "Kent adının kendisini, kent halkı söz öbeğini ve ayrı yer adını kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        },
+        {
+          "text": "başka bir bölgedeki yer adı",
+          "usage_role": "explanatory",
+          "applicability": "Ayrı sözcüğün kaynakta belirtilen başka bir bölgedeki yeri adlandırdığı bağlamı açıklamak için kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Ayrı bir yerdeki özel ad işlevini korur.",
+            "loses": "Kent adını ve ona bağlı halk ile aidiyet biçimlerini kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F004"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_011",
+          "rendering_kind": "ordinary",
+          "target_gloss": "Medine'nin adı"
+        },
+        {
+          "lexical_unit_id": "lu_012",
+          "rendering_kind": "ordinary",
+          "target_gloss": "Medine halkı"
+        },
+        {
+          "lexical_unit_id": "lu_013",
+          "rendering_kind": "ordinary",
+          "target_gloss": "Medine'ye ait"
+        },
+        {
+          "lexical_unit_id": "lu_014",
+          "rendering_kind": "ordinary",
+          "target_gloss": "Medine'ye ait"
+        },
+        {
+          "lexical_unit_id": "lu_015",
+          "rendering_kind": "ordinary",
+          "target_gloss": "Şam bölgesindeki bir yer adı"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "kent adı",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Bir yerin özel adı olma yönünü korur.",
+            "loses": "Medine halkı, Medine'ye aidiyet biçimleri ve Şam bölgesindeki ayrı yer adı kapsamını dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          }
+        }
+      ],
+      "neighbor_distinctions": [],
+      "neighbor_coverage_note": "Adayların tamamı değerlendirildi. Dış adaylar yalnızca başka kent, kale, yer, kişi veya soy adlarını paylaşan geniş özel ad alanındadır; aynı kökün öteki dalları da anlamsal olarak ayrıdır. Bu yüzden hiçbiri bu dalın sınırını yararlı ve yinelenmeyen bir karşılaştırmayla keskinleştirmez.",
+      "branch_image_ar": "اسم موضع",
+      "what_is_ar": "يدخل فيه يثرب اسما للمدينة، والنسبة يثربي وأثربي، وأثارب موضعا بالشام.",
+      "source_phrase_ar": "أثارب موضع بالشام (jamhara)؛ يثرب مدينة الرسول، ونصل يثربي وأثربي منسوب إلى يثرب (sihah)؛ نهى أن يقال للمدينة يثرب وسماها طيبة (tahdhib)؛ يا أهل يثرب أي أهل المدينة (mufradat)",
+      "sources": [
+        "JA",
+        "SI",
+        "TA",
+        "MU"
+      ],
+      "source_note": {
+        "MU": "Tek bir kaynak, Medine adıyla kurulan söz öbeğinin Medine halkını anlattığını belirtir.",
+        "SI": "Tek bir kaynak, Medine'ye aidiyet bildiren iki ayrı türemiş biçimi birlikte kaydeder.",
+        "JA": "Tek bir kaynak, Şam bölgesinde bulunan ayrı bir yer adını ayrıca kaydeder."
+      }
+    },
+    {
+      "branch_ref": "root_000197/B004",
+      "concept_map": {
+        "definition": "Bir şeyi bozarak düzenini dağıtma veya öğelerini birbirine karıştırmadır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Sözcük, belirli bir söz kalıbı ve benzeri kullanımlar için bozma veya birbirine karıştırma anlamında açıklanır.",
+            "claim_ids": [
+              "lu_003"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Bu dal tek bir kaynağın açıklamasına dayanır: sözcük, belirli bir söz kalıbı ve benzeri kullanımlar içinde bozma veya birbirine karıştırma anlamıyla yorumlanır.",
+        "common_claim_ids": [
+          "lu_003"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "bozma ve birbirine karıştırma",
+        "applicability": "Kaynak yorumundaki düzeni bozma ve öğeleri birbirine karıştırma bileşenlerini birlikte veren temel karşılıktır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Bir şeyi bozma ile öğelerini veya düzenini birbirine karıştırma anlamlarını birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "işi bozup karıştırma",
+          "usage_role": "contextual",
+          "applicability": "Sözcük bir durumun düzenini bozma ve onu karışık hale getirme sonucu açısından çevrildiğinde kullanılabilir.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Bozma eylemini ve bununla birlikte ortaya çıkan karışıklığı korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_003",
+          "rendering_kind": "ordinary",
+          "target_gloss": "bozma ve birbirine karıştırma"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "karışıklık",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Karışma sonucunu kısmen korur.",
+            "loses": "Bir şeyi bozma, düzenini dağıtma ve etkin biçimde karıştırma eylemini açıkça taşımaz.",
+            "adds": null,
+            "collision": null
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000431/B003",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Belirli bir söz kalıbındaki sözcüğe verilen bozma ve karıştırma yorumudur.",
+          "neighbor_only": "Akıl, söz, iş, koşu veya okun doğrultusu gibi alanlarda karışmanın yol açtığı bozukluk ve eksikliği ayrıntılandırır.",
+          "gloss": "karışarak düzeni bozulma",
+          "shared_zone": "Her iki dal da karışmanın düzeni bozduğu veya doğru işleyişi engellediği durumları kapsar.",
+          "distinction": "Odak dal bozma ile karıştırmayı genel bir kaynak yorumu olarak bir arada verir. Komşu dal ise karışmanın akıl, söz, iş ve nesnelerde ortaya çıkardığı eğrilik, eksiklik veya işleyiş bozukluğunu somut alanlarla genişletir."
+        },
+        {
+          "neighbor_ref": "root_001411/B004",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bir şeyi bozma veya öğelerini birbirine karıştırma eylemini yalın biçimde anlatır.",
+          "neighbor_only": "İş, inanç, sözleşme ve güven ilişkilerinde çıkış yolunu belirsizleştiren karışıklık, bozulma ve düzensizliği kapsar.",
+          "gloss": "işin karışıp bozulması",
+          "shared_zone": "İki dalda da düzenin karışması ve bunun sonucunda işleyişin bozulması bulunur.",
+          "distinction": "Odak dal genel bozma ve karıştırma çekirdeğidir. Komşu dal ise işlerin, ilişkilerin veya yükümlülüklerin içinden çıkılması güç biçimde karışması, bozulması ve belirsizleşmesi durumuna yönelir."
+        },
+        {
+          "neighbor_ref": "root_001360/B004",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bozmanın yanı sıra öğeleri birbirine karıştırma anlamını da taşır.",
+          "neighbor_only": "Bir kişinin bir topluluğun işini veya düzenini bozması biçimindeki belirli katılımcı yapısını taşır.",
+          "gloss": "bir topluluğun işini bozma",
+          "shared_zone": "Her iki dal da var olan bir düzeni veya işi bozma eylemini anlatır.",
+          "distinction": "Odak dal bozma ve karıştırmayı katılımcıları sınırlamadan verir. Komşu dal ise bir kişinin topluluğa yönelen ve onların işini bozan eylemini özellikle belirtir."
+        },
+        {
+          "neighbor_ref": "root_001142/B016",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Karıştırmanın düzen bozucu veya zarar verici sonucunu içerir.",
+          "neighbor_only": "İnsanların birbirine karışması durumunu, zorunlu bir bozulma sonucu olmadan anlatır.",
+          "gloss": "insanların birbirine karışması",
+          "shared_zone": "Her iki dalın ortak alanı ayrı öğelerin veya kişilerin birbirine karışmasıdır.",
+          "distinction": "Odak dalda karıştırma, bozma sonucuyla birlikte düşünülür. Komşu dal yalnızca insanların birbirine karışmış halde bulunmasını anlatır; bu durumun düzeni bozması gerekli değildir."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; yayımlananlar bozucu karışma, işin bozulması, belirli katılımcılı bozma ve sonuçsuz karışma arasındaki sınırları gösterir. Düşmanlığı açığa vurma, dedikodu, iç sıkıntısı ve aynı kökün kınama, beden bölümü ile yer adı dalları ayrı çekirdeklere sahip olduğundan eklenmedi.",
+      "branch_image_ar": "الإفساد والتخليط",
+      "what_is_ar": "يدخل فيه تفسير التثريب بالإفساد أو التخليط في عبارة لا تثريب عليكم ونحوها.",
+      "source_phrase_ar": "معناه لا إفساد عليكم؛ التثريب الإفساد والتخليط",
+      "sources": [
+        "TA"
+      ],
+      "source_note": {}
+    }
+  ],
+  "root_profile": {
+    "summary": "Kök, suçu yüzüne vurarak kınama, işkembe ile bağırsakları örten ince yağ tabakası, yer adları ve bozma ya da karıştırma yorumu olmak üzere dört ayrı anlam kümesi taşır. Kınama ile bozma yorumu aynı söz biçiminde kaynak ayrılığı gösterirken anatomik ve özel ad dalları bunlardan bağımsızdır.",
+    "polysemy": "polysemic",
+    "organization": "multi_branch"
+  },
+  "occurrence_evidence": {
+    "summary": {
+      "morpheme_count": 1,
+      "word_count": 1,
+      "ayah_count": 1,
+      "surah_count": 1
+    },
+    "forms": [
+      {
+        "form_id": "F001",
+        "lemma_ar": "تَثْرِيب",
+        "stem_ar": "تَثْرِيبَ",
+        "pos": "N",
+        "measure": "II",
+        "morph_features": "STEM|POS:N|VN|(II)|LEM:tavoriyb|ROOT:vrb|M|ACC",
+        "occurrence_count": 1
+      }
+    ],
+    "ayahs": [
+      {
+        "ayah_ref": "12:92",
+        "surface_ar": "قَالَ لَا تَثْرِيبَ عَلَيْكُمُ ٱلْيَوْمَ يَغْفِرُ ٱللَّهُ لَكُمْ وَهُوَ أَرْحَمُ ٱلرَّٰحِمِينَ"
+      }
+    ],
+    "occurrences": [
+      {
+        "qac_ref": "12:92:3:1",
+        "qac_word_ref": "12:92:3",
+        "surah": 12,
+        "ayah": 92,
+        "word_index": 3,
+        "morpheme_index": 1,
+        "surface_ar": "تَثْرِيبَ",
+        "stem_ar": "تَثْرِيبَ",
+        "lemma_ar": "تَثْرِيب",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "II",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|VN|(II)|LEM:tavoriyb|ROOT:vrb|M|ACC",
+        "ayah_ref": "12:92",
+        "form_id": "F001",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s012:092:noun:3",
+          "attachment_word_unit_id": "q:12:92:3",
+          "qac_char_span": [
+            5,
+            10
+          ],
+          "attachment_char_spans": [
+            [
+              5,
+              10
+            ]
+          ],
+          "source_grammar": "gerund (maṣdar), accusative (manṣūb under lā), Form II verbal noun",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s012:092:pass1:attach:a2",
+              "relation": "particle_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:12:92:2",
+              "other_surface": "لَا",
+              "other_root": "",
+              "other_form_tag": "NEG_PART",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s012:092:pass1:attach:a3",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:12:92:4",
+              "other_surface": "",
+              "other_root": "",
+              "other_form_tag": "",
+              "prep_base": "عَلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s012:092:pass1:attach:a4",
+              "relation": "adverbial",
+              "focus_role": "head",
+              "other_unit_id": "q:12:92:5",
+              "other_surface": "الْيَوْمَ",
+              "other_root": "ي و م",
+              "other_form_tag": "ADV",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

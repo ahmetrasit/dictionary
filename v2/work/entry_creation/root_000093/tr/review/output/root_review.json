@@ -1,0 +1,71 @@
+{
+  "verdict": "repair",
+  "summary": "B004 dalındaki oğlak derisi anlamı, oğlağı tutma eylemi olarak yanlış yorumlanmış ve bu hata ilgili yayın alanlarına yayılmıştır. Ayrıca bağımsız anlam ile kaynaklar arasındaki sayı varyantının facet rolleri ters kurulmuştur.",
+  "issues": [
+    {
+      "target_ref": "root_000093/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_015",
+        "lu_016"
+      ],
+      "evidence_conflict": "lu_016 içindeki kaynak ifadesi oğlağın derisini bildirir; tanım ve F003 bunu oğlağı tutma eylemi yapıyor. Ayrıca lu_016 bütün verilen kaynaklarda bulunan bağımsız bir anlamken F003 source_variant sayılmış, lu_015'teki bin ile on bin arasındaki gerçek kaynak farkı ise F002'de associated_use olarak sınıflanmıştır.",
+      "smallest_correction": "Tanımda tutma eylemini sütten kesilmiş oğlağın derisiyle değiştirin; F003'ü bu bağımsız deri anlamını veren core yapın ve lu_015'teki sayı ayrılığını anlatan F002'yi source_variant olarak sınıflandırın."
+    },
+    {
+      "target_ref": "root_000093/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_016"
+      ],
+      "evidence_conflict": "Ortak özet lu_016'yı sütten kesilmiş oğlağın tutulması diye açıklıyor; kanıttaki ifade burada oğlağın derisini bildirir.",
+      "smallest_correction": "Ortak özetteki tutma eylemi ifadesini sütten kesilmiş oğlağın derisi olarak düzeltin."
+    },
+    {
+      "target_ref": "root_000093/B004",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_016"
+      ],
+      "evidence_conflict": "Kavram karşılığı lu_016'yı oğlağı tutma eylemi olarak veriyor; kanıt ayrı anlamın sütten kesilmiş oğlağın derisi olduğunu gösteriyor.",
+      "smallest_correction": "Kavram karşılığındaki 'sütten kesilmiş oğlağı tutma' bölümünü 'sütten kesilmiş oğlağın derisi' olarak değiştirin ve açıklama ile hata profilini buna uyarlayın."
+    },
+    {
+      "target_ref": "root_000093/B004",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_016"
+      ],
+      "evidence_conflict": "F003'e bağlı bağlamsal karşılık, kanıttaki deri adını 'sütten kesilmiş oğlağı tutma' diye bir eyleme dönüştürüyor.",
+      "smallest_correction": "F003'e bağlı karşılığı 'sütten kesilmiş oğlağın derisi' yapın; applicability ve error_profile metinlerini de deri referentine göre düzeltin."
+    },
+    {
+      "target_ref": "root_000093/B004",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_016"
+      ],
+      "evidence_conflict": "lu_016 için 'sütten kesilmiş oğlağı tutma' karşılığı, kanıtta verilen oğlak derisi anlamını yanlış bir eylem olarak çeviriyor.",
+      "smallest_correction": "lu_016 target_gloss değerini 'sütten kesilmiş oğlağın derisi' olarak değiştirin."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök özeti B004'teki deri anlamını 'sütten kesilmiş oğlağı tutma' diye aktararak aynı yanlış eylem yorumunu kök düzeyine taşır.",
+      "smallest_correction": "Kök özetindeki bu ifadeyi 'sütten kesilmiş oğlağın derisi' olarak değiştirin."
+    }
+  ]
+}

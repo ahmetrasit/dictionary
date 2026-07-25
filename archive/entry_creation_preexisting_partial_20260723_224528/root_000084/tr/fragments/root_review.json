@@ -1,0 +1,40 @@
+{
+  "inputs_sha256": "2134354e4e0829cb8857ded2c4fe8112125b85e842bb94b93d83059bb1631bb2",
+  "verdict": "repair",
+  "summary": "Yanıtın ana dal ayrımı, kavram haritaları ve sözlüksel karşılıkları genel olarak kanıtla uyumludur. Ancak bir kaynak sınırlaması ortak anlatım gibi sunulmuş, tek kaynaklı ikinci dalın bu niteliği belirtilmemiş ve bir komşuluk kartında içkin iyilik bolluğu dışa yönelik verme beklentisine dönüştürülmüştür.",
+  "issues": [
+    {
+      "target_ref": "root_000084/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003"
+      ],
+      "evidence_conflict": "Ortak özet, dar çıkış vurgusunu akışın genel ve ortak niteliği olarak sunuyor. Oysa lu_003 içindeki dar yer sınırlaması yalnız mufradat kaynak parçasında bulunuyor; aynı kayda bağlı öteki kaynak parçaları sadece suyun fışkırıp çıkmasını örnekliyor.",
+      "smallest_correction": "Ortak çekirdeği yarık veya çıkıştan suyun fışkırması olarak ifade edin; dar yer vurgusunu ise bütün kaynaklara mal etmeden, kanıtın bir bölümüne ait özel bir sınırlama olarak belirtin."
+    },
+    {
+      "target_ref": "root_000084/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_009"
+      ],
+      "evidence_conflict": "Bu dalın tek kanıtı yalnız ayn kaynağında geçen lu_009 kaydıdır, fakat kaynak sentezi bunu tek kaynaklı bir tanıklık olarak göstermeyip yalnız ortak özet içinde veriyor.",
+      "smallest_correction": "lu_009 için tek kaynaklı tanıklık niteliğini kaynak ayrıntısında açıkça gösterin ve dalın anlamını başka kaynaklarca ortaklaşa doğrulanmış gibi sunmayın."
+    },
+    {
+      "target_ref": "root_000084/B002",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_009"
+      ],
+      "evidence_conflict": "lu_009 yalnız kişinin iyiliğinin çok olduğunu bildirir; iyiliğin kişiden başkalarına çıkmasını, verilmesini veya başkalarınca beklenmesini kurucu sınır yapmaz. root_000818/B006 karşılaştırması ise odağı kişiden beklenen ve çıkan iyilik diye yeniden kurarak bu içkin niteliği esirgeme davranışının tam karşıtı sayıyor.",
+      "smallest_correction": "İlişkiyi near_neighbor ve partial olarak kurun; bu dalı kişideki iyilik bolluğu, komşuyu ise iyiliği engelleme ve başkasına ulaştırmama davranışı olarak ayırın."
+    }
+  ]
+}

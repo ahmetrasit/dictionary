@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Üç dalın kavram haritaları, açıklamaları, sözlüksel karşılıkları ve komşu sınırları kanıtla uyumludur. Ancak üçüncü dalın tek kaynaklı tanıklığı ortak kaynak özeti altında bırakılmış ve kaynak ayrıntısı olarak gösterilmemiştir.",
+  "issues": [
+    {
+      "target_ref": "root_000078/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011"
+      ],
+      "evidence_conflict": "lu_011 yalnızca mufradat kaynağına bağlıdır. Buna rağmen common_claim_ids içinde yer almakta, common_summary birden çok kaynağın ortak tanıklığı bulunmadığını söylerken source_details dizisi boş bırakılmaktadır; böylece tek kaynaklı kayıt kaynak ayrıntısında gösterilmemektedir.",
+      "smallest_correction": "lu_011 kaydını common_claim_ids listesinden çıkarıp source_details içine sole_attestation türünde, yalnızca bu kaynağa özgü belaya düşüren söz taşıma bilgisini veren bir satır olarak ekleyin."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtı düzenli biçimde yansıtıyor; ancak iki dalın tanımı bağımlı ayrıntıları çekirdeğe taşıyor, ikinci dalın kavram karşılığı aynı kapsam sorununu sürdürüyor ve bir kaynak biçimi ayrılığı sentezde görünmez kalıyor.",
+  "issues": [
+    {
+      "target_ref": "root_000052/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002"
+      ],
+      "evidence_conflict": "lu_001 katılımcı belirtmeden iyiliği umut ederek bekleme çekirdeğini verir; birinin iyiliğini umup bekleme yapısı lu_002'ye özgüdür. F002 bu yapıyı uzmanlaşma olarak ayırdığı halde tanım, bir kişi veya şeyden gelecek iyilik koşulunu dalın tamamına taşır.",
+      "smallest_correction": "Tanımın ilk cümlesini katılımcısız iyiliği umut ederek bekleme çekirdeğiyle sınırlandırın; birinden gelecek iyiliği umup bekleme yapısını yalnız F002'de bırakın."
+    },
+    {
+      "target_ref": "root_000052/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_004"
+      ],
+      "evidence_conflict": "lu_004'te maqayis aynı umut anlamını yalın bir ad biçimiyle, sihah ile tahdhib ise iyelikli kullanım içinde verir. Ortak özet yalnız değişik bir ad biçiminden söz ederek bu kaynaklar arası biçim ayrılığını görünmez kılar.",
+      "smallest_correction": "Ortak özete, kaynak adlarını satırlara dağıtmadan, aynı umut adının aktarımlarda yalın ad biçimi ile iyelikli kullanım arasında değiştiğini belirten kaynak-yansız bir karşıtlık ekleyin."
+    },
+    {
+      "target_ref": "root_000052/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005",
+        "lu_006"
+      ],
+      "evidence_conflict": "lu_005 yalnız bakışta dikkat ve temkini çekirdek olarak verir; nesneyi açık seçik hale getirmeye yönelik bakış lu_006'nın tek kaynaklı uzmanlaşmasıdır. F002 bunu uzmanlaşma diye ayırsa da tanım açık seçik kavrama amacını bütün dal için zorunlu kılar.",
+      "smallest_correction": "Tanımı bakışta dikkat ve temkinle inceleme çekirdeğine çekin; açık seçik kavramaya yönelik bakışı F002'de lu_006 ile sınırlı tutun."
+    },
+    {
+      "target_ref": "root_000052/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005",
+        "lu_006"
+      ],
+      "evidence_conflict": "Kavram karşılığındaki anlayarak sözü ve uygulanabilirlik açıklaması, lu_006'daki açık seçik kavrama bileşenini lu_005'in de zorunlu çekirdeğiymiş gibi gösterir. Bu nedenle karşılığın hatasız uyum beyanı dalın kaynak kapsamını aşar.",
+      "smallest_correction": "Kavram karşılığını bakışta dikkat ve temkinle inceleme çekirdeğine indirin; açık seçik kavrama unsurunu yalnız lu_006'ya bağlı bağlamsal karşılıkta koruyun ve hata profilini buna göre güncelleyin."
+    }
+  ]
+}

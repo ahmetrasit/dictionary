@@ -1,0 +1,65 @@
+{
+  "inputs_sha256": "dfca5f2606e713d4ad1e0b22b1fd45a617f30fbbe009db754e99e651380e270c",
+  "verdict": "repair",
+  "summary": "Dal ayrımları genel olarak kanıtla uyumludur; ancak B001 kavram karşılığı ses adını eyleme indirger, B001 ve B003 kaynak sentezleri tek-kaynak tanıklıklarını belirtmez ve B003 genel çekirdeği ile lu_006 karşılığına yalnız su kullanımının desteklediği pay anlamı taşınır.",
+  "issues": [
+    {
+      "target_ref": "root_000057/B001",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002"
+      ],
+      "evidence_conflict": "lu_001 sesin adını, lu_002 ise sesi çıkarma eylemini tanıklar. \"İnilti veya ıkınma sesi çıkarma\" yalnız eylem adı olarak okunur ve lu_001'deki ses adını kavram karşılığında korumaz.",
+      "smallest_correction": "Kavram karşılığını sesi ve eylemi ayrı ayrı gösterecek biçimde, örneğin \"inilti veya ıkınma sesi ve bu sesi çıkarma\" olarak düzeltin; mevcut facet bağlantılarını koruyun."
+    },
+    {
+      "target_ref": "root_000057/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001"
+      ],
+      "evidence_conflict": "lu_001 yalnızca sihah kaynağında tanıklanır. Buna rağmen ses adı ortak özette lu_002 ile birlikte kaynaklar arası ortak bilgi gibi sunulur ve tek-kaynak tanıklığını bildiren bir kaynak ayrıntısı bulunmaz.",
+      "smallest_correction": "lu_001'deki ses adı biçimini sihah kaynağına özgü bir sole_attestation ayrıntısı olarak gösterin ve ortak özeti çok kaynaklı çekirdekle sınırlayın."
+    },
+    {
+      "target_ref": "root_000057/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_006",
+        "lu_007"
+      ],
+      "evidence_conflict": "lu_006 genel olarak belirlenmiş şeyi tanıklar; paya ayrılma anlamı ise su kullanımını veren lu_007'ye bağlıdır. Tanım ve F001, \"pay\" unsurunu yalnız lu_006 ile desteklenen genel çekirdeğe taşıyarak uzmanlaşmayı çekirdeğe yükseltir.",
+      "smallest_correction": "Genel tanım ve F001'den pay unsurunu çıkarıp çekirdeği belirlenmiş şeyle sınırlayın; bölüştürülmüş veya ayrılmış su payını yalnız lu_007'ye bağlı F002 uzmanlaşmasında tutun."
+    },
+    {
+      "target_ref": "root_000057/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_006",
+        "lu_007"
+      ],
+      "evidence_conflict": "B003'teki lu_006 ve lu_007 yalnızca maqayis kaynağında tanıklanır. Mevcut sentez lu_006'yı ortak özette verir, lu_007'yi ise yalnız extension olarak işaretler; dalın bütünüyle tek kaynağa dayanması belirtilmez.",
+      "smallest_correction": "Her iki iddianın maqayis kaynağına özgü tek-kaynak tanıklıkları olduğunu kaynak sentezinde açıkça gösterin; lu_007'nin suya özgü uzmanlaşma niteliğini de koruyun."
+    },
+    {
+      "target_ref": "root_000057/B003",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_006"
+      ],
+      "evidence_conflict": "lu_006 yalnız genel \"belirlenmiş\" anlamını verir. \"Ölçüsü veya payı belirlenmiş\" karşılığındaki pay seçeneği lu_006'da yoktur; suyun belirlenmiş veya bölüştürülmüş olması lu_007'nin ayrı kullanımına aittir.",
+      "smallest_correction": "lu_006 hedef karşılığını \"belirlenmiş\" veya kanıtı aşmayan eşdeğer bir genel ifadeyle sınırlandırın; su payı karşılığını lu_007'de bırakın."
+    }
+  ]
+}

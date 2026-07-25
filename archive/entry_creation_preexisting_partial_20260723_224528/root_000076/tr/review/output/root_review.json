@@ -1,0 +1,43 @@
+{
+  "verdict": "repair",
+  "summary": "Kesin eş anlamlı olarak yayımlanan üç ilişki, bağımlı biçim ve örnek ayrıntılarına rağmen çekirdek anlam ve sınır bakımından kanıtla uyumludur. Ancak bir kavram karşılığı dalın zamansal kapsamını düşürüyor; çaba dalındaki kalıplaşmış örnek de hem kavram haritasında hem komşu ayrımında bağımsız sınır özelliği gibi sunuluyor.",
+  "issues": [
+    {
+      "target_ref": "root_000076/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_004"
+      ],
+      "evidence_conflict": "lu_004 ile verilen özel kullanım yalnız fiziksel yakınlığa indirgenemez; dalın tanımı ve sağlanan komşu sınırı yerin yanında zamanı da kapsar. Kavram karşılığı yalnız \"yanında\" derken hata kaydının hiçbir kayıp olmadığını söylemesi, zamansal çekirdek kullanımı ana karşılıktan düşürür.",
+      "smallest_correction": "Kavram karşılığını \"yanında veya sırasında\" gibi yer ve zaman değerlerini birlikte taşıyan doğal bir ifadeyle değiştirin; uygulanabilirlik ve hata kaydını da bu kapsamla uyumlu hale getirin."
+    },
+    {
+      "target_ref": "root_000076/B010",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_022",
+        "lu_023",
+        "lu_024"
+      ],
+      "evidence_conflict": "lu_022 ve lu_023 yoğun çaba gösterme çekirdeğini verir. lu_024 ise hiçbir çabayı esirgememeyi anlatan bağımlı bir kalıplaşmış kullanımdır; ayrı bir kapsam genişlemesi değildir. F002'nin \"extension\" rolü bu örneği dal sınırına yükseltir.",
+      "smallest_correction": "F002'nin rolünü \"example\" olarak değiştirin ve çekirdek tanımı olduğu gibi bırakın."
+    },
+    {
+      "target_ref": "root_000076/B010",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_022",
+        "lu_023",
+        "lu_024"
+      ],
+      "evidence_conflict": "Komşu ayrımındaki focus_only, lu_024'teki hiçbir çabayı esirgememe kalıbını bu dalın sınırına özgü bir koşul gibi gösterir. Oysa lu_022 ve lu_023'ün çekirdeği komşuyla paylaşılan yoğun gayrettir; kısmi eşleşmeyi doğuran fark, komşu kartındaki ciddiyet ve yolculuk kapsamlarının daha geniş olmasıdır.",
+      "smallest_correction": "focus_only değerini null yapın ve ayrımı, ortak yoğun çaba çekirdeği ile yalnız komşuda bulunan daha geniş ciddiyet ve yolculuk alanlarına dayandırın; near_synonym ve partial sınıflarını koruyun."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "inputs_sha256": "b5ab3cefac668f4d18e18540f6c21c98573fde1763489da9e50ec17eb24c6101",
+  "verdict": "repair",
+  "summary": "B004 dalında lu_026 ile kanıtlanan şaraba özgü kullanım, ürün ve içecek genellemeleriyle gereğinden fazla genişletilmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_000060/B004",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_026"
+      ],
+      "evidence_conflict": "Kanıt yalnızca şarabın ilk çıkan bölümünü bildirirken tanım bunu herhangi bir ürünün ilk elde edilen kısmına, F003 ise herhangi bir içeceğe genişletiyor.",
+      "smallest_correction": "Tanım ve F003 içindeki bu örneği şarabın ilk çıkan bölümüyle sınırlandırın."
+    },
+    {
+      "target_ref": "root_000060/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_026"
+      ],
+      "evidence_conflict": "Kaynağa özgü ayrıntı şarabın ilk çıkan bölümüdür; özet bunu genel bir içeceğin ilk elde edilen kısmı olarak aktarıyor.",
+      "smallest_correction": "lu_026 ayrıntısında genel içecek ifadesini şarabın ilk çıkan bölümü olarak düzeltin."
+    },
+    {
+      "target_ref": "root_000060/B004",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_026"
+      ],
+      "evidence_conflict": "İlk elde edilen ürün karşılığı ve benzer ürünlere uzanan uygulanabilirlik açıklaması, yalnızca şarabı belirten kanıttan daha geniştir.",
+      "smallest_correction": "Karşılığı ve uygulanabilirlik açıklamasını şarabın ilk çıkan bölümüyle sınırlayın."
+    },
+    {
+      "target_ref": "root_000060/B004",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_026"
+      ],
+      "evidence_conflict": "lu_026 için içeceğin ilk elde edilen bölümü karşılığı, şaraba özgü kanıtı bütün içeceklere genişletiyor.",
+      "smallest_correction": "lu_026 karşılığını şarabın ilk çıkan bölümü olarak daraltın."
+    }
+  ]
+}

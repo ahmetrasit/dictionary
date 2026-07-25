@@ -1,0 +1,85 @@
+{
+  "inputs_sha256": "d41a614a44d94270597cb3f49ff5baf3cca2aed0cd83288eda2a3ea79b5cfba9",
+  "verdict": "repair",
+  "summary": "root_000100/B004, ortakla karşılıklı ayrılma kapsamını kaybediyor ve bu kayıp komşu ayrımında gerçekte bulunmayan bir asimetri üretiyor. Aynı dalın kaynak sentezi ile sözlüksel ve bağlamsal karşılıkları da düzeltilmeli; root_000099/B004 içindeki sıradan karşılıklarda açıklama yerine kullanılan kaynak kökenli terim kaldırılmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_000100/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_014"
+      ],
+      "evidence_conflict": "lu_014, karşılıklı ayrılmayı hem kadın ile eşi hem de ortak için tanıklar. Tanım ve F002 ise kapsamı yalnızca eşlere indirerek ortakla ayrılmayı kaybediyor.",
+      "smallest_correction": "Tanımda ve F002'de karşılıklı yükümlülük kaldırarak ayrılan katılımcıları eşler veya ortaklar olarak belirtin."
+    },
+    {
+      "target_ref": "root_000100/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_014"
+      ],
+      "evidence_conflict": "lu_014'ün tek kaynak ayrıntısı eşle ayrılmanın yanında ortakla ayrılmayı da içerir. Sentez yalnızca eşleri anıyor ve sıradan Türkçe açıklama yerine kaynak kökenli ibra terimine dayanıyor.",
+      "smallest_correction": "lu_014 özetini eşlerin veya ortakların karşılıklı olarak birbirlerini yükümlülükten çıkarıp ayrılması şeklinde genişletin ve ibra terimini doğrudan açıklamayla değiştirin."
+    },
+    {
+      "target_ref": "root_000100/B004",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_014"
+      ],
+      "evidence_conflict": "Sıradan karşılık politikası taşıyan lu_014, hem eş hem ortak ayrılığını bildirir. Hedef karşılık ortağı dışarıda bırakıyor ve eylemi açıklamak yerine ibra terimini kullanıyor.",
+      "smallest_correction": "lu_014 karşılığını eşiyle veya ortağıyla, birbirlerini yükümlülükten çıkararak ayrıldı gibi düz Türkçe ve iki katılımcı türünü de koruyan bir ifadeyle değiştirin."
+    },
+    {
+      "target_ref": "root_000100/B004",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_014"
+      ],
+      "evidence_conflict": "Bağlamsal karşılık, lu_014'teki eş veya ortak kapsamını yalnızca eşlere indiriyor ve anlamı açıklamak yerine ibra terimini koruyor.",
+      "smallest_correction": "Karşılığı eşlerin veya ortakların karşılıklı olarak yükümlülükleri kaldırıp ayrılması biçiminde düzeltin."
+    },
+    {
+      "target_ref": "root_000100/B004",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_014"
+      ],
+      "evidence_conflict": "root_000099/B004 ile kurulan ilişkide ortakla ayrılma yalnızca komşuya ait gösteriliyor. Oysa odak dalın lu_014 tanıklığı ortakla ayrılmayı açıkça kendi sınırına da alır.",
+      "smallest_correction": "Ortakla ayrılmayı komşuya özgü fark olmaktan çıkarın; ilişki türünü ve kalan asimetriyi iki dalın gerçek sınırlarına göre yeniden değerlendirin."
+    },
+    {
+      "target_ref": "root_000099/B004",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_016",
+        "lu_018"
+      ],
+      "evidence_conflict": "lu_016 ve lu_018 sıradan karşılık politikası taşır; mevcut karşılıklar temel eylemi açıklamak yerine ibra terimini kullanıyor.",
+      "smallest_correction": "lu_016'yı onu borç veya güvence yükümlülüğünden çıkardım, lu_018'i eşiyle veya ortağıyla karşılıklı yükümlülükleri kaldırarak ayrıldı gibi doğrudan Türkçe açıklamalarla verin."
+    },
+    {
+      "target_ref": "root_000099/B004",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_018"
+      ],
+      "evidence_conflict": "lu_018 için verilen bağlamsal karşılık, karşılıklı yükümlülük kaldırma anlamını açıklamak yerine ibra terimine bırakıyor.",
+      "smallest_correction": "Bağlamsal karşılığı karşılıklı yükümlülükleri kaldırarak ayrılma biçiminde düz Türkçeyle değiştirin."
+    }
+  ]
+}

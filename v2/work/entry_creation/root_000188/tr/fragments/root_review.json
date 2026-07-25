@@ -1,0 +1,99 @@
+{
+  "inputs_sha256": "3d527a1ed240d3e6f362769729ded4af6b6b0ebe6daa5f697d03a291f3ab3439",
+  "verdict": "repair",
+  "summary": "Girdi genel olarak kanıtla uyumludur; ancak kaynak değişkelerinin çekirdekten ayrılması, iki kaynak ayrıntısının korunması, bir katılımcı rolü ve Temim dalının özel ad kimliği yayımdan önce düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000188/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_018"
+      ],
+      "evidence_conflict": "lu_018, en uzun gece örneğinin yanında eksiksiz bir sayı örneğini de içerir; kaynak özeti yalnızca doğal süre ve gece örneklerini aktararak bu ayırt edici miktar kullanımını dışarıda bırakır.",
+      "smallest_correction": "lu_018 çok kaynaklı olduğundan, eksiksiz sayı veya sayılan miktar örneğini kaynak belirtmeden common_summary içine ekleyin."
+    },
+    {
+      "target_ref": "root_000188/B006",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_022"
+      ],
+      "evidence_conflict": "lu_022 iki farklı kaynak uygulaması verir; F001 bunların ikisini de core içinde ayrıntılı biçimde sıralarken F002 aynı ayrıntıları source_variant olarak yeniden sıralar. Böylece ortak çekirdek ile kaynak değişkeleri ayrılmamıştır.",
+      "smallest_correction": "F001'i okla bölüştürülen deve etindeki tamamlayıcı dağıtım ortaklığıyla sınırlayın; iki alternatif uygulamayı yalnızca F002 source_variant içinde tutun."
+    },
+    {
+      "target_ref": "root_000188/B007",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_024",
+        "lu_025"
+      ],
+      "evidence_conflict": "lu_024 malzemeyi isteyen kişiyi, lu_025 ise ona verilen parçayı gösterir; F002'deki \"istenen kişiye bağışlanan\" sözü alıcı rolünü tersine çevirir.",
+      "smallest_correction": "F002'de \"istenen kişiye\" ifadesini \"isteyen kişiye\" olarak değiştirin."
+    },
+    {
+      "target_ref": "root_000188/B008",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_028"
+      ],
+      "evidence_conflict": "lu_028 içindeki bir aktarım, biçimin başındaki sesin başka bir diş sesinin yerine geçmiş olabileceğini söyleyerek kök bağlantısını ihtiyatlı bırakır. Kaynak sentezi bu türetim ve aidiyet çekincesini bütünüyle atlar.",
+      "smallest_correction": "lu_028 çok kaynaklı olduğundan, bu olası ses değişimini ve kök aidiyeti çekincesini kaynak belirtmeden common_summary içinde koruyun."
+    },
+    {
+      "target_ref": "root_000188/B009",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_029",
+        "lu_030"
+      ],
+      "evidence_conflict": "lu_029 ve lu_030 belirli topluluğu Temim olarak tanımlar; tanım ve facetler bunu yalnızca \"belirli bir soy topluluğu\" diye genelleştirerek dalı öteki özel topluluk adlarından ayıran kimliği siler.",
+      "smallest_correction": "Tanımda ve ilk ilgili facette topluluğu Temim adıyla açıkça belirtin; sonraki göndermeler bu adı temel alabilir."
+    },
+    {
+      "target_ref": "root_000188/B009",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_030"
+      ],
+      "evidence_conflict": "lu_030 yalnızca bir sözlükte tanıklanır; buna rağmen common_summary ve common_claim_ids içinde ortak malzeme gibi sunulmuş, sole_attestation olarak ayrılmamıştır.",
+      "smallest_correction": "lu_030'u common_claim_ids içinden çıkarıp Temim görüşü, eğilimi ve yerleşim çevresiyle özdeşleşmeyi anlatan bir sole_attestation source_details satırına taşıyın."
+    },
+    {
+      "target_ref": "root_000188/B009",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_029",
+        "lu_030"
+      ],
+      "evidence_conflict": "Kavram karşılığı yalnızca belirsiz bir topluluğa bağlılık ve özdeşleşmeyi söyler; lu_029'daki Temim topluluğunun adı olma çekirdeğini temsil etmez ve özel göndergenin kimliğini korumaz.",
+      "smallest_correction": "Kavram karşılığını Temim topluluğunun kendisini, ona bağlılığı ve onunla özdeşleşmeyi birlikte adlandıracak biçimde düzeltin."
+    },
+    {
+      "target_ref": "root_000188/B009",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_029",
+        "lu_030"
+      ],
+      "evidence_conflict": "Her iki lexical gloss da gerekli özel adı \"belirli bir soy topluluğu\" veya \"o topluluk\" sözleriyle değiştirir. Bu genel ifadeler lu_029 ve lu_030'un Temim'e özgü göndergesini korumaz.",
+      "smallest_correction": "lu_029 ve lu_030 karşılıklarında Temim adını açıkça kullanın; sıradan açıklamaları bu özel kimliğin adı, mensubu ve onunla özdeşleşme olarak bırakın."
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "inputs_sha256": "b959141123348c8267d67019796c04cf89ac65790d25f95d9daa12cb55200da3",
+  "verdict": "repair",
+  "summary": "Kavram haritasi ve Turkce karsiliklar genel olarak kanitla uyumludur; ancak bazi kaynaklara ozgu kayitlar ortak gorus gibi sunulmus, iki facet yanlis siniflandirilmis ve yalınlik dalindaki bir karsilik modal kosulu kaybetmistir. Bu noktalar yayindan once duzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000116/B001",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003",
+        "lu_004"
+      ],
+      "evidence_conflict": "F002, yere yayilma kullanimini ses degismeli soyleyisle tek bir specialization altinda birlestiriyor. lu_003 anlamsal bir kullanim, lu_004 ise ayni eylemin ses varyantidir; bunlar ayni facet roluyle temsil edilemez.",
+      "smallest_correction": "F002'yi yalniz lu_003 ile specialization olarak birakip lu_004 icin ayri bir source_variant faceti ekleyin."
+    },
+    {
+      "target_ref": "root_000116/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002",
+        "lu_003",
+        "lu_004"
+      ],
+      "evidence_conflict": "Ozet, yere yayilmayi ve ses varyantini kaynaklarin ortak kaydi gibi birlestiriyor; oysa lu_003 ile lu_004 yalniz Sihah'ta bulunur ve lu_001 ile lu_002 icindeki yayma, genisletme ve sikmanin karsiti aciklamalari kaynaklara gore ayrisir.",
+      "smallest_correction": "Ortak ozeti yalniz paylasilan yayma ve uzama cekirdegine daraltin; Sihah'a ozgu yere yayilma ve ses varyantini, uygun claim ID'lerle bu kaynaga ozgu ayrintida verin."
+    },
+    {
+      "target_ref": "root_000116/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005",
+        "lu_006",
+        "lu_008"
+      ],
+      "evidence_conflict": "Ozet, genislik, duzluk ve cikintisizligi kaynaklarin ortak arazi tarifi gibi sunuyor. Cikintisiz ve tumseksiz olma lu_008 ile yalniz Tahdhib'de kayitlidir; lu_005 ve lu_006 ise kaynaklara gore serilen esya benzetmesi, genis arazi ve her yayilmis seyi adlandirma gibi farkli ayrintilar tasir.",
+      "smallest_correction": "Ortak ozeti serilmis yuzey ile yayilmis yer baglantisina daraltin ve Tahdhib'in cikintisiz arazi kaydini lu_008 ile kaynaga ozgu ayrinti olarak ayirin."
+    },
+    {
+      "target_ref": "root_000116/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_009",
+        "lu_010",
+        "lu_011"
+      ],
+      "evidence_conflict": "Kaynaklarin genislik, artis ve ustunlugu ortak cekirdek olarak verdigi soyleniyor. lu_009'da ustunluk yalniz Ayn'a, artis Tahdhib'e, genislik ise diger kayitlara aittir; lu_010 yalniz Tahdhib'deki ses varyanti, lu_011 yalniz Mufradat'taki gecim ornegidir.",
+      "smallest_correction": "Ortaklik iddiasini genislik ekseniyle sinirlayin; ustunluk ve artis farkini tarafsiz bir karsilastirma olarak belirtin, tek kaynakli ses varyanti ile gecim ornegini ilgili kaynaga ozgu ayrintilara tasiyin."
+    },
+    {
+      "target_ref": "root_000116/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_015",
+        "lu_016",
+        "lu_017",
+        "lu_018"
+      ],
+      "evidence_conflict": "Ozet, isteme, alma, saldirma ve verme amaclarini kaynaklarin ortak aciklamasi gibi aktarir. Bu amac dizisi ve suya uzatilan avuc ornegi Mufradat'a ozgudur; harcayici el Maqayis'te, sevilen veya sevilmeyen seylere el uzatma ise Ayn ile Tahdhib'de kayitlidir.",
+      "smallest_correction": "Ortak ozeti el veya kolu uzatma cekirdegine daraltin; Mufradat'in amac listesini ve orneklerini lu_015, lu_017 ve lu_018 ile kaynaga ozgu ayrintida verin, diger ayrimlari da ortaklik iddiasi kurmadan koruyun."
+    },
+    {
+      "target_ref": "root_000116/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_019",
+        "lu_020",
+        "lu_021",
+        "lu_022"
+      ],
+      "evidence_conflict": "Ozet, konusma rahatligi, cekingenligi birakma, kaynasma ve sevimli yuz ayrintilarini tek bir kaynak ortakligi gibi sunar. Ilk iki kayit Ayn ile Tahdhib'e, cekingenligi birakma lu_021 ile yalniz Sihah'a, sevimli yuz lu_022 ile yalniz Tahdhib'e aittir.",
+      "smallest_correction": "Ortak ozeti bu kullanimlarin toplumsal aciklik bagina indirgemek ve lu_021 ile lu_022'yi kendi tek kaynaklarina ozgu ayrintilar olarak ayirmak yeterlidir."
+    },
+    {
+      "target_ref": "root_000116/B007",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_024",
+        "lu_025"
+      ],
+      "evidence_conflict": "Iki kullanim iki kaynagin ortak kaydi degildir: ulkeyi enine boyuna dolasma yalniz Sihah'ta, kokulu bitkili arazide gezinti ve bunun arazi adindan turetilmesi yalniz Tahdhib'dedir. Turetim bilgisi de mevcut ozette kaybolmustur.",
+      "smallest_correction": "Tarafsiz ortak ozeti koruyup lu_024 icin Sihah'a, lu_025 icin Tahdhib'e ozgu iki ayrinti ekleyin ve lu_025'teki turetim bagini acikca belirtin."
+    },
+    {
+      "target_ref": "root_000116/B008",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_027"
+      ],
+      "evidence_conflict": "Ozet yalniz bir cogul bicim varmis gibi konusur. lu_027, Ayn'in bir cogulu, Tahdhib'in baska bir cogulu, Sihah'in ise her iki cogulu birlikte verdigini gosteren yayinla ilgili bir kaynak farki tasir.",
+      "smallest_correction": "Cogul bicimler arasindaki kaynak farkini common_summary icinde tarafsizca belirtin ve mumkun olan kaynaga ozgu ayrintiyi lu_027 ile ekleyin."
+    },
+    {
+      "target_ref": "root_000116/B011",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_033"
+      ],
+      "evidence_conflict": "F003, bir millik kullanimi source_variant olarak etiketliyor; kanitta bu bir ses veya kaynak varyanti degil, uzaklik bildiren ayri bir collocation ve anlamsal uzmanlasmadir.",
+      "smallest_correction": "F003 rolunu specialization veya extension olarak degistirin; source_variant etiketini kaldirin."
+    },
+    {
+      "target_ref": "root_000116/B011",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_031",
+        "lu_032",
+        "lu_033"
+      ],
+      "evidence_conflict": "Ozet uc kullanim icin genel olarak kaynaklar ifadesini kullaniyor. lu_032 ve lu_033 yalniz Tahdhib'dedir; ayrica lu_031'de Sihah yalniz uzakligi, Tahdhib uzaklikla birlikte uzunlugu aciklar.",
+      "smallest_correction": "Ortak ozeti lu_031'in uzak yol cekirdegine daraltin; uzunluk farkini ve lu_032 ile lu_033'teki iki tek kaynakli olcuyu Tahdhib'e ozgu ayrintida verin."
+    },
+    {
+      "target_ref": "root_000116/B012",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_034"
+      ],
+      "evidence_conflict": "Ozet yalınlik anlamini kosulsuz bir kaynak tanimi gibi aktarir. lu_034 bunun Mufradat'ta bazi kisilerin yaptigi mecazi bir aktarma oldugunu soyler; hem atif hem de sinirlayici turetim bilgisi kaybolmustur.",
+      "smallest_correction": "lu_034'u Mufradat'a ozgu ayrintida verip anlamin bazi kullananlarca mecazen aktarildigi sinirlamasini ve turetimini koruyun."
+    },
+    {
+      "target_ref": "root_000116/B012",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_034"
+      ],
+      "evidence_conflict": "Bilesimsiz ve duzenlenmemis olma karsiligi, kanittaki bilesim, telif ve duzenin tasavvur edilememesi kosulunu salt fiili duzensizlik gibi gosterebilir.",
+      "smallest_correction": "Karsiligi bilesim ve duzenin dusunulemedigi yalınlik seklinde degistirerek modal kosulu koruyun."
+    }
+  ]
+}

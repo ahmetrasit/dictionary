@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "B003 dalında dumanın uygulanma yeri bir kaynak çeşidinde arıların üzeri, diğerinde kovan olduğu halde sentez ve sözlüksel karşılık yalnız kovanı koruyor.",
+  "issues": [
+    {
+      "target_ref": "root_000073/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011"
+      ],
+      "evidence_conflict": "Kanıt, işlemi bir aktarımda arıların üzerine, diğerinde kovana duman verme olarak sunuyor. Ortak özet yalnız kovana duman verildiğini söyleyerek bu belirgin kaynak ayrımını kapsamıyor.",
+      "smallest_correction": "Ortak özette dumanın kaynağa göre kovana ya da arıların üzerine verildiğini belirtin."
+    },
+    {
+      "target_ref": "root_000073/B003",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011"
+      ],
+      "evidence_conflict": "Sözlüksel karşılık yalnız kovana duman vermeyi içeriyor; oysa verilen anlam dumanın arıların üzerine veya kovana uygulanmasını açıkça kapsıyor.",
+      "smallest_correction": "Karşılığı \"arıları çıkarıp balı almak için kovana ya da arıların üzerine duman vermek\" biçiminde genişletin."
+    }
+  ]
+}

@@ -44,6 +44,15 @@ Markdown table. If the renderer needs a mechanical value, extend the script or
 packet contract. If the value requires linguistic judgment, add only the
 smallest keyed editorial field to JSONL.
 
+Root packet creation is a deterministic coordinator operation, not an agent
+work unit. Do not spawn native agents whose sole responsibility is to run
+`python3 scripts/root_packet.py <root_id>` or any other packet-generation
+script. The coordinator may run packet scripts locally, in batches, or through a
+plain job runner, and then hand the resulting packet or a derived evidence
+package to editorial agents. A spawned agent must own an authored analytical or
+review artifact with evidence-bound judgments; it may run validation or helper
+commands only in service of that authored output.
+
 Agents never edit rendered files. The top-level orchestrator also never
 manually repairs authored JSONL or rendered Markdown: it sends substantive
 corrections to the producing agent in a fresh run and reruns the renderer. When
@@ -77,7 +86,9 @@ Then:
 1. Verify `data/working/furuq_v4.sqlite` and `data/working/qac.sqlite` exist.
    Run `./scripts/sync_upstream.sh` only when they are missing or refresh was
    explicitly requested.
-2. Run `python3 scripts/root_packet.py <requested-root_id>`.
+2. The coordinator runs `python3 scripts/root_packet.py <requested-root_id>`
+   only if the canonical packet is missing or stale. This is never delegated to
+   a worker agent.
 3. Read the resolved `root_envelope_id`. An envelope may contain multiple V4
    root records.
 4. Run `python3 scripts/build_entry_bundles.py <requested-root_id>`.

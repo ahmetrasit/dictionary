@@ -1,0 +1,1694 @@
+{
+  "inputs_sha256": "6d09c3477f629fabdd19b9f5e12bc56b7d1036a52a2b3b0525b9f29149053b85",
+  "artifact_format": "dictionary-v2-root-entry-draft-v1",
+  "generated_by": "v2/scripts/accept_root_writer.py",
+  "root_envelope_id": "root_000181",
+  "language": "tr",
+  "branches": [
+    {
+      "branch_ref": "root_000181/B001",
+      "concept_map": {
+        "definition": "Dokuz sayısını ve bu sayıya dayanan doksan, dokuzuncu ve on dokuz gibi sayı ile sıra biçimlerini kapsar.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Temel değer, sekizden sonra ve ondan önce gelen dokuz sayısıdır.",
+            "claim_ids": [
+              "lu_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Dokuz sayısının, dilbilgisel olarak dişil sayılan varlıklarla kullanılan ayrı bir biçimi vardır.",
+            "claim_ids": [
+              "lu_002"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "extension",
+            "statement": "Dokuz onluktan oluşan sayı, cümledeki görevine göre değişen biçimlerle ifade edilir.",
+            "claim_ids": [
+              "lu_003"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "extension",
+            "statement": "Bir dizide dokuzuncu sırada bulunan kişi, gün, gece veya şey belirtilir.",
+            "claim_ids": [
+              "lu_004"
+            ]
+          },
+          {
+            "facet_id": "F005",
+            "role": "extension",
+            "statement": "On ile dokuzun birleşmesinden oluşan sayı, sayılan varlığın dilbilgisel türüne göre iki biçimde kurulur.",
+            "claim_ids": [
+              "lu_005"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynakların ortak çekirdeği dokuz sayısıdır. Bu çekirdek, sayılan varlığın dilbilgisel türüne bağlı dokuz biçimini, cümledeki duruma göre iki biçimde kurulan doksanı ve sayılan varlığın dilbilgisel türüne göre iki biçimde kurulan on dokuzu da kapsar.",
+        "common_claim_ids": [
+          "lu_001",
+          "lu_002",
+          "lu_003",
+          "lu_005"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_004"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek bir kaynak, dokuzuncu sırayı gün ve gece üzerinden örneklendirir."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "dokuz ve buna dayalı sayı biçimleri",
+        "applicability": "Dokuzun temel sayı, onluk, sıra ve birleşik sayı biçimlerini birlikte adlandırmak için uygundur.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Dokuz çekirdeğini ve bu çekirdekten kurulan bütün sayı biçimlerini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003",
+          "F004",
+          "F005"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "dokuz",
+          "usage_role": "general",
+          "applicability": "Doğrudan temel sayıyı veya sayılan varlığın türüne göre seçilen dokuz biçimini karşılar.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Temel dokuz sayısını ve onun sayma işlevini eksiksiz korur.",
+            "loses": "Doksan, dokuzuncu ve on dokuz biçimlerini kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "doksan",
+          "usage_role": "contextual",
+          "applicability": "Dokuz onluktan oluşan sayının söz konusu olduğu cümlelerde kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Dokuz onluktan oluşan sayısal değeri korur.",
+            "loses": "Temel, sıra ve on dokuzla kurulan diğer biçimleri dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        },
+        {
+          "text": "dokuzuncu",
+          "usage_role": "contextual",
+          "applicability": "Bir kişi, zaman veya şeyin dizideki dokuzuncu sırasını bildirir.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Dokuz sayısına dayanan sıra bildirme işlevini korur.",
+            "loses": "Sayma, onluk ve birleşik sayı biçimlerini kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F004"
+          ]
+        },
+        {
+          "text": "on dokuz",
+          "usage_role": "contextual",
+          "applicability": "On ile dokuzun birleştiği sayının doğal Türkçe karşılığı olarak kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "On ve dokuzdan oluşan birleşik sayısal değeri korur.",
+            "loses": "Temel dokuz, doksan ve dokuzuncu biçimlerini kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F005"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_001",
+          "rendering_kind": "ordinary",
+          "target_gloss": "dokuz"
+        },
+        {
+          "lexical_unit_id": "lu_002",
+          "rendering_kind": "ordinary",
+          "target_gloss": "dişil sayılan varlıklarla kullanılan dokuz biçimi"
+        },
+        {
+          "lexical_unit_id": "lu_003",
+          "rendering_kind": "ordinary",
+          "target_gloss": "doksan"
+        },
+        {
+          "lexical_unit_id": "lu_004",
+          "rendering_kind": "ordinary",
+          "target_gloss": "dokuzuncu"
+        },
+        {
+          "lexical_unit_id": "lu_005",
+          "rendering_kind": "ordinary",
+          "target_gloss": "on dokuz"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000181/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal dokuzun sayı, onluk, sıra ve birleşik sayı biçimlerini adlandırır.",
+          "neighbor_only": "Komşu dal, bir kişi ya da şey ekleyerek sekizi dokuza tamamlama sürecini bildirir.",
+          "gloss": "dokuz sayısı ile dokuza tamamlama",
+          "shared_zone": "Her iki dalın anlamı dokuz sayısına ve dokuzuncu sıraya dayanır.",
+          "distinction": "Odak dal sayısal değeri ve ondan kurulan biçimleri gösterir; komşu dal ise bir topluluğun ya da şeyin dokuz kişiye veya parçaya ulaşmasını, buna katkı sağlayan dokuzuncu katılımcıyı öne çıkarır."
+        },
+        {
+          "neighbor_ref": "root_001016/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal dokuz tabanlı sayı ve sıra biçimlerini içerir.",
+          "neighbor_only": "Komşu dal on tabanlı sayı ve sıra biçimlerini içerir.",
+          "gloss": "dokuz ile on",
+          "shared_zone": "İki dal da temel sayıların ve bunlardan kurulan dilbilgisel biçimlerin alanındadır.",
+          "distinction": "Yapısal görevleri benzese de odak dalın değeri dokuz, komşu dalın değeri ondur; bu yüzden doğal cümlelerde birbirlerinin yerine geçmezler."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; en yararlı sınırlar, dokuz sayısını dokuza ulaşma sürecinden ve komşu sayı ailesinden ayıran iki karşılaştırmadır.",
+      "branch_image_ar": "العدد تسعة",
+      "what_is_ar": "التسعة والتسع في العدد؛ التسعون؛ التاسع؛ تسعة عشر وما تركب من العدد",
+      "source_phrase_ar": "التسعة في العدد (maqayis;sihah;mufradat)؛ التسع والتسعة من العدد (ayn;tahdhib)؛ تسعون في موضع الرفع وتسعين في الجر والنصب واليوم التاسع والليلة التاسعة وتسع عشرة (tahdhib)؛ تسعة رهط وتسع وتسعون نعجة وازدادوا تسعا وعليها تسعة عشر (mufradat)",
+      "sources": [
+        "MQ",
+        "AY",
+        "SI",
+        "TA",
+        "MU"
+      ],
+      "source_note": {
+        "TA": "Tek bir kaynak, dokuzuncu sırayı gün ve gece üzerinden örneklendirir."
+      }
+    },
+    {
+      "branch_ref": "root_000181/B002",
+      "concept_map": {
+        "definition": "Bir kişinin bir topluluğun dokuzuncusu olması veya sekiz kişi ya da parçadan oluşanı kendisiyle ya da eklenen bir unsurla dokuza tamamlamasıdır. Bir topluluğun toplamda dokuz kişiye ulaşması da bu sürecin sonuç görünümüdür.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Kişi bir topluluğa katılarak onun dokuzuncu üyesi olur veya topluluk için dokuzuncu kişi işlevi görür.",
+            "claim_ids": [
+              "lu_006"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "core",
+            "statement": "Sekiz olan bir bütün, dokuzuncu unsurun eklenmesiyle dokuza tamamlanır.",
+            "claim_ids": [
+              "lu_007",
+              "lu_009"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "extension",
+            "statement": "Bir topluluk, süreci gerçekleştiren katılımcı ayrıca belirtilmeden dokuz kişiye ulaşır.",
+            "claim_ids": [
+              "lu_008"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Ortak anlatım, kişinin topluluğun dokuzuncusu olmasını ve sekiz olan bir bütünü yeni bir unsur ekleyerek dokuza tamamlamasını aynı sayısal dönüşüm altında birleştirir.",
+        "common_claim_ids": [
+          "lu_006",
+          "lu_007"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_008"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek bir kaynak, topluluğun öznesini belirtmeden doğrudan dokuz kişi olmasını kaydeder."
+          },
+          {
+            "claim_ids": [
+              "lu_009"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek bir kaynak, sekizi dokuza tamamlayan unsur için dokuzuncu nitelemesini verir ve bu kuruluşu üçü tamamlayan dördüncü örneğiyle açıklar."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "dokuzuncu olma veya dokuza tamamlama",
+        "applicability": "Kişinin dokuzuncu katılımcı olması, sekizin dokuza tamamlanması ve topluluğun dokuz kişiye ulaşması için uygundur.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Dokuzuncu katılımcıyı, tamamlama işlemini ve dokuz olma sonucunu birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "topluluğun dokuzuncusu olmak",
+          "usage_role": "contextual",
+          "applicability": "Bir kişinin var olan topluluğa dokuzuncu üye olarak katıldığı bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Kişinin topluluktaki dokuzuncu katılımcı konumunu korur.",
+            "loses": "Nesneyi dokuza tamamlama ve topluluğun kendiliğinden dokuz olma görünümlerini kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "sekizi dokuza tamamlamak",
+          "usage_role": "contextual",
+          "applicability": "Sekiz kişi veya parçadan oluşan bütüne dokuzuncu unsurun eklendiği bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Sekizden dokuza geçişi sağlayan ekleme ve tamamlama işlemini korur.",
+            "loses": "Kişinin topluluktaki dokuzuncu konumunu ve öznesiz dokuz olma sonucunu kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "dokuz kişi olmak",
+          "usage_role": "contextual",
+          "applicability": "Bir topluluğun toplam üye sayısının dokuz olduğu sonuç bağlamında kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Topluluğun dokuz kişiye ulaşmış olmasını korur.",
+            "loses": "Dokuzuncu kişinin rolünü ve sekizi tamamlama işlemini açıkça göstermez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_006",
+          "rendering_kind": "ordinary",
+          "target_gloss": "topluluğun dokuzuncusu olmak"
+        },
+        {
+          "lexical_unit_id": "lu_007",
+          "rendering_kind": "ordinary",
+          "target_gloss": "sekiz olanı dokuza tamamlamak"
+        },
+        {
+          "lexical_unit_id": "lu_008",
+          "rendering_kind": "ordinary",
+          "target_gloss": "dokuz kişi olmak"
+        },
+        {
+          "lexical_unit_id": "lu_009",
+          "rendering_kind": "ordinary",
+          "target_gloss": "sekizi dokuza tamamlayan dokuzuncu"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "tamamlamak",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Bir bütünü eksiksiz duruma getirme işlemini genel olarak korur.",
+            "loses": null,
+            "adds": "Dokuz sayısıyla ilgisi olmayan her türlü tamamlama işlemini de kapsar.",
+            "collision": "Sayısal hedefi belirtilmediğinde dalın ayırt edici sekizden dokuza geçişi kaybolur."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000181/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal bir topluluğu veya bütünü dokuz kişiye ya da parçaya ulaştıran değişimi bildirir.",
+          "neighbor_only": "Komşu dal dokuzun sayı, onluk, sıra ve birleşik sayı biçimlerini adlandırır.",
+          "gloss": "dokuza ulaşma ile dokuz sayısı",
+          "shared_zone": "Her iki dal dokuz sayısına ve dokuzuncu sıra fikrine dayanır.",
+          "distinction": "Odak dalda dokuz, bir katılma veya tamamlama sonucudur; komşu dalda ise herhangi bir değişim gerektirmeyen sayısal değer ve onun dil biçimleridir."
+        },
+        {
+          "neighbor_ref": "root_001016/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal sekiz olanı dokuzuncu unsurla dokuza tamamlar.",
+          "neighbor_only": "Komşu dal dokuz olanı onuncu unsurla ona tamamlar.",
+          "gloss": "dokuza ve ona tamamlama",
+          "shared_zone": "Her iki dal bir kişinin yeni sıra üyesi olmasıyla önceki sayıyı bir artıran tamamlama sürecidir.",
+          "distinction": "İşlem yapısı aynı olsa da başlangıç ve sonuç sayıları farklıdır: odak dal sekizden dokuza, komşu dal dokuzdan ona geçer."
+        },
+        {
+          "neighbor_ref": "root_000203/B003",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal sekizi dokuzuncu unsurla dokuza tamamlar.",
+          "neighbor_only": "Komşu dal ikiyi üçüncü unsurla üçe tamamlar ve yarışta üçüncü gelmeyi de kapsar.",
+          "gloss": "dokuzuncu ve üçüncü tamamlayıcı",
+          "shared_zone": "İki dal da sıradaki yeni unsurun önceki topluluğu bir üst sayıya tamamlamasını anlatır.",
+          "distinction": "Odak dalın hedefi dokuzdur; komşu dalın hedefi üçtür ve komşu ayrıca yarış sırasını kapsayan özel bir kullanıma sahiptir."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; sayı ailesiyle olan sınır ve aynı işlemi farklı hedef sayılarda kuran iki komşu, dalın yapısını en açık biçimde gösterir.",
+      "branch_image_ar": "إتمام الثمانية تسعة",
+      "what_is_ar": "صيرورة القوم أو الشيء تسعة؛ كون المرء تاسعا؛ إتمام الثمانية بتاسع",
+      "source_phrase_ar": "تسعت القوم أي صرت تاسعهم (maqayis;ayn)؛ أتسعت الشيء إذا كان ثمانية فأتممته تسعة (maqayis;ayn)؛ كنت لهم تاسعا (sihah;tahdhib;mufradat)؛ أتسعوا أي صاروا تسعة (sihah)",
+      "sources": [
+        "MQ",
+        "AY",
+        "SI",
+        "TA",
+        "MU"
+      ],
+      "source_note": {
+        "SI": "Tek bir kaynak, topluluğun öznesini belirtmeden doğrudan dokuz kişi olmasını kaydeder.",
+        "TA": "Tek bir kaynak, sekizi dokuza tamamlayan unsur için dokuzuncu nitelemesini verir ve bu kuruluşu üçü tamamlayan dördüncü örneğiyle açıklar."
+      }
+    },
+    {
+      "branch_ref": "root_000181/B003",
+      "concept_map": {
+        "definition": "Bir topluluğa ait malların dokuz eşit payından birini almak veya tahsil etmektir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "İşlemi yapan kişi, topluluğun toplam malının dokuzda birini alır.",
+            "claim_ids": [
+              "lu_010"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar, işlemi topluluğun mallarından sabit olarak dokuzda bir pay alma şeklinde ortaklaşa tanımlar.",
+        "common_claim_ids": [
+          "lu_010"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "malın dokuzda birini almak",
+        "applicability": "Bir topluluğun toplam malından dokuzda birlik payın alındığı işlemler için uygundur.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Malı, dokuzda bir oranını ve alma işlemini eksiksiz korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "malların dokuzda birini tahsil etmek",
+          "usage_role": "contextual",
+          "applicability": "Topluluğun mallarından herhangi bir dokuzda birlik payın alındığı cümlelerde kullanılabilir.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Topluluğun mallarından dokuzda birlik pay alma işlemini korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_010",
+          "rendering_kind": "ordinary",
+          "target_gloss": "topluluğun mallarının dokuzda birini almak"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "vergi almak",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Bir topluluktan mal veya para alma yönünü korur.",
+            "loses": null,
+            "adds": "Yasal bir yükümlülük ve dokuzda birden farklı oranlar ekler.",
+            "collision": "Her vergi bu dalda belirtilen sabit dokuzda bir pay değildir."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000181/B004",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal dokuzda birlik payı alma eylemini içerir.",
+          "neighbor_only": "Komşu dal yalnızca dokuz eşit parçadan biri olan payı adlandırır.",
+          "gloss": "dokuzda biri almak ile dokuzda bir",
+          "shared_zone": "Her iki dalın nicel dayanağı bir bütünün dokuz eşit payından biridir.",
+          "distinction": "Odak dalda alan kişi, topluluğun malı ve alma işlemi kurucudur; komşu dalda ise herhangi bir alma işlemi olmadan yalnızca payın oranı belirtilir."
+        },
+        {
+          "neighbor_ref": "root_001016/B004",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal malların dokuzda birini alır.",
+          "neighbor_only": "Komşu dal malların onda birini alır ve alan kişinin adını da kapsar.",
+          "gloss": "dokuzda bir ile onda bir alma",
+          "shared_zone": "İki dal da bir topluluğun mallarından sabit kesirli pay alma eylemini anlatır.",
+          "distinction": "Eylem yapıları yakın olsa da oranlar farklıdır; ayrıca komşu dal, payı alan görevliyi de kendi sınırına dahil eder."
+        },
+        {
+          "neighbor_ref": "root_000329/B001",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Odak dal alınan payı kesin olarak dokuzda birle sınırlar.",
+          "neighbor_only": "Komşu dal oranı sabit olmayan her türlü payı, bölüşmeyi ve pay vermeyi kapsar.",
+          "gloss": "dokuzda birlik pay ile genel pay",
+          "shared_zone": "Her iki dal bir bütünden ayrılan pay veya hak alanında buluşur.",
+          "distinction": "Odak dal belirli bir oranın alınmasıdır; komşu dal ise oranı ve alma yönünü zorunlu kılmayan genel pay kavramıdır."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; payın kendisi, farklı oranla aynı alma işlemi ve genel pay kavramı en yararlı üç sınırı oluşturur.",
+      "branch_image_ar": "أخذ التُّسع من المال",
+      "what_is_ar": "أخذ تسع أموال القوم",
+      "source_phrase_ar": "تسعت القوم أتسعهم إذا أخذت تسع أموالهم (maqayis;sihah;tahdhib;mufradat)",
+      "sources": [
+        "MQ",
+        "SI",
+        "TA",
+        "MU"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_000181/B004",
+      "concept_map": {
+        "definition": "Bir bütünün dokuz eşit parçaya ayrılmasıyla elde edilen tek paydır; aynı oranı bildiren ikinci bir söz biçimi de bulunur.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Pay, bir bütünün dokuz eşit parçasından tam olarak biridir.",
+            "claim_ids": [
+              "lu_011"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "source_variant",
+            "statement": "Aynı dokuzda birlik payı bildiren başka bir söz biçimi de kullanılır.",
+            "claim_ids": [
+              "lu_012"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar temel biçimi bir bütünün dokuz eşit parçasından biri olarak tanımlar; ikinci biçimin de aynı oranı bildirdiğini aktarır. Bir kayıt, ikinci biçimin yalnızca tek bir aktarıcıdan işitildiğini belirtir.",
+        "common_claim_ids": [
+          "lu_011",
+          "lu_012"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "dokuzda bir",
+        "applicability": "Bir bütünün dokuz eşit payından yalnızca birini gösteren her iki söz biçimi için uygundur.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Bütünü dokuz eşit parçaya ayıran kesin oranı ve tek payı korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "dokuzda birlik pay",
+          "usage_role": "explanatory",
+          "applicability": "Oranın bir bütün içindeki pay niteliğinin özellikle açıklanması gerektiğinde kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Dokuz eşit parçadan biri olan payı açıkça korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_011",
+          "rendering_kind": "ordinary",
+          "target_gloss": "dokuzda bir"
+        },
+        {
+          "lexical_unit_id": "lu_012",
+          "rendering_kind": "ordinary",
+          "target_gloss": "dokuzda bir anlamındaki diğer söz biçimi"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "parça",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Bir bütünden ayrılmış bölüm olma yönünü korur.",
+            "loses": null,
+            "adds": "Dokuz eşit parçaya bağlı olmayan her büyüklükte bölümü de kapsar.",
+            "collision": "Kesin dokuzda bir oranını belirtmediği için başka parça türleriyle karışır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000181/B003",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal yalnızca dokuzda birlik payı adlandırır.",
+          "neighbor_only": "Komşu dal topluluğun mallarından bu payı alma eylemini ve alan kişiyi içerir.",
+          "gloss": "dokuzda bir ile onu alma",
+          "shared_zone": "İki dal aynı dokuzda birlik nicel oranı temel alır.",
+          "distinction": "Odak dal durağan bir pay oranıdır; komşu dal ise mal, alan kişi ve alma işlemi gerektiren bir eylemdir."
+        },
+        {
+          "neighbor_ref": "root_001016/B003",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal bir bütünün dokuzda birlik payıdır.",
+          "neighbor_only": "Komşu dal bir bütünün onda birlik payıdır.",
+          "gloss": "dokuzda bir ile onda bir",
+          "shared_zone": "İki dal da bütünü eşit parçalara ayıran birim kesirleri adlandırır.",
+          "distinction": "Payların yapısı aynı türdedir ancak payda farklıdır: odak dokuz eşit parçadan birini, komşu on eşit parçadan birini gösterir."
+        },
+        {
+          "neighbor_ref": "root_000133/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal payın büyüklüğünü kesin olarak dokuzda birle sınırlar.",
+          "neighbor_only": "Komşu dal oran belirtmeden parçayı, parça topluluğunu ve bütünü parçalara ayırmayı kapsar.",
+          "gloss": "dokuzda bir ile genel parça",
+          "shared_zone": "Her iki dal bir bütünün içinden ayrılan bölüm düşüncesini paylaşır.",
+          "distinction": "Odak dal yalnızca sabit birim kesirdir; komşu dal ise eşitlik veya belirli bir oran gerektirmeyen daha genel parçalama alanıdır."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; alma eylemi, komşu birim kesir ve genel parça kavramı oran sınırını en iyi açıklayan karşılaştırmalardır.",
+      "branch_image_ar": "جزء من تسعة",
+      "what_is_ar": "التُّسع جزء من تسعة؛ التسيع بمعنى التُّسع",
+      "source_phrase_ar": "التسع بالضم جزء من تسعة وكذلك التسيع (sihah)؛ العشير والتسيع بمعنى العشر والتسع (tahdhib)؛ التسع جزء من تسعة (mufradat)",
+      "sources": [
+        "SI",
+        "TA",
+        "MU"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_000181/B005",
+      "concept_map": {
+        "definition": "Ayın dokuzuncu gecesiyle biten üç gecelik dönemdir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Dönem art arda gelen üç geceden oluşur ve sonuncusu ayın dokuzuncu gecesidir.",
+            "claim_ids": [
+              "lu_013"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "associated_use",
+            "statement": "Üç gecelik topluluk, son gecesinin dokuzuncu gece olması nedeniyle dokuz sayısıyla adlandırılır.",
+            "claim_ids": [
+              "lu_014"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar, ayın dokuzuncu gecesiyle sona eren art arda üç geceyi tek bir dönem olarak tanımlar; bir kayıt bu dönemin daha önceki adlandırılmış üç gecelik dönemin ardından geldiğini belirtir.",
+        "common_claim_ids": [
+          "lu_013"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_014"
+            ],
+            "kind": "derivation",
+            "summary": "Tek bir kaynak, üç gecelik dönemin adını son gecenin dokuzuncu sırada bulunmasına bağlar."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "dokuzuncu geceyle biten üç gece",
+        "applicability": "Ay içindeki yedinci, sekizinci ve dokuzuncu geceleri tek bir üçlü dönem olarak anlatmak için uygundur.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Üç gecelik süreyi ve dönemin dokuzuncu geceyle bitme koşulunu korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "ayın dokuzuncu gecesinde biten üçlü",
+          "usage_role": "explanatory",
+          "applicability": "Gecelerin ay içindeki konumunu ve üçlü dönem oluşturduğunu açıklayan bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Ay bağlamını, üç gecelik grubu ve dokuzuncu gecede bitişi korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_013",
+          "rendering_kind": "ordinary",
+          "target_gloss": "ayın dokuzuncu gecesiyle biten üç gece"
+        },
+        {
+          "lexical_unit_id": "lu_014",
+          "rendering_kind": "ordinary",
+          "target_gloss": "sonuncusu dokuzuncu gece olan üç gece"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "ayın ilk dokuz gecesi",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Ay geceleriyle dokuz sayısı arasındaki ilişkiyi yüzeysel olarak korur.",
+            "loses": "Yalnızca üç geceden oluşma ve dokuzuncu gecede sona erme sınırını kaybeder.",
+            "adds": "Döneme ait olmayan ilk altı geceyi ekler.",
+            "collision": "Dokuz gecelik süreyi, üç gecelik sabit dönemle karıştırır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001538/B005",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal ayın dokuzuncu gecesiyle biten üç gecelik dönemdir.",
+          "neighbor_only": "Komşu dal ay başındaki ilk üç geceden sonra gelen başka bir üç gecelik dönemdir.",
+          "gloss": "ardışık üç gecelik ay dönemleri",
+          "shared_zone": "Her iki dal ayın gecelerini art arda üç gecelik adlandırılmış dönemler halinde gruplar.",
+          "distinction": "Dönemlerin uzunluğu aynıdır fakat ay içindeki konumları farklıdır; odak dönem dokuzuncu gecede biter, komşu dönem daha önceki üç gecelik sırayı bildirir."
+        },
+        {
+          "neighbor_ref": "root_000063/B002",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Odak dal ay içinde belirli sırada bulunan üç tam geceyi kapsar.",
+          "neighbor_only": "Komşu dal tek bir gecenin saatlerini ve zaman parçalarını kapsar.",
+          "gloss": "üç gece ile gecenin bölümleri",
+          "shared_zone": "İki dal da gece zamanını bölümlere ayırarak adlandırır.",
+          "distinction": "Odak dal birkaç tam geceden oluşan takvim dönemidir; komşu dal ise bir gecenin kendi içindeki saat ve zaman dilimleridir."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; başka bir üç gecelik ay dönemi ve tek gecenin iç bölümleri, süre ile takvim konumu sınırlarını en açık biçimde gösterir.",
+      "branch_image_ar": "ليال تنتهي بالتاسعة",
+      "what_is_ar": "التسع ثلاث ليال من الشهر آخرها الليلة التاسعة",
+      "source_phrase_ar": "التسع ثلاث ليال من الشهر آخر ليلة منها الليلة التاسعة (maqayis)؛ التسع مثال الصرد ثلاث ليال من الشهر وهي بعد النفل (sihah)؛ ثلاث تسع سمين تسعا لأن آخرتها الليلة التاسعة (tahdhib)؛ التسع ثلاث ليال من الشهر آخرها التاسعة (mufradat)",
+      "sources": [
+        "MQ",
+        "SI",
+        "TA",
+        "MU"
+      ],
+      "source_note": {
+        "TA": "Tek bir kaynak, üç gecelik dönemin adını son gecenin dokuzuncu sırada bulunmasına bağlar."
+      }
+    },
+    {
+      "branch_ref": "root_000181/B006",
+      "concept_map": {
+        "definition": "Develer için dokuz sayısıyla sınıflandırılan susuz bekleme ve suya varma düzenidir. Bir topluluğun develerinin bu düzene göre suya gelmesi de bu kullanıma dahildir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Develerin su içişleri arasındaki susuzluk ve suya dönüş döngüsü dokuz sayısıyla sınıflandırılır.",
+            "claim_ids": [
+              "lu_015"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "associated_use",
+            "statement": "Bir topluluğun develeri, dokuzlu döngüye uygun zamanda suya varır.",
+            "claim_ids": [
+              "lu_016"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Ortak kaynak anlatımı, dokuz sayısıyla adlandırılan düzeni develerin susuzluk ve suya dönüş döngülerinden biri olarak tanımlar.",
+        "common_claim_ids": [
+          "lu_015"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_016"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek bir kaynak, topluluğun develerinin dokuzlu düzene göre suya varmasını ayrıca eylem olarak kaydeder."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "develerin dokuzlu sulama döngüsü",
+        "applicability": "Develerin susuz bekletilmesi ve dokuz sayısıyla belirlenen düzende yeniden suya varması için uygundur.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Develeri, dokuzlu sınıflandırmayı, susuzluk aralığını ve suya dönüşü korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "develeri dokuzlu düzende sulamak",
+          "usage_role": "contextual",
+          "applicability": "Develerin dokuz sayısıyla adlandırılan döngüye göre suya geldiği yetiştiricilik bağlamlarında kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Dokuzlu döngüyü, develeri ve suya varma olayını birlikte korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_015",
+          "rendering_kind": "ordinary",
+          "target_gloss": "develerin dokuzlu susuzluk ve sulama döngüsü"
+        },
+        {
+          "lexical_unit_id": "lu_016",
+          "rendering_kind": "ordinary",
+          "target_gloss": "topluluğun develerinin dokuzlu düzende suya gelmesi"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "dokuz günde bir sulama",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Dokuz sayısı ile sulama düzeni arasındaki bağı korur.",
+            "loses": "Kaynakların yalnızca adlandırdığı döngünün kendi sayım düzenini belirsizleştirir.",
+            "adds": "Kaynaklarda açıkça verilmeyen dokuz tam günlük kesin bir aralık ekler.",
+            "collision": "Döngü adı ile modern takvim günü hesabını özdeşleştirebilir."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001016/B006",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal dokuz sayısıyla sınıflandırılan deve sulama döngüsüdür.",
+          "neighbor_only": "Komşu dal on sayısıyla sınıflandırılan ve onuncu gün ya da iki suya varış arasıyla açıklanan döngüdür.",
+          "gloss": "dokuzlu ve onlu deve sulama döngüsü",
+          "shared_zone": "İki dal da develerin susuzluk aralığını ve yeniden suya varmasını sayı temelli bir döngüyle düzenler.",
+          "distinction": "Hayvan, eylem alanı ve döngü yapısı ortaktır; ayırıcı sınır, odakta dokuzlu, komşuda onlu sayımın kullanılmasıdır."
+        },
+        {
+          "neighbor_ref": "root_000689/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal dokuzlu susuzluk ve suya dönüş düzenidir.",
+          "neighbor_only": "Komşu dal beş gün susuzluktan sonra altıncı gün suya varma düzenidir.",
+          "gloss": "dokuzlu ve altıncı gün sulaması",
+          "shared_zone": "Her iki dal develerin belirli bir bekleme sonrasında yeniden suya götürülmesini anlatır.",
+          "distinction": "Odak döngü dokuz sayısıyla adlandırılır ve gün hesabı ayrıca açıklanmaz; komşu döngü ise beş günlük kesintiyi ve altıncı gündeki varışı açıkça belirtir."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; onlu ve altıncı gün döngüleri aynı yetiştiricilik işlemi içindeki sayı ve hesap farkını en açık biçimde gösterir.",
+      "branch_image_ar": "ظمء الإبل على تسع",
+      "what_is_ar": "التسع من أظماء الإبل؛ ورود الإبل تسعا",
+      "source_phrase_ar": "التسع أيضا ظمء من أظماء الإبل (sihah)؛ أتسع القوم إذا وردت إبلهم تسعا (sihah)؛ التسع من أظماء الإبل (mufradat)",
+      "sources": [
+        "SI",
+        "MU"
+      ],
+      "source_note": {
+        "SI": "Tek bir kaynak, topluluğun develerinin dokuzlu düzene göre suya varmasını ayrıca eylem olarak kaydeder."
+      }
+    },
+    {
+      "branch_ref": "root_000181/B007",
+      "concept_map": {
+        "definition": "Ayın onuncu günündeki belirli oruç gününden bir önceki gündür. Ayrı bir aktarımda ise dokuzuncu gün sözü, günlerin sayılış biçimine bağlı olarak onuncu gündeki oruç günü için yorumlanır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Adlandırılan gün, ayın onuncu günündeki belirli oruç gününden hemen önce gelir.",
+            "claim_ids": [
+              "lu_017"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "source_variant",
+            "statement": "Bir oruç aktarımındaki dokuzuncu gün sözü, özel bir gün sayımıyla onuncu gündeki oruç günü olarak yorumlanır.",
+            "claim_ids": [
+              "lu_018"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Bir oruç aktarımındaki dokuzuncu gün sözü, onlu suya varma hesabının dokuz gün sayılması gerekçesiyle ayın onuncu günündeki belirli oruç gününe yöneltilir.",
+        "common_claim_ids": [
+          "lu_018"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_017"
+            ],
+            "kind": "derivation",
+            "summary": "Tek bir kaynak, terimi ayın onuncu günündeki belirli oruç gününün hemen öncesinde bulunan gün için kullanır ve bu gün adının sonradan türetilmiş olabileceği konusunda tereddüt belirtir."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "onuncu oruç gününden önceki gün ve dokuzuncu gün yorumu",
+        "applicability": "Hem onuncu gündeki oruç gününün hemen öncesini hem de dokuzuncu sözünün onuncu güne yöneltildiği aktarımı birlikte açıklar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Önceki gün ilişkisini ve dokuzuncu gün sözünün onuncu güne ilişkin yorumunu korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "onuncu oruç gününden önceki gün",
+          "usage_role": "contextual",
+          "applicability": "Ayın belirli onuncu gününden hemen önce gelen günü adlandıran cümlelerde kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Belirli onuncu oruç gününden hemen önce gelme ilişkisini korur.",
+            "loses": "Dokuzuncu gün sözünün onuncu güne yöneltildiği yorum biçimini kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "dokuzuncu denilen onuncu oruç günü",
+          "usage_role": "explanatory",
+          "applicability": "Dokuzuncu gün sözünün sayım yorumu nedeniyle onuncu gündeki oruç gününü gösterdiği aktarım için kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Dokuzuncu sözünü onuncu gündeki oruç gününe bağlayan yorum ilişkisini korur.",
+            "loses": "Onuncu oruç gününden önceki ayrı gün kullanımını kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_017",
+          "rendering_kind": "ordinary",
+          "target_gloss": "onuncu oruç gününden önceki gün"
+        },
+        {
+          "lexical_unit_id": "lu_018",
+          "rendering_kind": "ordinary",
+          "target_gloss": "yorumda onuncu oruç gününü gösteren dokuzuncu gün"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "ayın dokuzuncu günü",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Dokuzuncu sıra bilgisini tek başına korur.",
+            "loses": "Belirli onuncu oruç günüyle önceki gün ilişkisini ve aktarımda yapılan özel yorumu kaybeder.",
+            "adds": "Her ayın sıradan dokuzuncu gününü kapsayan genel bir takvim anlamı ekler.",
+            "collision": "Genel sıra günü, bu dala özgü oruç günü bağlamıyla karışır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000181/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal belirli bir oruç gününe bağlı takvim gününü ve yorumunu içerir.",
+          "neighbor_only": "Komşu dal dokuz sayısını ve dokuzuncu sırayı bağlamdan bağımsız sayı biçimleri olarak içerir.",
+          "gloss": "özel oruç günü ile dokuzuncu sıra",
+          "shared_zone": "İki dal dokuzuncu sıra fikrini paylaşır.",
+          "distinction": "Odak dalda sıra, belirli bir onuncu oruç günüyle kurulan takvim ilişkisine bağlıdır; komşu dalda dokuzuncu, herhangi bir dizide kullanılabilen genel sıra biçimidir."
+        },
+        {
+          "neighbor_ref": "root_001076/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal sabit bir onuncu oruç gününden hemen önceki günü gösterir.",
+          "neighbor_only": "Komşu dal konuşma gününden hemen sonraki günü gösterir.",
+          "gloss": "önceki özel gün ile yarın",
+          "shared_zone": "Her iki dal bir günü başka bir güne göre doğrudan komşuluk ilişkisiyle belirler.",
+          "distinction": "Odak dalın yönü geriye ve dayanağı belirli bir oruç gününe doğrudur; komşu dalın yönü ileriye ve dayanağı konuşma anının günüdür."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel dokuzuncu sıra ve konuşma gününe bağlı ertesi gün, dalın özel takvim dayanağını en yararlı biçimde sınırlar.",
+      "branch_image_ar": "التّاسوعاء قبل عاشوراء",
+      "what_is_ar": "التاسوعاء اليوم قبل يوم العاشوراء؛ التاسع المؤول بعاشوراء في خبر الصوم",
+      "source_phrase_ar": "التاسوعاء قبل يوم العاشوراء وأظنه مولدا (sihah)؛ لأصومن التاسع يعني عاشوراء (tahdhib)",
+      "sources": [
+        "SI",
+        "TA"
+      ],
+      "source_note": {
+        "SI": "Tek bir kaynak, terimi ayın onuncu günündeki belirli oruç gününün hemen öncesinde bulunan gün için kullanır ve bu gün adının sonradan türetilmiş olabileceği konusunda tereddüt belirtir."
+      }
+    }
+  ],
+  "root_profile": {
+    "summary": "Kökün çekirdeği dokuz sayısıdır; sayı ve sıra biçimlerinden dokuza tamamlama, dokuzda birlik pay ve bu payı alma, ay geceleri, deve sulama döngüsü ve belirli oruç günleriyle ilgili kullanımlara yayılır. Dallar aynı sayısal temeli korurken işlem, oran, takvim ve yetiştiricilik alanlarında ayrı kavram sınırları kurar.",
+    "polysemy": "polysemic",
+    "organization": "radial"
+  },
+  "occurrence_evidence": {
+    "summary": {
+      "morpheme_count": 7,
+      "word_count": 7,
+      "ayah_count": 6,
+      "surah_count": 5
+    },
+    "forms": [
+      {
+        "form_id": "F001",
+        "lemma_ar": "تِسْع",
+        "stem_ar": "تِسْعَ",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:tisoE|ROOT:tsE|M|ACC",
+        "occurrence_count": 1
+      },
+      {
+        "form_id": "F002",
+        "lemma_ar": "تِسْع",
+        "stem_ar": "تِسْعًا",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:tisoE|ROOT:tsE|M|INDEF|ACC",
+        "occurrence_count": 1
+      },
+      {
+        "form_id": "F003",
+        "lemma_ar": "تِسْع",
+        "stem_ar": "تِسْعِ",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:tisoE|ROOT:tsE|M|GEN",
+        "occurrence_count": 1
+      },
+      {
+        "form_id": "F004",
+        "lemma_ar": "تِسْعَة",
+        "stem_ar": "تِسْعَةُ",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:tisoEap|ROOT:tsE|F|NOM",
+        "occurrence_count": 1
+      },
+      {
+        "form_id": "F005",
+        "lemma_ar": "تِسْع",
+        "stem_ar": "تِسْعٌ",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:tisoE|ROOT:tsE|M|INDEF|NOM",
+        "occurrence_count": 1
+      },
+      {
+        "form_id": "F006",
+        "lemma_ar": "تِسْع",
+        "stem_ar": "تِسْعُونَ",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:tisoE|ROOT:tsE|MP|NOM",
+        "occurrence_count": 1
+      },
+      {
+        "form_id": "F007",
+        "lemma_ar": "تِسْعَة",
+        "stem_ar": "تِسْعَةَ",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:tisoEap|ROOT:tsE|F|ACC",
+        "occurrence_count": 1
+      }
+    ],
+    "ayahs": [
+      {
+        "ayah_ref": "17:101",
+        "surface_ar": "وَلَقَدْ ءَاتَيْنَا مُوسَىٰ تِسْعَ ءَايَٰتٍۭ بَيِّنَٰتٍ فَسْـَٔلْ بَنِىٓ إِسْرَٰٓءِيلَ إِذْ جَآءَهُمْ فَقَالَ لَهُۥ فِرْعَوْنُ إِنِّى لَأَظُنُّكَ يَٰمُوسَىٰ مَسْحُورًا"
+      },
+      {
+        "ayah_ref": "18:25",
+        "surface_ar": "وَلَبِثُوا۟ فِى كَهْفِهِمْ ثَلَٰثَ مِا۟ئَةٍ سِنِينَ وَٱزْدَادُوا۟ تِسْعًا"
+      },
+      {
+        "ayah_ref": "27:12",
+        "surface_ar": "وَأَدْخِلْ يَدَكَ فِى جَيْبِكَ تَخْرُجْ بَيْضَآءَ مِنْ غَيْرِ سُوٓءٍ فِى تِسْعِ ءَايَٰتٍ إِلَىٰ فِرْعَوْنَ وَقَوْمِهِۦٓ إِنَّهُمْ كَانُوا۟ قَوْمًا فَٰسِقِينَ"
+      },
+      {
+        "ayah_ref": "27:48",
+        "surface_ar": "وَكَانَ فِى ٱلْمَدِينَةِ تِسْعَةُ رَهْطٍ يُفْسِدُونَ فِى ٱلْأَرْضِ وَلَا يُصْلِحُونَ"
+      },
+      {
+        "ayah_ref": "38:23",
+        "surface_ar": "إِنَّ هَٰذَآ أَخِى لَهُۥ تِسْعٌ وَتِسْعُونَ نَعْجَةً وَلِىَ نَعْجَةٌ وَٰحِدَةٌ فَقَالَ أَكْفِلْنِيهَا وَعَزَّنِى فِى ٱلْخِطَابِ"
+      },
+      {
+        "ayah_ref": "74:30",
+        "surface_ar": "عَلَيْهَا تِسْعَةَ عَشَرَ"
+      }
+    ],
+    "occurrences": [
+      {
+        "qac_ref": "17:101:4:1",
+        "qac_word_ref": "17:101:4",
+        "surah": 17,
+        "ayah": 101,
+        "word_index": 4,
+        "morpheme_index": 1,
+        "surface_ar": "تِسْعَ",
+        "stem_ar": "تِسْعَ",
+        "lemma_ar": "تِسْع",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:tisoE|ROOT:tsE|M|ACC",
+        "ayah_ref": "17:101",
+        "form_id": "F001",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s017:101:noun:6",
+          "attachment_word_unit_id": "q:17:101:6",
+          "qac_char_span": [
+            15,
+            18
+          ],
+          "attachment_char_spans": [
+            [
+              15,
+              18
+            ]
+          ],
+          "source_grammar": "Cardinal numeral, accusative (second object of ātaynā, in construct state with āyātin). Arabic numerals 3-10 take the opposite gender of the counted noun -- tisʿa (without tāʾ marbūṭa) counts feminine āyātin. The number nine appears 7 times in the Quran",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s017:101:pass1:attach:a2",
+              "relation": "direct_object",
+              "focus_role": "dependent",
+              "other_unit_id": "q:17:101:4",
+              "other_surface": "آتَيْنَا",
+              "other_root": "أ ت ي",
+              "other_form_tag": "PV",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s017:101:pass1:attach:a3",
+              "relation": "idafa",
+              "focus_role": "head",
+              "other_unit_id": "q:17:101:7",
+              "other_surface": "آيَاتٍ",
+              "other_root": "أ ي ي",
+              "other_form_tag": "NOUN_ABSTRACT",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology;case_government"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "18:25:8:1",
+        "qac_word_ref": "18:25:8",
+        "surah": 18,
+        "ayah": 25,
+        "word_index": 8,
+        "morpheme_index": 1,
+        "surface_ar": "تِسْعًا",
+        "stem_ar": "تِسْعًا",
+        "lemma_ar": "تِسْع",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:tisoE|ROOT:tsE|M|INDEF|ACC",
+        "ayah_ref": "18:25",
+        "form_id": "F002",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s018:025:noun:10",
+          "attachment_word_unit_id": "q:18:25:10",
+          "qac_char_span": [
+            33,
+            37
+          ],
+          "attachment_char_spans": [
+            [
+              33,
+              36
+            ],
+            [
+              33,
+              37
+            ]
+          ],
+          "source_grammar": "Cardinal number in the accusative case (object of izdādū — mafʿūl bihi, or accusative of specification — tamyīz). The tanwīn leaves the counted noun unspecified: \"nine\" of what? This grammatical openness is deliberate",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s018:025:pass1:attach:a5",
+              "relation": "accusative_specification",
+              "focus_role": "dependent",
+              "other_unit_id": "q:18:25:9",
+              "other_surface": "وَازْدَادُوا",
+              "other_root": "ز ي د",
+              "other_form_tag": "PV",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "27:12:11:1",
+        "qac_word_ref": "27:12:11",
+        "surah": 27,
+        "ayah": 12,
+        "word_index": 11,
+        "morpheme_index": 1,
+        "surface_ar": "تِسْعِ",
+        "stem_ar": "تِسْعِ",
+        "lemma_ar": "تِسْع",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:tisoE|ROOT:tsE|M|GEN",
+        "ayah_ref": "27:12",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s027:012:noun:12",
+          "attachment_word_unit_id": "q:27:12:12",
+          "qac_char_span": [
+            33,
+            36
+          ],
+          "attachment_char_spans": [
+            [
+              33,
+              36
+            ]
+          ],
+          "source_grammar": "NOUN_NUM, gen sg (governed by fī), first term of iḍāfa with āyāt",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s027:012:pass1:attach:a7",
+              "relation": "prep_complement",
+              "focus_role": "dependent",
+              "other_unit_id": "q:27:12:2",
+              "other_surface": "وَأَدْخِلْ",
+              "other_root": "د خ ل",
+              "other_form_tag": "CV",
+              "prep_base": "فِي",
+              "status": "strongly_licensed",
+              "confidence": "medium",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s027:012:pass1:attach:a8",
+              "relation": "idafa",
+              "focus_role": "head",
+              "other_unit_id": "q:27:12:13",
+              "other_surface": "آيَاتٍ",
+              "other_root": "أ ي ي",
+              "other_form_tag": "NOUN_ABSTRACT",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology;case_government"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "27:48:4:1",
+        "qac_word_ref": "27:48:4",
+        "surah": 27,
+        "ayah": 48,
+        "word_index": 4,
+        "morpheme_index": 1,
+        "surface_ar": "تِسْعَةُ",
+        "stem_ar": "تِسْعَةُ",
+        "lemma_ar": "تِسْعَة",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:tisoEap|ROOT:tsE|F|NOM",
+        "ayah_ref": "27:48",
+        "form_id": "F004",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s027:048:noun:5",
+          "attachment_word_unit_id": "q:27:48:5",
+          "qac_char_span": [
+            13,
+            17
+          ],
+          "attachment_char_spans": [
+            [
+              13,
+              16
+            ],
+            [
+              13,
+              17
+            ]
+          ],
+          "source_grammar": "NOUN_NUM nom.m, muḍāf",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s027:048:pass1:attach:a3",
+              "relation": "subject",
+              "focus_role": "dependent",
+              "other_unit_id": "q:27:48:2",
+              "other_surface": "وَكَانَ",
+              "other_root": "ك و ن",
+              "other_form_tag": "PV",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "word_order;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s027:048:pass1:attach:a4",
+              "relation": "idafa",
+              "focus_role": "head",
+              "other_unit_id": "q:27:48:6",
+              "other_surface": "رَهْطٍ",
+              "other_root": "ر ه ط",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology;case_government"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "38:23:5:1",
+        "qac_word_ref": "38:23:5",
+        "surah": 38,
+        "ayah": 23,
+        "word_index": 5,
+        "morpheme_index": 1,
+        "surface_ar": "تِسْعٌ",
+        "stem_ar": "تِسْعٌ",
+        "lemma_ar": "تِسْع",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:tisoE|ROOT:tsE|M|INDEF|NOM",
+        "ayah_ref": "38:23",
+        "form_id": "F005",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s038:023:noun:5",
+          "attachment_word_unit_id": "q:38:23:5",
+          "qac_char_span": [
+            12,
+            15
+          ],
+          "attachment_char_spans": [
+            [
+              12,
+              15
+            ]
+          ],
+          "source_grammar": "cardinal number, nominative first element of the compound count",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s038:023:pass1:attach:a3",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:38:23:4",
+              "other_surface": "",
+              "other_root": "",
+              "other_form_tag": "",
+              "prep_base": "لـ",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology;case_government"
+            },
+            {
+              "attachment_id": "ae:v3:s038:023:pass1:attach:a4",
+              "relation": "conjoined",
+              "focus_role": "head",
+              "other_unit_id": "q:38:23:7",
+              "other_surface": "وَتِسْعُونَ",
+              "other_root": "ت س ع",
+              "other_form_tag": "NOUN_NUM",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "parallelism;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s038:023:pass1:attach:a5",
+              "relation": "accusative_specification",
+              "focus_role": "head",
+              "other_unit_id": "q:38:23:8",
+              "other_surface": "نَعْجَةً",
+              "other_root": "ن ع ج",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s038:023:pass1:attach:a14",
+              "relation": "predication",
+              "focus_role": "head",
+              "other_unit_id": "q:38:23:4",
+              "other_surface": "لَهُ",
+              "other_root": "و ل ي",
+              "other_form_tag": "PREP",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "38:23:6:2",
+        "qac_word_ref": "38:23:6",
+        "surah": 38,
+        "ayah": 23,
+        "word_index": 6,
+        "morpheme_index": 2,
+        "surface_ar": "تِسْعُونَ",
+        "stem_ar": "تِسْعُونَ",
+        "lemma_ar": "تِسْع",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:tisoE|ROOT:tsE|MP|NOM",
+        "ayah_ref": "38:23",
+        "form_id": "F006",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s038:023:noun:7",
+          "attachment_word_unit_id": "q:38:23:7",
+          "qac_char_span": [
+            15,
+            21
+          ],
+          "attachment_char_spans": [
+            [
+              15,
+              21
+            ],
+            [
+              16,
+              19
+            ]
+          ],
+          "source_grammar": "cardinal number, nominative tens component coordinated with تِسْعٌ",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s038:023:pass1:attach:a4",
+              "relation": "conjoined",
+              "focus_role": "dependent",
+              "other_unit_id": "q:38:23:5",
+              "other_surface": "تِسْعٌ",
+              "other_root": "ت س ع",
+              "other_form_tag": "NOUN_NUM",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "parallelism;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "74:30:2:1",
+        "qac_word_ref": "74:30:2",
+        "surah": 74,
+        "ayah": 30,
+        "word_index": 2,
+        "morpheme_index": 1,
+        "surface_ar": "تِسْعَةَ",
+        "stem_ar": "تِسْعَةَ",
+        "lemma_ar": "تِسْعَة",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:tisoEap|ROOT:tsE|F|ACC",
+        "ayah_ref": "74:30",
+        "form_id": "F007",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s074:030:noun:2",
+          "attachment_word_unit_id": "q:74:30:2",
+          "qac_char_span": [
+            5,
+            9
+          ],
+          "attachment_char_spans": [
+            [
+              5,
+              8
+            ],
+            [
+              5,
+              9
+            ]
+          ],
+          "source_grammar": "compound cardinal first element; feminine form with fatḥa, joined with ʿashara to form nineteen; whole numeral acts as delayed subject",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s074:030:pass1:attach:a1",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:74:30:1",
+              "other_surface": "",
+              "other_root": "",
+              "other_form_tag": "",
+              "prep_base": "عَلَى",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s074:030:pass1:attach:a2",
+              "relation": "predication",
+              "focus_role": "head",
+              "other_unit_id": "q:74:30:1",
+              "other_surface": "عَلَيْهَا",
+              "other_root": "ع ل و",
+              "other_form_tag": "PREP",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s074:030:pass1:attach:a3",
+              "relation": "apposition",
+              "focus_role": "head",
+              "other_unit_id": "q:74:30:3",
+              "other_surface": "عَشَرَ",
+              "other_root": "ع ش ر",
+              "other_form_tag": "NOUN_NUM",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "local_syntax"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

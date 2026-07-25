@@ -1,13 +1,17 @@
 {
-  "format": 1,
+  "format": 2,
   "generated_by": "v2/scripts/build_branch_evidence.py",
   "root_envelope_id": "root_000086",
   "packet_path": "data/output/root_packets/root_000086.json",
-  "packet_sha256": "5c5ecd5e28d0eda0c99840e105d813c2b5aecc61b814afd83c6fe0f3f94346d6",
+  "packet_sha256": "c1e069f99fc9f03e258c416a7508911c36c3716501cb35c968aa5e728d41b4a0",
   "furuq_path": "data/working/furuq_v4.sqlite",
   "furuq_sha256": "1099db0d56515d2eb3e8d72f104f2e338c2c9a8c1fa6abbb046406d3b327e722",
   "qnet_path": "data/upstream/qnet/incidence_full/raw_keyword_incidence.sqlite",
   "qnet_sha256": "a5262b568203bff7ec04e6ca905781125beec83f90d62a5cf0cd6ff61049eee8",
+  "qnet_theme_path": "data/upstream/qnet/bridge_theme_full/bridge_theme_staging.sqlite",
+  "qnet_theme_sha256": "e4f590a111376e372eefef6d03b8694837ec9989017ce721d56db9828b2a734e",
+  "qnet_fix_manifest_path": "data/upstream/qnet/bridge_theme_full/latent_v11_qac_qnet_fix_manifest.json",
+  "qnet_fix_manifest_sha256": "b0ae3c19450a8019825321f6dc1e9f4c336249950f50267ed84eb3258756502c",
   "branch": {
     "root_id": "root_000086",
     "branch_id": "B014",
@@ -77,7 +81,431 @@
   ],
   "qnet_candidates": [],
   "qnet_core_overlap_candidates": [],
+  "qnet_bridge_overlap_candidates": [],
+  "qnet_theme_overlap_candidates": [
+    {
+      "root_id": "root_000589",
+      "branch_id": "B005",
+      "route": "root_theme_fallback",
+      "focus_scope": "root",
+      "shared_theme_count": 9,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "anatomy",
+        "animal",
+        "body",
+        "disease_injury",
+        "form_structure",
+        "health_medicine",
+        "livestock",
+        "motion",
+        "surface_shape"
+      ]
+    },
+    {
+      "root_id": "root_000712",
+      "branch_id": "B007",
+      "route": "root_theme_fallback",
+      "focus_scope": "root",
+      "shared_theme_count": 9,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "abundance_scarcity",
+        "anatomy",
+        "animal",
+        "body",
+        "pattern_marking",
+        "proof_uncertainty",
+        "substance_texture",
+        "surface_shape",
+        "visual_appearance"
+      ]
+    },
+    {
+      "root_id": "root_000610",
+      "branch_id": "B004",
+      "route": "root_theme_fallback",
+      "focus_scope": "root",
+      "shared_theme_count": 9,
+      "votes2_keyword_count": 1,
+      "shared_themes": [
+        "animal",
+        "fear_grief",
+        "habitat_ecology",
+        "motion",
+        "physiology",
+        "place_location",
+        "sequence_cycle",
+        "social_relations",
+        "travel"
+      ]
+    },
+    {
+      "root_id": "root_000910",
+      "branch_id": "B003",
+      "route": "root_theme_fallback",
+      "focus_scope": "root",
+      "shared_theme_count": 9,
+      "votes2_keyword_count": 1,
+      "shared_themes": [
+        "agency_action",
+        "anatomy",
+        "animal",
+        "body",
+        "livestock",
+        "perception",
+        "proof_uncertainty",
+        "social_relations",
+        "substance_texture"
+      ]
+    },
+    {
+      "root_id": "root_001544",
+      "branch_id": "B005",
+      "route": "root_theme_fallback",
+      "focus_scope": "root",
+      "shared_theme_count": 9,
+      "votes2_keyword_count": 1,
+      "shared_themes": [
+        "abundance_scarcity",
+        "agency_action",
+        "animal",
+        "communication",
+        "deception_corruption",
+        "emotion",
+        "fear_grief",
+        "language_speech",
+        "perception"
+      ]
+    },
+    {
+      "root_id": "root_000247",
+      "branch_id": "B001",
+      "route": "root_theme_fallback",
+      "focus_scope": "root",
+      "shared_theme_count": 9,
+      "votes2_keyword_count": 0,
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "cognition",
+        "identity_personhood",
+        "measurement",
+        "perception",
+        "physiology",
+        "social_relations",
+        "space"
+      ]
+    },
+    {
+      "root_id": "root_000393",
+      "branch_id": "B006",
+      "route": "root_theme_fallback",
+      "focus_scope": "root",
+      "shared_theme_count": 8,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "abundance_scarcity",
+        "anatomy",
+        "animal",
+        "form_structure",
+        "livestock",
+        "pattern_marking",
+        "perception",
+        "visual_appearance"
+      ]
+    },
+    {
+      "root_id": "root_000666",
+      "branch_id": "B005",
+      "route": "root_theme_fallback",
+      "focus_scope": "root",
+      "shared_theme_count": 8,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "agency_action",
+        "communication",
+        "economy",
+        "motion",
+        "place_location",
+        "provision_resource",
+        "space",
+        "travel"
+      ]
+    }
+  ],
+  "qnet_focus_coverage": {
+    "raw_keyword_exact_port": false,
+    "snapshot_exact_port": false,
+    "postfix_exact_port": false,
+    "theme_scope": "root_fallback",
+    "focus_themes": [
+      "abundance_scarcity",
+      "agency_action",
+      "agriculture",
+      "anatomy",
+      "animal",
+      "body",
+      "calendar_season",
+      "cognition",
+      "communication",
+      "containment_access",
+      "deception_corruption",
+      "disease_injury",
+      "earth_geology",
+      "economy",
+      "emotion",
+      "fear_grief",
+      "form_structure",
+      "geography_landscape",
+      "habitat_ecology",
+      "health_medicine",
+      "identity_personhood",
+      "intention_character",
+      "labor_work",
+      "language_speech",
+      "livestock",
+      "loss_absence",
+      "measurement",
+      "motion",
+      "naming_classification",
+      "navigation_route",
+      "pattern_marking",
+      "perception",
+      "physiology",
+      "place_location",
+      "proof_uncertainty",
+      "provision_resource",
+      "rhetoric_discourse",
+      "ritual",
+      "sequence_cycle",
+      "social_relations",
+      "space",
+      "substance_texture",
+      "surface_shape",
+      "transport",
+      "travel",
+      "visual_appearance",
+      "water_hydrology",
+      "weather_climate"
+    ]
+  },
   "furuq_candidates": [
+    {
+      "root_id": "root_000589",
+      "branch_id": "B005",
+      "root_norm": "ر ك ب",
+      "branch_image_ar": "الرُّكبة وما يصاب بها",
+      "what_is_ar": "الرُّكبة من الإنسان أو الدابة؛ عظم الركبة؛ ضرب الركبة أو الضرب بها؛ أثر يشبه ركبة العنز",
+      "what_is_not_ar": "الرُّكْب موضع العانة؛ الركوب على الدابة؛ تركيب الشيء",
+      "source_phrase_ar": "ركبة الإنسان وهي عالية على ما هي فوقه (maqayis); ركبة البعير في يده (ayn;tahdhib); الركبة معروفة (jamhara;sihah;mufradat); الأركب العظيم الركبة (maqayis;sihah;tahdhib); ركبته أصبت ركبته وأصبته بركبتي (mufradat); ركبت الرجل إذا ضربته بركبتك أو ضربته بركبته (maqayis;jamhara;sihah)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1355;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3779:headword=%D8%B1%D9%83%D8%A8:root=%D8%B1%20%D9%83%20%D8%A8:sha=25ab09ed41395deb;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A730%3Asubentry%3A1%3A%D8%B1%D9%83%D8%A8:headword=%D8%B1%D9%83%D8%A8:root=%D8%B1%20%D9%83%20%D8%A8:sha=8c8a9e1ef9441991;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A288:headword=%D8%B1%D9%83%D8%A8:root=%D8%B1%20%D9%83%20%D8%A8:sha=a645cde5ddc9b543;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D516%3Bsegment_index%3D234:headword=%D8%B1%D9%83%D8%A8:root=%D8%B1%20%D9%83%20%D8%A8:sha=4dd0cf90a1e5e039;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A588:headword=%D8%B1%D9%83%D8%A8:root=%D8%B1%20%D9%83%20%D8%A8:sha=83d375bb90398d05",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_root_theme_fallback"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "anatomy",
+        "animal",
+        "body",
+        "disease_injury",
+        "form_structure",
+        "health_medicine",
+        "livestock",
+        "motion",
+        "surface_shape"
+      ],
+      "theme_focus_scopes": [
+        "root"
+      ]
+    },
+    {
+      "root_id": "root_000610",
+      "branch_id": "B004",
+      "root_norm": "ر و د",
+      "branch_image_ar": "التردد والاختلاف جيئة وذهابا",
+      "what_is_ar": "يدخل فيه راد الشيء إذا جاء وذهب، ورياد الإبل واختلافها في المرعى، والمراد موضع التردد، ورادت المرأة إلى بيوت جاراتها، وراد وساده إذا لم يستقر.",
+      "what_is_not_ar": "ليس فيه الطلب المقصود للرائد، ولا الرفق والمهل إذا كانا مستقلين عن صورة التردد.",
+      "source_phrase_ar": "يدل على مجيء وذهاب من انطلاق في جهة واحدة (maqayis)؛ راد الشئ يرود أي جاء وذهب (sihah)؛ رياد الإبل اختلافها في المرعى مقبلة ومدبرة (sihah)؛ المراد الموضع الذي ترود فيه الراعية (maqayis)؛ رادت المرأة ترود إذا اختلفت إلى بيوت جاراتها (maqayis)؛ راد وساده إذا لم يستقر (maqayis)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1285:headword=%D8%B1%D9%88%D8%AF:root=%D8%B1%20%D9%88%20%D8%AF:sha=8fabfde9ec1a8bb1;0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1402",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_root_theme_fallback"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "animal",
+        "fear_grief",
+        "habitat_ecology",
+        "motion",
+        "physiology",
+        "place_location",
+        "sequence_cycle",
+        "social_relations",
+        "travel"
+      ],
+      "theme_focus_scopes": [
+        "root"
+      ]
+    },
+    {
+      "root_id": "root_000910",
+      "branch_id": "B003",
+      "root_norm": "ض غ ث",
+      "branch_image_ar": "عرك ملتبس",
+      "what_is_ar": "اللوك بالأنياب والنواجذ والدلك والعرك ولمس سنام الناقة عند الشك في سمنها",
+      "what_is_not_ar": "ليس قبضة النبات ولا أضغاث الأحلام ولا خلط الحديث",
+      "source_phrase_ar": "ناقة ضغوث إذا شككت في سمنها فلمست أبها طرق (maqayis)؛ الضغث اللوك بالأنياب والنواجذ وضغث رأسه أي دلكه وناقة ضغوث لا يدرى سمنها حتى تضغث (ayn)؛ ضغثت الناقة أضغثها ضغثا إذا لمست سنامها أبها طرق أم لا (jamhara)؛ ضغث السنام عركه وناقة ضغوث يشك في سمنها فتضغث أبها طرق أم لا (sihah)",
+      "source_refs": "maqayis:root=%D8%B6%20%D8%BA%20%D8%AB:headword=%D8%B6%D8%BA%D8%AB:sha=110080b45c7f3193;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A2899:headword=%D8%B6%D8%BA%D8%AB:root=%D8%B6%20%D8%BA%20%D8%AB:sha=e620b0996e1d69fa;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1113%3Asubentry%3A0%3A%D8%B6%D8%BA%D8%AB:headword=%D8%B6%D8%BA%D8%AB:root=%D8%B6%20%D8%BA%20%D8%AB:sha=467858dd006ff147;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A682:headword=%D8%B6%D8%BA%D8%AB:root=%D8%B6%20%D8%BA%20%D8%AB:sha=2a59fc5e790e295f",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_root_theme_fallback"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "agency_action",
+        "anatomy",
+        "animal",
+        "body",
+        "livestock",
+        "perception",
+        "proof_uncertainty",
+        "social_relations",
+        "substance_texture"
+      ],
+      "theme_focus_scopes": [
+        "root"
+      ]
+    },
+    {
+      "root_id": "root_001544",
+      "branch_id": "B005",
+      "root_norm": "ن ق ع",
+      "branch_image_ar": "نقع الصوت المرتفع",
+      "what_is_ar": "يدخل فيه الصراخ وارتفاع الصوت وتتابعه أو دوامه، وصوت النعامة، وما قيس عليه من متكثر يصيح بما ليس عنده.",
+      "what_is_not_ar": "لا يدخل فيه الغبار ولا الماء ولا نقيعة الطعام.",
+      "source_phrase_ar": "النقيع الصراخ وهو النقع أيضا (maqayis)؛ نقع الصوت ارتفع (maqayis)؛ النقع صوت النعامة (maqayis)؛ نقع الصوت إذا ارتفع (ayn)؛ نقع بصوته وأنقع صوته إذا تابعه (ayn)؛ النقع رفع الصوت (tahdhib)؛ النقع الصراخ المرتفع (tahdhib)؛ نقع الصارخ بصوته وأنقع صوته إذا تابعه وأدامه (tahdhib)؛ النقاع الرجل يتكثر بما ليس عنده كأنه يصيح به (maqayis)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3691;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A139:headword=%D9%86%D9%82%D8%B9:root=%D9%86%20%D9%82%20%D8%B9:sha=81528ac8c1a7b42e;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D60%3Bsegment_index%3D7:headword=%D9%86%D9%82%D8%B9:root=%D9%86%20%D9%82%20%D8%B9:sha=be0a46baf555c95a",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_root_theme_fallback"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "abundance_scarcity",
+        "agency_action",
+        "animal",
+        "communication",
+        "deception_corruption",
+        "emotion",
+        "fear_grief",
+        "language_speech",
+        "perception"
+      ],
+      "theme_focus_scopes": [
+        "root"
+      ]
+    },
+    {
+      "root_id": "root_000247",
+      "branch_id": "B001",
+      "root_norm": "ج س م",
+      "branch_image_ar": "البدن أو الشخص المتجمع المدرك",
+      "what_is_ar": "يدخل فيه الجسم بمعنى البدن وأعضائه، والشخص والجسمان، والجسم الممتد ذو الطول والعرض والعمق.",
+      "what_is_not_ar": "لا يدخل فيه وصف الضخامة وحده، ولا تجسمت بمعنى اخترت أو قصدت، ولا ركوب معظم الأمر.",
+      "source_phrase_ar": "الجسم كل شخص مدرك (maqayis)؛ الجسم يجمع البدن وأعضاءه (ayn;tahdhib)؛ الجسم الجسد وكذلك الجسمان والجثمان (sihah)؛ الجسم ما له طول وعرض وعمق (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:578;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4047:headword=%D8%AC%D8%B3%D9%85:root=%D8%AC%20%D8%B3%20%D9%85:sha=7d2415ca966bea59;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4396:headword=%D8%AC%D8%B3%D9%85:root=%D8%AC%20%D8%B3%20%D9%85:sha=52c311f1dccb5df0;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D546%3Bsegment_index%3D72:headword=%D8%AC%D8%B3%D9%85:root=%D8%AC%20%D8%B3%20%D9%85:sha=68beeffa4d9647d7;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A247:headword=%D8%AC%D8%B3%D9%85:root=%D8%AC%20%D8%B3%20%D9%85:sha=a8296529adcf4b55",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_root_theme_fallback"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "anatomy",
+        "body",
+        "cognition",
+        "identity_personhood",
+        "measurement",
+        "perception",
+        "physiology",
+        "social_relations",
+        "space"
+      ],
+      "theme_focus_scopes": [
+        "root"
+      ]
+    },
+    {
+      "root_id": "root_000393",
+      "branch_id": "B006",
+      "root_norm": "خ ت م",
+      "branch_image_ar": "بياض خفي في أشاعر الفرس",
+      "what_is_ar": "يدخل فيه الفرس المختم إذا كان في أشاعره بياض خفي كاللمع دون التخديم.",
+      "what_is_not_ar": "ليس منه التخديم ولا الختم بمعنى الطبع أو الآخر.",
+      "source_phrase_ar": "فرس مختم إذا كان في أشاعره بياض خفي كاللمع دون التخديم",
+      "source_refs": "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A908%3Asubentry%3A0%3A%D8%AE%D8%AA%D9%85:headword=%D8%AE%D8%AA%D9%85:root=%D8%AE%20%D8%AA%20%D9%85:sha=458d6bdd6ec31717",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_root_theme_fallback"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "abundance_scarcity",
+        "anatomy",
+        "animal",
+        "form_structure",
+        "livestock",
+        "pattern_marking",
+        "perception",
+        "visual_appearance"
+      ],
+      "theme_focus_scopes": [
+        "root"
+      ]
+    },
+    {
+      "root_id": "root_000666",
+      "branch_id": "B005",
+      "root_norm": "س ب ح",
+      "branch_image_ar": "السعة للذهاب والمعاش",
+      "what_is_ar": "يدخل فيه السبح بمعنى الفراغ والتصرف في المعاش والمنقلب والجيئة والذهاب والاضطراب والتباعد في الأرض والكلام",
+      "what_is_not_ar": "لا يدخل فيه العوم الحسي ولا جري الفرس ولا الصلاة",
+      "source_phrase_ar": "أصلان أحدهما جنس من العبادة والآخر جنس من السعي (maqayis)؛ سبحا طويلا أي فراغا للنوم (ayn)؛ السبح الفراغ والتصرف في المعاش والمنقلب والجيئة والذهاب (sihah)؛ فراغا وتصرفا؛ اضطرابا ومعاشا؛ منقلبا طويلا (tahdhib)؛ سرعة الذهاب في العمل (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1723;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1578:headword=%D8%B3%D8%A8%D8%AD:root=%D8%B3%20%D8%A8%20%D8%AD:sha=5ed98277feb48d92;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A979:headword=%D8%B3%D8%A8%D8%AD:root=%D8%B3%20%D8%A8%20%D8%AD:sha=bdc9df377bc15627;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D236%3Bsegment_index%3D161:headword=%D8%B3%D8%A8%D8%AD:root=%D8%B3%20%D8%A8%20%D8%AD:sha=227ae90cfa29b261;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A657:headword=%D8%B3%D8%A8%D8%AD:root=%D8%B3%20%D8%A8%20%D8%AD:sha=9c6a83072090cff2",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_root_theme_fallback"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "agency_action",
+        "communication",
+        "economy",
+        "motion",
+        "place_location",
+        "provision_resource",
+        "space",
+        "travel"
+      ],
+      "theme_focus_scopes": [
+        "root"
+      ]
+    },
     {
       "root_id": "root_000086",
       "branch_id": "B001",
@@ -92,7 +520,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000086",
@@ -108,7 +539,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000086",
@@ -124,7 +558,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000086",
@@ -140,7 +577,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000086",
@@ -156,7 +596,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000086",
@@ -172,7 +615,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000086",
@@ -188,7 +634,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000086",
@@ -204,7 +653,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000086",
@@ -220,7 +672,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000086",
@@ -236,7 +691,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000086",
@@ -252,7 +710,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000086",
@@ -268,7 +729,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000086",
@@ -284,7 +748,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     }
   ]
 }

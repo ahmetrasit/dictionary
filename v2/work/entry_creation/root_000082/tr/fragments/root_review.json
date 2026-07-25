@@ -1,0 +1,53 @@
+{
+  "inputs_sha256": "f69cf544636dc1361528bd9379a7950e8ba34dd666de279da7f86a0ee822e91e",
+  "verdict": "repair",
+  "summary": "Yanıtın dal haritaları ve açıklamaları genel olarak kanıtla uyumludur; ancak B001'de iki özdeş çekirdek yalnız kullanım örnekleri farklı olduğu için yakın anlamlı sayılmıştır. Ayrıca bir tek-kaynak ayrıntısı eksik aktarılmış, B005'te karşıt olduğu belirtilen kaynak varyantı çekirdek görüntüden türemiş gibi sunulmuştur.",
+  "issues": [
+    {
+      "target_ref": "root_000082/B001",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002"
+      ],
+      "evidence_conflict": "Odak dalın çekirdeği bir şeyi ayırıp kesmedir; root_000081/B001 sınır kartı da doğrudan kesme ve ayırmayı çekirdek verir. Yanıt, yalnız odak dalın hukuk ve bağış uygulamaları ile komşunun fiziksel örnekleri farklı olduğu için ilişkiyi near_synonym/partial yapıyor; bu örnekler çekirdek sınırını değiştirmez.",
+      "smallest_correction": "root_000081/B001 ilişkisini synonym/exact olarak düzeltin; ayrımı çekirdek farkı gibi sunan alanları kaldırın veya farklı kaynak uygulamalarının çekirdek eşdeğerliğini bozmadığını belirtin."
+    },
+    {
+      "target_ref": "root_000082/B001",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002"
+      ],
+      "evidence_conflict": "Odak dalın ayırma ve kesme çekirdeği, root_001321/B001 kartındaki kesme ve ayırma çekirdeğiyle olağan kullanımda örtüşür. İp, şükrü kesme ve ayrılma ile boşanma ve bağış arasındaki farklar bağımlı kullanım dizileridir; bunları sınır farkı sayarak near_synonym/partial seçmek özdeş çekirdeği gereksiz yere daraltır.",
+      "smallest_correction": "root_001321/B001 ilişkisini synonym/exact olarak düzeltin ve yalnız bağımlı örneklere dayanan focus_only, neighbor_only ve distinction metinlerini çekirdek eşdeğerliğine göre yeniden kurun."
+    },
+    {
+      "target_ref": "root_000082/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_004"
+      ],
+      "evidence_conflict": "Tek-kaynak ayrıntısı bağışın verenin malından bütünüyle çıkmasını aktarıyor, fakat kanıt aynı bağışın Allah yoluna çıkarıldığını da açıkça belirtir. Bu ayırt edici hedef bilgisi sole_attestation özetinde kaybolmuştur.",
+      "smallest_correction": "lu_004 için source_details özetine bağışın Allah yoluna ayrıldığı bilgisini ekleyin."
+    },
+    {
+      "target_ref": "root_000082/B005",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_021"
+      ],
+      "evidence_conflict": "Kanıt, kadının süslenip güzelleşmesi kullanımını önceki kullanıma karşıt diye işaretler. Facet bunu doğru biçimde source_variant sayarken tanım, aynı kullanımı beden bölümlerinin belirginliği görüntüsünden gelişen dar bir kullanım olarak sunarak kanıtlanmamış bir türeme ilişkisi kurar.",
+      "smallest_correction": "Tanımda lu_021'i çekirdek beden görüntüsünden gelişmiş göstermeyin; onu tek kaynağın karşıt bir varyantı olarak ayrı biçimde belirtin."
+    }
+  ]
+}

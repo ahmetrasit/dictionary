@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Make a readable evidence packet for every V4 branch of one Quranic root."""
+"""Make a readable evidence packet for every V4 branch of one root."""
 
 import argparse
 import csv
@@ -69,20 +69,6 @@ def referenced_attachment_ids(instances):
     }
 
 
-def prepare_output_paths(output_dir, root_envelope_id, *, force):
-    output_dir.mkdir(parents=True, exist_ok=True)
-    json_path = output_dir / f"{root_envelope_id}.json"
-    md_path = output_dir / f"{root_envelope_id}.md"
-    existing = [path for path in (json_path, md_path) if path.exists()]
-    if existing and not force:
-        names = ", ".join(str(path) for path in existing)
-        raise SystemExit(
-            f"Refusing to replace existing root packet output(s): {names}. "
-            "Rerun with --force."
-        )
-    return json_path, md_path
-
-
 def find_roots(db, query):
     roots = fetch(db, "SELECT * FROM roots ORDER BY root_id")
     if query.startswith("root_"):
@@ -90,19 +76,46 @@ def find_roots(db, query):
         if not match:
             raise SystemExit(f"Unknown V4 root_id: {query}")
         target = root_key(match["root_norm"])
+        root_origin = db.execute(
+            """
+            SELECT origin_corpus FROM dictionary_entries WHERE root_id=?
+            UNION
+            SELECT origin_corpus FROM branch_images WHERE root_id=?
+            """,
+            (query, query),
+        ).fetchall()
+        origins = {row["origin_corpus"] for row in root_origin}
+        if "furuq" in origins:
+            candidates = {
+                row["root_id"] for row in db.execute(
+                    "SELECT DISTINCT root_id FROM dictionary_entries WHERE origin_corpus='furuq'"
+                )
+            }
+        elif "quranic" in origins:
+            candidates = {
+                row["root_id"] for row in db.execute(
+                    "SELECT DISTINCT root_id FROM branch_images WHERE origin_corpus='quranic'"
+                )
+            }
+        else:
+            candidates = {query}
     else:
         target = root_key(query)
-    quranic = {
-        row["root_id"] for row in db.execute(
-            "SELECT DISTINCT root_id FROM branch_images WHERE origin_corpus='quranic'"
-        )
-    }
+        candidates = {
+            row["root_id"] for row in db.execute(
+                """
+                SELECT DISTINCT root_id FROM dictionary_entries
+                UNION
+                SELECT DISTINCT root_id FROM branch_images
+                """
+            )
+        }
     matches = [
         row for row in roots
-        if row["root_id"] in quranic and root_key(row["root_norm"]) == target
+        if row["root_id"] in candidates and root_key(row["root_norm"]) == target
     ]
     if not matches:
-        raise SystemExit(f"No Quranic V4 root found for: {query}")
+        raise SystemExit(f"No evidence-backed V4 root found for: {query}")
     return target, matches
 
 
@@ -257,22 +270,24 @@ def main():
     parser.add_argument(
         "--force",
         action="store_true",
-        help="replace an existing JSON or Markdown packet",
+        help="overwrite an existing packet instead of skipping it",
     )
     args = parser.parse_args()
 
     furuq = open_db(project / "data/working/furuq_v4.sqlite")
-    qac_db = open_db(project / "data/working/qac.sqlite")
-    qnet_db = open_db(
-        project / "data/upstream/qnet/incidence_full/raw_keyword_incidence.sqlite"
-    )
     target, root_rows = find_roots(furuq, args.root)
     root_ids = [row["root_id"] for row in root_rows]
     root_envelope_id = "--".join(root_ids)
-    json_path, md_path = prepare_output_paths(
-        args.output_dir,
-        root_envelope_id,
-        force=args.force,
+    args.output_dir.mkdir(parents=True, exist_ok=True)
+    json_path = args.output_dir / f"{root_envelope_id}.json"
+    md_path = args.output_dir / f"{root_envelope_id}.md"
+    if json_path.exists() and not args.force:
+        print(f"Skipped existing {json_path}")
+        return
+
+    qac_db = open_db(project / "data/working/qac.sqlite")
+    qnet_db = open_db(
+        project / "data/upstream/qnet/incidence_full/raw_keyword_incidence.sqlite"
     )
     marks = ",".join("?" for _ in root_ids)
 
@@ -280,19 +295,19 @@ def main():
         branch_image_en, image_en_fit, image_en_gap_note, what_is_ar, what_is_en,
         what_is_not_ar, source_refs, source_phrase_ar, status, review_note,
         origin_corpus, contaminated
-        FROM branch_images WHERE origin_corpus='quranic' AND root_id IN ({marks})
+        FROM branch_images WHERE root_id IN ({marks})
         ORDER BY root_id, branch_id""", root_ids)
     sources = fetch(furuq, f"""SELECT root_id, source_id, source_ref, db_root_norm,
         headword, lemma, section_path, page_or_volume_ref, entry_text_clean,
         route_status, route_note, origin_corpus FROM dictionary_entries
-        WHERE origin_corpus='quranic' AND root_id IN ({marks})
+        WHERE root_id IN ({marks})
         ORDER BY root_id, source_id, source_ref""", root_ids)
     senses = fetch(furuq, f"""SELECT root_id, lexical_unit_id, expression_ar,
         unit_kind, branch_ids, sense_ar, sense_en, sense_en_fit,
         sense_en_gap_note, source_refs, branch_source_refs, source_phrase_ar,
         status, review_note, corpus_link_status, corpus_link_count,
         resolved_quran_stem_ar, resolved_quran_tag, origin_corpus
-        FROM lexical_unit_senses WHERE origin_corpus='quranic' AND root_id IN ({marks})
+        FROM lexical_unit_senses WHERE root_id IN ({marks})
         ORDER BY root_id, lexical_unit_id""", root_ids)
     links = fetch(furuq, f"""SELECT root_id, branch_id, lexical_unit_id, link_source
         FROM branch_lexical_unit_links WHERE root_id IN ({marks})

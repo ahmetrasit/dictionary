@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "7e384ee7d7b783da3b0c3ea1dc9f526c970ea216a881206b76ddb1c5ca594c41",
+  "verdict": "repair",
+  "summary": "B003 preserves the source alternatives in its definition but collapses them in the concept and lexical glosses, making the garment necessarily both small and an undergarment. The remaining reviewed semantics are publication-ready.",
+  "issues": [
+    {
+      "target_ref": "root_000036/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_008"
+      ],
+      "evidence_conflict": "The evidence defines the garment disjunctively as a small shirt or as a shirt worn under clothing, whereas the concept gloss 'kız çocukları için küçük iç gömlek' combines both descriptions into one narrower object and incorrectly marks the fit as complete.",
+      "smallest_correction": "Make the concept gloss preserve the alternatives, for example 'kız çocuklarının giydiği küçük gömlek veya iç gömlek', and align its applicability and error profile with that wording."
+    },
+    {
+      "target_ref": "root_000036/B003",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_008"
+      ],
+      "evidence_conflict": "The lexical rendering 'kız çocuklarının giydiği küçük iç gömlek' likewise merges the two attested descriptions, although lu_008 permits a small shirt or an undergarment rather than requiring both properties together.",
+      "smallest_correction": "Render lu_008 disjunctively as 'kız çocuklarının giydiği küçük gömlek veya iç gömlek'."
+    }
+  ]
+}

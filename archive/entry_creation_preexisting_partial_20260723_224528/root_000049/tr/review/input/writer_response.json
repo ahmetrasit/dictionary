@@ -1,0 +1,600 @@
+{
+  "branches": [
+    {
+      "branch_ref": "root_000049/B001",
+      "concept_map": {
+        "definition": "Arazi yüzeyinin eğri veya engebeli olması, yer yer yükselip alçalmasıdır; küçük tepecikler ile çıkıntılar arasındaki çukurluklar bu görünümün özel biçimleridir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Arazi yüzeyinde düzgünlüğü bozan eğrilik ve yükselti-alçaltı farkı bulunur.",
+            "claim_ids": [
+              "lu_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Yüzey farkı küçük tepecikler veya yerden yükselen küçük çıkıntılar biçiminde görülebilir.",
+            "claim_ids": [
+              "lu_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "specialization",
+            "statement": "Yüzey farkı, iki çıkıntı arasında kalan bir çukurluk biçiminde de görülebilir.",
+            "claim_ids": [
+              "lu_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynakların ortak çekirdeği, arazi yüzeyindeki eğrilik veya yükselti-alçaltı farkıdır. Küçük tepecik, küçük çıkıntı ve çıkıntılar arasındaki çukurluk anlatımları bu yüzey düzensizliğinin farklı görünümlerini belirtir.",
+        "common_claim_ids": [
+          "lu_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "arazi yüzeyindeki eğrilik ve yükselti-alçaltı farkı",
+        "applicability": "Arazi yüzeyindeki genel düzensizliği ve bunun hem yükselti hem çukurluk biçimlerini birlikte anlatır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Yüzey eğriliğini, yükselti-alçaltı karşıtlığını ve arazi kapsamını birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "arazi engebesi",
+          "usage_role": "general",
+          "applicability": "Yükselti ve çukurlukların tek tek belirtilmesinin gerekmediği genel arazi anlatımında kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Arazi yüzeyindeki düzgün olmayan yapıyı doğal ve kısa biçimde korur.",
+            "loses": "Küçük tepecik ile iki çıkıntı arasındaki çukurluk ayrımını açıkça söylemez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "küçük tepecik ya da çukurluk",
+          "usage_role": "explanatory",
+          "applicability": "Yüzey düzensizliğinin somut biçimlerinin açıklanması gereken bağlamlarda uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Küçük yükselti ve çıkıntılar arasındaki çukurluk görünümlerini korur.",
+            "loses": "Arazi yüzeyindeki genel eğrilik ve değişkenlik kapsamını tek başına karşılamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002",
+            "F003"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_001",
+          "rendering_kind": "ordinary",
+          "target_gloss": "arazi yüzeyindeki eğrilik, yükselti-alçaltı farkı, küçük tepecik veya çukurluk"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "düz arazi",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Arazi yüzeyine ilişkin olma özelliğini korur.",
+            "loses": "Eğrilik, yükselti ve çukurluktan oluşan yüzey düzensizliğini bütünüyle siler.",
+            "adds": "Yüzeyin düzgün ve yükselti farklarından arınmış olduğu anlamını ekler.",
+            "collision": "Kavramın karşıtı olan düz yüzey anlatımıyla karışır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000871/B005",
+          "relation_type": "antonym",
+          "boundary_match": "opposed",
+          "focus_only": "Eğrilik, küçük yükseltiler ve çıkıntılar arasındaki çukurluklar bulunur.",
+          "neighbor_only": "Arazi düz, pürüzsüz veya bitkisiz bir alan olarak tanımlanır.",
+          "gloss": "engebeli yüzey ile düz yüzey",
+          "shared_zone": "İki dal da arazinin gözle algılanan yüzey biçimini konu edinir.",
+          "distinction": "Odak dal yüzeydeki yükselme, alçalma ve eğriliği bildirir; komşu dal ise yüzeyin düz ve pürüzsüz oluşunu bildirir. Aynı arazi niteliği ekseninde karşıt yönlerdedirler."
+        },
+        {
+          "neighbor_ref": "root_001592/B003",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Sertlik veya toprak yapısı belirtilmeden her türlü yükselti-alçaltı farkını kapsar.",
+          "neighbor_only": "Yumuşak, oyuklu, aşağı doğru çöken veya kuraklıktan parçalanmış araziyi kapsar.",
+          "gloss": "engebeli arazi ile oyuklu yumuşak arazi",
+          "shared_zone": "Her iki dalda arazi yüzeyindeki çukurlaşma ve düzgün olmama görünümü bulunabilir.",
+          "distinction": "Odak dalın çekirdeği yükselti ile alçaltı arasındaki yüzey farkıdır. Komşu dalda ise arazinin yumuşak, oyuklu, çökmüş ya da kuraklıktan parçalanmış yapısı belirleyicidir; bu yüzden sıradan bağlamlarda birbirlerinin yerine geçmezler."
+        },
+        {
+          "neighbor_ref": "root_000227/B007",
+          "relation_type": "antonym",
+          "boundary_match": "opposed",
+          "focus_only": "Arazi yüzeyindeki eğrilik ve yükseklik değişimleri belirleyicidir.",
+          "neighbor_only": "Yüzeyin veya yolun düz ve kimi kullanımlarda sert olması belirleyicidir.",
+          "gloss": "yüzey düzensizliği ile düz yüzey",
+          "shared_zone": "İki dal da yer yüzeyinin biçimini ve geçiş niteliğini betimler.",
+          "distinction": "Odak dal düzgünlüğü bozan yükselti ve çukurlukları anlatırken komşu dal yüzeyin ya da yolun düz oluşunu anlatır. Sertlik komşu dalda ek bir kapsamdır ve odak dalın çekirdeğinde yer almaz."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; arazi yüzeyinin düzlüğü veya özel türde oyukluğu üzerinden sınırı en açık biçimde gösteren üç karşılaştırma yayımlandı. Toprak, çakıl, sertlik ya da belirli düz alan türlerini anlatan diğer adaylar yalnızca aynı alanı paylaşır ve ek bir ayrım sağlamaz."
+    },
+    {
+      "branch_ref": "root_000049/B002",
+      "concept_map": {
+        "definition": "Tam ve sıkı doldurulmamış bir kaptaki gevşekliği anlatır; olumsuz kuruluşta bir şeyde gevşeklik, zayıflık, yılgınlık veya kusur bulunmadığını, yasaklama bağlamında ise hiçbir hoşgörü ve yumuşama olmadığını bildirir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Tam ve sıkı doldurulmayan bir kapta gevşeklik veya boşluklu bir yapı bulunur.",
+            "claim_ids": [
+              "lu_002"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "extension",
+            "statement": "Olumsuz kuruluş, gevşeklik, zayıflık, yılgınlık veya kusurun bulunmadığını bağlama göre bildirir.",
+            "claim_ids": [
+              "lu_003"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "associated_use",
+            "statement": "Bir yasağın niteliğini anlatırken hiçbir hoşgörüye veya yumuşamaya yer verilmediğini belirtir.",
+            "claim_ids": [
+              "lu_004"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "source_variant",
+            "statement": "Yasaklama bağlamındaki ifade, alternatif olarak yasak hakkında hiçbir kuşku bulunmaması biçiminde yorumlanabilir.",
+            "claim_ids": [
+              "lu_004"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Anlamın somut çekirdeği, iyi doldurulmamış kaptaki gevşekliktir. Olumsuz kalıp bu niteliğin bulunmadığını söyler ve bağlama göre zayıflık, yılgınlık veya kusur yokluğunu anlatacak biçimde genişler.",
+        "common_claim_ids": [
+          "lu_002",
+          "lu_003"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_004"
+            ],
+            "kind": "disagreement",
+            "summary": "Yasaklama örneği öncelikle hiçbir hoşgörü veya yumuşama bulunmaması diye açıklanır; ikinci bir yorum bunu hiçbir kuşku bulunmaması olarak anlar."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "gevşeklik veya zayıflık bulunmaması",
+        "applicability": "Olumsuz kalıbın kap, hareket, davranış veya nitelik bağlamlarında taşıdığı ortak anlamı temsil eder.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Olumsuz kuruluşu ve bağlama göre gevşeklik ile zayıflığın bulunmamasını birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003",
+          "F004"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "hiçbir gevşeklik yok",
+          "usage_role": "general",
+          "applicability": "Doldurulmuş bir kapta veya sıkılığın önemli olduğu başka bir somut bağlamda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Gevşekliğin bulunmadığını açık ve doğal biçimde korur.",
+            "loses": "Zayıflık, yılgınlık, kusur ve yasaklamadaki yumuşamazlık uzantılarını belirtmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "zayıflık göstermeyen",
+          "usage_role": "contextual",
+          "applicability": "Bir gidişin, hareketin veya tutumun güçsüzlük ve yılgınlık taşımadığını anlatan bağlamlarda uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Güçsüzlük ve yılgınlık bulunmaması anlamını korur.",
+            "loses": "Kaptaki somut gevşekliği, kusur yokluğunu ve yasaklamadaki yumuşamazlığı dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "hiçbir yumuşama tanımayan",
+          "usage_role": "contextual",
+          "applicability": "Bir yasağın kesin ve hoşgörüsüz biçimde konulduğunu anlatan bağlamda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Yasaklamada hoşgörü ve yumuşama bulunmaması anlamını korur.",
+            "loses": "Somut gevşeklik, genel zayıflık ve alternatif kuşkusuzluk yorumunu kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_002",
+          "rendering_kind": "ordinary",
+          "target_gloss": "tam ve sıkı doldurulmayan kabın gevşekliği"
+        },
+        {
+          "lexical_unit_id": "lu_003",
+          "rendering_kind": "ordinary",
+          "target_gloss": "hiçbir gevşeklik, zayıflık, yılgınlık veya kusur yok"
+        },
+        {
+          "lexical_unit_id": "lu_004",
+          "rendering_kind": "ordinary",
+          "target_gloss": "yasakta hiçbir hoşgörü veya yumuşama yok; başka bir yoruma göre kuşku yok"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "sağlamlık",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Gevşeklik veya zayıflık bulunmamasının doğurabileceği güçlü durumu çağrıştırır.",
+            "loses": null,
+            "adds": "Olumsuz niteliğin yokluğundan öte, olumlu yapım kalitesi ve dayanıklılık anlamı ekler.",
+            "collision": "Sıkı yapılmış veya dayanıklı nesne anlamıyla karışarak olumsuz kuruluşu görünmez kılar."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001623/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Gevşeklik, zayıflık veya kusurun bulunmamasını olumsuz bir kuruluşla bildirir.",
+          "neighbor_only": "Bir şeyin sıkı, güçlü, güvenilir ve sağlam yapılmış olmasını olumlu bir nitelik olarak bildirir.",
+          "gloss": "gevşeklik yokluğu ile sağlamlık",
+          "shared_zone": "Her iki dal da bir şeyin gevşek veya dayanıksız olmamasına ilişkin bir sonuç doğurabilir.",
+          "distinction": "Odak dal istenmeyen niteliğin yokluğunu söyler ve hareket ya da yasaklama gibi bağlamlara genişleyebilir. Komşu dal ise şeyin sıkıca kurulmuş ve güvenilir olmasını doğrudan olumlu bir özellik olarak anlatır."
+        },
+        {
+          "neighbor_ref": "root_000290/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Kap, hareket, kusur ve yasaklama bağlamlarında gevşeklik veya zayıflık yokluğunu kapsar.",
+          "neighbor_only": "Bir işin iyi yapılmasını, düzgünlüğünü ve kimi canlılardaki güçlü yapıyı kapsar.",
+          "gloss": "gevşeklik bulunmaması ile iyi yapılmışlık",
+          "shared_zone": "Her iki dal sağlam ve gevşeklikten uzak bir sonuçla ilişkilendirilebilir.",
+          "distinction": "Odak dalın anlamı bir eksikliğin bulunmamasına dayanır. Komşu dal yapımın başarılı, düzgün ve güçlü oluşunu bildirir; bu olumlu üretim niteliği odak dalda zorunlu değildir."
+        },
+        {
+          "neighbor_ref": "root_000856/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Nesnedeki gevşeklik, hareketteki zayıflık, kusur yokluğu ve yasaktaki yumuşamazlığı kapsar.",
+          "neighbor_only": "Bir kişinin bir şeyde ısrar etmesini, kararını ve sebatını anlatır.",
+          "gloss": "zayıflık göstermeme ile kararlılık",
+          "shared_zone": "Davranış bağlamında iki dal da geri çekilmeyen veya gevşemeyen bir tutumu çağrıştırabilir.",
+          "distinction": "Odak dal zayıflık ya da yumuşama bulunmamasını niteler; öznenin amaçlı kararı zorunlu değildir. Komşu dal ise kişinin iradeli ısrarını ve sebatını çekirdek anlam yapar."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; sağlamlık, iyi yapılmışlık ve kararlılık en olası karışmaları oluşturduğu için yayımlandı. Zorlama, bedensel sertlik ve güçlü yapı adayları yalnızca sonuç veya alan benzerliği taşır; kökün diğer iki dalıysa bu kavramla yeterli anlamsal örtüşme göstermez."
+    },
+    {
+      "branch_ref": "root_000049/B003",
+      "concept_map": {
+        "definition": "Bir şeyin miktarını, bir topluluğun sayısını veya bir yere olan uzaklığı kestirip belirlemektir; sonuç olarak belirlenmiş miktar ya da süreyi de niteleyebilir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Bir şeyin ne kadar olduğunu yaklaşık olarak kestirme veya değerini belirleme işlemi yapılır.",
+            "claim_ids": [
+              "lu_005",
+              "lu_009"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Kestirme işlemi bir topluluğun sayısına veya büyüklüğüne yöneltilebilir.",
+            "claim_ids": [
+              "lu_006"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "specialization",
+            "statement": "Kestirme işlemi kişi ile su veya belirtilen bir yer arasındaki uzaklığa yöneltilebilir.",
+            "claim_ids": [
+              "lu_007",
+              "lu_010"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "extension",
+            "statement": "İşlemin sonucu, miktarı kestirilmiş veya zamanı belirlenmiş bir şeyin niteliği olabilir.",
+            "claim_ids": [
+              "lu_008"
+            ]
+          },
+          {
+            "facet_id": "F005",
+            "role": "associated_use",
+            "statement": "Yasak hakkında kuşku bulunmaması biçimindeki alternatif yorum, kestirme ve belirleme anlamıyla ilişkilendirilir.",
+            "claim_ids": [
+              "lu_004"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Ortak çekirdek, bir şeyin miktarını kestirmek veya belirlemektir. Aynı anlam ailesinde, sonucu kestirilmiş bir miktarı ya da vakti belirlenmiş bir süreyi niteleyen kullanım da bulunur.",
+        "common_claim_ids": [
+          "lu_005",
+          "lu_008"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_004"
+            ],
+            "kind": "derivation",
+            "summary": "Yasakta kuşku bulunmaması biçimindeki alternatif yorum, sözcüğün kestirme ve belirleme anlamına bağlanır."
+          },
+          {
+            "claim_ids": [
+              "lu_006",
+              "lu_007"
+            ],
+            "kind": "extension",
+            "summary": "Kestirmenin nesnesi bir topluluğun sayısı veya kişi ile su arasındaki uzaklık olabilir."
+          },
+          {
+            "claim_ids": [
+              "lu_009",
+              "lu_010"
+            ],
+            "kind": "example",
+            "summary": "Emir ve soru kalıpları, bir şeyin miktarını ya da belirtilen bir yere kadar olan uzaklığı kestirmeyi örnekler."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "miktar, sayı, uzaklık veya süreyi kestirip belirleme",
+        "applicability": "Kestirme işlemini, bu işlemin farklı nesnelerini ve belirlenmiş sonuç niteliğini birlikte temsil eder.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Miktar kestirmeyi, sayı ve uzaklık uygulamalarını, ayrıca süre belirleme sonucunu korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003",
+          "F004"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "miktarını kestirmek",
+          "usage_role": "general",
+          "applicability": "Bir şeyin ne kadar olduğunun yaklaşık olarak belirlenmesi gereken genel bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Bir şeyin miktarını yaklaşık biçimde belirleme çekirdeğini korur.",
+            "loses": "Topluluk sayısı, belirli uzaklık ve vakti belirlenmiş sonuç kullanımlarını açıkça göstermez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "uzaklığı kestirmek",
+          "usage_role": "contextual",
+          "applicability": "Kişi ile su veya başka bir belirtilen yer arasındaki mesafenin yaklaşık değerini sorma ve belirleme bağlamında uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Kestirme işlemini ve onun uzaklığa yönelmesini korur.",
+            "loses": "Genel miktar, topluluk sayısı ve belirlenmiş süre kapsamlarını dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        },
+        {
+          "text": "süresi belirlenmiş",
+          "usage_role": "contextual",
+          "applicability": "Bir son tarih veya sürenin önceden belirlenmiş olduğunu niteleyen bağlamda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Belirleme işleminin zamanla ilgili sonuç niteliğini korur.",
+            "loses": "Miktar, sayı ve uzaklık kestirme işlemlerini kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F004"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_004",
+          "rendering_kind": "ordinary",
+          "target_gloss": "yasakta hiçbir hoşgörü veya yumuşama yok; başka bir yoruma göre kuşku yok"
+        },
+        {
+          "lexical_unit_id": "lu_005",
+          "rendering_kind": "ordinary",
+          "target_gloss": "bir şeyin miktarını kestirmek veya belirlemek"
+        },
+        {
+          "lexical_unit_id": "lu_006",
+          "rendering_kind": "ordinary",
+          "target_gloss": "bir topluluğun sayısını veya büyüklüğünü kestirmek"
+        },
+        {
+          "lexical_unit_id": "lu_007",
+          "rendering_kind": "ordinary",
+          "target_gloss": "suya olan uzaklığı kestirmek"
+        },
+        {
+          "lexical_unit_id": "lu_008",
+          "rendering_kind": "ordinary",
+          "target_gloss": "miktarı kestirilmiş, belirlenmiş veya süreye bağlanmış"
+        },
+        {
+          "lexical_unit_id": "lu_009",
+          "rendering_kind": "ordinary",
+          "target_gloss": "bunun ne kadar olduğunu benim için kestir"
+        },
+        {
+          "lexical_unit_id": "lu_010",
+          "rendering_kind": "ordinary",
+          "target_gloss": "seninle belirtilen yer arasındaki uzaklık ne kadar"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "saymak",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Bir topluluğun veya miktarın sayısal değerine yönelmeyi kısmen korur.",
+            "loses": "Yaklaşık kestirme, uzaklık değerlendirme ve süre belirleme kapsamlarını kaybeder.",
+            "adds": "Ögeleri tek tek ve kesin biçimde sayma işlemini ekler.",
+            "collision": "Kesin sayım işlemiyle yaklaşık değer kestirme birbirine karışır."
+          }
+        },
+        {
+          "text": "ölçmek",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Bir niceliğin değerini belirleme yönelimini korur.",
+            "loses": null,
+            "adds": "Araç, standart birim veya doğrudan kesin karşılaştırma yoluyla ölçme anlamını ekleyebilir.",
+            "collision": "Yaklaşık kestirme ile standart birime dayalı kesin ölçüm ayrımını bulanıklaştırır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000403/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Kestirmenin yanı sıra bir uzaklığı değerlendirmeyi ve bir süreyi belirlemeyi kapsar.",
+          "neighbor_only": "Kestirmenin eksik bilgi altında sanı ve yaklaşık çıkarımla yapılmasını açıkça şart koşar.",
+          "gloss": "kestirip belirleme ile sanıya dayalı tahmin",
+          "shared_zone": "İki dal da miktar, sayı veya benzeri bir değeri yaklaşık olarak belirlemeyi kapsar.",
+          "distinction": "Odak dal kestirme yöntemini sanı veya eksik bilgiyle sınırlamaz ve sonucu süre belirleme yönüne uzatabilir. Komşu dalda ise yaklaşık çıkarımın sanıya dayanması sınırın belirgin parçasıdır."
+        },
+        {
+          "neighbor_ref": "root_000434/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Topluluk sayısı, suya veya yere uzaklık ve belirlenmiş süre gibi kullanımları kapsar.",
+          "neighbor_only": "Bir şeyi kesme veya yapma öncesinde başka bir ölçüye göre biçme ve ölçme sürecini kapsar.",
+          "gloss": "değeri kestirme ile önceden ölçüp biçme",
+          "shared_zone": "Her iki dal da bir şeyin değerini veya ölçüsünü eylemden önce belirleyebilir.",
+          "distinction": "Odak dalın çekirdeği miktarı veya uzaklığı kestirip belirlemektir. Komşu dal, özellikle kesme ya da yapma öncesindeki ölçüp biçme aşamasını ve buna bağlı hazırlığı da sınırına alır."
+        },
+        {
+          "neighbor_ref": "root_001269/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bir şeyin miktarını, topluluk sayısını veya uzaklığı doğrudan kestirebilir.",
+          "neighbor_only": "Bir şeyi başka bir şeyi örnek veya ölçüt alarak karşılaştırmalı biçimde belirler.",
+          "gloss": "doğrudan kestirme ile örneğe göre ölçme",
+          "shared_zone": "İki dal da bir şeyin niceliğini veya ölçüsünü belirleme alanında buluşur.",
+          "distinction": "Odak dal başka bir örnekle karşılaştırmayı zorunlu kılmaz. Komşu dalda ise bir şeyi başka bir şeye göre ölçme ve örneğe dayalı karşılaştırma çekirdeğin parçasıdır."
+        },
+        {
+          "neighbor_ref": "root_000989/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Değeri yaklaşık kestirmeyi, uzaklık değerlendirmeyi ve süre belirlemeyi kapsar.",
+          "neighbor_only": "Ögeleri sayarak toplamı kesin biçimde çıkarma ve sayılabilirliği belirtme işlemini kapsar.",
+          "gloss": "kestirme ile sayıp dökme",
+          "shared_zone": "Topluluk veya miktar söz konusu olduğunda iki dal da sayısal bir sonuca yönelebilir.",
+          "distinction": "Odak dal sonuca yaklaşık kestirme yoluyla ulaşabilir ve sayı dışındaki uzaklık ile süreye uzanır. Komşu dal ise sayılabilir ögelerin tek tek hesaba katılması ve toplamın çıkarılması üzerine kuruludur."
+        },
+        {
+          "neighbor_ref": "root_000950/B007",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Kişi, topluluk, uzaklık, miktar ve süre gibi daha geniş bir nesne alanına uygulanır.",
+          "neighbor_only": "Belirli bir iş için gereken yapı malzemesi sayısını kestirme örneğine bağlanan daha dar bir kullanımdır.",
+          "gloss": "genel kestirme ile gereken miktarı kestirme",
+          "shared_zone": "Her iki dalın çekirdeğinde bir miktarın yaklaşık değerini belirleme bulunur.",
+          "distinction": "Anlamsal çekirdek büyük ölçüde örtüşür; ancak odak dal çok sayıda nesne ve sonucu kapsarken komşu kartta kullanım gereken yapı malzemesi sayısının kestirilmesiyle örneklenip daralır."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; tahmin, ölçüp biçme, örneğe göre ölçme, kesin sayım ve dar kapsamlı miktar kestirme en yararlı beş sınırı verdi. Yarayı araçla yoklama, tartma ve tamlık adayları yöntem veya sonuç alanını paylaşsa da yayımlanan ayrımlara ek bir temel karşıtlık katmaz."
+    }
+  ],
+  "root_profile": {
+    "summary": "Kök, arazi yüzeyindeki yükselti-alçaltı farkını, gevşeklik veya zayıflık ile bunların olumsuzlanmasını ve miktar, sayı, uzaklık ya da süreyi kestirip belirlemeyi üç ayrı dalda taşır. Gevşeklik dalındaki kuşkusuzluk yorumu belirleme dalıyla sınırlı bir tarihsel anlam bağlantısı kurar.",
+    "polysemy": "polysemic",
+    "organization": "multi_branch"
+  }
+}

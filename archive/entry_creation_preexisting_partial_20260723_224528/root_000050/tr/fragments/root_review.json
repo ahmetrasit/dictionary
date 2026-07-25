@@ -1,0 +1,19 @@
+{
+  "inputs_sha256": "721e96b7a5178fdb6c612f8af58967ba4cb2a8313de286b28b3ab103cce0a434",
+  "verdict": "repair",
+  "summary": "B002 dalındaki bir komşuluk ilişkisi, kanıtta bulunmayan bir gücenme ayrımı ekleyerek eş anlamlı iki sınırı gereksiz yere ayırıyor. Diğer incelenen semantik alanlar yayıma hazırdır.",
+  "issues": [
+    {
+      "target_ref": "root_000050/B002",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_004",
+        "lu_005"
+      ],
+      "evidence_conflict": "Bu dalın kanıtı öfke durumunu ve bir kişiye öfkelenmeyi kapsar. root_001626/B005 sınır kartı da öfkeyi ve bir kişiye yönelen öfkeyi kapsıyor; içte duyulan gücenmeyi ayırıcı bir koşul olarak vermiyor. Yanıtın gücenme tonuna dayanan near_synonym/partial sınıflaması bu nedenle desteklenmiyor.",
+      "smallest_correction": "root_001626/B005 ilişkisini synonym/exact olarak değiştirin; focus_only ve neighbor_only alanlarını boşaltın ve gloss, shared_zone ile distinction metinlerini iki dalın aynı öfke ve hedefe yönelme sınırına sahip olduğunu gösterecek biçimde düzeltin."
+    }
+  ]
+}

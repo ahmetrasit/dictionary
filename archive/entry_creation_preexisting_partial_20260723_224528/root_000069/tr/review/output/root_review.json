@@ -1,0 +1,65 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtı iyi kapsıyor; ancak ikinci dalda ayrı tanıklanan inleme ve korku anlamı dua anlamına bağımlı bir uzmanlaşma gibi sunulmuş, ayrıca kanıtta bulunmayan bir yararlanıcı eklenmiştir. Birinci dalda da çekirdek tanıma kanıtlanmamış bir istemlilik ayrımı eklenmiş ve bir sözlüksel karşılık acı çekmek yerine acıma anlamına kayabilmektedir.",
+  "issues": [
+    {
+      "target_ref": "root_000069/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_010",
+        "lu_011"
+      ],
+      "evidence_conflict": "lu_010, çok inleyen ve korku ya da üzüntüsünü gösteren kişiyi; lu_011 ise çok dua eden veya iyilik için dua eden kişiyi ayrı açıklamalar olarak verir. F002, ilk açıklamayı ikinci açıklamadaki yakarıcı niteliğin bir görünümü sayarak kanıtta kurulmamış bir bağımlılık ekliyor; yalnızca lu_011 üzerine kurulan tanım da lu_010 çizgisini çekirdeğin dışında bırakıyor.",
+      "smallest_correction": "F002'yi lu_010'un bağımsız anlam çizgisini bildiren tarafsız bir çekirdek veya kaynak değişkeni olarak yeniden kurun ve tanımı hem çok inleyen ya da korkusunu gösteren kişiyi hem de çokça yakaran veya iyilik için dua eden kişiyi kapsayacak biçimde genişletin."
+    },
+    {
+      "target_ref": "root_000069/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011"
+      ],
+      "evidence_conflict": "lu_011 iyilik için dua etmeyi bildirir, fakat duanın başkaları yararına olduğunu belirtmez. F001'deki \"başkaları için iyilik diler\" sözü kanıtta olmayan bir yararlanıcı ekler.",
+      "smallest_correction": "F001'deki ifadeyi \"Kişi sık sık yakarır veya iyilik için dua eder\" olarak değiştirin."
+    },
+    {
+      "target_ref": "root_000069/B002",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011"
+      ],
+      "evidence_conflict": "İkinci bağlamsal karşılığın uygulanabilirlik açıklaması yakarışı başkası için iyi sonuç dilemeye özgülüyor. lu_011 yalnızca iyilik için duayı destekler ve belirli bir yararlanıcı vermez.",
+      "smallest_correction": "Karşılığı ve uygulanabilirlik açıklamasını \"iyilik için yakaran kişi\" çizgisinde tutup başkasına yönelik olma koşulunu kaldırın."
+    },
+    {
+      "target_ref": "root_000069/B001",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002",
+        "lu_003",
+        "lu_004"
+      ],
+      "evidence_conflict": "Bu iddialar acı, üzüntü veya yakınma sırasında sesi söylemeyi ya da çıkarmayı destekler, fakat sesin istemli veya kendiliğinden oluşuna dair bir ayrım vermez. Tanımdaki bu ikilik kanıtlanmamış bir kip ayrımı ekler.",
+      "smallest_correction": "Tanımdan \"istemli ya da kendiliğinden\" sözlerini çıkarın."
+    },
+    {
+      "target_ref": "root_000069/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_002"
+      ],
+      "evidence_conflict": "lu_002 kişinin acı çekip inleme sesi çıkarmasını anlatır. \"Acıyıp inleme sesi çıkarmak\" Türkçede birine acıma anlamına kayarak kaynakta bulunmayan bir şefkat ilişkisi kurabilir.",
+      "smallest_correction": "lu_002 karşılığını \"acı çekip inleme sesi çıkarmak\" olarak değiştirin."
+    }
+  ]
+}

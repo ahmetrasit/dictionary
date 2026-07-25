@@ -1,0 +1,883 @@
+{
+  "inputs_sha256": "20c93e7f441b43d46e4292fa1caca4437e3e50d4047ee357cfbbb331c45cdf4e",
+  "artifact_format": "dictionary-v2-root-entry-draft-v1",
+  "generated_by": "v2/scripts/accept_root_writer.py",
+  "root_envelope_id": "root_000132",
+  "language": "tr",
+  "branches": [
+    {
+      "branch_ref": "root_000132/B001",
+      "concept_map": {
+        "definition": "Deve türünden erkek veya dişi bir bireyi cinsiyet ayrımı yapmadan adlandıran isimdir. Farklı çoğul biçimleri az sayıyı, çok sayıyı ya da genel çoğulluğu bildirir; bir tanım kullanımı belirli bir olgunluk evresinden sonrasıyla sınırlar.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Ad, erkek deveyi de dişi deveyi de kapsar.",
+            "claim_ids": [
+              "lu_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "source_variant",
+            "statement": "Bir tanım, adın her iki cinsiyet için de belirli bir olgunluk evresinden sonra kullanılmasını şart koşar.",
+            "claim_ids": [
+              "lu_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "specialization",
+            "statement": "Bir çoğul biçimi özellikle az sayıdaki develeri gösterir.",
+            "claim_ids": [
+              "lu_002"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "specialization",
+            "statement": "Başka bir çoğul biçimi özellikle çok sayıdaki develeri gösterir.",
+            "claim_ids": [
+              "lu_003"
+            ]
+          },
+          {
+            "facet_id": "F005",
+            "role": "specialization",
+            "statement": "Üçüncü bir biçim, sayı derecesi ayrıca belirtilmeden develerin çoğulunu verir.",
+            "claim_ids": [
+              "lu_004"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Tanımlar, temel adın erkek ve dişi deve için ortak olduğunu ve üç ayrı çoğul biçimi bulunduğunu birlikte gösterir. Çoğullardan biri azlık, biri çokluk bildirirken üçüncüsü genel çoğul olarak verilir; ayrıca tek bir tanım adın iki cinsiyete uygulanmasını belirli bir olgunluk evresine bağlar.",
+        "common_claim_ids": [
+          "lu_001",
+          "lu_002",
+          "lu_003",
+          "lu_004"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "erkek veya dişi deve",
+        "applicability": "Cinsiyeti belirtilmeyen tek bir deve bireyini bütün temel kapsamıyla anlatır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Hem erkek hem dişi bireyi kapsayan cinsiyetten bağımsız deve adlandırmasını korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "deve",
+          "usage_role": "general",
+          "applicability": "Bağlamda hayvanın cinsiyetini ayrıca belirtmek gerekmiyorsa doğal karşılıktır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Tek bir erkek ya da dişi deve bireyini cinsiyet ayırmadan belirtir.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "az sayıdaki develer",
+          "usage_role": "contextual",
+          "applicability": "Azlık bildiren çoğul biçimin sayı ayrımının bağlamda görünmesi gerektiğinde kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Deve çoğulluğunu ve bu çoğulun az sayıya özgü oluşunu birlikte korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        },
+        {
+          "text": "çok sayıdaki develer",
+          "usage_role": "contextual",
+          "applicability": "Çokluk bildiren çoğul biçimin sayı ayrımının bağlamda görünmesi gerektiğinde kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Deve çoğulluğunu ve bu çoğulun çok sayıya özgü oluşunu birlikte korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F004"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_001",
+          "rendering_kind": "ordinary",
+          "target_gloss": "erkek veya dişi deve"
+        },
+        {
+          "lexical_unit_id": "lu_002",
+          "rendering_kind": "ordinary",
+          "target_gloss": "az sayıdaki develer"
+        },
+        {
+          "lexical_unit_id": "lu_003",
+          "rendering_kind": "ordinary",
+          "target_gloss": "çok sayıdaki develer"
+        },
+        {
+          "lexical_unit_id": "lu_004",
+          "rendering_kind": "ordinary",
+          "target_gloss": "develer"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "erkek deve",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Deve türünden tek bir bireyi gösterme özelliğini korur.",
+            "loses": "Dişi deve bireylerini de kapsayan cinsiyetten bağımsız kapsamı siler.",
+            "adds": null,
+            "collision": null
+          }
+        },
+        {
+          "text": "dişi deve",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Deve türünden tek bir bireyi gösterme özelliğini korur.",
+            "loses": "Erkek deve bireylerini de kapsayan cinsiyetten bağımsız kapsamı siler.",
+            "adds": null,
+            "collision": null
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001567/B002",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Erkek bireyleri de kapsayan cinsiyetten bağımsız bir deve adıdır.",
+          "neighbor_only": "Yalnız dişi bireyi kapsar ve biçim benzerliğiyle bazı gök cisimlerine de uzanır.",
+          "gloss": "dişi deve",
+          "shared_zone": "İki dal da tek bir deve bireyini adlandırabilir.",
+          "distinction": "Odak dal cinsiyet belirtmeden erkek veya dişi bireye uygulanır; komşu dal dişilikle sınırlıdır ve ayrıca biçim benzerliğine dayanan bir gök cismi uzantısı taşır."
+        },
+        {
+          "neighbor_ref": "root_000260/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Olgunluk ve cinsiyet belirtmeden tek bir deve bireyini adlandırabilir.",
+          "neighbor_only": "Olgun erkek deveyi, dişi devenin eşini veya sahipleri ve çobanlarıyla bir deve topluluğunu anlatabilir.",
+          "gloss": "olgun erkek deve veya deve topluluğu",
+          "shared_zone": "Her iki dalın göndergesi deve türündendir.",
+          "distinction": "Odak dalın çekirdeği her iki cinsiyeti kapsayan birey adıdır; komşu dal ise olgun erkek birey ve topluluk anlamları çevresinde kurulur."
+        },
+        {
+          "neighbor_ref": "root_000964/B004",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Kullanım amacı belirtilmeyen herhangi bir erkek ya da dişi deve bireyini kapsar.",
+          "neighbor_only": "Yolculukta binmek ve yük taşımak üzere ayrılmış deveyle sınırlıdır.",
+          "gloss": "yolculuğa ayrılmış deve",
+          "shared_zone": "İki dal da bir deve bireyini gösterebilir.",
+          "distinction": "Odak dal genel bir tür adıdır; komşu dal aynı hayvanı ancak yolculuk için hazırlanmış işlevsel durumuyla adlandırır."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün komşu adayları değerlendirildi. Dişi deve, olgun erkek veya topluluk ve yolculuğa ayrılmış deve adayları temel kapsamı doğrudan sınırlar; diğerleri yalnız nitelik, kullanım, değer veya aynı olay çevresinde zayıf bağ kurduğu için yayımlanmadı.",
+      "branch_image_ar": "البعير من الإبل",
+      "what_is_ar": "يدخل فيه اسم البعير الواقع على الجمل والناقة، وما يذكر معه من أبعرة وأباعر وبعران.",
+      "source_phrase_ar": "أصلان الجمال والبعر؛ يقال بعير وأبعرة وأباعر وبعران (maqayis)؛ البعير البازل والعرب تقول هذا بعير... للذكر جمل وللأنثى ناقة (ayn)؛ البعير اسم يجمع الذكر والأنثى (jamhara)؛ البعير من الإبل بمنزلة الإنسان... للجمل بعير وللناقة بعير (sihah)؛ البعير من الإبل بمنزلة الإنسان... يقع على الجمل والناقة إذا أجذعا (tahdhib)؛ البعير معروف ويقع على الذكر والأنثى (mufradat)",
+      "sources": [
+        "MQ",
+        "AY",
+        "JA",
+        "SI",
+        "TA",
+        "MU"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_000132/B002",
+      "concept_map": {
+        "definition": "Deve ile çift toynaklı hayvanlardan düşen katı dışkıdır; bir tanım evcil sığırı kapsam dışında tutar. Tek parçası ve çoğulu, deve, koyun ve tavşanın bunu çıkarma eylemi, biriktiği yer, çok dışkılayan ya da sağımcıya doğru dışkı bıraktığı için kusurlu sayılan hayvan ve bu kusurun kendisi de aynı anlam alanına bağlıdır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Temel ad, deve ve çift toynaklı hayvanlardan düşen katı dışkıyı gösterir.",
+            "claim_ids": [
+              "lu_005"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "source_variant",
+            "statement": "Bir tanım evcil sığır dışkısını bu adın hayvan kapsamından çıkarır.",
+            "claim_ids": [
+              "lu_005"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "specialization",
+            "statement": "Tekil biçim, dışkının tek bir parçasını bildirir.",
+            "claim_ids": [
+              "lu_006"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "specialization",
+            "statement": "Çoğul biçim, bu dışkının birden çok parçasını veya toplu miktarını bildirir.",
+            "claim_ids": [
+              "lu_007"
+            ]
+          },
+          {
+            "facet_id": "F005",
+            "role": "associated_use",
+            "statement": "Fiil biçimi, hayvanın bu tür dışkıyı çıkarmasını anlatır.",
+            "claim_ids": [
+              "lu_008"
+            ]
+          },
+          {
+            "facet_id": "F006",
+            "role": "extension",
+            "statement": "Dışkılama eylemi deve ve koyunun yanı sıra tavşan için de kullanılır.",
+            "claim_ids": [
+              "lu_008"
+            ]
+          },
+          {
+            "facet_id": "F007",
+            "role": "associated_use",
+            "statement": "Yer adı, dışkının bulunduğu veya biriktiği alanı gösterir.",
+            "claim_ids": [
+              "lu_009"
+            ]
+          },
+          {
+            "facet_id": "F008",
+            "role": "specialization",
+            "statement": "Bir hayvan adı, sağım sırasında sağımcıya doğru dışkı bırakan koyun veya dişi deveyi gösterir.",
+            "claim_ids": [
+              "lu_010"
+            ]
+          },
+          {
+            "facet_id": "F009",
+            "role": "source_variant",
+            "statement": "Aynı hayvan adı başka bir açıklamada çok dışkılayan hayvanı gösterir.",
+            "claim_ids": [
+              "lu_011"
+            ]
+          },
+          {
+            "facet_id": "F010",
+            "role": "associated_use",
+            "statement": "Sağımcıya doğru dışkı bırakma davranışı ayrıca hayvanda bir kusur sayılır ve ayrı bir adla anılır.",
+            "claim_ids": [
+              "lu_012"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Tanımlar, temel maddenin deve ve çift toynaklı hayvan dışkısı olduğunu; bunun tek parça ve çoğul adlarıyla, çıkarma eylemiyle ve birikme yeriyle genişlediğini gösterir. Hayvanı niteleyen ortak bir biçim bazı açıklamalarda sağımcıya doğru dışkı bırakma kusuruna, bazılarında çok dışkılamaya bağlanır; temel hayvan kapsamı konusunda da evcil sığırı dışarıda bırakan dar bir görüş vardır.",
+        "common_claim_ids": [
+          "lu_005",
+          "lu_006",
+          "lu_007",
+          "lu_008",
+          "lu_009",
+          "lu_010",
+          "lu_011",
+          "lu_012"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "deve ve çift toynaklı hayvan dışkısı",
+        "applicability": "Dalın temel maddesini, ilgili hayvan sınıflarıyla birlikte adlandırmak için kullanılır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Katı dışkı göndergesini ve deve ile çift toynaklı hayvanlara bağlı temel kapsamı korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "tek bir dışkı parçası",
+          "usage_role": "contextual",
+          "applicability": "Toplu madde değil, ondan ayrılan tek bir parça söz konusu olduğunda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Temel dışkı anlamını ve bunun tek bir parçası olma ayrımını korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        },
+        {
+          "text": "dışkılamak",
+          "usage_role": "contextual",
+          "applicability": "Deve, koyun veya tavşanın katı dışkı çıkarma eylemini anlatan bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Hayvanın söz konusu dışkıyı çıkarma eylemini doğrudan korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F005",
+            "F006"
+          ]
+        },
+        {
+          "text": "dışkı birikme yeri",
+          "usage_role": "explanatory",
+          "applicability": "Deve veya koyun dışkısının bulunduğu ya da toplandığı alan anlatılırken kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Dışkıyla tanımlanan yeri ve o yerde birikme ilişkisini korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F007"
+          ]
+        },
+        {
+          "text": "sağım sırasında dışkı atma kusuru",
+          "usage_role": "explanatory",
+          "applicability": "Sağılan hayvanın sağımcıya doğru dışkı bırakmasının kusur sayıldığı bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Davranışı, sağım koşulunu ve bunun hayvana yüklenen bir kusur oluşunu korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F008",
+            "F010"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_005",
+          "rendering_kind": "ordinary",
+          "target_gloss": "deve ve çift toynaklı hayvan dışkısı"
+        },
+        {
+          "lexical_unit_id": "lu_006",
+          "rendering_kind": "ordinary",
+          "target_gloss": "tek bir dışkı parçası"
+        },
+        {
+          "lexical_unit_id": "lu_007",
+          "rendering_kind": "ordinary",
+          "target_gloss": "dışkılar"
+        },
+        {
+          "lexical_unit_id": "lu_008",
+          "rendering_kind": "ordinary",
+          "target_gloss": "dışkılamak"
+        },
+        {
+          "lexical_unit_id": "lu_009",
+          "rendering_kind": "ordinary",
+          "target_gloss": "dışkı birikme yeri"
+        },
+        {
+          "lexical_unit_id": "lu_010",
+          "rendering_kind": "ordinary",
+          "target_gloss": "sağım sırasında sağımcıya doğru dışkı atan koyun veya dişi deve"
+        },
+        {
+          "lexical_unit_id": "lu_011",
+          "rendering_kind": "ordinary",
+          "target_gloss": "çok dışkılayan hayvan"
+        },
+        {
+          "lexical_unit_id": "lu_012",
+          "rendering_kind": "ordinary",
+          "target_gloss": "sağım sırasında dışkı atma kusuru"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "tezek",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Hayvan dışkısı olma yönünü genel olarak korur.",
+            "loses": "Deve ve çift toynaklı hayvan kapsamıyla tek parça, eylem ve yer bağlantılarını belirsizleştirir.",
+            "adds": "Kurutulmuş, yakıt ya da gübre olarak kullanılan dışkı çağrışımı ekler.",
+            "collision": "Türkçede özellikle kurutulup kalıplanmış hayvan dışkısını düşündürür."
+          }
+        },
+        {
+          "text": "hayvan gübresi",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Hayvandan çıkan dışkısal madde yönünü korur.",
+            "loses": "Belirli hayvan sınıflarını ve doğal olarak düşen katı dışkı sınırını zayıflatır.",
+            "adds": "Tarımda kullanılan her türlü hayvansal gübreyi kapsayan işlevsel bir anlam ekler.",
+            "collision": null
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000255/B007",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Tek parça ve çoğul dışkı adlarını, dışkılama eylemini, birikme yerini ve sağım kusurunu birlikte kapsar.",
+          "neighbor_only": "Dışkının toplanmasını ve pislik yiyen hayvanı da aynı dalda kapsar.",
+          "gloss": "hayvan dışkısı ve onunla ilgili kullanımlar",
+          "shared_zone": "İki dal da hayvan dışkısını doğrudan adlandırır.",
+          "distinction": "Ortak gönderge hayvan dışkısıdır; odak dal belirli hayvan sınıfları ve kendi türevleri çevresinde kurulurken komşu dal toplama eylemiyle pislik yiyen hayvana uzanır."
+        },
+        {
+          "neighbor_ref": "root_001616/B003",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Tek tek dışkı parçalarını, çıkarma eylemini ve sağım sırasında ortaya çıkan kusuru kapsar.",
+          "neighbor_only": "Dışkının idrarla birlikte birikip gübreli bir zemin veya yığın oluşturmasını merkez alır.",
+          "gloss": "dışkı ve idrar birikintisi",
+          "shared_zone": "Her iki dal deve ve koyun dışkısının bulunduğu yeri kapsayabilir.",
+          "distinction": "Odak dalın çekirdeği hayvandan düşen katı dışkıdır; komşu dal ise dışkı ile idrarın bir yerde toplanıp oluşturduğu birikinti ve zemine yönelir."
+        },
+        {
+          "neighbor_ref": "root_000728/B006",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Deve ve çift toynaklı hayvanların katı, parçalı dışkısıyla sınırlıdır.",
+          "neighbor_only": "Karından çıkan atığı daha genel biçimde ve özellikle daha akışkan dışkıyı kapsayabilir.",
+          "gloss": "karından çıkan atık",
+          "shared_zone": "İki dal da hayvanın bedeninden çıkan dışkısal maddeyi anlatır.",
+          "distinction": "Odak dal hayvan türü ve katı parça niteliğiyle sınırlandırılmıştır; komşu dal beden atığını daha geniş tutar ve kıvam bakımından farklı örnekleri de içine alır."
+        },
+        {
+          "neighbor_ref": "root_000204/B005",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Deve, koyun ve tavşanın parça biçimli katı dışkı çıkarmasını anlatır.",
+          "neighbor_only": "Dışkılama eylemini özellikle tek toynaklı hayvanlar için anlatır.",
+          "gloss": "hayvanın dışkılaması",
+          "shared_zone": "İki dal da bir hayvanın dışkı çıkarma eylemini doğrudan anlatır.",
+          "distinction": "Odak kullanım deve, koyun ve tavşanın parça biçimli katı dışkı çıkarmasına bağlıdır; komşu dal ise hayvanın, özellikle tek toynaklıların dışkılamasını merkez alır."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün komşu adayları değerlendirildi. Hayvan dışkısını, hayvanın dışkılama eylemini, dışkı-idrar birikintisini ve daha genel beden atığını anlatan dört dal sınırı doğrudan aydınlatır; kuşa özgü dışkılama ve dışkı, süt ve deve adı gibi kalan adaylar yalnız daha uzak bir alanı veya katılımcıyı paylaştığı için ayrıca yayımlanmadı.",
+      "branch_image_ar": "البعر الساقط من ذوات الخف والظلف",
+      "what_is_ar": "يدخل فيه البعر والبعرة والأبعار، وفعل بعر، وموضع البعر، والمبعار الكثير البعر أو الذي يعيب الحلب بإلقائه البعر.",
+      "source_phrase_ar": "البعر معروف (maqayis)؛ البعر للإبل ولكل ذي ظلف إلا للبقر الأهلي فإنه يخثي والوحشي يبعر (ayn)؛ البعر والبعر لغتان معروفتان للظلف والخف والجمع أبعار (jamhara)؛ البعرة واحدة البعر والأبعار وقد بعر البعير والشاة (sihah)؛ البعر لكل ذي ظلف ولكل ذي خف من الإبل والشاء وبقر الوحش والظباء ما خلا البقر الأهلي (tahdhib)؛ البعر لما يسقط منه والمبعر موضع البعر والمبعار من البعير الكثير البعر (mufradat)",
+      "sources": [
+        "MQ",
+        "AY",
+        "JA",
+        "SI",
+        "TA",
+        "MU"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_000132/B003",
+      "concept_map": {
+        "definition": "Eksikliğin geçici ya da kısmi olmadığı, bütünüyle ve sürekli devam eden yoksulluk durumudur.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Yoksulluk hem tamdır hem de süreklilik gösterir.",
+            "claim_ids": [
+              "lu_013"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Tek tanıklık, bu kullanımı herhangi bir geçicilik veya derece kaydı eklemeden tam ve sürekli yoksulluk durumu olarak açıklar.",
+        "common_claim_ids": [
+          "lu_013"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "tam ve sürekli yoksulluk",
+        "applicability": "Yoksulluğun hem bütün ağırlığıyla yaşandığını hem de kalıcı biçimde sürdüğünü anlatır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Yoksulluğun tam oluşunu ve kesintisiz sürme niteliğini birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "hiç dinmeyen ağır yoksulluk",
+          "usage_role": "explanatory",
+          "applicability": "Durumun sürekliliğini ve eksiksiz ağırlığını akıcı bir anlatımla vurgulamak için kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Yoksulluğun çok ağır ve devamlı bir durum olmasını birlikte korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_013",
+          "rendering_kind": "ordinary",
+          "target_gloss": "tam ve sürekli yoksulluk"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "yoksulluk",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Maddi yetersizlik ve yoksunluk durumunu korur.",
+            "loses": "Durumun hem tam hem de sürekli olduğu yönündeki iki zorunlu niteliği siler.",
+            "adds": null,
+            "collision": null
+          }
+        },
+        {
+          "text": "ihtiyaç",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Bir eksiklik veya yoksunluk bulunması yönünü korur.",
+            "loses": "Tam ve sürekli yoksulluk durumunu açıkça bildirmez.",
+            "adds": "Maddi olmayan, geçici veya tek bir şeye yönelik gereksinimleri de kapsar.",
+            "collision": "Genel gereksinim anlamıyla bu özel yoksulluk durumunu birbirine karıştırır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000178/B002",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Yoksulluğun tam ve sürekli olması zorunludur.",
+          "neighbor_only": "Genel ihtiyaç ve düşkünlüğü, toprağa yapışma imgesiyle kurulan bir söyleyişi de kapsar.",
+          "gloss": "yoksulluk ve düşkünlük",
+          "shared_zone": "İki dal da yoksulluk ve maddi düşkünlük durumunu anlatır.",
+          "distinction": "Odak dal yalnız tam ve sürekli yoksulluğu gösterir; komşu dal daha genel yoksulluk, ihtiyaç ve kalıplaşmış bir imge çevresinde daha geniştir."
+        },
+        {
+          "neighbor_ref": "root_001169/B002",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Yoksulluğun eksiksiz ve kalıcı olması anlamın kurucu parçasıdır.",
+          "neighbor_only": "Genel ihtiyaç, parasızlık ve yoksul ya da düşkün kişinin durumunu süre şartı olmadan kapsar.",
+          "gloss": "ihtiyaç ve parasızlık",
+          "shared_zone": "İki dal maddi yetersizlik ve yoksulluk alanında örtüşür.",
+          "distinction": "Odak dal derece ve süre bakımından en uç durumu zorunlu kılar; komşu dal daha hafif veya geçici ihtiyaç ve parasızlık durumlarına da uygulanabilir."
+        },
+        {
+          "neighbor_ref": "root_001164/B007",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Tam ve sürekli yoksulluğu bir durum olarak adlandırır.",
+          "neighbor_only": "Bir kişinin yoksulluğa düşmesini veya yoksullaşmasını bir değişim olarak anlatır.",
+          "gloss": "yoksullaşmak",
+          "shared_zone": "İki dal yoksulluk durumuyla ilgilidir.",
+          "distinction": "Odak dal kalıcı durumun niteliğini, komşu dal ise o duruma geçiş olayını merkez alır; biri ötekinin yerine doğal olarak kullanılamaz."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün komşu adayları değerlendirildi. Genel yoksulluk, ihtiyaç ve yoksullaşma adayları tamlık, süreklilik ve durum-eylem ayrımını en açık biçimde gösterir; kalan adaylar aynı geniş alandaki tekrarlar olduğundan ek bir sınır sağlamaz.",
+      "branch_image_ar": "الفقر التام الدائم",
+      "what_is_ar": "يدخل فيه استعمال البعر بمعنى الفقر التام الدائم كما نقله التهذيب.",
+      "source_phrase_ar": "قال أبو عمرو: البعر: الفقر التام الدائم (tahdhib)",
+      "sources": [
+        "TA"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_000132/B004",
+      "concept_map": {
+        "definition": "Başka bir sözün küçültme biçimi, kalıplaşmış olarak Tanrı uğruna duyulan öfkeyi adlandırır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Öfkenin ayırt edici nedeni kişisel bir hedef değil, Tanrı uğruna gösterilmesidir.",
+            "claim_ids": [
+              "lu_014"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "associated_use",
+            "statement": "Bu anlamı taşıyan söz, biçim bakımından dışkının tek parçasını bildiren adın küçültmesidir.",
+            "claim_ids": [
+              "lu_014"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Tek tanıklık, dışkının tek parçasını bildiren adın küçültme biçiminin kalıplaşarak Tanrı uğruna duyulan öfkeyi anlattığını belirtir.",
+        "common_claim_ids": [
+          "lu_014"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "Tanrı uğruna duyulan öfke",
+        "applicability": "Öfkenin özellikle Tanrı uğruna duyulduğu belirtilmek istendiğinde kullanılır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Öfke duygusunu ve onu ayırt eden Tanrı uğruna olma nedenini birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_014",
+          "rendering_kind": "ordinary",
+          "target_gloss": "Tanrı uğruna duyulan öfke"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "öfke",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Temel öfke duygusunu korur.",
+            "loses": "Öfkenin Tanrı uğruna duyulması koşulunu bütünüyle siler.",
+            "adds": null,
+            "collision": null
+          }
+        },
+        {
+          "text": "kutsal öfke",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Öfkenin kutsallıkla ilişkilendirilmesi yönünü korur.",
+            "loses": "Doğrudan Tanrı uğruna duyulma koşulunu kesin biçimde göstermez.",
+            "adds": "Kutsal sayılan her kişi, nesne veya değer uğruna duyulan öfkeyi de kapsayabilir.",
+            "collision": "Genel dinsel veya ahlaki öfke söylemiyle karışabilir."
+          }
+        }
+      ],
+      "neighbor_distinctions": [],
+      "neighbor_coverage_note": "Bütün komşu adayları değerlendirildi. Bitki, ekin, palmiye bölümü, çukur biçimli nesne, deve, dışkı ve yoksulluk dallarının hiçbiri Tanrı uğruna duyulan öfkeyle anlam sınırı paylaşmadığından yayımlanacak bir ayrım bulunmadı.",
+      "branch_image_ar": "البعيرة غضبة في الله",
+      "what_is_ar": "يدخل فيه استعمال البعيرة، وهي تصغير البعرة، بمعنى الغضبة في الله عز وجل.",
+      "source_phrase_ar": "البعيرة: تصغير البعرة وهي الغضبة في الله عز وجل (tahdhib)",
+      "sources": [
+        "TA"
+      ],
+      "source_note": {}
+    }
+  ],
+  "root_profile": {
+    "summary": "Kök, cinsiyetten bağımsız deve adıyla hayvan dışkısı ve buna bağlı eylem, yer ve nitelikleri kapsayan iki somut alanın yanında tam ve sürekli yoksulluk ile Tanrı uğruna duyulan öfke anlamlarını taşır.",
+    "polysemy": "polysemic",
+    "organization": "mixed"
+  },
+  "occurrence_evidence": {
+    "summary": {
+      "morpheme_count": 2,
+      "word_count": 2,
+      "ayah_count": 2,
+      "surah_count": 1
+    },
+    "forms": [
+      {
+        "form_id": "F001",
+        "lemma_ar": "بَعِير",
+        "stem_ar": "بَعِيرٍ",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:baEiyr|ROOT:bEr|M|INDEF|GEN",
+        "occurrence_count": 2
+      }
+    ],
+    "ayahs": [
+      {
+        "ayah_ref": "12:65",
+        "surface_ar": "وَلَمَّا فَتَحُوا۟ مَتَٰعَهُمْ وَجَدُوا۟ بِضَٰعَتَهُمْ رُدَّتْ إِلَيْهِمْ قَالُوا۟ يَٰٓأَبَانَا مَا نَبْغِى هَٰذِهِۦ بِضَٰعَتُنَا رُدَّتْ إِلَيْنَا وَنَمِيرُ أَهْلَنَا وَنَحْفَظُ أَخَانَا وَنَزْدَادُ كَيْلَ بَعِيرٍ ذَٰلِكَ كَيْلٌ يَسِيرٌ"
+      },
+      {
+        "ayah_ref": "12:72",
+        "surface_ar": "قَالُوا۟ نَفْقِدُ صُوَاعَ ٱلْمَلِكِ وَلِمَن جَآءَ بِهِۦ حِمْلُ بَعِيرٍ وَأَنَا۠ بِهِۦ زَعِيمٌ"
+      }
+    ],
+    "occurrences": [
+      {
+        "qac_ref": "12:65:22:1",
+        "qac_word_ref": "12:65:22",
+        "surah": 12,
+        "ayah": 65,
+        "word_index": 22,
+        "morpheme_index": 1,
+        "surface_ar": "بَعِيرٍ",
+        "stem_ar": "بَعِيرٍ",
+        "lemma_ar": "بَعِير",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:baEiyr|ROOT:bEr|M|INDEF|GEN",
+        "ayah_ref": "12:65",
+        "form_id": "F001",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s012:065:noun:27",
+          "attachment_word_unit_id": "q:12:65:27",
+          "qac_char_span": [
+            102,
+            106
+          ],
+          "attachment_char_spans": [
+            [
+              102,
+              106
+            ]
+          ],
+          "source_grammar": "concrete noun — genitive (mudāf ʾilayhi: kayla baʿīrin = measure of a camel = one camel-load)",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s012:065:pass1:attach:a20",
+              "relation": "idafa",
+              "focus_role": "dependent",
+              "other_unit_id": "q:12:65:26",
+              "other_surface": "كَيْلَ",
+              "other_root": "ك ي ل",
+              "other_form_tag": "NOUN_ABSTRACT",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology;case_government"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "12:72:9:1",
+        "qac_word_ref": "12:72:9",
+        "surah": 12,
+        "ayah": 72,
+        "word_index": 9,
+        "morpheme_index": 1,
+        "surface_ar": "بَعِيرٍ",
+        "stem_ar": "بَعِيرٍ",
+        "lemma_ar": "بَعِير",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:baEiyr|ROOT:bEr|M|INDEF|GEN",
+        "ayah_ref": "12:72",
+        "form_id": "F001",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s012:072:noun:11",
+          "attachment_word_unit_id": "q:12:72:11",
+          "qac_char_span": [
+            31,
+            35
+          ],
+          "attachment_char_spans": [
+            [
+              31,
+              35
+            ]
+          ],
+          "source_grammar": "Noun (NOUN_CONCRETE) masculine genitive; genitive of specification — \"a camel's [load]\"",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s012:072:pass1:attach:a8",
+              "relation": "idafa",
+              "focus_role": "dependent",
+              "other_unit_id": "q:12:72:10",
+              "other_surface": "حِمْلُ",
+              "other_root": "ح م ل",
+              "other_form_tag": "NOUN_ABSTRACT",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology;case_government"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

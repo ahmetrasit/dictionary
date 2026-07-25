@@ -1,0 +1,949 @@
+{
+  "inputs_sha256": "3937ccd17984b3fa445020b4e97b5de894e203bd63ccef5dd4b65e970c97d039",
+  "artifact_format": "dictionary-v2-root-entry-draft-v1",
+  "generated_by": "v2/scripts/accept_root_writer.py",
+  "root_envelope_id": "root_000267",
+  "language": "tr",
+  "branches": [
+    {
+      "branch_ref": "root_000267/B001",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi, dalın merkezindeki yetiştiği yerden ürün alma anlamını doğrular; ancak çerçeve yalnızca alma ve kazanma ile sınırlı değildir. Alınmış ürünün kendisini, başkası için toplamayı, toplayanın kazanan sayılmasını ve ağacın ya da toprağın ürün verir duruma gelmesini de yapıya bağlı olarak kapsar.",
+        "boundary_note": "Dalın çekirdeği toplama eylemi ile toplanan üründür; ürün verme ve başkası için toplama anlamları belirli yapılara bağlı tutulmalıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, yalın toplama ve toplanan ürün çekirdeğini, yalnızca belirli biçim ve söz öbeklerinde görülen ürün verme, ürünce bollaşma ve başkası için toplama kullanımlarından ayırır."
+      },
+      "concept_map": {
+        "definition": "Bir meyveyi veya başka toplanabilir ürünü ağacından ya da yetiştiği yerden almak ve böyle alınmış ürünü belirtir. Yapıya bağlı kullanımlarda başkası için toplama, toplayanın kazanan sayılması, ağacın ürününün olgunlaşması ve toprağın toplanabilir ürün bakımından bollaşması da anlatılır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Meyve veya başka bir ürünü ağacından ya da yetiştiği yerden alma eylemidir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "core",
+            "statement": "Ağaçtan veya başka bir yetişme yerinden toplanmış ürünün kendisini de belirtir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "specialization",
+            "statement": "Toplanan ürün özellikle taze meyve, yaş hurma veya bal olabilir; zamanında alınıp tazeliğini koruyan meyve de bu alana girer.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "associated_use",
+            "statement": "Belirli yapılarda bir başkası için ürün toplama ve toplayanı kazanan ya da elde eden kişi olarak adlandırma anlatılır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F005",
+            "role": "extension",
+            "statement": "Belirli yapılarda ağacın meyvesinin olgunlaşıp toplanabilir olması veya toprağın ot ve mantar gibi toplanabilir ürünlerce bollaşması anlatılır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar, ürünü yetiştiği yerden alma ile alınan ürünü ortak çekirdek olarak verir. Toplanan şey meyveyle sınırlı değildir; taze ürün, bal, ot ve mantar gibi toplanabilir şeyleri de kapsayabilir, ayrıca bazı yapılarda ürünün olgunlaşması veya çoğalması anlatılır.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "Ürünü yetiştiği yerden toplama, toplanan ürün, başkası için toplama ve ürün verir duruma gelme",
+        "applicability": "Toplama eylemi ile sonucunu birlikte temsil eder; son iki bölüm yalnızca bunları taşıyan yapıya bağlı kullanımlarda geçerlidir.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Toplama eylemini, toplanan ürünü, yararlanıcı değişimini ve ürün verme aşamasını korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003",
+          "F004",
+          "F005"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "yetiştiği yerden toplamak",
+          "usage_role": "general",
+          "applicability": "Meyvenin veya başka bir toplanabilir ürünün ağacından ya da yetişme yerinden alınması bağlamında kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Ürünü kaynağından alma eylemini doğal biçimde korur.",
+            "loses": "Toplanan ürün sonucunu ve yapıya bağlı ürün verme kullanımlarını dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "toplanmış taze ürün",
+          "usage_role": "contextual",
+          "applicability": "Dalından alınmış meyve, yaş hurma, bal veya benzeri taze ve toplanabilir ürünün kendisi için uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Toplama sonucunda elde edilen taze ürün anlamını korur.",
+            "loses": "Toplama eylemini, başkası için toplamayı ve ürün verme aşamasını belirtmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002",
+            "F003"
+          ]
+        },
+        {
+          "text": "ürün verir duruma gelmek",
+          "usage_role": "contextual",
+          "applicability": "Ağacın meyvesinin olgunlaşıp toplanabilir olması veya toprağın toplanabilir ürünlerce bollaşması bağlamına özgüdür.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Ürünün oluşup toplanabilir hale gelmesi aşamasını korur.",
+            "loses": "Ürünü toplama eylemini ve toplanmış ürünün kendisini dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F005"
+          ]
+        },
+        {
+          "text": "başkası için ürün toplamak",
+          "usage_role": "explanatory",
+          "applicability": "Toplama eyleminin yararlanıcısının başka bir kişi olduğu yapıda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Toplama eylemini ve başkası yararına yapılmasını korur.",
+            "loses": "Toplanan ürün adını ve ürünün olgunlaşması ya da çoğalması kullanımlarını dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F004"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_001",
+          "rendering_kind": "ordinary",
+          "target_gloss": "meyveyi veya başka bir ürünü ağacından ya da yetiştiği yerden toplamak"
+        },
+        {
+          "lexical_unit_id": "lu_002",
+          "rendering_kind": "ordinary",
+          "target_gloss": "ağaçtan veya başka bir yerden toplanan, çoğunlukla taze ürün"
+        },
+        {
+          "lexical_unit_id": "lu_003",
+          "rendering_kind": "ordinary",
+          "target_gloss": "zamanında toplanmış veya toplandığında tazeliğini koruyan meyve"
+        },
+        {
+          "lexical_unit_id": "lu_004",
+          "rendering_kind": "ordinary",
+          "target_gloss": "toplanıp getirilen seçme ürün"
+        },
+        {
+          "lexical_unit_id": "lu_005",
+          "rendering_kind": "ordinary",
+          "target_gloss": "toplanabilir ürünü alma"
+        },
+        {
+          "lexical_unit_id": "lu_006",
+          "rendering_kind": "ordinary",
+          "target_gloss": "biri için veya birinin hesabına ürün toplamak"
+        },
+        {
+          "lexical_unit_id": "lu_007",
+          "rendering_kind": "ordinary",
+          "target_gloss": "ağacın meyvesinin olgunlaşması veya ağacın ürün verir hale gelmesi"
+        },
+        {
+          "lexical_unit_id": "lu_008",
+          "rendering_kind": "ordinary",
+          "target_gloss": "toprağın ot, mantar ve benzeri toplanabilir ürünlerce bollaşması"
+        },
+        {
+          "lexical_unit_id": "lu_009",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kazanan veya elde eden kişi"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000205/B001",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Ürünü yetiştiği yerden alma eylemini, alınan ürünü ve yapıya bağlı toplama kullanımlarını kapsar.",
+          "neighbor_only": "Meyvenin ağaçta oluşmasını, ortaya çıkmasını ve olgunlaşmasını meyve alanının kendi içinden adlandırır.",
+          "gloss": "meyveyi toplama ile meyvenin oluşması",
+          "shared_zone": "Her iki dal da meyve ve olgunlaşmış ürün çevresinde yer alır.",
+          "distinction": "Odak dalında temel ayrım, ürünün yetiştiği yerden alınması ile alınmış ürün arasındadır; komşu dal ise meyvenin kendisini ve ağaç üzerindeki oluşma, çıkma ve olgunlaşma sürecini merkez alır."
+        },
+        {
+          "neighbor_ref": "root_000043/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Ürünü kaynağından toplama eylemiyle toplanmış ürünü birlikte adlandırır.",
+          "neighbor_only": "Ağaç ve ekinin verdiği ürünü, verimi ve toprağın getirisini üretici kaynak açısından adlandırır.",
+          "gloss": "toplanan ürün ile verim",
+          "shared_zone": "İki dal da ağaçtan veya topraktan elde edilen ürün alanında buluşur.",
+          "distinction": "Odak dalı ürünün yerinden alınmasını ve bu yolla elde edilen şeyi öne çıkarır; komşu dal ürünün ağaç, ekin veya toprak tarafından verilmesini ve verim niteliğini öne çıkarır."
+        },
+        {
+          "neighbor_ref": "root_000267/B004",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Toplama eylemi ve toplanmış ürün için genel ve yapıya bağlı kullanımları kapsar.",
+          "neighbor_only": "Toplanan şeyin en iyisini arkadaşına verme düşüncesini belirli bir söz içinde anlatır.",
+          "gloss": "toplama ile toplananın seçmesini paylaşma",
+          "shared_zone": "İki dal da toplanmış bir ürünün elde bulunmasını varsayar.",
+          "distinction": "Odak dalı toplama ve toplanan ürün alanını kurar; komşu dal bu alanı yalnızca kişinin elindekinin en iyisini arkadaşına ayırdığı özveri sözünün zemini olarak kullanır."
+        }
+      ],
+      "neighbor_coverage_note": "Yayımlanan üç karşılaştırma, meyvenin oluşması, verim ve toplama temelli özveri sözüyle karışabilecek sınırları açıklar; diğer adaylar yalnızca uzak bir ürün alanını paylaşır veya anlamlı bir karşıtlık sağlamaz.",
+      "branch_image_ar": "أخذ الجنى واكتسابه من منبته",
+      "what_is_ar": "جني الثمرة واجتناؤها والجني للغير والجنى المأخوذ من الشجر وغيره والرطب والعسل والكمأة والكلأ وإجناء الشجر والأرض",
+      "what_is_not_ar": "الجناية والتجني وجنأ في عدوه",
+      "source_phrase_ar": "أخذ الثمرة من شجرها (maqayis)؛ جنيت الثمرة أجنيها واجتنيتها (maqayis;sihah)؛ الجنى الرطب والعسل وكل ثمرة تجتنى (ayn;tahdhib)؛ ما يجتنى من الشجر وغيره (sihah)؛ كل ثمر يجتنى فهو جنى (tahdhib;mufradat)؛ جنيت فلانا جنى أي جنيته له؛ الجاني الكاسب (tahdhib)؛ أجنى الشجر وأجنت الأرض (sihah;mufradat)",
+      "sources": [
+        "MQ",
+        "AY",
+        "SI",
+        "TA",
+        "MU"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_000267/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, bir kimsenin haksız bir iş yaparak suçu ve doğurduğu sonucu kendisine, topluluğuna veya eylemin yöneldiği kişiye taşımasını açıkça verir. Ayrıca cezanın işi yapana ait olduğunu ve başkasının onun suçu yüzünden sorumlu tutulmaması gerektiğini belirtir.",
+        "boundary_note": "Bu dal gerçek bir haksız eylem ile onu işleyen kişinin sorumluluğuna ilişkindir; suçsuz birine uydurma suç yükleme anlamını kapsamaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, suç işleme ve kişisel sorumluluk çekirdeğini korur; kişi ve topluluk yönelimleriyle özlü sözlerdeki özel anlatımları bütün dalın tek biçimi saymaz."
+      },
+      "concept_map": {
+        "definition": "Bir kimsenin haksız bir iş yaparak suç ve sonucunu kendisine, topluluğuna veya eylemin yöneldiği kişiye taşımasıdır. Bu eylemin ceza sorumluluğu işi yapan kişiye aittir ve başkasına yüklenmez.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Kişi, haksız bir eylemle kendisine veya topluluğuna suç yükü getirir ya da eylemi başka bir kişiye karşı işler.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "core",
+            "statement": "Eylemin cezası ve sorumluluğu onu işleyen kişiye aittir; başka biri onun suçu nedeniyle sorumlu tutulmaz.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar, haksız eylemin kişiye, topluluğuna veya eylemin yöneldiği kimseye bir suç ve sonuç getirdiğinde birleşir. Sorumluluğun eylemi yapan kişide kalması ve başkasına aktarılmaması da sınırın parçasıdır.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "Kendine, topluluğuna ya da başkasına karşı suç işleyip sonucundan bizzat sorumlu olma",
+        "applicability": "Haksız eylemi, katılımcı yönünü ve ceza sorumluluğunun eylemi yapan kişide kalmasını birlikte anlatır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Suç işleme eylemini, etkilediği tarafları ve kişisel sorumluluk sonucunu korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "suç işlemek",
+          "usage_role": "general",
+          "applicability": "Bir kimsenin haksız bir eylem gerçekleştirdiğini kısa ve doğal biçimde belirtmek için kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Haksız bir eylemi gerçekleştirme çekirdeğini korur.",
+            "loses": "Sonucun kendisine veya topluluğuna dönmesini ve sorumluluğun yalnızca işleyene ait olmasını açıkça belirtmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "birine karşı suç işlemek",
+          "usage_role": "contextual",
+          "applicability": "Haksız eylemin belirli bir kişiye yöneldiği bağlam için uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Suç eylemini ve eylemin yöneldiği kişiyi korur.",
+            "loses": "Kişinin kendisine veya topluluğuna sonuç getirmesi ile kişisel ceza sorumluluğunu kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "işlediği suçtan kendisi sorumlu tutulmak",
+          "usage_role": "explanatory",
+          "applicability": "Cezanın suçu işleyen kişide kaldığı ve başkasına yüklenmediği bağlamda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Suçun sonucundan işi yapanın sorumlu olması ilkesini korur.",
+            "loses": "Eylemin kendisine, topluluğuna veya belirli bir kişiye yönelme seçeneklerini ayrıntılandırmaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_010",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kendisine veya topluluğuna yük getiren ya da birine yönelen suç işlemek"
+        },
+        {
+          "lexical_unit_id": "lu_011",
+          "rendering_kind": "ordinary",
+          "target_gloss": "suçu işleyen ve bu yüzden cezalandırılan kişi"
+        },
+        {
+          "lexical_unit_id": "lu_012",
+          "rendering_kind": "ordinary",
+          "target_gloss": "Sana karşı suç işleyen, senin suçlundur."
+        },
+        {
+          "lexical_unit_id": "lu_013",
+          "rendering_kind": "ordinary",
+          "target_gloss": "Yıkımına yol açanlar, onu düşüncesizce kuranlardır."
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000239/B004",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Haksız eylemin kendine, topluluğa veya başkasına yönelmesini ve sorumluluğun işleyende kalmasını birlikte kurar.",
+          "neighbor_only": "Suç, günah ve sınırı aşma adlarını eylemin katılımcı yönünü zorunlu kılmadan daha geniş bir adlandırma alanında toplar.",
+          "gloss": "suç işleme ile suç adı",
+          "shared_zone": "Her iki dal da haksız eylem, suç ve bunu yapan kişi alanında örtüşür.",
+          "distinction": "Odak dalı suçu işleme olayını, doğurduğu yükü ve işleyenin kişisel sorumluluğunu öne çıkarır; komşu dal ise suç veya günahın adı ile sınırı aşma niteliğini daha geniş biçimde kapsar."
+        },
+        {
+          "neighbor_ref": "root_000235/B004",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Suçun kim tarafından işlendiğini, kime yöneldiğini ve cezasının işleyene ait olduğunu belirtir.",
+          "neighbor_only": "Bir olayın sebebini bildiren ve bir şeyin bir kimse yüzünden olduğunu anlatan kullanımları da kapsar.",
+          "gloss": "suç yükü ile sebep",
+          "shared_zone": "İki dal da kişinin kendi üzerine getirdiği suç ve sonucu alanında buluşur.",
+          "distinction": "Odak dalında suç işleme ve kişisel sorumluluk kurucu öğelerdir; komşu dal suç yükünün yanında daha genel sebep bildiren anlatımlara da uzanır."
+        },
+        {
+          "neighbor_ref": "root_000252/B011",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Kişinin kendisine veya topluluğuna sonuç getirmesini ve yalnız kendi suçundan sorumlu olmasını da kapsar.",
+          "neighbor_only": "Suçun özellikle başka bir insanın üzerine getirilmesi veya ona karşı işlenmesi yönünü merkez alır.",
+          "gloss": "suç işleme ve birine suç yöneltme",
+          "shared_zone": "Her iki dal da bir kişiye karşı suç işleme anlamında yakınlaşır.",
+          "distinction": "Odak dalı kendine ve topluluğa dönen sonucu, başkasına karşı eylemi ve kişisel sorumluluğu birlikte kapsar; komşu dal insan üzerine getirilen suça daha dar biçimde odaklanır."
+        },
+        {
+          "neighbor_ref": "root_000018/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Haksız eylemin işlenmesini ve bu eylemin bir suç yükü doğurmasını merkez alır.",
+          "neighbor_only": "Kişiyi daha önce işlediği suç nedeniyle hesaba çekme ve sorumlu tutma eylemini merkez alır.",
+          "gloss": "suç işleme ile suçtan hesap sorma",
+          "shared_zone": "İki dal suç ile kişisel sorumluluk arasındaki bağda kesişir.",
+          "distinction": "Odak dalı sorumluluğu doğuran haksız eylemdir; komşu dal ise bu eylemden sonra kişiyi suçu nedeniyle sorumlu tutma işlemidir."
+        }
+      ],
+      "neighbor_coverage_note": "Yayımlanan karşılaştırmalar suç adı, suçun sebep ve yönelimi ile sonradan hesap sorma arasındaki temel karışmaları kapsar; büyük günah, ceza türü ve ağır yük adayları aynı alanın daha uzak öğeleridir.",
+      "branch_image_ar": "جر الجناية على النفس أو القوم",
+      "what_is_ar": "جنى الجناية وجر الجريرة على النفس أو القوم وما يعاقب به الجاني",
+      "what_is_not_ar": "جني الثمر والتجني على البريء وجنأ في عدوه",
+      "source_phrase_ar": "جنيت الجناية أجنيها (maqayis)؛ جنى فلان جناية أي جر جريرة على نفسه أو على قومه (ayn;tahdhib)؛ جنى عليه جناية (sihah)؛ استعير من ذلك جنى فلان جناية (mufradat)؛ يعاقب بجنايته ولا يؤخذ غيره بذنبه (tahdhib)",
+      "sources": [
+        "MQ",
+        "AY",
+        "SI",
+        "TA",
+        "MU"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_000267/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, bir kişiye işlemediği bir suçu sözle yükleme ve kişinin bu suçtan uzak olması koşullarını birlikte ve açıkça belirtir. Bu nedenle dal sıradan yalan söyleme veya gerçek bir suçu bildirme değil, suçsuz kişiye yöneltilen asılsız suçlamadır.",
+        "boundary_note": "Anlam, bir kişiye işlemediği bir suçu yükleyen belirli yapıya bağlıdır; genel yalan, sövme veya gerçekleşmiş suç bu dala alınmaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım yalnızca suçsuz bir kişiye işlemediği bir suçu yükleyen yapı için geçerlidir ve bundan yalın kök anlamı çıkarılmaz."
+      },
+      "concept_map": {
+        "definition": "Bir kişiye işlemediği bir suçu sözle yüklemek ve kişi suçsuz olduğu halde bu iddiayı onun hakkında ileri sürmektir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Bir kimse hakkında, onun işlemediği bir suçu işlediğini söyleyen asılsız bir iddia ileri sürülür.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "core",
+            "statement": "İddianın yöneldiği kişi, kendisine yüklenen eylemi yapmamıştır ve bu suç bakımından suçsuzdur.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar, kişinin yapmadığı bir suçun ona sözle yüklenmesi ve kişinin suçsuz olması konusunda birleşir. Bu iki koşul, anlamı genel yalandan ve doğru bir suç bildiriminden ayırır.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "Suçsuz birine işlemediği bir suçu yükleme",
+        "applicability": "Yalnızca belirli suç yükleme yapısında, iddianın asılsız ve hedef kişinin suçsuz olduğu durumda geçerlidir.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Asılsız suç iddiasını, yapılmamış eylemi ve hedef kişinin suçsuzluğunu korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "asılsız biçimde suçlamak",
+          "usage_role": "general",
+          "applicability": "Bir kişiye gerçek olmayan bir suç yöneltildiği bağlamda doğal ve kısa bir karşılıktır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Gerçek dışı suç iddiasını ve bunun bir kişiye yönelmesini korur.",
+            "loses": "Hedef kişinin isnat edilen eylemi yapmadığını ve suçsuz olduğunu açıkça söylemez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "birine işlemediği bir suçu yakıştırmak",
+          "usage_role": "explanatory",
+          "applicability": "İddianın belirli bir yapılmamış eyleme dayandığı ve hedef kişinin suçsuz olduğu bağlam için uygundur.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Yapılmamış bir suçu kişiye yüklemeyi ve iddianın asılsızlığını korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_014",
+          "rendering_kind": "ordinary",
+          "target_gloss": "birine işlemediği bir suçu yüklemek"
+        },
+        {
+          "lexical_unit_id": "lu_015",
+          "rendering_kind": "ordinary",
+          "target_gloss": "birine asılsız bir suç yüklemek"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000267/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Suçun hedefteki kişi tarafından işlenmemiş ve ona yöneltilen iddianın asılsız olmasını gerektirir.",
+          "neighbor_only": "Gerçek bir haksız eylemin yapılmasını ve sorumluluğun o eylemi yapan kişide kalmasını gerektirir.",
+          "gloss": "asılsız suç yükleme ile gerçek suç işleme",
+          "shared_zone": "İki dal da suç, bir eylemi yapan kişi ve sorumluluk alanını paylaşır.",
+          "distinction": "Odak dalında hedef kişi suçu işlememiştir ve iddia gerçeğe aykırıdır; komşu dalda ise haksız eylem gerçekten gerçekleşmiş, sorumluluk da onu yapan kişiye bağlanmıştır."
+        },
+        {
+          "neighbor_ref": "root_000157/B002",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "İddianın özellikle hedefin işlemediği bir suçu ona yüklemesini zorunlu kılar.",
+          "neighbor_only": "Şaşkınlık uyandıran genel yalanı ve yalnızca çirkin, uydurma söz niteliğini de kapsar.",
+          "gloss": "asılsız suçlama ile sarsıcı yalan",
+          "shared_zone": "İki dal suçsuz kişi hakkında uydurma ve suçlayıcı söz alanında örtüşür.",
+          "distinction": "Odak dalı, yapılmamış bir suçu suçsuz kişiye yükleme yapısıyla sınırlıdır; komşu dal ise suçlama yanında dinleyeni veya hedefi şaşırtan daha genel ve çirkin yalanı da kapsar."
+        },
+        {
+          "neighbor_ref": "root_000186/B009",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Yalanın içeriğinin yapılmamış bir suç olması ve hedef kişinin suçsuzluğu koşullarını taşır.",
+          "neighbor_only": "Başka biri hakkında söylenen her türlü yalanı, suç isnadı gerekmeksizin kapsar.",
+          "gloss": "işlenmemiş suçu yükleme ile biri hakkında yalan",
+          "shared_zone": "Her iki dal başka bir kişi hakkında gerçeğe aykırı söz söylemeyi kapsar.",
+          "distinction": "Odak dalında yanlış söz belirli bir suç yükler ve hedefin bunu yapmamış olması kurucudur; komşu dalda ise söylenen yalanın suç içermesi veya hedefin suçsuzluğunu belirtmesi gerekmez."
+        },
+        {
+          "neighbor_ref": "root_000603/B008",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Sözlü suçlamanın asılsız olmasını ve kişinin isnat edilen eylemi yapmamış olmasını gerektirir.",
+          "neighbor_only": "Sözle suçlama yanında sövme ve aşağılayıcı konuşmayı, doğruluk koşulu olmadan kapsar.",
+          "gloss": "asılsız suçlama ile sözlü saldırı",
+          "shared_zone": "İki dal bir kişiye yöneltilen suçlayıcı söz alanında buluşur.",
+          "distinction": "Odak dalı yanlış bir suç yükleme ve suçsuzluk koşuluyla sınırlıdır; komşu dal daha geniş biçimde suçlama, sövme ve sözlü saldırıyı kapsar."
+        },
+        {
+          "neighbor_ref": "root_001150/B003",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Belirli bir kişiye işlemediği bir suçun yüklenmesini ve onun suçsuz olmasını zorunlu kılar.",
+          "neighbor_only": "Uydurma yalanı, yanlış suçlamayı ve başka inanç ya da haksızlık bağlamlarını daha geniş biçimde kapsar.",
+          "gloss": "suçsuzu suçlama ile uydurma yalan",
+          "shared_zone": "İki dal uydurma söz ve yanlış suçlama alanında büyük ölçüde örtüşür.",
+          "distinction": "Odak dalı suçsuz bir hedefe belirli bir yapılmamış suç yükleme yapısıdır; komşu dal uydurma yalanı ve yanlış suçlamayı daha geniş konu ve kullanım alanlarında içerir."
+        }
+      ],
+      "neighbor_coverage_note": "Beş karşılaştırma, gerçek suç, genel uydurma söz, kişi hakkında yalan ve sözlü saldırıyla temel sınırları kapsar; kalan adaylar bu ayrımları yineler veya daha uzak bir söz alanında kalır.",
+      "branch_image_ar": "ادعاء ذنب على بريء",
+      "what_is_ar": "التجني بأن يدعى على المرء ذنب لم يفعله أو يتقول عليه وهو بريء",
+      "what_is_not_ar": "الجناية الواقعة وجني الثمر وجنأ في عدوه",
+      "source_phrase_ar": "تجنى فلان علي ذنبا إذا تقوله علي وأنا بريء (ayn)؛ التجني مثل التجرم وهو أن يدعي عليك ذنبا لم تفعله (sihah)؛ تجنى فلان على فلان ذنبا لم يجنه إذا تقوله عليه وهو بريء (tahdhib)",
+      "sources": [
+        "AY",
+        "SI",
+        "TA"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_000267/B004",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, kişinin topladığının veya elindekinin en iyisini arkadaşına vermesini belirli bir sözle örnekler. Toplayanın bulduğunu normalde kendine ayırması beklentisi, arkadaşını seçme ve ona en iyi payı sunma davranışını belirginleştirir.",
+        "boundary_note": "Bu dal genel toplama veya genel seçim anlamı değildir; özverili paylaşımı anlatan belirli söz ve onun kullanım değeriyle sınırlıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "non_bare",
+        "note": "Tanım yalnızca elindekinin en iyisini arkadaşına verme düşüncesini taşıyan belirli söze bağlıdır; bundan bağımsız bir yalın toplama ya da seçme anlamı çıkarılmaz."
+      },
+      "concept_map": {
+        "definition": "Belirli söz, kişinin topladığının ya da elindekinin en iyisini arkadaşına vermesini, toplayanın normalde bulduğunu kendine ayırması beklentisine karşı özverili bir davranış olarak anlatır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Kişi, topladığının veya elinde bulunanın en iyi bölümünü arkadaşına ayırır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "core",
+            "statement": "Bu verme davranışı, toplayanın bulduğunu olağan olarak kendi ağzına götürmesi beklentisine karşı özveriyi gösterir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "example",
+            "statement": "Arkadaş için yer mantarı toplanması, sözün dayandığı paylaşma davranışına örnek olur.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Dal, belirli bir sözün topladığı veya sahip olduğu şeyin en iyisini arkadaşına verme yoluyla özverili paylaşmayı anlatmasına dayanır; ayrıntılı tek kaynak kaydı aşağıda korunur.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek kayıt, toplayanın normalde bulduğunu kendine ayırması beklentisine karşın arkadaşına en iyi payı sunmasını ve arkadaş için yer mantarı toplama örneğini verir."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "Her toplayan kendine ayırırken topladığının en iyisini arkadaşına verme sözü",
+        "applicability": "Yalnızca özverili paylaşmayı anlatan belirli söz ve bu sözün arkadaşına en iyi payı ayırma anlamı için geçerlidir.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Toplanan şeyi, en iyi payı, arkadaş yararını ve olağan öz çıkara karşı özveriyi korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "elindekinin en iyisini arkadaşına sunmak",
+          "usage_role": "general",
+          "applicability": "Sözün bir kimsenin arkadaşını kendisine tercih ederek en iyi payı ona vermesini anlattığı bağlamda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "En iyi payın arkadaş yararına ayrılması ve özverili davranış anlamını korur.",
+            "loses": "Toplama çerçevesini ve toplayanın normalde bulduğunu kendine ayırması karşıtlığını açıkça taşımaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "topladığının seçmesini başkasına ayırmak",
+          "usage_role": "explanatory",
+          "applicability": "Toplanan ürünün en iyi bölümünün başka bir kişiye bırakıldığı özverili paylaşma bağlamında uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Toplanmış şeyi, seçme payı ve başkası yararına ayırmayı korur.",
+            "loses": "Yararlanıcının özellikle arkadaş olması ile sözdeki olağan öz çıkar karşıtlığını belirtmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_016",
+          "rendering_kind": "ordinary",
+          "target_gloss": "Topladığımın seçmesini dostuma veririm; herkes topladığını kendi ağzına götürse de."
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000267/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Toplananın en iyi bölümünü arkadaşına vermeyi belirli bir özveri sözü içinde anlatır.",
+          "neighbor_only": "Ürünü yetiştiği yerden alma eylemini, alınmış ürünü ve ürün verir duruma gelmeyi kapsar.",
+          "gloss": "toplama ile toplananın en iyisini verme",
+          "shared_zone": "İki dal da kişinin topladığı bir ürünün elinde bulunması zeminini paylaşır.",
+          "distinction": "Odak dalında toplama yalnızca en iyi payı arkadaşına verme sözünün somut zeminidir; komşu dal ise toplama eylemini ve toplanmış ürünü doğrudan adlandırır."
+        },
+        {
+          "neighbor_ref": "root_000011/B005",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Arkadaşa verilen şeyin kişinin topladığının en iyi bölümü olmasını ve bunu belirli sözle anlatmayı gerektirir.",
+          "neighbor_only": "Bir kişiyi veya şeyi başka seçeneklere üstün tutmayı, verilen nesne ve toplama çerçevesi olmadan genel olarak kapsar.",
+          "gloss": "seçme payı verme ile genel üstün tutma",
+          "shared_zone": "İki dal bir başkasını kendine veya başka seçeneklere üstün tutma alanında buluşur.",
+          "distinction": "Odak dalı, eldekinin en iyi payını arkadaşına sunan belirli özveri sözüdür; komşu dal ise kişi veya şeyleri çok daha genel biçimde seçme ve üstün tutmayı anlatır."
+        },
+        {
+          "neighbor_ref": "root_001063/B008",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Seçilen en iyi payın arkadaşına verilmesini ve bu vermenin özveri sayılmasını gerektirir.",
+          "neighbor_only": "Bir kişinin malının en iyisini seçip ayırma eylemini, seçilen payın bir arkadaşa verilmesini gerektirmeden anlatır.",
+          "gloss": "en iyi payı verme ile en iyi malı seçme",
+          "shared_zone": "Her iki dal elde bulunanlar arasından en iyi bölümü seçmeyi içerir.",
+          "distinction": "Odak dalında seçim, en iyi payı arkadaşına vermeye yönelir; komşu dalda ise kurucu anlam en iyi malı seçmektir ve özverili verme zorunlu değildir."
+        },
+        {
+          "neighbor_ref": "root_000779/B004",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Toplananın en iyi bölümünü arkadaşına ayıran belirli sözü ve özveri karşıtlığını taşır.",
+          "neighbor_only": "Arkadaşlara veya insanlara yağlı yiyecek yedirme eylemini doğrudan anlatır.",
+          "gloss": "seçme payı sunma ile yağlı yiyecek verme",
+          "shared_zone": "İki dal arkadaşlara değerli görülen bir yiyeceği sunma sahnesinde buluşabilir.",
+          "distinction": "Odak dalı seçme payı özveriyle arkadaşına verme düşüncesidir; komşu dal ise seçme veya özveri koşulu olmadan belirli bir yiyeceği insanlara yedirme eylemidir."
+        }
+      ],
+      "neighbor_coverage_note": "Karşılaştırmalar genel toplama, genel üstün tutma, en iyi malı seçme ve arkadaşa yiyecek sunma sınırlarını kapsar; öteki adaylar aynı seçim alanını yineler veya daha uzak bir cömertlik temasında kalır.",
+      "branch_image_ar": "إيثار المجتنى وخياره",
+      "what_is_ar": "المثل في إيثار الصاحب بخيار ما جناه المرء من الكمأة أو غيرها",
+      "what_is_not_ar": "الجناية والتجني والجنى العام بلا صيغة المثل",
+      "source_phrase_ar": "هذا جناي وخياره فيه إذ كل جان يده إلى فيه؛ يضرب هذا مثلا للرجل يؤثر صاحبه بخيار ما عنده؛ يجتنوا له الكمأة (tahdhib)",
+      "sources": [
+        "TA"
+      ],
+      "source_note": {
+        "TA": "Tek kayıt, toplayanın normalde bulduğunu kendine ayırması beklentisine karşın arkadaşına en iyi payı sunmasını ve arkadaş için yer mantarı toplama örneğini verir."
+      }
+    }
+  ],
+  "root_profile": {
+    "summary": "Kök, yetiştiği yerden ürün toplama ve toplanan ürün çevresindeki somut çekirdeğin yanında, suç işleyip sorumluluk doğurma, suçsuz kişiye işlemediği bir suçu yükleme ve elindekinin seçmesini bir dosta verme sözü gibi ayrışmış anlamlar kurar. Son anlam, toplama alanındaki somut çekirdeği özverili paylaşma yönünde kullanır.",
+    "polysemy": "polysemic",
+    "organization": "radial"
+  },
+  "occurrence_evidence": {
+    "summary": {
+      "morpheme_count": 2,
+      "word_count": 2,
+      "ayah_count": 2,
+      "surah_count": 2
+    },
+    "forms": [
+      {
+        "form_id": "F001",
+        "lemma_ar": "جَنِيّ",
+        "stem_ar": "جَنِيًّا",
+        "pos": "ADJ",
+        "measure": "",
+        "morph_features": "STEM|POS:ADJ|LEM:janiy~|ROOT:jny|MS|INDEF|ACC",
+        "occurrence_count": 1
+      },
+      {
+        "form_id": "F002",
+        "lemma_ar": "جَنَى",
+        "stem_ar": "جَنَى",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:janaY|ROOT:jny|M|GEN",
+        "occurrence_count": 1
+      }
+    ],
+    "ayahs": [
+      {
+        "ayah_ref": "19:25",
+        "surface_ar": "وَهُزِّىٓ إِلَيْكِ بِجِذْعِ ٱلنَّخْلَةِ تُسَٰقِطْ عَلَيْكِ رُطَبًا جَنِيًّا"
+      },
+      {
+        "ayah_ref": "55:54",
+        "surface_ar": "مُتَّكِـِٔينَ عَلَىٰ فُرُشٍۭ بَطَآئِنُهَا مِنْ إِسْتَبْرَقٍ وَجَنَى ٱلْجَنَّتَيْنِ دَانٍ"
+      }
+    ],
+    "occurrences": [
+      {
+        "qac_ref": "19:25:8:1",
+        "qac_word_ref": "19:25:8",
+        "surah": 19,
+        "ayah": 25,
+        "word_index": 8,
+        "morpheme_index": 1,
+        "surface_ar": "جَنِيًّا",
+        "stem_ar": "جَنِيًّا",
+        "lemma_ar": "جَنِيّ",
+        "source_pos": "ADJ",
+        "pos": "ADJ",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:ADJ|LEM:janiy~|ROOT:jny|MS|INDEF|ACC",
+        "ayah_ref": "19:25",
+        "form_id": "F001",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s019:025:noun:10",
+          "attachment_word_unit_id": "q:19:25:10",
+          "qac_char_span": [
+            31,
+            35
+          ],
+          "attachment_char_spans": [
+            [
+              31,
+              34
+            ],
+            [
+              31,
+              35
+            ]
+          ],
+          "source_grammar": "adjective, masculine singular indefinite accusative, ADJ_QUALIT",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s019:025:pass1:attach:a6",
+              "relation": "adjective",
+              "focus_role": "dependent",
+              "other_unit_id": "q:19:25:9",
+              "other_surface": "رُطَبَاً",
+              "other_root": "ر ط ب",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "55:54:7:2",
+        "qac_word_ref": "55:54:7",
+        "surah": 55,
+        "ayah": 54,
+        "word_index": 7,
+        "morpheme_index": 2,
+        "surface_ar": "جَنَى",
+        "stem_ar": "جَنَى",
+        "lemma_ar": "جَنَى",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:janaY|ROOT:jny|M|GEN",
+        "ayah_ref": "55:54",
+        "form_id": "F002",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s055:054:noun:8",
+          "attachment_word_unit_id": "q:55:54:8",
+          "qac_char_span": [
+            27,
+            31
+          ],
+          "attachment_char_spans": [
+            [
+              27,
+              31
+            ],
+            [
+              28,
+              31
+            ]
+          ],
+          "source_grammar": "noun (masdar/verbal noun), masculine singular nominative, from janā \"to pick/gather\"",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s055:054:pass1:attach:a5",
+              "relation": "conjoined",
+              "focus_role": "dependent",
+              "other_unit_id": "q:55:54:4",
+              "other_surface": "بَطَائِنُهَا",
+              "other_root": "ب ط ن",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "parallelism;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s055:054:pass1:attach:a6",
+              "relation": "idafa",
+              "focus_role": "head",
+              "other_unit_id": "q:55:54:9",
+              "other_surface": "الْجَنَّتَيْنِ",
+              "other_root": "ج ن ن",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology;case_government"
+            },
+            {
+              "attachment_id": "ae:v3:s055:054:pass1:attach:a7",
+              "relation": "predication",
+              "focus_role": "head",
+              "other_unit_id": "q:55:54:10",
+              "other_surface": "دَانٍ",
+              "other_root": "د ن و",
+              "other_form_tag": "NOUN_ACTIVE_PART",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

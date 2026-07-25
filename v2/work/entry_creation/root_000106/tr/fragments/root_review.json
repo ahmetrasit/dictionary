@@ -1,0 +1,41 @@
+{
+  "inputs_sha256": "ae9ed66bf5b4822bedd044236fc7b76768a14ad7e32eaf394885be9a965afb8c",
+  "verdict": "repair",
+  "summary": "Dal çekirdekleri, kavram ve bağlamsal karşılıklar, sözcüksel karşılıklar ile komşu sınırları kanıtla uyumludur. Yayımdan önce kaynak sentezinde iki ayırt edici örnek, tek kaynaklı bir tanıklık ve ortak özeti destekleyen bir id tamamlanmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_000106/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001"
+      ],
+      "evidence_conflict": "Kanıt, gölge ile güneş arasını ve cennet ile cehennem arasındaki açıklığı ayırt edici örnekler olarak verir; ortak özet yalnızca fiziksel ayırma, uzak aralık ve görünmeyen engeli genelleyerek bu örnekleri aktarmamaktadır.",
+      "smallest_correction": "Ortak özete, kaynak belirtmeden gölge ile güneş ve cennet ile cehennem arasını örnekleyen kısa bir cümle ekleyin."
+    },
+    {
+      "target_ref": "root_000106/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003"
+      ],
+      "evidence_conflict": "Bu dalın tek kanıtı yalnızca bir sözlüğe bağlıdır; kaynak sentezi anlamı özetlemekte, ancak bu kullanımın tek kaynaklı tanıklık olduğunu göstermemektedir.",
+      "smallest_correction": "lu_003 için sole_attestation türünde, bu öte dünya engeli açıklamasının yalnızca ilgili kaynakta aktarıldığını belirten bir kaynak ayrıntısı ekleyin."
+    },
+    {
+      "target_ref": "root_000106/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_004",
+        "lu_005"
+      ],
+      "evidence_conflict": "Ortak özetin iki belirlenmiş uç arasındaki aralık veya kapsam cümlesi hem inanç kullanımına hem okumada atlanan bölüme dayanır; buna karşın common_claim_ids yalnızca lu_004 değerini içerir ve lu_005 desteğini dışarıda bırakır.",
+      "smallest_correction": "Ortak çekirdek cümlesinin dayanağını eksiksiz göstermek için lu_005 değerini common_claim_ids listesine ekleyin."
+    }
+  ]
+}

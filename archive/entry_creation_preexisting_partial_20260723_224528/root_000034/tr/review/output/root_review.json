@@ -1,0 +1,18 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtla uyumludur; ancak B001 dalındaki bir komşu karşılaştırması, odak dalın sınırına kanıtlanmayan yara incelemesini eklemektedir.",
+  "issues": [
+    {
+      "target_ref": "root_000034/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002"
+      ],
+      "evidence_conflict": "root_000295/B004 karşılaştırmasının shared_zone metni, iki dalın da yaranın incelenmesinde ve tedavisinde buluştuğunu söylüyor. Oysa lu_001 ve lu_002 odak dal için yalnızca yarayı veya yaralı kişiyi tedavi etme ve yarayı onarma anlamlarını destekliyor; inceleme, derinlik yoklama ve ölçme yalnızca komşu sınır kartında yer alıyor.",
+      "smallest_correction": "Shared_zone metnini iki dalın yarayı tedavi etmede buluştuğunu söyleyecek biçimde daraltın; inceleme, yoklama ve ölçmeyi yalnızca neighbor_only ile distinction alanlarında bırakın."
+    }
+  ]
+}

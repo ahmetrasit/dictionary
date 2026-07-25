@@ -1,0 +1,953 @@
+{
+  "format": 2,
+  "generated_by": "v2/scripts/build_branch_evidence.py",
+  "root_envelope_id": "root_000708",
+  "packet_path": "data/output/root_packets/root_000708.json",
+  "packet_sha256": "a1539418ca175ddfa1aa3bb34e6f1a88581723dfce0114e31de033e79be90dfa",
+  "furuq_path": "data/working/furuq_v4.sqlite",
+  "furuq_sha256": "1099db0d56515d2eb3e8d72f104f2e338c2c9a8c1fa6abbb046406d3b327e722",
+  "qnet_path": "data/upstream/qnet/incidence_full/raw_keyword_incidence.sqlite",
+  "qnet_sha256": "a5262b568203bff7ec04e6ca905781125beec83f90d62a5cf0cd6ff61049eee8",
+  "qnet_theme_path": "data/upstream/qnet/bridge_theme_full/bridge_theme_staging.sqlite",
+  "qnet_theme_sha256": "e4f590a111376e372eefef6d03b8694837ec9989017ce721d56db9828b2a734e",
+  "qnet_fix_manifest_path": "data/upstream/qnet/bridge_theme_full/latent_v11_qac_qnet_fix_manifest.json",
+  "qnet_fix_manifest_sha256": "b0ae3c19450a8019825321f6dc1e9f4c336249950f50267ed84eb3258756502c",
+  "branch": {
+    "root_id": "root_000708",
+    "branch_id": "B003",
+    "branch_image_ar": "سعر السوق",
+    "what_is_ar": "يدخل فيه السعر الذي يقوم عليه الثمن وأسعار الطعام والتسعير وتقدير السعر",
+    "what_is_not_ar": "ليس اشتعال النار ولا حرها ولا السعار",
+    "source_phrase_ar": "السعر سعر السوق الذي تقوم عليه بالثمن (ayn); أسعر أهل السوق إسعارا وسعروا تسعيرا (ayn); السعر واحد أسعار الطعام والتسعير تقدير السعر (sihah); السعر من الأسعار وهو الذي يقوم عليه الثمن (tahdhib); السعر في السوق تشبيها باستعار النار (mufradat); سعر الطعام من هذا لأنه يرتفع ويعلو (maqayis)",
+    "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1624;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A477:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=0e4460fa238a883d;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1722:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=08192c6b91929a41;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D118%3Bsegment_index%3D4:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=bb1f95ffe5f52054;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A701:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=637fed378ba24caf",
+    "status": "accepted",
+    "contaminated": "no"
+  },
+  "dictionary_basis": {
+    "dictionary_count": 5,
+    "passage_count": 5,
+    "sources": [
+      {
+        "source_id": "maqayis",
+        "dictionary_name": "Maqāyīs al-Lugha",
+        "source_refs": [
+          "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1624"
+        ],
+        "passages": [
+          {
+            "source_ref": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1624",
+            "headword": "سعر",
+            "route_status": "exact",
+            "entry_text_clean": "| ( سعر ) السين والعين واراء ~~أصل واحد يدل على اشتعال الشيء واتقاده وارتفاعه | من ذلك السعير سعير ~~النار | واستعارها توقدها والمسعر PageV03P075 @76@ الخشب الذي يسعر به | ~~والسعار حر النار | ويقال سعر الرجل إذا ضربته السموم | ويقال إن السعرارة ~~هي التي تراها في الشمس كالهباء | وسعرت النار وأسعرتها فهي مسعرة ومسعورة ~~| ويقال استعر اللصوص كأنهم اشتعلوا واستعر الجرب في البعير | وسمى الأسعر ~~الجعفي لقوله # % فلا يدعني الأقوام من آل مالك % % لئن أنا لم أسعر عليهم وأثقب قال ابن ~~السكيت ويقال سعرهم شرا ولا يقال أسعرهم % % ومن هذا الباب السعر وهو ~~الجنون وسمي بذلك لأنه يستعر في الإنسان | ويقولون ناقة مسعورة وذلك لحدتها ~~كأنها مجنونة | فأما سعر الطعام فهو من هذا أيضا لأنه يرتفع ويعلو فأما ~~مساعر البعير فإنها مشاعره | ويقال هي آباطة وأرفاغه واصل ذنبه حيث رف وبره ~~وإنما سميت بذلك لأن الجرب يستعر فيها أولا ويستعر فيها أشد | وأما قول ~~عروة بن الورد # % فطاروا في بلاد اليستعور % % فقالوا أراد السعير | ويقال إنه مكان ~~ويقال إنه شجر يقال له اليستعور يستاك به PageV03P076 @77@",
+            "origin_corpus": "quranic",
+            "section_path": "-",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      },
+      {
+        "source_id": "ayn",
+        "dictionary_name": "Kitāb al-ʿAyn",
+        "source_refs": [
+          "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A477:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=0e4460fa238a883d"
+        ],
+        "passages": [
+          {
+            "source_ref": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A477:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=0e4460fa238a883d",
+            "headword": "سعر",
+            "route_status": "exact",
+            "entry_text_clean": "# سعر # السعر سعر السوق الذي تقوم عليه بالثمن تقول أسعر أهل السوق إسعارا ~~وسعروا تسعيرا إذا اتفقوا على سعر # وقيل للنبي صلى الله عليه وسلم سعر لنا # فقال المسعر الله # والسعر وقود النار والحرب",
+            "origin_corpus": "quranic",
+            "section_path": "heading:477",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      },
+      {
+        "source_id": "sihah",
+        "dictionary_name": "al-Ṣiḥāḥ",
+        "source_refs": [
+          "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1722:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=08192c6b91929a41"
+        ],
+        "passages": [
+          {
+            "source_ref": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1722:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=08192c6b91929a41",
+            "headword": "سعر",
+            "route_status": "exact",
+            "entry_text_clean": "### | [سعر] # سعرت النار والحرب: هيجتهما وألهبتهما. وقرئ: # (وإذا الجحيم سعرت) * و * (وسعرت) * أيضا بالتشديد، للمبالغة. وسعرناهم ~~بالنبل، أي أحرقناهم وأمضضناهم. ويقال: ضرب هبر، وطعن نتر (1) ، ورمي سعر. ~~والمسعر والمسعار: الخشب الذي تسعر به النار. ومنه قيل للرجل: إنه لمسعر ~~حرب، أي تحمى به الحرب. والمسعر أيضا: الطويل. ومسعر بن كدام المحدث، جعله ~~أصحاب الحديث \" مسعرا \" بالفتح، للتفاؤل. PageV02P684 # ومساعر الابل: آباطها وأرفاغها. واستعر الجرب في البعير، إذا ابتدأ ~~بمساعره. قال الشاعر ذو الرمة: # قريع هجان دس منه المساعر (1) * واستعرت النار وتسعرت، أي توقدت. واستعر ~~اللصوص، كأنهم اشتعلوا. والسعير: النار. والسعير في قول الشاعر (2) : حلفت ~~بمائرات حول عوض * وأنصاب تركن لدى السعير - قال ابن الكلبى: هو اسم صنم ~~كان لعنزة. والسعار بالضم: حر النار وشدة الجوع أيضا. وقوله تعالى: # (إن المجرمين في ضلال وسعر) *، قال الفراء: العناء والعذاب خاصة. والسعر ~~أيضا: الجنون. يقال: ناقة مسعورة أي مجنونة. وقوله تعالى: # (وكفى بجهنم سعيرا) * قال الإخفش: هو مثل دهين وصريع، لأنك تقول: سعرت ~~فهي مسعورة. وسعرت اليوم في حاجتي، أي طفت. ابن السكيت: يقال سعرهم شرا، أي ~~أوسعهم. قال: ولا يقال: أسعرهم. PageV02P685 # وسمى الاسعر الجعفي بقوله: فلا تدعني الاقوام من آل مالك * إذا أنا لم ~~أسعر عليهم وأثقب (1) - والسعرارة: الهباء في الشمس. والسعر: واحد أسعار ~~الطعام. والتسعير: تقدير السعر. واليستعور، الذى في شعر عروة (2) : موضع، ~~ويقال شجر. وسعر الرجل فهو مسعور، إذا ضربته السموم. والسعرة: لون إلى ~~السواد.",
+            "origin_corpus": "quranic",
+            "section_path": "heading:1722",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      },
+      {
+        "source_id": "tahdhib",
+        "dictionary_name": "Tahdhīb al-Lugha",
+        "source_refs": [
+          "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D118%3Bsegment_index%3D4:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=bb1f95ffe5f52054"
+        ],
+        "passages": [
+          {
+            "source_ref": "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D118%3Bsegment_index%3D4:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=bb1f95ffe5f52054",
+            "headword": "سعر",
+            "route_status": "exact",
+            "entry_text_clean": "# سعر : قال الله تبارك وتعالى حكاية عن قوم صالح : { فقالو صلى الله عليه ~~وسلم # 1764 ا أبشرا منا واحدا نتبعه إنآ إذا لفى ضلال } ( القمر : 24 ) قال ~~الفراء : أراد بالسعر : العناء للعذاب . وقال غيره في قوله : { نتبعه إنآ ~~إذا لفى ضلال } معناه : إنا إذا لفي ضلال وجنون ، يقال : ناقة مسعورة إذا ~~كانت كأن بها جنونا . قلت : ويجوز أن يكون معناه : إنا إن اتبعناه وأطعناه ~~فنحن في ضلال وفي عذاب وعناء مما يلزمنا ، وإلى هذا مال الفراء والله أعلم ~~. وقوله جل وعز : { بذنبهم فسحقا لاصحاب } ( الملك : 11 ) أي بعدا لأصحاب ~~النار ، يقال : سعرت النار أسعرها سعرا إذا أوقدتها ، وهي مسعورة . وسعرت ~~نار الحرب سعرا واستعرت النار إذا استوقدت ورجل مسعر حرب إذا كان يؤرثها . ~~والسعير ، النار نفسها . وسعار النار : حرها . ويقال للرجل إذا ضربه السموم ~~فاستعر جوفه : به سعار . وسعار العطش : التهابه ، وسعار الجوع : لهيبه ، ~~ومنه قول الشاعر يهجو رجلا : # تسمنها بأخثر حلبتيها # ومولاك الأحم ms0389 له سعار # وصفه بتغريزه حلائبه وكسعه ضروعها بالماء البارد وليرتد لبنها فيبقى لها ~~طرقها ، في حال جوع ابن عمه الأقرب منه . والأحم : الأدنى الأقرب ، والحميم ~~: القريب القرابة . ومساعر البعير : حيث يستعر فيه الجرب من الآباط ~~والأرفاغ وأم القراد والمشافر . ومنه قول ذي الرمة : # قريع هجان دس منه المساعر # والواحد مسعر . ويقال : سعر الرجل فهو مسعور إذا اشتد جوعه أو عطشه . ~~وقال الليث : السعرة في الإنسان : لون يضرب إلى سواد فويق الأدمة . وقال ~~العجاج : # أسعر ضربا أو طوالا هجرعا # ويقال : سعر فلان يسعر سعرا فهو أسعر قال : والسعرارة : ما تردد في الضوء ~~الساقط في البيت من الشمس وهو الهباء المنبث . ويقال لما يحرك به النار من ~~حديد أو خشب : مسعر ومسعار . ويقال : سعرت اليوم سعرة في حوائجي ثم جئت أي ~~طفت فيها . وقال الأصمعي : المسعر : الشديد في قوله : # وسامى بها عنق مسعر # وروى أبو عبيد عن أبي عمرو : المسعر : الطويل . ويقال : سعرت الناقة إذا ~~أسرعت في سيرها ، فهي سعور . وقال أبو عبيدة في كتاب ( الخيل ) : فرس مسعر ~~ومساعر ، وهو الذي تطيح قوائمه متفرقة ولا ضبر له . وقال ابن السكيت تقول ~~العرب : ضرب هبر ، وطعن نتر ، ورمي سعر ، مأخوذ من سعرت النار والحرب إذا ~~هيجتهما . وإنه لمسعر حرب أي تحمى به PageV02P053 الحرب . قال : والسعر من ~~الأسعار وهو الذي يقوم عليه الثمن . وفي الحديث أنه قيل للنبي صلى الله ~~عليه وسلم سعر لنا فقال : ( إن الله هو المسعر ) . وقال الليث : يقال أسعر ~~وسعر بمعنى واحد . والساعورة كهيئة التنور يحفر في الأرض يختبز فيه ، قال ~~ابن الأعرابي : وقال أبو زيد : السعران : شدة العدو ، والجمران : من الجمر ~~. والفلتان : النشيط وقال ابن الأعرابي : السعيرة : تصغير السعرة وهي ~~السعال الحاد . ويقال : هذا سعرة الأمر وسرحته وفوعته أي أوله وحدته . أبو ~~يوسف : استعر الناس في كل وجه واستنجوا إذا أكلوا الرطب وأصابوه . قال ابن ~~عرفة : { المجرمين فى ضلال } ( القمر : 47 ) أي في أمر نسعره أي يلهبنا .",
+            "origin_corpus": "quranic",
+            "section_path": "parent_entry_id=118;segment_index=4",
+            "page_or_volume_ref": "PageV02P053"
+          }
+        ]
+      },
+      {
+        "source_id": "mufradat",
+        "dictionary_name": "al-Mufradāt fī Gharīb al-Qurʾān",
+        "source_refs": [
+          "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A701:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=637fed378ba24caf"
+        ],
+        "passages": [
+          {
+            "source_ref": "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A701:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=637fed378ba24caf",
+            "headword": "سعر",
+            "route_status": "exact",
+            "entry_text_clean": "### | سعر # السعر: التهاب النار، وقد سعرتها، وسعرتها، وأسعرتها، والمسعر: الخشب ~~الذي يسعر به، واستعر الحرب، واللصوص، نحو: اشتعل، وناقة مسعورة، نحو: ~~موقدة، ومهيجة. السعار: # حر النار، وسعر الرجل: أصابه حر، قال تعالى: # وسيصلون سعيرا # [النساء/ 10] ، وقال تعالى: وإذا الجحيم سعرت # [التكوير/ 12] ، وقرئ بالتخفيف «2» ، وقوله: عذاب السعير # [الملك/ 5] ، أي: حميم، فهو فعيل في معنى مفعول، وقال تعالى: إن المجرمين ~~في ضلال وسعر # [القمر/ 47] ، والسعر في السوق، تشبيها باستعار النار.",
+            "origin_corpus": "quranic",
+            "section_path": "heading:701",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      }
+    ]
+  },
+  "lexical_units": [
+    {
+      "lexical_unit_id": "lu_012",
+      "expression_ar": "السعر",
+      "unit_kind": "form",
+      "sense_ar": "الثمن الذي يقوم عليه الشيء أو الطعام",
+      "source_phrase_ar": "سعر الطعام من هذا لأنه يرتفع ويعلو (maqayis)؛ السعر سعر السوق الذي تقوم عليه بالثمن (ayn)؛ السعر واحد أسعار الطعام (sihah)؛ السعر من الأسعار وهو الذي يقوم عليه الثمن (tahdhib)؛ السعر في السوق تشبيها باستعار النار (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1624;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A477:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=0e4460fa238a883d;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1722:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=08192c6b91929a41;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D118%3Bsegment_index%3D4:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=bb1f95ffe5f52054;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A701:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=637fed378ba24caf",
+      "branch_source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1624;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A477:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=0e4460fa238a883d;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1722:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=08192c6b91929a41;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D118%3Bsegment_index%3D4:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=bb1f95ffe5f52054;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A701:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=637fed378ba24caf",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "accepted"
+    },
+    {
+      "lexical_unit_id": "lu_013",
+      "expression_ar": "أسعر أهل السوق وسعروا تسعيرا",
+      "unit_kind": "collocation",
+      "sense_ar": "اتفقوا على سعر أو قدروا الثمن",
+      "source_phrase_ar": "أسعر أهل السوق إسعارا وسعروا تسعيرا إذا اتفقوا على سعر (ayn)؛ التسعير تقدير السعر (sihah)؛ في الحديث سعر لنا فقال إن الله هو المسعر (tahdhib)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A477:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=0e4460fa238a883d;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1722:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=08192c6b91929a41;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D118%3Bsegment_index%3D4:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=bb1f95ffe5f52054",
+      "branch_source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1624;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A477:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=0e4460fa238a883d;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1722:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=08192c6b91929a41;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D118%3Bsegment_index%3D4:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=bb1f95ffe5f52054;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A701:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=637fed378ba24caf",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "accepted"
+    }
+  ],
+  "qnet_candidates": [
+    {
+      "root_id": "root_001273",
+      "branch_id": "B010",
+      "root_norm": "ق و م",
+      "branch_image_ar": "قيمة وتقويم وتسعير",
+      "what_is_ar": "يدخل فيه القيمة ثمن الشيء، وتقويم السلعة أو المتاع، والتقاوم أو الاستقامة بمعنى بيان القيمة",
+      "what_is_not_ar": "ليس هو النيابة العامة ولا القوام بمعنى العماد",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3458:headword=%D9%82%D9%88%D9%85:root=%D9%82%20%D9%88%20%D9%85:sha=15b586f197819793;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4682:headword=%D9%82%D9%88%D9%85:root=%D9%82%20%D9%88%20%D9%85:sha=2238afd9ab22b661;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D485%3Bsegment_index%3D2:headword=%D9%82%D9%88%D9%85:root=%D9%82%20%D9%88%20%D9%85:sha=4f6b9c5a53f1432a;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1265:headword=%D9%82%D9%88%D9%85:root=%D9%82%20%D9%88%20%D9%85:sha=e0249bdf91e0d2da;0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2865",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "price",
+        "pricing",
+        "valuation",
+        "value"
+      ]
+    },
+    {
+      "root_id": "root_000206",
+      "branch_id": "B001",
+      "root_norm": "ث م ن",
+      "branch_image_ar": "العوض والقيمة في البيع",
+      "what_is_ar": "يدخل فيه ثمن المبيع وقيمة الشيء وما يؤخذ عوضا في البيع أو المعاوضة، ويدخل فيه كثرة الثمن وكون الشيء ثمينا.",
+      "what_is_not_ar": "ليس هذا فرع العدد ثمانية ولا الجزء الثامن، ولا أسماء المواضع أو النبات أو الأدوات المعزولة.",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:488;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4830:headword=%D8%AB%D9%85%D9%86:root=%D8%AB%20%D9%85%20%D9%86:sha=3cc05a37d3aeebdd;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D774%3Bsegment_index%3D8:headword=%D8%AB%D9%85%D9%86:root=%D8%AB%20%D9%85%20%D9%86:sha=e820f9cd59a66c51;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A210:headword=%D8%AB%D9%85%D9%86:root=%D8%AB%20%D9%85%20%D9%86:sha=34d57d34e37fe8ba",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "cost",
+        "price",
+        "value"
+      ]
+    },
+    {
+      "root_id": "root_000087",
+      "branch_id": "B001",
+      "root_norm": "ب خ س",
+      "branch_image_ar": "النقص من الحق والقدر",
+      "what_is_ar": "يدخل فيه نقص الحق والثمن والمكيال والثواب والشيء الطفيف الناقص والتباخس بالتناقص والتغابن",
+      "what_is_not_ar": "فقء العين؛ تبخيس المخ الخاص؛ البخسي من الزرع؛ الأباخس",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:214;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A2659:headword=%D8%A8%D8%AE%D8%B3:root=%D8%A8%20%D8%AE%20%D8%B3:sha=6b2a33c075c8fc54;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2146:headword=%D8%A8%D8%AE%D8%B3:root=%D8%A8%20%D8%AE%20%D8%B3:sha=ecb94d109a3b5605;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D350%3Bsegment_index%3D92:headword=%D8%A8%D8%AE%D8%B3:root=%D8%A8%20%D8%AE%20%D8%B3:sha=a54479c851a9904b;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A85:headword=%D8%A8%D8%AE%D8%B3:root=%D8%A8%20%D8%AE%20%D8%B3:sha=22f38041b1e190ec",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "price",
+        "value"
+      ]
+    },
+    {
+      "root_id": "root_001239",
+      "branch_id": "B008",
+      "root_norm": "ق ط ط",
+      "branch_image_ar": "غَلاءُ السِّعْرِ",
+      "what_is_ar": "يدخل فيه قط السعر وقطوط السعر والقاطط من السعر بمعنى الغلاء",
+      "what_is_not_ar": "ليس فتر السعر عند شمر",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2818:headword=%D9%82%D8%B7%D8%B7:root=%D9%82%20%D8%B7%20%D8%B7:sha=4be456ceaef6975e;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D450%3Bsegment_index%3D2:headword=%D9%82%D8%B7:root=%D9%82%20%D8%B7:sha=ad55095d81e151ec;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1229:headword=%D9%82%D8%B7:root=%D9%82%20%D8%B7:sha=7c0f9127b169b3fc",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "cost",
+        "price"
+      ]
+    },
+    {
+      "root_id": "root_001274",
+      "branch_id": "B004",
+      "root_norm": "ق و ي",
+      "branch_image_ar": "تقاو في ثمن المشترك حتى يأخذه أحدهم",
+      "what_is_ar": "يدخل فيه الاقتواء والمقاواة والتقاوي بين الشركاء في عبد أو جارية أو دابة أو دار أو غيرها من المشترك، بتقويم الثمن أو التزايد حتى يشتري أحدهم نصيب غيره؛ ويدخل فيه القاوي بمعنى الآخذ وقاوه أي أعطه نصيبه.",
+      "what_is_not_ar": "لا يدخل فيه القوة البدنية، ولا القفر ونفاد الزاد، ولا عيب الشعر، ولا تقاوي الدلو.",
+      "source_refs": "maqayis:root=%D9%82%20%D9%88%20%D9%8A:headword=%D9%82%D9%88%D9%8A:sha=689e8ab0b2975df6;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3465:headword=%D9%82%D9%88%D9%8A:root=%D9%82%20%D9%88%20%D9%8A:sha=f39cc89909356d17;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5511:headword=%D9%82%D9%88%D8%A7:root=%D9%82%20%D9%88%20%D8%A7:sha=f4fd3df7a7a22568;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D485%3Bsegment_index%3D11:headword=%D9%82%D9%88%D9%8A:root=%D9%82%20%D9%88%20%D9%8A:sha=f64b78fb289df1c8",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "price",
+        "valuation"
+      ]
+    },
+    {
+      "root_id": "root_001575",
+      "branch_id": "B003",
+      "root_norm": "ه ب ط",
+      "branch_image_ar": "نقصان مقدار أو قيمة",
+      "what_is_ar": "يدخل فيه نقص ثمن السلعة، واتضاع شحم الناقة وقلته، واستعمال هبطته أو أهبطته في إنقاص ذلك.",
+      "what_is_not_ar": "ليس الذل الاجتماعي ولا الهزال المرضي المسمى بالهبيط إلا إذا كان الكلام على نفس النقص الكمي.",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2862:headword=%D9%87%D8%A8%D8%B7:root=%D9%87%20%D8%A8%20%D8%B7:sha=695da1548af43a3b;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D295%3Bsegment_index%3D147:headword=%D9%87%D8%A8%D8%B7:root=%D9%87%20%D8%A8%20%D8%B7:sha=ccc42ca4361c1802",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "price",
+        "value"
+      ]
+    }
+  ],
+  "qnet_core_overlap_candidates": [
+    {
+      "root_id": "root_000764",
+      "branch_id": "B001",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "price",
+        "valuation"
+      ]
+    },
+    {
+      "root_id": "root_000534",
+      "branch_id": "B002",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 0,
+      "shared_core_keywords": [
+        "price",
+        "pricing"
+      ]
+    },
+    {
+      "root_id": "root_000860",
+      "branch_id": "B005",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 0,
+      "shared_core_keywords": [
+        "valuation",
+        "value"
+      ]
+    },
+    {
+      "root_id": "root_000095",
+      "branch_id": "B005",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 1,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "market"
+      ]
+    },
+    {
+      "root_id": "root_000169",
+      "branch_id": "B001",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 1,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "price"
+      ]
+    },
+    {
+      "root_id": "root_000176",
+      "branch_id": "B002",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 1,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "market"
+      ]
+    },
+    {
+      "root_id": "root_000202",
+      "branch_id": "B005",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 1,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "value"
+      ]
+    },
+    {
+      "root_id": "root_000544",
+      "branch_id": "B011",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 1,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "price"
+      ]
+    }
+  ],
+  "qnet_bridge_overlap_candidates": [
+    {
+      "root_id": "root_001066",
+      "branch_id": "B013",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 5,
+      "consensus_keyword_count": 2,
+      "shared_bridge_keywords": [
+        "accounting",
+        "commerce",
+        "economy",
+        "exchange",
+        "measurement"
+      ]
+    },
+    {
+      "root_id": "root_001224",
+      "branch_id": "B007",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 5,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "accounting",
+        "commerce",
+        "economy",
+        "exchange",
+        "measurement"
+      ]
+    },
+    {
+      "root_id": "root_001335",
+      "branch_id": "B001",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 5,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "accounting",
+        "commerce",
+        "exchange",
+        "measurement",
+        "provision"
+      ]
+    },
+    {
+      "root_id": "root_000641",
+      "branch_id": "B005",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 5,
+      "consensus_keyword_count": 0,
+      "shared_bridge_keywords": [
+        "accounting",
+        "commerce",
+        "measurement",
+        "scarcity",
+        "valuation"
+      ]
+    },
+    {
+      "root_id": "root_000974",
+      "branch_id": "B009",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 5,
+      "consensus_keyword_count": 0,
+      "shared_bridge_keywords": [
+        "accounting",
+        "commerce",
+        "economy",
+        "measurement",
+        "valuation"
+      ]
+    },
+    {
+      "root_id": "root_001292",
+      "branch_id": "B004",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 5,
+      "consensus_keyword_count": 0,
+      "shared_bridge_keywords": [
+        "accounting",
+        "commerce",
+        "economy",
+        "measurement",
+        "provision"
+      ]
+    }
+  ],
+  "qnet_theme_overlap_candidates": [
+    {
+      "root_id": "root_001292",
+      "branch_id": "B004",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 7,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "authority_governance",
+        "commerce_exchange",
+        "economy",
+        "finance_debt",
+        "measurement",
+        "provision_resource",
+        "value_quality"
+      ]
+    },
+    {
+      "root_id": "root_000205",
+      "branch_id": "B002",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 6,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "abundance_scarcity",
+        "authority_governance",
+        "commerce_exchange",
+        "economy",
+        "finance_debt",
+        "provision_resource"
+      ]
+    },
+    {
+      "root_id": "root_000974",
+      "branch_id": "B009",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 6,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "commerce_exchange",
+        "economy",
+        "finance_debt",
+        "measurement",
+        "provision_resource",
+        "value_quality"
+      ]
+    },
+    {
+      "root_id": "root_000520",
+      "branch_id": "B007",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "abundance_scarcity",
+        "commerce_exchange",
+        "economy",
+        "measurement",
+        "provision_resource"
+      ]
+    },
+    {
+      "root_id": "root_000533",
+      "branch_id": "B001",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "commerce_exchange",
+        "economy",
+        "finance_debt",
+        "provision_resource",
+        "value_quality"
+      ]
+    },
+    {
+      "root_id": "root_000642",
+      "branch_id": "B009",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "abundance_scarcity",
+        "commerce_exchange",
+        "economy",
+        "measurement",
+        "provision_resource"
+      ]
+    },
+    {
+      "root_id": "root_001262",
+      "branch_id": "B002",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "commerce_exchange",
+        "economy",
+        "finance_debt",
+        "measurement",
+        "value_quality"
+      ]
+    },
+    {
+      "root_id": "root_000472",
+      "branch_id": "B001",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "commerce_exchange",
+        "economy",
+        "finance_debt",
+        "measurement",
+        "value_quality"
+      ]
+    }
+  ],
+  "qnet_focus_coverage": {
+    "raw_keyword_exact_port": true,
+    "snapshot_exact_port": true,
+    "postfix_exact_port": false,
+    "theme_scope": "branch",
+    "focus_themes": [
+      "abundance_scarcity",
+      "authority_governance",
+      "commerce_exchange",
+      "economy",
+      "finance_debt",
+      "measurement",
+      "provision_resource",
+      "value_quality"
+    ]
+  },
+  "furuq_candidates": [
+    {
+      "root_id": "root_001273",
+      "branch_id": "B010",
+      "root_norm": "ق و م",
+      "branch_image_ar": "قيمة وتقويم وتسعير",
+      "what_is_ar": "يدخل فيه القيمة ثمن الشيء، وتقويم السلعة أو المتاع، والتقاوم أو الاستقامة بمعنى بيان القيمة",
+      "what_is_not_ar": "ليس هو النيابة العامة ولا القوام بمعنى العماد",
+      "source_phrase_ar": "القيمة ثمن الشيء بالتقويم؛ تقاوموا فيما بينهم (ayn)؛ قومت السلعة؛ استقمت السلعة؛ القيمة واحدة القيم (sihah)؛ القيمة ثمن الشيء بالتقويم؛ تقاوموه فيما بينهم؛ استقمت المتاع أي قومته؛ قامت الأمة مائة دينار أي بلغت قيمتها (tahdhib)؛ تقويم السلعة بيان قيمتها (mufradat)؛ قومت الشيء تقويما؛ أصل القيمة الواو (maqayis)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3458:headword=%D9%82%D9%88%D9%85:root=%D9%82%20%D9%88%20%D9%85:sha=15b586f197819793;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4682:headword=%D9%82%D9%88%D9%85:root=%D9%82%20%D9%88%20%D9%85:sha=2238afd9ab22b661;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D485%3Bsegment_index%3D2:headword=%D9%82%D9%88%D9%85:root=%D9%82%20%D9%88%20%D9%85:sha=4f6b9c5a53f1432a;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1265:headword=%D9%82%D9%88%D9%85:root=%D9%82%20%D9%88%20%D9%85:sha=e0249bdf91e0d2da;0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2865",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_packet"
+      ],
+      "shared_consensus_core": [
+        "price",
+        "pricing",
+        "valuation",
+        "value"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000764",
+      "branch_id": "B001",
+      "root_norm": "س و م",
+      "branch_image_ar": "طلب الشيء وعرض ثمنه",
+      "what_is_ar": "السوم في البيع والمبايعة والمساومة والاستيام وذكر الثمن وغلاء السيمة",
+      "what_is_not_ar": "ليس الرعي ولا الإرسال ولا العلامة ولا مرور الريح",
+      "source_phrase_ar": "أصل يدل على طلب الشيء (maqayis); السوم سومك في البياعة ومنه المساومة والاستيام (ayn); السوم في المبايعة؛ ساومته سواما واستام علي وتساومنا (sihah); السوم عرض السلعة على البيع؛ سمت فلانا سلعتي سوما؛ غالي السيمة (tahdhib); السوم أصله الذهاب في ابتغاء الشيء؛ السوم في البيع (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1710;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A5013:headword=%D8%B3%D9%88%D9%85:root=%D8%B3%20%D9%88%20%D9%85:sha=71af76c8fcc450f4;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4532:headword=%D8%B3%D9%88%D9%85:root=%D8%B3%20%D9%88%20%D9%85:sha=071a1135cf983cc2;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D661%3Bsegment_index%3D2:headword=%D8%B3%D9%88%D9%85:root=%D8%B3%20%D9%88%20%D9%85:sha=737f1ee58f7c6f08;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A758:headword=%D8%B3%D8%A7%D9%85:root=%D8%B3%20%D8%A7%20%D9%85:sha=1849666318d06987",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_core_overlap"
+      ],
+      "shared_consensus_core": [
+        "price",
+        "valuation"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001066",
+      "branch_id": "B013",
+      "root_norm": "ع ي ر",
+      "branch_image_ar": "عيار المكيال والميزان",
+      "what_is_ar": "تقدير المكيال والميزان والدنانير؛ العيار والمعيار",
+      "what_is_not_ar": "العار والتعيير؛ عير الميرة؛ العيار بمعنى كثير الحركة",
+      "source_phrase_ar": "عايرت المكاييل والموازين عيارا (sihah)؛ عايروا بين مكاييلكم وموازينكم (sihah)؛ المعيار العيار (sihah)؛ العيار تقدير المكيال والميزان (mufradat)؛ عيرت الدنانير (mufradat)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1830:headword=%D8%B9%D9%8A%D8%B1:root=%D8%B9%20%D9%8A%20%D8%B1:sha=a6971df2d9492417;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1057:headword=%D8%B9%D9%8A%D8%B1:root=%D8%B9%20%D9%8A%20%D8%B1:sha=8d4268a1e9bd5eb2",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_bridge_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [
+        "accounting",
+        "commerce",
+        "economy",
+        "exchange",
+        "measurement"
+      ],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001292",
+      "branch_id": "B004",
+      "root_norm": "ك ر ر",
+      "branch_image_ar": "كيل كثير بمكيال الكر",
+      "what_is_ar": "يدخل فيه الكر مكيالا لأهل العراق وأكرار الطعام وحساب الكر بالقفيز والوسق",
+      "what_is_not_ar": "ليس الحبل ولا الحسي ولا الكرة بمعنى المرة",
+      "source_phrase_ar": "الكر مكيال لأهل العراق (ayn); الكر الذي يكال به عربي صحيح (jamhara); الكر واحد أكرار الطعام (sihah); الكر مكيال لأهل العراق والكر ستون قفيزا (tahdhib)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3603:headword=%D9%83%D8%B1:root=%D9%83%20%D8%B1:sha=5ad859bcbcd9ca00;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A191%3Asubentry%3A0%3A%D9%83%D8%B1%D8%B1:headword=%D9%83%D8%B1%D8%B1:root=%D9%83%20%D8%B1%20%D8%B1:sha=94c2cf183d427adb;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1894:headword=%D9%83%D8%B1%D8%B1:root=%D9%83%20%D8%B1%20%D8%B1:sha=e29df9901f5014fd;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D511%3Bsegment_index%3D2:headword=%D9%83%D8%B1:root=%D9%83%20%D8%B1:sha=acfbae31f0d820fc",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_bridge_overlap",
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [
+        "accounting",
+        "commerce",
+        "economy",
+        "measurement",
+        "provision"
+      ],
+      "shared_themes": [
+        "authority_governance",
+        "commerce_exchange",
+        "economy",
+        "finance_debt",
+        "measurement",
+        "provision_resource",
+        "value_quality"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000206",
+      "branch_id": "B001",
+      "root_norm": "ث م ن",
+      "branch_image_ar": "العوض والقيمة في البيع",
+      "what_is_ar": "يدخل فيه ثمن المبيع وقيمة الشيء وما يؤخذ عوضا في البيع أو المعاوضة، ويدخل فيه كثرة الثمن وكون الشيء ثمينا.",
+      "what_is_not_ar": "ليس هذا فرع العدد ثمانية ولا الجزء الثامن، ولا أسماء المواضع أو النبات أو الأدوات المعزولة.",
+      "source_phrase_ar": "عوض ما يباع (maqayis)؛ الثمن ثمن المبيع (sihah)؛ ثمن كل شيء قيمته (tahdhib)؛ اسم لما يأخذه البائع في مقابلة البيع وكل ما يحصل عوضا عن شيء فهو ثمنه (mufradat)؛ شيء ثمين أي مرتفع الثمن أو كثير الثمن (sihah;mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:488;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4830:headword=%D8%AB%D9%85%D9%86:root=%D8%AB%20%D9%85%20%D9%86:sha=3cc05a37d3aeebdd;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D774%3Bsegment_index%3D8:headword=%D8%AB%D9%85%D9%86:root=%D8%AB%20%D9%85%20%D9%86:sha=e820f9cd59a66c51;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A210:headword=%D8%AB%D9%85%D9%86:root=%D8%AB%20%D9%85%20%D9%86:sha=34d57d34e37fe8ba",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_packet"
+      ],
+      "shared_consensus_core": [
+        "cost",
+        "price",
+        "value"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000534",
+      "branch_id": "B002",
+      "root_norm": "ر ب ص",
+      "branch_image_ar": "ترقب السلعة وحبسها",
+      "what_is_ar": "يدخل فيه ربصة المتاع والبيع والمتربص بمعنى المحتكر وانتظار غلاء السلعة أو رخصها",
+      "what_is_not_ar": "لا يدخل فيه مطلق الانتظار غير التجاري ولا ربصة المرأة في بيت زوجها",
+      "source_phrase_ar": "لي في متاعي ربصة أي لي فيه تربص (maqayis)؛ ليس في البيع ربصة أي لا يتربص به (ayn)؛ المتربص المحتكر ولي في متاعي ربصة (sihah)؛ سلعة كانت يقصد بها غلاء أو رخصا (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1436;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4720:headword=%D8%B1%D8%A8%D8%B5:root=%D8%B1%20%D8%A8%20%D8%B5:sha=334ba843bad5fb0b;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2562:headword=%D8%B1%D8%A8%D8%B5:root=%D8%B1%20%D8%A8%20%D8%B5:sha=2f139d9d64bdd610;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A532:headword=%D8%B1%D8%A8%D8%B5:root=%D8%B1%20%D8%A8%20%D8%B5:sha=016f8a4e78ececdf",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_core_overlap"
+      ],
+      "shared_consensus_core": [
+        "price",
+        "pricing"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001224",
+      "branch_id": "B007",
+      "root_norm": "ق س ط",
+      "branch_image_ar": "المكيال والمقدار",
+      "what_is_ar": "القسط مكيال؛ نصف صاع؛ مقدار من الدراهم",
+      "what_is_not_ar": "النصيب العام؛ الميزان؛ القسطاس",
+      "source_phrase_ar": "كل مقدار فهو قسط في الماء وغيره؛ القسط أيضا مكيال وهو نصف صاع؛ الفرق ستة أقساط؛ القسط أربعمائة واحد وثمانون درهما؛ القسط نصف الصاع",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3160:headword=%D9%82%D8%B3%D8%B7:root=%D9%82%20%D8%B3%20%D8%B7:sha=ffcef7cbf03b0f51;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2817:headword=%D9%82%D8%B3%D8%B7:root=%D9%82%20%D8%B3%20%D8%B7:sha=52ee6b8cb4cc7169;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D464%3Bsegment_index%3D2:headword=%D9%82%D8%B3%D8%B7:root=%D9%82%20%D8%B3%20%D8%B7:sha=a157c0cd7506e8ab",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_bridge_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [
+        "accounting",
+        "commerce",
+        "economy",
+        "exchange",
+        "measurement"
+      ],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000205",
+      "branch_id": "B002",
+      "root_norm": "ث م ر",
+      "branch_image_ar": "المال النامي",
+      "what_is_ar": "المال الكثير أو المستفاد ونماؤه وحسن القيام عليه والدعاء بكثرته",
+      "what_is_not_ar": "ليس ثمر الشجر ولا النفع المجازي العام ولا ثميرة اللبن",
+      "source_phrase_ar": "ثَمَّر الرجل ماله أحسن القيام عليه (maqayis;jamhara)؛ ثَمَّر الله ماله أي نماه (maqayis;jamhara)؛ الثمر أيضا المال المثمر (sihah)؛ فسر بأنواع الأموال (sihah)؛ الثمر أنواع المال (tahdhib)؛ أثمر الرجل كثر ماله (sihah;tahdhib)؛ يكنى به عن المال المستفاد (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:490;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1107%3Asubentry%3A0%3A%D8%AB%D9%85%D8%B1:headword=%D8%AB%D9%85%D8%B1:root=%D8%AB%20%D9%85%20%D8%B1:sha=96c6cec486791c82;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1588:headword=%D8%AB%D9%85%D8%B1:root=%D8%AB%20%D9%85%20%D8%B1:sha=ca594aaee940a0bd;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D772%3Bsegment_index%3D18:headword=%D8%AB%D9%85%D8%B1:root=%D8%AB%20%D9%85%20%D8%B1:sha=739cb57a6eda2b26;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A209:headword=%D8%AB%D9%85%D8%B1:root=%D8%AB%20%D9%85%20%D8%B1:sha=399301f9527c16f0",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "abundance_scarcity",
+        "authority_governance",
+        "commerce_exchange",
+        "economy",
+        "finance_debt",
+        "provision_resource"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000708",
+      "branch_id": "B001",
+      "root_norm": "س ع ر",
+      "branch_image_ar": "اشتعال النار وإيقادها",
+      "what_is_ar": "يدخل فيه إيقاد النار والتهابها واتقادها واسم السعير وحر النار وما تسعر به النار",
+      "what_is_not_ar": "ليس سعر السوق ولا الجنون ولا مساعر البعير",
+      "source_phrase_ar": "أصل واحد يدل على اشتعال الشيء واتقاده (maqayis); السعير نار (maqayis); السعر وقود النار (ayn); سعرت النار هيجتها وألهبتها (sihah); سعرت النار إذا أوقدتها وهي مسعورة (tahdhib); السعر التهاب النار (mufradat); المسعر الخشب الذي يسعر به (maqayis;sihah;mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1624;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A477:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=0e4460fa238a883d;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1722:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=08192c6b91929a41;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D118%3Bsegment_index%3D4:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=bb1f95ffe5f52054;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A701:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=637fed378ba24caf",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000708",
+      "branch_id": "B002",
+      "root_norm": "س ع ر",
+      "branch_image_ar": "اشتعال الحرب والشر",
+      "what_is_ar": "يدخل فيه تهييج الحرب وإثارتها وإحماؤها وإيقاع الشر أو الرمي المحرق أو تشبيه اللصوص بالاشتعال",
+      "what_is_not_ar": "ليس إيقاد النار الحسي وحده ولا سعر السوق",
+      "source_phrase_ar": "السعر وقود النار والحرب (ayn); سعرت النار والحرب هيجتهما وألهبتهما (sihah); سعرناهم بالنبل أي أحرقناهم وأمضضناهم (sihah); رجل مسعر حرب (sihah;tahdhib); سعرت نار الحرب واستعرت النار (tahdhib); استعر الحرب واللصوص نحو اشتعل (mufradat); سعرهم شرا (maqayis;sihah)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1624;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A477:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=0e4460fa238a883d;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1722:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=08192c6b91929a41;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D118%3Bsegment_index%3D4:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=bb1f95ffe5f52054;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A701:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=637fed378ba24caf",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000708",
+      "branch_id": "B004",
+      "root_norm": "س ع ر",
+      "branch_image_ar": "السُّعار والجنون والعناء",
+      "what_is_ar": "يدخل فيه السعار وحر الجوف والجوع والعطش والجنون والعناء والعذاب وناقة مسعورة",
+      "what_is_not_ar": "ليس سعر السوق ولا مساعر البعير الموضعية",
+      "source_phrase_ar": "السعار حر النار (maqayis;tahdhib;mufradat); سعر الرجل إذا ضربته السموم (maqayis;sihah); السعار شدة الجوع أيضا (sihah); السعر أيضا الجنون (maqayis;sihah); ناقة مسعورة أي مجنونة (maqayis;sihah); العناء والعذاب خاصة (sihah;tahdhib); سعار العطش التهابه وسعار الجوع لهيبه (tahdhib); سعر الرجل فهو مسعور إذا اشتد جوعه أو عطشه (tahdhib); ناقة مسعورة نحو موقدة ومهيجة (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1624;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1722:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=08192c6b91929a41;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D118%3Bsegment_index%3D4:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=bb1f95ffe5f52054;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A701:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=637fed378ba24caf",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000708",
+      "branch_id": "B005",
+      "root_norm": "س ع ر",
+      "branch_image_ar": "مساعر البعير وابتداء الجرب",
+      "what_is_ar": "يدخل فيه مساعر البعير وهي مواضع الآباط والأرفاغ وما معها حيث يستعر الجرب أو يبتدئ",
+      "what_is_not_ar": "ليس السعير النار ولا السعر الثمن",
+      "source_phrase_ar": "مساعر البعير آباطة وأرفاغه واصل ذنبه حيث رف وبره (maqayis); الجرب يستعر فيها أولا ويستعر فيها أشد (maqayis); مساعر الإبل آباطها وأرفاغها (sihah); استعر الجرب في البعير إذا ابتدأ بمساعره (sihah); مساعر البعير حيث يستعر فيه الجرب من الآباط والأرفاغ وأم القراد والمشافر (tahdhib)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1624;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1722:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=08192c6b91929a41;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D118%3Bsegment_index%3D4:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=bb1f95ffe5f52054",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000708",
+      "branch_id": "B006",
+      "root_norm": "س ع ر",
+      "branch_image_ar": "السعرارة هباء الشمس",
+      "what_is_ar": "يدخل فيه السعرارة وهي الهباء المتردد أو المرئي في شعاع الشمس",
+      "what_is_not_ar": "ليس النار ولا السوق ولا الجنون",
+      "source_phrase_ar": "السعرارة هي التي تراها في الشمس كالهباء (maqayis); السعرارة الهباء في الشمس (sihah); السعرارة ما تردد في الضوء الساقط في البيت من الشمس وهو الهباء المنبث (tahdhib)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1624;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1722:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=08192c6b91929a41;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D118%3Bsegment_index%3D4:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=bb1f95ffe5f52054",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000708",
+      "branch_id": "B007",
+      "root_norm": "س ع ر",
+      "branch_image_ar": "الطواف والعدو السريع",
+      "what_is_ar": "يدخل فيه الطواف في الحوائج والانتشار في كل وجه وسرعة الناقة وشدة العدو واضطراب قوائم الفرس في السير",
+      "what_is_not_ar": "ليس إيقاد النار ولا سعر السوق",
+      "source_phrase_ar": "سعرت اليوم في حاجتي أي طفت (sihah;tahdhib); سعرت الناقة إذا أسرعت في سيرها فهي سعور (tahdhib); فرس مسعر ومساعر وهو الذي تطيح قوائمه متفرقة ولا ضبر له (tahdhib); السعران شدة العدو (tahdhib); استعر الناس في كل وجه (tahdhib)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1722:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=08192c6b91929a41;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D118%3Bsegment_index%3D4:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=bb1f95ffe5f52054",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000708",
+      "branch_id": "B008",
+      "root_norm": "س ع ر",
+      "branch_image_ar": "السُّعرة في اللون",
+      "what_is_ar": "يدخل فيه السعرة وهي لون يميل إلى السواد أو يضرب إلى سواد فوق الأدمة",
+      "what_is_not_ar": "ليس السعار ولا سعر السوق ولا السعير",
+      "source_phrase_ar": "السعرة لون إلى السواد (sihah); السعرة في الإنسان لون يضرب إلى سواد فويق الأدمة (tahdhib)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1722:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=08192c6b91929a41;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D118%3Bsegment_index%3D4:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=bb1f95ffe5f52054",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000708",
+      "branch_id": "B009",
+      "root_norm": "س ع ر",
+      "branch_image_ar": "الساعورة تنور محفور",
+      "what_is_ar": "يدخل فيه الساعورة وهي كهيئة التنور يحفر في الأرض ويختبز فيه",
+      "what_is_not_ar": "ليس السعر ولا السعير ولا السعار",
+      "source_phrase_ar": "الساعورة كهيئة التنور يحفر في الأرض يختبز فيه (tahdhib)",
+      "source_refs": "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D118%3Bsegment_index%3D4:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=bb1f95ffe5f52054",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000708",
+      "branch_id": "B010",
+      "root_norm": "س ع ر",
+      "branch_image_ar": "حِدّة العارض وأوله",
+      "what_is_ar": "يدخل فيه السعيرة للسعال الحاد وسعرة الأمر أي أوله وحدته",
+      "what_is_not_ar": "ليس سعر السوق ولا اشتعال النار الحسي",
+      "source_phrase_ar": "السعيرة تصغير السعرة وهي السعال الحاد (tahdhib); هذا سعرة الأمر أي أوله وحدته (tahdhib)",
+      "source_refs": "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D118%3Bsegment_index%3D4:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=bb1f95ffe5f52054",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000708",
+      "branch_id": "B011",
+      "root_norm": "س ع ر",
+      "branch_image_ar": "طول أو شدة المسعر",
+      "what_is_ar": "يدخل فيه المسعر وصفا للطويل أو الشديد",
+      "what_is_not_ar": "ليس المسعر أداة إيقاد النار ولا مسعر الحرب",
+      "source_phrase_ar": "المسعر أيضا الطويل (sihah); المسعر الشديد (tahdhib); المسعر الطويل (tahdhib)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1722:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=08192c6b91929a41;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D118%3Bsegment_index%3D4:headword=%D8%B3%D8%B9%D8%B1:root=%D8%B3%20%D8%B9%20%D8%B1:sha=bb1f95ffe5f52054",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    }
+  ]
+}

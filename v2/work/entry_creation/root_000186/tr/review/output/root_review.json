@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın büyük bölümü kanıtla uyumludur; ancak bir komşu sınırında izleme yönü ters çevrilmiş, bir dalın tanımı da genel yalan söyleme anlamını kanıtta bulunmayan eylem veya söz yükleme koşuluyla daraltmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_000186/B006",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_021"
+      ],
+      "evidence_conflict": "root_000175/B007 sınır kartı, ineği yavrusunun izlediğini belirtir; neighbor_only ise \"onu izleyen annesini\" diyerek anneyi yavruyu izleyen taraf yapar. lu_021 de odak dalındaki yönün anneden sonra gelen yavru olduğunu gösterir.",
+      "smallest_correction": "neighbor_only içindeki \"onu izleyen annesini\" sözünü \"yavrusunun izlediği ineği\" olarak değiştirerek izleme yönünü sınır kartıyla uyumlu kılın."
+    },
+    {
+      "target_ref": "root_000186/B009",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_028"
+      ],
+      "evidence_conflict": "lu_028, bir kişi hakkında genel olarak yalan söylemeyi bildirir. Tanımın \"ona işlemediği ya da söylemediği bir şeyi yüklemek\" bölümü ise anlamı yalnızca eylem veya söz isnadıyla sınırlar; kanıt bu ek koşulu koymaz.",
+      "smallest_correction": "Tanımı \"Bir kişi hakkında gerçeğe aykırı söz söylemektir\" biçiminde bırakın veya ikinci bölümü her tür gerçek dışı sözü kapsayacak şekilde genelleştirin."
+    }
+  ]
+}

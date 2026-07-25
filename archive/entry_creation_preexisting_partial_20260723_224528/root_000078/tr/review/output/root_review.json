@@ -1,0 +1,29 @@
+{
+  "verdict": "repair",
+  "summary": "Yanit genel olarak dal ayrimlarini, baglamsal karsiliklari ve komsu sinirlarini koruyor. Ancak B002 tanimi, yalnizca turemis bir adla desteklenen yedek anlamini cekirdek eylemin zorunlu sonucu gibi sunuyor; ayrica B001 kaynak ozetinde kaydedilen cogul bicimlerden birinin ses varyanti atlanmis.",
+  "issues": [
+    {
+      "target_ref": "root_000078/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_008",
+        "lu_010"
+      ],
+      "evidence_conflict": "lu_008 bir seyi gizleme veya ilerisi icin saklama eylemini bildirir. Yedek ya da birikim adi ise lu_010 ile desteklenen ayri bir turemistir. Tanimin ikinci cumlesi, saklanan her seyin bu nedenle bir yedek veya birikim oldugunu soyleyerek bagimli turemeyi cekirdek eylemin genel sonucu haline getiriyor.",
+      "smallest_correction": "Tanimin ikinci cumlesini kaldirin. Yedek anlamini yalniz lu_010'a bagli associated_use facetinde ve ona ait baglamsal ya da sozluksel karsilikta tutun."
+    },
+    {
+      "target_ref": "root_000078/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_002"
+      ],
+      "evidence_conflict": "lu_002 azlik ve cokluk icin verilen cogullarin yaninda, bazi konusurlarin bir ses degisimiyle kullandigi ayri cogul bicimi de kaydeder. Mevcut kaynak ayrintisi yalniz azlik-cokluk ayrimini ozetledigi icin bu kaynak varyantini aktarmiyor.",
+      "smallest_correction": "lu_002 kaynak ayrintisina, bazi konusurlarda ses degisimiyle kullanilan ek cogul varyantini belirten kisa bir ifade ekleyin."
+    }
+  ]
+}

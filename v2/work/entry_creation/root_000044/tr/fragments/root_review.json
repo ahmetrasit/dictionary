@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "28008e3b7c55e61d0d20e7aba2119519e72e14ec565f4ba58d9b451680ca2a35",
+  "verdict": "repair",
+  "summary": "Birinci dal yayına hazırdır. İkinci dalda tek kaynağa özgü tanıklık kaynak ayrıntısında gösterilmemiştir; ayrıca iki kısmi komşuluk satırının açıklama metni, satırların kendi kapsam ayrımlarıyla çelişmektedir.",
+  "issues": [
+    {
+      "target_ref": "root_000044/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_002"
+      ],
+      "evidence_conflict": "lu_002 yalnızca sihah kaynağına bağlı bir tanıklıktır ve bu kaynağın alıkoyma ile yönünden çevirme açıklamasını taşır. source_details dizisinin boş bırakılması, bu tek-kaynak niteliğini kaynak sentezinde görünmez kılar.",
+      "smallest_correction": "lu_002 ile desteklenen ve yalnızca sihah kaynağına bağlanan bir source_details satırı ekleyerek bu kaynağın alıkoyma ve yönünden çevirme açıklamasını belirtin; ortak özeti değiştirmeyin."
+    },
+    {
+      "target_ref": "root_000044/B002",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_002"
+      ],
+      "evidence_conflict": "lu_002 odak dalın alıkoyma ve yönünden çevirme çekirdeğini destekler. root_001389/B003 kartı bir işten çevirme kapsamını, root_001038/B002 kartı ise kişi yanında şeyleri de kapsar. Yazarın focus_only ve neighbor_only alanları bu ek kapsamları doğru kaydettiği halde ilk satırın distinction alanı anlam ayrımı bulunmadığını söylüyor; ikinci satırın shared_zone alanı şeyleri iki dala birden yayıyor ve distinction alanı kapsam farkını yok sayıyor.",
+      "smallest_correction": "İlişki türlerini ve kısmi sınır eşleşmelerini koruyun. root_001389/B003 distinction metninde komşunun iş kapsamına uzandığını belirtin; root_001038/B002 shared_zone alanını kişiyle sınırlayın ve distinction metninde komşunun şeyleri de kapsayan nesne genişliğini açıkça koruyun."
+    }
+  ]
+}

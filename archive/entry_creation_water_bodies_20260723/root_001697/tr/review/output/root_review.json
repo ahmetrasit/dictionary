@@ -1,0 +1,42 @@
+{
+  "verdict": "repair",
+  "summary": "The response needs targeted semantic repairs in the large-water branch and one neighbor relation in the bird branch.",
+  "issues": [
+    {
+      "target_ref": "root_001697/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_009",
+        "lu_010"
+      ],
+      "evidence_conflict": "The synthesis presents falling or being thrown into the water followed by drowning as one common account. The supplied source phrases distinguish the Sihah account, which says the person was thrown into the sea, from the other accounts, which explicitly say that the person fell in and drowned.",
+      "smallest_correction": "Record the source variation explicitly: most accounts state falling into the great water and drowning, while Sihah states being thrown into the sea without explicitly asserting drowning. Do not present drowning after being thrown as common to all accounts."
+    },
+    {
+      "target_ref": "root_001697/B003",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_009",
+        "lu_010"
+      ],
+      "evidence_conflict": "Both lexical glosses coordinate being thrown into the water with a mandatory drowning result. The Sihah wording supports being thrown into the sea, whereas drowning is explicit in the falling accounts from the other sources.",
+      "smallest_correction": "Separate the alternatives in both glosses, for example as falling into the great water and drowning, or being thrown into the sea, without attaching an unattested drowning result to the latter alternative."
+    },
+    {
+      "target_ref": "root_001697/B004",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012",
+        "lu_013"
+      ],
+      "evidence_conflict": "The relation to root_000001/B012 is downgraded to near_synonym/partial only because the two records preserve different source-specific descriptions such as domestic or wild status, color, diet, neck markings, and vocal behavior. The supplied boundary card and these claims share the same pigeon collective and singular-pigeon core; those dependent illustrations do not establish a different ordinary-use boundary.",
+      "smallest_correction": "Classify root_000001/B012 as synonym/exact, set focus_only and neighbor_only to null, and explain that the differing source descriptions are dependent illustrations rather than boundary-level scope differences."
+    }
+  ]
+}

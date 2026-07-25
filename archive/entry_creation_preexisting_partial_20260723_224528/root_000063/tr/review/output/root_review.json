@@ -1,0 +1,40 @@
+{
+  "verdict": "repair",
+  "summary": "Yanit genel olarak kanitla uyumludur; ancak bir kaynakla sinirli yaklasma anlami cekirdege yukseltilmis, cekirdegin olumsuz bir ornegi baglantili kullanim sayilmis ve ilk dalin kaynak birlestirmesinde ayirt edici bicim varyantlari atlanmistir.",
+  "issues": [
+    {
+      "target_ref": "root_000063/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "Kanit, vaktin yaklasmasini yalnizca bu istemin kaynak sozlerinden birindeki sinirli aktarim olarak verir; yazar ise yaklasmayi tanimda ve F001 cekirdek yuzunde vaktin gelmesi, erisme ve olgunlasmayla esit duzeye cikarmistir.",
+      "smallest_correction": "Yaklasma unsurunu tanimdan ve F001 cekirdek ifadesinden cikarin; korunacaksa lu_012 ile bagli ayri bir source_variant yuzu olarak gosterin."
+    },
+    {
+      "target_ref": "root_000063/B003",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_013"
+      ],
+      "evidence_conflict": "lu_013, beklenen vaktin gelmesi cekirdeginin olumsuz soru veya bildirim icindeki dogrudan kullanimidir; yeni ya da baglantili bir anlam siniri getirmez. F002'nin associated_use rolu bu ornegi bagimsiz bir anlam gelismesi gibi siniflandirir.",
+      "smallest_correction": "F002'nin ifadesini ve lu_013 bagini koruyup rolunu example olarak degistirin."
+    },
+    {
+      "target_ref": "root_000063/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002"
+      ],
+      "evidence_conflict": "Kaynak sozleri temel ad icin iki ayri bicim varyanti ve fiil icin bir aktarima ozgu alternatif turev verir. Ortak ozet yalniz anlamlari birlestirdigi icin bu ayirt edici bicim ve turev bilgilerini hic kapsamaz.",
+      "smallest_correction": "common_summary icine, kaynak kodu tekrarlamadan, temel adin iki bicim varyanti ile fiilin tek aktarimda bulunan alternatif turevini belirten kisa bir cumle ekleyin."
+    }
+  ]
+}

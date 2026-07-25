@@ -1,0 +1,63 @@
+{
+  "inputs_sha256": "b73ebe971e99ba75825aec4df49ea6fa3800db5c4b32c6e1f595390348e4c351",
+  "verdict": "repair",
+  "summary": "Anlam örgüsü genel olarak kanıtla uyumludur; ancak üç dalın tek kaynağa dayandığı kaynak sentezinde gösterilmemiş, iki kalıplaşmış kullanım kaynak varyantı diye yanlış sınıflandırılmış ve bir sözlüksel karşılığa kanıtta bulunmayan süre uzunluğu eklenmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_000131/B006",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_014",
+        "lu_015"
+      ],
+      "evidence_conflict": "F002 ve F003, birer kaynağa özgü varyant değildir: lu_014 üç, lu_015 dört sözlükte tanıklanır ve iki ayrı kalıplaşmış kullanımı temsil eder. Bunları source_variant olarak işaretlemek kullanım ayrımını kaynak ayrılığı gibi gösterir.",
+      "smallest_correction": "F002 ile F003 rollerini source_variant yerine associated_use olarak değiştirin; mevcut anlam açıklamalarını koruyun."
+    },
+    {
+      "target_ref": "root_000131/B007",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_016"
+      ],
+      "evidence_conflict": "lu_016 bir süre sonra gerçekleşmeyi veya kesintili aralıkları bildirir; aralıkların mutlaka uzun olduğunu belirtmez. Hedef karşılıktaki \"uzun aralıklarla\" ifadesi kanıttaki sınırı daraltır.",
+      "smallest_correction": "lu_016 hedef karşılığından \"uzun\" nitelemesini çıkarıp \"aralıklarla, ara sıra\" gibi süre uzunluğunu dayatmayan bir karşılık kullanın."
+    },
+    {
+      "target_ref": "root_000131/B008",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_017"
+      ],
+      "evidence_conflict": "Dalın tek kanıtı olan lu_017 yalnızca bir sözlüğe bağlıdır; buna rağmen common_claim_ids içinde gösterilmiş ve source_details altında sole_attestation kaydı verilmemiştir. Böylece dalın tek kaynaklı oluşu yayına yansımaz.",
+      "smallest_correction": "lu_017 için source_details altında sole_attestation satırı ekleyin ve claim kimliğini ortak kaynak desteği izlenimi veren common_claim_ids alanından çıkarın."
+    },
+    {
+      "target_ref": "root_000131/B009",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_018"
+      ],
+      "evidence_conflict": "Dalın tek kanıtı olan lu_018 yalnızca bir sözlüğe bağlıdır; buna rağmen common_claim_ids içinde gösterilmiş ve source_details altında sole_attestation kaydı verilmemiştir. Tek kaynaklı yarar ve iyilik yokluğu kullanımı bu nedenle açıkça belirtilmez.",
+      "smallest_correction": "lu_018 için source_details altında sole_attestation satırı ekleyin ve claim kimliğini common_claim_ids alanından çıkarın."
+    },
+    {
+      "target_ref": "root_000131/B010",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_019"
+      ],
+      "evidence_conflict": "Dalın tek kanıtı olan lu_019 yalnızca bir sözlüğe bağlıdır; buna rağmen common_claim_ids içinde gösterilmiş ve source_details altında sole_attestation kaydı verilmemiştir. Düşmanlıkta ileri gitme anlamının tek tanıklığı görünmez kalır.",
+      "smallest_correction": "lu_019 için source_details altında sole_attestation satırı ekleyin ve claim kimliğini common_claim_ids alanından çıkarın."
+    }
+  ]
+}

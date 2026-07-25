@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "1ca1d753d57a7a062d180e85df502877973b4794ccaf800c97a8f31bed458129",
+  "verdict": "repair",
+  "summary": "İki sınırlı anlamsal düzeltme gerekiyor: yılan adının sözlüksel karşılığı kaynak varyantlarını doğru seçenekler olarak vermeli, tek kaynakta tanıklanan başlama yapısı da kaynak sentezinde tekil tanıklık olarak gösterilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000038/B004",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_017"
+      ],
+      "evidence_conflict": "Karşılık, tehlikeli olmayı bütün betimlemeler için zorunlu kılıyor ve kısa yılan betimlemesindeki sıçrama özelliğini atlıyor. Kanıt ise irilik, kısa ve sıçrayan oluş, çok tehlikeli oluş ve yuvarlak gövdeyi birbirinden farklı kaynak varyantları olarak sunuyor.",
+      "smallest_correction": "Sözlüksel karşılığı, tehlikeliliği de öteki betimlemelerle aynı düzeyde bir seçenek yapacak ve kısa oluşla birlikte sıçramayı koruyacak biçimde değiştirin; örneğin 'iri, kısa ve sıçrayan, çok tehlikeli ya da yuvarlak gövdeli diye betimlenen bir yılan' yazın."
+    },
+    {
+      "target_ref": "root_000038/B006",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_019"
+      ],
+      "evidence_conflict": "Dalın tek kanıtı yalnız tahdhib kaynağında tanıklanmıştır, ancak kaynak sentezi bunu ortak iddialar arasında gösterip tekil tanıklık bilgisini vermiyor.",
+      "smallest_correction": "lu_019 iddiasını common_claim_ids listesinden çıkarıp aynı iddiayı, yapının bir eyleme başlamayı ve yapmaya koyulmayı anlattığını belirten sole_attestation türünde bir source_details satırına taşıyın."
+    }
+  ]
+}

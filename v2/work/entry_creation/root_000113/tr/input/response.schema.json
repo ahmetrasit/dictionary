@@ -1,0 +1,326 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dictionary.local/v2/fragments/root-writer.schema.json",
+  "title": "Root writer response",
+  "description": "Structured concept-map authoring for one root and target language.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["branches", "root_profile"],
+  "properties": {
+    "branches": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/branch" }
+    },
+    "root_profile": { "$ref": "#/$defs/rootProfile" }
+  },
+  "$defs": {
+    "branchRef": {
+      "type": "string",
+      "pattern": "^root_[0-9]{6}/B[0-9]{3}$"
+    },
+    "claimId": {
+      "type": "string",
+      "pattern": "^lu_[0-9]{3,}$"
+    },
+    "facetId": {
+      "type": "string",
+      "pattern": "^F[0-9]{3}$"
+    },
+    "shortText": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 500,
+      "pattern": "^[^\\u0600-\\u06FF]*$"
+    },
+    "shortProse": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 1600,
+      "pattern": "^[^\\u0600-\\u06FF]*$"
+    },
+    "prose": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 3000,
+      "pattern": "^[^\\u0600-\\u06FF]*$"
+    },
+    "nullableProse": {
+      "type": ["string", "null"],
+      "minLength": 10,
+      "maxLength": 1600,
+      "pattern": "^[^\\u0600-\\u06FF]*$"
+    },
+    "branch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "branch_ref",
+        "concept_map",
+        "source_synthesis",
+        "concept_gloss",
+        "contextual_glosses",
+        "lexical_glosses",
+        "excluded_glosses",
+        "neighbor_distinctions",
+        "neighbor_coverage_note"
+      ],
+      "properties": {
+        "branch_ref": { "$ref": "#/$defs/branchRef" },
+        "concept_map": { "$ref": "#/$defs/conceptMap" },
+        "source_synthesis": { "$ref": "#/$defs/sourceSynthesis" },
+        "concept_gloss": { "$ref": "#/$defs/conceptGloss" },
+        "contextual_glosses": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 4,
+          "items": { "$ref": "#/$defs/contextualGloss" }
+        },
+        "lexical_glosses": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/lexicalGloss" }
+        },
+        "excluded_glosses": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 3,
+          "items": { "$ref": "#/$defs/excludedGloss" }
+        },
+        "neighbor_distinctions": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 5,
+          "items": { "$ref": "#/$defs/neighborDistinction" }
+        },
+        "neighbor_coverage_note": { "$ref": "#/$defs/shortProse" }
+      }
+    },
+    "conceptMap": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["definition", "facets"],
+      "properties": {
+        "definition": { "$ref": "#/$defs/shortProse" },
+        "facets": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/conceptFacet" }
+        }
+      }
+    },
+    "conceptFacet": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["facet_id", "role", "statement", "claim_ids"],
+      "properties": {
+        "facet_id": { "$ref": "#/$defs/facetId" },
+        "role": {
+          "enum": [
+            "core",
+            "specialization",
+            "extension",
+            "associated_use",
+            "example",
+            "source_variant"
+          ]
+        },
+        "statement": { "$ref": "#/$defs/shortProse" },
+        "claim_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/claimId" }
+        }
+      }
+    },
+    "sourceSynthesis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "common_summary",
+        "common_claim_ids",
+        "source_details",
+        "supporting_claim_ids",
+        "duplicate_claims"
+      ],
+      "properties": {
+        "common_summary": { "$ref": "#/$defs/prose" },
+        "common_claim_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/claimId" }
+        },
+        "source_details": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/sourceDetail" }
+        },
+        "supporting_claim_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/claimId" }
+        },
+        "duplicate_claims": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/duplicateClaim" }
+        }
+      }
+    },
+    "sourceDetail": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim_ids", "kind", "summary"],
+      "properties": {
+        "claim_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/claimId" }
+        },
+        "kind": {
+          "enum": [
+            "example",
+            "disagreement",
+            "restriction",
+            "extension",
+            "implication",
+            "derivation",
+            "sole_attestation"
+          ]
+        },
+        "summary": { "$ref": "#/$defs/shortProse" }
+      }
+    },
+    "duplicateClaim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim_id", "merged_into"],
+      "properties": {
+        "claim_id": { "$ref": "#/$defs/claimId" },
+        "merged_into": { "$ref": "#/$defs/claimId" }
+      }
+    },
+    "conceptGloss": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "applicability", "error_profile", "facet_ids"],
+      "properties": {
+        "text": { "$ref": "#/$defs/shortText" },
+        "applicability": { "$ref": "#/$defs/shortProse" },
+        "error_profile": { "$ref": "#/$defs/errorProfile" },
+        "facet_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/facetId" }
+        }
+      }
+    },
+    "contextualGloss": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "usage_role", "applicability", "error_profile", "facet_ids"],
+      "properties": {
+        "text": { "$ref": "#/$defs/shortText" },
+        "usage_role": { "enum": ["general", "contextual", "explanatory"] },
+        "applicability": { "$ref": "#/$defs/shortProse" },
+        "error_profile": { "$ref": "#/$defs/errorProfile" },
+        "facet_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/facetId" }
+        }
+      }
+    },
+    "lexicalGloss": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lexical_unit_id", "rendering_kind", "target_gloss"],
+      "properties": {
+        "lexical_unit_id": { "$ref": "#/$defs/claimId" },
+        "rendering_kind": { "enum": ["ordinary", "proper_name"] },
+        "target_gloss": {
+          "type": ["string", "null"],
+          "minLength": 2,
+          "maxLength": 500,
+          "pattern": "^[^\\u0600-\\u06FF]*$"
+        }
+      }
+    },
+    "excludedGloss": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "category", "error_profile"],
+      "properties": {
+        "text": { "$ref": "#/$defs/shortText" },
+        "category": { "enum": ["alternative", "common_loanword", "confusable"] },
+        "error_profile": { "$ref": "#/$defs/errorProfile" }
+      }
+    },
+    "errorProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fit", "preserves", "loses", "adds", "collision"],
+      "properties": {
+        "fit": {
+          "enum": ["none", "narrowing", "broadening", "displacement", "drifted_loanword"]
+        },
+        "preserves": { "$ref": "#/$defs/shortProse" },
+        "loses": { "$ref": "#/$defs/nullableProse" },
+        "adds": { "$ref": "#/$defs/nullableProse" },
+        "collision": { "$ref": "#/$defs/nullableProse" }
+      }
+    },
+    "neighborDistinction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "neighbor_ref",
+        "relation_type",
+        "boundary_match",
+        "focus_only",
+        "neighbor_only",
+        "gloss",
+        "shared_zone",
+        "distinction"
+      ],
+      "properties": {
+        "neighbor_ref": { "$ref": "#/$defs/branchRef" },
+        "relation_type": {
+          "enum": [
+            "synonym",
+            "near_synonym",
+            "antonym",
+            "polarity_pair",
+            "near_neighbor",
+            "same_field",
+            "thematic",
+            "other"
+          ]
+        },
+        "boundary_match": {
+          "enum": ["exact", "partial", "opposed", "field_only", "thematic_only"]
+        },
+        "focus_only": { "$ref": "#/$defs/nullableProse" },
+        "neighbor_only": { "$ref": "#/$defs/nullableProse" },
+        "gloss": { "$ref": "#/$defs/shortText" },
+        "shared_zone": { "$ref": "#/$defs/shortProse" },
+        "distinction": { "$ref": "#/$defs/prose" }
+      }
+    },
+    "rootProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["summary", "polysemy", "organization"],
+      "properties": {
+        "summary": { "$ref": "#/$defs/shortProse" },
+        "polysemy": { "enum": ["monosemic", "polysemic"] },
+        "organization": {
+          "enum": ["monosemic", "radial", "multi_branch", "mixed", "uncertain"]
+        }
+      }
+    }
+  }
+}

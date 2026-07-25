@@ -1,0 +1,40 @@
+{
+  "inputs_sha256": "b635d2dd978c2d8d0e63bfdbd712eedf3bd5ac7045b3884572c82bdd155cd29e",
+  "verdict": "repair",
+  "summary": "The response is broadly publication-ready, but three localized renderings require correction to preserve the supplied lexical boundaries and expression-specific content.",
+  "issues": [
+    {
+      "target_ref": "root_000102/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_002"
+      ],
+      "evidence_conflict": "The evidence gives two alternatives for the causative form: removing something and taking or driving it into open ground. The target gloss preserves only removal from a place.",
+      "smallest_correction": "Expand the lu_002 target gloss to include both alternatives, for example, \"yerinden uzaklaştırmak veya açık alana çıkarmak.\""
+    },
+    {
+      "target_ref": "root_000102/B003",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_010"
+      ],
+      "evidence_conflict": "The contextual gloss \"geçmiş zaman\" denotes past time generally, while the evidence is restricted to the immediately preceding night. Its error profile therefore incorrectly labels the gloss as a narrowing that fully preserves that restriction.",
+      "smallest_correction": "Replace the contextual gloss with \"dün gece\" or \"geçen gece\" and update its error profile to reflect an exact fit for lu_010."
+    },
+    {
+      "target_ref": "root_000102/B007",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_028"
+      ],
+      "evidence_conflict": "The supplied expression explicitly evaluates someone as a lord and as a neighbor, but the target gloss changes these roles into doing a great deed and behaving worthily.",
+      "smallest_correction": "Render the two stated roles directly, for example, \"ne büyük bir efendi oldun; ne iyi bir komşu oldun.\""
+    }
+  ]
+}

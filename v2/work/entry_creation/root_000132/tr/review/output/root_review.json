@@ -1,0 +1,83 @@
+{
+  "verdict": "repair",
+  "summary": "Temel anlamlar, Türkçe karşılıklar ve yayımlanan komşu ayrımları kanıtla uyumludur. Ancak kaynak sentezleri tek kaynağa özgü kayıtları sözlük koduyla ayırmıyor; B002'de ayrıca bir örnek ile türemiş bir hayvan adı yanlış kavramsal rollerde sunuluyor.",
+  "issues": [
+    {
+      "target_ref": "root_000132/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001"
+      ],
+      "evidence_conflict": "Olgunluk evresine bağlı kullanım sınırlaması lu_001 içinde yalnız tahdhib kaynağında bulunuyor. Kaynak sentezi bunu ortak özette yalnızca belirsiz bir 'tek tanım' diye anıyor ve tahdhib'e özgü bir kaynak ayrıntısı vermiyor.",
+      "smallest_correction": "Ortak özeti kaynak yansız bırakıp tahdhib için, olgunluk evresi sınırlamasını lu_001 ile bağlayan tekil bir kaynak ayrıntısı ekleyin."
+    },
+    {
+      "target_ref": "root_000132/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005"
+      ],
+      "evidence_conflict": "Evcil sığırı kapsam dışında bırakan kayıt lu_005 içinde yalnız ayn kaynağına aittir. Kaynak sentezi bu ayrımı dar bir görüş olarak özetliyor fakat onu ayn'e özgü bir kaynak ayrıntısıyla çözümlemiyor.",
+      "smallest_correction": "Ayn için, evcil sığır istisnasını lu_005 ile bağlayan ve yalnız bu kaynağa özgü bilgiyi içeren bir kaynak ayrıntısı ekleyin."
+    },
+    {
+      "target_ref": "root_000132/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_008"
+      ],
+      "evidence_conflict": "Lu_008 kaynak ifadeleri yabani hayvanı ve özellikle tavşanı ayırt edici eylem örnekleri olarak verir. Kaynak sentezi yalnız genel dışkılama eylemini anıyor ve bu örnekleri kapsamıyor.",
+      "smallest_correction": "Lu_008'e bağlı tavşan ve yabani hayvan örneklerini, kaynaklar arası ortaklıkları tekrarlamadan kaynak sentezine ekleyin."
+    },
+    {
+      "target_ref": "root_000132/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_008"
+      ],
+      "evidence_conflict": "F006, tavşan kullanımını 'extension' olarak sınıflandırıyor; oysa lu_008'in anlamı hayvanın dışkılamasıdır ve tavşan ile yabani hayvan kaynak ifadelerinde bu genel eylemin örnekleri olarak yer alır.",
+      "smallest_correction": "F006'nın rolünü 'example' olarak değiştirin; eylemin temel kapsamını genişleten ayrı bir anlam gibi sunmayın."
+    },
+    {
+      "target_ref": "root_000132/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_010"
+      ],
+      "evidence_conflict": "F008, sağımcıya doğru dışkı bırakan koyun veya dişi deve adını 'specialization' olarak sınıflandırıyor. Lu_010, temel dışkı kavramının bir alt türünü değil, bu davranışla nitelenen hayvan için türemiş ve ilişkili bir kullanımı tanımlar.",
+      "smallest_correction": "F008'nın rolünü 'associated_use' olarak değiştirin; ifade ve bağlı karşılıklar aynı kalabilir."
+    },
+    {
+      "target_ref": "root_000132/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_013"
+      ],
+      "evidence_conflict": "Tam ve sürekli yoksulluk anlamı lu_013 ile yalnız tahdhib kaynağında tanıklanmıştır. Boş kaynak ayrıntıları, bu dalın tek kaynaklı oluşunu yayımlanabilir sentezde göstermiyor.",
+      "smallest_correction": "Tahdhib için, tam ve sürekli yoksulluk tanıklığını lu_013 ile bağlayan tekil bir kaynak ayrıntısı ekleyin."
+    },
+    {
+      "target_ref": "root_000132/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_014"
+      ],
+      "evidence_conflict": "Tanrı uğruna duyulan öfke anlamı ve bunun küçültme biçimiyle kurulması lu_014 içinde yalnız tahdhib kaynağında tanıklanmıştır. Boş kaynak ayrıntıları bu tekil tanıklığı sözlük koduyla göstermiyor.",
+      "smallest_correction": "Tahdhib için, küçültme türetimini ve Tanrı uğruna duyulan öfke anlamını lu_014 ile bağlayan tekil bir kaynak ayrıntısı ekleyin."
+    }
+  ]
+}

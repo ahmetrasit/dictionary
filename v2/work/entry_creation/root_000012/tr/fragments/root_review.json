@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "be4b8fe431bcbb08ee49e1b7b8379057bae59bd101fbc1a05adec673ec757820",
+  "verdict": "repair",
+  "summary": "İki sınırlı düzeltme gereklidir: bir sözlüksel karşılık kuyu kazma eylemini eksik bırakıyor, bir komşu ayrımı ise kanıtta bulunmayan süreklilik ve hukuk koşulları ekliyor.",
+  "issues": [
+    {
+      "target_ref": "root_000012/B006",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_023"
+      ],
+      "evidence_conflict": "lu_023, kuyu veya kuyuya benzetilen mezar kazma eylemini verir. Mevcut karşılıkta ilk üye yalnızca \"kuyu\" olarak bırakıldığı için kuyu kazma eylemi açıkça karşılanmıyor.",
+      "smallest_correction": "lu_023 hedef karşılığını \"kuyu kazmak; benzetme yoluyla mezar kazmak\" olarak değiştirin."
+    },
+    {
+      "target_ref": "root_000012/B007",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_024"
+      ],
+      "evidence_conflict": "root_000217/B010 karşılaştırması odak dal için süren veya kalıcı, hatta hukuki bir yükümlülük sınırı kuruyor ve ortak alanı kişinin istemediği şeye baskıyla yöneltilmesi olarak tanımlıyor. lu_024 yalnızca bir şeyin doğrudan konuşana yüklenip bağlayıcı kılınmasını destekler; süreklilik, hukuk ve isteksizlik koşullarını desteklemez.",
+      "smallest_correction": "İlişki türünü koruyun; ortak alanı dışarıdan yöneltilen bağlayıcılıkla sınırlayın ve ayrımı, odak dalın belirli bir şeyi konuşana bağlaması ile komşu dalın kişiyi bir işe zorlaması üzerinden kurarak süreklilik, hukuk ve isteksizlik eklerini kaldırın."
+    }
+  ]
+}

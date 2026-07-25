@@ -20,6 +20,7 @@ from v2.scripts.assemble_entry import (
     canonical_sha256,
     enrich_root_writer_response,
     root_entry_filename,
+    sha256_file,
     validate_fragment,
 )
 from v2.scripts.create_entry import (
@@ -247,8 +248,10 @@ def validate_repair_preservation(
     candidate: dict,
     *,
     editable_branch_indexes: set[int],
+    editable_branch_fields: dict[int, set[str]] | None = None,
     root_editable: bool,
 ) -> None:
+    editable_branch_fields = editable_branch_fields or {}
     previous_branches = previous.get("branches", [])
     candidate_branches = candidate.get("branches", [])
     if len(previous_branches) != len(candidate_branches):
@@ -256,6 +259,13 @@ def validate_repair_preservation(
     for index, (before, after) in enumerate(zip(previous_branches, candidate_branches)):
         if index not in editable_branch_indexes and before != after:
             raise ContractError(f"repair changed protected branch index {index}")
+        if index in editable_branch_fields:
+            allowed = editable_branch_fields[index]
+            for field in set(before) | set(after):
+                if field not in allowed and before.get(field) != after.get(field):
+                    raise ContractError(
+                        f"repair changed protected branch index {index} field {field}"
+                    )
     if not root_editable and previous.get("root_profile") != candidate.get("root_profile"):
         raise ContractError("repair changed the protected root profile")
 
@@ -274,6 +284,7 @@ def accept(
     *,
     previous_path: Path | None = None,
     editable_branch_indexes: set[int] | None = None,
+    editable_branch_fields: dict[int, set[str]] | None = None,
     root_editable: bool = False,
 ) -> dict:
     task = load_json(task_path)
@@ -294,6 +305,7 @@ def accept(
                 previous,
                 response,
                 editable_branch_indexes=editable,
+                editable_branch_fields=editable_branch_fields,
                 root_editable=root_editable,
             )
     enriched = enrich_root_writer_response(response, task)
@@ -343,12 +355,34 @@ def main(argv: list[str] | None = None) -> int:
         output = task.parent.parent / "fragments" / filename
     error_output = task.parent.parent / "output/validation_error.txt"
     editable_branch_indexes = set(args.editable_branch_index)
+    editable_branch_fields = None
     root_editable = args.root_editable
     if args.repair_scope:
         scope = load_json(args.repair_scope.resolve())
         if not isinstance(scope, dict) or scope.get("repairable_by") != "root_writer":
             raise SystemExit("repair scope is not owned by the root writer")
+        if scope.get("writer_task_sha256") != canonical_sha256(task_value):
+            raise SystemExit("repair scope is not bound to this writer task")
+        if scope.get("previous_response_sha256") != sha256_file(args.previous.resolve()):
+            raise SystemExit("repair scope is not bound to the previous writer response")
+        for field in ("review_inputs_sha256", "review_sha256"):
+            if not isinstance(scope.get(field), str) or len(scope[field]) != 64:
+                raise SystemExit(f"repair scope lacks bound {field}")
         editable_branch_indexes = set(scope.get("editable_branch_indexes", []))
+        raw_fields = scope.get("editable_branch_fields", {})
+        if not isinstance(raw_fields, dict):
+            raise SystemExit("repair scope has invalid editable_branch_fields")
+        editable_branch_fields = {}
+        for index, fields in raw_fields.items():
+            if not isinstance(fields, list):
+                raise SystemExit("repair scope has invalid editable_branch_fields")
+            try:
+                branch_index = int(index)
+            except ValueError as error:
+                raise SystemExit("repair scope has invalid branch field index") from error
+            editable_branch_fields[branch_index] = set(fields)
+        if set(editable_branch_fields) != editable_branch_indexes:
+            raise SystemExit("repair scope branch fields do not match branch indexes")
         root_editable = scope.get("root_editable") is True
     try:
         stored = accept(
@@ -357,6 +391,7 @@ def main(argv: list[str] | None = None) -> int:
             output.resolve(),
             previous_path=args.previous.resolve() if args.previous else None,
             editable_branch_indexes=editable_branch_indexes,
+            editable_branch_fields=editable_branch_fields,
             root_editable=root_editable,
         )
     except (OSError, ContractError, KeyError, TypeError, json.JSONDecodeError) as error:

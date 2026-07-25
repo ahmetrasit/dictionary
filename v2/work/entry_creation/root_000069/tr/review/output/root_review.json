@@ -1,0 +1,67 @@
+{
+  "verdict": "repair",
+  "summary": "Dal çekirdekleri ve temel ayrımlar genel olarak kanıtla uyumludur. Ancak birinci dalda iki söyleyiş biçimi yanlış nitelendirilmiş, ayırt edici kaynak ayrıntıları atlanmış ve bir komşu sınırı uzatılmış biçimlerle çelişmiştir. İkinci dalda da inançlı kişi yorumuna bağlı dil kaydı belirtilmemiştir.",
+  "issues": [
+    {
+      "target_ref": "root_000069/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_006",
+        "lu_007"
+      ],
+      "evidence_conflict": "lu_006 iki vav içeren uzatılmış biçim olarak verilir; iki kez uzatıldığı söylenmez. lu_007 ise yalnızca inleme sesinin bir söyleyiş biçimi olarak kaydedilir ve kısa olduğu belirtilmez. Kaynak ayrıntıları bu iki özelliği kanıtsız biçimde ekliyor.",
+      "smallest_correction": "lu_006 özetini iki vavlı uzatılmış söyleyiş, lu_007 özetini ise süre belirtmeden ayrı bir söyleyiş biçimi olarak düzeltin."
+    },
+    {
+      "target_ref": "root_000069/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002",
+        "lu_008"
+      ],
+      "evidence_conflict": "Sentez, bir açıklamanın anlamı üzüntü bildiren her söze genişletmesini, acı sırasında verilen alternatif ünlem örneğini ve sonuna ses eklenen biçimin uzun ya da uzatılmadan söylenebilmesini aktarmıyor. Bunlar kaynak ifadelerindeki ayırt edici genişletme ve biçim ayrıntılarıdır.",
+      "smallest_correction": "Bu üç ayrıntıyı sözlük adı vermeden ve ilgili idlerle ilişkilendirerek ortak özete ekleyin."
+    },
+    {
+      "target_ref": "root_000069/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_006",
+        "lu_007"
+      ],
+      "evidence_conflict": "lu_006 için iki kez uzatma, iki vav bulunmasıyla aynı değildir; lu_007 için de kısa söyleyiş niteliği kanıtta yoktur. Bu nedenle iki sözlüksel karşılık kaynak biçimlerini yanlış sınırlar.",
+      "smallest_correction": "lu_006 karşılığını iki vavlı uzatılmış inleme sesi, lu_007 karşılığını yalnızca inleme sesinin bir söyleyiş biçimi olarak verin."
+    },
+    {
+      "target_ref": "root_000069/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005",
+        "lu_006",
+        "lu_008"
+      ],
+      "evidence_conflict": "root_000147/B001 ayrımında odak dalının kısa bir sesle sınırlı olduğu söyleniyor. Oysa kanıt odak dalında uzatılmış biçimleri ve uzun ya da uzatılmadan söylenebilen biçimi açıkça kapsıyor.",
+      "smallest_correction": "Ayrımdaki kısa sesle sınırlama ifadesini kaldırın; sınırı gözyaşı ve ağlama eylemine karşı belirli acı, üzüntü veya yakınma ünlemi üzerinden kurun."
+    },
+    {
+      "target_ref": "root_000069/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_014"
+      ],
+      "evidence_conflict": "Sentez inançlı kişi ve din bilgini yorumlarını aktarıyor, fakat inançlı kişi yorumunun bir kaynakta Habeş diline bağlandığı kısıtını atlıyor.",
+      "smallest_correction": "Ortak özete, inançlı kişi yorumunun bir açıklamada Habeş diline ait sayıldığını kaynak nötr biçimde ekleyin."
+    }
+  ]
+}

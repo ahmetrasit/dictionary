@@ -143,6 +143,13 @@ class RenderOccurrencesTest(unittest.TestCase):
         )
         self.assertEqual(normalize_pattern_surface("مُسْتَقِيمَاً"), "مستقيم")
 
+    def test_packet_validation_preserves_non_accepted_branch_metadata(self):
+        packet = copy.deepcopy(self.sirat)
+        packet["branches"][0]["status"] = "review"
+        packet["branches"][0]["contaminated"] = "yes"
+
+        validate_packet(packet)
+
     def test_render_lists_every_sirat_occurrence_and_source_grammar(self):
         rendered = render_markdown(self.sirat, SIRAT_PACKET, "tr")
         for occurrence in self.sirat["qac"]["occurrences"]:
@@ -222,6 +229,30 @@ class RenderOccurrencesTest(unittest.TestCase):
             local_source_grammar(
                 "noun, nominative. The word appears 62 times in the Quran."
             ),
+        )
+        self.assertEqual(
+            local_source_grammar(
+                "NOUN_CONCRETE — nominative as nāʾib al-fāʿil (passive subject) of yuṣabbu, definite with al-"
+            ),
+            "NOUN_CONCRETE — nominative as nāʾib al-fāʿil (passive subject) of yuṣabbu, definite with al-",
+        )
+        self.assertEqual(
+            local_source_grammar(
+                "Definite noun, masculine broken plural. COUNT=1 in the entire Quran — this is the ONLY occurrence. Broken plural pattern fiʿāl"
+            ),
+            "Definite noun, masculine broken plural. Broken plural pattern fiʿāl",
+        )
+        self.assertEqual(
+            local_source_grammar(
+                "NOUN_CONCRETE — nominative; khabar. ROOT LEXICON: NOUN_CONCRETE:169, COUNT:184; the dominant form"
+            ),
+            "NOUN_CONCRETE — nominative; khabar. the dominant form",
+        )
+        self.assertEqual(
+            local_source_grammar(
+                "GERUND accusative; all 13 Quran-wide occurrences are this GERUND form"
+            ),
+            "GERUND accusative",
         )
 
     def test_generated_output_is_deterministic_and_protected(self):

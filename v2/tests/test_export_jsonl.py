@@ -19,9 +19,10 @@ class ExportJsonlTest(unittest.TestCase):
                 FIXTURE.read_text(encoding="utf-8"), encoding="utf-8"
             )
 
-            content, count = render_jsonl(entries_dir)
+            content, count, language = render_jsonl(entries_dir)
 
             self.assertEqual(count, 1)
+            self.assertEqual(language, "tr")
             self.assertEqual(len(content.splitlines()), 1)
             self.assertEqual(json.loads(content)["entry_id"], "root_000858/tr")
 
@@ -33,12 +34,13 @@ class ExportJsonlTest(unittest.TestCase):
                 FIXTURE.read_text(encoding="utf-8"), encoding="utf-8"
             )
 
-            content, count = render_jsonl(entries_dir, "user_dictionary")
+            content, count, language = render_jsonl(entries_dir, "user_dictionary")
             projected = json.loads(content)
 
             self.assertEqual(count, 1)
+            self.assertEqual(language, "tr")
             self.assertEqual(projected["projection"], "user_dictionary")
-            self.assertNotIn("occurrence_evidence", projected)
+            self.assertEqual(set(projected["occurrence_evidence"]), {"summary"})
             self.assertNotIn("dictionary_basis", projected["branches"][0])
 
     def test_check_detects_stale_output(self):

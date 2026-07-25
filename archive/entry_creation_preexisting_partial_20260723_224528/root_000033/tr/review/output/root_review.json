@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtla uyumludur; ancak bir kaynak ayrıntısı kanıtta bulunmayan kendiliğindenlik ekliyor ve yalnızca tek sözlükte kayıtlı iki dalın tekil tanıklığı kaynak sentezinde belirtilmiyor.",
+  "issues": [
+    {
+      "target_ref": "root_000033/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003"
+      ],
+      "evidence_conflict": "lu_003 yalnızca suyun değiştiğini bildirir; kaynak ayrıntısındaki kendiliğinden ifadesi değişimin nedeni veya gerçekleşme biçimi hakkında kanıtta bulunmayan bir özellik ekler.",
+      "smallest_correction": "Kaynak ayrıntısını, tek bir sözlüğün suyun değişmesini ayrı bir kuruluşla kaydettiğini söyleyecek biçimde düzenleyip kendiliğinden ifadesini kaldırın."
+    },
+    {
+      "target_ref": "root_000033/B007",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_015"
+      ],
+      "evidence_conflict": "lu_015 yalnızca tek bir sözlükten sağlanmıştır, fakat kaynak sentezi bu kullanımın tekil tanıklık olduğunu belirtmez ve sole_attestation ayrıntısı içermez.",
+      "smallest_correction": "lu_015 için, bir sözlüğün bir kişinin diğerine ayağıyla vurmasını kaydettiğini belirten kısa ve sözlüğe özgü bir sole_attestation kaynak ayrıntısı ekleyin."
+    },
+    {
+      "target_ref": "root_000033/B008",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_016"
+      ],
+      "evidence_conflict": "lu_016 yalnızca tek bir sözlükten sağlanmıştır, fakat kaynak sentezi oyun adının tekil tanıklık olduğunu belirtmez ve sole_attestation ayrıntısı içermez.",
+      "smallest_correction": "lu_016 için, bir sözlüğün bu sözcüğü yakalama ve dokunma adıyla anılan oyun olarak kaydettiğini belirten kısa ve sözlüğe özgü bir sole_attestation kaynak ayrıntısı ekleyin."
+    }
+  ]
+}

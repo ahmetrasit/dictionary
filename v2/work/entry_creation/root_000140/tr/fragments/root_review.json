@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": "68254ca41058e4ceb78822d39fd8186695c8aabaddba220daa2dade25d038a62",
+  "verdict": "repair",
+  "summary": "B002 dalındaki komşu kapsam notu, yayımlanan ilişki sayısını yanlış bildiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_000140/B002",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005"
+      ],
+      "evidence_conflict": "Komşu ayrımları listesinde yalnız root_000170/B007 ilişkisi bulunmasına karşın kapsam notu iki komşunun seçildiğini söylüyor.",
+      "smallest_correction": "Kapsam notundaki \"iki komşu\" ifadesini yayımlanan tek ilişkiyle uyumlu olacak biçimde \"bir komşu\" olarak değiştirin."
+    }
+  ]
+}

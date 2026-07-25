@@ -1,0 +1,705 @@
+{
+  "inputs_sha256": "715d072c5c261c2a620760918e65340810eddd65e85bd28507b94bd64875db4b",
+  "artifact_format": "dictionary-v2-root-entry-draft-v1",
+  "generated_by": "v2/scripts/accept_root_writer.py",
+  "root_envelope_id": "root_000195",
+  "language": "tr",
+  "branches": [
+    {
+      "branch_ref": "root_000195/B001",
+      "concept_map": {
+        "definition": "Suyu ya da kanı dökerek akıtma veya bu sıvıların dökülüp akmasıdır. Şiddetli yağmurun boşanmasını, vadideki sel akışını ve adanmış hayvanların kesilmesi sırasında kanın bolca akıtılmasını da kapsar.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Bir kimse suyu ya da kanı döküp akıtır veya sıvı kendiliğinden dökülerek akar.",
+            "claim_ids": [
+              "lu_001",
+              "lu_002",
+              "lu_007"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Su veya yağmur çok şiddetli biçimde ve bol miktarda boşanır.",
+            "claim_ids": [
+              "lu_003",
+              "lu_005"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "extension",
+            "statement": "Vadiden geçen sel ve vadideki yoğun su akışı bu anlam alanına girer.",
+            "claim_ids": [
+              "lu_004"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "specialization",
+            "statement": "Adanmış hayvanların kesilmesi sırasında kanın akıtılması, çekirdek döküp akıtma anlamının özel bir uygulamasıdır.",
+            "claim_ids": [
+              "lu_005"
+            ]
+          },
+          {
+            "facet_id": "F005",
+            "role": "source_variant",
+            "statement": "Döküp akıtma eylemi, aynı ettirgen anlamı taşıyan başka bir çekimli biçimle de ifade edilir.",
+            "claim_ids": [
+              "lu_006"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynakların ortak çizgisi, suyun veya kanın dökülerek akıtılması ile sıvının dökülüp akmasıdır. Bu çekirdek, çok şiddetli yağmura, vadideki sel akışına ve adanmış hayvanların kesilmesi sırasında kanın akmasına uygulanır.",
+        "common_claim_ids": [
+          "lu_001",
+          "lu_002",
+          "lu_003",
+          "lu_004",
+          "lu_005",
+          "lu_007"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_006"
+            ],
+            "kind": "derivation",
+            "summary": "Tek bir kaynak, döküp akıtma eylemi için aynı ettirgen anlamdaki alternatif bir çekimli biçimi de kaydeder."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "döküp akıtma ve dökülerek akma",
+        "applicability": "Hem bir kişinin suyu veya kanı akıtmasını hem de sıvının, özellikle yağmurun, yoğun biçimde dökülüp akmasını birlikte karşılayan en geniş doğal ifadedir.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Ettirgen dökme eylemini, kendiliğinden akışı ve yoğun sıvı hareketini birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003",
+          "F004"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "döküp akıtmak",
+          "usage_role": "general",
+          "applicability": "Bir kişinin suyu ya da kanı dökerek akışa geçirdiği geçişli kullanımlarda doğaldır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Bir sıvıyı dökme ve akmasını sağlama işlemini korur.",
+            "loses": "Sıvının kendiliğinden boşanmasını, şiddetli yağmuru ve vadideki sel akışını tek başına karşılamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F004"
+          ]
+        },
+        {
+          "text": "şiddetle boşanmak",
+          "usage_role": "contextual",
+          "applicability": "Yağmurun veya bol suyun çok yoğun biçimde döküldüğü geçişsiz bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Sıvının yoğun ve güçlü biçimde dökülmesini korur.",
+            "loses": "Bir kişinin sıvıyı döküp akıtması ile kan ve vadi seline özgü uygulamaları dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "sel halinde akmak",
+          "usage_role": "contextual",
+          "applicability": "Vadinin yoğun bir su akışıyla dolduğu veya suyun sel gibi ilerlediği bağlamlara uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Bol suyun kesintisiz ve güçlü akışını korur.",
+            "loses": "Suyu ya da kanı döküp akıtma işlemini ve yağmurun yukarıdan boşanmasını belirtmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        },
+        {
+          "text": "kanı bolca akıtmak",
+          "usage_role": "contextual",
+          "applicability": "Kanamanın yoğunluğunu veya adanmış bir hayvan kesilirken kanın akıtılmasını anlatan bağlamlarda uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Kanın bilinçli olarak ve bol miktarda akıtılması yönünü korur.",
+            "loses": "Su, yağmur ve vadi seliyle ilgili geçişsiz akış kullanımlarını kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F004"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_001",
+          "rendering_kind": "ordinary",
+          "target_gloss": "suyu veya kanı döküp akıtmak"
+        },
+        {
+          "lexical_unit_id": "lu_002",
+          "rendering_kind": "ordinary",
+          "target_gloss": "suyun dökülüp akması"
+        },
+        {
+          "lexical_unit_id": "lu_003",
+          "rendering_kind": "ordinary",
+          "target_gloss": "çok şiddetli biçimde boşanan su veya yağmur"
+        },
+        {
+          "lexical_unit_id": "lu_004",
+          "rendering_kind": "ordinary",
+          "target_gloss": "vadideki sel akışı"
+        },
+        {
+          "lexical_unit_id": "lu_005",
+          "rendering_kind": "ordinary",
+          "target_gloss": "yağmurun veya kanın şiddetle akması; adanmış hayvanın kanını akıtma"
+        },
+        {
+          "lexical_unit_id": "lu_006",
+          "rendering_kind": "ordinary",
+          "target_gloss": "onu döküp akıtmak"
+        },
+        {
+          "lexical_unit_id": "lu_007",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kanı bolca döküp akıtmak"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "taşmak",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Sıvının yoğun ve denetimsiz hareketini kısmen korur.",
+            "loses": "Döküp akıtma işlemini ve yukarıdan boşanma yönünü kaybeder.",
+            "adds": "Bir kabın veya sınırın kapasitesinin aşılması anlamını ekler.",
+            "collision": "Gündelik kullanımda esas olarak bir sınırın dışına çıkmayı anlatır."
+          }
+        },
+        {
+          "text": "sağanak",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Yağmurun yoğun biçimde yağması yönünü korur.",
+            "loses": "Su veya kanı döküp akıtmayı, sıvının genel akışını ve vadi selini kapsamaz.",
+            "adds": null,
+            "collision": "Yalnızca belirli bir yağış türünü adlandıran meteorolojik bir sözcüktür."
+          }
+        },
+        {
+          "text": "püskürmek",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Sıvının güçlü biçimde hareket etmesini korur.",
+            "loses": "Dökülme, aşağı yönlü boşanma ve sürekli akış özelliklerini kaybeder.",
+            "adds": "Basınçla dışarı doğru fırlama biçimini ekler.",
+            "collision": "Basınçlı ve dışa yönelen sıvı çıkışıyla karışır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001599/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Kan akıtma, adanmış hayvanların kesilmesi ve vadideki sel akışı bu dalda açıkça yer alır.",
+          "neighbor_only": "Gözyaşı ve tek bir yağmur hamlesi komşu dalın ayrıca belirttiği kullanımlardır.",
+          "gloss": "dökülüp akma",
+          "shared_zone": "Her iki dal da suyun ve yağmurun dökülerek akmasını, ayrıca bir sıvının dökülmesini kapsar.",
+          "distinction": "Çekirdek sıvı hareketi büyük ölçüde örtüşür; ancak bu dal kan ve kesim bağlamına, komşu dal ise gözyaşı ile tek yağmur hamlesine uzandığı için sınırlar tam olarak aynı değildir."
+        },
+        {
+          "neighbor_ref": "root_000723/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal kanın akıtılmasını, kesim bağlamını ve vadideki sel akışını özellikle içerir.",
+          "neighbor_only": "Komşu dal gözyaşını, bulutu ve suyun yer yüzeyine yayılışını ayrıca kapsar.",
+          "gloss": "dökme ve dökülme",
+          "shared_zone": "Suyun dökülmesi, akması ve yağmurun yoğun biçimde yağması iki dalın ortak alanıdır.",
+          "distinction": "İkisi sıradan su ve yağmur bağlamlarında yaklaşır; fakat katılımcılar ve özel uygulamalar ayrıldığı için birbirinin yerine her bağlamda kullanılamaz."
+        },
+        {
+          "neighbor_ref": "root_000481/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal sürekli dökülme, şiddetli yağış, kan akıtma ve vadideki seli kapsar.",
+          "neighbor_only": "Komşu dal sıvının tek hamlede hızla itilmesini ve başka sıvı türlerini öne çıkarır.",
+          "gloss": "bir hamlede dışarı akıtma",
+          "shared_zone": "Her iki dalda da bir sıvının güçlü biçimde dışarı çıkması veya çıkarılması vardır.",
+          "distinction": "Komşu dalın ayırt edici yönü tek seferlik itki ve çıkıştır; bu dalın çekirdeği ise dökerek akıtma ile bol veya sürekli dökülüp akmadır."
+        },
+        {
+          "neighbor_ref": "root_001514/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Dökme, aşağı doğru boşanma, kan akıtma ve vadi seli bu dala özgüdür.",
+          "neighbor_only": "Kaynaktan kabarıp çıkma, fokurdama ve suyun çokluğu komşu dalın ayırt edici yönleridir.",
+          "gloss": "suyun coşup çoğalması",
+          "shared_zone": "İki dal da bol ve güçlü su hareketini anlatabilir.",
+          "distinction": "Bu dal sıvının dökülmesine ve akmasına odaklanır; komşu dal ise suyun bir kaynaktan yukarı doğru coşarak çıkmasına ve çoğalmasına odaklanır."
+        },
+        {
+          "neighbor_ref": "root_000195/B002",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Bu dal sıvının dökülmesi ve akıtılmasıyla ilgili bir olayı adlandırır.",
+          "neighbor_only": "Komşu dal su çanakları bulunan bir çayırlık alanı adlandırır.",
+          "gloss": "su çanaklı çayırlık",
+          "shared_zone": "İki dalın ortak sahnesinde suyun akması ve alçak yerlerde toplanması bulunabilir.",
+          "distinction": "Biri bir sıvı hareketi, diğeri ise suyu barındıran bir arazi türüdür; ortak su sahnesi dışında anlam çekirdekleri örtüşmez."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar karşılaştırıldı; yayımlananlar dökülme, güçlü sıvı çıkışı, suyun kaynaktan coşması ve su tutan araziyle karışma ihtimalini en açık biçimde gösterir. Kalan adaylar daha uzak bir sıvı sahnesini paylaşır veya ayrı konuşmacı dalına aittir.",
+      "branch_image_ar": "الصبّ والانصباب",
+      "what_is_ar": "صب الماء والدم؛ انصباب المطر الشديد؛ سيل الوادي؛ سيلان دماء الهدي؛ ثج المستحاضة للدم",
+      "source_phrase_ar": "أصل واحد وهو صب الشيء (maqayis)؛ الثج شدة انصباب المطر والدم ومطر ثجاج (ayn)؛ ثججت الماء والدم أثجه ثجا إذا سيلته (sihah)؛ مطر ثجاج إذا انصب جدا (sihah)؛ الثج سيلان دماء الهدي (sihah)؛ ثججت الماء ثجا أثجه وقد ثج يثج ثجوجا (tahdhib)؛ ثج الماء يثج إذا انصب (tahdhib)؛ ثج الماء وأتى الوادي بثجيجه وإسالة دم الهدي (mufradat)",
+      "sources": [
+        "MQ",
+        "AY",
+        "SI",
+        "TA",
+        "MU"
+      ],
+      "source_note": {
+        "TA": "Tek bir kaynak, döküp akıtma eylemi için aynı ettirgen anlamdaki alternatif bir çekimli biçimi de kaydeder."
+      }
+    },
+    {
+      "branch_ref": "root_000195/B002",
+      "concept_map": {
+        "definition": "İçinde suyun toprağın alçak bölümlerine aktığı veya toplandığı çanaklar bulunan çayırlık alandır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Çayırlık alanın içinde suyu alan ve suyun toprağa doğru aktığı birden çok çanak bulunur.",
+            "claim_ids": [
+              "lu_008"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Bu dal, içinde suyun toprağın alçak yerlerine aktığı çanaklar bulunan bir çayırlığı adlandırır.",
+        "common_claim_ids": [
+          "lu_008"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "su çanakları bulunan çayırlık",
+        "applicability": "Bir su çanağını değil, suyun aktığı veya toplandığı çanakları bünyesinde barındıran çayırlık alanın tamamını anlatır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Çayırlık olma, içinde su çanakları bulunması ve suyun alçak bölümlere yönelmesi özelliklerini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "suyun çukurlara aktığı çayır",
+          "usage_role": "explanatory",
+          "applicability": "Arazi türünün yapısını açıklamanın gerektiği bağlamlarda, çayırlık ile suyun alçak çanaklara yönelmesini birlikte belirtir.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Çayırlığı, içindeki alçak su çanaklarını ve suyun bu çanaklara akışını birlikte korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "su çanaklı çayır",
+          "usage_role": "contextual",
+          "applicability": "Kısa bir arazi betimlemesinde, çayırın içinde suyu alan çanakların bulunduğu özellikle vurgulanacaksa uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Çayırlık alanı ve bu alanın içindeki su çanaklarını korur.",
+            "loses": "Suyun toprağın alçak bölümlerine doğru akması yönünü açıkça bildirmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_008",
+          "rendering_kind": "ordinary",
+          "target_gloss": "içinde su çanakları bulunan çayırlık"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "gölet",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Suyun bir alçak yerde toplanması yönünü korur.",
+            "loses": "Çayırlık alanı ve onun içindeki birden çok su çanağını kaybeder.",
+            "adds": "Araziyi değil, toplanmış su kütlesinin kendisini adlandırır.",
+            "collision": "Tek bir küçük durgun su kütlesiyle karışır."
+          }
+        },
+        {
+          "text": "bataklık",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Su ile belirlenen bir arazi olma yönünü korur.",
+            "loses": "Çayırlığın içindeki ayrı su çanakları yapısını kaybeder.",
+            "adds": "Toprağın sürekli suya doymuş ve çamurlu olması anlamını ekler.",
+            "collision": "Sürekli ıslak ve geçilmesi güç arazi türünü çağrıştırır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000374/B008",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal, su çanaklarını içeren çayırlık alanın tamamını adlandırır.",
+          "neighbor_only": "Komşu dal suyu tutan küçük çukurları, kıvrımlı kazıları ve setlenmiş düz yüzeyleri doğrudan adlandırır.",
+          "gloss": "suyu tutan çukurlar ve düzlükler",
+          "shared_zone": "İki dal da çayırlık veya düz arazide suyun alçak yapılarda tutulduğu bir sahneyi paylaşır.",
+          "distinction": "Bu dalın göndergesi çanakları içeren çayırlıktır; komşu dalın göndergesi ise suyu tutmak üzere oluşmuş veya yapılmış çukurların ve yüzeylerin kendisidir."
+        },
+        {
+          "neighbor_ref": "root_000018/B006",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Çayırlık olma ve içinde birden çok su çanağı barındırma bu dala özgüdür.",
+          "neighbor_only": "Komşu dal suyu günlerce tutabilen tek bir havuz, çukur veya küçük su birikme yerini adlandırır.",
+          "gloss": "su tutan çukur",
+          "shared_zone": "Her ikisi de suyun arazideki alçak bölümlerde birikmesiyle ilgilidir.",
+          "distinction": "Ortak alan suyun tutulmasıdır; ancak biri kapsayıcı bir çayırlık türü, diğeri suyu tutan çukurun veya havuzun kendisidir."
+        },
+        {
+          "neighbor_ref": "root_000180/B009",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal, içinde su çanakları bulunmasıyla tanımlanan çayırlığı anlatır.",
+          "neighbor_only": "Komşu dal selin geride bıraktığı suyu veya insanlarca otlatılmadan bırakılmış bir çayırlığı anlatır.",
+          "gloss": "geride bırakılmış su veya çayırlık",
+          "shared_zone": "İki dal çayırlık ve arazi üzerinde kalan su sahnesinde yaklaşır.",
+          "distinction": "Bu dalın kurucu özelliği çayırlık içindeki su çanaklarıdır; komşu dalda belirleyici olan, suyun selce ya da çayırın insanlarca geride bırakılmasıdır."
+        },
+        {
+          "neighbor_ref": "root_000195/B001",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Bu dal su çanakları içeren bir arazi türünü adlandırır.",
+          "neighbor_only": "Komşu dal suyun veya kanın dökülüp akması olayını adlandırır.",
+          "gloss": "dökülüp akma",
+          "shared_zone": "Akan suyun arazideki çanaklara ulaşması iki dalı aynı doğal sahnede buluşturabilir.",
+          "distinction": "Bu dal kalıcı bir yer türüne, komşu dal ise geçici bir sıvı hareketine gönderme yapar; bu nedenle aralarında yalnızca sahne bağı vardır."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; seçilen karşılaştırmalar çayırlığın, içindeki su tutucu çukurların ve geride kalmış su ya da çayırın birbirinden ayrılmasını sağlar. Öteki adaylar aynı su arazisi alanını daha genel biçimde yineler.",
+      "branch_image_ar": "روضة الحياض",
+      "what_is_ar": "الثجة للروضة التي فيها حياض للماء تصوب في الأرض",
+      "source_phrase_ar": "الثجة الروضة إذا كان فيها حياض للماء تصوب في الأرض (tahdhib)",
+      "sources": [
+        "TA"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_000195/B003",
+      "concept_map": {
+        "definition": "Topluluk önünde düşüncesini akıcı, güçlü ve etkili biçimde dile getirebilen konuşmacıdır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Kişi, topluluğa seslenirken sözü akıcı, açık ve etkileyici biçimde kullanır.",
+            "claim_ids": [
+              "lu_009"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Bu dal, topluluk karşısında akıcı ve etkili konuşma gücüne sahip kişiyi nitelendirir.",
+        "common_claim_ids": [
+          "lu_009"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "akıcı ve etkili konuşmacı",
+        "applicability": "Bir kişinin yalnızca konuşabilmesini değil, topluluğa yönelik sözünü akıcı, güçlü ve etkileyici biçimde sunabilmesini anlatır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Kişiyi, akıcı söyleyişi ve topluluk önündeki etkili konuşma yeteneğini birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "güçlü konuşmacı",
+          "usage_role": "general",
+          "applicability": "Bir kişinin topluluk önünde sözünü etkili ve kendinden emin biçimde sunduğunu belirtmek için kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Konuşmacının etkili ve güçlü oluşunu korur.",
+            "loses": "Söyleyişin akıcı ve açık olması özelliğini açıkça belirtmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "sözünü akıcı söyleyen kişi",
+          "usage_role": "explanatory",
+          "applicability": "Niteliğin konuşma akıcılığı üzerinden açıklanması gereken bağlamlarda doğaldır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Kişinin sözü kesintisiz ve rahat biçimde söylemesini korur.",
+            "loses": "Topluluk önündeki sözün güçlü ve etkileyici olması yönünü tek başına karşılamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_009",
+          "rendering_kind": "ordinary",
+          "target_gloss": "akıcı ve etkili konuşmacı"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "konuşkan",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Kişinin rahat veya bol konuşması yönünü kısmen korur.",
+            "loses": "Topluluk önündeki akıcı, güçlü ve etkili söyleyiş ölçütünü kaybeder.",
+            "adds": "Sık ve çok konuşma eğilimini ekler.",
+            "collision": "Sözün niteliğinden çok konuşma sıklığına ilişkin kişilik özelliğiyle karışır."
+          }
+        },
+        {
+          "text": "sözcü",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Başkalarına yönelik konuşan bir kişi olmasını korur.",
+            "loses": "Akıcılık, güç ve etkileyicilik niteliklerini kaybeder.",
+            "adds": "Bir kişi veya topluluk adına konuşma görevini ekler.",
+            "collision": "Kurumsal temsil görevini adlandıran sözcükle karışır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000711/B008",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal akıcılığı, açıklığı ve topluluk üzerindeki etkiyi birlikte gerektirir.",
+          "neighbor_only": "Komşu dalın sınırı, kişinin konuşmaya güçlü biçimde muktedir olmasıyla yetinebilir.",
+          "gloss": "konuşmaya güçlü biçimde yetkin kişi",
+          "shared_zone": "Her iki dal da sözü rahat ve güçlü biçimde kullanabilen bir kişiyi nitelendirir.",
+          "distinction": "Komşu dal genel konuşma gücünü öne çıkarırken bu dal, topluluk önündeki akıcı ve etkileyici söyleyişi daha dar bir ölçüt olarak taşır."
+        },
+        {
+          "neighbor_ref": "root_000151/B004",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal doğrudan akıcı ve etkili konuşan kişiyi adlandırır.",
+          "neighbor_only": "Komşu dal sözün amacına ulaşmasını sağlayan anlatım niteliğini ve bu niteliği taşıyan sözü de kapsar.",
+          "gloss": "amacına ulaşan etkili anlatım",
+          "shared_zone": "Açık, güçlü ve amacına ulaşan konuşma iki dalın ortak anlam alanıdır.",
+          "distinction": "Bu dalın odağı konuşmacı kişidir; komşu dalın alanı ise kişiden başka etkili anlatım niteliğine ve bu niteliği taşıyan söze de uzanır."
+        },
+        {
+          "neighbor_ref": "root_001158/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal topluluk önünde etki yaratan güçlü konuşmacıyı öne çıkarır.",
+          "neighbor_only": "Komşu dal dil kurallarına uygunluk, yanlışsız söyleyiş ve sonradan edinilmiş gösterişli akıcılığı da kapsar.",
+          "gloss": "dili akıcı ve doğru kullanma",
+          "shared_zone": "Akıcı, açık ve düzgün konuşma iki dalın kesiştiği alandır.",
+          "distinction": "Komşu dal dilsel doğruluk ve akıcılık niteliğine odaklanır; bu dal ise bu niteliğin topluluğa seslenen etkili bir konuşmacıda gerçekleşmesini gerektirir."
+        },
+        {
+          "neighbor_ref": "root_000546/B011",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Bu dal konuşmacının kalıcı akıcılık ve etki niteliğini anlatır.",
+          "neighbor_only": "Komşu dal sözün, konuşmanın veya şiirin önceden hazırlanmadan o anda kurulmasını anlatır.",
+          "gloss": "hazırlıksız söz söyleme",
+          "shared_zone": "Her ikisi de bir konuşmanın başarılı biçimde söylenmesi sahnesinde bulunabilir.",
+          "distinction": "Hazırlıksız söyleme, sözün hazırlanış koşuludur; bu dal ise konuşmacının akıcılık ve etki niteliğidir. Biri diğerini zorunlu kılmaz."
+        },
+        {
+          "neighbor_ref": "root_001272/B001",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Bu dal konuşan kişinin akıcı ve etkili olma niteliğini gerektirir.",
+          "neighbor_only": "Komşu dal tek bir sözden konuşmaya, şiire veya topluluk hitabına kadar sözün sesle dışa vurulması olayını kapsar.",
+          "gloss": "sözü sesle dile getirme",
+          "shared_zone": "Her iki dalda da düşüncenin sesli söz yoluyla başkasına aktarılması vardır.",
+          "distinction": "Komşu dal sıradan söz üretme eylemini anlatır; bu dal ise o eylemi gerçekleştiren kişinin belirgin akıcılık ve etki gücünü nitelendirir."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar incelendi; seçilenler konuşma gücü, etkili anlatım, dilsel akıcılık, hazırlıksız söyleme ve sıradan söz üretme arasındaki en yararlı sınırları gösterir. Kalanlar yalnızca uzak bir konuşma sahnesini paylaşır veya bu kökün ayrı sıvı ve arazi dallarıdır.",
+      "branch_image_ar": "الخطيب المفوّه",
+      "what_is_ar": "الرجل المثج إذا كان خطيبا مفوها",
+      "source_phrase_ar": "رجل مثج إذا كان خطيبا مفوها (tahdhib)",
+      "sources": [
+        "TA"
+      ],
+      "source_note": {}
+    }
+  ],
+  "root_profile": {
+    "summary": "Anlam yapısı üç belirgin dala ayrılır: sıvıyı döküp akıtma veya sıvının dökülerek akması, su çanakları içeren bir çayırlık ve akıcı, etkili konuşmacı. İlk dal olay, ikinci dal yer, üçüncü dal ise kişi niteliği bildirir.",
+    "polysemy": "polysemic",
+    "organization": "multi_branch"
+  },
+  "occurrence_evidence": {
+    "summary": {
+      "morpheme_count": 1,
+      "word_count": 1,
+      "ayah_count": 1,
+      "surah_count": 1
+    },
+    "forms": [
+      {
+        "form_id": "F001",
+        "lemma_ar": "ثَجَّاج",
+        "stem_ar": "ثَجَّاجًا",
+        "pos": "ADJ",
+        "measure": "",
+        "morph_features": "STEM|POS:ADJ|LEM:vaj~aAj|ROOT:vjj|MS|INDEF|ACC",
+        "occurrence_count": 1
+      }
+    ],
+    "ayahs": [
+      {
+        "ayah_ref": "78:14",
+        "surface_ar": "وَأَنزَلْنَا مِنَ ٱلْمُعْصِرَٰتِ مَآءً ثَجَّاجًا"
+      }
+    ],
+    "occurrences": [
+      {
+        "qac_ref": "78:14:5:1",
+        "qac_word_ref": "78:14:5",
+        "surah": 78,
+        "ayah": 14,
+        "word_index": 5,
+        "morpheme_index": 1,
+        "surface_ar": "ثَجَّاجًا",
+        "stem_ar": "ثَجَّاجًا",
+        "lemma_ar": "ثَجَّاج",
+        "source_pos": "ADJ",
+        "pos": "ADJ",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:ADJ|LEM:vaj~aAj|ROOT:vjj|MS|INDEF|ACC",
+        "ayah_ref": "78:14",
+        "form_id": "F001",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s078:014:noun:6",
+          "attachment_word_unit_id": "q:78:14:6",
+          "qac_char_span": [
+            20,
+            25
+          ],
+          "attachment_char_spans": [
+            [
+              20,
+              24
+            ],
+            [
+              20,
+              25
+            ]
+          ],
+          "source_grammar": "indefinite accusative intensive adjective on faʿʿāl pattern; modifies māʾan and marks the water as abundant, forceful, or continuously pouring",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s078:014:pass1:attach:a3",
+              "relation": "adjective",
+              "focus_role": "dependent",
+              "other_unit_id": "q:78:14:5",
+              "other_surface": "مَاءً",
+              "other_root": "م و ه",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

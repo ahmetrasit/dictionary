@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yanit genel olarak kanitla uyumludur; ancak B001 kaynak sentezi, lu_007 icindeki ayri bir turemis kullanim ve ona bagli kosulu atlamaktadir.",
+  "issues": [
+    {
+      "target_ref": "root_000176/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_007"
+      ],
+      "evidence_conflict": "lu_007 yalnizca bir kisinin ticaretinden kazanc saglamasini orneklemez; ayni kaynak ifadesi, karli bir pazara rastlama kosuluyla ayri bir turemis kullanimi da bildirir. Mevcut kaynak ayrintisi bu turetimi ve kosulu kapsamamaktadir.",
+      "smallest_correction": "Mevcut lu_007 kaynak ayrintisina, karli bir pazara rastlama durumunun ayri bir turemis eylemle anlatildigini ekleyin."
+    }
+  ]
+}

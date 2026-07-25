@@ -1,0 +1,40 @@
+{
+  "inputs_sha256": "55e5c01006c30734b21748fc762f55b02a357030444a561cce6101fddff413db",
+  "verdict": "repair",
+  "summary": "B003 dalında yalnızca bir kaynakta bulunan anatomik konum ayrıntısı ortak çekirdeğe yükseltilmiş, kaynakların ortak görüşü gibi sunulmuş ve kavram karşılığında zorunlu hale getirilmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_000095/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "lu_012 Cemhere'de yalnızca göğüs eti olarak açıklanırken boyun ile köprücük kemiği arasındaki yer Tahzib'in eklediği daha dar ayrıntıdır. Tanım ve F001 bu konumu çekirdeğin zorunlu sınırı yaparak genel göğüs eti tanıklığını daraltıyor.",
+      "smallest_correction": "Çekirdek tanımı ve F001'i göğüs etiyle sınırla; boyun ile köprücük kemiği arasındaki konumu kaynak kısıtı veya kaynak varyantı niteliğinde ayrı bir facet olarak göster."
+    },
+    {
+      "target_ref": "root_000095/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "common_summary iki kaynağın hem göğüs eti anlamında hem de boyun ile köprücük kemiği arasındaki konumda birleştiğini söylüyor. Oysa lu_012 içindeki Cemhere ifadesi yalnız göğüs etini verir; dar konum yalnız Tahzib ifadesinde bulunur.",
+      "smallest_correction": "Ortak kısmı göğüs eti anlamıyla sınırla ve konum ayrıntısını sözlük kodunu çoğaltmadan, yalnız bir kaynağın eklediği daraltıcı açıklama olarak kaynak-nötr biçimde belirt."
+    },
+    {
+      "target_ref": "root_000095/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "Kavram karşılığı yalnız boyun ile köprücük kemiği arasındaki göğüs etini gösteriyor ve error_profile bunu kayıpsız sayıyor. lu_012'nin genel göğüs eti tanıklığı bu zorunlu konum sınırından daha geniştir.",
+      "smallest_correction": "Kavram karşılığını göğüs eti yap; mevcut dar konumlu ifadeyi bağlamsal karşılığa taşı ve bunun genel çekirdeğe göre daraltma olduğunu error_profile içinde göster."
+    }
+  ]
+}

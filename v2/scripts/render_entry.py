@@ -29,6 +29,7 @@ LABELS = {
         "identity": "Entry identity",
         "roots": "Roots",
         "status": "Status",
+        "review_gate": "Review gate",
         "profile": "Root profile",
         "branches": "Branch overview",
         "branch": "Branch",
@@ -46,6 +47,7 @@ LABELS = {
         "lexicalization": "Lexicalization",
         "lexicalization_scope": "Authored lexicalization scope",
         "non_bare": "non-bare",
+        "unit_kind_counts": "unit-kind counts",
         "concept_map": "Concept-map facets",
         "facet_role": "Facet role",
         "lexical_realizations": "Lexical realizations",
@@ -96,6 +98,7 @@ LABELS = {
         "identity": "Madde kimliği",
         "roots": "Kökler",
         "status": "Durum",
+        "review_gate": "İnceleme eşiği",
         "profile": "Kök profili",
         "branches": "Dal özeti",
         "branch": "Dal",
@@ -113,6 +116,7 @@ LABELS = {
         "lexicalization": "Sözlüksel yapı",
         "lexicalization_scope": "Yazılmış sözlüksel kapsam",
         "non_bare": "çıplak olmayan",
+        "unit_kind_counts": "birim türü sayıları",
         "concept_map": "Kavram haritası öğeleri",
         "facet_role": "Öğe rolü",
         "lexical_realizations": "Sözlüksel gerçekleşmeler",
@@ -339,20 +343,31 @@ def render_markdown(entry: dict, packet: dict) -> str:
         f"- **{label['roots']}:** "
         + ", ".join(f"`{root_id}` (`{roots[root_id]}`)" for root_id in entry["root_ids"]),
         f"- **{label['status']}:** {enum_label(language, entry['status'])}",
-        "",
-        f"## {label['profile']}",
-        "",
-        plain_text(profile["summary"]),
-        "",
-        f"- **{label['organization']}:** {enum_label(language, profile['polysemy'])} / "
-        f"{enum_label(language, profile['organization'])}; "
-        f"{profile['branch_count']} {label['branch'].lower()}",
-        f"- **{label['collocation']}:** {enum_label(language, profile['collocation_weight'])}. "
-        f"{plain_text(profile['collocation_note'])}",
-        "",
-        f"## {label['branches']}",
-        "",
     ]
+    if "review_gate" in entry:
+        gate = entry["review_gate"]
+        lines.append(
+            f"- **{label['review_gate']}:** "
+            f"{gate['semantic_review_verdict']} "
+            f"({gate['issue_count']} issue(s); {gate['policy']})"
+        )
+    lines.extend(
+        [
+            "",
+            f"## {label['profile']}",
+            "",
+            plain_text(profile["summary"]),
+            "",
+            f"- **{label['organization']}:** {enum_label(language, profile['polysemy'])} / "
+            f"{enum_label(language, profile['organization'])}; "
+            f"{profile['branch_count']} {label['branch'].lower()}",
+            f"- **{label['collocation']}:** {enum_label(language, profile['collocation_weight'])}. "
+            f"{plain_text(profile['collocation_note'])}",
+            "",
+            f"## {label['branches']}",
+            "",
+        ]
+    )
     overview = []
     for branch in entry["branches"]:
         frozen = packet_branches[(branch["root_id"], branch["branch_id"])]
@@ -371,6 +386,10 @@ def render_markdown(entry: dict, packet: dict) -> str:
         lexicalization_profile = branch.get(
             "lexicalization_profile"
         ) or branch_lexicalization_profile(branch["lexical_realizations"])
+        unit_kind_counts = ", ".join(
+            f"{plain_text(kind)}={count}"
+            for kind, count in lexicalization_profile["unit_kind_counts"].items()
+        )
         lines.extend(
             [
                 "",
@@ -387,7 +406,10 @@ def render_markdown(entry: dict, packet: dict) -> str:
                 f"- **{label['lexicalization']}:** "
                 f"{enum_label(language, lexicalization_profile['branch_kind'])}; "
                 f"{label['non_bare']}="
-                f"{str(lexicalization_profile['has_non_bare']).lower()}",
+                f"{str(lexicalization_profile['has_non_bare']).lower()}; "
+                f"{label['collocation']}="
+                f"{str(lexicalization_profile['has_collocation']).lower()}; "
+                f"{label['unit_kind_counts']}: {unit_kind_counts or '-'}",
             ]
         )
         identity = branch.get("identity_judgment")
@@ -672,7 +694,14 @@ def render_markdown(entry: dict, packet: dict) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
-def write_rendered(path: Path, content: str, *, check: bool) -> None:
+def write_rendered(
+    path: Path,
+    content: str,
+    *,
+    check: bool,
+    entry_status: str,
+    force: bool,
+) -> None:
     if check:
         if not path.is_file():
             raise ContractError(f"Missing rendered entry: {path}")
@@ -681,6 +710,11 @@ def write_rendered(path: Path, content: str, *, check: bool) -> None:
         return
     path.parent.mkdir(parents=True, exist_ok=True)
     if path.exists():
+        if entry_status in {"reviewed", "published"} and not force:
+            raise ContractError(
+                f"Refusing to replace Markdown for {entry_status!r} entry without "
+                f"--force: {path}"
+            )
         first = path.read_text(encoding="utf-8").splitlines()[:1]
         if not first or not first[0].startswith(
             f"<!-- generated-by: {GENERATOR} schema="
@@ -697,10 +731,22 @@ def write_rendered(path: Path, content: str, *, check: bool) -> None:
             temporary.unlink()
 
 
-def render(entry_path: Path, output_path: Path, *, check: bool = False) -> str:
+def render(
+    entry_path: Path,
+    output_path: Path,
+    *,
+    check: bool = False,
+    force: bool = False,
+) -> str:
     entry, packet = validate_entry(entry_path.resolve())
     content = render_markdown(entry, packet)
-    write_rendered(output_path.resolve(), content, check=check)
+    write_rendered(
+        output_path.resolve(),
+        content,
+        check=check,
+        entry_status=entry["status"],
+        force=force,
+    )
     return content
 
 
@@ -709,6 +755,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("entry", type=Path)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--check", action="store_true")
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Allow replacement of Markdown for reviewed or published entries",
+    )
     return parser.parse_args(argv)
 
 
@@ -716,7 +767,7 @@ def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     output = args.output or args.entry.with_suffix(".md")
     try:
-        content = render(args.entry, output, check=args.check)
+        content = render(args.entry, output, check=args.check, force=args.force)
     except (OSError, ContractError, KeyError, TypeError) as error:
         raise SystemExit(str(error)) from error
     action = "Checked" if args.check else "Wrote"

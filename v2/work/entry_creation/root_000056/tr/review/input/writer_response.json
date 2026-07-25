@@ -1,0 +1,669 @@
+{
+  "branches": [
+    {
+      "branch_ref": "root_000056/B001",
+      "concept_map": {
+        "definition": "Özgür olmayan, bir başkasının mülkiyetinde bulunan kadını ve bu kadının kölelik durumunu ifade eder.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Bir başkasının mülkiyetinde bulunan ve özgür kadının karşıtı sayılan kadını belirtir.",
+            "claim_ids": [
+              "lu_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "core",
+            "statement": "Bir kadının köle oluşunu veya kölelik altında bulunma durumunu belirtir.",
+            "claim_ids": [
+              "lu_002"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "specialization",
+            "statement": "Köle kadınları topluca belirtmek için kullanılan çeşitli çoğul biçimleri kapsar.",
+            "claim_ids": [
+              "lu_003"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar, temel anlamı özgür kadının karşıtı olan köle kadın şeklinde verir; ayrıca kadın köleliği durumunu ve adın çeşitli çoğul biçimlerini kaydeder.",
+        "common_claim_ids": [
+          "lu_001",
+          "lu_002",
+          "lu_003"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "köle kadın ve kadın köleliği",
+        "applicability": "Kişiyi, onun özgür olmayışını ve bu durumun adını birlikte kapsayan genel karşılıktır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Köle kadını, özgür kadına karşıtlığını ve kadın köleliği durumunu birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "köle kadın",
+          "usage_role": "contextual",
+          "applicability": "Tek bir kadının hukuki ve toplumsal durumunu adlandıran bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Özgür olmayan ve bir başkasının mülkiyetinde bulunan kadın anlamını korur.",
+            "loses": "Soyut kadın köleliği durumu ile çoğul biçimlere ilişkin kapsamı dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "kadın köleliği",
+          "usage_role": "explanatory",
+          "applicability": "Bir kadının köle olma durumundan söz edilen bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Kadının özgür olmama ve kölelik altında bulunma durumunu korur.",
+            "loses": "Bu durumda bulunan tekil kadını adlandırma işlevini dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_001",
+          "rendering_kind": "ordinary",
+          "target_gloss": "köle kadın; özgür olmayan kadın"
+        },
+        {
+          "lexical_unit_id": "lu_002",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kadın köleliği; köle kadın olma durumu"
+        },
+        {
+          "lexical_unit_id": "lu_003",
+          "rendering_kind": "ordinary",
+          "target_gloss": "köle kadınlar"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "kadın hizmetçi",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Bir kadının başkasına hizmet etmesi çağrışımını korur.",
+            "loses": "Özgür olmama ve mülkiyet altında bulunma koşulunu kaybeder.",
+            "adds": "Özgür ve ücretli bir çalışanın da kastedilebilmesi olanağını ekler.",
+            "collision": "Ev içi hizmette çalışan özgür kadınlarla karışır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000973/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Özellikle köle kadını ve kadın köleliği durumunu belirtir.",
+          "neighbor_only": "Cinsiyetten bağımsız köleyi, erkek köleyi ve alınıp satılabilir olmayı da kapsar.",
+          "gloss": "köle kadın karşısında genel köle",
+          "shared_zone": "Her ikisi de özgürlüğü bulunmayan ve mülkiyet altında tutulan insanı konu eder.",
+          "distinction": "Odak dal kadınla ve onun kölelik durumuyla sınırlıdır; komşu dal ise köleliği daha genel bir kişi ve mülkiyet kategorisi olarak ele alır."
+        },
+        {
+          "neighbor_ref": "root_000053/B014",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Köle kadın adının yanında kadın köleliği durumunu ve çoğul biçimleri de kapsar.",
+          "neighbor_only": null,
+          "gloss": "köle kadın",
+          "shared_zone": "İki dal da temel olarak özgür olmayan köle kadını adlandırır.",
+          "distinction": "Komşu dal köle kadın için kullanılan başka bir adla sınırlıyken odak dal soyut kölelik durumunu ve adın çoğul biçimlerini de içerir."
+        },
+        {
+          "neighbor_ref": "root_000586/B003",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Köleliği kadın kişi üzerinden ve kadın köleliği durumu olarak sınırlar.",
+          "neighbor_only": "Genel kölelik kurumunu, köle kişiyi ve bir insanı köleleştirme eylemini kapsar.",
+          "gloss": "köle kadın karşısında kölelik",
+          "shared_zone": "Her ikisi de kişinin özgürlüğünü yitirdiği mülkiyet ilişkisine dayanır.",
+          "distinction": "Odak dal belirli bir kadın kategorisini ve onun durumunu adlandırır; komşu dal ise köleliği kişi, kurum ve köleleştirme süreci olarak daha geniş biçimde kapsar."
+        },
+        {
+          "neighbor_ref": "root_000056/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Köle kadını ve mevcut kölelik durumunu adlandırır.",
+          "neighbor_only": "Bir köle kadın edinme veya bir kadının köle hâline gelme geçişini bildirir.",
+          "gloss": "durum karşısında edinme veya dönüşme",
+          "shared_zone": "İki dalın ortak ekseni, kadının kölelik statüsüyle ilişkisidir.",
+          "distinction": "Odak dal kişi ve durumu gösterirken komşu dal bu statüye yönelik edinme ya da bu statüye geçme olayını gösterir."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün aday komşular incelendi; yayımlananlar kişi, durum ve geçiş sınırlarını gerçekten açıklayan en yakın karşılaştırmalardır."
+    },
+    {
+      "branch_ref": "root_000056/B002",
+      "concept_map": {
+        "definition": "Bir kadını köle olarak edinmeyi veya bir kadının özgür durumdan kölelik durumuna geçmesini ifade eder.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Bir kadını kendine köle olarak alma ve böylece köle kadın edinme eylemini belirtir.",
+            "claim_ids": [
+              "lu_004",
+              "lu_005",
+              "lu_008",
+              "lu_009"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "core",
+            "statement": "Bir kadının köle kadın hâline gelerek yeni bir duruma geçmesini belirtir.",
+            "claim_ids": [
+              "lu_006",
+              "lu_007"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Aktarılan fiil biçimleri iki katılımcı düzeni gösterir: bir kişi bir kadını kendine köle edinir ya da kadın kendi durumundaki değişmeyle köle hâline gelir.",
+        "common_claim_ids": [
+          "lu_004",
+          "lu_005",
+          "lu_007",
+          "lu_008",
+          "lu_009"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_006"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Bir kaynak, öneri biçiminde verilen bir kullanımın 'köle kadın hâline gelmek' anlamıyla doğru olacağını özellikle belirtir."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "köle kadın edinmek veya köle kadın hâline gelmek",
+        "applicability": "Eyleyenin bir kadın edindiği ve kadının kendisinin durum değiştirdiği iki yapıyı birlikte temsil eder.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Hem edinme eylemini hem de kadının kölelik durumuna geçmesini ayrı katılımcı yapılarıyla korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "köle kadın edinmek",
+          "usage_role": "contextual",
+          "applicability": "Bir kişinin bir kadını kendisi için köle olarak aldığı geçişli kullanımlarda uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Bir kişinin bir kadını kendine köle olarak alma eylemini korur.",
+            "loses": "Kadının kendisinin köle hâline geldiği geçişsiz durum değişikliğini dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "köle kadın hâline gelmek",
+          "usage_role": "contextual",
+          "applicability": "Özne olan kadının durum değiştirerek köle olduğu geçişsiz kullanımlarda uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Kadının kölelik durumuna geçmesini ve değişimin kadında gerçekleşmesini korur.",
+            "loses": "Başka bir kişinin bir kadını kendine köle olarak edinmesi anlamını dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_004",
+          "rendering_kind": "ordinary",
+          "target_gloss": "bir kadını köle edinmek"
+        },
+        {
+          "lexical_unit_id": "lu_005",
+          "rendering_kind": "ordinary",
+          "target_gloss": "bir kadını köle edinmek"
+        },
+        {
+          "lexical_unit_id": "lu_006",
+          "rendering_kind": "ordinary",
+          "target_gloss": "köle kadın hâline gelmek"
+        },
+        {
+          "lexical_unit_id": "lu_007",
+          "rendering_kind": "ordinary",
+          "target_gloss": "köle kadın hâline gelmek"
+        },
+        {
+          "lexical_unit_id": "lu_008",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kendine başka bir köle kadın edinmek"
+        },
+        {
+          "lexical_unit_id": "lu_009",
+          "rendering_kind": "ordinary",
+          "target_gloss": "bir kadını köle edinmek"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "köleleştirmek",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Bir insanın kölelik durumuyla ilişkilendirilmesi yönünü korur.",
+            "loses": "Bir kadını kendine köle olarak edinme ile öznenin köle hâline gelmesi ayrımını kaybeder.",
+            "adds": "Bir başkasını zorla köle durumuna sokan ettirgen bir eylemi ekler.",
+            "collision": "Bir insanı köle durumuna sokma eylemiyle karışır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000056/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Köle kadın edinme eylemini ve kadının kölelik durumuna geçişini bildirir.",
+          "neighbor_only": "Köle kadını ve onun mevcut kölelik durumunu adlandırır.",
+          "gloss": "edinme ve dönüşme karşısında kişi ve durum",
+          "shared_zone": "İki dal da kadının kölelik statüsüyle ilişkili kişi ve olayları kapsar.",
+          "distinction": "Odak dal bir edinme ya da durum değişikliği olayıdır; komşu dal ise olayın katılımcısı olan kadını ve ortaya çıkan durumu adlandırır."
+        },
+        {
+          "neighbor_ref": "root_000018/B010",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Edinilen şeyi köle kadınla sınırlar ve ayrıca kadının köle hâline gelmesini kapsar.",
+          "neighbor_only": "Mal veya başka bir şeyi kendisi için edinme ve kazanmayı genel olarak kapsar.",
+          "gloss": "köle kadın edinmek karşısında genel edinmek",
+          "shared_zone": "Her iki dalda da bir kişinin bir şeyi kendisi için edinmesi anlam alanı bulunur.",
+          "distinction": "Odak dalın geçişli kullanımı yalnızca köle kadın edinmeye özgüdür ve geçişsiz bir durum değişikliği de vardır; komşu dal nesnesi bakımından geneldir."
+        },
+        {
+          "neighbor_ref": "root_000438/B009",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bir köle kadın edinmeyi veya kadının kendisinin köle hâline gelmesini kapsar.",
+          "neighbor_only": "Bir topluluğu zorla köleleştirme ya da mülkiyet altına alma eylemini kapsar.",
+          "gloss": "köle kadın edinmek karşısında zorla köleleştirmek",
+          "shared_zone": "Her iki dal da insanların kölelik ve mülkiyet ilişkisine sokulmasıyla ilgilidir.",
+          "distinction": "Odak dal kadınla sınırlı edinme ve öznenin durum değişikliğini ayırır; komşu dal ise başkalarını zor kullanarak köleleştiren eyleyeni öne çıkarır."
+        },
+        {
+          "neighbor_ref": "root_000979/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "opposed",
+          "focus_only": "Kadının kölelik durumuna girmesini ve bir köle kadın edinilmesini kapsar.",
+          "neighbor_only": "Kölelik durumundan özgürlüğe çıkmayı ve özgür bırakmayı kapsar.",
+          "gloss": "köleliğe giriş karşısında kölelikten çıkış",
+          "shared_zone": "İki dal da kölelik ile özgürlük arasındaki statü değişimini konu eder.",
+          "distinction": "Odak dalın durum değişikliği köleliğe doğrudur; komşu dal ters yönde, kölelikten özgürlüğe geçişi bildirir. Odak dalın edinme kullanımı ise bu karşıtlığa doğrudan girmez."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; seçilen karşılaştırmalar edinme, köleleştirme, mevcut durum ve ters yönlü statü değişimini ayırır."
+    },
+    {
+      "branch_ref": "root_000056/B003",
+      "concept_map": {
+        "definition": "Bir erkek, kabile veya soy kolunun adını ve bu ada bağlı olarak kişi ya da topluluk aidiyeti bildiren sıfat biçimlerini kapsar.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Aidiyet sıfatına dayanak olan bir erkek adını, kabile adını veya soy kolu adını belirtir.",
+            "claim_ids": [
+              "lu_010",
+              "lu_011"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "core",
+            "statement": "İlgili erkek, kabile veya soy koluna bağlılığı bildiren türemiş sıfatı belirtir.",
+            "claim_ids": [
+              "lu_012"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "source_variant",
+            "statement": "Aynı aidiyeti bildiren, birden çok benzer harfin birleştiği seyrek bir biçimi kapsar.",
+            "claim_ids": [
+              "lu_013"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar, bir erkek ya da kabile adını aidiyet sıfatının dayanağı olarak kaydeder ve aynı sıfatı başka bir soy koluna bağlayan kullanımı da aktarır. Sıfatın birden fazla biçimi vardır.",
+        "common_claim_ids": [
+          "lu_010",
+          "lu_012"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_011"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Bir kaynak, aidiyet sıfatının dayanağı olarak belirli bir soy kolunu ayrıca kaydeder."
+          },
+          {
+            "claim_ids": [
+              "lu_013"
+            ],
+            "kind": "derivation",
+            "summary": "Bir kaynak, dört y harfinin bir araya geldiği başka bir aidiyet biçimini de aktarır."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "kişi, kabile veya soy kolu adı ve ona bağlı aidiyet sıfatı",
+        "applicability": "Hem sıfatın dayandığı özel adı hem de o ada bağlılığı bildiren türemiş biçimleri kapsar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Ad dayanağını, kişi ile topluluk seçeneklerini ve bunlardan türeyen aidiyet sıfatını korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "aidiyet sıfatı türetilen özel ad",
+          "usage_role": "explanatory",
+          "applicability": "Bir erkek, kabile veya soy kolunun adının türetime dayanak olduğu bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Özel adın aidiyet bildiren bir sıfata dayanak olmasını korur.",
+            "loses": "Türetilmiş sıfatın kendisini ve onun değişik biçimlerini dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "adı geçen kişi veya topluluğa mensup",
+          "usage_role": "contextual",
+          "applicability": "Bir kişinin adı geçen erkek, kabile veya soy koluyla bağını bildiren sıfat bağlamlarında kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Bir kişi veya topluluk adına bağlılığı bildiren sıfat işlevini korur.",
+            "loses": "Sıfatın dayandığı özel adı ve seyrek biçimin yazılış özelliğini dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_010",
+          "rendering_kind": "ordinary",
+          "target_gloss": "aidiyet sıfatı türetilen bir erkek veya kabile adı"
+        },
+        {
+          "lexical_unit_id": "lu_011",
+          "rendering_kind": "ordinary",
+          "target_gloss": "aidiyet sıfatı türetilen bir soy kolunun adı"
+        },
+        {
+          "lexical_unit_id": "lu_012",
+          "rendering_kind": "ordinary",
+          "target_gloss": "ilgili kişi, kabile veya soy koluna mensup"
+        },
+        {
+          "lexical_unit_id": "lu_013",
+          "rendering_kind": "ordinary",
+          "target_gloss": "dört y harfini birleştiren aktarılmış aidiyet biçimi"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "ulusal",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Bir topluluğa bağlılık bildirme yönünü korur.",
+            "loses": null,
+            "adds": "Modern bir ulusa veya devlete ilişkin olma anlamını ekler.",
+            "collision": "Soy ve kabile aidiyetini modern ulusal aidiyetle karıştırır."
+          }
+        },
+        {
+          "text": "kölelikle ilgili",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Aynı yazı kökünden geldiği düşünülebilecek biçimsel çağrışımı korur.",
+            "loses": "Kişi, kabile veya soy kolu adına dayalı aidiyet ilişkisini bütünüyle kaybeder.",
+            "adds": "Kölelik durumu ya da köle kişiyle ilgili olma anlamını ekler.",
+            "collision": "Köle kadın ve kadın köleliği dalıyla karışır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000153/B008",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Başka bir erkek, kabile veya soy kolu adını ve ona bağlı çeşitli aidiyet biçimlerini kapsar.",
+          "neighbor_only": "Kendi belirli kabile adını ve yalnız ona bağlı aidiyet sıfatını kapsar.",
+          "gloss": "başka özel adlara bağlı aidiyet yapıları",
+          "shared_zone": "İki dal da bir kabile veya topluluk adıyla ondan türeyen aidiyet sıfatını birlikte verir.",
+          "distinction": "Yapısal ilişki aynıdır, fakat adlandırılan topluluklar ve bunlara bağlı sıfatlar farklıdır; bu nedenle biçimler birbirinin yerine kullanılamaz."
+        },
+        {
+          "neighbor_ref": "root_000291/B010",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Kendi erkek, kabile ve soy kolu adlarına bağlı aidiyet biçimlerini kapsar.",
+          "neighbor_only": "Başka bir topluluk adına bağlı birkaç aidiyet sıfatını ve ayrıca bir kişi adını kapsar.",
+          "gloss": "ad ve aidiyet sıfatı kümeleri",
+          "shared_zone": "Her iki dal özel adları ve bu adlara bağlılık bildiren türemiş sıfatları içerir.",
+          "distinction": "Ortaklık yalnızca ad ile aidiyet sıfatı arasındaki yapıdadır; özel adların gösterdiği kişi ve topluluklar birbirinden ayrıdır."
+        },
+        {
+          "neighbor_ref": "root_000128/B007",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Soy kolu adının yanında bu ada bağlı aidiyet sıfatlarını da kapsar.",
+          "neighbor_only": "Bir topluluğun kabileden küçük bir soy bölümü oluşunu kavramsal olarak açıklar.",
+          "gloss": "soy kolu adı karşısında soy kolu türü",
+          "shared_zone": "İki dal da daha büyük bir topluluk içindeki soy koluyla ilgilidir.",
+          "distinction": "Odak dal belirli adları ve bu adlardan türeyen sıfatları verir; komşu dal ise özel bir adı değil, soy kolunun topluluk yapısındaki türünü tanımlar."
+        },
+        {
+          "neighbor_ref": "root_000006/B009",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Özel adla birlikte o ada bağlı aidiyet sıfatını da kapsar.",
+          "neighbor_only": "Bir kişinin kendi kabilesi içinde gelmesini bildiren kalıplaşmış kullanımı kapsar.",
+          "gloss": "kabile aidiyetinin ad ve kalıp yoluyla anlatımı",
+          "shared_zone": "Her iki dal kabileye bağlılık ve kişinin kabilesiyle ilişkisi alanında yer alır.",
+          "distinction": "Odak dal ad ve türemiş sıfat ilişkisini kurar; komşu dal kabile içinde gelmeyi anlatan ayrı bir söz kalıbına dayanır."
+        }
+      ],
+      "neighbor_coverage_note": "Adayların tümü karşılaştırıldı; özel adları farklı olsa da ad, soy kolu ve aidiyet sıfatı sınırını açıklayan örnekler seçildi."
+    },
+    {
+      "branch_ref": "root_000056/B004",
+      "concept_map": {
+        "definition": "Kedinin kendine özgü çağrı sesiyle bağırmasını, yani miyavlamasını ifade eder.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Kedinin ses çıkarıp kendine özgü biçimde bağırması veya miyavlaması eylemini belirtir.",
+            "claim_ids": [
+              "lu_014"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Tek aktarım, öznesi kedi olan bir fiili kedinin bağırması ve kendine özgü sesi çıkarması anlamıyla açıklar.",
+        "common_claim_ids": [
+          "lu_014"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "kedinin miyavlaması",
+        "applicability": "Kedinin kendine özgü çağrı sesini çıkardığı eylemi doğal ve doğrudan biçimde karşılar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Hayvanın kedi oluşunu ve çıkardığı kendine özgü çağrı sesini birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "kedi miyavladı",
+          "usage_role": "contextual",
+          "applicability": "Eylemin geçmiş zamanda ve öznesi açıkça kedi olacak biçimde çevrildiği cümlelerde kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Kedi öznesini, ses çıkarma eylemini ve sesin türünü eksiksiz korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_014",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kedi miyavladı; kedi miyavlamak"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "mırıldanmak",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Kedinin ses çıkarması yönünü korur.",
+            "loses": "Açık bir çağrı veya bağırma niteliğindeki miyavlama sesini kaybeder.",
+            "adds": "Alçak, sürekli ve sakin bir ses çıkarma anlamını ekler.",
+            "collision": "Kedinin farklı nitelikteki düşük ve sürekli sesiyle karışır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000855/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Sesi özellikle kediye ve kedinin miyavlamasına bağlar.",
+          "neighbor_only": "Korku, felaket veya çağrı sırasında yükselen şiddetli çığlığı genel olarak kapsar.",
+          "gloss": "miyavlama karşısında şiddetli çığlık",
+          "shared_zone": "Her iki dal canlı bir varlığın işitilebilir biçimde sesini yükseltmesini anlatabilir.",
+          "distinction": "Odak dal türü ve sesi belirli olan kedi çağrısıdır; komşu dal ise konuşan ya da bağıran varlığın türünü sınırlamayan şiddetli bir çığlıktır."
+        },
+        {
+          "neighbor_ref": "root_000901/B001",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Yalnızca kedinin miyavlama sesini belirtir.",
+          "neighbor_only": "Tilki, baykuş, kurt ve koşan at gibi başka hayvanların seslerini kapsar.",
+          "gloss": "farklı hayvan çağrıları",
+          "shared_zone": "İki dal da hayvanların çıkardığı ve türle ilişkilendirilen sesleri adlandırır.",
+          "distinction": "Odak dalın sesi kediye özgüdür; komşu dal başka hayvan türlerinin birbirinden farklı seslerini aynı ses kategorisinde toplar."
+        },
+        {
+          "neighbor_ref": "root_000445/B001",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Kedinin miyavlamasını belirtir.",
+          "neighbor_only": "Boğa veya buzağının böğürme sesini belirtir.",
+          "gloss": "miyavlama karşısında böğürme",
+          "shared_zone": "Her iki dal belirli bir hayvan türünün kendine özgü çağrı sesini anlatır.",
+          "distinction": "Ses çıkarma olayı ortak olsa da sesin kaynağı ve işitsel türü farklıdır; biri kedi miyavlaması, diğeri sığır böğürmesidir."
+        },
+        {
+          "neighbor_ref": "root_001582/B001",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Kedinin miyavlama sesini belirtir.",
+          "neighbor_only": "Güvercin ve ibibik gibi kuşların kendilerine özgü seslerini belirtir.",
+          "gloss": "kedi çağrısı karşısında kuş çağrısı",
+          "shared_zone": "Her iki dal belirli hayvanların karakteristik ses çıkarma eylemini adlandırır.",
+          "distinction": "Odak dal kediye ve miyavlamaya özgüdür; komşu dal ise kuşların farklı çıkış biçimli çağrı seslerine dayanır."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün ses adayları incelendi; kedi sesini genel çığlıktan ve başka hayvanların türsel çağrılarından ayıran örnekler seçildi."
+    }
+  ],
+  "root_profile": {
+    "summary": "Kök, köle kadın ve kadın köleliği çevresindeki kişi, durum ve geçiş anlamlarını; bunlardan ayrı olarak özel ada dayalı aidiyet sıfatlarını ve kedinin miyavlamasını kapsar.",
+    "polysemy": "polysemic",
+    "organization": "mixed"
+  }
+}

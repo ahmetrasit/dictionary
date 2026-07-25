@@ -1,0 +1,51 @@
+{
+  "inputs_sha256": "e223e713168acef996036a6b2fe6dadbdffa1f64547667212263dc04cad3e650",
+  "verdict": "repair",
+  "summary": "Girdi genel olarak dal sınırlarını ve temel anlamları koruyor; ancak iki sözlüksel karşılık kaynak anlamını daraltıyor veya değiştiriyor, bir kaynak kısıtlaması düzleştiriliyor ve tek kaynaklı ayırt edici örnek kaynak sentezinde kayboluyor.",
+  "issues": [
+    {
+      "target_ref": "root_000094/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_007"
+      ],
+      "evidence_conflict": "lu_007, elçiler arasında ilk olmayı veya gönderilişte kendisinden önce bir elçi bulunmamasını verir. Hedef karşılık ise \"ilk ve benzeri bulunmayan\" diyerek seçenekliği zorunlu bir birlik haline getiriyor ve zamansal öncelsizliği nitelikçe eşsizliğe çeviriyor.",
+      "smallest_correction": "lu_007 hedef karşılığını \"elçiler arasında ilk ya da kendisinden önce elçi gönderilmemiş\" gibi, seçenekliği ve zamansal öncelsizliği koruyan bir ifadeyle değiştirin."
+    },
+    {
+      "target_ref": "root_000094/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_017"
+      ],
+      "evidence_conflict": "lu_017 kayıtları yorgunluk, zarar, zayıflık ve topallık arasında farklılaşır; ayrıca bir kayıt kullanımı özellikle topallık koşuluna bağlar. common_summary nedenleri yan yana topluyor, fakat bu kısıtlayıcı kaynak farkını bildirmiyor.",
+      "smallest_correction": "lu_017 çok kaynaklı olduğundan ayrı bir source_details satırı açmadan, common_summary içine bazı aktarımların genel yorgunluk, zarar veya zayıflık verdiğini, bir aktarımın ise kullanımı topallıkla sınırladığını kaynak-tarafsız biçimde ekleyin."
+    },
+    {
+      "target_ref": "root_000094/B004",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_017"
+      ],
+      "evidence_conflict": "lu_017 bineğin yorulmasını, zarar görmesini, topallamasını veya zayıflamasını seçenekli olarak kapsar. \"Bineğin yorulup yürüyemez duruma gelmesi\" yalnız yorgunluğu neden olarak koruyup öteki açık nedenleri dışarıda bırakıyor.",
+      "smallest_correction": "Hedef karşılığı \"bineğin yorulma, sakatlanma, topallama veya zayıflık yüzünden yürüyemez duruma gelmesi\" biçiminde genişletin."
+    },
+    {
+      "target_ref": "root_000094/B005",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_023"
+      ],
+      "evidence_conflict": "lu_023 tek kaynaklı kayıtta tavşan ile yavrusunun semirmesini ayırt edici somut örnek olarak verir. source_synthesis yalnız genel hayvan semirmesini bildiriyor ve bu örneği hiçbir satırda korumuyor.",
+      "smallest_correction": "lu_023 ile tek kaynağa çözümlenen bir example source_details satırı ekleyerek tavşan ile yavrusunun semirmesi örneğini Türkçe ve kaynak-özgül biçimde belirtin."
+    }
+  ]
+}

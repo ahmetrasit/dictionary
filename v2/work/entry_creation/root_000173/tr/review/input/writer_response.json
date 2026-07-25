@@ -1,0 +1,135 @@
+{
+  "branches": [
+    {
+      "branch_ref": "root_000173/B001",
+      "concept_map": {
+        "definition": "Bilgelik ve dinginlik taşıyan bir kutu imgesidir; bu kapsamda bilinen kutuyu ve tahtadan oyulup içinde bilgelik bulunan özel nesneyi belirtir. Bilgiyi ve bilgeliği barındıran yer sayılan kalp de bu kutuya benzetilerek anlatılır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Bilinen kutu, bilgelik ve dinginlik taşıyan ana imgeyi oluşturur.",
+            "claim_ids": [
+              "lu_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Özel görünümde nesne tahtadan oyulmuştur ve içinde bilgelik bulunur.",
+            "claim_ids": [
+              "lu_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "extension",
+            "statement": "Kalp, bilginin saklandığı ve bilgeliğin barındığı yer sayılarak kutu imgesinin uzantısı olur.",
+            "claim_ids": [
+              "lu_002"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Temel anlatım, bilinen bir kutuyu kapsar; aynı söz, tahtadan oyulmuş ve içinde bilgelik bulunan özel bir nesne için de kullanılır.",
+        "common_claim_ids": [
+          "lu_001"
+        ],
+        "source_details": [
+          {
+            "claim_ids": [
+              "lu_002"
+            ],
+            "kind": "extension",
+            "summary": "Kalp, bilginin saklandığı ve bilgeliğin barındığı yer kabul edilerek kutuya benzetilir."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "bilgelik ve dinginlik taşıyan kutu",
+        "applicability": "Dalın kutu temelli çekirdeğini ve bu çekirdeğin taşıdığı ana anlam yükünü birlikte karşılar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Kutu olma niteliğini, bilgelik ile dinginliği taşıma özelliğini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "bilinen kutu",
+          "usage_role": "general",
+          "applicability": "Söz, ek bir özel durum belirtilmeden herkesçe tanınan kutuyu gösterdiğinde kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Nesnenin bilinen bir kutu oluşunu korur.",
+            "loses": "Bilgelik ve dinginlik taşıma anlam yükünü belirtmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "bilgelik barındıran oyma ahşap kutu",
+          "usage_role": "contextual",
+          "applicability": "Nesnenin tahtadan oyulmuş olması ve içinde bilgelik bulunması özellikle anlatıldığında kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Oyma ahşap nesne olmayı ve içinde bilgelik bulunmasını korur.",
+            "loses": "Ana imgedeki dinginlik yükünü ve kalbe uzanan benzetmeli kullanımı dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "bilginin ve bilgeliğin yuvası sayılan kalp",
+          "usage_role": "explanatory",
+          "applicability": "Kalp, bilgiyi ve bilgeliği içinde tutan yer olarak kutuya benzetildiğinde kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Kalbin bilgi ve bilgelik için barındırıcı yer sayılmasını korur.",
+            "loses": "Somut kutuyu ve onun tahtadan oyulmuş özel görünümünü belirtmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_001",
+          "rendering_kind": "ordinary",
+          "target_gloss": "bilinen kutu; içinde bilgelik bulunan oyma ahşap nesne"
+        },
+        {
+          "lexical_unit_id": "lu_002",
+          "rendering_kind": "ordinary",
+          "target_gloss": "bilginin saklandığı ve bilgeliğin yuvası sayılan kalp"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [],
+      "neighbor_coverage_note": "Sağlanan kanıtta komşu dal bulunmadığından yayımlanabilecek bir anlam karşıtlığı yoktur."
+    }
+  ],
+  "root_profile": {
+    "summary": "Kök, bilgelik ve dinginlik taşıyan kutu imgesi çevresinde tek bir anlam dalı kurar; kalbin bilgi ve bilgeliği barındıran yer sayılması bu fiziksel çekirdeğin benzetmeli uzantısıdır.",
+    "polysemy": "monosemic",
+    "organization": "monosemic"
+  }
+}

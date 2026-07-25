@@ -101,9 +101,22 @@ def repair_scope(review: dict, task: dict) -> dict:
         for issue in review["issues"]
         if issue["target_ref"] != "root_profile"
     }
+    fields: dict[str, set[str]] = {}
+    for issue in review["issues"]:
+        if issue["target_ref"] == "root_profile":
+            continue
+        index = task["branch_roster"].index(issue["target_ref"])
+        fields.setdefault(str(index), set()).add(issue["field"])
     return {
         "repairable_by": "root_writer",
+        "review_inputs_sha256": review["inputs_sha256"],
+        "review_sha256": canonical_sha256(review),
+        "writer_task_sha256": task["writer_task_sha256"],
+        "previous_response_sha256": task["writer_response"]["sha256"],
         "editable_branch_indexes": sorted(indexes),
+        "editable_branch_fields": {
+            index: sorted(values) for index, values in sorted(fields.items())
+        },
         "root_editable": any(
             issue["target_ref"] == "root_profile" for issue in review["issues"]
         ),
@@ -158,6 +171,19 @@ def main(argv: list[str] | None = None) -> int:
         task = load_json(task_path)
         review_output = work_dir / "review/output"
         review_output.mkdir(parents=True, exist_ok=True)
+        stale_by_verdict = {
+            "pass": (
+                "semantic_review_error.txt",
+                "repair_scope.json",
+                "editorial_review.txt",
+            ),
+            "repair": ("editorial_review.txt",),
+            "editorial_review": ("semantic_review_error.txt", "repair_scope.json"),
+        }
+        for name in stale_by_verdict[review["verdict"]]:
+            path = review_output / name
+            if path.exists():
+                path.unlink()
         if review["verdict"] == "repair":
             atomic_write(
                 review_output / "semantic_review_error.txt", review_error(review)
@@ -170,14 +196,6 @@ def main(argv: list[str] | None = None) -> int:
             atomic_write(
                 review_output / "editorial_review.txt", review_error(review)
             )
-        for name in (
-            "semantic_review_error.txt",
-            "repair_scope.json",
-            "editorial_review.txt",
-        ):
-            path = review_output / name
-            if review["verdict"] == "pass" and path.exists():
-                path.unlink()
     except (OSError, ContractError, KeyError, TypeError) as error:
         raise SystemExit(str(error)) from error
     print(f"Accepted {output_path.resolve()} ({review['verdict']})")

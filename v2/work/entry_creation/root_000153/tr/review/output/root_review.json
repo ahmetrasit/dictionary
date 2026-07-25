@@ -1,0 +1,51 @@
+{
+  "verdict": "repair",
+  "summary": "Yanit genel olarak kanitla uyumludur; ancak bir anlam facet'i yanlis hiyerarsilestirilmis, iki komsu iliski siniri hatali siniflandirilmis ve tek kaynakli bir kullanim ortak kanit gibi sunulmustur.",
+  "issues": [
+    {
+      "target_ref": "root_000153/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_015"
+      ],
+      "evidence_conflict": "Ant icerek guven verme veya anti sinama icin sunma, lu_015'in bagimsiz anlam kapsamidir ve tanim ile kavram glossunda dal sinirinin bir parcasi olarak kullanilmistir. Buna ragmen F002'nin associated_use olarak etiketlenmesi bu kapsami bagimli bir kullanim gibi gosterir; komsu ayrimlari da ayni kapsami sinir farki saymaktadir.",
+      "smallest_correction": "F002'nin rolunu associated_use yerine extension olarak degistirin; diger facet metnini ve claim bagini koruyun."
+    },
+    {
+      "target_ref": "root_000153/B007",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_019"
+      ],
+      "evidence_conflict": "Lu_019 bir seyi umursamama ve ona deger vermeme cekirdegini birlikte verir. root_000971/B002 de dogrudan umursamamayi, bir seyi saymamayi ve ona agirlik vermemeyi anlatir. Yazarin neighbor_only alani yeni bir katilimci, kosul veya kapsam degil, ayni cekirdegin aciklamasidir; bu nedenle near_synonym/partial sinifi gereksiz bir daraltmadir.",
+      "smallest_correction": "root_000971/B002 iliskisini synonym/exact yapin, focus_only ve neighbor_only alanlarini null olarak ayarlayin ve ayrim metnini belirgin bir sinir farki bulunmadigini soyleyecek bicimde duzeltin."
+    },
+    {
+      "target_ref": "root_000153/B008",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_021",
+        "lu_022"
+      ],
+      "evidence_conflict": "Odak dal belirli bir kabilenin ozel adi ile ona mensubiyeti, root_000056/B003 ise baska adlara bagli baska bir mensubiyet bicimini anlatir. Referanslar veya cekirdek anlamlar kesismez; yalnizca ozel ad ve mensubiyet alanini paylasirlar. Bu, partial bir yakin komsuluk degil field_only duzeyinde ortak alandir.",
+      "smallest_correction": "root_000056/B003 icin relation_type degerini same_field, boundary_match degerini field_only yapin; mevcut iki tarafa ozgu aciklamalari koruyun."
+    },
+    {
+      "target_ref": "root_000153/B009",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_023"
+      ],
+      "evidence_conflict": "Lu_023 yalnizca tek sozluk tarafindan aktarilir. Buna ragmen common_claim_ids icinde tutulmus ve source_details altinda sole_attestation olarak gosterilmemistir; bu yerlesim destegi kaynaklar arasinda ortakmis gibi sunar.",
+      "smallest_correction": "lu_023'u common_claim_ids listesinden cikarin ve ayni claim kimligiyle, bu dagilma kalibinin tek kaynakta kaydedildigini belirten bir sole_attestation source_details satiri ekleyin."
+    }
+  ]
+}

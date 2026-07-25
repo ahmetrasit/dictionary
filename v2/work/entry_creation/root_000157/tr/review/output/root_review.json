@@ -1,0 +1,19 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın temel anlam örgüsü ve kaynak sentezi kanıtla uyumludur; ancak B002'de bir komşunun sınırı başka özelliklerle karıştırıldığı için yayımlanmadan önce düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000157/B002",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005",
+        "lu_006",
+        "lu_007"
+      ],
+      "evidence_conflict": "root_000405/B003 için verilen komşuya özgü alan, uydurulmuş konuşmaları, masalsı anlatıları ve başkasına yakıştırılan sözleri kapsadığını söylüyor. Oysa supplied boundary card yalnızca yalanı uydurma ve iftira etme, ilgili söz biçimleri ve oğul ya da kız isnadını iftira sayma alanını verir; yayımlanan üç özellik bu komşunun kanıtında yoktur.",
+      "smallest_correction": "root_000405/B003 satırındaki neighbor_only metnini komşunun yalan uydurma ve oğul ya da kız isnadını iftira sayma kapsamıyla değiştirin; distinction metnindeki daha geniş uydurulmuş konuşma anlatımını da aynı sınıra göre düzeltin. İlişki türü ve odak dalın suçsuz hedef ile afallatıcı etki ayrımı korunabilir."
+    }
+  ]
+}

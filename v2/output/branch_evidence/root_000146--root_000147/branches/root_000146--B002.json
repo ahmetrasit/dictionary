@@ -1,5 +1,5 @@
 {
-  "format": 1,
+  "format": 2,
   "generated_by": "v2/scripts/build_branch_evidence.py",
   "root_envelope_id": "root_000146--root_000147",
   "packet_path": "data/output/root_packets/root_000146--root_000147.json",
@@ -8,6 +8,10 @@
   "furuq_sha256": "1099db0d56515d2eb3e8d72f104f2e338c2c9a8c1fa6abbb046406d3b327e722",
   "qnet_path": "data/upstream/qnet/incidence_full/raw_keyword_incidence.sqlite",
   "qnet_sha256": "a5262b568203bff7ec04e6ca905781125beec83f90d62a5cf0cd6ff61049eee8",
+  "qnet_theme_path": "data/upstream/qnet/bridge_theme_full/bridge_theme_staging.sqlite",
+  "qnet_theme_sha256": "e4f590a111376e372eefef6d03b8694837ec9989017ce721d56db9828b2a734e",
+  "qnet_fix_manifest_path": "data/upstream/qnet/bridge_theme_full/latent_v11_qac_qnet_fix_manifest.json",
+  "qnet_fix_manifest_sha256": "b0ae3c19450a8019825321f6dc1e9f4c336249950f50267ed84eb3258756502c",
   "branch": {
     "root_id": "root_000146",
     "branch_id": "B002",
@@ -274,27 +278,221 @@
       ]
     }
   ],
-  "furuq_candidates": [
+  "qnet_bridge_overlap_candidates": [
     {
-      "root_id": "root_000146",
-      "branch_id": "B001",
-      "root_norm": "ب ك ي",
-      "branch_image_ar": "البكاء والحزن",
-      "what_is_ar": "البكاء والبكا؛ الحزن؛ إسالة الدمع؛ صوت البكاء؛ البكاء على الميت أو عليه؛ نسبة البكاء مجازا أو حقيقة إلى غير الإنسان",
-      "what_is_not_ar": "ليس الإبكاء؛ ليس التباكي؛ ليس مغالبة غيره في البكاء؛ ليس اسم الباكي أو جمعه",
-      "source_phrase_ar": "البكاء ممدود ومقصور (ayn)؛ البكا يمد ويقصر، الصوت، الدموع وخروجها، بكيت عليه (sihah)؛ البكا يقصر ويمد، بكى الرجل يبكي، بكيت الميت وبكيته (tahdhib)؛ بكى يبكي بكا وبكاء، في الحزن وإسالة الدمع معا، يقال في كل واحد منهما منفردا (mufradat)",
-      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3913:headword=%D8%A8%D9%83%D9%89:root=%D8%A8%20%D9%83%20%D9%8A:sha=f51812b2231b0acb;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5234:headword=%D8%A8%D9%83%D9%89:root=%D8%A8%20%D9%83%20%D9%8A:sha=d5e2511f1274dd10;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D518%3Bsegment_index%3D52:headword=%D8%A8%D9%83%D8%A7:root=%D8%A8%20%D9%83%20%D8%A7:sha=df3de36b435bcd54;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A140:headword=%D8%A8%D9%83%D9%8A:root=%D8%A8%20%D9%83%20%D9%8A:sha=b8fd35c5725dbd79",
-      "status": "accepted",
-      "contaminated": "no",
-      "discovery_basis": [
-        "qnet_packet",
-        "sibling"
-      ],
-      "shared_consensus_core": [
-        "tear",
-        "weeping"
+      "root_id": "root_000079",
+      "branch_id": "B003",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "distress",
+        "emotion",
+        "sorrow"
       ]
     },
+    {
+      "root_id": "root_000192",
+      "branch_id": "B003",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "agency",
+        "causality",
+        "emotion"
+      ]
+    },
+    {
+      "root_id": "root_000221",
+      "branch_id": "B005",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "distress",
+        "emotion",
+        "response"
+      ]
+    },
+    {
+      "root_id": "root_000600",
+      "branch_id": "B002",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "emotion",
+        "harm",
+        "sorrow"
+      ]
+    },
+    {
+      "root_id": "root_000781",
+      "branch_id": "B005",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "distress",
+        "emotion",
+        "response"
+      ]
+    },
+    {
+      "root_id": "root_000814",
+      "branch_id": "B002",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "agency",
+        "causality",
+        "emotion"
+      ]
+    }
+  ],
+  "qnet_theme_overlap_candidates": [
+    {
+      "root_id": "root_000421",
+      "branch_id": "B003",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 6,
+      "votes2_keyword_count": 0,
+      "shared_themes": [
+        "agency_action",
+        "communication",
+        "danger_harm",
+        "emotion",
+        "reasoning_decision",
+        "suffering_hardship"
+      ]
+    },
+    {
+      "root_id": "root_000147",
+      "branch_id": "B002",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "agency_action",
+        "communication",
+        "emotion",
+        "force_power",
+        "suffering_hardship"
+      ]
+    },
+    {
+      "root_id": "root_000924",
+      "branch_id": "B004",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "danger_harm",
+        "emotion",
+        "fear_grief",
+        "force_power",
+        "suffering_hardship"
+      ]
+    },
+    {
+      "root_id": "root_000083",
+      "branch_id": "B002",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "communication",
+        "emotion",
+        "fear_grief",
+        "rhetoric_discourse",
+        "suffering_hardship"
+      ]
+    },
+    {
+      "root_id": "root_000855",
+      "branch_id": "B001",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "communication",
+        "danger_harm",
+        "emotion",
+        "fear_grief",
+        "suffering_hardship"
+      ]
+    },
+    {
+      "root_id": "root_000108",
+      "branch_id": "B003",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "communication",
+        "emotion",
+        "fear_grief",
+        "force_power",
+        "rhetoric_discourse"
+      ]
+    },
+    {
+      "root_id": "root_000243",
+      "branch_id": "B003",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "agency_action",
+        "danger_harm",
+        "emotion",
+        "fear_grief",
+        "suffering_hardship"
+      ]
+    },
+    {
+      "root_id": "root_000192",
+      "branch_id": "B003",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 1,
+      "shared_themes": [
+        "agency_action",
+        "communication",
+        "emotion",
+        "force_power",
+        "reasoning_decision"
+      ]
+    }
+  ],
+  "qnet_focus_coverage": {
+    "raw_keyword_exact_port": true,
+    "snapshot_exact_port": true,
+    "postfix_exact_port": false,
+    "theme_scope": "branch",
+    "focus_themes": [
+      "agency_action",
+      "communication",
+      "danger_harm",
+      "emotion",
+      "fear_grief",
+      "force_power",
+      "reasoning_decision",
+      "rhetoric_discourse",
+      "suffering_hardship"
+    ]
+  },
+  "furuq_candidates": [
     {
       "root_id": "root_000147",
       "branch_id": "B002",
@@ -308,87 +506,23 @@
       "contaminated": "no",
       "discovery_basis": [
         "qnet_packet",
+        "qnet_theme_overlap",
         "sibling"
       ],
       "shared_consensus_core": [
         "causation",
         "inducement"
-      ]
-    },
-    {
-      "root_id": "root_000258",
-      "branch_id": "B005",
-      "root_norm": "ج م د",
-      "branch_image_ar": "جُمود العين عن الدمع",
-      "what_is_ar": "يدخل فيه العين الجامدة أو الجمود أو الجمادى التي لا تدمع أو قل دمعها",
-      "what_is_not_ar": "ليس جمود الماء؛ وليس جفاف الأرض من المطر",
-      "source_phrase_ar": "رجل جامد العين قل دمعه (ayn;tahdhib); عين جماد لا دمع فيها (ayn); عين جمود لا دمع لها (sihah); ظلت العين جمادى أي جامدة لا تدمع (tahdhib)",
-      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4095:headword=%D8%AC%D9%85%D8%AF:root=%D8%AC%20%D9%85%20%D8%AF:sha=1ad383b53f57c24b;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1239:headword=%D8%AC%D9%85%D8%AF:root=%D8%AC%20%D9%85%20%D8%AF:sha=934af51a7ca1dda8;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D547%3Bsegment_index%3D21:headword=%D8%AC%D9%85%D8%AF:root=%D8%AC%20%D9%85%20%D8%AF:sha=5c7aa0a9d6986bad",
-      "status": "accepted",
-      "contaminated": "no",
-      "discovery_basis": [
-        "qnet_packet"
       ],
-      "shared_consensus_core": [
-        "tear",
-        "weeping"
-      ]
-    },
-    {
-      "root_id": "root_000488",
-      "branch_id": "B001",
-      "root_norm": "د م ع",
-      "branch_image_ar": "الدَّمْع ومجراه في العين",
-      "what_is_ar": "ماء العين والدمعة والدموع ودمعان العين ومجتمع الدمع ومدامعه وسرعة الدمعة والبكاء",
-      "what_is_not_ar": "دُماع الكرم والشجة الدامعة والسمة في مجرى الدمع وامتلاء الوعاء والرطوبة الخارجة عن العين",
-      "source_phrase_ar": "الدمع ماء العين والقطرة دمعة والفعل دمعت العين (maqayis); الدمع ماؤها والدمعة القطرة والمدمع مجتمع الدمع (ayn); الدمع دمع العين والدمعة القطرة منه والمدامع المآقي (sihah); الدمع ماء العين والمدمع مجتمع الدمع وامرأة دمعة سريعة الدمعة والبكاء (tahdhib); الدمع يكون اسما للسائل من العين ومصدر دمعت العين (mufradat)",
-      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1116;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A663:headword=%D8%AF%D9%85%D8%B9:root=%D8%AF%20%D9%85%20%D8%B9:sha=2f1c2247795e7866;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2973:headword=%D8%AF%D9%85%D8%B9:root=%D8%AF%20%D9%85%20%D8%B9:sha=e8989dcaba1809a4;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D145%3Bsegment_index%3D4:headword=%D8%AF%D9%85%D8%B9:root=%D8%AF%20%D9%85%20%D8%B9:sha=8969b566ebd87dca;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A493:headword=%D8%AF%D9%85%D8%B9:root=%D8%AF%20%D9%85%20%D8%B9:sha=eb92e95411f76db0",
-      "status": "accepted",
-      "contaminated": "no",
-      "discovery_basis": [
-        "qnet_packet"
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "agency_action",
+        "communication",
+        "emotion",
+        "force_power",
+        "suffering_hardship"
       ],
-      "shared_consensus_core": [
-        "tear",
-        "weeping"
-      ]
-    },
-    {
-      "root_id": "root_000513",
-      "branch_id": "B006",
-      "root_norm": "ذ ر و",
-      "branch_image_ar": "ذُرى الدمع وإذراؤه",
-      "what_is_ar": "انصباب الدمع وإذراء العين دمعها والذرى اسما للدمع المصبوب",
-      "what_is_not_ar": "تذرية التراب؛ إلقاء الشيء؛ الذروة والستر؛ ذرو القول",
-      "source_phrase_ar": "أذرت العين دمعها تذريه (maqayis;sihah)؛ الذرى اسم لما صب من الدمع (maqayis;sihah)؛ والذرى ما انصب من الدمع وقد أذرت العين الدمع (tahdhib)",
-      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1198;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5324:headword=%D8%B0%D8%B1%D8%A7:root=%D8%B0%20%D8%B1%20%D8%A7:sha=7663d853ca776dc4;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D761%3Bsegment_index%3D3:headword=%D8%B0%D8%B1%D8%A7:root=%D8%B0%20%D8%B1%20%D8%A7:sha=82d4771964ccf48b",
-      "status": "accepted",
-      "contaminated": "no",
-      "discovery_basis": [
-        "qnet_packet"
-      ],
-      "shared_consensus_core": [
-        "tear",
-        "weeping"
-      ]
-    },
-    {
-      "root_id": "root_000974",
-      "branch_id": "B005",
-      "root_norm": "ع ب ر",
-      "branch_image_ar": "جريان الدمع وحرارة الحزن",
-      "what_is_ar": "يدخل فيه عبرة الدمع وجريه ونفس الدمع، وتردد البكاء، وسخنة العين، والحزن الذي معه بكاء، واستعبر إذا جرت عبرته.",
-      "what_is_not_ar": "ليس هو العبرة بمعنى الاعتبار، ولا العبير الطيب، ولا العبر بمعنى شاطئ النهر.",
-      "source_phrase_ar": "عبرة الدمع جريه والدمع أيضا نفسه عبرة (maqayis;ayn;tahdhib)؛ عبر فلان يعبر عبرا من الحزن وهو عبران والمرأة عبرى وعبرة (maqayis;ayn)؛ استعبر إذا جرت عبرته (maqayis;ayn;sihah)؛ العبرة تردد البكاء في الصدر وربما قيل لتردد الدمع في العين عبرة (jamhara)؛ العبرة بالفتح تحلب الدمع (sihah)؛ رأى فلان عبر عينيه أي ما يسخن عينيه (sihah;tahdhib)؛ عبر العين للدمع والعبرة كالدمعة (mufradat)",
-      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2402;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A790:headword=%D8%B9%D8%A8%D8%B1:root=%D8%B9%20%D8%A8%20%D8%B1:sha=ddf8cc1433e9d46b;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A726%3Asubentry%3A3%3A%D8%B9%D8%A8%D8%B1:headword=%D8%B9%D8%A8%D8%B1:root=%D8%B9%20%D8%A8%20%D8%B1:sha=d020902aa94b09a3;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1800:headword=%D8%B9%D8%A8%D8%B1:root=%D8%B9%20%D8%A8%20%D8%B1:sha=c11ae2490cc2d4e0;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D173%3Bsegment_index%3D8:headword=%D8%B9%D8%A8%D8%B1:root=%D8%B9%20%D8%A8%20%D8%B1:sha=9a347a8a8704dd72;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A960:headword=%D8%B9%D8%A8%D8%B1:root=%D8%B9%20%D8%A8%20%D8%B1:sha=630e86b7b0371839",
-      "status": "accepted",
-      "contaminated": "no",
-      "discovery_basis": [
-        "qnet_packet"
-      ],
-      "shared_consensus_core": [
-        "tear",
-        "weeping"
+      "theme_focus_scopes": [
+        "branch"
       ]
     },
     {
@@ -411,7 +545,83 @@
         "sorrow",
         "tear",
         "weeping"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000079",
+      "branch_id": "B003",
+      "root_norm": "ب ء س",
+      "branch_image_ar": "الابتئاس حزنا وكراهة",
+      "what_is_ar": "الابتئاس والمبتئس في الحزن والكراهة وبلوغ المكروه ولزوم البؤس",
+      "what_is_not_ar": "البأس في الحرب والفقر وصيغة الذم",
+      "source_phrase_ar": "المبتئس المفتعل من الكراهة والحزن (maqayis); لا تبتئس أي لا تحزن ولا تشتك (sihah); ابتأس الرجل إذا بلغه شيء يكرهه (tahdhib); غير حزين ولا كاره (tahdhib); لا تلزم البؤس ولا تحزن (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:369;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2144:headword=%D8%A8%D8%A3%D8%B3:root=%D8%A8%20%D8%A1%20%D8%B3:sha=90c00215714176da;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D660%3Bsegment_index%3D13:headword=%D8%A8%D8%A3%D8%B3:root=%D8%A8%20%D8%A3%20%D8%B3:sha=11cdb4184137a906;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A161:headword=%D8%A8%D8%A4%D8%B3:root=%D8%A8%20%D8%A1%20%D8%B3:sha=f1bac1c8d0c2b0f3",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_bridge_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [
+        "distress",
+        "emotion",
+        "sorrow"
+      ],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000421",
+      "branch_id": "B003",
+      "root_norm": "خ ط ب",
+      "branch_image_ar": "الخطب: الأمر الواقع العظيم",
+      "what_is_ar": "يدخل فيه الخطب بمعنى الأمر وسبب الأمر والأمر العظيم الذي يكثر فيه التخاطب، مثل سؤال ما خطبك.",
+      "what_is_not_ar": "ليس الخطاب نفسه ولا خطبة النساء ولا اللون الأخطب.",
+      "source_phrase_ar": "الخطب الأمر يقع وإنما سمي بذلك لما يقع فيه من التخاطب والمراجعة (maqayis)؛ الخطب سبب الأمر (ayn)؛ الخطب الأمر العظيم (jamhara)؛ الخطب سبب الامر تقول ما خطبك (sihah)؛ الخطب الأمر العظيم الذي يكثر فيه التخاطب (mufradat)",
+      "source_refs": "maqayis:root=%D8%AE%20%D8%B7%20%D8%A8:headword=%D8%AE%D8%B7%D8%A8:sha=123d3e644485ee19;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A2694:headword=%D8%AE%D8%B7%D8%A8:root=%D8%AE%20%D8%B7%20%D8%A8:sha=2c982fff2b709258;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A677%3Asubentry%3A1%3A%D8%AE%D8%B7%D8%A8:headword=%D8%AE%D8%B7%D8%A8:root=%D8%AE%20%D8%B7%20%D8%A8:sha=24885a2d5b35e939;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A257:headword=%D8%AE%D8%B7%D8%A8:root=%D8%AE%20%D8%B7%20%D8%A8:sha=e1150fc3fec2714f;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A425:headword=%D8%AE%D8%B7%D8%A8:root=%D8%AE%20%D8%B7%20%D8%A8:sha=6519e41527819ba1",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "agency_action",
+        "communication",
+        "danger_harm",
+        "emotion",
+        "reasoning_decision",
+        "suffering_hardship"
+      ],
+      "theme_focus_scopes": [
+        "branch"
       ]
+    },
+    {
+      "root_id": "root_000258",
+      "branch_id": "B005",
+      "root_norm": "ج م د",
+      "branch_image_ar": "جُمود العين عن الدمع",
+      "what_is_ar": "يدخل فيه العين الجامدة أو الجمود أو الجمادى التي لا تدمع أو قل دمعها",
+      "what_is_not_ar": "ليس جمود الماء؛ وليس جفاف الأرض من المطر",
+      "source_phrase_ar": "رجل جامد العين قل دمعه (ayn;tahdhib); عين جماد لا دمع فيها (ayn); عين جمود لا دمع لها (sihah); ظلت العين جمادى أي جامدة لا تدمع (tahdhib)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4095:headword=%D8%AC%D9%85%D8%AF:root=%D8%AC%20%D9%85%20%D8%AF:sha=1ad383b53f57c24b;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1239:headword=%D8%AC%D9%85%D8%AF:root=%D8%AC%20%D9%85%20%D8%AF:sha=934af51a7ca1dda8;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D547%3Bsegment_index%3D21:headword=%D8%AC%D9%85%D8%AF:root=%D8%AC%20%D9%85%20%D8%AF:sha=5c7aa0a9d6986bad",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_packet"
+      ],
+      "shared_consensus_core": [
+        "tear",
+        "weeping"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000032",
@@ -432,122 +642,87 @@
         "sorrow",
         "tear",
         "weeping"
-      ]
-    },
-    {
-      "root_id": "root_001633",
-      "branch_id": "B009",
-      "root_norm": "و ح ي",
-      "branch_image_ar": "نياحة وبكاء",
-      "what_is_ar": "الإيحاء بمعنى البكاء أو جعل المرثي مبكيا، ونياحة النائحة على الميت",
-      "what_is_not_ar": "ليس الصوت مطلقا ولا الإعلام الخفي ولا السرعة",
-      "source_phrase_ar": "الإيحاء البكاء؛ فلان يوحي أباه أي يبكيه؛ النائحة توحي الميت تنوح عليه",
-      "source_refs": "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D257%3Bsegment_index%3D15:headword=%D9%88%D8%AD%D9%8A:root=%D9%88%20%D8%AD%20%D9%8A:sha=c959d4deb6196d0e",
-      "status": "accepted",
-      "contaminated": "no",
-      "discovery_basis": [
-        "qnet_core_overlap"
       ],
-      "shared_consensus_core": [
-        "crying",
-        "grief",
-        "weeping"
-      ]
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
-      "root_id": "root_000239",
+      "root_id": "root_000192",
       "branch_id": "B003",
-      "root_norm": "ج ر م",
-      "branch_image_ar": "الكسب والإكساب",
-      "what_is_ar": "يدخل فيه جرم بمعنى كسب، وجريمة الأهل أي كاسبهم، وجرم أو أجرم غيره بمعنى أكسبه أو حمله على شيء في تفسير ولا يجرمنكم",
-      "what_is_not_ar": "لا يدخل فيه الذنب نفسه إلا إذا نظر إليه بوصفه مكتسبا، ولا يدخل القطع الحسي إلا أصلا اشتقاقيا",
-      "source_phrase_ar": "جرم أي كسب لأن الذي يحوزه فكأنه اقتطعه؛ فلان جريمة أهله أي كاسبهم؛ جرمت فزارة أي كسبتهم غضبا (maqayis)؛ جرم يجرم أي كسب؛ فلان جريمة أهله أي كاسبهم؛ ولا يجرمنكم أي لا يحملنكم ويقال لا يكسبنكم (sihah)؛ خرج يجرم قومه أي يكسبهم؛ لا يحملنكم ولا يكسبنكم؛ أجرمني كذا وجرمني وجرمت وأجرمت بمعنى واحد (tahdhib)",
-      "source_refs": "maqayis:root=%D8%AC%20%D8%B1%20%D9%85:headword=%D8%AC%D8%B1%D9%85:sha=8ec33e43617c3540;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4387:headword=%D8%AC%D8%B1%D9%85:root=%D8%AC%20%D8%B1%20%D9%85:sha=ba2063c1e0e10cc6;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D547%3Bsegment_index%3D93:headword=%D8%AC%D8%B1%D9%85:root=%D8%AC%20%D8%B1%20%D9%85:sha=87cab6c1d1a26ad0",
+      "root_norm": "ث ب ت",
+      "branch_image_ar": "تثبيت الشيء وتقويته",
+      "what_is_ar": "يدخل فيه جعل الشيء ثابتا، وتسكين القلب وتثبيته، وتقوية الفؤاد أو القدم، وما يثبت بالفعل",
+      "what_is_not_ar": "ليس منه الحبس أو الجراحة التي تمنع الحركة، ولا الحكم بالحجة، ولا التروي والفحص",
+      "source_phrase_ar": "أثبته غيره وثبته بمعنى (sihah)؛ نثبت به فؤادك معنى تثبيت الفؤاد تسكين القلب (tahdhib)؛ الإثبات والتثبيت تارة يقال بالفعل لما يخرج من العدم إلى الوجود نحو أثبت الله كذا (mufradat)؛ وهي دوام الشيء (maqayis)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:507;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A525:headword=%D8%AB%D8%A8%D8%AA:root=%D8%AB%20%D8%A8%20%D8%AA:sha=6963549c90c484e8;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D734%3Bsegment_index%3D9:headword=%D8%AB%D8%A8%D8%AA:root=%D8%AB%20%D8%A8%20%D8%AA:sha=2a273423e7e955b2;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A195:headword=%D8%AB%D8%A8%D8%AA:root=%D8%AB%20%D8%A8%20%D8%AA:sha=3255e23248448ad5",
       "status": "accepted",
       "contaminated": "no",
       "discovery_basis": [
-        "qnet_core_overlap"
+        "qnet_bridge_overlap",
+        "qnet_theme_overlap"
       ],
-      "shared_consensus_core": [
-        "causation",
-        "inducement"
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [
+        "agency",
+        "causality",
+        "emotion"
+      ],
+      "shared_themes": [
+        "agency_action",
+        "communication",
+        "emotion",
+        "force_power",
+        "reasoning_decision"
+      ],
+      "theme_focus_scopes": [
+        "branch"
       ]
     },
     {
-      "root_id": "root_000707",
-      "branch_id": "B003",
-      "root_norm": "س ع د",
-      "branch_image_ar": "الإسعاد في النياحة",
-      "what_is_ar": "إسعاد النساء في البكاء والنياحة بأن تساعد إحداهن الأخرى على الحزن والبكاء",
-      "what_is_not_ar": "المعاونة العامة؛ سعديك في الطاعة؛ السعادة",
-      "source_phrase_ar": "الإسعاد لا يكون إلا في البكاء (maqayis)؛ لا إسعاد في الإسلام (tahdhib)؛ يتابعنها ويساعدنها ما دامت تنوح عليه وتبكيه (tahdhib)؛ الإسعاد في البكاء خاصة (mufradat)",
-      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1623;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D116%3Bsegment_index%3D4:headword=%D8%B3%D8%B9%D8%AF:root=%D8%B3%20%D8%B9%20%D8%AF:sha=0ce871c686d7d1f7;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A700:headword=%D8%B3%D8%B9%D8%AF:root=%D8%B3%20%D8%B9%20%D8%AF:sha=f06298d1f04a1fbe",
+      "root_id": "root_000488",
+      "branch_id": "B001",
+      "root_norm": "د م ع",
+      "branch_image_ar": "الدَّمْع ومجراه في العين",
+      "what_is_ar": "ماء العين والدمعة والدموع ودمعان العين ومجتمع الدمع ومدامعه وسرعة الدمعة والبكاء",
+      "what_is_not_ar": "دُماع الكرم والشجة الدامعة والسمة في مجرى الدمع وامتلاء الوعاء والرطوبة الخارجة عن العين",
+      "source_phrase_ar": "الدمع ماء العين والقطرة دمعة والفعل دمعت العين (maqayis); الدمع ماؤها والدمعة القطرة والمدمع مجتمع الدمع (ayn); الدمع دمع العين والدمعة القطرة منه والمدامع المآقي (sihah); الدمع ماء العين والمدمع مجتمع الدمع وامرأة دمعة سريعة الدمعة والبكاء (tahdhib); الدمع يكون اسما للسائل من العين ومصدر دمعت العين (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1116;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A663:headword=%D8%AF%D9%85%D8%B9:root=%D8%AF%20%D9%85%20%D8%B9:sha=2f1c2247795e7866;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2973:headword=%D8%AF%D9%85%D8%B9:root=%D8%AF%20%D9%85%20%D8%B9:sha=e8989dcaba1809a4;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D145%3Bsegment_index%3D4:headword=%D8%AF%D9%85%D8%B9:root=%D8%AF%20%D9%85%20%D8%B9:sha=8969b566ebd87dca;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A493:headword=%D8%AF%D9%85%D8%B9:root=%D8%AF%20%D9%85%20%D8%B9:sha=eb92e95411f76db0",
       "status": "accepted",
       "contaminated": "no",
       "discovery_basis": [
-        "qnet_core_overlap"
-      ],
-      "shared_consensus_core": [
-        "grief",
-        "weeping"
-      ]
-    },
-    {
-      "root_id": "root_000780",
-      "branch_id": "B002",
-      "root_norm": "ش ح ن",
-      "branch_image_ar": "إشحان البكاء",
-      "what_is_ar": "تهيؤ المرء أو الصبي للبكاء مع اجتماع النفس وامتلائها له",
-      "what_is_not_ar": "ليس ملء السفينة ولا الطرد ولا العداوة",
-      "source_phrase_ar": "أشحن فلان للبكاء إذا تهيأ له كأنه اجتمع له (maqayis)؛ أشحن الصبي أي تهيأ للبكاء (sihah)؛ أشحن الرجل إشحانا وأجهش إجهاشا إذا تهيأ للبكاء (tahdhib)؛ أشحن للبكاء امتلأت نفسه لتهيئه له (mufradat)",
-      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1912;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4944:headword=%D8%B4%D8%AD%D9%86:root=%D8%B4%20%D8%AD%20%D9%86:sha=6681aa41354475f2;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D236%3Bsegment_index%3D80:headword=%D8%B4%D8%AD%D9%86:root=%D8%B4%20%D8%AD%20%D9%86:sha=39cb84e8ed99e30c;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A769:headword=%D8%B4%D8%AD%D9%86:root=%D8%B4%20%D8%AD%20%D9%86:sha=c25e491a1e6f2031",
-      "status": "accepted",
-      "contaminated": "no",
-      "discovery_basis": [
-        "qnet_core_overlap"
+        "qnet_packet"
       ],
       "shared_consensus_core": [
         "tear",
         "weeping"
-      ]
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
-      "root_id": "root_000931",
-      "branch_id": "B003",
-      "root_norm": "ط ر ف",
-      "branch_image_ar": "عين أصابها طرف فأدمعها",
-      "what_is_ar": "يدخل فيه إصابة العين بشيء أو حزن حتى تدمع أو تنكسر أو يطمح بصرها، وما قيل في مطروف العين، والتعبير بطارفة عين لما يحير العين بكثرته.",
-      "what_is_not_ar": "لا يدخل فيه مجرد النظر السالم ولا الناحية المحسوسة.",
-      "source_phrase_ar": "عين مطروفة يصيبها طرف شيء ثوب أو غيره فتغرورق دمعا وطرفها الحزن (maqayis)؛ الطرف إصابتك عينا بثوب أو غيره وطرفها الحزن بالبكاء (ayn)؛ طرفت عينه إذا أصبتها بشئ فدمعت والطرفة نقطة حمراء من الدم (sihah)؛ الدنيا قد طرفت أعينكم ومطروفة العينين (tahdhib)؛ طرف فلان أصيب طرفه (mufradat)؛ جاء فلان بطارفة عين أي بشيء تتحير له العين من كثرته (maqayis)؛ جاء فلان بطارفة عين إذا جاء بمال كثير (sihah)",
-      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2253;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A5234:headword=%D8%B7%D8%B1%D9%81:root=%D8%B7%20%D8%B1%20%D9%81:sha=e0d1b3eb4ee48b77;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3373:headword=%D8%B7%D8%B1%D9%81:root=%D8%B7%20%D8%B1%20%D9%81:sha=7cf228c5b0f7cece;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D696%3Bsegment_index%3D11:headword=%D8%B7%D8%B1%D9%81:root=%D8%B7%20%D8%B1%20%D9%81:sha=14fc3ecc6b01712c;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A917:headword=%D8%B7%D8%B1%D9%81:root=%D8%B7%20%D8%B1%20%D9%81:sha=297d77726d6583aa",
+      "root_id": "root_000146",
+      "branch_id": "B001",
+      "root_norm": "ب ك ي",
+      "branch_image_ar": "البكاء والحزن",
+      "what_is_ar": "البكاء والبكا؛ الحزن؛ إسالة الدمع؛ صوت البكاء؛ البكاء على الميت أو عليه؛ نسبة البكاء مجازا أو حقيقة إلى غير الإنسان",
+      "what_is_not_ar": "ليس الإبكاء؛ ليس التباكي؛ ليس مغالبة غيره في البكاء؛ ليس اسم الباكي أو جمعه",
+      "source_phrase_ar": "البكاء ممدود ومقصور (ayn)؛ البكا يمد ويقصر، الصوت، الدموع وخروجها، بكيت عليه (sihah)؛ البكا يقصر ويمد، بكى الرجل يبكي، بكيت الميت وبكيته (tahdhib)؛ بكى يبكي بكا وبكاء، في الحزن وإسالة الدمع معا، يقال في كل واحد منهما منفردا (mufradat)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3913:headword=%D8%A8%D9%83%D9%89:root=%D8%A8%20%D9%83%20%D9%8A:sha=f51812b2231b0acb;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5234:headword=%D8%A8%D9%83%D9%89:root=%D8%A8%20%D9%83%20%D9%8A:sha=d5e2511f1274dd10;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D518%3Bsegment_index%3D52:headword=%D8%A8%D9%83%D8%A7:root=%D8%A8%20%D9%83%20%D8%A7:sha=df3de36b435bcd54;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A140:headword=%D8%A8%D9%83%D9%8A:root=%D8%A8%20%D9%83%20%D9%8A:sha=b8fd35c5725dbd79",
       "status": "accepted",
       "contaminated": "no",
       "discovery_basis": [
-        "qnet_core_overlap"
+        "qnet_packet",
+        "sibling"
       ],
       "shared_consensus_core": [
-        "sorrow",
-        "tear"
-      ]
-    },
-    {
-      "root_id": "root_000951",
-      "branch_id": "B002",
-      "root_norm": "ط م ع",
-      "branch_image_ar": "الإطماع والإغراء",
-      "what_is_ar": "إدخال الطمع في غيره، وما يكون مطمعا أو سببا لطمع ذي الريبة، والصفة مطماع لمن تطمع ولا تمكن",
-      "what_is_not_ar": "الطمع الباطن نفسه، وأرزاق الجند، وصيغة التعجب، والطائر الذي يجعل في الشبك",
-      "source_phrase_ar": "أطمعه غيره (ayn;sihah)؛ امرأة مطماع تطمع ولا تمكن (maqayis;ayn;sihah;tahdhib)؛ المطمع ما طمعت فيه (ayn;tahdhib)؛ قول المخاضعة من المرأة المطمعة في الفساد أي مما يطمع ذا الريبة فيها (tahdhib)",
-      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2208;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A604:headword=%D8%B7%D9%85%D8%B9:root=%D8%B7%20%D9%85%20%D8%B9:sha=79c6e7252768a26d;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3057:headword=%D8%B7%D9%85%D8%B9:root=%D8%B7%20%D9%85%20%D8%B9:sha=386050095ec21acf;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D137%3Bsegment_index%3D5:headword=%D8%B7%D9%85%D8%B9:root=%D8%B7%20%D9%85%20%D8%B9:sha=24864a6923bfef1d",
-      "status": "accepted",
-      "contaminated": "no",
-      "discovery_basis": [
-        "qnet_core_overlap"
+        "tear",
+        "weeping"
       ],
-      "shared_consensus_core": [
-        "inducement",
-        "provocation"
-      ]
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000146",
@@ -563,7 +738,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000146",
@@ -579,7 +757,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000146",
@@ -595,7 +776,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000147",
@@ -611,7 +795,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_000147",
@@ -627,7 +814,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     }
   ]
 }

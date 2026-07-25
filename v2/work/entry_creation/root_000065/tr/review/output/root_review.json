@@ -1,0 +1,95 @@
+{
+  "verdict": "repair",
+  "summary": "Girdi genel olarak anlam dallarını doğru kuruyor; ancak kaynaklar arası kapsam farklarının ortaklaştırıldığı yerler, kanıtsız bir süreklilik kaydı, gündüz yolculuğu anlamındaki aşırı daraltma ve çekirdekleri tam örtüşen bir komşuluk ilişkisinin bağımlı uzantı nedeniyle eksik eşdeğer sayılması düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000065/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005"
+      ],
+      "evidence_conflict": "Ortak özet bu birimi yalnızca dönüş ya da başvuru yeri olarak sunuyor. Kanıt ise bir aktarımda aynı biçimin ayrıca eylem adı ile zaman ve yer adı olarak sınıflandırıldığını gösteriyor; bu ayırt edici kaynak varyantı sentezde yer almıyor.",
+      "smallest_correction": "Ortak özete, kaynakların dönüş veya başvuru yeri anlamında birleştiğini, bir aktarımın ise biçimi ayrıca eylem adı ile zaman ve yer adı olarak sınıflandırdığını kaynak adı vermeden ekleyin."
+    },
+    {
+      "target_ref": "root_000065/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_008"
+      ],
+      "evidence_conflict": "F002, kişiyi bu dönüşü \"sürekli veya belirgin biçimde\" yapan biri olarak sınırlandırıyor. Kanıt kişiyi yanlışları bırakıp doğru davranışlara yönelerek Tanrı'ya dönen kişi diye açıklar, fakat süreklilik ya da belirginlik koşulu koymaz.",
+      "smallest_correction": "F002'deki \"sürekli veya belirgin biçimde\" kaydını kaldırıp facet'i yalnızca bu dönüşü yapan kişinin nitelenmesi olarak yazın."
+    },
+    {
+      "target_ref": "root_000065/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_008"
+      ],
+      "evidence_conflict": "Ortak özet, yanlışları bırakma ve Tanrı'nın buyruklarını yerine getirme açılımını bütün kaynakların ortak çekirdeği gibi veriyor. Kanıtta bir aktarım yalnızca bu kişiyi yanlışından dönen kişi diye tanımlarken öteki aktarım davranış değişikliğini ayrıntılandırıyor.",
+      "smallest_correction": "Ortak çekirdeği yanlışından dönüp Tanrı'ya yönelen kişiyle sınırlandırın; yanlışları bırakma ve doğru eylemleri yapma ayrıntısının bir aktarımda açıklandığını kaynak adı vermeden karşılaştırmalı biçimde ekleyin."
+    },
+    {
+      "target_ref": "root_000065/B003",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011"
+      ],
+      "evidence_conflict": "Tanım ve F003, gündüz yolculuğunu bütün gün sürüp gece konaklama koşuluyla tek bir kapsam gibi kuruyor. Kanıt daha geniş biçimde gündüz yolculuğunu da içeriyor; geceye dek sürme ve gecede konaklama yalnızca aktarımlardan bazılarındaki daha dar açıklamalardır.",
+      "smallest_correction": "Tanım ile F003'ü genel olarak gündüz yol alma üzerine kurun; geceye dek sürdürme ve gece konaklama ayrıntısını kaynaklara göre değişen daha dar kapsam olarak belirtin."
+    },
+    {
+      "target_ref": "root_000065/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011"
+      ],
+      "evidence_conflict": "Sentez, gündüz yolculuğu için verilen kapsam farklarını bildirmiyor. Kanıttaki aktarımlar gündüz yol alma, geceye kadar sürdürme ve bütün günü yolda geçirip gece konaklama biçimlerinde ayrışıyor.",
+      "smallest_correction": "Bu üç kapsamı kaynak adı vermeden ortak özette karşılaştırın ve genel gündüz yolculuğunu, geceye dek sürme ile gece konaklama kayıtlarından ayırın."
+    },
+    {
+      "target_ref": "root_000065/B003",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011"
+      ],
+      "evidence_conflict": "lu_011 için \"gündüz boyunca yol alma\" karşılığı, genel gündüz yolculuğu anlamını bütün güne yayılan yolculuk olarak daraltıyor ve geceye kadar sürme varyantını da göstermiyor.",
+      "smallest_correction": "Karşılığı genel \"gündüz yol alma\" anlamını koruyacak ve daha dar geceye dek sürme ya da gece konaklama varyantını ayrıca gösterecek biçimde genişletin."
+    },
+    {
+      "target_ref": "root_000065/B007",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_022"
+      ],
+      "evidence_conflict": "Ortak özet bütün aktarımları güneşin dönüş yerine varması imgesinde birleştiriyor. Kanıtta kaynaklar güneşin batmasında birleşse de bazı aktarımlar batış yerinde kaybolmayı söylerken biri bunu doğrudan \"batmak\" eşdeğeri olarak verir.",
+      "smallest_correction": "Ortak çekirdeği güneşin batması olarak yazın; batış yerinde kaybolma veya oraya dönme çerçevesinin yalnız bazı aktarımlarda bulunduğunu kaynak adı vermeden belirtin."
+    },
+    {
+      "target_ref": "root_000065/B007",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_022",
+        "lu_023"
+      ],
+      "evidence_conflict": "root_001112/B004 ile iki branch'in olağan kullanım çekirdeği güneşin ufukta kaybolarak batmasıdır ve birbirinin yerine kullanılabilir. Mevcut near_synonym/partial kararı yalnızca lu_023'teki bağımlı günlük seyir uzantısını odak tarafına ekleyerek çekirdek eşdeğerliğini düşürüyor.",
+      "smallest_correction": "root_001112/B004 ilişkisini synonym/exact olarak değiştirin; lu_023'teki bağımlı uzantıyı çekirdek sınır farkı gibi kullanmayın ve ayrım metnini ortak batma çekirdeğine göre düzenleyin."
+    }
+  ]
+}
