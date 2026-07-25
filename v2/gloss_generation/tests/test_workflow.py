@@ -40,6 +40,7 @@ def chosen(text, facet_ids):
             "loses_facet_ids": [],
             "adds": None,
             "collision": None,
+            "reason": None,
         },
     }
 
@@ -101,6 +102,15 @@ class GlossGenerationWorkflowTest(unittest.TestCase):
                 for row in source["concept_map"]["facets"]
             ],
         )
+        self.assertEqual(
+            len(branch["neighbor_distinctions"]),
+            len(source["arabic_neighbor_distinctions"]),
+        )
+        self.assertEqual(
+            branch["neighbor_distinctions"][0]["neighbor_ref"],
+            "root_000672/B001",
+        )
+        self.assertIn("distinction_tr", branch["neighbor_distinctions"][0])
         serialized = json.dumps(package, ensure_ascii=False)
         for forbidden in (
             "occurrence_evidence",
@@ -109,6 +119,7 @@ class GlossGenerationWorkflowTest(unittest.TestCase):
             "attachments",
             "dictionary_basis",
             "arabic_neighbor_distinctions",
+            "evidence_refs",
         ):
             self.assertNotIn(forbidden, serialized)
 
@@ -467,6 +478,7 @@ class GlossGenerationWorkflowTest(unittest.TestCase):
                         "loses_facet_ids": [],
                         "adds": None,
                         "collision": None,
+                        "reason": None,
                     },
                 }
             )
@@ -505,6 +517,9 @@ class GlossGenerationWorkflowTest(unittest.TestCase):
             response["branches"][0]["concept_gloss"]["error"][
                 "fit"
             ] = "narrowing"
+            response["branches"][0]["concept_gloss"]["error"][
+                "reason"
+            ] = "This gloss omits one source facet."
             response_path = resolve_path(task["output"]["path"])
             response_path.parent.mkdir(parents=True, exist_ok=True)
             response_path.write_text(
@@ -515,6 +530,44 @@ class GlossGenerationWorkflowTest(unittest.TestCase):
                 ContractError, "narrowing requires a lost facet"
             ):
                 validate_response(task_path)
+
+    def test_non_exact_fit_requires_user_facing_reason(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            task_path = prepare_entry(
+                FIXTURE, ["en"], Path(temporary) / "work"
+            )[0]
+            task = load_json(task_path)
+            package = load_json(
+                resolve_path(task["inputs"]["package"]["path"])
+            )
+            response = valid_response(task, package, "en")
+            error = response["branches"][0]["concept_gloss"]["error"]
+            error["fit"] = "narrowing"
+            error["loses_facet_ids"] = [
+                package["branches"][0]["facets"][-1]["facet_id"]
+            ]
+            response["branches"][0]["concept_gloss"]["facet_ids"] = [
+                facet
+                for facet in response["branches"][0]["concept_gloss"]["facet_ids"]
+                if facet not in error["loses_facet_ids"]
+            ]
+            response_path = resolve_path(task["output"]["path"])
+            response_path.parent.mkdir(parents=True, exist_ok=True)
+            response_path.write_text(
+                json.dumps(response, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(
+                ContractError, "non-none fit requires a reason"
+            ):
+                validate_response(task_path)
+
+            error["reason"] = "This gloss omits one source facet."
+            response_path.write_text(
+                json.dumps(response, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+            )
+            validate_response(task_path)
 
     def test_response_hash_and_lexical_roster_are_bound(self):
         with tempfile.TemporaryDirectory() as temporary:

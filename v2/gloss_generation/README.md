@@ -54,14 +54,17 @@ Preparation deterministically extracts only:
   `what_is_not_ar`;
 - mechanical lexicalization class and authored Turkish scope note;
 - relevant Arabic lexical units, Turkish glosses, and facet bindings;
+- compact Furūq neighbor distinctions, with neighbor `source_phrase_ar` when
+  available from completed Turkish entries;
 - rare, disputed, technical, register, or construction constraints.
 
-Occurrence sections, dictionary apparatus, neighbors, renderer fields, and
-unrelated provenance never enter the model package.
+Occurrence sections, dictionary apparatus, full neighbor records, renderer
+fields, and unrelated provenance never enter the model package.
 
 Every concept, contextual, and lexical gloss records represented facets and a
 compact fit profile: `none`, `narrowing`, `broadening`, `displacement`, or
-`drifted_loanword`.
+`drifted_loanword`. Non-`none` profiles also carry a short user-facing
+`reason` that explains the semantic cost of the selected gloss.
 
 ## Prepare writer tasks
 

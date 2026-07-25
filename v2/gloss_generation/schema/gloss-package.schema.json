@@ -139,6 +139,35 @@
         "statement_tr": { "$ref": "#/$defs/shortText" }
       }
     },
+    "neighborDistinction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "neighbor_ref",
+        "focus_only_tr",
+        "neighbor_only_tr",
+        "distinction_tr",
+        "basis"
+      ],
+      "properties": {
+        "neighbor_ref": { "$ref": "#/$defs/branchRef" },
+        "relation_type": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 100
+        },
+        "shared_tr": { "$ref": "#/$defs/shortText" },
+        "focus_only_tr": { "$ref": "#/$defs/shortText" },
+        "neighbor_only_tr": { "$ref": "#/$defs/shortText" },
+        "distinction_tr": { "$ref": "#/$defs/shortText" },
+        "basis": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 100
+        },
+        "neighbor_source_phrase_ar": { "$ref": "#/$defs/shortText" }
+      }
+    },
     "branch": {
       "type": "object",
       "additionalProperties": false,
@@ -152,7 +181,8 @@
         "branch_kind",
         "scope_note_tr",
         "lexical_units",
-        "constraints"
+        "constraints",
+        "neighbor_distinctions"
       ],
       "properties": {
         "branch_ref": { "$ref": "#/$defs/branchRef" },
@@ -186,6 +216,10 @@
         "constraints": {
           "type": "array",
           "items": { "$ref": "#/$defs/constraint" }
+        },
+        "neighbor_distinctions": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/neighborDistinction" }
         }
       }
     }

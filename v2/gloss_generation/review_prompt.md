@@ -18,9 +18,15 @@ Check every branch:
   pretending to be full concept equivalents;
 - every supplied lexical unit has a natural gloss respecting construction
   scope, proper-name status, and bound facets;
+- neighbor distinctions are respected when a target-language gloss risks
+  collapsing the focus branch into a nearby Arabic branch; collision notes
+  should be concrete when the same English word can blur distinct branches;
 - represented and lost facet IDs describe the actual wording;
 - `none`, `narrowing`, `broadening`, `displacement`, and
   `drifted_loanword` are applied consistently;
+- each non-`none` error profile has a short user-facing `reason` that honestly
+  explains the loss, addition, displacement, drift, or collision without
+  requiring the reader to inspect facet IDs;
 - additions and collisions are concrete, target-language-specific risks;
 - Arabic evidence has not been copied as target prose. In an Arabic-derived
   target script, distinguish legitimate Urdu, Persian, Dari, Pashto, Sorani, or

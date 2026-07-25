@@ -44,6 +44,7 @@ LOCALES = BASE / "locales"
 LOCALE_PROMPTS = BASE / "locale_prompts"
 DEFAULT_WORK = BASE / "work"
 DEFAULT_RESULTS = BASE / "results"
+_BRANCH_SOURCE_PHRASES: dict[tuple[str, str], str] | None = None
 # Unicode blocks containing modern Arabic-script letters, additions, presentation
 # forms, and supplementary Arabic-script symbols. Python's stdlib `re` has no
 # Script=Arabic property, so keep this explicit table covered by tests.
@@ -358,6 +359,95 @@ def compact_constraints(branch: dict) -> list[dict]:
     return constraints
 
 
+def branch_source_phrase_index() -> dict[tuple[str, str], str]:
+    global _BRANCH_SOURCE_PHRASES
+    if _BRANCH_SOURCE_PHRASES is not None:
+        return _BRANCH_SOURCE_PHRASES
+
+    index: dict[tuple[str, str], str] = {}
+    entries_dir = PROJECT / "v2/entries/tr"
+    for entry_path in sorted(entries_dir.glob("root_*.json")):
+        try:
+            entry = load_json(entry_path)
+        except Exception:
+            continue
+        if not isinstance(entry, dict):
+            continue
+        for branch in entry.get("branches", []):
+            if not isinstance(branch, dict):
+                continue
+            root_id = branch.get("root_id")
+            branch_id = branch.get("branch_id")
+            source_phrase = branch.get("source_phrase_ar")
+            if (
+                isinstance(root_id, str)
+                and isinstance(branch_id, str)
+                and isinstance(source_phrase, str)
+                and source_phrase.strip()
+            ):
+                index[(root_id, branch_id)] = source_phrase
+    _BRANCH_SOURCE_PHRASES = index
+    return index
+
+
+def compact_neighbor_distinctions(entry: dict, branch: dict) -> list[dict]:
+    source_phrases = dict(branch_source_phrase_index())
+    for entry_branch in entry.get("branches", []):
+        if not isinstance(entry_branch, dict):
+            continue
+        root_id = entry_branch.get("root_id")
+        branch_id = entry_branch.get("branch_id")
+        source_phrase = entry_branch.get("source_phrase_ar")
+        if (
+            isinstance(root_id, str)
+            and isinstance(branch_id, str)
+            and isinstance(source_phrase, str)
+            and source_phrase.strip()
+        ):
+            source_phrases[(root_id, branch_id)] = source_phrase
+
+    distinctions = []
+    for row in branch.get("arabic_neighbor_distinctions", []):
+        neighbor_root = row.get("neighbor_root_id")
+        neighbor_branch = row.get("neighbor_branch_id")
+        if not isinstance(neighbor_root, str) or not isinstance(
+            neighbor_branch, str
+        ):
+            continue
+        distinction = {
+            "neighbor_ref": f"{neighbor_root}/{neighbor_branch}",
+            "focus_only_tr": row.get("focus_only"),
+            "neighbor_only_tr": row.get("neighbor_only"),
+            "distinction_tr": row.get("distinction"),
+            "basis": row.get("basis"),
+        }
+        optional = {
+            "relation_type": row.get("relation_type"),
+            "shared_tr": row.get("shared_zone") or row.get("shared"),
+            "neighbor_source_phrase_ar": source_phrases.get(
+                (neighbor_root, neighbor_branch)
+            ),
+        }
+        distinction.update(
+            {
+                key: value
+                for key, value in optional.items()
+                if isinstance(value, str) and value.strip()
+            }
+        )
+        if all(
+            isinstance(distinction.get(key), str) and distinction[key].strip()
+            for key in (
+                "focus_only_tr",
+                "neighbor_only_tr",
+                "distinction_tr",
+                "basis",
+            )
+        ):
+            distinctions.append(distinction)
+    return distinctions
+
+
 def build_package(entry: dict, entry_path: Path, target_language: str) -> dict:
     locale_path(target_language)
     if entry.get("language") != "tr":
@@ -414,6 +504,9 @@ def build_package(entry: dict, entry_path: Path, target_language: str) -> dict:
                 "scope_note_tr": scope.get("note"),
                 "lexical_units": lexical_units,
                 "constraints": compact_constraints(branch),
+                "neighbor_distinctions": compact_neighbor_distinctions(
+                    entry, branch
+                ),
             }
         )
 
@@ -754,8 +847,19 @@ def validate_error_profile(
     fit = error["fit"]
     adds = error["adds"]
     collision = error["collision"]
-    if fit == "none" and (losses or adds is not None):
-        raise ContractError(f"{label}: fit none requires no losses or additions")
+    reason = error["reason"]
+    if fit == "none" and (
+        losses
+        or adds is not None
+        or collision is not None
+        or reason is not None
+    ):
+        raise ContractError(
+            f"{label}: fit none requires no losses, additions, "
+            "collisions, or reason"
+        )
+    if fit != "none" and reason is None:
+        raise ContractError(f"{label}: non-none fit requires a reason")
     if fit == "narrowing" and not losses:
         raise ContractError(f"{label}: narrowing requires a lost facet")
     if fit == "broadening" and adds is None:
@@ -768,7 +872,7 @@ def validate_error_profile(
         raise ContractError(
             f"{label}: drifted_loanword requires a collision note"
         )
-    for field in ("adds", "collision"):
+    for field in ("adds", "collision", "reason"):
         value = error[field]
         if (
             not allow_arabic_script

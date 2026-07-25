@@ -33,7 +33,7 @@
     "errorProfile": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["fit", "loses_facet_ids", "adds", "collision"],
+      "required": ["fit", "loses_facet_ids", "adds", "collision", "reason"],
       "properties": {
         "fit": {
           "enum": [
@@ -55,6 +55,11 @@
           "maxLength": 300
         },
         "collision": {
+          "type": ["string", "null"],
+          "minLength": 2,
+          "maxLength": 300
+        },
+        "reason": {
           "type": ["string", "null"],
           "minLength": 2,
           "maxLength": 300

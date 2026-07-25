@@ -8,7 +8,10 @@ another worker. Workers must not delegate.
 
 This workflow generates gloss sets, not encyclopedia entries. The Turkish entry
 is the semantic pivot, while the exact Arabic fields in the compact package are
-boundary safeguards.
+boundary safeguards. Compact Furūq neighbor distinctions in the package are
+also boundary safeguards: they help workers avoid collapsing nearby Arabic
+branches into one target-language gloss without an explicit collision or reason
+note.
 
 ## Required run configuration
 
@@ -39,6 +42,12 @@ The target-language writer alone authors `glosses.json`. The independent locale
 reviewer judges that response and never rewrites it. The same writer assignment
 may perform one bounded repair. A repaired response always receives a fresh
 independent reviewer.
+
+Every non-`none` gloss error profile must include a short user-facing `reason`.
+Reviewers should pass defensible imperfect glosses when the facet accounting,
+error profile, collision notes, and reason honestly disclose the semantic cost;
+they should request repair only for misleading wording, unnatural target prose,
+or inaccurate fit accounting.
 
 Use an output-only filesystem sandbox for writers and reviewers when the
 runtime provides one. Controller-owned task seals catch accidental or ordinary

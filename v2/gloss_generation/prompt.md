@@ -20,6 +20,12 @@ Read `package.json` as follows:
   word that can replace every occurrence. Return `null` when no responsible
   branch-wide label exists, and supply contextual glosses instead.
 - Construction-bound lexical units must remain construction-bound.
+- Use `neighbor_distinctions` as Furūq boundary guidance. They identify nearby
+  Arabic branches that may collapse into the same target-language word. Use
+  them to avoid misleading generic glosses and to write concrete `collision`
+  and `reason` notes when a target gloss can be confused with a neighboring
+  branch. Treat optional `neighbor_source_phrase_ar` as a neighbor-side Arabic
+  image safeguard, not as part of the focus branch.
 - Every concept, contextual, and lexical gloss must carry its own compact error
   assessment.
 
@@ -33,6 +39,12 @@ Error assessment:
   facet, added meaning, or collision that demonstrates the shift.
 - `drifted_loanword`: use for a familiar loanword whose target-language meaning
   has drifted; `collision` is required.
+
+Set `reason` to `null` only when `fit` is `none`. For every other fit, write a
+short user-facing reason explaining the semantic cost of the selected gloss in
+plain target-language prose. Mention the omitted facet, added meaning, shifted
+center, drifted loanword, or collision risk directly enough for a translation
+agent or reader to understand the warning without inspecting facet statements.
 
 Use only facet IDs and lexical-unit IDs present in the package. Keep `adds` and
 `collision` null unless they identify a real target-language risk. Do not add

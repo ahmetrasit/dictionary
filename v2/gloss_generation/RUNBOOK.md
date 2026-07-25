@@ -56,7 +56,7 @@ The workflow has five layers:
 
 | Layer | Owner | Purpose |
 |---|---|---|
-| Compact package extraction | `workflow.py` | Projects only translation-relevant Turkish and Arabic fields; excludes occurrences and apparatus |
+| Compact package extraction | `workflow.py` | Projects only translation-relevant Turkish and Arabic fields plus compact Furūq neighbor distinctions; excludes occurrences and apparatus |
 | Locale policy | `locales/*.json` and `locale_prompts/*.md` | Defines target standard, script, idiom, morphology, loanword risks, proper names, and QA checks |
 | Gloss writing | one target-language writer | Authors concept, contextual, and lexical gloss candidates with error profiles |
 | Independent review and one repair | fresh reviewer, then retained writer if needed | Produces `pass`, bounded `repair`, or `editorial_review`; prevents self-approval |
