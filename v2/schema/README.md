@@ -9,7 +9,9 @@ prompt. A top-level controller starts at
 [`../orchestration/README.md`](../orchestration/README.md) and follows the
 normative orchestration spec. Root writers and reviewers do not bootstrap from
 this file or traverse the repository documentation; they receive and follow
-only their staged, hash-bound packages.
+their prepared evidence packages and the current role prompt. Older copied
+reviewer prompts that prohibit Agent B edits belong to the former workflow and
+are superseded by `../prompts/root-reviewer.md`.
 
 The root packet owns Arabic branch identity, branch boundaries, dictionary
 passages, lexical units, Quran occurrences, grammar, attachments, and QNet
@@ -238,7 +240,8 @@ remain explicit.
 coordinator:
 
 - `root-writer.schema.json` for the reduced one-call production response;
-- `root-reviewer.schema.json` for evidence-grounded semantic issues or pass;
+- `root-reviewer.schema.json` for Agent B's evidence-grounded findings: `pass`,
+  surgically applied `repair`, or unresolved `editorial_review`;
 - `branch-writer.schema.json` for one target-language branch-shaped fragment;
 - `root-profile.schema.json` for the final short root profile.
 

@@ -60,12 +60,11 @@ deterministic, while target-language writing and independent locale review are
 the only delegated roles.
 
 For encyclopedia entry creation, there is no orchestration CLI and intentionally
-no `--run-agents` option. The controller runs `create_entry.py` and every other
-deterministic command itself, and uses native delegation only for the staged
-root writer and independent semantic reviewer. Do not create script-runner
-agents, per-root controllers, or nested workers. Do not launch `root-writer.md`
-or `root-reviewer.md` directly; the staging scripts create their hash-bound
-packages and exact output paths.
+no `--run-agents` option. Prepared bundles under `v2/work/entry_creation/` are
+reused as-is. The controller uses native delegation only for Agent A, when
+writer output is missing, and Agent B, which reviews the output and applies only
+its own recorded surgical corrections. Do not create script-runner agents,
+per-root controllers, or nested workers.
 
 ## Current corpus checkpoint
 
@@ -88,15 +87,12 @@ Current production campaigns queue Quran-corpus roots from
 is sorted by root envelope, packet gaps are skipped, and combined envelopes such
 as `root_000099--root_000100` are processed as one root workflow. Campaign
 orchestration uses only the worker capacity allowed by both the explicit run
-configuration and the runtime. The top-level controller runs every deterministic
-command itself and delegates only root authorship and independent semantic
-review. Workers have `SUBAGENTS: forbidden`; they do not launch agents or
-operate root workflows. The writer session identity is retained through review
-and finalization for bounded repair or surface-form completion. After process
-resumption without that handle, one tightly staged continuation may repair the
-protected response or fill exact generated queues; it may not create a new full
-candidate. Blocked roots park without stopping the rest of the queue. Packet
-creation is coordinator-side deterministic preparation, not a worker session.
+configuration and the runtime. Workers have `SUBAGENTS: forbidden`; they do not
+launch agents or operate root workflows. Agent A writes only when the writer
+output is missing. Agent B reviews the output, records findings first, then
+applies only bounded surgical corrections. Agent A is not retained for repair,
+and no second review follows Agent B's correction. Packet creation is
+coordinator-side deterministic preparation, not a worker session.
 
 ## Transitional neighbor-network checkpoint
 
@@ -155,8 +151,8 @@ The normative field rules and ownership boundary are documented in
 `schema/README.md`. The Turkish `ṣirāṭ` JSON file is a complete draft fixture,
 not a published lexical decision.
 
-The minimal agent workflow, branch evidence package, fragment ownership map,
-retry rules, and acceptance criteria are defined in
+The minimal agent workflow, branch evidence package, role boundaries, and
+completion criteria are defined in
 `orchestration/entry-creation.spec.md`. The production contract uses one
 initial root-level writer invocation per root envelope and target language. That
 invocation sees the minimal evidence for all accepted branches and returns
@@ -164,49 +160,30 @@ branch-shaped fragments plus the short root profile. Semantic workers never
 receive Quran ayahs, occurrence data, QAC morphology, attachment records, full
 branch packages, the master entry schema, or the orchestration spec.
 
-Older work directories may still contain branch-per-agent manifests. They are
-ignored: prepare mode writes one current `tasks/root_writer.json`, one
-deduplicated `inputs/root_evidence.json`, and coordinator-only review state
-before any model call. The evidence contains compact source claims and lexical
-unit IDs, not raw passages. A coordinator policy classifies every lexical unit
-as ordinary or proper-name before the writer runs; the policy may be reviewed or
-the generated all-ordinary fallback. Initial writer prose uses placeholders for
-protected proper names. If assembly discovers missing used transliterations or
-protected-name forms, it creates
-`inputs/transliteration_review.json` or `inputs/name_review.json`; the same
-writer completes those generated queues without invalidating or rewriting the
-accepted entry response.
+Older work directories may still contain branch-per-agent manifests and
+state-oriented task metadata. Those are not completion authorities for the
+current workflow. Reuse the prepared writer and review bundles; do not reprepare
+them merely because output is pending. The evidence contains compact source
+claims and lexical unit IDs, not raw passages.
 
-The top-level controller begins by preparing deterministic evidence and
-resumable task manifests directly, without delegating and without making a model
-call:
-
-```sh
-python3 v2/scripts/create_entry.py root_000858 --language tr
-```
-
-The controller follows `prompts/entry-orchestrator.md`, runs staging and every
-other deterministic command directly, delegates one root writer and one
-independent semantic reviewer when their artifacts are needed, and publishes
-only after mechanical gates pass. There is no separate handoff operator or
-per-root orchestration worker. The reviewer reports issues but never rewrites
-prose; uncertain issues pause for editorial judgment. There is intentionally no
-`--run-agents` script option:
+The controller follows `prompts/entry-orchestrator.md`, delegates Agent A only
+for a missing writer output, and delegates Agent B for review. Agent B writes
+its findings before editing and may change only the fields named in bounded,
+high-confidence findings. Uncertain or structural issues pause for editorial
+judgment without an edit. There is intentionally no `--run-agents` script
+option:
 
 ```text
 Run the v2 entry orchestrator for root_000858/tr.
 ```
 
-The orchestrator resumes hash-matching writer and review responses and reruns
-stale output. Each worker writes to its real repository output, runs the exact
-read-only validator carried by its staged task, and corrects that same file in
-place until it passes. A failed response is not discarded or replaced by a new
-candidate. Campaign mode permits one semantic repair with the same writer and
-one rebound review; if the rebound review still fails, the root is parked
-and the queue continues. Bounded repairs cannot change unaffected branches and
-invalidate the earlier semantic review. Outputs are written to
-`v2/entries/<language>/`, while task and fragment state stays under
-`v2/work/entry_creation/`.
+Agent A writes `output/<root>_entry.json`. Agent B reviews its immutable
+pre-fix snapshot, writes `review/output/root_review.json`, and either leaves the
+writer output unchanged for `pass` or applies only its recorded surgical
+corrections for `repair`. Agent A is never called for repair, and the corrected
+output receives no second review. Structural/schema validation follows each
+authored output. Assembly into `v2/entries/<language>/` is separate downstream
+work.
 
 Export all validated entries as deterministic, one-entry-per-line JSONL:
 
@@ -245,16 +222,15 @@ CLI language choices before its language-specific agent pass can run.
 Each root writer receives the regular
 `v2/work/entry_creation/<root>/<language>/input/` package and is instructed not
 to inspect any other path. It writes only
-`v2/work/entry_creation/<root>/<language>/output/<root>_entry.json`. After raw
-response validation, deterministic acceptance enriches that same file with
-Arabic fields, compact source codes, dictionary-keyed prose notes, and
-root-level occurrence/attachment evidence. Exact references remain internal. The
-semantic reviewer receives only `review/input/` and writes only
-`review/output/root_review.json`. Both semantic workers validate and, when
-necessary, repair those files in place before returning. The orchestration
-controller owns timeouts, process monitoring, and every deterministic command.
-Operational failures park the affected root, while invalid worker JSON remains
-preserved for correction by its owning worker.
+`v2/work/entry_creation/<root>/<language>/output/<root>_entry.json`. Agent B
+receives the prepared `review/input/` evidence and immutable writer snapshot,
+writes `review/output/root_review.json`, and then applies only its recorded
+surgical corrections to the live writer output. Copied report-only reviewer
+instructions in older prepared bundles are obsolete; the current
+`prompts/root-reviewer.md` governs Agent B without requiring the evidence bundle
+to be prepared again. Both agent artifacts receive structural/schema
+validation. The orchestration controller owns timeouts, process monitoring, and
+every deterministic command.
 The existing plural `inputs/` directory is coordinator-only state; it is not
 part of the writer package.
 

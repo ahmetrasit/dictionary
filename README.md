@@ -71,41 +71,22 @@ existing campaign configuration may supply the worker settings instead. The
 controller must not invent a model, reasoning profile, service tier, or
 concurrency limit.
 
-The controller runs preparation and every other deterministic command itself.
-Its first per-root preparation command, run from the repository root, is:
-
-```sh
-python3 v2/scripts/create_entry.py root_000858 --language tr
-```
-
-That command prepares resumable state; it does not launch agents or complete the
-orchestration. Only the controller may use native delegation, and only for the
-staged root writer and independent semantic reviewer.
+Prepared input bundles under `v2/work/entry_creation/` are reused. Missing
+writer or review output is not a reason to prepare them again. Only the
+controller may use native delegation: Agent A writes a missing output, then
+Agent B reviews it and applies only the bounded corrections recorded in its own
+findings. Agent A is never used for repair, and there is no second review.
 
 ## Campaign completion
 
-A writer output or writer fragment is intermediate work, not a completed entry.
-A root is successfully complete only when its current writer fragment validates,
-an exact bound semantic review passes, the JSON entry validates, and its Markdown
-is reproducible.
+For the current agent workflow, a root is complete when its writer output is
+schema-valid, Agent B's review is schema-valid, and Agent B has applied any
+recorded surgical correction before returning. A `pass` requires no edit; a
+`repair` means Agent B recorded and applied bounded corrections; an
+`editorial_review` remains unresolved.
 
-Reconcile the Turkish Quranic campaign directly from the canonical artifacts:
-
-```sh
-python3 v2/scripts/audit_entry_campaign.py --scope quranic --language tr
-```
-
-Use `--json` for the complete machine-readable result. The command is read-only
-and exits nonzero unless every selected envelope is `published_valid`. States
-such as `review_missing`, `repair_required`, `publication_stale`, and `parked`
-must never be reported as successful completion.
-
-Never create a canonical fragment by copying a worker response. Validate and
-accept it through the owning command:
-
-```sh
-python3 v2/scripts/validate_agent_output.py \
-  v2/work/entry_creation/<root>/tr/input/task.json
-python3 v2/scripts/accept_root_writer.py \
-  v2/work/entry_creation/<root>/tr/tasks/root_writer.json
-```
+Completion does not depend on workflow states, content hashes, acceptance
+copies, publication, or rendered Markdown. Report missing writer outputs and
+writer outputs awaiting Agent B directly from the two output locations
+documented in
+[`v2/orchestration/entry-creation.spec.md`](v2/orchestration/entry-creation.spec.md).
