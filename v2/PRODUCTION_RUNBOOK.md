@@ -44,6 +44,10 @@ Sort by numeric root envelope. Skip missing numeric IDs such as packet gaps, and
 treat combined packet envelopes such as `root_000099--root_000100` as one root
 workflow. Each root workflow includes every accepted branch in that packet.
 
+For Quranic scope, retain exactly packets with at least one branch whose
+`origin_corpus` is `quranic`. Do not approximate the Quranic queue with the first
+N packets or a numeric boundary.
+
 Interpret "first N roots" as the first N sorted packet envelopes; a combined
 envelope counts as one workflow. For "through/until root N", include envelopes
 whose first numeric component is at most N and keep a combined envelope intact
@@ -192,6 +196,17 @@ pass, finalization, master validation, and Markdown `--check` all succeed. A
 root parks when a prepare blocker, operational failure, semantic ambiguity, or
 exhausted bounded repair prevents publication. Parked roots do not block the
 campaign queue.
+
+At startup, after interruption, at batch boundaries, and before a completion
+report, audit the exact campaign scope:
+
+```sh
+python3 v2/scripts/audit_entry_campaign.py --scope quranic --language tr
+```
+
+The command is read-only and exits zero only when every selected root is
+`published_valid`. Do not report writer acceptance, a parked terminal root, or
+an existing entry filename as successful completion.
 
 ## Repair Routing
 

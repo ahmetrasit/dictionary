@@ -14,12 +14,13 @@ if str(PROJECT) not in sys.path:
     sys.path.insert(0, str(PROJECT))
 
 from v2.scripts.create_entry import atomic_write, json_content
+from v2.scripts.audit_entry_campaign import audit_root
 
 
 MANIFEST_FORMAT = "dictionary-v2-entry-manifest-v1"
 
 
-def load_candidate(path: Path) -> dict | None:
+def load_candidate(path: Path, project: Path = PROJECT) -> dict | None:
     try:
         value = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError):
@@ -46,21 +47,38 @@ def load_candidate(path: Path) -> dict | None:
         "root_envelope_id": envelope,
         "language": language,
         "kind": kind,
-        "path": path.resolve().relative_to(PROJECT).as_posix(),
+        "path": path.resolve().relative_to(project.resolve()).as_posix(),
         "priority": priority,
     }
 
 
-def build_manifest() -> dict:
-    candidates = [
-        *sorted((PROJECT / "v2/entries").glob("*/*.json")),
-        *sorted((PROJECT / "v2/work/entry_creation").glob("*/**/output/root_*_entry.json")),
-    ]
+def build_manifest(
+    *,
+    project: Path = PROJECT,
+    include_drafts: bool = False,
+) -> dict:
+    candidates = sorted((project / "v2/entries").glob("*/*.json"))
+    if include_drafts:
+        candidates.extend(
+            sorted(
+                (project / "v2/work/entry_creation").glob(
+                    "*/**/output/root_*_entry.json"
+                )
+            )
+        )
     selected: dict[tuple[str, str], dict] = {}
     for path in candidates:
-        item = load_candidate(path)
+        item = load_candidate(path, project)
         if item is None:
             continue
+        if not include_drafts:
+            audit = audit_root(
+                project,
+                item["root_envelope_id"],
+                item["language"],
+            )
+            if audit["state"] != "published_valid":
+                continue
         key = (item["root_envelope_id"], item["language"])
         previous = selected.get(key)
         if previous is None or item["priority"] < previous["priority"]:
@@ -88,13 +106,18 @@ def parse_args() -> argparse.Namespace:
         default=PROJECT / "v2/entries/index.json",
     )
     parser.add_argument("--check", action="store_true")
+    parser.add_argument(
+        "--include-drafts",
+        action="store_true",
+        help="Include shape-valid work outputs and entries without completion checks",
+    )
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
     output = args.output.resolve()
-    content = json_content(build_manifest())
+    content = json_content(build_manifest(include_drafts=args.include_drafts))
     if args.check:
         if not output.is_file() or output.read_text(encoding="utf-8") != content:
             raise SystemExit(f"Stale entry manifest: {output}")

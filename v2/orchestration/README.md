@@ -64,6 +64,17 @@ For an interrupted run, use the same scope and configuration and say `resume`.
 The controller must prove reuse with the check scripts and task hashes; it must
 not infer completion from an existing filename or a worker's status message.
 
+Before resuming or reporting completion, derive current status directly:
+
+```sh
+python3 v2/scripts/audit_entry_campaign.py --scope quranic --language tr
+```
+
+Use the exact requested scope and language. The command exits zero only when
+every selected root is `published_valid`. Writer acceptance is intermediate;
+`parked`, `review_missing`, `repair_required`, and `publication_stale` are not
+successful completion.
+
 There is no orchestration CLI and intentionally no `--run-agents` option. The
 controller begins each eligible root directly, from the repository root:
 

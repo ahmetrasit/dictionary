@@ -2,6 +2,31 @@
 
 Status: normative orchestration contract for entry schema version 4.
 
+## Completion Invariant
+
+A writer response, validated writer output, or accepted writer fragment is
+intermediate work and is never a completed root workflow. Successful completion
+means all of the following are current at the same time:
+
+```text
+valid task-bound writer fragment
++ exact bound semantic-review pass
++ schema/evidence-valid published JSON
++ reproducible published Markdown
+= published_valid
+```
+
+`published_valid` is the only successful campaign result. `parked` is terminal
+for scheduling but unsuccessful. A root with a missing or invalid review, a
+`repair` or `editorial_review` verdict, stale publication bindings, invalid JSON,
+or stale Markdown is not complete even when writer, review, JSON, or Markdown
+files exist. The read-only completion authority is:
+
+```text
+python3 v2/scripts/audit_entry_campaign.py --scope <quranic|all> \
+  --language <language>
+```
+
 This workflow creates one encyclopedia entry for one root envelope and one
 target language. One initial writing invocation receives the minimal evidence
 for all accepted branches in that root and returns branch-shaped fragments plus
@@ -46,14 +71,18 @@ read-only `task.json.validation.command` for its own authored output. The
 controller reruns that command before acceptance.
 
 Production campaigns run this same root-level workflow repeatedly. The campaign
-queue is built from canonical Quran-corpus root packets under
-`data/output/root_packets/`, sorted by numeric root envelope. Missing numeric
-IDs are skipped, and combined envelopes such as `root_000099--root_000100` are
-treated as one queue item. Each semantic worker owns exactly one root envelope,
-one target language, and one declared artifact or explicitly generated
-surface-form queue set per turn. "First N roots" counts N sorted packet
-envelopes; a combined envelope counts once. "Through root N" includes envelopes
-whose first numeric component is at most N and never splits a combined envelope.
+queue is built from canonical packets under `data/output/root_packets/`, sorted
+by numeric root envelope. `quranic` scope includes exactly packets with at least
+one branch whose `origin_corpus` is `quranic`; `all` scope includes every packet.
+Do not approximate Quranic scope with a numeric range or "first N" packet
+selection. Missing numeric IDs are skipped, and combined envelopes such as
+`root_000099--root_000100` are treated as one queue item. Each semantic worker
+owns exactly one root envelope, one target language, and one declared artifact
+or explicitly generated surface-form queue set per turn. "First N roots" counts
+N sorted packet envelopes only when the requested scope itself is explicitly a
+first-N selection; a combined envelope counts once. "Through root N" includes
+envelopes whose first numeric component is at most N and never splits a combined
+envelope.
 The controller may run workers for different roots concurrently up to runtime
 capacity, further limited by any explicit lower campaign cap. It must not assume
 a fixed slot count, split one root across competing writers, or run a same-root
@@ -472,6 +501,13 @@ but does not imply `pass`; the controller must read and route the verdict.
 Likewise, an existing filename or JSON parse success never proves task-hash,
 roster, review-binding, or publication validity.
 
+The controller's in-memory scheduling state is not completion evidence. On
+startup, after interruption, at batch boundaries, and before a final campaign
+report, it runs `audit_entry_campaign.py` over the exact requested scope. The
+auditor derives durable status from current tasks, fragments, reviews, entries,
+and validators; no separately maintained status ledger overrides those
+artifacts.
+
 The controller runs every transition command itself. It may batch independent
 controller commands and run semantic workers for different roots concurrently,
 but it must preserve same-root order. It never creates a worker whose job is to
@@ -628,6 +664,9 @@ runs JSONL export and required projections after all eligible roots are
 terminal. That export is complete only when every record validates, one common
 schema is preserved, and every projection is reproducible and hash-bound to its
 master entry. Projection or export never requires another semantic worker.
+Before reporting campaign success, the controller runs the read-only campaign
+auditor over the exact scope and requires exit zero. A nonzero audit is an
+incomplete campaign even if every writer worker returned successfully.
 
 ## Script Boundary
 
@@ -650,6 +689,7 @@ render_occurrences.py      QAC, ayah, morphology, and attachment structures
 render_entry.py            reader-facing Markdown
 project_entry.py           bounded, master-hash-bound consumer projections
 export_jsonl.py            validated master or projection records as JSONL
+audit_entry_campaign.py    read-only derived root/campaign completion status
 ```
 
 The controller runs every script in this table directly and checks its exit

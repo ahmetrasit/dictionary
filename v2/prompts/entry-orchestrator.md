@@ -97,6 +97,20 @@ transition by itself. Transition only after the required command succeeds and
 the required artifact exists. Capture the command, exit code, and exact
 stdout/stderr for every failed gate.
 
+`parked` is terminal for scheduling but is not successful completion. A writer
+fragment is also not completion. On startup, after interruption, at batch
+boundaries, and before the final report, run the read-only derived audit over
+the exact requested scope:
+
+```text
+python3 v2/scripts/audit_entry_campaign.py --scope <quranic|all> \
+  --language <language>
+```
+
+Report campaign success only on exit zero. Use its per-root classification to
+resume the next required transition; do not replace it with filename counts or
+in-memory bookkeeping.
+
 ### 1. Prepare directly
 
 Run from the repository root:
@@ -368,6 +382,10 @@ Build the queue from actual `data/output/root_packets/root_*.json` files. Sort b
 the first numeric root ID in each envelope, skip absent IDs, and treat combined
 envelopes such as `root_000099--root_000100` as one item. Never manufacture a
 numeric ID or spawn a worker to generate a packet.
+
+For `quranic` scope, include exactly packets with at least one branch whose
+`origin_corpus` is `quranic`. Do not substitute the first N packets or a numeric
+cutoff for this filter.
 
 Interpret ranges against that canonical queue:
 
