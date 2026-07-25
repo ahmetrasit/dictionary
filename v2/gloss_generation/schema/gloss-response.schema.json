@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dictionary.local/v2/gloss-generation/gloss-response.schema.json",
+  "title": "Compact target-language gloss writer response",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["inputs_sha256", "branches"],
+  "properties": {
+    "inputs_sha256": { "$ref": "#/$defs/hash" },
+    "branches": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/branch" }
+    }
+  },
+  "$defs": {
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "branchRef": {
+      "type": "string",
+      "pattern": "^root_[0-9]{6}/B[0-9]{3}$"
+    },
+    "facetId": {
+      "type": "string",
+      "pattern": "^F[0-9]{3}$"
+    },
+    "lexicalUnitId": {
+      "type": "string",
+      "pattern": "^lu_[0-9]+$"
+    },
+    "errorProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fit", "loses_facet_ids", "adds", "collision"],
+      "properties": {
+        "fit": {
+          "enum": [
+            "none",
+            "narrowing",
+            "broadening",
+            "displacement",
+            "drifted_loanword"
+          ]
+        },
+        "loses_facet_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/facetId" }
+        },
+        "adds": {
+          "type": ["string", "null"],
+          "minLength": 2,
+          "maxLength": 300
+        },
+        "collision": {
+          "type": ["string", "null"],
+          "minLength": 2,
+          "maxLength": 300
+        }
+      }
+    },
+    "chosenGloss": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "facet_ids", "error"],
+      "properties": {
+        "text": { "type": "string", "minLength": 1, "maxLength": 300 },
+        "facet_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/facetId" }
+        },
+        "error": { "$ref": "#/$defs/errorProfile" }
+      }
+    },
+    "contextualGloss": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "facet_ids", "lexical_unit_ids", "error"],
+      "properties": {
+        "text": { "type": "string", "minLength": 1, "maxLength": 300 },
+        "facet_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/facetId" }
+        },
+        "lexical_unit_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/lexicalUnitId" }
+        },
+        "error": { "$ref": "#/$defs/errorProfile" }
+      }
+    },
+    "branch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "branch_ref",
+        "concept_gloss",
+        "contextual_glosses",
+        "lexical_glosses"
+      ],
+      "properties": {
+        "branch_ref": { "$ref": "#/$defs/branchRef" },
+        "concept_gloss": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "required": ["text", "facet_ids", "error"],
+          "properties": {
+            "text": { "type": "string", "minLength": 1, "maxLength": 300 },
+            "facet_ids": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": { "$ref": "#/$defs/facetId" }
+            },
+            "error": { "$ref": "#/$defs/errorProfile" }
+          }
+        },
+        "contextual_glosses": {
+          "type": "array",
+          "maxItems": 6,
+          "items": { "$ref": "#/$defs/contextualGloss" }
+        },
+        "lexical_glosses": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/chosenGloss" }
+        }
+      }
+    }
+  }
+}

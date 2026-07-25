@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dictionary.local/v2/gloss-generation/gloss-review-response.schema.json",
+  "title": "Independent target-language gloss review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["inputs_sha256", "verdict", "summary", "issues"],
+  "properties": {
+    "inputs_sha256": { "$ref": "#/$defs/hash" },
+    "verdict": {
+      "enum": ["pass", "repair", "editorial_review"]
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 800
+    },
+    "issues": {
+      "type": "array",
+      "maxItems": 100,
+      "items": { "$ref": "#/$defs/issue" }
+    }
+  },
+  "$defs": {
+    "hash": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "branchRef": {
+      "type": "string",
+      "pattern": "^root_[0-9]{6}/B[0-9]{3}$"
+    },
+    "facetId": {
+      "type": "string",
+      "pattern": "^F[0-9]{3}$"
+    },
+    "lexicalUnitId": {
+      "type": "string",
+      "pattern": "^lu_[0-9]+$"
+    },
+    "issue": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "branch_ref",
+        "field",
+        "lexical_unit_id",
+        "facet_ids",
+        "kind",
+        "severity",
+        "confidence",
+        "problem",
+        "smallest_correction"
+      ],
+      "properties": {
+        "branch_ref": { "$ref": "#/$defs/branchRef" },
+        "field": {
+          "enum": [
+            "concept_gloss",
+            "contextual_glosses",
+            "lexical_glosses"
+          ]
+        },
+        "lexical_unit_id": {
+          "oneOf": [
+            { "$ref": "#/$defs/lexicalUnitId" },
+            { "type": "null" }
+          ]
+        },
+        "facet_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/facetId" }
+        },
+        "kind": {
+          "enum": [
+            "semantic_fit",
+            "facet_accounting",
+            "source_boundary",
+            "naturalness",
+            "locale_convention",
+            "error_profile"
+          ]
+        },
+        "severity": { "enum": ["minor", "major"] },
+        "confidence": { "enum": ["low", "medium", "high"] },
+        "problem": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 800
+        },
+        "smallest_correction": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 800
+        }
+      }
+    }
+  }
+}
