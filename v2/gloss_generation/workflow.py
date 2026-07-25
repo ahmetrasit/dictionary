@@ -742,8 +742,31 @@ def verify_task(task_path: Path) -> dict:
         "instructions",
         "accepted_review_response",
     }
-    expected_manifest_keys = initial_keys if mode == "initial" else repair_keys
-    if mode not in {"initial", "repair"} or set(manifest) != expected_manifest_keys:
+    editorial_repair_keys = {
+        "contract",
+        "canonical",
+        "source_writer_task",
+        "source_review_task",
+        "previous_response",
+        "review_response",
+        "package",
+        "locale",
+        "locale_prompt",
+        "prompt",
+        "package_schema",
+        "response_schema",
+        "instructions",
+    }
+    if mode == "initial":
+        expected_manifest_keys = initial_keys
+    elif mode == "repair":
+        expected_manifest_keys = repair_keys
+    else:
+        expected_manifest_keys = editorial_repair_keys
+    if (
+        mode not in {"initial", "repair", "editorial_repair"}
+        or set(manifest) != expected_manifest_keys
+    ):
         raise ContractError("Gloss task manifest shape is invalid")
     output = task.get("output")
     validation = task.get("validation")
@@ -759,7 +782,7 @@ def verify_task(task_path: Path) -> dict:
         "output_path": output.get("path"),
         "validation_command": validation.get("command"),
     }
-    if task.get("mode") == "repair":
+    if task.get("mode") in {"repair", "editorial_repair"}:
         expected_contract["repair_scope"] = task.get("repair_scope")
     if manifest.get("contract") != expected_contract:
         raise ContractError("Gloss task contract is stale or has been modified")
@@ -781,7 +804,7 @@ def verify_task(task_path: Path) -> dict:
         "response_schema": input_dir / "response.schema.json",
         "instructions": input_dir / "instructions.md",
     }
-    if mode == "repair":
+    if mode in {"repair", "editorial_repair"}:
         expected_staged.update(
             {
                 "previous_response": input_dir / "previous_response.json",
@@ -800,7 +823,7 @@ def verify_task(task_path: Path) -> dict:
         or package.get("target_language") != task.get("target_language")
         or package.get("source_language") != "tr"
         or locale.get("code") != task.get("target_language")
-        or mode not in {"initial", "repair"}
+        or mode not in {"initial", "repair", "editorial_repair"}
     ):
         raise ContractError(
             "Gloss task identity does not match its package or locale"
@@ -824,6 +847,10 @@ def verify_task(task_path: Path) -> dict:
             != base_path
         ):
             raise ContractError("Repair task lineage is invalid")
+    if mode == "editorial_repair" and task_path.parent.parent.name != "editorial":
+        raise ContractError(
+            "Editorial repair tasks must use an editorial override folder"
+        )
     return task
 
 
@@ -1025,7 +1052,7 @@ def validate_response(
                 require_complete_facet_disposition=True,
                 allow_arabic_script=allow_arabic_script,
             )
-    if task["mode"] == "repair":
+    if task["mode"] in {"repair", "editorial_repair"}:
         validate_repair_scope(task, value)
     return task, value, package
 
@@ -1268,7 +1295,11 @@ def verify_review_task(task_path: Path) -> dict:
         package.get("root_envelope_id") != task.get("root_envelope_id")
         or package.get("target_language") != task.get("target_language")
         or locale.get("code") != task.get("target_language")
-        or task.get("writer_mode") not in {"initial", "repair"}
+        or task.get("writer_mode") not in {
+            "initial",
+            "repair",
+            "editorial_repair",
+        }
     ):
         raise ContractError(
             "Gloss review identity does not match its package or locale"
@@ -1417,12 +1448,18 @@ def repair_instructions(
     )
 
 
-def stage_repair(review_task_path: Path) -> Path:
+def stage_repair_from_review(
+    review_task_path: Path,
+    *,
+    repair_folder: str,
+    required_writer_mode: str,
+    allowed_verdicts: set[str],
+) -> Path:
     review_task_path = review_task_path.resolve()
     review_task, review, _review_package = validate_review_response(
         review_task_path
     )
-    if review["verdict"] != "repair":
+    if review["verdict"] not in allowed_verdicts:
         raise ContractError(
             f"Cannot prepare repair for review verdict {review['verdict']!r}"
         )
@@ -1430,7 +1467,7 @@ def stage_repair(review_task_path: Path) -> Path:
         review_task["inputs"]["writer_task"]["path"]
     )
     writer_task, writer_response, _package = validate_response(writer_task_path)
-    if writer_task["mode"] != "initial":
+    if writer_task["mode"] != required_writer_mode:
         raise ContractError("Gloss workflow permits only one semantic repair")
     reviewed_copy = resolve_path(
         review_task["inputs"]["writer_response"]["path"]
@@ -1441,7 +1478,7 @@ def stage_repair(review_task_path: Path) -> Path:
 
     writer_manifest = writer_task["inputs"]
     locale = load_json(resolve_path(writer_manifest["locale"]["path"]))
-    repair_root = writer_task_path.parent.parent / "repair"
+    repair_root = writer_task_path.parent.parent / repair_folder
     input_dir = repair_root / "input"
     output_path = repair_root / "output/glosses.json"
     task_path = input_dir / "task.json"
@@ -1544,6 +1581,218 @@ def stage_repair(review_task_path: Path) -> Path:
         "source_language": "tr",
         "target_language": writer_task["target_language"],
         "mode": "repair",
+        "source_entry_status": writer_task["source_entry_status"],
+        "repair_scope": repair_scope,
+        "inputs": manifest,
+        "inputs_sha256": canonical_sha256(manifest),
+        "output": {"path": path_ref(output_path)},
+        "validation": {"command": validation_command},
+    }
+    write_controller_task(task_path, task, "writer")
+    return task_path
+
+
+def stage_repair(review_task_path: Path) -> Path:
+    return stage_repair_from_review(
+        review_task_path,
+        repair_folder="repair",
+        required_writer_mode="initial",
+        allowed_verdicts={"repair"},
+    )
+
+
+def stage_editorial_repair(review_task_path: Path) -> Path:
+    review_task_path = review_task_path.resolve()
+    review_task = load_json(review_task_path)
+    if (
+        review_task.get("format") != REVIEW_TASK_FORMAT
+        or review_task.get("generated_by") != GENERATOR
+    ):
+        raise ContractError(f"Unrecognized gloss review task: {review_task_path}")
+    review_manifest = review_task.get("inputs")
+    if not isinstance(review_manifest, dict):
+        raise ContractError("Gloss review task lacks its input manifest")
+    for key in (
+        "writer_task",
+        "writer_response",
+        "package",
+        "locale",
+        "locale_prompt",
+    ):
+        if key not in review_manifest:
+            raise ContractError("Gloss review task manifest shape is invalid")
+
+    review_response_path = resolve_path(review_task["output"]["path"])
+    review = load_json(review_response_path)
+    validate_schema(
+        review,
+        REVIEW_RESPONSE_SCHEMA,
+        f"gloss review response in {review_response_path}",
+    )
+    if review["inputs_sha256"] != review_task.get("inputs_sha256"):
+        raise ContractError("Gloss review response is bound to stale task inputs")
+    if review["verdict"] not in {"repair", "editorial_review"}:
+        raise ContractError(
+            f"Cannot prepare editorial repair for review verdict "
+            f"{review['verdict']!r}"
+        )
+
+    writer_task_path = resolve_path(review_manifest["writer_task"]["path"])
+    writer_task = load_json(writer_task_path)
+    if writer_task.get("mode") not in {"repair", "editorial_repair"}:
+        raise ContractError(
+            "Editorial repair requires a rebound or editorial non-pass review"
+        )
+    writer_manifest = writer_task.get("inputs")
+    if not isinstance(writer_manifest, dict):
+        raise ContractError("Gloss writer task lacks its input manifest")
+
+    previous_response_path = resolve_path(review_manifest["writer_response"]["path"])
+    actual_response_path = resolve_path(writer_task["output"]["path"])
+    if (
+        actual_response_path.is_file()
+        and sha256_file(previous_response_path) != sha256_file(actual_response_path)
+    ):
+        raise ContractError("Review is not bound to the current writer response")
+    previous_response = load_json(previous_response_path)
+
+    package = load_json(resolve_path(review_manifest["package"]["path"]))
+    locale = load_json(resolve_path(review_manifest["locale"]["path"]))
+    allow_arabic_script = locale_allows_arabic(locale)
+    branches = {branch["branch_ref"]: branch for branch in package["branches"]}
+    for index, issue in enumerate(review["issues"]):
+        label = f"$.issues[{index}]"
+        branch = branches.get(issue["branch_ref"])
+        if branch is None:
+            raise ContractError(f"{label}: branch is outside the package roster")
+        valid_facets = {row["facet_id"] for row in branch["facets"]}
+        unknown_facets = set(issue["facet_ids"]) - valid_facets
+        if unknown_facets:
+            raise ContractError(
+                f"{label}: unknown facet IDs {sorted(unknown_facets)}"
+            )
+        unit_id = issue["lexical_unit_id"]
+        if issue["field"] == "lexical_glosses":
+            valid_units = {
+                row["lexical_unit_id"] for row in branch["lexical_units"]
+            }
+            if unit_id not in valid_units:
+                raise ContractError(
+                    f"{label}: lexical issue requires one supplied "
+                    "lexical-unit ID"
+                )
+        elif unit_id is not None:
+            raise ContractError(
+                f"{label}: lexical_unit_id is only valid for lexical_glosses"
+            )
+        for field in ("problem", "smallest_correction"):
+            target_prose(
+                issue[field],
+                f"{label}.{field}",
+                allow_arabic_script=allow_arabic_script,
+            )
+
+    repair_root = writer_task_path.parent.parent / "editorial"
+    input_dir = repair_root / "input"
+    output_path = repair_root / "output/glosses.json"
+    task_path = input_dir / "task.json"
+    package_path = input_dir / "package.json"
+    locale_copy = input_dir / "locale.json"
+    locale_prompt_copy = input_dir / "locale_prompt.md"
+    prompt_copy = input_dir / "prompt.md"
+    previous_copy = input_dir / "previous_response.json"
+    review_copy = input_dir / "review.json"
+    package_schema_copy = input_dir / "package.schema.json"
+    response_schema_copy = input_dir / "response.schema.json"
+    instructions_path = input_dir / "instructions.md"
+
+    if task_path.exists():
+        current = load_json(task_path)
+        if current.get("generated_by") != GENERATOR:
+            raise ContractError(
+                f"Refusing to replace unmarked editorial task: {task_path}"
+            )
+
+    source_copies = (
+        (package_path, review_manifest["package"]["path"]),
+        (locale_copy, review_manifest["locale"]["path"]),
+        (locale_prompt_copy, review_manifest["locale_prompt"]["path"]),
+        (prompt_copy, writer_manifest["prompt"]["path"]),
+        (package_schema_copy, writer_manifest["package_schema"]["path"]),
+        (response_schema_copy, writer_manifest["response_schema"]["path"]),
+    )
+    for destination, source in source_copies:
+        atomic_write(
+            destination,
+            resolve_path(source).read_text(encoding="utf-8"),
+        )
+    atomic_write(previous_copy, json_content(previous_response))
+    atomic_write(review_copy, json_content(review))
+
+    repair_scope: list[dict] = []
+    for issue in review["issues"]:
+        scope = {
+            "branch_ref": issue["branch_ref"],
+            "field": issue["field"],
+            "lexical_unit_id": issue["lexical_unit_id"],
+        }
+        if scope not in repair_scope:
+            repair_scope.append(scope)
+    atomic_write(
+        instructions_path,
+        repair_instructions(
+            locale,
+            task_path,
+            package_path,
+            locale_copy,
+            locale_prompt_copy,
+            prompt_copy,
+            previous_copy,
+            review_copy,
+            response_schema_copy,
+            output_path,
+        ),
+    )
+
+    validation_command = [
+        "python3",
+        GENERATOR,
+        "validate",
+        path_ref(task_path),
+    ]
+    contract = {
+        "root_envelope_id": writer_task["root_envelope_id"],
+        "target_language": writer_task["target_language"],
+        "mode": "editorial_repair",
+        "source_entry_status": writer_task["source_entry_status"],
+        "repair_scope": repair_scope,
+        "output_path": path_ref(output_path),
+        "validation_command": validation_command,
+    }
+    manifest = {
+        "contract": contract,
+        "canonical": canonical_dependencies(
+            writer_task["target_language"], "writer"
+        ),
+        "source_writer_task": binding(writer_task_path),
+        "source_review_task": binding(review_task_path),
+        "previous_response": binding(previous_copy),
+        "review_response": binding(review_copy),
+        "package": binding(package_path),
+        "locale": binding(locale_copy),
+        "locale_prompt": binding(locale_prompt_copy),
+        "prompt": binding(prompt_copy),
+        "package_schema": binding(package_schema_copy),
+        "response_schema": binding(response_schema_copy),
+        "instructions": binding(instructions_path),
+    }
+    task = {
+        "format": TASK_FORMAT,
+        "generated_by": GENERATOR,
+        "root_envelope_id": writer_task["root_envelope_id"],
+        "source_language": "tr",
+        "target_language": writer_task["target_language"],
+        "mode": "editorial_repair",
         "source_entry_status": writer_task["source_entry_status"],
         "repair_scope": repair_scope,
         "inputs": manifest,
@@ -1797,6 +2046,15 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     )
     prepare_repair.add_argument("review_task", type=Path)
 
+    prepare_editorial_repair = subparsers.add_parser(
+        "prepare-editorial-repair",
+        help=(
+            "Stage a human-authorized bounded repair from a rebound "
+            "non-pass review"
+        ),
+    )
+    prepare_editorial_repair.add_argument("review_task", type=Path)
+
     accept = subparsers.add_parser(
         "accept",
         help="Store a reviewed gloss result after an independently bound pass",
@@ -1863,6 +2121,9 @@ def main(argv: list[str] | None = None) -> int:
         elif args.command == "prepare-repair":
             task = stage_repair(args.review_task)
             print(f"Staged bounded gloss repair at {task}")
+        elif args.command == "prepare-editorial-repair":
+            task = stage_editorial_repair(args.review_task)
+            print(f"Staged editorial gloss repair at {task}")
         elif args.command == "accept":
             output = accept_reviewed_result(
                 args.writer_task,

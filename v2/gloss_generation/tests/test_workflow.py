@@ -16,6 +16,7 @@ from v2.gloss_generation.workflow import (
     parse_languages,
     prepare_entry,
     resolve_path,
+    stage_editorial_repair,
     stage_repair,
     stage_review,
     store_result,
@@ -503,6 +504,104 @@ class GlossGenerationWorkflowTest(unittest.TestCase):
             )
             with self.assertRaisesRegex(ContractError, "out-of-scope"):
                 validate_response(repair_task_path)
+
+    def test_editorial_repair_can_follow_a_rebound_non_pass(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            temporary_path = Path(temporary)
+            writer_task_path = prepare_entry(
+                FIXTURE, ["en"], temporary_path / "work"
+            )[0]
+            writer_task = load_json(writer_task_path)
+            package = load_json(
+                resolve_path(writer_task["inputs"]["package"]["path"])
+            )
+            original = valid_response(writer_task, package, "en")
+            writer_response_path = resolve_path(writer_task["output"]["path"])
+            writer_response_path.parent.mkdir(parents=True, exist_ok=True)
+            writer_response_path.write_text(
+                json.dumps(original, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+            )
+
+            first_branch = package["branches"][0]
+            issue = {
+                "branch_ref": first_branch["branch_ref"],
+                "field": "concept_gloss",
+                "lexical_unit_id": None,
+                "facet_ids": [
+                    row["facet_id"] for row in first_branch["facets"]
+                ],
+                "kind": "semantic_fit",
+                "severity": "major",
+                "confidence": "high",
+                "problem": "The concept gloss is too broad.",
+                "smallest_correction": "Tighten only the concept gloss.",
+            }
+            review_task_path = stage_review(writer_task_path)
+            review_task = load_json(review_task_path)
+            review_path = resolve_path(review_task["output"]["path"])
+            review_path.parent.mkdir(parents=True, exist_ok=True)
+            review_path.write_text(
+                json.dumps(
+                    valid_review(review_task, "repair", [issue]),
+                    ensure_ascii=False,
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+            repair_task_path = stage_repair(review_task_path)
+            repair_task = load_json(repair_task_path)
+            repaired = copy.deepcopy(original)
+            repaired["inputs_sha256"] = repair_task["inputs_sha256"]
+            repaired["branches"][0]["concept_gloss"][
+                "text"
+            ] = "tightened English concept gloss"
+            repair_output = resolve_path(repair_task["output"]["path"])
+            repair_output.parent.mkdir(parents=True, exist_ok=True)
+            repair_output.write_text(
+                json.dumps(repaired, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+            )
+            validate_response(repair_task_path)
+
+            rebound_review_task_path = stage_review(repair_task_path)
+            rebound_review_task = load_json(rebound_review_task_path)
+            rebound_review_path = resolve_path(
+                rebound_review_task["output"]["path"]
+            )
+            rebound_review_path.parent.mkdir(parents=True, exist_ok=True)
+            rebound_review_path.write_text(
+                json.dumps(
+                    valid_review(rebound_review_task, "repair", [issue]),
+                    ensure_ascii=False,
+                    indent=2,
+                )
+                + "\n",
+                encoding="utf-8",
+            )
+
+            with self.assertRaisesRegex(
+                ContractError, "only one semantic repair"
+            ):
+                stage_repair(rebound_review_task_path)
+
+            editorial_task_path = stage_editorial_repair(
+                rebound_review_task_path
+            )
+            editorial_task = load_json(editorial_task_path)
+            editorial = copy.deepcopy(repaired)
+            editorial["inputs_sha256"] = editorial_task["inputs_sha256"]
+            editorial["branches"][0]["concept_gloss"][
+                "text"
+            ] = "editorially tightened English concept gloss"
+            editorial_output = resolve_path(editorial_task["output"]["path"])
+            editorial_output.parent.mkdir(parents=True, exist_ok=True)
+            editorial_output.write_text(
+                json.dumps(editorial, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+            )
+            validate_response(editorial_task_path)
 
     def test_narrowing_requires_a_lost_facet(self):
         with tempfile.TemporaryDirectory() as temporary:

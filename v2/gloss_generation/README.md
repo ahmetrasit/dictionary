@@ -30,8 +30,9 @@ needs only translation glosses. This folder introduces a separate projection:
 - occurrences and dictionary apparatus are omitted mechanically;
 - each locale authors only its concept, contextual, and lexical wording;
 - every chosen gloss reports loss, addition, displacement, or collision;
-- an independent locale reviewer, one bounded repair, and deterministic
-  acceptance prevent a writer from self-approving;
+- an independent locale reviewer, one bounded repair, deterministic acceptance,
+  and an explicit editorial repair path for authorized parked rebound failures
+  prevent a writer from self-approving;
 - 33 locale packs and substantive language-specific prompts cover the approved
   Western-bridge and Muslim-audience rollout.
 
@@ -154,6 +155,12 @@ fresh independent review; a second non-pass verdict is terminal.
 The controller does not semantically bridge review to repair. The staged repair
 instructions, validated review output, previous response, and generated
 `repair_scope` are the complete handoff to the retained writer.
+
+If a rebound review returns `repair` or `editorial_review`, the default outcome
+is parked. With explicit human/controller authorization, the controller may run
+`prepare-editorial-repair` on that rebound review, make only the review-scoped
+surgical edits, validate the output, and send it to a fresh review. Acceptance
+still requires a bound `pass`.
 
 ## Accept
 

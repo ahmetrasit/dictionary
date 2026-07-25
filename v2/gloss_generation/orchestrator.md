@@ -35,7 +35,8 @@ The controller alone:
 - runs `workflow.py` preparation, validation, review staging, repair staging,
   acceptance, and storage commands;
 - checks hashes, paths, exit codes, and existing artifacts;
-- enforces one repair and one rebound-review limit;
+- enforces one repair and one rebound-review limit unless an explicit
+  human/controller editorial repair override is granted;
 - reports every root/locale pair as reviewed or parked.
 
 The target-language writer alone authors `glosses.json`. The independent locale
@@ -176,8 +177,12 @@ python3 v2/gloss_generation/workflow.py prepare-review <repair-writer-task>
 ```
 
 Delegate the rebound review to a fresh independent reviewer. If it returns
-anything other than `pass`, park the pair. Do not expand scope, start a second
-semantic repair, or replace the candidate.
+anything other than `pass`, park the pair by default. With explicit
+human/controller authorization, run `prepare-editorial-repair` on the rebound
+review, make only the generated `editorial` task's scoped surgical edits,
+validate, then send the editorial response to a fresh independent review.
+Without that authorization, do not expand scope, start a second semantic repair,
+or replace the candidate.
 
 Writer/reviewer corrections required only to satisfy their own schema do not
 consume the semantic repair budget, but the two-correction structural limit

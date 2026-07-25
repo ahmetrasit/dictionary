@@ -60,6 +60,7 @@ The workflow has five layers:
 | Locale policy | `locales/*.json` and `locale_prompts/*.md` | Defines target standard, script, idiom, morphology, loanword risks, proper names, and QA checks |
 | Gloss writing | one target-language writer | Authors concept, contextual, and lexical gloss candidates with error profiles |
 | Independent review and one repair | fresh reviewer, then retained writer if needed | Produces `pass`, bounded `repair`, or `editorial_review`; prevents self-approval |
+| Editorial repair override | controller, only after explicit authorization | Unparks a rebound non-pass by making bounded surgical edits and sending the result to a fresh review |
 | Deterministic acceptance | `workflow.py` | Verifies hashes, freshness, rosters, facets, repair scope, review binding, and stores the reviewed result |
 
 This design reuses Arabic semantic analysis and the Turkish semantic entry while
@@ -307,8 +308,17 @@ python3 v2/gloss_generation/workflow.py accept \
   v2/gloss_generation/work/root_000858/en/repair/review/input/task.json
 ```
 
-If the rebound verdict is `repair` or `editorial_review`, park the pair. There
-is no second semantic repair.
+If the rebound verdict is `repair` or `editorial_review`, park the pair by
+default. With explicit human/controller authorization, run:
+
+```sh
+python3 v2/gloss_generation/workflow.py prepare-editorial-repair \
+  v2/gloss_generation/work/root_000858/en/repair/review/input/task.json
+```
+
+Edit only the generated `editorial/input/task.json` `repair_scope`, validate the
+editorial response, prepare a fresh review, and accept only a bound `pass`.
+Without that authorization, there is no second semantic repair.
 
 ## 8. Run multiple locales or a campaign
 
