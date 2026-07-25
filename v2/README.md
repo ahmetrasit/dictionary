@@ -43,12 +43,29 @@ or a through/until boundary for a campaign. Replace placeholders before the run
 or name an existing campaign configuration that supplies them. The controller
 must not infer worker model, reasoning, service tier, or concurrency settings.
 
-There is no orchestration CLI and intentionally no `--run-agents` option. The
-controller runs `create_entry.py` and every other deterministic command itself,
-and uses native delegation only for the staged root writer and independent
-semantic reviewer. Do not create script-runner agents, per-root controllers, or
-nested workers. Do not launch `root-writer.md` or `root-reviewer.md` directly;
-the staging scripts create their hash-bound packages and exact output paths.
+## Compact multilingual gloss workflow
+
+Target-language gloss generation is a separate, thinner workflow under
+[`gloss_generation/`](gloss_generation/). It consumes an already validated
+Turkish v2 entry and generates only independently reviewed concept, contextual,
+and lexical translation glosses with per-gloss semantic error profiles. It
+does not recreate the encyclopedia entry or occurrence section.
+
+A cold controller must begin with
+[`gloss_generation/RUNBOOK.md`](gloss_generation/RUNBOOK.md), then follow
+[`gloss_generation/orchestrator.md`](gloss_generation/orchestrator.md). The
+approved initial rollout covers 33 Western bridge and Muslim-audience locales;
+English, German, and Turkish form the safe smoke set. Preparation is
+deterministic, while target-language writing and independent locale review are
+the only delegated roles.
+
+For encyclopedia entry creation, there is no orchestration CLI and intentionally
+no `--run-agents` option. The controller runs `create_entry.py` and every other
+deterministic command itself, and uses native delegation only for the staged
+root writer and independent semantic reviewer. Do not create script-runner
+agents, per-root controllers, or nested workers. Do not launch `root-writer.md`
+or `root-reviewer.md` directly; the staging scripts create their hash-bound
+packages and exact output paths.
 
 ## Current corpus checkpoint
 

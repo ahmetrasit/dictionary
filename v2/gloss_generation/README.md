@@ -4,13 +4,41 @@ This workflow generates compact, independently reviewed target-language gloss
 sets from a validated Turkish v2 entry. It does not generate another
 encyclopedia entry.
 
-Read:
+Cold-start read order:
 
-1. [`LANGUAGE_ROLLOUT.md`](LANGUAGE_ROLLOUT.md) for the 33-locale rollout and
+1. [`RUNBOOK.md`](RUNBOOK.md) for preflight, exact commands, worker dispatch,
+   resumption, failure routing, and completion checks;
+2. [`LANGUAGE_ROLLOUT.md`](LANGUAGE_ROLLOUT.md) for the 33-locale rollout and
    script-policy decision;
-2. [`orchestrator.md`](orchestrator.md) for the top-level controller prompt;
-3. [`prompt.md`](prompt.md) and [`review_prompt.md`](review_prompt.md) for the
+3. [`orchestrator.md`](orchestrator.md) for the normative top-level controller
+   prompt;
+4. [`prompt.md`](prompt.md) and [`review_prompt.md`](review_prompt.md) for the
    bounded linguistic roles.
+
+No model calls have been run by installing this folder. `prepare` and
+`prepare-all` only stage deterministic tasks; the controller uses native
+delegation for linguistic workers.
+
+## Why this workflow was added
+
+The encyclopedia workflow repeats full target-language semantic authoring and
+review. That is appropriate for complete entries but wasteful when a consumer
+needs only translation glosses. This folder introduces a separate projection:
+
+- semantic boundaries come from one validated Turkish entry plus exact Arabic
+  safeguards;
+- occurrences and dictionary apparatus are omitted mechanically;
+- each locale authors only its concept, contextual, and lexical wording;
+- every chosen gloss reports loss, addition, displacement, or collision;
+- an independent locale reviewer, one bounded repair, and deterministic
+  acceptance prevent a writer from self-approving;
+- 33 locale packs and substantive language-specific prompts cover the approved
+  Western-bridge and Muslim-audience rollout.
+
+No existing entry schema or consumer was replaced. Reviewed gloss results live
+under this folder. The executable received an independent code review; task
+freshness, lexical-unit facet scope, extended Arabic-script detection, and
+multi-scope repair enforcement were hardened and covered by tests.
 
 Every worker receives one shared role prompt plus a hash-bound
 `locale_prompts/<locale>.md`. Locale-specific prompts cover the target standard,
@@ -68,12 +96,14 @@ Writer tasks are staged under:
 
 ```text
 work/<root-envelope>/<locale>/
+  controller/writer_task.sha256
   input/instructions.md
   input/task.json
   input/package.json
   input/locale.json
   input/locale_prompt.md
   input/prompt.md
+  input/package.schema.json
   input/response.schema.json
   output/glosses.json
 ```
