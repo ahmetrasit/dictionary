@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "B001, B004 ve B005 yayıma hazırdır. B002 kimlik gerekçesinde kanıta dayanmayan doğuştanlık nitelemesi vardır. B003 ise yalnızca bir kaynak anlatımında görülen güzel yapılılık yönünü bütün iri, dolgun veya yağlı beden kullanımlarının zorunlu çekirdeği haline getirmektedir.",
+  "issues": [
+    {
+      "target_ref": "root_001857/B002",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi yaş, önderlik, görünüş, soyluluk ve çevrenin kişiyi yüceltmesini bildirir; saygın niteliğin doğuştan geldiğini bildirmez. Gerekçedeki doğuştan nitelemesi bu nedenle kanıtsız bir köken özelliği ekler.",
+      "smallest_correction": "Doğuştan sözünü kaldırıp karşıtlığı kişide bulunan veya görünüşünde beliren saygın nitelik ile başkalarının gösterdiği yüceltme arasında kurun."
+    },
+    {
+      "target_ref": "root_001857/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi güzel yapılı ve dolgun bedeni bir anlatımda verirken diğer anlatımlarda yalnızca şişman, çok yağlı veya iri bedeni bildirir. Tanım, bütün bu seçenekleri güzel yapılı görünmeyle birleştirerek F003'te kaynak varyantı olarak doğru sınıflandırılan özelliği dalın zorunlu çekirdeğine yükseltir.",
+      "smallest_correction": "Tanımı bedensel irilik, dolgunluk, besililik veya yağlılık çekirdeğiyle sınırlayın; güzel yapılı görünmeyi yalnızca kaynak varyantı olarak bırakın."
+    },
+    {
+      "target_ref": "root_001857/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığındaki iri, dolgun ve güzel yapılı olma ifadesi güzel yapılılığı bütün kullanımlarda gerekli gösterir. Oysa kaynak ifadesindeki şişmanlık, çok yağlılık ve irilik örnekleri bu güzellik niteliğini zorunlu kılmaz; mevcut hata profili de bu eklemeyi kayıp veya daralma olarak kaydetmez.",
+      "smallest_correction": "Kavram karşılığını bedensel irilik ve dolgunluk çekirdeğini verecek biçimde daraltın; güzel yapılılığı ayrı bağlamsal karşılıkta veya kaynak varyantında koruyup hata profilini buna göre düzeltin."
+    }
+  ]
+}

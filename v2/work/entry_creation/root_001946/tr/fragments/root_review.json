@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "9246aa00e5e8ecc0f12b2a1a9ab14441058d497c51dd15a3c1c396a3ee729701",
+  "verdict": "repair",
+  "summary": "B002 dalında kaynaklara ayrı ayrı ait koşullar tek bir zorunlu anlam sınırı gibi birleştirilmiştir. Diğer dallar verilen kanıtla uyumludur.",
+  "issues": [
+    {
+      "target_ref": "root_001946/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynakların ortak çekirdeği karşılıklı dövüşmedir; döşeli zeminde ve çok yakında olma bir kayıtta, kılıçla yaya dövüşme ve binek üzerinde olmama başka kayıtlarda bildirilir. Tanım ile F001 ise yerde ya da yaya olmayı ve çok yakınlığı birlikte kurucu koşul yaparak bu ayrı kayıtları tek bir zorunlu sınırda birleştiriyor.",
+      "smallest_correction": "Tanımı ve F001'i karşılıklı dövüşme ortak çekirdeğine indirin; döşeli zeminde çok yakın dövüşme ile kılıçla yaya dövüşme ve binek dışlama ayrıntılarını ayrı uzmanlaşma veya kaynak varyantı facetleri olarak gösterin."
+    },
+    {
+      "target_ref": "root_001946/B002",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı yerde, yaya, yakın ve kılıçlı olmayı aynı anda gerekli gösteriyor; oysa bc_001 bu nitelikleri tek bir ortak anlatımda değil, farklı sözlük kayıtlarında dağıtılmış ayrıntılar olarak verir.",
+      "smallest_correction": "Kavram karşılığını karşılıklı dövüşme çekirdeğini temsil edecek biçimde daraltın; zemin, yakınlık, kılıç ve yaya olma ayrıntılarını bağlamsal karşılıklara bırakın ve hata profilini buna göre güncelleyin."
+    }
+  ]
+}

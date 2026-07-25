@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "0a0def530365a1dc2d71309c9aa110a8bd3fc1bf2eaaba96ec2292b5b18cd2bc",
+  "verdict": "repair",
+  "summary": "B005 dalındaki sıradan renk nitelemesi kavram haritasında doğru biçimde ayrılmıştır; ancak kaynak sentezi ve kavram karşılığı bu tanıklığı yeniden sabit adlar kapsamına sokmakta veya kapsam dışında bırakmaktadır. Bu iki alan düzeltilmeden yanıt yayıma hazır değildir.",
+  "issues": [
+    {
+      "target_ref": "root_001947/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesindeki alaca ip tanıklığı sıradan bir renk nitelemesidir ve dalın kimlik yargısı ile F004 bunu doğru biçimde belirtir. Buna karşılık common_summary, tanıklıkların yer, yapı, hayvan ve nesneler için sabit adlar gösterdiğini söyleyerek ip nitelemesini ya sabit bir nesne adına dönüştürür ya da sentezden çıkarır.",
+      "smallest_correction": "common_summary metnini, özel ve yerleşik adlandırmaların yanında ipin sıradan biçimde alaca diye nitelendiğini de açıkça söyleyecek biçimde düzeltin; tek sözlükle çözümlenemeyen claim kimliği için kaynak ayrıntısı eklemeyin."
+    },
+    {
+      "target_ref": "root_001947/B005",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı yalnızca sabit özel ad veya nesne adı derken F001'in kapsadığı sıradan renk nitelemesini ve kaynak ifadesindeki alaca ip kullanımını temsil etmez. Buna rağmen hata profili karşılığı eksiksiz saymakta, hiçbir kayıp bildirmemekte ve F001'i korunmuş göstererek kendi kavram haritasıyla çelişmektedir.",
+      "smallest_correction": "Kavram karşılığını sabit adlandırmalarla birlikte sıradan renk nitelemesi istisnasını da temsil edecek biçimde genişletin; uygulanabilirlik ve hata profilini de bu geniş kapsamla uyumlu hale getirin."
+    }
+  ]
+}
