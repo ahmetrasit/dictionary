@@ -265,6 +265,11 @@ OUTPUT: the path declared by that repair task
 SCOPE: only task.json repair_scope
 ```
 
+Do not add a controller-authored explanation of the review issues when sending
+the repair task. The generated `repair/input/instructions.md` and its staged
+review/previous-response files are the full semantic bridge. The controller may
+state only the role, input path, output restriction, and validation rule.
+
 The response must remain complete, use the new repair-task hash, change every
 requested scope, and change nothing outside it. Validate:
 

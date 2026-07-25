@@ -151,6 +151,10 @@ The retained writer handles `repair/input/instructions.md`. Validation rejects
 changes outside the review-derived scope. The repaired response must receive a
 fresh independent review; a second non-pass verdict is terminal.
 
+The controller does not semantically bridge review to repair. The staged repair
+instructions, validated review output, previous response, and generated
+`repair_scope` are the complete handoff to the retained writer.
+
 ## Accept
 
 Only a review pass bound to the exact final writer response can produce the

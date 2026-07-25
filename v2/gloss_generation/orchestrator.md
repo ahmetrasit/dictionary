@@ -161,6 +161,13 @@ Continue the retained writer using only the generated
 change only branch fields named by the review-derived repair scope. The
 validator mechanically rejects changes outside that scope.
 
+Do not paraphrase, summarize, or semantically bridge the reviewer issues for the
+writer. The generated repair task is the complete handoff: it includes the
+validated review output, previous writer response, package, and machine-scoped
+`repair_scope`. The controller may identify the repair instruction path and
+operational constraints, but it must not restate reviewer reasoning in a way
+that creates a second, unofficial repair prompt.
+
 Validate the repair, then stage a fresh review:
 
 ```text
