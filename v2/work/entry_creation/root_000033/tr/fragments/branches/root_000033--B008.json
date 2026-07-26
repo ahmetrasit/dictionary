@@ -1,30 +1,53 @@
 {
-  "root_inputs_sha256": "6104ac1e6f836fc5e5d0bab8014fdec3d6295d5bffbc9effd21e4a06aebf213e",
+  "root_inputs_sha256": "ff4e1c539bce159e8c8bbd75f41fb205a58996b2c860b59176ec86abdd63afe0",
   "root_id": "root_000033",
   "branch_id": "B008",
   "language": "tr",
   "image_transliteration": "lu'betü'd-dabta ve'l-messe",
-  "summary": "Yakalama ve dokunma diye anılan belirli bir oyundur.",
+  "summary": "Kaynakta iki geleneksel adla da anılan belirli bir oyunun adıdır; nasıl oynandığına ilişkin ayrıca bilgi verilmez.",
   "concept_map": {
-    "definition": "Yakalama ve dokunma diye anılan belirli bir oyundur.",
+    "definition": "Kaynakta iki geleneksel adla da anılan belirli bir oyunun adıdır; nasıl oynandığına ilişkin ayrıca bilgi verilmez.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Gösterilen şey, yakalama ve dokunma diye anılan belirli bir oyundur.",
+        "statement": "Sözcük, belirli bir geleneksel oyunu adlandırır.",
         "claim_ids": [
-          "lu_016"
+          "bc_001"
+        ]
+      },
+      {
+        "facet_id": "F002",
+        "role": "source_variant",
+        "statement": "Aynı oyunun kaynakta iki başka geleneksel adı bulunduğu belirtilir.",
+        "claim_ids": [
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Tek kayıt, belirli bir oyunun yakalama ve dokunma diye adlandırıldığını bildirir; kayıt oyunun kuralları, araçları veya oynanış biçimi hakkında ek bilgi vermez.",
+  "identity_judgment": {
+    "status": "accepted",
+    "rationale": "Tek kaynaklı ifade, sözcüğü iki geleneksel adla anılan belirli bir oyun olarak tanımlar. Oyunun kuralları verilmediğinden dal, adlandırılmış bir oyun olmanın ötesinde mekanik veya amaç yüklenmeden korunmalıdır.",
+    "boundary_note": "Belirli bir geleneksel oyunun adıdır; dokunma, yakalama veya eldeki nesneyi bulma gibi olası oyun kuralları kanıt olmadan tanıma eklenmez."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "bare",
+    "note": "Yalın ad doğrudan belirli oyunu gösterir; anlam herhangi bir eylem kalıbına bağlanmaz ve genel oyun kavramına genişletilmez."
+  },
+  "source_summary": "Kayıt, sözcüğü iki başka adla da bilinen bir oyun olarak tanıtır, ancak oyunun araçlarını, amacını veya kurallarını açıklamaz.",
   "source_synthesis": {
-    "common_summary": "Tek kayıt, belirli bir oyunun yakalama ve dokunma diye adlandırıldığını bildirir; kayıt oyunun kuralları, araçları veya oynanış biçimi hakkında ek bilgi vermez.",
-    "common_claim_ids": [
-      "lu_016"
+    "common_summary": "Kayıt, sözcüğü iki başka adla da bilinen bir oyun olarak tanıtır, ancak oyunun araçlarını, amacını veya kurallarını açıklamaz.",
+    "common_claim_ids": [],
+    "source_details": [
+      {
+        "claim_ids": [
+          "bc_001"
+        ],
+        "kind": "sole_attestation",
+        "summary": "Bu özel oyun adı ve iki eş adı tek sözlük tanıklığıyla desteklenir."
+      }
     ],
-    "source_details": [],
     "supporting_claim_ids": [],
     "duplicate_claims": []
   },
@@ -34,47 +57,86 @@
     {
       "lexical_unit_id": "lu_016",
       "rendering_kind": "ordinary",
-      "target_gloss": "yakalama ve dokunma diye anılan oyun"
+      "target_gloss": "iki başka adla da bilinen geleneksel bir oyun"
     }
   ],
   "glosses": {
-    "semantic_definition": "Yakalama ve dokunma diye anılan belirli bir oyundur.",
+    "semantic_definition": "Kaynakta iki geleneksel adla da anılan belirli bir oyunun adıdır; nasıl oynandığına ilişkin ayrıca bilgi verilmez.",
     "concept": {
       "rank": 1,
-      "text": "yakalama ve dokunma diye anılan oyun",
+      "text": "belirli bir geleneksel oyun",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Oyunu kanıtta verilen ayırt edici adlandırmayla karşılar.",
+      "applicability": "Kuralları açıklanmayan, ancak ayrı bir ad taşıdığı bilinen oyunun türünü ihtiyatlı biçimde karşılar.",
       "facet_ids": [
-        "F001"
+        "F001",
+        "F002"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Belirli bir oyun oluşunu ve yakalama ile dokunma diye anılmasını birlikte korur.",
+        "preserves": "Belirli ve geleneksel bir oyun adı olma bilgisini korur.",
         "loses": null,
         "adds": null,
         "collision": null
       }
     },
-    "contextual": [],
-    "selected": [
+    "contextual": [
       {
-        "rank": 1,
-        "text": "yakalama ve dokunma diye anılan oyun",
+        "rank": 2,
+        "text": "eski bir halk oyunu",
         "loanword_status": "none",
         "usage_role": "explanatory",
-        "selection_role": "primary_concept_gloss",
-        "applicability": "Oyunu kanıtta verilen ayırt edici adlandırmayla karşılar.",
+        "selection_role": "contextual_gloss",
+        "applicability": "Oyunun özel adını vermeden kültürel türünü okura açıklamak gereken bağlamlarda kullanılabilir.",
         "facet_ids": [
           "F001"
         ],
         "error_profile": {
+          "fit": "broadening",
+          "preserves": "Oyunun geleneksel nitelikte oluşunu korur.",
+          "loses": null,
+          "adds": "Halk oyunu sözü, kanıtlanmayan toplumsal yaygınlık ve icra biçimleri çağrıştırabilir.",
+          "collision": "Türkçede dans niteliğindeki halk oyunlarıyla karışabilir."
+        }
+      }
+    ],
+    "selected": [
+      {
+        "rank": 1,
+        "text": "belirli bir geleneksel oyun",
+        "loanword_status": "none",
+        "usage_role": "explanatory",
+        "selection_role": "primary_concept_gloss",
+        "applicability": "Kuralları açıklanmayan, ancak ayrı bir ad taşıdığı bilinen oyunun türünü ihtiyatlı biçimde karşılar.",
+        "facet_ids": [
+          "F001",
+          "F002"
+        ],
+        "error_profile": {
           "fit": "none",
-          "preserves": "Belirli bir oyun oluşunu ve yakalama ile dokunma diye anılmasını birlikte korur.",
+          "preserves": "Belirli ve geleneksel bir oyun adı olma bilgisini korur.",
           "loses": null,
           "adds": null,
           "collision": null
+        }
+      },
+      {
+        "rank": 2,
+        "text": "eski bir halk oyunu",
+        "loanword_status": "none",
+        "usage_role": "explanatory",
+        "selection_role": "contextual_gloss",
+        "applicability": "Oyunun özel adını vermeden kültürel türünü okura açıklamak gereken bağlamlarda kullanılabilir.",
+        "facet_ids": [
+          "F001"
+        ],
+        "error_profile": {
+          "fit": "broadening",
+          "preserves": "Oyunun geleneksel nitelikte oluşunu korur.",
+          "loses": null,
+          "adds": "Halk oyunu sözü, kanıtlanmayan toplumsal yaygınlık ve icra biçimleri çağrıştırabilir.",
+          "collision": "Türkçede dans niteliğindeki halk oyunlarıyla karışabilir."
         }
       }
     ],
@@ -82,44 +144,32 @@
   },
   "arabic_neighbor_distinctions": [
     {
-      "neighbor_root_id": "root_001358",
-      "neighbor_branch_id": "B001",
-      "relation_type": "same_field",
-      "boundary_match": "field_only",
-      "focus_only": "İki özel adla gösterilen tek bir oyun söz konusudur.",
-      "neighbor_only": "Oyun ve eğlence eylemi, oynanan şey, oyuncu ve oyun yeri gibi genel alan bütünüyle kapsanır.",
-      "expression_transliteration": "fi'lü hâzilin lâ yaksıdu maksaden sahîhan",
-      "gloss": "belirli bir oyun",
-      "shared_zone": "Odak dalın gösterdiği şey, komşu dalın genel oyun alanına girer.",
-      "distinction": "Odak dal yalnızca adı verilen tek bir oyundur; komşu dal oyun kavramını, eylemini, kişisini, aracını ve yerini kapsayan genel alandır."
-    },
-    {
       "neighbor_root_id": "root_000400",
       "neighbor_branch_id": "B010",
       "relation_type": "same_field",
       "boundary_match": "field_only",
-      "focus_only": "Oyun iki adla anılır, ancak kuralı veya aracı açıklanmaz.",
-      "neighbor_only": "Oyuncunun elindekini çıkarmaya dayalı belirli bir oyun kuralıyla tanımlanır.",
+      "focus_only": "Odak dalın oyunu yalnız özel adı ve iki eş adıyla tanınır; kuralı belirtilmez.",
+      "neighbor_only": "Komşu oyunda amaç, elde saklanan şeyi ortaya çıkarmaktır.",
       "expression_transliteration": "lu'betü ihrâci mâ fi'l-yed",
-      "gloss": "adlandırılmış oyun",
-      "shared_zone": "İki dal da ayrı ad taşıyan belirli oyunları gösterir.",
-      "distinction": "Odak dalda yalnızca adlandırma bilgisi vardır; komşu oyun ise eldekini çıkarmaya dayalı oynanış kuralıyla sınırlandırılır."
+      "gloss": "eldekini bulma oyunu",
+      "shared_zone": "Her ikisi de ayrı ad taşıyan geleneksel oyunlardır.",
+      "distinction": "Odak oyunun işleyişi bilinmediğinden iki oyun özdeşleştirilemez; komşu oyun eldeki şeyi bulmaya dayanan açık bir kuralla ayrılır."
     },
     {
       "neighbor_root_id": "root_001012",
       "neighbor_branch_id": "B013",
       "relation_type": "same_field",
       "boundary_match": "field_only",
-      "focus_only": "Oyunun yalnızca iki adı bilinir.",
-      "neighbor_only": "Dikilen ve başka bir parçayla vurulup sökülen bir araç üzerinden oynanan belirli oyun anlatılır.",
+      "focus_only": "Odak oyunun araç ve kuralları kaynakta açıklanmaz.",
+      "neighbor_only": "Komşu oyunda dikilen bir tahta başka bir tahtayla vurulup yerinden çıkarılır.",
       "expression_transliteration": "lu'betü'l-usr",
-      "gloss": "kuralları farklı oyun",
-      "shared_zone": "Her iki dal da adlandırılmış tekil bir oyunu gösterir.",
-      "distinction": "Odak oyunun oynanışını açıklamaz; komşu dal dikilen bir parçanın başka bir parçayla vurulmasına dayanan açık bir kurala sahiptir."
+      "gloss": "tahta vurup çıkarma oyunu",
+      "shared_zone": "Her iki dal belirli bir geleneksel oyunun adını verir.",
+      "distinction": "Komşu oyun tahta araçları ve vurma kuralıyla tanımlanır; odak dal için böyle bir araç veya hareket kanıtlanmamıştır."
     }
   ],
   "neighbor_coverage": {
     "assessment": "complete",
-    "note": "Bütün adaylar değerlendirildi; genel oyun alanı ile kuralları bilinen iki ayrı oyun, kuralları verilmeyen odak dalın sınırını en açık biçimde gösterdi."
+    "note": "Bütün komşular değerlendirildi; kuralları açık iki ayrı oyun, odak oyunun bilinmeyen işleyişine yanlış özellik yüklememek için en yararlı karşılaştırmalardır."
   }
 }

@@ -18,6 +18,34 @@ Prepared input bundles are reused as they are. Packet preparation, entry
 assembly, rendering, projection, and publication are separate deterministic
 work and are not completion gates for this authored-and-reviewed workflow.
 
+## Audit boundary
+
+Do not run or use:
+
+```text
+python3 v2/scripts/audit_entry_campaign.py ...
+```
+
+to determine whether this workflow is complete. That script audits the former
+publication pipeline: canonical acceptance fragments, bound reviews, published
+entry JSON, rendered Markdown, hashes, and publication validation. Its nonzero
+exit and its `state` values do not mean that Agent A or Agent B failed or still
+has work.
+
+In particular:
+
+- `publication_stale` describes downstream publication only;
+- `writer_missing` may mean that an old canonical fragment is absent even when
+  the live `output/<root>_entry.json` needed by this workflow exists;
+- `editorial_review` means Agent B reviewed the entry but left a bounded issue
+  for human judgment;
+- `structural_review_required` means branch-identity curation is needed outside
+  Agent B's surgical-edit authority.
+
+Determine Agent A/B completion only from the live writer output, Agent B review,
+and completion of any surgical repair as defined below. Never report the old
+audit's `published_valid` count as this workflow's completion count.
+
 ## Scope
 
 Build a campaign queue from existing packet files under:
@@ -71,7 +99,9 @@ The controller:
 - ensures that only one agent writes a given root at a time;
 - records operational failures without converting them into semantic findings;
 - reports completion from the two required agent artifacts and the result of
-  Agent B's turn.
+  Agent B's turn;
+- never substitutes the legacy publication audit for this workflow's artifact
+  count.
 
 The controller may run deterministic schema validation itself. It does not
 rewrite authored prose.
@@ -168,6 +198,9 @@ For this workflow, a root is complete when:
 There are no workflow states, hash gates, acceptance steps, rebound reviews, or
 publication requirements in this definition.
 
+Do not use `audit_entry_campaign.py`, a published entry, a canonical fragment,
+or rendered Markdown to add or remove roots from this completion count.
+
 An `editorial_review` result is reviewed but unresolved; list it separately
 rather than reporting it as completed content.
 
@@ -193,3 +226,7 @@ Assembly, master-entry validation, Markdown rendering, projection, export, and
 publication may consume the completed writer output later. They are
 deterministic downstream operations and must not be mixed into the definition
 of whether Agent A and Agent B completed their work.
+
+A separate publication-readiness report may use the legacy audit when that
+downstream question is explicitly requested. Label such a report
+`publication readiness`, never `Agent A/B workflow completion`.
