@@ -1,28 +1,45 @@
 {
-  "root_inputs_sha256": "828178e79dee2973b062b6cb380065c1690b2c94f29ed77ee3cab907fde0296b",
+  "root_inputs_sha256": "1b60652566fc89c76f9f42198dcec07e0f8abfc31edee8ec512bb789f83bbfb5",
   "root_id": "root_000009",
   "branch_id": "B006",
   "language": "tr",
   "image_transliteration": "başka bir topluluğa dışarıdan gelen yabancı",
-  "summary": "Bir topluluğun üyesi olmadığı halde o topluluk içinde bulunan dışarıdan gelmiş kişidir.",
+  "summary": "Bir topluluk içinde bulunan, fakat o topluluğa mensup olmayan yabancı erkektir.",
   "concept_map": {
-    "definition": "Bir topluluğun üyesi olmadığı halde o topluluk içinde bulunan dışarıdan gelmiş kişidir.",
+    "definition": "Bir topluluk içinde bulunan, fakat o topluluğa mensup olmayan yabancı erkektir.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Kişi, içinde bulunduğu topluluğa ait değildir ve oraya dışarıdan gelmiştir.",
+        "statement": "Kişi bir topluluğun içinde bulunur ancak o topluluktan değildir.",
         "claim_ids": [
-          "lu_012"
+          "bc_001"
+        ]
+      },
+      {
+        "facet_id": "F002",
+        "role": "core",
+        "statement": "Kişi topluluğa göre yabancı ve dışarıdan gelmiş sayılır.",
+        "claim_ids": [
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Kaynaklar, kişinin içinde bulunduğu topluluktan olmaması ve o toplulukta dışarıdan gelmiş biri sayılması üzerinde birleşir.",
+  "identity_judgment": {
+    "status": "accepted",
+    "rationale": "Kaynak ifadesi, içinde bulunduğu topluluğa mensup olmayan yabancı erkeği ortak biçimde tanımlar ve dal çerçevesindeki sınırı doğrular.",
+    "boundary_note": "Bu anlam yalnız bir topluluk içinde onlardan olmayan yabancı kişi nitelemesine bağlıdır."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "collocation",
+    "note": "Tanım kişi niteleyen kalıpla sınırlıdır; her gelen kişi veya dışarıdan gelen sel bu kapsama alınmaz."
+  },
+  "source_summary": "Kaynaklar, kişinin bulunduğu topluluğa mensup olmaması ve bu nedenle yabancı sayılması üzerinde birleşir.",
   "source_synthesis": {
-    "common_summary": "Kaynaklar, kişinin içinde bulunduğu topluluktan olmaması ve o toplulukta dışarıdan gelmiş biri sayılması üzerinde birleşir.",
+    "common_summary": "Kaynaklar, kişinin bulunduğu topluluğa mensup olmaması ve bu nedenle yabancı sayılması üzerinde birleşir.",
     "common_claim_ids": [
-      "lu_012"
+      "bc_001"
     ],
     "source_details": [],
     "supporting_claim_ids": [],
@@ -34,24 +51,25 @@
     {
       "lexical_unit_id": "lu_012",
       "rendering_kind": "ordinary",
-      "target_gloss": "topluluğa dışarıdan gelmiş yabancı kişi"
+      "target_gloss": "içinde bulunduğu topluluğa mensup olmayan yabancı adam"
     }
   ],
   "glosses": {
-    "semantic_definition": "Bir topluluğun üyesi olmadığı halde o topluluk içinde bulunan dışarıdan gelmiş kişidir.",
+    "semantic_definition": "Bir topluluk içinde bulunan, fakat o topluluğa mensup olmayan yabancı erkektir.",
     "concept": {
       "rank": 1,
-      "text": "topluluğa dışarıdan gelmiş yabancı",
+      "text": "topluluğa yabancı kimse",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Bir kişinin bulunduğu topluluğun üyesi olmadığını ve dışarıdan geldiğini birlikte belirtir.",
+      "applicability": "Bir kişinin içinde bulunduğu topluluğun mensubu olmadığını belirtmek için kullanılır.",
       "facet_ids": [
-        "F001"
+        "F001",
+        "F002"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Topluluğa ait olmama ve dışarıdan gelmiş bulunma özelliklerini korur.",
+        "preserves": "Topluluk içinde bulunma ve ona mensup olmama sınırını korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -61,17 +79,18 @@
     "selected": [
       {
         "rank": 1,
-        "text": "topluluğa dışarıdan gelmiş yabancı",
+        "text": "topluluğa yabancı kimse",
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Bir kişinin bulunduğu topluluğun üyesi olmadığını ve dışarıdan geldiğini birlikte belirtir.",
+        "applicability": "Bir kişinin içinde bulunduğu topluluğun mensubu olmadığını belirtmek için kullanılır.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Topluluğa ait olmama ve dışarıdan gelmiş bulunma özelliklerini korur.",
+          "preserves": "Topluluk içinde bulunma ve ona mensup olmama sınırını korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -82,13 +101,13 @@
       {
         "text": "yabancı",
         "category": "alternative",
-        "exclusion_reason": "Belirli bir topluluk içinde bulunma koşulu olmadan her türlü yabancıyı kapsar. Ülke veya dil bakımından yabancı kişiyle topluluk içindeki dışarıdan gelmiş kişiyi karıştırabilir.",
+        "exclusion_reason": "Bir topluluk içinde bulunmayan kişiler ile tanınmayan şeyleri de kapsayabilir.",
         "error_profile": {
           "fit": "broadening",
-          "preserves": "Kişinin ait olmama ve dışarıdan gelme özelliğini korur.",
+          "preserves": "Kişinin gruba göre dışarıdan oluşunu korur.",
           "loses": null,
-          "adds": "Belirli bir topluluk içinde bulunma koşulu olmadan her türlü yabancıyı kapsar.",
-          "collision": "Ülke veya dil bakımından yabancı kişiyle topluluk içindeki dışarıdan gelmiş kişiyi karıştırabilir."
+          "adds": "Bir topluluk içinde bulunmayan kişiler ile tanınmayan şeyleri de kapsayabilir.",
+          "collision": null
         }
       }
     ]
@@ -97,18 +116,18 @@
     {
       "neighbor_root_id": "root_001478",
       "neighbor_branch_id": "B006",
-      "relation_type": "synonym",
-      "boundary_match": "exact",
-      "focus_only": null,
-      "neighbor_only": null,
+      "relation_type": "near_synonym",
+      "boundary_match": "partial",
+      "focus_only": "Odak dal kişinin topluluğa yabancı oluşunu bildirir, sonradan karışma biçimini zorunlu kılmaz.",
+      "neighbor_only": "Komşu dal topluluğa dışarıdan girip ona karışan kişi görünümünü özellikle taşır.",
       "expression_transliteration": "topluluk içindeki yabancı",
-      "gloss": "topluluk içindeki yabancı",
-      "shared_zone": "İki dal da bir topluluğun içinde bulunup o topluluğa ait olmayan dışarıdan gelmiş kişiyi anlatır.",
-      "distinction": "Verilen sınırlar katılımcı, koşul ve kapsam bakımından aynıdır; iki dal doğrudan birbirinin yerine kullanılabilir."
+      "gloss": "topluluğa karışmış yabancı",
+      "shared_zone": "Her iki dal bir topluluk içinde o topluluktan olmayan kişiyi anlatır.",
+      "distinction": "Odak dal mensubiyet dışılığını merkez alır; komşu dal dışarıdan girme ve topluluğa karışma görünümünü daha belirgin taşır."
     }
   ],
   "neighbor_coverage": {
     "assessment": "single_sufficient",
-    "note": "Bütün yabancılık ve topluluğa katılma adayları incelendi; yalnızca sınırı bütünüyle örtüşen komşu yayımlandı."
+    "note": "Bütün adaylar değerlendirildi; topluluğa karışmış yabancı dalı mensubiyet ile sonradan giriş arasındaki farkı en iyi gösterdi."
   }
 }

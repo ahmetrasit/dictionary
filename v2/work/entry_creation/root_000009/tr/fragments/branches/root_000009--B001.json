@@ -1,48 +1,47 @@
 {
-  "root_inputs_sha256": "828178e79dee2973b062b6cb380065c1690b2c94f29ed77ee3cab907fde0296b",
+  "root_inputs_sha256": "1b60652566fc89c76f9f42198dcec07e0f8abfc31edee8ec512bb789f83bbfb5",
   "root_id": "root_000009",
   "branch_id": "B001",
   "language": "tr",
   "image_transliteration": "gelme ve ulaşma",
-  "summary": "Bir kişinin ya da şeyin kendisiyle, bir iş aracılığıyla veya bir düzenleme sonucunda gelmesi ve hedefe ulaşmasıdır; geciken kişiden gelmesinin istenmesini de kapsar.",
+  "summary": "Bir kişinin ya da şeyin bulunduğu yere gelmesi veya bir hedefe ulaşmasıdır; bazı kullanımlarda bu gelişin kolayca gerçekleştiği belirtilir.",
   "concept_map": {
-    "definition": "Bir kişinin ya da şeyin kendisiyle, bir iş aracılığıyla veya bir düzenleme sonucunda gelmesi ve hedefe ulaşmasıdır; geciken kişiden gelmesinin istenmesini de kapsar.",
+    "definition": "Bir kişinin ya da şeyin bulunduğu yere gelmesi veya bir hedefe ulaşmasıdır; bazı kullanımlarda bu gelişin kolayca gerçekleştiği belirtilir.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Kişi ya da şey bizzat, bir iş aracılığıyla veya bir düzenleme sonucunda gelir ve hedefe ulaşır.",
+        "statement": "Bir kişi ya da şey gelir veya bir hedefe ulaşır.",
         "claim_ids": [
-          "lu_001",
-          "lu_002"
+          "bc_001"
         ]
       },
       {
         "facet_id": "F002",
-        "role": "associated_use",
-        "statement": "Geciken birinin gelişi beklenir ve kendisinden gelmesi istenir.",
+        "role": "source_variant",
+        "statement": "Bir açıklamada gelişin kolaylıkla gerçekleşmesi özellikle belirtilir.",
         "claim_ids": [
-          "lu_003"
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Temel anlam, bir kişinin ya da şeyin gelmesi ve ulaşmasıdır. Anlatım, öznenin kendi gelişi yanında bir işin veya düzenlemenin hedefe varmasını da içine alır; ayrı bir açıklama ise gelişi kolay gerçekleşme niteliğiyle belirler.",
+  "identity_judgment": {
+    "status": "qualified",
+    "rationale": "Kaynak ifadesi dalın çekirdeğini gelme ve ulaşma olarak doğrular; kolaylık niteliği açıklamalardan yalnız birinde belirgindir. Gelmeyi isteme ise dalın genel anlamı değil, ayrı bir kalıpta görülen kullanımdır.",
+    "boundary_note": "Çekirdek anlam gelme ve ulaşmadır; gelmeyi isteme yalnız ilgili kalıba bağlıdır."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "mixed_non_bare",
+    "note": "Yalın gelme anlamı ile birini gecikmiş sayıp gelmesini istemeyi bildiren kalıp birbirine karıştırılmaz."
+  },
+  "source_summary": "Kaynaklar gelme ve ulaşma çekirdeğinde birleşir; kolaylık, çekirdeği sınırlamayan ek bir niteleme olarak görünür.",
   "source_synthesis": {
-    "common_summary": "Temel anlam, bir kişinin ya da şeyin gelmesi ve ulaşmasıdır. Anlatım, öznenin kendi gelişi yanında bir işin veya düzenlemenin hedefe varmasını da içine alır; ayrı bir açıklama ise gelişi kolay gerçekleşme niteliğiyle belirler.",
+    "common_summary": "Kaynaklar gelme ve ulaşma çekirdeğinde birleşir; kolaylık, çekirdeği sınırlamayan ek bir niteleme olarak görünür.",
     "common_claim_ids": [
-      "lu_001",
-      "lu_002"
+      "bc_001"
     ],
-    "source_details": [
-      {
-        "claim_ids": [
-          "lu_003"
-        ],
-        "kind": "sole_attestation",
-        "summary": "Geciken kişiyi bekleyip ondan gelmesini isteme anlamı ayrıca kaydedilir."
-      }
-    ],
+    "source_details": [],
     "supporting_claim_ids": [],
     "duplicate_claims": []
   },
@@ -52,12 +51,12 @@
     {
       "lexical_unit_id": "lu_001",
       "rendering_kind": "ordinary",
-      "target_gloss": "gelmek; ulaşmak"
+      "target_gloss": "gelmek veya ulaşmak"
     },
     {
       "lexical_unit_id": "lu_002",
       "rendering_kind": "ordinary",
-      "target_gloss": "ona gelmek; ona ulaşmak"
+      "target_gloss": "ona gitmek veya yanına varmak"
     },
     {
       "lexical_unit_id": "lu_003",
@@ -66,20 +65,21 @@
     }
   ],
   "glosses": {
-    "semantic_definition": "Bir kişinin ya da şeyin kendisiyle, bir iş aracılığıyla veya bir düzenleme sonucunda gelmesi ve hedefe ulaşmasıdır; geciken kişiden gelmesinin istenmesini de kapsar.",
+    "semantic_definition": "Bir kişinin ya da şeyin bulunduğu yere gelmesi veya bir hedefe ulaşmasıdır; bazı kullanımlarda bu gelişin kolayca gerçekleştiği belirtilir.",
     "concept": {
       "rank": 1,
-      "text": "gelmek veya ulaşmak",
+      "text": "gelmek, ulaşmak",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Kişinin, şeyin ya da yürütülen işin hedefe varmasını anlatan temel kullanımlara uygundur.",
+      "applicability": "Bir kişi veya şeyin bir yere gelişi ya da hedefe varışı anlatılırken kullanılır.",
       "facet_ids": [
-        "F001"
+        "F001",
+        "F002"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Gelme hareketini ve bir hedefe ulaşma sonucunu birlikte korur.",
+        "preserves": "Gelme ve bir hedefe ulaşma çekirdeğini birlikte korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -88,18 +88,18 @@
     "contextual": [
       {
         "rank": 2,
-        "text": "gelmesini istemek",
+        "text": "yanına gelmek",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Gecikmiş bir kişiden beklenen gelişi gerçekleştirmesinin istendiği bağlamda kullanılır.",
+        "applicability": "Bir kişinin başka bir kişinin bulunduğu yere gelişi söz konusu olduğunda doğaldır.",
         "facet_ids": [
-          "F002"
+          "F001"
         ],
         "error_profile": {
-          "fit": "none",
-          "preserves": "Bekleme sonrasında kişiden gelmesinin istenmesi anlamını korur.",
-          "loses": null,
+          "fit": "narrowing",
+          "preserves": "Kişinin bir hedefe doğru gelip ulaşmasını korur.",
+          "loses": "Kişi dışındaki şeylerin gelişi ile daha genel ulaşma kapsamını dışarıda bırakır.",
           "adds": null,
           "collision": null
         }
@@ -108,17 +108,18 @@
     "selected": [
       {
         "rank": 1,
-        "text": "gelmek veya ulaşmak",
+        "text": "gelmek, ulaşmak",
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Kişinin, şeyin ya da yürütülen işin hedefe varmasını anlatan temel kullanımlara uygundur.",
+        "applicability": "Bir kişi veya şeyin bir yere gelişi ya da hedefe varışı anlatılırken kullanılır.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Gelme hareketini ve bir hedefe ulaşma sonucunu birlikte korur.",
+          "preserves": "Gelme ve bir hedefe ulaşma çekirdeğini birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -126,54 +127,41 @@
       },
       {
         "rank": 2,
-        "text": "gelmesini istemek",
+        "text": "yanına gelmek",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Gecikmiş bir kişiden beklenen gelişi gerçekleştirmesinin istendiği bağlamda kullanılır.",
+        "applicability": "Bir kişinin başka bir kişinin bulunduğu yere gelişi söz konusu olduğunda doğaldır.",
         "facet_ids": [
-          "F002"
+          "F001"
         ],
         "error_profile": {
-          "fit": "none",
-          "preserves": "Bekleme sonrasında kişiden gelmesinin istenmesi anlamını korur.",
-          "loses": null,
+          "fit": "narrowing",
+          "preserves": "Kişinin bir hedefe doğru gelip ulaşmasını korur.",
+          "loses": "Kişi dışındaki şeylerin gelişi ile daha genel ulaşma kapsamını dışarıda bırakır.",
           "adds": null,
           "collision": null
         }
       }
     ],
-    "excluded": [
-      {
-        "text": "gelmek",
-        "category": "alternative",
-        "exclusion_reason": "Hedefe ulaşmayı, iş veya düzenleme yoluyla varmayı ve geliş isteğini ayrı ayrı göstermez.",
-        "error_profile": {
-          "fit": "narrowing",
-          "preserves": "Bir kişinin veya şeyin varış hareketini korur.",
-          "loses": "Hedefe ulaşmayı, iş veya düzenleme yoluyla varmayı ve geliş isteğini ayrı ayrı göstermez.",
-          "adds": null,
-          "collision": null
-        }
-      }
-    ]
+    "excluded": []
   },
   "arabic_neighbor_distinctions": [
     {
       "neighbor_root_id": "root_000281",
       "neighbor_branch_id": "B001",
-      "relation_type": "near_synonym",
-      "boundary_match": "partial",
-      "focus_only": "Bu dal, bir işin veya düzenlemenin hedefe ulaşmasını ve geciken kişiden gelmesinin istenmesini de içerir.",
-      "neighbor_only": "Komşu dal, belirli bir yere, işe veya zamana yönelmeyi ayrıca kapsar.",
+      "relation_type": "synonym",
+      "boundary_match": "exact",
+      "focus_only": null,
+      "neighbor_only": null,
       "expression_transliteration": "gelme ve ulaşma",
-      "gloss": "gelmek ve ulaşmak",
-      "shared_zone": "Her iki dalın çekirdeğinde bir varlığın gelmesi ve bir noktaya ulaşması bulunur.",
-      "distinction": "Temel hareket büyük ölçüde ortaktır; ancak odak dal iş veya düzenleme yoluyla varmayı ve geliş isteğini, komşu dal ise yönelme ve amaç boyutunu daha açık biçimde taşır."
+      "gloss": "gelmek",
+      "shared_zone": "Her iki dal da kişi veya şeyin gelmesini ve bir hedefe ulaşmasını anlatır.",
+      "distinction": "Kaynak kartlarındaki çekirdek ve kapsam bakımından anlamlı bir sınır farkı yoktur."
     }
   ],
   "neighbor_coverage": {
     "assessment": "single_sufficient",
-    "note": "Bütün adaylar karşılaştırıldı; yalnızca gelme çekirdeğine en çok yaklaşan ve kapsam ayrımını açıkça gösteren komşu yayımlandı."
+    "note": "Bütün adaylar değerlendirildi; en doğrudan eş anlamlı karşılık yayımlandı, diğerleri geliş senaryosunu paylaşsa da çekirdeği keskinleştirmedi."
   }
 }

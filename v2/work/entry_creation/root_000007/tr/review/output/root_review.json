@@ -1,50 +1,17 @@
 {
   "verdict": "repair",
-  "summary": "Yanıtın büyük bölümü kanıtla uyumludur. Ancak B001'de lu_002'nin babalık yönünden baba ve atalara katılan kişileri de kapsayan kaynak varyantı üç ayrı alanda daraltılmıştır. Ayrıca B002'nin komşu listesi, kendi kapsam notunda anılan anne kalıpları sınırını içermemektedir.",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak B001 dalının bir komşu karşılaştırmasında ortak kapsam komşuya özgü gösterilmiştir. Bu sınır anlatımı küçük ve kesin bir düzeltme gerektirir.",
   "issues": [
     {
       "target_ref": "root_000007/B001",
-      "field": "concept_map",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_002"
-      ],
-      "evidence_conflict": "lu_002 yalnızca babaları ve baba soyundaki ataları değil, babalık yönünden bunlara katılan kişileri de kapsar. F001 bunu baba soyundaki atalarla sınırlandırdığı için kanıttaki kaynak varyantı kavram haritasında görünmez kalmaktadır.",
-      "smallest_correction": "lu_002'ye bağlı ayrı bir kaynak varyantı yüzü ekleyerek babalık yönünden baba veya atalara katılan kişileri belirtin."
-    },
-    {
-      "target_ref": "root_000007/B001",
-      "field": "source_synthesis",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_002"
-      ],
-      "evidence_conflict": "lu_002'nin kaynak ifadesindeki ayırt edici kullanım, baba olmayan fakat babalık yönünden babalar arasına katılan kişiyi de çoğul kapsamına alır. Ortak özet yalnızca baba soyundaki atalardan söz ettiği için bu kaynak farkını sentezlememektedir.",
-      "smallest_correction": "Ortak özete, çoğul kullanımın babalık yönünden bunlara katılan kişilere de uzanabildiğini kaynak-yansız bir cümleyle ekleyin."
-    },
-    {
-      "target_ref": "root_000007/B001",
-      "field": "lexical_glosses",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_002"
-      ],
-      "evidence_conflict": "lu_002 için verilen \"babalar; baba soyundan atalar\" karşılığı, kanıttaki babalık yönünden bunlara katılan kişiler kapsamını dışarıda bırakmaktadır.",
-      "smallest_correction": "lu_002 karşılığına \"babalık yönünden bunlara katılan kişiler\" anlamını da ekleyin."
-    },
-    {
-      "target_ref": "root_000007/B002",
       "field": "neighbor_distinctions",
-      "severity": "minor",
+      "severity": "major",
       "confidence": "high",
       "claim_ids": [
-        "lu_013"
+        "bc_001"
       ],
-      "evidence_conflict": "lu_013 babanın yokluğu üzerinden övgü veya sövgü kuran kalıbı gösterirken, sağlanan root_000053/B001 sınır kartı anne adıyla kurulan paralel övgü ve yergi kalıplarını içerir. Buna rağmen bu yakın sınır yayımlanan listede yoktur; kapsam notu ise anne kalıplarını ve dört komşuyu yayımladığını söyler, listede yalnız üç komşu bulunur.",
-      "smallest_correction": "root_000053/B001 için baba ve anne adlarıyla kurulan değerlendirme kalıplarının ortak alanını ve katılımcı farkını açıklayan dördüncü komşu ayrımını ekleyin."
+      "evidence_conflict": "root_001683/B002 karşılaştırmasında anne ile babanın birlikte adlandırılması komşuya özgü gösterilmiştir. Oysa odak dalın sağlanan kapsamı ve sözlüksel birimi de anne ile babayı birlikte karşılayan biçimi içerir; dolayısıyla ebeveyn çifti ortak alana aittir. Komşuya özgü güvenli fark, annenin tek başına doğum ebeveyni olarak adlandırılmasıdır.",
+      "smallest_correction": "Yalnız root_001683/B002 komşu satırını düzeltin: anne-baba çiftini shared_zone alanına alın, neighbor_only alanını annenin tek başına doğum ebeveyni olarak adlandırılmasıyla sınırlandırın ve distinction alanını bu ortaklık ile gerçek tek taraflı farkı yansıtacak biçimde güncelleyin."
     }
   ]
 }

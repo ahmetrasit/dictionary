@@ -1,36 +1,45 @@
 {
-  "root_inputs_sha256": "828178e79dee2973b062b6cb380065c1690b2c94f29ed77ee3cab907fde0296b",
+  "root_inputs_sha256": "1b60652566fc89c76f9f42198dcec07e0f8abfc31edee8ec512bb789f83bbfb5",
   "root_id": "root_000009",
   "branch_id": "B002",
   "language": "tr",
   "image_transliteration": "verme ve sunma",
-  "summary": "Birine bir şeyi vermek ya da bir şeyi getirip hazır ederek onun erişimine sunmaktır.",
+  "summary": "Bir şeyi birine vermek; ayrıca bir şeyi getirip hazır ederek karşı tarafa sunmaktır.",
   "concept_map": {
-    "definition": "Birine bir şeyi vermek ya da bir şeyi getirip hazır ederek onun erişimine sunmaktır.",
+    "definition": "Bir şeyi birine vermek; ayrıca bir şeyi getirip hazır ederek karşı tarafa sunmaktır.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Bir kişi başka birine bir şey verir.",
+        "statement": "Bir şey bir alıcıya verilir.",
         "claim_ids": [
-          "lu_004"
+          "bc_001"
         ]
       },
       {
         "facet_id": "F002",
         "role": "extension",
-        "statement": "Verme anlamı, bir şeyi getirip hazır etme ve sunma biçiminde genişler.",
+        "statement": "Bir şey getirilip hazır edilerek karşı tarafa sunulur.",
         "claim_ids": [
-          "lu_004"
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Kaynaklar bir şeyi başkasına verme anlamında birleşir. Aynı birim, bir şeyi getirip hazır ederek sunma anlamında da kullanılır.",
+  "identity_judgment": {
+    "status": "accepted",
+    "rationale": "Kaynak ifadesi doğrudan verme anlamını ve ikincil olarak bir şeyi getirip hazır etme kullanımını bildirir. Bu iki geçişli kullanım dal çerçevesiyle uyumludur.",
+    "boundary_note": "Dal gelme eylemini değil, bir alıcıya verme veya bir şeyi getirip sunma eylemini anlatır."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "bare",
+    "note": "Tanım yalın fiilin verme ve getirip sunma kapsamıyla sınırlıdır; vergi ya da başka bir kalıp anlamı içeri alınmaz."
+  },
+  "source_summary": "Ortak çekirdek vermedir; bir açıklama aynı biçimin bir şeyi getirip hazır etme kullanımını da kapsadığını gösterir.",
   "source_synthesis": {
-    "common_summary": "Kaynaklar bir şeyi başkasına verme anlamında birleşir. Aynı birim, bir şeyi getirip hazır ederek sunma anlamında da kullanılır.",
+    "common_summary": "Ortak çekirdek vermedir; bir açıklama aynı biçimin bir şeyi getirip hazır etme kullanımını da kapsadığını gösterir.",
     "common_claim_ids": [
-      "lu_004"
+      "bc_001"
     ],
     "source_details": [],
     "supporting_claim_ids": [],
@@ -42,25 +51,25 @@
     {
       "lexical_unit_id": "lu_004",
       "rendering_kind": "ordinary",
-      "target_gloss": "vermek; getirip sunmak"
+      "target_gloss": "vermek; bir şeyi getirip sunmak"
     }
   ],
   "glosses": {
-    "semantic_definition": "Birine bir şeyi vermek ya da bir şeyi getirip hazır ederek onun erişimine sunmaktır.",
+    "semantic_definition": "Bir şeyi birine vermek; ayrıca bir şeyi getirip hazır ederek karşı tarafa sunmaktır.",
     "concept": {
       "rank": 1,
-      "text": "vermek veya getirip sunmak",
+      "text": "vermek; getirip sunmak",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Bir şeyin alıcıya verilmesini ya da getirilerek onun erişimine sunulmasını birlikte karşılar.",
+      "applicability": "Bir şeyin alıcıya geçirilmesi veya getirilerek onun önüne konması anlatılırken kullanılır.",
       "facet_ids": [
         "F001",
         "F002"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Hem doğrudan vermeyi hem de getirip hazır ederek sunmayı korur.",
+        "preserves": "Verme çekirdeğini ve getirip sunma uzantısını birlikte korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -69,18 +78,18 @@
     "contextual": [
       {
         "rank": 2,
-        "text": "getirip hazır etmek",
+        "text": "vermek",
         "loanword_status": "none",
-        "usage_role": "contextual",
+        "usage_role": "general",
         "selection_role": "contextual_gloss",
-        "applicability": "Bir nesnenin doğrudan verilmesinden çok getirilip erişilebilir kılındığı bağlama uygundur.",
+        "applicability": "Bir nesne veya yararın doğrudan bir alıcıya aktarılması bağlamında en doğal karşılıktır.",
         "facet_ids": [
-          "F002"
+          "F001"
         ],
         "error_profile": {
-          "fit": "none",
-          "preserves": "Nesnenin getirilmesi ve alıcı için hazır edilmesi işlemlerini korur.",
-          "loses": null,
+          "fit": "narrowing",
+          "preserves": "Bir şeyi alıcıya aktarma çekirdeğini korur.",
+          "loses": "Bir şeyi getirip hazır ederek sunma uzantısını belirtmez.",
           "adds": null,
           "collision": null
         }
@@ -89,18 +98,18 @@
     "selected": [
       {
         "rank": 1,
-        "text": "vermek veya getirip sunmak",
+        "text": "vermek; getirip sunmak",
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Bir şeyin alıcıya verilmesini ya da getirilerek onun erişimine sunulmasını birlikte karşılar.",
+        "applicability": "Bir şeyin alıcıya geçirilmesi veya getirilerek onun önüne konması anlatılırken kullanılır.",
         "facet_ids": [
           "F001",
           "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Hem doğrudan vermeyi hem de getirip hazır ederek sunmayı korur.",
+          "preserves": "Verme çekirdeğini ve getirip sunma uzantısını birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -108,37 +117,24 @@
       },
       {
         "rank": 2,
-        "text": "getirip hazır etmek",
+        "text": "vermek",
         "loanword_status": "none",
-        "usage_role": "contextual",
+        "usage_role": "general",
         "selection_role": "contextual_gloss",
-        "applicability": "Bir nesnenin doğrudan verilmesinden çok getirilip erişilebilir kılındığı bağlama uygundur.",
+        "applicability": "Bir nesne veya yararın doğrudan bir alıcıya aktarılması bağlamında en doğal karşılıktır.",
         "facet_ids": [
-          "F002"
+          "F001"
         ],
         "error_profile": {
-          "fit": "none",
-          "preserves": "Nesnenin getirilmesi ve alıcı için hazır edilmesi işlemlerini korur.",
-          "loses": null,
+          "fit": "narrowing",
+          "preserves": "Bir şeyi alıcıya aktarma çekirdeğini korur.",
+          "loses": "Bir şeyi getirip hazır ederek sunma uzantısını belirtmez.",
           "adds": null,
           "collision": null
         }
       }
     ],
-    "excluded": [
-      {
-        "text": "vermek",
-        "category": "alternative",
-        "exclusion_reason": "Bir şeyi getirip hazır ederek alıcının erişimine sunma uzantısını karşılamaz.",
-        "error_profile": {
-          "fit": "narrowing",
-          "preserves": "Bir şeyi başka birine aktarma çekirdeğini korur.",
-          "loses": "Bir şeyi getirip hazır ederek alıcının erişimine sunma uzantısını karşılamaz.",
-          "adds": null,
-          "collision": null
-        }
-      }
-    ]
+    "excluded": []
   },
   "arabic_neighbor_distinctions": [
     {
@@ -146,16 +142,16 @@
       "neighbor_branch_id": "B004",
       "relation_type": "near_synonym",
       "boundary_match": "partial",
-      "focus_only": "Odak dal, istek bulunmasa da vermeyi ve ayrıca getirip sunmayı kapsar.",
-      "neighbor_only": "Komşu dal, özellikle bir isteğe karşılık bir şey vermekle sınırlıdır.",
+      "focus_only": "Verme eylemi bir isteğe bağlı olmadan da gerçekleşebilir ve getirip sunma kullanımını kapsar.",
+      "neighbor_only": "Komşu dal özellikle kendisinden istenen bir şeyi verme durumunu öne çıkarır.",
       "expression_transliteration": "isteyene bir şey verme",
-      "gloss": "birine bir şey vermek",
-      "shared_zone": "Her iki dalda da bir şeyin bir verenden bir alıcıya geçmesi vardır.",
-      "distinction": "Komşu dal istek üzerine verilen şeyi öne çıkarır; odak dal ise daha genel vermeyi ve nesneyi getirip sunma uzantısını birlikte taşır."
+      "gloss": "isteneni vermek",
+      "shared_zone": "Her iki dalda da bir şey bir alıcıya verilir.",
+      "distinction": "Odak dal genel verme alanına sahipken komşu dal alıcının istemiş olması koşuluyla daha dardır."
     }
   ],
   "neighbor_coverage": {
     "assessment": "single_sufficient",
-    "note": "Verme alanındaki bütün adaylar değerlendirildi; istek koşuluyla ayrışan en yakın komşu sınırı göstermeye yeterlidir."
+    "note": "Bütün adaylar değerlendirildi; istek üzerine verme dalı en yakın sınır karşılaştırmasını sağladı."
   }
 }
