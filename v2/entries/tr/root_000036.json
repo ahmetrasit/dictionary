@@ -15,11 +15,12 @@
     "evidence_index_sha256": "d50789b986eeca208e4031d20479a3c40bd39533401424760dff53d4b5ff5354",
     "furuq_path": "data/working/furuq_v4.sqlite",
     "furuq_sha256": "1099db0d56515d2eb3e8d72f104f2e338c2c9a8c1fa6abbb046406d3b327e722",
-    "root_task_sha256": "ddc32d46864a46a6539f6345921e0868325e16275596bbc8c6bdebc65d227d19"
+    "root_task_sha256": "c2aa522f41277cec8c33850d7bfa48784484f6ac97009146e8adade49e467e28",
+    "root_evidence_format": "dictionary-v2-agent-root-evidence-v5"
   },
   "root_profile": {
     "transliteration": "hemze-sâd-dâl",
-    "summary": "Kökün merkezinde bir şeyin üzerine kapanma ve kapalı duruma getirme tasarımı bulunur; içindekileri kuşatan çevrili alan dalı bu tasarımla ilişkilidir. Küçük iç gömlek, yapıya bağlı avlu ve dağlar arasındaki yer anlamları ise daha bağımsız sözlüksel dallar oluşturur.",
+    "summary": "Kök, kuşatıp kapatma çekirdeğinin yanında içindekileri çevreleyen bir alanı, kız çocuklarına özgü küçük iç gömleğini, avluyu ve dağlar arasındaki çukur yer ile buna bağlı belirli yer kullanımını taşıyan birkaç ayrı sözlüksel dalda örgütlenir.",
     "polysemy": "polysemic",
     "organization": "mixed",
     "branch_count": 5,
@@ -35,52 +36,56 @@
       "what_is_not_ar": "الحظيرة والقميص والفناء والموضع",
       "source_phrase_ar": "شيء يشتمل على الشيء (maqayis); الإِصد والإِصاد والوصاد بمنزلة المطبق (ayn); أصدت عليهم وأوصدته (ayn); نار مُؤصدة أي مطبقة (ayn); آصدت الباب إذا أغلقته (sihah)",
       "image_transliteration": "el-İtbâk ve'l-iglâk ale'ş-şey'",
-      "summary": "Bir şeyin üzerine kapanarak onu kapalı duruma getirme eylemi ve bu işi gören kapatıcı şeydir. Kapı gibi bir nesnenin kapatılmasını, insanların üzerine bir yerin kapanmasını ve üzerlerine bütünüyle kapatılmış ateş tasvirini de kapsar.",
+      "summary": "Bir şeyi başka bir şeyin üzerine kapatmak ya da onu bütünüyle kuşatıp dışarıya açılmasını engellemektir. Bu çekirdek, kapı kapatma gibi eylemlerde ve kapatılmış şeyleri niteleyen yapılarda gerçekleşir.",
       "concept_map": {
-        "definition": "Bir şeyin üzerine kapanarak onu kapalı duruma getirme eylemi ve bu işi gören kapatıcı şeydir. Kapı gibi bir nesnenin kapatılmasını, insanların üzerine bir yerin kapanmasını ve üzerlerine bütünüyle kapatılmış ateş tasvirini de kapsar.",
+        "definition": "Bir şeyi başka bir şeyin üzerine kapatmak ya da onu bütünüyle kuşatıp dışarıya açılmasını engellemektir. Bu çekirdek, kapı kapatma gibi eylemlerde ve kapatılmış şeyleri niteleyen yapılarda gerçekleşir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir şeyin üzerine kapanıp açıklığı gidererek onu kapalı duruma getirme veya bunu sağlayan kapatıcı şey.",
+            "statement": "Bir şey başka bir şeyi içine alır, üstüne kapanır ve onun dışarıya açılmasını engeller.",
             "claim_ids": [
-              "lu_001",
-              "lu_002"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "extension",
-            "statement": "Bir topluluğun üzerine bir yeri kapatıp onları içeride bırakma kullanımı.",
+            "role": "specialization",
+            "statement": "Kapı söz konusu olduğunda eylem, kapıyı kapalı duruma getirmeyi anlatır.",
             "claim_ids": [
-              "lu_003"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "example",
-            "statement": "Kapıyı kapalı duruma getirme, çekirdek eylemin nesne üzerindeki somut bir örneğidir.",
+            "role": "associated_use",
+            "statement": "Bir topluluğun üzerine kapatma ve ateşin üzerlerine kapatılmış olması, çekirdeğin yapıya bağlı kullanımlarıdır.",
             "claim_ids": [
-              "lu_004"
-            ]
-          },
-          {
-            "facet_id": "F004",
-            "role": "example",
-            "statement": "İnsanların üzerine bütünüyle kapatılmış ateş, ortaya çıkan kuşatıcı kapalılığı anlatır.",
-            "claim_ids": [
-              "lu_005"
-            ]
-          },
-          {
-            "facet_id": "F005",
-            "role": "source_variant",
-            "statement": "Kapatıcı şey için, aynı adlandırma kümesinde başka bir biçim daha anılır.",
-            "claim_ids": [
-              "lu_006"
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, bir şeyin başka bir şeyi içine alıp üstüne kapanması çekirdeğini; kapı kapatma, birilerinin üzerine kapatma ve kapatılmış ateş örnekleriyle birlikte açıkça verir. Hazırlanan dal bu ortak kapatma ve kuşatma anlamını doğru biçimde temsil eder.",
+        "boundary_note": "Dalın çekirdeği kapatma ve kuşatmadır; kapı, ateş ve kişi grubu yalnızca bu çekirdeğin belirli gerçekleşmeleridir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım genel kapatma çekirdeğini korur; kapıyı kapatma, insanların üzerine kapatma ve kapatılmış ateş kullanımlarını yalnızca bağlı yapılara özgü gerçekleşmeler olarak ayırır."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "mixed_non_bare",
+        "has_non_bare": true,
+        "has_collocation": true,
+        "unit_kind_counts": {
+          "collocation": 2,
+          "form": 2,
+          "lexical_unit": 1,
+          "review": 1
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -88,7 +93,7 @@
           "expression_ar": "الإِصد والإِصاد",
           "unit_kind": "form",
           "sense_ar": "ما يطبق ويغلق على الشيء",
-          "target_gloss": "bir şeyin üzerine kapanan kapatıcı; kapak",
+          "target_gloss": "kapatıp örten şey",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4751:headword=%D8%A3%D8%B5%D8%AF:root=%D8%A1%20%D8%B5%20%D8%AF:sha=664011c74ff438be"
@@ -100,7 +105,7 @@
           "expression_ar": "الإيصاد",
           "unit_kind": "form",
           "sense_ar": "مصدر الإطباق والإغلاق",
-          "target_gloss": "üzerine kapatıp kapalı duruma getirme",
+          "target_gloss": "kuşatıp kapatma",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4751:headword=%D8%A3%D8%B5%D8%AF:root=%D8%A1%20%D8%B5%20%D8%AF:sha=664011c74ff438be"
@@ -149,7 +154,7 @@
           "expression_ar": "الوصاد",
           "unit_kind": "review",
           "sense_ar": "اسم مذكور مع الإِصد والإِصاد في باب المطبق",
-          "target_gloss": "kapatıcı şey için kullanılan bir ad",
+          "target_gloss": "kapatıp örten şey için kullanılan ad",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4751:headword=%D8%A3%D8%B5%D8%AF:root=%D8%A1%20%D8%B5%20%D8%AF:sha=664011c74ff438be"
@@ -160,43 +165,13 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Anlam alanı hem bir şeyi üzerine kapatıp açıklığını giderme eylemini hem de bunu sağlayan kapatıcı şeyi içerir. Sonuç, bir nesnenin kapalı duruma gelmesi veya ateşin insanların üzerine bütünüyle kapanması biçiminde görülebilir.",
+        "discussion": "Kaynaklar, anlamı bir şeyin diğerini kuşatıp kapatması çevresinde birleştirir; ad biçimleri kapatan şeyi, eylem biçimleri ise kapatma işlemini belirtir.",
         "evidence_refs": [
+          "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:101",
           "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4751:headword=%D8%A3%D8%B5%D8%AF:root=%D8%A1%20%D8%B5%20%D8%AF:sha=664011c74ff438be",
           "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1205:headword=%D8%A3%D8%B5%D8%AF:root=%D8%A1%20%D8%B5%20%D8%AF:sha=71cd0168b8dd97b7"
         ],
-        "details": [
-          {
-            "kind": "extension",
-            "summary": "Eylem, bir topluluğun üzerine bir yeri kapatıp onları içeride bırakmak için de kullanılır.",
-            "source_refs": [
-              "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4751:headword=%D8%A3%D8%B5%D8%AF:root=%D8%A1%20%D8%B5%20%D8%AF:sha=664011c74ff438be"
-            ],
-            "source_ids": [
-              "ayn"
-            ]
-          },
-          {
-            "kind": "example",
-            "summary": "Kapının kapatılması, eylemin tek nesneli ve somut bir örneği olarak verilir.",
-            "source_refs": [
-              "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1205:headword=%D8%A3%D8%B5%D8%AF:root=%D8%A1%20%D8%B5%20%D8%AF:sha=71cd0168b8dd97b7"
-            ],
-            "source_ids": [
-              "sihah"
-            ]
-          },
-          {
-            "kind": "sole_attestation",
-            "summary": "Kapatıcı şey adları arasında, anlamı ayrıntılandırılmadan ek bir biçim de kaydedilir.",
-            "source_refs": [
-              "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4751:headword=%D8%A3%D8%B5%D8%AF:root=%D8%A1%20%D8%B5%20%D8%AF:sha=664011c74ff438be"
-            ],
-            "source_ids": [
-              "ayn"
-            ]
-          }
-        ],
+        "details": [],
         "examples": [],
         "disagreement": null
       },
@@ -228,20 +203,20 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Bir şeyin üzerine kapanarak onu kapalı duruma getirme eylemi ve bu işi gören kapatıcı şeydir. Kapı gibi bir nesnenin kapatılmasını, insanların üzerine bir yerin kapanmasını ve üzerlerine bütünüyle kapatılmış ateş tasvirini de kapsar.",
+        "semantic_definition": "Bir şeyi başka bir şeyin üzerine kapatmak ya da onu bütünüyle kuşatıp dışarıya açılmasını engellemektir. Bu çekirdek, kapı kapatma gibi eylemlerde ve kapatılmış şeyleri niteleyen yapılarda gerçekleşir.",
         "concept": {
           "rank": 1,
-          "text": "üzerine kapatıp açıklığı giderme",
+          "text": "kuşatıp kapatma",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "Kapatma eylemi ile onun oluşturduğu tam kapalılığı birlikte anlatan en kısa genel karşılıktır.",
+          "applicability": "Dalın hem kapsama hem de kapalı duruma getirme öğelerini birlikte taşıyan en kısa genel karşılığıdır.",
           "facet_ids": [
             "F001"
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Üzerine kapanma işlemini, açıklığın giderilmesini ve kapalı sonucu korur.",
+            "preserves": "Bir şeyin başka bir şeyi kuşatması ve onun üzerine kapanması birlikte korunur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -250,55 +225,36 @@
         "contextual": [
           {
             "rank": 2,
-            "text": "kapatmak",
+            "text": "kapıyı kapatmak",
             "loanword_status": "none",
-            "usage_role": "general",
+            "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Kapı gibi bir nesneyi kapalı duruma getiren eylemin bağlamdan açık olduğu cümlelerde kullanılır.",
+            "applicability": "Kapının açık durumdan kapalı duruma getirildiği eylem bağlamında kullanılır.",
             "facet_ids": [
-              "F001",
-              "F003"
+              "F002"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Bir açıklığı giderip nesneyi kapalı duruma getirme eylemini korur.",
-              "loses": "Kapanmanın bir şeyin üzerine gerçekleştiğini ve kuşatıcı olabileceğini tek başına belirtmez.",
+              "preserves": "Kapalı duruma getirme işlemini açık biçimde korur.",
+              "loses": "Dalın kapı dışındaki kuşatma ve üzerini kapatma kapsamını taşımaz.",
               "adds": null,
               "collision": null
             }
           },
           {
             "rank": 3,
-            "text": "üstlerine kapatmak",
+            "text": "üzerlerine kapatılmış",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Bir yerin bir topluluğun üzerine kapatılarak insanların içeride bırakıldığı anlatımlarda kullanılır.",
+            "applicability": "Bir topluluğun ya da kapatılmış ateşin dışarıya açılmayacak biçimde çevrelendiği bağlamlarda kullanılır.",
             "facet_ids": [
-              "F002"
+              "F003"
             ],
             "error_profile": {
-              "fit": "none",
-              "preserves": "Kapatmanın hedef kişilerin üzerine yönelmesini ve kuşatıcı sonucu korur.",
-              "loses": null,
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 4,
-            "text": "üzerlerine kapatılmış ateş",
-            "loanword_status": "none",
-            "usage_role": "explanatory",
-            "selection_role": "contextual_gloss",
-            "applicability": "Ateşin insanların üzerine bütünüyle kapalı oluşunu anlatan özel kullanımda geçerlidir.",
-            "facet_ids": [
-              "F004"
-            ],
-            "error_profile": {
-              "fit": "none",
-              "preserves": "Ateşi, hedef kişileri ve üzerlerine kapanmış olma durumunu eksiksiz korur.",
-              "loses": null,
+              "fit": "narrowing",
+              "preserves": "Bir şeyin başkalarının üzerine kapanması ve onları içeride tutması korunur.",
+              "loses": "Genel ad anlamını ve kapı kapatma kullanımını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
@@ -307,17 +263,17 @@
         "selected": [
           {
             "rank": 1,
-            "text": "üzerine kapatıp açıklığı giderme",
+            "text": "kuşatıp kapatma",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "Kapatma eylemi ile onun oluşturduğu tam kapalılığı birlikte anlatan en kısa genel karşılıktır.",
+            "applicability": "Dalın hem kapsama hem de kapalı duruma getirme öğelerini birlikte taşıyan en kısa genel karşılığıdır.",
             "facet_ids": [
               "F001"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Üzerine kapanma işlemini, açıklığın giderilmesini ve kapalı sonucu korur.",
+              "preserves": "Bir şeyin başka bir şeyi kuşatması ve onun üzerine kapanması birlikte korunur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -325,55 +281,36 @@
           },
           {
             "rank": 2,
-            "text": "kapatmak",
+            "text": "kapıyı kapatmak",
             "loanword_status": "none",
-            "usage_role": "general",
+            "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Kapı gibi bir nesneyi kapalı duruma getiren eylemin bağlamdan açık olduğu cümlelerde kullanılır.",
+            "applicability": "Kapının açık durumdan kapalı duruma getirildiği eylem bağlamında kullanılır.",
             "facet_ids": [
-              "F001",
-              "F003"
+              "F002"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Bir açıklığı giderip nesneyi kapalı duruma getirme eylemini korur.",
-              "loses": "Kapanmanın bir şeyin üzerine gerçekleştiğini ve kuşatıcı olabileceğini tek başına belirtmez.",
+              "preserves": "Kapalı duruma getirme işlemini açık biçimde korur.",
+              "loses": "Dalın kapı dışındaki kuşatma ve üzerini kapatma kapsamını taşımaz.",
               "adds": null,
               "collision": null
             }
           },
           {
             "rank": 3,
-            "text": "üstlerine kapatmak",
+            "text": "üzerlerine kapatılmış",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Bir yerin bir topluluğun üzerine kapatılarak insanların içeride bırakıldığı anlatımlarda kullanılır.",
+            "applicability": "Bir topluluğun ya da kapatılmış ateşin dışarıya açılmayacak biçimde çevrelendiği bağlamlarda kullanılır.",
             "facet_ids": [
-              "F002"
+              "F003"
             ],
             "error_profile": {
-              "fit": "none",
-              "preserves": "Kapatmanın hedef kişilerin üzerine yönelmesini ve kuşatıcı sonucu korur.",
-              "loses": null,
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 4,
-            "text": "üzerlerine kapatılmış ateş",
-            "loanword_status": "none",
-            "usage_role": "explanatory",
-            "selection_role": "contextual_gloss",
-            "applicability": "Ateşin insanların üzerine bütünüyle kapalı oluşunu anlatan özel kullanımda geçerlidir.",
-            "facet_ids": [
-              "F004"
-            ],
-            "error_profile": {
-              "fit": "none",
-              "preserves": "Ateşi, hedef kişileri ve üzerlerine kapanmış olma durumunu eksiksiz korur.",
-              "loses": null,
+              "fit": "narrowing",
+              "preserves": "Bir şeyin başkalarının üzerine kapanması ve onları içeride tutması korunur.",
+              "loses": "Genel ad anlamını ve kapı kapatma kullanımını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
@@ -387,12 +324,12 @@
           "neighbor_branch_id": "B007",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Kapı dışındaki şeylerin ve insanların üzerine kapanma ile ortaya çıkan kapalı durum da kapsanır.",
-          "neighbor_only": "Özellikle kapı kanadını geri itip kapatma hareketi anlatılır.",
+          "focus_only": "Odak dal, bir şeyi kuşatıp üzerine kapanma ile kapatılmış nesne ve durumları da kapsar.",
+          "neighbor_only": "Komşu dal özellikle kapıyı geri itip kapatma eylemine bağlıdır.",
           "expression_transliteration": "Reddü'l-bâb",
-          "gloss": "kapıyı itip kapatma",
-          "shared_zone": "Her iki dal da kapının açıklığını gidererek onu kapalı duruma getirme eyleminde buluşur.",
-          "distinction": "Odak dalı, kapı kapatmayı aşan kuşatıcı bir kapanma ve kapalılık alanına sahiptir; komşu dal ise kapının geri itilerek kapatılması hareketine bağlıdır.",
+          "gloss": "kapıyı çekip kapatma",
+          "shared_zone": "Her iki dal da kapının kapalı duruma getirilmesini anlatabilir.",
+          "distinction": "Komşu dal kapı üzerinde gerçekleşen özel bir eylemdir; odak dalın çekirdeği ise daha genel kuşatıp kapatma ilişkisidir ve kapı dışındaki nesne ya da katılımcılara da uygulanır.",
           "expression_ar": "ردّ الباب",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
@@ -404,12 +341,12 @@
           "neighbor_branch_id": "B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Bir şeyin veya insanların üzerine kapanan kapatma işlemi ve kapatıcı şey öne çıkar.",
-          "neighbor_only": "Bir kabın ağzını tıkaçla sıkma ve hiçbir açıklık bırakmayan sarınma biçimleri de kapsanır.",
+          "focus_only": "Odak dal, bir şeyin başka bir şeyin üzerine kapanması veya onu kuşatması işlemini öne çıkarır.",
+          "neighbor_only": "Komşu dal, bir açıklığın tıkaçla ya da sıkıca bağlanarak ortadan kaldırılmasını öne çıkarır.",
           "expression_transliteration": "es-Sedd ve zevâlü'l-fürce",
-          "gloss": "tıkayıp aralığı yok etme",
-          "shared_zone": "İki dal da bir açıklığın ortadan kalkmasıyla oluşan sıkı kapalılığı anlatabilir.",
-          "distinction": "Odak dalı üzerine kapatma işlemini merkez alır; komşu dal tıkama, ağzı sıkma ve aralık bırakmama yollarına uzandığı için olağan kullanımda birbirinin yerine geçmez.",
+          "gloss": "açıklığı tıkayıp kapatma",
+          "shared_zone": "İki dalda da açıklığın kalmaması ve dışarıyla bağlantının kesilmesi sonucu bulunur.",
+          "distinction": "Odak dalın tanımlayıcı yönü kuşatıp üzerine kapanmadır; komşu dalda ise belirleyici işlem boşluğu tıkamak veya ağzı sıkıca bağlamaktır.",
           "expression_ar": "السد وزوال الفرجة",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
@@ -425,12 +362,12 @@
           "neighbor_branch_id": "B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Fiziksel olarak üzerine kapanıp kapalı duruma getiren işlem veya kapatıcı şey zorunludur.",
-          "neighbor_only": "Fiziksel kapanma olmadan erişimi, girişi, ışığı veya başka bir şeyi engellemek de kapsanır.",
-          "expression_transliteration": "Men'u'l-vusûl",
+          "focus_only": "Odak dal somut biçimde kuşatıp kapatma işlemini bildirir.",
+          "neighbor_only": "Komşu dalın çekirdeği, belirli bir kapatma biçimi aramadan erişimi engellemektir.",
+          "expression_transliteration": "menʿu'l-vuṣûl",
           "gloss": "erişimi engelleme",
-          "shared_zone": "Üzerine kapatma, hedefe ulaşmayı engellediğinde iki dal aynı olayda kesişebilir.",
-          "distinction": "Odak dalının çekirdeği kapanma biçimindeki fiziksel işlemdir; komşu dalın çekirdeği ise bunun hangi yolla yapıldığından bağımsız olarak erişimin önlenmesidir.",
+          "shared_zone": "Kapatma, içeridekine erişimi engelleyebilir ve böylece iki anlam aynı sonuçta buluşabilir.",
+          "distinction": "Erişimin engellenmesi odak dalda kapatmanın sonucu olabilir; komşu dalda ise sonuç doğrudan çekirdektir ve kuşatıp kapanma şart değildir.",
           "expression_ar": "منع الوصول",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
@@ -445,19 +382,7 @@
       "neighbor_coverage": {
         "candidate_count": 12,
         "assessment": "complete",
-        "note": "Bütün komşu kartları değerlendirildi; yayımlanan üç karşılaştırma kapanma, tıkama ve erişimi engelleme sınırlarını en açık biçimde ayırdığı için seçildi."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "mixed_non_bare",
-        "has_non_bare": true,
-        "has_collocation": true,
-        "unit_kind_counts": {
-          "collocation": 2,
-          "form": 2,
-          "lexical_unit": 1,
-          "review": 1
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "Bütün adaylar değerlendirildi; yayımlanan üç karşılaştırma kapı kapatma, açıklığı tıkama ve erişimi engelleme ile karışabilecek sınırları gösterir, diğer adaylar ise daha uzak sonuçları ya da ayrı dal anlamlarını yineler."
       }
     },
     {
@@ -468,27 +393,45 @@
       "what_is_not_ar": "الإغلاق والقميص والفناء والموضع",
       "source_phrase_ar": "الحظيرة أُصيدة سميت بذلك لاشتمالها على ما فيها (maqayis); الأُصيدة كالحظيرة لغة في الوصيدة (sihah)",
       "image_transliteration": "el-Hazîretü'l-müştemile alâ mâ fîhâ",
-      "summary": "İçinde bulunanları çevreleyip bir arada tutan, ağıl veya benzeri çevrili bir alandır.",
+      "summary": "İçinde bulunanları çevreleyerek bir arada tutan, barınak veya ağıl niteliğindeki çevrili alandır.",
       "concept_map": {
-        "definition": "İçinde bulunanları çevreleyip bir arada tutan, ağıl veya benzeri çevrili bir alandır.",
+        "definition": "İçinde bulunanları çevreleyerek bir arada tutan, barınak veya ağıl niteliğindeki çevrili alandır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "İçindekileri kuşatan sınırı sayesinde onları bir arada tutan çevrili alan veya ağıl.",
+            "statement": "Alan, içinde bulunanları çevreler ve sınırları içinde bir arada tutar.",
             "claim_ids": [
-              "lu_007"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "source_variant",
-            "statement": "Aynı çevrili alan anlamındaki başka bir söz biçiminin kaynak varyantı olarak kaydedilen biçim.",
+            "statement": "Kaynak ifadesinde bu alan, ağıl ya da ona denk bir çevrili yer olarak açıklanır.",
             "claim_ids": [
-              "lu_007"
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, içindekileri çevreleyip barındırdığı için bu adla anılan bir çitli ya da çevrili alanı doğrudan tanımlar. Hazırlanan dalın çevreleme ve içeride tutma çerçevesi bu ifadeyle uyumludur.",
+        "boundary_note": "Bu dal bir kapatma eylemini değil, içindekileri çevreleyen ve tutan alan türünü anlatır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın alan adını esas alır ve başka dallardaki kapatma eylemi ya da özel söz öbeklerini bu anlama katmaz."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "bare",
+        "has_non_bare": false,
+        "has_collocation": false,
+        "unit_kind_counts": {
+          "form": 1
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -496,7 +439,7 @@
           "expression_ar": "الأُصيدة",
           "unit_kind": "form",
           "sense_ar": "الحظيرة أو الوصيدة لاشتمالها على ما فيها",
-          "target_gloss": "içindekileri kuşatan çevrili alan; ağıl",
+          "target_gloss": "içindekileri çevreleyen barınak veya ağıl",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:101",
@@ -508,7 +451,7 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Bir kayıt adı, alanın içindekileri kuşatmasıyla açıklar; başka bir kayıt ise alanı ağıla benzetir ve biçimi aynı anlamdaki başka bir söz biçiminin kaynak varyantı sayar.",
+        "discussion": "Kaynaklar, bu adı içindekileri çevreleyip tutan ağıl benzeri bir alan için verir ve adlandırmayı alanın kapsayıcı niteliğiyle ilişkilendirir.",
         "evidence_refs": [
           "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:101",
           "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1205:headword=%D8%A3%D8%B5%D8%AF:root=%D8%A1%20%D8%B5%20%D8%AF:sha=71cd0168b8dd97b7"
@@ -538,20 +481,21 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "İçinde bulunanları çevreleyip bir arada tutan, ağıl veya benzeri çevrili bir alandır.",
+        "semantic_definition": "İçinde bulunanları çevreleyerek bir arada tutan, barınak veya ağıl niteliğindeki çevrili alandır.",
         "concept": {
           "rank": 1,
-          "text": "içindekileri kuşatan çevrili alan",
+          "text": "çevrili barınak",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "Alanı biçiminden çok, içindekileri çevreleyip bir arada tutma işleviyle tanımlar.",
+          "applicability": "İçindekileri çevreleyip bir arada tutan alanın yalın ve genel Türkçe karşılığıdır.",
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002"
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Çevrili alanı, kuşatma ilişkisini ve içindekileri bir arada tutma işlevini korur.",
+            "preserves": "Çevrili alan olma ve içindekileri barındırıp tutma özelliklerini birlikte korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -564,15 +508,15 @@
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Çevrili alanın hayvanları içinde tutan bir barınak olduğu bağlamlarda doğal karşılıktır.",
+            "applicability": "Çevrili alanın hayvan barındıran bir yer olarak kullanıldığı bağlamlarda doğal karşılıktır.",
             "facet_ids": [
-              "F001"
+              "F002"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "İçindekileri kuşatan ve bir arada tutan çevrili yer özelliğini korur.",
-              "loses": "Hayvan barındırmayan benzer çevrili alanlara uygulanabilen genel kapsamı daraltır.",
-              "adds": "Hayvan barındırma işlevini belirginleştirir.",
+              "preserves": "Çevrili ve barındırıcı alan niteliğini korur.",
+              "loses": "İçeride tutulanların mutlaka hayvan olmadığı daha genel alan kapsamını daraltır.",
+              "adds": null,
               "collision": null
             }
           }
@@ -580,17 +524,18 @@
         "selected": [
           {
             "rank": 1,
-            "text": "içindekileri kuşatan çevrili alan",
+            "text": "çevrili barınak",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "Alanı biçiminden çok, içindekileri çevreleyip bir arada tutma işleviyle tanımlar.",
+            "applicability": "İçindekileri çevreleyip bir arada tutan alanın yalın ve genel Türkçe karşılığıdır.",
             "facet_ids": [
-              "F001"
+              "F001",
+              "F002"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Çevrili alanı, kuşatma ilişkisini ve içindekileri bir arada tutma işlevini korur.",
+              "preserves": "Çevrili alan olma ve içindekileri barındırıp tutma özelliklerini birlikte korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -602,15 +547,15 @@
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Çevrili alanın hayvanları içinde tutan bir barınak olduğu bağlamlarda doğal karşılıktır.",
+            "applicability": "Çevrili alanın hayvan barındıran bir yer olarak kullanıldığı bağlamlarda doğal karşılıktır.",
             "facet_ids": [
-              "F001"
+              "F002"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "İçindekileri kuşatan ve bir arada tutan çevrili yer özelliğini korur.",
-              "loses": "Hayvan barındırmayan benzer çevrili alanlara uygulanabilen genel kapsamı daraltır.",
-              "adds": "Hayvan barındırma işlevini belirginleştirir.",
+              "preserves": "Çevrili ve barındırıcı alan niteliğini korur.",
+              "loses": "İçeride tutulanların mutlaka hayvan olmadığı daha genel alan kapsamını daraltır.",
+              "adds": null,
               "collision": null
             }
           }
@@ -623,12 +568,12 @@
           "neighbor_branch_id": "B003",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Çevrili yer, içinde tutulanların türü belirtilmeden kuşatma işleviyle tanımlanır.",
-          "neighbor_only": "Sığır veya koyun barınağı olma ve dal ya da taştan yapılabilme özellikleri açıkça belirtilir.",
+          "focus_only": "Odak dal, içindekileri çevreleyen alanı barındırdığı şeyin türünü zorunlu kılmadan adlandırır.",
+          "neighbor_only": "Komşu dal özellikle sığır veya koyun gibi hayvanların barındığı ağılı anlatır.",
           "expression_transliteration": "Hazîretü'l-mâşiye",
           "gloss": "hayvan ağılı",
-          "shared_zone": "Her iki dal da canlıları çevreleyip bir arada tutabilen ağıl türü bir yeri gösterebilir.",
-          "distinction": "Odak dalında temel ölçüt içindekileri kuşatmaktır; komşu dal bunu belirli hayvanların barınağına ve kimi yapım malzemelerine bağlayarak daha dar bir sınır çizer.",
+          "shared_zone": "Her iki dal da çevrili bir barınak veya ağıl alanını gösterebilir.",
+          "distinction": "Komşu dal hayvan barındırma bakımından özelleşmiştir; odak dalın kaynak ifadesi ise çevreleme ve içeride tutmayı temel alır, içeridekilerin türünü sınırlamaz.",
           "expression_ar": "حظيرة الماشية",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
@@ -639,55 +584,53 @@
           ]
         },
         {
-          "neighbor_root_id": "root_000377",
-          "neighbor_branch_id": "B003",
-          "relation_type": "near_neighbor",
+          "neighbor_root_id": "root_000338",
+          "neighbor_branch_id": "B001",
+          "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "İçinde bulunanları tutan ağıl benzeri çevrili alan öne çıkar.",
-          "neighbor_only": "Koruma altındaki bölge veya çevrilmiş genel yer anlamı da bulunur.",
-          "expression_transliteration": "el-Himâ ve'l-hazîra",
-          "gloss": "korunan çevrili yer",
-          "shared_zone": "İki dal da sınırla çevrilmiş ve içi dışından ayrılmış bir alanı anlatır.",
-          "distinction": "Odak dalı kuşatıp içeride tutma işleviyle ağıl benzeri bir yeri belirtir; komşu dal koruma alanına ve daha genel çevrili yere açıldığı için tam karşılık değildir.",
-          "expression_ar": "الحِمى والحظيرة",
+          "focus_only": "Odak dal, alanın içindekileri kapsayıp bir arada tutma işlevini öne çıkarır.",
+          "neighbor_only": "Komşu dal, ahşap, kamış veya ağaçtan yapılabilen duvarı ve bu duvarla kurulan çevrili yeri de kapsar.",
+          "expression_transliteration": "hzyrh thjz alshy' wtjm'h",
+          "gloss": "çitli alan",
+          "shared_zone": "İki dal da içindekileri sınırlandıran çevrili alanı anlatır.",
+          "distinction": "Odak dal kapsayıcı alan adı olarak daha yalındır; komşu dal yapı malzemesini, duvarı ve çevrili yerin farklı kullanım alanlarını ayrıca kapsar.",
+          "expression_ar": "حظيرة تحجز الشيء وتجمعه",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1639:headword=%D8%AD%D9%8A%D8%B1:root=%D8%AD%20%D9%8A%20%D8%B1:sha=8450a36db07be5c7"
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:762",
+            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1669:headword=%D8%AD%D8%B8%D8%B1:root=%D8%AD%20%D8%B8%20%D8%B1:sha=502b253b208ef64c",
+            "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1384%3Asubentry%3A0%3A%D8%AD%D8%B8%D8%B1:headword=%D8%AD%D8%B8%D8%B1:root=%D8%AD%20%D8%B8%20%D8%B1:sha=93b73230927e0806",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A341:headword=%D8%AD%D8%B8%D8%B1:root=%D8%AD%20%D8%B8%20%D8%B1:sha=3ccb4bd08e839e2f",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1631:headword=%D8%AD%D8%B8%D8%B1:root=%D8%AD%20%D8%B8%20%D8%B1:sha=3bcde6c4413488ca",
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D55:headword=%D8%AD%D8%B8%D8%B1:root=%D8%AD%20%D8%B8%20%D8%B1:sha=0061f668c8c095e2"
           ]
         },
         {
-          "neighbor_root_id": "root_000036",
+          "neighbor_root_id": "root_000372",
           "neighbor_branch_id": "B001",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Kuşatıcı sınırı bulunan somut bir yer adlandırılır.",
-          "neighbor_only": "Bir şeyi üzerine kapatma eylemi veya bunu yapan kapatıcı şey adlandırılır.",
-          "expression_transliteration": "el-İtbâk ve'l-iglâk ale'ş-şey'",
-          "gloss": "kapatma ve çevrili alan",
-          "shared_zone": "Çevrili alanın içindekileri kuşatması, kapanma ve dışarıdan ayırma düşüncesini paylaşır.",
-          "distinction": "Bu dal sonuçtaki yer türünü gösterir; komşu dal ise kapatma işlemini ya da kapatıcı nesneyi gösterir. Ortak kuşatma düşüncesi onları eş anlamlı yapmaz.",
-          "expression_ar": "الإطباق والإغلاق على الشيء",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal, çevreleme sonucunda oluşan barınak niteliğindeki alanı adlandırır.",
+          "neighbor_only": "Komşu dal, bir şeyi duvarla veya başka unsurlarla çevreleme eylem ve durumunu anlatır.",
+          "expression_transliteration": "el-ihatu'l-hissiyye ve't-tahvit",
+          "gloss": "çevreleme",
+          "shared_zone": "Çevrili bir alan, somut çevreleme işleminin sonucudur.",
+          "distinction": "Odak dal bir yer türüdür; komşu dalın çekirdeği ise o yeri meydana getirebilen çevreleme ilişkisidir.",
+          "expression_ar": "الإحاطة الحسية والتحويط",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:101",
-            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4751:headword=%D8%A3%D8%B5%D8%AF:root=%D8%A1%20%D8%B5%20%D8%AF:sha=664011c74ff438be",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1205:headword=%D8%A3%D8%B5%D8%AF:root=%D8%A1%20%D8%B5%20%D8%AF:sha=71cd0168b8dd97b7"
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:827",
+            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1797:headword=%D8%AD%D9%88%D8%B7:root=%D8%AD%20%D9%88%20%D8%B7:sha=274187d7cef14094",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A382:headword=%D8%AD%D9%8A%D8%B7:root=%D8%AD%20%D9%8A%20%D8%B7:sha=9cab2a58efe53cc8",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2737:headword=%D8%AD%D9%88%D8%B7:root=%D8%AD%20%D9%88%20%D8%B7:sha=1fe62c9f923b50e1",
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D246%3Bsegment_index%3D4:headword=%D8%AD%D9%88%D8%B7:root=%D8%AD%20%D9%88%20%D8%B7:sha=259306409e8f2e1f"
           ]
         }
       ],
       "neighbor_coverage": {
         "candidate_count": 12,
         "assessment": "complete",
-        "note": "Bütün adaylar karşılaştırıldı; seçilen komşular genel çevrili alanı hayvan ağılı, korunan yer ve kapatma eyleminden ayıran en yararlı sınırları verir."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "bare",
-        "has_non_bare": false,
-        "has_collocation": false,
-        "unit_kind_counts": {
-          "form": 1
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "Tüm adaylar incelendi; hayvan ağılı, çitli alan ve somut çevreleme ile yapılan üç karşılaştırma dalın yer türü ve kapsam sınırını yeterince belirginleştirir."
       }
     },
     {
@@ -698,35 +641,54 @@
       "what_is_not_ar": "الإغلاق والحظيرة والفناء والموضع",
       "source_phrase_ar": "الأُصدة قميص صغير يلبسه الصبايا (maqayis); صبية ذات مُؤصد (maqayis); الأُصدة قميص يلبس تحت الثوب وتلبسه صغار الجواري (sihah); أصدته تأصيدا (sihah)",
       "image_transliteration": "el-Usdetü'lletî telbesühâ's-sabâyâ",
-      "summary": "Kız çocuklarının giydiği küçük bir gömlek ya da üst giysinin altında giyilen bir iç gömlektir. Ad ayrıca bu giysiyi taşıyan kız çocuğuyla ve birine bu giysiyi giydirme eylemiyle ilişkili kullanımlara temel olur.",
+      "summary": "Kız çocuklarının giydiği küçük bir gömlek ya da başka bir giysinin altına giyilen gömlektir. Bu giysiye sahip olma ve birine onu giydirme, ayrı yapılarda kurulan bağlı kullanımlardır.",
       "concept_map": {
-        "definition": "Kız çocuklarının giydiği küçük bir gömlek ya da üst giysinin altında giyilen bir iç gömlektir. Ad ayrıca bu giysiyi taşıyan kız çocuğuyla ve birine bu giysiyi giydirme eylemiyle ilişkili kullanımlara temel olur.",
+        "definition": "Kız çocuklarının giydiği küçük bir gömlek ya da başka bir giysinin altına giyilen gömlektir. Bu giysiye sahip olma ve birine onu giydirme, ayrı yapılarda kurulan bağlı kullanımlardır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kız çocuklarının giydiği küçük gömlek veya üst giysinin altında kullanılan iç gömlek.",
+            "statement": "Kız çocuklarının giydiği küçük bir gömlek veya giysi altına giyilen gömlek türüdür.",
             "claim_ids": [
-              "lu_008"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "associated_use",
-            "statement": "Bu gömleği taşıyan kız çocuğunu, üzerindeki giysi üzerinden belirten kullanım.",
+            "statement": "Bir kız çocuğunun bu giysiye sahip olduğu, giysi adıyla kurulan bağlı bir yapıda belirtilir.",
             "claim_ids": [
-              "lu_009"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "associated_use",
-            "statement": "Birine bu küçük iç gömleği giydirme eylemi.",
+            "role": "extension",
+            "statement": "Türemiş eylem, birine bu küçük gömleği giydirmeyi anlatır.",
             "claim_ids": [
-              "lu_010"
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi kız çocuklarının giydiği küçük gömleği veya giysi altına giyilen gömleği temel alır, fakat aynı iddia bu giysiye sahip olma ve birine bu giysiyi giydirme yapılarını da içerir. Dal korunabilir; giysinin kendisi çekirdek, sahiplik ve giydirme ise yapıya bağlı kullanımlar olarak ayrılmalıdır.",
+        "boundary_note": "Giysi anlamı dalın çekirdeğidir; giysiye sahip olma ve onu giydirme eylemi çekirdekle eşitlenmemelidir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım küçük iç gömleğini merkezde tutar; giysiye sahip olma ve birine onu giydirme anlamlarını yalnızca ilgili söz öbekleri ve türemiş eylemle sınırlar."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "mixed_non_bare",
+        "has_non_bare": true,
+        "has_collocation": true,
+        "unit_kind_counts": {
+          "collocation": 2,
+          "form": 1
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -734,7 +696,7 @@
           "expression_ar": "الأُصدة",
           "unit_kind": "form",
           "sense_ar": "قميص صغير أو قميص يلبس تحت الثوب وتلبسه الصبايا",
-          "target_gloss": "kız çocuklarının giydiği küçük gömlek; iç gömlek",
+          "target_gloss": "kız çocuklarının giydiği küçük veya içe giyilen gömlek",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:101",
@@ -747,7 +709,7 @@
           "expression_ar": "ذات مؤصد",
           "unit_kind": "collocation",
           "sense_ar": "صبية أو جارية ذات أُصدة",
-          "target_gloss": "bu gömleği giymiş kız çocuğu",
+          "target_gloss": "küçük iç gömleği olan kız",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:101",
@@ -760,7 +722,7 @@
           "expression_ar": "أصدته تأصيدا",
           "unit_kind": "collocation",
           "sense_ar": "ألبسته الأُصدة",
-          "target_gloss": "ona bu iç gömleği giydirdi",
+          "target_gloss": "ona küçük iç gömleğini giydirdi",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1205:headword=%D8%A3%D8%B5%D8%AF:root=%D8%A1%20%D8%B5%20%D8%AF:sha=71cd0168b8dd97b7"
@@ -771,23 +733,12 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Giysi bir anlatımda kız çocuklarının giydiği küçük gömlek, diğerinde üst giysinin altında giyilen ve yine küçük kızlara özgü bir iç gömlek olarak tanımlanır. Bu giysiyi taşıyan kız çocuğu da üzerindeki gömlek aracılığıyla belirtilir.",
+        "discussion": "Kaynaklar küçük kızların giydiği, kimi açıklamada başka bir giysinin altında bulunan küçük gömleği bildirir; ayrıca bu giysiye sahip olma ve onu giydirme yapıları aynı iddiada yer alır.",
         "evidence_refs": [
           "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:101",
           "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1205:headword=%D8%A3%D8%B5%D8%AF:root=%D8%A1%20%D8%B5%20%D8%AF:sha=71cd0168b8dd97b7"
         ],
-        "details": [
-          {
-            "kind": "derivation",
-            "summary": "Aynı giysi adı, birine bu gömleği giydirme anlamındaki eylemin de dayanağıdır.",
-            "source_refs": [
-              "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1205:headword=%D8%A3%D8%B5%D8%AF:root=%D8%A1%20%D8%B5%20%D8%AF:sha=71cd0168b8dd97b7"
-            ],
-            "source_ids": [
-              "sihah"
-            ]
-          }
-        ],
+        "details": [],
         "examples": [],
         "disagreement": null
       },
@@ -812,20 +763,20 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Kız çocuklarının giydiği küçük bir gömlek ya da üst giysinin altında giyilen bir iç gömlektir. Ad ayrıca bu giysiyi taşıyan kız çocuğuyla ve birine bu giysiyi giydirme eylemiyle ilişkili kullanımlara temel olur.",
+        "semantic_definition": "Kız çocuklarının giydiği küçük bir gömlek ya da başka bir giysinin altına giyilen gömlektir. Bu giysiye sahip olma ve birine onu giydirme, ayrı yapılarda kurulan bağlı kullanımlardır.",
         "concept": {
           "rank": 1,
-          "text": "kız çocuklarının giydiği küçük ya da içe giyilen gömlek",
+          "text": "kız çocuklarının giydiği küçük veya içe giyilen gömlek",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "İki tanımdaki küçük gömlek ve üst giysi altına giyilen gömlek seçeneklerini, ortak kullanıcı grubuyla birlikte kapsar.",
+          "applicability": "Kaynaklardaki küçük gömlek ve giysi altına giyilen gömlek çeşitlerini, kız çocuklarıyla ilişkisini koruyarak seçenekli biçimde yansıtır.",
           "facet_ids": [
             "F001"
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Gömlek türünü, küçük veya içe giyilen oluşunu ve kız çocuklarına özgü kullanımı korur.",
+            "preserves": "Gömlek türü, kız çocuklarınca kullanım ve kaynaklardaki küçüklük ya da içe giyilme seçenekleri korunur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -834,71 +785,53 @@
         "contextual": [
           {
             "rank": 2,
-            "text": "küçük kız gömleği",
+            "text": "küçük iç gömleği",
             "loanword_status": "none",
-            "usage_role": "contextual",
+            "usage_role": "general",
             "selection_role": "contextual_gloss",
-            "applicability": "Giysinin küçüklüğünün ve onu giyen kız çocuğunun öne çıktığı bağlamlarda kullanılır.",
+            "applicability": "Kullanıcının bağlamdan kız çocuğu olduğunun anlaşıldığı giysi anlatımlarında doğal karşılıktır.",
             "facet_ids": [
               "F001"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Küçük gömlek türünü ve kız çocuklarının giymesi özelliğini korur.",
-              "loses": "Üst giysinin altında kullanılan iç gömlek olma seçeneğini açıkça göstermez.",
+              "preserves": "Giysinin küçük bir iç gömleği olmasını korur.",
+              "loses": "Kız çocuklarına özgü kullanım bilgisini açıkça söylemez.",
               "adds": null,
               "collision": null
             }
           },
           {
             "rank": 3,
-            "text": "iç gömlek",
+            "text": "küçük iç gömleği olan kız",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Gömleğin başka bir giysinin altında giyildiği bağlamlarda doğal ve kısa karşılıktır.",
-            "facet_ids": [
-              "F001"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Başka bir giysinin altında giyilen gömlek olma özelliğini korur.",
-              "loses": "Giysinin küçük oluşunu ve özellikle kız çocukları tarafından giyilmesini tek başına belirtmez.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 4,
-            "text": "bu gömleği giymiş kız çocuğu",
-            "loanword_status": "none",
-            "usage_role": "explanatory",
-            "selection_role": "contextual_gloss",
-            "applicability": "Kız çocuğunun üzerindeki özel gömlek aracılığıyla tanımlandığı kullanım içindir.",
+            "applicability": "Kız çocuğunun söz konusu giysiye sahip olduğunu bildiren bağlı yapıda kullanılır.",
             "facet_ids": [
               "F002"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Kişiyi, kız çocuğu oluşunu ve onu belirleyen gömleği birlikte korur.",
+              "preserves": "Kız çocuğu ile sahip olduğu küçük iç gömleği arasındaki ilişkiyi eksiksiz korur.",
               "loses": null,
               "adds": null,
               "collision": null
             }
           },
           {
-            "rank": 5,
-            "text": "bu iç gömleği giydirmek",
+            "rank": 4,
+            "text": "küçük iç gömleğini giydirmek",
             "loanword_status": "none",
-            "usage_role": "explanatory",
+            "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Bir kişiye söz konusu küçük iç gömleğin giydirildiği eylem bağlamında kullanılır.",
+            "applicability": "Birine bu özel giysi türünün giydirildiği türemiş eylem bağlamında kullanılır.",
             "facet_ids": [
               "F003"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Giydirme eylemini ve eylemin nesnesi olan özel gömleği korur.",
+              "preserves": "Giysiyi başka birine giydirme işlemini ve giysi türünü korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -908,17 +841,17 @@
         "selected": [
           {
             "rank": 1,
-            "text": "kız çocuklarının giydiği küçük ya da içe giyilen gömlek",
+            "text": "kız çocuklarının giydiği küçük veya içe giyilen gömlek",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "İki tanımdaki küçük gömlek ve üst giysi altına giyilen gömlek seçeneklerini, ortak kullanıcı grubuyla birlikte kapsar.",
+            "applicability": "Kaynaklardaki küçük gömlek ve giysi altına giyilen gömlek çeşitlerini, kız çocuklarıyla ilişkisini koruyarak seçenekli biçimde yansıtır.",
             "facet_ids": [
               "F001"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Gömlek türünü, küçük veya içe giyilen oluşunu ve kız çocuklarına özgü kullanımı korur.",
+              "preserves": "Gömlek türü, kız çocuklarınca kullanım ve kaynaklardaki küçüklük ya da içe giyilme seçenekleri korunur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -926,71 +859,53 @@
           },
           {
             "rank": 2,
-            "text": "küçük kız gömleği",
+            "text": "küçük iç gömleği",
             "loanword_status": "none",
-            "usage_role": "contextual",
+            "usage_role": "general",
             "selection_role": "contextual_gloss",
-            "applicability": "Giysinin küçüklüğünün ve onu giyen kız çocuğunun öne çıktığı bağlamlarda kullanılır.",
+            "applicability": "Kullanıcının bağlamdan kız çocuğu olduğunun anlaşıldığı giysi anlatımlarında doğal karşılıktır.",
             "facet_ids": [
               "F001"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Küçük gömlek türünü ve kız çocuklarının giymesi özelliğini korur.",
-              "loses": "Üst giysinin altında kullanılan iç gömlek olma seçeneğini açıkça göstermez.",
+              "preserves": "Giysinin küçük bir iç gömleği olmasını korur.",
+              "loses": "Kız çocuklarına özgü kullanım bilgisini açıkça söylemez.",
               "adds": null,
               "collision": null
             }
           },
           {
             "rank": 3,
-            "text": "iç gömlek",
+            "text": "küçük iç gömleği olan kız",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Gömleğin başka bir giysinin altında giyildiği bağlamlarda doğal ve kısa karşılıktır.",
-            "facet_ids": [
-              "F001"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Başka bir giysinin altında giyilen gömlek olma özelliğini korur.",
-              "loses": "Giysinin küçük oluşunu ve özellikle kız çocukları tarafından giyilmesini tek başına belirtmez.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 4,
-            "text": "bu gömleği giymiş kız çocuğu",
-            "loanword_status": "none",
-            "usage_role": "explanatory",
-            "selection_role": "contextual_gloss",
-            "applicability": "Kız çocuğunun üzerindeki özel gömlek aracılığıyla tanımlandığı kullanım içindir.",
+            "applicability": "Kız çocuğunun söz konusu giysiye sahip olduğunu bildiren bağlı yapıda kullanılır.",
             "facet_ids": [
               "F002"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Kişiyi, kız çocuğu oluşunu ve onu belirleyen gömleği birlikte korur.",
+              "preserves": "Kız çocuğu ile sahip olduğu küçük iç gömleği arasındaki ilişkiyi eksiksiz korur.",
               "loses": null,
               "adds": null,
               "collision": null
             }
           },
           {
-            "rank": 5,
-            "text": "bu iç gömleği giydirmek",
+            "rank": 4,
+            "text": "küçük iç gömleğini giydirmek",
             "loanword_status": "none",
-            "usage_role": "explanatory",
+            "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Bir kişiye söz konusu küçük iç gömleğin giydirildiği eylem bağlamında kullanılır.",
+            "applicability": "Birine bu özel giysi türünün giydirildiği türemiş eylem bağlamında kullanılır.",
             "facet_ids": [
               "F003"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Giydirme eylemini ve eylemin nesnesi olan özel gömleği korur.",
+              "preserves": "Giysiyi başka birine giydirme işlemini ve giysi türünü korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -1005,12 +920,12 @@
           "neighbor_branch_id": "B015",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Üst giysinin altında giyilme ve bu giysiden türeyen kişi ile giydirme kullanımları bulunur.",
-          "neighbor_only": "Giysinin göbeğe kadar uzanması, gövdeye asılı görünmesi veya göğüslük türünde olması da kapsanır.",
+          "focus_only": "Odak dal, kız çocuklarının giydiği veya başka giysinin altına giyilen küçük gömleği anlatır.",
+          "neighbor_only": "Komşu dal küçük gömleğin yanında gövdeye asılı duran, bele kadar uzanan başka kısa giysi türlerini de kapsar.",
           "expression_transliteration": "Sevbün sagîrun ke-ennehû âlikun ale'l-cesed",
-          "gloss": "kız çocukları için kısa gömlek",
-          "shared_zone": "İki dal da kız çocuklarının giydiği küçük veya kısa bir gömlek türünde kesişir.",
-          "distinction": "Odak dalı alternatif olarak kız çocuklarının giydiği küçük gömlek ile üst giysinin altında giyilen gömlek tanımlarını ve bunlara bağlı kullanımları kapsar; komşu dal ise boy, duruş ve göğüslük biçimi gibi başka giysi özelliklerine uzanır.",
+          "gloss": "kısa çocuk giysisi",
+          "shared_zone": "Her iki dal da kız çocuklarıyla ilişkilendirilebilen küçük veya kısa bir üst giysisini gösterebilir.",
+          "distinction": "Odak dal gömlek ve içe giyilme özellikleriyle sınırlıdır; komşu dal ise kesim ve gövdedeki duruş bakımından farklı kısa giysileri de içine alır.",
           "expression_ar": "ثوب صغير كأنه عالق على الجسد",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
@@ -1024,12 +939,12 @@
           "neighbor_branch_id": "B007",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Giysi küçük kızlara özgüdür ve küçük gömlek olarak da tanımlanır.",
-          "neighbor_only": "Giysi, zırh veya iki kat giysi arasında giyilebilir ve kadının kalçasına bağladığı örtüyü de kapsar.",
+          "focus_only": "Odak dal giysiyi küçük kızların giydiği küçük bir gömlek olarak sınırlar.",
+          "neighbor_only": "Komşu dal iki giysi arasında, zırh altında veya kadınların bedeninin başka bölümünde kullanılan daha geniş bir iç giysi sınıfıdır.",
           "expression_transliteration": "Gılâletün beyne's-siyâb",
-          "gloss": "giysiler arasındaki ince içlik",
-          "shared_zone": "Her iki dal da başka bir giysinin altında kullanılan iç giysiyi anlatabilir.",
-          "distinction": "Odak dalı kullanıcıyı kız çocuklarıyla sınırlar ve küçük gömlek biçimini korur; komşu dal farklı katmanlar arasındaki daha genel içlik ve örtü türlerine yayılır.",
+          "gloss": "giysi altına giyilen ince kat",
+          "shared_zone": "İki dal da başka bir giysinin altında giyilen bir giysiyi anlatabilir.",
+          "distinction": "Odak dal çocuklara özgü küçük gömlek türüdür; komşu dalın kullanıcı, konum ve giysi biçimi kapsamı daha geniştir.",
           "expression_ar": "غلالة بين الثياب",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
@@ -1042,14 +957,14 @@
         {
           "neighbor_root_id": "root_001256",
           "neighbor_branch_id": "B001",
-          "relation_type": "near_neighbor",
+          "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Kız çocuklarına özgü küçük veya içe giyilen özel gömlek türü anlatılır.",
-          "neighbor_only": "Her türden genel gömlek ile gömlek giyme ve göreve girme gibi aktarmalı kullanımlar kapsanır.",
+          "focus_only": "Odak dal küçük boyut, içe giyilme ve kız çocuklarıyla kullanım sınırlarını taşır.",
+          "neighbor_only": "Komşu dal genel gömlek ve giyme anlamlarının yanı sıra örtü ve görev gibi aktarmalı kullanımları da kapsar.",
           "expression_transliteration": "Kamîsun yülbesü ev yütekammasu",
-          "gloss": "genel gömlek",
-          "shared_zone": "Odak giysi, komşu dalın genel gömlek sınıfı içinde değerlendirilebilir.",
-          "distinction": "Odak dalı belirli kullanıcı ve giyim katmanıyla özelleşmiş bir giysidir; komşu dal genel gömlek kavramını ve onun aktarmalı kullanımlarını taşır.",
+          "gloss": "gömlek",
+          "shared_zone": "Odak giysi genel gömlek sınıfının küçük ve özel bir türüdür.",
+          "distinction": "Genel gömlek karşılığı odak dalın kullanıcı ve kullanım sınırlarını siler; odak dal da komşunun genel ve aktarmalı kapsamının tümünü taşımaz.",
           "expression_ar": "قميص يلبس أو يتقمص",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
@@ -1063,17 +978,7 @@
       "neighbor_coverage": {
         "candidate_count": 12,
         "assessment": "complete",
-        "note": "Komşu kartların tamamı incelendi; seçilen üçü özel giysiyi kısa kız gömleği, genel içlik ve genel gömlekten ayıran en yakın karşılaştırmalardır."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "mixed_non_bare",
-        "has_non_bare": true,
-        "has_collocation": true,
-        "unit_kind_counts": {
-          "collocation": 2,
-          "form": 1
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "Adayların tamamı değerlendirildi; küçük kısa giysi, iç kat ve genel gömlek karşılaştırmaları bu özel çocuk giysisinin biçim, kullanım ve kullanıcı sınırlarını en açık biçimde gösterir."
       }
     },
     {
@@ -1084,27 +989,45 @@
       "what_is_not_ar": "الإغلاق والحظيرة والقميص والموضع",
       "source_phrase_ar": "الأَصيد لغة في الوصيد وهو الفناء (sihah)",
       "image_transliteration": "el-Finâ' ve'l-vasîd",
-      "summary": "Bir evin ya da yapının önünde veya ona bağlı bulunan açık avlu alanıdır; burada aynı anlamdaki başka bir biçimin sözlüksel karşılığı olarak geçer.",
+      "summary": "Bir evin ya da yapının çevresinde veya önünde bulunan açık alan, yani avludur.",
       "concept_map": {
-        "definition": "Bir evin ya da yapının önünde veya ona bağlı bulunan açık avlu alanıdır; burada aynı anlamdaki başka bir biçimin sözlüksel karşılığı olarak geçer.",
+        "definition": "Bir evin ya da yapının çevresinde veya önünde bulunan açık alan, yani avludur.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir yapıya bağlı, onun önünde veya yakınında bulunan açık avlu alanı.",
+            "statement": "Bir yapıyla bağlantılı açık alanı, başka bir deyişle avluyu belirtir.",
             "claim_ids": [
-              "lu_011"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "source_variant",
-            "statement": "Aynı avlu anlamını taşıyan başka bir söz biçiminin karşılığı olarak kaydedilen varyant.",
+            "statement": "Bu anlam, aynı avlu adının dilsel bir biçim değişkesi olarak aktarılır.",
             "claim_ids": [
-              "lu_011"
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi sözcüğü doğrudan avlu anlamındaki başka bir biçimin dilsel çeşidi olarak tanımlar. Hazırlanan dalın avlu odağı bu tek kaynaklı ve açık tanımla tam olarak örtüşür.",
+        "boundary_note": "Dal yalnızca avlu anlamıdır; kapı, giriş veya kapatma anlamları bu dala taşınmaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın biçimin avlu anlamıyla sınırlıdır ve komşu biçimin kapı gibi ek anlamlarını ya da başka söz öbeklerini içeri almaz."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "bare",
+        "has_non_bare": false,
+        "has_collocation": false,
+        "unit_kind_counts": {
+          "form": 1
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -1112,7 +1035,7 @@
           "expression_ar": "الأَصيد",
           "unit_kind": "form",
           "sense_ar": "الفناء على أنه لغة في الوصيد",
-          "target_gloss": "avlu; yapının önündeki açık alan",
+          "target_gloss": "avlu",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1205:headword=%D8%A3%D8%B5%D8%AF:root=%D8%A1%20%D8%B5%20%D8%AF:sha=71cd0168b8dd97b7"
@@ -1123,7 +1046,7 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Sözcük, bir yapıya bağlı açık avluyu belirtir ve bu anlamdaki başka bir biçimin karşılığı olarak kaydedilir.",
+        "discussion": "Tek kaynak, biçimi avlu anlamındaki eşdeğer bir söyleyiş çeşidi olarak verir.",
         "evidence_refs": [
           "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1205:headword=%D8%A3%D8%B5%D8%AF:root=%D8%A1%20%D8%B5%20%D8%AF:sha=71cd0168b8dd97b7"
         ],
@@ -1145,20 +1068,20 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Bir evin ya da yapının önünde veya ona bağlı bulunan açık avlu alanıdır; burada aynı anlamdaki başka bir biçimin sözlüksel karşılığı olarak geçer.",
+        "semantic_definition": "Bir evin ya da yapının çevresinde veya önünde bulunan açık alan, yani avludur.",
         "concept": {
           "rank": 1,
-          "text": "yapıya bağlı açık avlu",
+          "text": "avlu",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "Bir evin veya başka bir yapının önündeki ya da ona bağlı açık alanı doğrudan karşılar.",
+          "applicability": "Yapıyla bağlantılı açık alan anlamını tam ve doğal biçimde karşılar.",
           "facet_ids": [
             "F001"
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Açık avlu oluşunu ve avlunun bir yapıyla mekânsal bağını korur.",
+            "preserves": "Yapıya bağlı açık alan anlamını eksiksiz korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -1167,19 +1090,19 @@
         "contextual": [
           {
             "rank": 2,
-            "text": "avlu",
+            "text": "evin avlusu",
             "loanword_status": "none",
-            "usage_role": "general",
+            "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Söz konusu açık alanın hangi yapıya bağlı olduğunun cümlede açıkça belirtildiği durumlarda kullanılır.",
+            "applicability": "Açık alanın bir eve bağlı olduğunun bağlamda belirtilmesi gerektiğinde kullanılır.",
             "facet_ids": [
               "F001"
             ],
             "error_profile": {
-              "fit": "broadening",
-              "preserves": "Bir yapıyla ilişkili açık alan ve avlu çekirdeğini korur.",
-              "loses": null,
-              "adds": "Yapı önüne veya yapıya bağlı alana özgü olmayan daha genel avlu kullanımlarını da çağrıştırabilir.",
+              "fit": "narrowing",
+              "preserves": "Avlunun bir yapıyla bağlantılı açık alan olmasını korur.",
+              "loses": "Ev dışındaki yapılara bağlı avlu olasılığını sınırlar.",
+              "adds": null,
               "collision": null
             }
           }
@@ -1187,17 +1110,17 @@
         "selected": [
           {
             "rank": 1,
-            "text": "yapıya bağlı açık avlu",
+            "text": "avlu",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "Bir evin veya başka bir yapının önündeki ya da ona bağlı açık alanı doğrudan karşılar.",
+            "applicability": "Yapıyla bağlantılı açık alan anlamını tam ve doğal biçimde karşılar.",
             "facet_ids": [
               "F001"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Açık avlu oluşunu ve avlunun bir yapıyla mekânsal bağını korur.",
+              "preserves": "Yapıya bağlı açık alan anlamını eksiksiz korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -1205,19 +1128,19 @@
           },
           {
             "rank": 2,
-            "text": "avlu",
+            "text": "evin avlusu",
             "loanword_status": "none",
-            "usage_role": "general",
+            "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Söz konusu açık alanın hangi yapıya bağlı olduğunun cümlede açıkça belirtildiği durumlarda kullanılır.",
+            "applicability": "Açık alanın bir eve bağlı olduğunun bağlamda belirtilmesi gerektiğinde kullanılır.",
             "facet_ids": [
               "F001"
             ],
             "error_profile": {
-              "fit": "broadening",
-              "preserves": "Bir yapıyla ilişkili açık alan ve avlu çekirdeğini korur.",
-              "loses": null,
-              "adds": "Yapı önüne veya yapıya bağlı alana özgü olmayan daha genel avlu kullanımlarını da çağrıştırabilir.",
+              "fit": "narrowing",
+              "preserves": "Avlunun bir yapıyla bağlantılı açık alan olmasını korur.",
+              "loses": "Ev dışındaki yapılara bağlı avlu olasılığını sınırlar.",
+              "adds": null,
               "collision": null
             }
           }
@@ -1226,34 +1149,16 @@
       },
       "arabic_neighbor_distinctions": [
         {
-          "neighbor_root_id": "root_000756",
-          "neighbor_branch_id": "B001",
-          "relation_type": "synonym",
-          "boundary_match": "exact",
-          "focus_only": null,
-          "neighbor_only": null,
-          "expression_transliteration": "Sâhatü'd-dâr",
-          "gloss": "ev avlusu",
-          "shared_zone": "Her iki dal da evin açık avlusunu veya bahçe niteliğindeki açık alanını gösterir.",
-          "distinction": "Çekirdek sınırlar aynı açık avlu alanını gösterdiğinden anlam bakımından yer değiştirebilirler; ayrım yalnızca kullanılan söz biçimindedir.",
-          "expression_ar": "ساحة الدار",
-          "basis": "furuq_branch_comparison",
-          "evidence_refs": [
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1701",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A990:headword=%D8%B3%D9%88%D8%AD:root=%D8%B3%20%D9%88%20%D8%AD:sha=8c35bc072a68449c"
-          ]
-        },
-        {
           "neighbor_root_id": "root_001653",
           "neighbor_branch_id": "B002",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Anlam yalnızca yapıya bağlı açık avlu alanında tutulur.",
-          "neighbor_only": "Evin kapısı ve avlunun eve bitişikliği de bağımsız anlam öğeleri olarak kapsanır.",
+          "focus_only": null,
+          "neighbor_only": "Komşu dal avlunun yanı sıra evin kapısını da gösterebilir ve alanı eve bitişik oluşuyla açıklar.",
           "expression_transliteration": "Finâü'l-beyt ev bâbühü'l-muttasıl bi'r-rab'",
           "gloss": "ev avlusu veya kapısı",
-          "shared_zone": "İki dal da eve bağlı avlu alanını adlandırabilir.",
-          "distinction": "Odak dalı açık avluyla sınırlıdır; komşu dal avlunun yanı sıra kapıyı ve eve bitişiklik ilişkisini de kapsadığı için bütünüyle eş anlamlı değildir.",
+          "shared_zone": "Her iki dal da evle bağlantılı avlu anlamında kullanılabilir.",
+          "distinction": "Avlu bağlamında anlamlar örtüşür, ancak komşu dalın kapı kapsamı odak dalda bulunmaz; bu nedenle tam eş anlamlılık yalnızca avlu kullanımında geçerlidir.",
           "expression_ar": "فناء البيت أو بابه المتصل بالربع",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
@@ -1263,41 +1168,48 @@
           ]
         },
         {
-          "neighbor_root_id": "root_000687",
-          "neighbor_branch_id": "B004",
+          "neighbor_root_id": "root_001181",
+          "neighbor_branch_id": "B002",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Yapıya bağlı açık avlu, kapı yapısından ayrı olarak adlandırılır.",
-          "neighbor_only": "Kapı, kapı önü, gölgelik ve kapı yakınındaki oturma bölümü gibi yapısal alanlar da kapsanır.",
-          "expression_transliteration": "es-Südde inde'l-bâb ve'l-finâ'",
-          "gloss": "kapı önü ve avlu",
-          "shared_zone": "Her iki dal da yapının girişine yakın açık avlu veya kapı önü alanında kesişir.",
-          "distinction": "Odak dalı avlu anlamını korur; komşu dal kapının kendisine ve giriş çevresindeki örtülü ya da yapılı bölümlere genişler.",
-          "expression_ar": "السدة عند الباب والفناء",
+          "focus_only": "Odak dal yalın biçimde avlu alanını adlandırır.",
+          "neighbor_only": "Komşu dal evin çevresine uzanan alanı ve özellikle evin önündeki genişliği de vurgular.",
+          "expression_transliteration": "fna' aldar ws'tha",
+          "gloss": "evin avlusu ve önü",
+          "shared_zone": "İki dal evle bağlantılı avlu veya açık alan anlamında buluşur.",
+          "distinction": "Odak dal genel avlu adıdır; komşu dal alanın evin yanlarına uzanması ve önündeki genişlik gibi mekânsal ayrıntıları ayrıca taşır.",
+          "expression_ar": "فناء الدار وسعتها",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1610",
-            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4807:headword=%D8%B3%D8%AF:root=%D8%B3%20%D8%AF:sha=34d5ab5e7a8d620c",
-            "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A150%3Asubentry%3A0%3A%D8%B3%D8%AF%D8%AF:headword=%D8%B3%D8%AF%D8%AF:root=%D8%B3%20%D8%AF%20%D8%AF:sha=0077b1fd4596e4bf",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A680:headword=%D8%B3%D8%AF:root=%D8%B3%20%D8%AF:sha=9d88d6e4f3cfbcc6",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1299:headword=%D8%B3%D8%AF%D8%AF:root=%D8%B3%20%D8%AF%20%D8%AF:sha=e8ee02949326e67c",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D639%3Bsegment_index%3D2:headword=%D8%B3%D8%AF:root=%D8%B3%20%D8%AF:sha=d6e8adab561e526a"
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2665",
+            "maqayis:root=%D9%81%20%D9%86%20%D9%8A:headword=%D9%81%D9%86%D9%8A:sha=79cd219537171d95",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5493:headword=%D9%81%D9%86%D9%89:root=%D9%81%20%D9%86%20%D9%8A:sha=21f23bb28b424d1d",
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D800%3Bsegment_index%3D7:headword=%D9%81%D9%86%D8%A7:root=%D9%81%20%D9%86%20%D8%A7:sha=f43f3d81e0053fd3"
+          ]
+        },
+        {
+          "neighbor_root_id": "root_000756",
+          "neighbor_branch_id": "B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal kaynakta başka bir avlu adının söyleyiş çeşidi olarak belirlenmiştir.",
+          "neighbor_only": "Komşu dal evin saha ve açık alanını daha genel bir yer adıyla ifade eder.",
+          "expression_transliteration": "Sâhatü'd-dâr",
+          "gloss": "evin açık alanı",
+          "shared_zone": "Her iki dal bir evin avlusunu veya açık sahasını gösterebilir.",
+          "distinction": "Gösterilen yer büyük ölçüde örtüşse de odak dal belirli bir avlu adının biçim çeşididir; komşu dalın sözlüksel kapsamı evin sahası olarak bağımsızdır.",
+          "expression_ar": "ساحة الدار",
+          "basis": "furuq_branch_comparison",
+          "evidence_refs": [
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1701",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A990:headword=%D8%B3%D9%88%D8%AD:root=%D8%B3%20%D9%88%20%D8%AD:sha=8c35bc072a68449c"
           ]
         }
       ],
       "neighbor_coverage": {
         "candidate_count": 12,
         "assessment": "complete",
-        "note": "Bütün adaylar değerlendirildi; yayımlanan ilişkiler avluyla tam örtüşen dalı ve kapı ya da giriş çevresine genişleyen iki yakın dalı gösterir."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "bare",
-        "has_non_bare": false,
-        "has_collocation": false,
-        "unit_kind_counts": {
-          "form": 1
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "Bütün komşular gözden geçirildi; ev avlusu, evin önü ve genel açık alanla ilgili üç yakın karşılaştırma avlu çekirdeğini ve kapı anlamının dışarıda kalışını açıklar."
       }
     },
     {
@@ -1308,27 +1220,46 @@
       "what_is_not_ar": "الإغلاق والحظيرة والقميص والفناء",
       "source_phrase_ar": "ذات الأَصاد موضع (sihah); الأَصاد ردهة بين أجبل (sihah)",
       "image_transliteration": "el-Mevdi' beyne'l-cibâl",
-      "summary": "Dağların arasında kalan çukur veya genişçe bir arazi bölümüdür. Bundan bağımsız başka bir söz birimi, yalnızca belirli bir yer adı olarak kaydedilir.",
+      "summary": "Dağlar arasında bulunan çukur veya çanak biçimli bir alandır. Daha uzun bir sözlüksel yapıda ise belirli bir yeri gösterir.",
       "concept_map": {
-        "definition": "Dağların arasında kalan çukur veya genişçe bir arazi bölümüdür. Bundan bağımsız başka bir söz birimi, yalnızca belirli bir yer adı olarak kaydedilir.",
+        "definition": "Dağlar arasında bulunan çukur veya çanak biçimli bir alandır. Daha uzun bir sözlüksel yapıda ise belirli bir yeri gösterir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Dağlarla çevrili veya dağların arasında kalan çukur, genişçe arazi bölümü.",
+            "statement": "Dağlar arasında yer alan çukur veya çanak biçimli doğal alanı belirtir.",
             "claim_ids": [
-              "lu_013"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "associated_use",
-            "statement": "Başka bir söz biriminin, dağlar arasındaki arazi türünden bağımsız olarak belirli bir yer adı olması.",
+            "statement": "Daha uzun bir sözlüksel ifade, belirli bir yerin adı olarak kullanılır.",
             "claim_ids": [
-              "lu_012"
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi iki bağlı kullanımı birlikte verir: dağlar arasındaki çukur alanı belirten yalın biçim ve belirli bir yeri gösteren daha uzun ifade. Hazırlanan dal kullanılabilir, ancak yer türü ile özel bir yeri belirten sözlüksel kullanım tek ve belirsiz bir yer anlamıymış gibi birleştirilmemelidir.",
+        "boundary_note": "Dağlar arasındaki çukur alan yer türüdür; belirli yeri gösteren uzun ifade ise bu çekirdeğe bağlı ayrı bir sözlüksel kullanımdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım yalın biçimin dağlar arasındaki çukur alan anlamıyla daha uzun ifadenin belirli yer kullanımını açıkça ayırır."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "mixed_non_bare",
+        "has_non_bare": true,
+        "has_collocation": false,
+        "unit_kind_counts": {
+          "form": 1,
+          "lexical_unit": 1
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -1336,7 +1267,7 @@
           "expression_ar": "ذات الأَصاد",
           "unit_kind": "lexical_unit",
           "sense_ar": "اسم موضع",
-          "target_gloss": "belirli bir yerin adı",
+          "target_gloss": "belirli bir yer adı",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1205:headword=%D8%A3%D8%B5%D8%AF:root=%D8%A1%20%D8%B5%20%D8%AF:sha=71cd0168b8dd97b7"
@@ -1348,7 +1279,7 @@
           "expression_ar": "الأَصاد",
           "unit_kind": "form",
           "sense_ar": "ردهة بين أجبل",
-          "target_gloss": "dağlar arasındaki çukur düzlük",
+          "target_gloss": "dağlar arasındaki çukur alan",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1205:headword=%D8%A3%D8%B5%D8%AF:root=%D8%A1%20%D8%B5%20%D8%AF:sha=71cd0168b8dd97b7"
@@ -1359,22 +1290,11 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Temel coğrafi anlam, dağlar arasında kalan çukur veya genişçe bir arazi bölümüdür.",
+        "discussion": "Tek kaynak, yalın biçimi dağlar arasındaki çukur alan olarak açıklar ve aynı öğeyi içeren daha uzun ifadeyi belirli bir yer için kaydeder.",
         "evidence_refs": [
           "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1205:headword=%D8%A3%D8%B5%D8%AF:root=%D8%A1%20%D8%B5%20%D8%AF:sha=71cd0168b8dd97b7"
         ],
-        "details": [
-          {
-            "kind": "sole_attestation",
-            "summary": "Başka bir söz birimi, belirli bir yer adı olarak kaydedilir.",
-            "source_refs": [
-              "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1205:headword=%D8%A3%D8%B5%D8%AF:root=%D8%A1%20%D8%B5%20%D8%AF:sha=71cd0168b8dd97b7"
-            ],
-            "source_ids": [
-              "sihah"
-            ]
-          }
-        ],
+        "details": [],
         "examples": [],
         "disagreement": null
       },
@@ -1392,20 +1312,20 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Dağların arasında kalan çukur veya genişçe bir arazi bölümüdür. Bundan bağımsız başka bir söz birimi, yalnızca belirli bir yer adı olarak kaydedilir.",
+        "semantic_definition": "Dağlar arasında bulunan çukur veya çanak biçimli bir alandır. Daha uzun bir sözlüksel yapıda ise belirli bir yeri gösterir.",
         "concept": {
           "rank": 1,
-          "text": "dağlar arasındaki çukur düzlük",
+          "text": "dağlar arasındaki çukur alan",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "Dağların çevrelediği alçak ve görece geniş arazi bölümünü kısa biçimde karşılar.",
+          "applicability": "Yalın biçimin doğal yer türünü eksiksiz karşılar; belirli yer kullanımı ayrıca bağlamsal olarak gösterilir.",
           "facet_ids": [
             "F001"
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Dağlar arasında bulunma, alçaklık ve arazi bölümü olma özelliklerini korur.",
+            "preserves": "Alanı çevreleyen dağları ve aradaki çukur yer biçimini birlikte korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -1414,17 +1334,17 @@
         "contextual": [
           {
             "rank": 2,
-            "text": "dağlar arasında kalan çukur alan",
+            "text": "dağ çanağı",
             "loanword_status": "none",
-            "usage_role": "explanatory",
+            "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Coğrafi biçimin özel bir yer adı değil, betimlenen arazi türü olduğu bağlamlarda kullanılır.",
+            "applicability": "Dağlar arasında kalan çukur ve çanak biçimli doğal alanın kısa bağlamsal karşılığıdır.",
             "facet_ids": [
               "F001"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Dağlarla çevrili olmayı ve aradaki arazinin çukur alan niteliğini korur.",
+              "preserves": "Dağlarla çevrili çukur alan görünümünü doğal bir Türkçe ifadeyle korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -1432,18 +1352,18 @@
           },
           {
             "rank": 3,
-            "text": "belirli bir yerin adı",
+            "text": "belirli bir yer",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "contextual_gloss",
-            "applicability": "İfadenin coğrafi türü betimlemek yerine tek bir yeri adlandırdığı kullanım içindir.",
+            "applicability": "Daha uzun sözlüksel ifadenin özel bir yeri gösterdiği kullanım açıklanırken kullanılır.",
             "facet_ids": [
               "F002"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Sözün belirli bir coğrafi yeri adlandırma işlevini korur.",
-              "loses": "Adlandırılan yerin dağlar arasındaki çukur arazi niteliğini tek başına açıklamaz.",
+              "preserves": "İfadenin tek ve belirli bir yere gönderimde bulunmasını korur.",
+              "loses": "Yerin dağlar arasındaki çukur alanla sözlüksel bağlantısını açıkça taşımaz.",
               "adds": null,
               "collision": null
             }
@@ -1452,17 +1372,17 @@
         "selected": [
           {
             "rank": 1,
-            "text": "dağlar arasındaki çukur düzlük",
+            "text": "dağlar arasındaki çukur alan",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "Dağların çevrelediği alçak ve görece geniş arazi bölümünü kısa biçimde karşılar.",
+            "applicability": "Yalın biçimin doğal yer türünü eksiksiz karşılar; belirli yer kullanımı ayrıca bağlamsal olarak gösterilir.",
             "facet_ids": [
               "F001"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Dağlar arasında bulunma, alçaklık ve arazi bölümü olma özelliklerini korur.",
+              "preserves": "Alanı çevreleyen dağları ve aradaki çukur yer biçimini birlikte korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -1470,17 +1390,17 @@
           },
           {
             "rank": 2,
-            "text": "dağlar arasında kalan çukur alan",
+            "text": "dağ çanağı",
             "loanword_status": "none",
-            "usage_role": "explanatory",
+            "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Coğrafi biçimin özel bir yer adı değil, betimlenen arazi türü olduğu bağlamlarda kullanılır.",
+            "applicability": "Dağlar arasında kalan çukur ve çanak biçimli doğal alanın kısa bağlamsal karşılığıdır.",
             "facet_ids": [
               "F001"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Dağlarla çevrili olmayı ve aradaki arazinin çukur alan niteliğini korur.",
+              "preserves": "Dağlarla çevrili çukur alan görünümünü doğal bir Türkçe ifadeyle korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -1488,18 +1408,18 @@
           },
           {
             "rank": 3,
-            "text": "belirli bir yerin adı",
+            "text": "belirli bir yer",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "contextual_gloss",
-            "applicability": "İfadenin coğrafi türü betimlemek yerine tek bir yeri adlandırdığı kullanım içindir.",
+            "applicability": "Daha uzun sözlüksel ifadenin özel bir yeri gösterdiği kullanım açıklanırken kullanılır.",
             "facet_ids": [
               "F002"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Sözün belirli bir coğrafi yeri adlandırma işlevini korur.",
-              "loses": "Adlandırılan yerin dağlar arasındaki çukur arazi niteliğini tek başına açıklamaz.",
+              "preserves": "İfadenin tek ve belirli bir yere gönderimde bulunmasını korur.",
+              "loses": "Yerin dağlar arasındaki çukur alanla sözlüksel bağlantısını açıkça taşımaz.",
               "adds": null,
               "collision": null
             }
@@ -1513,12 +1433,12 @@
           "neighbor_branch_id": "B004",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Dağlar arasındaki coğrafi yer ayrıca belirli bir yer adı olarak kullanılabilir.",
-          "neighbor_only": "Tepeler, kum yükseltileri ve benzeri kabartılar arasındaki alçaklıklarla beden üzerindeki benzetmeli aralıklar da kapsanır.",
+          "focus_only": "Odak dal dağlarla çevrili çukur bir alanı belirtir.",
+          "neighbor_only": "Komşu dal iki yükselti, kum sırtı veya başka beden çıkıntıları arasındaki alçak boşluğa kadar uzanan daha geniş bir kapsama sahiptir.",
           "expression_transliteration": "Fürcetün munhafidatün beyne mürtefiayn",
-          "gloss": "iki yükselti arasındaki alçak alan",
-          "shared_zone": "Her iki dal da dağlar veya başka yükseltiler arasında kalan alçak araziyi anlatabilir.",
-          "distinction": "Odak dalı dağlar arasındaki çukur araziye ve onun yer adı kullanımına bağlıdır; komşu dal farklı yükselti türleri arasındaki aralıklara ve benzetmeli beden bölgelerine kadar genişler.",
+          "gloss": "iki yükselti arasındaki alçak yer",
+          "shared_zone": "Her iki dal da dağlar veya yükseltiler arasında kalan alçak bir yeri gösterebilir.",
+          "distinction": "Odak dal dağlık çevre ve çukur alanla sınırlıdır; komşu dal farklı yükselti türleri ve benzetmeli beden bölgeleri arasında da kullanılabilir.",
           "expression_ar": "فرجة منخفضة بين مرتفعين",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
@@ -1530,16 +1450,35 @@
           ]
         },
         {
+          "neighbor_root_id": "root_000402",
+          "neighbor_branch_id": "B003",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal dağlar arasındaki çukur doğal alanı yer türü olarak adlandırır.",
+          "neighbor_only": "Komşu dal iki tepe arasındaki eğimli alçak yerin yanı sıra tahılın düştüğü değirmen bölümünü de kapsar.",
+          "expression_transliteration": "el-Mekânü'l-munhafid ellezî yenkâdu ileyhi's-sâkıt",
+          "gloss": "iki tepe arasındaki alçak yer",
+          "shared_zone": "İki dal, yükseltiler arasında bulunan alçak bir doğal alanı anlatabilir.",
+          "distinction": "Odak dal çanak veya çukur alanı vurgular; komşu dalın ayırt edici yönü düşen şeyin yöneldiği alçak ve eğimli yer olmasıdır ve ayrıca araç parçasına uzanır.",
+          "expression_ar": "المكان المنخفض الذي ينقاد إليه الساقط",
+          "basis": "furuq_branch_comparison",
+          "evidence_refs": [
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:868",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1645:headword=%D8%AE%D8%B1%D8%B1:root=%D8%AE%20%D8%B1%20%D8%B1:sha=6b355d20be724a87",
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D344%3Bsegment_index%3D4:headword=%D8%AE%D8%B1:root=%D8%AE%20%D8%B1:sha=301ee53c784465f8"
+          ]
+        },
+        {
           "neighbor_root_id": "root_000797",
           "neighbor_branch_id": "B004",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Dağların arasında kalan çukur veya genişçe arazi bölümünün kendisi anlatılır.",
-          "neighbor_only": "İki dağ arasındaki geçit, yol, yarık veya su yatağı işlevi öne çıkar.",
+          "focus_only": "Odak dal dağlar arasında kalan çukur veya çanak biçimli alanı anlatır.",
+          "neighbor_only": "Komşu dal iki dağ arasındaki yarık, geçit, yol veya su yatağı niteliğini öne çıkarır.",
           "expression_transliteration": "eş-Şi'b beyne'l-cebeleyn",
           "gloss": "dağ geçidi",
-          "shared_zone": "İki dal da dağlar arasındaki bir arazi oluşumunu gösterebilir.",
-          "distinction": "Odak dalı aradaki çukur alanı bir yer yüzeyi olarak adlandırır; komşu dal ise açıklığı, geçiş yolunu veya akış hattını adlandırdığı için olağan kullanımda yer değiştirmez.",
+          "shared_zone": "Her iki dal da iki dağ arasındaki bir arazi biçimini gösterebilir.",
+          "distinction": "Odak dal kapalıca bir çukur alan görünümündedir; komşu dal ise aralık, geçiş yolu veya akış koridoru olmasıyla ayrılır.",
           "expression_ar": "الشِّعب بين الجبلين",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
@@ -1552,39 +1491,28 @@
           ]
         },
         {
-          "neighbor_root_id": "root_000402",
-          "neighbor_branch_id": "B003",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Alan özellikle dağlar arasında bulunur ve belirli yer adı kullanımına da sahiptir.",
-          "neighbor_only": "İki tepe arasındaki alçak yerin düşen maddeyi kendine yöneltmesi ve değirmenin tahıl atılan bölümü de kapsanır.",
-          "expression_transliteration": "el-Mekânü'l-munhafid ellezî yenkâdu ileyhi's-sâkıt",
-          "gloss": "iki tepe arasındaki akış alanı",
-          "shared_zone": "Her iki dal da iki yükselti arasında kalan alçak araziyi anlatır.",
-          "distinction": "Odak dalı dağlar arasındaki yer biçimini merkez alır; komşu dal alçaklığın düşen şeyi yöneltme özelliğine ve buna dayalı özel bir düzenek bölümüne uzanır.",
-          "expression_ar": "المكان المنخفض الذي ينقاد إليه الساقط",
+          "neighbor_root_id": "root_001243",
+          "neighbor_branch_id": "B009",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Odak dal bir doğal yer türünü ve buna bağlı belirli yer kullanımını içerir.",
+          "neighbor_only": "Komşu dal belirli bir dağın veya yerin özel adıdır.",
+          "expression_transliteration": "qtn asm jbl aw mwd'",
+          "gloss": "belirli dağ veya yer adı",
+          "shared_zone": "İki dal da dağlık bir coğrafyada belirli bir yere gönderimde bulunabilir.",
+          "distinction": "Odak dalın yalın biçiminde tanımlanabilir bir arazi türü vardır; komşu dal ise yalnızca belirli bir coğrafi varlığı adlandırır.",
+          "expression_ar": "قَطَن اسم جبل أو موضع",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:868",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1645:headword=%D8%AE%D8%B1%D8%B1:root=%D8%AE%20%D8%B1%20%D8%B1:sha=6b355d20be724a87",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D344%3Bsegment_index%3D4:headword=%D8%AE%D8%B1:root=%D8%AE%20%D8%B1:sha=301ee53c784465f8"
+            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3223:headword=%D9%82%D8%B7%D9%86:root=%D9%82%20%D8%B7%20%D9%86:sha=8204115b508efda8",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5029:headword=%D9%82%D8%B7%D9%86:root=%D9%82%20%D8%B7%20%D9%86:sha=27c25a63b4fa83dc"
           ]
         }
       ],
       "neighbor_coverage": {
         "candidate_count": 12,
         "assessment": "complete",
-        "note": "Tüm komşu kartları değerlendirildi; seçilen üçü çukur dağlık alanı genel alçak aralık, geçit ve akış alanından en açık biçimde ayırır."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "mixed_non_bare",
-        "has_non_bare": true,
-        "has_collocation": false,
-        "unit_kind_counts": {
-          "form": 1,
-          "lexical_unit": 1
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "Tüm adaylar değerlendirildi; alçak arazi, tepe arası çöküntü, dağ geçidi ve özel dağ adı karşılaştırmaları doğal yer türü ile belirli yer kullanımının sınırlarını gösterir."
       }
     }
   ],

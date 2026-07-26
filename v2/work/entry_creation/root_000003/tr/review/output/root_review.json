@@ -1,17 +1,160 @@
 {
   "verdict": "repair",
-  "summary": "B005 disindaki dallar yayin semantigi bakimindan kanitla uyumludur. B005 kaynak sentezindeki ilk kosul, belirli bir icme bicimini dislayan kaniti icmenin tumden yoklugu olarak genisletmektedir.",
+  "summary": "Yanit genel olarak dal sinirlarini ve mekanik kapsam profillerini koruyor; ancak B001'de acik bir kaynak genislemesi daraltilmis, B002 ve B004'te alternatif kaynak anlatimlari zorunlu birlesim gibi sunulmus, B006 tanimina da kaynakta bulunmayan bir baslangic durumu eklenmis. Asagidaki yuksek guvenli ve alanla sinirli duzeltmeler uygulanmalidir.",
   "issues": [
     {
-      "target_ref": "root_000003/B005",
+      "target_ref": "root_000003/B001",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kesin kaynak ifadesi bir anlatimda kapsami yeryuzunde yetisen her seye kadar genisletirken gerekce bunu yalniz yem ve otlatma amaciyla yetisen bitkilerle sinirliyor ve dali kosulsuz kabul ediyor.",
+      "smallest_correction": "Durumu qualified yap; gerekcede otlak ve hayvan yemi cekirdegini korurken bir kaynak anlatiminin kapsami yeryuzunde yetisen her seye genislettigini acikca belirt."
+    },
+    {
+      "target_ref": "root_000003/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanim yeryuzunde yetisenleri bu amacla kaydiyla yem ve otlatmaya bagliyor; kesin kaynak ifadesindeki yeryuzunde yetisen her sey genislemesini korumuyor.",
+      "smallest_correction": "Tanima kaynakla sinirli genislemeyi niteleyen bir cumle ekle ve bunu ayri bir source_variant facet olarak goster; mevcut otlak ve hazir mera facetlerini koru."
+    },
+    {
+      "target_ref": "root_000003/B001",
       "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak ozet, en genis kaynak anlatimini butun yemlik yer bitkileri diye daraltiyor; kaynak metni yemlik kaydi koymadan yeryuzunde yetisen her seyi soyluyor.",
+      "smallest_correction": "Ortak ozeti, ortak otlak ve hayvan yemi cekirdegiyle bir anlatimdaki yeryuzunde yetisen her seye uzanan genislemeyi ayiracak bicimde duzelt."
+    },
+    {
+      "target_ref": "root_000003/B002",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekce amaclama, niyet ve hazirlanmayi tek kullanimda birlikte zorunlu unsurlar gibi sunuyor; kesin kaynak ifadesi bunlari alternatif anlam anlatimlari olarak da veriyor.",
+      "smallest_correction": "Accepted durumunu koruyarak gerekceyi amaclama, niyet etme veya hazirlanma alternatiflerini ve yolculuk baglamindaki hazirlik ozellesmesini acikca gosterecek bicimde duzelt."
+    },
+    {
+      "target_ref": "root_000003/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanim ve cekirdek facet amaclama ya da niyet ile fiili hazirligi zorunlu bir birlesim haline getiriyor; kaynakta amaclama, niyetlenme ve hazirlanma alternatifleri bulunuyor.",
+      "smallest_correction": "Tanim ve F001'i alternatifligi koruyacak bicimde yaz; F002'de yolculuga hazirlanmayi, kimi anlatimda karar ve donanimin birlikte verilmesini belirten bir ozellesme olarak koru."
+    },
+    {
+      "target_ref": "root_000003/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak ozet amaclama ile hazirlanmayi ortak ve birlikte bulunan cekirdek sayiyor; kaynaklar amaclama, niyetlenme, hazirlanma ve yol donanimi arasinda farkli anlatimlar sunuyor.",
+      "smallest_correction": "Ozeti alternatif genel anlatimlari ve yolculuk ozellesmesindeki karar, hazirlik ve donanim farklarini source-neutral bicimde ayiracak sekilde duzelt."
+    },
+    {
+      "target_ref": "root_000003/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Amaclayip hazirlanmak glossu iki eylemi birlikte zorunlu kilar ve yalniz amaclama, niyetlenme ya da hazirlanma kullanimlarini disarida birakir.",
+      "smallest_correction": "Glossu amaclamak, niyet etmek veya hazirlanmak biciminde alternatifli yap; applicability ve error_profile metnini buna uyarla ve yalniz cekirdek faceti bagla."
+    },
+    {
+      "target_ref": "root_000003/B004",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekce elin kilica goturulmesi ile kilici cekmeye hazirlanmayi tek bir zorunlu sirali hareket sayiyor; kesin kaynak ifadesi bunlari iki farkli anlatim olarak verir.",
+      "smallest_correction": "Durumu qualified yap ve gerekceyi cekmeye hazirlanma cekirdegi ile bunun elin kilica geri goturulmesi bicimindeki kaynak anlatimini ayiracak sekilde duzelt."
+    },
+    {
+      "target_ref": "root_000003/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanim el hareketini her kullanim icin zorunlu kilarken kaynakta yalniz kilici cekmeye hazirlanma anlatimi da vardir; associated_use etiketi bu kaynak varyantini yanlis siniflandirir.",
+      "smallest_correction": "Tanimi iki kaynak anlatimini kapsayacak bicimde duzelt; F001'i kilici cekmeye hazirlanma cekirdegi, F002'yi elin kilica geri goturulmesi source_variant faceti yap."
+    },
+    {
+      "target_ref": "root_000003/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak ozet tum kaynaklari elin geri goturulmesi ve hazirlanma birlesiminde ortaklastiriyor; kaynaklar el hareketi anlatimi ile dogrudan hazirlanma anlatimi arasinda ayrilir.",
+      "smallest_correction": "Ozeti ortak cekme amacini koruyup el hareketi ve dogrudan hazirlanma anlatimlarini ayri varyantlar olarak gosterecek bicimde duzelt."
+    },
+    {
+      "target_ref": "root_000003/B004",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Mevcut gloss yalniz elin kilica goturulmesi anlatimini karsilar ve dogrudan kilici cekmeye hazirlanma kaynak anlatimini kaybeder.",
+      "smallest_correction": "Concept glossu kilici cekmeye hazirlanmak olarak genellestir ve applicability ile error_profile metinlerini iki kaynak anlatimini kapsayacak bicimde uyarla."
+    },
+    {
+      "target_ref": "root_000003/B004",
+      "field": "contextual_glosses",
       "severity": "minor",
       "confidence": "high",
       "claim_ids": [
-        "lu_006"
+        "bc_001"
       ],
-      "evidence_conflict": "lu_006 kanitinda ilk kosul, su bulununca icmenin tumden yoklugu olarak aciklanmaz; ifade yalniz belirli bir icme bicimini dislar. common_summary bunu ceylanlarin suyu bulduklarinda icmemesi diye genelleyerek kanitin verdiginden daha genis bir olumsuzluk kuruyor.",
-      "smallest_correction": "Ilk kosuldaki icmemesi sozunu asiri bicimde icmemesi gibi kanittaki sinirli icme bicimini gosterecek sekilde duzeltin; ikinci kosulu ve dalin odagini degistirmeyin."
+      "evidence_conflict": "Elini kilicina atmak baglamsal glossu yalniz el hareketi varyantini karsiladigi halde fit none olarak isaretlenmis ve kaybettigi dogrudan hazirlanma varyanti belirtilmemis.",
+      "smallest_correction": "Glossu koru; fit degerini narrowing yap ve loses alaninda el hareketi belirtilmeden verilen dogrudan hazirlanma anlatimini disarida biraktigini belirt."
+    },
+    {
+      "target_ref": "root_000003/B004",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005"
+      ],
+      "evidence_conflict": "lu_005 kesin anlami elin kilica geri goturulmesini veya kilici cekmeye hazirlanmayi alternatif olarak verir; hedef gloss yalniz ilkini karsiliyor.",
+      "smallest_correction": "lu_005 target_gloss degerini kilici cekmek icin elini ona geri goturmek veya kilici cekmeye hazirlanmak biciminde tamamla."
+    },
+    {
+      "target_ref": "root_000003/B006",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kesin kaynak yalniz bir seyi hareket ettirmeyi bildirir; tanimdaki durgunluk veya konumdan ifadesi desteklenmeyen bir baslangic durumu ya da konum degisikligi siniri ekler.",
+      "smallest_correction": "Yalniz tanim cumlesini Bir seyi hareket ettirmek demektir biciminde daralt; mevcut cekirdek faceti koru."
     }
   ]
 }
