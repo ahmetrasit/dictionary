@@ -1,28 +1,105 @@
 {
   "verdict": "repair",
-  "summary": "Girdi genel olarak kanıtla uyumludur; ancak bir sözcüksel karşılık dilbilgisel olarak kazma eylemini eksik bırakıyor ve bir komşu ayrımı kanıtta bulunmayan süreklilik ile hukukilik koşulları ekliyor.",
+  "summary": "B002, B005 ve B008 dallarında kanıtın izin verdiğinden daha geniş ya da daha dar anlam sınırları kurulmuştur. Bulgular, yalnızca bu sınırları etkileyen alanlarda küçük ve doğrudan düzeltmeler gerektirir.",
   "issues": [
     {
-      "target_ref": "root_000012/B006",
-      "field": "lexical_glosses",
-      "severity": "minor",
+      "target_ref": "root_000012/B002",
+      "field": "source_synthesis",
+      "severity": "major",
       "confidence": "high",
       "claim_ids": [
-        "lu_023"
+        "bc_001"
       ],
-      "evidence_conflict": "Kanıt hem kuyunun hem de kuyuya benzetilen mezarın kazılmasını bildirirken hedef karşılıkta \"kuyu\" yalın ad olarak bırakılmış, yalnızca mezar için \"kazmak\" eylemi kurulmuştur. Bu yapı iki nesneye ortak olan işlemi doğal ve açık biçimde aktarmıyor.",
-      "smallest_correction": "Karşılığı \"kuyu kazmak; benzetme yoluyla da mezar kazmak\" biçiminde düzenleyerek kazma eylemini her iki kapsam için açıkça belirtin."
+      "evidence_conflict": "Kanıtın bazı aktarımları ağacı ılgına benzer diye nitelerken bir aktarım onu ılgının bir türü sayar. Ortak özet bu ayrılığı göstermeyip bütün kaynakları yalnızca benzerlik görüşünde birleştiriyor.",
+      "smallest_correction": "Ortak özeti, kaynakların benzerlik ile tür ilişkisi arasında ayrıldığını kaynak kodlarını yinelemeden açıkça belirtecek biçimde düzelt."
     },
     {
-      "target_ref": "root_000012/B007",
-      "field": "neighbor_distinctions",
+      "target_ref": "root_000012/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kısa kavram karşılığı ağacı kesin olarak bir ılgın türü sayıyor; oysa kanıtın önemli bölümü yalnızca ılgına benzediğini bildiriyor.",
+      "smallest_correction": "Kısa karşılığı kesin tür sınıflandırması yerine kalın köklü ve ılgına benzeyen bir ağaç olarak ver; hata profilini de bu nötrleştirmeye uyarla."
+    },
+    {
+      "target_ref": "root_000012/B005",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yargı, kötülemenin her kullanımda soy ve aile kökenine yönelmesini zorunlu sayıyor. Kanıtta soy hakkında kötü söz söyleyen aktarımın yanında hedefi ayrıca soyla sınırlamayan yerme, sövme ve gıyabında kötüleme açıklamaları da vardır.",
+      "smallest_correction": "Durumu qualified yap ve gerekçede dal çerçevesinin soy hedefini yalnızca açık kaynak çeşitlemesi olarak koruyup genel kötüleme aktarımlarını da kapsaması gerektiğini belirt."
+    },
+    {
+      "target_ref": "root_000012/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ile çekirdek facet, bütün yerme, sövme ve gıyabında kötüleme örneklerini zorunlu olarak soy saldırısına indirger. Kanıt yalnızca bir aktarımda soy ve hasep hedefini açıkça belirtir.",
+      "smallest_correction": "Tanımı genel yerme, sövme ve gıyabında kötülemeyi çekirdek yapacak; soy veya aile kökenine saldırıyı ise açık bir uzmanlaşma olarak koruyacak biçimde düzelt."
+    },
+    {
+      "target_ref": "root_000012/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet bütün kaynakları soy ve aile kökenine saldırma açıklamasında birleştiriyor; kanıt ise genel yerme, sövme ve gıyabında kötüleme ile açık soy hedefini ayrı kaynak görünümleri olarak sunuyor.",
+      "smallest_correction": "Ortak özeti, genel kötüleme açıklamalarını ortak alan olarak verip soy ve hasep hedefini bazı aktarımların açıklaştırdığı özel görünüm olarak ayıracak biçimde düzelt."
+    },
+    {
+      "target_ref": "root_000012/B005",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı yalnızca soya dil uzatmayı temsil ediyor ve hedefi soyla sınırlamayan yerme, sövme ve gıyabında kötüleme çekirdeğini dışarıda bırakıyor.",
+      "smallest_correction": "Kavram karşılığını genel kötüleme çekirdeğini kapsayan doğal bir ifadeyle değiştir; uygulama ve hata profilinde soy hedefini zorunlu çekirdek sayma."
+    },
+    {
+      "target_ref": "root_000012/B005",
+      "field": "contextual_glosses",
       "severity": "minor",
       "confidence": "high",
       "claim_ids": [
-        "lu_024"
+        "bc_001"
       ],
-      "evidence_conflict": "Kanıt yalnızca bir şeyin konuşan kişiye yüklenip onun için bağlayıcı kılındığını gösterir. Komşu ayrımındaki \"süren bir yükümlülük\" ve \"hukuki ya da sürekli bir bağ\" ifadeleri, sürenin veya hukukiliğin dal sınırı olduğu yönünde desteklenmeyen ek koşullar getirir.",
-      "smallest_correction": "Süreklilik ve hukukilik bildiren ifadeleri kaldırın; ayrımı, bir şeyi doğrudan konuşan kişiye bağlayıcı yükümlülük olarak yükleme ile bir kişiyi belirli bir işi yapmaya zorlama karşıtlığı üzerinden kurun."
+      "evidence_conflict": "Aile kökenini kötüleme karşılığı kaynakta desteklenen dar bir bağlamdır, fakat hata profili onu bütün çekirdeği kayıpsız koruyan bir karşılık olarak işaretliyor.",
+      "smallest_correction": "Bu bağlamsal karşılığı koru, ancak fit değerini narrowing yap; genel yerme, sövme ve gıyabında kötüleme kapsamını kaybettiğini belirt ve yalnızca ilgili uzmanlaşma facetiyle ilişkilendir."
+    },
+    {
+      "target_ref": "root_000012/B008",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım, yalnızca kışa hazırlanma söz grubuyla kanıtlanan eylemi herhangi bir yaklaşan duruma hazırlanma anlamına genişletiyor. Mekanik profil bu eylem görünümünün söz grubuna bağlı kalmasını gerektirir.",
+      "smallest_correction": "Tanımın eylem bölümünü yalnızca kışa önceden hazırlanmakla sınırla; ayrı biçimin hazırlanmış ve hazır olma durumunu koru."
+    },
+    {
+      "target_ref": "root_000012/B008",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı genel ve geçişli bir önceden hazırlamak eylemi kuruyor; kanıt ise kişinin kışa hazırlanmasını ve ayrı bir biçimde hazırlanmış olma durumunu verir.",
+      "smallest_correction": "Karşılığı kışa hazırlanmak ile hazırlanmış olmak görünümlerini katılımcı yapıları değiştirmeden yan yana verecek biçimde düzelt; uygulama ve hata profilini buna uyarla."
     }
   ]
 }
