@@ -99,6 +99,12 @@ python3 v2/gloss_generation/workflow.py prepare-all \
   --language-set western-muslim-priority
 ```
 
+For a production orchestration wave, generate the complete available input
+bundle set before launching workers. During active writer orchestration, do not
+run `prepare` or `prepare-all` as part of slot top-up. Top-up only from
+already staged tasks whose `input/task.json` and `controller/writer_task.sha256`
+exist and whose output is not already present.
+
 Never infer a missing Turkish entry. A preparation error is deterministic:
 correct a clearly owned prerequisite or park the affected pair with the exact
 diagnostic. Do not send malformed or stale evidence to a writer.
