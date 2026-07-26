@@ -15,11 +15,12 @@
     "evidence_index_sha256": "e2ef9aa85a9eec195aacc26685d2ae1acf5abc0ec84b25154067b6c966f9ca65",
     "furuq_path": "data/working/furuq_v4.sqlite",
     "furuq_sha256": "1099db0d56515d2eb3e8d72f104f2e338c2c9a8c1fa6abbb046406d3b327e722",
-    "root_task_sha256": "828178e79dee2973b062b6cb380065c1690b2c94f29ed77ee3cab907fde0296b"
+    "root_task_sha256": "1b60652566fc89c76f9f42198dcec07e0f8abfc31edee8ec512bb789f83bbfb5",
+    "root_evidence_format": "dictionary-v2-agent-root-evidence-v5"
   },
   "root_profile": {
     "transliteration": "ʾ-t-y",
-    "summary": "Kök, gelme ve hedefe ulaşma çekirdeğinden verme, uygun yoldan yaklaşma, suyu yönlendirme, uzaktan gelen taşkın ve dışarıdan gelen kişi gibi kollara açılır. Ürün artışı, ödeme, hayvan yürüyüşü, yol, yıkımla karşılaşma, çiftleşme isteği ve etkili kişi anlamları daha gevşek ya da kalıplaşmış dallar oluşturur.",
+    "summary": "Kök, gelme ve ulaştırmadan uygun yoldan işlemeye uzanan bir çekirdeğin yanında su yolu, dışarıdan gelen sel, yabancı kişi, ürün ve artış, mali ödeme, hayvan hareketi, yol, felaket, çiftleşme isteği ve etkili kişi gibi çoğu kalıba bağlı tarihsel anlam dalları taşır.",
     "polysemy": "polysemic",
     "organization": "mixed",
     "branch_count": 13,
@@ -35,28 +36,46 @@
       "what_is_not_ar": "ليس الإعطاء ولا الخراج ولا ريع الزرع",
       "source_phrase_ar": "أتى يأتي أتيا (jamhara)؛ الإتيان المجئ (sihah)؛ أتاني فلان إتيانا وأتيا وأتية وأتوة (tahdhib;maqayis)؛ الإتيان مجيء بسهولة (mufradat)",
       "image_transliteration": "gelme ve ulaşma",
-      "summary": "Bir kişinin ya da şeyin kendisiyle, bir iş aracılığıyla veya bir düzenleme sonucunda gelmesi ve hedefe ulaşmasıdır; geciken kişiden gelmesinin istenmesini de kapsar.",
+      "summary": "Bir kişinin ya da şeyin bulunduğu yere gelmesi veya bir hedefe ulaşmasıdır; bazı kullanımlarda bu gelişin kolayca gerçekleştiği belirtilir.",
       "concept_map": {
-        "definition": "Bir kişinin ya da şeyin kendisiyle, bir iş aracılığıyla veya bir düzenleme sonucunda gelmesi ve hedefe ulaşmasıdır; geciken kişiden gelmesinin istenmesini de kapsar.",
+        "definition": "Bir kişinin ya da şeyin bulunduğu yere gelmesi veya bir hedefe ulaşmasıdır; bazı kullanımlarda bu gelişin kolayca gerçekleştiği belirtilir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kişi ya da şey bizzat, bir iş aracılığıyla veya bir düzenleme sonucunda gelir ve hedefe ulaşır.",
+            "statement": "Bir kişi ya da şey gelir veya bir hedefe ulaşır.",
             "claim_ids": [
-              "lu_001",
-              "lu_002"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "associated_use",
-            "statement": "Geciken birinin gelişi beklenir ve kendisinden gelmesi istenir.",
+            "role": "source_variant",
+            "statement": "Bir açıklamada gelişin kolaylıkla gerçekleşmesi özellikle belirtilir.",
             "claim_ids": [
-              "lu_003"
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi dalın çekirdeğini gelme ve ulaşma olarak doğrular; kolaylık niteliği açıklamalardan yalnız birinde belirgindir. Gelmeyi isteme ise dalın genel anlamı değil, ayrı bir kalıpta görülen kullanımdır.",
+        "boundary_note": "Çekirdek anlam gelme ve ulaşmadır; gelmeyi isteme yalnız ilgili kalıba bağlıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Yalın gelme anlamı ile birini gecikmiş sayıp gelmesini istemeyi bildiren kalıp birbirine karıştırılmaz."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "mixed_non_bare",
+        "has_non_bare": true,
+        "has_collocation": true,
+        "unit_kind_counts": {
+          "collocation": 1,
+          "form": 2
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -64,7 +83,7 @@
           "expression_ar": "أتى",
           "unit_kind": "form",
           "sense_ar": "جاء أو وصل، بالذات أو بالأمر أو بالتدبير",
-          "target_gloss": "gelmek; ulaşmak",
+          "target_gloss": "gelmek veya ulaşmak",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
@@ -81,7 +100,7 @@
           "expression_ar": "أتوته",
           "unit_kind": "form",
           "sense_ar": "أتيته، وهي لغة في الإتيان",
-          "target_gloss": "ona gelmek; ona ulaşmak",
+          "target_gloss": "ona gitmek veya yanına varmak",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
@@ -110,257 +129,7 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Temel anlam, bir kişinin ya da şeyin gelmesi ve ulaşmasıdır. Anlatım, öznenin kendi gelişi yanında bir işin veya düzenlemenin hedefe varmasını da içine alır; ayrı bir açıklama ise gelişi kolay gerçekleşme niteliğiyle belirler.",
-        "evidence_refs": [
-          "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:39",
-          "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
-          "maqayis:root=%D8%A1%20%D8%AA%20%D9%8A:headword=%D8%A3%D8%AA%D9%8A:sha=7f53dd4e46ea06c3",
-          "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A7:headword=%D8%A3%D8%AA%D9%89:root=%D8%A1%20%D8%AA%20%D9%8A:sha=e41baaeb672b8520",
-          "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6",
-          "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
-        ],
-        "details": [
-          {
-            "kind": "sole_attestation",
-            "summary": "Geciken kişiyi bekleyip ondan gelmesini isteme anlamı ayrıca kaydedilir.",
-            "source_refs": [
-              "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:39",
-              "maqayis:root=%D8%A1%20%D8%AA%20%D9%8A:headword=%D8%A3%D8%AA%D9%8A:sha=7f53dd4e46ea06c3"
-            ],
-            "source_ids": [
-              "maqayis"
-            ]
-          }
-        ],
-        "examples": [],
-        "disagreement": null
-      },
-      "dictionary_basis": {
-        "dictionary_count": 5,
-        "passage_count": 6,
-        "sources": [
-          {
-            "source_id": "jamhara",
-            "dictionary_name": "Jamharat al-Lugha",
-            "source_refs": [
-              "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324"
-            ]
-          },
-          {
-            "source_id": "sihah",
-            "dictionary_name": "al-Ṣiḥāḥ",
-            "source_refs": [
-              "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6"
-            ]
-          },
-          {
-            "source_id": "tahdhib",
-            "dictionary_name": "Tahdhīb al-Lugha",
-            "source_refs": [
-              "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
-            ]
-          },
-          {
-            "source_id": "mufradat",
-            "dictionary_name": "al-Mufradāt fī Gharīb al-Qurʾān",
-            "source_refs": [
-              "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A7:headword=%D8%A3%D8%AA%D9%89:root=%D8%A1%20%D8%AA%20%D9%8A:sha=e41baaeb672b8520"
-            ]
-          },
-          {
-            "source_id": "maqayis",
-            "dictionary_name": "Maqāyīs al-Lugha",
-            "source_refs": [
-              "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:39",
-              "maqayis:root=%D8%A1%20%D8%AA%20%D9%8A:headword=%D8%A3%D8%AA%D9%8A:sha=7f53dd4e46ea06c3"
-            ]
-          }
-        ]
-      },
-      "glosses": {
-        "semantic_definition": "Bir kişinin ya da şeyin kendisiyle, bir iş aracılığıyla veya bir düzenleme sonucunda gelmesi ve hedefe ulaşmasıdır; geciken kişiden gelmesinin istenmesini de kapsar.",
-        "concept": {
-          "rank": 1,
-          "text": "gelmek veya ulaşmak",
-          "loanword_status": "none",
-          "usage_role": "explanatory",
-          "selection_role": "primary_concept_gloss",
-          "applicability": "Kişinin, şeyin ya da yürütülen işin hedefe varmasını anlatan temel kullanımlara uygundur.",
-          "facet_ids": [
-            "F001"
-          ],
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Gelme hareketini ve bir hedefe ulaşma sonucunu birlikte korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          }
-        },
-        "contextual": [
-          {
-            "rank": 2,
-            "text": "gelmesini istemek",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Gecikmiş bir kişiden beklenen gelişi gerçekleştirmesinin istendiği bağlamda kullanılır.",
-            "facet_ids": [
-              "F002"
-            ],
-            "error_profile": {
-              "fit": "none",
-              "preserves": "Bekleme sonrasında kişiden gelmesinin istenmesi anlamını korur.",
-              "loses": null,
-              "adds": null,
-              "collision": null
-            }
-          }
-        ],
-        "selected": [
-          {
-            "rank": 1,
-            "text": "gelmek veya ulaşmak",
-            "loanword_status": "none",
-            "usage_role": "explanatory",
-            "selection_role": "primary_concept_gloss",
-            "applicability": "Kişinin, şeyin ya da yürütülen işin hedefe varmasını anlatan temel kullanımlara uygundur.",
-            "facet_ids": [
-              "F001"
-            ],
-            "error_profile": {
-              "fit": "none",
-              "preserves": "Gelme hareketini ve bir hedefe ulaşma sonucunu birlikte korur.",
-              "loses": null,
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 2,
-            "text": "gelmesini istemek",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Gecikmiş bir kişiden beklenen gelişi gerçekleştirmesinin istendiği bağlamda kullanılır.",
-            "facet_ids": [
-              "F002"
-            ],
-            "error_profile": {
-              "fit": "none",
-              "preserves": "Bekleme sonrasında kişiden gelmesinin istenmesi anlamını korur.",
-              "loses": null,
-              "adds": null,
-              "collision": null
-            }
-          }
-        ],
-        "excluded": [
-          {
-            "text": "gelmek",
-            "category": "alternative",
-            "exclusion_reason": "Hedefe ulaşmayı, iş veya düzenleme yoluyla varmayı ve geliş isteğini ayrı ayrı göstermez.",
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Bir kişinin veya şeyin varış hareketini korur.",
-              "loses": "Hedefe ulaşmayı, iş veya düzenleme yoluyla varmayı ve geliş isteğini ayrı ayrı göstermez.",
-              "adds": null,
-              "collision": null
-            }
-          }
-        ]
-      },
-      "arabic_neighbor_distinctions": [
-        {
-          "neighbor_root_id": "root_000281",
-          "neighbor_branch_id": "B001",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Bu dal, bir işin veya düzenlemenin hedefe ulaşmasını ve geciken kişiden gelmesinin istenmesini de içerir.",
-          "neighbor_only": "Komşu dal, belirli bir yere, işe veya zamana yönelmeyi ayrıca kapsar.",
-          "expression_transliteration": "gelme ve ulaşma",
-          "gloss": "gelmek ve ulaşmak",
-          "shared_zone": "Her iki dalın çekirdeğinde bir varlığın gelmesi ve bir noktaya ulaşması bulunur.",
-          "distinction": "Temel hareket büyük ölçüde ortaktır; ancak odak dal iş veya düzenleme yoluyla varmayı ve geliş isteğini, komşu dal ise yönelme ve amaç boyutunu daha açık biçimde taşır.",
-          "expression_ar": "المجيء والحصول",
-          "basis": "furuq_branch_comparison",
-          "evidence_refs": [
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:653",
-            "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A15%3A%D8%AC%D9%8A%D8%A3:headword=%D8%AC%D9%8A%D8%A3:root=%D8%AC%20%D9%8A%20%D8%A1:sha=4e9d35a011163170",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A27:headword=%D8%AC%D9%8A%D8%A3:root=%D8%AC%20%D9%8A%20%D8%A1:sha=d650ac36178abfae",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A283:headword=%D8%AC%D8%A7%D8%A1:root=%D8%AC%20%D8%A7%20%D8%A1:sha=97b3af903d8ffce2"
-          ]
-        }
-      ],
-      "neighbor_coverage": {
-        "candidate_count": 20,
-        "assessment": "single_sufficient",
-        "note": "Bütün adaylar karşılaştırıldı; yalnızca gelme çekirdeğine en çok yaklaşan ve kapsam ayrımını açıkça gösteren komşu yayımlandı."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "mixed_non_bare",
-        "has_non_bare": true,
-        "has_collocation": true,
-        "unit_kind_counts": {
-          "collocation": 1,
-          "form": 2
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
-      }
-    },
-    {
-      "root_id": "root_000009",
-      "branch_id": "B002",
-      "branch_image_ar": "الإيتاء والإعطاء",
-      "what_is_ar": "الإعطاء، وإتيان الشيء بالشيء أو إحضاره",
-      "what_is_not_ar": "ليس مجرد المجيء ولا الإتاوة المفروضة",
-      "source_phrase_ar": "آتى يؤتي إيتاء في معنى أعطى (jamhara)؛ آتاه إيتاء أي أعطاه وآتاه أيضا أي أتى به (sihah)؛ الإتياء الإعطاء (tahdhib)؛ الإيتاء الإعطاء (mufradat;maqayis)",
-      "image_transliteration": "verme ve sunma",
-      "summary": "Birine bir şeyi vermek ya da bir şeyi getirip hazır ederek onun erişimine sunmaktır.",
-      "concept_map": {
-        "definition": "Birine bir şeyi vermek ya da bir şeyi getirip hazır ederek onun erişimine sunmaktır.",
-        "facets": [
-          {
-            "facet_id": "F001",
-            "role": "core",
-            "statement": "Bir kişi başka birine bir şey verir.",
-            "claim_ids": [
-              "lu_004"
-            ]
-          },
-          {
-            "facet_id": "F002",
-            "role": "extension",
-            "statement": "Verme anlamı, bir şeyi getirip hazır etme ve sunma biçiminde genişler.",
-            "claim_ids": [
-              "lu_004"
-            ]
-          }
-        ]
-      },
-      "lexical_realizations": [
-        {
-          "lexical_unit_id": "lu_004",
-          "expression_ar": "آتى",
-          "unit_kind": "form",
-          "sense_ar": "أعطى، وقد يقال لما أتى بالشيء وأحضره",
-          "target_gloss": "vermek; getirip sunmak",
-          "target_rendering_kind": "ordinary",
-          "evidence_refs": [
-            "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A7:headword=%D8%A3%D8%AA%D9%89:root=%D8%A1%20%D8%AA%20%D9%8A:sha=e41baaeb672b8520",
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:39",
-            "maqayis:root=%D8%A1%20%D8%AA%20%D9%8A:headword=%D8%A3%D8%AA%D9%8A:sha=7f53dd4e46ea06c3"
-          ],
-          "quran_form": null
-        }
-      ],
-      "usage_notes": [],
-      "evidence_qualifiers": [],
-      "source_discussion": {
-        "discussion": "Kaynaklar bir şeyi başkasına verme anlamında birleşir. Aynı birim, bir şeyi getirip hazır ederek sunma anlamında da kullanılır.",
+        "discussion": "Kaynaklar gelme ve ulaşma çekirdeğinde birleşir; kolaylık, çekirdeği sınırlamayan ek bir niteleme olarak görünür.",
         "evidence_refs": [
           "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:39",
           "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
@@ -416,21 +185,21 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Birine bir şeyi vermek ya da bir şeyi getirip hazır ederek onun erişimine sunmaktır.",
+        "semantic_definition": "Bir kişinin ya da şeyin bulunduğu yere gelmesi veya bir hedefe ulaşmasıdır; bazı kullanımlarda bu gelişin kolayca gerçekleştiği belirtilir.",
         "concept": {
           "rank": 1,
-          "text": "vermek veya getirip sunmak",
+          "text": "gelmek, ulaşmak",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "Bir şeyin alıcıya verilmesini ya da getirilerek onun erişimine sunulmasını birlikte karşılar.",
+          "applicability": "Bir kişi veya şeyin bir yere gelişi ya da hedefe varışı anlatılırken kullanılır.",
           "facet_ids": [
             "F001",
             "F002"
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Hem doğrudan vermeyi hem de getirip hazır ederek sunmayı korur.",
+            "preserves": "Gelme ve bir hedefe ulaşma çekirdeğini birlikte korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -439,18 +208,18 @@
         "contextual": [
           {
             "rank": 2,
-            "text": "getirip hazır etmek",
+            "text": "yanına gelmek",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Bir nesnenin doğrudan verilmesinden çok getirilip erişilebilir kılındığı bağlama uygundur.",
+            "applicability": "Bir kişinin başka bir kişinin bulunduğu yere gelişi söz konusu olduğunda doğaldır.",
             "facet_ids": [
-              "F002"
+              "F001"
             ],
             "error_profile": {
-              "fit": "none",
-              "preserves": "Nesnenin getirilmesi ve alıcı için hazır edilmesi işlemlerini korur.",
-              "loses": null,
+              "fit": "narrowing",
+              "preserves": "Kişinin bir hedefe doğru gelip ulaşmasını korur.",
+              "loses": "Kişi dışındaki şeylerin gelişi ile daha genel ulaşma kapsamını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
@@ -459,18 +228,18 @@
         "selected": [
           {
             "rank": 1,
-            "text": "vermek veya getirip sunmak",
+            "text": "gelmek, ulaşmak",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "Bir şeyin alıcıya verilmesini ya da getirilerek onun erişimine sunulmasını birlikte karşılar.",
+            "applicability": "Bir kişi veya şeyin bir yere gelişi ya da hedefe varışı anlatılırken kullanılır.",
             "facet_ids": [
               "F001",
               "F002"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Hem doğrudan vermeyi hem de getirip hazır ederek sunmayı korur.",
+              "preserves": "Gelme ve bir hedefe ulaşma çekirdeğini birlikte korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -478,37 +247,259 @@
           },
           {
             "rank": 2,
-            "text": "getirip hazır etmek",
+            "text": "yanına gelmek",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Bir nesnenin doğrudan verilmesinden çok getirilip erişilebilir kılındığı bağlama uygundur.",
+            "applicability": "Bir kişinin başka bir kişinin bulunduğu yere gelişi söz konusu olduğunda doğaldır.",
             "facet_ids": [
-              "F002"
+              "F001"
             ],
             "error_profile": {
-              "fit": "none",
-              "preserves": "Nesnenin getirilmesi ve alıcı için hazır edilmesi işlemlerini korur.",
-              "loses": null,
+              "fit": "narrowing",
+              "preserves": "Kişinin bir hedefe doğru gelip ulaşmasını korur.",
+              "loses": "Kişi dışındaki şeylerin gelişi ile daha genel ulaşma kapsamını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
           }
         ],
-        "excluded": [
+        "excluded": []
+      },
+      "arabic_neighbor_distinctions": [
+        {
+          "neighbor_root_id": "root_000281",
+          "neighbor_branch_id": "B001",
+          "relation_type": "synonym",
+          "boundary_match": "exact",
+          "focus_only": null,
+          "neighbor_only": null,
+          "expression_transliteration": "gelme ve ulaşma",
+          "gloss": "gelmek",
+          "shared_zone": "Her iki dal da kişi veya şeyin gelmesini ve bir hedefe ulaşmasını anlatır.",
+          "distinction": "Kaynak kartlarındaki çekirdek ve kapsam bakımından anlamlı bir sınır farkı yoktur.",
+          "expression_ar": "المجيء والحصول",
+          "basis": "furuq_branch_comparison",
+          "evidence_refs": [
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:653",
+            "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A15%3A%D8%AC%D9%8A%D8%A3:headword=%D8%AC%D9%8A%D8%A3:root=%D8%AC%20%D9%8A%20%D8%A1:sha=4e9d35a011163170",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A283:headword=%D8%AC%D8%A7%D8%A1:root=%D8%AC%20%D8%A7%20%D8%A1:sha=97b3af903d8ffce2",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A27:headword=%D8%AC%D9%8A%D8%A3:root=%D8%AC%20%D9%8A%20%D8%A1:sha=d650ac36178abfae"
+          ]
+        }
+      ],
+      "neighbor_coverage": {
+        "candidate_count": 20,
+        "assessment": "single_sufficient",
+        "note": "Bütün adaylar değerlendirildi; en doğrudan eş anlamlı karşılık yayımlandı, diğerleri geliş senaryosunu paylaşsa da çekirdeği keskinleştirmedi."
+      }
+    },
+    {
+      "root_id": "root_000009",
+      "branch_id": "B002",
+      "branch_image_ar": "الإيتاء والإعطاء",
+      "what_is_ar": "الإعطاء، وإتيان الشيء بالشيء أو إحضاره",
+      "what_is_not_ar": "ليس مجرد المجيء ولا الإتاوة المفروضة",
+      "source_phrase_ar": "آتى يؤتي إيتاء في معنى أعطى (jamhara)؛ آتاه إيتاء أي أعطاه وآتاه أيضا أي أتى به (sihah)؛ الإتياء الإعطاء (tahdhib)؛ الإيتاء الإعطاء (mufradat;maqayis)",
+      "image_transliteration": "verme ve sunma",
+      "summary": "Bir şeyi birine vermek; ayrıca bir şeyi getirip hazır ederek karşı tarafa sunmaktır.",
+      "concept_map": {
+        "definition": "Bir şeyi birine vermek; ayrıca bir şeyi getirip hazır ederek karşı tarafa sunmaktır.",
+        "facets": [
           {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Bir şey bir alıcıya verilir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "extension",
+            "statement": "Bir şey getirilip hazır edilerek karşı tarafa sunulur.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi doğrudan verme anlamını ve ikincil olarak bir şeyi getirip hazır etme kullanımını bildirir. Bu iki geçişli kullanım dal çerçevesiyle uyumludur.",
+        "boundary_note": "Dal gelme eylemini değil, bir alıcıya verme veya bir şeyi getirip sunma eylemini anlatır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın fiilin verme ve getirip sunma kapsamıyla sınırlıdır; vergi ya da başka bir kalıp anlamı içeri alınmaz."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "bare",
+        "has_non_bare": false,
+        "has_collocation": false,
+        "unit_kind_counts": {
+          "form": 1
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
+      },
+      "lexical_realizations": [
+        {
+          "lexical_unit_id": "lu_004",
+          "expression_ar": "آتى",
+          "unit_kind": "form",
+          "sense_ar": "أعطى، وقد يقال لما أتى بالشيء وأحضره",
+          "target_gloss": "vermek; bir şeyi getirip sunmak",
+          "target_rendering_kind": "ordinary",
+          "evidence_refs": [
+            "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6",
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A7:headword=%D8%A3%D8%AA%D9%89:root=%D8%A1%20%D8%AA%20%D9%8A:sha=e41baaeb672b8520",
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:39",
+            "maqayis:root=%D8%A1%20%D8%AA%20%D9%8A:headword=%D8%A3%D8%AA%D9%8A:sha=7f53dd4e46ea06c3"
+          ],
+          "quran_form": null
+        }
+      ],
+      "usage_notes": [],
+      "evidence_qualifiers": [],
+      "source_discussion": {
+        "discussion": "Ortak çekirdek vermedir; bir açıklama aynı biçimin bir şeyi getirip hazır etme kullanımını da kapsadığını gösterir.",
+        "evidence_refs": [
+          "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:39",
+          "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
+          "maqayis:root=%D8%A1%20%D8%AA%20%D9%8A:headword=%D8%A3%D8%AA%D9%8A:sha=7f53dd4e46ea06c3",
+          "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A7:headword=%D8%A3%D8%AA%D9%89:root=%D8%A1%20%D8%AA%20%D9%8A:sha=e41baaeb672b8520",
+          "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6",
+          "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
+        ],
+        "details": [],
+        "examples": [],
+        "disagreement": null
+      },
+      "dictionary_basis": {
+        "dictionary_count": 5,
+        "passage_count": 6,
+        "sources": [
+          {
+            "source_id": "jamhara",
+            "dictionary_name": "Jamharat al-Lugha",
+            "source_refs": [
+              "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324"
+            ]
+          },
+          {
+            "source_id": "sihah",
+            "dictionary_name": "al-Ṣiḥāḥ",
+            "source_refs": [
+              "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6"
+            ]
+          },
+          {
+            "source_id": "tahdhib",
+            "dictionary_name": "Tahdhīb al-Lugha",
+            "source_refs": [
+              "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
+            ]
+          },
+          {
+            "source_id": "mufradat",
+            "dictionary_name": "al-Mufradāt fī Gharīb al-Qurʾān",
+            "source_refs": [
+              "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A7:headword=%D8%A3%D8%AA%D9%89:root=%D8%A1%20%D8%AA%20%D9%8A:sha=e41baaeb672b8520"
+            ]
+          },
+          {
+            "source_id": "maqayis",
+            "dictionary_name": "Maqāyīs al-Lugha",
+            "source_refs": [
+              "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:39",
+              "maqayis:root=%D8%A1%20%D8%AA%20%D9%8A:headword=%D8%A3%D8%AA%D9%8A:sha=7f53dd4e46ea06c3"
+            ]
+          }
+        ]
+      },
+      "glosses": {
+        "semantic_definition": "Bir şeyi birine vermek; ayrıca bir şeyi getirip hazır ederek karşı tarafa sunmaktır.",
+        "concept": {
+          "rank": 1,
+          "text": "vermek; getirip sunmak",
+          "loanword_status": "none",
+          "usage_role": "explanatory",
+          "selection_role": "primary_concept_gloss",
+          "applicability": "Bir şeyin alıcıya geçirilmesi veya getirilerek onun önüne konması anlatılırken kullanılır.",
+          "facet_ids": [
+            "F001",
+            "F002"
+          ],
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Verme çekirdeğini ve getirip sunma uzantısını birlikte korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          }
+        },
+        "contextual": [
+          {
+            "rank": 2,
             "text": "vermek",
-            "category": "alternative",
-            "exclusion_reason": "Bir şeyi getirip hazır ederek alıcının erişimine sunma uzantısını karşılamaz.",
+            "loanword_status": "none",
+            "usage_role": "general",
+            "selection_role": "contextual_gloss",
+            "applicability": "Bir nesne veya yararın doğrudan bir alıcıya aktarılması bağlamında en doğal karşılıktır.",
+            "facet_ids": [
+              "F001"
+            ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Bir şeyi başka birine aktarma çekirdeğini korur.",
-              "loses": "Bir şeyi getirip hazır ederek alıcının erişimine sunma uzantısını karşılamaz.",
+              "preserves": "Bir şeyi alıcıya aktarma çekirdeğini korur.",
+              "loses": "Bir şeyi getirip hazır ederek sunma uzantısını belirtmez.",
               "adds": null,
               "collision": null
             }
           }
-        ]
+        ],
+        "selected": [
+          {
+            "rank": 1,
+            "text": "vermek; getirip sunmak",
+            "loanword_status": "none",
+            "usage_role": "explanatory",
+            "selection_role": "primary_concept_gloss",
+            "applicability": "Bir şeyin alıcıya geçirilmesi veya getirilerek onun önüne konması anlatılırken kullanılır.",
+            "facet_ids": [
+              "F001",
+              "F002"
+            ],
+            "error_profile": {
+              "fit": "none",
+              "preserves": "Verme çekirdeğini ve getirip sunma uzantısını birlikte korur.",
+              "loses": null,
+              "adds": null,
+              "collision": null
+            }
+          },
+          {
+            "rank": 2,
+            "text": "vermek",
+            "loanword_status": "none",
+            "usage_role": "general",
+            "selection_role": "contextual_gloss",
+            "applicability": "Bir nesne veya yararın doğrudan bir alıcıya aktarılması bağlamında en doğal karşılıktır.",
+            "facet_ids": [
+              "F001"
+            ],
+            "error_profile": {
+              "fit": "narrowing",
+              "preserves": "Bir şeyi alıcıya aktarma çekirdeğini korur.",
+              "loses": "Bir şeyi getirip hazır ederek sunma uzantısını belirtmez.",
+              "adds": null,
+              "collision": null
+            }
+          }
+        ],
+        "excluded": []
       },
       "arabic_neighbor_distinctions": [
         {
@@ -516,12 +507,12 @@
           "neighbor_branch_id": "B004",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal, istek bulunmasa da vermeyi ve ayrıca getirip sunmayı kapsar.",
-          "neighbor_only": "Komşu dal, özellikle bir isteğe karşılık bir şey vermekle sınırlıdır.",
+          "focus_only": "Verme eylemi bir isteğe bağlı olmadan da gerçekleşebilir ve getirip sunma kullanımını kapsar.",
+          "neighbor_only": "Komşu dal özellikle kendisinden istenen bir şeyi verme durumunu öne çıkarır.",
           "expression_transliteration": "isteyene bir şey verme",
-          "gloss": "birine bir şey vermek",
-          "shared_zone": "Her iki dalda da bir şeyin bir verenden bir alıcıya geçmesi vardır.",
-          "distinction": "Komşu dal istek üzerine verilen şeyi öne çıkarır; odak dal ise daha genel vermeyi ve nesneyi getirip sunma uzantısını birlikte taşır.",
+          "gloss": "isteneni vermek",
+          "shared_zone": "Her iki dalda da bir şey bir alıcıya verilir.",
+          "distinction": "Odak dal genel verme alanına sahipken komşu dal alıcının istemiş olması koşuluyla daha dardır.",
           "expression_ar": "إعطاء شيء لمن سألك",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
@@ -534,16 +525,7 @@
       "neighbor_coverage": {
         "candidate_count": 20,
         "assessment": "single_sufficient",
-        "note": "Verme alanındaki bütün adaylar değerlendirildi; istek koşuluyla ayrışan en yakın komşu sınırı göstermeye yeterlidir."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "bare",
-        "has_non_bare": false,
-        "has_collocation": false,
-        "unit_kind_counts": {
-          "form": 1
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "Bütün adaylar değerlendirildi; istek üzerine verme dalı en yakın sınır karşılaştırmasını sağladı."
       }
     },
     {
@@ -554,43 +536,62 @@
       "what_is_not_ar": "ليس مطلق المجيء بالذات ولا الإعطاء",
       "source_phrase_ar": "أتيت الأمر من مأتاته (sihah;maqayis)؛ آتيته على ذلك الأمر مواتاة إذا وافقته وطاوعته (sihah)؛ آتيت فلانا على أمره مؤاتاة وهو حسن المطاوعة (maqayis)؛ تأتى له الشيء أي تهيأ (sihah)؛ تأتى فلان لحاجته إذا ترفق لها (tahdhib)",
       "image_transliteration": "işe uygun yoldan yaklaşma ve işin hazır hale gelmesi",
-      "summary": "Bir işin uygun giriş yolunu bulmak, o işe uymak, işin kişi için hazır veya yürütülebilir hale gelmesi ve bir gereksinime incelikle uygun yoldan yaklaşmaktır.",
+      "summary": "Bir işi uygun yönünden ele almak, bir kimseye bir işte uyup razı olmak veya bir şeyin yapılabilir hale gelmesidir. İhtiyacı usulünce ve incelikle yürütme de bu alandaki ayrı bir kullanımdır.",
       "concept_map": {
-        "definition": "Bir işin uygun giriş yolunu bulmak, o işe uymak, işin kişi için hazır veya yürütülebilir hale gelmesi ve bir gereksinime incelikle uygun yoldan yaklaşmaktır.",
+        "definition": "Bir işi uygun yönünden ele almak, bir kimseye bir işte uyup razı olmak veya bir şeyin yapılabilir hale gelmesidir. İhtiyacı usulünce ve incelikle yürütme de bu alandaki ayrı bir kullanımdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir iş, kendisine girilebilecek doğru yönü ve yolu bakımından ele alınır.",
+            "statement": "Bir işe sonuç alınabilecek uygun yönünden yaklaşılır.",
             "claim_ids": [
-              "lu_005"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "core",
-            "statement": "Kişi bir işte karşısındakine uyar ve onunla birlikte hareket eder.",
+            "role": "extension",
+            "statement": "Bir kimseye belirli bir işte uyulur ve onun isteğine razı olunur.",
             "claim_ids": [
-              "lu_006"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "extension",
-            "statement": "İş yapılabilir duruma gelir ve izlenecek yönü açılır.",
+            "role": "associated_use",
+            "statement": "Bir şey kişi için elverişli ve yapılabilir hale gelir.",
             "claim_ids": [
-              "lu_007"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F004",
-            "role": "specialization",
-            "statement": "Bir gereksinime sertlik göstermeden, uygun yol ve davranış seçilerek ulaşılır.",
+            "role": "associated_use",
+            "statement": "Bir ihtiyaç uygun yol gözetilerek incelikle yürütülür.",
             "claim_ids": [
-              "lu_008"
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bir işe uygun yönünden yaklaşmayı, birine uyup razı olmayı, bir şeyin elverişli hale gelmesini ve ihtiyacı incelikle yürütmeyi birlikte destekler.",
+        "boundary_note": "Dal tek bir yalın anlama indirgenmez; yaklaşım, uyum, elverişlilik ve ihtiyacı usulünce yürütme kullanımları ayrıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Biçimlere bağlı yaklaşım ve uyum anlamları ile iki ayrı kalıptaki elverişlilik ve incelikli yürütme anlamları ayrı tutulur."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "mixed_non_bare",
+        "has_non_bare": true,
+        "has_collocation": true,
+        "unit_kind_counts": {
+          "collocation": 2,
+          "form": 2
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -598,7 +599,7 @@
           "expression_ar": "مأتاه",
           "unit_kind": "form",
           "sense_ar": "وجه الأمر وسبيله الذي يؤتى منه",
-          "target_gloss": "işin giriş yönü ve uygun yolu",
+          "target_gloss": "işin uygun yönü ve tutulacak yolu",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6",
@@ -612,7 +613,7 @@
           "expression_ar": "مؤاتاة",
           "unit_kind": "form",
           "sense_ar": "الموافقة والمطاوعة على الأمر",
-          "target_gloss": "uyma ve birlikte hareket etme",
+          "target_gloss": "uyma ve razı olma",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6",
@@ -627,7 +628,7 @@
           "expression_ar": "تأتى له الشيء",
           "unit_kind": "collocation",
           "sense_ar": "تهيأ له الشيء وانقاد وجهه",
-          "target_gloss": "işin yapılabilir duruma gelmesi",
+          "target_gloss": "bir şeyin ona elverişli hale gelmesi",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6",
@@ -642,7 +643,7 @@
           "expression_ar": "تأتى لحاجته",
           "unit_kind": "collocation",
           "sense_ar": "ترفق لحاجته وأتاها من وجهها",
-          "target_gloss": "gereksinimine incelikle ve uygun yoldan yaklaşmak",
+          "target_gloss": "ihtiyacını uygun yoldan ve incelikle yürütmek",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
@@ -653,25 +654,14 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Dal, işin giriş yönünü bulmayı, bir işte karşılıklı uyumu ve işin yapılabilir duruma gelmesini bir arada toplar. Bu anlamlar, doğru yolu seçme ile koşullara uyma çevresinde birleşir.",
+        "discussion": "Toplu kanıt, uygun yoldan yaklaşma çevresinde uyma, elverişli hale gelme ve ihtiyacı incelikle yürütme kullanımlarını bir araya getirir.",
         "evidence_refs": [
           "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:39",
           "maqayis:root=%D8%A1%20%D8%AA%20%D9%8A:headword=%D8%A3%D8%AA%D9%8A:sha=7f53dd4e46ea06c3",
           "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6",
           "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
         ],
-        "details": [
-          {
-            "kind": "sole_attestation",
-            "summary": "Bir gereksinime incelikle davranarak ve ona uygun yönden yaklaşarak ulaşma kullanımı ayrıca kaydedilir.",
-            "source_refs": [
-              "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
-            ],
-            "source_ids": [
-              "tahdhib"
-            ]
-          }
-        ],
+        "details": [],
         "examples": [],
         "disagreement": null
       },
@@ -704,22 +694,23 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Bir işin uygun giriş yolunu bulmak, o işe uymak, işin kişi için hazır veya yürütülebilir hale gelmesi ve bir gereksinime incelikle uygun yoldan yaklaşmaktır.",
+        "semantic_definition": "Bir işi uygun yönünden ele almak, bir kimseye bir işte uyup razı olmak veya bir şeyin yapılabilir hale gelmesidir. İhtiyacı usulünce ve incelikle yürütme de bu alandaki ayrı bir kullanımdır.",
         "concept": {
           "rank": 1,
-          "text": "uygun yolunu bulup işler duruma gelmek",
+          "text": "uygun yoldan ele almak ve elverişli hale gelmek",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "Bir işin doğru yönden ele alınması, koşullara uyum göstermesi ve yürüyebilir hale gelmesi için uygundur.",
+          "applicability": "İşin uygun yönü, kişiler arası uyum veya bir şeyin yapılabilir hale gelişi birlikte temsil edileceğinde kullanılır.",
           "facet_ids": [
             "F001",
             "F002",
-            "F003"
+            "F003",
+            "F004"
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Uygun yönü bulma, uyma ve işin yapılabilir duruma gelmesi çekirdeğini korur.",
+            "preserves": "Uygun yaklaşım, uyum ve elverişlilik eksenlerini korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -728,36 +719,18 @@
         "contextual": [
           {
             "rank": 2,
-            "text": "işi uygun yönden ele almak",
-            "loanword_status": "none",
-            "usage_role": "explanatory",
-            "selection_role": "contextual_gloss",
-            "applicability": "Bir işe sonuç verecek doğru giriş noktasından yaklaşmanın anlatıldığı bağlamda kullanılır.",
-            "facet_ids": [
-              "F001"
-            ],
-            "error_profile": {
-              "fit": "none",
-              "preserves": "İşin doğru yönünü ve ona uygun yaklaşımı açık biçimde korur.",
-              "loses": null,
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 3,
-            "text": "incelikle yolunu bulmak",
+            "text": "elverişli hale gelmek",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Bir gereksinime uygun davranışla ve kırmadan ulaşma bağlamına özgüdür.",
+            "applicability": "Bir şeyin kişi için yapılabilir veya mümkün hale gelmesini anlatan kalıpta kullanılır.",
             "facet_ids": [
-              "F004"
+              "F003"
             ],
             "error_profile": {
-              "fit": "none",
-              "preserves": "Gereksinime uygun yoldan ve incelikli davranışla ulaşmayı korur.",
-              "loses": null,
+              "fit": "narrowing",
+              "preserves": "Bir şeyin elverişli hale gelişi anlamını korur.",
+              "loses": "Uygun yönden yaklaşma, kişiye uyma ve ihtiyacı incelikle yürütme kullanımlarını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
@@ -766,19 +739,20 @@
         "selected": [
           {
             "rank": 1,
-            "text": "uygun yolunu bulup işler duruma gelmek",
+            "text": "uygun yoldan ele almak ve elverişli hale gelmek",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "Bir işin doğru yönden ele alınması, koşullara uyum göstermesi ve yürüyebilir hale gelmesi için uygundur.",
+            "applicability": "İşin uygun yönü, kişiler arası uyum veya bir şeyin yapılabilir hale gelişi birlikte temsil edileceğinde kullanılır.",
             "facet_ids": [
               "F001",
               "F002",
-              "F003"
+              "F003",
+              "F004"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Uygun yönü bulma, uyma ve işin yapılabilir duruma gelmesi çekirdeğini korur.",
+              "preserves": "Uygun yaklaşım, uyum ve elverişlilik eksenlerini korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -786,55 +760,24 @@
           },
           {
             "rank": 2,
-            "text": "işi uygun yönden ele almak",
-            "loanword_status": "none",
-            "usage_role": "explanatory",
-            "selection_role": "contextual_gloss",
-            "applicability": "Bir işe sonuç verecek doğru giriş noktasından yaklaşmanın anlatıldığı bağlamda kullanılır.",
-            "facet_ids": [
-              "F001"
-            ],
-            "error_profile": {
-              "fit": "none",
-              "preserves": "İşin doğru yönünü ve ona uygun yaklaşımı açık biçimde korur.",
-              "loses": null,
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 3,
-            "text": "incelikle yolunu bulmak",
+            "text": "elverişli hale gelmek",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Bir gereksinime uygun davranışla ve kırmadan ulaşma bağlamına özgüdür.",
+            "applicability": "Bir şeyin kişi için yapılabilir veya mümkün hale gelmesini anlatan kalıpta kullanılır.",
             "facet_ids": [
-              "F004"
+              "F003"
             ],
             "error_profile": {
-              "fit": "none",
-              "preserves": "Gereksinime uygun yoldan ve incelikli davranışla ulaşmayı korur.",
-              "loses": null,
+              "fit": "narrowing",
+              "preserves": "Bir şeyin elverişli hale gelişi anlamını korur.",
+              "loses": "Uygun yönden yaklaşma, kişiye uyma ve ihtiyacı incelikle yürütme kullanımlarını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
           }
         ],
-        "excluded": [
-          {
-            "text": "hazırlamak",
-            "category": "confusable",
-            "exclusion_reason": "Doğru giriş yolunu bulma, birine uyma ve gereksinime incelikle yaklaşma anlamlarını siler. Kişinin işi etkin biçimde hazır hale getirdiği yönünde kanıtlanmayan bir neden ilişkisi ekler. Geçişsiz biçimde hazır hale gelme ile bir şeyi hazırlama eylemini birbirine karıştırır.",
-            "error_profile": {
-              "fit": "displacement",
-              "preserves": "Bir işin hazır ve yürütülebilir duruma gelmesi alanını çağrıştırır.",
-              "loses": "Doğru giriş yolunu bulma, birine uyma ve gereksinime incelikle yaklaşma anlamlarını siler.",
-              "adds": "Kişinin işi etkin biçimde hazır hale getirdiği yönünde kanıtlanmayan bir neden ilişkisi ekler.",
-              "collision": "Geçişsiz biçimde hazır hale gelme ile bir şeyi hazırlama eylemini birbirine karıştırır."
-            }
-          }
-        ]
+        "excluded": []
       },
       "arabic_neighbor_distinctions": [
         {
@@ -842,35 +785,25 @@
           "neighbor_branch_id": "B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak dal doğru giriş yönünü bulmayı, birine uymayı ve gereksinime incelikle yaklaşmayı kapsar.",
-          "neighbor_only": "Komşu dal güçlüğün azalmasını ve bir şeyin kolaylaştırılmasını doğrudan anlatır.",
-          "expression_transliteration": "güçlükten sonra açılma ve kolaylık",
-          "gloss": "işin yapılabilir hale gelmesi",
-          "shared_zone": "Her iki dalda da bir işin yürütülebilir ve elverişli duruma gelmesi bulunur.",
-          "distinction": "Odak dal uygun yaklaşım ve uyma ilişkisini kurar; komşu dal ise temel olarak güçlüğün kalkması ile kolaylığı karşılaştırır.",
+          "focus_only": "Odak dal uygun yönden yaklaşmayı, birine uymayı ve ihtiyacı incelikle yürütmeyi de kapsar.",
+          "neighbor_only": "Komşu dal güçlüğün kalkıp genel olarak kolaylığın ortaya çıkmasını merkez alır.",
+          "expression_transliteration": "anftah wshwlh b'd 'sr",
+          "gloss": "kolaylaşıp elverişli olmak",
+          "shared_zone": "Her iki dal bir işin yapılabilir ve elverişli hale gelmesini anlatabilir.",
+          "distinction": "Ortak elverişlilik alanına rağmen odak dal yöntem ve uyum ilişkileri taşır; komşu dalın çekirdeği ise güçlüğün karşıtı olan kolaylıktır.",
           "expression_ar": "انفتاح وسهولة بعد عسر",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:4144",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1987:headword=%D9%8A%D8%B3%D8%B1:root=%D9%8A%20%D8%B3%20%D8%B1:sha=28eb318566f237b4",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1687:headword=%D9%8A%D8%B3%D8%B1:root=%D9%8A%20%D8%B3%20%D8%B1:sha=09de27f569e0745e"
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1687:headword=%D9%8A%D8%B3%D8%B1:root=%D9%8A%20%D8%B3%20%D8%B1:sha=09de27f569e0745e",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1987:headword=%D9%8A%D8%B3%D8%B1:root=%D9%8A%20%D8%B3%20%D8%B1:sha=28eb318566f237b4"
           ]
         }
       ],
       "neighbor_coverage": {
         "candidate_count": 20,
         "assessment": "single_sufficient",
-        "note": "Hazırlık, uygunluk ve yol bulma adayları incelendi; en açıklayıcı ayrım, elverişli hale gelme ile kolaylaşma arasındadır."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "mixed_non_bare",
-        "has_non_bare": true,
-        "has_collocation": true,
-        "unit_kind_counts": {
-          "collocation": 2,
-          "form": 2
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "Bütün adaylar değerlendirildi; elverişlilik ortaklığı bulunan komşu, dalın yöntem ve uyum sınırını en iyi gösterdi."
       }
     },
     {
@@ -881,35 +814,54 @@
       "what_is_not_ar": "ليس السيل الآتي من بلد آخر نفسه ولا ريع الزرع",
       "source_phrase_ar": "أت لمائك أي سهل له سبيلا وذلك السبيل الأتي (jamhara)؛ الأتي الجدول يؤتيه الرجل إلى أرضه (sihah)؛ كل جدول ماء أتي (tahdhib)؛ أت لهذا الماء أي سهل جريه (maqayis)؛ الأتي ما وقع في النهر من خشب أو ورق مما يحبس الماء (maqayis)",
       "image_transliteration": "su yolu ve suyun akışını yönlendirme",
-      "summary": "Suyu bir havuza veya toprağa taşıyan su yolu ile suya yol açıp akışını yönlendirmedir; bir kaynakta, su yoluna düşerek akışı tutan maddeler de aynı adla anılır.",
+      "summary": "Suyun akacağı kanal veya suya bir yol açarak akışını kolaylaştırıp yönlendirmedir. Bir kaynakta aynı ad, nehirde birikip suyu tutan odun ve yapraklar için de kullanılır.",
       "concept_map": {
-        "definition": "Suyu bir havuza veya toprağa taşıyan su yolu ile suya yol açıp akışını yönlendirmedir; bir kaynakta, su yoluna düşerek akışı tutan maddeler de aynı adla anılır.",
+        "definition": "Suyun akacağı kanal veya suya bir yol açarak akışını kolaylaştırıp yönlendirmedir. Bir kaynakta aynı ad, nehirde birikip suyu tutan odun ve yapraklar için de kullanılır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Su, açılmış bir yatak veya küçük akarsu yoluyla havuza ya da toprağa taşınır.",
+            "statement": "Su için açılan veya suyu araziye taşıyan bir kanal bulunur.",
             "claim_ids": [
-              "lu_009"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "core",
-            "statement": "Suya geçeceği yol açılır, akışı kolaylaştırılır ve gideceği yön belirlenir.",
+            "statement": "Suyun akacağı yol kolaylaştırılır ve akış belirli bir yöne çevrilir.",
             "claim_ids": [
-              "lu_010"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "source_variant",
-            "statement": "Ayrı bir açıklamada, su yoluna düşen tahta ve yaprak gibi maddelerin akışı tutması anlatılır.",
+            "statement": "Bir açıklamada nehirdeki odun ve yaprak birikintisinin suyu tutması adlandırılır.",
             "claim_ids": [
-              "lu_009"
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi su için yol açma ve akışı yöneltme eylemlerini, su kanalı adını ve bir açıklamada akışı tutan birikintiyi açıkça içerir.",
+        "boundary_note": "Su yolu ve akışı kolaylaştırma çekirdektir; akışı tutan odun ya da yaprak birikintisi kaynakça sınırlı bir yan kullanımdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Su yolu adı ile suya yol açmayı bildiren kalıp ayrılır; akışı tutan birikinti yalnız biçimin özel kapsamındadır."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "mixed_non_bare",
+        "has_non_bare": true,
+        "has_collocation": true,
+        "unit_kind_counts": {
+          "collocation": 1,
+          "form": 1
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -917,7 +869,7 @@
           "expression_ar": "الأَتِيّ",
           "unit_kind": "form",
           "sense_ar": "جدول الماء أو النهر إلى الحوض، وما يسلك له مجرى أو ما يحبس الماء في النهر",
-          "target_gloss": "su yolu; akışı tutan sürüküntü",
+          "target_gloss": "su kanalı; suyu tutan odun ve yaprak birikintisi",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
@@ -933,7 +885,7 @@
           "expression_ar": "أت لهذا الماء",
           "unit_kind": "collocation",
           "sense_ar": "سهل لهذا الماء طريقه أو وجه له مجرى",
-          "target_gloss": "suya yol açıp akışını yönlendirmek",
+          "target_gloss": "bu suya yol açıp akışını yönlendirmek",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
@@ -947,7 +899,7 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Ana açıklama, suyu taşıyan yol ile bu yolu açıp akışı kolaylaştırma ve yönlendirme eylemini birleştirir. Ayrı bir açıklama ise aynı birimi, su yoluna düşüp akışı tutan tahta veya yaprak gibi maddelere bağlar.",
+        "discussion": "Kanıt su kanalı ile suyun akışına yol açma anlamlarını birleştirir; akışı tutan birikinti aynı toplu iddia içindeki sınırlı bir karşı kullanımdır.",
         "evidence_refs": [
           "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:39",
           "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
@@ -995,21 +947,22 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Suyu bir havuza veya toprağa taşıyan su yolu ile suya yol açıp akışını yönlendirmedir; bir kaynakta, su yoluna düşerek akışı tutan maddeler de aynı adla anılır.",
+        "semantic_definition": "Suyun akacağı kanal veya suya bir yol açarak akışını kolaylaştırıp yönlendirmedir. Bir kaynakta aynı ad, nehirde birikip suyu tutan odun ve yapraklar için de kullanılır.",
         "concept": {
           "rank": 1,
-          "text": "su yolu açıp akışı yönlendirmek",
+          "text": "su kanalı açmak ve akışı yönlendirmek",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "Suyu taşıyan yolun oluşturulması, akışın kolaylaştırılması ve istenen yöne çevrilmesi için uygundur.",
+          "applicability": "Hem suyu taşıyan yol hem de bu yolu açıp akışı kolaylaştırma kavramsal olarak birlikte verileceğinde uygundur.",
           "facet_ids": [
             "F001",
-            "F002"
+            "F002",
+            "F003"
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Su yolunu, yol açma işlemini ve akışı yönlendirme sonucunu korur.",
+            "preserves": "Su kanalı, yol açma ve akışı yönlendirme çekirdeğini korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -1018,18 +971,18 @@
         "contextual": [
           {
             "rank": 2,
-            "text": "akışı tutan sürüküntü",
+            "text": "sulama kanalı",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Tahta veya yaprak gibi maddelerin su yoluna düşüp suyu tuttuğu kaynak açıklamasına özgüdür.",
+            "applicability": "Suyu araziye veya havuza taşıyan somut su yolu adlandırıldığında kullanılır.",
             "facet_ids": [
-              "F003"
+              "F001"
             ],
             "error_profile": {
-              "fit": "none",
-              "preserves": "Su yolundaki maddelerin akışı engelleyip tutması anlamını korur.",
-              "loses": null,
+              "fit": "narrowing",
+              "preserves": "Suyu taşıyan kanal anlamını korur.",
+              "loses": "Akışı kolaylaştırma eylemini ve suyu tutan birikinti kullanımını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
@@ -1038,18 +991,19 @@
         "selected": [
           {
             "rank": 1,
-            "text": "su yolu açıp akışı yönlendirmek",
+            "text": "su kanalı açmak ve akışı yönlendirmek",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "Suyu taşıyan yolun oluşturulması, akışın kolaylaştırılması ve istenen yöne çevrilmesi için uygundur.",
+            "applicability": "Hem suyu taşıyan yol hem de bu yolu açıp akışı kolaylaştırma kavramsal olarak birlikte verileceğinde uygundur.",
             "facet_ids": [
               "F001",
-              "F002"
+              "F002",
+              "F003"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Su yolunu, yol açma işlemini ve akışı yönlendirme sonucunu korur.",
+              "preserves": "Su kanalı, yol açma ve akışı yönlendirme çekirdeğini korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -1057,50 +1011,37 @@
           },
           {
             "rank": 2,
-            "text": "akışı tutan sürüküntü",
+            "text": "sulama kanalı",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Tahta veya yaprak gibi maddelerin su yoluna düşüp suyu tuttuğu kaynak açıklamasına özgüdür.",
+            "applicability": "Suyu araziye veya havuza taşıyan somut su yolu adlandırıldığında kullanılır.",
             "facet_ids": [
-              "F003"
+              "F001"
             ],
             "error_profile": {
-              "fit": "none",
-              "preserves": "Su yolundaki maddelerin akışı engelleyip tutması anlamını korur.",
-              "loses": null,
+              "fit": "narrowing",
+              "preserves": "Suyu taşıyan kanal anlamını korur.",
+              "loses": "Akışı kolaylaştırma eylemini ve suyu tutan birikinti kullanımını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
           }
         ],
-        "excluded": [
-          {
-            "text": "su kanalı",
-            "category": "alternative",
-            "exclusion_reason": "Suya yol açma, akışı yönlendirme ve akışı tutan sürüküntü açıklamasını dışarıda bırakır.",
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Suyu taşıyan açılmış yol anlamını korur.",
-              "loses": "Suya yol açma, akışı yönlendirme ve akışı tutan sürüküntü açıklamasını dışarıda bırakır.",
-              "adds": null,
-              "collision": null
-            }
-          }
-        ]
+        "excluded": []
       },
       "arabic_neighbor_distinctions": [
         {
           "neighbor_root_id": "root_000707",
           "neighbor_branch_id": "B009",
-          "relation_type": "near_synonym",
+          "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak dal su yolunu açma ve akışı yönlendirme eylemini, ayrıca akışı tutan madde açıklamasını içerir.",
-          "neighbor_only": "Komşu dal su dışında süt ve ilik yollarını da kapsar ve sulayan akarsuyu adlandırır.",
+          "focus_only": "Odak dal kanalın yanında suya yol açma ve akışı yönlendirme eylemini de kapsar.",
+          "neighbor_only": "Komşu dal su dışında süt ve ilik için de kullanılan akış yollarını kapsar.",
           "expression_transliteration": "sulayan su yolları",
-          "gloss": "suyu taşıyan yol",
-          "shared_zone": "Her iki dalda da bir sıvıyı taşıyan ve suyu toprağa ulaştırabilen yol vardır.",
-          "distinction": "Odak dal açma ve yönlendirme işlemini öne çıkarırken komşu dal taşıyıcı yolların türlerini daha geniş bir sıvı alanında adlandırır.",
+          "gloss": "su taşıyan kanal",
+          "shared_zone": "Her iki dal suyu taşıyan ve toprağı sulayan bir kanal anlamında kesişir.",
+          "distinction": "Odak dal suya özgü yol açma eylemiyle bağlantılıdır; komşu dal ise farklı sıvıların geçitlerini kapsayan daha geniş bir kanal adıdır.",
           "expression_ar": "السواعد مجاري تسقي",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
@@ -1108,43 +1049,12 @@
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1303:headword=%D8%B3%D8%B9%D8%AF:root=%D8%B3%20%D8%B9%20%D8%AF:sha=4c5ee6dfea4bbf24",
             "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D116%3Bsegment_index%3D4:headword=%D8%B3%D8%B9%D8%AF:root=%D8%B3%20%D8%B9%20%D8%AF:sha=0ce871c686d7d1f7"
           ]
-        },
-        {
-          "neighbor_root_id": "root_000288",
-          "neighbor_branch_id": "B003",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalın çekirdeği suyu geçiren yol ve akışın kolaylaştırılmasıdır.",
-          "neighbor_only": "Komşu dal bilinçli yapılmış bir seti, havuzu veya akışa konan taş ve ağacı merkez alır.",
-          "expression_transliteration": "su engeli ve su yapısı",
-          "gloss": "suyu tutan engel",
-          "shared_zone": "Her iki dalın bir bölümünde su yolunda akışı tutan katı maddeler bulunur.",
-          "distinction": "Engel anlamı odak dalda kaynaklara özgü bir yan açıklamadır; komşu dalda ise yapılmış su engeli ve biriktirme yeri temel anlamdır.",
-          "expression_ar": "حاجز الماء ومصنعته",
-          "basis": "furuq_branch_comparison",
-          "evidence_refs": [
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:843",
-            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1576:headword=%D8%AD%D8%A8%D8%B3:root=%D8%AD%20%D8%A8%20%D8%B3:sha=56e2fc61529a4926",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2175:headword=%D8%AD%D8%A8%D8%B3:root=%D8%AD%20%D8%A8%20%D8%B3:sha=a3a3eb6f1608d7a7",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D236%3Bsegment_index%3D162:headword=%D8%AD%D8%A8%D8%B3:root=%D8%AD%20%D8%A8%20%D8%B3:sha=6defbbcd139f2942",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A288:headword=%D8%AD%D8%A8%D8%B3:root=%D8%AD%20%D8%A8%20%D8%B3:sha=513f0995671710b8"
-          ]
         }
       ],
       "neighbor_coverage": {
         "candidate_count": 20,
-        "assessment": "complete",
-        "note": "Su yolu ve su engeli adaylarının tümü değerlendirildi; biri ana akış yolunu, diğeri kaynaklara özgü engel açıklamasını sınırlar."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "mixed_non_bare",
-        "has_non_bare": true,
-        "has_collocation": true,
-        "unit_kind_counts": {
-          "collocation": 1,
-          "form": 1
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "assessment": "single_sufficient",
+        "note": "Bütün adaylar değerlendirildi; sulama kanalı komşusu somut yol ile akışı yöneltme eylemi arasındaki sınırı en iyi belirginleştirdi."
       }
     },
     {
@@ -1155,19 +1065,45 @@
       "what_is_not_ar": "ليس الجدول المصنوع ولا الغريب من الناس",
       "source_phrase_ar": "الأتي السيل بعينه يأتيك من بلد مطر من غير بلدك (jamhara)؛ سيل أتي وأتاوي إذا جاءك ولم يصبك مطره (sihah)؛ المسيل الذي يأتي من بلد قد مطر فيه إلى بلد لم يمطر فيه أتي (tahdhib)؛ السيل المار على وجهه أتي وأتاوي (mufradat)؛ الأتي أيضا السيل الذي يأتي من بلد غير بلدك (maqayis)",
       "image_transliteration": "başka bölgeden gelen taşkın",
-      "summary": "Yağmur alan başka bir bölgeden, yağmur almamış bir bölgeye doğru gelen ve kaynağı yerel olmayan taşkın suyudur.",
+      "summary": "Yağmur alan başka bir bölgeden, yağmur almamış bir bölgeye yatağı boyunca ulaşıp geçen seldir.",
       "concept_map": {
-        "definition": "Yağmur alan başka bir bölgeden, yağmur almamış bir bölgeye doğru gelen ve kaynağı yerel olmayan taşkın suyudur.",
+        "definition": "Yağmur alan başka bir bölgeden, yağmur almamış bir bölgeye yatağı boyunca ulaşıp geçen seldir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Taşkın suyu, yağmurun yağdığı bölgeden yağmur almayan başka bir bölgeye gelir.",
+            "statement": "Selin suyu yağmur alan başka bir bölgeden gelir.",
             "claim_ids": [
-              "lu_011"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "core",
+            "statement": "Sel, kendi yağmurunu almamış bir bölgeye ulaşıp oradan geçer.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynakların tümü, yağmurun düştüğü başka bir yerden yağmur almamış bölgeye ulaşan seli veya kendi yatağında dışarıdan geçip gelen seli tanımlar.",
+        "boundary_note": "Anlam yalnız dışarıdaki yağış alanından gelen sel kalıbına bağlıdır; genel sel veya genel akış değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım yalnız belirtilen sel nitelemesine bağlı tutulur ve sözcükten genel bir yalın anlam türetilmez."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "collocation",
+        "has_non_bare": true,
+        "has_collocation": true,
+        "unit_kind_counts": {
+          "collocation": 1
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -1175,7 +1111,7 @@
           "expression_ar": "سيل أَتِيّ",
           "unit_kind": "collocation",
           "sense_ar": "سيل يأتي من بلد مطر إلى بلد لم يمطر",
-          "target_gloss": "yağışı başka yerde oluşup uzaktan gelen taşkın suyu",
+          "target_gloss": "yağmur alan başka bir bölgeden gelen sel",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
@@ -1191,7 +1127,7 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Ana açıklamalarda taşkın suyu, yağmur alan başka bir yerden gelip yağmur almamış bir yere ulaşır ve yerel yağıştan doğmaz. Ayrı bir açıklama ise bu çıkış ve varış koşulunu vermeden yalnızca selin akıp geçmesini belirtir.",
+        "discussion": "Kaynaklar, yerel yağıştan doğmayan ve yağmur alan başka bir yerden geçerek gelen sel sınırında birleşir.",
         "evidence_refs": [
           "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:39",
           "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
@@ -1247,20 +1183,21 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Yağmur alan başka bir bölgeden, yağmur almamış bir bölgeye doğru gelen ve kaynağı yerel olmayan taşkın suyudur.",
+        "semantic_definition": "Yağmur alan başka bir bölgeden, yağmur almamış bir bölgeye yatağı boyunca ulaşıp geçen seldir.",
         "concept": {
           "rank": 1,
-          "text": "uzaktan gelen taşkın suyu",
+          "text": "başka bölgeden gelen sel",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "Yağışı başka yerde oluşmuş ve yağmur almayan bölgeye dışarıdan ulaşmış taşkın için kullanılır.",
+          "applicability": "Selin ulaştığı yerde yağmur yağmamış, su başka bir yağış alanından gelmişse kullanılır.",
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002"
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Taşkının başka bir yağış bölgesinden gelmesi ve yerel olmaması koşullarını korur.",
+            "preserves": "Selin dışarıdaki yağış alanından gelmesi koşulunu korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -1270,17 +1207,18 @@
         "selected": [
           {
             "rank": 1,
-            "text": "uzaktan gelen taşkın suyu",
+            "text": "başka bölgeden gelen sel",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "Yağışı başka yerde oluşmuş ve yağmur almayan bölgeye dışarıdan ulaşmış taşkın için kullanılır.",
+            "applicability": "Selin ulaştığı yerde yağmur yağmamış, su başka bir yağış alanından gelmişse kullanılır.",
             "facet_ids": [
-              "F001"
+              "F001",
+              "F002"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Taşkının başka bir yağış bölgesinden gelmesi ve yerel olmaması koşullarını korur.",
+              "preserves": "Selin dışarıdaki yağış alanından gelmesi koşulunu korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -1290,14 +1228,14 @@
         "excluded": [
           {
             "text": "sel",
-            "category": "confusable",
-            "exclusion_reason": "Yerel yağıştan doğan selleri de kapsayarak başka bölgeden gelme koşulunu kaldırır. Her türlü sel ile yağışı başka yerde oluşan özel taşkını aynı ad altında toplar.",
+            "category": "alternative",
+            "exclusion_reason": "Yerel yağmurdan doğan selleri de kapsayarak zorunlu dış kaynak koşulunu kaldırır.",
             "error_profile": {
               "fit": "broadening",
-              "preserves": "Hareket eden taşkın suyu alanını korur.",
+              "preserves": "Akan büyük su kütlesi olma niteliğini korur.",
               "loses": null,
-              "adds": "Yerel yağıştan doğan selleri de kapsayarak başka bölgeden gelme koşulunu kaldırır.",
-              "collision": "Her türlü sel ile yağışı başka yerde oluşan özel taşkını aynı ad altında toplar."
+              "adds": "Yerel yağmurdan doğan selleri de kapsayarak zorunlu dış kaynak koşulunu kaldırır.",
+              "collision": null
             }
           }
         ]
@@ -1308,36 +1246,27 @@
           "neighbor_branch_id": "B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal, suyun yağmur alan başka bir bölgeden yağmur almamış yere gelmesini zorunlu kılar.",
-          "neighbor_only": "Komşu dal her türlü akışı, akıtmayı, akan suyu ve akış yerini kapsar.",
+          "focus_only": "Sel, yağmur alan başka bir bölgeden yağmur almamış bölgeye gelmelidir.",
+          "neighbor_only": "Komşu dal her türlü su akışını, akıtmayı, akan suyu ve akış yerini kapsar.",
           "expression_transliteration": "selin akışı",
-          "gloss": "akan taşkın suyu",
-          "shared_zone": "Her iki dalda da bir yatak boyunca hareket eden su bulunur.",
-          "distinction": "Odak dal kaynağı ve varış yerinin yağış durumuyla belirlenen özel bir taşkındır; komşu dal ise kaynağına bakmadan genel akışı anlatır.",
+          "gloss": "akmak ve sel olmak",
+          "shared_zone": "Her iki dalda da yatakta ilerleyen akan su bulunur.",
+          "distinction": "Odak dal kaynağı ve hedef bölgenin yağış durumuyla sınırlı özel bir sel türüdür; komşu dal genel akış alanıdır.",
           "expression_ar": "جريان السيل",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1717",
             "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4976:headword=%D8%B3%D9%8A%D9%84:root=%D8%B3%20%D9%8A%20%D9%84:sha=5eff1803f87fa2d2",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A757:headword=%D8%B3%D8%A7%D9%84:root=%D8%B3%20%D8%A7%20%D9%84:sha=59486e2e429b1534",
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4073:headword=%D8%B3%D9%8A%D9%84:root=%D8%B3%20%D9%8A%20%D9%84:sha=4ef2ec29ea3ecd91",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D657%3Bsegment_index%3D9:headword=%D8%B3%D9%8A%D9%84:root=%D8%B3%20%D9%8A%20%D9%84:sha=677cdc426abbba62",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A757:headword=%D8%B3%D8%A7%D9%84:root=%D8%B3%20%D8%A7%20%D9%84:sha=59486e2e429b1534"
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D657%3Bsegment_index%3D9:headword=%D8%B3%D9%8A%D9%84:root=%D8%B3%20%D9%8A%20%D9%84:sha=677cdc426abbba62"
           ]
         }
       ],
       "neighbor_coverage": {
         "candidate_count": 20,
         "assessment": "single_sufficient",
-        "note": "Yağmur, taşkın ve su akışı adayları incelendi; genel akan suyla kurulan karşıtlık bu dalın dışarıdan gelme koşulunu en iyi gösterir."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "collocation",
-        "has_non_bare": true,
-        "has_collocation": true,
-        "unit_kind_counts": {
-          "collocation": 1
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "Bütün adaylar değerlendirildi; genel su akışı dalı, bu kalıbın dışarıdan gelme koşulunu en açık biçimde gösterdi."
       }
     },
     {
@@ -1348,19 +1277,45 @@
       "what_is_not_ar": "ليس كل آت مطلقا ولا السيل الآتي من بلد آخر",
       "source_phrase_ar": "رجل أتي وأتاوي وهو الغريب (jamhara)؛ الاتي أيضا والاتاوى الغريب (sihah)؛ إنما هو أتي فينا (tahdhib)؛ به شبه الغريب فقيل أتاوي (mufradat)؛ رجل أتي أي غريب في قوم ليس منهم وأتاوي كذلك (maqayis)",
       "image_transliteration": "başka bir topluluğa dışarıdan gelen yabancı",
-      "summary": "Bir topluluğun üyesi olmadığı halde o topluluk içinde bulunan dışarıdan gelmiş kişidir.",
+      "summary": "Bir topluluk içinde bulunan, fakat o topluluğa mensup olmayan yabancı erkektir.",
       "concept_map": {
-        "definition": "Bir topluluğun üyesi olmadığı halde o topluluk içinde bulunan dışarıdan gelmiş kişidir.",
+        "definition": "Bir topluluk içinde bulunan, fakat o topluluğa mensup olmayan yabancı erkektir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kişi, içinde bulunduğu topluluğa ait değildir ve oraya dışarıdan gelmiştir.",
+            "statement": "Kişi bir topluluğun içinde bulunur ancak o topluluktan değildir.",
             "claim_ids": [
-              "lu_012"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "core",
+            "statement": "Kişi topluluğa göre yabancı ve dışarıdan gelmiş sayılır.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, içinde bulunduğu topluluğa mensup olmayan yabancı erkeği ortak biçimde tanımlar ve dal çerçevesindeki sınırı doğrular.",
+        "boundary_note": "Bu anlam yalnız bir topluluk içinde onlardan olmayan yabancı kişi nitelemesine bağlıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım kişi niteleyen kalıpla sınırlıdır; her gelen kişi veya dışarıdan gelen sel bu kapsama alınmaz."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "collocation",
+        "has_non_bare": true,
+        "has_collocation": true,
+        "unit_kind_counts": {
+          "collocation": 1
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -1368,7 +1323,7 @@
           "expression_ar": "رجل أَتِيّ",
           "unit_kind": "collocation",
           "sense_ar": "رجل غريب في قوم ليس منهم",
-          "target_gloss": "topluluğa dışarıdan gelmiş yabancı kişi",
+          "target_gloss": "içinde bulunduğu topluluğa mensup olmayan yabancı adam",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
@@ -1384,7 +1339,7 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Kaynaklar, kişinin içinde bulunduğu topluluktan olmaması ve o toplulukta dışarıdan gelmiş biri sayılması üzerinde birleşir.",
+        "discussion": "Kaynaklar, kişinin bulunduğu topluluğa mensup olmaması ve bu nedenle yabancı sayılması üzerinde birleşir.",
         "evidence_refs": [
           "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:39",
           "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
@@ -1440,20 +1395,21 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Bir topluluğun üyesi olmadığı halde o topluluk içinde bulunan dışarıdan gelmiş kişidir.",
+        "semantic_definition": "Bir topluluk içinde bulunan, fakat o topluluğa mensup olmayan yabancı erkektir.",
         "concept": {
           "rank": 1,
-          "text": "topluluğa dışarıdan gelmiş yabancı",
+          "text": "topluluğa yabancı kimse",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "Bir kişinin bulunduğu topluluğun üyesi olmadığını ve dışarıdan geldiğini birlikte belirtir.",
+          "applicability": "Bir kişinin içinde bulunduğu topluluğun mensubu olmadığını belirtmek için kullanılır.",
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002"
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Topluluğa ait olmama ve dışarıdan gelmiş bulunma özelliklerini korur.",
+            "preserves": "Topluluk içinde bulunma ve ona mensup olmama sınırını korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -1463,17 +1419,18 @@
         "selected": [
           {
             "rank": 1,
-            "text": "topluluğa dışarıdan gelmiş yabancı",
+            "text": "topluluğa yabancı kimse",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "Bir kişinin bulunduğu topluluğun üyesi olmadığını ve dışarıdan geldiğini birlikte belirtir.",
+            "applicability": "Bir kişinin içinde bulunduğu topluluğun mensubu olmadığını belirtmek için kullanılır.",
             "facet_ids": [
-              "F001"
+              "F001",
+              "F002"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Topluluğa ait olmama ve dışarıdan gelmiş bulunma özelliklerini korur.",
+              "preserves": "Topluluk içinde bulunma ve ona mensup olmama sınırını korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -1484,13 +1441,13 @@
           {
             "text": "yabancı",
             "category": "alternative",
-            "exclusion_reason": "Belirli bir topluluk içinde bulunma koşulu olmadan her türlü yabancıyı kapsar. Ülke veya dil bakımından yabancı kişiyle topluluk içindeki dışarıdan gelmiş kişiyi karıştırabilir.",
+            "exclusion_reason": "Bir topluluk içinde bulunmayan kişiler ile tanınmayan şeyleri de kapsayabilir.",
             "error_profile": {
               "fit": "broadening",
-              "preserves": "Kişinin ait olmama ve dışarıdan gelme özelliğini korur.",
+              "preserves": "Kişinin gruba göre dışarıdan oluşunu korur.",
               "loses": null,
-              "adds": "Belirli bir topluluk içinde bulunma koşulu olmadan her türlü yabancıyı kapsar.",
-              "collision": "Ülke veya dil bakımından yabancı kişiyle topluluk içindeki dışarıdan gelmiş kişiyi karıştırabilir."
+              "adds": "Bir topluluk içinde bulunmayan kişiler ile tanınmayan şeyleri de kapsayabilir.",
+              "collision": null
             }
           }
         ]
@@ -1499,14 +1456,14 @@
         {
           "neighbor_root_id": "root_001478",
           "neighbor_branch_id": "B006",
-          "relation_type": "synonym",
-          "boundary_match": "exact",
-          "focus_only": null,
-          "neighbor_only": null,
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal kişinin topluluğa yabancı oluşunu bildirir, sonradan karışma biçimini zorunlu kılmaz.",
+          "neighbor_only": "Komşu dal topluluğa dışarıdan girip ona karışan kişi görünümünü özellikle taşır.",
           "expression_transliteration": "topluluk içindeki yabancı",
-          "gloss": "topluluk içindeki yabancı",
-          "shared_zone": "İki dal da bir topluluğun içinde bulunup o topluluğa ait olmayan dışarıdan gelmiş kişiyi anlatır.",
-          "distinction": "Verilen sınırlar katılımcı, koşul ve kapsam bakımından aynıdır; iki dal doğrudan birbirinin yerine kullanılabilir.",
+          "gloss": "topluluğa karışmış yabancı",
+          "shared_zone": "Her iki dal bir topluluk içinde o topluluktan olmayan kişiyi anlatır.",
+          "distinction": "Odak dal mensubiyet dışılığını merkez alır; komşu dal dışarıdan girme ve topluluğa karışma görünümünü daha belirgin taşır.",
           "expression_ar": "النحيت الدخيل في القوم",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
@@ -1517,16 +1474,7 @@
       "neighbor_coverage": {
         "candidate_count": 20,
         "assessment": "single_sufficient",
-        "note": "Bütün yabancılık ve topluluğa katılma adayları incelendi; yalnızca sınırı bütünüyle örtüşen komşu yayımlandı."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "collocation",
-        "has_non_bare": true,
-        "has_collocation": true,
-        "unit_kind_counts": {
-          "collocation": 1
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "Bütün adaylar değerlendirildi; topluluğa karışmış yabancı dalı mensubiyet ile sonradan giriş arasındaki farkı en iyi gösterdi."
       }
     },
     {
@@ -1537,35 +1485,54 @@
       "what_is_not_ar": "ليس الإيتاء بمعنى الإعطاء ولا الإتاوة المفروضة",
       "source_phrase_ar": "أتاء هذا النخل أي ثمره وكذلك الزرع (jamhara)؛ الاتاء البركة والنماء وحمل النخل (sihah)؛ جاء أتوه (sihah;mufradat)؛ إتاء النخلة ريعها وزكاؤها وكثرة ثمارها (tahdhib)؛ الإتاء نماء الزرع والنخل وأتى الماء إتاء أي كثر (maqayis)",
       "image_transliteration": "büyüme ve ürünün ortaya çıkması",
-      "summary": "Ekin ve hurmanın büyüyüp bol ürün vermesi, suyun çoğalması ve çalkalanan tulumdan yağın çıkması çevresinde, artışın görünür bir ürüne dönüşmesidir.",
+      "summary": "Ekin ve hurmanın gelişip ürün vermesi, ürününün ve veriminin bol olmasıdır; suyun çoğalması da bu artış alanına uzanır. Ayrı bir kalıp, çalkalanan tulumda yağın ortaya çıkmasını bildirir.",
       "concept_map": {
-        "definition": "Ekin ve hurmanın büyüyüp bol ürün vermesi, suyun çoğalması ve çalkalanan tulumdan yağın çıkması çevresinde, artışın görünür bir ürüne dönüşmesidir.",
+        "definition": "Ekin ve hurmanın gelişip ürün vermesi, ürününün ve veriminin bol olmasıdır; suyun çoğalması da bu artış alanına uzanır. Ayrı bir kalıp, çalkalanan tulumda yağın ortaya çıkmasını bildirir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Ekin veya hurma büyür, bereketlenir ve bol ürün verir.",
+            "statement": "Ekin veya hurma gelişir, ürün verir ve verimi artar.",
             "claim_ids": [
-              "lu_014"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "extension",
-            "statement": "Aynı artış düşüncesi suyun çoğalması için de kullanılır.",
+            "statement": "Suyun miktarı çoğalır.",
             "claim_ids": [
-              "lu_014"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "associated_use",
-            "statement": "Tulum çalkalandıktan sonra yağın ortaya çıkması, çıkan ürün olarak anlatılır.",
+            "statement": "Ayrı bir kalıpta çalkalanan tulumun yağı ortaya çıkar.",
             "claim_ids": [
-              "lu_015"
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi ekin ve hurmanın ürünü, gelişmesi ve bol verimi ile suyun çoğalmasını destekler. Çalkalanan tulumdan yağın çıkması ise yalnız ayrı kalıbın kaynak ifadesiyle açıklanabilen, çekirdeğe bağlı olmayan bir kullanımdır.",
+        "boundary_note": "Bitkisel ürün ve artış çekirdektir; suyun çoğalması uzantı, tulumdan yağ çıkması ise ayrı kalıp kullanımıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Ürün ve gelişme bildiren biçim, suyun çoğalması ve çalkalanan tulumda yağın belirmesini bildiren kalıptan ayrı tutulur."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "mixed_non_bare",
+        "has_non_bare": true,
+        "has_collocation": true,
+        "unit_kind_counts": {
+          "collocation": 1,
+          "form": 1
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -1573,7 +1540,7 @@
           "expression_ar": "الإتاء",
           "unit_kind": "form",
           "sense_ar": "ريع الزرع والنخل ونماؤهما، وما يكثر أو يخرج",
-          "target_gloss": "büyüme, bereket ve bol ürün",
+          "target_gloss": "ekin ve hurmanın gelişmesi, ürünü ve bol verimi",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
@@ -1590,7 +1557,7 @@
           "expression_ar": "جاء أتوه",
           "unit_kind": "collocation",
           "sense_ar": "جاء زبد السقاء بعد المخض",
-          "target_gloss": "çalkalanan tulumdan yağın çıkması",
+          "target_gloss": "çalkalanan tulumun yağının ortaya çıkması",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6",
@@ -1602,7 +1569,7 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Dalın ana alanı ekin ve hurmanın büyümesi, bereketlenmesi ve ürün vermesidir; suyun çoğalması da bu artış çizgisine katılır. Ayrıca çalkalanan tulumdan yağın çıkması, ortaya gelen ürün olarak anlatılır.",
+        "discussion": "Toplu kanıt bitkisel gelişme, ürün ve bol verimi merkez alır; su artışı ve tulum yağının belirmesi farklı kapsamlı kullanımlardır.",
         "evidence_refs": [
           "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:39",
           "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
@@ -1658,21 +1625,22 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Ekin ve hurmanın büyüyüp bol ürün vermesi, suyun çoğalması ve çalkalanan tulumdan yağın çıkması çevresinde, artışın görünür bir ürüne dönüşmesidir.",
+        "semantic_definition": "Ekin ve hurmanın gelişip ürün vermesi, ürününün ve veriminin bol olmasıdır; suyun çoğalması da bu artış alanına uzanır. Ayrı bir kalıp, çalkalanan tulumda yağın ortaya çıkmasını bildirir.",
         "concept": {
           "rank": 1,
-          "text": "çoğalıp bol ürün vermek",
+          "text": "gelişip bol ürün vermek",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "Bitkinin büyümesi ve bol ürün vermesi ile suyun çoğalmasını anlatan ana kullanımlara uygundur.",
+          "applicability": "Ekin veya hurmanın gelişmesi, ürün çıkarması ve veriminin artması birlikte anlatılacağında kullanılır.",
           "facet_ids": [
             "F001",
-            "F002"
+            "F002",
+            "F003"
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Artma, büyüme ve görünür ürün verme çekirdeğini birlikte korur.",
+            "preserves": "Bitkisel gelişme, ürün ve bolluk çekirdeğini korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -1681,18 +1649,18 @@
         "contextual": [
           {
             "rank": 2,
-            "text": "çalkalanınca yağı çıkmak",
+            "text": "bol ürün",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Tulumdaki sıvının çalkalanması sonucunda yağın ortaya çıktığı özel bağlamda kullanılır.",
+            "applicability": "Ekinin veya hurmanın çıkan ürünü ve yüksek verimi adlandırıldığında kullanılır.",
             "facet_ids": [
-              "F003"
+              "F001"
             ],
             "error_profile": {
-              "fit": "none",
-              "preserves": "Çalkalama sonrasında yağın görünür biçimde ortaya çıkması sonucunu korur.",
-              "loses": null,
+              "fit": "narrowing",
+              "preserves": "Bitkinin ürünü ile verim bolluğunu korur.",
+              "loses": "Gelişme sürecini, suyun çoğalmasını ve tulum yağı kullanımını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
@@ -1701,18 +1669,19 @@
         "selected": [
           {
             "rank": 1,
-            "text": "çoğalıp bol ürün vermek",
+            "text": "gelişip bol ürün vermek",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "Bitkinin büyümesi ve bol ürün vermesi ile suyun çoğalmasını anlatan ana kullanımlara uygundur.",
+            "applicability": "Ekin veya hurmanın gelişmesi, ürün çıkarması ve veriminin artması birlikte anlatılacağında kullanılır.",
             "facet_ids": [
               "F001",
-              "F002"
+              "F002",
+              "F003"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Artma, büyüme ve görünür ürün verme çekirdeğini birlikte korur.",
+              "preserves": "Bitkisel gelişme, ürün ve bolluk çekirdeğini korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -1720,37 +1689,24 @@
           },
           {
             "rank": 2,
-            "text": "çalkalanınca yağı çıkmak",
+            "text": "bol ürün",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Tulumdaki sıvının çalkalanması sonucunda yağın ortaya çıktığı özel bağlamda kullanılır.",
+            "applicability": "Ekinin veya hurmanın çıkan ürünü ve yüksek verimi adlandırıldığında kullanılır.",
             "facet_ids": [
-              "F003"
+              "F001"
             ],
             "error_profile": {
-              "fit": "none",
-              "preserves": "Çalkalama sonrasında yağın görünür biçimde ortaya çıkması sonucunu korur.",
-              "loses": null,
+              "fit": "narrowing",
+              "preserves": "Bitkinin ürünü ile verim bolluğunu korur.",
+              "loses": "Gelişme sürecini, suyun çoğalmasını ve tulum yağı kullanımını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
           }
         ],
-        "excluded": [
-          {
-            "text": "ürün",
-            "category": "alternative",
-            "exclusion_reason": "Büyüme ve çoğalma sürecini, su artışını ve çalkalanan tulumdan yağ çıkması kullanımını karşılamaz.",
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Ekin veya hurmadan ortaya çıkan verimi korur.",
-              "loses": "Büyüme ve çoğalma sürecini, su artışını ve çalkalanan tulumdan yağ çıkması kullanımını karşılamaz.",
-              "adds": null,
-              "collision": null
-            }
-          }
-        ]
+        "excluded": []
       },
       "arabic_neighbor_distinctions": [
         {
@@ -1758,57 +1714,26 @@
           "neighbor_branch_id": "B002",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal büyüme ve bereketi, suyun çoğalmasını ve tulumdan yağ çıkması yan kullanımını kapsar.",
-          "neighbor_only": "Komşu dal ağacın, hurmanın, ekinin veya toprağın verdiği ürünü doğrudan adlandırır.",
-          "expression_transliteration": "ağaç ve ekin ürünü",
-          "gloss": "bitkinin ürünü ve verimi",
-          "shared_zone": "Her iki dalda da ekin ve ağaçların verdiği ürün ile verim bulunur.",
-          "distinction": "Odak dal yalnız ürünü değil büyüme ve çoğalma sürecini de içerir; komşu dal ise elde edilen ürünü merkez alır.",
+          "focus_only": "Odak dal ürünün yanında gelişme, verim bolluğu ve suyun çoğalması kapsamlarını taşır.",
+          "neighbor_only": "Komşu dal ağaç, hurma, ekin ve toprağın verdiği ürünü daha genel bir ürün adı olarak kapsar.",
+          "expression_transliteration": "ghlh alshjr walzr'",
+          "gloss": "ağaç ve ekin ürünü",
+          "shared_zone": "Her iki dal ekin ve hurmanın meydana getirdiği ürünü anlatır.",
+          "distinction": "Odak dal ürünle birlikte gelişme ve bolluk sürecini öne çıkarır; komşu dal ürünün kendisine daha genel biçimde yönelir.",
           "expression_ar": "غلة الشجر والزرع",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:117",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A48:headword=%D8%A3%D9%83%D9%84:root=%D8%A1%20%D9%83%20%D9%84:sha=8318067002f57ae8",
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3882:headword=%D8%A3%D9%83%D9%84:root=%D8%A1%20%D9%83%20%D9%84:sha=4e2954ca5d6a29a9",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D518%3Bsegment_index%3D26:headword=%D8%A3%D9%83%D9%84:root=%D8%A3%20%D9%83%20%D9%84:sha=66809c4ae1fa1ccb",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A48:headword=%D8%A3%D9%83%D9%84:root=%D8%A1%20%D9%83%20%D9%84:sha=8318067002f57ae8"
-          ]
-        },
-        {
-          "neighbor_root_id": "root_001075",
-          "neighbor_branch_id": "B001",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Odak dal su artışını bitki büyümesi ve ürün verme düşüncesinin bir uzantısı olarak taşır.",
-          "neighbor_only": "Komşu dal bol su yanında yağmur, geçim genişliği, mal ve ıslak toprağı da kapsar.",
-          "expression_transliteration": "su ve geçim bolluğu",
-          "gloss": "suyun çoğalması",
-          "shared_zone": "Her iki dalın bir bölümünde suyun bol ve çok olması anlatılır.",
-          "distinction": "Su bolluğu odak dalda büyüme ve ürün alanına bağlı bir uzantıdır; komşu dalda ise daha geniş bolluk ve geçim alanının çekirdeğidir.",
-          "expression_ar": "غزارة الماء والرزق",
-          "basis": "furuq_branch_comparison",
-          "evidence_refs": [
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2582",
-            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A2868:headword=%D8%BA%D8%AF%D9%82:root=%D8%BA%20%D8%AF%20%D9%82:sha=47428e4dd86a9224",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3666:headword=%D8%BA%D8%AF%D9%82:root=%D8%BA%20%D8%AF%20%D9%82:sha=7bc6ad5fe3420a13",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D405%3Bsegment_index%3D2:headword=%D8%BA%D8%AF%D9%82:root=%D8%BA%20%D8%AF%20%D9%82:sha=b4ec549c96a636c8",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1071:headword=%D8%BA%D8%AF%D9%82:root=%D8%BA%20%D8%AF%20%D9%82:sha=c6c2f898a871e4c4"
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D518%3Bsegment_index%3D26:headword=%D8%A3%D9%83%D9%84:root=%D8%A3%20%D9%83%20%D9%84:sha=66809c4ae1fa1ccb"
           ]
         }
       ],
       "neighbor_coverage": {
         "candidate_count": 20,
-        "assessment": "complete",
-        "note": "Ürün, büyüme ve bolluk adayları karşılaştırıldı; ürünle ve su bolluğuyla kurulan iki ayrım dalın ana ve genişlemiş alanlarını gösterir."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "mixed_non_bare",
-        "has_non_bare": true,
-        "has_collocation": true,
-        "unit_kind_counts": {
-          "collocation": 1,
-          "form": 1
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "assessment": "single_sufficient",
+        "note": "Bütün adaylar değerlendirildi; ürün dalı, ürünün kendisi ile gelişme ve bol verim arasındaki ayrımı en iyi belirginleştirdi."
       }
     },
     {
@@ -1819,28 +1744,54 @@
       "what_is_not_ar": "ليس الإيتاء بمعنى مطلق الإعطاء ولا ريع الزرع",
       "source_phrase_ar": "الإتاوة الخراج أو الجزية يؤديه القوم إلى الملك (jamhara)؛ الاتاوة الخراج والجمع الاتاوي (sihah)؛ الإتاوة الخراج وجمعها الأتاوى والإتاوات (tahdhib)؛ أتوته أتوة إذا رشوته إتاوة وهي الرشوة (tahdhib)",
       "image_transliteration": "ödenen vergi veya çıkar ödemesi",
-      "summary": "Bir topluluğun veya kişinin yönetime vergi ya da zorunlu ödeme olarak sunduğu maldır; ayrıca çıkar sağlamak için gizlice verilen ödeme anlamına genişler.",
+      "summary": "Bir topluluğun veya kişinin yönetime ödediği vergi ya da baş vergisidir. Ayrı bir kalıpta, bir kimseye çıkar sağlamak için verilen rüşveti veya rüşvet verme eylemini anlatır.",
       "concept_map": {
-        "definition": "Bir topluluğun veya kişinin yönetime vergi ya da zorunlu ödeme olarak sunduğu maldır; ayrıca çıkar sağlamak için gizlice verilen ödeme anlamına genişler.",
+        "definition": "Bir topluluğun veya kişinin yönetime ödediği vergi ya da baş vergisidir. Ayrı bir kalıpta, bir kimseye çıkar sağlamak için verilen rüşveti veya rüşvet verme eylemini anlatır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Topluluk ya da kişi, yönetime vergi veya başka bir zorunlu ödeme verir.",
+            "statement": "Topluluk veya kişi yönetime vergi niteliğinde para öder.",
             "claim_ids": [
-              "lu_016"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "extension",
-            "statement": "Ödeme, bir çıkar elde etmek amacıyla gizlice verilen mala da ad olur.",
+            "role": "specialization",
+            "statement": "Ödeme baş vergisi veya benzeri yükümlülük niteliği taşır.",
             "claim_ids": [
-              "lu_016",
-              "lu_017"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "associated_use",
+            "statement": "Ayrı bir kullanımda bir kimseye rüşvet verilir.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi yönetime ödenen vergi veya baş vergisini ortak alan olarak verir ve aynı toplu iddia içinde bir kişiye sunulan rüşvet kullanımını da bildirir.",
+        "boundary_note": "Düzenli veya zorunlu kamu ödemesi çekirdektir; rüşvet, aynı biçimin ayrı kalıptaki özel kullanımıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Vergi adı olarak kullanılan biçim ile birine rüşvet vermeyi bildiren kalıp kapsam bakımından ayrılır."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "mixed_non_bare",
+        "has_non_bare": true,
+        "has_collocation": true,
+        "unit_kind_counts": {
+          "collocation": 1,
+          "form": 1
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -1848,7 +1799,7 @@
           "expression_ar": "الإتاوة",
           "unit_kind": "form",
           "sense_ar": "الخراج أو الجزية أو المكس المؤدى، وقد تستعمل للرشوة",
-          "target_gloss": "vergi, zorunlu ödeme veya çıkar ödemesi",
+          "target_gloss": "vergi veya baş vergisi; rüşvet",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
@@ -1862,7 +1813,7 @@
           "expression_ar": "أتوته إتاوة",
           "unit_kind": "collocation",
           "sense_ar": "رشيته رشوة",
-          "target_gloss": "çıkar sağlamak için gizli ödeme yapmak",
+          "target_gloss": "ona rüşvet vermek",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
@@ -1873,230 +1824,7 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Ana kullanım, topluluğun veya kişinin yönetime verdiği vergi ve zorunlu ödemedir. Aynı birim ayrıca çıkar sağlamak için verilen gizli ödeme anlamında kaydedilir.",
-        "evidence_refs": [
-          "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
-          "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6",
-          "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
-        ],
-        "details": [
-          {
-            "kind": "sole_attestation",
-            "summary": "Birine çıkar sağlamak amacıyla gizli ödeme verme eylemi ayrıca belirtilir.",
-            "source_refs": [
-              "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
-            ],
-            "source_ids": [
-              "tahdhib"
-            ]
-          }
-        ],
-        "examples": [],
-        "disagreement": null
-      },
-      "dictionary_basis": {
-        "dictionary_count": 3,
-        "passage_count": 3,
-        "sources": [
-          {
-            "source_id": "jamhara",
-            "dictionary_name": "Jamharat al-Lugha",
-            "source_refs": [
-              "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324"
-            ]
-          },
-          {
-            "source_id": "sihah",
-            "dictionary_name": "al-Ṣiḥāḥ",
-            "source_refs": [
-              "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6"
-            ]
-          },
-          {
-            "source_id": "tahdhib",
-            "dictionary_name": "Tahdhīb al-Lugha",
-            "source_refs": [
-              "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
-            ]
-          }
-        ]
-      },
-      "glosses": {
-        "semantic_definition": "Bir topluluğun veya kişinin yönetime vergi ya da zorunlu ödeme olarak sunduğu maldır; ayrıca çıkar sağlamak için gizlice verilen ödeme anlamına genişler.",
-        "concept": {
-          "rank": 1,
-          "text": "vergi ya da çıkar ödemesi",
-          "loanword_status": "none",
-          "usage_role": "explanatory",
-          "selection_role": "primary_concept_gloss",
-          "applicability": "Yönetime verilen zorunlu mal ile kişisel çıkar için verilen gizli ödemeyi ayırarak birlikte karşılar.",
-          "facet_ids": [
-            "F001",
-            "F002"
-          ],
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Zorunlu yönetim ödemesini ve çıkar amaçlı gizli ödeme uzantısını korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          }
-        },
-        "contextual": [
-          {
-            "rank": 2,
-            "text": "çıkar için gizli ödeme yapmak",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Bir kişiye kararını etkilemek veya çıkar sağlamak amacıyla mal verildiği özel bağlamda kullanılır.",
-            "facet_ids": [
-              "F002"
-            ],
-            "error_profile": {
-              "fit": "none",
-              "preserves": "Kişisel çıkar amacıyla birine gizli ödeme verme işlemini korur.",
-              "loses": null,
-              "adds": null,
-              "collision": null
-            }
-          }
-        ],
-        "selected": [
-          {
-            "rank": 1,
-            "text": "vergi ya da çıkar ödemesi",
-            "loanword_status": "none",
-            "usage_role": "explanatory",
-            "selection_role": "primary_concept_gloss",
-            "applicability": "Yönetime verilen zorunlu mal ile kişisel çıkar için verilen gizli ödemeyi ayırarak birlikte karşılar.",
-            "facet_ids": [
-              "F001",
-              "F002"
-            ],
-            "error_profile": {
-              "fit": "none",
-              "preserves": "Zorunlu yönetim ödemesini ve çıkar amaçlı gizli ödeme uzantısını korur.",
-              "loses": null,
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 2,
-            "text": "çıkar için gizli ödeme yapmak",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Bir kişiye kararını etkilemek veya çıkar sağlamak amacıyla mal verildiği özel bağlamda kullanılır.",
-            "facet_ids": [
-              "F002"
-            ],
-            "error_profile": {
-              "fit": "none",
-              "preserves": "Kişisel çıkar amacıyla birine gizli ödeme verme işlemini korur.",
-              "loses": null,
-              "adds": null,
-              "collision": null
-            }
-          }
-        ],
-        "excluded": [
-          {
-            "text": "vergi",
-            "category": "alternative",
-            "exclusion_reason": "Kişisel çıkar sağlamak amacıyla birine gizlice verilen ödeme uzantısını karşılamaz.",
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Yönetime verilen zorunlu mal ödemesini korur.",
-              "loses": "Kişisel çıkar sağlamak amacıyla birine gizlice verilen ödeme uzantısını karşılamaz.",
-              "adds": null,
-              "collision": null
-            }
-          }
-        ]
-      },
-      "arabic_neighbor_distinctions": [
-        {
-          "neighbor_root_id": "root_000906",
-          "neighbor_branch_id": "B010",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dal, yönetim ödemesinin yanında çıkar için verilen gizli ödemeyi de kapsar.",
-          "neighbor_only": "Komşu dal, kişi, köle veya toprağa konan çeşitli vergileri ve düzenli yükümlülükleri kapsar.",
-          "expression_transliteration": "birine yüklenen ödeme",
-          "gloss": "kişiye konan vergi",
-          "shared_zone": "Her iki dalda da bir kişi veya topluluktan alınan zorunlu mal ödemesi bulunur.",
-          "distinction": "Odak dal ödenen malı ve gizli çıkar ödemesi uzantısını öne çıkarır; komşu dal ise kime veya neye vergi konduğunun daha geniş türlerini kapsar.",
-          "expression_ar": "المال المضروب على أحد",
-          "basis": "furuq_branch_comparison",
-          "evidence_refs": [
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2166",
-            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4593:headword=%D8%B6%D8%B1%D8%A8:root=%D8%B6%20%D8%B1%20%D8%A8:sha=f30a7eb7df749aef",
-            "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A723%3Asubentry%3A2%3A%D8%B6%D8%B1%D8%A8:headword=%D8%B6%D8%B1%D8%A8:root=%D8%B6%20%D8%B1%20%D8%A8:sha=e1297f93c344a27e",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A358:headword=%D8%B6%D8%B1%D8%A8:root=%D8%B6%20%D8%B1%20%D8%A8:sha=4aaa8a6d03598980",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D612%3Bsegment_index%3D33:headword=%D8%B6%D8%B1%D8%A8:root=%D8%B6%20%D8%B1%20%D8%A8:sha=2d79f20c65d29e85"
-          ]
-        }
-      ],
-      "neighbor_coverage": {
-        "candidate_count": 20,
-        "assessment": "single_sufficient",
-        "note": "Vergi, pay ve ödeme adayları incelendi; zorunlu ödeme çekirdeğini en geniş biçimde paylaşan komşu sınırı açıklamaya yeterlidir."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "mixed_non_bare",
-        "has_non_bare": true,
-        "has_collocation": true,
-        "unit_kind_counts": {
-          "collocation": 1,
-          "form": 1
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
-      }
-    },
-    {
-      "root_id": "root_000009",
-      "branch_id": "B009",
-      "branch_image_ar": "رجع يدي الناقة في السير",
-      "what_is_ar": "أتو أو أتي يدي الناقة، أي رجع يديها في السير",
-      "what_is_not_ar": "ليس مطلق الإتيان ولا طريق الماء",
-      "source_phrase_ar": "ما أحسن أتو قوائم الناقة وأتيها في السير (jamhara)؛ ما أحسن أتو يدي هذه الناقة وأتي أيضا أي رجع يديها في السير (sihah)؛ ما أحسن أتو يديها وأتي يديها يعني رجع يديها (tahdhib)",
-      "image_transliteration": "dişi devenin yürürken ön ayaklarını geri çekmesi",
-      "summary": "Dişi devenin yürürken ön ayaklarını geri çekip yeniden öne taşıyan yinelemeli adım hareketidir.",
-      "concept_map": {
-        "definition": "Dişi devenin yürürken ön ayaklarını geri çekip yeniden öne taşıyan yinelemeli adım hareketidir.",
-        "facets": [
-          {
-            "facet_id": "F001",
-            "role": "core",
-            "statement": "Dişi deve yürüyüş sırasında ön ayaklarını geri çekerek adımını yineler.",
-            "claim_ids": [
-              "lu_018"
-            ]
-          }
-        ]
-      },
-      "lexical_realizations": [
-        {
-          "lexical_unit_id": "lu_018",
-          "expression_ar": "أتو يدي الناقة",
-          "unit_kind": "collocation",
-          "sense_ar": "رجع يدي الناقة في السير",
-          "target_gloss": "dişi devenin yürürken ön ayaklarını geri çekmesi",
-          "target_rendering_kind": "ordinary",
-          "evidence_refs": [
-            "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
-          ],
-          "quran_form": null
-        }
-      ],
-      "usage_notes": [],
-      "evidence_qualifiers": [],
-      "source_discussion": {
-        "discussion": "Kaynaklar, dişi devenin yürüyüşü sırasında ön ayaklarını geri çekme ve adım döngüsünü yineleme hareketini anlatır.",
+        "discussion": "Toplu iddia vergi ve baş vergisi anlamlarını ortaklaştırır; rüşvet kullanımı kaynaklara ayrı ayrı dağıtılamayan özel bir karşılık olarak aynı iddiada yer alır.",
         "evidence_refs": [
           "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
           "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6",
@@ -2134,20 +1862,240 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Dişi devenin yürürken ön ayaklarını geri çekip yeniden öne taşıyan yinelemeli adım hareketidir.",
+        "semantic_definition": "Bir topluluğun veya kişinin yönetime ödediği vergi ya da baş vergisidir. Ayrı bir kalıpta, bir kimseye çıkar sağlamak için verilen rüşveti veya rüşvet verme eylemini anlatır.",
         "concept": {
           "rank": 1,
-          "text": "devenin ön ayaklarını geri çekişi",
+          "text": "ödenen vergi; rüşvet",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "Dişi devenin yürüyüşünde ön ayakların geri dönerek yeni adıma hazırlanmasını anlatır.",
+          "applicability": "Yönetime ödenen mali yükümlülük ile ayrı rüşvet kullanımı birlikte gösterileceğinde kullanılır.",
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002",
+            "F003"
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Dişi deve, ön ayaklar ve yürüyüşteki geri çekme hareketini korur.",
+            "preserves": "Vergi, baş vergisi ve ayrı rüşvet kullanımını korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          }
+        },
+        "contextual": [
+          {
+            "rank": 2,
+            "text": "vergi",
+            "loanword_status": "none",
+            "usage_role": "general",
+            "selection_role": "contextual_gloss",
+            "applicability": "Topluluğun veya kişinin yönetime yaptığı zorunlu mali ödeme söz konusu olduğunda kullanılır.",
+            "facet_ids": [
+              "F001",
+              "F002"
+            ],
+            "error_profile": {
+              "fit": "narrowing",
+              "preserves": "Yönetime yapılan mali yükümlülük ödemesini korur.",
+              "loses": "Rüşvet olarak verilen ödeme kullanımını dışarıda bırakır.",
+              "adds": null,
+              "collision": null
+            }
+          }
+        ],
+        "selected": [
+          {
+            "rank": 1,
+            "text": "ödenen vergi; rüşvet",
+            "loanword_status": "none",
+            "usage_role": "explanatory",
+            "selection_role": "primary_concept_gloss",
+            "applicability": "Yönetime ödenen mali yükümlülük ile ayrı rüşvet kullanımı birlikte gösterileceğinde kullanılır.",
+            "facet_ids": [
+              "F001",
+              "F002",
+              "F003"
+            ],
+            "error_profile": {
+              "fit": "none",
+              "preserves": "Vergi, baş vergisi ve ayrı rüşvet kullanımını korur.",
+              "loses": null,
+              "adds": null,
+              "collision": null
+            }
+          },
+          {
+            "rank": 2,
+            "text": "vergi",
+            "loanword_status": "none",
+            "usage_role": "general",
+            "selection_role": "contextual_gloss",
+            "applicability": "Topluluğun veya kişinin yönetime yaptığı zorunlu mali ödeme söz konusu olduğunda kullanılır.",
+            "facet_ids": [
+              "F001",
+              "F002"
+            ],
+            "error_profile": {
+              "fit": "narrowing",
+              "preserves": "Yönetime yapılan mali yükümlülük ödemesini korur.",
+              "loses": "Rüşvet olarak verilen ödeme kullanımını dışarıda bırakır.",
+              "adds": null,
+              "collision": null
+            }
+          }
+        ],
+        "excluded": []
+      },
+      "arabic_neighbor_distinctions": [
+        {
+          "neighbor_root_id": "root_000906",
+          "neighbor_branch_id": "B010",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal aynı biçimin rüşvet kullanımını da kapsar.",
+          "neighbor_only": "Komşu dal kişiye, köleye veya toprağa konan vergi, gelir ve görev ödemelerini daha geniş sınıflar halinde kapsar.",
+          "expression_transliteration": "almal almdrwb 'la ahd",
+          "gloss": "kişiye veya toprağa konan vergi",
+          "shared_zone": "Her iki dal bir kişi veya topluluğa yüklenen vergi ve kamu ödemesi alanında kesişir.",
+          "distinction": "Odak dal vergi adının yanında rüşvet kullanımına sahiptir; komşu dal ise üzerine konan mali yükümlülük türlerini daha geniş kapsar.",
+          "expression_ar": "المال المضروب على أحد",
+          "basis": "furuq_branch_comparison",
+          "evidence_refs": [
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2166",
+            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4593:headword=%D8%B6%D8%B1%D8%A8:root=%D8%B6%20%D8%B1%20%D8%A8:sha=f30a7eb7df749aef",
+            "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A723%3Asubentry%3A2%3A%D8%B6%D8%B1%D8%A8:headword=%D8%B6%D8%B1%D8%A8:root=%D8%B6%20%D8%B1%20%D8%A8:sha=e1297f93c344a27e",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A358:headword=%D8%B6%D8%B1%D8%A8:root=%D8%B6%20%D8%B1%20%D8%A8:sha=4aaa8a6d03598980",
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D612%3Bsegment_index%3D33:headword=%D8%B6%D8%B1%D8%A8:root=%D8%B6%20%D8%B1%20%D8%A8:sha=2d79f20c65d29e85"
+          ]
+        }
+      ],
+      "neighbor_coverage": {
+        "candidate_count": 20,
+        "assessment": "single_sufficient",
+        "note": "Bütün adaylar değerlendirildi; mali yükümlülük komşusu vergi çekirdeği ile rüşvet uzantısı arasındaki sınırı en iyi gösterdi."
+      }
+    },
+    {
+      "root_id": "root_000009",
+      "branch_id": "B009",
+      "branch_image_ar": "رجع يدي الناقة في السير",
+      "what_is_ar": "أتو أو أتي يدي الناقة، أي رجع يديها في السير",
+      "what_is_not_ar": "ليس مطلق الإتيان ولا طريق الماء",
+      "source_phrase_ar": "ما أحسن أتو قوائم الناقة وأتيها في السير (jamhara)؛ ما أحسن أتو يدي هذه الناقة وأتي أيضا أي رجع يديها في السير (sihah)؛ ما أحسن أتو يديها وأتي يديها يعني رجع يديها (tahdhib)",
+      "image_transliteration": "dişi devenin yürürken ön ayaklarını geri çekmesi",
+      "summary": "Devenin yürürken ön ayaklarını ileri adımdan sonra düzenli biçimde geri getirme hareketidir.",
+      "concept_map": {
+        "definition": "Devenin yürürken ön ayaklarını ileri adımdan sonra düzenli biçimde geri getirme hareketidir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Deve yürüyüş sırasında ön ayaklarını geri getirir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Bu hareket devenin yürüyüş niteliği olarak değerlendirilir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bütünüyle devenin yürüyüş sırasında ön ayaklarını geri getirme hareketini anlatır ve verilen dal sınırıyla örtüşür.",
+        "boundary_note": "Anlam yalnız devenin yürüyüşte ön ayaklarını geri getirme biçimini niteleyen kalıba bağlıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım devenin ön ayak hareketini bildiren kalıpla sınırlıdır; genel yürüyüş veya geliş anlamına genişletilmez."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "collocation",
+        "has_non_bare": true,
+        "has_collocation": true,
+        "unit_kind_counts": {
+          "collocation": 1
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
+      },
+      "lexical_realizations": [
+        {
+          "lexical_unit_id": "lu_018",
+          "expression_ar": "أتو يدي الناقة",
+          "unit_kind": "collocation",
+          "sense_ar": "رجع يدي الناقة في السير",
+          "target_gloss": "devenin yürürken ön ayaklarını geri getirişi",
+          "target_rendering_kind": "ordinary",
+          "evidence_refs": [
+            "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6",
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
+          ],
+          "quran_form": null
+        }
+      ],
+      "usage_notes": [],
+      "evidence_qualifiers": [],
+      "source_discussion": {
+        "discussion": "Kaynaklar, devenin yürüyüşünde ön ayakların geri getirilişini aynı hareket niteliği olarak tanımlar.",
+        "evidence_refs": [
+          "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324",
+          "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6",
+          "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
+        ],
+        "details": [],
+        "examples": [],
+        "disagreement": null
+      },
+      "dictionary_basis": {
+        "dictionary_count": 3,
+        "passage_count": 3,
+        "sources": [
+          {
+            "source_id": "jamhara",
+            "dictionary_name": "Jamharat al-Lugha",
+            "source_refs": [
+              "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A6%3A%D8%A3%D8%AA%D9%8A:headword=%D8%A3%D8%AA%D9%8A:root=%D8%A1%20%D8%AA%20%D9%8A:sha=653966d5ecc0a324"
+            ]
+          },
+          {
+            "source_id": "sihah",
+            "dictionary_name": "al-Ṣiḥāḥ",
+            "source_refs": [
+              "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6"
+            ]
+          },
+          {
+            "source_id": "tahdhib",
+            "dictionary_name": "Tahdhīb al-Lugha",
+            "source_refs": [
+              "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
+            ]
+          }
+        ]
+      },
+      "glosses": {
+        "semantic_definition": "Devenin yürürken ön ayaklarını ileri adımdan sonra düzenli biçimde geri getirme hareketidir.",
+        "concept": {
+          "rank": 1,
+          "text": "devenin ön ayaklarını geri getirişi",
+          "loanword_status": "none",
+          "usage_role": "explanatory",
+          "selection_role": "primary_concept_gloss",
+          "applicability": "Devenin yürüyüşündeki belirli ön ayak hareketi adlandırıldığında kullanılır.",
+          "facet_ids": [
+            "F001",
+            "F002"
+          ],
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Hayvanı, yürüyüş bağlamını ve ön ayakların geri hareketini korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -2157,37 +2105,25 @@
         "selected": [
           {
             "rank": 1,
-            "text": "devenin ön ayaklarını geri çekişi",
+            "text": "devenin ön ayaklarını geri getirişi",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "Dişi devenin yürüyüşünde ön ayakların geri dönerek yeni adıma hazırlanmasını anlatır.",
+            "applicability": "Devenin yürüyüşündeki belirli ön ayak hareketi adlandırıldığında kullanılır.",
             "facet_ids": [
-              "F001"
+              "F001",
+              "F002"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Dişi deve, ön ayaklar ve yürüyüşteki geri çekme hareketini korur.",
+              "preserves": "Hayvanı, yürüyüş bağlamını ve ön ayakların geri hareketini korur.",
               "loses": null,
               "adds": null,
               "collision": null
             }
           }
         ],
-        "excluded": [
-          {
-            "text": "hızlı yürüyüş",
-            "category": "confusable",
-            "exclusion_reason": "Dişi devenin ön ayaklarını geri çekerek adımını yinelemesi biçimini siler. Kanıtta bulunmayan bir hız niteliği ekler. Adımın biçimini yürüyüşün hızıyla karıştırır.",
-            "error_profile": {
-              "fit": "displacement",
-              "preserves": "Hayvanın yürüyüşüne ilişkin bir hareket bulunduğunu korur.",
-              "loses": "Dişi devenin ön ayaklarını geri çekerek adımını yinelemesi biçimini siler.",
-              "adds": "Kanıtta bulunmayan bir hız niteliği ekler.",
-              "collision": "Adımın biçimini yürüyüşün hızıyla karıştırır."
-            }
-          }
-        ]
+        "excluded": []
       },
       "arabic_neighbor_distinctions": [
         {
@@ -2195,12 +2131,12 @@
           "neighbor_branch_id": "B008",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal özellikle dişi devenin ön ayaklarını geri çekmesini anlatır.",
-          "neighbor_only": "Komşu dal hayvanın ayaklarını ve adımlarını genel olarak geri getirmesini, ayrıca yürüyüş türü değiştirmesini kapsar.",
-          "expression_transliteration": "hayvanın yürürken ayaklarını geri çekmesi",
-          "gloss": "hayvanın adımını geri getirmesi",
-          "shared_zone": "Her iki dalda da yürüyen hayvanın ayağını geri çekerek yeni adıma geçmesi vardır.",
-          "distinction": "Odak dal tür ve uzuv bakımından dişi devenin ön ayaklarıyla sınırlıdır; komşu dal başka hayvanlara ve yürüyüş değişimine açılır.",
+          "focus_only": "Odak dal özellikle devenin ön ayaklarını geri getirmesine bağlıdır.",
+          "neighbor_only": "Komşu dal farklı bineklerin ayak hareketini, adımını ve bir yürüyüş türünden ötekine geçişini kapsar.",
+          "expression_transliteration": "rj' aldabh fy alsyr",
+          "gloss": "bineğin ayağını geri getirmesi",
+          "shared_zone": "Her iki dal yürüyen bir hayvanın ayaklarını geri getirme hareketini anlatır.",
+          "distinction": "Odak dal deve ve ön ayaklarla sınırlıdır; komşu dal hayvan ve yürüyüş türü bakımından daha geniştir.",
           "expression_ar": "رجع الدابة في السير",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
@@ -2214,16 +2150,7 @@
       "neighbor_coverage": {
         "candidate_count": 20,
         "assessment": "single_sufficient",
-        "note": "Yürüyüş ve uzuv hareketi adayları incelendi; genel ayak geri dönüşüyle karşılaştırma tür ve uzuv sınırını açıkça gösterir."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "collocation",
-        "has_non_bare": true,
-        "has_collocation": true,
-        "unit_kind_counts": {
-          "collocation": 1
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "Bütün adaylar değerlendirildi; genel binek ayağı hareketi komşusu, deveye ve ön ayaklara özgü sınırı en açık biçimde gösterdi."
       }
     },
     {
@@ -2234,37 +2161,62 @@
       "what_is_not_ar": "ليس مجيء الشخص ولا الجدول المائي",
       "source_phrase_ar": "الميتاء والميداء آخر الغاية حيث ينتهي إليه جري الخيل (sihah)؛ الميتاء الطريق العامر ومجتمع الطريق (sihah)؛ داري بميتاء دار فلان وميداء دار فلان أي تلقاء داره ومحاذية لها (sihah)؛ طريق ميتاء مسلوك وميتاء الطريق وميداؤه محجته (tahdhib)",
       "image_transliteration": "yol, son nokta ve karşı hiza",
-      "summary": "Bir koşunun bittiği son nokta ile insanların kullandığı ana yol veya yol kavşağıdır; konum bildiren kullanımda bir evin tam karşısını ve hizasını gösterir.",
+      "summary": "İşlek veya yürünmüş ana yol, yolların birleştiği yer ya da yarış atlarının koşusunun bittiği son sınırdır. Bir konum kalıbında, bir evin karşısında veya onunla aynı hizada bulunmayı bildirir.",
       "concept_map": {
-        "definition": "Bir koşunun bittiği son nokta ile insanların kullandığı ana yol veya yol kavşağıdır; konum bildiren kullanımda bir evin tam karşısını ve hizasını gösterir.",
+        "definition": "İşlek veya yürünmüş ana yol, yolların birleştiği yer ya da yarış atlarının koşusunun bittiği son sınırdır. Bir konum kalıbında, bir evin karşısında veya onunla aynı hizada bulunmayı bildirir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Koşunun veya izlenen yolun ulaştığı son nokta belirtilir.",
+            "statement": "İnsanların kullandığı işlek veya yürünmüş ana yol adlandırılır.",
             "claim_ids": [
-              "lu_019",
-              "lu_020"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "core",
-            "statement": "İnsanların kullandığı ana yol, yolun açık geçidi veya yolların birleştiği yer anlatılır.",
+            "role": "specialization",
+            "statement": "Yolların birleştiği kavşak veya yolun belirgin ana kesimi anlatılır.",
             "claim_ids": [
-              "lu_019",
-              "lu_020"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "extension",
-            "statement": "Bir yerin başka bir evin tam karşısında ve onunla aynı hizada olması anlatılır.",
+            "statement": "Yarış atlarının koşusunun ulaştığı son sınır adlandırılır.",
             "claim_ids": [
-              "lu_021"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "associated_use",
+            "statement": "Bir yapı başka bir yapının karşısında veya aynı hizasında bulunur.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi yarışın son sınırı, işlek ya da yürünmüş yol, yol kavşağı ve bir evin karşısında veya hizasında olma kullanımlarını açıkça destekler.",
+        "boundary_note": "Yol adı, yarış sonu ve konumsal hizalama aynı biçim ailesindeki ayrı kullanımlardır; biri ötekine indirgenmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Yol ve son sınır bildiren adlar ile bir evin karşısında bulunmayı bildiren kalıp ayrı kapsamlar olarak korunur."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "mixed_non_bare",
+        "has_non_bare": true,
+        "has_collocation": true,
+        "unit_kind_counts": {
+          "collocation": 1,
+          "form": 2
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -2272,7 +2224,7 @@
           "expression_ar": "الميتاء",
           "unit_kind": "form",
           "sense_ar": "آخر الغاية أو الطريق المسلوك أو مجتمع الطريق",
-          "target_gloss": "son nokta; kullanılan ana yol veya yol kavşağı",
+          "target_gloss": "yarışın son sınırı; işlek ana yol veya yol kavşağı",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6",
@@ -2285,7 +2237,7 @@
           "expression_ar": "الميداء",
           "unit_kind": "form",
           "sense_ar": "آخر الغاية أو محجة الطريق كالقبيل للميتاء",
-          "target_gloss": "son nokta; yolun ana geçidi",
+          "target_gloss": "yarışın son sınırı veya yolun ana kesimi",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6",
@@ -2298,7 +2250,7 @@
           "expression_ar": "بميتاء دار فلان",
           "unit_kind": "collocation",
           "sense_ar": "تلقاء دار فلان ومحاذية لها",
-          "target_gloss": "bir evin tam karşısında ve aynı hizada",
+          "target_gloss": "bir evin karşısında veya aynı hizasında",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6"
@@ -2309,23 +2261,12 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Ortak alan, koşunun bittiği son noktayı ve insanların kullandığı ana yol ya da yol birleşimini içerir. İki biçim bu yol ve bitiş anlamlarını paylaşır.",
+        "discussion": "Toplu kanıt yol, kavşak ve yarış sonu anlamlarını; ayrıca yapıların karşı karşıya veya aynı hizada oluşunu bildiren kalıbı bir araya getirir.",
         "evidence_refs": [
           "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6",
           "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
         ],
-        "details": [
-          {
-            "kind": "sole_attestation",
-            "summary": "Bir evin başka bir evin tam karşısında ve aynı hizada bulunması ayrıca kaydedilir.",
-            "source_refs": [
-              "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6"
-            ],
-            "source_ids": [
-              "sihah"
-            ]
-          }
-        ],
+        "details": [],
         "examples": [],
         "disagreement": null
       },
@@ -2350,22 +2291,23 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Bir koşunun bittiği son nokta ile insanların kullandığı ana yol veya yol kavşağıdır; konum bildiren kullanımda bir evin tam karşısını ve hizasını gösterir.",
+        "semantic_definition": "İşlek veya yürünmüş ana yol, yolların birleştiği yer ya da yarış atlarının koşusunun bittiği son sınırdır. Bir konum kalıbında, bir evin karşısında veya onunla aynı hizada bulunmayı bildirir.",
         "concept": {
           "rank": 1,
-          "text": "yolun sonu, ana geçidi veya karşı hizası",
+          "text": "işlek ana yol, son sınır ve karşı hizası",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "Bitiş noktası, kullanılan ana yol ve bir yapının karşı hizası anlamlarını ayırarak kapsar.",
+          "applicability": "Yol ailesindeki temel adlar ile yarış sonu ve karşıda bulunma kullanımları topluca temsil edileceğinde kullanılır.",
           "facet_ids": [
             "F001",
             "F002",
-            "F003"
+            "F003",
+            "F004"
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Son nokta, ana yol ve karşı hizada bulunma anlamlarının tümünü korur.",
+            "preserves": "Yol, kavşak, yarış sonu ve konumsal hizalama kapsamlarını korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -2374,18 +2316,19 @@
         "contextual": [
           {
             "rank": 2,
-            "text": "evin tam karşısında",
+            "text": "işlek ana yol",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Bir yapının başka bir yapıya dönük ve onunla aynı hizada bulunduğu konum bağlamına uygundur.",
+            "applicability": "İnsanların yürüdüğü veya yolların birleştiği belirgin yol adlandırıldığında kullanılır.",
             "facet_ids": [
-              "F003"
+              "F001",
+              "F002"
             ],
             "error_profile": {
-              "fit": "none",
-              "preserves": "Karşı karşıya bulunma ve aynı hizada olma ilişkisini korur.",
-              "loses": null,
+              "fit": "narrowing",
+              "preserves": "İşlek ve yürünmüş yol anlamını korur.",
+              "loses": "Yarış sonu ile bir yapının karşısında veya hizasında bulunma kullanımlarını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
@@ -2394,19 +2337,20 @@
         "selected": [
           {
             "rank": 1,
-            "text": "yolun sonu, ana geçidi veya karşı hizası",
+            "text": "işlek ana yol, son sınır ve karşı hizası",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "Bitiş noktası, kullanılan ana yol ve bir yapının karşı hizası anlamlarını ayırarak kapsar.",
+            "applicability": "Yol ailesindeki temel adlar ile yarış sonu ve karşıda bulunma kullanımları topluca temsil edileceğinde kullanılır.",
             "facet_ids": [
               "F001",
               "F002",
-              "F003"
+              "F003",
+              "F004"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Son nokta, ana yol ve karşı hizada bulunma anlamlarının tümünü korur.",
+              "preserves": "Yol, kavşak, yarış sonu ve konumsal hizalama kapsamlarını korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -2414,37 +2358,25 @@
           },
           {
             "rank": 2,
-            "text": "evin tam karşısında",
+            "text": "işlek ana yol",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Bir yapının başka bir yapıya dönük ve onunla aynı hizada bulunduğu konum bağlamına uygundur.",
+            "applicability": "İnsanların yürüdüğü veya yolların birleştiği belirgin yol adlandırıldığında kullanılır.",
             "facet_ids": [
-              "F003"
+              "F001",
+              "F002"
             ],
             "error_profile": {
-              "fit": "none",
-              "preserves": "Karşı karşıya bulunma ve aynı hizada olma ilişkisini korur.",
-              "loses": null,
+              "fit": "narrowing",
+              "preserves": "İşlek ve yürünmüş yol anlamını korur.",
+              "loses": "Yarış sonu ile bir yapının karşısında veya hizasında bulunma kullanımlarını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
           }
         ],
-        "excluded": [
-          {
-            "text": "yol",
-            "category": "alternative",
-            "exclusion_reason": "Koşunun son noktası ile bir evin karşısında ve aynı hizada bulunma anlamlarını göstermez. Ana veya işlek olma koşulu taşımayan her türlü yolu kapsar. Özel ana yol ve son nokta anlamlarını genel yol kavramıyla karıştırır.",
-            "error_profile": {
-              "fit": "broadening",
-              "preserves": "İnsanların kullandığı geçit ve ulaşım yolu alanını korur.",
-              "loses": "Koşunun son noktası ile bir evin karşısında ve aynı hizada bulunma anlamlarını göstermez.",
-              "adds": "Ana veya işlek olma koşulu taşımayan her türlü yolu kapsar.",
-              "collision": "Özel ana yol ve son nokta anlamlarını genel yol kavramıyla karıştırır."
-            }
-          }
-        ]
+        "excluded": []
       },
       "arabic_neighbor_distinctions": [
         {
@@ -2452,12 +2384,12 @@
           "neighbor_branch_id": "B008",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal son noktayı ve bir evin karşı hizasını da kapsar.",
-          "neighbor_only": "Komşu dal temel olarak yolların birleştiği ana yolu ve o yola girme eylemini anlatır.",
+          "focus_only": "Odak dal yarışın son sınırını ve bir yapının karşısındaki hizayı da kapsar.",
+          "neighbor_only": "Komşu dal yolun toplandığı ana cadde ve bu caddeyi tutma eylemiyle sınırlıdır.",
           "expression_transliteration": "yolları birleştiren ana yol",
-          "gloss": "ana yol ve yol birleşimi",
-          "shared_zone": "Her iki dalda da kullanılan ana yol ve yolların birleştiği geçit bulunur.",
-          "distinction": "Yol alanında yakınlaşırlar; ancak odak dal koşunun sonuna ve karşı hizaya genişlerken komşu dal ana yol üzerinde kalır.",
+          "gloss": "ana yol ve kavşak",
+          "shared_zone": "Her iki dal işlek ana yol ve yolların birleştiği yer anlamında kesişir.",
+          "distinction": "Odak dal yol çekirdeğinin ötesinde yarış sonu ve konumsal hizalama kullanımlarına sahiptir; komşu dal bu uzantıları taşımaz.",
           "expression_ar": "محجة الطريق الجامعة",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
@@ -2470,17 +2402,7 @@
       "neighbor_coverage": {
         "candidate_count": 20,
         "assessment": "single_sufficient",
-        "note": "Yol, geçit ve hareket adayları değerlendirildi; ana yol komşusu, son nokta ve karşı hiza uzantılarını en açık biçimde sınırlar."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "mixed_non_bare",
-        "has_non_bare": true,
-        "has_collocation": true,
-        "unit_kind_counts": {
-          "collocation": 1,
-          "form": 2
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "Bütün adaylar değerlendirildi; ana yol ve kavşak komşusu, dalın yol dışındaki yarış sonu ve hizalama kapsamlarını en iyi açığa çıkardı."
       }
     },
     {
@@ -2491,43 +2413,61 @@
       "what_is_not_ar": "ليس مطلق المجيء المحايد ولا الإعطاء",
       "source_phrase_ar": "أتى على فلان أتو أي موت أو بلاء أصابه (tahdhib)؛ الأتو المرض الشديد أو كسر يد أو رجل أو موت (tahdhib)؛ أتي على يد فلان إذا هلك له مال (tahdhib)؛ يؤتى دونه أي يذهب به ويغلب عليه (tahdhib)؛ أتي فلان إذا أطل عليه العدو (tahdhib)؛ الإتيان يقال في الخير وفي الشر (mufradat)",
       "image_transliteration": "yıkım ve ölümün gelip çatması",
-      "summary": "Bir kişinin ölüm, ağır hastalık, kırık veya başka bir yıkıcı olayla karşılaşması; malının yok olması ya da onun uğruna öldürülüp yenilmesidir. Ayrıca düşmanın yaklaşıp kişiyi baskı altına alması anlatılır.",
+      "summary": "Belirli kalıplarda bir kişiye ölüm, ağır hastalık, bela veya kırık gelmesi; malının yok olması; öldürülüp götürülmesi ya da düşmanın ona yaklaşmasıdır.",
       "concept_map": {
-        "definition": "Bir kişinin ölüm, ağır hastalık, kırık veya başka bir yıkıcı olayla karşılaşması; malının yok olması ya da onun uğruna öldürülüp yenilmesidir. Ayrıca düşmanın yaklaşıp kişiyi baskı altına alması anlatılır.",
+        "definition": "Belirli kalıplarda bir kişiye ölüm, ağır hastalık, bela veya kırık gelmesi; malının yok olması; öldürülüp götürülmesi ya da düşmanın ona yaklaşmasıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kişi ölüm, ağır hastalık, kırık veya başka bir ağır yıkımla karşılaşır.",
+            "statement": "Kişi ölüm, ağır hastalık, bela veya uzuv kırılması gibi ağır bir zarara uğrar.",
             "claim_ids": [
-              "lu_022"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "extension",
-            "statement": "Bir kişinin elindeki mal yok olur.",
+            "role": "associated_use",
+            "statement": "Bir kişinin malı yok olur.",
             "claim_ids": [
-              "lu_023"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "extension",
-            "statement": "Bir kişi başkası uğruna öldürülür, götürülür veya yenilerek ele geçirilir.",
+            "role": "associated_use",
+            "statement": "Bir kişi öldürülür, götürülür veya üzerinde üstünlük kurulur.",
             "claim_ids": [
-              "lu_024"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F004",
             "role": "associated_use",
-            "statement": "Düşman yaklaşıp kişinin üzerine çıkar ve onu yakın tehlike altında bırakır.",
+            "statement": "Düşman kişiye yaklaşır ve tehdit oluşturur.",
             "claim_ids": [
-              "lu_025"
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi belirli kalıplarda kişiye ölüm, ağır hastalık, bela veya kırık gelmesini; malın yok olmasını; kişinin öldürülüp götürülmesini ve düşmanın yaklaşmasını destekler. Genel olarak gelişin iyi veya kötü olabileceği notu, bu dalın yalnız zararlı kalıplarını genişletmez.",
+        "boundary_note": "Dal yalnız belirtilen zarar ve tehdit kalıplarına bağlıdır; genel gelme eylemi veya her türlü yok oluş değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Ölüm, hastalık, mal kaybı, yenilgi ve düşman yaklaşması anlamları yalnız kendi kalıplarında korunur."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "collocation",
+        "has_non_bare": true,
+        "has_collocation": true,
+        "unit_kind_counts": {
+          "collocation": 4
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -2535,7 +2475,7 @@
           "expression_ar": "أتى على فلان أتو",
           "unit_kind": "collocation",
           "sense_ar": "أصابه موت أو بلاء أو مرض شديد أو كسر",
-          "target_gloss": "ölüm, ağır hastalık, kırık veya yıkıma uğramak",
+          "target_gloss": "ölüm, ağır hastalık, bela veya kırığa uğramak",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2",
@@ -2548,7 +2488,7 @@
           "expression_ar": "أُتِي على يد فلان",
           "unit_kind": "collocation",
           "sense_ar": "هلك له مال",
-          "target_gloss": "elindeki mal yok olmak",
+          "target_gloss": "malı yok olmak",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
@@ -2572,7 +2512,7 @@
           "expression_ar": "أُتي فلان",
           "unit_kind": "collocation",
           "sense_ar": "أطل عليه العدو وأشرف عليه",
-          "target_gloss": "düşman yaklaşıp üzerine çıkmak",
+          "target_gloss": "düşman yaklaşmış olmak",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
@@ -2583,43 +2523,12 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Temel kullanım, kişinin ölüm, ağır hastalık, kırık veya başka bir yıkıcı olayla karşılaşmasıdır. İyi ve kötü olaylara açılabilen genel gelme düşüncesi burada kötü sonuç yönünde özelleşir.",
+        "discussion": "Toplu kanıt, farklı kalıplarda kişisel felaket, mal kaybı, öldürülme veya götürülme ve yaklaşan düşman tehdidini sıralar; genel gelişin olumlu da olabileceği ayrıca belirtilir.",
         "evidence_refs": [
           "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A7:headword=%D8%A3%D8%AA%D9%89:root=%D8%A1%20%D8%AA%20%D9%8A:sha=e41baaeb672b8520",
           "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
         ],
-        "details": [
-          {
-            "kind": "extension",
-            "summary": "Bir kişinin elindeki malın yok olması, yıkımın mala uzanan bir biçimi olarak kaydedilir.",
-            "source_refs": [
-              "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
-            ],
-            "source_ids": [
-              "tahdhib"
-            ]
-          },
-          {
-            "kind": "extension",
-            "summary": "Birinin uğruna öldürülme, götürülme veya yenilerek ele geçirilme anlamı ayrıca belirtilir.",
-            "source_refs": [
-              "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
-            ],
-            "source_ids": [
-              "tahdhib"
-            ]
-          },
-          {
-            "kind": "sole_attestation",
-            "summary": "Düşmanın yaklaşıp kişinin üzerine çıkması ve yakın tehlike oluşturması ayrıca kaydedilir.",
-            "source_refs": [
-              "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D742%3Bsegment_index%3D14:headword=%D8%A3%D8%AA%D9%89:root=%D8%A3%20%D8%AA%20%D9%89:sha=4f697633f86b5aa2"
-            ],
-            "source_ids": [
-              "tahdhib"
-            ]
-          }
-        ],
+        "details": [],
         "examples": [],
         "disagreement": null
       },
@@ -2644,14 +2553,14 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Bir kişinin ölüm, ağır hastalık, kırık veya başka bir yıkıcı olayla karşılaşması; malının yok olması ya da onun uğruna öldürülüp yenilmesidir. Ayrıca düşmanın yaklaşıp kişiyi baskı altına alması anlatılır.",
+        "semantic_definition": "Belirli kalıplarda bir kişiye ölüm, ağır hastalık, bela veya kırık gelmesi; malının yok olması; öldürülüp götürülmesi ya da düşmanın ona yaklaşmasıdır.",
         "concept": {
           "rank": 1,
-          "text": "ölüm, yıkım veya yaklaşan düşman tehdidiyle karşılaşmak",
+          "text": "felakete uğramak, kaybetmek veya düşmanca ele geçirilmek",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "Kişinin bedenine, yaşamına ya da malına gelen yıkımı ve yaklaşan düşman tehlikesini kapsar.",
+          "applicability": "Kanıttaki farklı zarar kalıplarının ortak olumsuz sonucunu topluca göstermek için kullanılır.",
           "facet_ids": [
             "F001",
             "F002",
@@ -2660,7 +2569,7 @@
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Ağır zarar görme, yok olma ve yaklaşan düşman tehdidiyle karşılaşma alanlarını korur.",
+            "preserves": "Kişisel felaket, mal kaybı, öldürülme veya götürülme ve düşman tehdidi kapsamlarını korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -2669,36 +2578,18 @@
         "contextual": [
           {
             "rank": 2,
-            "text": "malı yok olmak",
+            "text": "ağır bir felakete uğramak",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Yıkıcı olayın kişiye değil onun elindeki mala yöneldiği bağlamda kullanılır.",
+            "applicability": "Ölüm, ağır hastalık, bela veya kırık gibi kişisel zarar anlatan kalıpta kullanılır.",
             "facet_ids": [
-              "F002"
+              "F001"
             ],
             "error_profile": {
-              "fit": "none",
-              "preserves": "Kişinin elindeki malın bütünüyle yok olması sonucunu korur.",
-              "loses": null,
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 3,
-            "text": "düşman kapıya dayanmak",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Düşmanın yaklaşıp kişinin üzerine çıktığı ve yakın tehlike oluşturduğu bağlamda kullanılır.",
-            "facet_ids": [
-              "F004"
-            ],
-            "error_profile": {
-              "fit": "none",
-              "preserves": "Düşmanın çok yaklaşması ve kişiyi yakın tehlike altında bırakmasını korur.",
-              "loses": null,
+              "fit": "narrowing",
+              "preserves": "Kişinin ağır bir zarara uğramasını korur.",
+              "loses": "Mal kaybını, öldürülüp götürülmeyi ve düşmanın yaklaşmasını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
@@ -2707,11 +2598,11 @@
         "selected": [
           {
             "rank": 1,
-            "text": "ölüm, yıkım veya yaklaşan düşman tehdidiyle karşılaşmak",
+            "text": "felakete uğramak, kaybetmek veya düşmanca ele geçirilmek",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "Kişinin bedenine, yaşamına ya da malına gelen yıkımı ve yaklaşan düşman tehlikesini kapsar.",
+            "applicability": "Kanıttaki farklı zarar kalıplarının ortak olumsuz sonucunu topluca göstermek için kullanılır.",
             "facet_ids": [
               "F001",
               "F002",
@@ -2720,7 +2611,7 @@
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Ağır zarar görme, yok olma ve yaklaşan düşman tehdidiyle karşılaşma alanlarını korur.",
+              "preserves": "Kişisel felaket, mal kaybı, öldürülme veya götürülme ve düşman tehdidi kapsamlarını korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -2728,92 +2619,52 @@
           },
           {
             "rank": 2,
-            "text": "malı yok olmak",
+            "text": "ağır bir felakete uğramak",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Yıkıcı olayın kişiye değil onun elindeki mala yöneldiği bağlamda kullanılır.",
+            "applicability": "Ölüm, ağır hastalık, bela veya kırık gibi kişisel zarar anlatan kalıpta kullanılır.",
             "facet_ids": [
-              "F002"
+              "F001"
             ],
             "error_profile": {
-              "fit": "none",
-              "preserves": "Kişinin elindeki malın bütünüyle yok olması sonucunu korur.",
-              "loses": null,
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 3,
-            "text": "düşman kapıya dayanmak",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Düşmanın yaklaşıp kişinin üzerine çıktığı ve yakın tehlike oluşturduğu bağlamda kullanılır.",
-            "facet_ids": [
-              "F004"
-            ],
-            "error_profile": {
-              "fit": "none",
-              "preserves": "Düşmanın çok yaklaşması ve kişiyi yakın tehlike altında bırakmasını korur.",
-              "loses": null,
+              "fit": "narrowing",
+              "preserves": "Kişinin ağır bir zarara uğramasını korur.",
+              "loses": "Mal kaybını, öldürülüp götürülmeyi ve düşmanın yaklaşmasını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
           }
         ],
-        "excluded": [
-          {
-            "text": "ölmek",
-            "category": "alternative",
-            "exclusion_reason": "Ağır hastalık, kırık, malın yok olması, başkası uğruna yenilme ve yaklaşan düşman tehdidini dışarıda bırakır.",
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Kişinin yaşamını yitirmesi sonucunu korur.",
-              "loses": "Ağır hastalık, kırık, malın yok olması, başkası uğruna yenilme ve yaklaşan düşman tehdidini dışarıda bırakır.",
-              "adds": null,
-              "collision": null
-            }
-          }
-        ]
+        "excluded": []
       },
       "arabic_neighbor_distinctions": [
         {
           "neighbor_root_id": "root_000487",
           "neighbor_branch_id": "B002",
-          "relation_type": "near_synonym",
+          "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak dal ağır hastalık, kırık, mal kaybı ve yaklaşan düşman gibi karşılaşılan olayları kapsar.",
-          "neighbor_only": "Komşu dal bir şeyi yok etme, kökünden silme ve yıkımı etkin olarak başkasına yöneltmeyi de kapsar.",
-          "expression_transliteration": "kökten yok oluş",
-          "gloss": "yok olma ve yıkıma uğrama",
-          "shared_zone": "Her iki dalda da ölüm, yok oluş ve ağır kayıp sonucu vardır.",
-          "distinction": "Odak dal kişinin veya malının yıkıcı olayla karşılaşmasını anlatır; komşu dal yok edilme yanında yok etme eylemini de çekirdeğe alır.",
+          "focus_only": "Odak dal ağır hastalık ve kırığı, mal kaybını, kişinin götürülmesini ve düşmanın yaklaşmasını ayrı kalıplarda kapsar.",
+          "neighbor_only": "Komşu dal bir şeyi bütünüyle yok etme ve kökünü kazıma eylemini merkez alır.",
+          "expression_transliteration": "alhlak almstasl",
+          "gloss": "tümüyle yok etmek",
+          "shared_zone": "Her iki dal ölüm, kayıp ve ağır yıkım sonuçlarında kesişir.",
+          "distinction": "Odak dal farklı zarar olaylarının kişiye veya malına erişmesini anlatan kalıplardır; komşu dalın çekirdeği doğrudan ve tam yok etmedir.",
           "expression_ar": "الهلاك المستأصل",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1114",
             "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A5350:headword=%D8%A8%D9%84%D9%86%D8%B7:root=%D8%A8%20%D9%84%20%D9%86%20%D8%B7:sha=8f001c8dc5b5aed5",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A492:headword=%D8%AF%D9%85%D8%B1:root=%D8%AF%20%D9%85%20%D8%B1:sha=db7d57893c84107b",
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1674:headword=%D8%AF%D9%85%D8%B1:root=%D8%AF%20%D9%85%20%D8%B1:sha=3590cd7aa1c880e0",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D49:headword=%D8%AF%D9%85%D8%B1:root=%D8%AF%20%D9%85%20%D8%B1:sha=d1340b5cdc23aaeb",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A492:headword=%D8%AF%D9%85%D8%B1:root=%D8%AF%20%D9%85%20%D8%B1:sha=db7d57893c84107b"
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D49:headword=%D8%AF%D9%85%D8%B1:root=%D8%AF%20%D9%85%20%D8%B1:sha=d1340b5cdc23aaeb"
           ]
         }
       ],
       "neighbor_coverage": {
         "candidate_count": 20,
         "assessment": "single_sufficient",
-        "note": "Ölüm, yok oluş ve ağır zarar adayları incelendi; yok etme ile yıkıma uğrama arasındaki katılımcı farkını gösteren komşu seçildi."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "collocation",
-        "has_non_bare": true,
-        "has_collocation": true,
-        "unit_kind_counts": {
-          "collocation": 4
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "Bütün adaylar değerlendirildi; kökten yok oluş komşusu, zarar kalıpları ile doğrudan yok etme çekirdeği arasındaki farkı en iyi gösterdi."
       }
     },
     {
@@ -2824,19 +2675,45 @@
       "what_is_not_ar": "ليس رجع يدي الناقة في السير",
       "source_phrase_ar": "استأتت الناقة استئتاء مهموز أي ضبعت وأرادت الفحل (sihah)",
       "image_transliteration": "dişi devenin çiftleşme isteği",
-      "summary": "Dişi devenin çiftleşme isteği duyması ve erkek deveye yönelmesidir.",
+      "summary": "Dişi devenin çiftleşme isteği göstererek erkek deve istemesidir.",
       "concept_map": {
-        "definition": "Dişi devenin çiftleşme isteği duyması ve erkek deveye yönelmesidir.",
+        "definition": "Dişi devenin çiftleşme isteği göstererek erkek deve istemesidir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Dişi deve çiftleşmeye hazır hale gelir ve erkek deveyi ister.",
+            "statement": "Dişi deve çiftleşme isteği gösterir.",
             "claim_ids": [
-              "lu_026"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "core",
+            "statement": "Dişi deve erkek deveyi ister.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Tek kaynaklı ifade, dişi devenin çiftleşme isteği gösterip erkeği istemesini doğrudan ve eksiksiz biçimde tanımlar.",
+        "boundary_note": "Anlam yalnız dişi devenin çiftleşme isteğini bildiren kalıba bağlıdır; yürüyüş hareketi değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım dişi deve ve çiftleşme isteğini bildiren kalıpla sınırlıdır; başka hayvanlara yalın biçimde genellenmez."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "collocation",
+        "has_non_bare": true,
+        "has_collocation": true,
+        "unit_kind_counts": {
+          "collocation": 1
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -2844,7 +2721,7 @@
           "expression_ar": "استأتت الناقة",
           "unit_kind": "collocation",
           "sense_ar": "ضبعت وأرادت الفحل",
-          "target_gloss": "dişi devenin çiftleşmek isteyip erkeğe yönelmesi",
+          "target_gloss": "dişi devenin çiftleşmek için erkek deve istemesi",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6"
@@ -2855,11 +2732,22 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Tek kayıt, dişi devenin çiftleşme isteği duymasını ve erkek deveye yönelmesini birlikte bildirir.",
+        "discussion": "Kanıt tek sözlükte yer alır ve dişi devenin çiftleşme isteğini belirli bir kalıpta bildirir.",
         "evidence_refs": [
           "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6"
         ],
-        "details": [],
+        "details": [
+          {
+            "kind": "sole_attestation",
+            "summary": "Dişi devenin çiftleşme isteği gösterip erkek deve istemesi bu kalıpla tek başına tanıklanır.",
+            "source_refs": [
+              "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5202:headword=%D8%A3%D9%86%D8%A7:root=%D8%A1%20%D9%86%20%D8%A7:sha=36585c50a23159a6"
+            ],
+            "source_ids": [
+              "sihah"
+            ]
+          }
+        ],
         "examples": [],
         "disagreement": null
       },
@@ -2877,20 +2765,21 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Dişi devenin çiftleşme isteği duyması ve erkek deveye yönelmesidir.",
+        "semantic_definition": "Dişi devenin çiftleşme isteği göstererek erkek deve istemesidir.",
         "concept": {
           "rank": 1,
           "text": "dişi devenin çiftleşmek istemesi",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "Dişi devenin çiftleşmeye hazır olup erkek deveye yöneldiği durumu tam olarak karşılar.",
+          "applicability": "Dişi devenin erkek deveye yönelen çiftleşme isteği anlatıldığında kullanılır.",
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002"
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Hayvanın dişi deve olması ve erkekle çiftleşme isteği duyması koşullarını korur.",
+            "preserves": "Hayvanı, dişiliği ve erkek deveye yönelen çiftleşme isteğini korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -2904,33 +2793,21 @@
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "Dişi devenin çiftleşmeye hazır olup erkek deveye yöneldiği durumu tam olarak karşılar.",
+            "applicability": "Dişi devenin erkek deveye yönelen çiftleşme isteği anlatıldığında kullanılır.",
             "facet_ids": [
-              "F001"
+              "F001",
+              "F002"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Hayvanın dişi deve olması ve erkekle çiftleşme isteği duyması koşullarını korur.",
+              "preserves": "Hayvanı, dişiliği ve erkek deveye yönelen çiftleşme isteğini korur.",
               "loses": null,
               "adds": null,
               "collision": null
             }
           }
         ],
-        "excluded": [
-          {
-            "text": "çiftleşmek",
-            "category": "confusable",
-            "exclusion_reason": "Dişi devenin henüz çiftleşmeyip bunu istemesi ve erkeğe yönelmesi durumunu siler. Çiftleşme eyleminin gerçekten gerçekleştiği sonucunu ekler. Çiftleşme isteğini gerçekleşmiş çiftleşme eylemiyle karıştırır.",
-            "error_profile": {
-              "fit": "displacement",
-              "preserves": "Dişi deve ile erkek deve arasındaki çiftleşme alanını korur.",
-              "loses": "Dişi devenin henüz çiftleşmeyip bunu istemesi ve erkeğe yönelmesi durumunu siler.",
-              "adds": "Çiftleşme eyleminin gerçekten gerçekleştiği sonucunu ekler.",
-              "collision": "Çiftleşme isteğini gerçekleşmiş çiftleşme eylemiyle karıştırır."
-            }
-          }
-        ]
+        "excluded": []
       },
       "arabic_neighbor_distinctions": [
         {
@@ -2938,36 +2815,27 @@
           "neighbor_branch_id": "B002",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal yalnızca dişi deveyi konu alır.",
-          "neighbor_only": "Komşu dal toynaklı dişileri genel olarak kapsar ve çiftleşme isteğine eşlik eden ıslaklık belirtisini de içerir.",
+          "focus_only": "Odak dal yalnız dişi deveye özgüdür ve fiziksel belirtiyi zorunlu kılmaz.",
+          "neighbor_only": "Komşu dal toynaklı dişileri genel olarak kapsar ve çiftleşme isteğine eşlik eden ıslaklığı da bildirebilir.",
           "expression_transliteration": "dişi hayvanın erkeği istemesi ve ıslaklık",
-          "gloss": "dişi hayvanın erkeği istemesi",
-          "shared_zone": "Her iki dalda da dişi hayvanın çiftleşme isteğiyle erkeğe yönelmesi vardır.",
-          "distinction": "Temel istek aynıdır; odak dal tür bakımından dişi deveyle sınırlıyken komşu dal daha geniş hayvan grubunu ve bedensel belirtiyi kapsar.",
+          "gloss": "dişi hayvanın erkek istemesi",
+          "shared_zone": "Her iki dal dişi bir toynaklının çiftleşmek için erkeği istemesini anlatır.",
+          "distinction": "Odak dal dişi deveyle sınırlıdır; komşu dal hayvan türü ve görülen belirtiler bakımından daha geniştir.",
           "expression_ar": "إرادة الفحل والرطوبة",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3965",
             "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3398:headword=%D9%88%D8%AF%D9%82:root=%D9%88%20%D8%AF%20%D9%82:sha=48d7e0c4f2d49df5",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1620:headword=%D9%88%D8%AF%D9%82:root=%D9%88%20%D8%AF%20%D9%82:sha=fc38050d0ac332a6",
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3728:headword=%D9%88%D8%AF%D9%82:root=%D9%88%20%D8%AF%20%D9%82:sha=3070dbd39d3e79c0",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D475%3Bsegment_index%3D6:headword=%D9%88%D8%AF%D9%82:root=%D9%88%20%D8%AF%20%D9%82:sha=3b2e1c239e93ebfd",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1620:headword=%D9%88%D8%AF%D9%82:root=%D9%88%20%D8%AF%20%D9%82:sha=fc38050d0ac332a6"
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D475%3Bsegment_index%3D6:headword=%D9%88%D8%AF%D9%82:root=%D9%88%20%D8%AF%20%D9%82:sha=3b2e1c239e93ebfd"
           ]
         }
       ],
       "neighbor_coverage": {
         "candidate_count": 20,
         "assessment": "single_sufficient",
-        "note": "Çiftleşme isteğiyle ilgili bütün adaylar incelendi; daha geniş hayvan kapsamına sahip komşu, tür sınırını en açık biçimde gösterir."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "collocation",
-        "has_non_bare": true,
-        "has_collocation": true,
-        "unit_kind_counts": {
-          "collocation": 1
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "Bütün adaylar değerlendirildi; dişi toynaklının erkek istemesi dalı tür kapsamındaki farkı en açık biçimde gösterdi."
       }
     },
     {
@@ -2978,19 +2846,45 @@
       "what_is_not_ar": "ليس الغريب في قومه، وإن اتحد اللفظ",
       "source_phrase_ar": "رجل أتي إذا كان نافذا (maqayis)",
       "image_transliteration": "etkili, sözü geçen erkek",
-      "summary": "Bir erkeğin etkili ve sözü geçen biri olmasıdır.",
+      "summary": "Sözü veya işi etkili olan, kararını uygulayıp işini yürütebilen adamdır.",
       "concept_map": {
-        "definition": "Bir erkeğin etkili ve sözü geçen biri olmasıdır.",
+        "definition": "Sözü veya işi etkili olan, kararını uygulayıp işini yürütebilen adamdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Erkek, etkili ve sözü geçen biri olarak nitelenir.",
+            "statement": "Kişinin sözü veya yaptığı iş etkisini gösterir.",
             "claim_ids": [
-              "lu_013"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "core",
+            "statement": "Kişi kararını uygulayıp işi sonuçlandırabilecek niteliktedir.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Tek kaynaklı ifade, belirli kişi nitelemesini doğrudan etkili, sözü veya işi geçen bir adam anlamında verir; yabancılık anlamıyla aynı biçimde olsa da semantik olarak ayrıdır.",
+        "boundary_note": "Anlam yalnız bir erkeği etkili ve işini yürütebilir diye niteleyen kalıba bağlıdır; yabancılık bildirmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım kişi niteleyen bu kalıpla sınırlıdır; genel güç, çaba veya yalın bir fiil anlamına genişletilmez."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "collocation",
+        "has_non_bare": true,
+        "has_collocation": true,
+        "unit_kind_counts": {
+          "collocation": 1
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -2998,7 +2892,7 @@
           "expression_ar": "رجل أَتِيّ",
           "unit_kind": "collocation",
           "sense_ar": "رجل نافذ",
-          "target_gloss": "etkili, sözü geçen erkek",
+          "target_gloss": "etkili ve işini yürütebilen adam",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:39",
@@ -3010,12 +2904,24 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Tek kayıt, erkeği etkili ve sözü geçen biri olarak niteler.",
+        "discussion": "Kanıt tek sözlükte yer alır ve erkeği etkili, işi yürüyen veya hükmü geçen kişi olarak niteleyen özel bir kullanımdır.",
         "evidence_refs": [
           "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:39",
           "maqayis:root=%D8%A1%20%D8%AA%20%D9%8A:headword=%D8%A3%D8%AA%D9%8A:sha=7f53dd4e46ea06c3"
         ],
-        "details": [],
+        "details": [
+          {
+            "kind": "sole_attestation",
+            "summary": "Bir erkeğin etkili ve işini yürütebilir oluşu bu kişi nitelemesiyle tek başına tanıklanır.",
+            "source_refs": [
+              "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:39",
+              "maqayis:root=%D8%A1%20%D8%AA%20%D9%8A:headword=%D8%A3%D8%AA%D9%8A:sha=7f53dd4e46ea06c3"
+            ],
+            "source_ids": [
+              "maqayis"
+            ]
+          }
+        ],
         "examples": [],
         "disagreement": null
       },
@@ -3034,20 +2940,21 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Bir erkeğin etkili ve sözü geçen biri olmasıdır.",
+        "semantic_definition": "Sözü veya işi etkili olan, kararını uygulayıp işini yürütebilen adamdır.",
         "concept": {
           "rank": 1,
-          "text": "etkili, sözü geçen erkek",
+          "text": "etkili ve işini yürüten adam",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "Bir erkeği genel olarak etkili ve sözü geçen biri diye nitelemek için kullanılır.",
+          "applicability": "Bir erkeğin sözü geçen ve kararını uygulayabilen biri olduğu anlatıldığında kullanılır.",
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002"
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Erkeğin etkili ve sözü geçen biri olarak nitelenmesini korur.",
+            "preserves": "Kişinin etkili ve işini sonuçlandırabilir oluşunu korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -3057,17 +2964,18 @@
         "selected": [
           {
             "rank": 1,
-            "text": "etkili, sözü geçen erkek",
+            "text": "etkili ve işini yürüten adam",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "Bir erkeği genel olarak etkili ve sözü geçen biri diye nitelemek için kullanılır.",
+            "applicability": "Bir erkeğin sözü geçen ve kararını uygulayabilen biri olduğu anlatıldığında kullanılır.",
             "facet_ids": [
-              "F001"
+              "F001",
+              "F002"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Erkeğin etkili ve sözü geçen biri olarak nitelenmesini korur.",
+              "preserves": "Kişinin etkili ve işini sonuçlandırabilir oluşunu korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -3076,15 +2984,15 @@
         ],
         "excluded": [
           {
-            "text": "iş bitiren erkek",
+            "text": "güçlü adam",
             "category": "confusable",
-            "exclusion_reason": "Genel olarak etkili ve sözü geçen kişi niteliğini belirli bir başarıya indirger. Erkeğin giriştiği işi mutlaka sonuçlandırdığı yönünde kanıtlanmayan bir koşul ekler. Genel etkililik niteliğini belirli bir işi bitirme başarısıyla karıştırır.",
+            "exclusion_reason": "Fiziksel güç ve genel kuvvet anlamlarını ekleyerek etkililik sınırını aşar. Bedensel kuvveti anlatan kişi nitelemeleriyle karışabilir.",
             "error_profile": {
-              "fit": "displacement",
-              "preserves": "Erkeğin etkili biri olarak görülmesi düşüncesini kısmen korur.",
-              "loses": "Genel olarak etkili ve sözü geçen kişi niteliğini belirli bir başarıya indirger.",
-              "adds": "Erkeğin giriştiği işi mutlaka sonuçlandırdığı yönünde kanıtlanmayan bir koşul ekler.",
-              "collision": "Genel etkililik niteliğini belirli bir işi bitirme başarısıyla karıştırır."
+              "fit": "broadening",
+              "preserves": "Kişinin bir işi gerçekleştirebilme kapasitesini kısmen korur.",
+              "loses": null,
+              "adds": "Fiziksel güç ve genel kuvvet anlamlarını ekleyerek etkililik sınırını aşar.",
+              "collision": "Bedensel kuvveti anlatan kişi nitelemeleriyle karışabilir."
             }
           }
         ]
@@ -3095,12 +3003,12 @@
           "neighbor_branch_id": "B005",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal yalnızca erkeği etkili ve sözü geçen biri olarak niteler.",
-          "neighbor_only": "Komşu dal belirli bir işi yürütme gücünü ve o işte sonuç alabilmeyi soyut olarak anlatır.",
+          "focus_only": "Odak dal bu niteliği bir erkeğin kalıcı veya ayırt edici özelliği olarak bildirir.",
+          "neighbor_only": "Komşu dal belirli bir işte nüfuz ve o işi yürütme gücünü soyut ad olarak kapsar.",
           "expression_transliteration": "işi yürütme gücü",
-          "gloss": "etkili kişi ve işi yürütme gücü",
-          "shared_zone": "Her iki dal da genel olarak etkili olma düşüncesinde buluşur.",
-          "distinction": "Odak dal yalnızca etkili ve sözü geçen erkeği niteler; belirli bir işi yürütme ve gerçekleştirme gücü komşu dala özgüdür.",
+          "gloss": "bir işte etkili olma",
+          "shared_zone": "Her iki dal bir işi etkili biçimde yürütme ve sonuçlandırma gücünü anlatır.",
+          "distinction": "Odak dal kişiyi niteleyen kalıptır; komşu dal ise iş üzerindeki nüfuz ve yürütme yetisini kavram olarak adlandırır.",
           "expression_ar": "نفاذ في الأمر",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
@@ -3111,16 +3019,7 @@
       "neighbor_coverage": {
         "candidate_count": 20,
         "assessment": "single_sufficient",
-        "note": "Güç, karar ve iş yürütme adayları incelendi; kişi niteliğiyle soyut yapabilme gücü arasındaki en yakın karşılaştırma yayımlandı."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "collocation",
-        "has_non_bare": true,
-        "has_collocation": true,
-        "unit_kind_counts": {
-          "collocation": 1
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "Bütün adaylar değerlendirildi; işte etkili olma komşusu kişi niteliği ile soyut yeterlik arasındaki farkı en iyi gösterdi."
       }
     }
   ],

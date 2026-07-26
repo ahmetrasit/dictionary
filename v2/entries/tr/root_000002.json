@@ -15,11 +15,12 @@
     "evidence_index_sha256": "1d37dfae0898c02f0e2368739d2cb97aef8d91b6dd84dbc8cb86170fae42a17c",
     "furuq_path": "data/working/furuq_v4.sqlite",
     "furuq_sha256": "1099db0d56515d2eb3e8d72f104f2e338c2c9a8c1fa6abbb046406d3b327e722",
-    "root_task_sha256": "28ab78e503a1ab92b152839c5b9d582f5ae22c7041111a1d5e0047d9a5edd9e0"
+    "root_task_sha256": "da0727b43cd1bef2ad8781aaaa2fdedd9d677df0ea2ec18e9a890f33e16013fe",
+    "root_evidence_format": "dictionary-v2-agent-root-evidence-v5"
   },
   "root_profile": {
     "transliteration": "ḥ-d-d",
-    "summary": "Kök, ayırıcı sınır ve engellemeden demirin sertliğine, keskin kenara ve güçlü etkiye uzanan bağlantılı fakat çok dallı bir yapı gösterir. Karşı gelme, öfke taşkınlığı, eş yasındaki süs yasağı ve demir araçla tıraş ya da bileme gibi kalıplaşmış kollar da bu yapıya bağlanır.",
+    "summary": "Bu kökün dalları ayıran sınır ve engellemeden karşı çıkmaya; demirin sertliğinden keskin ağza, güçlü etkiye ve öfkeli taşkınlığa; ayrıca yas süresince süsten kaçınma ile demir araç kullanma, tıraş ve bileme uygulamalarına uzanır. Ortak çağrışımlar sınırlandırma, sertlik ve keskin etkidir, ancak dallar tek bir çağdaş anlamda birleştirilemez.",
     "polysemy": "polysemic",
     "organization": "mixed",
     "branch_count": 8,
@@ -35,51 +36,54 @@
       "what_is_not_ar": "ليس المقصود هنا العقوبة نفسها ولا حدة السيف أو الحديد، وإن كانت المصادر تربط بعض ذلك بالمنع أو الطرف.",
       "source_phrase_ar": "الحد الحاجز بين الشيئين (maqayis;sihah;mufradat)؛ منتهى كل شيء حده (sihah;tahdhib)؛ حدود الأرضين وحدود الحرم (tahdhib)؛ حدود الله هي الأشياء التي بين تحريمها وتحليلها (tahdhib)؛ الوصف المحيط بمعناه المميز له عن غيره (mufradat)",
       "image_transliteration": "ayırıcı engel ve belirleyici son sınır",
-      "summary": "Bir şeyi başkasından ayıran ve karışmasını önleyen sınırı ya da bir şeyin ulaştığı son noktayı bildirir. Bu ayırma işlevi, bir kavramı başkalarından seçen tanıma ve aşılmaması gereken hükümlere de genişler.",
+      "summary": "İki şeyi birbirinden ayırıp karışmalarını önleyen çizgi ya da engel ve bir şeyin sona erdiği uç noktadır. Yerlerin kapsamını, bir kavramı başkalarından ayıran tanımı ve aşılmaması gereken yasak-izin çizgilerini de belirtebilir.",
       "concept_map": {
-        "definition": "Bir şeyi başkasından ayıran ve karışmasını önleyen sınırı ya da bir şeyin ulaştığı son noktayı bildirir. Bu ayırma işlevi, bir kavramı başkalarından seçen tanıma ve aşılmaması gereken hükümlere de genişler.",
+        "definition": "İki şeyi birbirinden ayırıp karışmalarını önleyen çizgi ya da engel ve bir şeyin sona erdiği uç noktadır. Yerlerin kapsamını, bir kavramı başkalarından ayıran tanımı ve aşılmaması gereken yasak-izin çizgilerini de belirtebilir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "İki şeyi birbirinden ayıran ve birbirine karışmalarını önleyen bir engel ya da sınırdır.",
+            "statement": "İki şeyin arasını ayırır ve birbirine karışmasını önler.",
             "claim_ids": [
-              "lu_001"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "core",
-            "statement": "Bir şeyin bittiği, eriştiği ya da ötesine geçmediği uç ve son noktadır.",
+            "role": "extension",
+            "statement": "Bir şeyin vardığı son noktayı veya bir yerin kapsamını belirler.",
             "claim_ids": [
-              "lu_002"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "extension",
-            "statement": "Bir kavramın anlam çevresini kuşatıp onu başka kavramlardan ayıran tanımlayıcı niteliktir.",
+            "statement": "Bir anlamı çevreleyip başkalarından ayıran tanımı ve aşılmaması gereken hüküm çizgisini anlatır.",
             "claim_ids": [
-              "lu_003"
-            ]
-          },
-          {
-            "facet_id": "F004",
-            "role": "extension",
-            "statement": "Kişinin aşmaması gereken izin, yasak ve yükümlülük sınırlarını belirleyen hükümlerdir.",
-            "claim_ids": [
-              "lu_004"
-            ]
-          },
-          {
-            "facet_id": "F005",
-            "role": "associated_use",
-            "statement": "Arazisi ya da evi bir başkasınınkinin hemen yanında bulunan komşu kişiyi de anlatır.",
-            "claim_ids": [
-              "lu_005"
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, iki şeyi ayıran engelden bir şeyin vardığı son noktaya, yer sınırlarına, ayırt edici tanıma ve aşılmaması gereken hükümlere uzanan ortak bir sınırlandırma çekirdeği verir. Geçici çerçeve bu çekirdeği ve onun başlıca uzantılarını doğru yansıtır.",
+        "boundary_note": "Bu dal cezanın kendisini, kesici ağzı ya da demir madenini değil; ayıran, sonlandıran veya kapsam belirleyen sınırı anlatır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, genel ayırıcı sınır çekirdeğini özel tamlamalarda görülen bitiş noktası, yer sınırı, ayırt edici tanım ve aşılmaz hüküm kullanımlarından ayrı katmanlarda tutar."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "mixed_non_bare",
+        "has_non_bare": true,
+        "has_collocation": false,
+        "unit_kind_counts": {
+          "form": 1,
+          "lexical_unit": 4
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -101,7 +105,7 @@
           "expression_ar": "حد الشيء",
           "unit_kind": "lexical_unit",
           "sense_ar": "منتهى الشيء وطرفه الذي ينتهي إليه",
-          "target_gloss": "bir şeyin sonu ve uç noktası",
+          "target_gloss": "bir şeyin son noktası",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1244:headword=%D8%AD%D8%B0%D8%AF:root=%D8%AD%20%D8%B0%20%D8%AF:sha=dbb73204ac319000",
@@ -114,7 +118,7 @@
           "expression_ar": "حد الشيء",
           "unit_kind": "lexical_unit",
           "sense_ar": "الوصف المحيط بمعنى الشيء والمميز له من غيره",
-          "target_gloss": "bir şeyi başkasından ayıran kapsamlı tanım",
+          "target_gloss": "ayırt edici tanım",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A299:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=57607146360c2f88"
@@ -139,7 +143,7 @@
           "expression_ar": "حديد فلان",
           "unit_kind": "lexical_unit",
           "sense_ar": "الملاصق لجاره إذا كانت أرضه أو داره إلى جنب أرضه",
-          "target_gloss": "taşınmazı bitişik komşu",
+          "target_gloss": "arazisi ya da evi bitişik komşu",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1244:headword=%D8%AD%D8%B0%D8%AF:root=%D8%AD%20%D8%B0%20%D8%AF:sha=dbb73204ac319000",
@@ -151,25 +155,14 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Anlam alanının merkezinde ayırma ve sona erme vardır: sınır hem iki alanın karışmasını önler hem de bir şeyin eriştiği ucu gösterir. Aynı şema aşılmaması gereken hükümlere ve bitişik taşınmazlar üzerinden komşuluk ilişkisine uygulanır.",
+        "discussion": "Kaynaklar, ayırma ve sonlandırma çekirdeğinde birleşir; yer kapsamını, ayırt edici tanımı ve yasakla izin arasındaki aşılmaz çizgiyi bunun uzantıları olarak verir.",
         "evidence_refs": [
           "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
           "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A299:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=57607146360c2f88",
           "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1244:headword=%D8%AD%D8%B0%D8%AF:root=%D8%AD%20%D8%B0%20%D8%AF:sha=dbb73204ac319000",
           "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D225%3Bsegment_index%3D4:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=b974e506d86126bd"
         ],
-        "details": [
-          {
-            "kind": "extension",
-            "summary": "Tek bir kaynak, sınır fikrini bir şeyin anlamını kuşatıp onu başkalarından ayıran tanım için de kullanır.",
-            "source_refs": [
-              "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A299:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=57607146360c2f88"
-            ],
-            "source_ids": [
-              "mufradat"
-            ]
-          }
-        ],
+        "details": [],
         "examples": [],
         "disagreement": null
       },
@@ -208,23 +201,22 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Bir şeyi başkasından ayıran ve karışmasını önleyen sınırı ya da bir şeyin ulaştığı son noktayı bildirir. Bu ayırma işlevi, bir kavramı başkalarından seçen tanıma ve aşılmaması gereken hükümlere de genişler.",
+        "semantic_definition": "İki şeyi birbirinden ayırıp karışmalarını önleyen çizgi ya da engel ve bir şeyin sona erdiği uç noktadır. Yerlerin kapsamını, bir kavramı başkalarından ayıran tanımı ve aşılmaması gereken yasak-izin çizgilerini de belirtebilir.",
         "concept": {
           "rank": 1,
           "text": "ayıran ve kapsamı belirleyen sınır",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "Fiziksel ayırma, bitiş noktası, kavramsal çevre ve aşılmaması gereken hüküm kullanımlarını ortak bir sınır fikrinde toplar.",
+          "applicability": "Ayırma, bitiş noktası ve kapsam belirleme öğelerinin birlikte anlatıldığı dal geneli için uygundur.",
           "facet_ids": [
             "F001",
             "F002",
-            "F003",
-            "F004"
+            "F003"
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Ayırma, sona erme ve geçerli kapsamı belirleme işlevlerinin tümünü korur.",
+            "preserves": "Ayırıcı engeli, son noktayı ve belirlenmiş kapsamı birlikte korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -233,56 +225,36 @@
         "contextual": [
           {
             "rank": 2,
-            "text": "sınır",
+            "text": "ayırıcı sınır",
             "loanword_status": "none",
-            "usage_role": "general",
+            "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "İki alanı ayıran çizgi, bir şeyin sonu veya aşılmaması gereken kural bağlamlarında doğal karşılıktır.",
+            "applicability": "İki şeyin birbirine karışmasını önleyen çizgi veya engel söz konusu olduğunda kullanılır.",
             "facet_ids": [
-              "F001",
-              "F002",
-              "F004"
+              "F001"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Ayırma ve ötesine geçmeme düşüncesini açık biçimde korur.",
-              "loses": "Kavramsal tanım ile bitişik komşu kullanımını tek başına göstermez.",
+              "preserves": "İki alanı ayırma ve karışmayı önleme işlevini korur.",
+              "loses": "Bitiş noktası, tanımsal kapsam ve hüküm çizgisi uzantılarını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
           },
           {
             "rank": 3,
-            "text": "tanım",
+            "text": "son nokta",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Bir kavramın anlamını kuşatıp onu başka kavramlardan ayıran sözlü belirleme bağlamına özgüdür.",
+            "applicability": "Bir şeyin eriştiği uç veya bittiği yer özellikle vurgulandığında kullanılır.",
             "facet_ids": [
-              "F003"
+              "F002"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Anlam çevresini belirleme ve başkalarından ayırma işlevini korur.",
-              "loses": "Fiziksel engel, son nokta, hüküm ve komşuluk kullanımlarını dışarıda bırakır.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 4,
-            "text": "bitişik komşu",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Evi ya da arazisi başka bir taşınmaza doğrudan komşu olan kişi için kullanılır.",
-            "facet_ids": [
-              "F005"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Sınır paylaşan iki taşınmaz arasındaki komşuluk ilişkisini korur.",
-              "loses": "Sınırın engel, son nokta, tanım ve hüküm anlamlarını taşımaz.",
+              "preserves": "Bir şeyin sona erdiği uç nokta anlamını korur.",
+              "loses": "Ayırıcı engel ve kapsamı tanımlama işlevlerini dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
@@ -295,16 +267,15 @@
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "Fiziksel ayırma, bitiş noktası, kavramsal çevre ve aşılmaması gereken hüküm kullanımlarını ortak bir sınır fikrinde toplar.",
+            "applicability": "Ayırma, bitiş noktası ve kapsam belirleme öğelerinin birlikte anlatıldığı dal geneli için uygundur.",
             "facet_ids": [
               "F001",
               "F002",
-              "F003",
-              "F004"
+              "F003"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Ayırma, sona erme ve geçerli kapsamı belirleme işlevlerinin tümünü korur.",
+              "preserves": "Ayırıcı engeli, son noktayı ve belirlenmiş kapsamı birlikte korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -312,149 +283,89 @@
           },
           {
             "rank": 2,
-            "text": "sınır",
+            "text": "ayırıcı sınır",
             "loanword_status": "none",
-            "usage_role": "general",
+            "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "İki alanı ayıran çizgi, bir şeyin sonu veya aşılmaması gereken kural bağlamlarında doğal karşılıktır.",
+            "applicability": "İki şeyin birbirine karışmasını önleyen çizgi veya engel söz konusu olduğunda kullanılır.",
             "facet_ids": [
-              "F001",
-              "F002",
-              "F004"
+              "F001"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Ayırma ve ötesine geçmeme düşüncesini açık biçimde korur.",
-              "loses": "Kavramsal tanım ile bitişik komşu kullanımını tek başına göstermez.",
+              "preserves": "İki alanı ayırma ve karışmayı önleme işlevini korur.",
+              "loses": "Bitiş noktası, tanımsal kapsam ve hüküm çizgisi uzantılarını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
           },
           {
             "rank": 3,
-            "text": "tanım",
+            "text": "son nokta",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Bir kavramın anlamını kuşatıp onu başka kavramlardan ayıran sözlü belirleme bağlamına özgüdür.",
+            "applicability": "Bir şeyin eriştiği uç veya bittiği yer özellikle vurgulandığında kullanılır.",
             "facet_ids": [
-              "F003"
+              "F002"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Anlam çevresini belirleme ve başkalarından ayırma işlevini korur.",
-              "loses": "Fiziksel engel, son nokta, hüküm ve komşuluk kullanımlarını dışarıda bırakır.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 4,
-            "text": "bitişik komşu",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Evi ya da arazisi başka bir taşınmaza doğrudan komşu olan kişi için kullanılır.",
-            "facet_ids": [
-              "F005"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Sınır paylaşan iki taşınmaz arasındaki komşuluk ilişkisini korur.",
-              "loses": "Sınırın engel, son nokta, tanım ve hüküm anlamlarını taşımaz.",
+              "preserves": "Bir şeyin sona erdiği uç nokta anlamını korur.",
+              "loses": "Ayırıcı engel ve kapsamı tanımlama işlevlerini dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
           }
         ],
-        "excluded": [
-          {
-            "text": "yasaklama",
-            "category": "confusable",
-            "exclusion_reason": "Ayırıcı sınırı, son noktayı, kavramsal tanımı ve komşuluk kullanımını kaybeder. Sınırın kendisi yerine etkin bir yasaklama eylemi getirir. Engelleme ve yasaklama dalıyla doğrudan karışır.",
-            "error_profile": {
-              "fit": "displacement",
-              "preserves": "Aşılmaması gereken bir çizginin engelleyici yönünü kısmen korur.",
-              "loses": "Ayırıcı sınırı, son noktayı, kavramsal tanımı ve komşuluk kullanımını kaybeder.",
-              "adds": "Sınırın kendisi yerine etkin bir yasaklama eylemi getirir.",
-              "collision": "Engelleme ve yasaklama dalıyla doğrudan karışır."
-            }
-          }
-        ]
+        "excluded": []
       },
       "arabic_neighbor_distinctions": [
-        {
-          "neighbor_root_id": "root_000106",
-          "neighbor_branch_id": "B001",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Bir şeyin son noktası, kavramsal tanımı, aşılmaması gereken hükümler ve bitişik komşu kullanımları da vardır.",
-          "neighbor_only": "Engeli somut ya da soyut bir uzaklık ve engelleyici durum olarak ayrıca genişletir.",
-          "expression_transliteration": "iki şey arasındaki engel",
-          "gloss": "iki şey arasındaki engel",
-          "shared_zone": "Her ikisi de iki şeyi birbirinden ayıran ve yaklaşmayı ya da karışmayı önleyen engeli anlatır.",
-          "distinction": "Komşu dal doğrudan iki şey arasındaki engelde yoğunlaşır; bu dal ise aynı çekirdeği son nokta, tanım, hüküm ve komşuluk ilişkisine kadar genişletir.",
-          "expression_ar": "حاجز بين شيئين",
-          "basis": "furuq_branch_comparison",
-          "evidence_refs": [
-            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A2826:headword=%D8%A8%D8%B1%D8%B2%D8%AE:root=%D8%A8%20%D8%B1%20%D8%B2%20%D8%AE:sha=96e3de060a80397a",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1111:headword=%D8%A8%D8%B1%D8%B2%D8%AE:root=%D8%A8%20%D8%B1%20%D8%B2%20%D8%AE:sha=1f619b54dad26bbc",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D380%3Bsegment_index%3D4:headword=%D8%A8%D8%B1%D8%B2%D8%AE:root=%D8%A8%20%D8%B1%20%D8%B2%20%D8%AE:sha=90ef0c938cabf213",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A99:headword=%D8%A8%D8%B1%D8%B2%D8%AE:root=%D8%A8%20%D8%B1%20%D8%B2%20%D8%AE:sha=3add8777d9f61ee5"
-          ]
-        },
         {
           "neighbor_root_id": "root_001560",
           "neighbor_branch_id": "B002",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Ayırıcı engel, kavramsal tanım, hüküm ve komşuluk kapsamları bulunur.",
-          "neighbor_only": "Haberin, okun veya iletinin hedefe ulaşması ve bir muhataba ulaştırılması da kapsanır.",
-          "expression_transliteration": "bir şeyin ulaştığı son nokta",
-          "gloss": "ulaşılan son nokta",
-          "shared_zone": "Her iki dal bir şeyin eriştiği sonu, ucunu ve varış sınırını ifade eder.",
-          "distinction": "Örtüşme yalnızca son nokta anlamındadır; komşu dal hedefe varma ve ulaştırmayı da içerirken bu dalın merkezi ayırıcı ve belirleyici sınırdır.",
+          "focus_only": "Ayırıcı engel, yer kapsamı ve ayırt edici tanım işlevlerini de içerir.",
+          "neighbor_only": "Bir haberin, okun veya iletinin hedefe ulaşmasını ve ulaştırılmasını da kapsar.",
+          "expression_transliteration": "alghayh alty ynthy ilyha alshy'",
+          "gloss": "ulaşılan son ve hedef",
+          "shared_zone": "Her iki dal da bir şeyin vardığı sonu veya ereği gösterebilir.",
+          "distinction": "Odak dal son nokta yanında ayırma ve kapsam çizme işlevi taşır; komşu dal ise sona ulaşma ve bir şeyi hedefe ulaştırma olayını öne çıkarır.",
           "expression_ar": "الغاية التي ينتهي إليها الشيء",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
-            "maqayis:root=%D9%86%20%D9%87%20%D9%8A:headword=%D9%86%D9%87%D9%8A:sha=a0772320bc8de653",
             "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A2311:headword=%D9%86%D9%87%D9%8A:root=%D9%86%20%D9%87%20%D9%8A:sha=dae3273f1c355bcb",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5589:headword=%D9%86%D9%87%D9%89:root=%D9%86%20%D9%87%20%D9%8A:sha=3afb7c9cd77bd90f",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1550:headword=%D9%86%D9%87%D9%89:root=%D9%86%20%D9%87%20%D9%8A:sha=a00f1b717415d562"
+            "maqayis:root=%D9%86%20%D9%87%20%D9%8A:headword=%D9%86%D9%87%D9%8A:sha=a0772320bc8de653",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1550:headword=%D9%86%D9%87%D9%89:root=%D9%86%20%D9%87%20%D9%8A:sha=a00f1b717415d562",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5589:headword=%D9%86%D9%87%D9%89:root=%D9%86%20%D9%87%20%D9%8A:sha=3afb7c9cd77bd90f"
           ]
         },
         {
-          "neighbor_root_id": "root_000076",
+          "neighbor_root_id": "root_000106",
           "neighbor_branch_id": "B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Sınırın kendisini, engel oluşunu ve başka alanlara genişleyen belirleyici işlevini adlandırır.",
-          "neighbor_only": "Bir ilgecin hareket ya da yönelişin varış noktasına ulaşmasını bildiren görevini anlatır.",
-          "expression_transliteration": "sona ulaşma ve bitiş",
-          "gloss": "varış sınırına ulaşma",
-          "shared_zone": "İki dal da bir sürecin eriştiği son sınır düşüncesinde buluşur.",
-          "distinction": "Bu dal sınırı bir varlık veya kavram olarak adlandırır; komşu dal ise o sınıra ulaşma ilişkisini dilbilgisel olarak kurar.",
-          "expression_ar": "الغاية والانتهاء",
+          "focus_only": "Son nokta, yer kapsamı ve kavramsal tanım uzantılarına sahiptir.",
+          "neighbor_only": "Uzaklık veya bir işe engel olan durum gibi daha geniş engel türlerini kapsar.",
+          "expression_transliteration": "hacizün beyne şey'eyn",
+          "gloss": "iki şey arasındaki engel",
+          "shared_zone": "İki şeyin arasında durup onları ayıran engel anlamında örtüşürler.",
+          "distinction": "Komşu dalın çekirdeği araya giren engeldir; odak dal bu işlevi sınır, son ve kapsam belirleme düzeni içinde kurar.",
+          "expression_ar": "حاجز بين شيئين",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5624:headword=%D8%A3%D9%84%D8%A7:root=%D8%A1%20%D9%84%20%D8%A7:sha=8125f8fe349c73d9"
+            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A2826:headword=%D8%A8%D8%B1%D8%B2%D8%AE:root=%D8%A8%20%D8%B1%20%D8%B2%20%D8%AE:sha=96e3de060a80397a",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A99:headword=%D8%A8%D8%B1%D8%B2%D8%AE:root=%D8%A8%20%D8%B1%20%D8%B2%20%D8%AE:sha=3add8777d9f61ee5",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1111:headword=%D8%A8%D8%B1%D8%B2%D8%AE:root=%D8%A8%20%D8%B1%20%D8%B2%20%D8%AE:sha=1f619b54dad26bbc",
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D380%3Bsegment_index%3D4:headword=%D8%A8%D8%B1%D8%B2%D8%AE:root=%D8%A8%20%D8%B1%20%D8%B2%20%D8%AE:sha=90ef0c938cabf213"
           ]
         }
       ],
       "neighbor_coverage": {
         "candidate_count": 15,
         "assessment": "complete",
-        "note": "Bütün adaylar değerlendirildi; yayımlanmayanlar yalnızca yer, bölge veya aynı kökün uzak dallarını paylaştığı için sınırı daha iyi açıklamıyor."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "mixed_non_bare",
-        "has_non_bare": true,
-        "has_collocation": false,
-        "unit_kind_counts": {
-          "form": 1,
-          "lexical_unit": 4
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "En güçlü karışma noktaları son-erek ve aradaki engel dallarıdır; öteki adaylar yalnızca alan, yer, yasaklama veya aynı kökün başka bir dalını paylaşır ve ek bir sınır ayrımı sağlamaz."
       }
     },
     {
@@ -465,62 +376,55 @@
       "what_is_not_ar": "لا يدخل فيه مجرد رسم الحد المكاني إلا بقدر ما يعمل كمنع، ولا يدخل فيه حديد المعدن أو حد السيف.",
       "source_phrase_ar": "الأصل الأول المنع (maqayis)؛ للبواب حداد لمنعه الناس (maqayis;sihah;tahdhib;mufradat)؛ السجان حداد لأنه يمنع من الخروج (sihah;tahdhib)؛ محدود ممنوع من البخت أو الرزق (maqayis;sihah;mufradat)؛ حد العاصي لأنه يمنعه عن المعاودة (maqayis;sihah;tahdhib;mufradat)؛ دون ذلك حدد أي منع (sihah;tahdhib)؛ حددا بمعنى معاذ الله أو حراما (maqayis;sihah;tahdhib)",
       "image_transliteration": "engelleme, uzaklaştırma ve yasaklama",
-      "summary": "Bir kimseyi girişten, çıkıştan ya da bir eylemden alıkoyma, uzaklaştırma ve bir işi yasaklama anlamıdır. Bu işlev görevli, yoksun bırakılmış kişi, dokunulmaz iş, kaçınılmazlık sözü ve yeniden suç işlemeyi önleyen ceza üzerinden somutlaşır.",
+      "summary": "Bir kişinin girmesini, çıkmasını ya da bir işi yapmasını engellemek veya onu bir şeyden geri çevirmektir. Bekçilik, tutsaklığı sürdürme, paydan yoksun bırakma, dokunulmaz sayma ve yeniden suç işlemeyi caydıran ceza bu engellemenin özel görünümleridir.",
       "concept_map": {
-        "definition": "Bir kimseyi girişten, çıkıştan ya da bir eylemden alıkoyma, uzaklaştırma ve bir işi yasaklama anlamıdır. Bu işlev görevli, yoksun bırakılmış kişi, dokunulmaz iş, kaçınılmazlık sözü ve yeniden suç işlemeyi önleyen ceza üzerinden somutlaşır.",
+        "definition": "Bir kişinin girmesini, çıkmasını ya da bir işi yapmasını engellemek veya onu bir şeyden geri çevirmektir. Bekçilik, tutsaklığı sürdürme, paydan yoksun bırakma, dokunulmaz sayma ve yeniden suç işlemeyi caydıran ceza bu engellemenin özel görünümleridir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Birini bir şeye erişmekten, bir yere girmekten veya bir kötülüğü yapmaktan alıkoyup uzak tutmaktır.",
+            "statement": "Birinin girişini, çıkışını veya bir eylemi gerçekleştirmesini engeller.",
             "claim_ids": [
-              "lu_006",
-              "lu_014"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Kapı görevlisi girişi, gardiyan ise tutulan kişinin çıkışını önleyen kişi olarak adlandırılır.",
+            "statement": "Kapıcı ve gardiyan gibi kişiler, başkalarının geçişini önledikleri için bu çekirdeği gerçekleştirir.",
             "claim_ids": [
-              "lu_007",
-              "lu_008"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "extension",
-            "statement": "Paydan, geçimden ya da talihten yoksun bırakılan kimse için sonuç bildiren bir niteleme olur.",
+            "statement": "Yoksun bırakma, dokunulmazlık ve yeniden yapmayı önleyen ceza da engelleme sonucu üzerinden adlandırılır.",
             "claim_ids": [
-              "lu_009"
-            ]
-          },
-          {
-            "facet_id": "F004",
-            "role": "specialization",
-            "statement": "Yaklaşılması uygun olmayan dokunulmaz ve yasak işi ya da böyle bir şeyden sakınma sözünü bildirir.",
-            "claim_ids": [
-              "lu_010",
-              "lu_011"
-            ]
-          },
-          {
-            "facet_id": "F005",
-            "role": "associated_use",
-            "statement": "Bir işten kaçınacak yol veya başka seçenek bulunmadığını bildiren kalıplaşmış sözde kullanılır.",
-            "claim_ids": [
-              "lu_012"
-            ]
-          },
-          {
-            "facet_id": "F006",
-            "role": "specialization",
-            "statement": "Suç işleyenin aynı eyleme yeniden dönmesini önlemeyi amaçlayan belirlenmiş ceza için kullanılır.",
-            "claim_ids": [
-              "lu_013"
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi ortak çekirdeği açıkça engelleme ve birini bir eylemden geri çevirme olarak kurar; kapıcı, gardiyan, yoksun bırakılmış kişi, dokunulmaz iş ve caydırıcı ceza bu çekirdeğin özel gerçekleşmeleridir. Geçici çerçeve bunları doğru biçimde aynı dalda toplar.",
+        "boundary_note": "Yer sınırı ancak fiilen geçişi engellediğinde bu dala girer; maden ve kesici ağız anlamları bu dalın dışındadır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım genel engelleme çekirdeğini korur; kapıcı, gardiyan, yoksunluk, kaçışsızlık ve ceza gibi biçim ya da tamlamaya bağlı kullanımları bu çekirdeğin özel görünümleri olarak ayırır."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "mixed_non_bare",
+        "has_non_bare": true,
+        "has_collocation": true,
+        "unit_kind_counts": {
+          "collocation": 1,
+          "form": 5,
+          "lexical_unit": 3
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -528,7 +432,7 @@
           "expression_ar": "الحد",
           "unit_kind": "form",
           "sense_ar": "المنع والصرف عن الشيء",
-          "target_gloss": "engelleme ve uzak tutma",
+          "target_gloss": "engelleme; geri çevirme",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
@@ -542,7 +446,7 @@
           "expression_ar": "الحداد",
           "unit_kind": "form",
           "sense_ar": "البواب الذي يمنع الناس من الدخول",
-          "target_gloss": "girişi önleyen kapı görevlisi",
+          "target_gloss": "girişi engelleyen kapıcı",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
@@ -557,7 +461,7 @@
           "expression_ar": "الحداد",
           "unit_kind": "form",
           "sense_ar": "السجان الذي يمنع من في السجن من الخروج",
-          "target_gloss": "çıkışı önleyen gardiyan",
+          "target_gloss": "çıkışı engelleyen gardiyan",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1244:headword=%D8%AD%D8%B0%D8%AF:root=%D8%AD%20%D8%B0%20%D8%AF:sha=dbb73204ac319000",
@@ -570,7 +474,7 @@
           "expression_ar": "محدود",
           "unit_kind": "form",
           "sense_ar": "ممنوع أو محروم من الحظ أو الرزق",
-          "target_gloss": "paydan ve geçimden yoksun bırakılmış",
+          "target_gloss": "paydan ya da geçimden yoksun",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
@@ -598,7 +502,7 @@
           "expression_ar": "حددا",
           "unit_kind": "lexical_unit",
           "sense_ar": "صيغة تعوذ أو تحريم بمعنى معاذ الله أو حراما",
-          "target_gloss": "Tanrı korusun, böyle bir şey yasaktır",
+          "target_gloss": "Tanrı korusun; kesinlikle olmaz",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
@@ -612,7 +516,7 @@
           "expression_ar": "مالي عن هذا الأمر حدد ومحتد",
           "unit_kind": "lexical_unit",
           "sense_ar": "ليس لي عنه معدل ولا ممتنع ولا بد",
-          "target_gloss": "bu işten kaçışım ve başka seçeneğim yok",
+          "target_gloss": "bu işten kaçışım yok",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
@@ -626,7 +530,7 @@
           "expression_ar": "الحد",
           "unit_kind": "form",
           "sense_ar": "العقوبة الشرعية التي تمنع العاصي من المعاودة",
-          "target_gloss": "yeniden suç işlemeyi önleyen hukuk cezası",
+          "target_gloss": "yeniden suç işlemeyi caydıran din hukuku cezası",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
@@ -641,7 +545,7 @@
           "expression_ar": "حد فلانا عن الشر",
           "unit_kind": "collocation",
           "sense_ar": "صرفه ومنعه عن الشر",
-          "target_gloss": "onu kötülükten alıkoymak",
+          "target_gloss": "birini kötülükten alıkoymak",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D225%3Bsegment_index%3D4:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=b974e506d86126bd"
@@ -652,25 +556,14 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Ortak çekirdek, girişe, çıkışa veya eyleme engel olup kişiyi uzak tutmaktır. Bu işlev kapı görevlisi ve gardiyanda meslek adı, yoksun kişide sonuç, yasak işte dokunulmazlık, kaçınılmazlık sözünde seçenek yokluğu ve cezada caydırıcılık olarak görünür.",
+        "discussion": "Kaynaklar engelleme çekirdeğinde birleşir ve kapıcıyı, gardiyanı, yoksun kişiyi, dokunulmaz işi, kaçışsızlığı ve caydırıcı cezayı bu çekirdekle açıklar.",
         "evidence_refs": [
           "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
           "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A299:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=57607146360c2f88",
           "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1244:headword=%D8%AD%D8%B0%D8%AF:root=%D8%AD%20%D8%B0%20%D8%AF:sha=dbb73204ac319000",
           "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D225%3Bsegment_index%3D4:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=b974e506d86126bd"
         ],
-        "details": [
-          {
-            "kind": "sole_attestation",
-            "summary": "Tek bir kaynak, fiili bir kişiyi kötülükten çevirip alıkoymak anlamıyla ayrıca kaydeder.",
-            "source_refs": [
-              "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D225%3Bsegment_index%3D4:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=b974e506d86126bd"
-            ],
-            "source_ids": [
-              "tahdhib"
-            ]
-          }
-        ],
+        "details": [],
         "examples": [],
         "disagreement": null
       },
@@ -709,25 +602,22 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Bir kimseyi girişten, çıkıştan ya da bir eylemden alıkoyma, uzaklaştırma ve bir işi yasaklama anlamıdır. Bu işlev görevli, yoksun bırakılmış kişi, dokunulmaz iş, kaçınılmazlık sözü ve yeniden suç işlemeyi önleyen ceza üzerinden somutlaşır.",
+        "semantic_definition": "Bir kişinin girmesini, çıkmasını ya da bir işi yapmasını engellemek veya onu bir şeyden geri çevirmektir. Bekçilik, tutsaklığı sürdürme, paydan yoksun bırakma, dokunulmaz sayma ve yeniden suç işlemeyi caydıran ceza bu engellemenin özel görünümleridir.",
         "concept": {
           "rank": 1,
-          "text": "engelleme, uzak tutma ve yasaklama",
+          "text": "engelleme ve geri çevirme",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "Dalın giriş, çıkış, eylem, yoksunluk, dokunulmazlık ve caydırıcı ceza kullanımlarındaki ortak işlevi karşılar.",
+          "applicability": "Giriş, çıkış veya eylemin önlenmesini ve bundan doğan yoksunluk ya da caydırmayı kapsayan dal geneli için uygundur.",
           "facet_ids": [
             "F001",
             "F002",
-            "F003",
-            "F004",
-            "F005",
-            "F006"
+            "F003"
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Bir kişiyi ya da eylemi durdurma, uzaklaştırma ve erişimi kapatma çekirdeğini bütünüyle korur.",
+            "preserves": "Önleme, geri çevirme ve eylemi durdurma çekirdeğini korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -738,53 +628,17 @@
             "rank": 2,
             "text": "alıkoyma",
             "loanword_status": "none",
-            "usage_role": "general",
+            "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Bir kişinin girişini, çıkışını veya belirli bir eylemi yapmasını önleme bağlamlarında kullanılır.",
+            "applicability": "Bir kişinin çıkışının veya hareketinin doğrudan önlenmesi bağlamında kullanılır.",
             "facet_ids": [
               "F001",
               "F002"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Kişiyi hareketten veya eylemden geri tutma işlevini korur.",
-              "loses": "Yasak sözleri, yoksunluk sonucu ve cezanın kurumsal niteliğini açıkça göstermez.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 3,
-            "text": "yasak ve dokunulmaz",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Yapılmasına izin verilmeyen ve yaklaşılmaması gereken bir işi niteleyen bağlamda uygundur.",
-            "facet_ids": [
-              "F004"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Bir işe erişimin kapatılması ve onun yapılmasının yasaklanmasını korur.",
-              "loses": "Görevli, yoksun kişi, kaçınılmazlık ve caydırıcı ceza kullanımlarını içermez.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 4,
-            "text": "caydırıcı ceza",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Bir suçun yeniden işlenmesini önlemek üzere hukukça belirlenen ceza bağlamına özgüdür.",
-            "facet_ids": [
-              "F006"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Ceza yoluyla kişiyi aynı eyleme dönmekten alıkoyma amacını korur.",
-              "loses": "Giriş, çıkış, görevli, yoksunluk ve yasak sözleriyle ilgili diğer kullanımları dışarıda bırakır.",
+              "preserves": "Bir kişiyi hareketten veya çıkıştan engelleme öğesini korur.",
+              "loses": "Giriş yasağını, genel eylemden caydırmayı ve yoksunluk uzantısını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
@@ -793,22 +647,19 @@
         "selected": [
           {
             "rank": 1,
-            "text": "engelleme, uzak tutma ve yasaklama",
+            "text": "engelleme ve geri çevirme",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "Dalın giriş, çıkış, eylem, yoksunluk, dokunulmazlık ve caydırıcı ceza kullanımlarındaki ortak işlevi karşılar.",
+            "applicability": "Giriş, çıkış veya eylemin önlenmesini ve bundan doğan yoksunluk ya da caydırmayı kapsayan dal geneli için uygundur.",
             "facet_ids": [
               "F001",
               "F002",
-              "F003",
-              "F004",
-              "F005",
-              "F006"
+              "F003"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Bir kişiyi ya da eylemi durdurma, uzaklaştırma ve erişimi kapatma çekirdeğini bütünüyle korur.",
+              "preserves": "Önleme, geri çevirme ve eylemi durdurma çekirdeğini korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -818,152 +669,74 @@
             "rank": 2,
             "text": "alıkoyma",
             "loanword_status": "none",
-            "usage_role": "general",
+            "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Bir kişinin girişini, çıkışını veya belirli bir eylemi yapmasını önleme bağlamlarında kullanılır.",
+            "applicability": "Bir kişinin çıkışının veya hareketinin doğrudan önlenmesi bağlamında kullanılır.",
             "facet_ids": [
               "F001",
               "F002"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Kişiyi hareketten veya eylemden geri tutma işlevini korur.",
-              "loses": "Yasak sözleri, yoksunluk sonucu ve cezanın kurumsal niteliğini açıkça göstermez.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 3,
-            "text": "yasak ve dokunulmaz",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Yapılmasına izin verilmeyen ve yaklaşılmaması gereken bir işi niteleyen bağlamda uygundur.",
-            "facet_ids": [
-              "F004"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Bir işe erişimin kapatılması ve onun yapılmasının yasaklanmasını korur.",
-              "loses": "Görevli, yoksun kişi, kaçınılmazlık ve caydırıcı ceza kullanımlarını içermez.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 4,
-            "text": "caydırıcı ceza",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Bir suçun yeniden işlenmesini önlemek üzere hukukça belirlenen ceza bağlamına özgüdür.",
-            "facet_ids": [
-              "F006"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Ceza yoluyla kişiyi aynı eyleme dönmekten alıkoyma amacını korur.",
-              "loses": "Giriş, çıkış, görevli, yoksunluk ve yasak sözleriyle ilgili diğer kullanımları dışarıda bırakır.",
+              "preserves": "Bir kişiyi hareketten veya çıkıştan engelleme öğesini korur.",
+              "loses": "Giriş yasağını, genel eylemden caydırmayı ve yoksunluk uzantısını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
           }
         ],
-        "excluded": [
-          {
-            "text": "sınır",
-            "category": "confusable",
-            "exclusion_reason": "Alıkoyma eylemini, görevli adlarını, yoksunluğu ve caydırıcı cezayı kaybeder. Önleme eylemi yerine ayırıcı bir çizgi veya son nokta anlamı getirir. Ayırıcı ve kapsam belirleyici sınır dalıyla karışır.",
-            "error_profile": {
-              "fit": "displacement",
-              "preserves": "Erişimi kapatma ve ötesine geçmeyi önleme yönünü kısmen korur.",
-              "loses": "Alıkoyma eylemini, görevli adlarını, yoksunluğu ve caydırıcı cezayı kaybeder.",
-              "adds": "Önleme eylemi yerine ayırıcı bir çizgi veya son nokta anlamı getirir.",
-              "collision": "Ayırıcı ve kapsam belirleyici sınır dalıyla karışır."
-            }
-          }
-        ]
+        "excluded": []
       },
       "arabic_neighbor_distinctions": [
         {
-          "neighbor_root_id": "root_000193",
-          "neighbor_branch_id": "B003",
+          "neighbor_root_id": "root_000296",
+          "neighbor_branch_id": "B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Görevliler, dokunulmaz iş, kalıplaşmış sakınma sözü ve caydırıcı ceza gibi özel gerçekleşmeleri kapsar.",
-          "neighbor_only": "Bir şeyi geri çevirme ve iyilikten yoksun bırakılmış, yenik kişi anlamlarını ayrıca içerir.",
-          "expression_transliteration": "alıkoyma, engelleme ve geri çevirme",
-          "gloss": "alıkoyma ve geri çevirme",
-          "shared_zone": "Her iki dal da kişiyi veya şeyi hareketten ve amaçlanan eylemden alıkoymayı anlatır.",
-          "distinction": "Çekirdekler büyük ölçüde örtüşür; ancak bu dal yasaklama ve kurumsal önleme çevresinde genişlerken komşu dal geri çevirme ile yenik ve yoksun kişi sonucunu öne çıkarır.",
-          "expression_ar": "الحبس والمنع والرد",
+          "focus_only": "Kapıcılık, gardiyanlık, nasipten yoksunluk ve caydırıcı ceza gibi özel görünümleri kapsar.",
+          "neighbor_only": "Koruma, güvence ve mal üzerinde işlem yapmayı kısıtlama anlamlarını da kapsar.",
+          "expression_transliteration": "el-menʿ ve'l-iḥâṭa",
+          "gloss": "engelleme ve koruma",
+          "shared_zone": "Her iki dal da bir şeyi yasaklayıp erişimi veya davranışı önleyebilir.",
+          "distinction": "Odak dalın merkezi geri çevirip eylemi durdurmaktır; komşu dal engellemenin yanında çevreleyerek koruma ve güvence altına alma işlevini taşır.",
+          "expression_ar": "المنع والإحاطة",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1581:headword=%D8%AB%D8%A8%D8%B1:root=%D8%AB%20%D8%A8%20%D8%B1:sha=0dbf869be66c2c9e",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D772%3Bsegment_index%3D12:headword=%D8%AB%D8%A8%D8%B1:root=%D8%AB%20%D8%A8%20%D8%B1:sha=18e2e2d152694abf"
-          ]
-        },
-        {
-          "neighbor_root_id": "root_000338",
-          "neighbor_branch_id": "B002",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Giriş ve çıkışın önlenmesi, görevli adları, yoksunluk ve caydırıcı ceza kullanımlarını kapsar.",
-          "neighbor_only": "İzin vermemenin karşıtı olarak yasaklama ile ekin veya otlağın başkasına kapatılmasını özellikle kapsar.",
-          "expression_transliteration": "izin vermeyip engelleme",
-          "gloss": "izin vermeyip yasaklama",
-          "shared_zone": "Her iki dal bir işi yapılabilir olmaktan çıkarma ve erişimi engelleme alanında örtüşür.",
-          "distinction": "Komşu dal doğrudan izin ve yasak karşıtlığına dayanır; bu dalın daha geniş çekirdeği fiziksel alıkoyma, görevli, yoksunluk ve ceza sonuçlarını da taşır.",
-          "expression_ar": "منع وحجر عن الإباحة",
-          "basis": "furuq_branch_comparison",
-          "evidence_refs": [
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:762",
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:763",
-            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1669:headword=%D8%AD%D8%B8%D8%B1:root=%D8%AD%20%D8%B8%20%D8%B1:sha=502b253b208ef64c",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1631:headword=%D8%AD%D8%B8%D8%B1:root=%D8%AD%20%D8%B8%20%D8%B1:sha=3bcde6c4413488ca",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D55:headword=%D8%AD%D8%B8%D8%B1:root=%D8%AD%20%D8%B8%20%D8%B1:sha=0061f668c8c095e2",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A341:headword=%D8%AD%D8%B8%D8%B1:root=%D8%AD%20%D8%B8%20%D8%B1:sha=3ccb4bd08e839e2f"
+            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:860",
+            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1441:headword=%D8%B0%D8%AD%D8%AC:root=%D8%B0%20%D8%AD%20%D8%AC:sha=8119122b8594f153",
+            "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1177%3Asubentry%3A0%3A%D8%AD%D8%AC%D8%B1:headword=%D8%AD%D8%AC%D8%B1:root=%D8%AD%20%D8%AC%20%D8%B1:sha=8bf4b3d75fd6116a",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A297:headword=%D8%AD%D8%AC%D8%B1:root=%D8%AD%20%D8%AC%20%D8%B1:sha=17e46868bce15497",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1619:headword=%D8%AD%D8%AC%D8%B1:root=%D8%AD%20%D8%AC%20%D8%B1:sha=088196ccf1d90bd5",
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D236%3Bsegment_index%3D30:headword=%D8%AD%D8%AC%D8%B1:root=%D8%AD%20%D8%AC%20%D8%B1:sha=aae31c261a974cc9"
           ]
         },
         {
           "neighbor_root_id": "root_000288",
           "neighbor_branch_id": "B001",
-          "relation_type": "near_neighbor",
+          "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Yasak, dokunulmazlık, yoksunluk ve yeniden suçu önleyen ceza kapsamları vardır.",
-          "neighbor_only": "Kişi, hayvan veya nesnenin tutulduğu yer ile hayvana ayrılan yem gibi adlaşmış kullanımları vardır.",
-          "expression_transliteration": "engelleme ve tutma",
-          "gloss": "hareketten alıkoyup tutma",
-          "shared_zone": "Her iki dal kişi veya nesnenin serbestçe hareket etmesini önleme anlamında buluşur.",
-          "distinction": "Bu dal önleme ve yasaklama işlevini öne çıkarır; komşu dal ise tutma, kapatma ve tutulma yerinin adlandırılmasına yönelir.",
+          "focus_only": "Dokunulmaz sayma, paydan yoksun bırakma ve cezayla caydırma uzantılarına sahiptir.",
+          "neighbor_only": "Bir şeyi salmama, bir canlıyı bağlı tutma ve tutulduğu yeri adlandırma kapsamına sahiptir.",
+          "expression_transliteration": "el-menʿu ve'l-imsâk",
+          "gloss": "tutma ve salmama",
+          "shared_zone": "Bir kişinin çıkmasını veya serbestçe hareket etmesini önleme alanında örtüşürler.",
+          "distinction": "Komşu dal fiziksel tutma ve salmama yönünde yoğunlaşır; odak dal girişten, çıkıştan ya da eylemden geri çeviren daha genel bir yasaklayıcı işlev taşır.",
           "expression_ar": "المنع والإمساك",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:843",
             "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1576:headword=%D8%AD%D8%A8%D8%B3:root=%D8%AD%20%D8%A8%20%D8%B3:sha=56e2fc61529a4926",
             "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A654%3Asubentry%3A0%3A%D8%AD%D8%A8%D8%B3:headword=%D8%AD%D8%A8%D8%B3:root=%D8%AD%20%D8%A8%20%D8%B3:sha=0e4830a8a0ddcfab",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A288:headword=%D8%AD%D8%A8%D8%B3:root=%D8%AD%20%D8%A8%20%D8%B3:sha=513f0995671710b8",
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2175:headword=%D8%AD%D8%A8%D8%B3:root=%D8%AD%20%D8%A8%20%D8%B3:sha=a3a3eb6f1608d7a7",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D236%3Bsegment_index%3D162:headword=%D8%AD%D8%A8%D8%B3:root=%D8%AD%20%D8%A8%20%D8%B3:sha=6defbbcd139f2942",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A288:headword=%D8%AD%D8%A8%D8%B3:root=%D8%AD%20%D8%A8%20%D8%B3:sha=513f0995671710b8"
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D236%3Bsegment_index%3D162:headword=%D8%AD%D8%A8%D8%B3:root=%D8%AD%20%D8%A8%20%D8%B3:sha=6defbbcd139f2942"
           ]
         }
       ],
       "neighbor_coverage": {
         "candidate_count": 15,
         "assessment": "complete",
-        "note": "Bütün adaylar değerlendirildi; yayımlanan üç komşu önleme çekirdeğine en yakın olanlardır, diğerleri bağlama veya uzak kardeş anlamlara dayanır."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "mixed_non_bare",
-        "has_non_bare": true,
-        "has_collocation": true,
-        "unit_kind_counts": {
-          "collocation": 1,
-          "form": 5,
-          "lexical_unit": 3
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "En yakın adaylar genel engelleme-koruma ve tutup salmama dallarıdır; bağlama, geri çevirme, yasaklama ve kökün öteki dalları daha dar ya da yalnızca tematik benzerlik gösterir."
       }
     },
     {
@@ -974,29 +747,54 @@
       "what_is_not_ar": "لا يدخل فيه مجرد منع البواب أو الحد العقابي إلا إذا صار مخالفة وممانعة.",
       "source_phrase_ar": "المحادة المخالفة فكأنه الممانعة (maqayis)؛ المحادة المخالفة ومنع ما يجب عليك وكذلك التحاد (sihah)؛ حاددته أي عاصيته (tahdhib)؛ يقال تحدد بهم أي تحرش بهم (tahdhib)؛ يحادون الله ورسوله أي يمانعون (mufradat)",
       "image_transliteration": "karşı gelme ve uyuşmazlık",
-      "summary": "Bir kişiye, buyruğa veya yükümlülüğe karşı gelme, uymama ve direnme anlamıdır. Bu karşı duruş, bir topluluğa sataşıp onunla çekişmeye kadar genişleyebilir.",
+      "summary": "Bir kişiye, buyruğa veya yükümlülüğe karşı çıkmak; boyun eğmeyip direnmek ya da yapılması gerekeni esirgemektir. Bazı yapılarda bu karşı duruş, bir gruba sataşma ve onunla çekişme biçimini alır.",
       "concept_map": {
-        "definition": "Bir kişiye, buyruğa veya yükümlülüğe karşı gelme, uymama ve direnme anlamıdır. Bu karşı duruş, bir topluluğa sataşıp onunla çekişmeye kadar genişleyebilir.",
+        "definition": "Bir kişiye, buyruğa veya yükümlülüğe karşı çıkmak; boyun eğmeyip direnmek ya da yapılması gerekeni esirgemektir. Bazı yapılarda bu karşı duruş, bir gruba sataşma ve onunla çekişme biçimini alır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir kimseye ya da buyruğa karşı çıkmak, itaat etmemek ve yerine getirilmesi gerekeni engellemektir.",
+            "statement": "Bir kişiye veya buyruğa karşı çıkıp boyun eğmemeyi anlatır.",
             "claim_ids": [
-              "lu_015",
-              "lu_016",
-              "lu_017"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "extension",
-            "statement": "Karşı duruşun sataşma, kışkırtma ve başkalarıyla açık çekişmeye dönüşen biçimidir.",
+            "role": "specialization",
+            "statement": "Yapılması gerekeni esirgemek, karşı çıkmanın yükümlülüğe yönelmiş biçimidir.",
             "claim_ids": [
-              "lu_018"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "associated_use",
+            "statement": "Belirli bir yapıda karşı duruş, bir gruba sataşıp onunla çekişmeye dönüşür.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi karşı gelme, yükümlülüğü yerine getirmeyerek direnme, başkaldırma ve sataşıp çekişme biçimlerini ortak bir karşı duruş altında toplar. Geçici çerçevenin karşı çıkma ve uyuşmazlık vurgusu bu içeriğe uygundur.",
+        "boundary_note": "Bu dal edilgin bir engelleme değil, bir kişiye ya da buyruğa yönelmiş etkin karşı çıkma ve direnmedir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım karşı çıkma çekirdeğini korurken yükümlülüğü esirgeme, başkaldırma ve bir gruba sataşma gibi biçim ve tamlamaya bağlı gerçekleşmeleri birbirine karıştırmaz."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "mixed_non_bare",
+        "has_non_bare": true,
+        "has_collocation": true,
+        "unit_kind_counts": {
+          "collocation": 1,
+          "form": 3
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -1004,7 +802,7 @@
           "expression_ar": "المحادة",
           "unit_kind": "form",
           "sense_ar": "المخالفة والمعصية والممانعة",
-          "target_gloss": "karşı gelme, itaatsizlik ve direnme",
+          "target_gloss": "karşı çıkma, başkaldırma ve direnme",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
@@ -1018,7 +816,7 @@
           "expression_ar": "التحاد",
           "unit_kind": "form",
           "sense_ar": "المخالفة ومنع ما يجب على المرء",
-          "target_gloss": "karşı gelme ve yükümlülüğü engelleme",
+          "target_gloss": "karşı çıkıp gerekeni esirgeme",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1244:headword=%D8%AD%D8%B0%D8%AF:root=%D8%AD%20%D8%B0%20%D8%AF:sha=dbb73204ac319000"
@@ -1030,7 +828,7 @@
           "expression_ar": "حاددته",
           "unit_kind": "form",
           "sense_ar": "عاصيته وخالفته",
-          "target_gloss": "ona itaatsizlik edip karşı gelmek",
+          "target_gloss": "ona karşı geldim",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D225%3Bsegment_index%3D4:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=b974e506d86126bd"
@@ -1042,7 +840,7 @@
           "expression_ar": "تحدد بهم",
           "unit_kind": "collocation",
           "sense_ar": "تحرش بهم ونازعهم",
-          "target_gloss": "onlara sataşıp onlarla çekişmek",
+          "target_gloss": "onlara sataşıp çekişmek",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D225%3Bsegment_index%3D4:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=b974e506d86126bd"
@@ -1053,44 +851,14 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Dalın ortak anlamı, beklenen uyumu göstermeyip bir kişiye, buyruğa veya yükümlülüğe karşı durmaktır. Bu tutum itaatsizlikten etkin direnişe, oradan da sataşma ve çekişmeye uzanır.",
+        "discussion": "Kaynaklar karşı çıkma ve direnme çekirdeğini; başkaldırma, gerekeni esirgeme ve bir gruba sataşarak çekişme görünümleriyle birlikte verir.",
         "evidence_refs": [
           "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
           "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A299:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=57607146360c2f88",
-          "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1244:headword=%D8%AD%D8%B0%D8%AF:root=%D8%AD%20%D8%B0%20%D8%AF:sha=dbb73204ac319000"
+          "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1244:headword=%D8%AD%D8%B0%D8%AF:root=%D8%AD%20%D8%B0%20%D8%AF:sha=dbb73204ac319000",
+          "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D225%3Bsegment_index%3D4:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=b974e506d86126bd"
         ],
-        "details": [
-          {
-            "kind": "sole_attestation",
-            "summary": "Tek bir kaynak, karşı gelme ile kişinin üzerine düşeni engellemesini ayrı bir ad biçiminde kaydeder.",
-            "source_refs": [
-              "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1244:headword=%D8%AD%D8%B0%D8%AF:root=%D8%AD%20%D8%B0%20%D8%AF:sha=dbb73204ac319000"
-            ],
-            "source_ids": [
-              "sihah"
-            ]
-          },
-          {
-            "kind": "sole_attestation",
-            "summary": "Tek bir kaynak, fiili doğrudan birine itaatsizlik edip karşı çıkmak anlamında verir.",
-            "source_refs": [
-              "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D225%3Bsegment_index%3D4:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=b974e506d86126bd"
-            ],
-            "source_ids": [
-              "tahdhib"
-            ]
-          },
-          {
-            "kind": "extension",
-            "summary": "Tek bir kaynak, karşı duruşu bir topluluğa sataşma ve onunla çekişme yönünde genişletir.",
-            "source_refs": [
-              "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D225%3Bsegment_index%3D4:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=b974e506d86126bd"
-            ],
-            "source_ids": [
-              "tahdhib"
-            ]
-          }
-        ],
+        "details": [],
         "examples": [],
         "disagreement": null
       },
@@ -1129,21 +897,22 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Bir kişiye, buyruğa veya yükümlülüğe karşı gelme, uymama ve direnme anlamıdır. Bu karşı duruş, bir topluluğa sataşıp onunla çekişmeye kadar genişleyebilir.",
+        "semantic_definition": "Bir kişiye, buyruğa veya yükümlülüğe karşı çıkmak; boyun eğmeyip direnmek ya da yapılması gerekeni esirgemektir. Bazı yapılarda bu karşı duruş, bir gruba sataşma ve onunla çekişme biçimini alır.",
         "concept": {
           "rank": 1,
-          "text": "karşı gelme ve direnme",
+          "text": "karşı çıkma ve direnme",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "İtaatsizlik, yükümlülüğü engelleme, etkin karşı duruş ve çekişme biçimlerinin ortak yönünü verir.",
+          "applicability": "Buyruğa, kişiye veya yükümlülüğe yönelen etkin karşı duruşun tüm temel görünümleri için uygundur.",
           "facet_ids": [
             "F001",
-            "F002"
+            "F002",
+            "F003"
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Uyumu reddetme, karşı çıkma ve karşı tarafın isteğine direnme çekirdeğini korur.",
+            "preserves": "Etkin karşı çıkmayı, boyun eğmemeyi ve direnmeyi birlikte korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -1152,36 +921,18 @@
         "contextual": [
           {
             "rank": 2,
-            "text": "itaatsizlik",
+            "text": "başkaldırma",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Bir kişiye veya buyruğa uymayı reddetme ve ona karşı gelme bağlamında doğal karşılıktır.",
+            "applicability": "Bir buyruğa veya üstün konumdaki muhataba açıkça karşı gelme bağlamında kullanılır.",
             "facet_ids": [
               "F001"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Buyruğa uymama ve yetkeye karşı çıkma anlamını açıkça korur.",
-              "loses": "Sataşma ve karşılıklı çekişmeye dönüşen etkin karşı duruşu göstermez.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 3,
-            "text": "sataşıp çekişme",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Bir topluluğu kışkırtarak onunla açık bir uyuşmazlığa girme bağlamına özgüdür.",
-            "facet_ids": [
-              "F002"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Karşı duruşun sataşma ve çekişme biçimini korur.",
-              "loses": "Buyruğa uymama ve yükümlülüğü engelleme biçimindeki daha genel çekirdeği dışarıda bırakır.",
+              "preserves": "Boyun eğmeme ve etkin karşı çıkma öğelerini korur.",
+              "loses": "Yükümlülüğü esirgeme ve sataşarak çekişme biçimlerini dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
@@ -1190,18 +941,19 @@
         "selected": [
           {
             "rank": 1,
-            "text": "karşı gelme ve direnme",
+            "text": "karşı çıkma ve direnme",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "İtaatsizlik, yükümlülüğü engelleme, etkin karşı duruş ve çekişme biçimlerinin ortak yönünü verir.",
+            "applicability": "Buyruğa, kişiye veya yükümlülüğe yönelen etkin karşı duruşun tüm temel görünümleri için uygundur.",
             "facet_ids": [
               "F001",
-              "F002"
+              "F002",
+              "F003"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Uyumu reddetme, karşı çıkma ve karşı tarafın isteğine direnme çekirdeğini korur.",
+              "preserves": "Etkin karşı çıkmayı, boyun eğmemeyi ve direnmeyi birlikte korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -1209,55 +961,24 @@
           },
           {
             "rank": 2,
-            "text": "itaatsizlik",
+            "text": "başkaldırma",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Bir kişiye veya buyruğa uymayı reddetme ve ona karşı gelme bağlamında doğal karşılıktır.",
+            "applicability": "Bir buyruğa veya üstün konumdaki muhataba açıkça karşı gelme bağlamında kullanılır.",
             "facet_ids": [
               "F001"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Buyruğa uymama ve yetkeye karşı çıkma anlamını açıkça korur.",
-              "loses": "Sataşma ve karşılıklı çekişmeye dönüşen etkin karşı duruşu göstermez.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 3,
-            "text": "sataşıp çekişme",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Bir topluluğu kışkırtarak onunla açık bir uyuşmazlığa girme bağlamına özgüdür.",
-            "facet_ids": [
-              "F002"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Karşı duruşun sataşma ve çekişme biçimini korur.",
-              "loses": "Buyruğa uymama ve yükümlülüğü engelleme biçimindeki daha genel çekirdeği dışarıda bırakır.",
+              "preserves": "Boyun eğmeme ve etkin karşı çıkma öğelerini korur.",
+              "loses": "Yükümlülüğü esirgeme ve sataşarak çekişme biçimlerini dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
           }
         ],
-        "excluded": [
-          {
-            "text": "öfke",
-            "category": "confusable",
-            "exclusion_reason": "İtaatsizliği, buyruğa karşı çıkmayı ve yükümlülüğü engellemeyi kaybeder. Karşı gelme için zorunlu olmayan bir duygu durumunu anlamın merkezine getirir. Öfke, acelecilik ve taşkınlık dalıyla karışır.",
-            "error_profile": {
-              "fit": "displacement",
-              "preserves": "Karşılaşmanın gergin ve çatışmalı olabilen yönünü kısmen korur.",
-              "loses": "İtaatsizliği, buyruğa karşı çıkmayı ve yükümlülüğü engellemeyi kaybeder.",
-              "adds": "Karşı gelme için zorunlu olmayan bir duygu durumunu anlamın merkezine getirir.",
-              "collision": "Öfke, acelecilik ve taşkınlık dalıyla karışır."
-            }
-          }
-        ]
+        "excluded": []
       },
       "arabic_neighbor_distinctions": [
         {
@@ -1265,36 +986,19 @@
           "neighbor_branch_id": "B003",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Buyruğa itaatsizlik etme ve yapılması gerekeni engelleme özellikle bulunur.",
-          "neighbor_only": "Topluluktan ayrılma, onu terk etme ve karşılıklı öfkelenme gibi ek durumları içerir.",
+          "focus_only": "Yapılması gerekeni esirgeme ve buyruğa başkaldırma yönlerini özellikle içerir.",
+          "neighbor_only": "Bir topluluktan ayrılma, onu terk etme ve ona karşı çekişmeye girişme görünümlerini özellikle içerir.",
           "expression_transliteration": "öfkeli karşı çıkma ve çekişme",
-          "gloss": "öfkeli karşı çıkış ve çekişme",
-          "shared_zone": "Her iki dal da bir kişiye veya topluluğa karşı durma, uyuşmazlığa girme ve çekişme alanında örtüşür.",
-          "distinction": "Bu dal itaatsizlik ve direnme çekirdeğinde kalır; komşu dal karşı çıkışı öfke, kopuş, terk etme ve toplulukla çatışma senaryolarına genişletir.",
+          "gloss": "öfkeli karşı çıkış",
+          "shared_zone": "Her iki dal da kızgınlıkla birleşebilen karşı çıkma ve çekişmeyi anlatır.",
+          "distinction": "Odak dalın çekirdeği muhataba veya buyruğa karşı direnmedir; komşu dal öfkelenme, uzaklaşma ve toplulukla çekişme senaryosunu daha belirgin taşır.",
           "expression_ar": "المراغمة مغاضبة ومخالفة ومنازعة",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1320",
             "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3037:headword=%D8%B1%D8%BA%D9%85:root=%D8%B1%20%D8%BA%20%D9%85:sha=1735e2879deaab1c",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4489:headword=%D8%B1%D8%BA%D9%85:root=%D8%B1%20%D8%BA%20%D9%85:sha=ba0d068b1f66a271",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A576:headword=%D8%B1%D8%BA%D9%85:root=%D8%B1%20%D8%BA%20%D9%85:sha=58935837a8bb72ec"
-          ]
-        },
-        {
-          "neighbor_root_id": "root_001092",
-          "neighbor_branch_id": "B003",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Buyruğa uymama, yükümlülüğü engelleme ve sataşma kapsamları vardır.",
-          "neighbor_only": "Birine öfkelenerek karşılık verme ve topluluğuna karşı öfkeli davranma özellikle vurgulanır.",
-          "expression_transliteration": "öfkeli karşı duruş",
-          "gloss": "öfkeli karşı duruş",
-          "shared_zone": "Her ikisi de başka bir tarafa karşı çıkma ve onunla uyumu bozma durumunu içerir.",
-          "distinction": "Komşu dalın ayırıcı öğesi karşılıklı öfkedir; bu dalda öfke zorunlu değildir, itaatsizlik ve direnme yeterlidir.",
-          "expression_ar": "المراغمة والمخالفة",
-          "basis": "furuq_branch_comparison",
-          "evidence_refs": [
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A402:headword=%D8%BA%D8%B6%D8%A8:root=%D8%BA%20%D8%B6%20%D8%A8:sha=59bf1b4161b2497f"
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A576:headword=%D8%B1%D8%BA%D9%85:root=%D8%B1%20%D8%BA%20%D9%85:sha=58935837a8bb72ec",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4489:headword=%D8%B1%D8%BA%D9%85:root=%D8%B1%20%D8%BA%20%D9%85:sha=ba0d068b1f66a271"
           ]
         },
         {
@@ -1302,12 +1006,12 @@
           "neighbor_branch_id": "B003",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Yetkeye itaatsizlik ve yapılması gerekeni engelleme anlamları bulunur.",
-          "neighbor_only": "Denk bir rakibe karşı ayağa kalkma, düşmanlık etme veya onun yaptığının benzerini karşılık olarak yapma bulunur.",
+          "focus_only": "Buyruğa karşı gelme ve yükümlülüğü yerine getirmeme kapsamına sahiptir.",
+          "neighbor_only": "Denk bir rakibin karşısına çıkıp onun yaptığının benzerini yapma anlamını taşır.",
           "expression_transliteration": "denk rakibe karşı koyma",
-          "gloss": "rakibe karşı koyma",
-          "shared_zone": "İki dal da karşı tarafta konumlanıp onun iradesine veya eylemine karşı durmayı anlatır.",
-          "distinction": "Bu dal uyumsuzluk ve itaatsizlikten doğar; komşu dal ise denk rakipler arasındaki karşılıklı eylem ve düşmanlığı öne çıkarır.",
+          "gloss": "rakibe karşı durma",
+          "shared_zone": "İki tarafın birbirine karşı konum alıp çatışması bakımından örtüşürler.",
+          "distinction": "Komşu dal denk rakiplerin karşılıklı eylemini öne çıkarır; odak dal ise eşitlik gerektirmeden itaatsizlik, engelleme ve direnme içerir.",
           "expression_ar": "المناوأة نهوض الند إلى الند",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
@@ -1321,17 +1025,7 @@
       "neighbor_coverage": {
         "candidate_count": 15,
         "assessment": "complete",
-        "note": "Adayların tümü incelendi; yayımlananlar karşı duruşun en yakın biçimleridir, ötekiler yalnızca çatışma alanını paylaşır veya farklı bir çekirdeğe sahiptir."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "mixed_non_bare",
-        "has_non_bare": true,
-        "has_collocation": true,
-        "unit_kind_counts": {
-          "collocation": 1,
-          "form": 3
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "En yararlı karşılaştırmalar öfkeli karşı çıkış ve rakibe karşı durmadır; adaletsizlik, yargılama, yerinden kıpırdamama ve kökün öteki dalları ortak çekirdeği paylaşmaz."
       }
     },
     {
@@ -1342,35 +1036,53 @@
       "what_is_not_ar": "لا يدخل فيه حد الشفرة بوصفه طرفا قاطعا إلا من جهة كونه آلة حديدية.",
       "source_phrase_ar": "سمي الحديد حديدا لامتناعه وصلابته وشدته (maqayis)؛ الحديد معروف والحديدة أخص منه والجمع الحدائد (sihah)؛ الحديد معروف وصانعه الحداد ويقال ضربه بحديدة (tahdhib)؛ الحديد معروف وأنزلنا الحديد فيه بأس شديد (mufradat)",
       "image_transliteration": "demir ve dirençli sertlik",
-      "summary": "Sertliği, dayanıklılığı ve kolayca boyun eğmemesiyle tanınan demir metalini bildirir. Bunun bir parçası ve bu metali işleyen usta da aynı anlam çevresinde adlandırılır.",
+      "summary": "Sertliği, dayanıklılığı ve gücüyle tanınan demir madenidir. Bu maddeden yapılmış tek bir parça ve onu işleyen usta da maddeyle ilişkileri üzerinden adlandırılır.",
       "concept_map": {
-        "definition": "Sertliği, dayanıklılığı ve kolayca boyun eğmemesiyle tanınan demir metalini bildirir. Bunun bir parçası ve bu metali işleyen usta da aynı anlam çevresinde adlandırılır.",
+        "definition": "Sertliği, dayanıklılığı ve gücüyle tanınan demir madenidir. Bu maddeden yapılmış tek bir parça ve onu işleyen usta da maddeyle ilişkileri üzerinden adlandırılır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kolay eğilmeyen, sert ve dayanıklı yapısıyla tanımlanan demir metalidir.",
+            "statement": "Sert ve dayanıklı olan bilinen demir madenini belirtir.",
             "claim_ids": [
-              "lu_019"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Belirli bir demir parçasını veya demirden yapılmış tek bir nesneyi anlatır.",
+            "role": "extension",
+            "statement": "Demirden yapılmış tek bir parçayı madde üzerinden adlandırır.",
             "claim_ids": [
-              "lu_020"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "associated_use",
-            "statement": "Demiri işleyip ondan araç ve nesne yapan meslek sahibini adlandırır.",
+            "role": "extension",
+            "statement": "Demiri işleyen ustanın adı da aynı maddeyle kurulan meslek ilişkisinden doğar.",
             "claim_ids": [
-              "lu_021"
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bilinen madeni doğrudan adlandırır, adını sertlik ve dayanıklılıkla açıklar ve ondan yapılmış parçayı ve madeni işleyen ustayı aynı adlandırma çevresine bağlar. Geçici çerçeve bu nesne merkezli yapıyı doğru verir.",
+        "boundary_note": "Sertlik burada madenin niteliğidir; genel güçlülük ya da bir bıçağın kesen ağzı tek başına bu dalı oluşturmaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın maden anlamını merkeze alır; parçayı ve ustayı bu madenle ilişkili türemiş adlar olarak tutar ve kesici ağız anlamını içeri almaz."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "bare",
+        "has_non_bare": false,
+        "has_collocation": false,
+        "unit_kind_counts": {
+          "form": 3
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -1378,7 +1090,7 @@
           "expression_ar": "الحديد",
           "unit_kind": "form",
           "sense_ar": "المعدن المعروف بامتناعه وصلابته وشدته",
-          "target_gloss": "sert ve dayanıklı demir",
+          "target_gloss": "sert ve dayanıklı demir madeni",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
@@ -1406,7 +1118,7 @@
           "expression_ar": "الحداد",
           "unit_kind": "form",
           "sense_ar": "صانع الحديد",
-          "target_gloss": "demiri işleyen usta",
+          "target_gloss": "demirci",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D225%3Bsegment_index%3D4:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=b974e506d86126bd"
@@ -1417,25 +1129,14 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Dalın merkezinde sert, dayanıklı ve dirençli metal olarak demir bulunur; tek bir demir parçası bu genel madde adının özelleşmiş biçimidir. Meslek adı ise malzemeden onu işleyen kişiye düzenli bir geçiş kurar.",
+        "discussion": "Kaynaklar bilinen demir madenini ortak çekirdek olarak verir; sertlik ve dayanıklılığı adlandırmanın gerekçesi, demir parçası ile demirciyi de ilişkili uzantılar olarak gösterir.",
         "evidence_refs": [
           "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
           "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A299:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=57607146360c2f88",
           "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1244:headword=%D8%AD%D8%B0%D8%AF:root=%D8%AD%20%D8%B0%20%D8%AF:sha=dbb73204ac319000",
           "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D225%3Bsegment_index%3D4:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=b974e506d86126bd"
         ],
-        "details": [
-          {
-            "kind": "derivation",
-            "summary": "Tek bir kaynak, demiri işleyen ustanın meslek adını bu metal adından türeyen kullanım olarak kaydeder.",
-            "source_refs": [
-              "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D225%3Bsegment_index%3D4:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=b974e506d86126bd"
-            ],
-            "source_ids": [
-              "tahdhib"
-            ]
-          }
-        ],
+        "details": [],
         "examples": [],
         "disagreement": null
       },
@@ -1474,21 +1175,22 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Sertliği, dayanıklılığı ve kolayca boyun eğmemesiyle tanınan demir metalini bildirir. Bunun bir parçası ve bu metali işleyen usta da aynı anlam çevresinde adlandırılır.",
+        "semantic_definition": "Sertliği, dayanıklılığı ve gücüyle tanınan demir madenidir. Bu maddeden yapılmış tek bir parça ve onu işleyen usta da maddeyle ilişkileri üzerinden adlandırılır.",
         "concept": {
           "rank": 1,
           "text": "sert ve dayanıklı demir",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "Metal ve ondan ayrılan tek parça için doğrudan, bu metali işleyen usta içinse bağlı meslek anlamının temeli olarak uygundur.",
+          "applicability": "Madenin kendisini ve onu tanımlayan sertlik ile dayanıklılık niteliklerini birlikte veren dal geneli için uygundur.",
           "facet_ids": [
             "F001",
-            "F002"
+            "F002",
+            "F003"
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Metal kimliğini, sertlik ve direnç özelliklerini ve bağlı parça kullanımını korur.",
+            "preserves": "Maden kimliğini, sertliği ve dayanıklılığı birlikte korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -1497,54 +1199,18 @@
         "contextual": [
           {
             "rank": 2,
-            "text": "demir",
-            "loanword_status": "none",
-            "usage_role": "general",
-            "selection_role": "contextual_gloss",
-            "applicability": "Bilinen sert metalin madde adı olarak kullanıldığı genel bağlamların doğal karşılığıdır.",
-            "facet_ids": [
-              "F001"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Metal türünü ve onun sert, dayanıklı oluşunu korur.",
-              "loses": "Tek bir parçayı ve bu metali işleyen meslek sahibini ayrıca belirtmez.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 3,
             "text": "demir parçası",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Belirsiz bir metal kütlesinden değil, eldeki tek bir demir parçasından söz edildiğinde kullanılır.",
+            "applicability": "Belirsiz biçimli tek bir demir nesne veya parça söz konusu olduğunda kullanılır.",
             "facet_ids": [
               "F002"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Malzemenin demir oluşunu ve tek parça olarak ayrılmasını korur.",
-              "loses": "Genel metal türünü ve demiri işleyen meslek sahibini kapsamaz.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 4,
-            "text": "demirci",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Demiri işleyerek araç veya başka nesneler yapan meslek sahibi için kullanılır.",
-            "facet_ids": [
-              "F003"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Demir malzemesiyle çalışan meslek sahibini doğru biçimde adlandırır.",
-              "loses": "Metalin kendisini ve tek bir demir parçasını adlandırmaz.",
+              "preserves": "Nesnenin demir maddesinden yapılmış olmasını korur.",
+              "loses": "Madenin genel adı ile onu işleyen usta uzantısını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
@@ -1557,14 +1223,15 @@
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "Metal ve ondan ayrılan tek parça için doğrudan, bu metali işleyen usta içinse bağlı meslek anlamının temeli olarak uygundur.",
+            "applicability": "Madenin kendisini ve onu tanımlayan sertlik ile dayanıklılık niteliklerini birlikte veren dal geneli için uygundur.",
             "facet_ids": [
               "F001",
-              "F002"
+              "F002",
+              "F003"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Metal kimliğini, sertlik ve direnç özelliklerini ve bağlı parça kullanımını korur.",
+              "preserves": "Maden kimliğini, sertliği ve dayanıklılığı birlikte korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -1572,113 +1239,45 @@
           },
           {
             "rank": 2,
-            "text": "demir",
-            "loanword_status": "none",
-            "usage_role": "general",
-            "selection_role": "contextual_gloss",
-            "applicability": "Bilinen sert metalin madde adı olarak kullanıldığı genel bağlamların doğal karşılığıdır.",
-            "facet_ids": [
-              "F001"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Metal türünü ve onun sert, dayanıklı oluşunu korur.",
-              "loses": "Tek bir parçayı ve bu metali işleyen meslek sahibini ayrıca belirtmez.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 3,
             "text": "demir parçası",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Belirsiz bir metal kütlesinden değil, eldeki tek bir demir parçasından söz edildiğinde kullanılır.",
+            "applicability": "Belirsiz biçimli tek bir demir nesne veya parça söz konusu olduğunda kullanılır.",
             "facet_ids": [
               "F002"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Malzemenin demir oluşunu ve tek parça olarak ayrılmasını korur.",
-              "loses": "Genel metal türünü ve demiri işleyen meslek sahibini kapsamaz.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 4,
-            "text": "demirci",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Demiri işleyerek araç veya başka nesneler yapan meslek sahibi için kullanılır.",
-            "facet_ids": [
-              "F003"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Demir malzemesiyle çalışan meslek sahibini doğru biçimde adlandırır.",
-              "loses": "Metalin kendisini ve tek bir demir parçasını adlandırmaz.",
+              "preserves": "Nesnenin demir maddesinden yapılmış olmasını korur.",
+              "loses": "Madenin genel adı ile onu işleyen usta uzantısını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
           }
         ],
-        "excluded": [
-          {
-            "text": "sertlik",
-            "category": "confusable",
-            "exclusion_reason": "Belirli metal kimliğini, demir parçasını ve demiri işleyen ustayı kaybeder. Çeşitli nesne ve kişilere uygulanabilen genel bir nitelik anlamı getirir. Genel sağlamlık ve güç bildiren komşu dallarla karışır.",
-            "error_profile": {
-              "fit": "displacement",
-              "preserves": "Demirin dirençli ve kolay eğilmeyen niteliğini korur.",
-              "loses": "Belirli metal kimliğini, demir parçasını ve demiri işleyen ustayı kaybeder.",
-              "adds": "Çeşitli nesne ve kişilere uygulanabilen genel bir nitelik anlamı getirir.",
-              "collision": "Genel sağlamlık ve güç bildiren komşu dallarla karışır."
-            }
-          }
-        ]
+        "excluded": []
       },
       "arabic_neighbor_distinctions": [
         {
-          "neighbor_root_id": "root_000188",
-          "neighbor_branch_id": "B003",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Belirli bir metali, onun parçasını ve onu işleyen ustayı adlandırır.",
-          "neighbor_only": "Sertlik ve şiddeti insan, nesne veya uzunluk niteliği olarak anlatır.",
-          "expression_transliteration": "sert ve güçlü şey",
-          "gloss": "sert ve güçlü şey",
-          "shared_zone": "Her iki dal sertlik, güç ve dış etkiye kolay boyun eğmeme niteliğinde buluşur.",
-          "distinction": "Bu dalda sertlik demir metalinin ayırıcı özelliğidir; komşu dal ise aynı niteliği belirli bir metal kimliği olmadan çeşitli varlıklara yükler.",
-          "expression_ar": "الشيء الصلب الشديد",
-          "basis": "furuq_branch_comparison",
-          "evidence_refs": [
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:380",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4364:headword=%D8%AA%D9%85%D9%85:root=%D8%AA%20%D9%85%20%D9%85:sha=6408a990a6f04140",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D734%3Bsegment_index%3D4:headword=%D8%AA%D9%85:root=%D8%AA%20%D9%85:sha=8409ac38da92325f"
-          ]
-        },
-        {
           "neighbor_root_id": "root_001396",
           "neighbor_branch_id": "B001",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Demir metalini ve ona bağlı parça ile meslek adını içerir.",
-          "neighbor_only": "İnsan, ip, nesne veya anlatımda süreklilik gösteren sağlamlık ve güç niteliğini kapsar.",
-          "expression_transliteration": "süreğen sağlamlık",
-          "gloss": "sağlamlık ve dayanıklılık",
-          "shared_zone": "Her iki dal dayanıklılık, sertlik ve güçlü yapı alanında yer alır.",
-          "distinction": "Komşu dal soyutlanabilir bir sağlamlık niteliğidir; bu dalın çekirdeği ise o niteliği taşıyan belirli metal maddesidir.",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Belirli bir maddeyi, o maddeden parçayı ve onu işleyen ustayı adlandırır.",
+          "neighbor_only": "İnsan, ip, nesne veya anlatım gibi çok farklı taşıyıcılardaki genel sağlamlığı anlatır.",
+          "expression_transliteration": "alslabh almmtdh",
+          "gloss": "sağlamlık ve güç",
+          "shared_zone": "Sertlik, dayanıklılık ve güç nitelikleri bakımından örtüşürler.",
+          "distinction": "Odak dal nitelikleri belirli bir madenin yapısında toplar; komşu dal ise maddeden bağımsız genel bir sağlamlık niteliğidir.",
           "expression_ar": "الصَّلابة الممتدّة",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3322",
             "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1035%3Asubentry%3A0%3A%D9%85%D8%AA%D9%86:headword=%D9%85%D8%AA%D9%86:root=%D9%85%20%D8%AA%20%D9%86:sha=676c7238ea025144",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1389:headword=%D9%85%D8%AA%D9%86:root=%D9%85%20%D8%AA%20%D9%86:sha=48215b561f97e3ce",
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5062:headword=%D9%85%D8%AA%D9%86:root=%D9%85%20%D8%AA%20%D9%86:sha=746c7c1591a73f99",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D735%3Bsegment_index%3D5:headword=%D9%85%D8%AA%D9%86:root=%D9%85%20%D8%AA%20%D9%86:sha=9f71c611b6e4c739",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1389:headword=%D9%85%D8%AA%D9%86:root=%D9%85%20%D8%AA%20%D9%86:sha=48215b561f97e3ce"
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D735%3Bsegment_index%3D5:headword=%D9%85%D8%AA%D9%86:root=%D9%85%20%D8%AA%20%D9%86:sha=9f71c611b6e4c739"
           ]
         },
         {
@@ -1686,12 +1285,12 @@
           "neighbor_branch_id": "B006",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "Demiri, demir parçasını ve demir ustasını adlandırır.",
-          "neighbor_only": "Başka bir metal olan kurşunu adlandırır.",
+          "focus_only": "Demir madenini ve onunla ilişkili parça ile ustayı adlandırır.",
+          "neighbor_only": "Kurşun madenini adlandırır.",
           "expression_transliteration": "kurşun",
-          "gloss": "kurşun metali",
-          "shared_zone": "Her iki dal da işlenebilen bir metal maddesini adlandırır.",
-          "distinction": "Ortaklık yalnızca metal alanındadır; adlandırılan maddeler ve ayırıcı fiziksel özellikleri farklıdır.",
+          "gloss": "kurşun",
+          "shared_zone": "Her ikisi de bir metal maddenin adıdır.",
+          "distinction": "Ortak alan metallerdir, ancak adlandırılan maddeler ayrıdır ve olağan kullanımda birbirlerinin yerine geçmezler.",
           "expression_ar": "رَصاص",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
@@ -1702,16 +1301,7 @@
       "neighbor_coverage": {
         "candidate_count": 15,
         "assessment": "complete",
-        "note": "Tüm adaylar değerlendirildi; sertlik ve metal alanındaki en açıklayıcı üç karşılaştırma yayımlandı, araç ve ocak adayları yalnızca kullanım çevresini paylaşır."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "bare",
-        "has_non_bare": false,
-        "has_collocation": false,
-        "unit_kind_counts": {
-          "form": 3
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "Genel sağlamlık dalı nitelik bakımından, kurşun dalı madde alanı bakımından sınırı aydınlatır; ocak, kalın araç ve kökün öteki dalları daha uzak ilişkiler sunar."
       }
     },
     {
@@ -1722,36 +1312,53 @@
       "what_is_not_ar": "لا يدخل فيه الغضب والطيش إلا إذا قصدت الحدة النفسية، ولا يدخل فيه الحديد بوصفه معدنا فقط.",
       "source_phrase_ar": "الأصل الآخر طرف الشيء (maqayis)؛ حد السيف وهو حرفه وحد السكين (maqayis)؛ حد كل شيء شباته (sihah;tahdhib)؛ حد السنان وحد السيف ما دق من شفرته (tahdhib)؛ سيوف حداد وألسنة حداد (sihah;mufradat)؛ بصرك اليوم حديد وحديد النظر وحديد الفهم (tahdhib;mufradat)؛ حددت السكين رققت حده (mufradat)",
       "image_transliteration": "keskin uç ve içe işleyen etki",
-      "summary": "Kılıç ve bıçak gibi kesici araçların incelmiş, kesen kenarını ve sivri ucunu bildirir. Bu fiziksel keskinlik, sözün güçlü etkisine ve görme ya da kavrayışın seçiciliğine aktarılır.",
+      "summary": "Kılıç, bıçak veya mızrak gibi bir aracın incelmiş, kesen ağzı ya da ucudur; bileme bu kısmı inceltip keskinleştirir. Dilin etkisi ile görüş ve kavrayışın güçlü oluşu da keskin ağzın nüfuzundan benzetmeyle anlatılır.",
       "concept_map": {
-        "definition": "Kılıç ve bıçak gibi kesici araçların incelmiş, kesen kenarını ve sivri ucunu bildirir. Bu fiziksel keskinlik, sözün güçlü etkisine ve görme ya da kavrayışın seçiciliğine aktarılır.",
+        "definition": "Kılıç, bıçak veya mızrak gibi bir aracın incelmiş, kesen ağzı ya da ucudur; bileme bu kısmı inceltip keskinleştirir. Dilin etkisi ile görüş ve kavrayışın güçlü oluşu da keskin ağzın nüfuzundan benzetmeyle anlatılır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kılıç, bıçak ve benzeri bir aracın inceltilmiş, kesici kenarı veya sivri ucudur.",
+            "statement": "Bir kesici ya da delici aracın incelmiş, kesen ağzını veya ucunu belirtir.",
             "claim_ids": [
-              "lu_022",
-              "lu_023"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "extension",
-            "statement": "Sözün demir gibi güçlü, yaralayıcı ve karşısındakine işleyen etkisini anlatır.",
+            "role": "associated_use",
+            "statement": "Bileme, kesen ağzı inceltip daha keskin duruma getirir.",
             "claim_ids": [
-              "lu_024"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "extension",
-            "statement": "Görüşün veya anlayışın ayrıntıları seçebilen güçlü ve keskin oluşunu bildirir.",
+            "statement": "Keskinliğin etkisi dile, görüşe ve kavrayışa güçlü nüfuz niteliği olarak aktarılır.",
             "claim_ids": [
-              "lu_025"
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesinin fiziksel çekirdeği kılıç, bıçak ve mızrak gibi araçların incelmiş kesici ağzıdır; keskin dil, görüş ve kavrayış bu çekirdeğin etki ve nüfuz benzetmesine dayanan uzantılarıdır. Geçici çerçeve kullanılabilir, ancak nüfuz özelliği fiziksel ucun zorunlu ayrı bir parçası değil, özellikle uzantıları bağlayan sonuç olarak tutulmalıdır.",
+        "boundary_note": "Dal, metal maddesini veya öfkeyi değil; kesen ince ağzı ve bundan aktarılan etkili, güçlü algılama niteliğini anlatır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "non_bare",
+        "note": "Tanım yalnızca belirtilen araç ağzı ve niteleme yapılarıyla sınırlıdır; bunlardan bağımsız bir yalın kök anlamı varsaymaz ve bileme eylemini kesici ağız oluşturma süreci olarak tutar."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "non_bare",
+        "has_non_bare": true,
+        "has_collocation": false,
+        "unit_kind_counts": {
+          "lexical_unit": 4
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -1759,7 +1366,7 @@
           "expression_ar": "حد السيف",
           "unit_kind": "lexical_unit",
           "sense_ar": "حرف السيف وشباته القاطعة",
-          "target_gloss": "kılıcın kesici ağzı",
+          "target_gloss": "kılıcın keskin ağzı",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
@@ -1773,7 +1380,7 @@
           "expression_ar": "حد السكين",
           "unit_kind": "lexical_unit",
           "sense_ar": "حرف السكين وشفرته القاطعة",
-          "target_gloss": "bıçağın kesici ağzı",
+          "target_gloss": "bıçağın keskin ağzı",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
@@ -1799,7 +1406,7 @@
           "expression_ar": "بصر حديد",
           "unit_kind": "lexical_unit",
           "sense_ar": "بصر نافذ حاد الرؤية",
-          "target_gloss": "keskin görüş ve güçlü kavrayış",
+          "target_gloss": "keskin görüş ve kavrayış",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D225%3Bsegment_index%3D4:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=b974e506d86126bd",
@@ -1811,7 +1418,7 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Kaynaklar keskinliğin somut temelini kılıç ve bıçağın ince, kesen kenarında kurar. Aynı etki benzetme yoluyla güçlü dile, seçici görüşe ve çabuk kavrayışa taşınır.",
+        "discussion": "Kaynaklar kesici araçların ince ve keskin ağzını çekirdek olarak verir; bilemeyi bu ağzı oluşturma süreci, etkili dil ile güçlü görüş ve kavrayışı da benzetmeli uzantılar olarak sunar.",
         "evidence_refs": [
           "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
           "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A299:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=57607146360c2f88",
@@ -1857,14 +1464,14 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Kılıç ve bıçak gibi kesici araçların incelmiş, kesen kenarını ve sivri ucunu bildirir. Bu fiziksel keskinlik, sözün güçlü etkisine ve görme ya da kavrayışın seçiciliğine aktarılır.",
+        "semantic_definition": "Kılıç, bıçak veya mızrak gibi bir aracın incelmiş, kesen ağzı ya da ucudur; bileme bu kısmı inceltip keskinleştirir. Dilin etkisi ile görüş ve kavrayışın güçlü oluşu da keskin ağzın nüfuzundan benzetmeyle anlatılır.",
         "concept": {
           "rank": 1,
-          "text": "keskin kenar ve içe işleyen etki",
+          "text": "keskin ağız ve nüfuz eden etki",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "Kesici aracın ağzını doğrudan, dilin etkisini ve görüş ile anlayışın keskinliğini aktarılmış anlamla kapsar.",
+          "applicability": "Fiziksel kesici ağzı ve onun dile, görüşe ve kavrayışa aktarılan etkisini birlikte anlatan dal geneli için uygundur.",
           "facet_ids": [
             "F001",
             "F002",
@@ -1872,7 +1479,7 @@
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Somut kesici kenarı ve ondan aktarılan güçlü, seçici etkiyi birlikte korur.",
+            "preserves": "Kesici ağzı, keskinliği ve benzetmeli güçlü etkiyi birlikte korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -1883,52 +1490,34 @@
             "rank": 2,
             "text": "kesici ağız",
             "loanword_status": "none",
-            "usage_role": "general",
+            "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Kılıç, bıçak veya benzeri bir aracın kesen ince kenarından söz edilen somut bağlama uygundur.",
+            "applicability": "Kılıç veya bıçağın fiziksel olarak kesen ince kısmı söz konusu olduğunda kullanılır.",
             "facet_ids": [
               "F001"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Aracın kesen ve inceltilmiş kenarını tam olarak korur.",
-              "loses": "Dilin etkisi ile görüş ve anlayışın keskinliği yönündeki aktarmaları dışarıda bırakır.",
+              "preserves": "Aracın incelmiş ve kesen kısmını eksiksiz korur.",
+              "loses": "Bileme sürecini ve dil, görüş, kavrayış uzantılarını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
           },
           {
             "rank": 3,
-            "text": "keskin dilli",
+            "text": "keskin görüş",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Sözleri güçlü, sert ve karşısındakini etkileyen kişi veya topluluk için kullanılır.",
-            "facet_ids": [
-              "F002"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Sözün kesici bir araç gibi güçlü ve yaralayıcı etkisini korur.",
-              "loses": "Gerçek kesici kenarı ve görme ya da kavrayış keskinliğini içermez.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 4,
-            "text": "keskin görüş ve kavrayış",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Ayrıntıyı güçlü biçimde gören veya anlamı çabuk ve seçici biçimde kavrayan kişi için uygundur.",
+            "applicability": "Görme, değerlendirme veya kavrayışın güçlü ve nüfuz edici oluşu anlatıldığında kullanılır.",
             "facet_ids": [
               "F003"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Görme ve anlama gücünün seçici, etkili oluşunu korur.",
-              "loses": "Kesici aracın gerçek kenarını ve etkili dil kullanımını dışarıda bırakır.",
+              "preserves": "Fiziksel keskinlikten aktarılan güçlü algılama niteliğini korur.",
+              "loses": "Fiziksel kesici ağzı, bilemeyi ve dilin etkisini dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
@@ -1937,11 +1526,11 @@
         "selected": [
           {
             "rank": 1,
-            "text": "keskin kenar ve içe işleyen etki",
+            "text": "keskin ağız ve nüfuz eden etki",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "Kesici aracın ağzını doğrudan, dilin etkisini ve görüş ile anlayışın keskinliğini aktarılmış anlamla kapsar.",
+            "applicability": "Fiziksel kesici ağzı ve onun dile, görüşe ve kavrayışa aktarılan etkisini birlikte anlatan dal geneli için uygundur.",
             "facet_ids": [
               "F001",
               "F002",
@@ -1949,7 +1538,7 @@
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Somut kesici kenarı ve ondan aktarılan güçlü, seçici etkiyi birlikte korur.",
+              "preserves": "Kesici ağzı, keskinliği ve benzetmeli güçlü etkiyi birlikte korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -1959,71 +1548,40 @@
             "rank": 2,
             "text": "kesici ağız",
             "loanword_status": "none",
-            "usage_role": "general",
+            "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Kılıç, bıçak veya benzeri bir aracın kesen ince kenarından söz edilen somut bağlama uygundur.",
+            "applicability": "Kılıç veya bıçağın fiziksel olarak kesen ince kısmı söz konusu olduğunda kullanılır.",
             "facet_ids": [
               "F001"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Aracın kesen ve inceltilmiş kenarını tam olarak korur.",
-              "loses": "Dilin etkisi ile görüş ve anlayışın keskinliği yönündeki aktarmaları dışarıda bırakır.",
+              "preserves": "Aracın incelmiş ve kesen kısmını eksiksiz korur.",
+              "loses": "Bileme sürecini ve dil, görüş, kavrayış uzantılarını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
           },
           {
             "rank": 3,
-            "text": "keskin dilli",
+            "text": "keskin görüş",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Sözleri güçlü, sert ve karşısındakini etkileyen kişi veya topluluk için kullanılır.",
-            "facet_ids": [
-              "F002"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Sözün kesici bir araç gibi güçlü ve yaralayıcı etkisini korur.",
-              "loses": "Gerçek kesici kenarı ve görme ya da kavrayış keskinliğini içermez.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 4,
-            "text": "keskin görüş ve kavrayış",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Ayrıntıyı güçlü biçimde gören veya anlamı çabuk ve seçici biçimde kavrayan kişi için uygundur.",
+            "applicability": "Görme, değerlendirme veya kavrayışın güçlü ve nüfuz edici oluşu anlatıldığında kullanılır.",
             "facet_ids": [
               "F003"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Görme ve anlama gücünün seçici, etkili oluşunu korur.",
-              "loses": "Kesici aracın gerçek kenarını ve etkili dil kullanımını dışarıda bırakır.",
+              "preserves": "Fiziksel keskinlikten aktarılan güçlü algılama niteliğini korur.",
+              "loses": "Fiziksel kesici ağzı, bilemeyi ve dilin etkisini dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
           }
         ],
-        "excluded": [
-          {
-            "text": "sertlik",
-            "category": "confusable",
-            "exclusion_reason": "Kesici kenarı, sivri ucu, etkili dili ve seçici görüşü kaybeder. Kesme zorunluluğu olmayan genel bir madde veya karakter niteliği getirir. Demir sertliği ve yoğun güç bildiren kardeş dallarla karışır.",
-            "error_profile": {
-              "fit": "displacement",
-              "preserves": "Güçlü ve karşı koyan etki düşüncesini sınırlı biçimde korur.",
-              "loses": "Kesici kenarı, sivri ucu, etkili dili ve seçici görüşü kaybeder.",
-              "adds": "Kesme zorunluluğu olmayan genel bir madde veya karakter niteliği getirir.",
-              "collision": "Demir sertliği ve yoğun güç bildiren kardeş dallarla karışır."
-            }
-          }
-        ]
+        "excluded": []
       },
       "arabic_neighbor_distinctions": [
         {
@@ -2031,19 +1589,19 @@
           "neighbor_branch_id": "B003",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Keskinliği dil, görüş ve kavrayışın etkisine de aktarır.",
-          "neighbor_only": "Deve dişleri ve kulak uçları gibi başka organların sivri uçlarını özellikle kapsar.",
-          "expression_transliteration": "keskin ve içe işleyen uç",
+          "focus_only": "Keskin dil, güçlü görüş ve kavrayış gibi benzetmeli uzantıları ve bileme sürecini içerir.",
+          "neighbor_only": "Deve dişlerinin uçları ve kulakların sivriltilmiş kenarları gibi beden örneklerini içerir.",
+          "expression_transliteration": "trf had nafdh",
           "gloss": "keskin ve sivri uç",
-          "shared_zone": "Her iki dal kılıcın ve genel olarak nesnelerin keskin, işleyen uç veya kenarını anlatır.",
-          "distinction": "Somut keskin uçta örtüşme güçlüdür; bu dal ayrıca etkili dil ve seçici algı alanına uzanırken komşu dal çeşitli somut uçları genişletir.",
+          "shared_zone": "Kılıcın veya başka bir şeyin keskin kenarı ve ucu anlamında güçlü biçimde örtüşürler.",
+          "distinction": "Komşu dal keskin uç ve kenarın farklı nesne ile beden örneklerine yayılır; odak dal araç ağzından dil, görüş ve kavrayışın etkisine uzanır.",
           "expression_ar": "طرف حاد نافذ",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
             "maqayis:root=%D8%B0%20%D8%A8:headword=%D8%B0%D8%A8:sha=c966a0817a922a67",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A509:headword=%D8%B0%D8%A8:root=%D8%B0%20%D8%A8:sha=5098b043583eff34",
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A269:headword=%D8%B0%D8%A8%D8%A8:root=%D8%B0%20%D8%A8%20%D8%A8:sha=5717be6d02f9c0c6",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D758%3Bsegment_index%3D2:headword=%D8%B0%D8%A8:root=%D8%B0%20%D8%A8:sha=cc68a1b5d83d3dec",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A509:headword=%D8%B0%D8%A8:root=%D8%B0%20%D8%A8:sha=5098b043583eff34"
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D758%3Bsegment_index%3D2:headword=%D8%B0%D8%A8:root=%D8%B0%20%D8%A8:sha=cc68a1b5d83d3dec"
           ]
         },
         {
@@ -2051,56 +1609,27 @@
           "neighbor_branch_id": "B012",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Etkili dil ile keskin görüş ve anlayış aktarmalarını içerir.",
-          "neighbor_only": null,
+          "focus_only": "Bileme ile dil, görüş ve kavrayışın benzetmeli keskinliğini kapsar.",
+          "neighbor_only": "Verilen kartta özellikle kılıç ve bıçak ağzıyla sınırlı bir adlandırma öne çıkar.",
           "expression_transliteration": "bıçak ve kılıcın kesici ağzı",
-          "gloss": "kılıç ve bıçağın kesici ağzı",
-          "shared_zone": "Her iki dal kılıç, bıçak ve başka kesici araçların kesen kenarında örtüşür.",
-          "distinction": "Komşu dal somut kesici ağızla sınırlıdır; bu dal aynı somut çekirdeği dilin etkisi ile görme ve kavrama gücüne genişletir.",
+          "gloss": "kılıç ve bıçak ağzı",
+          "shared_zone": "Kılıç ve bıçağın kesen kenarını adlandırmada örtüşürler.",
+          "distinction": "Komşu dal fiziksel araç ağzında yoğunlaşır; odak dal aynı çekirdeği etkili dil ve güçlü algı uzantılarına taşır.",
           "expression_ar": "حد الشفرة والسيف",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2519",
             "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A2859:headword=%D8%BA%D8%B1:root=%D8%BA%20%D8%B1:sha=c7be24078d02c269",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1073:headword=%D8%BA%D8%B1%D8%B1:root=%D8%BA%20%D8%B1%20%D8%B1:sha=e629db5615270cf4",
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1836:headword=%D8%BA%D8%B1%D8%B1:root=%D8%BA%20%D8%B1%20%D8%B1:sha=b9a7814773c6acf3",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D398%3Bsegment_index%3D5:headword=%D8%BA%D8%B1:root=%D8%BA%20%D8%B1:sha=da5c3328f410ee17",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1073:headword=%D8%BA%D8%B1%D8%B1:root=%D8%BA%20%D8%B1%20%D8%B1:sha=e629db5615270cf4"
-          ]
-        },
-        {
-          "neighbor_root_id": "root_000349",
-          "neighbor_branch_id": "B004",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Kesici araç kenarı, güçlü görüş ve kavrayış anlamlarını da kapsar.",
-          "neighbor_only": "Dilin keskinliğini özellikle güzel ve akıcı konuşma yeteneğiyle birleştirir; ayrıca sivri uç niteliğini taşır.",
-          "expression_transliteration": "keskinlik ve güzel konuşma",
-          "gloss": "keskin ve akıcı dil",
-          "shared_zone": "İki dal dilin güçlü, keskin ve karşısındakine etkili oluşunda buluşur.",
-          "distinction": "Bu dal keskin dili kesici etkinin aktarımı olarak kurar; komşu dal bu niteliğe güzel ve akıcı konuşmayı da ekler.",
-          "expression_ar": "الحدة والفصاحة",
-          "basis": "furuq_branch_comparison",
-          "evidence_refs": [
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:794",
-            "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1467%3Asubentry%3A0%3A%D8%AD%D9%84%D9%81:headword=%D8%AD%D9%84%D9%81:root=%D8%AD%20%D9%84%20%D9%81:sha=93f7d75bfabddf31",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3277:headword=%D8%AD%D9%84%D9%81:root=%D8%AD%20%D9%84%20%D9%81:sha=daca5f86bb964583",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D239%3Bsegment_index%3D10:headword=%D8%AD%D9%84%D9%81:root=%D8%AD%20%D9%84%20%D9%81:sha=0faba011b56296f0"
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D398%3Bsegment_index%3D5:headword=%D8%BA%D8%B1:root=%D8%BA%20%D8%B1:sha=da5c3328f410ee17"
           ]
         }
       ],
       "neighbor_coverage": {
         "candidate_count": 15,
         "assessment": "complete",
-        "note": "Bütün adaylar incelendi; kesici uç ve keskin dil sınırını en iyi gösteren üçü yayımlandı, diğerleri yalnızca araç, incelik veya uzak kardeş anlam taşır."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "non_bare",
-        "has_non_bare": true,
-        "has_collocation": false,
-        "unit_kind_counts": {
-          "lexical_unit": 4
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "En yakın iki aday fiziksel keskin uç ve kılıç-bıçak ağzı dallarıdır; uzun araç, küçüklük, yay oyuğu ve kökün öteki dalları çekirdeği yeterince paylaşmaz."
       }
     },
     {
@@ -2111,36 +1640,55 @@
       "what_is_not_ar": "لا يدخل فيه حد السيف المادي ولا حد الله الشرعي.",
       "source_phrase_ar": "حد الشراب صلابته (maqayis;sihah;tahdhib)؛ حد الرجل بأسه (maqayis;sihah;tahdhib)؛ الحدة التي تعتري الإنسان من النزق (maqayis;sihah)؛ الحدة الغضبة (tahdhib)؛ حد يحد إذا أخذته عجلة وطيش (tahdhib)",
       "image_transliteration": "yiğitlikte, içecekte ve öfkede sertlik",
-      "summary": "İçecekte sertlik, insanda güçlü ve atılgan oluş, ruh durumunda ise öfke, acelecilik ve taşkınlık olarak beliren yoğunluğu bildirir. Ortak özellik, etkinin yumuşak değil güçlü ve denetlenmesi zor oluşudur.",
+      "summary": "İçkinin sert ve güçlü etkisi ya da bir kişinin güçlü, atılgan oluşudur. İnsanı kaplayan öfke, acelecilik ve düşünmeden taşma durumu da aynı yoğunlukla anlatılır.",
       "concept_map": {
-        "definition": "İçecekte sertlik, insanda güçlü ve atılgan oluş, ruh durumunda ise öfke, acelecilik ve taşkınlık olarak beliren yoğunluğu bildirir. Ortak özellik, etkinin yumuşak değil güçlü ve denetlenmesi zor oluşudur.",
+        "definition": "İçkinin sert ve güçlü etkisi ya da bir kişinin güçlü, atılgan oluşudur. İnsanı kaplayan öfke, acelecilik ve düşünmeden taşma durumu da aynı yoğunlukla anlatılır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "specialization",
-            "statement": "Bir içeceğin güçlü ve sert oluşudur.",
+            "statement": "İçkinin damakta veya bedende duyulan sert ve güçlü etkisini anlatır.",
             "claim_ids": [
-              "lu_026"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Bir erkeğin güç, yiğitlik ve yardım sırasında kararlı biçimde ileri atılma niteliğidir.",
+            "role": "core",
+            "statement": "Bir kişinin güçlü, etkili ve atılgan oluşunu belirtir.",
             "claim_ids": [
-              "lu_027"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "core",
-            "statement": "İnsanı birden saran öfke, acelecilik, düşünmeden davranma ve denetimsiz taşkınlıktır.",
+            "role": "extension",
+            "statement": "Öfke, acelecilik ve düşünmeden taşma biçimindeki geçici ruhsal yoğunluğu anlatır.",
             "claim_ids": [
-              "lu_028",
-              "lu_029"
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi içkinin sertliğini, insanın gücünü ve kişiyi kaplayan öfkeli acelecilik ile taşkınlığı aynı yoğunluk çevresinde verir. Geçici çerçeve bu üyeleri doğru toplar, fakat insanın gücü ile geçici öfke durumunu tek bir ruhsal özellik gibi birleştirmemek gerekir.",
+        "boundary_note": "Bu dal fiziksel kesici ağzı değil; içkide sertlik, insanda güçlü atılganlık ve geçici öfkeli taşkınlık görünümlerini içerir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım içkide sertlik, kişide güç ve öfkeli taşkınlık alanlarını ayrı tutar; öfkeden kabarma yapısını genel insan niteliğine dönüştürmez."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "mixed_non_bare",
+        "has_non_bare": true,
+        "has_collocation": true,
+        "unit_kind_counts": {
+          "collocation": 1,
+          "form": 1,
+          "lexical_unit": 2
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -2148,7 +1696,7 @@
           "expression_ar": "حد الشراب",
           "unit_kind": "lexical_unit",
           "sense_ar": "صلابة الشراب وشدته",
-          "target_gloss": "içeceğin sertliği",
+          "target_gloss": "içkinin sertliği",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
@@ -2162,7 +1710,7 @@
           "expression_ar": "حد الرجل",
           "unit_kind": "lexical_unit",
           "sense_ar": "بأس الرجل ونفاذه في نجدته",
-          "target_gloss": "erkeğin gücü ve yardımda atılganlığı",
+          "target_gloss": "adamın gücü ve atılganlığı",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
@@ -2176,7 +1724,7 @@
           "expression_ar": "الحدة",
           "unit_kind": "form",
           "sense_ar": "النزق والغضب والعجلة والطيش",
-          "target_gloss": "öfke, acelecilik ve düşüncesiz taşkınlık",
+          "target_gloss": "öfkeli acelecilik ve taşkınlık",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
@@ -2190,7 +1738,7 @@
           "expression_ar": "احتد من الغضب",
           "unit_kind": "collocation",
           "sense_ar": "غضب واشتدت حدته",
-          "target_gloss": "öfkelenip sertleşmek",
+          "target_gloss": "öfkesi kabarmak",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1244:headword=%D8%AD%D8%B0%D8%AF:root=%D8%AD%20%D8%B0%20%D8%AF:sha=dbb73204ac319000",
@@ -2202,7 +1750,7 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Ortak anlam, bir nitelik veya tepkinin güçlü ve sert biçimde ortaya çıkmasıdır. İçecekte bu sert tat, kişide güç ve atılganlık, ruh durumunda ise öfke, acelecilik ve düşüncesiz taşkınlık olarak gerçekleşir.",
+        "discussion": "Kaynaklar içkinin sertliğini, kişinin gücünü ve insanı kaplayan öfkeli acelecilik ile taşkınlığı yoğunluk bakımından ilişkili fakat ayrı gerçekleşmeler olarak verir.",
         "evidence_refs": [
           "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
           "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1244:headword=%D8%AD%D8%B0%D8%AF:root=%D8%AD%20%D8%B0%20%D8%AF:sha=dbb73204ac319000",
@@ -2240,14 +1788,14 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "İçecekte sertlik, insanda güçlü ve atılgan oluş, ruh durumunda ise öfke, acelecilik ve taşkınlık olarak beliren yoğunluğu bildirir. Ortak özellik, etkinin yumuşak değil güçlü ve denetlenmesi zor oluşudur.",
+        "semantic_definition": "İçkinin sert ve güçlü etkisi ya da bir kişinin güçlü, atılgan oluşudur. İnsanı kaplayan öfke, acelecilik ve düşünmeden taşma durumu da aynı yoğunlukla anlatılır.",
         "concept": {
           "rank": 1,
-          "text": "sertlik, atılganlık ve öfke taşkınlığı",
+          "text": "sertlik, atılgan güç ve öfkeli taşkınlık",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "İçeceğin sertliğini, kişinin güçlü atılışını ve öfkeyle gelen aceleci denetimsizliği ayrı gerçekleşmeler olarak kapsar.",
+          "applicability": "İçkinin etkisini, insanın gücünü ve geçici öfkeli taşkınlığı ayrı kapsamlarla birlikte gösteren dal geneli için uygundur.",
           "facet_ids": [
             "F001",
             "F002",
@@ -2255,7 +1803,7 @@
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Sert duyumu, insandaki gücü ve denetimsiz öfke yoğunluğunu birlikte korur.",
+            "preserves": "Üç ayrı gerçekleşmedeki sertlik, güç ve yoğun taşma öğelerini korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -2264,54 +1812,18 @@
         "contextual": [
           {
             "rank": 2,
-            "text": "sert içim",
+            "text": "öfkeli taşkınlık",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Güçlü ve sert olarak nitelenen bir içecek için uygundur.",
-            "facet_ids": [
-              "F001"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "İçeceğin güçlü ve sert oluşunu korur.",
-              "loses": "İnsandaki güç, atılganlık, öfke ve acelecilik kullanımlarını içermez.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 3,
-            "text": "gözü pek atılganlık",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Bir kişinin yardım veya çatışma anında güçlü ve kararlı biçimde ileri atılmasını anlatır.",
-            "facet_ids": [
-              "F002"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Kişinin gücünü, yiğitliğini ve kararlı ileri atılışını korur.",
-              "loses": "İçeceğin sertliği ile denetimsiz öfke ve acelecilik durumlarını dışarıda bırakır.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 4,
-            "text": "çabuk öfkelenme",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "İnsanı hızla saran ve onu aceleci, düşüncesiz davranışa sürükleyen öfke bağlamında kullanılır.",
+            "applicability": "Bir kişinin öfkeyle aceleci, fevri ve denetimsiz davranması anlatıldığında kullanılır.",
             "facet_ids": [
               "F003"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Öfkenin birden yükselmesini ve davranış denetimini zayıflatmasını korur.",
-              "loses": "İçeceğin sertliğini ve kişinin yiğitçe atılganlığını içermez.",
+              "preserves": "Öfke, acelecilik ve düşünmeden taşma durumunu korur.",
+              "loses": "İçkinin sertliğini ve kişinin kalıcı güç-atılganlık niteliğini dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
@@ -2320,11 +1832,11 @@
         "selected": [
           {
             "rank": 1,
-            "text": "sertlik, atılganlık ve öfke taşkınlığı",
+            "text": "sertlik, atılgan güç ve öfkeli taşkınlık",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "İçeceğin sertliğini, kişinin güçlü atılışını ve öfkeyle gelen aceleci denetimsizliği ayrı gerçekleşmeler olarak kapsar.",
+            "applicability": "İçkinin etkisini, insanın gücünü ve geçici öfkeli taşkınlığı ayrı kapsamlarla birlikte gösteren dal geneli için uygundur.",
             "facet_ids": [
               "F001",
               "F002",
@@ -2332,7 +1844,7 @@
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Sert duyumu, insandaki gücü ve denetimsiz öfke yoğunluğunu birlikte korur.",
+              "preserves": "Üç ayrı gerçekleşmedeki sertlik, güç ve yoğun taşma öğelerini korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -2340,73 +1852,24 @@
           },
           {
             "rank": 2,
-            "text": "sert içim",
+            "text": "öfkeli taşkınlık",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Güçlü ve sert olarak nitelenen bir içecek için uygundur.",
-            "facet_ids": [
-              "F001"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "İçeceğin güçlü ve sert oluşunu korur.",
-              "loses": "İnsandaki güç, atılganlık, öfke ve acelecilik kullanımlarını içermez.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 3,
-            "text": "gözü pek atılganlık",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Bir kişinin yardım veya çatışma anında güçlü ve kararlı biçimde ileri atılmasını anlatır.",
-            "facet_ids": [
-              "F002"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Kişinin gücünü, yiğitliğini ve kararlı ileri atılışını korur.",
-              "loses": "İçeceğin sertliği ile denetimsiz öfke ve acelecilik durumlarını dışarıda bırakır.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 4,
-            "text": "çabuk öfkelenme",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "İnsanı hızla saran ve onu aceleci, düşüncesiz davranışa sürükleyen öfke bağlamında kullanılır.",
+            "applicability": "Bir kişinin öfkeyle aceleci, fevri ve denetimsiz davranması anlatıldığında kullanılır.",
             "facet_ids": [
               "F003"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Öfkenin birden yükselmesini ve davranış denetimini zayıflatmasını korur.",
-              "loses": "İçeceğin sertliğini ve kişinin yiğitçe atılganlığını içermez.",
+              "preserves": "Öfke, acelecilik ve düşünmeden taşma durumunu korur.",
+              "loses": "İçkinin sertliğini ve kişinin kalıcı güç-atılganlık niteliğini dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
           }
         ],
-        "excluded": [
-          {
-            "text": "keskinlik",
-            "category": "confusable",
-            "exclusion_reason": "İçeceğin sertliğini, kişinin yiğit atılışını ve denetimsiz öfkeyi kaybeder. Kesici bir kenar veya seçici algı çağrışımını anlamın merkezine getirir. Keskin kenar, etkili dil ve güçlü görüş dalıyla karışır.",
-            "error_profile": {
-              "fit": "displacement",
-              "preserves": "Güçlü ve yumuşak olmayan etki düşüncesini kısmen korur.",
-              "loses": "İçeceğin sertliğini, kişinin yiğit atılışını ve denetimsiz öfkeyi kaybeder.",
-              "adds": "Kesici bir kenar veya seçici algı çağrışımını anlamın merkezine getirir.",
-              "collision": "Keskin kenar, etkili dil ve güçlü görüş dalıyla karışır."
-            }
-          }
-        ]
+        "excluded": []
       },
       "arabic_neighbor_distinctions": [
         {
@@ -2414,19 +1877,19 @@
           "neighbor_branch_id": "B005",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "İçeceğin sertliği ile insanın güç ve yiğitlikteki atılganlığını da kapsar.",
-          "neighbor_only": "Aynı denetimsiz öfke ve hafifliği hayvana da uygulayabilir.",
-          "expression_transliteration": "taşkın öfke ve düşüncesizlik",
-          "gloss": "öfke, taşkınlık ve düşüncesizlik",
-          "shared_zone": "Her iki dal insanda öfke, acelecilik, düşünmeden davranma ve taşkınlık durumunu anlatır.",
-          "distinction": "Öfke alanında çekirdekler yakındır; bu dal ayrıca içeceğin sertliği ile yiğitçe atılganlığı kapsarken komşu dal taşkınlığı insan ve hayvana yayar.",
+          "focus_only": "İçkinin sertliği ile kişinin güçlü ve atılgan oluşunu da kapsar.",
+          "neighbor_only": "İnsan yanında hayvanın da hafiflik, coşma ve denetimsiz hareket durumunu kapsar.",
+          "expression_transliteration": "hdh wtysh mntlq",
+          "gloss": "öfkeli coşma ve fevrilik",
+          "shared_zone": "Öfke, taşkınlık, fevrilik ve ruhsal keskinlik alanında örtüşürler.",
+          "distinction": "Komşu dal ruhsal ve davranışsal coşmaya yoğunlaşır; odak dal bu duruma ek olarak içkinin sertliğini ve kişinin gücünü içerir.",
           "expression_ar": "حدّة وطيش منطلق",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2231",
             "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A5290:headword=%D8%B7%D9%8A%D8%B1:root=%D8%B7%20%D9%8A%20%D8%B1:sha=015bcb43fd43a97f",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1795:headword=%D8%B7%D9%8A%D8%B1:root=%D8%B7%20%D9%8A%20%D8%B1:sha=671fbd703bd6bfd9",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A944:headword=%D8%B7%D9%8A%D8%B1:root=%D8%B7%20%D9%8A%20%D8%B1:sha=8aaeb884b81dc03a"
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A944:headword=%D8%B7%D9%8A%D8%B1:root=%D8%B7%20%D9%8A%20%D8%B1:sha=8aaeb884b81dc03a",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1795:headword=%D8%B7%D9%8A%D8%B1:root=%D8%B7%20%D9%8A%20%D8%B1:sha=671fbd703bd6bfd9"
           ]
         },
         {
@@ -2434,60 +1897,28 @@
           "neighbor_branch_id": "B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "İçecek sertliği, yiğitlik ve birden yükselen öfke özellikle bulunur.",
-          "neighbor_only": "Kötü huy, zorluk, taşkın ordu ve çokluk gibi daha geniş sertlik belirtilerini içerir.",
+          "focus_only": "İçkinin sertliği ve ani öfkeli acelecilik görünümlerini içerir.",
+          "neighbor_only": "Huysuzluk, güçlük, hoyratlık ve kalabalık ordunun coşkusu gibi daha geniş görünümleri içerir.",
           "expression_transliteration": "sertlik, öfke ve taşkınlık",
-          "gloss": "sert ve taşkın yaradılış",
-          "shared_zone": "İki dal kişide sertlik, öfkeye yatkınlık ve denetlenmesi güç taşkınlık alanında buluşur.",
-          "distinction": "Bu dal belirli sertlik ve öfke durumlarını ayırır; komşu dal bunları sürekli kötü huy, zorluk ve toplu taşkınlıkla genişletir.",
+          "gloss": "sert huyluluk ve taşkın güç",
+          "shared_zone": "İnsandaki sertlik, güç ve taşkın davranış bakımından örtüşürler.",
+          "distinction": "Odak dal belirli yapılarda içki, güç ve öfke yoğunluğunu verir; komşu dal daha genel bir sert huyluluk ve kaba taşkınlık alanına yayılır.",
           "expression_ar": "شدة وحدّة وعرامة",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
-            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A809:headword=%D8%B9%D8%B1%D9%85:root=%D8%B9%20%D8%B1%20%D9%85:sha=4a7167b75a480505",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4601:headword=%D8%B9%D8%B1%D9%85:root=%D8%B9%20%D8%B1%20%D9%85:sha=de98f635512fa98e",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D174%3Bsegment_index%3D5:headword=%D8%B9%D8%B1%D9%85:root=%D8%B9%20%D8%B1%20%D9%85:sha=3ed895a77a2a8c02",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A993:headword=%D8%B9%D8%B1%D9%85:root=%D8%B9%20%D8%B1%20%D9%85:sha=dc31b5ee65b306f7",
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2454",
-            "maqayis:root=%D8%B9%20%D8%B1%20%D9%85%20%D8%B1%20%D9%85:headword=%D8%B9%D8%B1%D9%85%D8%B1%D9%85:sha=b5df954c0bee8526"
-          ]
-        },
-        {
-          "neighbor_root_id": "root_000229",
-          "neighbor_branch_id": "B007",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Öfke, acelecilik ve içeceğin sertliği kapsamları vardır.",
-          "neighbor_only": "Çocuğun, yavrunun, bitkinin veya kuşun gelişip bedence güçlenmesini anlatır.",
-          "expression_transliteration": "güçlenme ve sertleşme",
-          "gloss": "gelişip güçlenme",
-          "shared_zone": "Her iki dal güç, sertlik ve dayanıklılığın belirginleştiği durumları içerir.",
-          "distinction": "Komşu dal büyüme sonucunda kazanılan bedensel gücü anlatır; bu dal ise sert duyum, yiğit atılış ve öfke yoğunluğudur.",
-          "expression_ar": "الاشتداد والصلابة",
-          "basis": "furuq_branch_comparison",
-          "evidence_refs": [
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:546",
-            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4078:headword=%D8%AC%D8%AF%D9%84:root=%D8%AC%20%D8%AF%20%D9%84:sha=ec69e9a413459377",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3938:headword=%D8%AC%D8%AF%D9%84:root=%D8%AC%20%D8%AF%20%D9%84:sha=43865ff53eb4afbb",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D547%3Bsegment_index%3D2:headword=%D8%AC%D8%AF%D9%84:root=%D8%AC%20%D8%AF%20%D9%84:sha=ad212562e6639202",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A230:headword=%D8%AC%D8%AF%D9%84:root=%D8%AC%20%D8%AF%20%D9%84:sha=8735675f91f606f0"
+            "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A809:headword=%D8%B9%D8%B1%D9%85:root=%D8%B9%20%D8%B1%20%D9%85:sha=4a7167b75a480505",
+            "maqayis:root=%D8%B9%20%D8%B1%20%D9%85%20%D8%B1%20%D9%85:headword=%D8%B9%D8%B1%D9%85%D8%B1%D9%85:sha=b5df954c0bee8526",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A993:headword=%D8%B9%D8%B1%D9%85:root=%D8%B9%20%D8%B1%20%D9%85:sha=dc31b5ee65b306f7",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4601:headword=%D8%B9%D8%B1%D9%85:root=%D8%B9%20%D8%B1%20%D9%85:sha=de98f635512fa98e",
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D174%3Bsegment_index%3D5:headword=%D8%B9%D8%B1%D9%85:root=%D8%B9%20%D8%B1%20%D9%85:sha=3ed895a77a2a8c02"
           ]
         }
       ],
       "neighbor_coverage": {
         "candidate_count": 15,
         "assessment": "complete",
-        "note": "Tüm adaylar değerlendirildi; öfke, taşkınlık ve güç eksenini en iyi ayıran üçü yayımlandı, kalanlar tek bir durum ya da uzak kardeş dal düzeyindedir."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "mixed_non_bare",
-        "has_non_bare": true,
-        "has_collocation": true,
-        "unit_kind_counts": {
-          "collocation": 1,
-          "form": 1,
-          "lexical_unit": 2
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "En yakın ayrımlar öfkeli fevrilik ve sert huylu taşkınlık dallarıyla kurulur; yalnızca öfke, genel güç, sıcaklık ve kökün öteki dalları daha dar veya daha uzak kalır."
       }
     },
     {
@@ -2498,28 +1929,54 @@
       "what_is_not_ar": "لا يدخل فيه الاستحداد بمعنى الحلق أو شحذ الشفرة.",
       "source_phrase_ar": "حدت المرأة على بعلها وأحدت إذا منعت نفسها الزينة والخضاب (maqayis)؛ أحدت المرأة امتنعت من الزينة والخضاب بعد وفاة زوجها (sihah)؛ حدت أربعة أشهر وعشرا (tahdhib)؛ إحداد المرأة على زوجها تركها الزينة مأخوذ من المنع (tahdhib)؛ الحداد أيضا ثياب المأتم السود (sihah)",
       "image_transliteration": "kadının yas tutarken süsü bırakması",
-      "summary": "Kadının, kocasının ölümünden sonra yas gereği süslenmeyi ve boya kullanmayı belirli bir süre bırakmasıdır. Tek bir kaynakta siyah yas giysileri de bu uygulamayla bağlantılı olarak aynı adla anılır.",
+      "summary": "Kocası ölen kadının yas süresince süslenmekten ve boya kullanmaktan bilinçli olarak kaçınmasıdır. Aynı adlandırma çevresinde siyah yas giysileri için de ilişkili bir kullanım bulunur.",
       "concept_map": {
-        "definition": "Kadının, kocasının ölümünden sonra yas gereği süslenmeyi ve boya kullanmayı belirli bir süre bırakmasıdır. Tek bir kaynakta siyah yas giysileri de bu uygulamayla bağlantılı olarak aynı adla anılır.",
+        "definition": "Kocası ölen kadının yas süresince süslenmekten ve boya kullanmaktan bilinçli olarak kaçınmasıdır. Aynı adlandırma çevresinde siyah yas giysileri için de ilişkili bir kullanım bulunur.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kadının ölen kocasının ardından yas tutarken süs, boya ve benzeri bezeme uygulamalarından uzak durmasıdır.",
+            "statement": "Kocası ölen kadın yas amacıyla süslenmekten ve boya kullanmaktan kaçınır.",
             "claim_ids": [
-              "lu_030",
-              "lu_031"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "source_variant",
-            "statement": "Yas sırasında giyilen siyah giysiler için kullanılan, tek kaynağa özgü bağlı bir addır.",
+            "role": "specialization",
+            "statement": "Uygulama kaynakta dört ay on günlük belirli bir yas süresiyle örneklenir.",
             "claim_ids": [
-              "lu_032"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "associated_use",
+            "statement": "Aynı biçim siyah yas giysilerinin adı olarak da kullanılır.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesinin ana olayı, kocası öldükten sonra kadının belirli bir süre süsten ve boyadan kaçınarak yas tutmasıdır. Siyah yas giysileri tek bir kaynakta aynı biçimin ayrı bir ad kullanımı olarak verildiğinden, geçici çerçeve korunabilir ancak giysi ana olayın zorunlu parçası değil ilişkili bir kullanım olarak ayrılmalıdır.",
+        "boundary_note": "Dal, eş ölümüne bağlı süsten kaçınma uygulamasını anlatır; siyah yas giysisi yalnızca ilişkili ad kullanımıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım eş için yas tutma yapılarına bağlı uygulamayı merkeze alır; siyah giysi adını ayrı bir biçime bağlı ilişkili kullanım olarak tutar ve bunu genel yas anlamına genişletmez."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "mixed_non_bare",
+        "has_non_bare": true,
+        "has_collocation": true,
+        "unit_kind_counts": {
+          "collocation": 2,
+          "form": 1
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -2527,7 +1984,7 @@
           "expression_ar": "حدت المرأة على زوجها",
           "unit_kind": "collocation",
           "sense_ar": "تركت الزينة والخضاب حدادا على زوجها",
-          "target_gloss": "kadının kocasının ardından süslenmeyi bırakması",
+          "target_gloss": "kocası için süsten kaçınarak yas tutmak",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
@@ -2541,7 +1998,7 @@
           "expression_ar": "أحدت المرأة على زوجها",
           "unit_kind": "collocation",
           "sense_ar": "امتنعت من الزينة والخضاب حدادا على زوجها",
-          "target_gloss": "kadının ölen kocası için süs ve boyadan kaçınması",
+          "target_gloss": "kocası için süsten kaçınarak yas tutmak",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
@@ -2566,24 +2023,13 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Ortak anlatım, kocası ölen kadının yas süresince süslenmeyi ve boya kullanmayı bırakmasıdır. Bu, genel bir üzüntüden çok belirli katılımcısı, nedeni ve davranış kısıtlaması olan bir yas uygulamasıdır.",
+        "discussion": "Kaynaklar kocası ölen kadının süs ve boyadan kaçınmasını yas uygulamasının çekirdeği olarak verir; belirli süreyi örnekler ve siyah yas giysisini ilişkili bir ad kullanımı olarak ekler.",
         "evidence_refs": [
           "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
           "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1244:headword=%D8%AD%D8%B0%D8%AF:root=%D8%AD%20%D8%B0%20%D8%AF:sha=dbb73204ac319000",
           "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D225%3Bsegment_index%3D4:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=b974e506d86126bd"
         ],
-        "details": [
-          {
-            "kind": "sole_attestation",
-            "summary": "Tek bir kaynak, uygulamanın yanında siyah yas giysilerini de aynı adla anar.",
-            "source_refs": [
-              "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1244:headword=%D8%AD%D8%B0%D8%AF:root=%D8%AD%20%D8%B0%20%D8%AF:sha=dbb73204ac319000"
-            ],
-            "source_ids": [
-              "sihah"
-            ]
-          }
-        ],
+        "details": [],
         "examples": [],
         "disagreement": null
       },
@@ -2615,20 +2061,21 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Kadının, kocasının ölümünden sonra yas gereği süslenmeyi ve boya kullanmayı belirli bir süre bırakmasıdır. Tek bir kaynakta siyah yas giysileri de bu uygulamayla bağlantılı olarak aynı adla anılır.",
+        "semantic_definition": "Kocası ölen kadının yas süresince süslenmekten ve boya kullanmaktan bilinçli olarak kaçınmasıdır. Aynı adlandırma çevresinde siyah yas giysileri için de ilişkili bir kullanım bulunur.",
         "concept": {
           "rank": 1,
-          "text": "eşinin ardından süslenmeyi bırakma",
+          "text": "eş için süsten kaçınarak yas tutma",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "Kocası ölen kadının yas süresince süsten ve boya kullanımından uzak durduğu temel uygulamayı tam olarak karşılar.",
+          "applicability": "Kocanın ölümünden sonra süs ve boyayı bırakma uygulamasını anlatan dalın ana kullanımı için uygundur.",
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002"
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Eşin ölümünü, yas durumunu ve süslenmekten bilinçli olarak kaçınmayı korur.",
+            "preserves": "Eş ölümünü, yas amacını ve süs ile boyadan kaçınmayı korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -2639,34 +2086,17 @@
             "rank": 2,
             "text": "yas süresince süslenmeme",
             "loanword_status": "none",
-            "usage_role": "general",
+            "usage_role": "explanatory",
             "selection_role": "contextual_gloss",
-            "applicability": "Kocası ölen kadının belirli yas döneminde süs ve boya kullanmamasını anlatan bağlamlarda uygundur.",
+            "applicability": "Uygulamanın dış davranışı, özellikle süs ve boyanın bırakılması açıklanırken kullanılır.",
             "facet_ids": [
-              "F001"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Yas dönemindeki süslenmeme ve boya kullanmama davranışını korur.",
-              "loses": "Eşin ölümünü söz içinde açıkça belirtmez ve siyah yas giysisi kullanımını kapsamaz.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 3,
-            "text": "siyah yas giysileri",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Yalnızca tek kaynağın kaydettiği siyah matem kıyafetleri anlamında kullanılır.",
-            "facet_ids": [
+              "F001",
               "F002"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Yas sırasında giyilen siyah kıyafetleri doğru biçimde adlandırır.",
-              "loses": "Kadının eşinin ardından süs ve boya kullanımını bırakması biçimindeki temel uygulamayı içermez.",
+              "preserves": "Yas süresini ve süslenmekten kaçınma davranışını korur.",
+              "loses": "Kocanın ölümü koşulunu ve siyah giysi adını açıkça belirtmez.",
               "adds": null,
               "collision": null
             }
@@ -2675,17 +2105,18 @@
         "selected": [
           {
             "rank": 1,
-            "text": "eşinin ardından süslenmeyi bırakma",
+            "text": "eş için süsten kaçınarak yas tutma",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "Kocası ölen kadının yas süresince süsten ve boya kullanımından uzak durduğu temel uygulamayı tam olarak karşılar.",
+            "applicability": "Kocanın ölümünden sonra süs ve boyayı bırakma uygulamasını anlatan dalın ana kullanımı için uygundur.",
             "facet_ids": [
-              "F001"
+              "F001",
+              "F002"
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Eşin ölümünü, yas durumunu ve süslenmekten bilinçli olarak kaçınmayı korur.",
+              "preserves": "Eş ölümünü, yas amacını ve süs ile boyadan kaçınmayı korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -2695,128 +2126,69 @@
             "rank": 2,
             "text": "yas süresince süslenmeme",
             "loanword_status": "none",
-            "usage_role": "general",
+            "usage_role": "explanatory",
             "selection_role": "contextual_gloss",
-            "applicability": "Kocası ölen kadının belirli yas döneminde süs ve boya kullanmamasını anlatan bağlamlarda uygundur.",
+            "applicability": "Uygulamanın dış davranışı, özellikle süs ve boyanın bırakılması açıklanırken kullanılır.",
             "facet_ids": [
-              "F001"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Yas dönemindeki süslenmeme ve boya kullanmama davranışını korur.",
-              "loses": "Eşin ölümünü söz içinde açıkça belirtmez ve siyah yas giysisi kullanımını kapsamaz.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 3,
-            "text": "siyah yas giysileri",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Yalnızca tek kaynağın kaydettiği siyah matem kıyafetleri anlamında kullanılır.",
-            "facet_ids": [
+              "F001",
               "F002"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Yas sırasında giyilen siyah kıyafetleri doğru biçimde adlandırır.",
-              "loses": "Kadının eşinin ardından süs ve boya kullanımını bırakması biçimindeki temel uygulamayı içermez.",
+              "preserves": "Yas süresini ve süslenmekten kaçınma davranışını korur.",
+              "loses": "Kocanın ölümü koşulunu ve siyah giysi adını açıkça belirtmez.",
               "adds": null,
               "collision": null
             }
           }
         ],
-        "excluded": [
-          {
-            "text": "süslenme",
-            "category": "confusable",
-            "exclusion_reason": "Eşin ölümünü, yas süresini ve süsten bilinçli olarak uzak durmayı kaybeder. Dalın çekirdeğine karşıt olan güzelleşme ve bezeme eylemini getirir. Kadının süslenip güzelleşmesini bildiren karşıt dalla karışır.",
-            "error_profile": {
-              "fit": "displacement",
-              "preserves": "Kadının görünüşünü ve süs kullanımını konu edinme yönünü korur.",
-              "loses": "Eşin ölümünü, yas süresini ve süsten bilinçli olarak uzak durmayı kaybeder.",
-              "adds": "Dalın çekirdeğine karşıt olan güzelleşme ve bezeme eylemini getirir.",
-              "collision": "Kadının süslenip güzelleşmesini bildiren karşıt dalla karışır."
-            }
-          }
-        ]
+        "excluded": []
       },
       "arabic_neighbor_distinctions": [
         {
           "neighbor_root_id": "root_000727",
           "neighbor_branch_id": "B003",
-          "relation_type": "near_synonym",
+          "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Temel anlamı eşin ölümünden sonra süs ve boya kullanımını bırakmaktır.",
-          "neighbor_only": "Yas giysilerini giymeyi, bu giysileri taşıyan kadını ve eş dışındaki yakınların kaybını da kapsar.",
+          "focus_only": "Kocası ölen kadının süs ve boyadan kaçınması uygulamasını merkeze alır.",
+          "neighbor_only": "Eş veya başka bir yakının kaybından sonra siyah yas giysisi giyen kişiyi ve giyme eylemini daha geniş kapsar.",
           "expression_transliteration": "siyah yas giysileri",
           "gloss": "siyah yas giysisi giyme",
-          "shared_zone": "İki dal siyah yas giysileri ve eşi ölen kadının yas davranışı çevresinde örtüşür.",
-          "distinction": "Bu dalın çekirdeği süslenmeyi bırakma uygulamasıdır ve giysi anlamı tek kaynağa bağlıdır; komşu dalın merkezinde siyah yas giysisi ile onu giyen yaslı kadın vardır.",
+          "shared_zone": "Siyah yas giysileri ve eş kaybı bağlamında örtüşürler.",
+          "distinction": "Komşu dal giysiyi giyme ve giysili kişiyi öne çıkarır; odak dalın çekirdeği dul kadının süs ile boyadan kaçınmasıdır.",
           "expression_ar": "ثياب الحداد السود",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1654",
             "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A757%3Asubentry%3A2%3A%D8%B3%D9%84%D8%A8:headword=%D8%B3%D9%84%D8%A8:root=%D8%B3%20%D9%84%20%D8%A8:sha=88718ce4e62ee7cf",
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A721:headword=%D8%B3%D9%84%D8%A8:root=%D8%B3%20%D9%84%20%D8%A8:sha=8d3cac1500eb84b7",
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A314:headword=%D8%B3%D9%84%D8%A8:root=%D8%B3%20%D9%84%20%D8%A8:sha=694146c4a2426323",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D648%3Bsegment_index%3D101:headword=%D8%B3%D9%84%D8%A8:root=%D8%B3%20%D9%84%20%D8%A8:sha=46c284b92d744ff1",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A721:headword=%D8%B3%D9%84%D8%A8:root=%D8%B3%20%D9%84%20%D8%A8:sha=8d3cac1500eb84b7"
+            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D648%3Bsegment_index%3D101:headword=%D8%B3%D9%84%D8%A8:root=%D8%B3%20%D9%84%20%D8%A8:sha=46c284b92d744ff1"
           ]
         },
         {
           "neighbor_root_id": "root_000573",
           "neighbor_branch_id": "B007",
-          "relation_type": "polarity_pair",
+          "relation_type": "antonym",
           "boundary_match": "opposed",
-          "focus_only": "Yas nedeniyle süs ve boya kullanımından bilinçli olarak uzak durulur.",
-          "neighbor_only": "Kadın kendini güzelleştirir, süslenir ve görünüşünü hazırlayıp öne çıkarır.",
+          "focus_only": "Yas nedeniyle süs ve boyadan bilinçli olarak uzak durmayı anlatır.",
+          "neighbor_only": "Kadının kendini güzelleştirip süslenmesini ve hazırlanmasını anlatır.",
           "expression_transliteration": "kadının süslenip güzelleşmesi",
-          "gloss": "süslenme ve güzelleşme",
-          "shared_zone": "Her iki dal kadının süs ve görünüş düzenlemesiyle ilişkili davranışını konu edinir.",
-          "distinction": "Aynı süslenme ekseninde yönler karşıttır: bu dal süsü yas gereği bırakmayı, komşu dal ise süslenip güzelleşmeyi bildirir.",
+          "gloss": "süslenip hazırlanma",
+          "shared_zone": "Her iki dal kadının süslenmeyle kurduğu davranışsal ilişkiyi konu alır.",
+          "distinction": "Odak dal yas nedeniyle süslenmeyi bırakır; komşu dal aynı eksende süslenmeyi ve güzelleşmeyi gerçekleştirir.",
           "expression_ar": "رعد المرأة وبرقها",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1278:headword=%D8%B1%D8%B9%D8%AF:root=%D8%B1%20%D8%B9%20%D8%AF:sha=f9ed3281d6492021",
             "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D140%3Bsegment_index%3D7:headword=%D8%B1%D8%B9%D8%AF:root=%D8%B1%20%D8%B9%20%D8%AF:sha=c34c6a115f72dac9"
           ]
-        },
-        {
-          "neighbor_root_id": "root_000707",
-          "neighbor_branch_id": "B003",
-          "relation_type": "thematic",
-          "boundary_match": "thematic_only",
-          "focus_only": "Kocası ölen kadının süslenmeyi ve boya kullanımını bırakmasıdır.",
-          "neighbor_only": "Kadınların ağlama ve ağıt yakmada birbirlerine katılıp yardım etmesidir.",
-          "expression_transliteration": "ağıtta birbirine katılma",
-          "gloss": "ağıtta birbirine katılma",
-          "shared_zone": "İki dal ölüm sonrasındaki yas davranışları ve kadınların bu süreçteki uygulamaları bağlamını paylaşır.",
-          "distinction": "Bu dal görünüş ve süslenmeye getirilen kişisel kısıtlamadır; komşu dal birlikte ağlama ve ağıt yakma eylemidir, anlam çekirdekleri örtüşmez.",
-          "expression_ar": "الإسعاد في النياحة",
-          "basis": "furuq_branch_comparison",
-          "evidence_refs": [
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1623",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D116%3Bsegment_index%3D4:headword=%D8%B3%D8%B9%D8%AF:root=%D8%B3%20%D8%B9%20%D8%AF:sha=0ce871c686d7d1f7",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A700:headword=%D8%B3%D8%B9%D8%AF:root=%D8%B3%20%D8%B9%20%D8%AF:sha=f06298d1f04a1fbe"
-          ]
         }
       ],
       "neighbor_coverage": {
         "candidate_count": 15,
         "assessment": "complete",
-        "note": "Bütün adaylar incelendi; yas giysisi, karşıt süslenme ve ortak yas bağlamını gösteren üç ilişki yayımlandı, diğerleri farklı evlilik veya kayıp durumlarıdır."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "mixed_non_bare",
-        "has_non_bare": true,
-        "has_collocation": true,
-        "unit_kind_counts": {
-          "collocation": 2,
-          "form": 1
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "Siyah yas giysisi yakın ilişkili alanı, süslenip hazırlanma ise açık karşıt ekseni gösterir; düğün, eşin yokluğu, ağıt ve kökün öteki dalları yalnızca senaryo ortaklığı taşır."
       }
     },
     {
@@ -2827,36 +2199,54 @@
       "what_is_not_ar": "لا يدخل فيه إحداد المرأة على زوجها ولا الحديد بوصفه معدنا مجردا.",
       "source_phrase_ar": "الاستحداد استعمال الحديد (maqayis)؛ تحديد الشفرة وإحدادها واستحدادها بمعنى (sihah)؛ الاستحداد أيضا حلق شعر العانة (sihah)؛ الاستحداد حلق العانة (tahdhib)؛ استحد الرجل إذا أحد شفرة بحديدة وغيرها (tahdhib)",
       "image_transliteration": "demir kullanma",
-      "summary": "Demirden bir aracı kullanmayı, kasık kıllarını tıraş etmeyi ve bir bıçağın ağzını bileyip keskinleştirmeyi bildirir. Bu kullanımlar aynı dalda yer alır, ancak biri diğerinin özel biçimi değildir.",
+      "summary": "Demirden yapılmış bir aracı kullanmaktır; özel bir kullanımda bu araçla kasık kıllarını tıraş etmeyi anlatır. Ayrı adlandırmalarda bıçak ağzını demirden ya da başka bir araçtan yararlanarak bilemek ve keskinleştirmek de bu dalda yer alır.",
       "concept_map": {
-        "definition": "Demirden bir aracı kullanmayı, kasık kıllarını tıraş etmeyi ve bir bıçağın ağzını bileyip keskinleştirmeyi bildirir. Bu kullanımlar aynı dalda yer alır, ancak biri diğerinin özel biçimi değildir.",
+        "definition": "Demirden yapılmış bir aracı kullanmaktır; özel bir kullanımda bu araçla kasık kıllarını tıraş etmeyi anlatır. Ayrı adlandırmalarda bıçak ağzını demirden ya da başka bir araçtan yararlanarak bilemek ve keskinleştirmek de bu dalda yer alır.",
         "facets": [
           {
             "facet_id": "F001",
-            "role": "source_variant",
-            "statement": "Demirden yapılmış bir aracı belirli bir iş için kullanma eylemidir.",
+            "role": "core",
+            "statement": "Demirden yapılmış bir aracı kullanmayı anlatır.",
             "claim_ids": [
-              "lu_033"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "core",
-            "statement": "Kasık bölgesindeki kılları tıraş etme uygulamasıdır.",
+            "role": "specialization",
+            "statement": "Özel kullanımda kasık kıllarını bir kesici araçla tıraş etmeyi belirtir.",
             "claim_ids": [
-              "lu_034"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "core",
-            "statement": "Bir bıçağın ağzını bileyerek ince, keskin ve kesici duruma getirme işlemidir.",
+            "role": "associated_use",
+            "statement": "Bıçak ağzını bir araçla bileyip keskin duruma getirmeyi anlatır.",
             "claim_ids": [
-              "lu_035",
-              "lu_036"
+              "bc_001"
             ]
           }
         ]
+      },
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi demir araç kullanmayı, kasık kıllarını tıraş etmeyi ve bir bıçak ağzını keskinleştirmeyi aynı türemiş biçim çevresinde toplar. Geçici çerçeve bu kümeyi korur, ancak keskinleştirmenin demir dışında bir araçla da yapılabildiğini ve tıraş anlamının özel bir kullanım olduğunu açıkça sınırlandırmak gerekir.",
+        "boundary_note": "Dal yalın demir maddesini değil, araç kullanma eylemlerini anlatır; tıraş ve bileme birbirinin yerine geçen genel anlamlar değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, türemiş biçimdeki genel demir araç kullanımı ile özel tıraş anlamını ve bıçak ağzını keskinleştiren ayrı adlandırmaları birbirine karıştırmadan gösterir."
+      },
+      "lexicalization_profile": {
+        "branch_kind": "mixed_non_bare",
+        "has_non_bare": true,
+        "has_collocation": false,
+        "unit_kind_counts": {
+          "form": 2,
+          "lexical_unit": 2
+        },
+        "basis": "furuq.lexical_unit_senses.unit_kind"
       },
       "lexical_realizations": [
         {
@@ -2902,7 +2292,7 @@
           "expression_ar": "إحداد الشفرة",
           "unit_kind": "lexical_unit",
           "sense_ar": "شحذ الشفرة وجعلها حادة",
-          "target_gloss": "bıçağı bileyip keskin duruma getirme",
+          "target_gloss": "bıçak ağzını bileyip keskinleştirme",
           "target_rendering_kind": "ordinary",
           "evidence_refs": [
             "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1244:headword=%D8%AD%D8%B0%D8%AF:root=%D8%AD%20%D8%B0%20%D8%AF:sha=dbb73204ac319000",
@@ -2914,23 +2304,13 @@
       "usage_notes": [],
       "evidence_qualifiers": [],
       "source_discussion": {
-        "discussion": "Dalın ortak kaynaklarla desteklenen kullanımları, kasık kıllarını tıraş etme ile bıçak ağzını bileyip keskinleştirmedir. Bunlar eş düzeyde iki ayrı anlam alanıdır; biri diğerinin alt türü değildir.",
+        "discussion": "Kaynaklar demir araç kullanmayı genel çerçeve, kasık kıllarını tıraş etmeyi özel kullanım ve bıçak ağzını demir ya da başka bir araçla keskinleştirmeyi ilişkili eylem olarak verir.",
         "evidence_refs": [
+          "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
           "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1244:headword=%D8%AD%D8%B0%D8%AF:root=%D8%AD%20%D8%B0%20%D8%AF:sha=dbb73204ac319000",
           "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D225%3Bsegment_index%3D4:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=b974e506d86126bd"
         ],
-        "details": [
-          {
-            "kind": "sole_attestation",
-            "summary": "Tek bir kaynak, özel uygulamalardan bağımsız olarak genel demir araç kullanma anlamını kaydeder.",
-            "source_refs": [
-              "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675"
-            ],
-            "source_ids": [
-              "maqayis"
-            ]
-          }
-        ],
+        "details": [],
         "examples": [],
         "disagreement": null
       },
@@ -2962,14 +2342,14 @@
         ]
       },
       "glosses": {
-        "semantic_definition": "Demirden bir aracı kullanmayı, kasık kıllarını tıraş etmeyi ve bir bıçağın ağzını bileyip keskinleştirmeyi bildirir. Bu kullanımlar aynı dalda yer alır, ancak biri diğerinin özel biçimi değildir.",
+        "semantic_definition": "Demirden yapılmış bir aracı kullanmaktır; özel bir kullanımda bu araçla kasık kıllarını tıraş etmeyi anlatır. Ayrı adlandırmalarda bıçak ağzını demirden ya da başka bir araçtan yararlanarak bilemek ve keskinleştirmek de bu dalda yer alır.",
         "concept": {
           "rank": 1,
-          "text": "demir kullanma, kasık tıraşı ve bıçak bileme",
+          "text": "demir araç kullanma, tıraş etme ve bileme",
           "loanword_status": "none",
           "usage_role": "explanatory",
           "selection_role": "primary_concept_gloss",
-          "applicability": "Genel demir araç kullanma, kasık kıllarını tıraş etme ve bıçak bileme kullanımlarını eş düzeyde karşılar.",
+          "applicability": "Genel araç kullanımını, özel tıraş anlamını ve keskinleştirme eylemini ayrı kapsamlarla birlikte gösteren dal geneli için uygundur.",
           "facet_ids": [
             "F001",
             "F002",
@@ -2977,7 +2357,7 @@
           ],
           "error_profile": {
             "fit": "none",
-            "preserves": "Demir araç kullanma, kasık tıraşı ve bıçak bileme anlamlarını eş düzeyde korur.",
+            "preserves": "Araç kullanma, özel tıraş ve bıçak ağzını bileme öğelerini korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -2986,54 +2366,36 @@
         "contextual": [
           {
             "rank": 2,
-            "text": "demir araç kullanma",
+            "text": "kasık kıllarını tıraş etme",
             "loanword_status": "none",
-            "usage_role": "general",
+            "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Yalnızca demirden bir aracın kullanılması anlamının gerektiği bağlamlarda uygundur.",
+            "applicability": "Türemiş biçimin özel beden bakımı anlamı söz konusu olduğunda kullanılır.",
             "facet_ids": [
-              "F001"
+              "F002"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Bir işin demirden yapılmış araçla gerçekleştirilmesini korur.",
-              "loses": "Kasık tıraşı ve bıçak bileme anlamlarını içermez.",
+              "preserves": "Kesici araçla yapılan özel tıraş eylemini korur.",
+              "loses": "Genel demir araç kullanımını ve bıçak ağzını bileme anlamını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
           },
           {
             "rank": 3,
-            "text": "kasık kıllarını tıraş etme",
+            "text": "bıçak ağzını bileme",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Kasık bölgesindeki kılların tıraş edilmesi bağlamına özgüdür.",
-            "facet_ids": [
-              "F002"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Kasık bölgesindeki kılları tıraş etme anlamını korur.",
-              "loses": "Genel demir kullanımını ve bıçak ağzını bileme işlemini kapsamaz.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 4,
-            "text": "bıçak bileme",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Bıçağın ağzını inceltip keskin ve kesici duruma getirme işlemi için kullanılır.",
+            "applicability": "Bir bıçak ağzının keskinleştirilmesi özellikle anlatıldığında kullanılır.",
             "facet_ids": [
               "F003"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Bıçak ağzını keskinleştiren bileme işlemini ve sonucunu korur.",
-              "loses": "Genel demir kullanımını ve kasık kıllarını tıraş etme uygulamasını dışarıda bırakır.",
+              "preserves": "Bıçak ağzını araçla keskinleştirme eylemini korur.",
+              "loses": "Genel demir araç kullanımını ve özel tıraş anlamını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
@@ -3042,11 +2404,11 @@
         "selected": [
           {
             "rank": 1,
-            "text": "demir kullanma, kasık tıraşı ve bıçak bileme",
+            "text": "demir araç kullanma, tıraş etme ve bileme",
             "loanword_status": "none",
             "usage_role": "explanatory",
             "selection_role": "primary_concept_gloss",
-            "applicability": "Genel demir araç kullanma, kasık kıllarını tıraş etme ve bıçak bileme kullanımlarını eş düzeyde karşılar.",
+            "applicability": "Genel araç kullanımını, özel tıraş anlamını ve keskinleştirme eylemini ayrı kapsamlarla birlikte gösteren dal geneli için uygundur.",
             "facet_ids": [
               "F001",
               "F002",
@@ -3054,7 +2416,7 @@
             ],
             "error_profile": {
               "fit": "none",
-              "preserves": "Demir araç kullanma, kasık tıraşı ve bıçak bileme anlamlarını eş düzeyde korur.",
+              "preserves": "Araç kullanma, özel tıraş ve bıçak ağzını bileme öğelerini korur.",
               "loses": null,
               "adds": null,
               "collision": null
@@ -3062,86 +2424,55 @@
           },
           {
             "rank": 2,
-            "text": "demir araç kullanma",
+            "text": "kasık kıllarını tıraş etme",
             "loanword_status": "none",
-            "usage_role": "general",
+            "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Yalnızca demirden bir aracın kullanılması anlamının gerektiği bağlamlarda uygundur.",
+            "applicability": "Türemiş biçimin özel beden bakımı anlamı söz konusu olduğunda kullanılır.",
             "facet_ids": [
-              "F001"
+              "F002"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Bir işin demirden yapılmış araçla gerçekleştirilmesini korur.",
-              "loses": "Kasık tıraşı ve bıçak bileme anlamlarını içermez.",
+              "preserves": "Kesici araçla yapılan özel tıraş eylemini korur.",
+              "loses": "Genel demir araç kullanımını ve bıçak ağzını bileme anlamını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
           },
           {
             "rank": 3,
-            "text": "kasık kıllarını tıraş etme",
+            "text": "bıçak ağzını bileme",
             "loanword_status": "none",
             "usage_role": "contextual",
             "selection_role": "contextual_gloss",
-            "applicability": "Kasık bölgesindeki kılların tıraş edilmesi bağlamına özgüdür.",
-            "facet_ids": [
-              "F002"
-            ],
-            "error_profile": {
-              "fit": "narrowing",
-              "preserves": "Kasık bölgesindeki kılları tıraş etme anlamını korur.",
-              "loses": "Genel demir kullanımını ve bıçak ağzını bileme işlemini kapsamaz.",
-              "adds": null,
-              "collision": null
-            }
-          },
-          {
-            "rank": 4,
-            "text": "bıçak bileme",
-            "loanword_status": "none",
-            "usage_role": "contextual",
-            "selection_role": "contextual_gloss",
-            "applicability": "Bıçağın ağzını inceltip keskin ve kesici duruma getirme işlemi için kullanılır.",
+            "applicability": "Bir bıçak ağzının keskinleştirilmesi özellikle anlatıldığında kullanılır.",
             "facet_ids": [
               "F003"
             ],
             "error_profile": {
               "fit": "narrowing",
-              "preserves": "Bıçak ağzını keskinleştiren bileme işlemini ve sonucunu korur.",
-              "loses": "Genel demir kullanımını ve kasık kıllarını tıraş etme uygulamasını dışarıda bırakır.",
+              "preserves": "Bıçak ağzını araçla keskinleştirme eylemini korur.",
+              "loses": "Genel demir araç kullanımını ve özel tıraş anlamını dışarıda bırakır.",
               "adds": null,
               "collision": null
             }
           }
         ],
-        "excluded": [
-          {
-            "text": "keskinlik",
-            "category": "confusable",
-            "exclusion_reason": "Demir araç kullanma, kasık tıraşı ve bileme işlemlerini eylem olarak kaybeder. İşlem yerine keskin kenar ve etkili algı gibi sonuç anlamlarını getirir. Keskin kenar ve içe işleyen etki dalıyla karışır.",
-            "error_profile": {
-              "fit": "displacement",
-              "preserves": "Bıçak bilemenin ortaya çıkardığı kesici sonucu korur.",
-              "loses": "Demir araç kullanma, kasık tıraşı ve bileme işlemlerini eylem olarak kaybeder.",
-              "adds": "İşlem yerine keskin kenar ve etkili algı gibi sonuç anlamlarını getirir.",
-              "collision": "Keskin kenar ve içe işleyen etki dalıyla karışır."
-            }
-          }
-        ]
+        "excluded": []
       },
       "arabic_neighbor_distinctions": [
         {
           "neighbor_root_id": "root_000750",
           "neighbor_branch_id": "B003",
-          "relation_type": "near_synonym",
+          "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Genel demir kullanımı ve kasık kıllarını tıraş etme uygulamasını da kapsar.",
-          "neighbor_only": "Bilemeyi özellikle bileği taşıyla yapılan düzeltme ve parlatma işlemi olarak sınırlar.",
+          "focus_only": "Genel demir araç kullanımı ve kasık kıllarını tıraş etme kullanımlarını da içerir.",
+          "neighbor_only": "Demir, bıçak veya mızrak ucunu özellikle bileği taşıyla bileme ve parlatma alanında yoğunlaşır.",
           "expression_transliteration": "bileği taşıyla keskinleştirme ve parlatma",
           "gloss": "bileği taşıyla keskinleştirme",
-          "shared_zone": "Her iki dal demir, bıçak veya sivri ucun bilenerek keskin ve düzgün duruma getirilmesini anlatır.",
-          "distinction": "Bileme bağlamında anlamlar çok yakındır; komşu dal kullanılan taşı ve parlatmayı öne çıkarırken bu dal ayrıca genel demir kullanımı ile tıraşı içerir.",
+          "shared_zone": "Bir bıçak ya da metal ağzını bileme ve keskinleştirmede örtüşürler.",
+          "distinction": "Komşu dalın çekirdeği bileği taşıyla keskinleştirmedir; odak dal bunu daha geniş araç kullanma ve özel tıraş kümesinin bir üyesi olarak taşır.",
           "expression_ar": "تحديد وصقل بالمسن",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
@@ -3154,59 +2485,29 @@
         {
           "neighbor_root_id": "root_000350",
           "neighbor_branch_id": "B002",
-          "relation_type": "near_synonym",
+          "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Kasık bölgesini özellikle belirtir ve ayrıca demir kullanımı ile bıçak bilemeyi kapsar.",
-          "neighbor_only": "Baş, saç, sakal, hayvan kılı ve kılsız yüzey gibi daha geniş tıraş sonuçlarını içerir.",
+          "focus_only": "Kasık kıllarına özgü tıraşın yanında demir araç kullanma ve bileme anlamlarını içerir.",
+          "neighbor_only": "Baş, saç, sakal veya hayvan kılı gibi daha geniş nesnelerin tıraş edilmesini ve tıraşla çıplaklaşan yüzeyi kapsar.",
           "expression_transliteration": "kılı giderme ve tıraş",
-          "gloss": "saçı veya kılı tıraş etme",
-          "shared_zone": "Her iki dal kesici araçla kılı dipten alıp bölgeyi tıraş etme eyleminde örtüşür.",
-          "distinction": "Bu dalda tıraş kasık kıllarına özgü bir uygulamadır; komşu dal beden, hayvan ve yüzey boyunca daha genel tıraş alanını kapsar.",
+          "gloss": "saç veya kılı tıraş etme",
+          "shared_zone": "Bir kesici araçla kılı yüzeyden giderme eyleminde örtüşürler.",
+          "distinction": "Komşu dal genel tıraş eylemidir; odak dalın tıraş kullanımı kasık kıllarıyla sınırlı, öteki kullanımları ise araç ve bileme odaklıdır.",
           "expression_ar": "تنحية الشعر والحلق",
           "basis": "furuq_branch_comparison",
           "evidence_refs": [
             "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:795",
             "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1388:headword=%D8%AD%D9%84%D9%82:root=%D8%AD%20%D9%84%20%D9%82:sha=817e8acf54a72382",
             "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1474%3Asubentry%3A0%3A%D8%AD%D9%84%D9%82:headword=%D8%AD%D9%84%D9%82:root=%D8%AD%20%D9%84%20%D9%82:sha=ee40663e5dbcb74c",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3537:headword=%D8%AD%D9%84%D9%82:root=%D8%AD%20%D9%84%20%D9%82:sha=9be4079d88ba243c",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A354:headword=%D8%AD%D9%84%D9%82:root=%D8%AD%20%D9%84%20%D9%82:sha=cad6cf5a1ace50fe"
-          ]
-        },
-        {
-          "neighbor_root_id": "root_000002",
-          "neighbor_branch_id": "B005",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Keskinliği üreten bileme işlemini, demir kullanmayı ve tıraşı bildirir.",
-          "neighbor_only": "Ortaya çıkan keskin kenarı ve bunun dil, görüş ve kavrayıştaki etkisini bildirir.",
-          "expression_transliteration": "keskin uç ve içe işleyen etki",
-          "gloss": "keskin kenar ve etki",
-          "shared_zone": "İki dal bıçak ağzının keskin, ince ve kesici duruma gelmesi çevresinde buluşur.",
-          "distinction": "Bu dal keskinliği meydana getiren işlemi anlatır; komşu dal ise işlemin sonucu olan kesici kenarı ve onun aktarılmış etkilerini adlandırır.",
-          "expression_ar": "الطرف الحاد والنفاذ",
-          "basis": "furuq_branch_comparison",
-          "evidence_refs": [
-            "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:675",
-            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1244:headword=%D8%AD%D8%B0%D8%AF:root=%D8%AD%20%D8%B0%20%D8%AF:sha=dbb73204ac319000",
-            "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D225%3Bsegment_index%3D4:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=b974e506d86126bd",
-            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A299:headword=%D8%AD%D8%AF:root=%D8%AD%20%D8%AF:sha=57607146360c2f88"
+            "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A354:headword=%D8%AD%D9%84%D9%82:root=%D8%AD%20%D9%84%20%D9%82:sha=cad6cf5a1ace50fe",
+            "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3537:headword=%D8%AD%D9%84%D9%82:root=%D8%AD%20%D9%84%20%D9%82:sha=9be4079d88ba243c"
           ]
         }
       ],
       "neighbor_coverage": {
         "candidate_count": 15,
         "assessment": "complete",
-        "note": "Bütün adaylar değerlendirildi; bileme, tıraş ve işlem-sonuç ayrımını en iyi gösteren üç karşılaştırma yayımlandı, diğerleri yalnızca araç veya kesme alanını paylaşır."
-      },
-      "lexicalization_profile": {
-        "branch_kind": "mixed_non_bare",
-        "has_non_bare": true,
-        "has_collocation": false,
-        "unit_kind_counts": {
-          "form": 2,
-          "lexical_unit": 2
-        },
-        "basis": "furuq.lexical_unit_senses.unit_kind"
+        "note": "Bileği taşıyla keskinleştirme ve genel tıraş dalları iki özel kullanımı doğrudan sınırlar; makasla kesme, çok dipten kırpma, araç adları ve kökün öteki dalları daha uzak kalır."
       }
     }
   ],
