@@ -1,30 +1,53 @@
 {
-  "root_inputs_sha256": "e23bc3e30ffad86728c9eeb61912d74a4599a1dc3eef22e64e1c7db229e77980",
+  "root_inputs_sha256": "426942d30f39da01bd2f92da7667c829c21a2e3bbfd727933d8be0a0e56a0225",
   "root_id": "root_000038",
   "branch_id": "B006",
   "language": "tr",
   "image_transliteration": "aṣale yefʿalü",
-  "summary": "Bir kişinin belirli bir işi yapmaya başlaması ve o işi yürütmeye koyulmasıdır.",
+  "summary": "Belirli bir kuruluşta, bir kişinin ardından söylenen eylemi yapmaya başlamasını ve o işe koyulmasını bildirir.",
   "concept_map": {
-    "definition": "Bir kişinin belirli bir işi yapmaya başlaması ve o işi yürütmeye koyulmasıdır.",
+    "definition": "Belirli bir kuruluşta, bir kişinin ardından söylenen eylemi yapmaya başlamasını ve o işe koyulmasını bildirir.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Kişi önceki durumdan çıkar, belirtilen eyleme başlar ve onu yapmaya koyulur.",
+        "statement": "Öznenin belirtilen eylemi yapmaya başlaması ve işe koyulmasıdır.",
         "claim_ids": [
-          "lu_019"
+          "bc_001"
+        ]
+      },
+      {
+        "facet_id": "F002",
+        "role": "specialization",
+        "statement": "Bu anlam, kişi bildiren özne ile ardından gelen eylemin birlikte kurduğu özel yapıya bağlıdır.",
+        "claim_ids": [
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Aktarılan yapı, bir kişinin belirtilen eyleme başlamasını ve o eylemi yapmaya koyulmasını anlatır.",
+  "identity_judgment": {
+    "status": "accepted",
+    "rationale": "Kaynak sözü belirli bir kişi ve ardından gelen eylemle kurulan yapının, kişinin o eylemi yapmaya başladığını bildirdiğini açıkça gösterir. Anlam yalın bir kök veya genel başlangıç adı değil, bu özel kuruluşta başlayan eylemdir.",
+    "boundary_note": "Dal, öznenin ardından gelen eylemi yapmaya koyulduğunu bildiren özel yapıyla sınırlıdır."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "non_bare",
+    "note": "Anlam yalnız özne ve ardından gelen eylemle kurulan yapıda geçerlidir; yalın biçime genel bir başlama anlamı yüklenmez."
+  },
+  "source_summary": "Tek tanıklık, kişi bildiren öznenin ardından gelen eyleme koyulmayı anlatan özel bir kuruluş verir ve bunu başlamayı bildiren benzer yapılarla açıklar.",
   "source_synthesis": {
-    "common_summary": "Aktarılan yapı, bir kişinin belirtilen eyleme başlamasını ve o eylemi yapmaya koyulmasını anlatır.",
-    "common_claim_ids": [
-      "lu_019"
+    "common_summary": "Tek tanıklık, kişi bildiren öznenin ardından gelen eyleme koyulmayı anlatan özel bir kuruluş verir ve bunu başlamayı bildiren benzer yapılarla açıklar.",
+    "common_claim_ids": [],
+    "source_details": [
+      {
+        "claim_ids": [
+          "bc_001"
+        ],
+        "kind": "sole_attestation",
+        "summary": "Özel yapı, belirtilen kişinin ardından gelen işi yapmaya başladığını ve o işe koyulduğunu bildirir."
+      }
     ],
-    "source_details": [],
     "supporting_claim_ids": [],
     "duplicate_claims": []
   },
@@ -34,24 +57,25 @@
     {
       "lexical_unit_id": "lu_019",
       "rendering_kind": "ordinary",
-      "target_gloss": "şöyle yapmaya başladı; yapmaya koyuldu"
+      "target_gloss": "o işi yapmaya başladı, işe koyuldu"
     }
   ],
   "glosses": {
-    "semantic_definition": "Bir kişinin belirli bir işi yapmaya başlaması ve o işi yürütmeye koyulmasıdır.",
+    "semantic_definition": "Belirli bir kuruluşta, bir kişinin ardından söylenen eylemi yapmaya başlamasını ve o işe koyulmasını bildirir.",
     "concept": {
       "rank": 1,
-      "text": "bir işi yapmaya koyulmak",
+      "text": "yapmaya koyulmak",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Bir kişinin belirli bir eyleme gerçekten başladığını ve onu yürütmeye geçtiğini anlatan yapı için uygundur.",
+      "applicability": "Yalnız öznenin ardından bir eylemin geldiği ve o eylemin başladığını bildiren özel kuruluşun bütününde geçerlidir.",
       "facet_ids": [
-        "F001"
+        "F001",
+        "F002"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Eylemin başlamasını, kişinin o eyleme geçmesini ve işi yürütmeye koyulmasını korur.",
+        "preserves": "Eylemin başlamasını, öznenin işe girişmesini ve yapıya bağlılığı korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -60,17 +84,17 @@
     "contextual": [
       {
         "rank": 2,
-        "text": "yapmaya başladı",
+        "text": "başladı ve yapmaya girişti",
         "loanword_status": "none",
-        "usage_role": "general",
+        "usage_role": "explanatory",
         "selection_role": "contextual_gloss",
-        "applicability": "Bir kişinin ardından belirtilen eyleme giriştiğini bildiren doğal cümle içi karşılıktır.",
+        "applicability": "Başlamanın yalnız niyet veya yaklaşma değil, eyleme girişme olduğunu açıkça belirtmek gereken bağlamlarda kullanılır.",
         "facet_ids": [
           "F001"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Kişinin belirtilen eyleme gerçekten giriştiği başlangıç aşamasını korur.",
+          "preserves": "Başlama ile fiilen işe girişme aşamalarını birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -80,17 +104,18 @@
     "selected": [
       {
         "rank": 1,
-        "text": "bir işi yapmaya koyulmak",
+        "text": "yapmaya koyulmak",
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Bir kişinin belirli bir eyleme gerçekten başladığını ve onu yürütmeye geçtiğini anlatan yapı için uygundur.",
+        "applicability": "Yalnız öznenin ardından bir eylemin geldiği ve o eylemin başladığını bildiren özel kuruluşun bütününde geçerlidir.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Eylemin başlamasını, kişinin o eyleme geçmesini ve işi yürütmeye koyulmasını korur.",
+          "preserves": "Eylemin başlamasını, öznenin işe girişmesini ve yapıya bağlılığı korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -98,17 +123,17 @@
       },
       {
         "rank": 2,
-        "text": "yapmaya başladı",
+        "text": "başladı ve yapmaya girişti",
         "loanword_status": "none",
-        "usage_role": "general",
+        "usage_role": "explanatory",
         "selection_role": "contextual_gloss",
-        "applicability": "Bir kişinin ardından belirtilen eyleme giriştiğini bildiren doğal cümle içi karşılıktır.",
+        "applicability": "Başlamanın yalnız niyet veya yaklaşma değil, eyleme girişme olduğunu açıkça belirtmek gereken bağlamlarda kullanılır.",
         "facet_ids": [
           "F001"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Kişinin belirtilen eyleme gerçekten giriştiği başlangıç aşamasını korur.",
+          "preserves": "Başlama ile fiilen işe girişme aşamalarını birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -119,56 +144,32 @@
   },
   "arabic_neighbor_distinctions": [
     {
+      "neighbor_root_id": "root_000090",
+      "neighbor_branch_id": "B001",
+      "relation_type": "near_synonym",
+      "boundary_match": "partial",
+      "focus_only": "Özne ile ardından gelen eylemden oluşan özel yapıda işe koyulmayı bildirir.",
+      "neighbor_only": "Bir işi, yaratmayı veya sıralamayı genel olarak başlatmayı ve bir şeyi öne almayı kapsar.",
+      "expression_transliteration": "iftitâhu'ş-şey'i ve takdîmuhu",
+      "gloss": "bir işe başlamak",
+      "shared_zone": "Her iki dal da bir eylemin başlangıcını ve kişinin o eyleme girişmesini anlatabilir.",
+      "distinction": "Bu dal yalnız belirli dil bilgisel kuruluşta ardından gelen eylemin başlamasını bildirir; komşu dal başlangıç ve öne alma düşüncesini yapıdan bağımsız ve daha geniş biçimde kapsar."
+    },
+    {
       "neighbor_root_id": "root_001329",
       "neighbor_branch_id": "B002",
       "relation_type": "near_neighbor",
       "boundary_match": "partial",
-      "focus_only": "Kişi eyleme gerçekten başlar ve onu yürütmeye geçer.",
-      "neighbor_only": "Eylem gerçekleşmeden ona yaklaşma veya gerçekleşmenin eşiğinde kalma anlatılır.",
+      "focus_only": "Eylemin gerçekten başladığını ve öznenin işe giriştiğini bildirir.",
+      "neighbor_only": "Eylemin gerçekleşmeye yaklaşmasını bildirir ve başlamış olmasını zorunlu kılmaz.",
       "expression_transliteration": "muḳârebetü'l-fiʿl",
       "gloss": "yapmaya yaklaşmak",
-      "shared_zone": "İki dal bir eylemin başlangıç sınırına yakın bir aşamayı anlatır.",
-      "distinction": "Bu dal başlangıç sınırının aşıldığını ve eylemin başladığını bildirir; komşu dal yalnız eyleme yaklaşıldığını, dolayısıyla eylemin gerçekleşmemiş olabileceğini anlatır."
-    },
-    {
-      "neighbor_root_id": "root_001146",
-      "neighbor_branch_id": "B008",
-      "relation_type": "near_synonym",
-      "boundary_match": "partial",
-      "focus_only": "Bir kişinin ardından söylenen eylemi yapmaya koyulduğu belirli bir kuruluş söz konusudur.",
-      "neighbor_only": "Bir konuya, söze veya işe ilk kez el atma ve onu açma anlamı daha genel biçimde bulunur.",
-      "expression_transliteration": "iftitâḥu'l-emr ve evvelü aḫẕihî",
-      "gloss": "bir işe başlamak",
-      "shared_zone": "İki dal bir işin veya eylemin başlangıç aşamasını bildirir.",
-      "distinction": "Bu dal kişiyi doğrudan ardından gelen eylemin içine sokan bir başlangıç yapısıdır; komşu dal ise bir konuya veya işe ilk kez el atmayı daha genel bir başlangıç olarak anlatır."
-    },
-    {
-      "neighbor_root_id": "root_000090",
-      "neighbor_branch_id": "B001",
-      "relation_type": "near_neighbor",
-      "boundary_match": "partial",
-      "focus_only": "Kişinin belirli bir eylemi fiilen yapmaya geçmesi bu dalın dar çekirdeğidir.",
-      "neighbor_only": "Bir şeyin ilk bölümü, yaratılışın başlangıcı ve bir şeyi öne alma gibi daha geniş başlangıç ilişkileri vardır.",
-      "expression_transliteration": "iftitâḥu'ş-şeyʾ ve taḳdîmühû",
-      "gloss": "ilk başlatma ve öne alma",
-      "shared_zone": "Her iki dal yeni bir işin veya durumun başlangıç noktasını içerir.",
-      "distinction": "Bu dal bir kişinin belirtilen eyleme girişini anlatır; komşu dal ise nesnelerin ilk bölümü, yaratılış başlangıcı ve bir şeyi diğerinden önceye koyma gibi daha geniş ilişkileri kapsar."
-    },
-    {
-      "neighbor_root_id": "root_001123",
-      "neighbor_branch_id": "B001",
-      "relation_type": "same_field",
-      "boundary_match": "field_only",
-      "focus_only": "Bir eyleme ilk giriş ve başlangıç aşaması anlatılır.",
-      "neighbor_only": "Olumsuz yapıda bir eylemin kesilmeden sürmesi ve devam etmesi anlatılır.",
-      "expression_transliteration": "el-müdâvemetü'l-menfiyye",
-      "gloss": "yapmayı sürdürmek",
-      "shared_zone": "İki dal bir kişinin eylemle zamansal ilişkisini kuran yapılardır.",
-      "distinction": "Bu dal eylemin başlamasını işaretler; komşu dal başlangıçla ilgilenmez, olumsuz kuruluş içinde eylemin kesilmeden devam ettiğini bildirir."
+      "shared_zone": "İki dal da bir özne ile henüz gelişmekte olan bir eylem arasındaki başlangıç çevresini anlatır.",
+      "distinction": "Bu dal eyleme girişildiğini bildirir; komşu dal yalnız gerçekleşmeye çok yaklaşmayı gösterebilir, bu yüzden eylemin başlaması bakımından birbirinin yerine geçmez."
     }
   ],
   "neighbor_coverage": {
     "assessment": "complete",
-    "note": "Bütün komşular değerlendirildi; seçilen dört kart eyleme yaklaşma, genel başlama, ilk konum ve sürdürme karşıtlıklarını açıklar, kalanlar daha uzak başlangıç adları, dil bilgisel parçalar veya ayrı kök dallarıdır."
+    "note": "Bütün adaylar değerlendirildi; genel başlama ile yalnız yaklaşma arasındaki iki temel sınır karşılaştırması yayımlandı."
   }
 }
