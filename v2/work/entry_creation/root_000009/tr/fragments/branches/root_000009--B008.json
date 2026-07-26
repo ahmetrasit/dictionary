@@ -1,47 +1,55 @@
 {
-  "root_inputs_sha256": "828178e79dee2973b062b6cb380065c1690b2c94f29ed77ee3cab907fde0296b",
+  "root_inputs_sha256": "1b60652566fc89c76f9f42198dcec07e0f8abfc31edee8ec512bb789f83bbfb5",
   "root_id": "root_000009",
   "branch_id": "B008",
   "language": "tr",
   "image_transliteration": "ödenen vergi veya çıkar ödemesi",
-  "summary": "Bir topluluğun veya kişinin yönetime vergi ya da zorunlu ödeme olarak sunduğu maldır; ayrıca çıkar sağlamak için gizlice verilen ödeme anlamına genişler.",
+  "summary": "Bir topluluğun veya kişinin yönetime ödediği vergi ya da baş vergisidir. Ayrı bir kalıpta, bir kimseye çıkar sağlamak için verilen rüşveti veya rüşvet verme eylemini anlatır.",
   "concept_map": {
-    "definition": "Bir topluluğun veya kişinin yönetime vergi ya da zorunlu ödeme olarak sunduğu maldır; ayrıca çıkar sağlamak için gizlice verilen ödeme anlamına genişler.",
+    "definition": "Bir topluluğun veya kişinin yönetime ödediği vergi ya da baş vergisidir. Ayrı bir kalıpta, bir kimseye çıkar sağlamak için verilen rüşveti veya rüşvet verme eylemini anlatır.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Topluluk ya da kişi, yönetime vergi veya başka bir zorunlu ödeme verir.",
+        "statement": "Topluluk veya kişi yönetime vergi niteliğinde para öder.",
         "claim_ids": [
-          "lu_016"
+          "bc_001"
         ]
       },
       {
         "facet_id": "F002",
-        "role": "extension",
-        "statement": "Ödeme, bir çıkar elde etmek amacıyla gizlice verilen mala da ad olur.",
+        "role": "specialization",
+        "statement": "Ödeme baş vergisi veya benzeri yükümlülük niteliği taşır.",
         "claim_ids": [
-          "lu_016",
-          "lu_017"
+          "bc_001"
+        ]
+      },
+      {
+        "facet_id": "F003",
+        "role": "associated_use",
+        "statement": "Ayrı bir kullanımda bir kimseye rüşvet verilir.",
+        "claim_ids": [
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Ana kullanım, topluluğun veya kişinin yönetime verdiği vergi ve zorunlu ödemedir. Aynı birim ayrıca çıkar sağlamak için verilen gizli ödeme anlamında kaydedilir.",
+  "identity_judgment": {
+    "status": "accepted",
+    "rationale": "Kaynak ifadesi yönetime ödenen vergi veya baş vergisini ortak alan olarak verir ve aynı toplu iddia içinde bir kişiye sunulan rüşvet kullanımını da bildirir.",
+    "boundary_note": "Düzenli veya zorunlu kamu ödemesi çekirdektir; rüşvet, aynı biçimin ayrı kalıptaki özel kullanımıdır."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "mixed_non_bare",
+    "note": "Vergi adı olarak kullanılan biçim ile birine rüşvet vermeyi bildiren kalıp kapsam bakımından ayrılır."
+  },
+  "source_summary": "Toplu iddia vergi ve baş vergisi anlamlarını ortaklaştırır; rüşvet kullanımı kaynaklara ayrı ayrı dağıtılamayan özel bir karşılık olarak aynı iddiada yer alır.",
   "source_synthesis": {
-    "common_summary": "Ana kullanım, topluluğun veya kişinin yönetime verdiği vergi ve zorunlu ödemedir. Aynı birim ayrıca çıkar sağlamak için verilen gizli ödeme anlamında kaydedilir.",
+    "common_summary": "Toplu iddia vergi ve baş vergisi anlamlarını ortaklaştırır; rüşvet kullanımı kaynaklara ayrı ayrı dağıtılamayan özel bir karşılık olarak aynı iddiada yer alır.",
     "common_claim_ids": [
-      "lu_016"
+      "bc_001"
     ],
-    "source_details": [
-      {
-        "claim_ids": [
-          "lu_017"
-        ],
-        "kind": "sole_attestation",
-        "summary": "Birine çıkar sağlamak amacıyla gizli ödeme verme eylemi ayrıca belirtilir."
-      }
-    ],
+    "source_details": [],
     "supporting_claim_ids": [],
     "duplicate_claims": []
   },
@@ -51,30 +59,31 @@
     {
       "lexical_unit_id": "lu_016",
       "rendering_kind": "ordinary",
-      "target_gloss": "vergi, zorunlu ödeme veya çıkar ödemesi"
+      "target_gloss": "vergi veya baş vergisi; rüşvet"
     },
     {
       "lexical_unit_id": "lu_017",
       "rendering_kind": "ordinary",
-      "target_gloss": "çıkar sağlamak için gizli ödeme yapmak"
+      "target_gloss": "ona rüşvet vermek"
     }
   ],
   "glosses": {
-    "semantic_definition": "Bir topluluğun veya kişinin yönetime vergi ya da zorunlu ödeme olarak sunduğu maldır; ayrıca çıkar sağlamak için gizlice verilen ödeme anlamına genişler.",
+    "semantic_definition": "Bir topluluğun veya kişinin yönetime ödediği vergi ya da baş vergisidir. Ayrı bir kalıpta, bir kimseye çıkar sağlamak için verilen rüşveti veya rüşvet verme eylemini anlatır.",
     "concept": {
       "rank": 1,
-      "text": "vergi ya da çıkar ödemesi",
+      "text": "ödenen vergi; rüşvet",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Yönetime verilen zorunlu mal ile kişisel çıkar için verilen gizli ödemeyi ayırarak birlikte karşılar.",
+      "applicability": "Yönetime ödenen mali yükümlülük ile ayrı rüşvet kullanımı birlikte gösterileceğinde kullanılır.",
       "facet_ids": [
         "F001",
-        "F002"
+        "F002",
+        "F003"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Zorunlu yönetim ödemesini ve çıkar amaçlı gizli ödeme uzantısını korur.",
+        "preserves": "Vergi, baş vergisi ve ayrı rüşvet kullanımını korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -83,18 +92,19 @@
     "contextual": [
       {
         "rank": 2,
-        "text": "çıkar için gizli ödeme yapmak",
+        "text": "vergi",
         "loanword_status": "none",
-        "usage_role": "contextual",
+        "usage_role": "general",
         "selection_role": "contextual_gloss",
-        "applicability": "Bir kişiye kararını etkilemek veya çıkar sağlamak amacıyla mal verildiği özel bağlamda kullanılır.",
+        "applicability": "Topluluğun veya kişinin yönetime yaptığı zorunlu mali ödeme söz konusu olduğunda kullanılır.",
         "facet_ids": [
+          "F001",
           "F002"
         ],
         "error_profile": {
-          "fit": "none",
-          "preserves": "Kişisel çıkar amacıyla birine gizli ödeme verme işlemini korur.",
-          "loses": null,
+          "fit": "narrowing",
+          "preserves": "Yönetime yapılan mali yükümlülük ödemesini korur.",
+          "loses": "Rüşvet olarak verilen ödeme kullanımını dışarıda bırakır.",
           "adds": null,
           "collision": null
         }
@@ -103,18 +113,19 @@
     "selected": [
       {
         "rank": 1,
-        "text": "vergi ya da çıkar ödemesi",
+        "text": "ödenen vergi; rüşvet",
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Yönetime verilen zorunlu mal ile kişisel çıkar için verilen gizli ödemeyi ayırarak birlikte karşılar.",
+        "applicability": "Yönetime ödenen mali yükümlülük ile ayrı rüşvet kullanımı birlikte gösterileceğinde kullanılır.",
         "facet_ids": [
           "F001",
-          "F002"
+          "F002",
+          "F003"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Zorunlu yönetim ödemesini ve çıkar amaçlı gizli ödeme uzantısını korur.",
+          "preserves": "Vergi, baş vergisi ve ayrı rüşvet kullanımını korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -122,37 +133,25 @@
       },
       {
         "rank": 2,
-        "text": "çıkar için gizli ödeme yapmak",
+        "text": "vergi",
         "loanword_status": "none",
-        "usage_role": "contextual",
+        "usage_role": "general",
         "selection_role": "contextual_gloss",
-        "applicability": "Bir kişiye kararını etkilemek veya çıkar sağlamak amacıyla mal verildiği özel bağlamda kullanılır.",
+        "applicability": "Topluluğun veya kişinin yönetime yaptığı zorunlu mali ödeme söz konusu olduğunda kullanılır.",
         "facet_ids": [
+          "F001",
           "F002"
         ],
         "error_profile": {
-          "fit": "none",
-          "preserves": "Kişisel çıkar amacıyla birine gizli ödeme verme işlemini korur.",
-          "loses": null,
+          "fit": "narrowing",
+          "preserves": "Yönetime yapılan mali yükümlülük ödemesini korur.",
+          "loses": "Rüşvet olarak verilen ödeme kullanımını dışarıda bırakır.",
           "adds": null,
           "collision": null
         }
       }
     ],
-    "excluded": [
-      {
-        "text": "vergi",
-        "category": "alternative",
-        "exclusion_reason": "Kişisel çıkar sağlamak amacıyla birine gizlice verilen ödeme uzantısını karşılamaz.",
-        "error_profile": {
-          "fit": "narrowing",
-          "preserves": "Yönetime verilen zorunlu mal ödemesini korur.",
-          "loses": "Kişisel çıkar sağlamak amacıyla birine gizlice verilen ödeme uzantısını karşılamaz.",
-          "adds": null,
-          "collision": null
-        }
-      }
-    ]
+    "excluded": []
   },
   "arabic_neighbor_distinctions": [
     {
@@ -160,16 +159,16 @@
       "neighbor_branch_id": "B010",
       "relation_type": "near_synonym",
       "boundary_match": "partial",
-      "focus_only": "Odak dal, yönetim ödemesinin yanında çıkar için verilen gizli ödemeyi de kapsar.",
-      "neighbor_only": "Komşu dal, kişi, köle veya toprağa konan çeşitli vergileri ve düzenli yükümlülükleri kapsar.",
-      "expression_transliteration": "birine yüklenen ödeme",
-      "gloss": "kişiye konan vergi",
-      "shared_zone": "Her iki dalda da bir kişi veya topluluktan alınan zorunlu mal ödemesi bulunur.",
-      "distinction": "Odak dal ödenen malı ve gizli çıkar ödemesi uzantısını öne çıkarır; komşu dal ise kime veya neye vergi konduğunun daha geniş türlerini kapsar."
+      "focus_only": "Odak dal aynı biçimin rüşvet kullanımını da kapsar.",
+      "neighbor_only": "Komşu dal kişiye, köleye veya toprağa konan vergi, gelir ve görev ödemelerini daha geniş sınıflar halinde kapsar.",
+      "expression_transliteration": "almal almdrwb 'la ahd",
+      "gloss": "kişiye veya toprağa konan vergi",
+      "shared_zone": "Her iki dal bir kişi veya topluluğa yüklenen vergi ve kamu ödemesi alanında kesişir.",
+      "distinction": "Odak dal vergi adının yanında rüşvet kullanımına sahiptir; komşu dal ise üzerine konan mali yükümlülük türlerini daha geniş kapsar."
     }
   ],
   "neighbor_coverage": {
     "assessment": "single_sufficient",
-    "note": "Vergi, pay ve ödeme adayları incelendi; zorunlu ödeme çekirdeğini en geniş biçimde paylaşan komşu sınırı açıklamaya yeterlidir."
+    "note": "Bütün adaylar değerlendirildi; mali yükümlülük komşusu vergi çekirdeği ile rüşvet uzantısı arasındaki sınırı en iyi gösterdi."
   }
 }

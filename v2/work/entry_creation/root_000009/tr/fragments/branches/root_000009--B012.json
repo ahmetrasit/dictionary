@@ -1,30 +1,53 @@
 {
-  "root_inputs_sha256": "828178e79dee2973b062b6cb380065c1690b2c94f29ed77ee3cab907fde0296b",
+  "root_inputs_sha256": "1b60652566fc89c76f9f42198dcec07e0f8abfc31edee8ec512bb789f83bbfb5",
   "root_id": "root_000009",
   "branch_id": "B012",
   "language": "tr",
   "image_transliteration": "dişi devenin çiftleşme isteği",
-  "summary": "Dişi devenin çiftleşme isteği duyması ve erkek deveye yönelmesidir.",
+  "summary": "Dişi devenin çiftleşme isteği göstererek erkek deve istemesidir.",
   "concept_map": {
-    "definition": "Dişi devenin çiftleşme isteği duyması ve erkek deveye yönelmesidir.",
+    "definition": "Dişi devenin çiftleşme isteği göstererek erkek deve istemesidir.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Dişi deve çiftleşmeye hazır hale gelir ve erkek deveyi ister.",
+        "statement": "Dişi deve çiftleşme isteği gösterir.",
         "claim_ids": [
-          "lu_026"
+          "bc_001"
+        ]
+      },
+      {
+        "facet_id": "F002",
+        "role": "core",
+        "statement": "Dişi deve erkek deveyi ister.",
+        "claim_ids": [
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Tek kayıt, dişi devenin çiftleşme isteği duymasını ve erkek deveye yönelmesini birlikte bildirir.",
+  "identity_judgment": {
+    "status": "accepted",
+    "rationale": "Tek kaynaklı ifade, dişi devenin çiftleşme isteği gösterip erkeği istemesini doğrudan ve eksiksiz biçimde tanımlar.",
+    "boundary_note": "Anlam yalnız dişi devenin çiftleşme isteğini bildiren kalıba bağlıdır; yürüyüş hareketi değildir."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "collocation",
+    "note": "Tanım dişi deve ve çiftleşme isteğini bildiren kalıpla sınırlıdır; başka hayvanlara yalın biçimde genellenmez."
+  },
+  "source_summary": "Kanıt tek sözlükte yer alır ve dişi devenin çiftleşme isteğini belirli bir kalıpta bildirir.",
   "source_synthesis": {
-    "common_summary": "Tek kayıt, dişi devenin çiftleşme isteği duymasını ve erkek deveye yönelmesini birlikte bildirir.",
-    "common_claim_ids": [
-      "lu_026"
+    "common_summary": "Kanıt tek sözlükte yer alır ve dişi devenin çiftleşme isteğini belirli bir kalıpta bildirir.",
+    "common_claim_ids": [],
+    "source_details": [
+      {
+        "claim_ids": [
+          "bc_001"
+        ],
+        "kind": "sole_attestation",
+        "summary": "Dişi devenin çiftleşme isteği gösterip erkek deve istemesi bu kalıpla tek başına tanıklanır."
+      }
     ],
-    "source_details": [],
     "supporting_claim_ids": [],
     "duplicate_claims": []
   },
@@ -34,24 +57,25 @@
     {
       "lexical_unit_id": "lu_026",
       "rendering_kind": "ordinary",
-      "target_gloss": "dişi devenin çiftleşmek isteyip erkeğe yönelmesi"
+      "target_gloss": "dişi devenin çiftleşmek için erkek deve istemesi"
     }
   ],
   "glosses": {
-    "semantic_definition": "Dişi devenin çiftleşme isteği duyması ve erkek deveye yönelmesidir.",
+    "semantic_definition": "Dişi devenin çiftleşme isteği göstererek erkek deve istemesidir.",
     "concept": {
       "rank": 1,
       "text": "dişi devenin çiftleşmek istemesi",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Dişi devenin çiftleşmeye hazır olup erkek deveye yöneldiği durumu tam olarak karşılar.",
+      "applicability": "Dişi devenin erkek deveye yönelen çiftleşme isteği anlatıldığında kullanılır.",
       "facet_ids": [
-        "F001"
+        "F001",
+        "F002"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Hayvanın dişi deve olması ve erkekle çiftleşme isteği duyması koşullarını korur.",
+        "preserves": "Hayvanı, dişiliği ve erkek deveye yönelen çiftleşme isteğini korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -65,33 +89,21 @@
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Dişi devenin çiftleşmeye hazır olup erkek deveye yöneldiği durumu tam olarak karşılar.",
+        "applicability": "Dişi devenin erkek deveye yönelen çiftleşme isteği anlatıldığında kullanılır.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Hayvanın dişi deve olması ve erkekle çiftleşme isteği duyması koşullarını korur.",
+          "preserves": "Hayvanı, dişiliği ve erkek deveye yönelen çiftleşme isteğini korur.",
           "loses": null,
           "adds": null,
           "collision": null
         }
       }
     ],
-    "excluded": [
-      {
-        "text": "çiftleşmek",
-        "category": "confusable",
-        "exclusion_reason": "Dişi devenin henüz çiftleşmeyip bunu istemesi ve erkeğe yönelmesi durumunu siler. Çiftleşme eyleminin gerçekten gerçekleştiği sonucunu ekler. Çiftleşme isteğini gerçekleşmiş çiftleşme eylemiyle karıştırır.",
-        "error_profile": {
-          "fit": "displacement",
-          "preserves": "Dişi deve ile erkek deve arasındaki çiftleşme alanını korur.",
-          "loses": "Dişi devenin henüz çiftleşmeyip bunu istemesi ve erkeğe yönelmesi durumunu siler.",
-          "adds": "Çiftleşme eyleminin gerçekten gerçekleştiği sonucunu ekler.",
-          "collision": "Çiftleşme isteğini gerçekleşmiş çiftleşme eylemiyle karıştırır."
-        }
-      }
-    ]
+    "excluded": []
   },
   "arabic_neighbor_distinctions": [
     {
@@ -99,16 +111,16 @@
       "neighbor_branch_id": "B002",
       "relation_type": "near_synonym",
       "boundary_match": "partial",
-      "focus_only": "Odak dal yalnızca dişi deveyi konu alır.",
-      "neighbor_only": "Komşu dal toynaklı dişileri genel olarak kapsar ve çiftleşme isteğine eşlik eden ıslaklık belirtisini de içerir.",
+      "focus_only": "Odak dal yalnız dişi deveye özgüdür ve fiziksel belirtiyi zorunlu kılmaz.",
+      "neighbor_only": "Komşu dal toynaklı dişileri genel olarak kapsar ve çiftleşme isteğine eşlik eden ıslaklığı da bildirebilir.",
       "expression_transliteration": "dişi hayvanın erkeği istemesi ve ıslaklık",
-      "gloss": "dişi hayvanın erkeği istemesi",
-      "shared_zone": "Her iki dalda da dişi hayvanın çiftleşme isteğiyle erkeğe yönelmesi vardır.",
-      "distinction": "Temel istek aynıdır; odak dal tür bakımından dişi deveyle sınırlıyken komşu dal daha geniş hayvan grubunu ve bedensel belirtiyi kapsar."
+      "gloss": "dişi hayvanın erkek istemesi",
+      "shared_zone": "Her iki dal dişi bir toynaklının çiftleşmek için erkeği istemesini anlatır.",
+      "distinction": "Odak dal dişi deveyle sınırlıdır; komşu dal hayvan türü ve görülen belirtiler bakımından daha geniştir."
     }
   ],
   "neighbor_coverage": {
     "assessment": "single_sufficient",
-    "note": "Çiftleşme isteğiyle ilgili bütün adaylar incelendi; daha geniş hayvan kapsamına sahip komşu, tür sınırını en açık biçimde gösterir."
+    "note": "Bütün adaylar değerlendirildi; dişi toynaklının erkek istemesi dalı tür kapsamındaki farkı en açık biçimde gösterdi."
   }
 }

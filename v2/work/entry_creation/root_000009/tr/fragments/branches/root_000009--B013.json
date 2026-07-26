@@ -1,30 +1,53 @@
 {
-  "root_inputs_sha256": "828178e79dee2973b062b6cb380065c1690b2c94f29ed77ee3cab907fde0296b",
+  "root_inputs_sha256": "1b60652566fc89c76f9f42198dcec07e0f8abfc31edee8ec512bb789f83bbfb5",
   "root_id": "root_000009",
   "branch_id": "B013",
   "language": "tr",
   "image_transliteration": "etkili, sözü geçen erkek",
-  "summary": "Bir erkeğin etkili ve sözü geçen biri olmasıdır.",
+  "summary": "Sözü veya işi etkili olan, kararını uygulayıp işini yürütebilen adamdır.",
   "concept_map": {
-    "definition": "Bir erkeğin etkili ve sözü geçen biri olmasıdır.",
+    "definition": "Sözü veya işi etkili olan, kararını uygulayıp işini yürütebilen adamdır.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Erkek, etkili ve sözü geçen biri olarak nitelenir.",
+        "statement": "Kişinin sözü veya yaptığı iş etkisini gösterir.",
         "claim_ids": [
-          "lu_013"
+          "bc_001"
+        ]
+      },
+      {
+        "facet_id": "F002",
+        "role": "core",
+        "statement": "Kişi kararını uygulayıp işi sonuçlandırabilecek niteliktedir.",
+        "claim_ids": [
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Tek kayıt, erkeği etkili ve sözü geçen biri olarak niteler.",
+  "identity_judgment": {
+    "status": "accepted",
+    "rationale": "Tek kaynaklı ifade, belirli kişi nitelemesini doğrudan etkili, sözü veya işi geçen bir adam anlamında verir; yabancılık anlamıyla aynı biçimde olsa da semantik olarak ayrıdır.",
+    "boundary_note": "Anlam yalnız bir erkeği etkili ve işini yürütebilir diye niteleyen kalıba bağlıdır; yabancılık bildirmez."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "collocation",
+    "note": "Tanım kişi niteleyen bu kalıpla sınırlıdır; genel güç, çaba veya yalın bir fiil anlamına genişletilmez."
+  },
+  "source_summary": "Kanıt tek sözlükte yer alır ve erkeği etkili, işi yürüyen veya hükmü geçen kişi olarak niteleyen özel bir kullanımdır.",
   "source_synthesis": {
-    "common_summary": "Tek kayıt, erkeği etkili ve sözü geçen biri olarak niteler.",
-    "common_claim_ids": [
-      "lu_013"
+    "common_summary": "Kanıt tek sözlükte yer alır ve erkeği etkili, işi yürüyen veya hükmü geçen kişi olarak niteleyen özel bir kullanımdır.",
+    "common_claim_ids": [],
+    "source_details": [
+      {
+        "claim_ids": [
+          "bc_001"
+        ],
+        "kind": "sole_attestation",
+        "summary": "Bir erkeğin etkili ve işini yürütebilir oluşu bu kişi nitelemesiyle tek başına tanıklanır."
+      }
     ],
-    "source_details": [],
     "supporting_claim_ids": [],
     "duplicate_claims": []
   },
@@ -34,24 +57,25 @@
     {
       "lexical_unit_id": "lu_013",
       "rendering_kind": "ordinary",
-      "target_gloss": "etkili, sözü geçen erkek"
+      "target_gloss": "etkili ve işini yürütebilen adam"
     }
   ],
   "glosses": {
-    "semantic_definition": "Bir erkeğin etkili ve sözü geçen biri olmasıdır.",
+    "semantic_definition": "Sözü veya işi etkili olan, kararını uygulayıp işini yürütebilen adamdır.",
     "concept": {
       "rank": 1,
-      "text": "etkili, sözü geçen erkek",
+      "text": "etkili ve işini yürüten adam",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Bir erkeği genel olarak etkili ve sözü geçen biri diye nitelemek için kullanılır.",
+      "applicability": "Bir erkeğin sözü geçen ve kararını uygulayabilen biri olduğu anlatıldığında kullanılır.",
       "facet_ids": [
-        "F001"
+        "F001",
+        "F002"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Erkeğin etkili ve sözü geçen biri olarak nitelenmesini korur.",
+        "preserves": "Kişinin etkili ve işini sonuçlandırabilir oluşunu korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -61,17 +85,18 @@
     "selected": [
       {
         "rank": 1,
-        "text": "etkili, sözü geçen erkek",
+        "text": "etkili ve işini yürüten adam",
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Bir erkeği genel olarak etkili ve sözü geçen biri diye nitelemek için kullanılır.",
+        "applicability": "Bir erkeğin sözü geçen ve kararını uygulayabilen biri olduğu anlatıldığında kullanılır.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Erkeğin etkili ve sözü geçen biri olarak nitelenmesini korur.",
+          "preserves": "Kişinin etkili ve işini sonuçlandırabilir oluşunu korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -80,15 +105,15 @@
     ],
     "excluded": [
       {
-        "text": "iş bitiren erkek",
+        "text": "güçlü adam",
         "category": "confusable",
-        "exclusion_reason": "Genel olarak etkili ve sözü geçen kişi niteliğini belirli bir başarıya indirger. Erkeğin giriştiği işi mutlaka sonuçlandırdığı yönünde kanıtlanmayan bir koşul ekler. Genel etkililik niteliğini belirli bir işi bitirme başarısıyla karıştırır.",
+        "exclusion_reason": "Fiziksel güç ve genel kuvvet anlamlarını ekleyerek etkililik sınırını aşar. Bedensel kuvveti anlatan kişi nitelemeleriyle karışabilir.",
         "error_profile": {
-          "fit": "displacement",
-          "preserves": "Erkeğin etkili biri olarak görülmesi düşüncesini kısmen korur.",
-          "loses": "Genel olarak etkili ve sözü geçen kişi niteliğini belirli bir başarıya indirger.",
-          "adds": "Erkeğin giriştiği işi mutlaka sonuçlandırdığı yönünde kanıtlanmayan bir koşul ekler.",
-          "collision": "Genel etkililik niteliğini belirli bir işi bitirme başarısıyla karıştırır."
+          "fit": "broadening",
+          "preserves": "Kişinin bir işi gerçekleştirebilme kapasitesini kısmen korur.",
+          "loses": null,
+          "adds": "Fiziksel güç ve genel kuvvet anlamlarını ekleyerek etkililik sınırını aşar.",
+          "collision": "Bedensel kuvveti anlatan kişi nitelemeleriyle karışabilir."
         }
       }
     ]
@@ -99,16 +124,16 @@
       "neighbor_branch_id": "B005",
       "relation_type": "near_synonym",
       "boundary_match": "partial",
-      "focus_only": "Odak dal yalnızca erkeği etkili ve sözü geçen biri olarak niteler.",
-      "neighbor_only": "Komşu dal belirli bir işi yürütme gücünü ve o işte sonuç alabilmeyi soyut olarak anlatır.",
+      "focus_only": "Odak dal bu niteliği bir erkeğin kalıcı veya ayırt edici özelliği olarak bildirir.",
+      "neighbor_only": "Komşu dal belirli bir işte nüfuz ve o işi yürütme gücünü soyut ad olarak kapsar.",
       "expression_transliteration": "işi yürütme gücü",
-      "gloss": "etkili kişi ve işi yürütme gücü",
-      "shared_zone": "Her iki dal da genel olarak etkili olma düşüncesinde buluşur.",
-      "distinction": "Odak dal yalnızca etkili ve sözü geçen erkeği niteler; belirli bir işi yürütme ve gerçekleştirme gücü komşu dala özgüdür."
+      "gloss": "bir işte etkili olma",
+      "shared_zone": "Her iki dal bir işi etkili biçimde yürütme ve sonuçlandırma gücünü anlatır.",
+      "distinction": "Odak dal kişiyi niteleyen kalıptır; komşu dal ise iş üzerindeki nüfuz ve yürütme yetisini kavram olarak adlandırır."
     }
   ],
   "neighbor_coverage": {
     "assessment": "single_sufficient",
-    "note": "Güç, karar ve iş yürütme adayları incelendi; kişi niteliğiyle soyut yapabilme gücü arasındaki en yakın karşılaştırma yayımlandı."
+    "note": "Bütün adaylar değerlendirildi; işte etkili olma komşusu kişi niteliği ile soyut yeterlik arasındaki farkı en iyi gösterdi."
   }
 }
