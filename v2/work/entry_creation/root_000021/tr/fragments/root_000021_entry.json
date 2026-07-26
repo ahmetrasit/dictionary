@@ -1,5 +1,5 @@
 {
-  "inputs_sha256": "f704c3ef6603f91e036a383a7f758956f004f8daf6ca3ecb443d7079b5537984",
+  "inputs_sha256": "16ca6428514b44dcf912135ab41e624c75ab2f862d91004abe6024ef62df7e9b",
   "artifact_format": "dictionary-v2-root-entry-draft-v1",
   "generated_by": "v2/scripts/accept_root_writer.py",
   "root_envelope_id": "root_000021",
@@ -7,68 +7,60 @@
   "branches": [
     {
       "branch_ref": "root_000021/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, bir şeyi başka bir şeye ya da kişiye ulaştırmayı ve bir haberin muhatabına varmasını aynı ulaşma ilişkisi içinde açıkça birleştirir. Hazırlanan çerçeve bu ortak çekirdeği doğru biçimde yansıtır.",
+        "boundary_note": "Anlam yalnızca belirtilen yapılardaki ulaştırma veya ulaşma ilişkisini kapsar; borç ödeme gibi özel kullanımlara genişletilmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Bu dal yalnızca tanıklanan söz öbeklerinde geçerlidir; yalın köke genel bir ulaştırma anlamı yüklenmez."
+      },
       "concept_map": {
-        "definition": "Bir şeyi ya da sözü başka birine ulaştırmak veya onun kendiliğinden alıcısına varmasıdır; haberin muhataba erişmesi de bu kapsamdadır.",
+        "definition": "Belirli söz öbeklerinde bir şeyi ya da sözü bir alıcıya ulaştırmak veya haberin o alıcıya varmasıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir nesne veya söz, bir başkası tarafından alıcısına götürülür ve teslim edilir.",
+            "statement": "Bir nesne veya söz bir hedefe aktarılır ya da haber hedef kişiye kadar varır.",
             "claim_ids": [
-              "lu_001"
-            ]
-          },
-          {
-            "facet_id": "F002",
-            "role": "core",
-            "statement": "Haber, onu ayrıca taşıyan kişi öne çıkarılmadan muhatabına kadar varır.",
-            "claim_ids": [
-              "lu_002"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Anlam alanı hem bir şeyi veya sözü başkasına ulaştırma eylemini hem de haberin muhatabına varmasını kapsar.",
+        "common_summary": "Kaynaklar, bir şeyin hedefe teslim edilmesi ile haberin muhataba ulaşmasını ortak bir varış ilişkisi altında toplar.",
         "common_claim_ids": [
-          "lu_001"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_002"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Haberin sonunda bir kişiye erişmesi, ulaştıranın belirtilmediği bir kullanım olarak ayrıca kaydedilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "ulaştırma veya ulaşma",
-        "applicability": "Bir şeyin alıcıya götürülmesini de haberin muhataba varmasını da birlikte karşılayan genel anlatımdır.",
+        "text": "ulaştırmak veya ulaşmak",
+        "applicability": "Nesnenin bir alıcıya aktarılmasını ve haberin muhataba varmasını birlikte temsil eden genel karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Hem ettirgen ulaştırma yönünü hem de son noktaya varma yönünü korur.",
+          "preserves": "Hedefe aktarma ile hedefe varma yönlerini birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001",
-          "F002"
+          "F001"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "teslim etmek",
+          "text": "birine ulaştırmak",
           "usage_role": "contextual",
-          "applicability": "Bir nesnenin ya da sözün belirli bir alıcıya götürülüp verildiği bağlamlarda kullanılır.",
+          "applicability": "Bir nesne, selam veya sözün belirli bir alıcıya götürülüp aktarılması bağlamında kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Bir şeyi alıcısına götürüp verme işlemini açık biçimde korur.",
-            "loses": "Haberin kendiliğinden muhataba varması yönünü dışarıda bırakır.",
+            "fit": "none",
+            "preserves": "Aktarılan şeyin belirli bir hedefe erişmesini korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -77,18 +69,18 @@
           ]
         },
         {
-          "text": "haber ona ulaştı",
+          "text": "haber kendisine ulaşmak",
           "usage_role": "contextual",
-          "applicability": "Bir haberin sonunda ilgili kişiye vardığını bildiren cümlelerde kullanılır.",
+          "applicability": "Bir haberin aktarım sonunda muhatabına vardığını bildiren bağlamlarda kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Haberin muhatabına erişmesi sonucunu doğrudan korur.",
-            "loses": "Bir şeyi etkin biçimde götürüp teslim etme işlemini karşılamaz.",
+            "fit": "none",
+            "preserves": "Haberin muhatabına kadar varması yönünü korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F002"
+            "F001"
           ]
         }
       ],
@@ -96,142 +88,86 @@
         {
           "lexical_unit_id": "lu_001",
           "rendering_kind": "ordinary",
-          "target_gloss": "ona ulaştırdı veya teslim etti"
+          "target_gloss": "birine ulaştırmak veya teslim etmek"
         },
         {
           "lexical_unit_id": "lu_002",
           "rendering_kind": "ordinary",
-          "target_gloss": "haber ona ulaştı"
+          "target_gloss": "haber kendisine ulaşmak"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "varmak",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Hedefe veya muhataba ulaşma sonucunu korur.",
-            "loses": "Bir şeyi ya da sözü etkin biçimde alıcısına ulaştırma ve teslim etme yönünü dışarıda bırakır.",
-            "adds": null,
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_001655/B002",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Sözün veya haberin özellikle muhatabına erişmesini kapsar.",
-          "neighbor_only": "Kişinin bir yere varmasını ve yazı ya da iyiliğin ulaşmasını daha genel biçimde kapsar.",
-          "gloss": "varmak ve vardırmak",
-          "shared_zone": "Her iki dalda da bir şeyin hedeflenen kişi veya yere ulaşması ortak çekirdektir.",
-          "distinction": "Odak dal, teslim etme ile söz ve haberin muhataba erişmesine yoğunlaşır; komşu dal ise kişi, yer ve farklı nesneler için daha geniş bir varma veya vardırma alanına sahiptir."
-        },
-        {
-          "neighbor_ref": "root_000021/B002",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Bir nesne, söz veya haberin alıcıya fiziksel ya da iletişimsel olarak erişmesini anlatır.",
-          "neighbor_only": "Borç, yükümlülük veya korumaya bırakılmış şeyin gereğince yerine getirilmesini anlatır.",
-          "gloss": "yükümlülüğü yerine getirme",
-          "shared_zone": "Her iki dalda da bir şeyi ilgili kişiye verme sonucu bulunabilir.",
-          "distinction": "Bu dalın çekirdeği ulaştırma ve varmadır; komşu dalda belirleyici olan, kişiye düşen hakkı veya sorumluluğu eksiksiz yerine getirmektir."
+          "focus_only": "Tanıklanan söz öbeklerinde teslim etme ve haberin muhataba varması öne çıkar.",
+          "neighbor_only": "Kişi, nesne ve yazının bir yöne varmasını daha genel biçimde kapsar.",
+          "gloss": "genel varma ve ulaştırma",
+          "shared_zone": "Her iki dalda da bir varlığın veya iletinin belirli bir hedefe erişmesi bulunur.",
+          "distinction": "Komşu dal genel varış ve ulaştırmayı anlatırken odak dal, belirli söz öbekleriyle sınırlı aktarım ve haber ulaşması kullanımlarını temsil eder."
         }
       ],
-      "neighbor_coverage_note": "Bütün aday kartlar karşılaştırıldı; yayımlanan iki ayrım, genel varma anlamı ile yükümlülük yerine getirme anlamından doğabilecek başlıca karışıklıkları gösterir.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; sınırı en açık gösteren genel varış dalı yayımlandı, diğerleri daha uzak alan ilişkileri veya aynı kökün ayrı dallarıdır.",
       "branch_image_ar": "إيصال ووصول",
       "what_is_ar": "إيصال الشيء إلى غيره أو وصوله إليه، وانتهاء الخبر أو القول إلى المخاطب",
+      "what_is_not_ar": "أداء الحقوق الخاص؛ الأداة والعدة؛ الحيلة والاختتال",
       "source_phrase_ar": "أصل واحد وهو إيصال الشيء إلى الشيء أو وصوله إليه (maqayis)؛ تأدى إليه الخبر أي انتهى (sihah)؛ أدوا إلي بمعنى سلموا إلي أو أدوا إلى ما أمركم الله به (tahdhib)",
       "sources": [
         "MQ",
         "SI",
         "TA"
       ],
-      "source_note": {
-        "SI": "Haberin sonunda bir kişiye erişmesi, ulaştıranın belirtilmediği bir kullanım olarak ayrıca kaydedilir."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000021/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi kişinin üzerindeki borcu veya hakkı ödemesini, yerine getirmesini ve eksiksiz vermesini açıkça ortak çekirdek yapar. Vergi ve emanet örnekleri bu çekirdeğin uygulamalarıdır.",
+        "boundary_note": "Dal, yükümlülük konusu bir hakkın ödenmesi veya sahibine verilmesiyle sınırlıdır; salt ulaşmayı anlatmaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Dal hem çekimi yapılmış biçimleri hem de belirli söz öbeklerini içerir; söz öbeklerine özgü para çıkarma ve karşılaştırma anlamları genel tanıma katılmaz."
+      },
       "concept_map": {
-        "definition": "Kişinin üzerinde bulunan borcu, ödemeyi veya kendisine bırakılan şeyi hak sahibine vererek yükümlülüğünü eksiksiz yerine getirmesidir.",
+        "definition": "Kişinin üzerinde bulunan borç, vergi, emanet veya başka bir hakkı ödemesi, sahibine vermesi ve yükümlülüğü eksiksiz yerine getirmesidir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Üstlenilmiş bir borç veya hak ödenir ve gereken miktar eksiksiz verilir.",
+            "statement": "Yükümlülük konusu hak ödenir, sahibine verilir ve eksiksiz biçimde yerine getirilir.",
             "claim_ids": [
-              "lu_003",
-              "lu_007",
-              "lu_005"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Korumaya bırakılmış şey sahibine geri verilerek sorumluluk yerine getirilir.",
+            "role": "example",
+            "statement": "Borç, vergi, baş vergisi ve emanet bu yerine getirmenin örnekleridir.",
             "claim_ids": [
-              "lu_004"
-            ]
-          },
-          {
-            "facet_id": "F003",
-            "role": "extension",
-            "statement": "Yükümlü kişiden malın alınması veya zorla tahsil edilmesi karşı yöndeki bir kullanım oluşturur.",
-            "claim_ids": [
-              "lu_006"
-            ]
-          },
-          {
-            "facet_id": "F004",
-            "role": "source_variant",
-            "statement": "Bir kişinin kendisine bırakılan şeyi başkasından daha iyi yerine teslim ettiği karşılaştırmalı biçimde anlatılır.",
-            "claim_ids": [
-              "lu_008"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Çekirdek anlam, kişinin üzerinde bulunan hakkı ödemesi ve yükümlülüğünü tam olarak yerine getirmesidir. Adlandırma bu tamamlama ölçüsüne dayanır; karşılaştırmalı biçimde bir tanıklık bulunurken, başka değerlendirme aynı anlamı açık bir daha iyi yerine getirme kuruluşuyla söylemeyi tercih eder.",
+        "common_summary": "Kaynaklar, kişinin üzerindeki hakkı ödemesi ve eksiksiz biçimde yerine getirmesi konusunda birleşir; borç, vergi ve emanet başlıca örneklerdir.",
         "common_claim_ids": [
-          "lu_003",
-          "lu_007",
-          "lu_008"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_004"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Korumaya bırakılmış şeyin sahibine eksiksiz verilmesi özel bir uygulama olarak belirtilir."
-          },
-          {
-            "claim_ids": [
-              "lu_005"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Bir başkasına karşı doğmuş hakkın ödenip kapatılması, kişisel yükümlülük bağlamında ayrıca gösterilir."
-          },
-          {
-            "claim_ids": [
-              "lu_006"
-            ],
-            "kind": "extension",
-            "summary": "Yükümlüden mal çıkarma ve ona el koyarak tahsil etme, eylemin karşı yönden kurulan uzantısıdır."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "hakkı eksiksiz yerine getirme",
-        "applicability": "Borç, ödeme veya korumaya bırakılmış şeyin hak sahibine tam olarak verildiği genel anlamı karşılar.",
+        "text": "hakkı eksiksiz yerine getirmek",
+        "applicability": "Borç, vergi, emanet ve benzeri yükümlülüklerin ödenmesi veya sahibine verilmesi için genel karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Yükümlülük, hak sahibi, verme ve eksiksiz tamamlama öğelerinin tümünü korur.",
+          "preserves": "Hakkı verme, ödeme ve yükümlülüğü tamamlama çekirdeğini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -245,11 +181,158 @@
         {
           "text": "borcunu ödemek",
           "usage_role": "contextual",
-          "applicability": "Kişinin üzerinde bulunan para veya mal borcunu kapattığı bağlamlarda doğal karşılıktır.",
+          "applicability": "Üzerinde bulunan parasal borcu kapatma bağlamında doğal bir karşılıktır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Borçlunun hak sahibine gerekeni vererek borcu kapatmasını korur.",
-            "loses": "Korumaya bırakılmış şeyi geri verme ve başka yükümlülükleri yerine getirme kapsamını daraltır.",
+            "preserves": "Yükümlü olunan hakkı ödeme ve kapatma işlemini korur.",
+            "loses": "Emanet ve parasal olmayan hakların sahibine verilmesini kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "emaneti sahibine vermek",
+          "usage_role": "contextual",
+          "applicability": "Korunmak üzere bırakılan bir şeyi hak sahibine eksiksiz teslim etme bağlamında kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Bir hakkı sahibine eksiksiz verme yönünü korur.",
+            "loses": "Borç ve vergi gibi ödeme yükümlülüklerini kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_003",
+          "rendering_kind": "ordinary",
+          "target_gloss": "üzerindeki hakkı ödemek ve yerine getirmek"
+        },
+        {
+          "lexical_unit_id": "lu_004",
+          "rendering_kind": "ordinary",
+          "target_gloss": "emaneti sahibine eksiksiz vermek"
+        },
+        {
+          "lexical_unit_id": "lu_005",
+          "rendering_kind": "ordinary",
+          "target_gloss": "birine hakkını ödemek"
+        },
+        {
+          "lexical_unit_id": "lu_006",
+          "rendering_kind": "ordinary",
+          "target_gloss": "birinden zorla para çıkarmak"
+        },
+        {
+          "lexical_unit_id": "lu_007",
+          "rendering_kind": "ordinary",
+          "target_gloss": "hakkı ödeme ve eksiksiz yerine getirme"
+        },
+        {
+          "lexical_unit_id": "lu_008",
+          "rendering_kind": "ordinary",
+          "target_gloss": "emaneti daha iyi yerine getiren"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001237/B006",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Yükümlünün hakkı ödeyip eksiksiz yerine getirmesi bakış açısını öne çıkarır.",
+          "neighbor_only": "Hakkın alacaklı tarafından istenmesi, tahsil edilmesi ve teslim alınmasını da kapsar.",
+          "gloss": "hakkı ödeme ve tahsil etme",
+          "shared_zone": "Her iki dal da borç veya başka bir hakkın gereğinin yerine gelmesiyle ilgilidir.",
+          "distinction": "Odak dal yükümlünün ödeme ve verme eylemine dayanır; komşu dal ise alacaklının isteme ve tahsil etme yönünü de içerir."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; ödeme ile tahsil arasındaki katılımcı farkını gösteren en yakın dal seçildi, kalan adaylar yükümlülük, engelleme veya güvenilirlik gibi yan alanlardadır.",
+      "branch_image_ar": "أداء الحق والأمانة",
+      "what_is_ar": "دفع الحق وقضاؤه وتوفيته، كالدين والخراج والجزية والأمانة",
+      "what_is_not_ar": "مجرد وصول الخبر؛ الأداة والعدة؛ قلة العدد",
+      "source_phrase_ar": "أدى فلان يؤدي ما عليه أداء وتأدية (maqayis;tahdhib)؛ أدى دينه تأدية أي قضاه والاسم الأداء (sihah)؛ الأداء دفع الحق دفعة وتوفيته كأداء الخراج والجزية وأداء الأمانة (mufradat)",
+      "sources": [
+        "MQ",
+        "SI",
+        "TA",
+        "MU"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_000021/B003",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi süt, tulum ve hurma için sonraki işleme elverişli bir duruma gelmeyi destekler; ayrıca orta tempolu yürüyüşü ayrı bir kullanım olarak verir. Yürüyüş, olgunlaşma çekirdeğinin parçası değil, aynı dalda korunması gereken bağımlı bir kullanımdır.",
+        "boundary_note": "Elverişli duruma gelme çekirdeği yalnızca tanıklanan söz öbeklerine aittir; orta tempolu yürüyüş ayrı bir ilişkili kullanım olarak tutulur."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Bütün anlamlar belirli söz öbeklerine bağlıdır; süt, tulum, hurma ve yürüyüş kullanımlarından yalın kök anlamı çıkarılmaz."
+      },
+      "concept_map": {
+        "definition": "Belirli söz öbeklerinde süt, tulum veya hurmanın sonraki işlem ya da kullanım için elverişli bir aşamaya gelmesidir. Aynı dalda, iki yürüyüş biçimi arasında orta tempoyla yürüme ayrıca tanıklanır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Süt, tulum veya meyve bir sonraki işlem için elverişli olgunluk ya da kıvam aşamasına gelir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "associated_use",
+            "statement": "Yürüyüş bağlamında iki yürüyüş biçimi arasında orta bir tempoyla ilerleme anlatılır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar sütün mayalanmaya yaklaşmasını, tulumun çalkalanabilir olmasını ve hurmanın olgunlaşmasını elverişli aşamaya gelme altında verir; orta tempolu yürüyüş ayrıca kaydedilir.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "işlenmeye elverişli duruma gelmek",
+        "applicability": "Süt, tulum ve meyvenin sonraki işlem için uygun kıvam veya olgunluğa eriştiği ana kullanım için geçerlidir.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Bir sonraki işleme uygun aşamaya erişme çekirdeğini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "süt koyulaşmak",
+          "usage_role": "contextual",
+          "applicability": "Sütün mayalanabilecek ölçüde kıvam kazandığı bağlamda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Sütün sonraki işleme uygun kıvama gelmesini korur.",
+            "loses": "Tulumun hazır oluşunu, meyvenin olgunlaşmasını ve yürüyüş kullanımını kapsamaz.",
             "adds": null,
             "collision": null
           },
@@ -258,13 +341,13 @@
           ]
         },
         {
-          "text": "emaneti sahibine vermek",
+          "text": "orta tempoda yürümek",
           "usage_role": "contextual",
-          "applicability": "Korumak üzere alınmış bir şeyin sahibine geri verildiği bağlamlarda kullanılır.",
+          "applicability": "İki yürüyüş biçimi arasında kalan orta bir yürüyüşü anlatan özel bağlamda kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Kişiye bırakılan şeyin sahibine eksiksiz geri verilmesini korur.",
-            "loses": "Borç ve başka ödeme yükümlülüklerini kapsamaz.",
+            "fit": "none",
+            "preserves": "Orta hız ve biçimde yürüme kullanımını tam olarak korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -275,171 +358,111 @@
       ],
       "lexical_glosses": [
         {
-          "lexical_unit_id": "lu_003",
+          "lexical_unit_id": "lu_009",
           "rendering_kind": "ordinary",
-          "target_gloss": "üzerindeki hakkı ödedi ve eksiksiz yerine getirdi"
+          "target_gloss": "süt koyulaşıp mayalanmaya hazır olmak"
         },
         {
-          "lexical_unit_id": "lu_004",
+          "lexical_unit_id": "lu_010",
           "rendering_kind": "ordinary",
-          "target_gloss": "kendisine bırakılan şeyi sahibine verme"
+          "target_gloss": "tulum çalkalanmaya elverişli olmak"
         },
         {
-          "lexical_unit_id": "lu_005",
+          "lexical_unit_id": "lu_011",
           "rendering_kind": "ordinary",
-          "target_gloss": "ona olan borcunu ödedi"
+          "target_gloss": "hurma olgunlaşmak"
         },
         {
-          "lexical_unit_id": "lu_006",
+          "lexical_unit_id": "lu_012",
           "rendering_kind": "ordinary",
-          "target_gloss": "ondan mal tahsil etti veya malına el koydu"
+          "target_gloss": "sütü tulumda çalkalamak"
         },
         {
-          "lexical_unit_id": "lu_007",
+          "lexical_unit_id": "lu_013",
           "rendering_kind": "ordinary",
-          "target_gloss": "hakkı ödeme ve yükümlülüğü yerine getirme"
-        },
-        {
-          "lexical_unit_id": "lu_008",
-          "rendering_kind": "ordinary",
-          "target_gloss": "kendisine bırakılanı senden daha iyi yerine teslim eden"
+          "target_gloss": "orta tempoda yürümek"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "vermek",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Bir şeyin ilgili kişiye verilmesi yönünü korur.",
-            "loses": "Borç, hak veya korumaya bırakılmış şey üzerinden doğan yükümlülüğün eksiksiz kapatılması koşulunu siler.",
-            "adds": "Her türlü sıradan verme veya bağışlama eylemini de kapsar.",
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_001237/B006",
+          "neighbor_ref": "root_000063/B003",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Yükümlünün borcu veya kendisine bırakılan şeyi hak sahibine tam olarak vermesini merkez alır.",
-          "neighbor_only": "Hakkı isteme, tahsil etme, teslim alma ve kimi bedellerde yeterli sayılan karşılığı da kapsar.",
-          "gloss": "hakkı ödeme ve tahsil etme",
-          "shared_zone": "Her iki dal, borcun ödenmesi ve hak sahibinin alacağına kavuşması alanında örtüşür.",
-          "distinction": "Odak dal yükümlünün gereğini yerine getirmesi yönünden kuruludur; komşu dal hem ödeme hem de hak sahibinin istemesi ve alması yönlerini daha geniş biçimde içerir."
-        },
-        {
-          "neighbor_ref": "root_000449/B001",
-          "relation_type": "polarity_pair",
-          "boundary_match": "opposed",
-          "focus_only": "Üstlenilen hakkın korunup sahibine eksiksiz verilmesini anlatır.",
-          "neighbor_only": "Üstlenilen hakkın gizlice çiğnenmesini ve güvenin boşa çıkarılmasını anlatır.",
-          "gloss": "güveni boşa çıkarma",
-          "shared_zone": "İki dal da kişiye bırakılan şey ve ona bağlı sorumluluk eksenindedir.",
-          "distinction": "Bu dal sorumluluğun yerine getirilmesi kutbudur; komşu dal aynı sorumluluğun bozulması ve hak sahibinin güveninin çiğnenmesi kutbudur."
+          "focus_only": "Süt ve tulumun belirli bir işleme hazır oluşunu ve ayrı bir orta yürüyüş kullanımını kapsar.",
+          "neighbor_only": "Bir şeyin vaktine, olgunluğuna veya belirlenmiş son aşamasına gelmesini daha genel anlatır.",
+          "gloss": "vaktine ve olgunluğa erişmek",
+          "shared_zone": "Her iki dalda da bir şeyin uygun veya tamamlanmış aşamaya erişmesi bulunur.",
+          "distinction": "Komşu dal genel zaman ve olgunluk erişimini kapsar; odak dal ise belirli süt, tulum ve meyve söz öbekleriyle sınırlıdır ve ayrıca yürüyüş kullanımı taşır."
         }
       ],
-      "neighbor_coverage_note": "Bütün aday kartlar değerlendirildi; ödeme ve tahsil yönlerini birleştiren yakın anlam ile sorumluluğu bozan karşıt kutup, sınırı en açık biçimde gösterir.",
-      "branch_image_ar": "أداء الحق والأمانة",
-      "what_is_ar": "دفع الحق وقضاؤه وتوفيته، كالدين والخراج والجزية والأمانة",
-      "source_phrase_ar": "أدى فلان يؤدي ما عليه أداء وتأدية (maqayis;tahdhib)؛ أدى دينه تأدية أي قضاه والاسم الأداء (sihah)؛ الأداء دفع الحق دفعة وتوفيته كأداء الخراج والجزية وأداء الأمانة (mufradat)",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel olgunluğa erişme dalı temel sınırı en iyi gösterir, öteki adaylar meyveye özgü örnekler, erkenlik veya ilgisiz araç alanlarıdır.",
+      "branch_image_ar": "بلوغ حالة الصلاح",
+      "what_is_ar": "بلوغ اللبن أو السقاء أو الثمرة حالة تصلح لما بعدها، ويلحق به المشي المتوسط بين مشيين",
+      "what_is_not_ar": "أداء الدين؛ الإعانة؛ الحيلة",
+      "source_phrase_ar": "للبن إذا وصل إلى حال الرؤوب قد أدى يأدي أديا (maqayis)؛ أدى اللبن يأدي أديا أي خثر ليروب (sihah)؛ أدى السقاء يأدي أديا إذا أمكن أن يمخض (tahdhib)؛ أدت التمرة وهو الينوع والنضج وأدوت في مشيي وهو مشي بين المشيين (tahdhib)",
       "sources": [
         "MQ",
         "SI",
-        "TA",
-        "MU"
+        "TA"
       ],
-      "source_note": {
-        "MU": "Korumaya bırakılmış şeyin sahibine eksiksiz verilmesi özel bir uygulama olarak belirtilir.",
-        "TA": "Bir başkasına karşı doğmuş hakkın ödenip kapatılması, kişisel yükümlülük bağlamında ayrıca gösterilir.",
-        "SI": "Yükümlüden mal çıkarma ve ona el koyarak tahsil etme, eylemin karşı yönden kurulan uzantısıdır."
-      }
+      "source_note": {}
     },
     {
-      "branch_ref": "root_000021/B003",
+      "branch_ref": "root_000021/B004",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi araç, meslek donanımı, savaş gereci ve bir iş için hazırlanmayı ortak bir araçlanma alanında destekler. Su kabı ise bu işlevsel çekirdeğin zorunlu parçası değil, ayrı bir adlandırma olarak korunmalıdır.",
+        "boundary_note": "Araç ve hazırlık çekirdeği ile su kabı adı birbirine karıştırılmaz; her kullanım kendi tanıklanan biçimiyle sınırlandırılır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Dal hem ad ve türemiş biçimleri hem de hazırlık bildiren söz öbeklerini içerir; yapıya özgü anlamlar yalın kökte birleştirilmez."
+      },
       "concept_map": {
-        "definition": "Sütün, kabın içeriğinin veya meyvenin sonraki işleme ya da kullanıma elverişli olgunluk durumuna gelmesidir; orta hızdaki yürüyüş bu çekirdeğe bağlı ayrı bir kullanımdır.",
+        "definition": "Bir işi yapmaya yarayan araç, donanım veya savaş gereci ile bunları edinerek işe hazırlanma durumudur. Su taşımaya yarayan kap adı ayrı bir biçimsel kullanım olarak bu dalda yer alır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Süt koyulaşarak mayalanmaya veya çalkalanmaya uygun duruma gelir.",
+            "statement": "Bir meslek, yolculuk veya savaş için gereken araç ve donanım sağlanır.",
             "claim_ids": [
-              "lu_009",
-              "lu_010"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "extension",
-            "statement": "Meyve olgunlaşıp yenmeye veya sonraki işleme elverişli duruma gelir.",
+            "statement": "Araçları edinmiş olmak, yapılacak iş için hazır ve donanımlı olma durumuna uzanır.",
             "claim_ids": [
-              "lu_011"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "associated_use",
-            "statement": "Sütün kap içinde çalkalanması, hazır duruma gelişin ardından yapılan işlem olarak kullanılır.",
+            "role": "source_variant",
+            "statement": "Aynı biçim ailesindeki ayrı bir ad, su taşımaya yarayan kabı belirtir.",
             "claim_ids": [
-              "lu_012"
-            ]
-          },
-          {
-            "facet_id": "F004",
-            "role": "associated_use",
-            "statement": "İki yürüyüş biçimi arasında orta hızda yürüme, bu alana eklenen ayrı bir kullanımdır.",
-            "claim_ids": [
-              "lu_013"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak çekirdek, sütün koyulaşıp sonraki işleme uygun duruma ulaşmasıdır.",
+        "common_summary": "Kaynaklar aracı bir işe ulaşmayı sağlayan nesne, meslek donanımı ve savaş gereci olarak açıklar; yolculuğa veya işe hazırlanmayı ve su kabı adını da kaydeder.",
         "common_claim_ids": [
-          "lu_009"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_010"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Süt kabının çalkalanabilir duruma gelmesi, hazırlığın kap üzerinden anlatılan özel biçimidir."
-          },
-          {
-            "claim_ids": [
-              "lu_011"
-            ],
-            "kind": "extension",
-            "summary": "Hazır duruma gelme anlamı, meyvenin olgunlaşmasına genişletilir."
-          },
-          {
-            "claim_ids": [
-              "lu_012"
-            ],
-            "kind": "derivation",
-            "summary": "Sütü kap içinde çalkalama eylemi, hazır duruma geliş alanına bağlı bir işlem olarak kaydedilir."
-          },
-          {
-            "claim_ids": [
-              "lu_013"
-            ],
-            "kind": "sole_attestation",
-            "summary": "İki yürüyüş biçimi arasında orta hızda ilerleme, bağımsız bir yan kullanım olarak verilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "işlenmeye uygun duruma gelme",
-        "applicability": "Süt veya meyvenin sonraki işlem ya da kullanım için gereken olgunluk aşamasına ulaşmasını karşılar.",
+        "text": "araç, donanım ve hazırlık",
+        "applicability": "Bir eylemi mümkün kılan araçlar ile bunları edinerek hazır olma çekirdeğini birlikte karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Bir maddenin belirli bir sonraki aşamaya elverişli duruma ulaşması çekirdeğini korur.",
+          "preserves": "Araç, donanım ve işe hazırlanma ilişkisini birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -451,225 +474,34 @@
       },
       "contextual_glosses": [
         {
-          "text": "süt koyulaşmak",
+          "text": "yolculuk için hazırlanmak",
           "usage_role": "contextual",
-          "applicability": "Sütün mayalanma veya çalkalanma öncesinde koyulaşıp hazır hale geldiği bağlamlarda kullanılır.",
+          "applicability": "Yolculuk için gerekli araç ve gereçleri edinip hazır duruma gelme bağlamında kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Sütün yapısal değişimle sonraki işleme hazır olmasını korur.",
-            "loses": "Meyvenin olgunlaşması ile yürüyüş ve çalkalama kullanımlarını dışarıda bırakır.",
+            "preserves": "Gerekli donanımı edinerek hazır olma yönünü korur.",
+            "loses": "Meslek ve savaş araçlarını ve su kabı adını kapsamaz.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002"
           ]
         },
         {
-          "text": "orta hızda yürümek",
+          "text": "su kabı",
           "usage_role": "contextual",
-          "applicability": "İki farklı yürüyüş biçiminin arasında kalan bir hızla ilerlemeyi anlatır.",
+          "applicability": "Suyu taşımaya veya saklamaya yarayan kabın özel adı için açıklayıcı karşılıktır.",
           "error_profile": {
-            "fit": "displacement",
-            "preserves": "Yalnızca yürüyüşün iki uç arasında orta düzeyde oluşunu korur.",
-            "loses": "Süt veya meyvenin uygun olgunluk aşamasına gelmesi çekirdeğini taşımaz.",
-            "adds": null,
-            "collision": "Dalın madde ve olgunluk çekirdeğiyle değiştirilebilir bir genel karşılık değildir."
-          },
-          "facet_ids": [
-            "F004"
-          ]
-        }
-      ],
-      "lexical_glosses": [
-        {
-          "lexical_unit_id": "lu_009",
-          "rendering_kind": "ordinary",
-          "target_gloss": "süt koyulaşıp mayalanmaya hazır oldu"
-        },
-        {
-          "lexical_unit_id": "lu_010",
-          "rendering_kind": "ordinary",
-          "target_gloss": "kaptaki süt çalkalanabilir duruma geldi"
-        },
-        {
-          "lexical_unit_id": "lu_011",
-          "rendering_kind": "ordinary",
-          "target_gloss": "meyve olgunlaştı"
-        },
-        {
-          "lexical_unit_id": "lu_012",
-          "rendering_kind": "ordinary",
-          "target_gloss": "sütü kap içinde çalkaladım"
-        },
-        {
-          "lexical_unit_id": "lu_013",
-          "rendering_kind": "ordinary",
-          "target_gloss": "orta hızda yürüdüm"
-        }
-      ],
-      "excluded_glosses": [
-        {
-          "text": "olgunlaşmak",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Meyvenin uygun duruma erişmesi yönünü korur.",
-            "loses": "Sütün koyulaşıp mayalanmaya hazır hale gelmesini, su kabının çalkalanabilir duruma gelmesini ve orta yürüyüş kullanımını dışarıda bırakır.",
-            "adds": null,
-            "collision": null
-          }
-        }
-      ],
-      "neighbor_distinctions": [
-        {
-          "neighbor_ref": "root_000063/B003",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Süt, süt kabı ve meyvenin belirli bir sonraki işleme elverişli duruma gelmesini anlatır.",
-          "neighbor_only": "Bir şeyin vaktinin gelmesini, genel olgunlaşmayı ve sıcaklığın en yüksek aşamaya varmasını da kapsar.",
-          "gloss": "vakti gelmek ve olgunlaşmak",
-          "shared_zone": "Her iki dalda da bir şeyin gelişim sürecinde beklenen olgunluk noktasına ulaşması bulunur.",
-          "distinction": "Odak dal sonraki işleme elverişlilikle ve belirli maddelerle sınırlıdır; komşu dal zamanın gelmesini ve başka türden doruk noktalarını içeren daha genel bir erişme alanıdır."
-        }
-      ],
-      "neighbor_coverage_note": "Bütün adaylar karşılaştırıldı; genel olgunlaşma ve vaktin gelmesi dalı, özel hazırlık aşamasıyla en güçlü örtüşmeyi ve en yararlı sınır farkını taşır.",
-      "branch_image_ar": "بلوغ حالة الصلاح",
-      "what_is_ar": "بلوغ اللبن أو السقاء أو الثمرة حالة تصلح لما بعدها، ويلحق به المشي المتوسط بين مشيين",
-      "source_phrase_ar": "للبن إذا وصل إلى حال الرؤوب قد أدى يأدي أديا (maqayis)؛ أدى اللبن يأدي أديا أي خثر ليروب (sihah)؛ أدى السقاء يأدي أديا إذا أمكن أن يمخض (tahdhib)؛ أدت التمرة وهو الينوع والنضج وأدوت في مشيي وهو مشي بين المشيين (tahdhib)",
-      "sources": [
-        "MQ",
-        "SI",
-        "TA"
-      ],
-      "source_note": {
-        "TA": "Süt kabının çalkalanabilir duruma gelmesi, hazırlığın kap üzerinden anlatılan özel biçimidir. Hazır duruma gelme anlamı, meyvenin olgunlaşmasına genişletilir. Sütü kap içinde çalkalama eylemi, hazır duruma geliş alanına bağlı bir işlem olarak kaydedilir. İki yürüyüş biçimi arasında orta hızda ilerleme, bağımsız bir yan kullanım olarak verilir."
-      }
-    },
-    {
-      "branch_ref": "root_000021/B004",
-      "concept_map": {
-        "definition": "Bir işi yapmayı mümkün kılan araç, gereç ve hazırlık donanımıdır; su kabı, binek takımı ve silah donanımı bunun özelleşmiş örnekleridir.",
-        "facets": [
-          {
-            "facet_id": "F001",
-            "role": "core",
-            "statement": "Bir işe ulaşmak veya onu gerçekleştirmek için kullanılan araç ve gereçler çekirdeği oluşturur.",
-            "claim_ids": [
-              "lu_014"
-            ]
-          },
-          {
-            "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Binek üzerindeki kayışlar, genel araç ve gereç anlamının belirli bir donanım türüdür.",
-            "claim_ids": [
-              "lu_015"
-            ]
-          },
-          {
-            "facet_id": "F003",
-            "role": "specialization",
-            "statement": "Suyu taşımaya veya temizlenmede kullanmaya yarayan kap, somut bir araç türüdür.",
-            "claim_ids": [
-              "lu_016"
-            ]
-          },
-          {
-            "facet_id": "F004",
-            "role": "specialization",
-            "statement": "Silah donanımı eksiksiz olan kişi, araç gereç bakımından hazırlanmış kişi olarak nitelenir.",
-            "claim_ids": [
-              "lu_017"
-            ]
-          },
-          {
-            "facet_id": "F005",
-            "role": "extension",
-            "statement": "Yolculuk veya başka bir iş için gereken donanımı edinmek, hazır olma durumuna uzanır.",
-            "claim_ids": [
-              "lu_018",
-              "lu_019",
-              "lu_020"
-            ]
-          }
-        ]
-      },
-      "source_synthesis": {
-        "common_summary": "Araç, bir işi yapmayı sağlayan gereçtir; bu çekirdek su kabına, silah donanımına ve bir iş için gereken hazırlığa kadar uzanır.",
-        "common_claim_ids": [
-          "lu_014",
-          "lu_016",
-          "lu_017",
-          "lu_018",
-          "lu_019"
-        ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_015"
-            ],
-            "kind": "example",
-            "summary": "Binek üzerindeki kayış ve bağlar, genel donanım anlamının somut bir örneği olarak verilir."
-          },
-          {
-            "claim_ids": [
-              "lu_020"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Bir işe veya ibadete girişmeden önce hazır bulunma durumu için ayrı bir adlandırma kaydedilir."
-          }
-        ],
-        "supporting_claim_ids": [],
-        "duplicate_claims": []
-      },
-      "concept_gloss": {
-        "text": "araç ve hazırlık donanımı",
-        "applicability": "Hem bir işi gerçekleştiren gereci hem de işe girişmek için edinilen donanım ve hazır oluşu kapsar.",
-        "error_profile": {
-          "fit": "none",
-          "preserves": "Somut araç, gerekli donanım ve bunlarla işe hazırlanma yönlerini birlikte korur.",
-          "loses": null,
-          "adds": null,
-          "collision": null
-        },
-        "facet_ids": [
-          "F001",
-          "F002",
-          "F003",
-          "F004",
-          "F005"
-        ]
-      },
-      "contextual_glosses": [
-        {
-          "text": "iş aracı",
-          "usage_role": "general",
-          "applicability": "Belirli bir işi gerçekleştirmeye yarayan nesne veya gereçten söz edildiğinde kullanılır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Bir amaca erişmeyi sağlayan araç olma çekirdeğini korur.",
-            "loses": "Donanım edinerek hazırlanma durumunu ve özel su kabı anlamını kapsamaz.",
+            "fit": "none",
+            "preserves": "Suyu taşıyan kap anlamını doğrudan korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
-          ]
-        },
-        {
-          "text": "hazırlığını yapmak",
-          "usage_role": "contextual",
-          "applicability": "Yolculuk veya başka bir iş için gereken araçları edinip hazır hale gelme bağlamında kullanılır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Gerekli araçları edinme ve işe hazır hale gelme yönünü korur.",
-            "loses": "Tek başına bir araç veya belirli bir kap adı olma yönlerini dışarıda bırakır.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F005"
+            "F003"
           ]
         }
       ],
@@ -677,12 +509,12 @@
         {
           "lexical_unit_id": "lu_014",
           "rendering_kind": "ordinary",
-          "target_gloss": "araç veya gereç"
+          "target_gloss": "araç ve gereç"
         },
         {
           "lexical_unit_id": "lu_015",
           "rendering_kind": "ordinary",
-          "target_gloss": "binek takımının kayışları ve bağları"
+          "target_gloss": "eyer takımının kayışları"
         },
         {
           "lexical_unit_id": "lu_016",
@@ -692,62 +524,41 @@
         {
           "lexical_unit_id": "lu_017",
           "rendering_kind": "ordinary",
-          "target_gloss": "silah donanımı eksiksiz kişi"
+          "target_gloss": "silah ve donanımı eksiksiz olan"
         },
         {
           "lexical_unit_id": "lu_018",
           "rendering_kind": "ordinary",
-          "target_gloss": "yolculuk için hazırlanıp gerekenleri aldım"
+          "target_gloss": "yolculuk için hazırlanmak"
         },
         {
           "lexical_unit_id": "lu_019",
           "rendering_kind": "ordinary",
-          "target_gloss": "topluluk iş için hazırlanıp gereken donanımı aldı"
+          "target_gloss": "iş için hazırlanıp gerekli donanımı almak"
         },
         {
           "lexical_unit_id": "lu_020",
           "rendering_kind": "ordinary",
-          "target_gloss": "işe veya ibadete hazır oluş"
+          "target_gloss": "bir iş veya namaz için hazırlık"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "silah",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Donanım ve hazırlık alanındaki silah örneğini korur.",
-            "loses": "Genel araç, zanaat aleti, yol hazırlığı ve su kabı kapsamını dışarıda bırakır.",
-            "adds": null,
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000067/B008",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Her türlü işi gerçekleştiren araç ile işe hazırlık için edinilen donanımı kapsar.",
-          "neighbor_only": "Taşıma işlevli düzenekleri, çadır direklerini ve cenazeyi taşıyan düzeneği özellikle kapsar.",
-          "gloss": "taşıyıcı araç",
-          "shared_zone": "Her iki dalda da bir işi görmeye yarayan somut araç anlamı bulunur.",
-          "distinction": "Odak dal araç kavramını genel tutar ve hazırlığa genişler; komşu dal ise özellikle taşıyan veya üzerinde taşıma yapılan araç ve düzeneklerde yoğunlaşır."
-        },
-        {
-          "neighbor_ref": "root_001027/B003",
-          "relation_type": "polarity_pair",
-          "boundary_match": "opposed",
-          "focus_only": "Araç, bağ veya silah donanımının mevcut ve kullanıma hazır olmasını anlatır.",
-          "neighbor_only": "Bağ, taşıma parçası veya silah bulunmadığı için aracın ya da kişinin donanımsız kalmasını anlatır.",
-          "gloss": "donanımsız ve bağsız",
-          "shared_zone": "İki dal da araçların ve kişilerin işlev için gerekli parçalarla donatılması eksenindedir.",
-          "distinction": "Bu dal gerekli aracın veya donanımın varlığına dayanır; komşu dal aynı eksende gerekli parçanın yokluğunu ve buna bağlı işlev kaybını bildirir."
+          "focus_only": "Donanımlanma, işe hazırlanma ve ayrı bir su kabı adını da içerir.",
+          "neighbor_only": "Taşıyıcı düzenek ve çadır direkleri gibi daha geniş araç türlerini adlandırır.",
+          "gloss": "araç ve taşıyıcı düzenek",
+          "shared_zone": "Her iki dal da bir işi görmeye yarayan somut araçları kapsar.",
+          "distinction": "Odak dal somut aracın yanında donanımlı ve hazır olma durumuna uzanır; komşu dal araç ve taşıyıcı nesne adlarında daha geniştir."
         }
       ],
-      "neighbor_coverage_note": "Bütün aday kartlar incelendi; genel araçla taşıyıcı araç arasındaki yakınlık ve donanımlı olma ile donanımsızlık karşıtlığı en açıklayıcı iki sınırdır.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel araç dalı çekirdek örtüşmeyi en iyi gösterir, diğerleri belirli araç türleri, araçsızlık veya farklı işlevlerle sınırlıdır.",
       "branch_image_ar": "الأداة والعدة",
       "what_is_ar": "الأداة والآلة والعدة والسلاح وما يتهيأ به للفعل، ويدخل فيه الإداوة وعاء الماء",
+      "what_is_not_ar": "أداء الحقوق؛ الاستعداء على الخصم؛ الحيلة",
       "source_phrase_ar": "أداة الرحل سيوره ونسوعه وأداة السرج (jamhara)؛ الأداة الآلة والجمع الأدوات (sihah)؛ آديت للسفر فأنا مؤد له إذا كنت متهيئا له (sihah;tahdhib)؛ لكل ذي حرفة أداة وهي آلته وأداة الحرب سلاحها ورجل مؤد كامل أداة السلاح والإداوة للماء (tahdhib)؛ الأداة التي بها يتوصل إليه (mufradat)",
       "sources": [
         "JA",
@@ -755,90 +566,72 @@
         "TA",
         "MU"
       ],
-      "source_note": {
-        "JA": "Binek üzerindeki kayış ve bağlar, genel donanım anlamının somut bir örneği olarak verilir.",
-        "SI": "Bir işe veya ibadete girişmeden önce hazır bulunma durumu için ayrı bir adlandırma kaydedilir."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000021/B005",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi birini belirli bir işte güçlendirme ve ona yardım etme çekirdeğini açıkça verir. Yöneticiye bir hasım hakkında başvurma kullanımı, bu yardımın otorite aracılığıyla sağlanan özel biçimidir.",
+        "boundary_note": "Dal açık yardım ve güçlendirmeyi kapsar; gizli aldatmayı veya yalnızca araç sahibi olmayı içermez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Yardım ve otoriteden destek isteme anlamları yalnızca tanıklanan söz öbeklerinde geçerlidir; yalın köke taşınmaz."
+      },
       "concept_map": {
-        "definition": "Bir başkasını belirli bir işte güçlendirip ona yardım etmektir; yetkili bir kişiden karşı tarafa karşı destek istemek bunun özel bir biçimidir.",
+        "definition": "Bir kişiyi belirli bir iş veya kişiye karşı güçlendirmek ve ona yardım etmektir; bunun özel bir biçiminde kişi, hasmına karşı yöneticinin yardımını ister.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir kişi, başkasının bir işi yapabilmesi için ona güç ve yardım sağlar.",
+            "statement": "Bir kişi belirli bir işi yapabilsin diye güçlendirilir ve desteklenir.",
             "claim_ids": [
-              "lu_021"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Bir anlaşmazlıkta yetkili kişiden karşı tarafa karşı yardım istenir ve bu yardım alınır.",
+            "statement": "Bir hasma karşı yöneticiye başvurularak onun müdahalesi ve yardımı istenir.",
             "claim_ids": [
-              "lu_022"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Bir anlaşmazlıkta yetkili kişiden karşı tarafa karşı destek istemek, başkasını belirli bir işte güçlendirip ona yardım etme çekirdeğinin özel bir uygulamasıdır.",
+        "common_summary": "Kaynaklar güçlendirme ve yardım etme anlamında birleşir; yöneticiye hasım hakkında başvurma, bu yardım ilişkisinin özel uygulamasıdır.",
         "common_claim_ids": [
-          "lu_022"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_021"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Bir kişiyi belirli bir iş için güçlendirme ve ona doğrudan yardım etme genel anlamı ayrıca kaydedilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "birini güçlendirip destekleme",
-        "applicability": "Bir kişinin başkasına belirli bir işte güç kazandırdığı ve yardım ettiği genel anlamı karşılar.",
+        "text": "güçlendirip yardım etmek",
+        "applicability": "Bir kişiye belirli bir işte veya karşılaşmada güç ve destek sağlama çekirdeğinin genel karşılığıdır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Başkasına yönelen güçlendirme, yardım ve belirli bir işte ilerletme öğelerini korur.",
+          "preserves": "Güç kazandırma ile etkin yardım sağlama yönlerini korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001",
-          "F002"
+          "F001"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "ona yardım etmek",
-          "usage_role": "general",
-          "applicability": "Birinin belirli bir işi yapabilmesi için ona doğrudan destek verildiğinde kullanılır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Başkasına yönelmiş yardım ilişkisini açık biçimde korur.",
-            "loses": "Yardımın kişiyi güçlendirme yönünü ve yetkili desteği isteme özel durumunu zayıflatır.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        },
-        {
-          "text": "yetkiliden destek istemek",
+          "text": "yönetimden yardım istemek",
           "usage_role": "contextual",
-          "applicability": "Bir anlaşmazlıkta karşı tarafa karşı yetkili bir kişinin yardımına başvurulduğunda kullanılır.",
+          "applicability": "Bir hasma karşı yönetici veya yetkili makamın desteğini isteme bağlamında kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Karşı tarafa karşı yetkili yardımı isteme özel durumunu korur.",
-            "loses": "Yetkili ve anlaşmazlık içermeyen genel güçlendirme ile yardım kullanımlarını kapsamaz.",
+            "fit": "none",
+            "preserves": "Hasma karşı yetkili desteğine başvurma kullanımını korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -851,108 +644,86 @@
         {
           "lexical_unit_id": "lu_021",
           "rendering_kind": "ordinary",
-          "target_gloss": "onu bu işte güçlendirdi ve destekledi"
+          "target_gloss": "bir işte güçlendirip yardım etmek"
         },
         {
           "lexical_unit_id": "lu_022",
           "rendering_kind": "ordinary",
-          "target_gloss": "yetkiliden ona karşı yardım istedim"
+          "target_gloss": "hasma karşı yöneticiden yardım istemek"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "yardım istemek",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "displacement",
-            "preserves": "Yardım ve destek ilişkisini korur.",
-            "loses": "Bir başkasını güçlendirme veya ona karşı destek sağlama eylemini merkez olmaktan çıkarır.",
-            "adds": "Yardımı talep eden kişiyi ana eyleyen gibi gösterir.",
-            "collision": "Katılımcı yönünü tersine çevirerek destek verme ile destek istemeyi karıştırır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000027/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Belirli bir işte yardım etmeyi ve yetkiliden karşı tarafa karşı destek istemeyi kapsar.",
-          "neighbor_only": "Kişinin kendi gücünü ve başkasının dayanağını sağlamlaştırmasını daha genel biçimde kapsar.",
-          "gloss": "güç ve dayanışma",
-          "shared_zone": "Her iki dal, bir başkasına güç kazandırma ve onun yanında durma alanında örtüşür.",
-          "distinction": "Odak dal başkasına belirli bir işte yardım etme eylemine ve anlaşmazlıktaki yetkili desteğine bağlıdır; komşu dal güç ve dayanışmayı daha genel bir çerçevede anlatır."
-        },
-        {
-          "neighbor_ref": "root_001528/B007",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Birini güçlendiren her türlü yardımı ve iş görmesini kolaylaştıran desteği anlatır.",
-          "neighbor_only": "Bir kişi adına tartışma, onu savunma ve saldırıya karşı koruma eylemini özellikle anlatır.",
-          "gloss": "birini savunmak",
-          "shared_zone": "Her iki dalda da başka bir kişinin yanında durup ona karşı yönelen güçlüğü azaltma vardır.",
-          "distinction": "Bu dalın çekirdeği güçlendirme ve yardımdır; komşu dal yardımın savunma, tartışma ve saldırıyı geri çevirme biçimiyle sınırlıdır."
+          "focus_only": "Belirli bir işte yardım etmeyi ve hasma karşı yöneticinin desteğini istemeyi içerir.",
+          "neighbor_only": "Güç, dayanışma ve karşılıklı destek alanını daha genel biçimde kapsar.",
+          "gloss": "güç ve destek sağlamak",
+          "shared_zone": "Her iki dal da bir kişinin gücünü artırma ve ona destek olma alanında buluşur.",
+          "distinction": "Komşu dal genel güç ve dayanışma alanını kapsar; odak dal belirli söz öbeklerindeki yardım eylemi ile otoriteye başvurma kullanımına bağlıdır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel güçlendirme alanı ile savunmaya özgü yardım, odak dalın kapsamını ve özel yetkili desteğini en iyi açıklar.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel güç ve destek dalı en yakın karşılaştırmadır, kalanlar savunma, pekiştirme, otorite veya aynı kökün ayrı anlamlarıdır.",
       "branch_image_ar": "إعانة وتقوية",
       "what_is_ar": "إعانة غيره وتقويته على أمر، ومنه الاستعداء بالسلطان على الخصم",
+      "what_is_not_ar": "الأداة المادية؛ أداء الحق؛ الحيلة الخفية",
       "source_phrase_ar": "آداه على كذا إذا قواه عليه وأعانه (sihah)؛ استأديت الأمير على فلان فآداني عليه بمعنى استعديته فأعداني عليه (sihah)؛ استأديت السلطان على فلان أي استعديت فآداني عليه أي أعداني وأعانني (tahdhib)؛ استأديت على فلان نحو استعديت (mufradat)",
       "sources": [
         "SI",
         "TA",
         "MU"
       ],
-      "source_note": {
-        "SI": "Bir kişiyi belirli bir iş için güçlendirme ve ona doğrudan yardım etme genel anlamı ayrıca kaydedilir."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000021/B006",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bir hedefe erişmek veya onu ele geçirmek için hileye başvurmayı ve karşıdakini aldatmayı açıkça destekler. Verilen hayvan örneği çekirdeğin örneğidir, tanımın zorunlu katılımcısı değildir.",
+        "boundary_note": "Dal gizli düzen ve aldatma yoluyla hedefe erişmeyle sınırlıdır; açık yardım veya araç kullanımı tek başına bu anlama girmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Hile ve aldatma anlamı yalnızca tanıklanan söz öbeklerine bağlıdır; buradan yalın kök için genel bir anlam çıkarılmaz."
+      },
       "concept_map": {
-        "definition": "Bir şeye erişmek veya onu ele geçirmek için karşıdakini sezdirmeden yanıltıp hileli bir yol izlemektir.",
+        "definition": "Bir şeyi elde etmek, birini ele geçirmek veya bir işi gerçekleştirmek için gizli bir düzen kurup karşıdakini aldatmaktır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Hedefteki kişi ya da canlı, ele geçirilmek amacıyla sezdirmeden aldatılır ve tuzağa çekilir.",
+            "statement": "Hedefe erişmek için karşıdakinin fark etmeyeceği bir düzen veya aldatma yolu kullanılır.",
             "claim_ids": [
-              "lu_023"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "extension",
-            "statement": "Belirli bir işi gerçekleştirmek için dolaylı ve hileli bir çareye başvurulur.",
+            "role": "example",
+            "statement": "Bir yırtıcının avını yiyebilmek için onu kandırması bu kullanımın örneğidir.",
             "claim_ids": [
-              "lu_024"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Çekirdek kullanım, hedefi ele geçirmek için onu sezdirmeden aldatıp tuzağa çekmektir.",
+        "common_summary": "Kaynaklar bir hedefi elde etmek için hile kurma ve karşıdakini aldatma anlamında birleşir; avını kandıran yırtıcı bu çekirdeği örnekler.",
         "common_claim_ids": [
-          "lu_023"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_024"
-            ],
-            "kind": "extension",
-            "summary": "Ele geçirme amacıyla kurulan hile, herhangi bir işi dolaylı bir çareyle gerçekleştirmeye genişletilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "bir şeyi ele geçirmek veya bir işi yapmak için hileli yola başvurma",
-        "applicability": "Bir hedefi ele geçirmek ya da belirli bir işi yapmak amacıyla hileli ve dolaylı bir yola başvurmayı karşılar.",
+        "text": "hileyle ele geçirmeye çalışmak",
+        "applicability": "Bir hedefe ulaşmak veya onu almak için gizli düzen ve aldatma kullanılan bağlamların genel karşılığıdır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Hileli yol, hedefe ulaşma, ele geçirme amacı ve bir işi dolaylı biçimde yapma öğelerini birlikte korur.",
+          "preserves": "Hile kullanma, aldatma ve hedefi elde etme yönlerini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -964,32 +735,18 @@
       },
       "contextual_glosses": [
         {
-          "text": "tuzağa düşürmek",
+          "text": "kandırıp yakalamaya çalışmak",
           "usage_role": "contextual",
-          "applicability": "Bir kişi veya canlının ele geçirilmek üzere sezdirmeden aldatıldığı bağlamlarda kullanılır.",
+          "applicability": "Bir avı veya kişiyi aldatma yoluyla ele geçirmeye çalışma bağlamında kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Hedefi aldatıp ele geçirmeye yönelen gizli düzeni korur.",
-            "loses": "Bir işi yapmak için başvurulan daha genel dolaylı çare kullanımını kapsamaz.",
+            "fit": "none",
+            "preserves": "Aldatma yoluyla hedefi ele geçirme amacını korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
-          ]
-        },
-        {
-          "text": "hileli bir yol bulmak",
-          "usage_role": "explanatory",
-          "applicability": "Belirli bir işi doğrudan değil, aldatıcı veya dolaylı bir çareyle yapma bağlamında kullanılır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Amaca ulaşmak için hileli bir çareye başvurma yönünü korur.",
-            "loses": "Bir canlıyı ele geçirmek üzere tuzağa çekme özel hedefini zorunlu kılmaz.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
+            "F001",
             "F002"
           ]
         }
@@ -998,92 +755,78 @@
         {
           "lexical_unit_id": "lu_023",
           "rendering_kind": "ordinary",
-          "target_gloss": "onu ele geçirmek için tuzağa çekti"
+          "target_gloss": "birini kandırıp ele geçirmeye çalışmak"
         },
         {
           "lexical_unit_id": "lu_024",
           "rendering_kind": "ordinary",
-          "target_gloss": "bu işi yapmak için hileli bir yol buldu"
+          "target_gloss": "bir işi hileyle gerçekleştirmeye çalışmak"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "aldatmak",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Karşıdakini yanıltma ve hile unsurunu korur.",
-            "loses": "Bir şeyi ele geçirmek veya belirli bir işi yapmak için dolaylı bir yola başvurma amacını belirtmez.",
-            "adds": "Her türlü genel yanıltma eylemini de kapsar.",
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_001334/B002",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Bir şeyi ele geçirmek veya belirli bir işi yapmak için kullanılan hileli çareyi merkez alır.",
-          "neighbor_only": "Kötülük tasarlamayı, karşıdakini adım adım çekmeyi ve cezaya götüren ertelemeyi de kapsar.",
-          "gloss": "hileli düzen kurmak",
-          "shared_zone": "Her iki dalda da hedefe doğrudan görünmeyen aldatıcı bir düzenle ulaşma bulunur.",
-          "distinction": "Odak dal ele geçirme veya işi başarma amacındaki hileli yönteme yoğunlaşır; komşu dal kötü niyetli düzen, oyalama ve aşamalı çekme gibi daha geniş sonuçları içerir."
-        },
-        {
-          "neighbor_ref": "root_001097/B005",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Hedefe ulaşmak için etkin biçimde hile kurmayı ve onu tuzağa yöneltmeyi anlatır.",
-          "neighbor_only": "Karşıdakinin önceden var olan dalgınlığını veya dikkatsiz anını fırsata çevirmeyi anlatır.",
-          "gloss": "dalgınlıktan yararlanmak",
-          "shared_zone": "Her iki dalda da karşıdakinin fark etmemesi, hedefe erişmenin koşuludur.",
-          "distinction": "Bu dal hileli yöntemin kurulmasını öne çıkarır; komşu dal ise özellikle karşıdakinin dalgınlığını yakalayıp bundan yararlanmakla sınırlıdır."
+          "focus_only": "Bir şeyi almak veya bir işi yapmak için araçsal hileye başvurmayı öne çıkarır.",
+          "neighbor_only": "Kötülük tasarlama, karşıdakini oyalama ve cezaya sürükleyen erteleme gibi daha geniş düzenleri kapsar.",
+          "gloss": "hile ve kötü düzen kurmak",
+          "shared_zone": "Her iki dalda da karşıdakinin bilgisi dışında kurulan aldatıcı bir düzen vardır.",
+          "distinction": "Odak dal hedefi elde etmeye yönelik hileyle sınırlıdır; komşu dal zarar verme niyeti ve aşamalı tuzak gibi daha geniş kötü düzenleri de içerir."
         }
       ],
-      "neighbor_coverage_note": "Bütün aday kartlar karşılaştırıldı; geniş hileli düzen alanı ile dalgınlıktan yararlanma biçimi, amaç ve yöntem sınırını en açık biçimde gösterir.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; geniş hile ve düzen dalı çekirdek yakınlığını en iyi gösterir, kalanlar belirli kandırma, fırsat kollama veya gizlice alma türleridir.",
       "branch_image_ar": "حيلة واختتال",
       "what_is_ar": "الاحتيال والاختتال للوصول إلى الشيء أو أخذه",
+      "what_is_not_ar": "الإعانة الصريحة؛ أداء الحقوق؛ قلة العدد",
       "source_phrase_ar": "أدوت له أي ختلته والذئب يأدو للغزال أي يختله ليأكله (sihah)؛ أدوت أدوا إذا اختلت (tahdhib)؛ أدوت بفعل كذا أي احتلت وأصله تناولت الأداة (mufradat)",
       "sources": [
         "SI",
         "TA",
         "MU"
       ],
-      "source_note": {
-        "MU": "Ele geçirme amacıyla kurulan hile, herhangi bir işi dolaylı bir çareyle gerçekleştirmeye genişletilir."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000021/B007",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Tek kaynak ifadesi, kişinin işitmesini konuşana yöneltmesi ve onu dinlemesi anlamını doğrudan açıklar. Hazırlanan çerçeve bu dinleme eylemini ek bir anlam yüklemeden korur.",
+        "boundary_note": "Dal, dikkati işitme yoluyla konuşana verme anlamındadır; anlama hızı, susma veya işitme zayıflığı bu çekirdeğe dahil değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Dinleme anlamı yalnızca belirtilen yönelmeli söz öbeğinde geçerlidir; yalın biçime genel işitme anlamı verilmez."
+      },
       "concept_map": {
-        "definition": "Konuşan kişiye dikkati yöneltip söylediklerini işitmek üzere ona kulak vermektir.",
+        "definition": "İşitme dikkatini konuşan kişiye yöneltip onun söylediklerini dinlemektir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Dinleyici, işitme dikkatini konuşan kişiye yöneltir ve onun sözünü dinler.",
+            "statement": "Dinleyici işitme dikkatini konuşana verir ve onun sözünü dinler.",
             "claim_ids": [
-              "lu_025"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Tek kullanım, işitme dikkatini konuşan kişiye verip onun söylediklerini dinlemeyi bildirir.",
+        "common_summary": "Tek kaynak, işitmeyi konuşana yöneltme açıklamasıyla bu söz öbeğini dikkatle dinlemek anlamında tanıklar.",
         "common_claim_ids": [
-          "lu_025"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "konuşana kulak verme",
-        "applicability": "Bir muhatabın dikkatini konuşan kişiye yöneltip onun sözünü dinlediği durumları karşılar.",
+        "text": "kulak verip dinlemek",
+        "applicability": "Konuşan kişiye işitme dikkatini yöneltip sözünü takip etme bağlamında doğal genel karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Konuşana yönelme, işitme dikkati ve dinleme öğelerinin tümünü korur.",
+          "preserves": "İşitme dikkatini konuşana yöneltme ve dinleme eylemini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -1096,10 +839,10 @@
         {
           "text": "beni dinleyin",
           "usage_role": "contextual",
-          "applicability": "Konuşanın muhataplarından dikkatlerini kendisine verip sözünü işitmelerini istediği bağlamda kullanılır.",
+          "applicability": "Konuşanın bir topluluktan dikkatini kendisine vermesini istediği emir bağlamında kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Konuşana yönelmiş dikkatli dinleme isteğini eksiksiz korur.",
+            "preserves": "Konuşana yöneltilen dikkatli dinleme isteğini korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -1113,47 +856,26 @@
         {
           "lexical_unit_id": "lu_025",
           "rendering_kind": "ordinary",
-          "target_gloss": "ona kulak ver ve onu dinle"
+          "target_gloss": "kulak verip dinlemek"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "duymak",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Ses veya sözün işitme alanına girmesini korur.",
-            "loses": "Muhataba yönelerek kulağını verme ve dikkatle dinleme koşulunu dışarıda bırakır.",
-            "adds": "İstem dışı veya dikkat gerektirmeyen işitmeyi de kapsar.",
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000832/B005",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Dinlemeyi özellikle konuşan muhataba yönelmiş işitme dikkati olarak kurar.",
-          "neighbor_only": "Dinleme eylemini konuşan kişiye yönelme koşulu olmadan genel biçimde bildirir.",
+          "relation_type": "synonym",
+          "boundary_match": "exact",
+          "focus_only": null,
+          "neighbor_only": null,
           "gloss": "dinlemek",
-          "shared_zone": "Her iki dalın çekirdeğinde sesi işitmek üzere dikkat verme eylemi bulunur.",
-          "distinction": "Odak dal konuşan bir muhataba kulak vermeyi açıkça gerektirir; komşu dal aynı eylemi bu katılımcı ve yönelme sınırını belirtmeden anlatır."
-        },
-        {
-          "neighbor_ref": "root_001508/B001",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "İşitme dikkatini konuşana yöneltme eylemini, susmayı zorunlu bir öğe yapmadan anlatır.",
-          "neighbor_only": "Dinleyebilmek için susma ve konuşmayı kesme durumunu belirgin bir koşul olarak içerir.",
-          "gloss": "susup dinlemek",
-          "shared_zone": "Her iki dalda da konuşulan söze dikkat yöneltip onu dinleme vardır.",
-          "distinction": "Bu dalın çekirdeği kulağı ve dikkati konuşana vermektir; komşu dal ise buna dinlemek amacıyla susma koşulunu ekler."
+          "shared_zone": "Her iki dal da işitme dikkatini bir söze yöneltip onu dinleme eylemini bildirir.",
+          "distinction": "Verilen kartlarda anlam veya kapsam bakımından ayırt edici bir sınır görünmediği için iki dal eş anlamlıdır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel dinleme ile susarak dinleme kartları, muhataba yönelme ve sessizlik koşullarını en yararlı biçimde ayırır.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; yalın dinleme dalı tam eşleşme gösterir, diğerleri gizli ses, susarak dinleme, işitme zayıflığı veya anlamayı kapsayan farklı alanlardır.",
       "branch_image_ar": "إداء السمع",
       "what_is_ar": "إلقاء السمع إلى المخاطب والاستماع إليه",
+      "what_is_not_ar": "تسليم الأشخاص؛ أداء الحقوق؛ الاستعداء",
       "source_phrase_ar": "أدوا إلي بمعنى استمعوا إلي كأنه يقول أدوا إلي سمعكم؛ أد إلى بعضهم أي استمع إلى بعض من سبعت",
       "sources": [
         "TA"
@@ -1162,50 +884,51 @@
     },
     {
       "branch_ref": "root_000021/B008",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi koyunların az sayıda oluşunu ve develer için az bir sayıyı belirten adı ortak nicelik çekirdeğinde açıkça birleştirir. Çerçeve hayvan türlerini genelleştirmeden bu azlık niteliğini korur.",
+        "boundary_note": "Dal koyun veya deve sayısının azlığını bildirir; süt azlığı, sürünün herhangi bir büyüklüğü ya da genel değer düşüşü değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Azlık bir koyun söz öbeğinde ve az sayıdaki develeri belirten bir ad biçiminde tanıklanır; iki yapı kendi kapsamlarıyla korunur."
+      },
       "concept_map": {
-        "definition": "Koyun veya deve topluluğunun sayıca az olması ya da az sayıdaki deve topluluğunun yaklaşık miktarıdır.",
+        "definition": "Koyun topluluğunun az sayıda olması veya develerden oluşan küçük bir sayısal grubun belirtilmesidir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir koyun sürüsü, içerdiği hayvan sayısının azlığıyla nitelenir.",
+            "statement": "Koyun ya da deve topluluğu sayı bakımından küçük ve azdır.",
             "claim_ids": [
-              "lu_026"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Az sayıdaki develerin oluşturduğu topluluk için yaklaşık bir miktar veya küme belirtilir.",
+            "statement": "Bir ad biçimi, az sayıdaki develerden oluşan tahmini bir grubu belirtir.",
             "claim_ids": [
-              "lu_027"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Temel kullanım, koyun veya deve topluluğunu hayvan sayısının azlığı bakımından niteler.",
+        "common_summary": "Kaynaklar koyun topluluğunun az sayıda olduğunu bildirir; ayrıca bir ad biçimi az sayıdaki develerden oluşan tahmini grubu belirtir.",
         "common_claim_ids": [
-          "lu_026"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_027"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Az sayıdaki develer için yaklaşık bir topluluk miktarı ayrıca adlandırılır."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "az sayıda sürü hayvanı",
-        "applicability": "Koyun veya develerin oluşturduğu topluluğun sayıca küçük olduğunu bildiren genel karşılıktır.",
+        "text": "az sayıda koyun veya deve topluluğu",
+        "applicability": "Koyunların sayıca az oluşunu ve az sayıdaki develerden oluşan grubu birlikte temsil eder.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Hayvan topluluğu, koyun veya deve kapsamı ve sayısal azlık öğelerini korur.",
+          "preserves": "Hayvan topluluğundaki sayısal azlık çekirdeğini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -1217,33 +940,18 @@
       },
       "contextual_glosses": [
         {
-          "text": "küçük bir koyun sürüsü",
+          "text": "az sayıda koyun",
           "usage_role": "contextual",
-          "applicability": "Koyunlardan oluşan topluluğun sayıca az olduğu bağlamlarda doğal karşılıktır.",
+          "applicability": "Koyun topluluğunun sayıca küçük olduğunu niteleyen söz öbeğinde kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Sürü niteliğini ve hayvan sayısının azlığını korur.",
-            "loses": "Deve topluluğu ve onun yaklaşık miktarıyla ilgili kullanımı dışarıda bırakır.",
+            "preserves": "Koyun topluluğunun sayısal azlığını korur.",
+            "loses": "Az sayıdaki develeri belirten ad kullanımını kapsamaz.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F001"
-          ]
-        },
-        {
-          "text": "birkaç deve",
-          "usage_role": "contextual",
-          "applicability": "Az sayıdaki develerden oluşan küçük bir kümeyi nicelik bakımından anlatır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Deve sayısının az olduğunu ve küçük bir topluluk oluşturduğunu korur.",
-            "loses": "Koyunlara uygulanabilen genel azlık niteliğini kapsamaz.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F002"
           ]
         }
       ],
@@ -1251,91 +959,77 @@
         {
           "lexical_unit_id": "lu_026",
           "rendering_kind": "ordinary",
-          "target_gloss": "az sayıda koyundan oluşan sürü"
+          "target_gloss": "az sayıda koyun"
         },
         {
           "lexical_unit_id": "lu_027",
           "rendering_kind": "ordinary",
-          "target_gloss": "az sayıdaki develerin oluşturduğu topluluk"
+          "target_gloss": "az sayıdaki develerden oluşan grup"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "sürü",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Koyun veya deve gibi hayvanların topluluk oluşturmasını korur.",
-            "loses": "Topluluğun sayıca az olması koşulunu belirtmez.",
-            "adds": "Az olmayan hayvan topluluklarını da kapsar.",
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000524/B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Koyunları da kapsayan sayısal azlık niteliğini ve az sayıdaki deve miktarını anlatır.",
-          "neighbor_only": "Çoğunlukla dişi develerden oluşan küçük bir topluluğu doğrudan bir sürü adı olarak belirtir.",
-          "gloss": "küçük deve topluluğu",
-          "shared_zone": "Her iki dal, az sayıda devenin bir arada bulunması alanında örtüşür.",
-          "distinction": "Odak dal öncelikle sayısal azlığı niteleyip koyuna da uygulanır; komşu dal ise küçük deve topluluğunun adı olarak ve kimi kaynaklarda sayı sınırıyle kullanılır."
-        },
-        {
-          "neighbor_ref": "root_001240/B016",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Sürüdeki hayvanların az sayıda olmasını anlamın zorunlu öğesi yapar.",
-          "neighbor_only": "Koyun, sığır veya başka otlayan hayvanlardan oluşan sürüyü sayı azlığı gerektirmeden adlandırır.",
-          "gloss": "hayvan sürüsü",
-          "shared_zone": "Her iki dal koyun veya başka sürü hayvanlarının oluşturduğu topluluğu konu edinir.",
-          "distinction": "Bu dalın ayırıcı öğesi azlıktır; komşu dal ise topluluğu türü ve sürü oluşu bakımından adlandırır, küçük olmasını gerektirmez."
+          "focus_only": "Koyunların azlığını niteleyebilir ve develer için yaklaşık küçük bir sayı bildirir.",
+          "neighbor_only": "Çoğunlukla dişi develerden oluşan belirli türde küçük bir sürü adıdır ve kaynaklar sayı sınırında ayrılır.",
+          "gloss": "küçük deve sürüsü",
+          "shared_zone": "Her iki dal da az sayıdaki develerden oluşan bir topluluk alanına değinir.",
+          "distinction": "Odak dalın çekirdeği sayısal azlıktır ve koyunları da kapsar; komşu dal ise belirli bir küçük deve sürüsünü adlandırır."
         }
       ],
-      "neighbor_coverage_note": "Bütün aday kartlar incelendi; küçük deve topluluğu en yakın komşudur, genel sürü adı ise sayı azlığının zorunlu sınır olduğunu belirginleştirir.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; küçük deve sürüsü dalı sayısal sınırı en iyi açıklar, kalanlar süt azlığı, büyük sürü, genel eksilme veya hayvan malı alanındadır.",
       "branch_image_ar": "قلة عدد",
       "what_is_ar": "القلة في عدد الغنم أو الإبل",
+      "what_is_not_ar": "الأداة؛ أداء الحق؛ تتابع الموت",
       "source_phrase_ar": "غنم أدية على فعيلة أي قليلة (sihah)؛ غنم أدية أي قليلة؛ الأدية تقدير عدة من الإبل القليلة العدد (tahdhib)",
       "sources": [
         "SI",
         "TA"
       ],
-      "source_note": {
-        "TA": "Az sayıdaki develer için yaklaşık bir topluluk miktarı ayrıca adlandırılır."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000021/B009",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Tek kaynak ifadesi bir topluluktaki kişilerin birbiri ardınca ölmesini doğrudan bildirir. Hazırlanan çerçeve hem çoklu katılımcıyı hem de ölümlerin sıra halinde gerçekleşmesini korur.",
+        "boundary_note": "Dal tek bir kişinin ölümü değil, aynı topluluktaki ölümlerin peş peşe gerçekleşmesidir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Ardışık ölüm anlamı yalnızca topluluğu ve ölümü birlikte belirten tanıklanmış söz öbeğine aittir."
+      },
       "concept_map": {
-        "definition": "Bir topluluğun üyelerinin aynı anda değil, biri öldükten sonra bir başkası ölecek biçimde peş peşe ölmesidir.",
+        "definition": "Bir topluluğun üyelerinin aynı anda değil, biri öldükten sonra bir başkasının ölmesi biçiminde peş peşe hayatını kaybetmesidir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Topluluk üyelerinin ölümleri zaman içinde birbirini izler ve her ölümün ardından bir başkası gelir.",
+            "statement": "Aynı topluluktaki birden çok kişinin ölümü zaman içinde birbirini izler.",
             "claim_ids": [
-              "lu_028"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Tek kullanım, bir topluluktaki kişilerin ölümlerinin birbiri ardınca gerçekleşmesini anlatır.",
+        "common_summary": "Tek kaynak, bir topluluğun üyelerinin ölüm bakımından birbirini izlemesini ve birbiri ardınca hayatını kaybetmesini tanıklar.",
         "common_claim_ids": [
-          "lu_028"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "birbiri ardınca ölme",
-        "applicability": "Bir topluluğun üyelerinin tek tek ve peş peşe öldüğü durumları karşılayan genel anlatımdır.",
+        "text": "birbiri ardınca ölmek",
+        "applicability": "Bir topluluğun birden çok üyesinin zaman içinde sırayla hayatını kaybetmesini karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Birden çok kişi, ölüm ve zaman içindeki ardışıklık öğelerinin tümünü korur.",
+          "preserves": "Çoklu katılımcıyı ve ölümlerin ardışık oluşunu korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -1346,12 +1040,12 @@
       },
       "contextual_glosses": [
         {
-          "text": "peş peşe öldüler",
-          "usage_role": "contextual",
-          "applicability": "Aynı topluluğun üyelerinin ölümlerinin zaman içinde birbirini izlediği cümlelerde kullanılır.",
+          "text": "peş peşe hayatını kaybetmek",
+          "usage_role": "general",
+          "applicability": "Aynı topluluğun üyelerinin farklı zamanlarda birbirini izleyerek öldüğü anlatımlarda kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Topluluk üyelerinin ayrı ayrı ve ardışık biçimde ölmesini eksiksiz korur.",
+            "preserves": "Ölümlerin aynı topluluk içinde sırayla gerçekleşmesini korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -1365,47 +1059,26 @@
         {
           "lexical_unit_id": "lu_028",
           "rendering_kind": "ordinary",
-          "target_gloss": "topluluğun üyeleri peş peşe öldü"
+          "target_gloss": "topluluk üyeleri birbiri ardınca ölmek"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "ölmek",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Ölüm olayını korur.",
-            "loses": "Bir topluluk içinde ölümün kişi kişi ve art arda gerçekleşmesi öğesini dışarıda bırakır.",
-            "adds": null,
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_001186/B002",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
           "focus_only": "Bir topluluktaki birden çok ölümün zaman içinde birbirini izlemesini zorunlu kılar.",
-          "neighbor_only": "Tek bir kişinin ölmesini veya dünyadan ayrılmasını ardışıklık koşulu olmadan anlatır.",
-          "gloss": "ölmek",
-          "shared_zone": "Her iki dalın ortak konusu insanın yaşamının sona ermesidir.",
-          "distinction": "Odak dal tek bir ölüm adı değildir; bir toplulukta bir ölümün ardından başka bir ölüm gelmesini anlatır. Komşu dalda çoğulluk ve sıra zorunlu değildir."
-        },
-        {
-          "neighbor_ref": "root_000032/B006",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Ölümlerin bir topluluk içinde art arda gerçekleşmesini bildirir, her ölümün ansızın olmasını gerektirmez.",
-          "neighbor_only": "Bir ölümün ansızın ve beklenmedik biçimde gerçekleşmesini bildirir, başka ölümlerin izlemesini gerektirmez.",
-          "gloss": "ani ölüm",
-          "shared_zone": "Her iki dal ölüm olayının gerçekleşme biçimine ilişkin ek bir zaman özelliği taşır.",
-          "distinction": "Bu dalda belirleyici özellik ölümler arasındaki ardışıklıktır; komşu dalda ise tek ölümün beklenmedik ve ani oluşudur."
+          "neighbor_only": "Tek bir kişinin ölmesini, yok olmasını veya dünyadan ayrılmasını anlatabilir.",
+          "gloss": "ölmek ve yok olmak",
+          "shared_zone": "Her iki dal da kişinin hayatını kaybetmesi olayını içerir.",
+          "distinction": "Odak dal çoklu ve ardışık ölümleri gerektirir; komşu dal tek bir ölüm olayını anlatabilir ve sıra ilişkisi taşımaz."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar karşılaştırıldı; genel ölüm ile ani ölüm kartları, bu dalın zorunlu çoğulluk ve ardışıklık koşullarını en açık biçimde ayırır.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel ölüm dalı tekil olay ile ardışık topluluk ölümü arasındaki farkı en açık gösterir, diğerleri ölüm türü, ölüm adı veya kader alanındadır.",
       "branch_image_ar": "تتابع موت",
       "what_is_ar": "تتابع القوم موتا واحدا بعد آخر",
+      "what_is_not_ar": "التأهب والعدة؛ القلة؛ أداء الحقوق",
       "source_phrase_ar": "تآدى القوم وتعادوا إذا تتابعوا موتا",
       "sources": [
         "TA"
@@ -1414,7 +1087,7 @@
     }
   ],
   "root_profile": {
-    "summary": "Kök, ulaştırma ve yükümlülüğü yerine getirme gibi erişme yönlü anlamlardan araç, hazırlık, güçlendirme ve hileli çare alanlarına; ayrıca olgunlaşma, dinleme, sayısal azlık ve ardışık ölüm gibi birbirinden ayrılmış kullanımlara yayılır.",
+    "summary": "Kök, dokuz ayrı dalda ulaştırma ve ulaşma, hakkı yerine getirme, belirli bir olgunluk aşamasına gelme, araç ve hazırlık, yardım, hile, dinleme, sayısal azlık ve ardışık ölüm anlamlarını taşır. Bazı dallar ulaşma ya da araçlanma düşüncesi çevresinde ilişkilendirilebilir, ancak bütün dalları tek bir eşzamanlı çekirdeğe indirgemek mümkün değildir.",
     "polysemy": "polysemic",
     "organization": "mixed"
   },
