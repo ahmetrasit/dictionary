@@ -1,0 +1,780 @@
+{
+  "format": 2,
+  "generated_by": "v2/scripts/build_branch_evidence.py",
+  "root_envelope_id": "root_001081",
+  "packet_path": "data/output/root_packets/root_001081.json",
+  "packet_sha256": "3508fa6a5d1f054ec1fc34c6310e204a4db188b2d36fe9a4eca13724e0926d51",
+  "furuq_path": "data/working/furuq_v4.sqlite",
+  "furuq_sha256": "1099db0d56515d2eb3e8d72f104f2e338c2c9a8c1fa6abbb046406d3b327e722",
+  "qnet_path": "data/upstream/qnet/incidence_full/raw_keyword_incidence.sqlite",
+  "qnet_sha256": "a5262b568203bff7ec04e6ca905781125beec83f90d62a5cf0cd6ff61049eee8",
+  "qnet_theme_path": "data/upstream/qnet/bridge_theme_full/bridge_theme_staging.sqlite",
+  "qnet_theme_sha256": "e4f590a111376e372eefef6d03b8694837ec9989017ce721d56db9828b2a734e",
+  "qnet_fix_manifest_path": "data/upstream/qnet/bridge_theme_full/latent_v11_qac_qnet_fix_manifest.json",
+  "qnet_fix_manifest_sha256": "b0ae3c19450a8019825321f6dc1e9f4c336249950f50267ed84eb3258756502c",
+  "branch": {
+    "root_id": "root_001081",
+    "branch_id": "B002",
+    "branch_image_ar": "ملازمة الغريم للغريم",
+    "what_is_ar": "يدخل فيه الغريم بوصفه من لزمه الدين أو لازم غيره به، ويشمل استعماله لمن عليه الدين ولمن له الدين عند المصادر التي تصرح بالوجهين.",
+    "what_is_not_ar": "لا يدخل نفس المال المؤدى أو الغرامة إلا تبعا للشخص؛ ولا يدخل العذاب أو العشق.",
+    "source_phrase_ar": "الغريم سمي غريما للزومه وألحاحه (maqayis)؛ الغريم الملزوم ذلك والغريمان سواء الغارم والمغرم (ayn)؛ الغريم الذي عليه الدين وقد يكون الغريم أيضا الذي له الدين (sihah)؛ الغريم يقال لمن له الدين ولمن عليه الدين (mufradat)",
+    "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2592;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3038:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=eb4b20702d035b2a;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4629:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=f65f29ffcb7b3691;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1078:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=9d78b4ea977c9c00",
+    "status": "accepted",
+    "contaminated": "no"
+  },
+  "dictionary_basis": {
+    "dictionary_count": 4,
+    "passage_count": 4,
+    "sources": [
+      {
+        "source_id": "maqayis",
+        "dictionary_name": "Maqāyīs al-Lugha",
+        "source_refs": [
+          "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2592"
+        ],
+        "passages": [
+          {
+            "source_ref": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2592",
+            "headword": "غرم",
+            "route_status": "exact",
+            "entry_text_clean": "| ( غرم ) الغين والراء والميم أصل صحيح ~~يدل على ملازمة وملازة | من ذلك الغريم سمي غريما للزومه وألحاحه | والغرام ~~العذاب اللازم في قوله تعالى : @QB@ إن عذابها كان غراما @QE@ | قال الأعشى ~~: # % إن يعاقب يكن غراما وإن يعط % % جزيلا فإنه لا يبالي % % وغرم المال من ~~هذا أيضا سمي لأنه مال الغريم",
+            "origin_corpus": "quranic",
+            "section_path": "-",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      },
+      {
+        "source_id": "ayn",
+        "dictionary_name": "Kitāb al-ʿAyn",
+        "source_refs": [
+          "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3038:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=eb4b20702d035b2a"
+        ],
+        "passages": [
+          {
+            "source_ref": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3038:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=eb4b20702d035b2a",
+            "headword": "غرم",
+            "route_status": "exact",
+            "entry_text_clean": "# غرم # الغرم أداء شيء لزم من قبل كفالة أو لزوم نائبة في ماله من غير جناية ~~غرمته أغرمه # والتغريم مجاوز # والغريم الملزوم ذلك # والغريمان سواء الغارم والمغرم # والغرام العذاب أو العشق أو الشر وحب غرام أي لازم # وقوله تعالى @QB@ إن عذابها كان غراما @QE@ أي لازما # والمغرم الغرم قال تعالى @QB@ فهم من مغرم مثقلون @QE@ أي من غرم & باب ~~الغين واللام والنون معهما ن غ ل ل غ ن مستعملان فقط &",
+            "origin_corpus": "quranic",
+            "section_path": "heading:3038",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      },
+      {
+        "source_id": "sihah",
+        "dictionary_name": "al-Ṣiḥāḥ",
+        "source_refs": [
+          "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4629:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=f65f29ffcb7b3691"
+        ],
+        "passages": [
+          {
+            "source_ref": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4629:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=f65f29ffcb7b3691",
+            "headword": "غرم",
+            "route_status": "exact",
+            "entry_text_clean": "### | [غرم] # ابن الاعرابي: الغرام: الشر الدائم والعذاب. قال بشر: ويوم النسار ويوم ~~الجفار كانا عذابا وكانا غراما وقال الاعشى: إن يعاقب يكن غراما وإن يعط ~~جزيلا فإنه لا يبالى وقوله تعالى: (إن عذابها كان غراما) قال أبو عبيدة: أي ~~هلاكا ولزاما لهم. قال: ومنه رجل مغرم بالحب حب النساء. ومنه قولهم: رجل ~~مغرم من الغرم والدين. والغرام: الولوع وقد أغرم بالشئ أي أولع به. ~~والغريم: الذي عليه الدين. يقال: خذ من غريم السوء ما سنح. وقد يكون الغريم # PageV05P1996 # أيضا الذي له الدين. قال كثير: قضى كل ذي دين فوفى غريمه وعزه ممطول معنى ~~غريمها وأغرمته أنا وغرمته بمعنى. والغرامة: ما يلزم أداؤه وكذلك المغرم ~~والعزم. وقد عرم الرجل الدية.",
+            "origin_corpus": "quranic",
+            "section_path": "heading:4629",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      },
+      {
+        "source_id": "mufradat",
+        "dictionary_name": "al-Mufradāt fī Gharīb al-Qurʾān",
+        "source_refs": [
+          "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1078:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=9d78b4ea977c9c00"
+        ],
+        "passages": [
+          {
+            "source_ref": "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1078:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=9d78b4ea977c9c00",
+            "headword": "غرم",
+            "route_status": "exact",
+            "entry_text_clean": "### | غرم # الغرم: ما ينوب الإنسان في ماله من ضرر لغير جناية منه، أو خيانة، يقال: ~~غرم كذا غرما ومغرما، وأغرم فلان غرامة. قال تعالى: إنا لمغرمون # [الواقعة/ 66] ، فهم من مغرم مثقلون # [القلم/ 46] ، يتخذ ما ينفق مغرما # [التوبة/ 98] . والغريم يقال لمن له الدين، ولمن عليه الدين. قال تعالى: # والغارمين وفي سبيل الله # [التوبة/ 60] ، والغرام: ما ينوب الإنسان من شدة ومصيبة، قال: إن عذابها ~~كان غراما # [الفرقان/ 65] ، من قولهم: هو مغرم بالنساء، أي: يلازمهن ملازمة الغريم. ~~قال الحسن: كل غريم مفارق غريمه إلا النار «1» ، وقيل: معناه: مشغوفا ~~بإهلاكه.",
+            "origin_corpus": "quranic",
+            "section_path": "heading:1078",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      }
+    ]
+  },
+  "lexical_units": [
+    {
+      "lexical_unit_id": "lu_001",
+      "expression_ar": "الغريم",
+      "unit_kind": "form",
+      "sense_ar": "من لزمه الدين أو لازم غيره به، ويقال للذي عليه الدين وللذي له الدين.",
+      "source_phrase_ar": "الغريم سمي غريما للزومه وألحاحه (maqayis)؛ الغريم الملزوم ذلك والغريمان سواء الغارم والمغرم (ayn)؛ الغريم الذي عليه الدين وقد يكون الغريم أيضا الذي له الدين (sihah)؛ الغريم يقال لمن له الدين ولمن عليه الدين (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2592;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3038:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=eb4b20702d035b2a;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4629:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=f65f29ffcb7b3691;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1078:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=9d78b4ea977c9c00",
+      "branch_source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2592;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3038:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=eb4b20702d035b2a;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4629:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=f65f29ffcb7b3691;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1078:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=9d78b4ea977c9c00",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "accepted"
+    },
+    {
+      "lexical_unit_id": "lu_006",
+      "expression_ar": "الغارم",
+      "unit_kind": "form",
+      "sense_ar": "من عليه الغرم أو داخل في علاقة الدين والغرم.",
+      "source_phrase_ar": "الغريمان سواء الغارم والمغرم (ayn)؛ والغارمين وفي سبيل الله (mufradat)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3038:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=eb4b20702d035b2a;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1078:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=9d78b4ea977c9c00",
+      "branch_source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2592;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3038:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=eb4b20702d035b2a;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4629:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=f65f29ffcb7b3691;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1078:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=9d78b4ea977c9c00",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "accepted"
+    },
+    {
+      "lexical_unit_id": "lu_007",
+      "expression_ar": "المغرم",
+      "unit_kind": "form",
+      "sense_ar": "الشخص الملزوم بالغرم أو الدين.",
+      "source_phrase_ar": "الغريمان سواء الغارم والمغرم (ayn)؛ رجل مغرم من الغرم والدين (sihah)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3038:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=eb4b20702d035b2a;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4629:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=f65f29ffcb7b3691",
+      "branch_source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2592;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3038:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=eb4b20702d035b2a;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4629:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=f65f29ffcb7b3691;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1078:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=9d78b4ea977c9c00",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "accepted"
+    }
+  ],
+  "qnet_candidates": [
+    {
+      "root_id": "root_000373",
+      "branch_id": "B010",
+      "root_norm": "ح و ل",
+      "branch_image_ar": "إحالة الدين إلى غير صاحبه",
+      "what_is_ar": "الحوالة وإحالة الغريم أو الدين على آخر",
+      "what_is_not_ar": "ليس هو الحيلة ولا مطلق التحويل المكاني",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1837:headword=%D8%AD%D9%88%D9%84:root=%D8%AD%20%D9%88%20%D9%84:sha=087b738c7dccff99;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3969:headword=%D8%AD%D9%88%D9%84:root=%D8%AD%20%D9%88%20%D9%84:sha=589525ca7f2b5439;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A385:headword=%D8%AD%D9%88%D9%84:root=%D8%AD%20%D9%88%20%D9%84:sha=d59a5f8cba43fbd2",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "creditor",
+        "debtor"
+      ]
+    },
+    {
+      "root_id": "root_000483",
+      "branch_id": "B006",
+      "root_norm": "د ل ك",
+      "branch_image_ar": "المدالكة في المماطلة والمطالبة",
+      "what_is_ar": "يدخل فيه دالك الغريم إذا ماطله، ومماطلة الرجل أهله في المهر، والمدالكة بمعنى المصابرة أو الإلحاح في التقاضي.",
+      "what_is_not_ar": "ليس منه الدلك باليد، ولا دلوك الشمس، ولا خبرة الرجال.",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3786:headword=%D8%AF%D9%84%D9%83:root=%D8%AF%20%D9%84%20%D9%83:sha=8e191826135664cf;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D516%3Bsegment_index%3D137:headword=%D8%AF%D9%84%D9%83:root=%D8%AF%20%D9%84%20%D9%83:sha=813864f110b8487c;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A489:headword=%D8%AF%D9%84%D9%83:root=%D8%AF%20%D9%84%20%D9%83:sha=dbf363f381c15547",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "creditor",
+        "debtor"
+      ]
+    },
+    {
+      "root_id": "root_000491",
+      "branch_id": "B004",
+      "root_norm": "د م ي",
+      "branch_image_ar": "استخلاص الدين برفق",
+      "what_is_ar": "المستدمي الذي يستخرج من غريمه دينه بالرفق",
+      "what_is_not_ar": "نزف الأنف والدم السائل والحمرة",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5318:headword=%D8%AF%D9%85%D8%A7:root=%D8%AF%20%D9%85%20%D8%A7:sha=cb8cfd37cccce4b5",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "creditor",
+        "debtor"
+      ]
+    }
+  ],
+  "qnet_core_overlap_candidates": [
+    {
+      "root_id": "root_001012",
+      "branch_id": "B003",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "creditor",
+        "debt",
+        "debtor"
+      ]
+    },
+    {
+      "root_id": "root_001140",
+      "branch_id": "B003",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "debt",
+        "debtor"
+      ]
+    },
+    {
+      "root_id": "root_000152",
+      "branch_id": "B004",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 0,
+      "shared_core_keywords": [
+        "adherence",
+        "attachment"
+      ]
+    },
+    {
+      "root_id": "root_000175",
+      "branch_id": "B005",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 0,
+      "shared_core_keywords": [
+        "claimant",
+        "debt"
+      ]
+    },
+    {
+      "root_id": "root_000230",
+      "branch_id": "B005",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 0,
+      "shared_core_keywords": [
+        "adherence",
+        "attachment"
+      ]
+    },
+    {
+      "root_id": "root_000232",
+      "branch_id": "B001",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 0,
+      "shared_core_keywords": [
+        "adherence",
+        "attachment"
+      ]
+    },
+    {
+      "root_id": "root_000429",
+      "branch_id": "B002",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 0,
+      "shared_core_keywords": [
+        "adherence",
+        "attachment"
+      ]
+    },
+    {
+      "root_id": "root_000747",
+      "branch_id": "B010",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 0,
+      "shared_core_keywords": [
+        "attachment",
+        "claimant"
+      ]
+    }
+  ],
+  "qnet_bridge_overlap_candidates": [
+    {
+      "root_id": "root_000244",
+      "branch_id": "B003",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 6,
+      "consensus_keyword_count": 0,
+      "shared_bridge_keywords": [
+        "commerce",
+        "credit",
+        "debt",
+        "finance",
+        "law",
+        "obligation"
+      ]
+    },
+    {
+      "root_id": "root_001012",
+      "branch_id": "B003",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 5,
+      "consensus_keyword_count": 2,
+      "shared_bridge_keywords": [
+        "commerce",
+        "credit",
+        "debt",
+        "law",
+        "obligation"
+      ]
+    },
+    {
+      "root_id": "root_001033",
+      "branch_id": "B010",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 5,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "commerce",
+        "debt",
+        "finance",
+        "law",
+        "obligation"
+      ]
+    },
+    {
+      "root_id": "root_001069",
+      "branch_id": "B012",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 5,
+      "consensus_keyword_count": 0,
+      "shared_bridge_keywords": [
+        "commerce",
+        "credit",
+        "debt",
+        "finance",
+        "law"
+      ]
+    },
+    {
+      "root_id": "root_001430",
+      "branch_id": "B002",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 4,
+      "consensus_keyword_count": 2,
+      "shared_bridge_keywords": [
+        "agency",
+        "commerce",
+        "law",
+        "obligation"
+      ]
+    },
+    {
+      "root_id": "root_000012",
+      "branch_id": "B007",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 4,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "accountability",
+        "agency",
+        "law",
+        "relation"
+      ]
+    }
+  ],
+  "qnet_theme_overlap_candidates": [
+    {
+      "root_id": "root_000400",
+      "branch_id": "B012",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 6,
+      "votes2_keyword_count": 1,
+      "shared_themes": [
+        "commerce_exchange",
+        "finance_debt",
+        "justice_judgment",
+        "law",
+        "obligation_contract",
+        "social_relations"
+      ]
+    },
+    {
+      "root_id": "root_000744",
+      "branch_id": "B008",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "commerce_exchange",
+        "finance_debt",
+        "justice_judgment",
+        "law",
+        "obligation_contract"
+      ]
+    },
+    {
+      "root_id": "root_000012",
+      "branch_id": "B007",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "agency_action",
+        "justice_judgment",
+        "law",
+        "obligation_contract",
+        "social_relations"
+      ]
+    },
+    {
+      "root_id": "root_000099",
+      "branch_id": "B004",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "commerce_exchange",
+        "finance_debt",
+        "law",
+        "obligation_contract",
+        "social_relations"
+      ]
+    },
+    {
+      "root_id": "root_000175",
+      "branch_id": "B005",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "finance_debt",
+        "justice_judgment",
+        "law",
+        "motion",
+        "obligation_contract"
+      ]
+    },
+    {
+      "root_id": "root_000373",
+      "branch_id": "B010",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "commerce_exchange",
+        "finance_debt",
+        "law",
+        "motion",
+        "obligation_contract"
+      ]
+    },
+    {
+      "root_id": "root_000491",
+      "branch_id": "B004",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "commerce_exchange",
+        "finance_debt",
+        "justice_judgment",
+        "law",
+        "obligation_contract"
+      ]
+    },
+    {
+      "root_id": "root_000609",
+      "branch_id": "B006",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "commerce_exchange",
+        "finance_debt",
+        "justice_judgment",
+        "law",
+        "obligation_contract"
+      ]
+    }
+  ],
+  "qnet_focus_coverage": {
+    "raw_keyword_exact_port": true,
+    "snapshot_exact_port": true,
+    "postfix_exact_port": false,
+    "theme_scope": "branch",
+    "focus_themes": [
+      "agency_action",
+      "commerce_exchange",
+      "finance_debt",
+      "justice_judgment",
+      "law",
+      "motion",
+      "obligation_contract",
+      "social_relations"
+    ]
+  },
+  "furuq_candidates": [
+    {
+      "root_id": "root_000373",
+      "branch_id": "B010",
+      "root_norm": "ح و ل",
+      "branch_image_ar": "إحالة الدين إلى غير صاحبه",
+      "what_is_ar": "الحوالة وإحالة الغريم أو الدين على آخر",
+      "what_is_not_ar": "ليس هو الحيلة ولا مطلق التحويل المكاني",
+      "source_phrase_ar": "الحوالة إحالتك غريما (ayn); أحال عليه بدينه والاسم الحوالة (sihah); أحلت على فلان بالدين (mufradat)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1837:headword=%D8%AD%D9%88%D9%84:root=%D8%AD%20%D9%88%20%D9%84:sha=087b738c7dccff99;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3969:headword=%D8%AD%D9%88%D9%84:root=%D8%AD%20%D9%88%20%D9%84:sha=589525ca7f2b5439;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A385:headword=%D8%AD%D9%88%D9%84:root=%D8%AD%20%D9%88%20%D9%84:sha=d59a5f8cba43fbd2",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_packet",
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [
+        "creditor",
+        "debtor"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "commerce_exchange",
+        "finance_debt",
+        "law",
+        "motion",
+        "obligation_contract"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_001012",
+      "branch_id": "B003",
+      "root_norm": "ع س ر",
+      "branch_image_ar": "مطالبة المعسر",
+      "what_is_ar": "يدخل فيه عسر الغريم وطلب الدين أو الشيء عند العسرة والأخذ على عسرة بلا رفق",
+      "what_is_not_ar": "لا يدخل فيه نفس الفقر بلا مطالبة ولا مجرد الخصومة العامة",
+      "source_phrase_ar": "عسرته أنا أعسره إذا طالبته بدينك وهو معسر ولم تنظره إلى ميسرته (maqayis); عسرت الغريم أعسره إذا طلبت منه الدين على عسرته (sihah); عسرت الغريم أعسره عسرا إذا أخذته على عسرة ولم ترفق به (tahdhib); عسرني الرجل طالبني بشيء حين العسرة (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2476;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1812:headword=%D8%B9%D8%B3%D8%B1:root=%D8%B9%20%D8%B3%20%D8%B1:sha=4f81ef37a10141cc;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D118%3Bsegment_index%3D2:headword=%D8%B9%D8%B3%D8%B1:root=%D8%B9%20%D8%B3%20%D8%B1:sha=9e801587a498f2ed;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1002:headword=%D8%B9%D8%B3%D8%B1:root=%D8%B9%20%D8%B3%20%D8%B1:sha=8e02e0790d9fb8cf",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_core_overlap",
+        "qnet_bridge_overlap"
+      ],
+      "shared_consensus_core": [
+        "creditor",
+        "debt",
+        "debtor"
+      ],
+      "shared_bridge_keywords": [
+        "commerce",
+        "credit",
+        "debt",
+        "law",
+        "obligation"
+      ],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000244",
+      "branch_id": "B003",
+      "root_norm": "ج ز ي",
+      "branch_image_ar": "تقاضي الدين واستيفاؤه",
+      "what_is_ar": "يدخل فيه تجازي الدين والتقاضي والمتجازي الذي يطالب بالدين أو يستوفيه",
+      "what_is_not_ar": "ليس قضاء الشيء عن الغير ولا الجزية ولا المكافأة العامة",
+      "source_phrase_ar": "تجازيت ديني تقاضيته (ayn)؛ تجازيت ديني على فلان إذا تقاضيته؛ المتجازي المتقاضي (sihah)؛ أمرت فلانا يتجازى ديني أي يتقاضاه؛ أهل المدينة يسمون المتقاضي المتجازي (tahdhib)؛ تجازيت ديني على فلان أي تقاضيته؛ أهل المدينة يسمون المتقاضي المتجازي (maqayis)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4200:headword=%D8%AC%D8%B2%D9%8A:root=%D8%AC%20%D8%B2%20%D9%8A:sha=1d498fcc16bcb0d1;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5259:headword=%D8%AC%D8%B2%D9%8A:root=%D8%AC%20%D8%B2%20%D9%8A:sha=b957405d23d58242;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D550%3Bsegment_index%3D2:headword=%D8%AC%D8%B2%D9%89:root=%D8%AC%20%D8%B2%20%D9%89:sha=739672a5cb5fe9e5;0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:575;maqayis:root=%D8%AC%20%D8%B2%20%D9%8A:headword=%D8%AC%D8%B2%D9%8A:sha=4b61619da112254c",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_bridge_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [
+        "commerce",
+        "credit",
+        "debt",
+        "finance",
+        "law",
+        "obligation"
+      ],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000400",
+      "branch_id": "B012",
+      "root_norm": "خ ر ج",
+      "branch_image_ar": "تخارج الشركاء في النصيب",
+      "what_is_ar": "تخارج الشركاء أو الورثة، والمخارجة بمعنى المناهدة والمقاسمة",
+      "what_is_not_ar": "الخراج المالي المفروض؛ الخروج المكاني؛ لعبة الخراج",
+      "source_phrase_ar": "المخارجة المناهدة بالأصابع والتخارج التناهد (sihah)؛ يتخارج الشريكان وأهل الميراث (tahdhib)؛ لا بأس أن يتخارجا يعني العين والدين (tahdhib)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A776:headword=%D8%AE%D8%B1%D8%AC:root=%D8%AE%20%D8%B1%20%D8%AC:sha=3a3b07dabc5d1834;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D349%3Bsegment_index%3D37:headword=%D8%AE%D8%B1%D8%AC:root=%D8%AE%20%D8%B1%20%D8%AC:sha=f13220427b42efd0",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "commerce_exchange",
+        "finance_debt",
+        "justice_judgment",
+        "law",
+        "obligation_contract",
+        "social_relations"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000483",
+      "branch_id": "B006",
+      "root_norm": "د ل ك",
+      "branch_image_ar": "المدالكة في المماطلة والمطالبة",
+      "what_is_ar": "يدخل فيه دالك الغريم إذا ماطله، ومماطلة الرجل أهله في المهر، والمدالكة بمعنى المصابرة أو الإلحاح في التقاضي.",
+      "what_is_not_ar": "ليس منه الدلك باليد، ولا دلوك الشمس، ولا خبرة الرجال.",
+      "source_phrase_ar": "دالك الرجل غريمه أي ماطله (sihah)؛ يدالك يعني المطل بالمهر وكل مماطل فهو مدالك (tahdhib)؛ المدالكة المصابرة والمدالكة الإلحاح في التقاضي (tahdhib)؛ دالكت الرجل إذا ماطلته (mufradat)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3786:headword=%D8%AF%D9%84%D9%83:root=%D8%AF%20%D9%84%20%D9%83:sha=8e191826135664cf;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D516%3Bsegment_index%3D137:headword=%D8%AF%D9%84%D9%83:root=%D8%AF%20%D9%84%20%D9%83:sha=813864f110b8487c;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A489:headword=%D8%AF%D9%84%D9%83:root=%D8%AF%20%D9%84%20%D9%83:sha=dbf363f381c15547",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_packet"
+      ],
+      "shared_consensus_core": [
+        "creditor",
+        "debtor"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001140",
+      "branch_id": "B003",
+      "root_norm": "ف ر ح",
+      "branch_image_ar": "إثقال الدين والودائع",
+      "what_is_ar": "يدخل فيه الإفراح بمعنى الإثقال ولا سيما إثقال الدين والودائع والمدين المفدوح",
+      "what_is_not_ar": "لا يدخل فيه الفرح بمعنى السرور؛ ولا البطر",
+      "source_phrase_ar": "الإفراح وهو الإثقال (maqayis)؛ رجل مفرح أثقله الدين (ayn;jamhara;sihah;tahdhib;mufradat)؛ أفرحه الدين أثقله (sihah;tahdhib)؛ أفرحتك الودائع (maqayis;ayn;sihah;tahdhib)؛ المفرح المفدوح (sihah;mufradat)؛ أفرحني الشيء مثل فدحني (jamhara)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2753;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1696:headword=%D9%81%D8%B1%D8%AD:root=%D9%81%20%D8%B1%20%D8%AD:sha=aa9ade777633152e;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1386%3Asubentry%3A1%3A%D9%81%D8%B1%D8%AD:headword=%D9%81%D8%B1%D8%AD:root=%D9%81%20%D8%B1%20%D8%AD:sha=bdf21ac055576749;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1024:headword=%D9%81%D8%B1%D8%AD:root=%D9%81%20%D8%B1%20%D8%AD:sha=6619a20aff0eb4c2;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D94:headword=%D9%81%D8%B1%D8%AD:root=%D9%81%20%D8%B1%20%D8%AD:sha=d8c19446c9603dbd;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1133:headword=%D9%81%D8%B1%D8%AD:root=%D9%81%20%D8%B1%20%D8%AD:sha=090ff922dd169f24",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_core_overlap"
+      ],
+      "shared_consensus_core": [
+        "debt",
+        "debtor"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000744",
+      "branch_id": "B008",
+      "root_norm": "س م ن",
+      "branch_image_ar": "التسمين بين الشركاء",
+      "what_is_ar": "يدخل فيه التسمين في قسمة الشيء بين الشركاء ورد الفضل حتى تستوي الأنصباء",
+      "what_is_not_ar": "لا يدخل فيه التسمين بمعنى جعل الشيء سمينا ولا التسمين بمعنى التبريد",
+      "source_phrase_ar": "التسمين أن تقسم شيئا بين الشركاء فيكون في الأنصباء فضل لبعضهما على بعض فيرد كل من في يده فضل على الذي خسر نصيبه (ayn)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4932:headword=%D8%B3%D9%85%D9%86:root=%D8%B3%20%D9%85%20%D9%86:sha=f3a0c97b13aa3933",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "commerce_exchange",
+        "finance_debt",
+        "justice_judgment",
+        "law",
+        "obligation_contract"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000491",
+      "branch_id": "B004",
+      "root_norm": "د م ي",
+      "branch_image_ar": "استخلاص الدين برفق",
+      "what_is_ar": "المستدمي الذي يستخرج من غريمه دينه بالرفق",
+      "what_is_not_ar": "نزف الأنف والدم السائل والحمرة",
+      "source_phrase_ar": "المستدمي الذي يستخرج من غريمه دينه بالرفق (sihah)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5318:headword=%D8%AF%D9%85%D8%A7:root=%D8%AF%20%D9%85%20%D8%A7:sha=cb8cfd37cccce4b5",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_packet",
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [
+        "creditor",
+        "debtor"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "commerce_exchange",
+        "finance_debt",
+        "justice_judgment",
+        "law",
+        "obligation_contract"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_001081",
+      "branch_id": "B001",
+      "root_norm": "غ ر م",
+      "branch_image_ar": "لزوم غرم في المال",
+      "what_is_ar": "يدخل فيه الغرم والمغرم والغرامة وما يلزم أداؤه في المال من كفالة أو نائبة أو ضرر بلا جناية، وما يتصل بالدين والإنفاق المعدود مغرما.",
+      "what_is_not_ar": "لا يدخل عذاب لازم ولا عشق ولا ولوع إلا من جهة صورة اللزوم العامة؛ ولا يدخل وصف الغريم كشخص إلا إذا كان المراد نفس المال اللازم.",
+      "source_phrase_ar": "غرم المال من هذا أيضا سمي لأنه مال الغريم (maqayis)؛ الغرم أداء شيء لزم من قبل كفالة أو لزوم نائبة في ماله من غير جناية (ayn)؛ الغرامة ما يلزم أداؤه وكذلك المغرم (sihah)؛ الغرم ما ينوب الإنسان في ماله من ضرر لغير جناية منه أو خيانة (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2592;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3038:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=eb4b20702d035b2a;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4629:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=f65f29ffcb7b3691;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1078:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=9d78b4ea977c9c00",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001081",
+      "branch_id": "B003",
+      "root_norm": "غ ر م",
+      "branch_image_ar": "غرام العذاب اللازم",
+      "what_is_ar": "يدخل فيه الغرام بمعنى العذاب اللازم والشر الدائم والهلاك والشدة والمصيبة التي تلازم الإنسان.",
+      "what_is_not_ar": "لا يدخل الغرم المالي ولا الغريم في الدين؛ ولا يدخل الولوع والعشق إلا إذا أريد مجرد ملازمة الشدة.",
+      "source_phrase_ar": "الغرام العذاب اللازم (maqayis)؛ الغرام العذاب أو العشق أو الشر وحب غرام أي لازم (ayn)؛ الغرام الشر الدائم والعذاب أي هلاكا ولزاما لهم (sihah)؛ الغرام ما ينوب الإنسان من شدة ومصيبة (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2592;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3038:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=eb4b20702d035b2a;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4629:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=f65f29ffcb7b3691;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1078:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=9d78b4ea977c9c00",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001081",
+      "branch_id": "B004",
+      "root_norm": "غ ر م",
+      "branch_image_ar": "غرام الولوع والعلوق",
+      "what_is_ar": "يدخل فيه الغرام والعشق والولوع وإغرام الإنسان بالشيء أو بالنساء بمعنى الملازمة والعلوق الشديد.",
+      "what_is_not_ar": "لا يدخل العذاب والشر إلا إذا كانا مصورين بلزوم الغرام؛ ولا يدخل الدين والغرامة المالية.",
+      "source_phrase_ar": "الغرام العذاب أو العشق أو الشر وحب غرام أي لازم (ayn)؛ رجل مغرم بالحب والغرام الولوع وقد أغرم بالشئ أي أولع به (sihah)؛ هو مغرم بالنساء أي يلازمهن ملازمة الغريم (mufradat)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3038:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=eb4b20702d035b2a;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4629:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=f65f29ffcb7b3691;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1078:headword=%D8%BA%D8%B1%D9%85:root=%D8%BA%20%D8%B1%20%D9%85:sha=9d78b4ea977c9c00",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    }
+  ]
+}

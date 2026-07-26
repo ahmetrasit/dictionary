@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak üç dalda kaynak sentezi ayırt edici açıklama veya kısıtlamayı atlıyor, bir dalın kavram karşılığı ise reçine ile bal kıvamında özsu veren ağacı kanıtın kurmadığı biçimde aynılaştırıyor.",
+  "issues": [
+    {
+      "target_ref": "root_001342/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yetkili kaynak ifadesinde sütün bedenin süzülmüş özü olduğu ve iki bedensel madde arasından çıktığı yönünde ayırt edici bir açıklama bulunur; mevcut sentez yalnız ortak süt çekirdeğini ve bağlı kullanımları verir, bu açıklamayı hiç yansıtmaz.",
+      "smallest_correction": "Ortak özete, kaynak adını yinelemeden, bir aktarımın sütü bedenin süzülmüş özü olarak açıkladığını belirten kısa bir cümle ekleyin."
+    },
+    {
+      "target_ref": "root_001342/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yetkili kaynak ifadesi ortak anne sütünü bildiren kalıbı vermekle kalmaz, aynı bağlamda süt sözcüğünün öteki biçiminin kullanılmayacağını da açıkça sınırlar. Mevcut sentez bu biçimsel kısıtlamayı atlıyor.",
+      "smallest_correction": "Ortak özete, bazı aktarımların bu kalıpta alternatif süt biçiminin söylenmediğini belirttiğini kaynak kodu vermeden ekleyin."
+    },
+    {
+      "target_ref": "root_001342/B006",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt kokulu reçineyi bir kullanım, bal kıvamında özsu veren ağacı ise ayrı bir kullanım olarak aktarır; bu ağacın söz konusu reçineyi veren ağaç olduğunu söylemez. Kavram karşılığındaki 'onu veren ağaç' bağı iki ayrı göndergeyi kanıtsız biçimde aynılaştırır.",
+      "smallest_correction": "Kavram karşılığını, reçineyi ve bal kıvamında özsu veren ağacı ayrı öğeler olarak sayacak biçimde değiştirin; ağacın reçineyi verdiğini söyleyen bağı kaldırın."
+    },
+    {
+      "target_ref": "root_001342/B007",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yetkili kaynak ifadesindeki bir aktarım, anlamın önce süt gereksinimine bağlı olduğunu ve sonra bütün gereksinimlere genişlediğini açıklar. Mevcut sentez kapsam ayrılığını verir, fakat bu türetim ve anlam genişlemesini atlar.",
+      "smallest_correction": "Ortak özete, bir aktarımın anlamı süt gereksiniminden genel gereksinime uzanan bir genişleme olarak açıkladığını belirten kısa ve kaynak-nötr bir cümle ekleyin."
+    }
+  ]
+}

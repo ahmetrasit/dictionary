@@ -410,15 +410,15 @@
       "branch_ref": "root_000566/B003",
       "identity_judgment": {
         "status": "qualified",
-        "rationale": "Kaynak anlatımı gözetleme yapılan yer ile gözcünün oturduğu yolu aynı mekansal çekirdekte toplar; ayrıca yırtıcı hayvanlar için hazırlanmış tuzakları bağlı bir kullanım olarak verir. Geçici çerçeve temelde doğrudur, ancak tuzağı gözetleme yeriyle özdeşleştirmemek ve yol kullanımını sıradan yol anlamına genişletmemek gerekir.",
-        "boundary_note": "Çekirdek gözetleme için ayrılmış yer veya yoldur; hazırlanmış hayvan tuzağı buna bağlı ama ayrı bir kullanım olarak kalır."
+        "rationale": "Kaynak anlatımı gözetleme yapılan yeri ve yolu ayrı kullanımlar olarak verir; ayrıca yırtıcı hayvanlar için hazırlanmış tuzakları bağlı bir kullanım olarak ekler. Geçici çerçeve temelde doğrudur, ancak yolu mutlaka gözcünün beklediği bir kesitle sınırlamamak ve tuzağı gözetleme yeriyle özdeşleştirmemek gerekir.",
+        "boundary_note": "Dal gözetleme için ayrılmış yeri ve bağımsız yol anlamını kapsar; hazırlanmış hayvan tuzağı bunlara bağlı ama ayrı bir kullanım olarak kalır."
       },
       "lexicalization_scope": {
         "branch_kind": "mixed_non_bare",
-        "note": "Biçimlerin yer ve yol anlamı ile kalıp içindeki hayvan tuzakları kullanımı ayrı tutulur; kalıba özgü tuzak anlamı yalın biçimlerin tamamına genellenmez."
+        "note": "Biçimlerin yer ve yol anlamları ile bir biçimde ve kalıpta bulunan hayvan tuzağı kullanımları ayrı tutulur; tuzak anlamı yer ve yol bildiren biçimlere genellenmez."
       },
       "concept_map": {
-        "definition": "Bir gözcünün gözlem yapmak ve beklemek için bulunduğu yer ya da bu amaçla tuttuğu yol kesimidir. Yırtıcı hayvanlar için hazırlanmış tuzaklar, aynı dalda bağımlı ve özel bir kullanım oluşturur.",
+        "definition": "Bir gözcünün gözlem yapmak ve beklemek için bulunduğu yer ya da bağımsız olarak yoldur. Yırtıcı hayvanlar için hazırlanmış tuzaklar, aynı dalda bağımlı ve özel bir kullanım oluşturur.",
         "facets": [
           {
             "facet_id": "F001",
@@ -431,7 +431,7 @@
           {
             "facet_id": "F002",
             "role": "source_variant",
-            "statement": "Gözcünün oturup beklediği yol veya yolun belirli kesimi.",
+            "statement": "Ek bir gözetleme işlevi şartı taşımayan yol kullanımı.",
             "claim_ids": [
               "bc_001"
             ]
@@ -447,7 +447,7 @@
         ]
       },
       "source_synthesis": {
-        "common_summary": "Birleşik kaynak anlatımı gözetleme yerini ve gözcünün beklediği yolu mekansal çekirdekte birleştirir; hayvanlar için hazırlanmış tuzakları ise bu çekirdeğe bağlı özel bir kullanım olarak ekler.",
+        "common_summary": "Birleşik kaynak anlatımı gözetleme yerini ve bağımsız yol anlamını ayrı kullanımlar olarak verir; hayvanlar için hazırlanmış tuzakları ise bunlara bağlı özel bir kullanım olarak ekler.",
         "common_claim_ids": [
           "bc_001"
         ],
@@ -457,10 +457,10 @@
       },
       "concept_gloss": {
         "text": "gözetleme yeri veya yolu",
-        "applicability": "Gözcünün bir hedefi izlemek üzere bulunduğu yeri ve bu amaçla tuttuğu yol kesimini karşılar.",
+        "applicability": "Gözcünün bir hedefi izlemek üzere bulunduğu yeri veya bağımsız yol anlamını karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Gözetleme amacı ile yer veya yol türündeki mekansal taşıyıcıyı korur.",
+          "preserves": "Gözetleme amacı taşıyan yer ile bağımsız yol kullanımlarını birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -487,12 +487,12 @@
           ]
         },
         {
-          "text": "gözcünün beklediği yol",
+          "text": "yol",
           "usage_role": "explanatory",
-          "applicability": "Söz konusu yer bir yol veya yol kesimi olarak anlatıldığında açıklayıcı karşılıktır.",
+          "applicability": "Söz konusu biçim ek bir gözetleme işlevi belirtilmeden yol anlamında kullanıldığında doğrudan karşılıktır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Yol özelliği ile gözcünün orada bekleme amacını birlikte korur.",
+            "preserves": "Kaynakta bağımsız olarak verilen yol anlamını korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -521,12 +521,12 @@
         {
           "lexical_unit_id": "lu_001",
           "rendering_kind": "ordinary",
-          "target_gloss": "gözetleme yeri veya yolu"
+          "target_gloss": "gözetleme yeri veya yol"
         },
         {
           "lexical_unit_id": "lu_002",
           "rendering_kind": "ordinary",
-          "target_gloss": "gözetleme için ayrılmış yer veya yol"
+          "target_gloss": "gözetleme yeri veya yol"
         },
         {
           "lexical_unit_id": "lu_003",
@@ -540,17 +540,6 @@
         }
       ],
       "excluded_glosses": [
-        {
-          "text": "yol",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Mekanın kimi kullanımlarda yol olabilmesini korur.",
-            "loses": null,
-            "adds": "Gözetleme amacı taşımayan bütün sıradan yolları kapsama alır.",
-            "collision": null
-          }
-        },
         {
           "text": "karakol",
           "category": "alternative",
@@ -579,51 +568,51 @@
           "neighbor_ref": "root_000584/B003",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Bu dal gözetleme yolunu ve hayvan tuzağına bağlı kullanımı da kapsar.",
+          "focus_only": "Bu dal bağımsız yol anlamını ve hayvan tuzağına bağlı kullanımı da kapsar.",
           "neighbor_only": "Komşu dal gözetleme yerinin yüksek olmasını belirleyici özellik sayar.",
           "gloss": "gözetleme yeri",
           "shared_zone": "İki dal da gözcünün durup çevreyi izlediği belirli bir yeri adlandırır.",
-          "distinction": "Yer anlamları yakındır; ancak komşu dal yüksekliği gerektirirken bu dal yol kesimine de uygulanır ve ayrıca hayvan tuzağına uzanan özel bir kullanım taşır."
+          "distinction": "Yer anlamları yakındır; ancak komşu dal yüksekliği gerektirirken bu dal bağımsız olarak yol anlamında da kullanılır ve ayrıca hayvan tuzağına uzanan özel bir kullanım taşır."
         },
         {
           "neighbor_ref": "root_000009/B010",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "Bu dal yolu gözcünün orada bekleyip gözlem yapması işleviyle sınırlar.",
+          "focus_only": "Bu dal gözetleme yerinin yanında ek bir işlev koşulu taşımayan yol anlamını da kapsar.",
           "neighbor_only": "Komşu dal işlek yol, yol kavşağı, son nokta ve hizalanma gibi genel yol özelliklerini kapsar.",
-          "gloss": "gözetleme yolu",
+          "gloss": "yol",
           "shared_zone": "Her iki dalın bazı kullanımları bir yol veya yolun belirli bölümünü adlandırır.",
-          "distinction": "Yol alanı ortaktır, fakat bu dalın yolu gözetleme işleviyle tanımlanır; komşu dalın yol anlamı kullanım yoğunluğu, birleşme veya konumla belirlenir."
+          "distinction": "Yol alanı ortaktır; bu dal yolu genel olarak adlandırabilirken komşu dal işlek ya da geçilen yolu, yol birleşimini, son noktayı veya hizalanmayı ayrıca kapsar."
         },
         {
           "neighbor_ref": "root_001444/B006",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "Bu dal yol kesimini bir gözcünün bekleme ve izleme amacıyla belirler.",
+          "focus_only": "Bu dal gözetleme yerinin yanında ek bir konum şartı taşımayan yol anlamını da kapsar.",
           "neighbor_only": "Komşu dal yolun veya vadinin orta, sınır ya da ana bölümünü konum bakımından belirler.",
-          "gloss": "işlevsel yol kesimi",
+          "gloss": "yol",
           "shared_zone": "Her iki dal bir yolun belirli bir bölümünü ayırt ederek adlandırabilir.",
-          "distinction": "Bu dalda ayrım işlevseldir ve gözetlemeye dayanır; komşu dalda ise bölümün yol ya da vadi içindeki konumu belirleyicidir."
+          "distinction": "Bu dal yolu genel olarak adlandırabilir; komşu dalda ise yolun veya vadinin orta, sınır ya da ana bölümü olması belirleyicidir."
         },
         {
           "neighbor_ref": "root_000566/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Bu dal gözetlemenin yürütüldüğü yeri veya yolu adlandırır.",
+          "focus_only": "Bu dal gözetlemenin yürütüldüğü yeri, ayrıca bağımsız yol ve tuzak kullanımlarını adlandırır.",
           "neighbor_only": "Komşu dal gözetleme eylemini, gözcüyü ve gözlenen şeyi adlandırır.",
           "gloss": "gözetleme yeri",
-          "shared_zone": "İki dal aynı gözetleme olayının mekansal ve eylemsel bileşenlerini paylaşır.",
-          "distinction": "Bu dal olayın yerini, komşu dal ise yapılan işi ve katılımcıları öne çıkarır; bu nedenle aynı sahne içinde bulunsalar da birbirlerinin yerine kullanılamazlar."
+          "shared_zone": "Bu dalın gözetleme yeri kullanımı, komşu dalın gözetleme eylemiyle aynı olay sahnesinde buluşur.",
+          "distinction": "Bu dal olayın yerini adlandırır ve ayrıca yol ile tuzak kullanımları taşır; komşu dal ise yapılan işi ve katılımcıları öne çıkarır, bu nedenle birbirlerinin yerine kullanılamazlar."
         },
         {
           "neighbor_ref": "root_000566/B002",
           "relation_type": "thematic",
           "boundary_match": "thematic_only",
-          "focus_only": "Bu dalın çekirdeği gözetleme için ayrılmış mekandır; hazırlama yalnızca tuzak kullanımında görünür.",
+          "focus_only": "Bu dal gözetleme yerini, yolu ve tuzağı adlandırır; hazırlama yalnızca tuzak kullanımında görünür.",
           "neighbor_only": "Komşu dalın çekirdeği herhangi bir şeyi belirli kişi veya amaç için hazırlayıp ayırmaktır.",
           "gloss": "yer ve hazırlama",
           "shared_zone": "Hayvan tuzağı kullanımında yer veya düzeneğin önceden hazırlanması iki dalı aynı sahnede buluşturur.",
-          "distinction": "Hazırlama bu dalda yalnızca özel tuzak kullanımına bağlıdır; komşu dalda ise anlamın kurucu işlemidir ve gözetleme mekanı gerektirmez."
+          "distinction": "Hazırlama bu dalda yalnızca özel tuzak kullanımına bağlıdır; yol ve gözetleme yeri kullanımları hazırlama gerektirmez. Komşu dalda ise hazırlama anlamın kurucu işlemidir."
         }
       ],
       "neighbor_coverage_note": "Bütün adaylar değerlendirildi. Yüksek gözetleme yeri, iki ayrı yol alanı ve aynı kökteki eylem ile hazırlama dalları sınırı en iyi gösterdi; engebeli arazi, gece yolları, bilinmeyen arazide ilerleme ve öteki yol adayları gözetleme işlevini paylaşmadığından yayımlanmadı.",
@@ -665,7 +654,7 @@
           {
             "facet_id": "F002",
             "role": "extension",
-            "statement": "Yağmur görmüş ve bahar yağışı umulan yerdeki az ya da seyrek ot.",
+            "statement": "Bahar yağmuru umulan yerdeki az ya da seyrek ot.",
             "claim_ids": [
               "bc_001"
             ]
@@ -690,11 +679,11 @@
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "ilk ya da az yağmur ve onunla beliren seyrek ot",
-        "applicability": "Yağışın başlangıç veya azlık niteliğini ve bu yağışla ilişkili az bitki örtüsünü birlikte anlatan üst karşılıktır.",
+        "text": "ilk ya da az yağmur ve seyrek ot",
+        "applicability": "Yağışın başlangıç veya azlık niteliğini ve bahar yağmuru umulan yerdeki az bitki örtüsünü birlikte anlatan üst karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "İlk veya az yağmur çekirdeği ile ona bağlı seyrek ot uzantısını korur.",
+          "preserves": "İlk veya az yağmur çekirdeği ile bahar yağmuru umulan yerdeki seyrek ot uzantısını korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -738,10 +727,10 @@
         {
           "text": "seyrek ot",
           "usage_role": "contextual",
-          "applicability": "Yağmur alan ve daha fazla bahar yağışı beklenen yerdeki az bitki örtüsü için kullanılır.",
+          "applicability": "Bahar yağmuru beklenen yerdeki az bitki örtüsü için kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Bitki örtüsünün azlığını ve yağışlı araziyle bağını korur.",
+            "preserves": "Bitki örtüsünün azlığını ve bahar yağmuru beklentisini korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -775,7 +764,7 @@
         {
           "lexical_unit_id": "lu_006",
           "rendering_kind": "ordinary",
-          "target_gloss": "ilk yağmur geçişi"
+          "target_gloss": "bir yağmur geçişi veya ilk yağmur geçişi"
         },
         {
           "lexical_unit_id": "lu_007",

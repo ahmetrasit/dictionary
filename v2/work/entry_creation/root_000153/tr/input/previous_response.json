@@ -2,61 +2,51 @@
   "branches": [
     {
       "branch_ref": "root_000153/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, nesne ve giysinin eskimesini temel anlam olarak verir; yolculuğun bir bineği yıpratması da aynı fiziksel sürecin belirli bir bağlamdaki gerçekleşmesidir. Bu çerçeve sınama veya cevap bildiren öteki dallara taşmaz.",
+        "boundary_note": "Genel eskime ile yolculuğun bineği yıpratması ayrılır; başka dallardaki sınama anlamı bu kapsama girmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım yalın eskime çekirdeğini korur, yolculukta yıpranmış binek ve yeni giysi duasını yalnız kendi kalıplaşmış kullanımlarında ele alır."
+      },
       "concept_map": {
-        "definition": "Bir nesnenin, özellikle bir giysinin, kullanım veya başka bir yıpratıcı etki sonucunda eskimesi ve aşınmasıdır; yolculuk bir binek hayvanını da bu duruma düşürebilir.",
+        "definition": "Bir nesnenin, özellikle bir giysinin kullanımla eskimesi ve yıpranmasıdır; yolculuğun bineği tüketip yıpratması bu sürecin bağlama bağlı özel bir görünümüdür.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Nesne ya da giysi aşınarak eski ve yıpranmış duruma gelir.",
+            "statement": "Nesne veya giysi kullanıldıkça eskir, dayanıklılığını ve yeni durumunu yitirir.",
             "claim_ids": [
-              "lu_001",
-              "lu_002"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Uzun yolculuk bir binek hayvanını yıpratıp bitkin düşürebilir.",
+            "statement": "Uzun yolculuk bir bineği tüketip yıpranmış duruma getirebilir.",
             "claim_ids": [
-              "lu_003"
-            ]
-          },
-          {
-            "facet_id": "F003",
-            "role": "associated_use",
-            "statement": "Yeni giysi giyene, onu eskitmesi ve ardından yenisine kavuşması dileği söylenir.",
-            "claim_ids": [
-              "lu_004"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak çekirdek, nesnenin ya da giysinin aşınıp eski hale gelmesidir. Aynı durum, yolculuğun yorduğu ve yıprattığı binek hayvanına da uygulanır.",
+        "common_summary": "Kaynaklar fiziksel eskime ve yıpranma çekirdeğinde birleşir; giysi temel örnektir, yolculuktan tükenen binek ise bu çekirdeğin özel bağlamıdır.",
         "common_claim_ids": [
-          "lu_001",
-          "lu_002",
-          "lu_003"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_004"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Yeni giysi giyene, onu güle güle eskitmesi ve sonrasında yenisine kavuşması dilenir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "yıpranıp eskime",
-        "applicability": "Nesne, giysi veya yolculuktan aşınmış binek için çekirdek değişimi eksiksiz anlatır.",
+        "text": "eskime ve yolculukta yıpranma",
+        "applicability": "Yalın kullanımda nesne veya giysinin eskimesini, özel bağlamda ise yolculuktan tükenen bineği birlikte temsil eder.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Aşınma sonucunda eski ve yıpranmış hale gelme sürecini korur.",
+          "preserves": "Fiziksel eskime çekirdeğini ve yolculuğa bağlı binek özelleşmesini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -68,13 +58,13 @@
       },
       "contextual_glosses": [
         {
-          "text": "eskimek",
+          "text": "eskimek, yıpranmak",
           "usage_role": "general",
-          "applicability": "Giysi veya eşyanın kullanım sonucunda eski hale gelmesini anlatan doğal karşılıktır.",
+          "applicability": "Nesne ve giysinin kullanım sonucunda eski duruma gelmesini anlatan yalın bağlamlarda kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Nesnenin yeni durumunu yitirerek eski hale gelmesini korur.",
-            "loses": "Aşınma ve hırpalanma derecesini açıkça belirtmez.",
+            "fit": "none",
+            "preserves": "Nesne veya giysinin fiziksel eskime sürecini eksiksiz korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -83,12 +73,12 @@
           ]
         },
         {
-          "text": "yolculuktan yıpranmış",
+          "text": "yolculuktan yıpranmış binek",
           "usage_role": "contextual",
-          "applicability": "Uzun yolculuğun binek hayvanı üzerindeki yıpratıcı sonucunu niteler.",
+          "applicability": "Yalnızca yolculuğun tükettiği ve yıprattığı binekten söz edilen bağlamlara uygundur.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Yolculuğun hayvanı yıpratıp bitkin hale getirmesini korur.",
+            "preserves": "Yolculuğun bineği tüketip yıpratması koşulunu açıkça korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -102,37 +92,25 @@
         {
           "lexical_unit_id": "lu_001",
           "rendering_kind": "ordinary",
-          "target_gloss": "nesne veya giysi yıpranıp eskimek"
+          "target_gloss": "nesnenin ya da giysinin eskimesi ve yıpranması"
         },
         {
           "lexical_unit_id": "lu_002",
           "rendering_kind": "ordinary",
-          "target_gloss": "yıpranma ve eskime"
+          "target_gloss": "eskime, yıpranma"
         },
         {
           "lexical_unit_id": "lu_003",
           "rendering_kind": "ordinary",
-          "target_gloss": "yolculuğun yıprattığı binek hayvanı"
+          "target_gloss": "yolculuğun yıprattığı binek"
         },
         {
           "lexical_unit_id": "lu_004",
           "rendering_kind": "ordinary",
-          "target_gloss": "Güle güle eskit, Tanrı yenisini versin"
+          "target_gloss": "Güle güle eskit; Tanrı yerine yenisini versin"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "çürümek",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "displacement",
-            "preserves": "Bir şeyin kullanım değerini yitirmeye yönelmesini kısmen korur.",
-            "loses": "Kullanım veya yolculukla aşınıp eskime sürecini karşılamaz.",
-            "adds": "Bozularak dağılma veya kokuşma anlamı ekler.",
-            "collision": "Organik bozulma ve çözülme anlamıyla karışır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000154/B001",
@@ -140,92 +118,80 @@
           "boundary_match": "exact",
           "focus_only": null,
           "neighbor_only": null,
-          "gloss": "yıpranıp eskime",
-          "shared_zone": "Her ikisi de nesne veya giysinin kullanımla aşınıp eskimesini ve yolculuğun bineği yıpratmasını kapsar.",
-          "distinction": "Çekirdek süreç, katılımcılar ve yolculukla ilgili kapsam bakımından belirgin bir sınır farkı yoktur."
-        },
-        {
-          "neighbor_ref": "root_001482/B003",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Giysi ve binek dahil, aşınarak eski hale gelmenin genel sürecini kapsar.",
-          "neighbor_only": "İçi oyulma, ufalanma ve çürük duruma gelme sonucunu özellikle kapsar.",
-          "gloss": "çürüyüp ufalanma",
-          "shared_zone": "Her iki dal da bir şeyin zamanla sağlamlığını ve ilk durumunu yitirmesini anlatır.",
-          "distinction": "Odak dal genel yıpranıp eskimeyi anlatırken komşu dal çürüme, içten boşalma ve ufalanma sonucuyla sınırlıdır."
+          "gloss": "eskime ve yıpranma",
+          "shared_zone": "Her iki dal nesne veya giysinin eskimesini ve yolculuğun bineği yıpratmasını kapsar.",
+          "distinction": "Çekirdek, katılımcılar ve yolculuk özelleşmesi bakımından anlamlı bir sınır ayrılığı yoktur."
         },
         {
           "neighbor_ref": "root_001558/B003",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Yıpranmayı giysi dışındaki nesnelere ve yolculuktan hırpalanmış bineğe de genişletir.",
-          "neighbor_only": "Giyside aşınma izinin belirginleşmesini, henüz yırtılmamış olma koşuluyla öne çıkarır.",
-          "gloss": "aşınma izi belirmiş giysi",
-          "shared_zone": "İki dal da giysinin eskimesi ve kullanım izlerinin görünür hale gelmesinde örtüşür.",
-          "distinction": "Komşu dal giyside görünür iz ve yırtılmamışlık koşuluna bağlıdır; odak dal daha genel bir yıpranma alanına sahiptir."
+          "focus_only": "Bu dal nesnelerin genel eskimesini ve yolculuktan yıpranan bineği de kapsar.",
+          "neighbor_only": "Komşu dal giyside yıpranma izinin görünmesini ve henüz yırtılmamış olmasını özellikle belirtir.",
+          "gloss": "giyside beliren yıpranma",
+          "shared_zone": "İki dal da giysinin eskimesini ve bunun görünür hale gelmesini anlatabilir.",
+          "distinction": "Odak dal daha geniş bir fiziksel eskime alanına sahiptir; komşu dal ise görünür iz ve yırtılmama sınırıyla giysiye özelleşir."
+        },
+        {
+          "neighbor_ref": "root_001482/B003",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal kullanım veya yolculuk sonucundaki genel eskimeyi anlatır.",
+          "neighbor_only": "Komşu dal çürüme, ufalanma ve içinin boşalması gibi ileri bozulmayı gerektirir.",
+          "gloss": "çürüyüp ufalanma",
+          "shared_zone": "Her iki dal bir varlığın eski sağlam durumunu yitirmesi alanında buluşur.",
+          "distinction": "Genel yıpranma çürüme veya ufalanma gerektirmez; komşu dal ise ileri maddi çözülmeyi çekirdek yapar."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; burada yalnızca aynı sınırı paylaşan ya da yıpranmanın derecesini ve sonucunu açıklığa kavuşturan karşılaştırmalar yayımlandı."
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; en yakın eşdeğer ile giyside görünür yıpranma ve ileri çürüme sınırlarını açıklayan üç karşılaştırma seçildi."
     },
     {
       "branch_ref": "root_000153/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bir kişiyi veya işi deneyip sınamayı ve böylece gerçek niteliği ya da yapılanın sonucunu öğrenmeyi açıkça birleştirir. Fiziksel eskime ve yalnızca iyilikte bulunma bu sınama çekirdeğine dahil değildir.",
+        "boundary_note": "Sınama bir durumun gerçeğini ortaya çıkarır; fiziksel yıpranma ve karşılıksız iyilik ayrı dallarda kalır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım sınama çekirdeğini korurken türemiş biçimlerdeki kişi, eylem ve sonuç odaklarını birbirine karıştırmadan birlikte gösterir."
+      },
       "concept_map": {
-        "definition": "Bir kişinin ya da yaptığı işin gerçek durumunu, niteliğini veya değerini ortaya çıkarmak üzere onu denemek ve sınamaktır; sınama iyi ya da kötü koşullar yoluyla gerçekleşebilir.",
+        "definition": "Bir kişiyi, işi veya eylemi deneyip sınayarak onun gerçek niteliğini, değerini ya da ortaya çıkan sonucunu öğrenmektir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kişi, gerçek durumunun bilinmesi için denenir ve sınanır.",
+            "statement": "Kişi veya şey, gerçek durumu anlaşılmak üzere deneyime ve sınamaya tabi tutulur.",
             "claim_ids": [
-              "lu_005",
-              "lu_006"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "extension",
-            "statement": "Sınama yalnız güçlükle değil, iyi veya kötü koşullarla da gerçekleşebilir.",
+            "statement": "Sınamanın sonunda yapılan işin gerçek niteliği ve değeri belirginleşir.",
             "claim_ids": [
-              "lu_007",
-              "lu_008"
-            ]
-          },
-          {
-            "facet_id": "F003",
-            "role": "source_variant",
-            "statement": "Sınama eylemini adlandıran ayrı bir ad biçimi de aktarılır.",
-            "claim_ids": [
-              "lu_009"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ana anlam, kişinin durumunu öğrenmek için onu deneyip sınamaktır. Bu sınama hem iyi hem kötü koşullar aracılığıyla olabilir ve güçlük kadar olumlu bir imkan da kişinin niteliğini açığa çıkarabilir.",
+        "common_summary": "Kaynaklar deneyerek sınama anlamında birleşir; bu işlem kişinin durumunu veya yapılmış bir işin gerçek niteliğini ortaya çıkarır.",
         "common_claim_ids": [
-          "lu_005",
-          "lu_006",
-          "lu_007",
-          "lu_008"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_009"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Sınama anlamında kullanılan ayrı bir eylem adı biçimi de kaydedilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "durumunu ortaya çıkaran sınama",
-        "applicability": "Kişinin gerçek durumunu öğrenmeye yönelik deneme sürecini ve sonucunu birlikte anlatır.",
+        "text": "deneyerek sınama ve gerçek niteliği ortaya çıkarma",
+        "applicability": "Bir kişi, iş veya eylemin deneme yoluyla sınandığı ve sonucunda gerçek durumunun anlaşıldığı çekirdeği temsil eder.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Sınamanın kişinin gerçek durumunu ve niteliğini açığa çıkarma amacını korur.",
+          "preserves": "Hem sınama işlemini hem de gerçek niteliğin ortaya çıkması sonucunu korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -237,13 +203,13 @@
       },
       "contextual_glosses": [
         {
-          "text": "denemek",
+          "text": "denemek ve sınamak",
           "usage_role": "general",
-          "applicability": "Birinin durumunu ve yeterliğini öğrenmek için yapılan etkin sınamayı doğal biçimde karşılar.",
+          "applicability": "Bir kişinin veya şeyin durumunu anlamak amacıyla denendiği bağlamlarda doğal karşılıktır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Birinin gerçek durumunu öğrenmek için yoklanmasını korur.",
-            "loses": "İyi veya kötü koşulların başlı başına sınama olabilmesini belirtmez.",
+            "fit": "none",
+            "preserves": "Gerçek durumu öğrenmeye yönelik deneme ve sınama işlemini korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -252,18 +218,17 @@
           ]
         },
         {
-          "text": "sınanmak",
+          "text": "yaptığının gerçeğini görmek",
           "usage_role": "contextual",
-          "applicability": "Kişinin iyi ya da kötü bir koşul aracılığıyla denendiği edilgen bağlamlarda kullanılır.",
+          "applicability": "Geçmiş bir eylemin gerçek niteliğinin veya değerinin sonuç üzerinden anlaşıldığı bağlamlara uygundur.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Kişinin bir koşul içinde denenmesini ve durumunun ortaya çıkmasını korur.",
+            "preserves": "Yapılan işin gerçek niteliğinin sonradan belirginleşmesini korur.",
             "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001",
             "F002"
           ]
         }
@@ -272,12 +237,12 @@
         {
           "lexical_unit_id": "lu_005",
           "rendering_kind": "ordinary",
-          "target_gloss": "durumunu öğrenmek için denemek"
+          "target_gloss": "durumunu anlamak için denemek ve sınamak"
         },
         {
           "lexical_unit_id": "lu_006",
           "rendering_kind": "ordinary",
-          "target_gloss": "sınanmak"
+          "target_gloss": "bir insanı sınamak"
         },
         {
           "lexical_unit_id": "lu_007",
@@ -287,7 +252,7 @@
         {
           "lexical_unit_id": "lu_008",
           "rendering_kind": "ordinary",
-          "target_gloss": "sınanma, zorlu deneme"
+          "target_gloss": "çetin sınama ve deneme"
         },
         {
           "lexical_unit_id": "lu_009",
@@ -295,107 +260,96 @@
           "target_gloss": "sınama"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "ceza",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "displacement",
-            "preserves": "Kişinin güç bir durumla karşılaşabilmesini kısmen korur.",
-            "loses": "Durumu ve niteliği ortaya çıkaran deneme işlevini kaybeder.",
-            "adds": "Bir kusura karşılık yaptırım uygulanması anlamını ekler.",
-            "collision": "Yaptırım ve karşılık verme alanıyla karışır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000154/B002",
-          "relation_type": "synonym",
-          "boundary_match": "exact",
-          "focus_only": null,
-          "neighbor_only": null,
-          "gloss": "iyi ya da kötü koşulla sınama",
-          "shared_zone": "Her iki dal da kişinin denenmesini ve iyi veya kötü koşulların onun durumunu açığa çıkarmasını kapsar.",
-          "distinction": "Çekirdek sınama, kapsam ve ortaya çıkarma işlevi bakımından belirgin bir sınır farkı bulunmaz."
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal yapılan işin gerçek niteliğinin ve değerinin sonradan anlaşılmasını açıkça kapsar.",
+          "neighbor_only": "Komşu dal iyilik, güçlük ve yükümlülük biçimindeki sınama türlerini daha açık biçimde genişletir.",
+          "gloss": "durumu ortaya çıkaran sınama",
+          "shared_zone": "Her iki dal insanı deneyip sınayarak gerçek durumunu açığa çıkarmayı anlatır.",
+          "distinction": "Odak dal deney ve ortaya çıkan bilgi ilişkisini öne çıkarır; komşu dal sınamanın olumlu, olumsuz ve yükümlülük bildiren türlerini daha geniş kapsar."
         },
         {
           "neighbor_ref": "root_001128/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "İyi veya kötü koşullar yoluyla kişinin gerçek durumunun ortaya çıkmasını kapsar.",
-          "neighbor_only": "Madeni ateşle deneyerek iyisini kötüsünden ayırma alanını da kapsar.",
+          "focus_only": "Bu dal kişi ve eylemin deneyim yoluyla gerçek niteliğini öğrenmeye odaklanır.",
+          "neighbor_only": "Komşu dal iyi ile kötüyü ayırmayı ve madenin ateşle arıtılmasını da çekirdeğe katar.",
           "gloss": "ayırt edici sınama",
-          "shared_zone": "İki dal da deneme yoluyla gizli niteliğin ve gerçek değerin ortaya çıkarılmasını anlatır.",
-          "distinction": "Komşu dal insan sınamasının yanında madenin ateşle ayrıştırılmasını içerir; odak dal kişi ve eylem niteliğine yönelir."
+          "shared_zone": "Her iki dal sınama yoluyla gerçek nitelik veya kaliteyi ortaya çıkarır.",
+          "distinction": "Komşu dal ayırma ve maden arıtma modeline kadar uzanır; odak dalda bu maddi işlem zorunlu değildir."
         },
         {
-          "neighbor_ref": "root_000355/B002",
+          "neighbor_ref": "root_000121/B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Sınama eylemini ve iyi ya da kötü koşullar altında durumun açığa çıkmasını anlatır.",
-          "neighbor_only": "Deneme sonrasında bir kişi veya yerin beğenilir ve uygun bulunması sonucunu anlatır.",
-          "gloss": "deneyip uygun bulma",
-          "shared_zone": "Her iki dalda da değerlendirmeden önce deneme veya yoklama bulunur.",
-          "distinction": "Odak dal sınama sürecidir ve sonuç olumlu olmak zorunda değildir; komşu dal olumlu değerlendirme sonucunu öne çıkarır."
+          "focus_only": "Bu dal gerçek duruma ulaşmak için bir sınama veya deney işlemi gerektirir.",
+          "neighbor_only": "Komşu dal sınama olmaksızın bilgi, kavrayış ve iç görüş sahibi olmayı da kapsar.",
+          "gloss": "kavrayıp bilme",
+          "shared_zone": "Sınamanın sonucu bir şeyin gerçeğini bilmeye ve kavramaya varabilir.",
+          "distinction": "Bilgi odak dalda sınama sürecinin sonucudur; komşu dalda ise kavrayışın kendisi çekirdektir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; yalnız çekirdek sınamayla doğrudan örtüşen ve sınamanın kapsam ya da sonuç farkını gösteren komşular seçildi."
+      "neighbor_coverage_note": "Bütün adaylar incelendi; doğrudan sınama eşdeğeri, ayırt edici sınama ve sınama sonucundaki bilgiyle karışabilecek kavrayış dalı yayımlandı."
     },
     {
       "branch_ref": "root_000153/B003",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesinin belirli türemiş kullanımları güzel bir karşılıkta bulunmayı, iyilik etmeyi ve cömertlikte ya da savaşta üstün çaba göstermeyi destekler. Aynı ifade iyi veya kötü koşullarla sınamayı da anar; bu bölüm genel sınama dalıyla kesiştiğinden iyilik çekirdeğine koşulsuz katılamaz.",
+        "boundary_note": "İyilikte bulunma ve üstün çaba bu dalın merkezidir; iyi ya da kötü koşullarla sınama yalnız kaynak varyantı olarak tutulur."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "non_bare",
+        "note": "Tanım yalnız sağlanan türemiş yapılara bağlıdır; bunlardan genel bir yalın kök anlamı veya bütün sınama kullanımlarını kapsayan bir anlam çıkarılmaz."
+      },
       "concept_map": {
-        "definition": "Birine güzel bir iyilik yapmak veya yarar sağlamak; cömertlikte ya da savaşta yoğun çaba gösterip üstün bir iş ortaya koymaktır.",
+        "definition": "Belirli türemiş yapılarda birine güzel bir karşılıkta veya iyilikte bulunmayı, ayrıca bir kişinin cömertlikte ya da savaşta bütün gücüyle çaba göstermesini anlatır. İyi veya kötü koşullarla sınama anlatımı kaynak varyantıdır ve bu iyilik çekirdeğine genellenmez.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Birine güzel bir davranışla iyilik ve yarar sağlanır.",
+            "statement": "Bir kişiye güzel bir karşılık sağlanır veya ona iyilikte bulunulur.",
             "claim_ids": [
-              "lu_011",
-              "lu_013"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "extension",
-            "statement": "Cömertlikte veya savaşta büyük çaba göstererek üstün bir iş yapmak da bu alana girer.",
+            "statement": "Bir kişi cömertlikte veya savaşta bütün gücüyle çaba gösterip iyi bir performans sergiler.",
             "claim_ids": [
-              "lu_012"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "source_variant",
+            "statement": "Bazı kaynak anlatımlarında kişiyi iyi veya kötü koşullarla sınama anlamı da bulunur.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Dal, birine güzel bir iyilik yapıp yarar sağlamayı merkeze alır. Cömertlikte veya savaşta yoğun çaba göstererek iyi bir başarı ortaya koyma kullanımı da aynı olumlu değerlendirme alanına bağlanır.",
+        "common_summary": "Toplu kaynak ifadesi güzel karşılıkta bulunma, iyilik etme ve cömertlik ya da savaşta üstün çaba gösterme kullanımlarını bir araya getirir; ayrıca iyi veya kötü koşullarla sınamaya uzanan bir anlatım farkı taşır.",
         "common_claim_ids": [
-          "lu_011"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_012"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Cömertlikte veya savaşta büyük çaba gösterip üstün bir başarı sergileme anlamı ayrıca kaydedilir."
-          },
-          {
-            "claim_ids": [
-              "lu_013"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Birine doğrudan iyilikte bulunmayı anlatan kullanım ayrıca kaydedilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "iyilik yapma ve üstün çaba gösterme",
-        "applicability": "Hem başkasına yarar sağlayan güzel davranışı hem cömertlikte veya savaşta üstün çabayı kapsar.",
+        "text": "iyilikte bulunma ve üstün çaba gösterme",
+        "applicability": "Belirli türemiş yapılarda güzel karşılık sağlama, iyilik etme ve cömertlik ya da savaşta güçlü çaba gösterme çekirdeğine uygundur.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Güzel iyilik yapma ile üstün çaba gösterme biçimindeki iki çekirdek gerçekleşmeyi korur.",
+          "preserves": "İyilikte bulunma ile nitelikli ve yoğun çaba gösterme çekirdeğini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -407,13 +361,13 @@
       },
       "contextual_glosses": [
         {
-          "text": "iyilikte bulunmak",
+          "text": "iyilik etmek, güzel karşılık vermek",
           "usage_role": "general",
-          "applicability": "Birine güzel bir davranışla yarar sağlama bağlamında doğal karşılıktır.",
+          "applicability": "Birine yararlı ve güzel bir davranışta bulunulan türemiş kullanım için uygundur.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Başkasına güzel bir davranışla yarar sağlama yönünü korur.",
-            "loses": "Cömertlikte veya savaşta üstün çaba gösterme kullanımını dışarıda bırakır.",
+            "fit": "none",
+            "preserves": "Bir kişiye güzel karşılık sağlama ve iyilik etme anlamını korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -422,18 +376,33 @@
           ]
         },
         {
-          "text": "üstün başarı göstermek",
+          "text": "cömertlikte veya savaşta üstün çaba göstermek",
           "usage_role": "contextual",
-          "applicability": "Cömertlik veya savaş bağlamında yoğun çabayla iyi sonuç ortaya koymayı anlatır.",
+          "applicability": "Bir kişinin cömertlik ya da savaş alanında bütün gücüyle çalıştığı bağlamlara özgüdür.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Yoğun çaba ve olumlu değerlendirilmiş başarı yönünü korur.",
-            "loses": "Birine doğrudan iyilik ve yarar sağlama kullanımını dışarıda bırakır.",
+            "fit": "none",
+            "preserves": "Alan koşulunu ve yoğun, iyi nitelikli çabayı birlikte korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F002"
+          ]
+        },
+        {
+          "text": "iyi veya kötü koşullarla sınamak",
+          "usage_role": "explanatory",
+          "applicability": "Yalnız toplu kaynak ifadesindeki sınama varyantını açıklamak için kullanılır; iyilik çekirdeğine genellenmez.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Kaynak varyantındaki olumlu veya olumsuz koşullarla sınama kapsamını korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
           ]
         }
       ],
@@ -441,32 +410,20 @@
         {
           "lexical_unit_id": "lu_011",
           "rendering_kind": "ordinary",
-          "target_gloss": "ona güzel bir iyilik yapmak"
+          "target_gloss": "ona güzel bir karşılık ve iyilik sağladı"
         },
         {
           "lexical_unit_id": "lu_012",
           "rendering_kind": "ordinary",
-          "target_gloss": "cömertlikte veya savaşta üstün çaba göstermek"
+          "target_gloss": "cömertlikte veya savaşta üstün çaba gösterdi"
         },
         {
           "lexical_unit_id": "lu_013",
           "rendering_kind": "ordinary",
-          "target_gloss": "ona iyilikte bulunmak"
+          "target_gloss": "ona iyilik ettim"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "ödüllendirmek",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Birine olumlu bir yarar sağlama yönünü kısmen korur.",
-            "loses": null,
-            "adds": "İyiliğin önceki bir davranışa karşılık verilen ödül olması koşulunu ekler.",
-            "collision": "Başarı karşılığında ödül verme alanıyla karışır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000154/B003",
@@ -475,71 +432,241 @@
           "focus_only": null,
           "neighbor_only": null,
           "gloss": "iyilik ve üstün çaba",
-          "shared_zone": "Her iki dal da güzel bir iyilik yapmayı ve cömertlikte veya savaşta üstün çaba göstermeyi kapsar.",
-          "distinction": "Katılımcılar, olumlu değerlendirme ve çaba alanları bakımından belirgin bir sınır farkı bulunmaz."
+          "shared_zone": "Her iki dal güzel karşılıkta bulunmayı, iyilik etmeyi ve cömertlik ya da savaşta üstün çabayı kapsar.",
+          "distinction": "Türemiş yapıların temel kapsamı ve katılımcı ilişkileri bakımından yayımlanabilir bir sınır ayrılığı yoktur."
         },
         {
           "neighbor_ref": "root_000885/B003",
-          "relation_type": "near_synonym",
+          "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Cömertlikte veya savaşta kişinin kendi üstün çabasını ve başarısını da kapsar.",
-          "neighbor_only": "Yardım etme eylemini ayrıca kapsar.",
-          "gloss": "birine iyilik yapma",
-          "shared_zone": "İki dal da başka birine yarar sağlayan güzel bir davranışta bulunmayı anlatır.",
-          "distinction": "Komşu dal doğrudan başkasına yapılan iyilik ve yardıma odaklanır; odak dal ayrıca savaşta veya cömertlikte üstün çabayı içerir."
+          "focus_only": "Bu dal cömertlikte veya savaşta üstün çaba göstermeyi ve güzel karşılık sağlamayı da içerir.",
+          "neighbor_only": "Komşu dal iyilik yapma ve yardım etme eylemini kendi başına daha genel biçimde kapsar.",
+          "gloss": "birine iyilik etme",
+          "shared_zone": "İki dal bir başkasına yararlı ve güzel bir davranışta bulunma alanında kesişir.",
+          "distinction": "Odak dal belirli türemiş yapılara ve ayrıca üstün çaba kullanımına bağlıdır; komşu dalın çekirdeği genel iyilik yapmadır."
         },
         {
           "neighbor_ref": "root_000323/B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Belirli birine yarar sağlama ile cömertlikte veya savaşta üstün çabayı bir arada kapsar.",
-          "neighbor_only": "İşi iyi ve kusursuz yapmayı, adaletin ötesine geçmeyi ve kötülüğün karşıtını daha genel biçimde kapsar.",
-          "gloss": "iyi ve yararlı davranış",
-          "shared_zone": "Her iki dalda da olumlu değerlendirilen davranış ve başkasına yarar sağlama bulunur.",
-          "distinction": "Komşu dal iyi eylemin genel niteliğini anlatır; odak dal belirli iyilik yapma ve üstün çaba gösterme kalıplarına bağlıdır."
+          "focus_only": "Bu dal cömertlik veya savaşta bütün gücüyle çaba gösterme kullanımını taşır.",
+          "neighbor_only": "Komşu dal iyi eylem, ustalık, başkasına yarar sağlama ve adaletin ötesine geçme alanlarını geneller.",
+          "gloss": "iyi ve yetkin davranış",
+          "shared_zone": "Her iki dal iyi nitelikli davranış ve başkasına yarar sağlama alanında buluşur.",
+          "distinction": "Komşu dal iyiliğin ve yetkinliğin genel alanıdır; odak dal belirli yapılardaki iyilik ve çaba anlatımıyla sınırlıdır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; yayımlananlar iyilik yapma çekirdeğini paylaşan ve üstün çaba kapsamının sınırını belirginleştiren komşulardır."
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; tam eşdeğer dal ile genel iyilik yapma ve iyi davranış alanlarının sınırlarını gösteren iki komşu seçildi."
     },
     {
       "branch_ref": "root_000153/B004",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi iki belirli yapıyı açıkça ayırır: mazereti açıklayıp kınanmayı gidermek ve yeminle muhatabı rahatlatmak ya da sınamak. Dal çerçevesi bu katılımcı ve sonuç ayrımlarını doğru biçimde korur.",
+        "boundary_note": "Mazeret yapısı kınanmayı giderir; yemin yapısı ise güven verme veya sınama amacı taşır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "non_bare",
+        "note": "Anlam yalnız mazeret ve yemin nesneleriyle kurulan sağlanmış yapılara bağlıdır; genel açıklama veya genel sınama anlamına genişletilmez."
+      },
       "concept_map": {
-        "definition": "Kişinin suçlanmasını önleyecek gerekçeyi açıkça ortaya koymasıdır; ayrıca birine ant içerek güven vermeyi veya ona ant önerip doğruluğunu bununla sınamayı anlatır.",
+        "definition": "Bir muhataba mazereti açıklayıp kınanmayı gidermek ya da ona yemin ederek güven vermek veya sınanması için yemin sunmaktır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kişi, üzerindeki suçlamayı kaldıracak gerekçeyi karşısındakine açıklar.",
+            "statement": "Belirli bir sözlü sunum muhatabın kınamasını, kuşkusunu veya sınanma durumunu değiştirmeye yönelir.",
             "claim_ids": [
-              "lu_014"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "associated_use",
-            "statement": "Birine ant içmek onun içini rahatlatabilir; ona ant önermek ise doğruluğunu sınama aracı olabilir.",
+            "role": "specialization",
+            "statement": "Mazeretin yüzü açıkça anlatılır ve konuşana yöneltilecek kınama ortadan kaldırılır.",
             "claim_ids": [
-              "lu_015"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "source_variant",
+            "statement": "Yemin ya muhataba güven vermek için edilir ya da onu yemin üzerinden sınamak için sunulur.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Bir kullanımda kişi, artık suçlanmamasını sağlayacak gerekçeyi açıklar. Diğer kullanımda ant, ya karşıdakine güven vermek için içilir ya da doğruluğunu sınamak üzere ona sunulur.",
+        "common_summary": "Toplu kaynak ifadesi mazereti açıklamanın kınanmayı gidermesini ortak çerçeveye alır; yemin kullanımında ise güven verme ile muhatabı sınama amaçları arasında bir anlatım farkı gösterir.",
         "common_claim_ids": [
-          "lu_014",
-          "lu_015"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "suçlamayı kaldıran açıklama veya sınayıcı ant",
-        "applicability": "Gerekçeyi açıklama ile güven veren ya da doğruluğu sınayan ant kullanımlarını birlikte kapsar.",
+        "text": "mazereti açıklama veya yeminle güven verme ya da sınama",
+        "applicability": "Yalnız mazeretin kınanmayı kaldırdığı ve yeminin güven verme ya da sınama amacıyla sunulduğu belirli yapılara uygundur.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Suçlamayı kaldırma, güven verme ve ant yoluyla sınama işlevlerini korur.",
+          "preserves": "Mazeretin sonucu ile yeminin iki ayrı amacını eksiksiz korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "mazeretini açıklayıp kınanmayı gidermek",
+          "usage_role": "contextual",
+          "applicability": "Konuşanın mazeretini muhataba açıklayarak artık kınanmamasını sağladığı bağlamlara özgüdür.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Mazeretin açıklanmasını ve bunun kınamayı gideren sonucunu korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "yeminle güven vermek",
+          "usage_role": "contextual",
+          "applicability": "Bir kişinin muhatabını rahatlatmak ve kuşkusunu gidermek amacıyla yemin ettiği bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Yeminin muhataba güven ve iç rahatlığı verme amacını korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F003"
+          ]
+        },
+        {
+          "text": "sınamak için yemin sunmak",
+          "usage_role": "contextual",
+          "applicability": "Muhatabın yemin aracılığıyla sınanması amaçlanan kaynak varyantına özgüdür.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Yeminin muhataba sunulmasını ve sınama amacını birlikte korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F003"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_014",
+          "rendering_kind": "ordinary",
+          "target_gloss": "ona mazeretimi açıklayıp kınanmayı giderdim"
+        },
+        {
+          "lexical_unit_id": "lu_015",
+          "rendering_kind": "ordinary",
+          "target_gloss": "ona güven vermek için yemin ettim veya sınansın diye yemin sundum"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000154/B004",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal mazeret yapısının yanında güven verme veya sınama amaçlı yemin yapısını da kapsar.",
+          "neighbor_only": null,
+          "gloss": "mazereti açıklayıp kınanmayı giderme",
+          "shared_zone": "İki dal mazereti açıklayarak konuşana yönelik kınamayı ortadan kaldırır.",
+          "distinction": "Komşu dal mazeret yapısıyla sınırlıdır; odak dal aynı kimlik altında iki ayrı yemin kullanımını da taşır."
+        },
+        {
+          "neighbor_ref": "root_000154/B005",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal yemin yapısına ek olarak mazereti açıklayıp kınanmayı giderme yapısını içerir.",
+          "neighbor_only": null,
+          "gloss": "yeminle güven verme veya sınama",
+          "shared_zone": "İki dal yeminin muhatabı rahatlatmak ya da onu sınamak için sunulmasını kapsar.",
+          "distinction": "Komşu dal yalnız yemin yapısını işler; odak dalın sınırı mazeret açıklama yapısını da içerir."
+        },
+        {
+          "neighbor_ref": "root_000995/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal mazereti açıklama eylemini ve kınanmanın kalkması sonucunu belirli bir yapıda birleştirir.",
+          "neighbor_only": "Komşu dal mazeret, özür dileme, mazereti kabul etme ve bağışlanma isteme alanını genel olarak kapsar.",
+          "gloss": "mazeret ve özür",
+          "shared_zone": "İki dal kusur veya suçlama karşısında mazeretin ileri sürülmesi alanında buluşur.",
+          "distinction": "Odak dal açıklama ve kınamayı giderme sonucuna bağlıdır; komşu dal mazeretin daha geniş adlandırma ve kabul süreçlerini içerir."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; mazeret ve yemin alt kapsamlarının en yakın eşleri ile genel mazeret alanının sınırı yayımlandı."
+    },
+    {
+      "branch_ref": "root_000153/B005",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, eski bir uygulamada sahibinin mezarı yanında bağlanıp yem verilmeden ölüme bırakılan binek hayvanını açıkça tanımlar. Aynı ifade, ölen kişinin bineği çevresinde ağıt yakan kadınlara verilen ilişkili adı da destekler.",
+        "boundary_note": "Anlam genel bir felaket değildir; mezar başındaki ölüme bırakma uygulamasına ve ona bağlı ağıtçı adlandırmasına özgüdür."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım sağlanan yalın adlandırmayı esas alır ve onu genel binek, genel mezar ya da genel felaket anlamlarıyla genişletmez."
+      },
+      "concept_map": {
+        "definition": "Eski bir gömme uygulamasında sahibinin mezarı yanında bağlanıp beslenmeden ölüme bırakılan binek hayvanıdır. Ölen kişinin bineği çevresinde ağıt yakan kadınların ilişkili adlandırması da bu uygulamaya bağlıdır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Binek hayvanı sahibinin mezarı yanında bağlanır, beslenmez ve orada ölüme bırakılır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "associated_use",
+            "statement": "Ölen kişinin bineği çevresinde duran ve onun için ağıt yakan kadınlar ilişkili bir adla anılır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar mezar yanında bağlanıp beslenmeden ölüme bırakılan binek tanımında birleşir; toplu ifade ayrıca ölen kişinin bineği çevresinde ağıt yakan kadınların ilişkili adını verir.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "mezar başında ölüme bırakılan binek ve çevresindeki ağıtçılar",
+        "applicability": "Eski gömme uygulamasındaki binek adını ve bu bineğin çevresinde ağıt yakan kadınlara verilen ilişkili adı birlikte temsil eder.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Mezar, binek, ölüme bırakma ve ilişkili ağıtçı katılımcılarını korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -551,180 +678,27 @@
       },
       "contextual_glosses": [
         {
-          "text": "gerekçesini açıkça bildirmek",
-          "usage_role": "contextual",
-          "applicability": "Kişinin neden suçlanmaması gerektiğini karşısındakine açıkladığı bağlamda kullanılır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Gerekçeyi açıklayarak suçlamayı ortadan kaldırma işlevini korur.",
-            "loses": "Ant içerek güven verme veya antla sınama kullanımını dışarıda bırakır.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        },
-        {
-          "text": "ant içip güven vermek",
-          "usage_role": "contextual",
-          "applicability": "Kişinin ant içerek karşısındakinin içini rahatlattığı bağlamı karşılar.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Ant içme ve bununla karşıdakine güven verme işlevini korur.",
-            "loses": "Antın karşı tarafa sınama amacıyla sunulmasını ve gerekçe açıklamayı dışarıda bırakır.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F002"
-          ]
-        },
-        {
-          "text": "antla sınamak",
-          "usage_role": "contextual",
-          "applicability": "Birine ant önererek onun doğruluğunu yoklama bağlamında kullanılır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Antın bir kişiyi sınama aracı olarak sunulmasını korur.",
-            "loses": "Güven vermek için ant içmeyi ve gerekçe açıklamayı dışarıda bırakır.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F002"
-          ]
-        }
-      ],
-      "lexical_glosses": [
-        {
-          "lexical_unit_id": "lu_014",
-          "rendering_kind": "ordinary",
-          "target_gloss": "suçlanmayı kaldıracak gerekçeyi açıklamak"
-        },
-        {
-          "lexical_unit_id": "lu_015",
-          "rendering_kind": "ordinary",
-          "target_gloss": "ona ant içip güven vermek veya antla sınamak"
-        }
-      ],
-      "excluded_glosses": [
-        {
-          "text": "özür dilemek",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "displacement",
-            "preserves": "Suçlama ve kusur bağlamıyla ilişkili olmayı kısmen korur.",
-            "loses": "Suçlamayı kaldıracak gerekçeyi açıklama işlevini ve ant kullanımını kaybeder.",
-            "adds": "Kişinin kusurunu kabul edip bağışlanma istemesi anlamını ekler.",
-            "collision": "Bağışlanma isteme eylemiyle karışır."
-          }
-        }
-      ],
-      "neighbor_distinctions": [
-        {
-          "neighbor_ref": "root_000154/B004",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Ant içerek güven verme veya antı doğruluğu sınama aracı olarak sunma kullanımını da kapsar.",
-          "neighbor_only": null,
-          "gloss": "suçlamayı kaldıran gerekçeyi açıklama",
-          "shared_zone": "İki dal da kişinin suçlanmasını önleyecek gerekçeyi karşısındakine açıkça bildirmesini anlatır.",
-          "distinction": "Komşu dal açıklama kullanımına karşılık gelir; odak dal buna ek olarak güven verme ve sınama amaçlı ant kullanımını içerir."
-        },
-        {
-          "neighbor_ref": "root_000154/B005",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Suçlamayı kaldıracak gerekçeyi açıklama kullanımını da kapsar.",
-          "neighbor_only": null,
-          "gloss": "güven veren veya sınayan ant",
-          "shared_zone": "İki dal da antın karşıdakini rahatlatmak veya onun doğruluğunu sınamak amacıyla kullanılmasını anlatır.",
-          "distinction": "Komşu dal yalnız ant kullanımına karşılık gelir; odak dal ayrıca gerekçeyi açıklayıp suçlamayı kaldırmayı kapsar."
-        },
-        {
-          "neighbor_ref": "root_000995/B001",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Gerekçeyi karşıdakine açıklayarak suçlamayı kaldırmayı ve antla ilgili kullanımları anlatır.",
-          "neighbor_only": "Bağışlanma istemeyi, gerekçenin kabulünü ve suçun silinmesini daha geniş biçimde kapsar.",
-          "gloss": "gerekçe ve bağışlanma",
-          "shared_zone": "Her iki dal da bir kusur veya suçlama karşısında kişinin kendisini açıklamasıyla ilgilidir.",
-          "distinction": "Odak dal açıklamanın suçlamayı kaldıran yeterliliğine yönelir; komşu dal bağışlanma isteme ve kabul süreçlerini de kapsar."
-        }
-      ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; açıklama ve ant kullanımlarının ayrı sınırlarını gösteren iki yakın dal ile en olası kavramsal karışıklık yayımlandı."
-    },
-    {
-      "branch_ref": "root_000153/B005",
-      "concept_map": {
-        "definition": "Eski bir gömme geleneğinde, sahibinin mezarı başında bağlanıp yem ve su verilmeden ölünceye kadar bırakılan deve ya da başka bir binek hayvanıdır.",
-        "facets": [
-          {
-            "facet_id": "F001",
-            "role": "core",
-            "statement": "Deve veya başka bir binek, sahibinin mezarı yanında bağlanır ve ölünceye kadar beslenmez.",
-            "claim_ids": [
-              "lu_016"
-            ]
-          },
-          {
-            "facet_id": "F002",
-            "role": "associated_use",
-            "statement": "Ölenin bineği çevresinde durup onun için ağıt yakan kadınlar da aynı ad ailesinden bir biçimle anılır.",
-            "claim_ids": [
-              "lu_017"
-            ]
-          }
-        ]
-      },
-      "source_synthesis": {
-        "common_summary": "Temel gönderim, eski bir gömme geleneğinde sahibinin mezarı yanında bağlanan ve beslenmeden ölüme bırakılan deve ya da başka bir binektir. Aynı sahnede bineğin çevresinde ağıt yakan kadınlar için de bağlantılı bir ad kullanılır.",
-        "common_claim_ids": [
-          "lu_016",
-          "lu_017"
-        ],
-        "source_details": [],
-        "supporting_claim_ids": [],
-        "duplicate_claims": []
-      },
-      "concept_gloss": {
-        "text": "mezar başında ölüme bırakılan binek",
-        "applicability": "Eski gömme geleneğindeki hayvanı, yerini, sahibine bağını ve ölüme bırakılma sonucunu belirtir.",
-        "error_profile": {
-          "fit": "none",
-          "preserves": "Bineğin sahibinin mezarı başında bağlanıp beslenmeden ölüme bırakılmasını korur.",
-          "loses": null,
-          "adds": null,
-          "collision": null
-        },
-        "facet_ids": [
-          "F001"
-        ]
-      },
-      "contextual_glosses": [
-        {
-          "text": "mezara bağlanan kurbanlık binek",
+          "text": "mezar yanında beslenmeden ölüme bırakılan binek",
           "usage_role": "explanatory",
-          "applicability": "Geleneği bilmeyen okur için hayvanın mezarla ilişkisini ve kurban benzeri işlevini açıklar.",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Bineğin mezar başında ölüme bırakılması ve törensel işlevini korur.",
-            "loses": null,
-            "adds": "Hayvanın biçimsel bir kurban töreninde sunulduğu izlenimini ekleyebilir.",
-            "collision": "Doğrudan kesilerek sunulan kurbanla karışabilir."
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        },
-        {
-          "text": "bineğin çevresinde ağıt yakan kadınlar",
-          "usage_role": "contextual",
-          "applicability": "Ölen kişinin bineği çevresinde durup ağıt yakan kadın topluluğunu anlatır.",
+          "applicability": "Eski gömme uygulamasında sahibinin mezarı yanında bağlı tutulan hayvanı açıklamak için kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Kadınların binek çevresindeki konumunu ve ölen için ağıt yakmalarını korur.",
+            "preserves": "Bineğin mezar yanında bağlanmasını, beslenmemesini ve ölmesini korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "ölenin bineği çevresinde ağıt yakan kadınlar",
+          "usage_role": "explanatory",
+          "applicability": "Yalnız ilişkili çoğul adın, ölen kişinin bineği çevresindeki ağıtçı kadınları gösterdiği bağlama uygundur.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Kadınların ölen kişinin bineği çevresinde ağıt yakması ilişkisini korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -738,231 +712,96 @@
         {
           "lexical_unit_id": "lu_016",
           "rendering_kind": "ordinary",
-          "target_gloss": "sahibinin mezarı başında bağlanıp ölüme bırakılan binek"
+          "target_gloss": "sahibinin mezarı yanında bağlanıp ölüme bırakılan binek"
         },
         {
           "lexical_unit_id": "lu_017",
           "rendering_kind": "ordinary",
-          "target_gloss": "ölenin bineği çevresinde ağıt yakan kadınlar"
+          "target_gloss": "ölen kişinin bineği çevresinde ağıt yakan kadınlar"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "kurban",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Bir hayvanın törensel amaçla ölüme ayrılması yönünü korur.",
-            "loses": null,
-            "adds": "Genel olarak kutsal amaçla kesilen veya sunulan her canlıyı kapsar.",
-            "collision": "Kesilerek sunulan hayvanların genel adıyla karışır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000154/B006",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Bineğin çevresinde ağıt yakan kadınları adlandıran bağlantılı kullanımı da kapsar.",
+          "focus_only": "Bu dal binek çevresinde ağıt yakan kadınların ilişkili adlandırmasını da içerir.",
           "neighbor_only": null,
-          "gloss": "mezar başında ölüme bırakılan binek",
-          "shared_zone": "Her iki dal da eski gelenekte sahibinin mezarı yanında bağlanıp beslenmeden ölüme bırakılan hayvanı anlatır.",
-          "distinction": "Hayvanı gösteren çekirdek aynıdır; odak dal ayrıca aynı gömme sahnesindeki ağıtçı kadınlara ilişkin bağlantılı kullanımı içerir."
+          "gloss": "mezar yanında ölüme bırakılan binek",
+          "shared_zone": "İki dal eski bir uygulamada hayvanın sahibinin mezarı yanında bağlanıp beslenmeden ölmesini anlatır.",
+          "distinction": "Hayvanı anlatan çekirdek aynıdır; odak dal buna bağlı ağıtçı kadın adlandırmasını da kapsadığı için sınırı daha geniştir."
         },
         {
           "neighbor_ref": "root_001244/B008",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "Sahibinin mezarı yanında bağlanıp beslenmeden ölüme bırakılan belirli bir binektir.",
-          "neighbor_only": "Binmek için ayrılmış herhangi bir hayvanı ve ona takılan eyer ile yük donanımını kapsar.",
-          "gloss": "binmek için ayrılmış hayvan",
-          "shared_zone": "İki dal da insanların binmek için kullandığı hayvanları gösterebilir.",
-          "distinction": "Komşu dal bineği işlevine göre genel olarak adlandırır; odak dal onu belirli bir gömme geleneğindeki kaderiyle tanımlar."
+          "focus_only": "Bu dal hayvanın mezar yanında bağlanıp beslenmeden ölüme bırakılmasını gerektirir.",
+          "neighbor_only": "Komşu dal binmek için ayrılan hayvanı ve onun takımını genel olarak adlandırır.",
+          "gloss": "binmek için ayrılan hayvan",
+          "shared_zone": "Her iki dal insanın binek olarak kullandığı bir hayvanla ilgilidir.",
+          "distinction": "Binek olma yalnız ortak alandır; odak dalın çekirdeği mezar törenindeki ölüm uygulaması, komşunun çekirdeği ise binme işlevidir."
         },
         {
-          "neighbor_ref": "root_001593/B009",
+          "neighbor_ref": "root_000226/B001",
           "relation_type": "thematic",
           "boundary_match": "thematic_only",
-          "focus_only": "Mezar başında ölüme bırakılan hayvanı ve çevresindeki ağıtçıları anlatır.",
-          "neighbor_only": "Bir kişinin ölümü üzerine hazırlanan yemeği anlatır.",
-          "gloss": "ölüm için hazırlanan yemek",
-          "shared_zone": "Her iki dal da ölüm sonrasındaki geleneksel uygulamalar sahnesinde yer alır.",
-          "distinction": "Anlamsal çekirdekleri örtüşmez: biri hayvanın mezar başındaki uygulamasıdır, diğeri ölüm dolayısıyla hazırlanan yemektir."
+          "focus_only": "Bu dal mezar yanında ölüme bırakılan hayvanı ve ilişkili ağıtçıları adlandırır.",
+          "neighbor_only": "Komşu dal doğrudan mezarın kendisini ve mezar edinmeyi adlandırır.",
+          "gloss": "mezar",
+          "shared_zone": "İki dal aynı gömme ve mezar başı sahnesinde yer alabilir.",
+          "distinction": "Ortaklık yalnız senaryodadır; biri ritüeldeki hayvan ve ağıtçıları, öteki gömü yerini gösterir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; hayvanın özel gömme işlevini genel binekten ve aynı sahnedeki başka geleneklerden ayıran karşılaştırmalar seçildi."
+      "neighbor_coverage_note": "Bütün adaylar incelendi; aynı ritüel hayvanını veren yakın dal ile binek ve mezar alanlarında kolayca karışabilecek iki aday seçildi."
     },
     {
       "branch_ref": "root_000153/B006",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bu cevap sözünü, olumsuzluk içeren bir soru veya önermeden sonra olumsuzluğu kaldırıp söylenmeyeni olumlu olarak doğrulayan bir araç şeklinde tanımlar. Sıradan olumlu cevap ve söylem yönü değiştiren bağlaç bundan ayrıdır.",
+        "boundary_note": "Yalnız önceki olumsuzluğu geri çeviren olumlu cevap söz konusudur; bağımsız bir onay sözü değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "non_bare",
+        "note": "Tanım bu tek cevap aracının olumsuz bağlama bağlı işlevini korur ve onu genel olumlama ya da genel cevap verme anlamına genişletmez."
+      },
       "concept_map": {
-        "definition": "Olumsuz bir sözün ya da olumsuzluk içeren bir sorunun ardından, olumsuzlanan önermenin doğru olduğunu bildiren ve olumsuzluğu geri çeviren karşılıktır.",
+        "definition": "Olumsuzluk içeren bir soru veya sözü cevaplayarak önceki olumsuzluğu kaldıran ve söz konusu durumu olumlu biçimde doğrulayan cevap aracıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Karşılık, önceki olumsuzluğu reddederek olumsuzlanan önermeyi doğrular.",
+            "statement": "Cevap, öncesinde açıkça bulunan olumsuzluğu geri çevirir.",
             "claim_ids": [
-              "lu_018"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "extension",
+            "statement": "Olumsuzlanan durumun gerçekte geçerli olduğu olumlu biçimde doğrulanır.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Bu karşılık, olumsuzluk içeren söz veya sorudan sonra kullanılır. Önceki olumsuzluğu kaldırır ve olumsuzlanan önermenin gerçekleştiğini ya da doğru olduğunu bildirir.",
+        "common_summary": "Kaynaklar bu aracın olumsuzluk içeren soru veya söze cevap verdiği, olumsuzluğu kaldırdığı ve ilgili durumu olumlu olarak doğruladığı konusunda birleşir.",
         "common_claim_ids": [
-          "lu_018"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "olumsuzlananı doğrulayan karşılık",
-        "applicability": "Olumsuz söz veya sorudan sonra önceki olumsuzluğu geri çeviren karşılığı eksiksiz açıklar.",
+        "text": "olumsuz sözü tersine çeviren olumlu cevap",
+        "applicability": "Önceki soru veya önermede bulunan olumsuzluğu kaldırıp olumsuzlanan durumu doğrulayan cevaplara özgüdür.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Önceki olumsuzluğun reddedilmesini ve olumsuzlanan önermenin doğrulanmasını korur.",
-          "loses": null,
-          "adds": null,
-          "collision": null
-        },
-        "facet_ids": [
-          "F001"
-        ]
-      },
-      "contextual_glosses": [
-        {
-          "text": "aksine, öyle",
-          "usage_role": "contextual",
-          "applicability": "Olumsuz bir bildirimin ardından onun tersinin doğru olduğunu belirtmek için kullanılır.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Olumsuzluğu geri çevirip önermeyi doğrulama işlevini korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        },
-        {
-          "text": "hayır, öyle",
-          "usage_role": "explanatory",
-          "applicability": "Olumsuzluk içeren bir soruya, sorudaki olumsuz varsayımı reddederek olumlu yanıt verir.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Sorudaki olumsuz varsayımı reddetme ve olumlu önermeyi doğrulama işlevini korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        }
-      ],
-      "lexical_glosses": [
-        {
-          "lexical_unit_id": "lu_018",
-          "rendering_kind": "ordinary",
-          "target_gloss": "aksine, öyledir"
-        }
-      ],
-      "excluded_glosses": [
-        {
-          "text": "evet",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "displacement",
-            "preserves": "Bir önermeyi doğrulayan olumlu karşılık olma yönünü korur.",
-            "loses": "Önceki olumsuzluğu geri çevirme işlevini kaybeder.",
-            "adds": null,
-            "collision": "Olumsuz sorularda önceki olumsuz ifadeyi onaylama biçiminde anlaşılabilir."
-          }
-        }
-      ],
-      "neighbor_distinctions": [
-        {
-          "neighbor_ref": "root_000154/B010",
-          "relation_type": "synonym",
-          "boundary_match": "exact",
-          "focus_only": null,
-          "neighbor_only": null,
-          "gloss": "olumsuzluğu geri çeviren karşılık",
-          "shared_zone": "Her iki dal da olumsuz söz veya sorudan sonra olumsuzluğu reddedip önermeyi doğrular.",
-          "distinction": "Kullanım koşulu ve karşılığın söylem işlevi bakımından belirgin bir sınır farkı bulunmaz."
-        },
-        {
-          "neighbor_ref": "root_001525/B004",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Önceki sözde bulunan olumsuzluğu özellikle geri çevirip olumsuzlananı doğrular.",
-          "neighbor_only": "Olumlu bir sözü onaylama, olumlu yanıt verme ve söz verme işlevlerini kapsar.",
-          "gloss": "olumlu onay karşılığı",
-          "shared_zone": "İki dal da konuşmada bir önermeye olumlu karşılık verme işlevi taşır.",
-          "distinction": "Odak karşılık olumsuzluğu tersine çevirmek için seçilir; komşu karşılık olağan olumlu onaydır ve olumsuzluğu geri çevirmez."
-        },
-        {
-          "neighbor_ref": "root_000152/B008",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Bir olumsuz önermeye cevap verip onun tersini doğrular.",
-          "neighbor_only": "Konuşmanın yönünü değiştirir, önceki ifadeyi düzeltir veya yeni bir ifadeye geçer.",
-          "gloss": "sözü düzeltip yön değiştirme",
-          "shared_zone": "Her ikisi de önceki söyleme karşı çıkma veya onu düzeltme etkisi gösterebilir.",
-          "distinction": "Odak dal bağımsız bir cevap olarak olumsuzluğu kaldırır; komşu dal söz içindeki bağlama ve yön değiştirme aracıdır."
-        }
-      ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; karşılığın sıradan olumlu onaydan ve söylem yönünü değiştiren bağlayıcıdan farkını gösteren adaylar yayımlandı."
-    },
-    {
-      "branch_ref": "root_000153/B007",
-      "concept_map": {
-        "definition": "Bir şeyi önemsememek, ona değer veya ağırlık vermemek ve onunla ilgilenmemektir.",
-        "facets": [
-          {
-            "facet_id": "F001",
-            "role": "core",
-            "statement": "Kişi bir şeyi önemsemez ve ona dikkate değer bir ağırlık vermez.",
-            "claim_ids": [
-              "lu_019"
-            ]
-          },
-          {
-            "facet_id": "F002",
-            "role": "source_variant",
-            "statement": "Aynı önemsememe durumu, kalıplaşmış söz içinde ayrı bir eylem adıyla da belirtilir.",
-            "claim_ids": [
-              "lu_020"
-            ]
-          }
-        ]
-      },
-      "source_synthesis": {
-        "common_summary": "Çekirdek anlam, bir şeyi önemsememek ve ona değer ya da ağırlık vermemektir. Aynı tutumu kalıplaşmış bir söz içinde adlandıran ayrı bir biçim de aktarılır.",
-        "common_claim_ids": [
-          "lu_019"
-        ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_020"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Önemsememe durumunu kalıplaşmış bir söz içinde adlandıran ayrı bir eylem adı biçimi kaydedilir."
-          }
-        ],
-        "supporting_claim_ids": [],
-        "duplicate_claims": []
-      },
-      "concept_gloss": {
-        "text": "umursamama",
-        "applicability": "Bir şeye değer vermeme, onu önemsememe ve onunla ilgilenmeme tutumunu doğal biçimde karşılar.",
-        "error_profile": {
-          "fit": "none",
-          "preserves": "Bir şeyi önemsememe ve ona dikkate değer ağırlık vermeme tutumunu korur.",
+          "preserves": "Olumsuz öncülü, geri çevirme işlemini ve olumlu doğrulamayı korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -974,12 +813,144 @@
       },
       "contextual_glosses": [
         {
-          "text": "önemsememek",
-          "usage_role": "general",
-          "applicability": "Bir şeyi değerli veya dikkate alınmaya layık görmeme bağlamında kullanılır.",
+          "text": "aksine, öyle",
+          "usage_role": "contextual",
+          "applicability": "Olumsuz bir soruya veya söze karşı, olumsuzlanan durumun gerçekleştiğini doğrulayan Türkçe bağlamlarda kullanılabilir.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Bir şeye değer ve ağırlık vermeme yönünü korur.",
+            "preserves": "Önceki olumsuzluğu geri çevirip durumu olumlu doğrulama işlevini korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "hayır, tam tersine gerçekleşti",
+          "usage_role": "explanatory",
+          "applicability": "Tek sözcüklü doğal karşılığın yetersiz kaldığı durumlarda cevap işlevini açıkça anlatır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Olumsuzlamaya karşı çıkmayı ve olumsuzlanan olayın gerçekleştiğini korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_018",
+          "rendering_kind": "ordinary",
+          "target_gloss": "olumsuz sözü geri çevirip durumu doğrulayan cevap sözü"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000154/B010",
+          "relation_type": "synonym",
+          "boundary_match": "exact",
+          "focus_only": null,
+          "neighbor_only": null,
+          "gloss": "olumsuzluğu geri çeviren cevap",
+          "shared_zone": "Her iki dal olumsuz bir soru veya sözü geri çevirip olumsuzlanan durumu doğrular.",
+          "distinction": "Öncül koşulu, cevap işlevi ve olumlu sonuç bakımından anlamlı bir sınır ayrılığı yoktur."
+        },
+        {
+          "neighbor_ref": "root_001525/B004",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal öncesinde bulunan olumsuzluğu kaldırma koşulunu zorunlu tutar.",
+          "neighbor_only": "Komşu dal olumsuz öncül gerektirmeden onay, kabul ve söz verme işlevlerini kapsar.",
+          "gloss": "genel olumlu cevap",
+          "shared_zone": "İki dal konuşmada olumlu doğrulama veya onay bildiren cevap işlevi görebilir.",
+          "distinction": "Odak cevap ancak olumsuzluğu geri çevirir; komşu cevap genel onay verir ve söz verme işlevine de uzanır."
+        },
+        {
+          "neighbor_ref": "root_000152/B008",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Bu dal bir olumsuzluğu cevap yoluyla olumlu doğrulamaya çevirir.",
+          "neighbor_only": "Komşu dal söylemi kesip yön değiştirir, düzeltir veya yeni bir söz başlatır.",
+          "gloss": "söylem yönünü değiştiren bağlaç",
+          "shared_zone": "İki dilbilgisel araç önceki söylemle karşıt veya düzeltici bir ilişki kurabilir.",
+          "distinction": "Odak araç bir cevap ve doğrulama işlevindedir; komşu araç ise söylem bağlantısını ve yön değişimini düzenler."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; tam eşdeğer dal, genel olumlu cevap ve yüzeyde benzer görünen düzeltici bağlaç işlevi seçildi."
+    },
+    {
+      "branch_ref": "root_000153/B007",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bir şeyi önemsememeyi, onunla ilgilenmemeyi ve ona ağırlık vermemeyi açık biçimde anlatır. Bu tutum sınama, iyilik etme veya fiziksel yıpranma süreçlerinden ayrıdır.",
+        "boundary_note": "Çekirdek duygusal ve değerlendirici ilgisizliktir; unutma, susma veya görevde gevşeme zorunlu değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım sağlanan olumsuz yapılar ve ilişkili ad biçimiyle sınırlı ilgisizlik anlamını korur; bundan bağımsız bir yalın eylem genellemesi yapılmaz."
+      },
+      "concept_map": {
+        "definition": "Bir şeyi önemsememek, onunla ilgilenmemek ve ona dikkate değer bir ağırlık vermemektir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Kişi söz konusu şeye karşı kaygı, ilgi veya önem duymaz.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "extension",
+            "statement": "Şey, kişinin değerlendirmesinde dikkate alınacak bir ağırlık taşımaz.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar bir şeye ilgi ve önem göstermeme çekirdeğinde birleşir; ilişkili biçimler bu tutumu olumsuz yapılarda ve adlaştırılmış anlatımda verir.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "önemsememe ve umursamama",
+        "applicability": "Bir kişinin bir şeye ilgi, kaygı veya değer vermediği bütün sağlanmış olumsuz yapılarda çekirdeği doğal biçimde karşılar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "İlgi göstermeme ile önem ve ağırlık vermeme yönlerini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "umursamamak",
+          "usage_role": "general",
+          "applicability": "Bir şeyin kişide kaygı veya ilgi uyandırmadığı doğal günlük bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Bir şeye karşı ilgi ve kaygı duymama çekirdeğini korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -989,18 +960,18 @@
           ]
         },
         {
-          "text": "aldırmamak",
+          "text": "önem vermemek",
           "usage_role": "contextual",
-          "applicability": "Bir olayın veya sözün kişide kaygı ya da ilgi uyandırmadığını anlatır.",
+          "applicability": "Bir şeyin değerlendirmede ağırlık taşımadığı ve dikkate alınmadığı bağlamlara uygundur.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Bir şeyle ilgilenmeme ve onu önemsememe tutumunu korur.",
+            "preserves": "Şeye değer ve dikkate değer ağırlık vermeme yönünü korur.",
             "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F002"
           ]
         }
       ],
@@ -1008,27 +979,15 @@
         {
           "lexical_unit_id": "lu_019",
           "rendering_kind": "ordinary",
-          "target_gloss": "onu umursamamak, önemsememek"
+          "target_gloss": "onu umursamıyorum, ona önem vermiyorum"
         },
         {
           "lexical_unit_id": "lu_020",
           "rendering_kind": "ordinary",
-          "target_gloss": "hiç umursamama"
+          "target_gloss": "önemseme, umursama"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "unutmak",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "displacement",
-            "preserves": "Bir şeyin kişinin etkin dikkatinde bulunmamasını kısmen korur.",
-            "loses": "Bilinçli ya da değerlendirici biçimde önem vermeme tutumunu kaybeder.",
-            "adds": "Bilginin bellekten çıkması veya hatırlanmaması anlamını ekler.",
-            "collision": "Bellek yitimiyle karışır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000154/B009",
@@ -1037,81 +996,79 @@
           "focus_only": null,
           "neighbor_only": null,
           "gloss": "umursamama",
-          "shared_zone": "Her iki dal da bir şeyi önemsememeyi ve ona dikkate değer ağırlık vermemeyi anlatır.",
-          "distinction": "Tutum, katılımcılar ve kapsam bakımından belirgin bir sınır farkı bulunmaz."
+          "shared_zone": "Her iki dal bir şeye ilgi ve önem vermemeyi aynı olumsuz yapılarla anlatır.",
+          "distinction": "Çekirdek tutum, katılımcılar ve olumsuz yapı sınırı bakımından anlamlı bir ayrılık yoktur."
         },
         {
           "neighbor_ref": "root_000971/B002",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Genel olarak bir şeyle ilgilenmeme ve onu önemsememe tutumunu anlatır.",
-          "neighbor_only": "Şeyin kişinin gözünde hiçbir ağırlığının veya değerinin bulunmadığını özellikle vurgular.",
-          "gloss": "değer vermeme",
-          "shared_zone": "İki dal da bir şeyi dikkate değer görmemeyi ve ona önem vermemeyi anlatır.",
-          "distinction": "Komşu dal değersizlik ve ağırlıksızlık değerlendirmesini açıkça öne çıkarır; odak dal daha genel ilgisizliği de kapsar."
+          "focus_only": "Bu dal genel olarak ilgi, kaygı veya önem duymamayı anlatır.",
+          "neighbor_only": "Komşu dal şeyin hiçbir ağırlığı veya değeri olmadığı yargısını daha belirgin biçimde içerir.",
+          "gloss": "değer ve ağırlık vermeme",
+          "shared_zone": "İki dal bir şeyi önemsememe ve dikkate değer bulmama alanında büyük ölçüde örtüşür.",
+          "distinction": "Odak dal ilgisiz tutumu öne çıkarır; komşu dal bu tutumu şeyin değersiz veya ağırlıksız görülmesine bağlar."
         },
         {
-          "neighbor_ref": "root_001097/B004",
+          "neighbor_ref": "root_000970/B012",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Bir şeye değer vermeme ve onu önemsememe tutumudur.",
-          "neighbor_only": "Kişinin bildiği halde bilmezden gelmesini veya bilerek yüz çevirmesini gerektirir.",
-          "gloss": "bilmezden gelme",
-          "shared_zone": "Her iki dal da kişinin dikkatini bir şeyden bilinçli biçimde çekebilmesi yönünde örtüşür.",
-          "distinction": "Odak dal önem vermemeyi anlatır; komşu dal ise bilineni bilmez görünme veya kasıtlı yüz çevirme davranışını anlatır."
-        },
-        {
-          "neighbor_ref": "root_000902/B003",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Değer ve önem vermeme tutumunu anlatır; görevde başarısızlık gerektirmez.",
-          "neighbor_only": "Bir işi yerine getirmede gevşeklik, gecikme veya yetersizlik sonucunu kapsar.",
-          "gloss": "işi savsaklama",
-          "shared_zone": "Her iki dal da bir konuya gereken ilgiyi göstermeme görünümü verebilir.",
-          "distinction": "Odak dal içsel değerlendirme ve ilgisizliktir; komşu dal görev davranışındaki eksiklik ve gevşekliktir."
+          "focus_only": "Bu dal içsel ilgi ve önem eksikliğini anlatır, belirli bir dış davranış gerektirmez.",
+          "neighbor_only": "Komşu dal şeyi geride bırakma, unutma, ondan yüz çevirme veya küçümseme davranışlarına uzanır.",
+          "gloss": "arkada bırakıp yüz çevirme",
+          "shared_zone": "Bir şeyi önemsemeyen kişi ondan yüz çevirebilir veya onu geride bırakabilir.",
+          "distinction": "Odak dal bir tutumdur; komşu dal terk etme, unutma ya da küçümseme gibi daha belirgin sonuç davranışlarını içerir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; önem vermemeyi değersiz görme, bilmezden gelme ve görev savsaklamadan ayıran karşılaştırmalar yayımlandı."
+      "neighbor_coverage_note": "Bütün adaylar incelendi; tam eşdeğer dal ile değer vermeme ve yüz çevirme üzerinden sınırı keskinleştiren iki yakın aday seçildi."
     },
     {
       "branch_ref": "root_000153/B008",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bir boy veya kabile adını ve bu topluluğa mensubiyeti bildiren ilişkili biçimi birlikte verir. Dal, cevap sözüne ve fiil anlamlarına karışmadan bu adlandırma ilişkisini doğru biçimde sınırlar.",
+        "boundary_note": "Bir topluluğun özel adı ile o topluluğa mensubiyet bildiren biçim söz konusudur; sözlüksel fiil veya cevap işlevi yoktur."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın topluluk adı ile ondan kurulan mensubiyet biçimini kapsar; başka topluluk adlarına veya genel kabile kavramına genişletilmez."
+      },
       "concept_map": {
-        "definition": "Belirli bir topluluğun ya da kabilenin özel adı ve bu topluluğa mensup olmayı bildiren türemiş biçimdir.",
+        "definition": "Belirli bir boy veya kabilenin özel adı ve bu topluluğa mensup olmayı bildiren ilişkili biçimdir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Sözcük belirli bir topluluğun veya kabilenin özel adı olarak kullanılır.",
+            "statement": "Sözcük belirli bir boyu veya kabileyi özel ad olarak gösterir.",
             "claim_ids": [
-              "lu_021"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "extension",
-            "statement": "Bu topluluğa mensup olan kişi ya da şeyi bildiren bir mensubiyet biçimi türetilir.",
+            "statement": "İlişkili biçim bir kişinin veya şeyin bu topluluğa mensup olduğunu bildirir.",
             "claim_ids": [
-              "lu_022"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar sözcüğü belirli bir topluluk veya kabile adı olarak verir. Bu özel ada bağlı olarak, o topluluğa mensubiyeti bildiren türemiş bir biçim de kaydedilir.",
+        "common_summary": "Kaynaklar belirli bir boy veya kabile adında ve bu addan kurulan mensubiyet biçiminde birleşir; topluluğun daha geniş köken tanımlarında ayrıntı farkı bulunur.",
         "common_claim_ids": [
-          "lu_021",
-          "lu_022"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "bir kabile adı ve ona mensubiyet",
-        "applicability": "Özel ad işlevini ve o adla gösterilen topluluğa mensup olmayı bildiren türemiş biçimi kapsar.",
+        "text": "bir topluluk adı ve o topluluğa mensubiyet",
+        "applicability": "Belirli boy veya kabilenin özel adını ve bu addan kurulan mensubiyet biçimini birlikte açıklamak için kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Belirli topluluğun özel adı olma ve o topluluğa mensubiyet bildirme işlevlerini korur.",
+          "preserves": "Özel topluluk adı ile o ada bağlı mensubiyet ilişkisini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -1123,13 +1080,13 @@
       },
       "contextual_glosses": [
         {
-          "text": "belirli bir kabile",
+          "text": "bir boyun veya kabilenin özel adı",
           "usage_role": "explanatory",
-          "applicability": "Özel adın kimliği güvenli biçimde yüzeye getirilemediğinde, onun kabile adı işlevini açıklar.",
+          "applicability": "Sözcüğün belirli topluluğu adlandırdığı, fakat doğal Türkçe yüzey biçiminin henüz verilmediği bağlama uygundur.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Bir topluluğu kabile olarak adlandırma işlevini korur.",
-            "loses": "Kabilenin ayırt edici özel adını ve mensubiyet biçimini vermez.",
+            "fit": "none",
+            "preserves": "Belirli bir topluluğu özel adla gösterme işlevini korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -1138,12 +1095,12 @@
           ]
         },
         {
-          "text": "o kabileye mensup",
+          "text": "bu topluluğa mensup",
           "usage_role": "explanatory",
-          "applicability": "Türemiş biçimin bir kişi veya şey için topluluk mensubiyeti bildirdiği bağlamı açıklar.",
+          "applicability": "İlişkili biçimin kişi veya şey için söz konusu topluluğa aidiyet bildirdiği bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Adı geçen kabileye mensubiyet ilişkisini korur.",
+            "preserves": "Adlandırılan toplulukla mensubiyet ilişkisini açıkça korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -1157,113 +1114,116 @@
         {
           "lexical_unit_id": "lu_021",
           "rendering_kind": "ordinary",
-          "target_gloss": "belirli bir topluluk veya kabile adı"
+          "target_gloss": "bir boyun veya kabilenin özel adı"
         },
         {
           "lexical_unit_id": "lu_022",
           "rendering_kind": "ordinary",
-          "target_gloss": "o topluluğa veya kabileye mensup"
+          "target_gloss": "bu topluluğa mensup olan"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "aşiret",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Soy ve topluluk bağı bulunan insan grubunu gösterme yönünü korur.",
-            "loses": null,
-            "adds": "Belirli özel ad yerine bu türden bütün toplulukları kapsayan genel sınıf anlamını ekler.",
-            "collision": "Herhangi bir soy topluluğunun genel adıyla karışır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_001182/B003",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "Farklı bir topluluğun özel adını ve ondan türeyen mensubiyet biçimini kapsar.",
-          "neighbor_only": "Başka bir kabilenin özel adıdır ve verilen sınırda türemiş mensubiyet biçimi içermez.",
+          "focus_only": "Bu dal farklı bir topluluğu adlandırır ve ayrıca o topluluğa mensubiyet biçimini kapsar.",
+          "neighbor_only": "Komşu dal başka bir kabilenin yalnız özel adını verir.",
           "gloss": "başka bir kabile adı",
-          "shared_zone": "Her iki dal da belirli bir insan topluluğunun özel adı işlevindedir.",
-          "distinction": "İkisi aynı kavramın eş anlamlıları değil, farklı kabileleri gösteren ayrı özel adlardır; odak dal ayrıca mensubiyet biçimini kapsar."
+          "shared_zone": "Her iki dal belirli bir insan topluluğunun özel adı olarak kullanılır.",
+          "distinction": "Özel adlar farklı toplulukları gösterdiği için yer değiştiremez; odak dalda ayrıca mensubiyet biçimi bulunur."
         },
         {
           "neighbor_ref": "root_000056/B003",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Belirli bir kabilenin özel adını ve o kabileye mensubiyeti birlikte içerir.",
-          "neighbor_only": "Birden çok özel ad veya topluluğa bağlanabilen başka bir mensubiyet biçimini anlatır.",
-          "gloss": "özel ada bağlı mensubiyet",
-          "shared_zone": "İki dal da bir topluluk veya özel adla ilişki bildiren türemiş biçimleri kapsar.",
-          "distinction": "Odak dal tek bir kabile adıyla onun mensubiyet biçimini eşler; komşu dal farklı bir ad ailesine bağlı başka bir mensubiyet alanıdır."
-        },
-        {
-          "neighbor_ref": "root_000006/B009",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "Belirli kabilenin adı ve o kabileye mensubiyet biçimidir.",
-          "neighbor_only": "Bir kişinin kendi kabilesi veya topluluğu içinde bulunmasını anlatan genel bir kullanımdır.",
-          "gloss": "kişinin kendi kabilesi",
-          "shared_zone": "Her iki dal da kabile ve topluluk aidiyeti alanında yer alır.",
-          "distinction": "Odak dal özel ad ve ondan türeyen mensubiyettir; komşu dal herhangi bir kişinin kabilesini genel ilişki olarak gösterir."
+          "focus_only": "Bu dal kendi belirli boy veya kabile adını ve ona bağlı mensubiyeti gösterir.",
+          "neighbor_only": "Komşu dal başka adlara veya topluluklara bağlı birden çok mensubiyet açıklamasını kapsar.",
+          "gloss": "başka bir ada bağlı mensubiyet",
+          "shared_zone": "İki dal özel bir topluluk adıyla o ada bağlı mensubiyet biçimini ilişkilendirir.",
+          "distinction": "İlişki türü ortaktır, fakat dayandıkları özel adlar ve gösterdikleri topluluklar farklıdır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; özel adların birbirinin yerine geçmediğini ve özel ad ile genel kabile ilişkisi arasındaki farkı gösteren adaylar seçildi."
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; özel adların anlamca eşdeğer olmadığını göstermek üzere kabile adı ve mensubiyet alanından iki açıklayıcı karşılaştırma seçildi."
     },
     {
       "branch_ref": "root_000153/B009",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi yalnız belirli bir kalıp içinde insanların farklı yönlere dağılmış durumda bulunmasını anlatır. Dalın kimliği bu deyimsel yapıdan bağımsız genel bir dağılma fiili veya uzaklaşma anlamına genişletilemez.",
+        "boundary_note": "Anlam yalnız sağlanan kalıpta farklı yönlere dağılmış insanlar için geçerlidir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım açıkça sağlanan kalıpla sınırlıdır; buradan yalın kök için genel dağılma veya ayırma anlamı çıkarılmaz."
+      },
       "concept_map": {
-        "definition": "Bir insan topluluğunun bir arada kalmayıp farklı yönlere dağılmış ve birbirinden ayrılmış durumda olmasıdır.",
+        "definition": "Belirli bir deyim içinde insanların bir arada kalmayıp farklı yönlere dağılmış durumda bulunmasıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "İnsanlar birliklerini yitirerek farklı yönlere dağılır ve birbirlerinden uzaklaşırlar.",
+            "statement": "Bir insan topluluğu birlik durumunu yitirir ve farklı yönlere dağılmış halde bulunur.",
             "claim_ids": [
-              "lu_023"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Bu anlam yalnız kaynakta verilen kalıplaşmış söz içinde sözlükselleşmiştir.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Tek aktarılan kullanım, insanların toplu halde kalmayıp farklı yönlere dağılmış olmasını anlatır. Vurgu, grubun çeşitli yönlere ayrılarak birliğini yitirmesindedir.",
-        "common_claim_ids": [
-          "lu_023"
+        "common_summary": "Sağlanan tek kaynak kaydı, belirli bir kalıbı insanların farklı yönlere dağılmış olması biçiminde açıklar.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Bu kalıplaşmış dağılma anlatımı sağlanan kanıtta yalnız bir sözlükte yer alır."
+          }
         ],
-        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "her yana dağılmış olma",
-        "applicability": "Bir insan topluluğunun farklı yönlere ayrılıp birlik durumunu yitirmesini doğal biçimde karşılar.",
+        "text": "belirli bir deyimde farklı yönlere dağılmış olma",
+        "applicability": "Yalnız sağlanan kalıp içinde bir insan topluluğunun çeşitli yönlere dağılmış durumunu açıklamak için uygundur.",
         "error_profile": {
           "fit": "none",
-          "preserves": "İnsanların farklı yönlere dağılarak birbirinden ayrılması durumunu korur.",
+          "preserves": "Deyimsel sınırlamayı, insan topluluğunu ve farklı yönlere dağılma durumunu korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "dört bir yana dağılmış",
+          "text": "her biri bir yana dağılmış",
           "usage_role": "contextual",
-          "applicability": "Bir insan topluluğunun çeşitli yönlere ayrıldığı durumu canlı ve doğal biçimde anlatır.",
+          "applicability": "Bir insan topluluğunun birlikten çıkıp farklı yönlerde bulunduğunu doğal Türkçe anlatımla vermek için kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Grubun birlik durumunu yitirip farklı yönlere dağılmasını korur.",
+            "preserves": "Topluluğun farklı yönlere dağılmış olma durumunu korur.",
             "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002"
           ]
         }
       ],
@@ -1271,22 +1231,10 @@
         {
           "lexical_unit_id": "lu_023",
           "rendering_kind": "ordinary",
-          "target_gloss": "farklı yönlere dağılmış"
+          "target_gloss": "her biri farklı bir yana dağılmış"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "uzakta",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Kişilerin birbirinden ayrı yerlerde bulunabilmesini kısmen korur.",
-            "loses": "Bir grubun farklı yönlere dağılıp birliğini yitirmesi sürecini kaybeder.",
-            "adds": null,
-            "collision": "Tek bir varlığın yalnızca mesafe bakımından uzak olmasıyla karışır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000663/B007",
@@ -1294,9 +1242,9 @@
           "boundary_match": "exact",
           "focus_only": null,
           "neighbor_only": null,
-          "gloss": "farklı yönlere dağılma",
-          "shared_zone": "Her iki dal da bir insan topluluğunun çeşitli yönlere ayrılıp dağılmasını anlatır.",
-          "distinction": "Katılımcı, yön çokluğu ve dağılma sonucu bakımından belirgin bir sınır farkı bulunmaz."
+          "gloss": "farklı yönlere dağılıp gitme",
+          "shared_zone": "Her iki kalıplaşmış anlatım bir insan topluluğunun farklı yönlere dağılmasını bildirir.",
+          "distinction": "Deyimlerin söz varlığı farklı olsa da çekirdek durum ve yönlere dağılma sınırı bakımından anlam ayrılığı yoktur."
         },
         {
           "neighbor_ref": "root_000231/B006",
@@ -1304,36 +1252,26 @@
           "boundary_match": "exact",
           "focus_only": null,
           "neighbor_only": null,
-          "gloss": "her yana dağılma",
-          "shared_zone": "Her iki dal da insanların bir arada kalmayıp her yöne dağılmasını anlatır.",
-          "distinction": "Grubun dağılması ve farklı yönlere ayrılması bakımından belirgin bir sınır farkı yoktur."
-        },
-        {
-          "neighbor_ref": "root_000973/B010",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Özellikle bir insan topluluğunun farklı yönlere dağılmış durumunu anlatır.",
-          "neighbor_only": "İnsanların yanında nesne kümelerini ve farklı yönlere giden yolları da kapsar.",
-          "gloss": "dağınık kümeler ve yollar",
-          "shared_zone": "İki dal da toplulukların veya kümelerin farklı yönlere ayrılıp dağılmasını anlatabilir.",
-          "distinction": "Odak dal insan grubuyla sınırlıdır; komşu dal nesneler ve yollar dahil daha geniş bir dağılım alanına sahiptir."
+          "gloss": "her yöne dağılma",
+          "shared_zone": "Her iki deyim bir topluluğun birlikten çıkıp her yöne dağılmasını anlatır.",
+          "distinction": "Katılımcı, dağılma yönleri ve deyimsel kapsam bakımından yayımlanabilir bir sınır ayrılığı yoktur."
         },
         {
           "neighbor_ref": "root_001463/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Bir grubun farklı yönlere dağılarak birlik durumunu yitirmesini gerektirir.",
-          "neighbor_only": "Tek bir varlığın uzaklaşmasını, uzak yerde bulunmasını veya başka bir şeyi uzağa götürmeyi de kapsar.",
-          "gloss": "uzaklaşma",
-          "shared_zone": "Dağılan kişilerin birbirinden uzaklaşması iki alan arasında sonuç düzeyinde bağ kurar.",
-          "distinction": "Odak dal çoklu grubun yönlere ayrılmasıdır; komşu dal dağılma gerektirmeyen genel mesafe artışını anlatır."
+          "focus_only": "Bu dal çok sayıda insanın birbirinden ayrılıp farklı yönlere dağılmasını gerektirir.",
+          "neighbor_only": "Komşu dal tek bir varlığın uzaklaşmasını, uzak yerde bulunmasını veya uzaklaştırılmasını da kapsar.",
+          "gloss": "uzaklaşma ve uzaklık",
+          "shared_zone": "Farklı yönlere dağılan kişiler başlangıç noktasından ve birbirlerinden uzaklaşır.",
+          "distinction": "Uzaklık dağılmanın sonucu olabilir, fakat komşu dalda çokluk, birlik kaybı ve yön çeşitliliği zorunlu değildir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; insan grubunun yönlere dağılmasını genel uzaklaşmadan ve daha geniş nesne dağılımından ayıran karşılaştırmalar yayımlandı."
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; aynı dağılma durumunu veren iki deyim ile sonuçtaki uzaklıkla karışabilecek yakın alan seçildi."
     }
   ],
   "root_profile": {
-    "summary": "Bu kök; yıpranma, sınama, iyilik ve üstün çaba, gerekçe veya ant sunma, eski bir gömme uygulaması, olumsuzluğu geri çeviren karşılık, umursamama, kabile adı ve yönlere dağılma gibi belirgin biçimde ayrılan anlam alanlarına sahiptir. Bazı dallar süreç ve değerlendirme bakımından ilişkili olsa da ad, söylem aracı ve geleneksel gönderim dalları bağımsızlaşmıştır.",
+    "summary": "Bu kök fiziksel yıpranma ve sınamadan iyilikte bulunma, mazeret veya yemin sunma, mezar töreni, olumsuzluğu bozan cevap, umursamazlık, topluluk adı ve deyimsel dağılmaya uzanan belirgin bir çok anlamlılık gösterir. Yalın, türemiş ve kalıplaşmış kullanımlar ayrı sınırlarla örgütlenir.",
     "polysemy": "polysemic",
     "organization": "mixed"
   }

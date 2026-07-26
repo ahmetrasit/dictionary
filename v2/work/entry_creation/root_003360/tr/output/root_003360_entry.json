@@ -1,0 +1,792 @@
+{
+  "inputs_sha256": "fd76e08dc78458c4d8160ed66d1ce52d4229c418af6fbdbb1e2374e00295b058",
+  "artifact_format": "dictionary-v2-root-entry-draft-v1",
+  "generated_by": "v2/scripts/accept_root_writer.py",
+  "root_envelope_id": "root_003360",
+  "language": "tr",
+  "branches": [
+    {
+      "branch_ref": "root_003360/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bu dalda bir seyden ayrilan parca ile mal, arazi veya ev icindeki belirli payi birlikte verir. Gevsek cerceve bu iki yonu de tasir; ancak tanim, pay sahibi kisiyi veya bu kokun baska arac ve niteleme kullanimlarini kapsamaz.",
+        "boundary_note": "Dal, nesne ya da mulk icindeki parca ve belirli payla sinirlidir; pay sahibi kisiyi anlatmaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "unresolved",
+        "note": "Mekanik kapsam cozumlenmemis oldugu icin tanim yalniz verilen pay ve parca ifadesine baglanir; ozel kalip anlamlari eklenmez."
+      },
+      "concept_map": {
+        "definition": "Bir seyden ayrilan parca veya mal, arazi ve ev gibi bir butun icindeki belirli paydir; bu pay ayrilmis da olabilir, henuz ayrilmamis da olabilir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Anlamin cekirdegi, bir butunun icinden secilen parca veya pay olmasidir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "extension",
+            "statement": "Mulk ve mal baglaminda pay belirli olabilir; ayrilmis olmasi zorunlu degildir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar bu dali bir butunden ayrilan parca ve bilinen pay fikrinde toplar. Pay, ozellikle mal, arazi veya ev baglaminda dusunulur ve ayrilmislik kosulu anlamin zorunlu parcasi degildir.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "belirli pay veya parca",
+        "applicability": "Butun icindeki maddi parca ile mulk veya maldaki bilinen payi birlikte karsilamak icin uygundur.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Butunden ayrilan parca, belirli pay ve ayrilmis ya da ayrilmamis olabilme sinirini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "mulkten belirli pay",
+          "usage_role": "contextual",
+          "applicability": "Ev, arazi veya mal uzerindeki bilinen pay soz konusu oldugunda dogal bir metin ici karsiliktir.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Belirli pay ve mulk baglamini korur.",
+            "loses": "Genel olarak herhangi bir seyden ayrilan parca anlamini disarida birakir.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "bir seyden parca",
+          "usage_role": "contextual",
+          "applicability": "Mulk payi degil, genel bir butunden ayrilan parca anlatildiginda kullanilir.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Butunden alinan parca yonunu korur.",
+            "loses": "Bilinen mulk payi ve ayrilmis olmama ihtimalini acikca tasimaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
+      "lexical_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "ortak",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Payla iliskili mulk alanini cagristirabilir.",
+            "loses": "Payin veya parcanin kendisini siler.",
+            "adds": "Pay sahibi kisiyi ekler.",
+            "collision": "B002 dalinin kisiyi anlatan anlamiyla karisir."
+          }
+        },
+        {
+          "text": "ok ucu",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Ayni kok altindaki baska bir kullanima baglanabilir.",
+            "loses": "Parca ve mulk payi anlamini tamamen kaybeder.",
+            "adds": "Silah parcasini ekler.",
+            "collision": "B003 dalinin arac anlamiyla karisir."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_003360/B002",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Bu dal payin veya parcanin kendisini anlatir.",
+          "neighbor_only": "Komşu dal payda ortak olan kisiyi anlatir.",
+          "gloss": "pay ile pay sahibi ayrimi",
+          "shared_zone": "Ikisi de ozellikle arazi veya mulk icindeki pay iliskisine baglanir.",
+          "distinction": "B001'de anlam nesne veya hak olarak belirli paydir; B002'de ise o pay uzerinden ortaklik kurulan kisidir. Bu nedenle biri digerinin yerine kullanilamaz."
+        },
+        {
+          "neighbor_ref": "root_003360/B003",
+          "relation_type": "other",
+          "boundary_match": "field_only",
+          "focus_only": "Bu dal butun-parca veya mulk payi alanindadir.",
+          "neighbor_only": "Komşu dal okta bulunan ozel bir ucu anlatir.",
+          "gloss": "pay ile ok ucu ayrimi",
+          "shared_zone": "Ortaklik kok ailesi icinde farkli adlandirmalar olarak gorunmeleridir.",
+          "distinction": "B001'in cekirdegi pay veya parcadir; B003'un cekirdegi atilan bir aracin ucudur. Alan ve referent farkli oldugu icin anlam yakinligi kurulmaz."
+        },
+        {
+          "neighbor_ref": "root_003360/B004",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal ortaya cikan pay veya parcanin kendisini adlandirir.",
+          "neighbor_only": "Komşu dal bir hayvani olculu parcalara ayirma isini anlatir.",
+          "gloss": "parca ile parcalama isi ayrimi",
+          "shared_zone": "Ikisinde de butunu parcalara ayirma veya parca olarak dusunme alani vardir.",
+          "distinction": "B001 sonuctaki parca veya paya odaklanir; B004 ise kesim ve ayirma surecinin kendisine odaklanir. Surec ve sonuc ayrimi korunmalidir."
+        }
+      ],
+      "neighbor_coverage_note": "Verilen uc komsu degerlendirildi; pay sahibi, ok ucu ve parcalama isi ayrimlari okuyucunun en kolay karistirabilecegi sinirlari gosterir.",
+      "branch_image_ar": "الشِّقْص طائفة ونصيب",
+      "what_is_ar": "يدخل فيه القطعة من الشيء أو الأرض والنصيب المعلوم من المال أو الدار مفروزا أو غير مفروز",
+      "what_is_not_ar": "ليس الشريك نفسه ولا نصل السهم ولا تقطيع الذبيحة ولا نعت الفرس",
+      "source_phrase_ar": "الشِّقْص طائفة من شيء (maqayis;tahdhib); الشِّقْص القطعة من الارض والطائفة من الشئ (sihah); أعطاه شقصا من ماله (tahdhib); شقصا من دار نصيبا معلوما غير مفروز (tahdhib)",
+      "sources": [
+        "MQ",
+        "SI",
+        "TA"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_003360/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bu dali bir pay icinde ortak olan kisiye baglar. Bu, payin kendisiyle degil pay uzerinden kurulan ortaklik iliskisiyle ilgilidir; bu nedenle dalin kisi merkezli cercevesi korunmalidir.",
+        "boundary_note": "Dal, payin kendisini degil, pay uzerinden ortak sayilan kisiyi anlatir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "unresolved",
+        "note": "Mekanik kapsam cozumlenmemis oldugu icin anlam, yalniz kaynakta verilen ortaklik iliskisiyle sinirlanir."
+      },
+      "concept_map": {
+        "definition": "Bir arazi payi veya benzeri belirli pay icinde ortakligi bulunan kisidir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Cekirdek anlam, payla iliskili ortak kisi olmasidir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Kaynak ifadesi bu ortakligi ozellikle arazi payi baglaminda ornekler.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Tek kaynakli aktarim bu dali, belirli bir pay uzerinden ortak olan kisi diye aciklar. Anlam, pay nesnesine degil o paydaki ortaklik iliskisine aittir.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Aktarim, kisinin ortakligini arazi payi uzerinden kurulan iliskiyle sinirlar."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "pay ortagi",
+        "applicability": "Belirli bir payda ortak olan kisiyi kisa ve dogal bicimde verir.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Kisi olma, paya bagli ortaklik ve mulk baglami korunur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "arazi payinda ortak",
+          "usage_role": "contextual",
+          "applicability": "Kaynakta verilen arazi baglami acikca gerekli oldugunda kullanilir.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Kisi, ortaklik ve arazi payi baglamini korur.",
+            "loses": "Pay iliskisinin arazi disindaki benzer uygulamalarini acik birakmaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "pay",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Ortakligin dayandigi nesneyi korur.",
+            "loses": "Kisi ve ortaklik iliskisini kaybeder.",
+            "adds": null,
+            "collision": "B001 dalinin pay veya parca anlamiyla karisir."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_003360/B001",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Bu dal paydaki ortak kisiyi anlatir.",
+          "neighbor_only": "Komşu dal payin veya parcanin kendisini anlatir.",
+          "gloss": "pay sahibi ile pay ayrimi",
+          "shared_zone": "Ikisi de mulk veya arazi payi iliskisinde bulusur.",
+          "distinction": "B002 kisiyi adlandirir; B001 ise kisinin sahip olabilecegi payi veya parcayi adlandirir. Kisi ile nesne arasindaki rol farki belirleyicidir."
+        },
+        {
+          "neighbor_ref": "root_003360/B003",
+          "relation_type": "other",
+          "boundary_match": "field_only",
+          "focus_only": "Bu dal ortak kisi alanindadir.",
+          "neighbor_only": "Komşu dal ok ucunu anlatir.",
+          "gloss": "ortak kisi ile ok ucu ayrimi",
+          "shared_zone": "Ortaklik yalniz kok ailesi icinde adlandirma yakinligidir.",
+          "distinction": "B002 sosyal veya hukuki ortaklik iliskisindeki kisidir; B003 ise bir atis aracinin parcasidir. Anlam alanlari ayridir."
+        },
+        {
+          "neighbor_ref": "root_003360/B004",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Bu dal ortak olan kisiyi belirtir.",
+          "neighbor_only": "Komşu dal parcalama ve ayirma eylemini belirtir.",
+          "gloss": "kisi ile ayirma isi ayrimi",
+          "shared_zone": "Ikisi de pay veya parca fikrinin cevresinde okunabilir.",
+          "distinction": "B002 bir katilani veya iliski tarafini anlatir; B004 bir kesim ve ayirma surecini anlatir. Ortak senaryo baglantisi anlam yakinligi dogurmaz."
+        }
+      ],
+      "neighbor_coverage_note": "Verilen uc komsu incelendi; pay nesnesiyle iliski en yakin sinirdir, arac ve parcalama dallari ise daha uzak karisim ihtimalleridir.",
+      "branch_image_ar": "الشَّقِيص شريك في شِقْص",
+      "what_is_ar": "يدخل فيه الشريك المنسوب إلى شقص من الأرض",
+      "what_is_not_ar": "ليس الشقص النصيب نفسه ولا نصل السهم ولا نعت الفرس",
+      "source_phrase_ar": "الشقيص الشريك يقال هو شقيصى أي شريكي في شقص من الأرض (sihah)",
+      "sources": [
+        "SI"
+      ],
+      "source_note": {
+        "SI": "Aktarim, kisinin ortakligini arazi payi uzerinden kurulan iliskiyle sinirlar."
+      }
+    },
+    {
+      "branch_ref": "root_003360/B003",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi bu dali okta bulunan ozel bir uca baglar ve onun av gibi hedeflere atilmasini anar. Ancak ucun genis mi, uzun ama genis olmayan mi oldugu konusunda ayni derleme icinde farkli aktarimlar vardir; bu nedenle tanim araca odaklanir ve bicim ayrintisini tartismali bir nitelik olarak tutar.",
+        "boundary_note": "Dal ok ucudur; genislik ve uzunluk ayrintisi kesin tek bicim gibi sunulmamalidir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "unresolved",
+        "note": "Mekanik kapsam cozumlenmemis oldugu icin tanim yalniz verilen ok ucu adlandirmasina dayanir."
+      },
+      "concept_map": {
+        "definition": "Okta bulunan, hedefe atilan ozel bir uc turudur; kaynaklarda uzunluk ve genislik niteligine dair farkli tarifler aktarilir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Cekirdek anlam, okta bulunan ozel bir uc veya sivri parca olmasidir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "associated_use",
+            "statement": "Bu ucun av gibi hedeflere atilmasi kullanimi anilir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "source_variant",
+            "statement": "Bazi aktarimlar ucu uzun ve genis sayarken, bir aktarim uzun fakat genis olmayan bicimi kaydeder.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar anlamin ok ucuna ait oldugunda birlesir ve onun atilan bir arac parcasi oldugunu gosterir. Bicim ayrintisinda ise genislik ve uzunluk konusunda farkli aktarimlar bulundugu icin tanim bu ayrintiyi kesinlestirmez.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "ozel ok ucu",
+        "applicability": "Bicim tartismasini kesinlestirmeden, dalin araca ait cekirdek anlamini vermek icin uygundur.",
+        "error_profile": {
+          "fit": "broadening",
+          "preserves": "Okta bulunan uc turu olma cekirdegini korur.",
+          "loses": null,
+          "adds": "Ozel bicim ayrintisi aciklanmadiginda daha genel ok ucu turlerini de cagristirabilir.",
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F003"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "uzun ok ucu",
+          "usage_role": "contextual",
+          "applicability": "Uzunluk niteligini one cikaran baglamlarda dogal bir karsiliktir.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Ok ucu olma ve uzunluk niteligini korur.",
+            "loses": "Genislik konusundaki farkli aktarimi ve genel arac turu sinirini tam vermez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F003"
+          ]
+        },
+        {
+          "text": "avda atilan ok ucu",
+          "usage_role": "contextual",
+          "applicability": "Atis veya av kullanimi vurgulanan metinde aciklayici karsilik olarak kullanilir.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Ok ucu ve hedefe atilma kullanimi korunur.",
+            "loses": "Bicim tartismasini ve arac adinin genel kullanimini geri plana iter.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "pay",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Ayni kok ailesindeki baska bir dali cagristirir.",
+            "loses": "Okta bulunan uc anlamini siler.",
+            "adds": "Mulk veya parca payi alanini ekler.",
+            "collision": "B001 dalinin pay anlamiyla karisir."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_003360/B001",
+          "relation_type": "other",
+          "boundary_match": "field_only",
+          "focus_only": "Bu dal okta bulunan ozel uctur.",
+          "neighbor_only": "Komşu dal bir butundeki pay veya parcadir.",
+          "gloss": "ok ucu ile pay ayrimi",
+          "shared_zone": "Ortaklik kok ailesi icindeki farkli adlandirmalarla sinirlidir.",
+          "distinction": "B003 bir silah veya atis araci parcasidir; B001 ise mulk veya butun icindeki paydir. Ikisi arasinda metinde ikame edilebilir bir anlam ortakligi yoktur."
+        },
+        {
+          "neighbor_ref": "root_003360/B004",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Bu dal arac parcasini adlandirir.",
+          "neighbor_only": "Komşu dal eti veya hayvani parcalara ayirma isini anlatir.",
+          "gloss": "arac parcasi ile ayirma isi ayrimi",
+          "shared_zone": "Ikisi de fiziksel parca fikrinin cevresinde dusunulebilir.",
+          "distinction": "B003 elde bulunan veya atilan bir uc turudur; B004 bir butunu olculu parcalara ayirma eylemidir. Parca fikri ortak olsa da cekirdek islemler farklidir."
+        },
+        {
+          "neighbor_ref": "root_003360/B002",
+          "relation_type": "other",
+          "boundary_match": "field_only",
+          "focus_only": "Bu dal ok ucudur.",
+          "neighbor_only": "Komşu dal payda ortak olan kisidir.",
+          "gloss": "ok ucu ile ortak kisi ayrimi",
+          "shared_zone": "Ortaklik kok ailesi icindeki uzak adlandirma iliskisidir.",
+          "distinction": "B003 maddi bir arac parcasini; B002 ise mulk payi uzerinden tanimlanan kisiyi belirtir. Ortak kullanilabilecek bir semantik cekirdek yoktur."
+        }
+      ],
+      "neighbor_coverage_note": "Verilen uc komsu degerlendirildi; pay, ortak kisi ve parcalama isi dallariyla sinirlar farkli alanlar uzerinden aciklandi.",
+      "branch_image_ar": "المِشْقَص نصل للسهم",
+      "what_is_ar": "يدخل فيه سهم أو نصل يسمى المِشْقَص ويرمى به الوحش",
+      "what_is_not_ar": "ليس المعبلة عند أبي منصور ولا نصيب الأرض ولا الشريك",
+      "source_phrase_ar": "المِشْقَص سهم فيه نصل عريض (maqayis;tahdhib); المِشْقَص من النصال ما طال وعرض (sihah); يرمى به الوحش (tahdhib); المِشْقَص من النصال الطويل وليس بالعريض (tahdhib)",
+      "sources": [
+        "MQ",
+        "SI",
+        "TA"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_003360/B004",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bu dali kesilen hayvanin organlarini birbirinden ayirma ve olculu parcalar haline getirme isi olarak verir; ayrica bunu yapan kasap adini anar. Tanimda asil cekirdek eylem korunur, meslek adi ise bagli kullanim olarak kalir.",
+        "boundary_note": "Dal, payin kendisi degil; hayvani veya etini olculu parcalara ayirma surecidir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "unresolved",
+        "note": "Mekanik kapsam cozumlenmemis oldugu icin tanim yalniz kaynakta verilen parcalama eylemiyle sinirlanir."
+      },
+      "concept_map": {
+        "definition": "Kesilen hayvanin organlarini birbirinden ayirip olculu parcalar haline getirme isidir; bu isi yapan kasap icin bagli bir adlandirma da verilir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Cekirdek anlam, kesilen hayvani organlarina ayirip parcalara bolme isidir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Parcalar olculu veya dengeli dilimler olarak dusunulur.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "associated_use",
+            "statement": "Bu isi yapan kasap icin bagli bir adlandirma aktarilir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Tek kaynakli aktarim bu dali kesilen hayvanin organlarini birbirinden ayirma ve dengeli parcalar haline getirme isi olarak sunar. Meslek adi, eylemin kendisine bagli ikincil bir kullanimdir.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Aktarim, eylemi hayvanin organlarini ayirma ve kasapla iliskili kullanim olarak sinirlar."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "hayvani olculu parcalara ayirma",
+        "applicability": "Kesim sonrasi organlari ayirma ve parcalari dengeli hale getirme eylemini tam karsilar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Hayvan, organlari ayirma, parcalara bolme ve olcululuk yonlerini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "eti parcalara ayirma",
+          "usage_role": "contextual",
+          "applicability": "Kesim ve et hazirlama baglaminda daha akici bir metin ici karsiliktir.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Parcalara ayirma eylemini korur.",
+            "loses": "Organlari birbirinden ayirma ve olculu parca ayrintisini tam tasimaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "kasabin parcalama isi",
+          "usage_role": "explanatory",
+          "applicability": "Eylemi yapan kisiyle baglanti kurulmasi gereken yerde aciklayici karsiliktir.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Kasapla iliskili parcalama kullanimini korur.",
+            "loses": "Organlari olculu parcalara ayirma ayrintisinin tamamini vermez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F003"
+          ]
+        }
+      ],
+      "lexical_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "pay",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Parca fikrini zayif bicimde cagristirir.",
+            "loses": "Ayirma ve parcalama eylemini kaybeder.",
+            "adds": "Mulk veya hak payi alanini ekler.",
+            "collision": "B001 dalinin pay anlamiyla karisir."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_003360/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal parcalara ayirma surecini anlatir.",
+          "neighbor_only": "Komşu dal pay veya parcanin kendisini anlatir.",
+          "gloss": "parcalama isi ile parca ayrimi",
+          "shared_zone": "Ikisinde de butun ve parca iliskisi vardir.",
+          "distinction": "B004 eylem ve surectir; B001 ise bu tur bir ayirmadan bagimsiz olarak parca veya pay nesnesidir. Surec-sonuc farki ana sinirdir."
+        },
+        {
+          "neighbor_ref": "root_003360/B003",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Bu dal kesim ve ayirma isidir.",
+          "neighbor_only": "Komşu dal atilan arac ucudur.",
+          "gloss": "kesim isi ile ok ucu ayrimi",
+          "shared_zone": "Ikisi de fiziksel parca dusuncesiyle uzaktan iliskilendirilebilir.",
+          "distinction": "B004 bir butunu parcalara bolme eylemidir; B003 ise hazir bir arac parcasinin adidir. Eylem ile arac parcasi karistirilmamalidir."
+        },
+        {
+          "neighbor_ref": "root_003360/B002",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Bu dal parcalama eylemidir.",
+          "neighbor_only": "Komşu dal paydaki ortak kisidir.",
+          "gloss": "eylem ile ortak kisi ayrimi",
+          "shared_zone": "Pay veya parca fikrinin cevresinde uzak bir bag kurulabilir.",
+          "distinction": "B004 bir fiilsel sureci; B002 bir iliski tarafini veya kisiyi anlatir. Ortak alan, anlamlarin birbirinin yerine gecmesine yetmez."
+        }
+      ],
+      "neighbor_coverage_note": "Verilen uc komsu degerlendirildi; en anlamli sinir parca sonucuyla, digerleri ise arac ve kisi dallariyla kuruldu.",
+      "branch_image_ar": "التشقيص تقطيع الأعضاء",
+      "what_is_ar": "يدخل فيه تعضية الذبيحة وتفصيل أعضائها سهاما معتدلة واسم القصاب مُشَقِّص",
+      "what_is_not_ar": "ليس نصيب الأرض ولا شريك الشقص ولا نصل السهم",
+      "source_phrase_ar": "تشقيص الذبيحة تعضيتها وتفصيل أعضائها بعضها من بعض سهاما معتدلة (tahdhib); يقال للقصاب مُشَقِّص (tahdhib)",
+      "sources": [
+        "TA"
+      ],
+      "source_note": {
+        "TA": "Aktarim, eylemi hayvanin organlarini ayirma ve kasapla iliskili kullanim olarak sinirlar."
+      }
+    },
+    {
+      "branch_ref": "root_003360/B005",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi bu dali at icin soyluluk, iyi nitelik veya ustunluk anlatan bir niteleme olarak verir; fakat ayni kanit icinde aktarimin dogruluguna dair acik cekince de vardir. Bu nedenle dal korunur, ancak tanim kesin ve yaygin bir nitelik gibi degil, cekinceli bir at nitelemesi olarak yazilir.",
+        "boundary_note": "Dal yalniz at nitelemesidir ve aktarim cekincelidir; pay, ortak, ok ucu veya parcalama anlamina genisletilmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "unresolved",
+        "note": "Mekanik kapsam cozumlenmemis oldugu icin tanim yalniz verilen at nitelemesi kaydiyla sinirlanir."
+      },
+      "concept_map": {
+        "definition": "Aktarimi cekinceli olmakla birlikte, at icin iyi, seçkin veya degerli niteligi belirten bir sifat kullanimidir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Cekirdek anlam, at icin iyi ve seçkin nitelik bildiren bir niteleme olmasidir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "source_variant",
+            "statement": "Aktarimin dogrulugu konusunda kaynak ifadesi icinde acik cekince bulunur.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kayitlar bu dali at icin iyi nitelik ve ustunluk bildiren bir niteleme olarak aktarir, fakat ayni malzeme aktarimin kesinligi konusunda cekince de tasir. Bu yuzden anlam, guvenli bir genel kok anlami degil, sinirli ve ihtiyatli bir at nitelemesi olarak verilmelidir.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "iyi at nitelemesi",
+        "applicability": "Aktarim cekincesini koruyarak, anlamin at uzerindeki olumlu sifat kullanimini gostermek icin uygundur.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Atla sinirli olma, olumlu nitelik ve aktarim cekincesi korunur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "seckin at",
+          "usage_role": "contextual",
+          "applicability": "Cekincenin ayrica belirtildigi ve at niteligini akici vermek gereken baglamlarda kullanilir.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "At icin olumlu ve ustun nitelik bildirme yonunu korur.",
+            "loses": "Aktarimin cekinceli oldugunu tek basina gostermez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "iyi cins at",
+          "usage_role": "contextual",
+          "applicability": "Kalite ve deger vurgusunun one ciktigi metinlerde dogal bir karsiliktir.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "At ve iyi nitelik baglantisini korur.",
+            "loses": "Cekinceyi ve nitelemenin tam kapsamini acikca vermez.",
+            "adds": "Cins ifadesi kaliteyi soy veya tur gibi algilatabilir.",
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
+      "lexical_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "pay ortagi",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Ayni kok ailesindeki baska bir kullanimla yuzeysel bag kurar.",
+            "loses": "At nitelemesi ve cekinceyi tamamen kaybeder.",
+            "adds": "Mulk payinda ortak kisi anlamini ekler.",
+            "collision": "B002 dalinin ortak kisi anlamiyla karisir."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_003360/B002",
+          "relation_type": "other",
+          "boundary_match": "field_only",
+          "focus_only": "Bu dal cekinceli bir at nitelemesidir.",
+          "neighbor_only": "Komşu dal paydaki ortak kisidir.",
+          "gloss": "at nitelemesi ile ortak kisi ayrimi",
+          "shared_zone": "Yakinlik, ayni kok ailesinde farkli kullanimlar olarak kaydedilmeleridir.",
+          "distinction": "B005 hayvana verilen olumlu bir niteliktir; B002 ise pay iliskisindeki kisidir. Alan, katilimci ve islev bakimindan ayrilirlar."
+        },
+        {
+          "neighbor_ref": "root_003360/B001",
+          "relation_type": "other",
+          "boundary_match": "field_only",
+          "focus_only": "Bu dal at icin olumlu sifat kullanimidir.",
+          "neighbor_only": "Komşu dal pay veya parcadir.",
+          "gloss": "at niteliği ile pay ayrimi",
+          "shared_zone": "Ortaklik sadece kok ailesi icinde uzak adlandirma iliskisidir.",
+          "distinction": "B005 bir canlinin niteligini anlatir; B001 bir butundeki pay veya parcayi anlatir. Cekirdek anlamlar birbirine aktarilamaz."
+        },
+        {
+          "neighbor_ref": "root_003360/B003",
+          "relation_type": "other",
+          "boundary_match": "field_only",
+          "focus_only": "Bu dal at nitelemesidir.",
+          "neighbor_only": "Komşu dal ok ucudur.",
+          "gloss": "at nitelemesi ile ok ucu ayrimi",
+          "shared_zone": "Ortaklik kok ailesindeki uzak kullanim birlikteligidir.",
+          "distinction": "B005 nitelik bildirir; B003 bir aracin parcasini adlandirir. Biri sifat alani, oburu maddi nesne alanidir."
+        },
+        {
+          "neighbor_ref": "root_003360/B004",
+          "relation_type": "other",
+          "boundary_match": "field_only",
+          "focus_only": "Bu dal at icin olumlu nitelemedir.",
+          "neighbor_only": "Komşu dal kesilen hayvani parcalara ayirma isidir.",
+          "gloss": "nitelik ile parcalama isi ayrimi",
+          "shared_zone": "Ikisi de hayvanla ilgili metinlerde gorulebilir, fakat anlam cekirdekleri ayridir.",
+          "distinction": "B005 canli hayvana yonelik bir kalite nitelemesidir; B004 kesim sonrasi ayirma surecidir. Aynı hayvan alanina dokunabilmeleri ikame edilebilirlik saglamaz."
+        }
+      ],
+      "neighbor_coverage_note": "Verilen dort komsu incelendi; en belirgin risk ayni bicimli ortak kisi kullanimiyla, diger riskler pay, ok ucu ve parcalama dallariyladir.",
+      "branch_image_ar": "الشَّقِيص صفة للفرس الجواد",
+      "what_is_ar": "يدخل فيه نعت الفرس بالفراهة والجودة إذا صح النقل",
+      "what_is_not_ar": "ليس الشريك في شقص ولا نصيب الأرض ولا نصل السهم",
+      "source_phrase_ar": "إن كان صحيحا إن الشقيص في نعت الفرس الفاره الجواد (maqayis); الشقيص في نعت الفرس فراهة وجودة (tahdhib); لا أعرف الشقيص في نعت الخيل ولا أدري ما هو (tahdhib)",
+      "sources": [
+        "MQ",
+        "TA"
+      ],
+      "source_note": {}
+    }
+  ],
+  "root_profile": {
+    "summary": "Bu kok ailesinde parca ve pay fikri etrafinda bir merkez bulunur, fakat ok ucu, kesimle parcalama ve cekinceli at nitelemesi gibi uzak dallar da vardir. Bu nedenle entry, tek anlamli bir pay ailesi gibi degil, iliskili ve ayrismis dallardan olusan cok anlamli bir yapi olarak okunmalidir.",
+    "polysemy": "polysemic",
+    "organization": "mixed"
+  },
+  "occurrence_evidence": {
+    "summary": {
+      "morpheme_count": 0,
+      "word_count": 0,
+      "ayah_count": 0,
+      "surah_count": 0
+    },
+    "forms": [],
+    "ayahs": [],
+    "occurrences": []
+  }
+}

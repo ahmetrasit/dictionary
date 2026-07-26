@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Girdi genel olarak kanıtla uyumludur. Ancak B008'de kova ipinin ele bağlı olduğu ve suya elle erişildiği izlenimi veren anlatım, kanıttaki ipin kovaya bağlı olması ve suyun el gücüyle çekilmesi ilişkisini üç alanda yanlış kurmaktadır.",
+  "issues": [
+    {
+      "target_ref": "root_001489/B008",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe, suyun \"ele bağlı kova ipiyle\" çekildiğini söylüyor. Kanıttaki yapı ise ipin kovaya bağlı olduğunu ve kovanın el gücüyle çekildiğini bildiriyor; ipi ele bağlama ilişkisi kanıtta yoktur.",
+      "smallest_correction": "Gerekçedeki ifadeyi, kuyunun sığlığını suyun elle veya ipi bağlı bir kovayı elle çekerek çıkarılabilmesine bağlayacak biçimde düzeltmek."
+    },
+    {
+      "target_ref": "root_001489/B008",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım suya elle erişildiğini ve ipin ele bağlı olduğunu, F002 de ipin ele bağlı bir kova kullanıldığını ileri sürüyor. Kanıt suyun çıplak elle alınmasını değil, sığ kuyudan ipin bağlı olduğu kovanın el gücüyle çekilmesini anlatır.",
+      "smallest_correction": "Tanımı \"Suyu el gücüyle çekilebilecek kadar sığ olan kuyu veya böyle bir kuyudan, ipi bağlı kovayı elle çekerek su çıkarma durumudur\" biçiminde düzeltmek; F002'de de ipin kovaya bağlı olduğunu belirtmek."
+    },
+    {
+      "target_ref": "root_001489/B008",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet \"ipi ele bağlı bir kova\" diyerek bağlanma ilişkisini ters kuruyor. Kaynak ifadesinde ip kovaya bağlıdır ve çekme işlemi elle yapılır.",
+      "smallest_correction": "Ortak özetteki bölümü \"ipi bağlı bir kovanın elle çekilmesi\" olarak değiştirmek."
+    }
+  ]
+}

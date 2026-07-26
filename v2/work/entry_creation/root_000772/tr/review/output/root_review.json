@@ -1,0 +1,99 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yaniti genel dal ayrimlarini koruyor; ancak Sam dalinda belirli cografi adin kimligi tanim ve sozluk karsiliklarindan dusurulmus, uc dalin kaynak sentezlerinde sozluge ozgu ayrintilar ortak icerik gibi duzlestirilmis ve bir komsu ayriminda kanitin vermedigi cografi kuzey kapsami eklenmistir. Bu alanlar sinirli ve yuksek guvenli duzeltmeler gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_000772/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak ozet, sola yonelme ve baskalarini sola yoneltmeyi butun kaynaklarin ortak cizgisi gibi sunuyor; oysa kanitta toplulugu sola yoneltme, saga ve sola bakma ve karsit cogul bicimler farkli sozluk dagilimlarina sahiptir. Bos source_details dizisi bu ayirt edici kullanimlari ve dagilimlarini kaybediyor.",
+      "smallest_correction": "Ortak ozeti butun kaynaklarin destekledigi sol taraf cekirdegine daralt; toplulugu sola yoneltme, saga ve sola bakma ve karsit cogul bicimleri, yalniz bunlari veren sozluklere ozgu source_details satirlarinda bc_001 ile kaydet."
+    },
+    {
+      "target_ref": "root_000772/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_000819/B006 icin neighbor_only ve distinction metinleri komsu dalin cografi kuzey yonunu kapsadigini soyluyor. Saglanan sinir karti yalniz sol eli, sagin karsiti yonu ve genel yan ya da istikamet kullanimini verir; cografi kuzey iddiasini desteklemez.",
+      "smallest_correction": "root_000819/B006 satirindaki cografi kuzey iddiasini kaldir ve komsuya ozgu ek kapsami sol el ile genel yan ya da istikamet kullanimiyla sinirla."
+    },
+    {
+      "target_ref": "root_000772/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanitta dalin cekirdegi Sam ulkesi ve bolgesinin ozel adidir. Tanim ve F001 bunu yalniz 'belirli bir ulke ve bolge' diye anlattigi icin referansin kimligini kaldiriyor ve dali herhangi bir adsiz cografi bolgeye uygulanabilir hale getiriyor.",
+      "smallest_correction": "Tanimda ve F001'de cografi referansi acikca Sam ulkesi ve bolgesi olarak adlandir; kibleye gore sol tarafta sayilma aciklamasini ve bu ada bagli mensubiyet, yonelme ve varma turevlerini koru."
+    },
+    {
+      "target_ref": "root_000772/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak ozet yer adini, mensubiyet bicimlerini, yonelmeyi ve varmayi tek bir ortak anlatim gibi birlestiriyor. Kanitta yer adi dort kaynakta bulunsa da adlandirma aciklamasi, eril ve disil nispet bicimleri, yonelme ve varma fiilleri sozluklere gore farkli ayrintilar tasir; bos source_details dizisi bu dagilimi gostermiyor.",
+      "smallest_correction": "Ortak ozeti dort kaynagin paylastigi Sam yer adi cekirdegine daralt; adlandirma aciklamasini, nispet bicimlerini ve Sam'a yonelme ya da varma fiillerini bunlari veren sozluklere ozgu source_details satirlarinda bc_001 ile ayir."
+    },
+    {
+      "target_ref": "root_000772/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karsiligi 'belirli ulke ve bolge' diyerek kanitin verdigi ozel cografi kimligi belirtmiyor. Bu ifade tek basina hangi ulke ya da bolgenin kastedildigini gostermedigi icin dalin cekirdek referansini korumuyor.",
+      "smallest_correction": "Kavram karsiliginda adsiz 'belirli ulke ve bolge' ifadesini Sam ulkesi ve bolgesiyle degistir; mensubiyet, yonelme ve varma uzantilarini mevcut sinirlariyla koru."
+    },
+    {
+      "target_ref": "root_000772/B002",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Aciklayici karsilik 'adi gecen ulke ve bolge', diger karsiliklar ise yalniz 'bu bolge' diyor. Kendi applicability metinleri de cografi adi vermedigi icin bu gostergeler kanittaki Sam referansini bagimsiz olarak belirleyemiyor.",
+      "smallest_correction": "Temel aciklayici karsiligi Sam ulkesi ve bolgesi olarak yaz; baglam cografi adi baska yerde vermiyorsa mensubiyet, yonelme ve varma karsiliklarinda da 'bu bolge' yerine Sam adini kullan."
+    },
+    {
+      "target_ref": "root_000772/B002",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_007",
+        "lu_008",
+        "lu_009",
+        "lu_010",
+        "lu_011",
+        "lu_012"
+      ],
+      "evidence_conflict": "lu_007 'kaynaklarda adi gecen ulke ve bolge', diger birimler de yalniz 'bu bolge' diye karsilanmistir. Kanit bu birimlerin Sam yer adini, Sam'a mensubiyeti, Sam'a yonelmeyi ve Sam'a varmayi anlattigini acikca belirttigi halde mevcut karsiliklar zorunlu cografi kimligi kaybediyor.",
+      "smallest_correction": "lu_007'yi 'Sam ulkesi ve bolgesi', lu_008 ve lu_009'u Sam'a mensup erkek ve kadin, lu_010'u Sam'a mensup olma, lu_011'i Sam'a dogru gitme ve lu_012'yi Sam'a varma olarak acikca karsila."
+    },
+    {
+      "target_ref": "root_000772/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak ozet ugursuz kisiyi ya da nesneyi, baskalarina kotu talih getirmeyi ve bir seyi kotuye yormayi kaynaklarin ortak icerigi gibi topluyor. Kanitta kusu ugursuz sayma, topluluga ugursuzluk getirme, birini ugursuz sayma ve kisinin ugursuzlugunu diline baglayan ozlu soz farkli sozluklerde ve bazi durumlarda tek bir kaynakta yer alir; bos source_details bu ayirt edici ve tekil taniklari kaybediyor.",
+      "smallest_correction": "Ortak ozeti ugursuzluk ve kotu talih cekirdegine daralt; kus alameti, topluluga ugursuzluk getirme, ugursuz sayma ve dil hakkindaki ozlu sozu yalniz bunlari veren sozluklere ozgu source_details satirlarinda bc_001 ile kaydet."
+    }
+  ]
+}

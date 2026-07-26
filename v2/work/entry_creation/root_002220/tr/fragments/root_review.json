@@ -1,0 +1,62 @@
+{
+  "inputs_sha256": "decc7a55562968cdbd06f8f2ec522a72cdcf03a5d63d01e9025ac6d15fc5f547",
+  "verdict": "repair",
+  "summary": "B007 disinda yazar yaniti kanitla uyumlu gorunuyor. B007'de kanit hurma agacini ve deveyi verirken metindeki yalniz 'hurma' kullanimi meyveye kaydigi icin ilgili alanlarda cerceve dar ve yanlis okunuyor; bunu hurma agaci olarak duzeltmek yeterlidir.",
+  "issues": [
+    {
+      "target_ref": "root_002220/B007",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, kurakliktan etkilenmeyen varlik olarak hurma agacini ve deveyi verir. Rationale icindeki yalniz 'hurma' ifadesi Turkcede meyveye kayarak canli varlik sinirini bozuyor.",
+      "smallest_correction": "B007 identity_judgment.rationale icindeki 'hurma' sozunu 'hurma agaci' yap."
+    },
+    {
+      "target_ref": "root_002220/B007",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, canli varlik olarak hurma agacini ve deveyi anlatir. Concept_map definition ve F002 facetindeki yalniz 'hurma' kullanimi meyveyi dusundurerek verim ve dayaniklilik cekirdegini yanlis nesneye tasiyor.",
+      "smallest_correction": "B007 concept_map icinde 'hurma ya da devedir' ifadesini 'hurma agaci ya da devedir', F002'deki 'hurmanin' ifadesini 'hurma agacinin' yap."
+    },
+    {
+      "target_ref": "root_002220/B007",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, kaynak ornegini hurma agaci olarak sinirlar. Source_synthesis common_summary icindeki 'Hurma ve deve' ifadesi agac yerine meyveyle deveyi karsilastiriyor.",
+      "smallest_correction": "B007 source_synthesis.common_summary icinde 'Hurma ve deve' ifadesini 'Hurma agaci ve deve' yap."
+    },
+    {
+      "target_ref": "root_002220/B007",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, uygulanabilir varliklari hurma agaci ve deve olarak verir. Concept_gloss applicability icindeki 'hurma veya deve' ifadesi meyveyi kapsar gibi okunuyor.",
+      "smallest_correction": "B007 concept_gloss.applicability icinde 'hurma veya deve' ifadesini 'hurma agaci veya deve' yap."
+    },
+    {
+      "target_ref": "root_002220/B007",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, dayaniklilik nitelemesini hurma agaci ve deve icin verir. Contextual_glosses applicability icindeki 'Hurma veya devenin' ifadesi agac sinirini kaybediyor.",
+      "smallest_correction": "B007 contextual_glosses[0].applicability icinde 'Hurma veya devenin' ifadesini 'Hurma agaci veya devenin' yap."
+    }
+  ]
+}

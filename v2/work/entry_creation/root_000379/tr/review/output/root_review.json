@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtı, dal sınırlarını ve sözlüksel kapsamı doğru koruyor. B002 dalındaki kaynak sentezinde tek bir kaynağa özgü zaman koşulu bütün kaynakların ortak anlatımı gibi sunulduğu için sınırlı bir düzeltme gerekiyor.",
+  "issues": [
+    {
+      "target_ref": "root_000379/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kanamanın olağan günlerin ardından sürmesini kaynakların ortak anlatımı olarak gösteriyor. Oysa kanıtın bir kaynak parçası yalnız kanın kadına baskın gelip dinmemesini, diğer parçası ise kanamanın olağan günlerden sonra sürmesini bildiriyor; olağan günlerden sonralık koşulu ikisinde ortak değil.",
+      "smallest_correction": "Yalnız B002 source_synthesis.common_summary alanını değiştir: ortak noktayı kanamanın sürmesi ve dinmemesi olarak ver, kanın baskın gelmesini ve olağan günlerden sonra sürme koşulunu iki ayrı kaynak vurgusu olarak kaynak adlarını yinelemeden ayır."
+    }
+  ]
+}

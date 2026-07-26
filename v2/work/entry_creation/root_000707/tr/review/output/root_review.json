@@ -1,0 +1,83 @@
+{
+  "verdict": "repair",
+  "summary": "B006 dalı, uyumlu iki kaynak anlatımını bitkinin özdeşliği konusunda bir uyuşmazlık gibi sunuyor. B013 dalı ise kanıtta belirtilmeyen kumaş malzemesini tanımın zorunlu bir parçası yapıyor. Bu iki anlam sapması ilgili alanlarda dar ve doğrudan düzeltmeler gerektiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_000707/B006",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıtın bir kaydı ikinci bitkiyi ilkine benzer diye nitelerken öteki kayıt onu başka bir bitki olarak adlandırıyor; bunlar bitkinin aynı mı ayrı mı olduğu konusunda zorunlu bir uyuşmazlık oluşturmaz. Gerekçe ise bu anlatımları özdeşlik çatışması sayarak qualified durumunu buna dayandırıyor.",
+      "smallest_correction": "Durumu accepted yapın ve gerekçeyi, ikinci adın ilk hoş kokulu bitkiye benzer olmakla birlikte başka bir bitki olarak da kaydedildiğini söyleyecek biçimde düzeltin; kaynaklar arasında özdeşlik uyuşmazlığı bulunduğunu ileri sürmeyin."
+    },
+    {
+      "target_ref": "root_000707/B006",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F002, ikinci bitkinin bir kaynakta ilk bitkiyle aynı kabul edildiğini söylüyor. Kanıt yalnızca onun ilkine benzer olduğunu ve başka bir bitki olarak kaydedildiğini destekliyor; tam özdeşlik yargısını desteklemiyor.",
+      "smallest_correction": "Tanımdaki ve F002'deki aynı bitki ya da aynı tür karşıtlığını kaldırın. İkinci bitkiyi ilk hoş kokulu bitkiye benzer, fakat ayrıca başka bir bitki diye kaydedilmiş bir biçim olarak ifade edin."
+    },
+    {
+      "target_ref": "root_000707/B006",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, ikinci bitkinin ilk bitkiyle aynı mı başka mı olduğu konusunda uzlaşmazlık bulunduğunu bildiriyor. Benzer olma ile başka bir bitki olma birbiriyle bağdaşabildiğinden, verilen kaynak ifadesi böyle bir uzlaşmazlığı kanıtlamıyor.",
+      "smallest_correction": "Uzlaşmazlık iddiasını kaldırın; ikinci adın bir kaynakta ilk bitkiye benzer, diğerinde başka bir bitki olarak tanımlandığını kaynak farkını abartmadan özetleyin."
+    },
+    {
+      "target_ref": "root_000707/B006",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_023"
+      ],
+      "evidence_conflict": "lu_023 için hedef karşılık, bitkinin önceki bitkiyle aynı sayıldığını söylüyor. Birim kanıtı ise benzerlik veya yakınlık bildiriyor ve onu başka bir bitki diye kaydediyor; tam özdeşlik bildirmiyor.",
+      "smallest_correction": "Hedef karşılığı, önceki hoş kokulu bitkiye benzer veya yakın başka bir bitki olarak değiştirin; aynı sayıldığı ifadesini kaldırın."
+    },
+    {
+      "target_ref": "root_000707/B013",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe, genişletici parçayı kumaş olarak sınırlandırıyor. Kanıt kova, ayakkabı boğazı ve gömleğe eklenen yama veya artışı bildiriyor, fakat bütün örnekler için tek bir malzeme belirtmiyor.",
+      "smallest_correction": "Gerekçedeki kumaş parçası ifadesini ek parça veya yama olarak genelleştirin; diğer kimlik ve sınır ifadelerini koruyun."
+    },
+    {
+      "target_ref": "root_000707/B013",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F001, dalın çekirdeğini kumaş parçası olarak kuruyor. Kanıtın ortak çekirdeği eşyaya eklenerek onu genişleten parça veya yamadır; kova ve ayakkabı örneklerinin malzemesi belirtilmediği için kumaş şartı kapsamı kanıtsız biçimde daraltır.",
+      "smallest_correction": "Tanım ile F001'de kumaş sözcüğünü kaldırın ve çekirdeği bir kap veya giysiye eklenerek onu genişleten parça ya da yama olarak verin. Belgelenmiş kova, ayakkabı ve gömlek örneklerini koruyun."
+    },
+    {
+      "target_ref": "root_000707/B013",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı ek kumaş parçası diyerek kanıtta bulunmayan malzeme şartını bütün dala yayıyor ve kumaş olduğu belirtilmeyen kova veya ayakkabı eklerini dışarıda bırakabiliyor.",
+      "smallest_correction": "Kavram karşılığını eşyayı genişleten ek parça veya yama olarak değiştirin; applicability ve preserves metinlerinden de kumaş şartını kaldırın."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B001 dalının ilk komşuluk kaydı, aynı çekirdek sınırı taşıyan iki dalı bağımlı türev ve söz öbeği örnekleri nedeniyle gereksiz biçimde kısmi yakın anlamlı sayıyor. Bu kayıt tam eş anlamlılık olarak düzeltilmelidir; diğer alanlarda onarım gerektiren yüksek güvenli bir uyuşmazlık yoktur.",
+  "issues": [
+    {
+      "target_ref": "root_001347/B001",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B001 çekirdeği geriden gelenin öndekine yetişip ona erişmesidir; root_000175/B002 kartı da önce gidene yetişip onu yakalamayı aynı sınırla verir. Yazarın kısmi ayrım gerekçesi olarak gösterdiği ettirgen biçimler ve karşılıklı yetişme söz öbeği bağımlı gerçekleşimlerdir; çekirdek sınırını genişletmez.",
+      "smallest_correction": "root_000175/B002 kaydında relation_type değerini synonym, boundary_match değerini exact yapın; focus_only, neighbor_only ve distinction metinlerini türev örneklerini sınır farkı gibi sunmayacak ve çekirdeklerin tam örtüştüğünü açıkça belirtecek biçimde daraltın."
+    }
+  ]
+}

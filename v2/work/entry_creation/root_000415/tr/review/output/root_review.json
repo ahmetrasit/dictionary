@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yanit genel olarak kanitla uyumludur. Ancak B003 ile root_000108/B005 arasindaki ortak iki renklilik cekirdegi, yalnizca ornek ve baglama bagli uzanti farklari nedeniyle kismi sinir eslesmesi olarak gosterilmistir; bu tek satir duzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000415/B003",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B003 kaniti her iki rengin bir arada bulunmasini cekirdek sayar; root_000108/B005 karti da siyah ile beyazi veya iki farkli rengi kapsar. Yanit, nesne orneklerinin genisligini ve B003'teki sac ile yiyecek uzantilarini sinir farki sayarak iliskiyi near_synonym ve partial yapmistir, oysa bunlar ortak cekirdegin yerine gecen zorunlu kosullar degildir.",
+      "smallest_correction": "Yalnizca root_000108/B005 komsu satirinda relation_type degerini synonym, boundary_match degerini exact yap; focus_only ve neighbor_only degerlerini null yaparak asimetriyi kaldir, gloss ile distinction metinlerini de farklarin yalnizca taniklanan ornek ve baglama bagli uzantilar oldugunu belirtecek kadar duzelt."
+    }
+  ]
+}

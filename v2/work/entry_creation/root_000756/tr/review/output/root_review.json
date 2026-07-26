@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın dal kimliği, sözlükselleşme kapsamı, kavram çekirdeği, karşılıkları ve komşu ayrımları kanıtla uyumludur. Ancak kaynak sentezi, çoğul biçimlerin kaynaklar arasındaki ayırt edici dağılımını eksik bırakmaktadır.",
+  "issues": [
+    {
+      "target_ref": "root_000756/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, iki kaynağın iki çoğul biçimde birleştiğini ve Sihah kaynağının bunlara üçüncü bir çoğul biçim eklediğini gösterir. Mevcut sentez yalnızca birden fazla çoğul bulunduğunu söyleyerek bu tek-kaynaklı ayrıntıyı aktarmamaktadır.",
+      "smallest_correction": "Kaynak sentezine, iki çoğul biçimin iki kaynakta ortak olduğu ve üçüncü çoğul biçimin yalnızca Sihah tarafından tanıklandığı bilgisini ekleyin; diğer alanları değiştirmeyin."
+    }
+  ]
+}

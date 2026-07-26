@@ -1,0 +1,92 @@
+{
+  "verdict": "repair",
+  "summary": "B001 ve B002 kanıtla uyumludur. B003 ise başkasını yorma biçimindeki geniş ettirgen çekirdeği, uzun süre yürütme veya çalıştırma yöntemiyle sınırlandırmıştır. Bu daraltma yalnızca B003'ün listelenen alanlarında ve kök özetinde düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000456/B003",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıtın ortak çekirdeği bir başkasını yormaktır; yalnızca bir kaynak hayvanı yorma örneğini verir. Gerekçe ve sınır notu uzun yürüyüş ya da işi zorunlu katılımcı koşulu yaparak dal kimliğini daraltıyor.",
+      "smallest_correction": "Kabul durumunu koruyup gerekçe ile sınır notunu genel ettirgen yorma çekirdeğine göre yeniden kur; hayvanı yormayı belirgin örnek olarak belirt, uzun yürüyüş veya işi zorunlu sınır sayma."
+    },
+    {
+      "target_ref": "root_000456/B003",
+      "field": "lexicalization_scope",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Mekanik dal türü doğru biçimde bare olsa da not, çıplak dal anlamını uzun yürüyüş veya işle yorma biçiminde gereksiz yere sınırlandırıyor.",
+      "smallest_correction": "branch_kind değerini koru ve notu belirli bir söz öbeğine bağlı olmayan genel başkasını yorma anlamını verecek biçimde düzelt."
+    },
+    {
+      "target_ref": "root_000456/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ile ilk iki facet uzun süre hareket veya iş yüklemeyi ve zorlamayı çekirdeğe ekliyor. Yetkili kaynak ifadesi genel ettirgen yormayı destekler; hayvanı yorma ise özel örnektir.",
+      "smallest_correction": "Tanımı ve F001'i genel başkasını yorma çekirdeğine genişlet; F002'yi hayvana yönelen uzmanlaşma olarak düzelt ve F003'ü hayvanı yorma örneği olarak koru."
+    },
+    {
+      "target_ref": "root_000456/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet tüm kaynaklara yürüyüşü veya işi uzatma yöntemini yüklüyor; ortak olan yalnızca ettirgen yormadır, hayvan örneği ise kaynak kümesinin tamamına ait değildir.",
+      "smallest_correction": "Ortak özeti bir katılımcının başka bir katılımcıyı yorması çekirdeğiyle sınırla ve hayvan örneğinin özel bir gerçekleşme olduğunu belirt."
+    },
+    {
+      "target_ref": "root_000456/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı uzun süre yürütme veya çalıştırmayı zorunlu yöntem yapıyor ve böylece genel ettirgen yorma çekirdeğini karşılamıyor.",
+      "smallest_correction": "Karşılığı başkasını yormak biçimine genişlet; applicability, error_profile ve facet_ids alanlarını bu tam uyuma göre güncelle."
+    },
+    {
+      "target_ref": "root_000456/B003",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İki bağlamsal karşılık da kanıtta zorunlu olmayan uzun süre, aralıksız sürme veya çalışma yöntemini ekliyor. Kanıtın açık bağlamsal uzmanlaşması hayvanı yormaktır.",
+      "smallest_correction": "İlk karşılığı hayvanı yormak biçiminde düzelt ve ilgili açıklama ile hata profilini buna uyarla; kanıtsız çalışma yöntemi üzerine kurulu ikinci karşılığı kaldır."
+    },
+    {
+      "target_ref": "root_000456/B003",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu ayrımlarının focus_only ve distinction metinleri B003'ü sürekli yürütme veya iş yükleme yöntemiyle tanımlıyor. Bu yöntem dalın yetkili çekirdeği değil; çekirdek dış bir katılımcının diğerini yormasıdır.",
+      "smallest_correction": "Beş karşıtlığın B003 tarafını genel ettirgen yorma çekirdeğine göre düzelt; komşuların hayvan, sert sürme, sonuç durumu veya öznenin kendi çabası gibi kanıtlı özel sınırlarını koru."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök özeti üçüncü dalı uzun süren etkinlikle yorma biçiminde daraltarak B003'teki aynı çekirdek hatasını kök düzeyine taşıyor.",
+      "smallest_correction": "Üçüncü dalı bir başkasını yorma veya yorgun düşürme biçiminde özetle; diğer dalları ve sınıflandırma değerlerini koru."
+    }
+  ]
+}

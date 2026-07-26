@@ -1,0 +1,149 @@
+{
+  "inputs_sha256": "8e4bcc8e0c29aa245bda0dccc2f14a944f9ad55ccffcaa7bc54a091c96558a1d",
+  "verdict": "repair",
+  "summary": "B003 dalında korku nedeni ve aşırılık bütün sözlüksel biçimlerin ortak çekirdeği yapılmış; B006 dalında ise kaynakların genel ince uç veya namlu karşılığı yalnız ok ucuna daraltılmıştır. Bu iki sınır hatası kimlik, kavram haritası, kaynak özeti, karşılıklar ve komşu ayrımlarına yayılmıştır. Ayrıca B004 kaynak özeti, yolculukta güçten düşen devenin bakımla yeniden güç kazanması örneğini atlamaktadır.",
+  "issues": [
+    {
+      "target_ref": "root_000604/B003",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kimlik yargısı korku ve derin çekinmeden doğan tapınmayı bütün kaynakların ortak çekirdeği sayıyor. Oysa kaynak cümlesindeki çeşitli tanımlar yalnız tapınmayı veya keşişliği bildiriyor; korku nedeni ile ölçüyü aşan yüklenme belirli açıklamalarda görünür.",
+      "smallest_correction": "Durumu qualified yapın; ortak alanı tapınma ve keşişçe yaşama olarak, korku nedenini ve aşırı yüklenmeyi ise belirli kaynak ve biçimlere bağlı nitelikler olarak açıklayın."
+    },
+    {
+      "target_ref": "root_000604/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ile F001, korkuyu bütün dal için zorunlu neden yapıyor; F003 de aşırı çileyi dalın genel uzantısı gibi sunuyor. Kaynak cümlesinde yalın tapınma tanımları bulunduğu gibi aşırılık yalnız özel rahiplik uygulamasına ilişkin açıklamalarda yer alıyor.",
+      "smallest_correction": "Çekirdeği tapınmaya veya keşişçe yaşama olarak düzeltin; korku bağlantısını specialization, ölçüyü aşan tapınma yükünü de yalnız ilgili biçime bağlı specialization olarak tutun."
+    },
+    {
+      "target_ref": "root_000604/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet bütün kaynakların korkuyla tapınmaya yönelmeyi ortaklaştırdığını söylüyor. Kaynak cümlesinde birkaç sözlük yalnız tapınma karşılığını verir; korku, keşişlik, hücre hayatı ve aşırılık bütün kaynaklarda ortak değildir.",
+      "smallest_correction": "Ortak özeti yalın tapınma ve keşişlik alanıyla sınırlandırın; korku bağlantısını, hücre hayatını ve aşırılığı kaynaklar arasındaki ayrı vurgular olarak belirtin."
+    },
+    {
+      "target_ref": "root_000604/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak özeti yolculukta yorulup güçten düşme örneğini anıyor, fakat aynı kaynak cümlesinin devamındaki besleme ve iyi bakımla devenin yeniden güç kazanması sonucunu kapsamıyor.",
+      "smallest_correction": "Ortak özete, tekil yolculuk örneğinde devenin beslenip iyi bakımla yeniden gücüne kavuştuğunu belirten kısa bir cümle ekleyin."
+    },
+    {
+      "target_ref": "root_000604/B006",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kimlik yargısı bütün kaynakların yalnız ince ok ucunu verdiğini ve kılıç ile mızrak türlerinin dışarıda olduğunu söylüyor. Kaynak cümlesinin çoğu genel olarak ince uçları veya namluları bildirir; yalnız bir açıklama bunları ok uçlarıyla özelleştirir.",
+      "smallest_correction": "Durumu qualified yapın; genel ince silah ucu veya namluyu çekirdek, ok ucunu ise tek kaynaktaki özel açıklama olarak kaydedin ve kanıtsız dışlamaları kaldırın."
+    },
+    {
+      "target_ref": "root_000604/B006",
+      "field": "lexicalization_scope",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Mekanik bare türü doğru olsa da kapsam notu tanımı yalnız ince ok ucuna bağlıyor. Kaynak cümlesi genel ince uç veya namlu anlamını taşır ve ok ucu bunun kaynaklardan birindeki özelleşmesidir.",
+      "smallest_correction": "branch_kind değerini koruyun; notu genel ince silah ucu veya namlu kapsamını koruyacak ve ok ucunu özel açıklama sayacak biçimde düzeltin."
+    },
+    {
+      "target_ref": "root_000604/B006",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve iki facet bütün dalı ok ucuna indiriyor. Kaynakların ortak ifadesi ince uçlar veya namlulardır; ok uçları yalnız bir kaynakta açıkça belirtilmiştir, tekil ve çoğul ayrımı ise nesne türündeki bu farkı gidermez.",
+      "smallest_correction": "Tanım ile F001'i ince silah ucu veya namlu çekirdeğine genişletin; ok ucunu ayrı specialization olarak ekleyin ve tekil-çoğul bilgisini kaynak varyantı olarak koruyun."
+    },
+    {
+      "target_ref": "root_000604/B006",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet kaynakların ince ok ucu anlamında birleştiğini söylüyor. Kaynak cümlesinde ortak olan ince uç veya namlu niteliğidir; okla sınırlandırma yalnız bir sözlük açıklamasında bulunur.",
+      "smallest_correction": "Ortak özeti ince silah uçları veya namlular üzerinde birleşme biçiminde düzeltin ve ok ucu sınırlamasını tek kaynağa ait özelleşme olarak belirtin."
+    },
+    {
+      "target_ref": "root_000604/B006",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "ince ok ucu karşılığı, çoğu kaynakta okla sınırlandırılmayan ince uç veya namlu çekirdeğini daraltıyor; buna rağmen hata profili kayıp bulunmadığını ileri sürüyor.",
+      "smallest_correction": "Ana karşılığı ince silah ucu veya ince namlu olarak genişletin; hata profilini bu genel çekirdeğe göre düzeltin ve ok ucunu bağlamsal karşılıkta tutun."
+    },
+    {
+      "target_ref": "root_000604/B006",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "ince ok uçları bağlamsal karşılığı kaynaklardan birindeki özel bağlam için kullanılabilir, ancak mevcut applicability ve hata profili bunu bütün çoğul kullanımlara eksiksiz karşılık sayıyor.",
+      "smallest_correction": "Bu karşılığı yalnız ok uçlarının açıkça kastedildiği bağlama bağlayın ve hata profilinde genel ince uç veya namlu kapsamına göre narrowing kaydını belirtin."
+    },
+    {
+      "target_ref": "root_000604/B006",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_019",
+        "lu_020"
+      ],
+      "evidence_conflict": "Her iki sözlüksel karşılık da birimleri yalnız ok ucuna çeviriyor. Verilen birim anlamları çoğul ve tekil ince uç veya namlu karşılıklarını taşır; ok ucu sınırlaması kaynak cümlelerinin yalnız bir bölümündedir.",
+      "smallest_correction": "lu_019 karşılığını ince silah uçları veya ince namlular, lu_020 karşılığını ince silah ucu veya ince namlu yapın; ok ucu özel bağlamını bu yalın karşılıklara zorunlu sınır olarak eklemeyin."
+    },
+    {
+      "target_ref": "root_000604/B006",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu ayrımlarının focus_only, shared_zone ve distinction metinleri odağı yalnız ok ucuna bağladığı için genel ince uç veya namlu çekirdeğine göre sınırları yanlış kuruyor; özellikle mızrak ucu ve keskin kenar komşularıyla örtüşme olduğundan dar gösteriliyor.",
+      "smallest_correction": "Bütün seçili komşu satırlarında odağın genel ince silah ucu veya namlu sınırını esas alın; ortak alanları ve ayrımları buna göre yeniden yazıp ilişki türlerini bu genişletilmiş sınır üzerinden yeniden doğrulayın."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök özeti B003 dalını genel olarak korkudan doğan tapınma, B006 dalını da yalnız ince ok ucu diye sunarak iki dalın yukarıdaki aşırı dar veya aşırı nedensel çerçevelerini kök düzeyinde tekrar ediyor.",
+      "smallest_correction": "Özette B003'ü tapınma ve keşişlik, korku bağlantılı özel biçimleriyle; B006'yı ince silah ucu veya namlu, ok ucuna özgü kullanımıyla birlikte ifade edin."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dalların genel ayrımını ve sözlükselleşme kapsamını koruyor; ancak B002 kavram karşılığı bağlama bağlı sertliği çekirdeğe taşıyor, B003 çekirdek yüzü bütün işlemleri maddeden parça kaldırmaya indirgiyor ve parlatılmış kılıç karşılığı kanıtsız biçimde bilenmeyi ekliyor. Bu üç alan küçük ve doğrudan düzeltmelerle onarılabilir.",
+  "issues": [
+    {
+      "target_ref": "root_000411/B002",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Dalın kaynak çekirdeği pürüzlülük ve kalınlıktır; sertlik yalnızca alın, insan ve benzeri özel gerçekleşmelerde görünür. Kavram karşılığındaki \"sert olma\" ifadesi bu bağımlı niteliği bütün dalın çekirdeğine yükseltiyor ve kendi F001 yüzüyle de uyuşmuyor.",
+      "smallest_correction": "Kavram karşılığını \"pürüzlü ve kalın olma\" olarak değiştir; uygulanabilirlik ve korunan özellik açıklamalarından sertliği çekirdek bileşen olarak sunan sözleri çıkar."
+    },
+    {
+      "target_ref": "root_000411/B003",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F001 bütün silah ve ok işleme alanını yüzeyden madde kaldırma olarak tanımlıyor. Oysa kanıt kılıcın yapımına veya dövülmesine başlanmasını, bilenmesini ve parlatılmasını da kapsıyor; özellikle ilk biçim verme ve dövme zorunlu olarak yüzeyden madde kaldırma değildir.",
+      "smallest_correction": "Yalnızca F001 ifadesini, çekirdek alanı silah veya oka biçim verme, keskinleştirme ve yüzeyi bitirme işlemleri olarak anlatacak biçimde düzelt."
+    },
+    {
+      "target_ref": "root_000411/B003",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F003 için verilen \"bilenmiş ve parlatılmış kılıç\" karşılığı, bu karşıt varyantın kanıtında yalnızca parlatılmış veya yeni parlatılmış kılıç bulunmasına rağmen bilenmeyi de zorunlu kılıyor. Bileme ayrı bir kılıç kullanımında kanıtlanmıştır.",
+      "smallest_correction": "F003 bağlamsal karşılığından \"bilenmiş ve\" sözlerini çıkar ve korunan özellik açıklamasını yalnızca tamamlanmış, parlatılmış yüzeyi anlatacak biçimde daralt."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak B004 için seçilen komşuluk ilişkisi, yalnızca dolaylı anlatımı kuran eylem imgesinin farklılığı nedeniyle gereksiz yere daraltılmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_001088/B004",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Odak dal ile root_001659/B006, kadınla cinsel ilişkiyi yerleşmiş bir dolaylı anlatımla bildirme bakımından aynı çekirdeğe ve sınıra sahiptir. Yanıtın belirttiği gelme veya örtme imgesi ile basma imgesi arasındaki fark ek kapsam, katılımcı, koşul ya da uzmanlaşmış bağlam oluşturmaz; bu nedenle near_synonym ve partial sınıflandırmasını desteklemez.",
+      "smallest_correction": "Bu satırda relation_type değerini synonym, boundary_match değerini exact yapın; focus_only ve neighbor_only alanlarını null olarak ayarlayın ve distinction metnini iki dal arasında anlamlı bir sınır farkı bulunmadığını belirtecek biçimde düzeltin."
+    }
+  ]
+}

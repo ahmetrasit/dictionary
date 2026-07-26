@@ -1,0 +1,37 @@
+{
+  "verdict": "editorial_review",
+  "summary": "B001 dalındaki temel katılımcı rolleri genel olarak doğru kurulmuş, ancak kavram karşılığı, lu_001 karşılığı ve kök özeti aynı ifadeyle rolleri tersine çevirmiştir. Kaynakta belaya uğrayan düşman değil, düşmanın hasmıdır; düşman bu belaya sevinen taraftır. Görev sınırı yazar çıktısını değiştirmeye izin vermediğinden bu yerel ve yüksek güvenli düzeltmeler editoryal incelemeye bırakılmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_000816/B001",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "\"düşmanın uğradığı belaya sevinme\" ifadesi düşmanı belaya uğrayan kişi yapar. bc_001 ise düşmanın, hasmının başına gelen belaya sevindiğini bildirir; böylece sevinen ile belaya uğrayan katılımcılar karşılıkta tersine dönmüştür.",
+      "smallest_correction": "concept_gloss.text değerini \"hasmının başına gelen belaya düşmanca sevinme\" olarak değiştirin ve hata profilindeki koruma açıklamasını bu katılımcı düzeniyle uyumlu tutun."
+    },
+    {
+      "target_ref": "root_000816/B001",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001"
+      ],
+      "evidence_conflict": "lu_001 için verilen \"düşmanın uğradığı belaya sevinme\" karşılığı, kaynak birimin düşmanın kendi hasmının belasına sevinmesi yönündeki katılımcı yapısını tersine çevirir.",
+      "smallest_correction": "Yalnız lu_001 target_gloss değerini \"hasmının başına gelen belaya düşmanca sevinme\" olarak değiştirin."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök özetindeki \"düşmanın başına gelen kötülüğe sevinme\" ifadesi yine düşmanı kötülüğe uğrayan taraf yapar; incelenen B001 dalında düşman, hasmının uğradığı kötülüğe sevinen taraftır.",
+      "smallest_correction": "Kök özetinin ilk alanını \"hasmının başına gelen kötülüğe düşmanca sevinme\" olarak değiştirin; diğer dört alanı aynen koruyun."
+    }
+  ]
+}

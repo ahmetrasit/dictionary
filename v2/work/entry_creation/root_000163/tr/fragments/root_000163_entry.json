@@ -1,5 +1,5 @@
 {
-  "inputs_sha256": "3a3d227d05debe0c2453b86a4fb0c00292b1c5c251bb035c96ed3fc4dab2bec1",
+  "inputs_sha256": "5ca33144cbc4b4a54f52291808713e78fbc3699b1a747aa12bb8c3d551974d51",
   "artifact_format": "dictionary-v2-root-entry-draft-v1",
   "generated_by": "v2/scripts/accept_root_writer.py",
   "root_envelope_id": "root_000163",
@@ -7,65 +7,51 @@
   "branches": [
     {
       "branch_ref": "root_000163/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, dalın merkezini bilinen kapı ve bir şeyin giriş yeri olarak açıkça kurar. Çoğul ve ses tarihi notları bu nesne ya da yer anlamını değiştirmez.",
+        "boundary_note": "Dal, girişin kendisini bildirir; açma, kapama, içeri girme, bölümlendirme ya da kapıda görev yapma eylemlerini içermez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın dalı kapsar ve türemiş biçimlere ya da belirli söz öbeklerine özgü anlamları bu çekirdeğe katmaz."
+      },
       "concept_map": {
-        "definition": "Bir şeyin içeri girilen kapısı veya girişidir; çoğul anlatımın olağan bir biçimi ile yalnız ikili eşleşmede kullanılan kısıtlı bir biçimi vardır.",
+        "definition": "Bir yere veya bir şeyin içine geçiş sağlayan giriş yeri ya da bu girişi kapatıp açmaya yarayan kapıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Somut bir nesneye veya yapıya geçiş sağlayan kapıyı ya da giriş kısmını belirtir.",
+            "statement": "Bir şeyin içine geçilen açıklık veya giriş noktasıdır ve somut kapıyı da kapsar.",
             "claim_ids": [
-              "lu_001"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Birden çok kapı, olağan çoğul biçimiyle ifade edilir.",
-            "claim_ids": [
-              "lu_002"
-            ]
-          },
-          {
-            "facet_id": "F003",
             "role": "source_variant",
-            "statement": "Başka bir çoğul biçimi yalnız ikili kullanım eşleşmesinde kabul edilir ve tek başına kullanılamaz.",
+            "statement": "Adın olağan çoğul biçimi, bu tür girişlerin ya da kapıların birden fazlasını bildirir.",
             "claim_ids": [
-              "lu_003"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Anlamın ortak çekirdeği, bir şeyin bilinen kapısı veya içeri geçilen giriş kısmıdır.",
+        "common_summary": "Kaynakların ortak çekirdeği, sözcüğün bilinen kapıyı ve bir şeyin giriş yerini göstermesidir. Ayrıca olağan çoğul biçimi ve sözcüğün ses tarihine ilişkin bir dönüşüm notu verilir.",
         "common_claim_ids": [
-          "lu_001"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_002"
-            ],
-            "kind": "derivation",
-            "summary": "Olağan çoğul biçim, birden çok kapıyı bildirir."
-          },
-          {
-            "claim_ids": [
-              "lu_003"
-            ],
-            "kind": "restriction",
-            "summary": "Özel çoğul biçim yalnız ikili bir eşleşme içinde kullanılabilir; tek başına kullanımı kabul edilmez."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "kapı veya giriş",
-        "applicability": "Bir nesnenin ya da yapının hem geçiş açıklığını hem de bu açıklığı kapatan kapıyı karşılayan temel kullanımdır.",
+        "text": "giriş yeri veya kapı",
+        "applicability": "Hem bir şeyin içine geçilen yeri hem de bu geçişi denetleyen somut kapıyı birlikte ifade etmek gerektiğinde kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Kapı nesnesini ve içeri geçilen giriş işlevini birlikte korur.",
+          "preserves": "Giriş noktası ile somut kapı arasındaki çekirdek kapsamı birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -76,33 +62,33 @@
       },
       "contextual_glosses": [
         {
-          "text": "kapılar",
-          "usage_role": "contextual",
-          "applicability": "Birden çok kapının olağan çoğul biçimle anıldığı bağlamlarda kullanılır.",
+          "text": "kapı",
+          "usage_role": "general",
+          "applicability": "Bağlamda açılıp kapanan somut nesne veya bilinen kapı öne çıktığında doğal karşılıktır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Birden çok kapı bulunduğu bilgisini doğal bir çoğulla aktarır.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Somut kapı ve onun geçişi denetleme işlevini korur.",
+            "loses": "Her tür şeyin daha genel giriş noktası olabilme kapsamını geri plana iter.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F002"
+            "F001"
           ]
         },
         {
-          "text": "eşli kullanımda özel kapılar çoğulu",
-          "usage_role": "explanatory",
-          "applicability": "Yalnız başka bir ikili biçimle eşleştiğinde geçerli olan kısıtlı çoğul kullanımını açıklar.",
+          "text": "giriş",
+          "usage_role": "contextual",
+          "applicability": "Bir yerin veya başka bir şeyin içine geçilen nokta vurgulandığında kullanılır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Çoğulluk anlamını, ikili eşleşme şartını ve tek başına kullanılamama sınırını korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "İçeri geçiş sağlayan yer ve açıklık anlamını korur.",
+            "loses": "Açılıp kapanan somut kapı nesnesini zorunlu olarak bildirmez.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F003"
+            "F001"
           ]
         }
       ],
@@ -110,7 +96,7 @@
         {
           "lexical_unit_id": "lu_001",
           "rendering_kind": "ordinary",
-          "target_gloss": "kapı; giriş"
+          "target_gloss": "giriş yeri veya kapı"
         },
         {
           "lexical_unit_id": "lu_002",
@@ -120,55 +106,46 @@
         {
           "lexical_unit_id": "lu_003",
           "rendering_kind": "ordinary",
-          "target_gloss": "yalnız ikili eşleşmede kullanılan özel kapılar çoğulu"
+          "target_gloss": "yalnız söz eşlemesi içinde kullanılabilen ve tek başına kullanılamayan kısıtlı çoğul biçimi"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_001124/B001",
+          "neighbor_ref": "root_000435/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak, giriş açıklığının yanında onu kapatan kapı nesnesini de adlandırır.",
-          "neighbor_only": "Komşu, kapalı olanın açılması, aralanması veya bir açıklığın genişlemesi süreçlerini de kapsar.",
-          "gloss": "açıklık ve açılma",
-          "shared_zone": "İki dal da bir yerden içeri geçişe imkân veren açıklık alanında buluşur.",
-          "distinction": "Odak dal kapıyı veya girişi bir varlık olarak adlandırır; komşu dal ise kapalılığın giderilmesi ya da açıklığın genişlemesi durumunu öne çıkarır."
+          "focus_only": "Bu dal, açıklığın bir şeyin içine geçiş sağlayan giriş olmasını ve kapı işlevini öne çıkarır.",
+          "neighbor_only": "Komşu dal, iki şey arasındaki her türlü aralığı ve aradan geçen yolu giriş işlevi aramadan kapsar.",
+          "gloss": "giriş ile aralık",
+          "shared_zone": "Her ikisi de iki taraf arasında geçişe elverebilen uzamsal bir açıklığı gösterebilir.",
+          "distinction": "Giriş yeri belirli bir şeyin içine yönelen erişim noktasıdır; aralık ise yalnızca iki şey arasındaki boşluk olabilir ve bir iç mekâna giriş sağlaması gerekmez."
+        },
+        {
+          "neighbor_ref": "root_001124/B001",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Bu dal, giriş yerini veya kapıyı bir varlık olarak adlandırır.",
+          "neighbor_only": "Komşu dal, kapalı olanın açılması, ortaya çıkması ya da açıklığın genişlemesi sürecini bildirir.",
+          "gloss": "kapı ile açılma",
+          "shared_zone": "İki dal da kapı ve geçiş açıklığı çevresindeki aynı somut duruma uygulanabilir.",
+          "distinction": "Buradaki çekirdek girişin kendisidir; komşu dalın çekirdeği ise kapalı durumdan açık duruma geçiş veya açıklığın genişlemesidir."
         },
         {
           "neighbor_ref": "root_000464/B001",
           "relation_type": "thematic",
           "boundary_match": "thematic_only",
-          "focus_only": "Odak, geçişin gerçekleştiği kapıyı veya giriş yerini belirtir.",
-          "neighbor_only": "Komşu, bir yere, zamana ya da işe girme eylemini ve içeri sokmayı belirtir.",
-          "gloss": "içeri girme",
-          "shared_zone": "Kapı veya giriş, içeri girme olayının gerçekleşebileceği yerlerden biridir.",
-          "distinction": "Odak bir geçiş yerini ya da kapı nesnesini gösterirken komşu, bu yerden geçme eylemini veya bir şeyi içeri alma sürecini anlatır."
-        },
-        {
-          "neighbor_ref": "root_001101/B001",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Odak için kapının kapalı, kilitli veya sağlam biçimde örtülmüş olması gerekmez.",
-          "neighbor_only": "Komşu, sıkıca kapatma durumunu ve kapatıp açmaya yarayan düzeneği içerir.",
-          "gloss": "kilitli kapı ve kapatma düzeneği",
-          "shared_zone": "Her iki dal kapı nesnesi ve girişin denetlenmesi çevresinde kesişir.",
-          "distinction": "Odak kapının kendisini veya giriş işlevini bildirir; komşu ise kapının sıkıca kapalı oluşunu ve bunu sağlayan aracı sınırına alır."
-        },
-        {
-          "neighbor_ref": "root_000163/B002",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Odak, somut kapıyı veya bir şeyin girişini adlandırır.",
-          "neighbor_only": "Komşu, bir bütünü bölümlere ve sınıflara ayırıp düzenleme işlemini anlatır.",
-          "gloss": "bölümlere ayırma",
-          "shared_zone": "Bölüm kavramı, kapı adının düzenleyici bir sınıflama alanına taşınmasıyla ilişkilidir.",
-          "distinction": "Odak fiziksel geçiş yeri ya da kapıdır; komşu dalda somut giriş anlamı değil, konuları ayrı bölümler hâlinde düzenleme işlemi esastır."
+          "focus_only": "Bu dal, geçişin gerçekleştiği giriş noktasını veya kapıyı belirtir.",
+          "neighbor_only": "Komşu dal, bir kişinin ya da şeyin dışarıdan içeriye geçmesi eylemini belirtir.",
+          "gloss": "giriş yeri ile içeri girme",
+          "shared_zone": "Bir iç mekâna geçiş senaryosunda giriş yeri ile içeri girme eylemi birlikte bulunabilir.",
+          "distinction": "Biri geçişin mekânsal aracını veya noktasını, diğeri o noktadan içeri yönelen hareketi anlatır; bu nedenle birbirlerinin yerine kullanılamazlar."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; geçiş açıklığı, içeri girme, kapatma düzeneği ve bölümlendirme ile kurulan dört karşıtlık sınırı en açık biçimde gösterdi.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; giriş, açıklık ve içeri geçişle doğrudan karışabilecek üç aday yayımlandı, yalnızca aynı kökü veya kapı senaryosunu paylaşan ötekiler elendi.",
       "branch_image_ar": "مدخل الشيء",
       "what_is_ar": "الباب ومدخل الشيء وأبوابه وألفه المنقلبة عن واو",
+      "what_is_not_ar": "ليس التبويب ولا البواب الحاجب ولا البابة الغاية",
       "source_phrase_ar": "الباب أصل ألفه واو (maqayis)؛ الباب معروف (ayn)؛ الباب يجمع أبوابا (sihah)؛ الباب يقال لمدخل الشيء (mufradat)",
       "sources": [
         "MQ",
@@ -176,73 +153,73 @@
         "SI",
         "MU"
       ],
-      "source_note": {
-        "SI": "Olağan çoğul biçim, birden çok kapıyı bildirir. Özel çoğul biçim yalnız ikili bir eşleşme içinde kullanılabilir; tek başına kullanımı kabul edilmez."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000163/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi hem bir şeyi bölümlere veya sınıflara ayırma eylemini hem de bu yolla düzenlenmiş bölümleri açıkça destekler. Dal çerçevesi bu iki bağlı kullanımı doğru biçimde yansıtır.",
+        "boundary_note": "Çekirdek, düzenli bölüm veya sınıf oluşturmadır; yalnızca kesme, parçalama ya da mevcut bir parçayı adlandırma bu dala girmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, türemiş eylem adındaki bölümleme ile belirli söz öbeğindeki düzenlenmiş bölümleri ayırır ve ikisini yalın kök anlamı saymaz."
+      },
       "concept_map": {
-        "definition": "Bir bütünü konu veya türlerine göre bölümlere ayırıp düzenlemektir; bunun sonucunda sınıflandırılmış ve sıralanmış bölümler oluşur.",
+        "definition": "Bir şeyi anlamlı bölümlere veya sınıflara ayırıp düzenleme eylemidir; belirli söz öbeğinde ise bu yolla sınıflandırılmış ve sıralanmış bölümleri niteler.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir bütünü ayrı bölümlere veya sınıflara ayırma ve bu ayrımları düzenleme işlemidir.",
+            "statement": "Bir bütünü konu, tür veya işlev bakımından bölümlere ve sınıflara ayırıp düzenlemektir.",
             "claim_ids": [
-              "lu_004"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "İşlemin ürünü, sınıflandırılmış ve belirli bir sıraya konmuş bölümlerdir.",
+            "statement": "Belirli söz öbeğinde, oluşturulmuş bölümlerin sınıflandırılmış ve düzenlenmiş olmasını bildirir.",
             "claim_ids": [
-              "lu_005"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak anlam, bir şeyi ayrı bölümler veya sınıflar hâline getirerek düzenleme işlemidir.",
+        "common_summary": "Kaynaklar, eylem adını bir şeyi bölümlere ayırma olarak verir ve düzenlenmiş bölümleri sınıflandırılmış türlerle karşılaştırır. Böylece işlem ile işlemin düzenli sonucu birbirine bağlı, fakat ayrı kullanımlar olarak görünür.",
         "common_claim_ids": [
-          "lu_004"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_005"
-            ],
-            "kind": "derivation",
-            "summary": "Türetilmiş kullanım, sınıflandırılıp sıraya konmuş bölümleri sonuç olarak adlandırır."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "bölümlere ayırıp sınıflandırma",
-        "applicability": "Bir metni, konuyu veya başka bir bütünü ayrı başlıklar ya da türler altında düzenleme işlemini karşılar.",
+        "text": "bölümlere ayırıp düzenleme",
+        "applicability": "Bir bütünü yalnızca parçalamak değil, adlandırılabilir bölümler veya sınıflar halinde düzenlemek anlatıldığında kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Hem ayrı bölümler oluşturmayı hem de onları sınıflandırarak düzenlemeyi korur.",
+          "preserves": "Bölüm oluşturma ile bu bölümleri sınıflandırıp düzenleme işlemlerini birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "konulara göre bölümlendirmek",
-          "usage_role": "contextual",
-          "applicability": "Bir içeriğin konu başlıklarına göre ayrılıp düzenlendiği eylem bağlamlarında kullanılır.",
+          "text": "bölümlere ayırmak",
+          "usage_role": "general",
+          "applicability": "Eylemin kendisi öne çıktığında ve bağlam düzenleme amacını zaten gösterdiğinde kullanılır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Bütünü konu temelli ayrı ve düzenli bölümlere dönüştürme işlemini korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Bir bütünden ayrı bölümler oluşturma işlemini korur.",
+            "loses": "Bölümlerin sınıflandırılması ve düzenli bir yapı içinde sunulması koşulunu açıkça söylemez.",
             "adds": null,
             "collision": null
           },
@@ -251,13 +228,13 @@
           ]
         },
         {
-          "text": "sınıflandırılmış düzenli bölümler",
-          "usage_role": "explanatory",
-          "applicability": "Bölümlere ayırma işleminin tamamlanmış ürününden söz edildiğinde kullanılır.",
+          "text": "düzenlenmiş bölümler",
+          "usage_role": "contextual",
+          "applicability": "Belirli söz öbeği, işlemi değil ortaya çıkan sınıflandırılmış bölümleri nitelediğinde kullanılır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Bölümlerin hem sınıflandırılmış hem de düzenlenmiş olmasını korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Sonuçtaki bölümlerin düzenli ve sınıflandırılmış oluşunu korur.",
+            "loses": "Bütünü bu bölümlere ayıran oluşturma eylemini doğrudan ifade etmez.",
             "adds": null,
             "collision": null
           },
@@ -270,115 +247,105 @@
         {
           "lexical_unit_id": "lu_004",
           "rendering_kind": "ordinary",
-          "target_gloss": "bölümlere ayırma; sınıflandırma"
+          "target_gloss": "bölümlere veya sınıflara ayırıp düzenleme"
         },
         {
           "lexical_unit_id": "lu_005",
           "rendering_kind": "ordinary",
-          "target_gloss": "sınıflandırılıp düzenlenmiş bölümler"
+          "target_gloss": "sınıflandırılmış, düzenlenmiş bölümler"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_000241/B002",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak, ortaya çıkan bölümleri konu veya türlerine göre sınıflandırıp düzenler.",
-          "neighbor_only": "Komşu, bir şeyin herhangi bir parçasını ve bütünü parçalara ayırmayı daha genel biçimde kapsar.",
-          "gloss": "parçalara ayırma",
-          "shared_zone": "Her iki dal da bir bütünü daha küçük ve ayırt edilebilir birimlere bölmeyi içerir.",
-          "distinction": "Odak dalda düzenli bölüm ve sınıf oluşturma şartı vardır; komşu dalda ise parçalar konu başlığı veya sınıf niteliği taşımadan da bulunabilir."
-        },
-        {
           "neighbor_ref": "root_001240/B008",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak, ayrılan birimleri düzenli bölümler veya sınıflar olarak kurar.",
-          "neighbor_only": "Komşu, toplulukları dağıtma ve bir şeyi keserek ya da parçalayarak bölme gibi daha geniş ayrıştırmaları kapsar.",
-          "gloss": "ayırma ve parçalama",
-          "shared_zone": "İki dalda da tek bir bütünün birden çok kısma ayrılması ortak işlemdir.",
-          "distinction": "Odak, düzenleyici ve sınıflandırıcı bir bölümlendirmedir; komşu ise düzenli sınıflar oluşturma amacı bulunmayan dağıtma, kesme ve parçalama işlemlerini de içerir."
-        },
-        {
-          "neighbor_ref": "root_001492/B004",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Odak, önce ayrı bölümler veya sınıflar oluşturmayı gerektirir.",
-          "neighbor_only": "Komşu, bir şeyi kendi uygun yerine ya da derecesine koymakla sınırlı olabilir.",
-          "gloss": "uygun yerine koyma",
-          "shared_zone": "Her iki dal bir içeriği veya nesneyi düzenli bir yapıya yerleştirme fikrini paylaşır.",
-          "distinction": "Odak bütünü sınıflara ayırarak yeni bölümler kurar; komşu mevcut bir şeyi uygun konumuna yerleştirir ve mutlaka bölümlendirme yapmaz."
+          "focus_only": "Bu dal, parçaları bölüm veya sınıf olarak düzenli bir yapıya yerleştirmeyi gerektirir.",
+          "neighbor_only": "Komşu dal, toplulukları ayırmadan bir şeyi kesip parçalara bölmeye kadar daha geniş ayrıştırma eylemlerini kapsar.",
+          "gloss": "bölümleme ile parçalama",
+          "shared_zone": "Her iki dal da bir bütünün birden çok parçaya veya kümeye ayrılmasını anlatabilir.",
+          "distinction": "Bölümleme, ortaya çıkan parçaların bölüm veya sınıf olarak düzenlenmesini içerir; komşu anlamda düzenli sınıflandırma olmadan salt ayırma ya da kesme yeterlidir."
         },
         {
           "neighbor_ref": "root_001159/B013",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak, içeriği ayrı ve düzenli bölümler hâline getirmeyi amaçlar.",
-          "neighbor_only": "Komşu, parçaları ve anlamları açıklayıp belirginleştirme işlevini de taşır.",
-          "gloss": "ayrıntılandırıp açıklama",
-          "shared_zone": "Her iki dal, bir bütünün iç yapısını ayrımlar yoluyla görünür kılar.",
-          "distinction": "Odak sınıflandırılmış bölümler oluşturur; komşu ayrımları açıklama ve anlamları belirginleştirme amacıyla yapar, bu nedenle bölüm kurması gerekmez."
+          "focus_only": "Bu dalın sonucu, bir bütünün düzenlenmiş bölümlere veya sınıflara ayrılmasıdır.",
+          "neighbor_only": "Komşu dalın amacı, parçaları ve anlamları açıklayıp belirsizliği gidermektir.",
+          "gloss": "bölümleme ile ayrıntılı açıklama",
+          "shared_zone": "Bir metni veya konuyu parçalara ayırmak, hem düzenlemeye hem de açıklamaya hizmet edebilir.",
+          "distinction": "Burada kurucu işlem yapısal sınıflandırmadır; komşu dalda ise parçaları ve anlamları belirginleştiren açıklama öne çıkar."
+        },
+        {
+          "neighbor_ref": "root_000241/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal, bütünü bölümlere ayıran ve onları düzenleyen işlemi bildirir.",
+          "neighbor_only": "Komşu dal, işlemin kendisinden bağımsız olarak bir parçayı, topluluğu veya bütünü oluşturan unsuru adlandırabilir.",
+          "gloss": "bölümleme ile parça",
+          "shared_zone": "Bölümleme sonucunda ortaya çıkan her bölüm, bir bütünün parçası olarak görülebilir.",
+          "distinction": "Biri düzenleyici bir ayırma işlemidir; diğeri ise bu işlem yapılmış olsun ya da olmasın mevcut bir parçayı veya topluluğu gösterir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel parçalama, geniş ayrıştırma, uygun yere koyma ve açıklayıcı ayrıntılandırma ile olan dört ayrım bölümlendirmenin özel sınırını gösterdi.",
+      "neighbor_coverage_note": "Bütün adaylar karşılaştırıldı; düzenli bölümleme, genel parçalama, açıklayıcı ayrıştırma ve parça adı arasındaki sınırı gösteren üç aday seçildi.",
       "branch_image_ar": "جعل الشيء أبوابا",
       "what_is_ar": "التبويب والأبواب المبوبة أي جعل الشيء أبوابا وأصنافا",
+      "what_is_not_ar": "ليس الباب المدخل ولا البواب الحاجب",
       "source_phrase_ar": "الفعل منه التبويب (ayn)؛ أبواب مبوبة كما يقال أصناف مصنفة (sihah)",
       "sources": [
         "AY",
         "SI"
       ],
-      "source_note": {
-        "SI": "Türetilmiş kullanım, sınıflandırılıp sıraya konmuş bölümleri sonuç olarak adlandırır."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000163/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, kapıda duran görevliyi ve böyle bir görevli edinme eylemini birlikte verir. Geçici dal çerçevesi iki kullanımı da doğru sınırlar içinde tutar.",
+        "boundary_note": "Dal kapının kendisini değil, kapıyı gözeten görevliyi ve yalnızca ilgili türemiş söyleyişte bu görevliyi tutma eylemini bildirir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, görevli adını görevli edinme bildiren söz öbeğinden ayırır; bu eylem yalın biçime genellenmez."
+      },
       "concept_map": {
-        "definition": "Kapıda durarak giriş çıkışı gözeten görevli veya kapıcıdır. Kullanım, böyle bir kişiyi tutma ya da kapı görevlisi yapma eylemini de kapsar.",
+        "definition": "Kapıda durup giriş çıkışı gözeten görevliyi bildirir; belirli türemiş söyleyişte ise böyle bir görevliyi tutma veya görevlendirme eylemini anlatır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kapıda bulunup giriş çıkışı gözeten ve kapıyla ilgilenen görevliyi belirtir.",
+            "statement": "Kapıda bulunarak giriş çıkışı gözeten ve denetleyen görevli kişidir.",
             "claim_ids": [
-              "lu_007"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "associated_use",
-            "statement": "Bir kişiyi kapı görevlisi olarak tutma veya bu göreve getirme eylemini belirtir.",
+            "role": "extension",
+            "statement": "Belirli türemiş söyleyiş, birini kapı görevlisi olarak tutmayı veya görevlendirmeyi bildirir.",
             "claim_ids": [
-              "lu_006"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak eylem anlamı, kapıda görev yapacak bir kişiyi tutmak veya onu kapı görevlisi yapmaktır.",
+        "common_summary": "Kaynaklar görevli adını kapıda duran ve giriş çıkışı gözeten kişi olarak ortaklaşa verir. Aynı tanıklık kümesi, belirli türemiş söyleyişi böyle bir görevli edinme anlamıyla açıklar.",
         "common_claim_ids": [
-          "lu_006"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_007"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Görevli, kapıda durup giriş çıkışı gözeten kapıcı olarak tanımlanır."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "kapı görevlisi ve onu görevlendirme",
-        "applicability": "Hem kapıda gözetim yapan kişiyi hem de birini bu görev için tutma veya atama eylemini birlikte temsil eder.",
+        "text": "kapı görevlisi; kapı görevlisi tutma",
+        "applicability": "Görevli adı ile yalnızca ilgili türemiş söyleyişteki görevli edinme eyleminin birlikte temsil edilmesi gerektiğinde kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Kapıdaki görevliyi ve bir kişiyi bu göreve getirme eylemini birlikte korur.",
+          "preserves": "Kapıyı gözeten kişi ile böyle bir kişiyi görevlendirme kullanımını ayrı ayrı korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -390,13 +357,13 @@
       },
       "contextual_glosses": [
         {
-          "text": "kapıcı; kapı görevlisi",
-          "usage_role": "contextual",
-          "applicability": "Kapıda bulunup giriş çıkışı gözeten kişiden söz edilen bağlamlarda kullanılır.",
+          "text": "kapı görevlisi",
+          "usage_role": "general",
+          "applicability": "Kapıda duran ve giriş çıkışı gözeten kişi adlandırıldığında kullanılır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Görevlinin kapıya bağlı görevini ve gözetim işlevini korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Kapıda görev yapan ve giriş çıkışı denetleyen kişi anlamını korur.",
+            "loses": "Böyle bir görevliyi tutma veya görevlendirme eylemini kapsamaz.",
             "adds": null,
             "collision": null
           },
@@ -405,13 +372,13 @@
           ]
         },
         {
-          "text": "kapıcı tutmak",
+          "text": "kapı görevlisi tutmak",
           "usage_role": "contextual",
-          "applicability": "Bir kişinin kapıda görev yapmak üzere tutulduğu eylem bağlamlarında kullanılır.",
+          "applicability": "Belirli türemiş söyleyiş, birini bu görev için edinmeyi anlattığında kullanılır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Birini kapı görevlisi edinme veya bu görev için tutma işlemini korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Bir kişiyi kapı görevlisi olarak edinme eylemini korur.",
+            "loses": "Kapı görevlisinin bağımsız kişi adı olarak kullanımını içermez.",
             "adds": null,
             "collision": null
           },
@@ -424,131 +391,120 @@
         {
           "lexical_unit_id": "lu_006",
           "rendering_kind": "ordinary",
-          "target_gloss": "kapıcı tutmak; birini kapı görevlisi yapmak"
+          "target_gloss": "kapı görevlisi tutmak"
         },
         {
           "lexical_unit_id": "lu_007",
           "rendering_kind": "ordinary",
-          "target_gloss": "kapıcı; kapı görevlisi"
+          "target_gloss": "kapıda giriş çıkışı gözeten görevli"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000307/B001",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak, görev yerini kapı ve giriş çıkış denetimiyle sınırlar.",
-          "neighbor_only": "Komşu, herhangi bir kişiyi, yeri veya varlığı koruma ve kollama işini geniş biçimde kapsar.",
-          "gloss": "koruma görevlisi",
-          "shared_zone": "Her iki dalda da bir yeri gözeten ve istenmeyen geçişe karşı koruyan görevli bulunabilir.",
-          "distinction": "Kapı görevlisi genel bir koruyucudan daha dar kapsamlıdır: görev yeri kapıdır ve işi giriş çıkışı yönetmektir; komşu dalda korunan yer ve koruma biçimi sınırsızdır."
-        },
-        {
-          "neighbor_ref": "root_000297/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak, kapıda denetim yapan insan görevliyi veya onu görevlendirmeyi belirtir.",
-          "neighbor_only": "Komşu, iki taraf arasına giren herhangi bir engeli ve engelleme işlevini kapsar.",
-          "gloss": "engel koyup ayırma",
-          "shared_zone": "Kapı görevlisi gerektiğinde kişiler arasında engel olarak geçişi önleyebilir.",
-          "distinction": "Odakta kapıya bağlı bir görev ve insan katılımcı vardır; komşuda ise ayıran unsur kişi olmak zorunda değildir ve kapıyla ilişkili değildir."
+          "focus_only": "Bu dal, görevi belirli olarak kapıda ve giriş çıkış üzerinde kurulan kişiyi adlandırır.",
+          "neighbor_only": "Komşu dal, herhangi bir kişi, yer veya şeyi koruma ve gözetme etkinliğini daha genel olarak kapsar.",
+          "gloss": "kapı görevlisi ile bekçi",
+          "shared_zone": "Kapı görevlisi, bulunduğu girişi gözettiği ölçüde koruma ve bekçilik yapabilir.",
+          "distinction": "Kapı görevlisinin ayırt edici yönü kapıdaki giriş çıkışı yönetmesidir; genel bekçilikte kapı, ziyaretçi kabulü veya geçiş denetimi zorunlu değildir."
         },
         {
-          "neighbor_ref": "root_000728/B004",
+          "neighbor_ref": "root_000980/B006",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "Odak, sıradan bir kapıda giriş çıkışı yöneten tekil görevliyi kapsar.",
-          "neighbor_only": "Komşu, sınır hattında gözcülük yapan silahlı topluluğu ve onların konuşlandığı yeri kapsar.",
-          "gloss": "silahlı sınır gözcüsü",
-          "shared_zone": "Her iki dal belirli bir geçiş noktasını gözetmekle görevli kişileri içerir.",
-          "distinction": "Odaktaki görev kapıya ve giriş çıkışa bağlıdır; komşu dal askerî nitelikli sınır gözetimini, silahlı birliği ve görev yerini öne çıkarır."
+          "focus_only": "Bu dal, kapıya bağlı özel bir hizmet ve gözetim görevini bildirir.",
+          "neighbor_only": "Komşu dal, ücretli işçi, hizmetli veya düzen sağlayan görevli gibi daha genel çalışma rollerini kapsar.",
+          "gloss": "kapı görevlisi ile hizmetli",
+          "shared_zone": "Her iki dal da başkası adına belirli bir iş yapan görevli kişiyi gösterebilir.",
+          "distinction": "Kapı görevlisi konum ve işlev bakımından girişe bağlıdır; genel hizmetli veya işçi başka görevlerde ve başka yerlerde çalışabilir."
         },
         {
           "neighbor_ref": "root_000163/B001",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Odak, kapıda çalışan kişiyi ve bu kişiyi görevlendirme eylemini belirtir.",
-          "neighbor_only": "Komşu, kişinin görev yaptığı kapı nesnesini veya giriş yerini belirtir.",
-          "gloss": "kapı veya giriş",
-          "shared_zone": "Kapı, görevlinin çalışma yeridir ve iki dalın ortak senaryo unsurudur.",
-          "distinction": "Odak insan görevliyi ya da görevlendirmeyi adlandırır; komşu ise bu görevlinin bulunduğu fiziksel kapıyı veya girişi adlandırır."
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Bu dal kapıda çalışan kişiyi ve onu görevlendirmeyi bildirir.",
+          "neighbor_only": "Komşu dal, üzerinde görev yapılan giriş yerini veya kapı nesnesini bildirir.",
+          "gloss": "kapı görevlisi ile kapı",
+          "shared_zone": "Görevli ile kapı aynı giriş çıkış düzeninin katılımcılarıdır.",
+          "distinction": "Biri görevli kişi veya onu edinme eylemidir, diğeri ise girişin kendisidir; aynı senaryoda bulunmaları anlamlarını birleştirmez."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel koruma, engelleme, silahlı sınır gözetimi ve fiziksel kapı ile kurulan dört ayrım görevlinin sınırını en iyi açıkladı.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; görev, genel koruma ve hizmet rolleriyle en açıklayıcı iki karşılaştırma ile kapının kendisine ilişkin iç dal ayrımı yayımlandı.",
       "branch_image_ar": "الحاجب على الباب",
       "what_is_ar": "البواب الحاجب واتخاذ البواب",
+      "what_is_not_ar": "ليس الباب نفسه ولا التبويب",
       "source_phrase_ar": "تبوبت بوابا أي اتخذت بوابا (maqayis)؛ البواب الحاجب (ayn)؛ تبوبت بوابا اتخذته (sihah)",
       "sources": [
         "MQ",
         "AY",
         "SI"
       ],
-      "source_note": {
-        "AY": "Görevli, kapıda durup giriş çıkışı gözeten kapıcı olarak tanımlanır."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000163/B004",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi hem sınır ve hesap gibi alanlarda erişilen son noktayı hem de sınır yeri veya uç kullanımını destekler. Bunlar tek bir eşanlamlı çekirdek değil, aynı dalda ayrı tutulması gereken sözlüksel kullanımlardır.",
+        "boundary_note": "Dal ancak son nokta anlamı ile sınır yeri veya uç anlamı birbirine karıştırılmadan ve yalın kapı anlamına taşınmadan kullanılabilir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, belirli türemiş biçimlerdeki son nokta ve sınır yeri kullanımlarını ayrı tutar; bunları yalın kökün genel anlamı olarak sunmaz."
+      },
       "concept_map": {
-        "definition": "Bir sınırlandırmada veya hesaplamada ulaşılan son noktadır; ayrıca ülke sınırındaki geçit ya da ileri sınır noktası için kullanılır.",
+        "definition": "Belirli türemiş biçimlerde, sınır, hesap ve benzeri alanlarda ulaşılan son noktayı bildirir; ayrı bir kullanımda bir sınır yerini veya ucu adlandırır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Sınırlandırma, hesaplama ve benzeri işlemlerde ulaşılan son noktayı veya üst sınırı belirtir.",
+            "statement": "Sınır, hesap ve benzeri ölçülü alanlarda ulaşılan en son nokta veya üst sınırdır.",
             "claim_ids": [
-              "lu_008"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "extension",
-            "statement": "Ülke sınırında bulunan bir geçidi veya ileri sınır noktasını belirtir.",
+            "role": "source_variant",
+            "statement": "Ayrı sözlüksel kullanımda, bir sınır yeri veya uçtur.",
             "claim_ids": [
-              "lu_009"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "example",
-            "statement": "Belirli bir ülkenin sınırındaki geçit, sınır noktası anlamının yer adıyla belirtilen örneğidir.",
+            "statement": "Kaynak ifadesi, Hazar sınırlarındaki özel adlı yeri sınır yeri kullanımından ayrı olarak verir.",
             "claim_ids": [
-              "lu_010"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Temel anlam, sınırlandırma veya hesaplama gibi alanlarda varılan son nokta ve üst sınırdır.",
-        "common_claim_ids": [
-          "lu_008"
-        ],
+        "common_summary": "Bu dal için çok kaynaklı ortak bir özet yoktur; son nokta ve sınır yeri kullanımlarının tamamı tek kaynaklı tanıklıkta toplanır.",
+        "common_claim_ids": [],
         "source_details": [
           {
             "claim_ids": [
-              "lu_009"
+              "bc_001"
             ],
-            "kind": "extension",
-            "summary": "Anlam, ülke sınırındaki geçit veya ileri sınır noktasına genişler."
-          },
-          {
-            "claim_ids": [
-              "lu_010"
-            ],
-            "kind": "example",
-            "summary": "Belirli bir ülkenin sınır geçidi, bu genişlemenin yer adıyla anılan örneğidir."
+            "kind": "sole_attestation",
+            "summary": "Tek tanıklık, biçimi sınır ve hesap gibi alanlarda ulaşılan son nokta olarak; bir kullanımı Bizans sınırlarındaki sınır yeri, ayrı sözlüksel birimi ise Hazar sınırlarındaki özel adlı yer olarak verir."
           }
         ],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "hesapta son nokta veya sınır geçidi",
-        "applicability": "Hem bir hesap ya da sınırlandırmanın ulaştığı son noktayı hem de ülke sınırındaki geçiş noktasını temsil eder.",
+        "text": "son sınır veya sınır yeri",
+        "applicability": "Belirli biçimin iki ayrı sözlüksel kullanımını, ölçüdeki son nokta ile sınır yeri veya ucu birlikte göstermek gerektiğinde kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Soyut son sınır anlamını ve coğrafi sınır geçidi genişlemesini birlikte korur.",
+          "preserves": "Son nokta anlamı ile sınır yeri veya uç anlamını ayrı seçenekler olarak korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -560,13 +516,13 @@
       },
       "contextual_glosses": [
         {
-          "text": "ulaşılan üst sınır",
+          "text": "son sınır",
           "usage_role": "contextual",
-          "applicability": "Hesaplama, ölçme veya sınırlandırma sonunda varılan en yüksek nokta anlatılırken kullanılır.",
+          "applicability": "Sınır, hesap veya benzeri bir ölçekte erişilen en son nokta anlatıldığında kullanılır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Bir işlemin varabildiği son noktayı ve sınır değerini korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Ölçülü bir alanda ulaşılan son nokta ve üst sınır anlamını korur.",
+            "loses": "Sınır yeri veya uç kullanımını dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
@@ -575,32 +531,18 @@
           ]
         },
         {
-          "text": "sınır geçidi",
+          "text": "sınır yeri veya uç",
           "usage_role": "contextual",
-          "applicability": "Bir ülkenin uç sınırında bulunan geçiş yerinden söz edilirken kullanılır.",
+          "applicability": "Sözcük bir sınır yerini veya ucu adlandırdığında kullanılır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Coğrafi sınırı ve oradaki geçiş noktası işlevini korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Sınır yeri veya uç anlamını korur.",
+            "loses": "Hesap veya başka alanlardaki soyut son sınır anlamını içermez.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F002"
-          ]
-        },
-        {
-          "text": "belirli bir ülkedeki sınır geçidi",
-          "usage_role": "explanatory",
-          "applicability": "Kaynakta yer adıyla belirtilen özel sınır geçidini adını yeniden üretmeden açıklamak için kullanılır.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Belirli bir ülkeye bağlı tekil sınır geçidi kimliğini açıklayıcı biçimde korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
+            "F002",
             "F003"
           ]
         }
@@ -609,143 +551,119 @@
         {
           "lexical_unit_id": "lu_008",
           "rendering_kind": "ordinary",
-          "target_gloss": "sınırlandırmada veya hesapta ulaşılan son nokta"
+          "target_gloss": "sınır veya hesapta ulaşılan son nokta"
         },
         {
           "lexical_unit_id": "lu_009",
           "rendering_kind": "ordinary",
-          "target_gloss": "sınır geçidi; ileri sınır noktası"
+          "target_gloss": "Bizans sınırlarındaki bir sınır yeri"
         },
         {
           "lexical_unit_id": "lu_010",
           "rendering_kind": "ordinary",
-          "target_gloss": "belirli bir ülkenin sınırındaki geçit"
+          "target_gloss": "Hazar sınırlarındaki özel adlı bir yer"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_001560/B002",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak, son nokta anlamının yanında ülke sınırındaki geçidi de kapsar.",
-          "neighbor_only": "Komşu, bir haberin veya okun hedefe ulaşmasını ve bir şeyi muhataba ulaştırmayı da kapsar.",
-          "gloss": "son nokta ve ulaşma",
-          "shared_zone": "İki dal da bir şeyin ulaştığı son sınır veya bitiş noktası anlamında örtüşür.",
-          "distinction": "Odak hesap ve sınırlandırmadaki son noktayla coğrafi sınır geçidini birleştirir; komşu ise genel bitişin yanında hedefe ulaşma ve ulaştırma eylemlerini içerir."
-        },
-        {
           "neighbor_ref": "root_000050/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak, hesaplamadaki üst sınırı ve coğrafi sınır geçidini belirtir.",
-          "neighbor_only": "Komşu, süre, ömür, yarış veya başka süreçlerin vardığı sonu geniş biçimde kapsar.",
-          "gloss": "bir şeyin sonu",
-          "shared_zone": "Her iki dal belirli bir sürecin veya ölçünün ulaştığı son noktayı gösterebilir.",
-          "distinction": "Odak özellikle sınırlandırma ve hesap alanına bağlıdır ve sınır geçidi anlamına uzanır; komşu her tür şeyin sonunu ve süresel bitişini kapsayan daha genel bir alandır."
+          "focus_only": "Bu dalın son nokta anlamı belirli türemiş biçime bağlıdır ve dal ayrıca sınır karakolu anlamı taşır.",
+          "neighbor_only": "Komşu dal, süre, ömür, yarış veya herhangi bir şeyin ulaştığı sonu daha genel biçimde kapsar.",
+          "gloss": "son sınır ile son nokta",
+          "shared_zone": "Her iki dal da bir ölçünün veya ilerleyişin ulaştığı bitiş noktasını gösterebilir.",
+          "distinction": "Bu dalın örtüşen kullanımı sınır ve hesap gibi alanlarla sınırlı belirli bir biçimdir; komşu dal genel son ve süre sonunu kapsar, fakat sınır karakolu anlamı taşımaz."
+        },
+        {
+          "neighbor_ref": "root_001560/B002",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal, belirli alanlardaki üst sınıra ek olarak korunaklı sınır yeri anlamını da içerir.",
+          "neighbor_only": "Komşu dal, bir şeyin genel sonunu, hedefe ulaşmayı ve bir bildiriyi alıcıya ulaştırmayı da kapsar.",
+          "gloss": "üst sınır ile bitiş",
+          "shared_zone": "İki dal, bir şeyin daha ileri gitmediği son noktada örtüşür.",
+          "distinction": "Buradaki son sınır kullanımı belirli türemiş biçim ve alanlarla bağlıdır; komşu anlam daha genel bir bitiş ve ulaştırma alanına yayılır."
         },
         {
           "neighbor_ref": "root_001428/B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak, hesapta varılan son değeri ve sınırdaki geçiş noktasını içerebilir.",
-          "neighbor_only": "Komşu, iki araziyi, evi veya suyu ayıran çizgi ya da engeli belirtir.",
-          "gloss": "ayıran sınır",
-          "shared_zone": "İki dal da bir alanın bittiği sınır noktasını veya sınır çizgisini konu edinir.",
-          "distinction": "Odak son nokta ve geçit işlevine yönelir; komşu ise iki tarafı birbirinden ayıran çizgi veya engel olma ilişkisini öne çıkarır."
-        },
-        {
-          "neighbor_ref": "root_001560/B010",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Odak, bir hesabın ulaştığı üst sınırı son nokta olarak ele alır.",
-          "neighbor_only": "Komşu, sayının büyüklüğünü veya belirli bir sayıya denk gelen miktarı bildirir.",
-          "gloss": "sayısal miktar",
-          "shared_zone": "Her iki dal hesaplamada belirlenen bir sayı veya sınır değer çevresinde kesişebilir.",
-          "distinction": "Odakta sayı bir işlemin ulaştığı son sınırdır; komşuda ise son olma şartı bulunmadan sayının miktarı ve büyüklüğü esastır."
+          "focus_only": "Bu dal, ulaşılan son noktayı veya sınır bölgesindeki karakolu bildirir.",
+          "neighbor_only": "Komşu dal, iki şeyin arasını ayıran çizgi, arazi sınırı veya fiziksel engeli bildirir.",
+          "gloss": "son sınır ile ayırıcı sınır",
+          "shared_zone": "Her iki dal da bir alanın sınırında veya daha öteye geçilmeyen çizgide kullanılabilir.",
+          "distinction": "Son sınır bir ölçünün vardığı uç noktadır; ayırıcı sınır ise iki alanı birbirinden ayıran çizgi ya da engeldir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel son nokta, süre sonu, ayıran sınır ve sayısal miktarla kurulan dört karşıtlık iki temel kullanımın sınırını gösterdi.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; son nokta, genel bitiş ve ayırıcı sınır arasındaki en güçlü üç karşılaştırma seçildi, yer adıyla yalnız tematik bağ kuran adaylar elendi.",
       "branch_image_ar": "غاية الحد والثغر",
       "what_is_ar": "البابة بمعنى الغاية في الحدود والحساب ونحوه والثغر الحدودي",
+      "what_is_not_ar": "ليس الباب المدخل ولا البوباة الفلاة",
       "source_phrase_ar": "البابة في الحدود والحساب ونحوه الغاية؛ البابة ثغر من ثغور الروم؛ باب الأبواب من ثغور الخزر",
       "sources": [
         "AY"
       ],
       "source_note": {
-        "AY": "Anlam, ülke sınırındaki geçit veya ileri sınır noktasına genişler. Belirli bir ülkenin sınır geçidi, bu genişlemenin yer adıyla anılan örneğidir."
+        "AY": "Tek tanıklık, biçimi sınır ve hesap gibi alanlarda ulaşılan son nokta olarak; bir kullanımı Bizans sınırlarındaki sınır yeri, ayrı sözlüksel birimi ise Hazar sınırlarındaki özel adlı yer olarak verir."
       }
     },
     {
       "branch_ref": "root_000163/B005",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi bir biçimi hem çöl düzlük hem de belirli bir güzergâhta ilk görünen yer olarak verir, ayrıca başka bir biçimle ayrı bir yer adını aynı dalda toplar. Bu nedenle dal ancak tek bir genel yer anlamı varsayılmadan kullanılabilir.",
+        "boundary_note": "Çöl düzlük anlamı ile iki ayrı yer adı kullanımı bağımsız sözlüksel yüzlerdir; bunlar yalın kapı, son sınır veya sınır karakolu anlamına genişletilmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, çöl bildiren biçim ile belirli yerleri gösteren sözlüksel birimleri ayrı tutar ve bunlardan yalın bir kök anlamı çıkarmaz."
+      },
       "concept_map": {
-        "definition": "Belirli bir yol üzerinde ilk beliren bir yer ya da ıssız, açık kırdır; ilgili başka bir ifade de belirli bir yer adı olarak kullanılır.",
+        "definition": "Belirli bir biçimde geniş, ıssız çöl düzlüğünü bildirir ve aynı biçim belirli bir güzergâhta ilk görünen yer için de kullanılır; başka bir sözlüksel birim ise belirli bir bölgedeki yer adıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kullanımlar, belirli bir yeri veya geniş ve ıssız açık araziyi adlandırma çevresinde birleşir.",
+            "statement": "Belirli biçimin genel yer türü anlamı, geniş ve ıssız çöl düzlüğüdür.",
             "claim_ids": [
-              "lu_011",
-              "lu_012"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Belirli bir güzergâhta uzaktan ilk fark edilen yer olarak tanımlanan özel konumu belirtir.",
+            "role": "source_variant",
+            "statement": "Aynı biçim, iki yer arasındaki güzergâhta uzaktan ilk görünen belirli bir yeri adlandırır.",
             "claim_ids": [
-              "lu_011"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "source_variant",
-            "statement": "Yer anlamı, geniş, ıssız ve açık kır veya çöl arazisi olarak da açıklanır.",
+            "statement": "Başka bir sözlüksel birim, belirli bir bölgede bu adla bilinen ayrı bir yeri gösterir.",
             "claim_ids": [
-              "lu_012"
-            ]
-          },
-          {
-            "facet_id": "F004",
-            "role": "example",
-            "statement": "Başka bir kullanım, belirli bir bölgede bu adla bilinen tekil bir yeri gösterir.",
-            "claim_ids": [
-              "lu_013"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Anlamın arazi yönü, geniş, açık ve ıssız bir kır veya çöl alanını belirtir.",
+        "common_summary": "Kaynaklar birlikte ele alındığında dal, bir çöl düzlüğü anlamını, Karn'dan Taif'e uzanan güzergâhta ilk görünen yeri ve Bahreyn'de bilinen ayrı yeri kapsar. İki yer kullanımı aynı coğrafi bilgi olarak birleştirilemez.",
         "common_claim_ids": [
-          "lu_012"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_011"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Bir kullanım, belirli bir güzergâhta uzaktan ilk beliren özel yeri gösterir."
-          },
-          {
-            "claim_ids": [
-              "lu_013"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Başka bir ifade, belirli bir bölgede bu adla bilinen tekil yer için kullanılır."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "yol üzerinde beliren yer veya ıssız açık kır",
-        "applicability": "Hem belirli bir güzergâhta ilk görünen yeri hem de geniş, açık ve ıssız arazi anlamını birlikte temsil eder.",
+        "text": "çöl düzlüğü ve belirli yer adları",
+        "applicability": "Dalın çöl türü anlamı ile birbirinden ayrı yer adı kullanımlarını tek üst gösterimde, aralarındaki ayrımı koruyarak sunmak gerektiğinde kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Güzergâha bağlı özel yer anlamını ve ıssız açık arazi anlamını birlikte korur.",
+          "preserves": "Çöl düzlüğü ile güzergâh ve bölgeye bağlı iki ayrı yer adı kullanımını birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -758,13 +676,28 @@
       },
       "contextual_glosses": [
         {
-          "text": "yol üzerinde ilk beliren yer",
-          "usage_role": "explanatory",
-          "applicability": "Belirli bir güzergâhta ilerlerken uzaktan ilk fark edilen özel konumdan söz edildiğinde kullanılır.",
+          "text": "ıssız çöl düzlüğü",
+          "usage_role": "general",
+          "applicability": "Biçim bir yer adı değil, geniş ve yerleşimsiz bir arazi türünü bildirdiğinde kullanılır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Yer olma niteliğini, güzergâh bağlantısını ve ilk görünme özelliğini korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Geniş, açık ve ıssız çöl arazisi anlamını korur.",
+            "loses": "Belirli güzergâh ve bölgeye bağlı yer adı kullanımlarını içermez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "güzergâhta ilk görünen yer",
+          "usage_role": "explanatory",
+          "applicability": "Kaynakta iki yer arasındaki yolculukta ilk görünür hâle gelen belirli yer anlatıldığında kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Bir güzergâhtan bakıldığında ilk görünen belirli yer olma bilgisini korur.",
+            "loses": "Genel çöl düzlüğü anlamını ve öteki bölgesel yer adı kullanımını dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
@@ -773,33 +706,18 @@
           ]
         },
         {
-          "text": "ıssız açık kır",
-          "usage_role": "contextual",
-          "applicability": "Geniş, yerleşimsiz ve açık bir kır ya da çöl alanı anlatılırken kullanılır.",
+          "text": "belirli bir bölgedeki yer",
+          "usage_role": "explanatory",
+          "applicability": "Ayrı sözlüksel birim, kaynakta belirli bir bölgede bilinen yeri gösterdiğinde kullanılır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Arazinin geniş, açık ve ıssız olma özelliklerini korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Bölgesel ve belirli bir yer adı olma bilgisini korur.",
+            "loses": "Çöl düzlüğü anlamını ve güzergâhta ilk görünen öteki yeri içermez.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F003"
-          ]
-        },
-        {
-          "text": "belirli bir bölgede bu adla bilinen yer",
-          "usage_role": "explanatory",
-          "applicability": "Kaynakta özel adıyla anılan tekil yeri, adını yeniden üretmeden açıklamak için kullanılır.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Tekil bir yer adı kullanımı olduğunu ve belirli bir bölgeye bağlılığını korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F004"
           ]
         }
       ],
@@ -807,113 +725,116 @@
         {
           "lexical_unit_id": "lu_011",
           "rendering_kind": "ordinary",
-          "target_gloss": "belirli bir yol üzerinde ilk beliren yer"
+          "target_gloss": "Karn'dan Taif'e uzanan güzergâhta ilk görünen yer"
         },
         {
           "lexical_unit_id": "lu_012",
           "rendering_kind": "ordinary",
-          "target_gloss": "ıssız açık kır; çöl"
+          "target_gloss": "geniş, ıssız çöl düzlüğü"
         },
         {
           "lexical_unit_id": "lu_013",
           "rendering_kind": "ordinary",
-          "target_gloss": "belirli bir bölgede bu adla bilinen yer"
+          "target_gloss": "Bahreyn'de bu adla bilinen yer"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_000167/B002",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak, ıssız arazi anlamının yanında güzergâhtaki özel yer ve tekil yer adı kullanımlarını içerir.",
-          "neighbor_only": "Komşu, arazinin düz, ağaçsız veya çok az ağaçlı oluşunu ve bu araziye bağlı türevleri içerir.",
-          "gloss": "çıplak ıssız arazi",
-          "shared_zone": "İki dal geniş, açık, ıssız ve bitki örtüsü az araziyi adlandırabilir.",
-          "distinction": "Odak dalın arazi anlamı genel bir ıssız açıklıktır ve ayrıca özel yer kullanımları vardır; komşu dal düz, çıplak ve az ağaçlı arazi özelliklerini daha belirgin taşır."
-        },
-        {
           "neighbor_ref": "root_000104/B005",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak, belirli güzergâh ve yer adı kullanımlarını da kapsar.",
-          "neighbor_only": "Komşu, karayı denizin karşıtı olarak ve kır ile çöllerin bütünü için geniş biçimde kullanır.",
-          "gloss": "kara ve çöl",
-          "shared_zone": "Her iki dal yerleşim dışındaki açık kır veya çöl arazisini gösterebilir.",
-          "distinction": "Odak daha dar bir ıssız açık araziyi ve belirli yerleri içerir; komşu ise denizin karşıtı olan kara alanına kadar genişleyen genel bir coğrafi kapsama sahiptir."
+          "focus_only": "Bu dalın çöl anlamı belirli bir biçime bağlıdır ve dal ayrıca iki ayrı yer adı kullanımı taşır.",
+          "neighbor_only": "Komşu dal, denizin karşıtı olan kara alanını ve genel olarak çöl, kır ve kara yolculuğunu daha geniş biçimde kapsar.",
+          "gloss": "çöl düzlüğü ile kara",
+          "shared_zone": "İki dal da deniz dışındaki açık ve çorak araziyi çöl olarak gösterebilir.",
+          "distinction": "Buradaki ortak alan belirli biçimin ıssız çöl düzlüğü anlamıdır; komşu dal genel karayı ve kara yolculuğunu da kapsar, fakat bu dalın yer adlarını içermez."
         },
         {
           "neighbor_ref": "root_000191/B003",
-          "relation_type": "near_neighbor",
+          "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak için arazide yolunu kaybetme veya yön bulamama şartı yoktur.",
-          "neighbor_only": "Komşu, yolcunun şaşırdığı ve yönünü bulamadığı ıssız araziyi özellikle belirtir.",
-          "gloss": "yol şaşırtan ıssız arazi",
-          "shared_zone": "Her iki dal geniş, ıssız ve geçilmesi güç bir açık araziyi gösterebilir.",
-          "distinction": "Odak arazinin açıklığı ve ıssızlığıyla yetinir; komşu anlam için yolcunun şaşırması ve yön bulamaması belirleyici bir özelliktir."
+          "focus_only": "Bu dal çöl düzlüğü için yön bulma güçlüğünü zorunlu kılmaz ve ayrıca yer adı kullanımları içerir.",
+          "neighbor_only": "Komşu dal, yolcunun yönünü şaşırdığı ve yol bulamadığı çölü özellikle belirtir.",
+          "gloss": "çöl düzlüğü ile yol şaşırtan çöl",
+          "shared_zone": "Her iki dal da geniş ve ıssız bir çöl veya kır alanını gösterebilir.",
+          "distinction": "Bu dalda açık çöl arazisi yeterlidir; komşu anlamda yolcunun şaşırması ve yolunu bulamaması ayırt edici koşuldur."
         },
         {
-          "neighbor_ref": "root_000870/B001",
-          "relation_type": "near_neighbor",
+          "neighbor_ref": "root_000167/B002",
+          "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak, arazinin ıssızlığını ve ayrıca özel yer kullanımlarını öne çıkarır.",
-          "neighbor_only": "Komşu, arazinin düz, pürüzsüz ve tek düzeyde olmasını gerektirir.",
-          "gloss": "düz ve pürüzsüz arazi",
-          "shared_zone": "Her iki dal açık ve geniş bir arazi parçasını anlatabilir.",
-          "distinction": "Odakta düz ve pürüzsüz yüzey zorunlu değildir; komşunun ayırt edici çekirdeği ise arazinin aynı düzeyde ve pürüzsüz olmasıdır."
+          "focus_only": "Bu dalın arazi anlamı belirli sözlüksel biçimle sınırlıdır ve dal iki yer adı kullanımını da kapsar.",
+          "neighbor_only": "Komşu dal, düz, ağaçsız veya çıplak çöl alanını genel bir arazi türü olarak ve ona bağlı türevlerle kapsar.",
+          "gloss": "çöl düzlüğü ile çıplak kır",
+          "shared_zone": "İki dal da geniş, açık, az bitkili veya ıssız araziyi ifade edebilir.",
+          "distinction": "Arazi özellikleri büyük ölçüde örtüşür; ancak komşu dal genel çıplak kır alanına yayılırken bu dal belirli biçim ve bağımsız yer adlarıyla sınırlıdır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; çıplak ıssız arazi, genel kara ve çöl, yol şaşırtan açıklık ve düz pürüzsüz araziyle kurulan dört ayrım en yararlı bulundu.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; çöl türünün genel kara, yol şaşırtan çöl ve çıplak kırla sınırını gösteren üç aday seçildi, yalnız coğrafi çağrışım taşıyanlar elendi.",
       "branch_image_ar": "موضع أو فلاة",
       "what_is_ar": "البوباة موضع أو فلاة وموضع بابين بالبحرين",
+      "what_is_not_ar": "ليس البابة الغاية ولا باب الأبواب الثغر",
       "source_phrase_ar": "البوباة مكان وهو أول ما يبدو من قرن إلى الطائف (maqayis)؛ البوباة الفلاة وهي الموماة (ayn)؛ بالبحرين موضع يعرف ببابين (ayn)",
       "sources": [
         "MQ",
         "AY"
       ],
-      "source_note": {
-        "MQ": "Bir kullanım, belirli bir güzergâhta uzaktan ilk beliren özel yeri gösterir.",
-        "AY": "Başka bir ifade, belirli bir bölgede bu adla bilinen tekil yer için kullanılır."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000163/B006",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, suyu insanlara ulaştırmak için aralarında dolaşan görevliyi doğrudan adlandırır. Dal çerçevesi kişiyi, taşıdığı suyu ve dolaşma biçimini doğru korur.",
+        "boundary_note": "Dal su verme eyleminin genelini değil, suyla dolaşıp insanlara dağıtım yapan kişiyi bildirir; kapı görevlisi anlamıyla ilişkili değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın kişi adını kapsar; su çekme, kap doldurma veya herhangi birine bir kez su verme eylemlerini bu ada genellemez."
+      },
       "concept_map": {
-        "definition": "Çarşı içinde dolaşarak insanlara su taşıyan ve dağıtan gezici su görevlisidir.",
+        "definition": "İnsanların arasında veya pazar içinde suyla dolaşarak onlara içecek su ulaştıran ve dağıtan görevli kişidir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "İnsanlara içmeleri için su ulaştıran bir su taşıyıcısı ve dağıtıcısıdır.",
+            "statement": "Suyu yanında taşıyarak insanlar arasında dolaşır ve suyu doğrudan onlara dağıtır.",
             "claim_ids": [
-              "lu_014"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Hizmetini sabit bir yerde değil, çarşı içinde dolaşarak yerine getirir.",
+            "statement": "Tanıklık, bu görevli adını özellikle Basra pazarlarındaki yerel kullanımla sınırlar.",
             "claim_ids": [
-              "lu_014"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kullanım, çarşı içinde dolaşıp insanlara su taşıyan ve dağıtan gezici görevliyi belirtir.",
-        "common_claim_ids": [
-          "lu_014"
+        "common_summary": "Bu dal için çok kaynaklı ortak bir özet yoktur; dolaşarak su dağıtan görevli ve pazar çevresi bilgisi tek kaynaklı tanıklıkta verilir.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek tanıklık, adı Basra pazarlarında insanların arasında suyla dolaşıp onlara su dağıtan görevli için kaydeder."
+          }
         ],
-        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "gezici su dağıtıcısı",
-        "applicability": "Çarşıda dolaşarak insanlara içme suyu ulaştıran görevliyi doğal ve kısa biçimde karşılar.",
+        "text": "dolaşarak su dağıtan görevli",
+        "applicability": "Suyu sabit bir yerde vermek yerine insanların arasında taşıyıp dağıtan kişi özellikle anlatıldığında kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Kişinin su dağıtma işini ve bunu dolaşarak yapma özelliğini korur.",
+          "preserves": "Kişi rolünü, su dağıtımını ve alıcılar arasında dolaşma koşulunu birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -925,13 +846,28 @@
       },
       "contextual_glosses": [
         {
-          "text": "çarşıda dolaşan su dağıtıcısı",
-          "usage_role": "explanatory",
-          "applicability": "Görevlinin çalışma ortamı ve dolaşarak su ulaştırma biçimi özellikle belirtilmek istendiğinde kullanılır.",
+          "text": "dolaşan su dağıtıcısı",
+          "usage_role": "general",
+          "applicability": "Görevlinin suyu taşıyarak alıcıların arasında dolaşması bağlamda görünür olduğunda kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Çarşı ortamını, hareketli hizmet biçimini ve su dağıtma görevini korur.",
+            "preserves": "Dolaşan kişi, taşınan su ve doğrudan dağıtım bileşenlerini eksiksiz korur.",
             "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "pazarda su dağıtan görevli",
+          "usage_role": "contextual",
+          "applicability": "Tanıklığın özel pazar çevresi açıkça anlatıldığında doğal açıklayıcı karşılıktır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Pazar çevresinde insanlara su ulaştıran görevli anlamını korur.",
+            "loses": "Görevlinin alıcılar arasında sürekli dolaşma biçimini açıkça belirtmez.",
             "adds": null,
             "collision": null
           },
@@ -945,7 +881,7 @@
         {
           "lexical_unit_id": "lu_014",
           "rendering_kind": "ordinary",
-          "target_gloss": "çarşıda dolaşan su dağıtıcısı"
+          "target_gloss": "Basra pazarlarında dolaşarak su dağıtan görevli"
         }
       ],
       "excluded_glosses": [],
@@ -954,90 +890,90 @@
           "neighbor_ref": "root_000722/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak, su verme işini çarşıda dolaşan belirli bir görevli olarak adlandırır.",
-          "neighbor_only": "Komşu, insan veya hayvana içecek verme eylemini ve kaynaktan su alma işini genel olarak kapsar.",
-          "gloss": "su verme",
-          "shared_zone": "Her iki dal bir insana içmesi için su ulaştırma olayını içerebilir.",
-          "distinction": "Odak su veren kişinin mesleki rolünü ve dolaşmasını gerektirir; komşu ise tek seferlik su verme eylemini de kapsar ve belirli bir görevli ya da çalışma ortamı gerektirmez."
+          "focus_only": "Bu dal, suyu taşıyarak alıcıların arasında dolaşan görevli kişiyi adlandırır.",
+          "neighbor_only": "Komşu dal, herhangi bir insan veya hayvana su ya da başka bir içecek verme eylemini ve kaynaktan su alma işini kapsar.",
+          "gloss": "su dağıtıcısı ile su verme",
+          "shared_zone": "Dolaşan görevli yaptığı iş sırasında insanlara içmeleri için su verir.",
+          "distinction": "Bu dal belirli çalışma biçimine sahip kişiyi adlandırır; komşu dal ise kişinin mesleği veya dolaşması ne olursa olsun su verme eylemini anlatır."
         },
         {
           "neighbor_ref": "root_000615/B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak, suyu çarşıdaki insanlara dolaşarak dağıtan görevliyi belirtir.",
-          "neighbor_only": "Komşu, aile veya topluluk için kaynaktan su çekme, taşıma ve su kabı ya da taşıyıcı kullanımlarını kapsar.",
-          "gloss": "su getirip taşıma",
-          "shared_zone": "İki dalda da suyun bir yerden insanlara taşınması ve ulaştırılması bulunur.",
-          "distinction": "Odakta çarşı içinde dolaşan su dağıtıcısı vardır; komşuda suyu kaynaktan çekip eve veya topluluğa taşıma işi ve taşıma araçları öne çıkar."
+          "focus_only": "Bu dalda su, insanlara doğrudan dağıtılmak üzere görevli tarafından dolaştırılır.",
+          "neighbor_only": "Komşu dal, suyu aile veya topluluk için kaynaktan getirmeyi, taşımayı ve su taşıyan kişi, hayvan ya da kabı kapsar.",
+          "gloss": "su dağıtma ile su taşıma",
+          "shared_zone": "Her iki dalda da bir kişi suyu bir yerden başka bir yere götürebilir.",
+          "distinction": "Burada taşıma, alıcıların arasında dolaşıp su dağıtmanın parçasıdır; komşu dalda suyu getirmek yeterlidir ve doğrudan dağıtım gerekmez."
         },
         {
           "neighbor_ref": "root_000433/B011",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak, hazır suyu dolaşarak insanlara ulaştıran dağıtıcıyı belirtir.",
-          "neighbor_only": "Komşu, topluluk veya sürü adına sırayla kaynaktan su çeken kişiyi belirtir.",
-          "gloss": "sırayla su çeken kişi",
-          "shared_zone": "Her iki dal su temin eden ve bu işi başkaları adına yapan bir kişiyi içerebilir.",
-          "distinction": "Odak dağıtım ve dolaşma aşamasına bağlıdır; komşu ise kaynaktan su çekme işine ve bu işin kişiler arasında sırayla yapılmasına bağlıdır."
-        },
-        {
-          "neighbor_ref": "root_000276/B007",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Odak, çarşıda dolaşan belirli su dağıtıcısı rolünü adlandırır.",
-          "neighbor_only": "Komşu, su istemeyi, su arayan kişiyi ve hayvan ya da ekine su vermeyi de kapsar.",
-          "gloss": "su isteme ve verme",
-          "shared_zone": "Her iki dal suya ihtiyaç duyanlara su sağlama alanında buluşur.",
-          "distinction": "Odak yalnız gezici insan su dağıtıcısını belirtir; komşu su talebini, talep eden kişiyi ve insan dışındaki alıcılara su verme eylemini de içerir."
+          "focus_only": "Bu dal, hazırlanmış suyu insanların arasında dolaşarak veren görevliyi bildirir.",
+          "neighbor_only": "Komşu dal, topluluk veya hayvanlar için nöbetleşe kaynaktan su çeken kişiyi bildirir.",
+          "gloss": "su dağıtıcısı ile su çekici",
+          "shared_zone": "İki görevli de bir topluluğun su ihtiyacını karşılamak için suyla çalışır.",
+          "distinction": "Dolaşan görevlinin ayırt edici işi suyu alıcılara dağıtmaktır; komşu görevlinin ayırt edici işi ise kaynaktan su çekmektir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel su verme, su taşıma, sırayla su çekme ve su isteme alanlarıyla kurulan dört ayrım gezici görevli anlamını en iyi sınırladı.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; kişi rolünü genel su verme, su taşıma ve kaynaktan su çekmeden ayıran üç karşılaştırma seçildi.",
       "branch_image_ar": "الساقي الجوّال",
       "what_is_ar": "البياب اسم الساقي الذي يطوف بالماء",
+      "what_is_not_ar": "ليس البواب الحاجب",
       "source_phrase_ar": "يسمون الساقي الذي يطوف عليهم بالماء بيابا",
       "sources": [
         "AY"
       ],
-      "source_note": {}
+      "source_note": {
+        "AY": "Tek tanıklık, adı Basra pazarlarında insanların arasında suyla dolaşıp onlara su dağıtan görevli için kaydeder."
+      }
     },
     {
       "branch_ref": "root_000163/B007",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, belirli söyleyişte bir şeyin muhataba uygun düşmesi veya onun durumuna elvermesi anlamını doğrudan açıklar. Geçici çerçeve bu kullanımın sınırını doğru verir.",
+        "boundary_note": "Anlam yalnızca tanıklanan söyleyişe bağlıdır; genel ihtiyaç, köken, temel, yer veya kapı anlamı olarak yorumlanamaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "non_bare",
+        "note": "Tanım yalnızca bir şeyin kişiye uygun olduğunu bildiren tanıklanmış söyleyişi kapsar ve bağımsız yalın kök anlamı ileri sürmez."
+      },
       "concept_map": {
-        "definition": "Bir şeyin belirli bir kişiye uygun, onun durumuna elverişli veya işine yarar olmasıdır.",
+        "definition": "Belirli bir söyleyişte, sözü edilen şeyin muhataba uygun, onun durumuna elverişli veya onun işine yarar olduğunu bildirir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir nesne veya seçeneğin muhatabın durumuna uygun ve onun için elverişli olmasını belirtir.",
+            "statement": "Sözü edilen şey ile muhatabın durumu arasında uygunluk ve işe yararlık ilişkisi kurar.",
             "claim_ids": [
-              "lu_015"
-            ]
-          },
-          {
-            "facet_id": "F002",
-            "role": "example",
-            "statement": "Gösterilen bir şeyin muhataba uygun olduğunu bildiren kalıplaşmış bir sözde gerçekleşir.",
-            "claim_ids": [
-              "lu_015"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kalıplaşmış söz, gösterilen şeyin muhataba uygun, onun durumuna elverişli veya işine yarar olduğunu bildirir.",
-        "common_claim_ids": [
-          "lu_015"
+        "common_summary": "Bu dal için çok kaynaklı ortak bir özet yoktur; bir şeyin muhataba uygun düşmesi anlamındaki söyleyiş tek kaynaklı tanıklıkla verilir.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek tanıklık, bütün söyleyişi sözü edilen şeyin muhataba uygun ve onun durumuna elverişli olmasıyla açıklar."
+          }
         ],
-        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "kişiye uygun olma",
-        "applicability": "Bir nesnenin veya seçeneğin belirli bir kişinin durumuna uyduğu ve onun için elverişli olduğu bağlamlarda kullanılır.",
+        "text": "kişiye uygun şey",
+        "applicability": "Yalnızca tanıklanmış söyleyiş içinde bir şeyin belirli kişiye uygun veya onun işine yarar olduğu anlatıldığında kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Uygunluk ilişkisini, değerlendirilen şeyi ve bu uygunluğun yöneldiği kişiyi korur.",
+          "preserves": "Şey ile kişi arasındaki uygunluk ve işe yararlık ilişkisini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -1048,19 +984,33 @@
       },
       "contextual_glosses": [
         {
-          "text": "Bu sana uygun bir şeydir.",
-          "usage_role": "contextual",
-          "applicability": "Konuşanın gösterilen nesnenin muhataba uygun olduğunu doğrudan bildirdiği cümlede kullanılır.",
+          "text": "bu sana uygun bir şey",
+          "usage_role": "general",
+          "applicability": "Tanıklanmış söyleyiş ikinci kişiye yöneltilen doğal bir cümle olarak çevrildiğinde kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Gösterilen şeyi, muhatabı ve aralarındaki uygunluk yargısını tam olarak korur.",
+            "preserves": "Belirli şeyin muhataba uygun düşmesi yargısını doğrudan ve doğal biçimde korur.",
             "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001",
-            "F002"
+            "F001"
+          ]
+        },
+        {
+          "text": "bu senin işine yarar",
+          "usage_role": "contextual",
+          "applicability": "Uygunluk, özellikle kişinin amacı veya gereksinimi bakımından yararlılık taşıdığında kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Şeyin muhatabın amacı bakımından elverişli ve yararlı oluşunu korur.",
+            "loses": "Kişinin durumuna uygunluğun yararlılık dışındaki daha genel yönlerini daraltır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
           ]
         }
       ],
@@ -1068,44 +1018,47 @@
         {
           "lexical_unit_id": "lu_015",
           "rendering_kind": "ordinary",
-          "target_gloss": "Bu sana uygun bir şeydir."
+          "target_gloss": "bu sana uygun veya senin işine yarayan bir şey"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000650/B004",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Odak, bir şeyin kişiye uygun veya onun durumu için elverişli olmasını bildirir.",
-          "neighbor_only": "Komşu, bir kişinin yardımıyla ihtiyacın güçlenmesi, çoğalması veya giderilmesi sonucunu anlatır.",
-          "gloss": "ihtiyacı karşılama",
-          "shared_zone": "İki dal da bir kişinin yararına olan ve onun ihtiyacına cevap veren bir ilişkiyi içerebilir.",
-          "distinction": "Odak nesne ile kişi arasındaki uygunluk niteliğidir; komşu ise başka bir kişinin etkisiyle ihtiyacın karşılanması veya işin görülmesi olayını anlatır."
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Bu dal, bir şeyin kişinin durumuna uygun veya onun işine yarar olduğunu bildirir.",
+          "neighbor_only": "Komşu dal, bir kişinin yardımıyla bir ihtiyacın güçlenmesini, çoğalmasını veya karşılanmasını anlatır.",
+          "gloss": "uygun şey ile ihtiyacı karşılama",
+          "shared_zone": "Kişiye uygun bir şey, onun ihtiyacını karşılamaya veya amacına ulaşmasına yardımcı olabilir.",
+          "distinction": "Burada kurucu ilişki şey ile kişi arasındaki uygunluktur; komşu dalda ise bir ihtiyacın başka biri aracılığıyla güçlenmesi veya giderilmesi olayı vardır."
         },
         {
           "neighbor_ref": "root_001188/B011",
           "relation_type": "thematic",
           "boundary_match": "thematic_only",
-          "focus_only": "Odak, eldeki bir şeyin kişiye uygun ve kullanışlı olduğunu bildirir.",
-          "neighbor_only": "Komşu, kişinin yoksunluk, ihtiyaç veya yoksulluk içinde bulunma durumunu belirtir.",
-          "gloss": "ihtiyaç ve yoksunluk",
-          "shared_zone": "Kişiye uygun bir şey, onun bir ihtiyacını karşılayabilecek seçenek olabilir.",
-          "distinction": "Odak bir şeyin kişiye uyma niteliğini anlatır ve ihtiyaç şart değildir; komşu ise kişinin eksiklik ve ihtiyaç durumunu adlandırır, uygun bir nesne içermez."
+          "focus_only": "Bu dal, mevcut bir şeyin belirli kişiye uygunluğunu değerlendirir.",
+          "neighbor_only": "Komşu dal, kişinin ihtiyaç veya yoksunluk içinde bulunma durumunu bildirir.",
+          "gloss": "uygunluk ile ihtiyaç",
+          "shared_zone": "Bir şeyin kişiye uygun sayılması, o kişinin ihtiyacıyla ilişkili olabilir.",
+          "distinction": "Uygunluk iki unsur arasındaki elverişlilik ilişkisidir; ihtiyaç ise kişide bulunan eksiklik durumudur ve uygun bir şeyin varlığını gerektirmez."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; yalnız ihtiyacın karşılanması ve ihtiyaç durumu, kişiye uygunlukla anlamlı fakat sınırlı bir karşılaştırma sağladı.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; yalnızca ihtiyaç ve ihtiyacı karşılama senaryosuyla anlamlı bağ kuran iki aday yayımlandı, köken ve temel adaylarında gerçek anlamsal örtüşme bulunmadı.",
       "branch_image_ar": "صلاح الشيء للمرء",
       "what_is_ar": "قولهم هذا شيء من بابتك أي يصلح لك",
+      "what_is_not_ar": "ليس الباب المدخل ولا التبويب",
       "source_phrase_ar": "هذا شيء من بابتك أي يصلح لك",
       "sources": [
         "SI"
       ],
-      "source_note": {}
+      "source_note": {
+        "SI": "Tek tanıklık, bütün söyleyişi sözü edilen şeyin muhataba uygun ve onun durumuna elverişli olmasıyla açıklar."
+      }
     }
   ],
   "root_profile": {
-    "summary": "Kök, kapı ve giriş çekirdeğinden bölümlere ayırma ile kapı görevlisi alanlarına uzanır. Ayrıca hesapta son nokta ve sınır geçidi, belirli yer ve ıssız kır, gezici su dağıtıcısı ve bir şeyin kişiye uygunluğu gibi bağımsızlaşmış dalları kapsar.",
+    "summary": "Anlam alanı, somut giriş ve kapıdan düzenli bölümlemeye ve kapı görevlisine uzanan ilişkili kullanımların yanında son sınır, çöl veya yer adı, dolaşan su dağıtıcısı ve kişiye uygunluk bildiren bağımsız sözlüksel dalları içerir.",
     "polysemy": "polysemic",
     "organization": "mixed"
   },

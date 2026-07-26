@@ -1,65 +1,6 @@
 {
-  "inputs_sha256": "b2288aef1486e7a973934ea947c4f2c71797201f89cd7ed53078735500a00e5d",
-  "verdict": "repair",
-  "summary": "Yanıt genel olarak kanıtla uyumludur; ancak bir kavram rolü yanlış sınıflandırılmış, B002'ye kanıtsız bir ettirgen anlam eklenmiş, B003'ün kavram karşılığı çekirdeğin yer anlamını dışarıda bırakmış ve B006'ya kanıtsız bir kesme konumu katılmıştır.",
-  "issues": [
-    {
-      "target_ref": "root_000141/B001",
-      "field": "concept_map",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_004"
-      ],
-      "evidence_conflict": "F004, bakla adlandırmasını source_variant olarak sınıflandırıyor. Kanıt ise bunun yalnızca kaynaklar arası bir biçim değişkesi değil, söz ailesi içindeki ayrı ve özelleşmiş bir bitki adı olduğunu gösteriyor.",
-      "smallest_correction": "F004 rolünü specialization olarak değiştirin; bakla anlamını ve mevcut açıklamayı koruyun."
-    },
-    {
-      "target_ref": "root_000141/B002",
-      "field": "concept_map",
-      "severity": "major",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_007"
-      ],
-      "evidence_conflict": "Tanım ve F001, insan topluluğunun hayvanları bitki örtüsünde otlatması anlamını ekliyor. Kanıt yalnızca topluluğun bitkiler üzerinde otlamasını, develerin yemesini ve eşeğin yemesini bildiriyor; ettirgen hayvan otlatma anlamını vermiyor.",
-      "smallest_correction": "Tanımdan ve F001'den hayvan otlatma seçeneğini çıkarın; topluluğu bitkiler üzerinde otlayan veya onları yiyen katılımcı olarak anlatın."
-    },
-    {
-      "target_ref": "root_000141/B002",
-      "field": "contextual_glosses",
-      "severity": "major",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_007"
-      ],
-      "evidence_conflict": "Taze ot üzerinde hayvan otlatmak karşılığı, lu_007'de bulunmayan ettirgen bir eylem ve hayvan nesnesi ekliyor.",
-      "smallest_correction": "Bu karşılığı topluluğun taze otsu bitkiler üzerinde otlamasını veya bu bitkileri yemesini anlatan ettirgen olmayan bir karşılıkla değiştirin."
-    },
-    {
-      "target_ref": "root_000141/B003",
-      "field": "concept_gloss",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_005",
-        "lu_010",
-        "lu_011",
-        "lu_012"
-      ],
-      "evidence_conflict": "Yerin taze otsu bitkilerle kaplanması karşılığı yoğun örtü sonucunu öne çıkarıyor ve lu_005'teki yetişme yeri çekirdeğini kapsamıyor. Yoğunluk yalnızca lu_012'nin özelleşmiş arazi kullanımında açıkça bulunuyor.",
-      "smallest_correction": "Kavram karşılığını yerin taze otsu bitki çıkarması veya bu bitkilerin yetiştiği yer biçiminde verin ve ilgili çekirdek facet kimliklerini ekleyin."
-    },
-    {
-      "target_ref": "root_000141/B006",
-      "field": "concept_map",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_020"
-      ],
-      "evidence_conflict": "Tanımdaki diplerinden sözü kesmenin belirli bir konumdan yapılmasını şart koşuyor; lu_020 yalnızca otsu bitkinin biçilmesini veya kesilmesini bildiriyor.",
-      "smallest_correction": "Tanımdan diplerinden sözünü çıkarın; biçme veya kesme eylemini başka bir konum kısıtı eklemeden koruyun."
-    }
-  ]
+  "inputs_sha256": "62a5728e8709627093b8b215792bd58a389a7eec5ea98ce5707744cea741bfac",
+  "verdict": "pass",
+  "summary": "Yazar yanıtı, sağlanan dal iddialarıyla, mekanik sözlükselleşme profilleriyle, sözcüksel birim politikalarıyla ve komşu sınır kartlarıyla uyumludur. Yayın açısından düzeltme gerektiren bir anlam, kapsam, kaynak sentezi veya komşuluk sorunu bulunmamıştır.",
+  "issues": []
 }

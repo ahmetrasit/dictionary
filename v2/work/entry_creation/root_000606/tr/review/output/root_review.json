@@ -1,0 +1,17 @@
+{
+  "verdict": "editorial_review",
+  "summary": "B005 dalındaki kaynak sentezi, aynı kullanım için verilen sözlükler arası açıklama ayrılıklarını kaynaklara göre ayırmadığından editoryal inceleme gerektiriyor. Yazar çıktısı değiştirilmedi.",
+  "issues": [
+    {
+      "target_ref": "root_000606/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, aynı kullanım için ayn'da büyüklük, sihah'ta düşüncesizlik ve taşkınlık, tahdhib'de ise düşürülme ve zayıflatılma, taşkınlık, günah ve sapma açıklamalarını birbirinden ayırır. Mevcut common_summary bu ayrılığı ortak bir toplu açıklamaya indiriyor; source_details boş bırakıldığı için sözlüklere özgü ve birbiriyle uyuşmayan okumalar yayıma taşınmıyor.",
+      "smallest_correction": "common_summary yalnızca kaynakların ortaklaştığı kınanan durum alanıyla sınırlandırılmalı; ayn, sihah ve tahdhib için bc_001'e bağlı ayrı source_details satırları eklenerek büyüklük, düşüncesizlik ve taşkınlık, düşürülme ve zayıflatılma, günah ve sapma okumaları ilgili sözlüğe özgü biçimde gösterilmelidir."
+    }
+  ]
+}

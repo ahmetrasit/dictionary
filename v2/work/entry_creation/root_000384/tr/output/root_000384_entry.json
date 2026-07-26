@@ -55,11 +55,11 @@
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "gizlemek ve saklı tutmak",
-        "applicability": "Eylem çekirdeğini ve bir şeyi daha sonra kullanılmak üzere görünmez durumda tutma amacını birlikte karşılayan genel anlatımdır.",
+        "text": "gizleme, saklı tutma, saklanan şey ve gizlenme",
+        "applicability": "Bir şeyi görünmez kılma ve ilerisi için saklı tutma eylemlerini, bu yolla saklanan şeyi ve kişinin kendini gizlemesini birlikte karşılayan genel anlatımdır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Gizleme eylemini, görünmezliği ve saklı tutma sonucunu korur.",
+          "preserves": "Gizleme eylemini, saklı tutulan şeyi ve kişinin kendini gözden uzaklaştırmasını korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -618,21 +618,29 @@
     {
       "branch_ref": "root_000384/B005",
       "identity_judgment": {
-        "status": "accepted",
-        "rationale": "Kaynak ifadesi, seçkin bir dişi devenin görünmeyen bir yerine konulan damgayı açıkça tanımlar. Dal çerçevesi damga türünü, hayvanı ve gizli konum koşulunu eksiksiz korur.",
-        "boundary_note": "Dal her damgayı değil, seçkin dişi devenin görünmeyen bir yerine konulan özel damgayı kapsar."
+        "status": "qualified",
+        "rationale": "Kaynak ifadesinin ortak çekirdeği, görünmeyen bir yere konulan damgadır. Tanıklıklardan biri bu damgayı seçkin bir dişi deveyle sınırlar; dolayısıyla hayvan koşulu ortak çekirdek değil, kaynağa özgü bir daraltmadır.",
+        "boundary_note": "Dal her damgayı değil, görünmeyen bir yere konulan damgayı kapsar; seçkin dişi deve sınırlaması tanıklıklardan birine özgüdür."
       },
       "lexicalization_scope": {
         "branch_kind": "bare",
         "note": "Yalın dal belirli bir hayvan damgasını adlandırır; genel gizlilik, çadır veya tahıl kılıfı anlamları tanıma katılmaz."
       },
       "concept_map": {
-        "definition": "Seçkin bir dişi devenin dışarıdan kolayca görülmeyen bir yerine vurulan damga.",
+        "definition": "Dışarıdan kolayca görülmeyen bir yere vurulan damga; bir tanıklıkta seçkin dişi devenin gizli yerindeki damga olarak daraltılır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Seçkin dişi devenin görünmeyen bir yerine vurulan özel damga.",
+            "statement": "Görünmeyen bir yere vurulan damga.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Seçkin dişi devenin görünmeyen bir yerine vurulan damga.",
             "claim_ids": [
               "bc_001"
             ]
@@ -640,7 +648,7 @@
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar damganın seçkin dişi deveye ait olması ve gözden uzak bir yere konulması üzerinde birleşir.",
+        "common_summary": "Kaynaklar gözden uzak bir yere konulan damga çekirdeğinde birleşir; tanıklıklardan biri bunu seçkin dişi devenin gizli yerindeki damga olarak daraltır.",
         "common_claim_ids": [
           "bc_001"
         ],
@@ -649,11 +657,11 @@
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "gizli yerdeki deve damgası",
-        "applicability": "Seçkin bir dişi devenin kolay görülmeyen yerine vurulan damganın adı olarak kullanılır.",
+        "text": "gizli yere vurulan damga",
+        "applicability": "Dışarıdan kolayca görülmeyen bir yere vurulan damganın genel adı olarak kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Damga türünü, deve katılımcısını ve görünmeyen konum koşulunu korur.",
+          "preserves": "Damga türünü ve görünmeyen konum koşulunu korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -676,10 +684,10 @@
           "neighbor_ref": "root_000238/B006",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak dal, seçkin dişi devenin görünmeyen yerindeki damgayı belirtir.",
+          "focus_only": "Odak dal, uygulama yöntemi belirtmeksizin görünmeyen bir yerdeki damgayı belirtir.",
           "neighbor_only": "Komşu dal, devenin uyluğundaki derinin kesilip kaldırılmadan toplanmasıyla yapılan belirli işareti belirtir.",
           "gloss": "uyluk derisinden yapılan işaret",
-          "shared_zone": "İki dal da deveyi ayırt etmek için bedende bırakılan işaret alanındadır.",
+          "shared_zone": "İki dal da bedende bırakılan ayırt edici işaret alanında kesişir.",
           "distinction": "Odak dalı belirleyen özellik damganın gizli konumudur; komşu dalı belirleyen özellik ise uyluk derisine uygulanan özel kesme yöntemidir."
         },
         {
@@ -689,18 +697,18 @@
           "focus_only": "Odak dal görünmeyen konumdaki damgayı belirtir.",
           "neighbor_only": "Komşu dal yanağa vurulan belirli damgayı belirtir.",
           "gloss": "yanak damgası",
-          "shared_zone": "Her iki dal deve üzerindeki ayırt edici damgaları adlandırır.",
+          "shared_zone": "Her iki dal konumla ayrıştırılan damga adlandırmalarıdır.",
           "distinction": "İki adlandırmanın temel ayrımı konumdur: odak dal gizli bir yeri, komşu dal açıkça yanağı şart koşar."
         },
         {
           "neighbor_ref": "root_000389/B009",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "Odak dalın biçimi belirtilmez; görünmeyen yerde bulunması ve seçkin dişi deveye ait olması belirleyicidir.",
+          "focus_only": "Odak dalın biçimi belirtilmez; görünmeyen bir yerde bulunması belirleyicidir.",
           "neighbor_only": "Komşu dal uylukta enine uzanan uzun bir damga biçimini belirtir.",
           "gloss": "uyluktaki enine uzun damga",
-          "shared_zone": "İki dal deve damgalama söz varlığına aittir.",
-          "distinction": "Odak dal gizli konum ve hayvan niteliğiyle, komşu dal ise uyluk konumu ve damganın uzun enine biçimiyle sınırlandırılır."
+          "shared_zone": "İki dal damga söz varlığına aittir.",
+          "distinction": "Odak dal gizli konumla, komşu dal ise uyluk konumu ve damganın uzun enine biçimiyle sınırlandırılır."
         }
       ],
       "neighbor_coverage_note": "Sağlanan komşuların tümü değerlendirildi; gizli konumu yöntem, yanak konumu ve uyluktaki biçimden ayıran üç damga ilişkisi yayımlandı.",
@@ -747,7 +755,7 @@
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar büyük küp anlamında ve adın saklama bildiren kökten geldiği açıklamasında birleşir; kullanımda kökteki seslerden birinin düştüğünü belirtir.",
+        "common_summary": "Kaynaklar özgün seslerden birinin kullanımda düşürülmesini kaydeder; tanıklıklardan biri büyük küp anlamını, diğeri ise adın saklama bildiren kökle bağını açıkça belirtir.",
         "common_claim_ids": [
           "bc_001"
         ],
@@ -849,12 +857,12 @@
         "note": "Anlam belirli bir yer adlandırmasına bağlı sözlüksel birimdir; yalın köke toprağı sürme anlamı yüklenmez."
       },
       "concept_map": {
-        "definition": "Toprağı ekim için sürmek, altını üstüne getirerek kabartmak ve tarıma hazırlamak.",
+        "definition": "Belirli bir yer adlandırmasında toprağı ekim için sürmek, altını üstüne getirerek kabartmak ve tarıma hazırlamak.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Toprağı sürüp altını üstüne getirerek ekime hazırlamak.",
+            "statement": "Belirli bir yer adlandırmasında toprağı sürüp altını üstüne getirerek ekime hazırlamak.",
             "claim_ids": [
               "bc_001"
             ]

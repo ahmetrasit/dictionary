@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yanit genel olarak kanitla uyumludur; ancak B008 kavram karsiligi kederi gereksiz bicimde incinmis gururun sonucu yapmis, B011'deki bir sozluk birimi karsiligi ise uc alternatif nedeni yanlislikla birlikte gerceklesen nedenlere donusturmustur. Iki alan en kucuk duzeltmelerle onarilmalidir.",
+  "issues": [
+    {
+      "target_ref": "root_000973/B008",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit, incinmis gurur, hiddet, keder ve ic duygulanimi ayni ad altinda fakat ayri anlam yonleri olarak verir. Kavram karsiligindaki 'incinmis gururdan dogan ... keder' ifadesi, kaynakta bulunmayan bir neden-sonuc bagi kurarak keder kapsamını daraltir.",
+      "smallest_correction": "Kavram karsiliginin metnini neden-sonuc bagi kurmadan 'incinmis gurur, ofke veya kederli ic duygulanim' olarak degistir; alanin diger alt alanlarini koru."
+    },
+    {
+      "target_ref": "root_000973/B011",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_028"
+      ],
+      "evidence_conflict": "Kanit, yolcunun binegi yoruldugunda, zarar gordugunde veya kayboldugunda yolda kalmasini uc alternatif neden olarak verir. 'Yorulup zarar gordugu veya kayboldugu' karsiligi ise yorulma ile zarar gormeyi birlikte gerceklesmis tek secenek yapar.",
+      "smallest_correction": "lu_028 hedef karsiligini 'binegi yoruldugu, zarar gordugu veya kayboldugu icin yolda kaldi' olarak degistir; diger sozluk birimi karsiliklarini koru."
+    }
+  ]
+}

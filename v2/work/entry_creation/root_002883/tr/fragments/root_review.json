@@ -1,0 +1,40 @@
+{
+  "inputs_sha256": "cf71c0d2dc6e6b407ff46a0ffc1bffbdbc06fed10b1db307bfdf9f2b9a17bde0",
+  "verdict": "repair",
+  "summary": "Yazar cevabi genel olarak dal sinirlarini ve komsu ayrimlarini koruyor. Ancak B002'de kaynakta develere ait verilen su yuzeyi ornegi iki alanda genel hayvanlara genisletilmis, B004'teki bir aciklayici karsilik ise Turkcede kaynakta hedeflenen beden yeri anlamindan cok yerli veya mahalli kadin gibi okunuyor. Bu bulgular yalniz ilgili alanlarda kucuk metin degisiklikleriyle onarilabilir.",
+  "issues": [
+    {
+      "target_ref": "root_002883/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B002 bc_001, havuzda kalan az suyu ve bu suyu agizlariyla alanlari develer olarak verir. Concept map tanimi ve F002 ifadeleri bunu genel hayvanlar diye genisleterek kaynak ornegindeki katilimciyi belirsizlestiriyor.",
+      "smallest_correction": "B002 concept_map icinde yalniz tanim ve F002 statement metinlerinde hayvanlar ifadesini develer olarak degistir."
+    },
+    {
+      "target_ref": "root_002883/B002",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B002 bc_001, agizla alinan su yuzeyini develerle sinirli bir kaynak tasviri olarak verir. Contextual gloss metni hayvanlar diyerek bu tasviri kaynak disi bicimde genellestiriyor.",
+      "smallest_correction": "B002 contextual_glosses icindeki aciklayici karsiligin text alanini develerin agizladigi su yuzeyi yap."
+    },
+    {
+      "target_ref": "root_002883/B004",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B004 bc_001, kadin hakkinda bir yerin kuru olmasi niteligini verir. Contextual gloss olarak kuru yerli kadin Turkcede yerli veya mahalli kadin gibi okunabildigi icin kaynakta verilen beden yeri niteligini yanlis yöne tasiyor.",
+      "smallest_correction": "B004 contextual_glosses icindeki kuru yerli kadin text alanini bedensel yeri kuru kadin olarak degistir."
+    }
+  ]
+}

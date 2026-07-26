@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B009'un nitelikli kimliği, çözümlenmemiş sözlükselleşme kapsamı ve boş sözlüksel birim listesi kanıtla uyumludur. Ancak kavram haritası, kaynak iddiasında bulunmayan görünmezlik niteliğini çekirdek tanıma eklemektedir; bu sınırlı ekleme canlı yazar çıktısından kaldırılmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001444/B009",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, varlık adını ve çoğul sınıfını kaydeder, ardından adı haber ve elçilikle ilişkili eski biçimlerle açıklar; varlığın görünmez olduğunu söylemez. Tanım ile F001 bu desteklenmeyen ontolojik niteliği çekirdeğe ekliyor.",
+      "smallest_correction": "B009 concept_map.definition ve F001 statement içindeki görünmez nitelemesini kaldır; ilahi haberci varlık açıklamasını, nitelikli kimlik kararını ve etimolojik kaynak varyantlarını değiştirme."
+    }
+  ]
+}

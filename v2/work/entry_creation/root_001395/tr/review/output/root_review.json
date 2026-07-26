@@ -1,0 +1,114 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın dal ayrımları genel olarak kanıtla uyumludur; ancak B004'te tek kaynağa özgü bekleme süresi ve B007'de tek kaynağa özgü sağlık niteliği dalın genel çekirdeğine yükseltilmiştir. B002'nin kavram karşılığı da doruğa ulaşmayı bütün kullanımlara yaymaktadır. Bu sınırlı alanlar kanıta göre düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001395/B002",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt uzama veya yükselmeyi genel çekirdek olarak verir; doruğa ulaşma yalnızca gün ve kuşlukla ilgili bazı kullanımlarda bulunur. Mevcut karşılık, ardışık anlatımıyla her kullanımın uzayıp yükselerek doruğa ulaştığını bildirir.",
+      "smallest_correction": "Kavram karşılığını \"uzama, yükselme ve kimi bağlamlarda doruğa ulaşma\" yapıp uygulanabilirlik ve korunan yön açıklamalarını da bu koşullu kapsamla uyumlu hale getirin."
+    },
+    {
+      "target_ref": "root_001395/B004",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Boşanan kadına verilen şeyin bekleme süresinde yarar sağlaması yalnızca bir kaynağın daha dar açıklamasıdır. Mevcut gerekçe geçici dönemi dalın genel işlevi gibi sunmaktadır.",
+      "smallest_correction": "Gerekçede genel işlevi boşanan kadına yarar sağlamakla sınırlayın ve bekleme süresini yalnızca bir kaynağın dar nitelemesi olarak belirtin; durum ve sınır notunu koruyun."
+    },
+    {
+      "target_ref": "root_001395/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım bekleme dönemini bütün dalın zorunlu zaman sınırı yaparken kanıtın çoğu yalnızca boşanan kadına yararlanması için verilen şeyi bildirir. Bekleme süresi tek kaynağa özgüdür ve uzmanlaşma değil kaynak varyantı olarak işaretlenmelidir.",
+      "smallest_correction": "Tanımdan zorunlu bekleme dönemi ifadesini çıkarın; F002 rolünü \"source_variant\" yapıp ifadesini bir kaynağın desteği bekleme süresiyle sınırlandırdığını açıkça belirtecek biçimde düzeltin. Diğer yüzleri koruyun."
+    },
+    {
+      "target_ref": "root_001395/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak sentezi ortak desteği verir, fakat tek kaynaktaki bekleme süresi kısıtını hiç kaydetmez.",
+      "smallest_correction": "Ortak özeti koruyup bir kaynağın yararlanmayı boşanma sonrasındaki bekleme süresiyle nitelediğini kaynak-tarafsız bir cümleyle ekleyin."
+    },
+    {
+      "target_ref": "root_001395/B007",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıtın ortak çekirdeği birini yaşatmak, sonunu ertelemek ve bu sürede yararlanmasını sağlamaktır. Sağlık içinde kalma yalnızca bir kaynaktaki belirli ifadenin niteliğidir; mevcut gerekçe ile sınır notu bunu kurucu sonuç yapmaktadır.",
+      "smallest_correction": "Gerekçe ve sınır notunda sağlık şartını genel çekirdekten çıkarın; sağlık içinde sürmeyi yalnızca bir kaynağın daha dar nitelemesi olarak kaydedin."
+    },
+    {
+      "target_ref": "root_001395/B007",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım sağlık içinde yararlanmayı bütün kullanımlarda zorunlu kılar ve F003 bunu genel ilişkili kullanım sayar. Kanıtta genel olan yaşatma ve yararlanma süresi, sağlık ise tek kaynağa özgü nitelemedir.",
+      "smallest_correction": "Tanımı yaşatma, sonu erteleme ve verilen sürede yararlanma çekirdeğiyle kurun. F001'e yaşatma ile yararlanma süresini birlikte taşıyın; F003 rolünü \"source_variant\" yapıp sağlık niteliğini tek kaynağa bağlayın."
+    },
+    {
+      "target_ref": "root_001395/B007",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Mevcut ortak özet, uzatılan sürenin sağlık içinde yararlanmayla nitelendiğini kaynakların tümüne yükler. Sağlık ayrıntısı yalnızca bir kaynakta bulunur.",
+      "smallest_correction": "Ortak özeti yaşamı sürdürme, sonu erteleme ve bu sürede yararlanma üzerinde kurun; sağlık içinde sürmeyi bir kaynağın daha dar nitelemesi olarak ayırın."
+    },
+    {
+      "target_ref": "root_001395/B007",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı sağlık niteliğini dalın tamamının çekirdeğine yerleştirir; oysa sağlık yalnızca tek kaynağın dar ifadesidir.",
+      "smallest_correction": "Karşılığı \"yaşatıp yararlanacağı süre verme\" olarak değiştirin ve uygulanabilirlik ile hata profili açıklamalarından genel sağlık şartını çıkarın."
+    },
+    {
+      "target_ref": "root_001395/B007",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Süre tanıma komşusuyla karşılaştırmada sağlık içinde yaşama odak dalının zorunlu sınırı sayılmıştır. Kanıt bu zorunluluğu dal genelinde desteklemez.",
+      "smallest_correction": "root_001447/B002 karşılaştırmasındaki focus_only ve distinction metinlerinden genel sağlık şartını çıkarın; yaşamın sürmesi ve bu sürede yararlanma ayrımını koruyun."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök özeti B007'yi sağlık içinde yaşatma olarak geneller; inceleme bulgusunda sağlık niteliğinin dal genelinde değil tek kaynakta bulunduğu saptanmıştır.",
+      "smallest_correction": "Özetteki \"sağlık içinde yaşatmaya\" ifadesini \"belirli süre yaşatıp yararlandırmaya\" olarak değiştirin; diğer kök düzenini koruyun."
+    }
+  ]
+}

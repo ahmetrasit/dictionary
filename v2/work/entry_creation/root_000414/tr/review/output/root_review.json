@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "B002 dalında kaynakların yalnız birindeki küçük delik ayrıntısı, genel dal çekirdeğinin zorunlu ölçek sınırı gibi sunulmuştur. Kavram haritası, kaynak sentezi ve kavram karşılığı bu daraltmayı taşımaktadır; diğer dallarda yüksek güvenli ve alanla sınırlı bir yayın kusuru saptanmamıştır.",
+  "issues": [
+    {
+      "target_ref": "root_000414/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi genel olarak açıklık, gedik, delik ve her türlü yarık ya da boşluğu bildirir; yalnız bir sözlük küçük deliği ayrıca anar. Tanım ile F001 bütün dalı küçük açıklıkla sınırlandırarak kaynak varyantını çekirdeğe yükseltmektedir.",
+      "smallest_correction": "Tanımdan ve F001'den küçüklüğü zorunlu kılan sözcükleri çıkarıp açıklık, delik, gedik ve aralık çekirdeğini ölçek bakımından nötr bırakın; örnek facet'lerini değiştirmeyin."
+    },
+    {
+      "target_ref": "root_000414/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, deliğin küçük olmasını kaynakların birleştiği özelliklerden biri saymaktadır; oysa ortak tanıklık fiziksel açıklık üzerindedir ve küçüklük yalnız bir kaynak ayrıntısıdır.",
+      "smallest_correction": "common_summary içindeki küçüklük iddiasını kaldırın ve ortak çekirdeği fiziksel açıklık, delik ya da aralık olarak ölçek bakımından nötr biçimde ifade edin."
+    },
+    {
+      "target_ref": "root_000414/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığındaki küçük nitelemesi ve hata profilindeki küçük ölçek iddiası, genel açıklık ve yarık tanıklıklarını dışarıda bırakarak dalın temel karşılığını gereksiz yere daraltmaktadır.",
+      "smallest_correction": "concept_gloss.text, applicability ve error_profile.preserves içinden küçüklüğü zorunlu kılan ifadeleri çıkarın; fiziksel açıklık, delik ve parçalar arası aralık kapsamını koruyun."
+    }
+  ]
+}

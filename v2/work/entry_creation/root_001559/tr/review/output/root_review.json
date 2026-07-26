@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıta ve dal sınırlarına uygundur. Ancak B003 dalının kavram karşılığı, akışı bütün çekirdeğin zorunlu parçası gibi göstererek akış içermeyen açma ve genişletme kullanımlarını gereksiz biçimde daraltmaktadır.",
+  "issues": [
+    {
+      "target_ref": "root_001559/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıtın çekirdeği bir şeyi açmayı veya genişletmeyi kapsar; akış yalnız kan akıtma ve bağırsak boşalması gibi bazı gerçekleşmelerde bulunur. Buna karşın mevcut kavram karşılığı, akışa bırakmayı genel karşılığın zorunlu bileşeni yapmaktadır.",
+      "smallest_correction": "Kavram karşılığını akışsız örnekleri de kapsayacak biçimde \"bir şeyi açma veya genişletme\" olarak değiştirin; uygulanabilirlik açıklamasını, hata profilini ve facet_ids listesini bu çekirdeğe göre yalnız F001'i gösterecek şekilde uyarlayın."
+    }
+  ]
+}

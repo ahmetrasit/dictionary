@@ -1,0 +1,61 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtının dal kimlikleri ve kapsamları genel olarak kanıtla uyumludur. Ancak B005, bazı kaynaklardaki kap içindeki hurma-kuru üzüm örneğini bütün dalın zorunlu çekirdeğine taşımaktadır; çekirdek, genel olarak karışmış ve ayrılmamış şey veya yiyecektir. Ayrıca B007'nin seçili komşusu yoksulluk durumunu, ihtiyaç anlamını ve bu durumdaki kişiyi de kapsadığı için tam eş anlamlı değildir. Bu yüksek güvenli ve sınırlı sorunlar en küçük alan düzeltmeleriyle giderilebilir.",
+  "issues": [
+    {
+      "target_ref": "root_001164/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi hem genel olarak karışmış şeyi ve karışık yiyeceği hem de hurma ile kuru üzümün bir kapta bulunması örneğini verir. Tanım ile F001 ise iki ayrı türü ve tek kabı zorunlu çekirdek koşulları yaparak genel kaynak anlatımını daraltmaktadır.",
+      "smallest_correction": "Tanımı ve F001'i, birbirinden ayrılmadan karışmış şey veya yiyecek çekirdeğine göre düzelt; iki ayrı şeyin tek kapta, özellikle hurma ile kuru üzüm olarak bulunmasını yalnız F002'deki örnek düzeyinde koru."
+    },
+    {
+      "target_ref": "root_001164/B005",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, bütün kaynakların tek kap ve hurma-kuru üzüm örneğinde birleştiğini söylüyor; oysa kaynak ifadesindeki bütün sözlükler için güvenli ortak payda karışmış şey veya karışık yiyecektir, tek kaplı meyve karışımı ise örnek ayrıntısıdır.",
+      "smallest_correction": "Ortak özeti, kaynakların karışmış şey veya yiyecek anlamında birleştiğini söyleyecek biçimde değiştir ve tek kapta hurma-kuru üzüm karışımını ortak zorunlu koşul değil, bu anlamı açıklayan bir örnek olarak sun."
+    },
+    {
+      "target_ref": "root_001164/B005",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı ve hata profili, 'tek kap' koşulunu dalın tamamına taşımaktadır. Kaynak ifadesindeki genel 'karışmış şey' ve 'karışık yiyecek' anlatımı kap koşuluyla sınırlı değildir.",
+      "smallest_correction": "Kavram karşılığını 'birbirinden ayrılmadan karışmış şeyler' olarak düzelt; uygulanabilirlik ve korunan anlam açıklamalarından zorunlu tek kap ve tür sayısı koşullarını kaldır."
+    },
+    {
+      "target_ref": "root_001164/B005",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_013"
+      ],
+      "evidence_conflict": "lu_013 genel olarak ayrılmamış karışık şeyi bildirir ve tek kaptaki hurma-kuru üzüm karışımını örnek verir. Hedef karşılık yalnız 'tek kapta' diyerek örnekteki kap koşulunu bütün birimin anlam sınırı yapmaktadır.",
+      "smallest_correction": "lu_013 hedef karşılığını 'birbirinden ayrılmadan karışmış şey' olarak değiştir; kap içindeki meyve örneğini bu genel karşılığın zorunlu koşulu yapma."
+    },
+    {
+      "target_ref": "root_001164/B007",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Odak dal yalnız yoksul duruma gelme değişimini bildirir. root_001188/B011 kartı ise yoksulluk ve ihtiyaç durumunu, bu durumdaki kişiyi ve yoksullaşma fiilini birlikte kapsar; bu ek durum ve katılımcı kapsamı exact/synonym sınıflandırmasını geçersiz kılar.",
+      "smallest_correction": "root_001188/B011 ilişkisini near_synonym/partial olarak değiştir; odak tarafında yoksullaşma değişimini, komşu tarafında ihtiyaç-yoksulluk durumu ile bu durumdaki kişiyi belirt ve ayrımı buna göre güncelle."
+    }
+  ]
+}

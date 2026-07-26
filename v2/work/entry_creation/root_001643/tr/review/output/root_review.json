@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak iki komşu ayrımında yayın anlamını etkileyen, sınırları belirli hatalar vardır. B001'de komşu dalın sığınak adlarını da kapsadığı gözden kaçırılmış, B006'da ise koşullu bir komşu anlam tam eş anlamlı sayılmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_001643/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_001059/B001 için verilen sınır kartı sığınma ve korunma eylemlerinin yanında sığınak ve sığınılan yer adlarını da açıkça kapsar. Yazarın neighbor_only ve distinction metinleri komşu dalı yalnızca eylem olarak sunarak odak dal ile gerçek ad alanı örtüşmesini silmektedir.",
+      "smallest_correction": "root_001059/B001 karşılaştırmasında komşu dalın hem sığınma eylemini hem de sığınak ve sığınılan yer adlarını kapsadığını belirtin; ortak ad alanındaki örtüşmeyi koruyup odak dalın koruyucu sığınak nesnesine yoğunlaştığını söyleyecek biçimde neighbor_only, shared_zone ve distinction metinlerini düzeltin."
+    },
+    {
+      "target_ref": "root_001643/B006",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Odak dalın kanıtı genel olarak bir kişiye üstün gelmeyi bildirirken root_000570/B002 sınır kartı üstün gelmeyi karşılıklı bir çekişmeye ve belirli bir işe bağlar. Bu ek koşul sıradan kullanımda sınırların tam ikame edilebilir olmasını engeller; synonym ve exact sınıflandırması bu nedenle kanıtla uyuşmaz.",
+      "smallest_correction": "root_000570/B002 ilişkisini near_synonym ve partial olarak değiştirin; focus_only alanında odak dalın genel kişi yönelimli yenme kapsamını, neighbor_only alanında komşunun karşılıklı çekişme ve belirli iş koşulunu belirtin ve gloss, shared_zone ile distinction metinlerini bu asimetriye göre en az ölçüde uyarlayın."
+    }
+  ]
+}

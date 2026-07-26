@@ -1,0 +1,28 @@
+{
+  "verdict": "editorial_review",
+  "summary": "B012 tanımı kanıttaki dişil ve göndergesi belirtilmemiş kullanımı kişi veya varlıkların tümüne genelliyor. Ayrıca B011 sentezi, tek kaynakta verilen ayırt edici örneği kapsamıyor; örneğin kanıtta açıklanmayan göndergisi editoryal karar gerektiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_003401/B012",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 yalnızca dişil biçimde verilen küçük ağız nitelemesini destekliyor ve nitelenen varlığın türünü açıklamıyor. Tanımın bunu herhangi bir kişi veya varlığa yayması, kanıtın açıkça vermediği bir kapsam ekliyor.",
+      "smallest_correction": "Tanımı, gönderge türü eklemeden, kaynakta dişil biçimde verilen ve ağzın küçük oluşunu bildiren bir görünüş nitelemesi olarak sınırlandırın."
+    },
+    {
+      "target_ref": "root_003401/B011",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 güzellik açıklamalarının yanında kadını bir kasır veya saray yanında anan tek kaynaklı, ayırt edici bir örnek de veriyor. Sentez yalnızca güzellik eşdeğerlerini özetlediği için bu örneği bütünüyle dışarıda bırakıyor.",
+      "smallest_correction": "Örneğin göndergesini veya işlevini tahmin etmeden önce editoryal olarak çözümleyin; ardından bc_001'e bağlı tek kaynaklı örnek olduğunu source_synthesis içinde kısa ve tarafsız biçimde kaydedin."
+    }
+  ]
+}

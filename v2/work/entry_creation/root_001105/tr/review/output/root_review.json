@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak B010 komşuluk karşılaştırmasında odağa kanıtsız bir su kokusu kapsamı eklenmiş, B011 kavram karşılığında ise alternatif renk ve koku nitelikleri birlikte bulunması gereken özellikler gibi sunulmuştur.",
+  "issues": [
+    {
+      "target_ref": "root_001105/B010",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşuluk kaydının shared_zone cümlesi iki dalın da et ve su gibi şeylerin kokusunu anlatabildiğini söylüyor. B010 kanıtı yalnız et veya yağ kokusunu, bunun elde kalmasını ve diğer kokuları bastırmasını destekliyor; su kokusu bu dalın kapsamında değildir.",
+      "smallest_correction": "B010 komşuluk kaydındaki shared_zone cümlesinden suyu çıkarıp ortak alanı et kokusu ile kokunun başka bir şeye sinmesi olarak belirtin."
+    },
+    {
+      "target_ref": "root_001105/B011",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığındaki \"renkli ve kokulu karışım\" sözü renk ile kokunun birlikte bulunmasını zorunlu gösteriyor. Kanıt ise gelin yüzüne sürülen bitkisel boya veya safran ile güzel kokulu maddeyi alternatif görünümler olarak verir.",
+      "smallest_correction": "concept_gloss.text değerini \"gelin yüzüne sürülen renkli veya kokulu karışım\" yapın ve aynı alandaki preserves açıklamasını renk veya koku işlevini koruyacak biçimde düzeltin."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "inputs_sha256": "6a8c812cde72e9060bbc78a8740da68f284f293b365fbcf0cb4c03fdf1773cd4",
+  "verdict": "repair",
+  "summary": "B002 dalındaki hayvan anlamı ve diğer üç dalın yayıma dönük semantik yapısı kanıtla uyumludur. Ancak B002'nin nesne anlamı yalnız eğri sırık söz öbeğiyle kanıtlanmışken tanım ve iki gloss yüzeyi bunu uzun ve ince nesnelerin genel eğriliğine genişletmektedir; bu alanlar söz öbeği sınırına çekilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000911/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, nesne alanında yalnız eğri sırık söz öbeğini verir; yalın biçim ise hayvandaki eğrilik ve güçlük içindir. Tanım ile F001 bunu her uzun ve ince nesneye uygulanabilen genel bir eğrilik anlamına genişleterek söz öbeğine bağlı kapsamı aşmaktadır.",
+      "smallest_correction": "Tanımın nesne bölümünü ve F001'i yalnız eğri sırığı anlatacak biçimde daralt; hayvandaki eğrilik, güçlük ve direnç bölümünü değiştirme."
+    },
+    {
+      "target_ref": "root_000911/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Glossun yalın \"eğrilik\" bölümü ve uzun nesneye ilişkin uygulanabilirlik açıklaması, kanıtta yalnız eğri sırık söz öbeğine bağlı olan nesne anlamını bağımsız bir dal anlamı gibi sunmaktadır.",
+      "smallest_correction": "Glossun nesne bölümünü \"eğri sırık\" olarak ver ve uygulanabilirlik ile korunan özellik açıklamalarını da bu söz öbeği sınırına çek; hayvan bölümünü koru."
+    },
+    {
+      "target_ref": "root_000911/B002",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İlk bağlamsal gloss, \"eğrilik\" sözünü herhangi bir uzun ve ince nesne için kullanılabilir gösteriyor. Kanıt bu nesne anlamını yalnız eğri sırık söz öbeğinde desteklemektedir.",
+      "smallest_correction": "İlk bağlamsal glossu \"eğri sırık\" olarak değiştir ve uygulanabilirlik ile korunan özellik metinlerini yalnız bu söz öbeğini anlatacak biçimde daralt."
+    }
+  ]
+}

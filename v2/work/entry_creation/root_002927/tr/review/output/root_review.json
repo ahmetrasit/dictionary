@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar ciktisi genel olarak kanitla uyumlu; ancak B003 kaynak sentezi, sahiplik ve verme deyimlerini sesin isitilmesine bagliymis gibi sunuyor. Bu yalniz source_synthesis alaninda dar bir duzeltme gerektiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_002927/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B003 icin bc_001 hayvan sesi cekirdegini, raghiya ile deveye sahip olma veya deve verme deyimlerini ve ayrica develeri bagirtip seslerini duyurma uygulamasini birlikte verir. Source_synthesis ise ilgili deyimler ve eylemler sesin isitilmesine dayanir diyerek sahiplik ve verme deyimlerini de isitme amacina baglar; bu kisim kanitla tam uyusmaz.",
+      "smallest_correction": "B003 source_synthesis common_summary metnini, hayvan sesi cekirdegini koruyacak; sahiplik/verme deyimlerini ses cikaran hayvan uzerinden metonimik kullanim olarak, develeri bagirtma orneklerini ise sesin duyurulmasi uygulamasi olarak ayiracak sekilde daralt."
+    }
+  ]
+}

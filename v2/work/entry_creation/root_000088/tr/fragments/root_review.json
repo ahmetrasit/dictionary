@@ -1,29 +1,6 @@
 {
-  "inputs_sha256": "12f7f0a21fc484aa3e8fb58d482b2640356357ca41e065b7b90280da259c8aa9",
-  "verdict": "editorial_review",
-  "summary": "Temel anlam haritası ve Türkçe karşılıklar genel olarak kanıtla uyumludur. Ancak iki dalda yalnızca tek sözlüğe özgü ayrıntılar ortak özete alınmıştır; mevcut çok kaynaklı iddia paketleri bu ayrıntıların kurala uygun kaynak satırlarına taşınmasına izin vermediğinden editoryal müdahale gerekir.",
-  "issues": [
-    {
-      "target_ref": "root_000088/B001",
-      "field": "source_synthesis",
-      "severity": "major",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_001"
-      ],
-      "evidence_conflict": "Ortak özetteki aşağılama ve baskı altına alma uzantısı yalnızca Makayis ibaresinde bulunur; aynı lu_001 iddiası ise Makayis ile Müfredat kaynaklarını birlikte taşır. Bu nedenle ayrıntı ne kaynaklar arası ortak içerik gibi common_summary içinde kalabilir ne de mevcut iddiayla tek sözlüğe çözümlenen bir source_details satırına konabilir.",
-      "smallest_correction": "lu_001 içindeki Makayis'e özgü uzantıyı ayrı ve tek kaynaklı bir iddiaya ayırın; ayrıntıyı bu yeni iddiayla source_details alanına taşıyıp common_summary içinden çıkarın."
-    },
-    {
-      "target_ref": "root_000088/B002",
-      "field": "source_synthesis",
-      "severity": "major",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_007"
-      ],
-      "evidence_conflict": "İlk ünsüzü değişmiş eşdeğer biçim yalnızca Makayis'in ibdal kaydında yer alır; lu_007 ise Makayis ile Tehzib'i birlikte gösterir. Bu tek kaynaklı ayrıntının common_summary içinde verilmesi kaynaklar arası ortaklık izlenimi yaratır, mevcut iddiayla source_details alanına taşınması da tek sözlüğe çözümleme koşulunu karşılamaz.",
-      "smallest_correction": "İbdal kaydını lu_007'den ayırarak yalnızca Makayis'e bağlı yeni bir iddia oluşturun; biçim ayrıntısını bu iddiayla source_details alanına taşıyın ve common_summary içinden kaldırın."
-    }
-  ]
+  "inputs_sha256": "bbc70851d7e60cc01122227deaffee8e7301ee029f994db56873deb53bd7c2ad",
+  "verdict": "pass",
+  "summary": "Yazar yanıtı, dört dalın kaynakla belirlenen kimlik ve kapsam sınırlarını koruyor. Kavram haritaları, sözlüksel karşılıklar, kaynak sentezleri ve komşu ayrımları kanıtla uyumlu; onarım gerektiren yayınsal bir sorun bulunmadı.",
+  "issues": []
 }

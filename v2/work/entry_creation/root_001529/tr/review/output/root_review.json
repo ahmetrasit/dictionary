@@ -1,0 +1,37 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dalların büyük bölümünü kanıta uygun ve kapsam sınırlarını koruyarak işler. Ancak B001 çekirdeğine kanıtta zorunlu olmayan amaçlılık koşulu eklenmiş, bu koşul bir komşu ayrımına da taşınmış ve kök özeti ayrı yükselme dalını üflemenin sonucuymuş gibi bağlamıştır.",
+  "issues": [
+    {
+      "target_ref": "root_001529/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak iddiası hem insanın ağzıyla ve araçla üflemesini hem de rüzgarın bir şeyin içine esmesini kapsar. Tanımdaki özne kuruluşu ve F001'deki amaçlı biçimde yöneltme şartı, rüzgarın kendiliğinden gerçekleşen etkisini dışarıda bırakarak dal çekirdeğine kanıtsız bir irade koşulu ekler.",
+      "smallest_correction": "Tanımı, havanın ağızdan veya bir araçtan gönderilmesini ve rüzgarın bir şeyin içine ya da üzerine esmesini kapsayacak biçimde düzelt; F001'den amaçlılık şartını kaldır ve yalnızca havanın ya da soluğun bir hedefe yönelmesini koru."
+    },
+    {
+      "target_ref": "root_001529/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_001533/B001 ile ayrım, odak dalını amaçlı üfleme diye sınırlar; oysa B001 iddiası rüzgarın bir şeyin içine esmesini de içerir. Komşudan ayrılmak için hedefe yönelme yeterlidir, irade şartı kanıtlanmamıştır.",
+      "smallest_correction": "Bu komşu satırındaki etkilemek amacıyla ve amaçlı ifadelerini kaldır; ayrımı, bu dalda havanın bir şeyin içine veya üzerine yönelmesine, komşuda ise hedef şartı olmadan soluğun gövdeden çıkmasına dayandır."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök özeti şişme, kabarma ve yükselip belirginleşmeyi birlikte hava gönderme eyleminin sonuçları olarak bağlar. Oysa B003, günün yükselmesi, ilkbaharda toprağın kabarması ve yüksek araziyi ayrı ve tanıklanmış bir yükselme dalı olarak kurar; bunlar üflemenin sonucu değildir.",
+      "smallest_correction": "Özetin ilk cümlesini hava gönderme eylemini, şişme ve kabarmayı, ayrıca ayrı yükselip belirginleşme kullanımlarını eş düzeyde sıralayacak biçimde düzelt; yükselmeyi üflemenin sonucu gibi bağlayan bunun sözcüğünü kaldır."
+    }
+  ]
+}

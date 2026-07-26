@@ -1,0 +1,83 @@
+{
+  "verdict": "repair",
+  "summary": "B006 dalinda kaynak yalniz su veya baska bir seyin degismesini verir; yazar ciktiysa bunu birkac alanda bozulma ve B013 ile karsitlik olarak genisletmis. Bu desteklenmeyen yon, B006 alanlarinda ve B006-B013 komsu ayriminda notr degisme anlatimina cekilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_002995/B006",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak iddiasi su veya baska bir seyin degismesini bildirir; identity_judgment ise dal sinirina ayrica bozulmayi ekliyor.",
+      "smallest_correction": "B006 identity_judgment icinde bozulma ifadesini kaldirip dali nesnenin durum veya nitelik degismesiyle sinirla."
+    },
+    {
+      "target_ref": "root_002995/B006",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak iddiasi notr degisme verir; concept_map tanimi ve F002, degismeyi ozellikle bozulmus hale gelme diye yonlendiriyor.",
+      "smallest_correction": "B006 concept_map tanimini ve F002'yi notr durum veya nitelik degisimi olarak yaz; bozulma uzmanlasmasini cikart."
+    },
+    {
+      "target_ref": "root_002995/B006",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak iddiasi degisme disinda bozulma yonu vermez; source_synthesis bu yonun anlasilabilecegini soyluyor.",
+      "smallest_correction": "B006 source_synthesis ozetini su ve benzeri nesnelerde notr degisme anlamiyla sinirla; bozulma yonunu desteklenmeyen ek olarak cikart."
+    },
+    {
+      "target_ref": "root_002995/B006",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak iddiasi degismeyi destekler; concept_gloss metni bozulup degismek diyerek olumsuz bozulma anlamini cekirdege ekliyor.",
+      "smallest_correction": "B006 concept_gloss metnini ve hata profilini notr degismek anlamina indir."
+    },
+    {
+      "target_ref": "root_002995/B006",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak iddiasi bozulmayi degil degismeyi verir; contextual_glosses icinde bozulmak karsiligi tam uygun gibi sunuluyor.",
+      "smallest_correction": "B006 contextual_glosses icindeki bozulmak karsiligini notr bir nitelik degistirmek karsiligiyla degistir ve degismek karsiliginin hata profilini notr hale getir."
+    },
+    {
+      "target_ref": "root_002995/B006",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B006 icin kanit notr degisme verir; B006 komsu ayrimlari bozulma dilini ve B013 ile antonim karsitlik iliskisini kuruyor.",
+      "smallest_correction": "B006 neighbor_distinctions ve ayni komsu kapsam notunda bozulma ve karsitlik dilini notr degisme diliyle degistir; B013 iliskisini tematik ayrim olarak yaz."
+    },
+    {
+      "target_ref": "root_002995/B013",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B013 kaniti bitkisel sallanma ve canlandirmayi verir, B006 kaniti ise notr degismedir; B013 komsu ayrimi B006'yi bozulma ve karsit yon olarak tanimliyor.",
+      "smallest_correction": "B013 icindeki B006 komsu ayrimini antonimden tematik ayrima cevir ve B006 tarafini notr degisme olarak tanimla."
+    }
+  ]
+}

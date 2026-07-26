@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dalların kimliğini, kullanım kapsamını ve kaynak ayrımlarını genel olarak doğru koruyor. Ancak B005 için kavram karşılığı, yalnız topluluk kullanımında açık olan karşılıklılığı bire bir ayak uydurma kullanımına da taşıyarak dalın ortak çekirdeğini gereksiz biçimde daraltıyor.",
+  "issues": [
+    {
+      "target_ref": "root_001187/B005",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 içindeki bire bir kullanım, bir kimsenin ötekinin işine ayak uydurmasını bildirir; karşılıklılık yalnız topluluğun bir konuyu kendi arasında ele aldığı kullanımda açıktır. Kavram karşılığındaki \"bir işi karşılıklı ele alma\" ifadesi ise karşılıklılığı iki kullanımın da ortak ve zorunlu bileşeni yaparak F001'i yanlış daraltır.",
+      "smallest_correction": "concept_gloss.text değerini karşılıklılığı bütün dala yaymayan \"bir iş veya konu üzerinde birlikte ilerleme\" gibi bir karşılıkla değiştirin. Aynı nesne içindeki applicability ve error_profile.preserves açıklamalarını da bire bir ayak uydurma ile topluluk içi karşılıklı görüşmeyi birlikte kapsayacak biçimde güncelleyin; F001 ve F002 bağlantılarını koruyun."
+    }
+  ]
+}

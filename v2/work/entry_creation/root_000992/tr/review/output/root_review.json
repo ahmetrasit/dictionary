@@ -1,0 +1,83 @@
+{
+  "verdict": "repair",
+  "summary": "Dal kimlikleri ve kapsam türleri genel olarak kanıtla uyumludur. Ancak kıyı dalındaki ırmağa özgü ayrıntı tanımda denize de yayılmış, yama dalında tek kaynağa özgü konum ortak görüş gibi sunulmuş ve bıyık dalında kanıtta bulunmayan çoğalma ile sıklaşma mekanizması birkaç alana eklenmiştir. Bu sınırlı alanlar en küçük düzeltmelerle kanıta çekilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000992/B003",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak sözü karşı yaka ve geçit açıklamasını yalnızca ırmak kullanımına bağlar. Tanımın ilk cümlesindeki ortak tamlama ise karşı yaka ve geçidi hem denize hem ırmağa uygulanabilir duruma getirir.",
+      "smallest_correction": "İlk cümleyi deniz için kıyı veya kıyıdaki yer, ırmak için kıyı, karşı yaka ya da geçit ayrımını açıkça kuracak biçimde düzelt; diğer kavram haritası öğelerini koru."
+    },
+    {
+      "target_ref": "root_000992/B003",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı yalnızca deniz veya ırmak kıyısı ile kıyıdaki yeri ifade eder; buna karşın F003 atfı Yemen'deki belirli kent ile o yere bağlı giysi nitelemesini de korunmuş sayar ve hata profilinde hiçbir kayıp bildirilmez.",
+      "smallest_correction": "Kavram karşılığının facet_ids listesinden F003 değerini çıkar; metni, uygulanabilirlik açıklamasını ve F001 ile F002 atıflarını koru."
+    },
+    {
+      "target_ref": "root_000992/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kovanın dibindeki yama yalnızca kaynaklardan birinde açıkça yer alır; diğer kaynak su kabının askısındaki bezemeli yamayı, kaba eklenen her yamayı ve çizme koncu kullanımını verir. Bu nedenle kaynakların kovanın dibindeki yama üzerinde birleştiği söylenemez.",
+      "smallest_correction": "Ortak özetin ilk cümlesini, toplu kanıtın kova veya su kabına eklenen yamayı verdiğini ve dip konumunun kaynaklardan birine özgü olduğunu belirtecek biçimde düzelt; kalan ayrıntıları koru."
+    },
+    {
+      "target_ref": "root_000992/B007",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak sözü yalnızca bıyığın dolmasını bildirir; kılların çoğalması ve sıklaşması biçiminde bir süreç belirtmez. Tanım ile çekirdek yüzey bu ek mekanizmayı kanıtlanmış anlam gibi sunar.",
+      "smallest_correction": "Tanımı bıyığın dolgun hale gelmesiyle, F001 ifadesini de bıyığın dolgun hale gelmesini bildirmekle sınırla; çoğalma ve sıklaşma ifadelerini çıkar."
+    },
+    {
+      "target_ref": "root_000992/B007",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığındaki gürleşme ve hata profilindeki kıl çoğalması ile sıklaşması, yalnızca bıyığın dolmasını bildiren kaynak sözünde yer almaz.",
+      "smallest_correction": "Kavram karşılığını bıyığın dolgunlaşması olarak düzelt; uygulanabilirlik ve korunan özellik açıklamalarından çoğalma, sıklaşma ve gürleşme öğelerini çıkar."
+    },
+    {
+      "target_ref": "root_000992/B007",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bağlamsal karşılığın metni kanıta uygundur, ancak uygulanabilirlik açıklaması bıyığın gür görünüm kazanmasını da ekler. Kaynak yalnızca dolgunlaşmayı destekler.",
+      "smallest_correction": "Uygulanabilirlik açıklamasından gür görünüm öğesini çıkar ve bıyığın dolu bir görünüm kazanmasıyla sınırla."
+    },
+    {
+      "target_ref": "root_000992/B007",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu karşılaştırmalarında odak dalın çekirdeği kıl çoğalması, sıklaşması, yoğunluğu ve boşluk bırakmama olarak açıklanır. Bunlar komşu kartlarındaki anlamları odak dala taşır; odak kanıtı yalnızca bıyığın dolmasını bildirir.",
+      "smallest_correction": "Genel gürleşme komşusuyla ortak alanı bıyığın dolgun görünmesi bağlamıyla sınırla. Son sınıra dek dolma komşusuyla ortak alanı yalnızca dolu duruma gelme olarak yaz; odak dal açıklamalarından kıl yoğunluğu ve boşluk bırakmama eklerini çıkar."
+    }
+  ]
+}

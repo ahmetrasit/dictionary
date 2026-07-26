@@ -1,0 +1,50 @@
+{
+  "verdict": "editorial_review",
+  "summary": "Dal çekirdekleri, sözlük karşılıkları ve komşu sınırları genel olarak kanıtla uyumludur. Ancak üç dalın kaynak sentezi, yalnız belirli sözlüklere ait ayrıntıları ortak anlatım gibi sunuyor ve kaynaklara özgü ayrıntı satırlarını boş bırakıyor. Ayrıca B001 tanımı, çekirdek anlamdan ayrı tutulmuş bir kaynak varyantını tanımın içine taşıyor. Bu noktalar kaynak aidiyetini koruyan sınırlı bir editoryal düzeltme gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_000660/B001",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanımın ikinci bölümü, yalnız mufradat tarafından gerçek süs için verilen kişiyi hiçbir durumda ayıplı kılmama ölçüsünü dalın çekirdek tanımına katıyor. Yazarın kendi F003 satırı bunu kaynak varyantı olarak doğru biçimde ayırdığı için aynı malzemenin tanımda yer alması bağımlı bir ayrıntıyı çekirdeğe yükseltiyor.",
+      "smallest_correction": "Tanımdan gerçek süse ilişkin ikinci bölümü çıkarıp bu bilgiyi yalnız F003 kaynak varyantında koruyun; ayıp ve çirkinliğin karşıtı olan güzel nitelik çekirdek tanım olarak kalsın."
+    },
+    {
+      "target_ref": "root_000660/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kişiyi ayıplı kılmayan gerçek süs ölçüsünü kaynakların ortak anlatımı gibi birleştiriyor; oysa bu ayrıntı yalnız mufradat kaydında bulunuyor. Kaynağa özgü bu sınırlama için hiçbir ayrıntı satırı verilmemiş.",
+      "smallest_correction": "Ortak özeti kaynaklarca paylaşılan güzelliğin ayıbın karşıtı olması çekirdeğiyle sınırlayın ve gerçek süsün kişiyi ayıplı kılmaması ölçüsünü bc_001 ile mufradat kaynağına ait tek bir kaynak ayrıntısı olarak ekleyin."
+    },
+    {
+      "target_ref": "root_000660/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet; sözle güzel göstermeyi ve göğün ışıklarla bezenmesini bütün kaynakların ortak katkısı gibi topluyor. Bu iki ayrıntı yalnız mufradat kaydında yer alırken kökün bir şeyin güzelliğine ve güzelleştirilmesine işaret ettiği açıklaması maqayis kaydına özgüdür; kaynak ayrıntıları ise tamamen boş bırakılmış.",
+      "smallest_correction": "Ortak özeti kaynaklar üstü eylem çekirdeğiyle sınırlayın; sözle güzel gösterme ve göğü ışıklarla bezeme ayrıntılarını mufradat için, kökün güzellik ve güzelleştirme yönündeki temel açıklamasını maqayis için bc_001 ile ayrı ve birbirini yinelemeyen kaynak ayrıntıları olarak kaydedin."
+    },
+    {
+      "target_ref": "root_000660/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, içsel, bedensel ve dışsal türlere ayırımı ve dünyalık unsurların mal, eşya ve saygınlıkla açıklanmasını ortak anlatım içine alıyor. Bu sınıflandırma ve örnekleme yalnız mufradat kaydında bulunuyor; ayn ile tahdhib ise yalnız bezenilen her şeyi kapsayan ortak ad çekirdeğini destekliyor.",
+      "smallest_correction": "Ortak özeti bezenmekte kullanılan her şeyin ortak adı çekirdeğiyle sınırlayın; üçlü sınıflandırmayı ve dünyalık unsurların örneklerini bc_001 ile yalnız mufradat kaynağına ait bir kaynak ayrıntısına taşıyın."
+    }
+  ]
+}

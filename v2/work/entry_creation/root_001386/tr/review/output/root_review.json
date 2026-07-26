@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "İkinci dalın bekleme, bir süre durup kalma ve ağır davranma çekirdeği doğru saptanmış; ancak kanıtta bulunmayan \"eylemden önce\" koşulu kimlik yargısında kabul edilmiş ve tanımın genel sınırına taşınmıştır. Bu daraltma, yalnız ilgili iki alanda küçük bir düzeltmeyle giderilebilir.",
+  "issues": [
+    {
+      "target_ref": "root_001386/B002",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yetkili kaynak ifadesi dalı bekleme, bir süre durup kalma ve ağır davranma anlamlarıyla sınırlar; bunların yalnız bir eyleme başlamadan önce gerçekleştiğini söylemez. Buna rağmen kimlik yargısı geçici çerçevedeki eylem öncesi koşulunu bütünüyle kabul etmektedir.",
+      "smallest_correction": "Durumu \"qualified\" yapın; gerekçe ile sınır notunda eylem öncesi koşulunu dalın zorunlu parçası olmaktan çıkarıp çekirdeği bekleme, bir süre durup kalma ve ağır davranma olarak belirtin."
+    },
+    {
+      "target_ref": "root_001386/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve çekirdek facet, bekleme ve durup kalmayı kişinin bir eyleme hemen geçmemesi veya işe başlamaması biçimine daraltıyor. Kanıt bekleme, bir süre durup kalma ve ağır davranmayı verir; eyleme başlama aşamasını zorunlu kılmaz.",
+      "smallest_correction": "Tanımdan ve F001-F002 ifadelerinden eyleme başlama koşulunu çıkarın; bekleme, bir süre durup kalma, ağır davranma ve gecikme bileşenlerini mevcut facet rolleriyle koruyun."
+    }
+  ]
+}

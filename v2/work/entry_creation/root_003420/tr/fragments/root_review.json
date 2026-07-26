@@ -1,0 +1,73 @@
+{
+  "inputs_sha256": "157cf5c842f03bade8a1bf18b4d7dabf9865a98440a74d7878c88856d3706b04",
+  "verdict": "editorial_review",
+  "summary": "Yazar yanıtındaki temel dal ayrımları genel olarak isabetlidir; ancak kaynaklara özgü ayrıntılar ortak özetlere taşınmış veya hiç belirtilmemiştir. Ayrıca B002'de yalnız Ayn'ın verdiği mecazi genişleme çekirdek anlamla eşitlenmiştir. Bu nedenle kaynak sentezi ile çekirdek-uzantı ayrımının editoryal olarak düzeltilmesi gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_003420/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, bulut varken soğuğun bulunmaması şartını bütün kaynakların ortak anlatımı gibi sunuyor. Oysa bu sınırlama yalnız Jamhara'ya aittir; gökyüzü ve gün kullanımları ile farklı biçim kayıtları da kaynaklara göre ayrışır.",
+      "smallest_correction": "Ortak özeti yalnız hava veya günün açık duruma gelmesi paydasına daraltın; Jamhara'nın bulut bulunsa bile soğuk bulunmaması kaydını ve kaynaklara özgü diğer örnek ya da biçimleri ilgili sözlük koduna bağlı source_details satırlarına taşıyın."
+    },
+    {
+      "target_ref": "root_003420/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve tek core facet, bütün kaynakların desteklediği sarhoşluktan ayılma anlamıyla yalnız Ayn'ın kaydettiği kalbin boş heves ve batıldan dönmesi kullanımını aynı çekirdek düzeyinde birleştiriyor. Kanıt, ilk anlamı ortak çekirdek; ikincisini kaynak-özel mecazi genişleme olarak ayırmayı gerektirir.",
+      "smallest_correction": "Tanımı ve F001 core facetini sarhoşluğun gitmesi ve kişinin ayılması çekirdeğiyle sınırlayın; kalbin boş heves ve batıldan dönmesini bc_001'e bağlı ayrı bir extension facet olarak ekleyin."
+    },
+    {
+      "target_ref": "root_003420/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kalbin boş heves ve batıldan uzaklaşmasını kaynakların ortak genişletmesi gibi aktarıyor; bu kullanım yalnız Ayn'da bulunur. Böylece kaynak-özel mecazi genişleme yanlışlıkla ortaklaştırılmıştır.",
+      "smallest_correction": "Ortak özeti kaynakların paylaştığı sarhoşluğun gitmesi anlamıyla sınırlayın ve kalbin boş heves ile batıldan dönmesi kullanımını Ayn kodlu, bc_001'e bağlı ayrı bir source_details satırında verin."
+    },
+    {
+      "target_ref": "root_003420/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Sarhoşluktan ve boş hevesten ayılma glossu, ortak çekirdekle yalnız Ayn'daki mecazi genişlemeyi eş düzeyde zorunlu bileşenler gibi birleştiriyor ve buna rağmen fit değerini none olarak gösteriyor.",
+      "smallest_correction": "Concept glossu ortak çekirdeği veren ayılma karşılığına daraltın; boş heves ve batıldan dönüşü concept glossun zorunlu parçası olmaktan çıkarıp extension facetine bağlı bağlamsal açıklamada koruyun."
+    },
+    {
+      "target_ref": "root_003420/B002",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kalbin boş hevesten dönmesi bağlamsal glossu mevcut durumda core facet F001'e bağlanmıştır; oysa kanıtta bu kullanım yalnız Ayn'ın verdiği mecazi genişlemedir.",
+      "smallest_correction": "Bu bağlamsal glossu, concept_map içinde oluşturulacak ayrı extension facetine bağlayın; sarhoşluktan ayılma glossunun core facet bağlantısını koruyun."
+    },
+    {
+      "target_ref": "root_003420/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Sentez ortak kap anlamını doğru verir, fakat Ayn'ın bu kap adını belirli bir türetim kalıbıyla kaydettiği kaynak-özel biçim bilgisini bütünüyle atlar.",
+      "smallest_correction": "Ortak özeti koruyun ve Ayn'ın kap adının türetim kalıbına ilişkin kaydını Ayn kodlu, bc_001'e bağlı kısa bir source_details satırı olarak ekleyin."
+    }
+  ]
+}

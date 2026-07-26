@@ -1,0 +1,37 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtla uyumludur; ancak bir komşuluk ilişkisi türevsel farklar nedeniyle gereksiz yere zayıflatılmış, bir nesne tanımına kanıtta bulunmayan yapısal ayrıntılar eklenmiş ve kök özeti dallardan birini kapsam dışında bırakmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_001142/B001",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Odak dalın çekirdeği kaçmak ve kaçıp uzaklaşmaktır; seçilen komşunun çekirdeği de doğrudan kaçmaktır. Yazılan fark yalnızca ettirgen ve karşılıklı türevlerle kaçışın yer veya zaman adlarını sayar. Bu bağımlı türevler çekirdeklerin olağan kullanımdaki eşdeğerliğini bozmadığı için ilişkiyi yakın eşanlamlı ve kısmi olarak işaretlemek kanıt sınırını yanlış yansıtır.",
+      "smallest_correction": "Bu komşuluk kaydında ilişki türünü eşanlamlı, sınır eşleşmesini tam yap; yalnızca bağımlı türevlere dayanan odak-farkı ifadesini kaldır ve açıklamayı iki dalın kaçma çekirdeğinde birbirinin yerine kullanılabildiğini belirtecek biçimde sınırla."
+    },
+    {
+      "target_ref": "root_001142/B010",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, nesneyi kadınlar ve çobanlara ait bir binek düzeneği olarak tanımlar ve yalnızca iki başka düzeneğe benzediğini söyler. Tanımdaki minderli veya sarılı olma ayrıntıları kaynak ifadesinde açıklanmadığı için desteklenmeyen fiziksel özellikler ekler.",
+      "smallest_correction": "Tanımdan minderli veya sarılı nitelemesini çıkar; nesneyi kadınların ve çobanların kullandığı, kaynakta iki başka binek düzeneğine benzetilen özel bir taşıma düzeneği olarak bırak."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök özeti dalları tek tek kapsayan geniş bir döküm verirken gevşeklikten sonra aklı başına toplama anlamındaki B015 dalını hiç temsil etmez. Böylece on altı dallı yapının yalnızca bu anlamı özetten düşer.",
+      "smallest_correction": "Kök özeti listesine gevşeklikten sonra aklı başına toplama anlamını kısa bir öğe olarak ekle; diğer özet içeriğini değiştirme."
+    }
+  ]
+}

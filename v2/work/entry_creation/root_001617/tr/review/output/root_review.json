@@ -1,0 +1,174 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtının dal ayrımları ve sözlükselleşme kapsamları genel olarak sağlamdır; ancak bazı alanlar kaynaklarda ortak olmayan ayrıntıları ortak çekirdek gibi sunmaktadır. Özellikle ilk dalda kanıtın vermediği ince, yumuşak ve alt kıl nitelemeleri birçok alana taşınmış; bazı başka dallarda da kaynağa özgü özellikler bütün aktarımlara mal edilmiştir. Aşağıdaki sınırlı düzeltmeler bu eklemeleri kaldırıp kaynak varyantlarını açıkça işaretler.",
+  "issues": [
+    {
+      "target_ref": "root_001617/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi hayvanı örten kıl veya yünü, özellikle deve ve tavşan örneklerini verir; bunun ince, yumuşak ya da alt kıl olduğunu belirtmez. Tanım ve ilk iki facet bu ek nitelikleri çekirdeğe yerleştiriyor.",
+      "smallest_correction": "Tanım ile F001 ve F002'deki ince, yumuşak ve alt kıl nitelemelerini kaldırıp çekirdeği hayvanı örten kıl veya yün olarak ifade et; barınak kullanımını değiştirme."
+    },
+    {
+      "target_ref": "root_001617/B001",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram glossu ve hata profili, kanıtta bulunmayan yumuşak alt kıl özelliğini dalın genel karşılığı olarak sunuyor.",
+      "smallest_correction": "Glossu hayvanı örten kıl veya yün biçiminde genelleştir ve applicability ile preserves metninden desteklenmeyen yumuşaklık ve alt kıl nitelemelerini çıkar."
+    },
+    {
+      "target_ref": "root_001617/B001",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Deve bağlamındaki gloss, kaynak yalnızca deve kılını verirken bunu yumuşak tüy olarak daraltıyor; hata profili de bu ek özelliği korunmuş sayıyor.",
+      "smallest_correction": "İlk bağlamsal glossu devenin kılı olarak değiştir ve ilgili açıklamalardan yumuşaklık nitelemesini kaldır; ikinci glossu koru."
+    },
+    {
+      "target_ref": "root_001617/B001",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002",
+        "lu_003",
+        "lu_005"
+      ],
+      "evidence_conflict": "Bu birimlerin kaynak anlamları hayvanı örten kıl veya yün, bunun tekili ve çoğulu ile devenin bol kıllı oluşunu verir; yumuşak alt kıl nitelemesi hiçbirinde yer almaz.",
+      "smallest_correction": "lu_001'i hayvanı örten kıl veya yün, lu_002'yi bundan tek bir kıl, lu_003'ü hayvanı örten kıllar ve lu_005'i devenin bol kıllı olması biçiminde düzelt."
+    },
+    {
+      "target_ref": "root_001617/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu ayrımlarındaki focus_only ve distinction metinleri bu dalı ince, yumuşak alt kıl diye sınırlar; sağlanan dal kanıtı ise deve, tavşan ve benzerlerini örten kıl veya yün kapsamını verir.",
+      "smallest_correction": "İki komşu ayrımında desteklenmeyen ince, yumuşak ve alt kıl nitelemelerini kaldır; koyun yünü ile genel kıl karşısındaki hayvan türü ve kapsam farkını koru."
+    },
+    {
+      "target_ref": "root_001617/B002",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe renk, boy ve kuyruksuzluğu ortak çekirdek gibi sunuyor; oysa kaynak ifadesinde ortak olan küçük hayvan adıdır, görünüş ayrıntıları aktarımlar arasında değişir.",
+      "smallest_correction": "accepted durumunu koru; gerekçeyi küçük hayvan çekirdeğinde birleşildiğini, renk, yaklaşık boy ve kuyruksuzluk ayrıntılarının ise aktarımlara göre değiştiğini söyleyecek biçimde düzelt."
+    },
+    {
+      "target_ref": "root_001617/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve facet yapısı renk, boy ve kuyruksuzluğu tek birleşik tarif gibi gösteriyor; kaynaklar kedi kadar veya daha küçük olma gibi alternatifler verir ve kuyruksuzluk yalnızca bazı aktarımlardadır.",
+      "smallest_correction": "Tanımı kaynaklara göre değişen görünüş tarifleri olarak nitele; F001'i küçük hayvan çekirdeğine indir ve F002'yi source_variant yaparak renk, boy ve kuyruksuzluğu değişken ayrıntılar olarak belirt."
+    },
+    {
+      "target_ref": "root_001617/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Common summary bütün aktarımların boy, renk ve kuyruksuzluk tariflerini birlikte verdiğini düşündürüyor; bu özellikler kaynak ifadesinde farklı aktarımlara dağılmıştır.",
+      "smallest_correction": "Ortaklığı küçük hayvan anlamıyla sınırla ve renk, kedi kadar veya daha küçük boy, kuyruksuzluk ile dişi biçimi ayrıntılarını bazı aktarımlarda verilen değişken bilgiler olarak yaz."
+    },
+    {
+      "target_ref": "root_001617/B002",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gloss kedi boyunu ve kuyruksuzluğu dalın hatasız genel karşılığına dönüştürüyor; kaynakta boy için iki farklı sınır vardır ve kuyruksuzluk bütün aktarımlarda ortak değildir.",
+      "smallest_correction": "Genel glossu boz veya donuk renkli küçük hayvan olarak değiştir; hata profilini bu ortak çekirdeğe göre güncelle ve yalnızca F001'e bağla."
+    },
+    {
+      "target_ref": "root_001617/B003",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İlk komşunun shared_zone metni mantarları yer altında gelişen ve yenilebilir diye niteler; sağlanan sınır kartları yalnızca yer mantarı türü ve küçük yer mantarı benzeri örnekler bilgisini verir.",
+      "smallest_correction": "İlk shared_zone cümlesini iki dalın yer mantarı alanında kesiştiğini söyleyecek biçimde kısalt; diğer ayrımları koru."
+    },
+    {
+      "target_ref": "root_001617/B005",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Common summary bütün aktarımları süre ve ayrılmama ayrıntılarında birleştiriyor; ortak çekirdek evde kalmadır, bir süre ayrılmama ve yerde duran kıl benzetmesi kaynaklara özgü eklerdir.",
+      "smallest_correction": "Ortaklığı evde kalmakla sınırla; bazı aktarımların bir süre ayrılmamayı, bir aktarımın da benzetmeyi eklediğini belirt."
+    },
+    {
+      "target_ref": "root_001617/B006",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Common summary bütün aktarımların yedi günlük diziyi ve kış sonu konumunu verdiğini söylüyor; bazıları yalnızca bunun geleneksel günlerden biri olduğunu belirtir, yedi ve kış sonu ayrıntısı tek aktarımda açıktır.",
+      "smallest_correction": "Ortak özeti geleneksel günlerden birinin adıyla sınırla ve bir aktarımın bunu kış sonundaki yedi günlük dizi olarak açıkladığını ekle."
+    },
+    {
+      "target_ref": "root_001617/B008",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe bütün kaynakları tavşanın izini örtmesi veya silmesi çekirdeğinde birleştiriyor; bir aktarım yalnızca tavşanın sert ve engebeli yerde yürümesini verir ve bunu iz silmeyle açıkça bağlamaz.",
+      "smallest_correction": "Durumu qualified yap; çoğu aktarımın iz örtme veya silmeyi verdiğini, sert zeminde yürümenin ise aynı fiilin ayrıca aktarılan bir varyantı olduğunu belirt."
+    },
+    {
+      "target_ref": "root_001617/B008",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Common summary sert zeminde ilerlemeyi iz silmenin bir ortam açıklaması sayarak kaynakta kurulmamış bir amaç ilişkisi ekliyor.",
+      "smallest_correction": "Çoğu aktarımın iz örtme veya silmede birleştiğini yaz; pençeleri toplama ve ayak tüylerini mekanizma olarak tut, sert ve engebeli zeminde yürümeyi ayrı kaynak varyantı diye belirt."
+    },
+    {
+      "target_ref": "root_001617/B009",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Coverage note iki yakın sınırın yayımlandığını söylüyor, ancak dalda yalnızca karıştırarak belirsizleştirme komşusuna ait tek ayrım bulunmaktadır.",
+      "smallest_correction": "Coverage note'u yalnızca yayımlanan karıştırarak belirsizleştirme dalının hedefli gizleme sınırını gösterdiğini söyleyecek biçimde düzelt."
+    }
+  ]
+}

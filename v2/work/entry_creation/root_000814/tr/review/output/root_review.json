@@ -1,0 +1,28 @@
+{
+  "verdict": "editorial_review",
+  "summary": "B002 dalında çok kaynaklı karşıt kullanım yanlışlıkla kaynak varyantı olarak sınıflandırılmıştır. B007 dalında ise yalnız örneğe ait uzunluk ayrıntısı genel tanıma taşınmıştır. Düzeltmeler yazar çıktısına müdahale gerektirdiğinden bu incelemenin yazma sınırı içinde uygulanmamıştır.",
+  "issues": [
+    {
+      "target_ref": "root_000814/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F002, yakınmaya yol açan olumsuz kullanımı kaynak varyantı diye sınıflandırıyor. Oysa bu karşıt anlam birden çok sözlükte tanıklanmış ve dalın iki yönlü çekirdeğinin bir parçası olarak sunulmuştur; tek kaynağa özgü bir açıklama değildir.",
+      "smallest_correction": "F002 rolünü kaynak varyantı yerine karşıt kullanımın eş düzeyli çekirdek konumunu gösterecek biçimde core olarak değiştirin; açıklama metnini ve kanıt kimliğini koruyun."
+    },
+    {
+      "target_ref": "root_000814/B007",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Dal tanımı devenin ancak uzun yolculuktan yorulması koşulunu kuruyor. Kanıtın genel kısmı yalnız yolculuğun deveyi yormasını bildirir; uzunluk ayrıntısı gece yürüyüşü örneğine aittir ve genel dal sınırına yükseltilemez.",
+      "smallest_correction": "Tanımdaki uzun yolculuktan ifadesini yolculuktan olarak daraltın; uzun gece yürüyüşü ayrıntısını yalnız örnek facetinde ve ilgili sözcük birimi karşılığında bırakın."
+    }
+  ]
+}

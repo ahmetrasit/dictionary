@@ -1,0 +1,40 @@
+{
+  "inputs_sha256": "88d444be35a72b091fc07b208d601910a22f4c82dfeb336fb28f7da78cd23858",
+  "verdict": "repair",
+  "summary": "B001 genel olarak kanıta uygun, fakat yağ içine konan tarih ürünü üç alanda yanlış biçimde posa olarak adlandırılmış. Kanıt bu unsuru hurma özü veya hulasa olarak verir; posa Türkçede artık veya lifli kalıntı fikri ekler. Düzeltme yalnızca B001'de bu ifadeleri hurma özü yönüne çekmekle sınırlıdır.",
+  "issues": [
+    {
+      "target_ref": "root_002593/B001",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 yağ içine konan unsuru hurma hulasa veya özü olarak verir; yazar gerekçesi bunu hurma posası diye adlandırarak kanıtta bulunmayan artık veya kalıntı fikri ekliyor.",
+      "smallest_correction": "B001 identity_judgment.rationale içindeki yağ içinde kullanılan hurma posası ifadesini yağ içine konan yoğun hurma özü olarak değiştir."
+    },
+    {
+      "target_ref": "root_002593/B001",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001'in ilgili örneği hurma özü veya hulasa alanındadır; F003 bunu hurma posası diye çekirdeğe bağlayınca dalın madde sınırına kanıtsız posa anlamı ekleniyor.",
+      "smallest_correction": "B001 concept_map.facets F003 statement alanında hurma posası yerine yağla birlikte kullanılan yoğun hurma özü deyişini kullan."
+    },
+    {
+      "target_ref": "root_002593/B001",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 yağ içine konan maddeyi hurma özü veya hulasa olarak destekler; contextual_glosses içinde hem hurma şurubu karşılığının kayıp açıklaması hem de ikinci bağlamsal karşılık posa anlamını kanıtsız biçimde ekliyor.",
+      "smallest_correction": "B001 contextual_glosses içinde hurma posası anlatımlarını yağa katılan yoğun hurma özü olarak düzelt; ikinci bağlamsal karşılığın text ve açıklama alanlarını bu sınıra göre güncelle."
+    }
+  ]
+}

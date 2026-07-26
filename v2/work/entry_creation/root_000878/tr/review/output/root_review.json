@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak B001 dalındaki bir sözcüksel karşılık, sertliği sesin niteliğine aktararak kaynak nesnenin sertliği anlamını bozuyor. Bu sınırlı karşılık düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000878/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001"
+      ],
+      "evidence_conflict": "lu_001 kanıtı uzayan veya yankılanan sesin sertlik taşıyan ya da hareket eden nesneden çıktığını belirtir. \"Sert bir ses\" ifadesi ise Türkçede sertliği kaynak nesneye değil sesin işitsel niteliğine yükler.",
+      "smallest_correction": "lu_001 target_gloss değerini \"sert bir nesneden uzayan ya da yankılanan bir ses çıkarmak\" olarak değiştir."
+    }
+  ]
+}

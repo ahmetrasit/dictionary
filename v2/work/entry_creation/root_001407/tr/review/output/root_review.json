@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "Dört yüksek güvenli ve sınırlı düzeltme gerekiyor: bir komşu ayrımı dalın seçimlik su durumlarını zorunlu gösteriyor, bir kavram yüzü yetkili iddiada bulunmayan bölgesel değişkenlik ekliyor ve iki ifade kaynağa özgü bilgileri bütün kaynaklara yayıyor.",
+  "issues": [
+    {
+      "target_ref": "root_001407/B003",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_000768/B002 ile ayrımın son cümlesi, odak dalın akışa ek olarak su düzeyi artışını ve kaynaklar arası beslenmeyi zorunlu kıldığını söylüyor. Oysa bc_001 akma, dolma ve başka sudan beslenmeyi dal içindeki ayrı gerçekleşmeler olarak verir; her kullanımda üçünün birlikte bulunmasını gerektirmez.",
+      "smallest_correction": "İlgili distinction cümlesindeki zorunluluk anlatımını kaldırıp odak dalın yüzey akışına ek olarak dolma, su artışı ve kaynaklar arası beslenmeyi de kapsadığını söyleyin."
+    },
+    {
+      "target_ref": "root_001407/B006",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F002, ölçünün uygulamadaki miktarının bölgesel geleneğe göre değişebileceğini ileri sürüyor; bc_001 böyle bir bölgesel değişkenlik bildirmiyor. Yetkili iddia bunun bilinen bir ölçü olduğunu, daha büyük ölçünün dörtte biri sayıldığını ve adın ölçülen miktarı benzeriyle tamamlama üzerinden açıklandığını verir.",
+      "smallest_correction": "F002 statement metnini, adın ölçülen miktarın benzeriyle tamamlanmasıyla ilişkilendirildiğini belirten bir kaynak açıklaması olarak değiştirin; bölgesel değişkenlik iddiasını kaldırın."
+    },
+    {
+      "target_ref": "root_001407/B006",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "common_summary bütün kaynakların dört birimin daha büyük ölçüyü oluşturduğunda birleştiğini ve adlandırma açıklamasını ortaklaşa verdiğini düşündürüyor. bc_001 içinde dörtte birlik oran yalnız sihah ile tahdhib'e, adlandırma açıklaması ise yalnız maqayis'e aittir; bütün kaynakların ortak noktası bunun bilinen bir ölçü olmasıdır.",
+      "smallest_correction": "common_summary metnini, kaynakların bunun bilinen bir hacim ölçüsü olduğunu ortakça verdiğini; bazı kaynakların dörtte birlik oranı, bir kaynağın da adlandırma açıklamasını bildirdiğini söyleyecek biçimde daraltın."
+    },
+    {
+      "target_ref": "root_001407/B009",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Rationale içindeki \"Bazı kaynakların\" sözü, kuruluşu kökün olağan düzeninden ayrı sayan birden çok kaynak bulunduğunu bildiriyor. bc_001 bu sınıflandırmayı yalnız maqayis'e bağlar.",
+      "smallest_correction": "Rationale metninde \"Bazı kaynakların\" ifadesini \"Bir kaynağın\" olarak değiştirin."
+    }
+  ]
+}

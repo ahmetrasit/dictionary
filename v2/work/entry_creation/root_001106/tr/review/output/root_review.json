@@ -1,0 +1,147 @@
+{
+  "verdict": "repair",
+  "summary": "B001'in kaynak özeti, koçu yoklayarak sınamayı sıkmanın özel bir gerçekleşmesi gibi sunuyor. B002, kusura yönelen işaret amacını yalnızca ele bağlayarak göz kapağını dışarıda bırakıyor. B004 ise kaynakta benzetme olarak verilen yere bastırma görüntüsünü gerçek hareket ve dal çekirdeği haline getiriyor. Bu yüksek güvenli sorunlar ilgili alanlarda dar kapsamlı düzeltmeler gerektiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_001106/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi elle sıkma ile koçu durumunu anlamak için dokunarak yoklamayı ayrı yapılar halinde yan yana verir; koçu yoklamanın el baskısıyla sıkmanın özel bir gerçekleşmesi olduğunu söylemez.",
+      "smallest_correction": "Ortak özette koçu yoklamayı sıkmanın özel bir gerçekleşmesi diye nitelemeyip aynı dalda yer alan ayrı bir sınama amaçlı dokunma kullanımı olarak belirt."
+    },
+    {
+      "target_ref": "root_001106/B002",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kesin kaynak ifadesi kusura yönelme amacını göz kapağı veya el ile yapılan işarete birlikte bağlar. Gerekçe ve sınır notu ise bu amacı yalnızca el işaretinin özelliği sayıyor.",
+      "smallest_correction": "Gerekçe ve sınır notunda kusura yönelen özel kullanımın göz kapağıyla veya elle yapılabildiğini belirt; genel göz kapağı, kaş ve göz işaretini çekirdek olarak koru."
+    },
+    {
+      "target_ref": "root_001106/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F002, kusura dikkat çekme kullanımını yalnızca el hareketine bağlıyor; kaynak bu amaçlı işaretin göz kapağıyla veya elle yapılabileceğini bildiriyor.",
+      "smallest_correction": "Tanımdaki ve F002'deki araç kapsamını göz kapağı veya el olarak düzelt; diğer çekirdek ve karşılıklı işaretleşme içeriğini değiştirme."
+    },
+    {
+      "target_ref": "root_001106/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kusura yönelme amacını yalnızca el işaretine tahsis ediyor; kesin ifade aynı amacı göz kapağı veya el işareti için verir.",
+      "smallest_correction": "Ortak özette kusura yönelen özel kullanımın göz kapağıyla veya elle gerçekleşebildiğini söyle."
+    },
+    {
+      "target_ref": "root_001106/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Uygulanabilirlik açıklaması kusura yönelen işareti yalnızca el işareti diye sınırlar; kaynak göz kapağını da bu amaçlı kullanımın aracı olarak verir.",
+      "smallest_correction": "Uygulanabilirlik ve korunan özellikler metninde kusura yönelen işaretin göz kapağıyla veya elle yapılabildiğini koru; üst kavram karşılığını değiştirme."
+    },
+    {
+      "target_ref": "root_001106/B002",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kusura dikkat çekme karşılığı ve açıklaması yalnızca el işaretini kabul ediyor; kaynak bu amaç için göz kapağı veya el seçeneklerini birlikte verir.",
+      "smallest_correction": "İlgili bağlamsal karşılığı, uygulanabilirliği ve koruma açıklamasını göz kapağı veya el işaretiyle kusura dikkat çekmeyi kapsayacak şekilde düzelt."
+    },
+    {
+      "target_ref": "root_001106/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak dalı hayvanda bacaktan gelen özel bir durum olarak verir ve yere bastırmayı yalnızca benzetmeyle anlatır. Tanım ve F001 bu benzetmeyi hayvanın gerçekten yaptığı hareket haline getiriyor.",
+      "smallest_correction": "Çekirdeği hayvanda bacaktan kaynaklanan özel durum olarak yaz; yere bastırma görüntüsünü yalnızca bu durumu açıklayan bir benzetme olarak nitele."
+    },
+    {
+      "target_ref": "root_001106/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet bütün tanıklığın görünüşü ayağın yere bastırılmasıyla açıkladığını söylüyor. Oysa ortak unsur durumun hayvanın bacağından gelmesidir; yere bastırma yalnızca kaynak ifadesindeki benzetmeli açıklamadır.",
+      "smallest_correction": "Ortak özeti bacak kaynaklı durumla sınırla ve yere bastırma görüntüsünü gerçek hareket değil açıklayıcı benzetme olarak ayır."
+    },
+    {
+      "target_ref": "root_001106/B004",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı ve açıklamaları dalı hayvanın ayağını gerçekten yere bastırması diye adlandırıyor; kesin ifade bunu bacak kaynaklı duruma yönelik bir benzetme olarak sunuyor.",
+      "smallest_correction": "Kavram karşılığını hayvanda bacak kaynaklı özel basış durumu olarak düzelt; yere bastırmayı yalnızca benzetmeli görünüş olarak açıklayıp hata profilini buna uyarla."
+    },
+    {
+      "target_ref": "root_001106/B004",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bağlamsal karşılık gerçek bir yere bastırma eylemi bildiriyor; kaynakta bu görüntü bacak kaynaklı durumu açıklayan benzetmedir.",
+      "smallest_correction": "Bağlamsal karşılığı ve açıklamalarını bacak kaynaklı özel basış durumu ve yere bastırır gibi görünme şeklinde düzelt."
+    },
+    {
+      "target_ref": "root_001106/B004",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_014"
+      ],
+      "evidence_conflict": "lu_014 karşılığı ayağı yere bastırmayı gerçek olay olarak veriyor; birimin kesin ifadesi bacak kaynaklı durumu yere bastırmaya benzeterek açıklar.",
+      "smallest_correction": "lu_014 karşılığını hayvanda bacak kaynaklı, ayağını yere bastırır gibi görünen özel basış durumu olarak düzelt."
+    },
+    {
+      "target_ref": "root_001106/B004",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İki komşu ayrımı da dalın çekirdeğini hayvanın ayağını gerçekten yere bastırması olarak tekrar ediyor; kaynak bu hareketi bacak kaynaklı durum için benzetme olarak verir.",
+      "smallest_correction": "Komşu ayrımlarındaki çekirdek ve ortak alan metinlerini bacak kaynaklı özel durum üzerinden kur; yere bastırma görüntüsünü benzetme olarak nitele."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök özeti B004'ü hayvanın yere basma durumu diye gerçek harekete indirger; dalın kesin kaynak çekirdeği hayvanda bacaktan kaynaklanan özel durumdur.",
+      "smallest_correction": "Kök özetindeki B004 tanımını hayvanda bacaktan kaynaklanan özel basış durumu olarak düzelt."
+    }
+  ]
+}

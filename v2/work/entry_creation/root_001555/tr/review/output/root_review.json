@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dalın küçük yastık çekirdeğini, semer üstü yaygı uzantısını, sözlüksel birimleri ve komşu sınırlarını genel olarak doğru kurar. Ancak kavram haritası, kaynakta yalnızca yastığa bağlı olan küçüklük niteliğini semer üstündeki yaygıya da taşır.",
+  "issues": [
+    {
+      "target_ref": "root_001555/B001",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 küçüklüğü yastığa bağlar; semer üstündeki yaygı için yalnızca nesne türünü ve konumunu verir. Tanım ile F003, bu yaygıyı da küçük sayarak kanıta ek bir özellik yükler.",
+      "smallest_correction": "Kavram haritasındaki tanımda ve F003 ifadesinde semer üstü yaygıyı niteleyen küçük sözcüğünü kaldır; diğer alanları değiştirme."
+    }
+  ]
+}

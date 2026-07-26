@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B003 dalındaki tanım, yalnız belirli eşdizimlerde kanıtlanan anlamı bütün davranışlara yaydığı için sınırlı bir düzeltme gerektiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_000657/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B003 için verilen mekanik profil yalnız eşdizimlere dayanıyor ve bc_001 anlamı kükreme, saldırı, yürüyüş ve konuşma kullanımlarıyla sınırlıyor. Tanımın \"Bir davranışı\" diye başlaması ise zorlanarak ölçüyü aşma anlamını kanıtlanmayan bütün davranışlara yayıyor.",
+      "smallest_correction": "Tanımın başlangıcını kükreme, saldırı, yürüyüş veya konuşma bağlamlarıyla açıkça sınırlandır; zorlanma, yapay yoğunluk, abartı ve yalana ilişkin mevcut açıklamayı koru."
+    }
+  ]
+}

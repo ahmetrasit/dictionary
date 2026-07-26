@@ -1,0 +1,83 @@
+{
+  "verdict": "editorial_review",
+  "summary": "Yazar yanıtı dal kimliklerini ve temel anlamları büyük ölçüde koruyor; ancak dört dalda kaynağa özgü ayrıntılar kaynaklar arası ortak özet içinde bırakılmış ve sözlük bazında açıkça ayrıştırılmamış. Ayrıca B005'te yalnız ceylan sürüsü için verilen sayısal kalabalıklık, dağ keçileri topluluğuna da yayılmış. Bu düzeltmeler canlı yazar çıktısına müdahale gerektirdiğinden editoryal inceleme gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_001433/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, tekil ve dişi adlarını, deri anlamını, keçilerin çoğalmasını ve keçi sahibini kaynakların ortak alanı içinde sunuyor. Oysa deri ile çoğalma yalnız sihah'ta, sahiplik sihah ile tahdhib'de, dişi adı ise ayn ile sihah'ta geçiyor; maqayis ve mufradat daha dar topluluk bilgileri veriyor.",
+      "smallest_correction": "Ortak özeti yalnız keçi türü ve ona bağlı adlandırmaların genel çekirdeğiyle sınırla; deri, çoğalma, sahiplik, tekil-dişi ayrımı ve özel topluluk açıklamalarını ilgili sözlük kodlarına bağlı source_details satırlarına taşı."
+    },
+    {
+      "target_ref": "root_001433/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet çakıl çokluğu ile yükseltili, engebeli ve sert tabanlı çöl ayrıntılarını yalnız belirsiz biçimde bazı anlatımlara bağlıyor. Çakıllı yer ayrıntısı sihah ve tahdhib'e, yükseltili çöl ve sert taban ayrıntısı ise tahdhib'e özgüdür.",
+      "smallest_correction": "Ortak sert ve kaba arazi çekirdeğini common_summary'de bırak; çakıl ve çöl ayrıntılarını ilgili sözlük kodlarına bağlı source_details satırlarında açıkça belirt."
+    },
+    {
+      "target_ref": "root_001433/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kararlı ve koruyucu kişiyi, malı biriktirip vermeyen cimriyi ve görüş katılığını toplu kaynak ifadesi içinde bırakıyor. Bu ayrıntılar tahdhib'e özgüdür; maqayis ile mufradat yalnız güçlü ve sıkı yapılı adamı destekler.",
+      "smallest_correction": "Common_summary'yi kaynakların paylaştığı güçlü ve sıkı yapılı adam çekirdeğiyle sınırla; kararlılık-koruyuculuk, cimrilik ve görüş katılığı kullanımlarını tahdhib kodlu source_details satırlarında göster."
+    },
+    {
+      "target_ref": "root_001433/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Sentez, dağ keçileri topluluğu ile ceylan sürüsünün farklı kaynak dağılımını ve ceylan sayısındaki uyuşmazlığı sözlük bazında göstermiyor. Maqayis dağ keçileri topluluğunu, sihah otuz-kırk ceylanı, tahdhib ise hem dağ keçileri topluluğunu hem otuzdan başlayan ceylan sürüsünü verir.",
+      "smallest_correction": "Genel hayvan topluluğu çekirdeğini common_summary'de koru; maqayis, sihah ve tahdhib'in tür ve sayı ayrıntılarını ayrı source_details satırlarına bağla."
+    },
+    {
+      "target_ref": "root_001433/B005",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Boundary_note, dağ keçileri topluluğunu da zorunlu olarak kalabalık sayıyor. Kanıtta sayısal büyüklük yalnız ceylan sürüsü için verilir; dağ keçileri için yalnız bir topluluk olma bilgisi vardır.",
+      "smallest_correction": "Sınır notunu, dağ keçileri topluluğu veya sayıca kalabalık ceylan sürüsü diye yeniden kur; kalabalıklık niteliğini dağ keçilerine yayma."
+    },
+    {
+      "target_ref": "root_001433/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanımdaki kalabalık bir sürü nitelemesi hem dağ keçilerine hem ceylanlara uygulanıyor. Kanıt, dağ keçileri için yalnız topluluk bildirirken otuz-kırk veya otuzdan fazla sayı sınırını ceylanlara özgü kılıyor.",
+      "smallest_correction": "Tanımı dağ keçileri topluluğu ile kalabalık ceylan sürüsünü ayrı seçenekler olarak ifade edecek biçimde düzelt; mevcut çekirdek ve kaynak varyantı facetlerini koru."
+    },
+    {
+      "target_ref": "root_001433/B005",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kalabalık dağ keçisi veya ceylan sürüsü karşılığı, kalabalıklığı iki hayvan grubuna birden bağlar. Sayı kısıtı yalnız ceylan sürüsünde kanıtlanmıştır.",
+      "smallest_correction": "Kavram karşılığını dağ keçileri topluluğu veya kalabalık ceylan sürüsü olarak değiştir ve açıklama ile hata profilini aynı ayrımı koruyacak biçimde daralt."
+    }
+  ]
+}

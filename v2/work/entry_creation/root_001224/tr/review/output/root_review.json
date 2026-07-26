@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dalların kimliğini, kapsamını ve komşu sınırlarını genel olarak doğru kuruyor. Ancak iki dalın kaynak sentezi, kanıtta açıkça bulunan ayırt edici kayıtları eksik veya fazla genelleyerek aktarıyor.",
+  "issues": [
+    {
+      "target_ref": "root_001224/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi teraziyi ve onun adaletle bağlantısını vermenin yanında, bazılarınca bu aracın şahin adı verilen teraziyle özdeşleştirildiğini de kaydediyor. Mevcut sentez bu ayırt edici görüş ayrılığını bütünüyle atlıyor.",
+      "smallest_correction": "Ortak özeti koruyup sonuna, bazılarınca aracın şahin adı verilen teraziyle özdeşleştirildiğini belirten kaynak yansız kısa bir cümle ekleyin."
+    },
+    {
+      "target_ref": "root_001224/B006",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, ortak çekirdek olarak tütsü ve ilaç kullanımını desteklerken nesneyi bir kayıtta Arap diye niteler, başka kayıtlarda Hint odunu veya Hindistan'dan getirilen odun olarak verir ve adın üç ses biçimini kaydeder. Mevcut ortak özet bütün kaynakları yalnız Hint bağlantısında birleştiriyor ve bu ayrımları aktarmıyor.",
+      "smallest_correction": "Ortak özeti tütsü ve ilaçta kullanılan odun veya ecza çekirdeğiyle sınırlayın; ardından Arap diye nitelenen kayıt ile Hint odunu veya Hindistan'dan getirilme kayıtlarını ve üç ad biçimini kaynak yansız biçimde belirtin."
+    }
+  ]
+}

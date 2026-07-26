@@ -1,0 +1,83 @@
+{
+  "verdict": "editorial_review",
+  "summary": "Yazar yanıtında beş dalı etkileyen yüksek güvenli anlam sorunları vardır. B001 ölçütü öznel hale getiriyor; B004 ve B014 iki bağlama özgü ifadeyi yanlış aktarıyor; B009 kanıtlanmayan ayrıntı ve çelişkili tat niteliği ekliyor; B016 ise Gassan bağlantısını tanım, kaynak özeti ve sözlüksel karşılıkta kaybediyor. Yazar çıktısı bu görevin düzenleme sınırı dışında olduğundan sorunlar editoryal düzeltmeye bırakılmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_000840/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, kendini tutmanın aklın ve dini hükümlerin gerektirdiği çizgide sürmesini açıkça çekirdeğe dahil eder. Tanımdaki \"doğru bildiği tutum\" bunu kişinin öznel kanaatine çeviriyor ve dini ölçütü kaybediyor.",
+      "smallest_correction": "Tanımda ve F002 yüzünde öznel \"doğru bildiği\" anlatımını kaldırıp tutumun aklın ve dini hükümlerin gerektirdiği çizgide sürdürülmesini açıkça belirtin."
+    },
+    {
+      "target_ref": "root_000840/B004",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_020"
+      ],
+      "evidence_conflict": "lu_020, Sidretülmünteha bağlamında cennetin en üst bölümünü bildirir. \"Bahçenin en üst bölümü\" karşılığı bu özel göndergenin yerine sıradan bir bahçe getiriyor.",
+      "smallest_correction": "lu_020 hedef karşılığını \"cennetin en üst bölümü\" olarak değiştirin."
+    },
+    {
+      "target_ref": "root_000840/B009",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yetkili kaynak ifadesi meyveyi çok ekşi ve demirhindi olarak tanımlar. Tanımdaki \"çok ekşi tatlı\" çelişkili biçimde tatlılık ekliyor; geniş kırmızı çekirdek ayrıntısı da yetkili kaynak ifadesinde bulunmuyor.",
+      "smallest_correction": "Tanımı meyvenin çok ekşi olduğunu ve demirhindi diye adlandırıldığını söyleyecek biçimde daraltın; tatlılık ile geniş kırmızı çekirdek ekini tanımdan ve F002 yüzünden çıkarın."
+    },
+    {
+      "target_ref": "root_000840/B014",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_042"
+      ],
+      "evidence_conflict": "lu_042 içindeki hitap \"Rabbinin hükmü\" anlamındadır. \"Yöneticinin hükmünün gerçekleşmesini bekle\" karşılığı ilahi göndergenin yerine beşeri bir yönetici getiriyor.",
+      "smallest_correction": "lu_042 hedef karşılığını \"Rabbinin hükmünü bekle\" olarak değiştirin."
+    },
+    {
+      "target_ref": "root_000840/B016",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt dalı özellikle Gassan'a bağlı bir boyun adı olarak tanımlar. \"Belirli bir Arap topluluğuna bağlı\" ifadesi ayırt edici Gassan kimliğini kaldırıp tanımı belirsizleştiriyor.",
+      "smallest_correction": "Tanımı ve F001 yüzünü adın Gassan'a bağlı belirli bir boyu gösterdiğini açıkça belirtecek biçimde düzeltin."
+    },
+    {
+      "target_ref": "root_000840/B016",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tek kaynaklı kayıt boyun Gassan'a bağlı olduğunu açıkça söyler. Ortak özet bu tekil ve ayırt edici kaynak ayrıntısını genel bir Arap topluluğuna indirgiyor.",
+      "smallest_correction": "Ortak özette kaydın Gassan'a bağlı bir boy adı verdiğini açıkça yazın."
+    },
+    {
+      "target_ref": "root_000840/B016",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_045"
+      ],
+      "evidence_conflict": "lu_045 sözlüksel birimi doğrudan Gassan'a bağlı bir boyu adlandırır. Mevcut hedef karşılık bu bağı çıkararak yalnızca belirsiz bir Arap topluluğu bağlantısı bırakıyor.",
+      "smallest_correction": "lu_045 hedef karşılığını \"Gassan'a bağlı bir boyun adı\" olarak değiştirin."
+    }
+  ]
+}

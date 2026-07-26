@@ -1,0 +1,94 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak dal kimliklerini ve kapsamlarını kanıtla uyumlu kuruyor. Ancak B009 kavram karşılığı, yalnızca bazı kaynak açıklamalarında bulunan boğulma sonucunu çekirdeğin zorunlu parçası yapıyor. B010'da ise kanıt yalnızca boyna kılıçla vurmayı bildirirken birden çok alan kesme sonucunu ekliyor. Bu yüksek güvenli ve alanları sınırlandırılmış ifadeler en küçük düzeltmelerle giderilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001249/B009",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıtın ortak çekirdeği denizin insanları içine alıp üzerlerine kapanması ve onları içeride tutmasıdır; boğulma yalnızca kaynak açıklamalarından birinde açıkça verilir. Kavram karşılığındaki \"boğması\" ve F002 bağlantısı bu kaynak bağımlı sonucu bütün dal için zorunlu çekirdek gibi gösteriyor.",
+      "smallest_correction": "Kavram karşılığını \"denizin insanları içine alıp kapatması\" olarak değiştir; uygulanabilirlik ve korunan özellik metinlerinden zorunlu boğulma sonucunu çıkar ve facet_ids listesini yalnızca F001 ile sınırla."
+    },
+    {
+      "target_ref": "root_001249/B010",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, bu dalın okumasını kişinin boynuna kılıçla vurmak olarak verir; kesmenin gerçekleştiğini ayrıca söylemez. Gerekçedeki \"boyna vurup kesme okuması\" kanıta ek bir sonuç yüklüyor.",
+      "smallest_correction": "Gerekçedeki \"boyna vurup kesme okuması\" ifadesini \"boyna kılıçla vurma okuması\" olarak değiştir; kimlik durumunu ve diğer sınır ifadelerini koru."
+    },
+    {
+      "target_ref": "root_001249/B010",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak iddiası boyna kılıçla vurmayı destekler, fakat tanım eylemi \"vurup onu kesmek\" diye verir ve F001 kesme sonucunu zorunlu kılar. Kesme sonucu sağlanan kanıtta yer almıyor.",
+      "smallest_correction": "Tanımı \"Belirli kılıçlı anlatımda kişinin boynuna kılıçla vurmaktır\" olarak daralt; F001 ifadesinden kesme sonucunu çıkar ve yalnızca darbenin boyun bölgesine yönelmesini koru."
+    },
+    {
+      "target_ref": "root_001249/B010",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak sentezi dalı \"boyna vurma ve kesme okuması\" diye özetliyor, oysa tek tanıklık ikinci okumayı yalnızca boyna vurma olarak bildiriyor.",
+      "smallest_correction": "Ortak özetteki \"boyna vurma ve kesme okuması\" ifadesini \"boyna kılıçla vurma okuması\" olarak değiştir; kuşandırma karşıtlığını aynen koru."
+    },
+    {
+      "target_ref": "root_001249/B010",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı, uygulanabilirlik ve korunan özellik açıklaması kesme sonucunu kanıtlanmış çekirdeğe katıyor. Sağlanan iddia yalnızca kılıçla boyna vurmayı destekliyor.",
+      "smallest_correction": "Kavram karşılığını \"boyna kılıçla vurma\" yap; uygulanabilirlik ve korunan özellik metinlerinden kesme sonucunu çıkar, diğer alanları koru."
+    },
+    {
+      "target_ref": "root_001249/B010",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "\"Boynuna kılıçla vurdu\" karşılığı kanıtla tam örtüşmesine rağmen daraltma olarak işaretleniyor ve kayıp alanında kanıtın söylemediği kesin kesme sonucu aranıyor.",
+      "smallest_correction": "Bu bağlamsal karşılığın fit değerini \"none\" yap ve loses değerini null olarak değiştir; karşılık ile diğer açıklamaları koru."
+    },
+    {
+      "target_ref": "root_001249/B010",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_028"
+      ],
+      "evidence_conflict": "lu_028 için sağlanan anlam boyna kılıçla vurmadır. \"Boynuna kılıçla vurup kesti\" karşılığı kanıtta bulunmayan kesme sonucunu ekliyor.",
+      "smallest_correction": "lu_028 target_gloss değerini \"boynuna kılıçla vurdu\" olarak değiştir."
+    },
+    {
+      "target_ref": "root_001249/B010",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_000312/B004 ile ortak alan, B010 için kanıtlanmayan kesmeyi de iki dalın ortak olayı sayıyor. B010 kanıtı ortaklığı yalnızca boyun bölgesine kılıçla vurma düzeyinde destekler.",
+      "smallest_correction": "root_000312/B004 satırındaki shared_zone metnini iki dalın boyun bölgesine kılıçla vurma olayında örtüştüğünü söyleyecek biçimde daralt; ilişki türünü ve diğer sınır metinlerini koru."
+    }
+  ]
+}

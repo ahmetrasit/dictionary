@@ -1,48 +1,5 @@
 {
-  "verdict": "repair",
-  "summary": "B004 dalının çekirdek tanımı ve kimlik yargısı kanıtı doğru biçimde niteler; ancak kapsam notu, komşu ayrımları ve kök özeti, yalnızca bir kaynakta türetimsel açıklama olarak geçen yumuşaklık ve gevşekliği yeniden zorunlu dal sınırı gibi sunmaktadır.",
-  "issues": [
-    {
-      "target_ref": "root_001923/B004",
-      "field": "lexicalization_scope",
-      "severity": "major",
-      "confidence": "high",
-      "claim_ids": [
-        "bc_001"
-      ],
-      "evidence_conflict": "Kapsam notu anlamı yumuşak ve gevşek kumlu yerle sınırlar. Oysa kaynak ifadesinde iki tanığın ortak çekirdeği kum içeren yerdir; yumuşak ve sert olmama açıklaması yalnızca bir tanıkta gerekçe olarak bulunur. Bu not, aynı daldaki nitelikli kimlik yargısı ve çekirdek tanımla da çelişir.",
-      "smallest_correction": "Kapsam notundan yumuşaklık ve gevşekliği zorunlu sınır yapan ifadeyi çıkarıp kapsamı yalnızca kanıttaki kumlu yer anlamıyla sınırlandırın."
-    },
-    {
-      "target_ref": "root_001923/B004",
-      "field": "neighbor_distinctions",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "bc_001"
-      ],
-      "evidence_conflict": "B005 ile karşılaştırmada odak dalı gevşeklikle tanımlanmış ve ayrım herhangi bir yumuşak kumlu yere genellenmiştir. Kanıtın ortak yer sınırı kumlu olmaktır; yumuşaklık ve sert olmama tek kaynağa ait türetimsel açıklamadır.",
-      "smallest_correction": "Odak ve ayrım cümlelerinde genel yer türünü yalnızca kumlu yer olarak anlatın; yumuşaklık veya gevşeklik anılacaksa bunun tek kaynağa ait açıklama olduğunu belirtin."
-    },
-    {
-      "target_ref": "root_001923/B005",
-      "field": "neighbor_distinctions",
-      "severity": "minor",
-      "confidence": "medium",
-      "claim_ids": [
-        "bc_001"
-      ],
-      "evidence_conflict": "B004 komşusu, yumuşak ve gevşek kumlu olma özellikleriyle tanımlanan bir tür gibi sunulmuştur. B004 için kaynakların ortak çekirdeği kumlu yerdir; bu ek özellikler zorunlu sınır değildir. Özel ad ile betimleyici yer türü ayrımı bu ek koşullara ihtiyaç duymaz.",
-      "smallest_correction": "Komşu dalı genel bir kumlu yer türü olarak tanımlayın ve ayrımı tekil özel ad ile betimleyici genel yer türü karşıtlığı üzerinden koruyun."
-    },
-    {
-      "target_ref": "root_profile",
-      "field": "root_profile",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [],
-      "evidence_conflict": "Kök özeti B004 dalını gevşek kumlu yer diye adlandırarak tek kaynaktaki açıklamayı dalın zorunlu çekirdeğine taşır. Aynı yanıtın nitelikli kimlik yargısı ve tanımı ortak çekirdeği yalnızca kumlu yer olarak belirlemiştir.",
-      "smallest_correction": "Kök özetindeki gevşek kumlu yer ifadesini kumlu yer olarak değiştirin."
-    }
-  ]
+  "verdict": "pass",
+  "summary": "Yazar yaniti, verilen kanitla yayin semantigi acisindan uyumludur. Dal sinirlari, kapsam notlari, cekirdek tanimlar, kaynak sentezi ve komsu ayrimlari kanitin izin verdigi cercevede korunmus; onarim gerektiren somut bir celiski bulunmamistir.",
+  "issues": []
 }

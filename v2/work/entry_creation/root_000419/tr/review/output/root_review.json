@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yaniti genel olarak kaniti dikkatle koruyor; ancak bir kimlik karari verilen gecici cerceveyi yanlis tanimliyor, bir sozluk birimi kaynakta bulunmayan fiziksel bir hareket ekliyor ve ses dalinin tanimi iki kanit sinirini gereksiz yere daraltiyor.",
+  "issues": [
+    {
+      "target_ref": "root_000419/B002",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gecici cercevenin what_is alani bas ve boyun alcalmasinin yaninda yildiz veya gunesin kaybolmaya yonelmesini zaten acikca icerir. Bu nedenle cercevenin yalnizca bas ve boyun durusuna dayandigi gerekcesiyle reframed denmesi verilen cerceveyi yanlis aktarir.",
+      "smallest_correction": "identity_judgment.status degerini accepted yap ve rationale metnini, gecici cercevenin hem bedensel alcalmayi hem de gok cisminin kaybolmaya yonelmesi uzantisini zaten dogru korudugunu belirtecek bicimde duzelt; boundary_note metnini koru."
+    },
+    {
+      "target_ref": "root_000419/B002",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003"
+      ],
+      "evidence_conflict": "lu_003 kaynak ifadesi kendini alcaltma, kisalma ve tevazu gostermeyi bildirir; basini egme hareketini bildirmez. Hedef karsiliktaki basini egdi eklemesi bu birimin kanitini fiziksel dalin cercevesine gore genisletir.",
+      "smallest_correction": "Yalnizca lu_003 target_gloss degerinden basini egdi eklemesini cikar ve karsiligi kendini alcaltti ve kuculttu olarak birak."
+    },
+    {
+      "target_ref": "root_000419/B005",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak, seslerin savasta ve baska yerlerde dolanip karismasini verir; savas disi ortami kalabalik olmakla sinirlamaz. Ayrica vurus sesinin kilic veya kamciya baglanmasinda kaynak farki vardir, oysa tanim bunu yalnizca silah vuruslari diye daraltir.",
+      "smallest_correction": "concept_map.definition icinde baska bir kalabalik ortam ifadesini baska bir ortam olarak genislet ve silah vuruslari ifadesini kilic ya da kamci vuruslari olarak duzelt; diger concept_map icerigini koru."
+    }
+  ]
+}

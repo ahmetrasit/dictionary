@@ -1,0 +1,84 @@
+{
+  "inputs_sha256": "4cbbf7445990351891ca83b832d35693e4d3fd757fd5a65d49645a472c1df9d2",
+  "verdict": "repair",
+  "summary": "Onarim gerekiyor: B004, kanittaki olumsuz uygunluk kalibini pozitif uygunluk olarak genisletiyor; B005 ise tek tanikliktaki is icinde karsi durma anlamini karsilama, denklik ve genel karsilik diline dogru genisletiyor. Ayni genisleme B005'e bakan iki komsu ayriminda da duzeltilmelidir. Diger dallarda yayinla ilgili zorunlu bir semantik kusur bulmadim.",
+  "issues": [
+    {
+      "target_ref": "root_002891/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanitta kisiye bagli kalip yalniz olumsuz bicimdedir: bir isin kisiye uygun dusmemesi. Yazar tanimi ve cekirdek facet'i bunu 'uymasi ya da uymamasi' ve genel uygunluk yargisi olarak genisletiyor.",
+      "smallest_correction": "B004 concept_map icinde tanimi ve cekirdek facet'ini, kisiye uygun dusmeme ile is veya cevapta saglam ve iyi kurulmus olma yargisini kapsayacak sekilde daralt."
+    },
+    {
+      "target_ref": "root_002891/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanittaki kisiye bagli ifade 'uygun dusmeme' seklindedir; source_synthesis ortak ozeti bunu 'uygun dusme ya da dusmeme' diye pozitif yonde de genisletiyor.",
+      "smallest_correction": "B004 source_synthesis.common_summary metnini kisiye uygun dusmeme ile is ve cevabin saglam kurulmus olmasi etrafinda yeniden daralt."
+    },
+    {
+      "target_ref": "root_002891/B005",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tek kanit B005'i bir kisinin baskasina isinde karsi durmasi olarak verir. Identity rationale ve boundary_note bunu 'karsilama' ve genel 'karsilik' diline dogru genisletiyor.",
+      "smallest_correction": "B005 identity_judgment icinde rationale ve boundary_note'u is icinde karsi durma iliskisiyle sinirla; karsilama ve genel karsilik ifadelerini kaldir."
+    },
+    {
+      "target_ref": "root_002891/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanitta cekirdek 'isinde ona karsi durmak'tir. Concept_map tanimi 'ona denk gelen' ve 'ayni is alaninda karsilik kuran kisi' ifadeleriyle denklik veya genel counterpart alanini ekliyor.",
+      "smallest_correction": "B005 concept_map tanimini ve facet'lerini, iki kisi arasinda is uzerinden kurulan karsi durma iliskisiyle sinirla; denklik, eslik ve genel karsilik eklerini kaldir."
+    },
+    {
+      "target_ref": "root_002891/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B005 tek kaynakli kanit yalniz 'isinde ona karsi durur' der. Source detail 'veya onu karsilamasi' diyerek ayni claim'e desteklenmeyen ikinci bir aktarim ekliyor.",
+      "smallest_correction": "B005 source_synthesis icinde sole_attestation summary metnini yalniz bir kisinin baskasina isinde karsi durmasi olarak daralt."
+    },
+    {
+      "target_ref": "root_002891/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B001'in B005'e bakan neighbor_only metni B005'i 'karsi durma ya da karsilama' diye aktarir. B005 kaniti ise is icinde karsi durma ile sinirlidir.",
+      "smallest_correction": "B001 neighbor_distinctions icindeki B005 neighbor_only metninden 'onu karsilamasi' genislemesini kaldir ve B005'i isinde karsi durma olarak aktar."
+    },
+    {
+      "target_ref": "root_002891/B004",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B004'un B005'e bakan neighbor_only metni B005'i 'ona denk konum alma' olarak da aktarir. B005 kaniti yalniz is icinde karsi durmayi destekler, genel denkligi desteklemez.",
+      "smallest_correction": "B004 neighbor_distinctions icindeki B005 neighbor_only metninden genel denklik ifadesini kaldir ve B005'i baskasina isinde karsi durma olarak daralt."
+    }
+  ]
+}

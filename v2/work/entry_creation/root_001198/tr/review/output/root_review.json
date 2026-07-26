@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dalların büyük bölümünde kaynak sınırlarını ve sözlükselleşme türlerini doğru koruyor. Bununla birlikte öpme dalının tanımı kaynakta bulunmayan amaçlar ekliyor, topluluk dalı cinleri de kapsayan kaynak varyantını göstermiyor ve yeterlik dalı karşı koyma anlamını taşıma yeterliğine genişletiyor. Bunlar sınırlı alanlarda küçük düzeltmelerle giderilebilir.",
+  "issues": [
+    {
+      "target_ref": "root_001198/B006",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi yalnız öpücüğü ve öpme eylemini doğruluyor; sevgi, yakınlık veya selamlama bildirme amaçlarını belirtmiyor. Tanım bu amaçları dalın anlam koşulu gibi ekliyor.",
+      "smallest_correction": "Tanımdan sevgi, yakınlık ve selamlama amaçlarını çıkarıp çekirdeği dudakla gerçekleştirilen öpme eylemi ve bunun tekil örneğiyle sınırlandırın."
+    },
+    {
+      "target_ref": "root_001198/B009",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesindeki aktarımlardan biri topluluk veya kuşak kapsamını hem cinlere hem insanlara açıkça uyguluyor. Kavram haritası ise dalı yalnız insan topluluğu olarak sunuyor ve bu kapsam farkını göstermiyor.",
+      "smallest_correction": "İnsan topluluğu çekirdeğini koruyun; ayrıca bazı kaynak kullanımında kapsamın cin kuşağını da içerdiğini belirten bir source_variant yüzeyi ekleyin."
+    },
+    {
+      "target_ref": "root_001198/B009",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak özeti bütün aktarımları insan topluluğu ve insan kuşağı çevresinde birleştiriyor, ancak verilen kaynak ifadesindeki cinleri de kapsayan belirgin kapsam varyantını anmıyor.",
+      "smallest_correction": "Ortak özete, kaynaklardan birindeki kullanımın kuşak veya topluluk adını cinlere de uyguladığını belirten kısa ve kaynak-nötr bir kapsam notu ekleyin."
+    },
+    {
+      "target_ref": "root_001198/B013",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi kalıbı bir şeyle karşılaşmaya, ona karşı koymaya veya onu savuşturmaya gücü yetmemekle sınırlar. Tanımdaki onu taşıma yeterliği bu sınırın dışında yeni bir yük taşıma anlamı ekliyor.",
+      "smallest_correction": "Tanımdaki onu taşımaya sözünü çıkarın ve cümleyi yalnız yüzleşme, karşı koyma veya savuşturma yeterliğinin bulunmamasıyla sınırlandırın."
+    }
+  ]
+}

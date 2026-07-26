@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtının dal kimliği, kapsamı, çekirdek tanımı ve komşu ayrımları kanıtla uyumludur. Kaynak sentezinde özgül bir türetme bilgisi eksik kalmış, bir sözlüksel karşılığa da kanıtta bulunmayan kolaylık anlamı eklenmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_001153/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, bc_001 içinde bacakları iki yana açmayı anlatan birleşik biçimin iki unsurdan türetildiğine ilişkin özgül açıklamayı aktarmıyor; yalnızca bunun sonuç anlamı olan aralık büyütmeye değiniyor.",
+      "smallest_correction": "common_summary alanına, bacakları iki yana açmayı anlatan birleşik biçimin iki öğenin birleşimi olarak açıklandığını belirten kaynak-yansız kısa bir cümle ekleyin; mevcut özeti ve diğer alanları koruyun."
+    },
+    {
+      "target_ref": "root_001153/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011"
+      ],
+      "evidence_conflict": "lu_011 için verilen hedef karşılıktaki \"kolaylık\" öğesi, işte genişlik ve hareket alanı bildiren kanıtta yer almayan ek bir anlamdır.",
+      "smallest_correction": "lu_011 target_gloss değerini \"hareket alanı bulunan iş\" olarak değiştirin ve diğer sözlüksel karşılıkları koruyun."
+    }
+  ]
+}

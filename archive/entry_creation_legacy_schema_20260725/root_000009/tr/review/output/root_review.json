@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Kavram karşılığında bir çekirdek uyum ilişkisi eksik kalmış, bir komşu ayrımında ise hayvan sınıfları arasında kanıtlanmayan bir genişlik ilişkisi kurulmuştur.",
+  "issues": [
+    {
+      "target_ref": "root_000009/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_006"
+      ],
+      "evidence_conflict": "Kavram karşılığı F002'yi kapsadığını belirtse de metin yalnız uygun yolu bulma ile işin yürütülebilir duruma gelmesini anlatıyor. lu_006 ise kişinin bir işte karşısındaki kişiye uymasını ve onunla birlikte hareket etmesini ayrı bir çekirdek ilişki olarak veriyor; karşılığın metni ve uygulanabilirlik açıklaması bu katılımcı ilişkisini korumuyor.",
+      "smallest_correction": "Kavram karşılığına bir işte karşısındaki kişiye uyma anlamını ayrı ve açık biçimde ekleyin; uygulanabilirlik açıklamasında da işi koşullara uyan özne gibi göstermek yerine kişiler arasındaki uyumu belirtin."
+    },
+    {
+      "target_ref": "root_000009/B012",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_026"
+      ],
+      "evidence_conflict": "Odak kanıtı dişi deveyle sınırlıyken komşu sınır kartı dişi toynaklı hayvanları belirtir. Ayrım komşuyu odaktan daha geniş bir hayvan grubu gibi sunarak kanıtın vermediği bir üst-alt kapsam ilişkisi kuruyor; verilen sınırlar yalnız çiftleşme isteği alanında kesişir.",
+      "smallest_correction": "Komşuyu daha geniş bir hayvan grubu olarak değil, dişi deveye karşı farklı bir hayvan sınıfıyla sınırlı olarak tanımlayın; yakın eş ve kısmi sınır sınıflandırmasını koruyun."
+    }
+  ]
+}

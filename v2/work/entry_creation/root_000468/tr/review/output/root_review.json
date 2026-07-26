@@ -1,0 +1,61 @@
+{
+  "verdict": "repair",
+  "summary": "B006'da genel kap anlamı gereksiz biçimde küçük kutuya daraltılmıştır. B007'de yalnız bazı kaynaklarda bulunan çıkarma ve koklama ayrıntıları bütün kaynakların ortak görüşü gibi sunulmuştur. B009'da ise kaynağa özgü yürüyüş ve benek özellikleri kuş türünün çekirdeğine taşınmıştır. Bu alanlarda sınırlı düzeltme gereklidir.",
+  "issues": [
+    {
+      "target_ref": "root_000468/B006",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesinin ortak çekirdeği içine eşya konan bir kap veya kutudur; yalnız bir kayıt onu küçük diye niteler, kadınların koku ve araç kabı oluşu da özel kullanımdır. Tanım ile F001, küçüklüğü bütün dalın zorunlu özelliği yaparak çekirdeği daraltıyor.",
+      "smallest_correction": "Tanım ve F001'den zorunlu küçüklük ile kanıtlanmayan kapalı olma nitelemesini çıkar; çekirdeği içine eşya konan kutu veya kap olarak ver ve kadınların koku ile araç kabı kullanımını F002'de uzmanlaşma olarak koru."
+    },
+    {
+      "target_ref": "root_000468/B006",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığındaki küçük eşya kutusu sözü, yalnız bir kaynağın küçüklük ayrıntısını bütün dalın çekirdeğine taşıyor ve daha genel kutu veya kap kayıtlarını dışarıda bırakıyor.",
+      "smallest_correction": "Kavram karşılığını eşya koymaya yarayan kutu veya kap olarak genişlet; uygulanabilirlik ve hata profilinden zorunlu küçüklük iddiasını çıkar ve yalnız F001'e bağla."
+    },
+    {
+      "target_ref": "root_000468/B007",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet bütün kaynakların bezin çıkarılıp koklatılmasında birleştiğini söylüyor. Oysa ortak kayıt bezin sarılıp dişi deveye yerleştirilmesidir; çıkarma, koklama ve yavruyu benimseme zinciri yalnız bazı kaynaklarda açıkça anlatılır.",
+      "smallest_correction": "Ortak özeti, bütün kaynakların paylaştığı sarılı bezin yerleştirilmesi çekirdeğiyle sınırla; çıkarma, koklama ve yavruyu benimseme sonucunu bazı anlatımlarda açıklanan işlem zinciri olarak nitele."
+    },
+    {
+      "target_ref": "root_000468/B009",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Dalın ortak çekirdeği belirli bir kuş türü olmasıdır. Yerde yürüyüş yalnız bir kaynağın ad açıklamasıdır; benek, koyu kanat içi ve Irak kuşları arasındaki yer de ayrı kaynak betimleridir. Tanım yürüyüşü türün zorunlu tanıtıcı özelliği yapıyor, F002 ise kaynağa özgü açıklamayı associated_use olarak sınıflıyor.",
+      "smallest_correction": "Tanımın ilk cümlesini yalnız belirli bir kuş türü çekirdeğine dayandır ve bütün betimleri bazı kaynaklara ait nitelemeler olarak sun; F002 rolünü source_variant yap."
+    },
+    {
+      "target_ref": "root_000468/B009",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yerde yürüyen benekli bir kuş türü karşılığı, iki ayrı kaynağa özgü betimi bütün kavramın zorunlu çekirdeği gibi birleştiriyor. Bu nedenle yalnız F001 olan tür kimliğini değil, F002 ve F003'teki değişken ayrıntıları da yanlış biçimde genelliyor.",
+      "smallest_correction": "Kavram karşılığını belirli bir kuş türü olarak değiştir; uygulanabilirlik ve hata profilini ortak tür kimliğiyle sınırla ve facet_ids alanında yalnız F001'i bırak."
+    }
+  ]
+}

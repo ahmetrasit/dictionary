@@ -1,0 +1,83 @@
+{
+  "verdict": "editorial_review",
+  "summary": "Yazar yanıtı genel olarak dal ayrımlarını koruyor; ancak bazı yayınsal anlam sorunları var. B005'te kaynakta melekler olan katılımcı görevlilere dönüştürülmüş, B006'da yalnız belirli kuruluşlarla kanıtlanan çekme anlamı herhangi bir nesneye genellenmiş, B007'de yalnız bazı kaynak anlatımlarına ait küçüklük ve sınırlılık bütün dalın çekirdeğine taşınmış, B009'da ise kaynakların farklı ayrıntıları ortak görüş gibi sunulmuş. Özellikle B009 için tek bc_001 kaydının birden çok sözlüğü birlikte bağlaması, kaynak bazlı düzeltmeyi kanıt sahipliği sınırına taşıyor.",
+  "issues": [
+    {
+      "target_ref": "root_001505/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F006, kaynakta işleri bağlayan katılımcıları melekler olarak veren ifadeyi genel görevliler biçiminde aktarıyor. Bu değişiklik kaynakta açıkça belirtilen katılımcı türünü ortadan kaldırıyor.",
+      "smallest_correction": "F006'daki görevliler sözünü melekler olarak düzeltin ve soyut kullanımın işleri bağlayan meleklere ait olduğunu açıkça koruyun."
+    },
+    {
+      "target_ref": "root_001505/B005",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet yalnız işlerin bağlanmasından söz ederek bu kullanımın kaynakta meleklere bağlanan ayırt edici katılımcısını düşürüyor.",
+      "smallest_correction": "İşlerin bağlanması kullanımını, işleri bağlayan meleklerden söz eden kaynak anlatımı olarak niteleyin."
+    },
+    {
+      "target_ref": "root_001505/B006",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Dal yalnız kuruluşlarla kanıtlanmış bir collocation dalıdır; buna karşın tanım herhangi bir şeyi yardımcı düzenek olmadan çekip çıkarma biçiminde genel ve yalın bir anlam kuruyor. Kanıt, düzeneksiz çekmeyi özellikle kuyudaki kovaya bağlar; can alma ve otu dişle koparma ayrı uzantılardır.",
+      "smallest_correction": "Tanımın ilk cümlesini kovayı yardımcı kaldırma düzeneği olmadan kuyudan doğrudan çekip çıkarma ile sınırlandırın; can alma ile otu dişle koparmayı ayrı uzantılar olarak bırakın."
+    },
+    {
+      "target_ref": "root_001505/B007",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım bütün dalı sınırlı ve özellikle küçük ganimet olarak kuruyor. Kanıtta az miktar ve bölüştürülememe yalnız bir kaynak anlatımının varyantıdır; hedefe varmadan veya bölüşümden önce alınan ganimet anlatımlarında küçüklük zorunlu değildir.",
+      "smallest_correction": "Tanımın ortak çekirdeğinden sınırlı ve küçük olma koşulunu çıkarın; az sayıdaki deve ile bölüştürülemeyen küçük malı yalnız kaynak varyantları olarak koruyun."
+    },
+    {
+      "target_ref": "root_001505/B007",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet sınırlı ganimeti bütün kaynakların ortak çekirdeği yapıyor. Oysa küçüklük ve başkana bırakılma bir anlatı koluna, rastlantıyla bulunan develer başka bir anlatı koluna aittir.",
+      "smallest_correction": "Ortak özeti sefer sırasında erken veya genel bölüşümden önce alınan ganimetle sınırlandırın; küçüklük, rastlantısal bulunma ve başkana bırakılmayı kaynak varyantları olarak ayrı tutun."
+    },
+    {
+      "target_ref": "root_001505/B007",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığındaki küçük ganimet sözü kaynak varyantına ait miktar koşulunu bütün teknik adın zorunlu özelliği gibi gösteriyor.",
+      "smallest_correction": "Kavram karşılığından küçük nitelemesini çıkarın ve uygulanabilirlik ile hata profili açıklamalarını da küçüklüğü ortak çekirdek saymayacak biçimde uyarlayın."
+    },
+    {
+      "target_ref": "root_001505/B009",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet bütün kaynakların hem su ve tuzda hazırlama hem de benzer adlı balıktan ayrılma konusunda birleştiğini söylüyor. Kanıtta su ve tuzda hazırlama ayn ile tahdhib'e, başka balık olmadığı kaydı ise sihah'a özgüdür; ortak olan yalnız belirli bir balık türü olmasıdır.",
+      "smallest_correction": "Ortak özeti belirli bir balık türü olma çekirdeğiyle sınırlandırın; tuzlu suda hazırlama ile başka balıktan ayrılma ayrıntılarını bütün kaynaklara mal etmeyin. Kaynak bazlı satırlar gerekiyorsa çok sözlüklü bc_001 kaydı kanıt sahibi tarafından ayrıştırılmalıdır."
+    }
+  ]
+}

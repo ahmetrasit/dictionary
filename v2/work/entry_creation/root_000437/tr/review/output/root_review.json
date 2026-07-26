@@ -1,0 +1,92 @@
+{
+  "verdict": "repair",
+  "summary": "İlk üç dal kanıtla uyumludur. Dördüncü dalın yer adı niteliği doğru kurulmuş olsa da gömmenin amacı birçok alanda ateşin alevinin durulması yerine kesin ve tam söndürme olarak sunulmuştur. Ayrıca bağlamsal karşılık, kanıtta bulunmayan çukur biçimini eklemektedir. Bu yüksek güvenli ve alanları sınırlı sorunlar canlı yanıtta en küçük değişikliklerle düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000437/B004",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, közün veya ateşin gömüldüğü yeri ve bunun sonucunda ateşin durulmasını bildirir; közün de kesin biçimde söndüğünü bildirmez. Gerekçe ile sınır notu ise amacı ve sonucu doğrudan sönme olarak kesinleştirir.",
+      "smallest_correction": "Kabul durumunu ve yer adı sınırını koruyup sönme ifadelerini ateşin alevinin durulması veya yatışması olarak değiştirin; közün bütünüyle sönmesini zorunlu kılmayın."
+    },
+    {
+      "target_ref": "root_000437/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve ikinci yüz, gömmenin ateşi söndürdüğünü kesin sonuç olarak ekliyor. Kanıtın çekirdeği, közün veya ateşin gömüldüğü yer ve ateşin bu yolla durulmasıdır; tam sönme ayrıca tanıklanmamıştır.",
+      "smallest_correction": "Tanım ile F002'deki söndürme kesinliğini kaldırıp gömmenin ateşin alevini durultma veya yatıştırma amacı taşıdığını söyleyin; F001'i değiştirmeyin."
+    },
+    {
+      "target_ref": "root_000437/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, iki tanıklığın ateşin sönmesi üzerinde birleştiğini söylüyor. Tanıklıklar gömülen köz veya ateş ile ateşin durulma amacını destekler, bütün közün kesin sönmesini değil.",
+      "smallest_correction": "Ortak özette sönme ve söndürme yerine ateşin alevinin durulması veya yatışması ifadelerini kullanın; diğer kaynak alanlarını koruyun."
+    },
+    {
+      "target_ref": "root_000437/B004",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı ve açıklaması, közü gömmenin onu kesin olarak söndürdüğünü bildiriyor. Kanıt yalnız ateşin gömme yoluyla durulmasını zorunlu kılar.",
+      "smallest_correction": "Karşılığı, közün veya ateşin gömülerek alevinin durultulduğu yer biçiminde daraltın ve açıklama ile hata profilindeki söndürme kesinliğini aynı yönde düzeltin."
+    },
+    {
+      "target_ref": "root_000437/B004",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bağlamsal karşılık hem kesin söndürme sonucunu hem de kanıtta bulunmayan çukur biçimini ekler. Kendi hata profili biçim ekini yanlışlıkla kayıp olarak kaydeder ve eklenen anlam alanını boş bırakır.",
+      "smallest_correction": "Karşılığı kanıtla uyumlu bir ateş yatıştırma yeri ifadesine çevirin, çukur biçimini kaldırın ve uygulanabilirlik ile hata profilini yeni karşılığa göre uyarlayın."
+    },
+    {
+      "target_ref": "root_000437/B004",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_008"
+      ],
+      "evidence_conflict": "lu_008 için verilen karşılık, közün veya ateşin kesin biçimde söndürüldüğünü söylüyor; birimin kanıtı ise gömüldüğü yeri ve ateşin durulmasını bildiriyor.",
+      "smallest_correction": "Hedef karşılığı, közün veya ateşin gömülerek alevinin durultulduğu yer olarak değiştirin."
+    },
+    {
+      "target_ref": "root_000437/B004",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu ayrımlarında odak dal sürekli kesin söndürme yeri olarak adlandırılıyor. Kanıtın sınırı ateşin gömülerek durulmasıdır; tam sönme şartı bu karşılaştırmalara da taşınmamalıdır.",
+      "smallest_correction": "İlişki türlerini ve komşu sınırlarını koruyup odak dala ilişkin söndürme ifadelerini alevi durultma veya yatıştırma ifadeleriyle değiştirin."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök özeti, dördüncü dalı közün kesin olarak söndürüldüğü yer diye özetleyerek dal kanıtından daha güçlü bir sonuç kuruyor.",
+      "smallest_correction": "Dördüncü dalı, közün veya ateşin alevi durulsun diye gömüldüğü yer olarak özetleyin; çok anlamlı ve ışınsal örgütlenme değerlerini koruyun."
+    }
+  ]
+}

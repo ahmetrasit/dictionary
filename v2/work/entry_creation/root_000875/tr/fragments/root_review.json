@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "e6c24232973d57a0094ef65d579eafdd0535d6b42aa2eb6077c2d4be8a2144b0",
+  "verdict": "editorial_review",
+  "summary": "Yazar yaniti genel olarak kanitla uyumludur; ancak bir turetim ayrintisi kaynak sentezinde atlanmis ve sozluksellesmis bir yildiz adi uzanti yerine ornek olarak siniflandirilmistir. Canli yazar ciktisi bu gorevin yazma siniri disinda oldugundan bu iki sinirli sorun editoryal duzeltmeye birakilmistir.",
+  "issues": [
+    {
+      "target_ref": "root_000875/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, lu_010 biciminin uc ayri unsurdan yontulmus sayildigi ozgul turetim aciklamasini icerir; source_synthesis yalnizca guclu ve kalici nitelik sonucunu aktarir ve bu turetimi butunuyle atlar.",
+      "smallest_correction": "common_summary icine, kaynaklar arasinda ortaklik iddiasi kurmadan, lu_010 biciminin kanitta siralanan uc unsurdan yontulmus sayildigini belirten kisa bir cumle ekleyin."
+    },
+    {
+      "target_ref": "root_000875/B006",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, belirli dort yildizin bu bicimle adlandirildigini bagimsiz bir sozluk kullanimi olarak taniklar; F004'un example rolu bu sozluksellesmis adlandirmayi yalnizca aciklayici bir ornek duzeyine indirir.",
+      "smallest_correction": "F004'un role degerini example yerine extension olarak degistirin; ifade metnini ve kanit bagini koruyun."
+    }
+  ]
+}

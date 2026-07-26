@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtı, söz öbeği sınırlarını ve kaynak varyantlarını dikkatle koruyor. Ancak B001'de yalnız köpeğe bağlı beyaz boyun halkası insanlara veya hayvanlara genel bir nitelik gibi yayılmış; B014'te ise eski zaman anlamına kanıtsız biçimde çağların başlangıcı ayrıntısı eklenmiştir. Bu iki sınırlı düzeltme dışında yayıma engel bir anlamsal sorun yoktur.",
+  "issues": [
+    {
+      "target_ref": "root_001053/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi uzun boyun niteliğini insan için de verirken halka biçimli beyazlığı özellikle köpeğe bağlar. Tanım ile F002, insanın veya herhangi bir hayvanın boynundaki beyazlığı aynı kapsamda sunarak köpeğe bağlı kullanımı genelleştiriyor.",
+      "smallest_correction": "Tanımda halka biçimli beyazlığı köpeğin boynuna bağla; F002'yi de uzun boynun insan veya hayvanda, halka biçimli beyazlığın ise köpekte görüldüğünü açıkça söyleyecek biçimde daralt."
+    },
+    {
+      "target_ref": "root_001053/B014",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak yalnız kalıbın eski zamanda gerçekleşmeyi bildirdiğini söyler; geçmiş çağların başlangıçlarına ilişkin daha dar bir zaman konumu vermez. Gerekçe bu desteklenmeyen başlangıç ayrıntısını ekliyor.",
+      "smallest_correction": "Gerekçedeki geçmiş çağların başlangıcı ifadesini kaldır ve kalıbın bir olayı çok eski veya uzak geçmiş zamana yerleştirdiğini söyle."
+    },
+    {
+      "target_ref": "root_001053/B014",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım, eski zaman anlamını geçmiş çağların başlangıçları diye daraltıyor. Kanıt çok eski geçmişi destekler, fakat geçmiş çağların başı gibi özel bir evreyi desteklemez.",
+      "smallest_correction": "Tanımdaki geçmiş çağların başlangıçları ifadesini kaldır; tanımı olayın çok eski veya uzak geçmiş zamanda gerçekleştiğini bildiren sabit söz öbeğiyle sınırla."
+    }
+  ]
+}

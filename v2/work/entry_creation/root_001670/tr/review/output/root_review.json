@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak B002'de seçenekli hareket anlamları tek bir birleşik olay gibi sunulmuş, B006'da kesintisizlik koşulu zayıflatılmış ve B007'de çekirdeği aynı olan bir komşuluk ilişkisi bağımlı kullanımlar nedeniyle gereksiz yere yakın anlamlı sayılmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_001670/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak, yalın kullanım için bir oyuğa girme ile inme veya düşme anlamlarını seçenekli biçimde verir; görünmez olma ise özellikle güneş ve gizleme kullanımlarında belirginleşir. Tanım ile F001 bu ögeleri birlikte gerçekleşmesi gereken tek bir olay gibi bağlar. Ayrıca ettirgen kullanım bir anlam uzmanlaşması değil, türetilmiş ilişkili kullanımdır.",
+      "smallest_correction": "Tanımı ve F001'i bir oyuğa girme, inme veya düşme seçeneklerini ayıracak biçimde düzelt; güneş kullanımındaki gözden kaybolmayı F002'de koru ve F004 rolünü associated_use yap. Diğer facet metinlerini ve kimlik çerçevesini koru."
+    },
+    {
+      "target_ref": "root_001670/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı içeri girmeyi zorunlu olarak kaybolmayla birleştiriyor ve kaynakta bağımsız seçenek olarak bulunan inme veya düşme anlamını göstermiyor.",
+      "smallest_correction": "Karşılık metnini bir oyuğa girme, inme, düşme veya bağlama göre gözden kaybolma seçeneklerini ayıracak biçimde değiştir; applicability ve error_profile.preserves metinlerini de aynı seçenekli kapsamla uyumlu hale getir."
+    },
+    {
+      "target_ref": "root_001670/B006",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak yolculuğun gündüz ile gece arasında kesilmeden sürdürülmesini belirtirken bağlamsal karşılığın applicability metni çok az kesintiye izin veriyor.",
+      "smallest_correction": "Applicability içindeki çok az kesinti ifadesini ara vermeden sürdürme olarak düzelt; karşılık metnini ve diğer alanları koru."
+    },
+    {
+      "target_ref": "root_001670/B007",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Odak dalın kaynak ifadesi nesneyi doğrudan komşu dalın temel tekil nesnesiyle özdeşleştirir. Komşudaki çoğul biçimler ve bu kabukların asıldığı nesneye ilişkin bağımlı kullanım çekirdek sınırı değiştirmez; bu nedenle near_synonym ve partial sınıflaması gereksiz bir düşürmedir.",
+      "smallest_correction": "root_001635/B007 ilişkisini synonym ve exact yap, focus_only ile neighbor_only alanlarını null olarak ayarla ve distinction metnini çekirdeklerin aynı olduğunu, bağımlı biçimlerin bu eşitliği bozmadığını belirtecek biçimde düzelt."
+    }
+  ]
+}

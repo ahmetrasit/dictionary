@@ -370,12 +370,12 @@
         "note": "Tanım, borcu isteme kalıbı ile bu işi yapan kişiyi bildiren biçimi ayrı tutar; bunlardan genel bir çıplak kök anlamı çıkarmaz."
       },
       "concept_map": {
-        "definition": "Bir borcun ödenmesini borçludan istemek ve alacağı ondan elde etmektir. Aynı anlam alanı, alacağını isteyen veya alan kişi için kullanılan adı da kapsar.",
+        "definition": "Bir borcun ödenmesini borçludan istemek ve alacağı ondan talep etmektir. Aynı anlam alanı, alacağını isteyen veya borcun ödenmesini talep eden kişi için kullanılan adı da kapsar.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Alacaklı, borçludan borcunu ödemesini ister ve alacağını ondan elde etmeye yönelir.",
+            "statement": "Alacaklı, borçludan borcunu ödemesini ister ve alacağını ondan talep eder.",
             "claim_ids": [
               "bc_001"
             ]
@@ -383,7 +383,7 @@
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Borcu isteyen ya da alacağı elde eden kişi bu eyleme bağlı özel bir adla anılır.",
+            "statement": "Borcu isteyen ya da alacağın ödenmesini talep eden kişi bu eyleme bağlı özel bir adla anılır.",
             "claim_ids": [
               "bc_001"
             ]
@@ -400,11 +400,11 @@
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "alacağı isteme ve elde etme",
-        "applicability": "Bir alacaklının borçludan ödeme istediği ve alacağını almaya yöneldiği bütün kanıtlı bağlamları kapsar.",
+        "text": "alacağı talep etme",
+        "applicability": "Bir alacaklının borçludan ödeme istemesi veya alacağını talep etmesi anlamındaki kanıtlı bağlamları kapsar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Borcu isteme, borçluya yönelme ve alacağı elde etme aşamalarını birlikte korur.",
+          "preserves": "Borcu isteme, borçluya yönelme ve alacağın ödenmesini talep etme bileşenlerini birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -418,11 +418,11 @@
         {
           "text": "borcun ödenmesini isteme",
           "usage_role": "contextual",
-          "applicability": "Eylemin alacağı henüz alma aşamasına geçmeden, borçludan ödeme isteme yönünü öne çıkaran bağlamlarda uygundur.",
+          "applicability": "Eylemin borçludan ödeme isteme yönünü öne çıkaran bağlamlarda uygundur.",
           "error_profile": {
-            "fit": "narrowing",
+            "fit": "none",
             "preserves": "Alacaklının borçludan ödeme istemesi ve isteğin borca yönelmesi bileşenlerini korur.",
-            "loses": "Alacağın gerçekten elde edilmesi aşamasını kendi başına içermez.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -431,12 +431,12 @@
           ]
         },
         {
-          "text": "alacağını isteme ve alma",
+          "text": "alacağını isteme",
           "usage_role": "general",
-          "applicability": "Hem isteme sürecini hem de alacağın borçludan alınmasını birlikte anlatan akıcı kullanımlarda uygundur.",
+          "applicability": "Alacaklının borçludan alacağını talep ettiği akıcı kullanımlarda uygundur.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Alacağı isteme ile onu borçludan elde etme yönlerini birlikte korur.",
+            "preserves": "Alacağı isteme ve talebin borçluya yönelmesi bileşenlerini birlikte korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -450,12 +450,12 @@
         {
           "lexical_unit_id": "lu_011",
           "rendering_kind": "ordinary",
-          "target_gloss": "borcumu ondan isteme ve alma"
+          "target_gloss": "borcumu ondan isteme"
         },
         {
           "lexical_unit_id": "lu_012",
           "rendering_kind": "ordinary",
-          "target_gloss": "alacağını isteyen ya da alan kimse"
+          "target_gloss": "alacağını isteyen veya borcun ödenmesini talep eden kimse"
         }
       ],
       "excluded_glosses": [],

@@ -1,0 +1,83 @@
+{
+  "verdict": "repair",
+  "summary": "B001 ve B002'de yalnizca sozluksel birim kanitinda bulunan iki kullanim, bc_001 ile destekleniyormus gibi dal kimligine ve ortak anlam sentezine tasinmistir. Kum icindeki yol B001'in, tan vaktine girme ise B002'nin dal duzeyindeki cekirdek veya bagli anlami olarak sunulmamalidir.",
+  "issues": [
+    {
+      "target_ref": "root_001132/B001",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 suyun acildigi yerleri ve vadi bosaltimlarini destekler, ancak kum icindeki yolu anmaz. Gerekce, yalniz lu_010'da bulunan bu kullanimi dal kimliginin yer veya guzergah ozellesmesi olarak kabul etmektedir.",
+      "smallest_correction": "Gerekcedeki kum icindeki yol ifadesini kaldirip suyun ciktigi agizlar ve vadi bosaltimlariyla sinirli tutun."
+    },
+    {
+      "target_ref": "root_001132/B001",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F003, bc_001'e dayanarak kum icindeki yollari dal kavraminin ozellesmesi saymaktadir; bu ayrinti bc_001'de degil, yalniz lu_010'un sozluksel birim kanitinda yer alir.",
+      "smallest_correction": "F003'ten kum icindeki yollar ifadesini cikarin; su cikis agizlari ve vadi bosaltimlariyla ilgili destekli yer kullanimlarini koruyun."
+    },
+    {
+      "target_ref": "root_001132/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak ozet, bc_001'in kapsamadigi kum icindeki yolu bu iddiayla desteklenen dal sentezine katmaktadir. Bu kullanim yalniz lu_010'da kanitlanir.",
+      "smallest_correction": "Ortak ozetten kum icindeki yol ifadesini kaldirin; ozetin yer ve guzergah bolumunu bc_001'deki su cikis yerleri ve vadi bosaltimlariyla sinirlayin."
+    },
+    {
+      "target_ref": "root_001132/B002",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 sabah aydinligini, gecenin sonunu ve iki tan gorunumunu destekler; tan vaktine girmeyi bildiren kullanim ise yalniz lu_013'te bulunur. Gerekce bu bagimli bicimi dal kimligine katmaktadir.",
+      "smallest_correction": "Gerekceden tan vaktine girme kullanimini kaldirin ve dal kimligini sabah isigiyla iki tan gorunumu uzerinde birakin."
+    },
+    {
+      "target_ref": "root_001132/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F003, tan vaktine girmeyi bc_001'e bagli bir associated_use olarak gostermektedir; oysa bu anlam bc_001'de yoktur ve yalniz lu_013'un bagimli bicimine aittir.",
+      "smallest_correction": "F003'u kaldirin; kavram haritasini bc_001'in destekledigi sabah aydinliginin belirmesi ve iki tan gorunumu ile sinirlayin."
+    },
+    {
+      "target_ref": "root_001132/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak ozet, tan vaktine girme kullanimini common_claim_ids altinda bc_001'e baglamaktadir; bu kullanim bc_001'in kaynak ifadesinde bulunmaz.",
+      "smallest_correction": "Ortak ozetten tan vaktine girme kullanimini kaldirin ve sentezi sabah isigiyla iki tan gorunumune indirin."
+    },
+    {
+      "target_ref": "root_001132/B002",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karsiligi facet_ids icinde, bc_001 ile desteklenmeyen tan vaktine girme kullanimini tasiyan F003'u da kapsadigini bildirmektedir.",
+      "smallest_correction": "Karsiligin metnini koruyun, ancak facet_ids listesinden F003'u cikarin."
+    }
+  ]
+}

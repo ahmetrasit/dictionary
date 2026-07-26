@@ -1,0 +1,39 @@
+{
+  "verdict": "editorial_review",
+  "summary": "Üç dalın temel anlam ayrımları ve sözlüksel kapsamları kanıtla uyumludur. Ancak sözlük kaynaklarına özgü ayrıntılar tek bir çok kaynaklı iddia altında toplandığı için kaynak sentezleri gereken tekil atıfları güvenilir biçimde kuramamaktadır. Bu eksikliği gidermek kanıt iddialarının kaynaklara göre ayrılmasını gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_001595/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Sentez, kurda ilişkin hırs kullanımını, cimrilik nitelemesini, geçişli ettirgen biçimi ve birleşik çok yeme adlandırmasını kaynaklara özgü ayrıntılar olarak ayırmıyor. Kanıtta bunların kaynak dağılımları farklıdır; buna karşılık bc_001 dört sözlüğü birlikte gösterdiğinden boş source_details alanına eklenecek hiçbir satır tek bir sözlüğe çözümlenemez.",
+      "smallest_correction": "Ortak çekirdek özeti koruyup tekil ve ayırt edici kullanımları ilgili sözlüklere özgü source_details satırlarına taşıyın. Bunun için bc_001 iddiasını kaynak sahipliğine göre ayırıp her ayrıntıyı tam olarak bir sözlüğe çözümlenen yeni iddia kimliğiyle ilişkilendirmek gerekir."
+    },
+    {
+      "target_ref": "root_001595/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, dişi devenin huysuzluk, ürkeklik ve hafiflikle hızlanmasını genel kaynak sentezine katıyor; oysa bu ayrıntılar yalnız belirli kaynak ifadelerinde bulunur. Ayrıca hızlı adam nitelemesi tek bir kaynakta yer aldığı halde source_details boş bırakılmıştır. Dört sözlüğü birlikte taşıyan bc_001, bu ayrıntıların tek sözlüğe bağlanmasına izin vermiyor.",
+      "smallest_correction": "Gerçekten ortak olan keskin ve hızlı ilerleyişi common_summary içinde bırakın; huysuzluk, ürkeklik, hafiflik ve hızlı adam ayrıntılarını kaynaklarına özgü satırlara taşıyın. Önce bc_001 iddiasını kaynak sahipliğine göre ayırmak gerektiğinden bu düzeltme kanıt yeniden ataması ister."
+    },
+    {
+      "target_ref": "root_001595/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Erkek ve dişi keçi yavrusu anlamı kaynaklarda ortaktır; fakat adlandırmanın yavruların hareketliliğine bağlanması yalnız bir kaynak ifadesine özgüdür. Bu açıklama common_summary içinde bc_001 ile bütün kaynaklara bağlanmış, source_details ise boş bırakılmıştır. bc_001 dört sözlüğü birlikte gösterdiği için tekil atıf yapılamaz.",
+      "smallest_correction": "Ortak özeti yalnız erkek ve dişi keçi yavrusu adlarıyla sınırlandırın; hareketliliğe dayalı adlandırma açıklamasını ilgili sözlüğe özgü source_details satırına taşıyın. Bunu yapabilmek için bc_001 iddiasının kaynak sahipliğine göre ayrılması gerekir."
+    }
+  ]
+}

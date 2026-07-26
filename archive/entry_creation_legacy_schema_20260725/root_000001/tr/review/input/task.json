@@ -1,0 +1,54 @@
+{
+  "format": 4,
+  "generated_by": "v2/scripts/create_entry.py",
+  "role": "root_reviewer",
+  "root_envelope_id": "root_000001",
+  "language": "tr",
+  "prompt": {
+    "path": "prompt.md",
+    "sha256": "0f4f56ec68001ddd9040c5a8b6c104afb0d3555ae210c1a8d7a3d8f8328e143c"
+  },
+  "response_schema": {
+    "path": "response.schema.json",
+    "sha256": "0f5c6cd6e24e46781bddf9a3546c49a57ba8e1aeb1eebec1d6821c99b764263a"
+  },
+  "branch_roster": [
+    "root_000001/B001",
+    "root_000001/B002",
+    "root_000001/B003",
+    "root_000001/B004",
+    "root_000001/B005",
+    "root_000001/B006",
+    "root_000001/B007",
+    "root_000001/B008",
+    "root_000001/B009",
+    "root_000001/B010",
+    "root_000001/B011",
+    "root_000001/B012",
+    "root_000001/B013",
+    "root_000001/B014",
+    "root_000001/B015",
+    "root_000001/B016",
+    "root_000001/B017"
+  ],
+  "evidence": {
+    "path": "evidence.json",
+    "sha256": "e580ef8e6d4453cdc02aae932abcde133a1f9dc14b42861a417c3803329eeed7"
+  },
+  "writer_response": {
+    "path": "writer_response.json",
+    "sha256": "356d9f404f8343404eb7e528f9b9dcd3a733256906667340c649ab21d4b0996b"
+  },
+  "writer_task_sha256": "c387935f63f5472a76033a3f36388313becac6bdc60a146d346305637781e189",
+  "canonical_task_sha256": "fa6a62b9aa9d644d782329c3f1903a66a4f1a5cff2c44bc856a38e055c614364",
+  "output": {
+    "path": "../output/root_review.json"
+  },
+  "validation": {
+    "command": [
+      "python3",
+      "v2/scripts/validate_agent_output.py",
+      "v2/work/entry_creation/root_000001/tr/review/input/task.json"
+    ]
+  }
+}

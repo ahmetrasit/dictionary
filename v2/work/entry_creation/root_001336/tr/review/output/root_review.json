@@ -1,0 +1,51 @@
+{
+  "verdict": "repair",
+  "summary": "B001 dalında kanıtın doğrudan bez olarak tanımlama seçeneği, kimlik gerekçesinde ve temel anlam karşılıklarında yalnızca beze benzeyen bir oluşuma indirgenmiştir. Bu alanlarda bez ile bezlere benzeyen etsi oluşum seçenekleri birlikte korunmalıdır. B002 dalında yayın açısından düzeltme gerektiren bir sorun yoktur.",
+  "issues": [
+    {
+      "target_ref": "root_001336/B001",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kimlik gerekçesi kaynakların yapıyı et parçası ve beze benzer oluşum olarak betimlediğini söyler; oysa bc_001 kaynaklardan birinin yapıyı doğrudan bez olarak tanımlamasını da aktarır.",
+      "smallest_correction": "Kabul durumunu ve sınır notunu koruyup gerekçedeki betimlemeyi, kaynakların yapıyı hem bez hem de bezlere benzeyen etsi bir oluşum olarak verdiğini belirtecek biçimde düzeltmek."
+    },
+    {
+      "target_ref": "root_001336/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve çekirdek facet, gösterileni yalnızca bez görünümünde veya bezlere benzeyen etsi bir doku parçası yapar. bc_001 ise bir kaynakta doğrudan bez, başka bir kaynakta bezlere benzeyen et parçası biçimindeki iki betimlemeyi korur.",
+      "smallest_correction": "Tanımı ve F001 ifadesini, gösterilen şeyi kadın cinsel organının içindeki bir bez veya bezlere benzeyen etsi bir oluşum olarak verecek biçimde düzeltmek; diğer facet yapısını korumak."
+    },
+    {
+      "target_ref": "root_001336/B001",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı yalnızca beze benzer etsi dokuyu adlandırdığı için bc_001 içindeki doğrudan bez tanımını dışarıda bırakır; buna karşın hata profili iki betimleme genişliğini koruduğunu ileri sürer.",
+      "smallest_correction": "Kavram karşılığını bez veya bezlere benzeyen etsi oluşum seçeneklerini kapsayacak biçimde değiştirmek ve hata profilinin korunan anlam açıklamasını buna uyarlamak."
+    },
+    {
+      "target_ref": "root_001336/B001",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002"
+      ],
+      "evidence_conflict": "Her iki sözlüksel karşılık da birimleri yalnızca beze benzer etsi doku olarak verir. lu_001 ve lu_002 kanıtları ise tekil ve çoğul biçimlerde doğrudan bez tanımı ile bezlere benzeyen etsi oluşum tanımını birlikte taşır.",
+      "smallest_correction": "lu_001 karşılığını tekilde, lu_002 karşılığını çoğulda bez veya bezlere benzeyen etsi oluşum seçeneklerini birlikte ifade edecek biçimde düzeltmek."
+    }
+  ]
+}

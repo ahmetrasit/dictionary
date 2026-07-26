@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "B001 genel olarak doğru kurulmuş, ancak iki alan kan ve gözyaşı tanıklığını yaygınlaştırıp herhangi bir akan şey gibi okutuyor. Bu yüksek güvenle daraltılabilir; B002 ve root_profile için yayın açısından sorun bulunmadı.",
+  "issues": [
+    {
+      "target_ref": "root_002940/B001",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, kanın ve gözyaşının kesilip sakinleşmesini ve buna bağlı kan dökülmesinin önlenmesi kullanımını verir. Boundary note ise dal sınırını 'akan şeyin' durması diye genişletiyor.",
+      "smallest_correction": "Boundary note içinde 'akan şeyin' ifadesini 'kanın, gözyaşının' olarak daralt; kan dökülmesinin durması ifadesini koru."
+    },
+    {
+      "target_ref": "root_002940/B001",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt çekirdeği kan ve gözyaşı ile sınırlı verir; tanımın 'Kan veya gözyaşı gibi akan bir şeyin' ifadesi çekirdeği kanıttaki iki örneğin dışındaki akan şeylere açıyor.",
+      "smallest_correction": "Concept_map.definition başlangıcını 'Kanın veya gözyaşının kesilip sakinleşmesi' olarak daralt; araç ve kan bedeliyle ilgili bağımlı kullanım cümlesini koru."
+    }
+  ]
+}

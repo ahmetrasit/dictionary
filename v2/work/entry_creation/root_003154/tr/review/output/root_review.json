@@ -1,0 +1,72 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar cevabi genel olarak kanitla uyumlu; ancak B008 alet dalinda ve B006'nin B008'e bakan komsu ayriminda kaynakta kil veya toprak isinde kullanilan alet anlatilirken Turkce metinde 'balci' geciyor. Bu ifade kil/balcik anlamini degil yanlis bir kelimeyi cagristirdigi icin ilgili alanlarda 'balcik' olarak sinirli duzeltme gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_003154/B006",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B008 komsu dali, kaynakta toprak veya kil isinde kullanilan alet olarak verilir; B006'nin komsu ayrimindaki 'balci' ifadesi bu siniri yanlis Turkce kelimeyle aktarir.",
+      "smallest_correction": "B006 neighbor_distinctions icinde B008'i anlatan cumlede 'balci' ifadesini 'balcik' olarak degistir."
+    },
+    {
+      "target_ref": "root_003154/B008",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B008 kaynak ifadesi aleti toprak/kil isinde kullanilan nesne olarak verir; identity_judgment.rationale icindeki 'balci' bu anlam yerine yanlis bir Turkce kelime cagristirir.",
+      "smallest_correction": "identity_judgment.rationale icindeki 'balci veya toprakta' ifadesini 'balcik veya toprakta' olarak degistir."
+    },
+    {
+      "target_ref": "root_003154/B008",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B008 concept_map, kaynakta verilen kil/toprak isinde kullanilan alet sinirini tasimali; definition ve F001 statement icindeki 'Balci/balci' bu siniri yanlis kelimeyle aktarir.",
+      "smallest_correction": "concept_map.definition ve F001 statement icindeki 'Balci/balci' ifadelerini 'Balcik/balcik' olarak degistir."
+    },
+    {
+      "target_ref": "root_003154/B008",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B008 source_synthesis, kaynaklarin toprak/kil isindeki alet anlamini ozetler; common_summary icindeki 'balci isinde' ifadesi bu anlami bozuyor.",
+      "smallest_correction": "source_synthesis.common_summary icindeki 'balci isinde' ifadesini 'balcik isinde' olarak degistir."
+    },
+    {
+      "target_ref": "root_003154/B008",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B008 concept_gloss aciklamasi kil/toprak isindeki alet anlamini korumali; applicability icindeki 'balci isinde' ifadesi yanlis kelimeyle anlam kaydirir.",
+      "smallest_correction": "concept_gloss.applicability icindeki 'balci isinde' ifadesini 'balcik isinde' olarak degistir."
+    },
+    {
+      "target_ref": "root_003154/B008",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B008 contextual gloss aciklamalari ve hata profili, kil/toprak isindeki alet anlamini aktarmali; 'Balci/balci' gecen yerler bu anlami yanlis Turkce kelimeyle veriyor.",
+      "smallest_correction": "contextual_glosses icinde 'Balci/balci' gecen aciklama ve hata profili metinlerini 'Balcik/balcik' olarak degistir."
+    }
+  ]
+}

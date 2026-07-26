@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "B006 dalında talep edilmeden verme yönündeki tekil kaynak aktarımı iki alanda yanlış biçimde verenin istememesi gibi ifade edilmiştir. Bu iki alan, kaynak ayrımlarını koruyan sınırlı düzeltmeler gerektirir; diğer dallarda yayıma engel bir anlam sorunu bulunmamıştır.",
+  "issues": [
+    {
+      "target_ref": "root_000390/B006",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynakta bir aktarım, alıcının talebi olmadan vermeyi bildirir; gerekçedeki \"istemeden verme\" ise verenin gönülsüz veya iradesiz davrandığı anlamına gelir. Ayrıca bu okuma baskın ödünç verme çizgisiyle aynı düzeyde sunulmaktadır.",
+      "smallest_correction": "Gerekçede bu okumayı \"bir aktarımda talep edilmeden verme\" olarak ayırın. Sınır notunda yararlandırmayı ana okuma, talep edilmeden vermeyi ve hayvanlara zarar verme istemini ayrı kaynak değişkeleri olarak belirtin."
+    },
+    {
+      "target_ref": "root_000390/B006",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özetteki \"istemeden karşılıksız verme\" ifadesi, kaynakta geçen alıcının talebi olmadan verme koşulunu yanlış aktarır ve tek bir kaynağın ayrıntısını toplu kanıtın ortak anlatımı gibi sunar.",
+      "smallest_correction": "İlk cümleyi, bir aktarımın talep edilmeden vermeyi bildirdiğini, diğer aktarımların ise deve veya atı yararlanma amacıyla ödünç vermeyi bildirdiğini açıkça ayıracak biçimde düzeltin; zarar verme yönündeki karşıt aktarımı değiştirmeyin."
+    }
+  ]
+}

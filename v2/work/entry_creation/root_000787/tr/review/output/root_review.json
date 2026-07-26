@@ -1,0 +1,59 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak B002 tanımında kesin kaynak ifadesinde bulunmayan bir örnek, B010'da kanıtı aşan bir anlam bileşeni ve kök profilinde bir dal eksikliği vardır. Bu sınırlı alanlar düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000787/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım, serilip kurutulan nesneler arasına tuzu da ekliyor; kesin kaynak ifadesi ise kumaş, et, kurutulmuş süt ürünü ve tahılı belirtir, tuzu belirtmez.",
+      "smallest_correction": "Concept map tanımındaki \"tuz veya\" sözlerini kaldırın; diğer örnekleri ve serip kurutma çekirdeğini koruyun."
+    },
+    {
+      "target_ref": "root_000787/B010",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kesin kaynak ifadesi gençliğin canlılığını ve güçlü isteğini destekler; tanım ile F002 bunlara atılganlık anlamını da ekler. Atılganlık, cesaretle öne çıkma çağrışımı taşıyan ayrı bir bileşendir ve kanıtta verilmez.",
+      "smallest_correction": "Tanımdan ve F002'den atılganlık unsurunu çıkarın; anlamı gençliğe özgü canlılık, heves ve güçlü istekle sınırlayın."
+    },
+    {
+      "target_ref": "root_000787/B010",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Concept gloss \"gençlik canlılığı ve atılganlığı\" biçiminde kanıtın desteklemediği atılganlık bileşenini çekirdek karşılığa yerleştiriyor ve hata profilinde bunu ek anlam olarak kaydetmiyor.",
+      "smallest_correction": "Concept glossu \"gençlik canlılığı ve güçlü isteği\" olarak değiştirin; uygulanabilirlik ve hata profili metinlerinden de atılganlık unsurunu kaldırın."
+    },
+    {
+      "target_ref": "root_000787/B010",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_025"
+      ],
+      "evidence_conflict": "lu_025 için kaynak anlamı gençliğin canlılığı ve güçlü isteğidir; hedef karşılık bunlara kanıtlanmayan atılganlığı ekler.",
+      "smallest_correction": "lu_025 hedef karşılığını \"gençliğin canlılığı ve güçlü isteği\" ile sınırlandırın."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök profili on iki dalı özetlediğini düşündüren bir anlam dizisi verirken B008'deki bir şeyi görünür kılma ve ortaya çıkarma dalını bütünüyle atlıyor.",
+      "smallest_correction": "Kök profili özetine görünür kılma veya ortaya çıkarma anlamını ekleyin; çok anlamlı ve çok dallı sınıflandırmalarını koruyun."
+    }
+  ]
+}

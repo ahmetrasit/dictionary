@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtı ve dal sınırlarını koruyor. B005 dalındaki lu_017 karşılığı ise kaynaklarda seçenekli verilen kadın niteliklerini tek bir birleşik koşula dönüştürdüğü için küçük ve doğrudan bir düzeltme gerektiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_001064/B005",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_017"
+      ],
+      "evidence_conflict": "lu_017 kanıtı iki ayrı açıklama verir: beden yapısının dengeli olması veya kadının yaş almış ve etli olması. Mevcut karşılık bunları \"bedeni dengeli, yaş almış ve etli kadın\" biçiminde birleştirerek bütün koşulların aynı anda bulunmasını gerektiriyor.",
+      "smallest_correction": "Yalnızca lu_017 target_gloss değerini \"bedeni dengeli kadın veya yaş almış, etli kadın\" olarak değiştirerek iki kanıt seçeneğini ayrı tut."
+    }
+  ]
+}

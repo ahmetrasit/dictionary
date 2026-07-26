@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yaniti genel olarak kanitla uyumludur; ancak iki sinirli ifade, kaynakta ayri tutulan anlamlari birlestiriyor veya kaynakta bulunmayan bir asama ekliyor.",
+  "issues": [
+    {
+      "target_ref": "root_001220/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanimdaki \"kizil posttan yapilan bir kap\" ifadesi, deri kabi ile kizil deriyi tek bir nesne iliskisi icinde birlestiriyor. Kanit ise deriden yapilan kabi ve kizil deriyi ayri adlandirmalar olarak veriyor; kabin kizil posttan yapildigini soylemiyor.",
+      "smallest_correction": "Tanimin basini \"Deriden yapilan bir kap, kizil deri ya da\" biciminde duzeltin; kalan tanimi degistirmeyin."
+    },
+    {
+      "target_ref": "root_001220/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003"
+      ],
+      "evidence_conflict": "lu_003 icin \"kabuk baglayip soyulmak\" karsiligi once kabuk olusmasi anlamini ekliyor. Kanit yalniz mevcut kabugun veya kurumus derinin soyulup ayrilmasini bildiriyor.",
+      "smallest_correction": "lu_003 hedef karsiligini \"kabugu ya da kurumus derisi soyulup ayrilmak\" olarak degistirin."
+    }
+  ]
+}

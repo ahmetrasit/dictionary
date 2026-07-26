@@ -1,0 +1,83 @@
+{
+  "verdict": "repair",
+  "summary": "B001'de sertlik ve engebelilik, kaynakların ortak arazi çekirdeğiymiş gibi sunulmuş; oysa ortak çekirdek çevreye göre yükselmedir ve sertlik yalnızca bazı kaynak ifadelerinde eklenir. B006'da ise çalışma, korku veya sıkıntı terin zorunlu nedeni hâline getirilmiş; kaynakların ortak çekirdeği doğrudan ter veya terlemedir. Bu iki sınır hatası ilgili alanlarda en küçük düzeltmelerle giderilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001473/B001",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe, farklı sözlüklerin sertlik ve engebelilik üzerinde ortaklaştığını söylüyor. Oysa bc_001 kaynaklarının ortak paydası arazinin yükselmesi veya alçak yere karşıt olmasıdır; sert ve kaba olma niteliği bütün kaynaklarda ortak değildir.",
+      "smallest_correction": "Kabul durumunu koruyup gerekçeyi, ortak çekirdeğin çevreye göre yükselme olduğunu ve sertlik ya da kabalığın bazı kaynaklarda ek nitelik olarak bulunduğunu söyleyecek biçimde düzelt."
+    },
+    {
+      "target_ref": "root_001473/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ile F002, sertlik, kabalık veya engebeliliği yükselmiş arazinin zorunlu ikinci çekirdeği yapıyor. bc_001 ise bütün kaynaklarda yükseltiyi desteklerken bu nitelikleri yalnızca sınırlı kaynak anlatımlarında verir.",
+      "smallest_correction": "Tanımı yükselmiş arazi çekirdeği üzerine kur; sertlik veya kabalığı zorunlu koşul olmaktan çıkarıp F002'de uzmanlaşma niteliği olarak belirt."
+    },
+    {
+      "target_ref": "root_001473/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kaynakların çoğunun araziyi sert veya engebeli anlattığını ileri sürüyor. bc_001'de kaynaklar yükselme ve alçak yere karşıtlıkta birleşir; sert veya kaba oluş bütün kaynaklara yayılabilecek ortak bir ayrıntı değildir.",
+      "smallest_correction": "Ortak özeti kaynakların yükselti üzerinde birleştiğini, sertlik veya kabalığın ise bazı anlatımlarda eklenen bir nitelik olduğunu belirtecek şekilde daralt."
+    },
+    {
+      "target_ref": "root_001473/B001",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "\"yüksek ve sert arazi\" karşılığı, kaynakların ortak yükselti çekirdeğine sertliği zorunlu olarak ekliyor ve yalnızca yükselmiş araziyi anlatan kullanımları dışarıda bırakıyor.",
+      "smallest_correction": "Kavram karşılığını \"yüksek arazi\" yap; uygulanabilirlik ve hata profilini ortak yükselti çekirdeğine göre güncelle ve yalnızca F001'e bağla."
+    },
+    {
+      "target_ref": "root_001473/B006",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım, ter veya terlemeyi çalışma, bunalma, korku ya da benzeri bir zorlanmanın sonucu olmakla sınırlandırıyor. bc_001'in birçok kaynak ifadesi doğrudan \"ter\" anlamını verir; çalışma ve sıkıntı yalnızca bazı kullanımlarda belirtilen nedenlerdir.",
+      "smallest_correction": "Tanımı doğrudan vücuttan ter çıkması veya çıkan ter olarak düzelt; çalışma, korku ve sıkıntıyı mevcut F002 uzmanlaşmasında olası bağlamlar olarak bırak."
+    },
+    {
+      "target_ref": "root_001473/B006",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "\"zorlanmadan doğan terleme\" karşılığı, bc_001'in yalın ter çekirdeğine zorlanma koşulu ekliyor ve bu koşulu belirtmeyen kaynak kullanımlarını gereksiz biçimde dışlıyor.",
+      "smallest_correction": "Kavram karşılığını \"ter veya terleme\" yap; uygulanabilirlik ve hata profilini yalın çekirdeğe göre güncelle ve yalnızca F001'e bağla."
+    },
+    {
+      "target_ref": "root_001473/B006",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "\"ter\" karşılığı daraltıcı sayılıyor ve zorlanma nedenini kaybettiği belirtiliyor. bc_001'de ter yalın çekirdektir; neden bilgisi uzmanlaşma olduğundan bu karşılık çekirdeği eksiltmez.",
+      "smallest_correction": "\"ter\" karşılığını tam uyumlu olarak değerlendir; uygulanabilirlik ve hata profilinden zorlanma nedeninin zorunlu olduğu varsayımını kaldır ve F001 bağlantısını koru."
+    }
+  ]
+}

@@ -1,51 +1,6 @@
 {
-  "inputs_sha256": "257f76a3f559b08921ecc4fa9bf728c569cf69fd3a73527ec362c42807f0a02a",
-  "verdict": "repair",
-  "summary": "Yanit genel olarak kanitla uyumludur. Ancak B004 dalinda lu_032 ile verilen posta yolu veya guzergahi anlami dort alanda posta duragi olarak aktarilmis; bu yerel anlam kaymasi duzeltilmelidir.",
-  "issues": [
-    {
-      "target_ref": "root_000103/B004",
-      "field": "concept_map",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_032"
-      ],
-      "evidence_conflict": "Kanit, bu birimi on iki millik bir mesafe veya posta yollarindan bir yol olarak verir. F002 ise bunu yol uzerindeki bir durak sayarak mekan turunu degistirir.",
-      "smallest_correction": "F002'deki durak ifadesini posta yolu veya guzergah bolumu olarak degistirin; tanimdaki ayni uzmanlasmayi da bu sinirla uyumlu kilin."
-    },
-    {
-      "target_ref": "root_000103/B004",
-      "field": "source_synthesis",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_032"
-      ],
-      "evidence_conflict": "Ortak ozet, ayni adin yol uzerindeki duragi gosterdigini soyler. Sunulan kanit yalnizca bir posta yolunu veya guzergahini ve on iki millik mesafeyi destekler; durak anlamini desteklemez.",
-      "smallest_correction": "Ortak ozette durak yerine posta yolu, guzergah veya on iki millik yol bolumu deyin."
-    },
-    {
-      "target_ref": "root_000103/B004",
-      "field": "contextual_glosses",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_032"
-      ],
-      "evidence_conflict": "On iki millik yol bolumu aciklamasinin uygulanabilirlik metni, lu_032'yi bir ulak yolu duragi olarak da yorumluyor; kanit bir durak degil, posta yolu veya guzergahi verir.",
-      "smallest_correction": "Uygulanabilirlik metninde durak secenegini posta yolu veya guzergah bolumu ile degistirin."
-    },
-    {
-      "target_ref": "root_000103/B004",
-      "field": "lexical_glosses",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_032"
-      ],
-      "evidence_conflict": "lu_032 icin hedef karsilik posta yolunun duragi diyor. Kanittaki anlam posta yollarindan bir yol veya on iki millik mesafedir.",
-      "smallest_correction": "Hedef karsiligi posta yolu veya on iki millik yol bolumu biciminde duzeltin."
-    }
-  ]
+  "inputs_sha256": "26664a937c823d2e753452527ffcd965f93cde0ee56ebf32dab677d5e2dd75ca",
+  "verdict": "pass",
+  "summary": "Yazar yaniti bes dalin kanitla verilen sinirlarini, karma sozluklesme kapsamlarini, cekirdek ve baglamsal anlam ayrimlarini tutarli bicimde koruyor. Yayin acisindan onarim gerektiren semantik bir sorun saptanmadı.",
+  "issues": []
 }

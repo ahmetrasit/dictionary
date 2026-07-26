@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "dcdb327d72468777dbef51c4743e3a0d83e7c4c419f141f586db6ae718412a20",
+  "verdict": "repair",
+  "summary": "B001 dalında iki sınırlı düzeltme gerekiyor: tanım, yalnız belirli kuruluşlarda görülen ateşle işleme anlamlarını yalın dal anlamı gibi genelleştiriyor; ayrıca ikinci yakın komşu kaydında komşuya özgü ateşi yakma kapsamı boş bırakılmış.",
+  "issues": [
+    {
+      "target_ref": "root_000879/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Dalın mechanical profili mixed_non_bare olarak verilmiştir. Kanıt, eti ateşte pişirme ile değneği ateşte yumuşatıp düzeltmeyi belirli kuruluşlara bağlarken tanım bunları genel olarak herhangi bir şeyi ateşle ısıtma, pişirme, yakma veya biçimini düzeltme anlamına genişletiyor.",
+      "smallest_correction": "Tanımın ilk cümlesindeki genel ateşle işleme dizisini, bu anlamların belirli kuruluşlara ait olduğunu açıkça gösterecek biçimde eti ateşte pişirme ve değneği ateşte yumuşatıp düzeltme örnekleriyle sınırla; kanıtta bulunmayan genel bir şeyi ısıtma ifadesini kaldır."
+    },
+    {
+      "target_ref": "root_000879/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_000880/B004 komşu kartı ateşi yakmayı açıkça kapsıyor; odak kanıtı ise ateşle karşılaşma, yakacak, pişirme ve değnek düzeltmeyi kapsasa da ateşi yakma eylemini dal anlamı olarak vermiyor. Buna rağmen partial ilişkide neighbor_only alanı null bırakılmış.",
+      "smallest_correction": "root_000880/B004 kaydındaki neighbor_only alanına yalnız komşuda bulunan ateşi yakıp tutuşturma kapsamını yaz; mevcut relation_type ve boundary_match değerlerini koru."
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "inputs_sha256": "7e37e066c4eb2ba37b6c93160718ffdec5b5d6fabe92d8df8c220f7223f1dcfb",
+  "inputs_sha256": "a36e87f1e39eab78567ae4caa4fb6876c3a734a76fa14c58e1b68d62d471cb42",
   "artifact_format": "dictionary-v2-root-entry-draft-v1",
   "generated_by": "v2/scripts/accept_root_writer.py",
   "root_envelope_id": "root_000157",
@@ -7,73 +7,75 @@
   "branches": [
     {
       "branch_ref": "root_000157/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, kişinin gördüğü veya karşılaştığı şey karşısında şaşırıp ne yapacağını bilememesini; bunun bakakalma, sözünün kesilmesi ya da susma sonucuna varabilmesini açıkça destekler. Geçişli kullanımda da birini şaşırtma, afallatma veya ansızın yakalama anlamı vardır.",
+        "boundary_note": "Bu dal yalnız şaşkınlık ve bocalama alanındadır; yalan, iftira ve asılsız suçlama anlamları öteki dala aittir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın dalı kapsar; herhangi bir kalıba bağlı özel anlamı genel kök anlamına taşımaz."
+      },
       "concept_map": {
-        "definition": "Bir kişinin şaşırıp ne yapacağını bilememesi, kimi zaman sözünü sürdüremeyip susmasıdır; ayrıca bir olayın kişiyi ansızın yakalayıp bu duruma düşürmesini de kapsar.",
+        "definition": "Kişinin beklenmedik veya şaşırtıcı bir şey karşısında hayrete düşüp ne yapacağını bilememesi, bakakalması ya da şaşkınlıktan sözünün kesilip susmasıdır. Geçişli kullanımda bir şeyin kişiyi şaşkına çevirmesini, afallatmasını veya ansızın yakalamasını anlatır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kişi yoğun şaşkınlık ve kafa karışıklığı içinde kalır.",
+            "statement": "Bir kişi gördüğü veya karşılaştığı şey yüzünden şaşırır, bocalar ve ne yapacağını bilemez.",
             "claim_ids": [
-              "lu_001",
-              "lu_003",
-              "lu_004",
-              "lu_014"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Şaşkınlık, kişinin sözünü kesip ne diyeceğini bilemeden susmasına kadar varabilir.",
+            "statement": "Şaşkınlık, hayretle bakakalma biçiminde dışa vurulabilir.",
             "claim_ids": [
-              "lu_001"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "extension",
-            "statement": "Bir olay, kişiyi afallatabilir ya da onu hazırlıksız yakalayarak bu şaşkınlığa sürükleyebilir.",
+            "statement": "Bocalamanın sonucu olarak kişinin sözü kesilebilir ve kişi şaşkınlık içinde susabilir.",
             "claim_ids": [
-              "lu_002"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F004",
-            "role": "source_variant",
-            "statement": "Şaşkın kişiyi anlatan bir niteleme bazı kayıtlarda kullanılırken başka bir kayıtta açıkça reddedilir.",
+            "role": "core",
+            "statement": "Geçişli kullanımda bir olay veya kişi, başkasını şaşırtıp afallatır.",
             "claim_ids": [
-              "lu_015"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F005",
+            "role": "source_variant",
+            "statement": "Geçişli kullanımın bir kaynak varyantı, birini hazırlıksızken ansızın yakalamaktır.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ana anlatım, kişinin şaşırıp zihnen duraksamasını ve bazen susacak ölçüde sözünün kesilmesini öne çıkarır. Bir olayın kişiyi afallatması veya ansızın yakalaması da aynı anlam alanındadır. Şaşkın kişiyi belirten ad ve nitelemeler kaydedilir; ancak nitelemelerden birinin kullanılabilirliği konusunda kabul ve açık ret yan yana bulunur.",
+        "common_summary": "Kaynakların ortak çekirdeği şaşırma, hayrete düşme ve bocalamadır; geçişli anlatım birini şaşırtma veya afallatmayı da kapsar. Kaynak anlatımları hayretle bakakalma, şaşkınlıktan sözü kesilip susma ve ansızın yakalama ayrıntılarında farklılaşır; ayrıca şaşkın kişi için kullanılan bir biçim bir anlatımda kabul edilirken başka bir anlatımda reddedilir.",
         "common_claim_ids": [
-          "lu_001",
-          "lu_002",
-          "lu_004",
-          "lu_014",
-          "lu_015"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_003"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Tek bir kayıt, bu durumu doğrudan şaşkınlık ve kafa karışıklığını adlandıran ayrı bir sözle verir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "şaşırıp afallama ya da birini ansızın afallatma",
-        "applicability": "Hem kişinin kendi şaşkınlık durumunu ve sözünün kesilmesini hem de dışarıdan gelen ansızın afallatıcı etkiyi birlikte anlatır.",
+        "text": "şaşırıp afallama; şaşırtma veya ansızın yakalama",
+        "applicability": "Dalın hem kişinin içine düştüğü şaşkınlık ve bocalama durumunu hem de geçişli kullanımdaki şaşırtma ve hazırlıksız yakalama yönünü birlikte temsil eder.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Şaşkınlığı, zihinsel duraksamayı, sözün kesilebilmesini ve dış etkenin ansızın afallatmasını korur.",
+          "preserves": "Şaşkınlık, bocalama, geçişli şaşırtma ve ansızın yakalama bileşenlerini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -81,33 +83,20 @@
         "facet_ids": [
           "F001",
           "F002",
-          "F003"
+          "F003",
+          "F004",
+          "F005"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "afallamak",
+          "text": "şaşırıp kalmak",
           "usage_role": "general",
-          "applicability": "Bir kişinin şaşırtıcı bir durum karşısında zihnen duraksamasını anlatan geçişsiz bağlamlarda doğaldır.",
+          "applicability": "Bir kişinin şaşırtıcı bir şey karşısında hayrete düşüp bakakaldığı veya ne yapacağını bilemediği bağlamlarda doğal karşılıktır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Kişinin şaşırıp ne yapacağını bilememesi biçimindeki temel durumu korur.",
-            "loses": "Bir başkasını ansızın bu duruma düşürme anlamını ve susmaya varan sonucu açıkça belirtmez.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        },
-        {
-          "text": "şaşkınlıktan dili tutulmak",
-          "usage_role": "contextual",
-          "applicability": "Şaşkınlığın kişinin sözünü kesip onu cevapsız ve sessiz bıraktığı bağlamlarda uygundur.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Şaşkınlığı ve bunun konuşmanın kesilmesine kadar varan sonucunu korur.",
-            "loses": "Susmaya varmayan daha hafif durumu ve dışarıdan ansızın afallatma kullanımını dışarıda bırakır.",
+            "preserves": "Kişinin şaşkınlığa düşmesi ve bocalaması yönünü korur.",
+            "loses": "Geçişli şaşırtma ve ansızın yakalama yönlerini tek başına anlatmaz.",
             "adds": null,
             "collision": null
           },
@@ -117,18 +106,49 @@
           ]
         },
         {
-          "text": "ansızın afallatmak",
+          "text": "şaşkınlıktan susakalmak",
           "usage_role": "contextual",
-          "applicability": "Bir olayın veya haberin kişiyi hazırlıksız yakalayıp şaşkınlığa sürüklediği geçişli bağlamlarda kullanılır.",
+          "applicability": "Şaşkınlığın kişinin sözünü kesip onu sessiz bıraktığı bağlamlara özgüdür.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Dış etkenin kişiyi ansızın yakalayıp şaşkınlığa düşürmesini korur.",
-            "loses": "Kişinin kendiliğinden yaşadığı durumu ve şaşkınlığın susmaya varabilmesini belirtmez.",
+            "preserves": "Bocalama sonucunda konuşamama ve susma görünümünü korur.",
+            "loses": "Bakakalma, geçişli şaşırtma ve ansızın yakalama yönlerini kapsamaz.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
+            "F001",
             "F003"
+          ]
+        },
+        {
+          "text": "şaşkına çevirmek",
+          "usage_role": "contextual",
+          "applicability": "Bir kişi veya olayın başkasında şaşkınlık ve bocalama doğurduğu geçişli bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Geçişli şaşırtma ve afallatma yönünü korur.",
+            "loses": "Kişinin kendiliğinden şaşırması ile ansızın yakalanması yönlerini anlatmaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F004"
+          ]
+        },
+        {
+          "text": "ansızın yakalamak",
+          "usage_role": "contextual",
+          "applicability": "Birinin hazırlıksız olduğu anda beklenmedik biçimde yakalandığı geçişli kaynak varyantına karşılık gelir.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Hazırlıksız ve beklenmedik biçimde yakalama yönünü korur.",
+            "loses": "Şaşkınlık, bakakalma ve sözün kesilmesi biçimindeki öteki görünümleri kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F005"
           ]
         }
       ],
@@ -136,44 +156,44 @@
         {
           "lexical_unit_id": "lu_001",
           "rendering_kind": "ordinary",
-          "target_gloss": "şaşırıp afallamak veya ne diyeceğini bilemeyip susmak"
+          "target_gloss": "şaşırıp afallamak; şaşkınlıktan susakalmak"
         },
         {
           "lexical_unit_id": "lu_002",
           "rendering_kind": "ordinary",
-          "target_gloss": "birini afallatmak veya ansızın yakalamak"
+          "target_gloss": "şaşkına çevirmek veya ansızın yakalamak"
         },
         {
           "lexical_unit_id": "lu_003",
           "rendering_kind": "ordinary",
-          "target_gloss": "şaşkınlık ve kafa karışıklığı"
+          "target_gloss": "şaşkınlık ve ne yapacağını bilememe"
         },
         {
           "lexical_unit_id": "lu_004",
           "rendering_kind": "ordinary",
-          "target_gloss": "afallama ve şaşkınlık"
+          "target_gloss": "hayrete yakın şaşkınlık ve bocalama"
         },
         {
           "lexical_unit_id": "lu_014",
           "rendering_kind": "ordinary",
-          "target_gloss": "afallamış veya şaşkın kimse"
+          "target_gloss": "şaşkın ve afallamış"
         },
         {
           "lexical_unit_id": "lu_015",
           "rendering_kind": "ordinary",
-          "target_gloss": "şaşkın, ne yapacağını bilemeyen kimse"
+          "target_gloss": "şaşkın ve ne yapacağını bilemez durumda"
         }
       ],
       "excluded_glosses": [
         {
-          "text": "kararsızlık",
-          "category": "confusable",
+          "text": "hayret",
+          "category": "alternative",
           "error_profile": {
-            "fit": "displacement",
-            "preserves": "Kişinin hemen bir yön belirleyememesi biçimindeki zihinsel duraksamayı kısmen korur.",
-            "loses": "Ansızın şaşırma, afallama ve sözün kesilmesi özelliklerini kaybeder.",
-            "adds": "Seçenekler arasında bilinçli bir seçim yapamama anlamını gereksiz yere ekler.",
-            "collision": "Şaşkınlıkla değil karar verme güçlüğüyle ilgili ayrı bir durumu çağrıştırır."
+            "fit": "narrowing",
+            "preserves": "Şaşırma ve olağan dışı bir durumla karşılaşma yönünü korur.",
+            "loses": "Bocalama, bakakalma, susma, şaşırtma ve ansızın yakalama bileşenlerini siler.",
+            "adds": null,
+            "collision": null
           }
         }
       ],
@@ -182,46 +202,57 @@
           "neighbor_ref": "root_001150/B007",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Şaşkınlığın sözü kesip susmaya varması ve bir olayın kişiyi ansızın afallatması bu dalda açıkça yer alır.",
-          "neighbor_only": null,
+          "focus_only": "Odak dalda şaşkınlıktan sözün kesilmesi, başkasını şaşırtma ve ansızın yakalama yönleri de vardır.",
+          "neighbor_only": "Komşu dal bu durumu başka bir sözcük ailesinin anlamı olarak sınırlar.",
           "gloss": "şaşırıp afallama",
-          "shared_zone": "Her iki dal da kişinin yoğun şaşkınlık ve kafa karışıklığı içinde kalmasını anlatır.",
-          "distinction": "Komşu dal ortak şaşırma durumunu karşılar; odak dal ise bu durumun konuşmayı kesen sonucunu ve dış etkenli, ansızın afallatma kullanımını ayrıca sınırına alır."
+          "shared_zone": "İki dal da şaşkınlık, hayret ve ne yapacağını bilememe durumunu anlatır.",
+          "distinction": "Çekirdek durum büyük ölçüde örtüşür; ancak odak dalın geçişli şaşırtma, hazırlıksız yakalama ve şaşkınlıktan susma sınırı komşu kartta yer almaz. Bu nedenle tam eş anlamlılık yerine kısmi örtüşme vardır."
         },
         {
           "neighbor_ref": "root_000149/B003",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak dalda susma, şaşkınlık ve afallamanın sonucu olabilir; ayrıca dışarıdan gelen şaşırtıcı etki bulunur.",
-          "neighbor_only": "Komşu dalda susma, kederden veya tartışmada cevabın ve dayanağın tükenmesinden doğabilir.",
-          "gloss": "sözü kesilecek kadar şaşırma",
-          "shared_zone": "İki dal, kişinin konuşmayı sürdüremeyip sessiz kalması sonucunda buluşur.",
-          "distinction": "Odak dalın çekirdeği şaşkınlık ve kafa karışıklığıdır; komşu dalın çekirdeği ise sebebi şaşkınlık olmak zorunda olmayan sözlü tükenme ve susmadır."
+          "focus_only": "Odak dalın çekirdeği şaşkınlık ve bocalamadır; susma bunun olası sonucudur.",
+          "neighbor_only": "Komşu dalda susma, kederden veya tartışmada cevapsız kalıp sözünün tükenmesinden doğabilir.",
+          "gloss": "şaşkınlıktan susma",
+          "shared_zone": "Her iki dalda da kişinin konuşmasının kesilmesi ve sessiz kalması görülebilir.",
+          "distinction": "Odak dal susmayı şaşkınlık ve bocalamanın sonucu olarak taşır; komşu dal ise susmayı kendi çekirdeği yapar ve keder ya da cevap bulamama gibi başka nedenlere de bağlar."
         },
         {
           "neighbor_ref": "root_000134/B004",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak dal, şaşkınlığın sözü kesmesini ve bir olayın kişiyi ansızın afallatmasını kapsar.",
-          "neighbor_only": "Komşu dal, kişinin yerinde kalakalmasını, beceriksizleşmesini ve giyimle ilgili özel bir kullanımı da kapsar.",
-          "gloss": "şaşkınlıktan kalakalma",
-          "shared_zone": "Her iki dalda şaşkınlık, kafa karışıklığı ve davranışın geçici olarak durması görülebilir.",
-          "distinction": "Odak dal zihinsel şaşkınlık ile sözün kesilmesine yönelir; komşu dal fiziksel olarak yerinde kalmayı ve daha geniş beceriksizlik kullanımlarını öne çıkarır."
+          "focus_only": "Odak dal başkasını şaşırtma, ansızın yakalama ve şaşkınlıktan susma yönlerini içerir.",
+          "neighbor_only": "Komşu dal yerinde donma, beceriksizlik ve giyinmeyi becerememe gibi özel görünümlere uzanır.",
+          "gloss": "şaşkınlık içinde kalma",
+          "shared_zone": "İki dal da şaşkınlık ve ne yapacağını bilememe durumunda birleşir.",
+          "distinction": "Komşu dal şaşkınlığı yerinde kalma ve beceriksizlikle genişletirken odak dal hayret, susma ve geçişli şaşırtma çevresinde örgütlenir; olağan kullanımda birbirlerinin yerine geçmezler."
+        },
+        {
+          "neighbor_ref": "root_000405/B005",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dalda şaşırtıcı karşılaşma, hayretle bakakalma, sözün kesilmesi ve başkasını ansızın yakalama öne çıkar.",
+          "neighbor_only": "Komşu dal korku, kaygı veya utanç yüzünden şaşırmayı ve fiziksel olarak yere ya da bulunduğu yere yapışıp kalmayı kapsar.",
+          "gloss": "şaşkınlık ve donakalma",
+          "shared_zone": "Her iki dal şaşkınlık, bocalama ve kişinin bulunduğu durumda kalakalması alanına dokunur.",
+          "distinction": "Odak dal şaşırtıcı etki ve onun zihinsel ya da sözlü sonucuna dayanır; komşu dal belirli duygusal nedenleri ve fiziksel yapışıp kalma uzantısını ayrıca içerir."
         },
         {
           "neighbor_ref": "root_000157/B002",
           "relation_type": "thematic",
           "boundary_match": "thematic_only",
-          "focus_only": "Bu dal, kişinin yaşadığı şaşkınlık, kafa karışıklığı ve söz kesilmesi durumudur.",
-          "neighbor_only": "Komşu dal, birine yapmadığı şeyi yükleyen ya da büyüklüğüyle afallatan yalan sözdür.",
-          "gloss": "afallama ile afallatıcı yalan",
-          "shared_zone": "Çarpıcı bir yalan, kişide odak dalın anlattığı afallama sonucunu doğurabilir.",
-          "distinction": "Biri kişinin zihinsel durumunu ve tepkisini, diğeri ise bu tepkiye yol açabilen asılsız söz veya suçlamayı adlandırır; birbirlerinin yerine kullanılamazlar."
+          "focus_only": "Odak dal bir kişinin şaşırması, afallaması veya şaşkınlıktan susması durumudur.",
+          "neighbor_only": "Komşu dalın çekirdeği yalan söyleme ve suçsuz birine yapmadığı şeyi yükleyerek iftira etmedir.",
+          "gloss": "şaşkınlık ile şaşırtıcı yalan ilişkisi",
+          "shared_zone": "Çirkin veya ağır bir yalan, söyleyen ya da dinleyen kişiyi şaşkına çevirebilir.",
+          "distinction": "Şaşkınlık burada yalnız iki dalı aynı sahnede buluşturan etkidir. Birinci dal zihinsel durumu, ikinci dal ise asılsız söz veya suçlama eylemini tanımlar."
         }
       ],
-      "neighbor_coverage_note": "Dokuz komşunun tümü değerlendirildi. En yakın şaşırma dalı, susma dalı, şaşkınlıktan kalakalma dalı ve aynı kökün yalan dalı sınırı açıklığa kavuşturduğu için yayımlandı; korkuyla yere yapışma benzeri adaylar tekrarlı, ötekiler ise ayrı çekirdeklere sahipti.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi. Şaşkınlıkla örtüşen, susma sonucunu paylaşan ve öteki ana dalla anlam bağını açıklayan beş aday sınırı belirginleştirdi; sebat, büyü ve aldatma, gönülde beliren düşünce ve şaşırtıcı nesne adayları ise yalnız uzak karşıtlık veya gevşek tema sunduğu için yayımlanmadı.",
       "branch_image_ar": "الدهش والحيرة حتى الانقطاع",
       "what_is_ar": "يدخل فيه بهت الرجل إذا دهش وتحير أو انقطع وسكت، وبهته الأمر إذا حيره أو أخذه بغتة.",
+      "what_is_not_ar": "لا يدخل فيه البهتان بمعنى الكذب والقذف، ولا الحساب النجومي المشكوك في عربيته.",
       "source_phrase_ar": "كالدهش والحيرة، بهت الرجل يبهت بهتا، والبهتة الحيرة (maqayis)؛ بهت الرجل يبهت بهتا إذا حار، رأى شيئا فبهت ينظر نظر المتعجب (ayn)؛ بهته بهتا أخذه بغتة، بهت الرجل إذا دهش وتحير (sihah)؛ انقطع وسكت متحيرا، بهته أي حيره (tahdhib)؛ دهش وتحير، وقد بهته (mufradat)",
       "sources": [
         "MQ",
@@ -230,130 +261,71 @@
         "TA",
         "MU"
       ],
-      "source_note": {
-        "MQ": "Tek bir kayıt, bu durumu doğrudan şaşkınlık ve kafa karışıklığını adlandıran ayrı bir sözle verir."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000157/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi dalın çekirdeğini yalan ve asılsız suçlama olarak verir; özellikle suçsuz bir kişiye yapmadığı bir şeyi yüklemeyi açıkça kapsar. Yalanın çirkinliği yüzünden söyleyen veya dinleyen kişiyi şaşırtması anlamın açıklayıcı etkisidir, yalanın yerine geçen ayrı bir çekirdek değildir.",
+        "boundary_note": "Bu dal, şaşkınlığı tek başına adlandırmaz; şaşkınlık ancak yalanın veya iftiranın ağırlığından doğan ikincil etkidir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım yalan ve iftira çekirdeğini verir; ünlem, yardım çağrısı ve yalanı ortaya atma gibi yapıya bağlı kullanımlar ayrı tutulur ve yalın anlamın tamamı sayılmaz."
+      },
       "concept_map": {
-        "definition": "Gerçeğe aykırı, uydurma ve asılsız sözdür. Belirgin gerçekleşmeleri arasında bir kimseye yapmadığı bir şeyi yükleyen suçlama ve ağırlığıyla söyleyeni veya işiteni afallatan yalan bulunur; özel bir kullanımda utanç verici biçimde uydurulmuş bir fiile kadar genişler.",
+        "definition": "Gerçeğe aykırı söz söylemek, özellikle suçsuz bir kişiye yapmadığı bir şeyi yükleyip iftira etmektir. Sözün ağır ve çirkin oluşu muhatabı şaşkına çevirebilir; belirli bir ifadeye bağlı kaynak varyantında uydurulan şey bir yoruma göre evlilik dışı cinsel ilişki, başka bir yoruma göre her türlü çirkin fiildir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Çekirdekte gerçeğe aykırı, uydurulmuş ve asılsız bir söz bulunur.",
+            "statement": "Çekirdekte gerçeğe aykırı söz, asılsız iddia ve yalan vardır.",
             "claim_ids": [
-              "lu_006",
-              "lu_007",
-              "lu_009"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Yalan, suçsuz bir kimseye yapmadığı bir işi yükleyen veya ona yöneltilen asılsız suçlama biçimini alabilir.",
+            "statement": "Özel ve belirgin kullanımda suçsuz bir kişiye yapmadığı bir şey yüklenir ve kişi asılsız biçimde suçlanır.",
             "claim_ids": [
-              "lu_005",
-              "lu_006",
-              "lu_016"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "specialization",
-            "statement": "Sözün korkunçluğu ve açık asılsızlığı, onu söyleyeni ya da işiteni afallatacak ölçüdedir.",
+            "role": "associated_use",
+            "statement": "Yalanın çirkinliği ve ağırlığı, onu işiten veya söyleyen kişide şaşkınlık doğurabilir.",
             "claim_ids": [
-              "lu_007"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F004",
-            "role": "associated_use",
-            "statement": "Yalanı adlandıran söz, yalana karşı yardım çağrısı veya şaşkınlık ünlemiyle ve yalan getirme kalıbıyla kullanılabilir.",
-            "claim_ids": [
-              "lu_009",
-              "lu_010",
-              "lu_011"
-            ]
-          },
-          {
-            "facet_id": "F005",
-            "role": "extension",
-            "statement": "Özel bir anlatımda anlam, utanç verici biçimde uydurulmuş her fiile uzanır; başka bir yorum bunu evlilik dışı cinsel ilişki için dolaylı anlatım sayar.",
-            "claim_ids": [
-              "lu_018"
-            ]
-          },
-          {
-            "facet_id": "F006",
-            "role": "specialization",
-            "statement": "Türemiş kişi adları, yalan suçlamayı yönelten kimseyi ve yapmadığı şey kendisine yüklenen kimseyi ayrı ayrı gösterir.",
-            "claim_ids": [
-              "lu_012",
-              "lu_013"
-            ]
-          },
-          {
-            "facet_id": "F007",
             "role": "source_variant",
-            "statement": "Bir biçim, eylem adı olarak veya yalan söyleme durumunu belirten kullanımda yorumlanır.",
+            "statement": "Belirli bir ifadeye bağlı kaynak varyantında uydurulan şey, bir yoruma göre evlilik dışı cinsel ilişki, başka bir yoruma göre her türlü çirkin fiildir.",
             "claim_ids": [
-              "lu_008"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak anlatım, yalanı ve özellikle suçsuz bir kişiye yapmadığı şeyi yükleyen asılsız suçlamayı merkeze alır. Bu söz, korkunçluğu ve apaçık asılsızlığı yüzünden söyleyeni ya da işiteni afallatabilir. Aynı alan içinde yalanı adlandıran biçimler, eylem adı veya durum belirten kullanım, yalana tepki ünlemi ve birine yöneltilen yalan söz de yer alır.",
+        "common_summary": "Kaynakların ortak alanı yalan, asılsız söz ve suçsuz bir kişiye işlemediği bir fiili yüklemektir. Kaynak anlatımları, yalanın ağırlığının dinleyeni şaşırtması ile belirli bir ifadede uydurulan şeyin evlilik dışı cinsel ilişki veya her türlü çirkin fiil olarak yorumlanması ayrıntılarında farklılaşır; asılsız isnat da suçsuz kişiye yapmadığı şeyi yükleme veya onun hakkında böyle bir şey söyleme biçimlerinde açıklanır.",
         "common_claim_ids": [
-          "lu_005",
-          "lu_006",
-          "lu_007",
-          "lu_008",
-          "lu_009",
-          "lu_010",
-          "lu_016"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_011"
-            ],
-            "kind": "example",
-            "summary": "Tek bir kayıt, bir kimsenin yalanla geldiğini bildiren kalıplaşmış kullanımı örnekler."
-          },
-          {
-            "claim_ids": [
-              "lu_012"
-            ],
-            "kind": "derivation",
-            "summary": "Tek bir kayıt, başkasına yapmadığı şeyi yükleyen kimse için türemiş bir kişi adı verir."
-          },
-          {
-            "claim_ids": [
-              "lu_013"
-            ],
-            "kind": "derivation",
-            "summary": "Tek bir kayıt, yapmadığı bir şey kendisine yüklenen kimse için ayrı bir türemiş kişi adı verir."
-          },
-          {
-            "claim_ids": [
-              "lu_018"
-            ],
-            "kind": "disagreement",
-            "summary": "Özel bir anlatım, utanç verici biçimde uydurulmuş her fiil olarak açıklanır; başka bir yorumda evlilik dışı cinsel ilişki için dolaylı anlatım sayılır."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "uydurma yalan ve asılsız suçlama",
-        "applicability": "Genel uydurma yalanı kapsar; afallatıcı ağırlıktaki sözü ve suçsuz birine yapmadığı şeyi yükleyen suçlamayı bunun belirgin gerçekleşmeleri olarak açık tutar.",
+        "text": "yalan ve suçsuz birine asılsız isnat",
+        "applicability": "Dalın genel yalan çekirdeğiyle, bir kişiye yapmadığı şeyi yükleme biçimindeki belirgin iftira yönünü birlikte karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Yalanı, asılsız suç yüklemeyi, suçsuz hedefi ve sözün söyleyen ya da işiten üzerindeki afallatıcı etkisini korur.",
+          "preserves": "Gerçeğe aykırı söz, suçsuz kişiye asılsız fiil yükleme ve iftira çekirdeğini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -361,55 +333,69 @@
         "facet_ids": [
           "F001",
           "F002",
-          "F003"
+          "F003",
+          "F004"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "asılsız suçlama",
+          "text": "yalan",
           "usage_role": "general",
-          "applicability": "Suçsuz bir kimseye yapmadığı bir iş veya çirkin bir suç yüklendiği bağlamlarda doğal karşılıktır.",
+          "applicability": "Gerçeğe aykırı sözün genel olarak adlandırıldığı, belirli bir kişiye yönelmiş suçlamanın öne çıkmadığı bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Suçsuz hedefe gerçeğe aykırı bir fiil yüklenmesi biçimindeki temel kullanımı korur.",
-            "loses": "Belirli bir kişiyi suçlamayan genel yalanı ve sözün afallatıcı büyüklüğünü zorunlu olarak anlatmaz.",
+            "preserves": "Gerçeğe aykırı ve asılsız söz çekirdeğini korur.",
+            "loses": "Suçsuz kişiye işlemediği bir fiili yükleme ve sözün şaşırtıcı ağırlığı yönlerini belirtmez.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001",
-            "F002"
+            "F001"
           ]
         },
         {
-          "text": "akıl almaz yalan",
+          "text": "iftira",
           "usage_role": "contextual",
-          "applicability": "Yalanın korkunçluğu veya apaçık asılsızlığı yüzünden dinleyeni afallattığı bağlamlarda uygundur.",
+          "applicability": "Bir kişiye yapmadığı bir fiilin yüklenerek asılsız biçimde suçlandığı bağlamlarda en doğal kısa karşılıktır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Uydurma sözün yalan oluşunu ve işiteni afallatan ağırlığını korur.",
-            "loses": "Suçsuz birine yapmadığı şeyi yükleme koşulunu ve türemiş kişi rollerini belirtmez.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001",
-            "F003"
-          ]
-        },
-        {
-          "text": "yapmadığı bir şeyi birine yüklemek",
-          "usage_role": "explanatory",
-          "applicability": "Eylem odaklı anlatımda, bir kimse hakkında gerçeğe aykırı bir suç veya davranış ileri sürmeyi açıklar.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Gerçeğe aykırı sözü, suçsuz hedefi ve yapılmamış bir fiilin o kişiye yüklenmesini korur.",
-            "loses": "Kişiye yönelmeyen genel yalanı ve yalanın afallatıcı etkisini açıkça içermez.",
+            "preserves": "Suçsuz kişiye asılsız bir fiil yükleme yönünü korur.",
+            "loses": "Belirli bir kişiye yönelmeyen genel yalan kapsamını ve şaşırtıcı etkiyi tek başına vermez.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F002"
+          ]
+        },
+        {
+          "text": "yapmadığı şeyi birine yüklemek",
+          "usage_role": "explanatory",
+          "applicability": "Asılsız suçlamada yüklenen fiil ile suçlanan kişinin ayrımını açıkça belirtmek gereken bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Suçsuz bir kişiye işlemediği fiili isnat etme işlemini açık biçimde korur.",
+            "loses": "Genel yalan anlamını ve yalanın dinleyende doğurduğu şaşkınlığı kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "çirkin bir uydurma",
+          "usage_role": "contextual",
+          "applicability": "Asılsız isnadın tek bir suçlama türüyle sınırlanmayıp yakışıksız bir fiil uydurmaya genişlediği bağlamlara uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Ağır ve yakışıksız bir fiilin asılsız biçimde uydurulması yönünü korur.",
+            "loses": "Genel yalan kapsamını ve doğrudan suçsuz kişiyi hedef alan temel iftira yapısını tek başına vermez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F004"
           ]
         }
       ],
@@ -417,127 +403,128 @@
         {
           "lexical_unit_id": "lu_005",
           "rendering_kind": "ordinary",
-          "target_gloss": "suçsuz birine asılsız suç yükleme"
+          "target_gloss": "suçsuz birini asılsız bir şeyle suçlama"
         },
         {
           "lexical_unit_id": "lu_006",
           "rendering_kind": "ordinary",
-          "target_gloss": "birine yapmadığı şeyi yüklemek veya onu yalanla karşılamak"
+          "target_gloss": "birine yapmadığı şeyi yükleyerek iftira etmek"
         },
         {
           "lexical_unit_id": "lu_007",
           "rendering_kind": "ordinary",
-          "target_gloss": "söyleyeni ya da işiteni afallatan korkunç yalan"
+          "target_gloss": "yalan ve iftira"
         },
         {
           "lexical_unit_id": "lu_008",
           "rendering_kind": "ordinary",
-          "target_gloss": "yalan söyleme; durum belirten kullanımda yalan söyleyerek"
+          "target_gloss": "yalan söyleme veya iftira etme"
         },
         {
           "lexical_unit_id": "lu_009",
           "rendering_kind": "ordinary",
-          "target_gloss": "yalan veya uydurma söz"
+          "target_gloss": "yalan veya iftira"
         },
         {
           "lexical_unit_id": "lu_010",
           "rendering_kind": "ordinary",
-          "target_gloss": "yalana karşı yardım çağrısı veya şaşkınlık ünlemi"
+          "target_gloss": "yalan karşısında yardım isteme veya şaşma ünlemi"
         },
         {
           "lexical_unit_id": "lu_011",
           "rendering_kind": "ordinary",
-          "target_gloss": "yalanla geldi"
+          "target_gloss": "bir yalan ortaya atmak"
         },
         {
           "lexical_unit_id": "lu_012",
           "rendering_kind": "ordinary",
-          "target_gloss": "başkasına yapmadığı şeyi yükleyen kimse"
+          "target_gloss": "başkasına yapmadığını yükleyen iftiracı"
         },
         {
           "lexical_unit_id": "lu_013",
           "rendering_kind": "ordinary",
-          "target_gloss": "yapmadığı bir şey kendisine yüklenen kimse"
+          "target_gloss": "yapmadığı şey kendisine yüklenen kişi"
         },
         {
           "lexical_unit_id": "lu_016",
           "rendering_kind": "ordinary",
-          "target_gloss": "birine yöneltilen yalan söz"
+          "target_gloss": "iftira niteliğindeki asılsız söz"
         },
         {
           "lexical_unit_id": "lu_018",
           "rendering_kind": "ordinary",
-          "target_gloss": "utanç verici bir fiil uydurma; bir yoruma göre evlilik dışı cinsel ilişkiyi dolaylı anlatma"
+          "target_gloss": "uydurulan çirkin bir fiil; kimi yorumda evlilik dışı cinsel ilişki"
         }
       ],
       "excluded_glosses": [
         {
-          "text": "dedikodu",
+          "text": "şaşkınlık",
           "category": "confusable",
           "error_profile": {
             "fit": "displacement",
-            "preserves": "Bir kişi hakkında olumsuz söz söyleme ortamını kısmen korur.",
-            "loses": "Sözün zorunlu olarak yalan oluşunu, suçsuz kişiye yapmadığı fiili yüklemeyi ve afallatıcı ağırlığı kaybeder.",
-            "adds": "Sözün kişinin yokluğunda yayılması ve konuşmadan konuşmaya aktarılması çağrışımını ekler.",
-            "collision": "Doğru olabilen çekiştirme ve söylenti anlamlarıyla karışır."
+            "preserves": "Yalanın ağırlığının söyleyen veya dinleyende doğurabildiği ikincil etkiyi korur.",
+            "loses": "Yalan, asılsız söz ve suçsuz kişiye işlemediği bir fiili yükleme çekirdeğini bütünüyle siler.",
+            "adds": null,
+            "collision": "Öteki ana dalın doğrudan çekirdeği olan şaşkınlık anlamıyla karışır."
           }
         }
       ],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_001150/B003",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dal, suçlanan kişinin suçsuzluğunu ve yalanın söyleyeni ya da işiteni afallatan ağırlığını özellikle belirtir.",
-          "neighbor_only": "Komşu dal, uydurma yalanı ortak koşma ve genel haksızlık alanlarına da açıkça uzatır.",
-          "gloss": "uydurma yalan ve asılsız suçlama",
-          "shared_zone": "Her iki dal da gerçeğe aykırı söz uydurmayı ve bunu bir başkasına suç olarak yüklemeyi kapsar.",
-          "distinction": "Çekirdekleri büyük ölçüde örtüşür; odak dal afallatıcı etki ile suçsuz hedefi öne çıkarırken komşu dal uydurmanın daha geniş yanlışlık alanlarını kapsar."
-        },
-        {
           "neighbor_ref": "root_000405/B003",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal, suçsuz bir kişiye yapmadığı şeyi yüklemeyi ve yalanın afallatıcı etkisini içerir.",
-          "neighbor_only": "Komşu dal, uydurulmuş konuşmaları, masalsı anlatıları ve başkasına yakıştırılan sözleri daha geniş biçimde kapsar.",
-          "gloss": "yalan uydurma",
-          "shared_zone": "İki dalın ortak alanı, gerçekte olmayan bir sözü veya iddiayı üretip ileri sürmektir.",
-          "distinction": "Komşu dalın merkezi söz üretme ve uydurmadır; odak dal ise yalanın suçsuz kişiye yüklenen suçlama biçimini ve sarsıcı sonucunu belirginleştirir."
-        },
-        {
-          "neighbor_ref": "root_001247/B004",
-          "relation_type": "near_neighbor",
-          "boundary_match": "field_only",
-          "focus_only": "Odak dalda suçlamanın asılsız olması ve hedefin yapmadığı bir fiille suçlanması kurucu özelliktir.",
-          "neighbor_only": "Komşu dal, doğru ya da yanlış kusur izlemeyi, arkadan çekiştirmeyi ve yalancı tanıklığı da aynı geniş alana alır.",
-          "gloss": "asılsız suçlama",
-          "shared_zone": "Her iki dal da bir kimseyi çirkin bir fiille suçlama ve onun hakkında incitici söz söyleme alanına girer.",
-          "distinction": "Odak dal zorunlu olarak uydurma ve gerçeğe aykırı suç yükler; komşu dalın sınırı ise suçlama yanında kusur araştırma ve arkadan konuşma gibi başka eylemleri de içerir."
+          "focus_only": "Odak dal suçsuz bir kişiye yapmadığı şeyi yükleme ve yalanın şaşırtıcı ağırlığı yönlerini özellikle içerir.",
+          "neighbor_only": "Komşu dal yalanı uydurma eylemini ve belirli soy isnatları gibi uydurma örneklerini öne çıkarır.",
+          "gloss": "yalan uydurma ve iftira",
+          "shared_zone": "İki dal da gerçeğe aykırı söz üretme ve asılsız iddia alanında güçlü biçimde örtüşür.",
+          "distinction": "Komşu dalın merkezi yalanı üretip uydurmaktır; odak dal ise genel yalanın yanında suçsuz kişiye işlemediği bir fiili yüklemeyi ve sözün sarsıcı niteliğini belirginleştirir."
         },
         {
           "neighbor_ref": "root_000403/B002",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal, suçsuz kişiye yapmadığı şeyi yüklemeyi ve sözün afallatıcı korkunçluğunu içerir.",
-          "neighbor_only": "Komşu dal, kesin bilgi olmadan tahmine dayanarak konuşmayı da kapsar.",
-          "gloss": "yalan ve dayanaksız söz",
-          "shared_zone": "Her iki dal da gerçeğe dayanmayan söz söyleme ve asılsız bir iddia üretme alanında örtüşür.",
-          "distinction": "Odak dal belirgin bir yalan veya suçlama gerektirir; komşu dalda ise konuşan kişi kasıtlı bir yalan uydurmasa bile doğrulanmamış tahminle konuşabilir."
+          "focus_only": "Odak dal asılsız suçlamayı ve suçsuz kişiye yapmadığı bir fiilin yüklenmesini kapsar.",
+          "neighbor_only": "Komşu dal doğruluğu araştırılmamış zanna dayanarak bilgisizce söz söylemeye kadar uzanır.",
+          "gloss": "yalan ile doğrulamadan konuşma",
+          "shared_zone": "Her iki dal gerçeğe aykırı söz ve asılsız iddia alanını paylaşır.",
+          "distinction": "Odak dalda sözün yalan veya iftira oluşu belirleyicidir; komşu dal ise kesin yalan uydurmanın yanında doğrulanmamış tahmine dayanarak konuşmayı da içine alır."
+        },
+        {
+          "neighbor_ref": "root_001247/B004",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal genel yalanı ve yalanın dinleyeni şaşırtabilecek ağırlığını da taşır.",
+          "neighbor_only": "Komşu dal kusur araştırma, çekiştirme ve yalancı tanıklık gibi daha geniş bir saldırı ve izleme alanına uzanır.",
+          "gloss": "asılsız suçlama",
+          "shared_zone": "İki dal suçlama, iftira ve bir kişiye kötü bir fiil yükleme alanında örtüşür.",
+          "distinction": "Odak dalın sınırı yalan ve suçsuz kişiye asılsız isnattır; komşu dal ise iftiranın ötesinde kusur izleme, çekiştirme ve tanıklık davranışlarını da kapsar."
+        },
+        {
+          "neighbor_ref": "root_001209/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dalda sözün gerçeğe aykırı olması ve suçsuz kişiye işlemediği bir fiilin yüklenmesi gerekir.",
+          "neighbor_only": "Komşu dal sözle saldırı, sövme ve kusur yüklemeyi, söz doğru olsa bile hakaret alanına girebilecek biçimde daha geniş tutar.",
+          "gloss": "sözle suçlama ve saldırı",
+          "shared_zone": "Her iki dal bir kişiye söz yoluyla kusur veya suç yöneltme sahnesinde buluşur.",
+          "distinction": "Odak dal asılsızlık ve iftirayla tanımlanır; komşu dalın çekirdeği ise sözün fırlatılır gibi yöneltilmesi, sövme ve ayıplamadır, dolayısıyla yalana bağlı değildir."
         },
         {
           "neighbor_ref": "root_000157/B001",
           "relation_type": "thematic",
           "boundary_match": "thematic_only",
-          "focus_only": "Bu dal, gerçeğe aykırı sözün veya suçlamanın kendisini adlandırır.",
-          "neighbor_only": "Komşu dal, kişinin şaşırıp zihnen duraksamasını ve kimi zaman sözünün kesilmesini adlandırır.",
-          "gloss": "afallatıcı yalan ile afallama",
-          "shared_zone": "Korkunç bir yalan, komşu dalda anlatılan şaşkınlık ve söz kesilmesi durumunu doğurabilir.",
-          "distinction": "Odak dal olası sebep olan yalan sözdür; komşu dal ise kişide ortaya çıkan zihinsel durum ve tepkidir. Ortak bir olayda buluşsalar da anlamca yer değiştiremezler."
+          "focus_only": "Odak dal yalan söyleme, asılsız iddia ve suçsuz bir kişiye iftira etme eylemidir.",
+          "neighbor_only": "Komşu dal kişinin şaşırması, afallaması, bakakalması veya sözünün kesilmesidir.",
+          "gloss": "şaşırtan yalan ile şaşkınlık ilişkisi",
+          "shared_zone": "Ağır ve çirkin bir yalan, onu işiten veya söyleyen kişide şaşkınlık doğurabilir.",
+          "distinction": "Şaşkınlık odak dalda yalanın olası etkisidir; komşu dalda ise doğrudan tanımlanan zihinsel durumdur. Bu etki bağı, iki çekirdeği eş anlamlı yapmaz."
         }
       ],
-      "neighbor_coverage_note": "Dokuz komşunun tümü değerlendirildi. Uydurma yalan, geniş suçlama alanı, bilgisizce söz söyleme ve şaşkınlık sonucu sınırı en iyi açıklayan beş dal yayımlandı; arkadan çekiştirme ile genel sözlü saldırı adayları daha uzak veya yayımlanan ayrımların tekrarıydı.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi. Yalan uydurma, doğrulamadan konuşma, asılsız suçlama, sözle saldırı ve öteki ana dalla etki bağı sınırı en iyi açıklayan beş adaydır; diğer uydurma-yalan adayları bunlarla yinelendi, çekiştirme adayı yalan şartını taşımadı ve ikinci sözlü suçlama adayı yayımlanan yakın komşuyla aynı ayrımı sundu.",
       "branch_image_ar": "الكذب الذي يبهت صاحبه أو سامعه",
       "what_is_ar": "يدخل فيه البهتان والبهيتة: الكذب، والقذف على البريء، والقول على الإنسان ما لم يفعل، والفعل المستبشع المفترى عند الراغب.",
+      "what_is_not_ar": "لا يدخل فيه الدهش والحيرة المجردان من الكذب، ولا الحساب النجومي المشكوك في عربيته.",
       "source_phrase_ar": "البهتان فالكذب، يا للبهيتة أي يا للكذب (maqayis)؛ استقبله بأمر قذفه به وهو بريء منه، والاسم البهتان (ayn)؛ قال عليه ما لم يفعله، والبهيتة البهتان (sihah)؛ استقبالك الرجل بأمر تقذفه به وهو منه بريء، البهتان الباطل الذي يتحير من بطلانه (tahdhib)؛ بهتان عظيم أي كذب يبهت سامعه لفظاعته، جاء بالبهيتة أي بالكذب (mufradat)",
       "sources": [
         "MQ",
@@ -546,14 +533,11 @@
         "TA",
         "MU"
       ],
-      "source_note": {
-        "MU": "Tek bir kayıt, bir kimsenin yalanla geldiğini bildiren kalıplaşmış kullanımı örnekler. Özel bir anlatım, utanç verici biçimde uydurulmuş her fiil olarak açıklanır; başka bir yorumda evlilik dışı cinsel ilişki için dolaylı anlatım sayılır.",
-        "SI": "Tek bir kayıt, başkasına yapmadığı şeyi yükleyen kimse için türemiş bir kişi adı verir. Tek bir kayıt, yapmadığı bir şey kendisine yüklenen kimse için ayrı bir türemiş kişi adı verir."
-      }
+      "source_note": {}
     }
   ],
   "root_profile": {
-    "summary": "Kök, bir yanda kişinin şaşkınlıktan zihnen duraksayıp kimi zaman susmasını, öte yanda büyüklüğüyle afallatan yalanı ve suçsuza yöneltilen asılsız suçlamayı düzenler. İkinci dal, birinci daldaki afallama sonucuyla anlamca bağ kurar ancak ayrı bir söz ve eylem alanı oluşturur.",
+    "summary": "Kök iki ilişkili anlam dalında örgütlenir: biri şaşkınlığa düşme, afallama ve başkasını şaşırtma; öteki yalan söyleme ve suçsuz kişiye asılsız isnatta bulunmadır. İkinci daldaki ağır yalanın şaşırtıcı etkisi iki dal arasındaki anlam bağını kurar, ancak çekirdekleri ayrı kalır.",
     "polysemy": "polysemic",
     "organization": "radial"
   },

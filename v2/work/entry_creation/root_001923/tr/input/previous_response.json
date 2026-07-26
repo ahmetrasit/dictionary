@@ -137,7 +137,7 @@
         "note": "Biçimin yalınlık durumu çözülmediğinden tanım, yalnızca kaynakta açıkça verilen kuş sınıfını kapsar ve başka kullanımlara genellenmez."
       },
       "concept_map": {
-        "definition": "Avlanmayan ve kendini savunamayan, bu yüzden kuşların değersiz sayılan kesimine konan kuştur. Kimi betimlemelerde akbaba benzeri ya da ondan küçük, boz tüylü ve yavaş uçan bir kuş olarak somutlaştırılır.",
+        "definition": "Avlanmayan ve kendini savunamayan, bu yüzden kuşların değersiz sayılan kesimine konan kuştur. Kimi betimlemelerde akbabanın kendisini ve ona benzeyen kuşları kapsar; başka bir betimlemede akbabadan küçük, boz tüylü ve yavaş uçan bir kuş olarak somutlaştırılır.",
         "facets": [
           {
             "facet_id": "F001",
@@ -158,7 +158,7 @@
           {
             "facet_id": "F003",
             "role": "source_variant",
-            "statement": "Bazı betimlemeler kuşu akbaba benzeri ya da ondan küçük, boz renkli ve yavaş uçan bir tür olarak sınırlar.",
+            "statement": "Bir kaynak varyantı akbabanın kendisini ve ona benzeyen kuşları kapsar; başka bir betimleme akbabadan küçük, boz renkli ve yavaş uçan bir kuşu örnekler.",
             "claim_ids": [
               "bc_001"
             ]
@@ -367,8 +367,8 @@
     {
       "branch_ref": "root_001923/B004",
       "identity_judgment": {
-        "status": "accepted",
-        "rationale": "Kaynak ifadesi, kum içeren bir yeri doğrudan gösterir ve bu yerin sert ya da sıkı değil, yumuşak olmasını açıklayıcı sınır olarak verir. Bu nedenle dal yalnızca herhangi bir kumlu alan değil, gevşek dokulu kumlu yerdir.",
+        "status": "qualified",
+        "rationale": "Kaynak ifadesinin iki tanığı da doğrudan kum içeren bir yeri gösterir. Yerin yumuşak ve sert olmayışı yalnızca bir tanıkta, adlandırmanın kökle bağlantısını açıklayan türetimsel bir gerekçe olarak bulunur; bu yüzden kumlu yer kimliğinin zorunlu koşulu değildir.",
         "boundary_note": "Bu dal betimleyici bir yer türüdür; hayvan rengi, kuş sınıfı, insan topluluğu veya belirli bir yerin özel adı değildir."
       },
       "lexicalization_scope": {
@@ -376,7 +376,7 @@
         "note": "Kanıt biçimin yalınlık durumunu çözmediği için tanım, yalnızca kaynakta bildirilen yumuşak ve gevşek kumlu yerle sınırlandırılır."
       },
       "concept_map": {
-        "definition": "Kumlu olan ve zemini sert ya da sıkı değil, yumuşak ve gevşek yapı gösteren yerdir.",
+        "definition": "Kumun belirleyici bir zemin öğesi olduğu yerdir.",
         "facets": [
           {
             "facet_id": "F001",
@@ -388,8 +388,8 @@
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Kumlu yerin ayırt edici sınırı, sert ve sıkı olmaması; yumuşak ve gevşek olmasıdır.",
+            "role": "source_variant",
+            "statement": "Bir kaynak, yerin yumuşak ve sert olmayışını zorunlu bir sınır olarak değil, adlandırmanın kökle bağlantısını açıklayan türetimsel bir gerekçe olarak verir.",
             "claim_ids": [
               "bc_001"
             ]
@@ -397,7 +397,7 @@
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar kum içeren bir yer anlamında birleşir. Ayrıntılı açıklama, bu yerin sert olmayan yumuşak dokusunu anlamın gerekçesi ve sınırı olarak belirtir.",
+        "common_summary": "Kaynaklar kum içeren bir yer anlamında birleşir. Kaynaklardan biri yerin yumuşak ve sert olmayışını anlamın zorunlu sınırı olarak değil, adlandırmanın türetimsel gerekçesi olarak açıklar.",
         "common_claim_ids": [
           "bc_001"
         ],
@@ -406,29 +406,28 @@
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "gevşek kumlu yer",
-        "applicability": "Hem yerin kumlu olmasını hem de zeminin sert ve sıkı olmayışını kısa biçimde karşılar.",
+        "text": "kumlu yer",
+        "applicability": "Kaynakların paylaştığı, kumun belirleyici zemin öğesi olduğu yer çekirdeğini doğrudan karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Kumlu yer çekirdeğini ve yumuşak, gevşek zemin koşulunu korur.",
+          "preserves": "Kumun belirleyici olduğu bir yer olma çekirdeğini eksiksiz korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001",
-          "F002"
+          "F001"
         ]
       },
       "contextual_glosses": [
         {
           "text": "yumuşak kumluk",
-          "usage_role": "general",
-          "applicability": "Zeminin kolay dağılan ve sıkı olmayan kumdan oluştuğu yerler için doğal bir karşılıktır.",
+          "usage_role": "contextual",
+          "applicability": "Tek kaynaktaki türetimsel açıklamanın, zeminin yumuşak ve sert olmayışını öne çıkardığı bağlamlarda uygundur.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Yerin kumlu oluşunu ve kumun yumuşak, sıkı olmayan yapısını korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Yerin kumlu oluşunu ve tek kaynaktaki yumuşaklık açıklamasını korur.",
+            "loses": "Yumuşaklığı belirtilmeyen diğer kumlu yerleri kapsam dışında bırakır.",
             "adds": null,
             "collision": null
           },
@@ -526,7 +525,7 @@
               "bc_001"
             ],
             "kind": "sole_attestation",
-            "summary": "Tek kaynak, özel adın hem belirli bir çatışmanın günü hem de bir kente yaklaşık bir mil uzaklıktaki yer için kullanıldığını bildirir."
+            "summary": "Tek kaynak, özel adın iki ayrı topluluk arasında gerçekleşen belirli çatışmanın günü ve bir kente yaklaşık bir mil uzaklıkta, başka bir yerleşimin yakınında bulunan yer için kullanıldığını bildirir."
           }
         ],
         "supporting_claim_ids": [],

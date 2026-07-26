@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": "3c1a647f45218b7ba055963bc74ada1e43abd8e69d7430a2d02b40661a105d01",
+  "verdict": "repair",
+  "summary": "Yazar yaniti genel olarak kanitla uyumludur. Yalnizca B002 dalindaki lu_009 sozluk karsiligi, kanitta verilen topluluklar anlamini demetleri de kapsayacak bicimde gereksiz yere genisletmektedir.",
+  "issues": [
+    {
+      "target_ref": "root_000915/B002",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_009"
+      ],
+      "evidence_conflict": "lu_009 icin saglanan anlam yalnizca topluluklardir; hedef karsiliktaki demetler eklemesi bu birime verilmeyen ek bir kapsami iceri alir.",
+      "smallest_correction": "lu_009 target_gloss degerini topluluklar olarak degistir; diger sozluk karsiliklarini aynen koru."
+    }
+  ]
+}

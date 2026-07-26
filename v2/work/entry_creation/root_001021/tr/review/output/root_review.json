@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak bir kaynak ortaklığı genellemesi ile bir sözlüksel karşılık, kanıtın sınırlarını değiştirmektedir. İki sorun da ilgili alanlarda küçük ve kesin düzeltmelerle giderilebilir.",
+  "issues": [
+    {
+      "target_ref": "root_001021/B006",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, derinin tüyü üzerindeyken kurumasını kaynakların birleştiği bir unsur olarak sunuyor. Oysa bc_001 içinde iki kaynak yalnızca tüyün alınmadan deri üzerinde bırakılmasını ortaklaşa destekliyor; kuruma ve ıslatılmama koşulları yalnızca ikinci kaynak aktarımında yer alıyor.",
+      "smallest_correction": "common_summary metnini, ortak noktanın tüyün deri üzerinde bırakılması olduğunu ve kuruma ile ıslatılmama koşullarının aktarımlardan yalnızca birinde ek olarak verildiğini kaynak tarafsız biçimde belirtecek şekilde düzeltin."
+    },
+    {
+      "target_ref": "root_001021/B008",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_033"
+      ],
+      "evidence_conflict": "lu_033 için hedef karşılıktaki \"uyaninca soylenen\" ifadesi, kanıttaki uyanınca anlaşılmaz sesler çıkarma niteliğini başkalarınca hakkında söz söylenme anlamına dönüştürüyor.",
+      "smallest_correction": "lu_033 target_gloss içindeki \"uyaninca soylenen\" bölümünü \"uyaninca anlasilmaz sesler cikaran\" olarak değiştirin; karşılığın diğer bölümlerini koruyun."
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "inputs_sha256": "49c685d35c4a419dd6720ba02e301a96818846acfaab85bce1ccbca3c28bfefa",
+  "verdict": "repair",
+  "summary": "Yazar cevabı genel olarak dalları ve ayrımları doğru koruyor; ancak B004 dalında kanıtın kadın köleye yönelen özel aşağılama hitabı sınırı birkaç alanda genel kişiye yönelen hitap gibi genişletilmiş. Ayrıca B005 kaynak sentezi, kanıttaki Beni Temim boy kolu bilgisini açıkça taşımıyor. Bu iki nokta cerrahi ve yüksek güvenli düzeltme gerektiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_002274/B004",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, hitabın kadin koleye yoneltildigini belirtir; mevcut gerekce ve sinir notu bunu genel olarak bir kisiye yonelen asagilayici hitap gibi sunuyor.",
+      "smallest_correction": "B004 identity_judgment icinde hitap alicisini genel kisi yerine kadin kole olarak sinirla."
+    },
+    {
+      "target_ref": "root_002274/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, dalın ozel hitap alicisini kadin kole olarak verir; mevcut tanim ve cekirdek facet bir kisiye yoneltilen genel hakaret hitabina genisliyor.",
+      "smallest_correction": "B004 concept_map tanimini ve F001 ifadesini kadin koleye yonelen asagilayici seslenis olarak daralt."
+    },
+    {
+      "target_ref": "root_002274/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak iddiasındaki kadin kole alicisi ortak ozette kayboluyor; ozet yalnizca belirli bir kisiye yonelen hitap diyor.",
+      "smallest_correction": "B004 source_synthesis.common_summary icinde aliciyi kadin kole olarak belirt."
+    },
+    {
+      "target_ref": "root_002274/B004",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram glossu dalin cekirdek haritasini temsil etmeli; mevcut gloss aliciyi soylemedigi icin kadin kole sinirini genel hakaret hitabina aciyor.",
+      "smallest_correction": "B004 concept_gloss metnini ve uygulanabilirlik aciklamasini kadin koleye yonelen asagilayici hitap olarak daralt."
+    },
+    {
+      "target_ref": "root_002274/B004",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Baglamsal gloss genel olarak asagilayici seslenmeyi verir; kanit ise bu hitabi kadin koleye yonelmis ozel kullanim olarak sinirlar.",
+      "smallest_correction": "B004 contextual_glosses icindeki metin, uygulanabilirlik ve korunan anlam aciklamasina kadin kole sinirini ekle."
+    },
+    {
+      "target_ref": "root_002274/B004",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B004 komsu ayrimlari bu dali tekil kisiye yonelen hitap diye tarif ediyor; kanit hitabin kadin koleye yoneldigini soyluyor.",
+      "smallest_correction": "B004 neighbor_distinctions alaninda B004 tarafini anlatan ifadeleri kadin koleye yonelen hitap olarak daralt."
+    },
+    {
+      "target_ref": "root_002274/B003",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B003-B004 ayriminda B004 komsusu bir kisiye yoneltilen hitap diye anlatiliyor; supplied neighbor evidence B004'u kadin koleye yonelen ozel hitap olarak sinirlar.",
+      "smallest_correction": "B003 neighbor_distinctions icindeki B004 neighbor_only ve distinction ifadelerini kadin koleye yonelen hitap olarak daralt."
+    },
+    {
+      "target_ref": "root_002274/B005",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B005-B004 ayriminda B004 komsusu tekil kisiye yonelen hitap diye anlatiliyor; supplied neighbor evidence B004'u kadin koleye yonelen ozel hitap olarak sinirlar.",
+      "smallest_correction": "B005 neighbor_distinctions icindeki B004 neighbor_only ve distinction ifadelerini kadin koleye yonelen hitap olarak daralt."
+    },
+    {
+      "target_ref": "root_002274/B005",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt takma adın Beni Temim icindeki bir boy koluna ait oldugunu bildirir; kaynak sentezi bunu yalnizca belirli bir topluluk kolu diye genel birakiyor.",
+      "smallest_correction": "B005 source_synthesis.common_summary icinde Beni Temim boy kolu bilgisini acikca belirt."
+    }
+  ]
+}

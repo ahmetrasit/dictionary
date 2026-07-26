@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar çıktısı genel olarak kanıt demetine bağlı kalıyor; ancak B003 tanımı rahatsızlığa kanıtta açıkça bulunmayan kalıcılık niteliği ekliyor. Bu tek alan sınırlı biçimde düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_003089/B003",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, rahatsızlığın insanı oturur hale getirmesini, canlılarda bir afet oluşunu ve bu durumdan etkilenmiş kişiyi bildirir; fakat rahatsızlığın kalıcı olduğunu söylemez.",
+      "smallest_correction": "B003 concept_map.definition alanındaki kalıcı nitelemesini kaldır; tanımı sakatlayıcı, düşkün bırakan veya oturur hale getiren rahatsızlık çekirdeğiyle bırak."
+    }
+  ]
+}

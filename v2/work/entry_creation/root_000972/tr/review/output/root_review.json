@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "B001 dalındaki iki genel karıştırma komşusu, yalnızca örnek ve sözlükselleşmiş sonuç farklarına dayanılarak yakın anlamlı sayılmıştır. Sağlanan sınır kartları çekirdeklerin örtüştüğünü gösterdiğinden bu iki ilişki eş anlamlı ve tam eşleşme olarak düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000972/B001",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_001426/B001 kartı genel olarak karıştırma ve kaynaştırmayı, odak dalın bc_001 kanıtı da genel karıştırma ve karışmayı çekirdek sayar. Mevcut yakın anlamlı ve kısmi eşleşme kararı, odaktaki yiyecek ve topluluk örnekleri ile peynir altı suyu varyantını çekirdek sınırı gibi kullanır; bunlar çekirdeğin yerine geçmeyen bağımlı uygulama ve varyantlardır.",
+      "smallest_correction": "root_001426/B001 satırında relation_type değerini synonym, boundary_match değerini exact yap; focus_only, neighbor_only ve distinction metinlerini ortak genel karıştırma çekirdeğinin tam örtüştüğünü, özel örnek ve varyantların bu eşitliği bozmadığını belirtecek kadar dar biçimde düzelt."
+    },
+    {
+      "target_ref": "root_000972/B001",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_000759/B001 kartındaki bir şeyi başka bir şeye karıştırma çekirdeği, odak dalın bc_001 kanıtındaki genel karıştırma çekirdeğiyle aynıdır. Mevcut yakın anlamlı ve kısmi eşleşme kararı, iki dalda verilen farklı uygulama alanlarını sınır farkı sayar; sağlanan kanıtta işler, mallar, yiyecekler ve topluluklar çekirdeği değiştiren koşullar değil örnek alanlardır.",
+      "smallest_correction": "root_000759/B001 satırında relation_type değerini synonym, boundary_match değerini exact yap; focus_only, neighbor_only ve distinction metinlerini çekirdeklerin tam örtüştüğünü ve farklı örnek alanlarının yalnızca kullanım odağı olduğunu açıklayacak kadar dar biçimde düzelt."
+    }
+  ]
+}

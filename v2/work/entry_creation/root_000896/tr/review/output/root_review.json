@@ -1,0 +1,39 @@
+{
+  "verdict": "editorial_review",
+  "summary": "B006 dalında kaynak belirli olarak sad harfini adlandırdığı halde tanım ve iki temel karşılık bunu yalnızca belirsiz bir ilgili harf diye aktarıyor. Bu genelleştirme harfin kimliğini yayından kaldırdığı için ilgili alanlarda açıkça sad adı verilmelidir; diğer dallarda yayın açısından zorunlu bir düzeltme saptanmadı.",
+  "issues": [
+    {
+      "target_ref": "root_000896/B006",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi dalın göndergesini sad harfi olarak açıkça belirliyor; tanım ve F001 ise hangi harf olduğunu söylemeden yalnızca kaynak alfabedeki belirli bir harften söz ediyor. Böylece dalın ayırt edici kimliği korunmuyor.",
+      "smallest_correction": "Tanımda ve F001 ifadesinde belirsiz belirli harf anlatımını Arap alfabesindeki sad harfi olarak değiştir; küçültme biçimi ile bölüm başı yorumuna ilişkin diğer facetleri aynen koru."
+    },
+    {
+      "target_ref": "root_000896/B006",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak belirli bir harf adı verirken kavram karşılığı kaynak alfabedeki ilgili harfin adı diyerek göndergenin sad olduğunu gizliyor. Üstelik hata profili harf kimliğinin korunduğunu söylüyor; mevcut karşılık bu kimliği korumuyor.",
+      "smallest_correction": "Kavram karşılığını Arap alfabesindeki sad harfinin adı olarak değiştir ve uygulanabilirlik ile hata profili cümlelerini bu açık kimlikle uyumlu hale getir."
+    },
+    {
+      "target_ref": "root_000896/B006",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_026"
+      ],
+      "evidence_conflict": "lu_026 doğrudan sad harfinin adını gösteriyor; hedef karşılık ise kaynak alfabedeki ilgili harfin adı diyerek hangi sözlük biriminin çevrildiğini belirtmiyor.",
+      "smallest_correction": "Yalnızca lu_026 target_gloss değerini Arap alfabesindeki sad harfinin adı olarak değiştir."
+    }
+  ]
+}

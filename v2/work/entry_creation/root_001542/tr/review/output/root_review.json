@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak B006 kavram haritası, suyun nereye serpildiğine ilişkin kanıtta bulunmayan bir ayrıntı ekliyor ve kanıtta tanımın parçası olan kuruntuyu giderme amacını ikincil gösteriyor.",
+  "issues": [
+    {
+      "target_ref": "root_001542/B006",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt yalnızca temizlenmeden sonra kuruntuyu gidermek için su serpildiğini bildirir; suyun bedene veya giysiye serpildiğini belirtmez. Ayrıca kuruntuyu giderme amacı kaynak ifadesinin doğrudan parçasıdır, yalnızca ilişkili bir kullanım değildir.",
+      "smallest_correction": "Tanımdan ve F001'den kanıtsız olan beden veya giysi hedefini çıkarın; tanımı temizlenmeden sonra kuruntuyu gidermek için su serpme ile sınırlayın ve F002'nin rolünü associated_use yerine core yapın."
+    }
+  ]
+}

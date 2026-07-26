@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B007 dalındaki iki yapı bağımlı kullanım genel olarak doğru sınırlandırılmıştır; ancak giysi veya kürkün eskimesi, pazar durgunluğunun bir uzmanlaşması gibi sınıflandırılmıştır. Bu bağımsız kullanımın facet rolü düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001568/B007",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, pazarın kesada uğraması ile giysi veya kürkün eskimesini iki ayrı söz öbeğine bağlı kullanım olarak verir. F002'nin specialization rolü, eskimeyi F001'deki pazar durgunluğunun daha dar bir türü gibi gösterir.",
+      "smallest_correction": "B007 concept_map içindeki F002 facet'inin role değerini specialization yerine associated_use olarak değiştirin; diğer alanları koruyun."
+    }
+  ]
+}

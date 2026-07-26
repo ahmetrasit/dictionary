@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "B004 ve B005 dallarının tanımları, yalnızca bağımlı söz birliklerinde kanıtlanan anlamları bağımsız ve genel dal anlamları gibi sunuyor. İki tanım da yapı bağımlılığını açıkça koruyacak biçimde sınırlandırılmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001632/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Mekanik profil bu dal için yalnızca iki collocation ve üç lexical_unit gösteriyor; bağımsız bir form göstermiyor. Buna rağmen definition, karnın veya midenin yiyeceksiz kalmasını sınırsız bir genel dal anlamı olarak tanımlıyor ve yapı bağımlı kullanımı yalın anlama genişletiyor.",
+      "smallest_correction": "Definition metnini, yiyeceksiz kalma anlamının listelenen aç kalma, geceleme, azık tükenmesi ve ilaç için mideyi boş bırakma ifadelerinde gerçekleştiğini açıkça belirtecek biçimde sınırlandır; mevcut örnek ve ayrımları koru."
+    },
+    {
+      "target_ref": "root_001632/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Mekanik profil bu dal için yalnızca bir collocation ve iki lexical_unit gösteriyor; bağımsız bir form göstermiyor. Buna rağmen definition, eldeki herhangi bir şeyi uzağa atmayı sınırsız bir genel dal anlamı olarak veriyor ve yalnızca bağımlı ifadelerle kanıtlanan eylemi yalın anlama genişletiyor.",
+      "smallest_correction": "Definition metnini, uzağa atma anlamının listelenen giysi, silah ve mızrak ifadelerinde gerçekleşen yapı bağımlı bir kullanım olduğunu açıkça belirtecek biçimde sınırlandır; nesne ve amaç ayrımlarını değiştirme."
+    }
+  ]
+}

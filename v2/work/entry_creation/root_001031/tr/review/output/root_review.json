@@ -1,0 +1,72 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dalların kimliğini, kapsamını ve sözlüksel birimlerini genel olarak doğru koruyor. Ancak B001'de kaynakta genel bırakılan istek alanı birkaç yerde cinsel istekle sınırlandırılmış; B005'te ise pişirme sonrasına bağlı tat benzetmesi balığın çekirdek niteliğine yükseltilmiş. Bu alanlarda küçük ve kanıta doğrudan bağlı düzeltmeler gerekiyor.",
+  "issues": [
+    {
+      "target_ref": "root_001031/B001",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi isteğin baskısından söz eder ve bunu cinsel istekle sınırlamaz; gerekçedeki cinsel istekler nitelemesi kanıttan daha dardır.",
+      "smallest_correction": "Gerekçedeki cinsel istekler ifadesini genel istek veya arzunun baskısı olarak değiştirin; kabul durumunu ve kalan gerekçeyi koruyun."
+    },
+    {
+      "target_ref": "root_001031/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve çekirdek faset, kaynakta alanı belirtilmeyen isteği cinsel istek diye daraltıyor. Kanıt uygunsuz veya yasak olandan sakınmayı ve isteğin baskısına karşı kendini tutmayı destekler.",
+      "smallest_correction": "Tanım ve F001'deki cinsel nitelemesini kaldırıp isteğin baskısı biçiminde genelleyin; sakınma ve yerleşik özdenetim yapısını değiştirmeyin."
+    },
+    {
+      "target_ref": "root_001031/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kaynakların genel istek ifadesini özellikle cinsel istek diye aktarıyor; bu uzmanlaştırma sağlanan kaynak sözünde yoktur.",
+      "smallest_correction": "Ortak özette özellikle cinsel isteğin baskısı yerine isteğin baskısı ifadesini kullanın ve diğer içeriği koruyun."
+    },
+    {
+      "target_ref": "root_001031/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İki komşu ayrımının odak dala özgü alanları, kanıttaki genel istek baskısını cinsel istek olarak daraltıyor. Komşulardan birinin cinsel korunmuşluk alanında olması odak dalın sınırını daraltmaz.",
+      "smallest_correction": "Her iki focus_only metnindeki cinsel istek nitelemesini genel istek veya arzunun baskısı olarak değiştirin; ilişki türlerini ve komşu sınırlarını koruyun."
+    },
+    {
+      "target_ref": "root_001031/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak önce küçük, beyaz ve pulsuz balığı tanımlar; pirince benzeyen tat ise yalnızca pişirildiğinde geçerli koşullu bir gözlemdir. F001 ikisini birlikte çekirdek yaparak bu bağımlı ayrıntıyı çekirdeğe yükseltiyor.",
+      "smallest_correction": "F001'i küçük, beyaz ve pulsuz balıkla sınırlandırın; pişmiş tadın pirince benzetilmesini aynı kanıta bağlı ayrı bir associated_use fasetine taşıyın. İki cümleli tanımı koruyun."
+    },
+    {
+      "target_ref": "root_001031/B005",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı, yalnızca pişirme koşulunda bildirilen tat benzetmesini balığın çekirdek adlandırmasına dahil ediyor; çekirdek küçük, beyaz ve pulsuz balıktır.",
+      "smallest_correction": "Kavram karşılığını küçük, beyaz ve pulsuz balık olarak daraltın; uygulanabilirlik, korunanlar ve facet_ids alanlarını yalnızca bu çekirdeği gösterecek biçimde uyarlayın. Koşullu tat bilgisini bağlamsal ve sözlüksel anlatımlarda koruyun."
+    }
+  ]
+}

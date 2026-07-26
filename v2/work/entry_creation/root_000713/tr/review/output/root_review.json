@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yaniti genel olarak dal kimliklerini, mekanik kapsamlari ve komsu sinirlarini kanitla uyumlu kuruyor. Ancak B002'de kizillik, yalnizca bazi kaynak ve kullanimlarda gorulen bir nitelik olmaktan cikip iki glosta zorunlu hale geliyor; B003'te ise kanitin bildirdigi genel renk degisimi iki yerde desteksiz bicimde solma yonunde ozellestiriliyor. Bu dort alan kucuk ve sinirli duzeltmeler gerektiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_000713/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit bir kaynaktaki yalniz siyahlik anlatimini, baska kaynaklardaki kizillik karismis siyahlik anlatimiyla birlikte verir. Buna karsin kavram glosu kizilligi zorunlu bir bilesen gibi sunuyor ve dalin yalniz siyahligi da kapsayan cekirdegini daraltiyor.",
+      "smallest_correction": "Kavram glosunu kizilligi olasi fakat zorunlu olmayan bir nitelik olarak gosterecek bicimde, ornegin \"kizilliga calabilen siyahlik\" olarak degistirin; uygunluk ve hata profili metnini de bu ihtiyari nitelikle uyumlu hale getirin."
+    },
+    {
+      "target_ref": "root_000713/B002",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003"
+      ],
+      "evidence_conflict": "lu_003 kaniti yalniz siyahlik anlatimini da icerirken hedef glos sadece kizillik karismis siyahlik veriyor. Boylece sozlukler arasindaki kapsam farki kayboluyor ve birimin kapsami gereksiz yere daraliyor.",
+      "smallest_correction": "lu_003 hedef glosunu yalniz siyahligi da koruyacak bicimde, ornegin \"siyahlik; bazen kizillik karismis ince koyuluk\" olarak duzeltin."
+    },
+    {
+      "target_ref": "root_000713/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit ates veya yakici ruzgarin ten rengini degistirdigini, ates durumunda da karartabildigini bildirir; yuzun soluklastigini bildirmez. F002'de \"yuzun soluklasmasi\" sonucunun cekirdek bir secenek yapilmasi kanitta bulunmayan belirli bir renk yonu ekliyor.",
+      "smallest_correction": "F002'deki \"yuzun soluklasmasi\" ifadesini kanitin yon belirtmeyen anlatimina uygun olarak \"yuz gorunusunun degismesi\" ile degistirin."
+    },
+    {
+      "target_ref": "root_000713/B003",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "\"Yakici ruzgar yuzunu soldurdu\" glosu, kanitin yalnizca yuzun veya tenin renginin degismesini bildirdigi yerde sonucu solma yonunde ozellestiriyor. Bu yon kanit tarafindan desteklenmiyor.",
+      "smallest_correction": "Bu baglamsal glosu \"yakici ruzgar yuzunun rengini degistirdi\" gibi yon belirtmeyen bir ifadeyle degistirin ve korunan ile kaybedilen ozellik aciklamalarini buna gore uyarlayin."
+    }
+  ]
+}

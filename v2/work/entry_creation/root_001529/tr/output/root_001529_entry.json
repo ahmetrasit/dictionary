@@ -1,0 +1,2498 @@
+{
+  "inputs_sha256": "90934862aa00f17f3b1b62fc6af040bc9f6eb824cf808bde304db7834bc81533",
+  "artifact_format": "dictionary-v2-root-entry-draft-v1",
+  "generated_by": "v2/scripts/accept_root_writer.py",
+  "root_envelope_id": "root_001529",
+  "language": "tr",
+  "branches": [
+    {
+      "branch_ref": "root_001529/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, ağızdan, rüzgardan ya da bir araçtan çıkan havanın bir şeyin içine veya üzerine yöneltilmesini dalın merkezine koyar. Şişirme, ateşi canlandırma, hayvanların benzer ses çıkarması ve dinsel anlatımlardaki özel kullanımlar bu yönlendirilmiş hava verme eylemine bağlıdır.",
+        "boundary_note": "Dal, kendiliğinden şişmeyi değil, havayı yönelten eylemi ve bu eyleme bağlı özel kullanımları kapsar."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Dal hem genel eylem biçimlerini hem de ateş, hayvan sesi, kıyamet borusu ve can verme bağlamlarına bağlı söz öbeklerini ayrı tutar."
+      },
+      "concept_map": {
+        "definition": "Bir öznenin ağzından, rüzgardan ya da bir araçtan çıkan havayı bir şeyin içine veya üzerine yöneltmesi ve böylece onu etkileyebilmesidir. Ateşi canlandırma, bir şeyi şişirme, hayvanların üfler gibi ses çıkarması ve dinsel anlatımlardaki boru ya da can verme kullanımları bu çekirdeğin özelleşmiş görünümleridir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Hava ya da soluk, bir şeyin içine veya üzerine amaçlı biçimde yöneltilir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "extension",
+            "statement": "Yöneltilen hava, nesnenin şişmesine yol açabilir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "specialization",
+            "statement": "Körük gibi bir araçla ateşe hava verilip ateş canlandırılır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "associated_use",
+            "statement": "Kedi ve yılanın çıkardığı ses, üflemeye benzeyen bir ses olarak anlatılır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F005",
+            "role": "specialization",
+            "statement": "Dinsel anlatımda kıyamet borusuna üfleme ve soluk üfleyerek can verme kullanımları bulunur.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynakların ortak çizgisi, havanın bir hedefe gönderilmesi eylemidir. Ağızla üfleme, körükle ateşe hava verme, bunun sonucunda şişme, hayvanların benzer sesi ve dinsel bağlamlardaki özel anlatımlar aynı eylem çekirdeği çevresinde toplanır.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "bir şeye hava üfleme",
+        "applicability": "Yöneltilmiş hava verme çekirdeğini, bunun ağızla, rüzgarla veya bir araçla yapılabilmesini kapsayacak biçimde karşılar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Havanın bir hedefe yöneltilmesi eylemini ve temel katılımcı ilişkisini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003",
+          "F004",
+          "F005"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "üflemek",
+          "usage_role": "general",
+          "applicability": "Ağızdan çıkan soluğun bir nesneye yöneltildiği genel cümlelerde doğal karşılıktır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Ağızdan çıkan havanın belirli bir hedefe yöneltilmesi eylemini korur.",
+            "loses": "Rüzgarın etkisini, araçla hava vermeyi ve özelleşmiş dinsel kullanımları tek başına belirtmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "ateşi körüklemek",
+          "usage_role": "contextual",
+          "applicability": "Ateşe bir körükle hava verilip ateşin canlandırıldığı bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Araçla ateşe hava verme ve ateşi canlandırma özelleşmesini korur.",
+            "loses": "Ağızla üfleme, şişirme, hayvan sesi ve dinsel kullanımları dışarıda bırakır.",
+            "adds": null,
+            "collision": "Bağlam verilmezse bir çatışmayı ya da olumsuz gelişmeyi kışkırtma anlamıyla karışabilir."
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        },
+        {
+          "text": "soluk üfleyerek can vermek",
+          "usage_role": "explanatory",
+          "applicability": "Dinsel yaratılış anlatısında soluğun can kazandırma aracı olarak sunulduğu kullanım içindir.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Soluk üfleme eylemini ve bunun can verme sonucuna bağlanmasını korur.",
+            "loses": "Dalın fiziksel üfleme, şişirme, ateş ve hayvan sesi kullanımlarını kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F005"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_001",
+          "rendering_kind": "ordinary",
+          "target_gloss": "üfleme; bir şeye hava gönderme"
+        },
+        {
+          "lexical_unit_id": "lu_002",
+          "rendering_kind": "ordinary",
+          "target_gloss": "üfleyip şişirmek"
+        },
+        {
+          "lexical_unit_id": "lu_008",
+          "rendering_kind": "ordinary",
+          "target_gloss": "körük"
+        },
+        {
+          "lexical_unit_id": "lu_009",
+          "rendering_kind": "ordinary",
+          "target_gloss": "ateşi körüklemekle görevli kişi"
+        },
+        {
+          "lexical_unit_id": "lu_018",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kedi ya da yılanın üfler gibi ses çıkarması"
+        },
+        {
+          "lexical_unit_id": "lu_020",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kıyamet borusunu üflemek"
+        },
+        {
+          "lexical_unit_id": "lu_021",
+          "rendering_kind": "ordinary",
+          "target_gloss": "soluk üfleyerek can vermek"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001527/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Havanın bir hedefe güçlüce yöneltilmesi, araçla ateşin canlandırılması ve şişirme sonucu bu dala özgüdür.",
+          "neighbor_only": "Ağızdan az miktarda tükürükle birlikte çıkan hafif püskürtme ve bunun büyü ya da sağaltma bağlamları komşuya özgüdür.",
+          "gloss": "az tükürüklü hafif püskürtme",
+          "shared_zone": "İki dalda da ağızdan çıkan soluk bir hedefe doğru gönderilir.",
+          "distinction": "Bu dalın çekirdeği hedefe hava vermektir; komşu dal ise üflemeden daha hafif, tükürmeden daha az sıvılı bir ağız çıkışını ve ona bağlı özel bağlamları ayırır."
+        },
+        {
+          "neighbor_ref": "root_001533/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Soluk belirli bir nesneyi etkilemek amacıyla onun içine veya üzerine yöneltilir.",
+          "neighbor_only": "Soluk alıp verme ve havanın gövdeden doğal biçimde çıkması başlı başına komşu dalın çekirdeğidir.",
+          "gloss": "soluk verme",
+          "shared_zone": "Her iki dal da havanın ağızdan ya da gövdeden dışarı çıkmasını içerir.",
+          "distinction": "Bu dal amaçlı ve hedefli bir üfleme eylemini anlatır; komşu dalda ise hedefi etkileme koşulu olmadan doğal solunum ya da gövdeden hava çıkışı vardır."
+        },
+        {
+          "neighbor_ref": "root_000609/B003",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Hava, bir özne ya da araç tarafından bir hedefe gönderilen etken olarak yer alır.",
+          "neighbor_only": "Rüzgarın ve esintinin kendisi, niteliği ve esme olayı komşu dalın konusudur.",
+          "gloss": "rüzgar ve esinti",
+          "shared_zone": "İki dalın ortak alanı hareket eden havadır.",
+          "distinction": "Bu dal havayı bir şeye gönderme eylemini kodlar; komşu dal ise havanın rüzgar veya esinti olarak varlığını ve hareketini kodlar."
+        },
+        {
+          "neighbor_ref": "root_001529/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bir özne ya da etken havayı hedefe yöneltir ve şişme bunun olası sonucudur.",
+          "neighbor_only": "Şişmiş olma veya şişme süreci, bunu doğuran bir üfleme eylemi bulunmadan da gerçekleşebilir.",
+          "gloss": "şişme ve kabarma",
+          "shared_zone": "Üfleme bir nesnenin şişmesine yol açtığında iki dal aynı olay zincirinde buluşur.",
+          "distinction": "Bu dal neden olan hava verme eylemini, komşu dal ise ortaya çıkan hacim artışını veya şişkin durumu merkez alır."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün aday komşular karşılaştırıldı; hava çıkışı, hafif püskürtme, rüzgar alanı ve şişme sonucuyla sınırı en iyi gösteren dört ilişki yayımlandı.",
+      "branch_image_ar": "إرسال الريح في الشيء",
+      "what_is_ar": "يدخل فيه نفخ الفم أو الريح في الشيء، ونفخ الصور والروح، ونفخ النار بالمنفاخ، ونفخ الهرة والحية",
+      "what_is_not_ar": "لا يدخل فيه مجرد الانتفاخ بلا فعل نفخ، ولا علو النهار والأرض، ولا الفخر والكبر، ولا كناية الخلو",
+      "source_phrase_ar": "النفخ معروف؛ نفخته فانتفخ؛ المنفاخ ما ينفخ به الإنسان في النار وغيرها (ayn)؛ نفخ الهرة والحية؛ نفخ الإنسان بفيه؛ نفخك النار بالمنفاخ (jamhara)؛ نفخ فيه ونفخه؛ ينفخ الصور؛ المنفاخ (sihah)؛ النفخ نفخ الريح في الشيء؛ نفخ الروح في النشأة الأولى (mufradat)",
+      "sources": [
+        "AY",
+        "JA",
+        "SI",
+        "MU"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_001529/B002",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi yalnızca içi gerçekten hava dolan nesneleri değil, karın şişkinliğini, uru, gevşek şişmanlığı, gençlik dolgunluğunu ve hayvan hastalıklarını da kapsar. Bu nedenle dalın güvenilir çekirdeği gerçek ya da görünüşçe hacim artışı ve kabarmadır; her örneğe gerçek hava dolması koşulu yüklenmemelidir.",
+        "boundary_note": "Şişme ve kabarma çekirdektir; hava dolması bazı nesnelerde gerçek, bedensel ve mecazlı örneklerde ise yalnızca benzetmeli olabilir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Genel şişme biçimleriyle karın, ur, gevşek şişmanlık, hayvan hastalığı ve içi hava dolu nesnelere bağlı özel birimler birbirine karıştırılmadan tanımlanır."
+      },
+      "concept_map": {
+        "definition": "Bir şeyin ya da beden bölümünün dışa doğru genişleyip şişmesi, kabarması veya dolgun görünmesidir; bunun gerçek hava dolmasından kaynaklanması zorunlu değildir. Karın şişkinliği, ur, gevşek şişmanlık, gençlik dolgunluğu, hayvanlarda şişiren hastalık ve içi hava dolu boş nesneler bu çekirdeğin ayrı gerçekleşmeleridir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Nesne ya da beden bölümü dışa doğru genişler, kabarır veya dolgunlaşır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Karın şişkinliği ve ur gibi bedensel şişmeler bu çekirdeğin hastalık ya da beslenme kaynaklı görünümleridir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "extension",
+            "statement": "Gevşek şişmanlık ve gençlik dolgunluğu, bedendeki hacim artışının görünüşe dayalı uzantılarıdır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "specialization",
+            "statement": "Atın ya da başka bir hayvanın bileklerini veya erbezlerini şişiren hastalıklar özel bir kullanım alanıdır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F005",
+            "role": "example",
+            "statement": "Balıktaki şişkin kese, su kabarcığı ve içi yalnızca hava dolu meyve, boş ve kabarık nesne örnekleridir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar şişme ve hacim artışı çekirdeğinde birleşir; bedensel şişkinlik, gevşek şişmanlık, gençlik dolgunluğu, hayvan hastalıkları ve içi hava dolu nesneler bu çekirdeğin farklı gerçekleşmeleri olarak sıralanır. Veriler, bütün örneklerin gerçek anlamda havayla dolduğu sonucunu gerektirmez.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "şişme ve kabarma",
+        "applicability": "Gerçek hava dolmasına bağlı olsun ya da olmasın, dışa doğru hacim artışı ve şişkin görünüm çekirdeğini karşılar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Hacim artışını, kabarmayı ve bunun nesne ile beden üzerindeki temel görünümünü korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003",
+          "F004",
+          "F005"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "şişmek",
+          "usage_role": "general",
+          "applicability": "Bir nesnenin ya da beden bölümünün hacim kazanıp dışa doğru genişlediği genel bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Dışa doğru genişleme ve hacim artışı biçimindeki temel değişimi korur.",
+            "loses": "Gençlik dolgunluğu, gevşek şişmanlık ve belirli nesne adlarını tek başına açıklamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "karın şişkinliği",
+          "usage_role": "contextual",
+          "applicability": "Yemek veya benzeri bir nedenle karnın şiştiği bedensel bağlam için doğal karşılıktır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Karındaki hacim artışı ve rahatsız edici şişkinlik görünümünü korur.",
+            "loses": "Başka beden bölümlerini, genel nesne şişmesini, şişmanlığı ve içi hava dolu nesneleri dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "gevşekçe şişmanlamak",
+          "usage_role": "contextual",
+          "applicability": "Kişinin sıkı olmayan, yumuşak ve kabarık bir beden görünümü kazanması bağlamında kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Bedendeki gevşek dolgunlaşma ve şişman görünüm kazanma uzantısını korur.",
+            "loses": "Geçici şişkinliği, uru, hayvan hastalıklarını ve hava dolu nesneleri kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        },
+        {
+          "text": "içi hava dolu kabarcık",
+          "usage_role": "explanatory",
+          "applicability": "İçi boş olup havayla kabarmış su kabarcığı, kese veya meyve benzeri nesneleri açıklamak için uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Gerçek hava dolmasıyla oluşan boş, şişkin nesne görünümünü korur.",
+            "loses": "Bedensel şişkinlik, hastalık, şişmanlık ve gençlik dolgunluğu kullanımlarını dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F005"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_002",
+          "rendering_kind": "ordinary",
+          "target_gloss": "üfleyip şişirmek"
+        },
+        {
+          "lexical_unit_id": "lu_003",
+          "rendering_kind": "ordinary",
+          "target_gloss": "şişmek; kabarıp hacim kazanmak"
+        },
+        {
+          "lexical_unit_id": "lu_006",
+          "rendering_kind": "ordinary",
+          "target_gloss": "gevşekçe şişmanlamış kişi"
+        },
+        {
+          "lexical_unit_id": "lu_010",
+          "rendering_kind": "ordinary",
+          "target_gloss": "hastalıktan oluşan urumsu şişlik"
+        },
+        {
+          "lexical_unit_id": "lu_011",
+          "rendering_kind": "ordinary",
+          "target_gloss": "karın şişkinliği"
+        },
+        {
+          "lexical_unit_id": "lu_012",
+          "rendering_kind": "ordinary",
+          "target_gloss": "gençlik dolgunluğuna erişmiş genç"
+        },
+        {
+          "lexical_unit_id": "lu_013",
+          "rendering_kind": "ordinary",
+          "target_gloss": "şişkin ya da gevşekçe şişman kişi"
+        },
+        {
+          "lexical_unit_id": "lu_014",
+          "rendering_kind": "ordinary",
+          "target_gloss": "erbezleri hastalık nedeniyle şişmiş erkek ya da aygır"
+        },
+        {
+          "lexical_unit_id": "lu_015",
+          "rendering_kind": "ordinary",
+          "target_gloss": "balığın suda yükselmesini sağlayan şişkin kese"
+        },
+        {
+          "lexical_unit_id": "lu_016",
+          "rendering_kind": "ordinary",
+          "target_gloss": "su yüzüne çıkan hava kabarcığı"
+        },
+        {
+          "lexical_unit_id": "lu_017",
+          "rendering_kind": "ordinary",
+          "target_gloss": "içi yalnızca hava dolu, boş bir bitki meyvesi"
+        },
+        {
+          "lexical_unit_id": "lu_019",
+          "rendering_kind": "ordinary",
+          "target_gloss": "hayvanın bileklerini şişiren ve yürüyünce dağılan gazlı hastalık"
+        },
+        {
+          "lexical_unit_id": "lu_025",
+          "rendering_kind": "ordinary",
+          "target_gloss": "karnımda şişkinlik hissediyorum"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001529/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Şişme, belirli bir üfleme eylemi olmadan hastalık, beslenme veya gelişme nedeniyle de ortaya çıkabilir.",
+          "neighbor_only": "Havanın bir hedefe gönderilmesi, hedef şişmese bile komşu dalın çekirdeğini gerçekleştirir.",
+          "gloss": "bir şeye hava üfleme",
+          "shared_zone": "Hava verme bir nesneyi şişirdiğinde iki dal aynı neden-sonuç zincirinde buluşur.",
+          "distinction": "Bu dal ortaya çıkan hacim artışını veya şişkin durumu merkez alır; komşu dal ise bu sonucu doğurabilen ama sonuçtan bağımsız olan hava verme eylemini anlatır."
+        },
+        {
+          "neighbor_ref": "root_001470/B006",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "İçi hava dolu boş nesneler, gençlik dolgunluğu ve hayvanlarda belirli şişiren hastalıklar bu dalın ek kapsamındadır.",
+          "neighbor_only": "Bir yemekten sonra dolma ve çıbanın şişmesi komşu dalda özel olarak öne çıkar.",
+          "gloss": "şişkinlik ve doluluk",
+          "shared_zone": "Her iki dal bedende şişme, dolgunlaşma ve şişman görünme durumlarını kapsar.",
+          "distinction": "Çekirdekler büyük ölçüde örtüşse de bu dal nesnelere ve hava dolu boş yapılara uzanır; komşu dalın kapsamı çıban, yemek sonrası doluluk ve bedensel şişmanlaşma çevresinde daha dardır."
+        },
+        {
+          "neighbor_ref": "root_000128/B005",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Şişme çekirdeği karın dışındaki beden bölümlerine, hayvan hastalıklarına ve nesnelere de uzanır.",
+          "neighbor_only": "Karının boşluğu, çok yeme, yakınma ve genel karın durumu şişme bulunmadan da komşu dalda yer alır.",
+          "gloss": "karın doluluğu ya da rahatsızlığı",
+          "shared_zone": "Karın yemek veya rahatsızlık nedeniyle şişip dolduğunda iki dal örtüşür.",
+          "distinction": "Bu dal hacim artışını zorunlu çekirdek sayar; komşu dal ise karının dolu, boş, ağrılı veya rahatsız oluşu gibi daha geniş ve karşıt durumları kapsar."
+        },
+        {
+          "neighbor_ref": "root_001185/B005",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Genel nesne ve beden şişmesi, gevşek şişmanlık ve içi hava dolu yapılar bu dala özgüdür.",
+          "neighbor_only": "Ateşli hastalıkta bedenin kaynaması ve damar ya da sinirin belirginleşmesi komşu dala özgüdür.",
+          "gloss": "damar kabarması ve ateşlenme",
+          "shared_zone": "Bedendeki bir bölüm dışa doğru kabarıp belirginleştiğinde iki dal arasında görünüş benzerliği oluşur.",
+          "distinction": "Bu dal genel şişme ve hacim artışını anlatır; komşu dal ise özellikle damar veya sinirin kabarmasını ve ateşli beden hareketini bir araya getirir."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; neden-sonuç sınırını, bedensel doluluk kapsamını ve özel hastalık ayrımlarını en açık gösteren dört komşu seçildi.",
+      "branch_image_ar": "انتفاخ الشيء وامتلاؤه بالريح",
+      "what_is_ar": "يدخل فيه انتفاخ الشيء أو الجسد: البطن، والورم، والسمن الرخو، وامتلاء الشباب، وداء الدابة أو الفرس، والأشياء المنتفخة أو الخاوية بالريح كالنفاخة",
+      "what_is_not_ar": "لا يدخل فيه فعل النفخ نفسه، ولا علو النهار والأرض، ولا الفخر والكبر إلا حيث صرحت به عبارة مستقلة",
+      "source_phrase_ar": "أصل صحيح يدل على انتفاخ وعلو؛ انتفخ الشيء؛ المنفوخ الرجل السمين (maqayis)؛ النفاخ نفخة الورم؛ النفخة انتفاخ البطن؛ ملأتهما نفخة الشباب؛ رجل منفوخ؛ فرس أنفخ؛ النفاخة هنة منتفخة في بطن السمكة؛ النفاخة ثمرة العشر ليس لها حشو إلا الريح (ayn)؛ بالدابة نفخ وهي ريح تنتفخ منها أرساغه (jamhara)؛ أجد نفخة إذا انتفخ بطنه؛ رجل أنفخ (sihah)؛ انتفخ بطنه؛ رجل منفوخ أي سمين (mufradat)",
+      "sources": [
+        "MQ",
+        "AY",
+        "JA",
+        "SI",
+        "MU"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_001529/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi günün yükselmesi, ilkbaharda bitkilerin çıkmasıyla toprağın kabarması ve yüksek arazi olmak üzere üç açık kullanımı birlikte verir. Bunlar yukarı çıkma veya yüzeyde belirginleşme ortaklığı taşır, ancak dalın kapsamı bu tanıklanmış biçimlerle sınırlıdır.",
+        "boundary_note": "Yükselme ortak görüntüdür; gün, ilkbahar ve arazi kullanımları birbirine indirgenmeden ayrı biçimler olarak korunur."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "İki söz öbeğine bağlı zaman ve mevsim kullanımı ile yüksek arazi bildiren biçim ayrılır; bunlardan genel bir yalın yükselme anlamı türetilmez."
+      },
+      "concept_map": {
+        "definition": "Tanıklanmış belirli biçimlerde bir şeyin yükselmesi ya da yüzeyde kabarıp belirginleşmesidir. Bu görünüm günün yükselmesine, ilkbaharda bitkilenmeyle toprağın kabarmasına ve yüksekçe araziye ayrı ayrı uygulanır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Ortak görüntü, yukarı çıkma veya yüzeyden kabarıp belirginleşmedir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "extension",
+            "statement": "Günün yükselmesi, zamanın ilerleyişini yukarı çıkma görüntüsüyle anlatan söz öbeğine bağlı bir kullanımdır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "extension",
+            "statement": "İlkbaharda bitkilerin çıkmasıyla toprağın kabarıp gelişmesi, mevsime bağlı bir kullanımdır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "specialization",
+            "statement": "Çevresine göre yükselmiş arazi ya da yüksekçe yer, kalıplaşmış bir yer biçimi adıdır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar günün yükselmesi, ilkbaharda toprağın bitkilenerek kabarması ve çevresine göre yüksek arazi kullanımlarında birleşir. Bu kullanımların ortak noktası yükselip belirginleşme görüntüsüdür; veriler sınırsız bir genel yükselme anlamı kurmaz.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "yükselip belirginleşme",
+        "applicability": "Gün, bitkilenmiş toprak ve yüksek arazi biçimlerinde ortak olan yukarı çıkma veya kabarma görüntüsünü temsil eder.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Yukarı çıkma, yüzeyden kabarma ve belirginleşme ortak çekirdeğini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003",
+          "F004"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "günün yükselmesi",
+          "usage_role": "contextual",
+          "applicability": "Günün ilerleyip gökte yükseldiğinin anlatıldığı söz öbeğine bağlı kullanım içindir.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Zamanın ilerleyişini yükselme görüntüsüyle veren özel kullanımı korur.",
+            "loses": "İlkbaharda toprağın kabarmasını ve yüksek arazi anlamını dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "ilkbaharda toprağın yeşerip kabarması",
+          "usage_role": "explanatory",
+          "applicability": "İlkbaharda bitkilerin çıkmasıyla yer yüzeyinin gelişip kabardığı mevsimsel bağlamı açıklar.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Bitkilenme, toprak gelişmesi ve kabarma arasındaki mevsimsel bağı korur.",
+            "loses": "Günün yükselmesi ile kalıcı yüksek arazi kullanımını kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        },
+        {
+          "text": "yüksekçe arazi",
+          "usage_role": "contextual",
+          "applicability": "Çevresindeki yere göre yükselmiş toprak parçasını adlandıran biçim için kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Arazi yüzeyinin çevresine göre yüksek ve belirgin olmasını korur.",
+            "loses": "Günün yükselmesi ve ilkbaharda toprağın bitkilenerek kabarması kullanımlarını dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F004"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_004",
+          "rendering_kind": "ordinary",
+          "target_gloss": "günün yükselip ilerlemesi"
+        },
+        {
+          "lexical_unit_id": "lu_005",
+          "rendering_kind": "ordinary",
+          "target_gloss": "ilkbaharda toprağın yeşerip kabarması"
+        },
+        {
+          "lexical_unit_id": "lu_007",
+          "rendering_kind": "ordinary",
+          "target_gloss": "yüksekçe arazi; yükselmiş yer"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000781/B002",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Günün yükselmesi ve ilkbaharda toprağın bitkilenerek kabarması bu dalın söz öbeklerine bağlı özel kapsamıdır.",
+          "neighbor_only": "Beden, yara, söz, ses ve başka nesnelerde yukarı çıkma ya da çıkıntı yapma komşu dalın daha geniş kapsamındadır.",
+          "gloss": "yükselme ve çıkıntı yapma",
+          "shared_zone": "Her iki dalda da bir şey çevresine göre yukarı çıkar veya belirginleşir.",
+          "distinction": "Bu dal üç tanıklanmış zaman, mevsim ve arazi biçimiyle sınırlıdır; komşu dal yükselme ve çıkıntı yapmayı çok daha geniş bir nesne ve olay kümesine uygular."
+        },
+        {
+          "neighbor_ref": "root_000141/B003",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Toprağın kabarması ve bu kullanımın ilkbaharla bağı, ayrıca gün ve yüksek arazi anlamları bu dala özgüdür.",
+          "neighbor_only": "Bir yerin genel olarak ot ve yeşillik çıkarması, kabarma veya ilkbahar koşulu olmadan da komşu dalda bulunur.",
+          "gloss": "toprağın yeşermesi",
+          "shared_zone": "Toprağın bitki çıkarması ve yeşillenmesi iki dalın örtüştüğü alandır.",
+          "distinction": "Bu dal ilkbahar bitkilenmesini toprağın kabarıp gelişmesi görüntüsüyle anlatır; komşu dal yalnızca yerin otlanmasını ya da yeşillik çıkarmasını merkez alır."
+        },
+        {
+          "neighbor_ref": "root_000298/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Günün yükselmesi ve ilkbahar bitkilenmesi, arazi anlamıyla birlikte bu dalda yer alır.",
+          "neighbor_only": "Kum, tepe ve tümsek gibi genel arazi çıkıntılarının geniş sınıfı komşu dala özgüdür.",
+          "gloss": "yerden yükselen tümsek",
+          "shared_zone": "Çevresindeki yerden yükselen arazi parçası iki dalda da bulunabilir.",
+          "distinction": "Bu dalda yüksek arazi, zaman ve mevsim uzantılarıyla aynı tanıklanmış kümede yer alır; komşu dal genel olarak yer yüzündeki tümsek ve yükseltileri kodlar."
+        },
+        {
+          "neighbor_ref": "root_001326/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "İlkbaharda toprağın bitkilerle kabarıp yükselmesi bu dala özgü görüntüdür.",
+          "neighbor_only": "Bitkinin boyca olgunlaşması, çiçeklenmesi ve kurumaya yaklaşması komşu dalın gelişim evreleridir.",
+          "gloss": "bitkinin olgunlaşıp çiçeklenmesi",
+          "shared_zone": "Bitki gelişimi yer yüzünü doldurup belirginleştirdiğinde iki dal aynı mevsimsel alana yaklaşır.",
+          "distinction": "Bu dal toprağın bitkilenme sonucunda kabarmasını anlatır; komşu dal ise bitkinin kendi olgunlaşma ve çiçeklenme sürecini merkez alır."
+        }
+      ],
+      "neighbor_coverage_note": "Adayların tamamı karşılaştırıldı; genel yükselme, toprağın yeşermesi, arazi çıkıntısı ve bitki gelişimiyle sınırı gösteren dört ilişki seçildi.",
+      "branch_image_ar": "علو الشيء وربو الأرض",
+      "what_is_ar": "يدخل فيه انتفخ النهار بمعنى علا أو ارتفع، ونفخة الربيع حين تعشب الأرض وتربو، والنفخاء من الأرض المرتفعة",
+      "what_is_not_ar": "لا يدخل فيه نفخ الريح في الشيء، ولا أمراض الانتفاخ الجسدي، ولا كنايات الخلو أو الفخر",
+      "source_phrase_ar": "انتفخ النهار علا؛ نفخة الربيع إعشابه لأن الأرض تربو وتنتفخ؛ النفخاء من الأرض (maqayis)؛ النفخاء من الأرض ما ارتفع (ayn)؛ انتفخ النهار أي علا؛ النفخاء من الأرض (sihah)؛ استعير انتفخ النهار إذا ارتفع؛ نفخة الربيع حين أعشب (mufradat)",
+      "sources": [
+        "MQ",
+        "AY",
+        "SI",
+        "MU"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_001529/B004",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi belirli bir söz öbeğini açıkça bağırsak gazını dışarı çıkarma anlamıyla tanımlar. Bu anlam fiziksel üfleme eylemine ya da karın şişkinliğine genellenemez.",
+        "boundary_note": "Dal yalnızca tanıklanmış söz öbeğindeki gaz çıkarma anlamıdır; yalın üfleme veya şişme anlamı değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım yalnızca verilen söz öbeğine bağlı tutulur ve kökün bağımsız eylem anlamı olarak sunulmaz."
+      },
+      "concept_map": {
+        "definition": "Belirli bir söz öbeğinde bağırsak gazını bedenden dışarı çıkarma eylemini anlatır. Anlam, söz öbeğinin dışına taşırılarak genel bir üfleme ya da şişme anlamına dönüştürülemez.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Kalıplaşmış söz öbeği, bağırsak gazını bedenden dışarı çıkarma eylemini bildirir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Dalın anlamı tek bir kalıba bağlıdır ve genel üfleme eyleminden ayrı tutulur.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek tanıklıkta bu söz öbeği, bağırsak gazını dışarı çıkarma eylemini bildirir."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "gaz çıkarmak",
+        "applicability": "Yalnızca tanıklanmış söz öbeğinin bağırsak gazını dışarı çıkarma anlamını karşılar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Bedensel gazın dışarı çıkarılması olayını ve eylem niteliğini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "yellenmek",
+          "usage_role": "contextual",
+          "applicability": "Bağırsak gazını dışarı çıkarma eyleminin tek sözcüklü ve doğal anlatımı olarak kullanılabilir.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Bağırsak gazını bedenden dışarı çıkarma eylemini eksiksiz korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_022",
+          "rendering_kind": "ordinary",
+          "target_gloss": "gaz çıkarmak; yellenmek"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001170/B004",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Anlam, bu dala özgü belirli söz öbeği içinde tanıklanmıştır.",
+          "neighbor_only": "Komşu dal aynı olayı başka bir sözcük ailesi ve hayvan örneğiyle de ifade eder.",
+          "gloss": "yellenme eylemi",
+          "shared_zone": "Her iki dalın olay çekirdeği bağırsak gazını dışarı çıkarmaktır.",
+          "distinction": "Olay anlamı örtüşür; ancak bu dal yalnızca belirli bir söz öbeğine bağlıyken komşu dal kendi biçimleriyle eylemi ve hayvan örneğini daha geniş biçimde tanıklar."
+        },
+        {
+          "neighbor_ref": "root_001019/B015",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal gazı dışarı çıkarma eylemini bildirir.",
+          "neighbor_only": "Komşu dal bağırsak gazını bir ad olarak bildirir, çıkarma eylemini zorunlu kılmaz.",
+          "gloss": "bağırsak gazı",
+          "shared_zone": "İki dal aynı bedensel gaz ve onun dışarı çıkışıyla ilgilidir.",
+          "distinction": "Bu dal bir olay ve eylem bildirir; komşu dal ise olayda yer alan gazı adlandırır."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar incelendi; olayın eşdeğer anlatımı ile gazın kendisini adlandıran dal, sınırı açıklayan iki yararlı karşılaştırmadır.",
+      "branch_image_ar": "نفخ بها بمعنى حبق",
+      "what_is_ar": "يدخل فيه التعبير نفخ بها بمعنى حبق",
+      "what_is_not_ar": "لا يدخل فيه نفخ الفم في شيء، ولا نفخ النار، ولا انتفاخ البطن نفسه",
+      "source_phrase_ar": "نفخ بها: حبق",
+      "sources": [
+        "SI"
+      ],
+      "source_note": {
+        "SI": "Tek tanıklıkta bu söz öbeği, bağırsak gazını dışarı çıkarma eylemini bildirir."
+      }
+    },
+    {
+      "branch_ref": "root_001529/B005",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi olumsuz bir ev kalıbının içeride hiç kimse bulunmadığını bildirdiğini açıkça belirtir. Ateş ya da üfleme görüntüsü kalıbın iç yapısında kalsa da dalın sözlüksel anlamı yalnızca yokluk bildirimidir.",
+        "boundary_note": "Dal, belirli olumsuz kalıpta bir yerde hiç kimse bulunmamasını bildirir; gerçek üfleme eylemini anlatmaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "non_bare",
+        "note": "Anlam yalnızca tanıklanmış olumsuz yokluk kalıbına bağlanır ve yalın kök anlamına genişletilmez."
+      },
+      "concept_map": {
+        "definition": "Belirli bir olumsuz kalıpla bir evde ya da yerde hiçbir kişinin bulunmadığını bildirmektir. Kalıbın içindeki ateş üfleme görüntüsü gerçek bir olay değil, insan yokluğunu pekiştiren anlatım aracıdır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Olumsuz kalıp, belirtilen yerde hiçbir kişinin bulunmadığını bildirir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "associated_use",
+            "statement": "Ateşi üfleyecek en sıradan kişinin bile yokluğu, tam insan yokluğunu pekiştiren bir anlatım görüntüsüdür.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Dal, yalnızca belirli bir olumsuz kalıpta insan yokluğunu bildiren kalıplaşmış bir kullanımdır.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek tanıklıkta olumsuz ev kalıbı, içeride hiçbir kişinin bulunmadığını bildirir."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "evde hiç kimse olmaması",
+        "applicability": "Tanıklanmış olumsuz kalıbın bir yerde hiçbir insan bulunmadığını bildiren bütün anlamını karşılar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Belirtilen yerde tek bir insanın bile bulunmaması yönündeki kesin yokluk anlamını korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "evde kimsecikler yok",
+          "usage_role": "contextual",
+          "applicability": "İnsan yokluğunu vurgulu ve doğal bir olumsuz cümleyle aktarmak gereken bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Evde tek bir kişinin bile bulunmadığı yönündeki vurgulu yokluk anlamını korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_023",
+          "rendering_kind": "ordinary",
+          "target_gloss": "evde hiç kimse yok"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000996/B003",
+          "relation_type": "synonym",
+          "boundary_match": "exact",
+          "focus_only": null,
+          "neighbor_only": null,
+          "gloss": "evde hiç kimse yok",
+          "shared_zone": "Her iki dal da olumsuz bir ev kalıbıyla içeride tek bir insan bile bulunmadığını bildirir.",
+          "distinction": "Anlam çekirdeği ve yer sınırı aynıdır; yalnızca yokluğu bildiren kalıplaşmış sözcük seçimi değişir."
+        },
+        {
+          "neighbor_ref": "root_000187/B005",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bu dal yalnızca bir evde veya yerde insan bulunmamasını bildirir.",
+          "neighbor_only": "Komşu dal insan yokluğunun yanı sıra hiçbir şey bırakmama ve kuyuda su bulunmaması gibi nesne ve madde yokluklarına da uzanır.",
+          "gloss": "hiç kimse ya da hiçbir şey olmaması",
+          "shared_zone": "Olumsuz ev kalıbında hiçbir insan bulunmadığını bildirme iki dalda ortaktır.",
+          "distinction": "Bu dalın kapsamı insan yokluğuyla sınırlıdır; komşu dal aynı yokluk anlatımını insan dışındaki şeylere ve suya da genişletir."
+        },
+        {
+          "neighbor_ref": "root_001617/B004",
+          "relation_type": "synonym",
+          "boundary_match": "exact",
+          "focus_only": null,
+          "neighbor_only": null,
+          "gloss": "evde kimsenin bulunmaması",
+          "shared_zone": "İki dal da belirli bir yerde hiçbir kişinin bulunmadığını olumsuz kalıpla bildirir.",
+          "distinction": "Anlamsal sınır aynıdır; fark yalnızca eşdeğer yokluk kalıplarında kullanılan sözcüklerdedir."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün aday kalıplar karşılaştırıldı; iki tam eşdeğer ve insan dışı yokluğa da uzanan bir yakın eşdeğer yayımlandı.",
+      "branch_image_ar": "ما بالدار نافخ ضرمة",
+      "what_is_ar": "يدخل فيه قولهم ما بالدار نافخ ضرمة أي ما بها أحد",
+      "what_is_not_ar": "لا يدخل فيه المعنى الحسي للنفخ إلا من جهة صورة الكناية",
+      "source_phrase_ar": "ما بالدار نافخ ضرمة أي ما بها أحد",
+      "sources": [
+        "SI"
+      ],
+      "source_note": {
+        "SI": "Tek tanıklıkta olumsuz ev kalıbı, içeride hiçbir kişinin bulunmadığını bildirir."
+      }
+    },
+    {
+      "branch_ref": "root_001529/B006",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi belirli bir kişi nitelemesini övünme ve kibir sahibi olmakla açıklar. Bedensel şişkinlik yalnızca bu tutumu çağrıştıran bir görüntü olabilir; dalın sözlüksel çekirdeği kişinin kendini üstün görüp böbürlenmesidir.",
+        "boundary_note": "Dal, belirli kişi nitelemesindeki kibir ve övünme anlamıdır; gerçek şişmanlık veya beden şişmesi değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Kibir anlamı yalnızca tanıklanmış kişi nitelemesine bağlı tutulur ve kökün bağımsız ya da bedensel anlamına yayılmaz."
+      },
+      "concept_map": {
+        "definition": "Belirli bir kişi nitelemesinde, kişinin kendini üstün görerek övünmesi ve kibirli davranmasıdır. Bedensel kabarma görüntüsü bu tutumu çağrıştırsa da gerçek bir şişme dalın anlamına dahil değildir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Kişi kendini üstün görür, büyüklük taslar ve bununla övünür.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "associated_use",
+            "statement": "Kabarma görüntüsü, kişinin böbürlenen ve kibirli tutumunu mecazlı olarak destekler.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Dal, belirli bir kişi nitelemesinde övünme ve kibir sahibi olmayı bildiren kalıplaşmış bir kullanımdır.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek tanıklıkta bu kişi nitelemesi, övünme ve kibir sahibi olmayı bildirir."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "kibirli ve böbürlenen kişi",
+        "applicability": "Tanıklanmış söz öbeğinde kişinin hem büyüklük taslamasını hem de bununla övünmesini karşılar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Kişinin kendini üstün görmesini, kibirlenmesini ve övünmesini birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "büyüklük taslayan biri",
+          "usage_role": "contextual",
+          "applicability": "Kişinin kendini başkalarından üstün görüp bunu davranışlarıyla belli ettiği bağlamlarda doğaldır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Kendini üstün görme ve kibirli davranma yönünü açıkça korur.",
+            "loses": "Kişinin sahip olduklarıyla övünmesi yönünü tek başına zorunlu olarak belirtmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "kibirlenip böbürlenmek",
+          "usage_role": "explanatory",
+          "applicability": "Nitelemenin bildirdiği tutumu kişi adından çok eylem olarak açıklamak gereken bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Kibirli olma ile bununla övünme ve böbürlenme yönlerini birlikte korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_024",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kibirli ve böbürlenen kişi"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000191/B004",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Övünme ve kibir, bu dala özgü belirli bir kişi nitelemesi içinde birlikte kodlanır.",
+          "neighbor_only": "Komşu dal kibirlenmeyi ve kendini beğenmişçe salınmayı genel eylem ve durum olarak daha geniş biçimde anlatır.",
+          "gloss": "kibirlenme ve kendini beğenme",
+          "shared_zone": "Kendini üstün görme, kibirlenme ve böbürlenme iki dalın ortak alanıdır.",
+          "distinction": "Bu dal belirli bir niteleme kalıbıyla kibir ve övünme sahibi kişiyi anlatır; komşu dal aynı tutumu daha genel bir eylem ve durum alanında kodlar."
+        },
+        {
+          "neighbor_ref": "root_000817/B002",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Bu dalda kabarma görüntüsüne dayalı kişi nitelemesi ve övünme yönü öne çıkar.",
+          "neighbor_only": "Komşu dal kibri burnu ya da başı yukarı kaldırma davranışıyla somutlaştırır ve gururla yükselmeyi de içerir.",
+          "gloss": "burnunu kaldırarak kibirlenme",
+          "shared_zone": "İki dal da kişinin kendini üstün görmesini ve kibirli davranmasını bildirir.",
+          "distinction": "Tutum çekirdeği yakındır; bu dal kabarma çağrışımlı kalıplaşmış bir niteleme kullanırken komşu dal kibri beden duruşu ve başı yukarı kaldırma görüntüsüyle anlatır."
+        },
+        {
+          "neighbor_ref": "root_000841/B006",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Kibirle birlikte övünme yönü ve belirli kişi nitelemesi bu dalın sınırındadır.",
+          "neighbor_only": "Komşu dal kibri tam ve yoğun bir büyüklük duygusu olarak adlandırır, övünmeyi zorunlu kılmaz.",
+          "gloss": "tam bir kibir",
+          "shared_zone": "Her iki dal kendini büyük görme ve kibirli kişi niteliğinde örtüşür.",
+          "distinction": "Bu dal kibri övünmeyle birlikte belirli bir söz öbeğinde verir; komşu dal ise kibirin derecesini ve eksiksizliğini öne çıkarır."
+        }
+      ],
+      "neighbor_coverage_note": "Adayların tamamı değerlendirildi; genel kibirlenme, beden duruşuyla kibir ve yoğun kibir arasındaki üç sınır en yararlı karşılaştırmaları verdi.",
+      "branch_image_ar": "انتفاخ الفخر والكبر",
+      "what_is_ar": "يدخل فيه رجل ذو نفخ أو ذو نفج بمعنى صاحب فخر وكبر",
+      "what_is_not_ar": "لا يدخل فيه السمن الرخو أو انتفاخ البطن إلا كصورة مجازية غير مقصودة هنا",
+      "source_phrase_ar": "رجل ذو نفخ وذو نفج بالجيم أي صاحب فخر وكبر",
+      "sources": [
+        "SI"
+      ],
+      "source_note": {
+        "SI": "Tek tanıklıkta bu kişi nitelemesi, övünme ve kibir sahibi olmayı bildirir."
+      }
+    }
+  ],
+  "root_profile": {
+    "summary": "Kökün ana örgüsü, havayı bir hedefe gönderme eylemi ile bunun şişme, kabarma ve yükselip belirginleşme sonuçları çevresinde gelişir. Bunun yanında gaz çıkarma, bir yerde hiç kimse bulunmaması ve kibirli övünme anlamlarını taşıyan, yalnızca belirli kalıplarda yaşayan ayrı sözlükselleşmiş dallar vardır.",
+    "polysemy": "polysemic",
+    "organization": "mixed"
+  },
+  "occurrence_evidence": {
+    "summary": {
+      "morpheme_count": 20,
+      "word_count": 20,
+      "ayah_count": 18,
+      "surah_count": 17
+    },
+    "forms": [
+      {
+        "form_id": "F001",
+        "lemma_ar": "نَفَخَ",
+        "stem_ar": "أَنفُخُ",
+        "pos": "V",
+        "measure": "",
+        "morph_features": "STEM|POS:V|IMPF|LEM:nafaxa|ROOT:nfx|1S",
+        "occurrence_count": 1
+      },
+      {
+        "form_id": "F002",
+        "lemma_ar": "نَفَخَ",
+        "stem_ar": "تَنفُخُ",
+        "pos": "V",
+        "measure": "",
+        "morph_features": "STEM|POS:V|IMPF|LEM:nafaxa|ROOT:nfx|2MS",
+        "occurrence_count": 1
+      },
+      {
+        "form_id": "F003",
+        "lemma_ar": "نَفَخَ",
+        "stem_ar": "يُنفَخُ",
+        "pos": "V",
+        "measure": "",
+        "morph_features": "STEM|POS:V|IMPF|PASS|LEM:nafaxa|ROOT:nfx|3MS",
+        "occurrence_count": 4
+      },
+      {
+        "form_id": "F004",
+        "lemma_ar": "نَفَخَ",
+        "stem_ar": "نَفَخْ",
+        "pos": "V",
+        "measure": "",
+        "morph_features": "STEM|POS:V|PERF|LEM:nafaxa|ROOT:nfx|1S",
+        "occurrence_count": 2
+      },
+      {
+        "form_id": "F005",
+        "lemma_ar": "نَفَخَ",
+        "stem_ar": "ٱنفُخُ",
+        "pos": "V",
+        "measure": "",
+        "morph_features": "STEM|POS:V|IMPV|LEM:nafaxa|ROOT:nfx|2MP",
+        "occurrence_count": 1
+      },
+      {
+        "form_id": "F006",
+        "lemma_ar": "نَفَخَ",
+        "stem_ar": "نُفِخَ",
+        "pos": "V",
+        "measure": "",
+        "morph_features": "STEM|POS:V|PERF|PASS|LEM:nafaxa|ROOT:nfx|3MS",
+        "occurrence_count": 7
+      },
+      {
+        "form_id": "F007",
+        "lemma_ar": "نَفَخَ",
+        "stem_ar": "نَفَخْ",
+        "pos": "V",
+        "measure": "",
+        "morph_features": "STEM|POS:V|PERF|LEM:nafaxa|ROOT:nfx|1P",
+        "occurrence_count": 2
+      },
+      {
+        "form_id": "F008",
+        "lemma_ar": "نَفَخَ",
+        "stem_ar": "نَفَخَ",
+        "pos": "V",
+        "measure": "",
+        "morph_features": "STEM|POS:V|PERF|LEM:nafaxa|ROOT:nfx|3MS",
+        "occurrence_count": 1
+      },
+      {
+        "form_id": "F009",
+        "lemma_ar": "نَفْخَة",
+        "stem_ar": "نَفْخَةٌ",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:nafoxap|ROOT:nfx|F|INDEF|NOM",
+        "occurrence_count": 1
+      }
+    ],
+    "ayahs": [
+      {
+        "ayah_ref": "3:49",
+        "surface_ar": "وَرَسُولًا إِلَىٰ بَنِىٓ إِسْرَٰٓءِيلَ أَنِّى قَدْ جِئْتُكُم بِـَٔايَةٍ مِّن رَّبِّكُمْ أَنِّىٓ أَخْلُقُ لَكُم مِّنَ ٱلطِّينِ كَهَيْـَٔةِ ٱلطَّيْرِ فَأَنفُخُ فِيهِ فَيَكُونُ طَيْرًۢا بِإِذْنِ ٱللَّهِ وَأُبْرِئُ ٱلْأَكْمَهَ وَٱلْأَبْرَصَ وَأُحْىِ ٱلْمَوْتَىٰ بِإِذْنِ ٱللَّهِ وَأُنَبِّئُكُم بِمَا تَأْكُلُونَ وَمَا تَدَّخِرُونَ فِى بُيُوتِكُمْ إِنَّ فِى ذَٰلِكَ لَءَايَةً لَّكُمْ إِن كُنتُم مُّؤْمِنِينَ"
+      },
+      {
+        "ayah_ref": "5:110",
+        "surface_ar": "إِذْ قَالَ ٱللَّهُ يَٰعِيسَى ٱبْنَ مَرْيَمَ ٱذْكُرْ نِعْمَتِى عَلَيْكَ وَعَلَىٰ وَٰلِدَتِكَ إِذْ أَيَّدتُّكَ بِرُوحِ ٱلْقُدُسِ تُكَلِّمُ ٱلنَّاسَ فِى ٱلْمَهْدِ وَكَهْلًا وَإِذْ عَلَّمْتُكَ ٱلْكِتَٰبَ وَٱلْحِكْمَةَ وَٱلتَّوْرَىٰةَ وَٱلْإِنجِيلَ وَإِذْ تَخْلُقُ مِنَ ٱلطِّينِ كَهَيْـَٔةِ ٱلطَّيْرِ بِإِذْنِى فَتَنفُخُ فِيهَا فَتَكُونُ طَيْرًۢا بِإِذْنِى وَتُبْرِئُ ٱلْأَكْمَهَ وَٱلْأَبْرَصَ بِإِذْنِى وَإِذْ تُخْرِجُ ٱلْمَوْتَىٰ بِإِذْنِى وَإِذْ كَفَفْتُ بَنِىٓ إِسْرَٰٓءِيلَ عَنكَ إِذْ جِئْتَهُم بِٱلْبَيِّنَٰتِ فَقَالَ ٱلَّذِينَ كَفَرُوا۟ مِنْهُمْ إِنْ هَٰذَآ إِلَّا سِحْرٌ مُّبِينٌ"
+      },
+      {
+        "ayah_ref": "6:73",
+        "surface_ar": "وَهُوَ ٱلَّذِى خَلَقَ ٱلسَّمَٰوَٰتِ وَٱلْأَرْضَ بِٱلْحَقِّ وَيَوْمَ يَقُولُ كُن فَيَكُونُ قَوْلُهُ ٱلْحَقُّ وَلَهُ ٱلْمُلْكُ يَوْمَ يُنفَخُ فِى ٱلصُّورِ عَٰلِمُ ٱلْغَيْبِ وَٱلشَّهَٰدَةِ وَهُوَ ٱلْحَكِيمُ ٱلْخَبِيرُ"
+      },
+      {
+        "ayah_ref": "15:29",
+        "surface_ar": "فَإِذَا سَوَّيْتُهُۥ وَنَفَخْتُ فِيهِ مِن رُّوحِى فَقَعُوا۟ لَهُۥ سَٰجِدِينَ"
+      },
+      {
+        "ayah_ref": "18:96",
+        "surface_ar": "ءَاتُونِى زُبَرَ ٱلْحَدِيدِ حَتَّىٰٓ إِذَا سَاوَىٰ بَيْنَ ٱلصَّدَفَيْنِ قَالَ ٱنفُخُوا۟ حَتَّىٰٓ إِذَا جَعَلَهُۥ نَارًا قَالَ ءَاتُونِىٓ أُفْرِغْ عَلَيْهِ قِطْرًا"
+      },
+      {
+        "ayah_ref": "18:99",
+        "surface_ar": "وَتَرَكْنَا بَعْضَهُمْ يَوْمَئِذٍ يَمُوجُ فِى بَعْضٍ وَنُفِخَ فِى ٱلصُّورِ فَجَمَعْنَٰهُمْ جَمْعًا"
+      },
+      {
+        "ayah_ref": "20:102",
+        "surface_ar": "يَوْمَ يُنفَخُ فِى ٱلصُّورِ وَنَحْشُرُ ٱلْمُجْرِمِينَ يَوْمَئِذٍ زُرْقًا"
+      },
+      {
+        "ayah_ref": "21:91",
+        "surface_ar": "وَٱلَّتِىٓ أَحْصَنَتْ فَرْجَهَا فَنَفَخْنَا فِيهَا مِن رُّوحِنَا وَجَعَلْنَٰهَا وَٱبْنَهَآ ءَايَةً لِّلْعَٰلَمِينَ"
+      },
+      {
+        "ayah_ref": "23:101",
+        "surface_ar": "فَإِذَا نُفِخَ فِى ٱلصُّورِ فَلَآ أَنسَابَ بَيْنَهُمْ يَوْمَئِذٍ وَلَا يَتَسَآءَلُونَ"
+      },
+      {
+        "ayah_ref": "27:87",
+        "surface_ar": "وَيَوْمَ يُنفَخُ فِى ٱلصُّورِ فَفَزِعَ مَن فِى ٱلسَّمَٰوَٰتِ وَمَن فِى ٱلْأَرْضِ إِلَّا مَن شَآءَ ٱللَّهُ وَكُلٌّ أَتَوْهُ دَٰخِرِينَ"
+      },
+      {
+        "ayah_ref": "32:9",
+        "surface_ar": "ثُمَّ سَوَّىٰهُ وَنَفَخَ فِيهِ مِن رُّوحِهِۦ وَجَعَلَ لَكُمُ ٱلسَّمْعَ وَٱلْأَبْصَٰرَ وَٱلْأَفْـِٔدَةَ قَلِيلًا مَّا تَشْكُرُونَ"
+      },
+      {
+        "ayah_ref": "36:51",
+        "surface_ar": "وَنُفِخَ فِى ٱلصُّورِ فَإِذَا هُم مِّنَ ٱلْأَجْدَاثِ إِلَىٰ رَبِّهِمْ يَنسِلُونَ"
+      },
+      {
+        "ayah_ref": "38:72",
+        "surface_ar": "فَإِذَا سَوَّيْتُهُۥ وَنَفَخْتُ فِيهِ مِن رُّوحِى فَقَعُوا۟ لَهُۥ سَٰجِدِينَ"
+      },
+      {
+        "ayah_ref": "39:68",
+        "surface_ar": "وَنُفِخَ فِى ٱلصُّورِ فَصَعِقَ مَن فِى ٱلسَّمَٰوَٰتِ وَمَن فِى ٱلْأَرْضِ إِلَّا مَن شَآءَ ٱللَّهُ ثُمَّ نُفِخَ فِيهِ أُخْرَىٰ فَإِذَا هُمْ قِيَامٌ يَنظُرُونَ"
+      },
+      {
+        "ayah_ref": "50:20",
+        "surface_ar": "وَنُفِخَ فِى ٱلصُّورِ ذَٰلِكَ يَوْمُ ٱلْوَعِيدِ"
+      },
+      {
+        "ayah_ref": "66:12",
+        "surface_ar": "وَمَرْيَمَ ٱبْنَتَ عِمْرَٰنَ ٱلَّتِىٓ أَحْصَنَتْ فَرْجَهَا فَنَفَخْنَا فِيهِ مِن رُّوحِنَا وَصَدَّقَتْ بِكَلِمَٰتِ رَبِّهَا وَكُتُبِهِۦ وَكَانَتْ مِنَ ٱلْقَٰنِتِينَ"
+      },
+      {
+        "ayah_ref": "69:13",
+        "surface_ar": "فَإِذَا نُفِخَ فِى ٱلصُّورِ نَفْخَةٌ وَٰحِدَةٌ"
+      },
+      {
+        "ayah_ref": "78:18",
+        "surface_ar": "يَوْمَ يُنفَخُ فِى ٱلصُّورِ فَتَأْتُونَ أَفْوَاجًا"
+      }
+    ],
+    "occurrences": [
+      {
+        "qac_ref": "3:49:18:2",
+        "qac_word_ref": "3:49:18",
+        "surah": 3,
+        "ayah": 49,
+        "word_index": 18,
+        "morpheme_index": 2,
+        "surface_ar": "أَنفُخُ",
+        "stem_ar": "أَنفُخُ",
+        "lemma_ar": "نَفَخَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "IMPF",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:V|IMPF|LEM:nafaxa|ROOT:nfx|1S",
+        "ayah_ref": "3:49",
+        "form_id": "F001",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s003:049:pass1:frame:v3",
+          "attachment_word_unit_id": "q:3:49:22",
+          "qac_char_span": [
+            66,
+            71
+          ],
+          "attachment_char_spans": [
+            [
+              66,
+              71
+            ],
+            [
+              68,
+              71
+            ]
+          ],
+          "source_grammar": "imperfect verb 1st person singular (Form I); marfūʿ; anfukhu = I blow/breathe",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s003:049:pass1:attach:a17",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:3:49:23",
+              "other_surface": "",
+              "other_root": "",
+              "other_form_tag": "",
+              "prep_base": "فِي",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "5:110:34:2",
+        "qac_word_ref": "5:110:34",
+        "surah": 5,
+        "ayah": 110,
+        "word_index": 34,
+        "morpheme_index": 2,
+        "surface_ar": "تَنفُخُ",
+        "stem_ar": "تَنفُخُ",
+        "lemma_ar": "نَفَخَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "IMPF",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:V|IMPF|LEM:nafaxa|ROOT:nfx|2MS",
+        "ayah_ref": "5:110",
+        "form_id": "F002",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s005:110:pass1:frame:v7",
+          "attachment_word_unit_id": "q:5:110:46",
+          "qac_char_span": [
+            149,
+            154
+          ],
+          "attachment_char_spans": [
+            [
+              149,
+              154
+            ],
+            [
+              151,
+              154
+            ]
+          ],
+          "source_grammar": "imperfect verb Form I, 2ms",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s005:110:pass1:attach:a26",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:5:110:47",
+              "other_surface": "",
+              "other_root": "",
+              "other_form_tag": "",
+              "prep_base": "فِي",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "6:73:16:1",
+        "qac_word_ref": "6:73:16",
+        "surah": 6,
+        "ayah": 73,
+        "word_index": 16,
+        "morpheme_index": 1,
+        "surface_ar": "يُنفَخُ",
+        "stem_ar": "يُنفَخُ",
+        "lemma_ar": "نَفَخَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "IMPF",
+        "mood": "",
+        "voice": "PASS",
+        "morph_features": "STEM|POS:V|IMPF|PASS|LEM:nafaxa|ROOT:nfx|3MS",
+        "ayah_ref": "6:73",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s006:073:pass1:frame:v5",
+          "attachment_word_unit_id": "q:6:73:22",
+          "qac_char_span": [
+            63,
+            67
+          ],
+          "attachment_char_spans": [
+            [
+              63,
+              67
+            ],
+            [
+              64,
+              67
+            ]
+          ],
+          "source_grammar": "imperfect verb (fiʿl muḍāriʿ), third-person masculine singular, passive voice (mabnī li-l-majhūl), indicative",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s006:073:pass1:attach:a13",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:6:73:24",
+              "other_surface": "الصُّورِ",
+              "other_root": "ص و ر",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "فِي",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "15:29:3:2",
+        "qac_word_ref": "15:29:3",
+        "surah": 15,
+        "ayah": 29,
+        "word_index": 3,
+        "morpheme_index": 2,
+        "surface_ar": "نَفَخْ",
+        "stem_ar": "نَفَخْ",
+        "lemma_ar": "نَفَخَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "PERF",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:V|PERF|LEM:nafaxa|ROOT:nfx|1S",
+        "ayah_ref": "15:29",
+        "form_id": "F004",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s015:029:pass1:frame:v2",
+          "attachment_word_unit_id": "q:15:29:5",
+          "qac_char_span": [
+            10,
+            15
+          ],
+          "attachment_char_spans": [
+            [
+              10,
+              15
+            ],
+            [
+              11,
+              14
+            ]
+          ],
+          "source_grammar": "perfect verb, Form I (faʿala), 1st person singular; no explicit direct object — the prepositional phrase fīhi supplies the target",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s015:029:pass1:attach:a3",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:15:29:6",
+              "other_surface": "",
+              "other_root": "",
+              "other_form_tag": "",
+              "prep_base": "فِي",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s015:029:pass1:attach:a4",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:15:29:8",
+              "other_surface": "رُوحِي",
+              "other_root": "ر و ح",
+              "other_form_tag": "NOUN_ABSTRACT",
+              "prep_base": "مِن",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "18:96:10:1",
+        "qac_word_ref": "18:96:10",
+        "surah": 18,
+        "ayah": 96,
+        "word_index": 10,
+        "morpheme_index": 1,
+        "surface_ar": "ٱنفُخُ",
+        "stem_ar": "ٱنفُخُ",
+        "lemma_ar": "نَفَخَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "IMPV",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:V|IMPV|LEM:nafaxa|ROOT:nfx|2MP",
+        "ayah_ref": "18:96",
+        "form_id": "F005",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s018:096:pass1:frame:v4",
+          "attachment_word_unit_id": "q:18:96:10",
+          "qac_char_span": [
+            40,
+            46
+          ],
+          "attachment_char_spans": [
+            [
+              40,
+              46
+            ],
+            [
+              41,
+              44
+            ]
+          ],
+          "source_grammar": "imperative verb, 2nd person masculine plural, Form I",
+          "attachments": []
+        }
+      },
+      {
+        "qac_ref": "18:99:7:2",
+        "qac_word_ref": "18:99:7",
+        "surah": 18,
+        "ayah": 99,
+        "word_index": 7,
+        "morpheme_index": 2,
+        "surface_ar": "نُفِخَ",
+        "stem_ar": "نُفِخَ",
+        "lemma_ar": "نَفَخَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "PERF",
+        "mood": "",
+        "voice": "PASS",
+        "morph_features": "STEM|POS:V|PERF|PASS|LEM:nafaxa|ROOT:nfx|3MS",
+        "ayah_ref": "18:99",
+        "form_id": "F006",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s018:099:pass1:frame:v3",
+          "attachment_word_unit_id": "q:18:99:9",
+          "qac_char_span": [
+            25,
+            29
+          ],
+          "attachment_char_spans": [
+            [
+              25,
+              29
+            ],
+            [
+              26,
+              29
+            ]
+          ],
+          "source_grammar": "perfect verb, 3rd person masculine singular, passive voice — divine passive (agent unnamed)",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s018:099:pass1:attach:a5",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:18:99:11",
+              "other_surface": "الصُّورِ",
+              "other_root": "ص و ر",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "فِي",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "20:102:2:1",
+        "qac_word_ref": "20:102:2",
+        "surah": 20,
+        "ayah": 102,
+        "word_index": 2,
+        "morpheme_index": 1,
+        "surface_ar": "يُنفَخُ",
+        "stem_ar": "يُنفَخُ",
+        "lemma_ar": "نَفَخَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "IMPF",
+        "mood": "",
+        "voice": "PASS",
+        "morph_features": "STEM|POS:V|IMPF|PASS|LEM:nafaxa|ROOT:nfx|3MS",
+        "ayah_ref": "20:102",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s020:102:pass1:frame:v1",
+          "attachment_word_unit_id": "q:20:102:2",
+          "qac_char_span": [
+            3,
+            7
+          ],
+          "attachment_char_spans": [
+            [
+              3,
+              7
+            ],
+            [
+              4,
+              7
+            ]
+          ],
+          "source_grammar": "imperfect verb, Form I, passive voice, 3ms, indicative (marfūʿ); tag: IV_PASS; nāʾib al-fāʿil (deputy subject) is implied or is al-ṣūr",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s020:102:pass1:attach:a2",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:20:102:4",
+              "other_surface": "الصُّورِ",
+              "other_root": "ص و ر",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "فِي",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "21:91:4:2",
+        "qac_word_ref": "21:91:4",
+        "surah": 21,
+        "ayah": 91,
+        "word_index": 4,
+        "morpheme_index": 2,
+        "surface_ar": "نَفَخْ",
+        "stem_ar": "نَفَخْ",
+        "lemma_ar": "نَفَخَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "PERF",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:V|PERF|LEM:nafaxa|ROOT:nfx|1P",
+        "ayah_ref": "21:91",
+        "form_id": "F007",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s021:091:pass1:frame:v2",
+          "attachment_word_unit_id": "q:21:91:6",
+          "qac_char_span": [
+            15,
+            21
+          ],
+          "attachment_char_spans": [
+            [
+              15,
+              21
+            ],
+            [
+              16,
+              19
+            ]
+          ],
+          "source_grammar": "perfect verb, Form I, 1st person plural (divine \"We\"); intransitive here (no direct object; fīhā is prepositional)",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s021:091:pass1:attach:a3",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:21:91:7",
+              "other_surface": "",
+              "other_root": "",
+              "other_form_tag": "",
+              "prep_base": "فِي",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s021:091:pass1:attach:a4",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:21:91:9",
+              "other_surface": "رُوحِنَا",
+              "other_root": "ر و ح",
+              "other_form_tag": "NOUN_ABSTRACT",
+              "prep_base": "مِن",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "23:101:2:1",
+        "qac_word_ref": "23:101:2",
+        "surah": 23,
+        "ayah": 101,
+        "word_index": 2,
+        "morpheme_index": 1,
+        "surface_ar": "نُفِخَ",
+        "stem_ar": "نُفِخَ",
+        "lemma_ar": "نَفَخَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "PERF",
+        "mood": "",
+        "voice": "PASS",
+        "morph_features": "STEM|POS:V|PERF|PASS|LEM:nafaxa|ROOT:nfx|3MS",
+        "ayah_ref": "23:101",
+        "form_id": "F006",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s023:101:pass1:frame:v1",
+          "attachment_word_unit_id": "q:23:101:3",
+          "qac_char_span": [
+            4,
+            7
+          ],
+          "attachment_char_spans": [
+            [
+              4,
+              7
+            ]
+          ],
+          "source_grammar": "PV_PASS — perfect passive 3ms, agentless passive construction (nāʾib al-fāʿil = fī ṣ-ṣūri or elided)",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s023:101:pass1:attach:a2",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:23:101:5",
+              "other_surface": "الصُّورِ",
+              "other_root": "ص و ر",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "فِي",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "27:87:2:1",
+        "qac_word_ref": "27:87:2",
+        "surah": 27,
+        "ayah": 87,
+        "word_index": 2,
+        "morpheme_index": 1,
+        "surface_ar": "يُنفَخُ",
+        "stem_ar": "يُنفَخُ",
+        "lemma_ar": "نَفَخَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "IMPF",
+        "mood": "",
+        "voice": "PASS",
+        "morph_features": "STEM|POS:V|IMPF|PASS|LEM:nafaxa|ROOT:nfx|3MS",
+        "ayah_ref": "27:87",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s027:087:pass1:frame:v1",
+          "attachment_word_unit_id": "q:27:87:3",
+          "qac_char_span": [
+            4,
+            8
+          ],
+          "attachment_char_spans": [
+            [
+              4,
+              8
+            ],
+            [
+              5,
+              8
+            ]
+          ],
+          "source_grammar": "imperfect passive indicative, 3ms",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s027:087:pass1:attach:a2",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:27:87:5",
+              "other_surface": "الصُّورِ",
+              "other_root": "ص و ر",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "فِي",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "32:9:3:2",
+        "qac_word_ref": "32:9:3",
+        "surah": 32,
+        "ayah": 9,
+        "word_index": 3,
+        "morpheme_index": 2,
+        "surface_ar": "نَفَخَ",
+        "stem_ar": "نَفَخَ",
+        "lemma_ar": "نَفَخَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "PERF",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:V|PERF|LEM:nafaxa|ROOT:nfx|3MS",
+        "ayah_ref": "32:9",
+        "form_id": "F008",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s032:009:pass1:frame:v2",
+          "attachment_word_unit_id": "q:32:9:4",
+          "qac_char_span": [
+            7,
+            11
+          ],
+          "attachment_char_spans": [
+            [
+              7,
+              11
+            ],
+            [
+              8,
+              11
+            ]
+          ],
+          "source_grammar": "perfect verb (PV); Form I (faʿala); 3rd person masculine singular; intransitive here (with fī = blew into); subject is God",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s032:009:pass1:attach:a2",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:32:9:5",
+              "other_surface": "",
+              "other_root": "",
+              "other_form_tag": "",
+              "prep_base": "فِي",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology;case_government"
+            },
+            {
+              "attachment_id": "ae:v3:s032:009:pass1:attach:a3",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:32:9:7",
+              "other_surface": "رُوحِهِ",
+              "other_root": "ر و ح",
+              "other_form_tag": "NOUN_ABSTRACT",
+              "prep_base": "مِن",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "36:51:1:2",
+        "qac_word_ref": "36:51:1",
+        "surah": 36,
+        "ayah": 51,
+        "word_index": 1,
+        "morpheme_index": 2,
+        "surface_ar": "نُفِخَ",
+        "stem_ar": "نُفِخَ",
+        "lemma_ar": "نَفَخَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "PERF",
+        "mood": "",
+        "voice": "PASS",
+        "morph_features": "STEM|POS:V|PERF|PASS|LEM:nafaxa|ROOT:nfx|3MS",
+        "ayah_ref": "36:51",
+        "form_id": "F006",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s036:051:pass1:frame:v1",
+          "attachment_word_unit_id": "q:36:51:2",
+          "qac_char_span": [
+            0,
+            4
+          ],
+          "attachment_char_spans": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "source_grammar": "perfect verb, passive voice (PV_PASS), 3rd person masculine singular",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s036:051:pass1:attach:a1",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:36:51:4",
+              "other_surface": "الصُّورِ",
+              "other_root": "ص و ر",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "فِي",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "38:72:3:2",
+        "qac_word_ref": "38:72:3",
+        "surah": 38,
+        "ayah": 72,
+        "word_index": 3,
+        "morpheme_index": 2,
+        "surface_ar": "نَفَخْ",
+        "stem_ar": "نَفَخْ",
+        "lemma_ar": "نَفَخَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "PERF",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:V|PERF|LEM:nafaxa|ROOT:nfx|1S",
+        "ayah_ref": "38:72",
+        "form_id": "F004",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s038:072:pass1:frame:v2",
+          "attachment_word_unit_id": "q:38:72:5",
+          "qac_char_span": [
+            10,
+            15
+          ],
+          "attachment_char_spans": [
+            [
+              10,
+              15
+            ],
+            [
+              11,
+              14
+            ]
+          ],
+          "source_grammar": "Form I perfect verb, 1st person singular; object or target supplied by fīhi",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s038:072:pass1:attach:a3",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:38:72:6",
+              "other_surface": "",
+              "other_root": "",
+              "other_form_tag": "",
+              "prep_base": "فِي",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s038:072:pass1:attach:a4",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:38:72:8",
+              "other_surface": "رُوحِي",
+              "other_root": "ر و ح",
+              "other_form_tag": "NOUN_ABSTRACT",
+              "prep_base": "مِن",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "39:68:1:2",
+        "qac_word_ref": "39:68:1",
+        "surah": 39,
+        "ayah": 68,
+        "word_index": 1,
+        "morpheme_index": 2,
+        "surface_ar": "نُفِخَ",
+        "stem_ar": "نُفِخَ",
+        "lemma_ar": "نَفَخَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "PERF",
+        "mood": "",
+        "voice": "PASS",
+        "morph_features": "STEM|POS:V|PERF|PASS|LEM:nafaxa|ROOT:nfx|3MS",
+        "ayah_ref": "39:68",
+        "form_id": "F006",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s039:068:pass1:frame:v1",
+          "attachment_word_unit_id": "q:39:68:2",
+          "qac_char_span": [
+            0,
+            4
+          ],
+          "attachment_char_spans": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "source_grammar": "PV_PASS.3MS passive perfect; agent suppressed; prepositional complement fī ṣ-ṣūri supplies locus or instrument",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s039:068:pass1:attach:a1",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:39:68:4",
+              "other_surface": "الصُّورِ",
+              "other_root": "ص و ر",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "فِي",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "39:68:16:1",
+        "qac_word_ref": "39:68:16",
+        "surah": 39,
+        "ayah": 68,
+        "word_index": 16,
+        "morpheme_index": 1,
+        "surface_ar": "نُفِخَ",
+        "stem_ar": "نُفِخَ",
+        "lemma_ar": "نَفَخَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "PERF",
+        "mood": "",
+        "voice": "PASS",
+        "morph_features": "STEM|POS:V|PERF|PASS|LEM:nafaxa|ROOT:nfx|3MS",
+        "ayah_ref": "39:68",
+        "form_id": "F006",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s039:068:pass1:frame:v4",
+          "attachment_word_unit_id": "q:39:68:19",
+          "qac_char_span": [
+            51,
+            54
+          ],
+          "attachment_char_spans": [
+            [
+              51,
+              54
+            ]
+          ],
+          "source_grammar": "PV_PASS.3MS passive perfect repeated; complement fīhi refers back to ṣūr",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s039:068:pass1:attach:a9",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:39:68:20",
+              "other_surface": "",
+              "other_root": "",
+              "other_form_tag": "",
+              "prep_base": "فِي",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;morphology"
+            },
+            {
+              "attachment_id": "ae:v3:s039:068:pass1:attach:a10",
+              "relation": "subject",
+              "focus_role": "head",
+              "other_unit_id": "q:39:68:21",
+              "other_surface": "أُخْرَى",
+              "other_root": "أ خ ر",
+              "other_form_tag": "ADJ_COMP",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "word_order;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "50:20:1:2",
+        "qac_word_ref": "50:20:1",
+        "surah": 50,
+        "ayah": 20,
+        "word_index": 1,
+        "morpheme_index": 2,
+        "surface_ar": "نُفِخَ",
+        "stem_ar": "نُفِخَ",
+        "lemma_ar": "نَفَخَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "PERF",
+        "mood": "",
+        "voice": "PASS",
+        "morph_features": "STEM|POS:V|PERF|PASS|LEM:nafaxa|ROOT:nfx|3MS",
+        "ayah_ref": "50:20",
+        "form_id": "F006",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s050:020:pass1:frame:v1",
+          "attachment_word_unit_id": "q:50:20:2",
+          "qac_char_span": [
+            0,
+            4
+          ],
+          "attachment_char_spans": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              4
+            ]
+          ],
+          "source_grammar": "perfect passive 3ms, Form I, no agent expressed",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s050:020:pass1:attach:a1",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:50:20:4",
+              "other_surface": "الصُّورِ",
+              "other_root": "ص و ر",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "فِي",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "66:12:7:2",
+        "qac_word_ref": "66:12:7",
+        "surah": 66,
+        "ayah": 12,
+        "word_index": 7,
+        "morpheme_index": 2,
+        "surface_ar": "نَفَخْ",
+        "stem_ar": "نَفَخْ",
+        "lemma_ar": "نَفَخَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "PERF",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:V|PERF|LEM:nafaxa|ROOT:nfx|1P",
+        "ayah_ref": "66:12",
+        "form_id": "F007",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s066:012:pass1:frame:v2",
+          "attachment_word_unit_id": "q:66:12:9",
+          "qac_char_span": [
+            28,
+            34
+          ],
+          "attachment_char_spans": [
+            [
+              28,
+              34
+            ],
+            [
+              29,
+              32
+            ]
+          ],
+          "source_grammar": "verb, perfect, 1st plural (divine \"We\"), Form I",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s066:012:pass1:attach:a7",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:66:12:10",
+              "other_surface": "",
+              "other_root": "",
+              "other_form_tag": "",
+              "prep_base": "فِي",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s066:012:pass1:attach:a8",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:66:12:12",
+              "other_surface": "رُوحِنَا",
+              "other_root": "ر و ح",
+              "other_form_tag": "NOUN_ABSTRACT",
+              "prep_base": "مِن",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "69:13:2:1",
+        "qac_word_ref": "69:13:2",
+        "surah": 69,
+        "ayah": 13,
+        "word_index": 2,
+        "morpheme_index": 1,
+        "surface_ar": "نُفِخَ",
+        "stem_ar": "نُفِخَ",
+        "lemma_ar": "نَفَخَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "PERF",
+        "mood": "",
+        "voice": "PASS",
+        "morph_features": "STEM|POS:V|PERF|PASS|LEM:nafaxa|ROOT:nfx|3MS",
+        "ayah_ref": "69:13",
+        "form_id": "F006",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s069:013:pass1:frame:v1",
+          "attachment_word_unit_id": "q:69:13:3",
+          "qac_char_span": [
+            4,
+            7
+          ],
+          "attachment_char_spans": [
+            [
+              4,
+              7
+            ]
+          ],
+          "source_grammar": "passive perfect (PV_PASS) third-person masculine singular; agent deleted — divine blower unnamed",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s069:013:pass1:attach:a2",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:69:13:5",
+              "other_surface": "الصُّورِ",
+              "other_root": "ص و ر",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "فِي",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s069:013:pass1:attach:a3",
+              "relation": "subject",
+              "focus_role": "head",
+              "other_unit_id": "q:69:13:6",
+              "other_surface": "نَفْخَةٌ",
+              "other_root": "ن ف خ",
+              "other_form_tag": "GERUND_INSTANT",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;word_order"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "69:13:5:1",
+        "qac_word_ref": "69:13:5",
+        "surah": 69,
+        "ayah": 13,
+        "word_index": 5,
+        "morpheme_index": 1,
+        "surface_ar": "نَفْخَةٌ",
+        "stem_ar": "نَفْخَةٌ",
+        "lemma_ar": "نَفْخَة",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:nafoxap|ROOT:nfx|F|INDEF|NOM",
+        "ayah_ref": "69:13",
+        "form_id": "F009",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s069:013:noun:6",
+          "attachment_word_unit_id": "q:69:13:6",
+          "qac_char_span": [
+            14,
+            18
+          ],
+          "attachment_char_spans": [
+            [
+              14,
+              17
+            ],
+            [
+              14,
+              18
+            ]
+          ],
+          "source_grammar": "indefinite nominative noun of instance (masdar marrī / ism marra); nāʾib al-fāʿil (substitute subject) of nufikha",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s069:013:pass1:attach:a3",
+              "relation": "subject",
+              "focus_role": "dependent",
+              "other_unit_id": "q:69:13:3",
+              "other_surface": "نُفِخَ",
+              "other_root": "ن ف خ",
+              "other_form_tag": "PV_PASS",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;word_order"
+            },
+            {
+              "attachment_id": "ae:v3:s069:013:pass1:attach:a4",
+              "relation": "adjective",
+              "focus_role": "head",
+              "other_unit_id": "q:69:13:7",
+              "other_surface": "وَاحِدَةٌ",
+              "other_root": "و ح د",
+              "other_form_tag": "NOUN_NUM",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "78:18:2:1",
+        "qac_word_ref": "78:18:2",
+        "surah": 78,
+        "ayah": 18,
+        "word_index": 2,
+        "morpheme_index": 1,
+        "surface_ar": "يُنفَخُ",
+        "stem_ar": "يُنفَخُ",
+        "lemma_ar": "نَفَخَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "IMPF",
+        "mood": "",
+        "voice": "PASS",
+        "morph_features": "STEM|POS:V|IMPF|PASS|LEM:nafaxa|ROOT:nfx|3MS",
+        "ayah_ref": "78:18",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s078:018:pass1:frame:v1",
+          "attachment_word_unit_id": "q:78:18:2",
+          "qac_char_span": [
+            3,
+            7
+          ],
+          "attachment_char_spans": [
+            [
+              3,
+              7
+            ],
+            [
+              4,
+              7
+            ]
+          ],
+          "source_grammar": "IV_PASS, imperfect passive third masculine singular; impersonal/passive verb with no explicit agent, followed by fī plus object-domain",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s078:018:pass1:attach:a2",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:78:18:4",
+              "other_surface": "الصُّورِ",
+              "other_root": "ص و ر",
+              "other_form_tag": "NOUN_CONCRETE",
+              "prep_base": "فِي",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

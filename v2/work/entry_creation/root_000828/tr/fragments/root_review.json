@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": "c1a77a247bdf34d46c0dfaab63f94c10f70fd4f005782b029502b2265f7143f9",
+  "verdict": "editorial_review",
+  "summary": "Dal kimlikleri, kapsamlar, sözlük karşılıkları, kaynak dağılımı ve komşu sınırları genel olarak kanıtla uyumludur. Ancak B002 içindeki güneş ısısı faseti, çekirdek anlam ile kaynaktaki kullanım örneğini aynı kaynak varyantı ifadesinde birleştirmektedir.",
+  "issues": [
+    {
+      "target_ref": "root_000828/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F003, güneş ısısını belirten anlamı bu ısının kişiye erişmesi örneğiyle tek bir source_variant fasetinde birleştiriyor. Kanıt önce güneş ısısını anlam olarak verir, ardından kişinin bundan etkilenmesini ayrı bir kullanım örneğiyle gösterir; örnek çekirdek sınırın parçası değildir.",
+      "smallest_correction": "F003 ifadesini yalnızca güneşten gelen ısı anlamıyla sınırlandırın. Kişinin güneş ısısından etkilenmesi ayrıntısı korunacaksa bunu bc_001'e bağlı, role değeri example olan ayrı bir fasete taşıyın."
+    }
+  ]
+}

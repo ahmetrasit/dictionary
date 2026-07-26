@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "5a342672f2d0f6bc5b4339a6765db674733a04e7170a068e4b46b15b3f474ca6",
+  "verdict": "repair",
+  "summary": "Yazar cevabi genel olarak kanita uyuyor, ancak iki tanimda cekirdek sinir gereksiz genisletiliyor veya daraltiliyor. B004 tanimi alikoymayi sure kosuluna bagliyor; B009 tanimi tasla temizlenmeye kanitta bulunmayan su kullanimi ayrintisi ekliyor. Bu iki bounded concept_map duzeltmesi yeterlidir.",
+  "issues": [
+    {
+      "target_ref": "root_002234/B004",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanitta ortak cekirdek, birligin savasta, sinirda veya dusman bolgesinde tutulup geri dondurulmemesidir. Tanim bunu genel olarak uzun sure tutma kosuluna baglayarak cekirdegi gereksiz daraltiyor.",
+      "smallest_correction": "B004 concept_map.definition icinde 'uzun sure' ifadesini kaldirip tanimi birligin seferde, sinir hattinda veya dusman bolgesinde tutulup geri donmesine izin verilmemesi olarak birak."
+    },
+    {
+      "target_ref": "root_002234/B009",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanitta tas veya taslarla istinca ve silinme verilir; su yerine ya da suyla birlikte kullanma ayrintisi verilmez. Tanim bu ayrintiyi ekleyerek kaynak sinirini asiyor.",
+      "smallest_correction": "B009 concept_map.definition icinde 'su yerine veya suyla birlikte tas kullanarak' kismini 'tas veya taslar kullanarak' seklinde degistir."
+    }
+  ]
+}

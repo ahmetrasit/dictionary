@@ -22,6 +22,16 @@ the exact error, then rerun the validator. Return only after it passes.
 
 Check only publication-relevant semantics:
 
+- the exact branch claim `source_phrase_ar` is treated as authoritative, while
+  provisional `branch_image_ar`, `what_is_ar`, and `what_is_not_ar` are corrected
+  or qualified in the authored identity judgment and definition when needed;
+- `identity_judgment` accurately records whether the branch framing was
+  accepted, qualified, or reframed; a response needing a split, merge, deletion,
+  or reassignment should have been parked for structural review before this
+  task;
+- `lexicalization_scope.branch_kind` matches the supplied mechanical profile,
+  and the definition obeys that scope: a collocation-only or otherwise non-bare
+  sense is never generalized into a bare branch meaning;
 - concept facets distinguish core meaning from specialization, extension,
   associated use, example, and source variant;
 - the definition preserves the core without promoting dependent material;
@@ -54,9 +64,11 @@ concept map. If the evidence permits more than one reasonable judgment, use
 `editorial_review` rather than forcing a repair.
 
 Every issue must identify one branch or `root_profile`, one bounded field, and
-the supplied claim IDs that support it. A `root_profile` issue must use the
-`root_profile` field and an empty claim-ID list. State the concrete evidence
-conflict and the smallest correction.
+the supplied evidence IDs that support it. Use branch-claim `bc_*` IDs for
+identity, scope, concept, source synthesis, gloss, and neighbor issues. Use
+lexical-unit `lu_*` IDs only for a `lexical_glosses` issue. A `root_profile`
+issue must use the `root_profile` field and an empty ID list. State the concrete
+evidence conflict and the smallest correction.
 
 Use verdicts consistently:
 

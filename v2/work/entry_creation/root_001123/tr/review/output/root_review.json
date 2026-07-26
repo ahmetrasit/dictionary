@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Dalın kimliği, yalın olmayan kapsamı, kavram çekirdeği, sözlüksel karşılıkları ve komşu ayrımları kanıtla uyumludur. Yalnızca bağlamsal karşılıkların hata profillerinde genişleme ve daralma yönleri ters işaretlenmiştir; bu iki değer düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001123/B001",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "\"hâlâ yapmak\" zorunlu olumsuzluk çerçevesini göstermediği için kaynak sınırını genişletir, ancak \"narrowing\" olarak işaretlenmiştir. \"yapmayı bırakmamak\" ise bazı bağlamlarda bilinçli seçim izlenimi ekleyerek kapsamı daraltır, ancak \"broadening\" olarak işaretlenmiştir.",
+      "smallest_correction": "İlk bağlamsal karşılığın error_profile.fit değerini \"broadening\", ikinci bağlamsal karşılığın değerini \"narrowing\" yapın; diğer bütün alanları koruyun."
+    }
+  ]
+}

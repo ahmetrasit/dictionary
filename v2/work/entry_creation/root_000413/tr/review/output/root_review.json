@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "B003 dalındaki kaynak örneği kavramsal bir uzmanlaşma gibi sunulmuş ve kavram karşılığında bu bağımlı örneğe dayanılırken istenmeyen sonuç yanlışlıkla istenen sonuç diye nitelenmiştir. Bu iki sınırlı alan düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000413/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Baskı ve inançsızlığa sürüklenme, dalın genel anlam sınırı veya uzmanlaşmış bir görünümü değil, kaynakta verilen belirli kullanımın sonucudur. F002 bunu uzmanlaşma olarak işaretleyerek bağımlı örneği kavramsal sınıra yükseltiyor.",
+      "smallest_correction": "F002 rolünü example yapın ve ifadeyi, kaynak örneğinde istenmeyen sonucun baskı ve inançsızlığa sürüklenme olduğunu belirtecek biçimde sınırlayın; diğer kavram haritası öğelerini koruyun."
+    },
+    {
+      "target_ref": "root_000413/B003",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığının facet_ids alanı kaynak örneğine ait F002'yi çekirdeğe katıyor. Ayrıca preserves metni istenmeyen sonucu yanlışlıkla istenen sonuç diye nitelendirerek dalın hoşnutsuzluk ve istememe yönüyle çelişiyor.",
+      "smallest_correction": "facet_ids alanını yalnızca F001 ile sınırlandırın ve preserves metnindeki istenen sonucu istenmeyen sonuç olarak düzeltin; karşılık metnini ve kalan alanları koruyun."
+    }
+  ]
+}

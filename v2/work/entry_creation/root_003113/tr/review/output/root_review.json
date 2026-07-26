@@ -1,0 +1,92 @@
+{
+  "verdict": "repair",
+  "summary": "B001, B002 ve B004 kaynak iddialariyla uyumlu. B003 icin onarim gerekir: yazar, siirsel ud baglamindaki belirli ses veya calinis ogesini yer yer genel bir telli calgi gibi sunuyor. Onarim yalniz B003 alanlari ve kok profilindeki bu adlandirma siniriyla sinirlidir.",
+  "issues": [
+    {
+      "target_ref": "root_003113/B003",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak iddiasi siirsel bir ud baglaminda belirli ses veya calinis ogesini verir; yazar bunu genel telli calgi olarak niteleyerek branch sinirini genellestiriyor.",
+      "smallest_correction": "Rationale ve boundary_note icinde genel telli calgi ifadesini ud calgisina ait belirli ses veya calinis ogesiyle degistir; nitelikli branch kararini koru."
+    },
+    {
+      "target_ref": "root_003113/B003",
+      "field": "lexicalization_scope",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Lexicalization notu tanimi siirsel calgi kullanimi diye aciyor, fakat kaynak iddiasi genel calgi degil ud baglantili belirli ses veya calinis ogesidir.",
+      "smallest_correction": "Notu, tanimin yalniz verilen siirsel ud baglantili ses veya calinis ogesi kullanimini acikladigini soyleyecek kadar daralt."
+    },
+    {
+      "target_ref": "root_003113/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Definition ve cekirdek facet, branchi bir calgi ya da genel calgi kullanimi olarak kuruyor; kaynak iddiasi ise ud baglamina ait belirli ses veya calinis ogesine bagli.",
+      "smallest_correction": "Definition ve ilgili facetleri, genel telli calgi yerine ud calgisina ait belirli ses veya calinis ogesi diye sinirla; icki, eglence ve duygulanma ogelerini eslik eden sahne ogeleri olarak koru."
+    },
+    {
+      "target_ref": "root_003113/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Source synthesis tek tanikligi calgiyi acikliyor diye ozetliyor; kaynak iddiasi genel calgi degil ud baglantili belirli ses veya calinis ogesidir.",
+      "smallest_correction": "Tek taniklik ozetini, ud calgisina ait belirli ses veya calinis ogesini icki ve eglence sahnesi icinde veren siirsel kullanim olarak daralt."
+    },
+    {
+      "target_ref": "root_003113/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Concept gloss 'telli calgi' diyerek branch cekirdegini genel bir nesne adina genisletiyor; kaynak iddiasi ud baglamindaki belirli ses veya calinis ogesine bagli.",
+      "smallest_correction": "Concept glossu udun belirli tinisi gibi ud baglantisini koruyan kisa bir karsilikla degistir; hata profilini ayni dar kapsamla uyumlu hale getir."
+    },
+    {
+      "target_ref": "root_003113/B003",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Contextual glosslar genel telli calgi veya calgi diyor; bu, kaynak iddiasindaki ud baglantili ses veya calinis ogesini yeterince sinirlamiyor.",
+      "smallest_correction": "Contextual glosslari eglence meclisindeki ud tinisi ve huzunlu ud tinisi gibi ud baglantili ifadelerle sinirla; uygulama ve hata profillerini buna gore daralt."
+    },
+    {
+      "target_ref": "root_003113/B003",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Neighbor ayrimlari B003 odagini genel calgi sahnesi olarak anlatiyor; kaynak iddiasi daha dar olarak ud baglantili belirli ses veya calinis ogesidir.",
+      "smallest_correction": "B003 neighbor ayrimlarinda focus ve distinction metinlerini genel calgi yerine ud tinisi veya ud baglantili ses ogesi olarak daralt; relation turlerini ve neighbor rosterini koru."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kok profili B003'u siirsel calgi sahnesi diye genellestiriyor; kok ozeti B003 onarimindaki ud baglantili daha dar siniri izlemeli.",
+      "smallest_correction": "Root profile summary icindeki B003 etiketi siirsel ud tinisi sahnesi olarak daralt; polysemy ve organization degerlerini koru."
+    }
+  ]
+}

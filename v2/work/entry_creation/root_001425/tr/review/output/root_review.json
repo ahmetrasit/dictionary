@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Dalın kimliği, kapsamı ve ana anlam örgüsü kanıtla uyumludur. Ancak kavram karşılığı, yavru çıkarma kullanımını kısrağa da yayarak kaynak sınırını aşmaktadır; bu kullanım kanıtta yalnız deve için tanıklanmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_001425/B001",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığındaki “deve ya da kısrağın ... er suyunu veya yavruyu çıkarma” kuruluşu, hem er suyu hem yavru nesnesini iki hayvan türüne de bağlamaktadır. Oysa bc_001 kısrağı yalnız er suyunun sıyrılıp çıkarıldığı tanıklıkta anarken yavru çıkarma kullanımını yalnız deveyle verir.",
+      "smallest_correction": "concept_gloss.text değerini “deve ya da kısrağın döl yatağına el sokup er suyunu çıkarma; devede yavruyu da çıkarma” olarak değiştirin. Aynı nesne-tür sınırını açıkça yansıtmak için concept_gloss.applicability ve concept_gloss.error_profile.preserves ifadelerinde de yavru çıkarma uzantısını deveyle sınırlayın."
+    }
+  ]
+}

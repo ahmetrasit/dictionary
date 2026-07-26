@@ -1,0 +1,61 @@
+{
+  "verdict": "repair",
+  "summary": "B001'in kavram karşılığı özel bağlayıcılık kullanımını genel çekirdeğe taşıyor. B003 ise sürekliliği bütün hastalık ve ağrı kullanımlarına yayıyor, bedensel zayıflama için tanıklanmayan bir neden ilişkisi kuruyor ve bir sözlüksel karşılıkta kaynakta bulunmayan yakınma anlamı ekliyor. Bu alanlarda dar ve yüksek güvenli düzeltmeler gerekiyor.",
+  "issues": [
+    {
+      "target_ref": "root_001652/B001",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Dalın ortak çekirdeği bir şeyin sürekli olmasıdır; bağlayıcılık ve zorunluluk yalnızca inanç düzeni veya buyruğa uyma ile kurulan özel kullanımda tanıklanır. Mevcut kavram karşılığı bu bağımlı özelliği dalın genel karşılığına katıyor.",
+      "smallest_correction": "Kavram karşılığını yalnızca \"sürekli olma\" olarak daralt; uygulanabilirlik ve hata profili açıklamalarını buna göre güncelle ve facet_ids listesini yalnız F001 ile sınırla."
+    },
+    {
+      "target_ref": "root_001652/B003",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kesin kaynak ifadesi kalıcı veya sürekli oluşu bir hastalık açıklamasında belirtirken başka tanıklıklarda hastalık ve ağrıyı bu koşul olmadan verir. Mevcut gerekçe ve sınır notu sürekliliği hastalık ile ağrının tümüne ait ortak çekirdek gibi kaydediyor.",
+      "smallest_correction": "qualified durumunu koru; gerekçe ile sınır notunu hastalık ve ağrıyı genel çekirdek, sürekliliği ise yalnız tanıklanan kalıcı hastalık kullanımı olarak gösterecek biçimde daralt."
+    },
+    {
+      "target_ref": "root_001652/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanıklık hastalık ve ağrıyı genel olarak, kalıcı hastalığı ise belirli bir açıklama olarak verir; ayrıca bedensel zayıflamayı hastalık veya ağrının sonucu diye açıklamaz. Mevcut tanım ve ilk iki facet sürekliliği genelleştiriyor ve zayıflama için tanıklanmayan bir neden ilişkisi kuruyor.",
+      "smallest_correction": "Tanımdaki genel çekirdeği hastalık ve ağrı olarak ver, kalıcı hastalığı özel tanıklık olarak ayır ve bedensel zayıflama hakkındaki neden ifadesini kaldır. F001'i genel hastalık veya rahatsızlık, F002'yi tek ya da çok sayıda ağrı olarak düzelt."
+    },
+    {
+      "target_ref": "root_001652/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığındaki \"süregelen\" nitelemesi hastalık ve ağrının tamamına yayılıyor; kesin kaynak ifadesi ise sürekliliği yalnız belirli hastalık tanıklığında açıkça bildiriyor ve ağrıyı süre koşulu olmadan da veriyor.",
+      "smallest_correction": "Kavram karşılığını \"hastalık ve ağrı\" olarak değiştir; uygulanabilirlik ve hata profili açıklamalarını sürekliliği genelleştirmeyecek biçimde güncelle."
+    },
+    {
+      "target_ref": "root_001652/B003",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_018"
+      ],
+      "evidence_conflict": "lu_018 yalnız ağrı duyma veya ağrı çekme anlamıyla tanıklanır. \"Sızlanmak\" ise ağrıyı sözle yakınarak bildirme anlamı ekler ve verilen kaynak ifadesinde desteklenmez.",
+      "smallest_correction": "lu_018 target_gloss değerinden \"veya sızlanmak\" bölümünü çıkar ve karşılığı \"ağrı duymak\" olarak bırak."
+    }
+  ]
+}

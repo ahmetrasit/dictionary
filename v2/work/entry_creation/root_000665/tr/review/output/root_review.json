@@ -1,0 +1,40 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtı ve dal sınırlarını koruyor; ancak B005'te ayrı ayrı tanıklanan tabaklama, sığır derisi ve kılsızlık özellikleri tanım ile karşılıklarda yanlış biçimde zorunlu ve birleşik koşullara dönüştürülmüş.",
+  "issues": [
+    {
+      "target_ref": "root_000665/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, belirli bitkisel maddeyle tabaklanmış deriyi, bazı kaynaklardaki sığır derisi kaydını ve kılsızlık niteliğini ayrı kapsam görünümleri olarak verir. Tanım bunları birleştirerek temel anlamı özellikle sığırdan elde edilen kılsız deriyle sınırlar.",
+      "smallest_correction": "Yalnızca concept_map.definition cümlesini düzeltin: belirli bitkisel maddeyle tabaklanmış deriyi çekirdek olarak verin; sığır derisini bazı kaynaklardaki özelleşme, kılsızlığı ise ayrı bir nitelik olarak belirtin ve bunları zorunlu birleşik koşullar yapmayın."
+    },
+    {
+      "target_ref": "root_000665/B005",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Concept gloss, tabaklanmış olma ile kılsızlığı tek bir deri türünün birlikte zorunlu özellikleri gibi sunuyor. bc_001 ise kılsızlığı bütün tabaklanmış deri tanıklıklarının ortak koşulu olarak vermiyor.",
+      "smallest_correction": "Concept glossu, belirli bitkisel maddeyle tabaklanmış deri ile kılsız deri veya buna bağlı ayakkabı görünümlerini alternatif ya da kaynakla sınırlı özellikler halinde gösterecek biçimde düzeltin; error_profile alanlarını da bu sınırlamaya göre güncelleyin."
+    },
+    {
+      "target_ref": "root_000665/B005",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_017",
+        "lu_018"
+      ],
+      "evidence_conflict": "lu_017 karşılığı tabaklanmışlık, kılsızlık ve sığır derisi olmayı birlikte zorunlu kılıyor; lu_018 karşılığı da tabaklanmış ve kılsız deriden yapılmayı birlikte şart koşuyor. İki birimin kanıtı bu özellikleri kümülatif değil, farklı kaynak görünümleri veya seçenekler halinde verir.",
+      "smallest_correction": "lu_017 ve lu_018 karşılıklarında seçenek yapısını koruyun: tabaklanmış deri veya kılsız deri niteliğini ve ayakkabı kullanımını birbirine zorunlu biçimde bağlamayın; sığır derisi kaydını da bütün örneklere genellemeyin."
+    }
+  ]
+}

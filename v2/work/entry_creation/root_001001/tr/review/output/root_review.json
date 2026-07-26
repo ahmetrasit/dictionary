@@ -1,0 +1,72 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dalların büyük bölümünde kanıtı ve kapsam sınırlarını doğru koruyor. Ancak B003'te belirli bir örnek gereğinden fazla genellenmiş, B007'de kalıcı olmayan durum çekirdeği kişiye gelen olaylarla sınırlandırılmış ve B012'de yalnızca bazı kullanımlara ait hareket güçlüğü çekirdek anlama taşınmış. Bu yüksek güvenli ve sınırlı sorunlar küçük alan düzeltmeleriyle giderilebilir.",
+  "issues": [
+    {
+      "target_ref": "root_001001/B003",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanımdaki genel \"sürü\" sözü, kanıtta yalnızca çok sayıdaki çekirge topluluğu olarak verilen örneği başka sürü türlerini de kapsayacak biçimde genişletiyor.",
+      "smallest_correction": "Tanımdaki \"sürü\" ifadesini \"çekirge sürüsü\" olarak daralt; tanımın geri kalanını değiştirme."
+    },
+    {
+      "target_ref": "root_001001/B007",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve çekirdek facet, anlamı yalnızca kişinin başına gelen hastalık, olay veya durumla sınırlandırıyor. Kanıt ise kişiye gelen olayların yanında genel olarak kalıcılığı bulunmayan durum veya niteliği de dalın çekirdeğine dahil ediyor.",
+      "smallest_correction": "Tanımı ve F001 çekirdek ifadesini, bir şeyde sonradan ortaya çıkan ve kalıcı olmayan durum veya niteliği kapsayacak biçimde genişlet; hastalık ve kişiye gelen olayı bunun kişi bağlamındaki gerçekleşmeleri olarak koru."
+    },
+    {
+      "target_ref": "root_001001/B007",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet çekirdeği yalnızca kişinin başına gelen durum diye kurarak kanıttaki daha genel, kalıcılığı olmayan durum veya nitelik anlamını dışarıda bırakıyor.",
+      "smallest_correction": "Ortak özeti kalıcılığı olmayan ve sonradan ortaya çıkan durum veya nitelik çekirdeğini kapsayacak biçimde genişlet; hastalık, beklenmedik isabet ve ansızın bağlanmayı bağlı gerçekleşmeler olarak bırak."
+    },
+    {
+      "target_ref": "root_001001/B007",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "\"Sonradan gelen geçici durum\" karşılığı yalnızca bir kişiye veya hedefe gelen olayı çağrıştırıyor ve kanıtın genel kalıcı olmama boyutunu yeterince temsil etmiyor.",
+      "smallest_correction": "Kavram karşılığını \"sonradan ortaya çıkan kalıcı olmayan durum veya nitelik\" olarak değiştir ve uygulanabilirlik ile korunan özellik açıklamalarını bu kapsama uyarla."
+    },
+    {
+      "target_ref": "root_001001/B012",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım yana saparak ilerlemenin tamamını \"güçlükle\" gerçekleşen hayvan yürüyüşü olarak sunuyor. Kanıtta yana veya sağa sola sapma genel hareket çekirdeğidir; zorluk yalnızca dişi deve ve düzgün yürümeyen hayvan kullanımlarına ait bir özelleşmedir, ayrıca dağda sağa sola ilerleyen kişi de kapsamdadır.",
+      "smallest_correction": "Tanımı hayvanın veya kişinin düz doğrultudan yana saparak ilerlemesi üzerine kur; güçlük ve zor idare edilmeyi yalnızca bazı hayvan kullanımlarına ait özelleşme olarak ikinci cümlede bırak."
+    },
+    {
+      "target_ref": "root_001001/B012",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "\"Yana saparak güçlükle ilerleme\" karşılığı hareket güçlüğünü bütün dal için zorunlu kılıyor; kanıtın ortak çekirdeği düz doğrultudan yana sapmadır.",
+      "smallest_correction": "Kavram karşılığını \"yana saparak ilerleme\" olarak daralt ve uygulanabilirlik ile korunan özellik açıklamalarından genel güçlük koşulunu çıkar."
+    }
+  ]
+}

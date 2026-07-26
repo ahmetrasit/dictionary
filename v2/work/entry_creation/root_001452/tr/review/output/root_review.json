@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtı ve dal sınırlarını koruyor; ancak bir sözlüksel karşılık eylemin nesnesini değiştiriyor ve madde dalında tek bir kaynağın eriyik sınıflandırması bütün dalın ortak çekirdeğiymiş gibi genelleniyor. Bu üç sınırlı alan düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001452/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003"
+      ],
+      "evidence_conflict": "lu_003 birine süre tanımayı ve onu aceleye getirmemeyi bildirir. Hedef karşılıktaki \"hemen karşılık vermedi\" ifadesi ise yanıt verme eylemi ekleyerek anlamı değiştirir.",
+      "smallest_correction": "lu_003 hedef karşılığını \"ona süre tanıdı, onu aceleye getirmedi\" olarak değiştir."
+    },
+    {
+      "target_ref": "root_001452/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Eriyik maddeler sınıflandırması yalnızca bir kaynak anlatımıdır; aynı kanıt yağ tortusu, irin, yer altı metalleri, ekmekten dökülen kül veya kırıntı ve ince katran sıvısı gibi eriyik olması gerekmeyen ayrı kullanımlar da verir. Buna rağmen F001 bunu dalın çekirdeği yapıyor ve tanım bütün çeşitleri tek bir ortak madde adı altında topluyor; bu, kimlik yargısındaki nitelemeyle de çelişiyor.",
+      "smallest_correction": "Tanımın ortak bir fiziksel sınıf ileri süren ilk cümlesini, kaynaklarda sıralanan ayrı madde kullanımlarını tarafsızca tanıtan bir cümleyle değiştir; F001'i çekirdek yerine kaynak varyantı olarak işaretle. Diğer varyantları koru."
+    },
+    {
+      "target_ref": "root_001452/B003",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı, eriyik, tortu, metal ve yoğun akışkanları kapsayan tek bir ortak ad bulunduğunu ileri sürüyor. Kanıt ise bunları ortak bir üst anlamın zorunlu üyeleri olarak değil, aynı söz biçiminin ayrı kaynak kullanımları olarak sıralıyor; kül veya kırıntı kullanımı da verilen ortak sınıfa doğal biçimde sığmıyor.",
+      "smallest_correction": "Kavram karşılığını tek bir ortak madde sınıfı iddiası taşımayan, aynı adın eriyik, tortu ve başka madde türlerine ilişkin çeşitli kullanımlarını belirten nötr bir karşılıkla değiştir; uygulanabilirlik ve hata profilini de yalnızca bu yeni sınırı yansıtacak kadar düzelt."
+    }
+  ]
+}

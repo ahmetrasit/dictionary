@@ -1,0 +1,73 @@
+{
+  "inputs_sha256": "0868ddc306e0285fbc102c5a2edb02779dc187eb1f51c95eea7a339c214de068",
+  "verdict": "repair",
+  "summary": "B003 dalında sesli yarılmanın nesnesi kanıta aykırı biçimde yalnız kumaşa daraltılmıştır. B005 dalında ise kaynakta açıkça verilen Medine ayrıntısı belirsiz bir kent ifadesine dönüştürülmüştür. Bu iki yerel sorun, yalnız etkilenen alanlarda küçük ve kesin düzeltmeler gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_000895/B003",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F002, yarılma sırasında ses duyulmasını yalnız kumaşa bağlar; oysa kanıt bu sonucu ahşap veya kumaşın yarılması için açıkça verir.",
+      "smallest_correction": "F002 ifadesindeki kumaş sınırlamasını kaldırıp özneyi ahşap veya kumaş olarak düzelt."
+    },
+    {
+      "target_ref": "root_000895/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, sesin işitilmesini yalnız kumaş örneğine bağlar; kanıt aynı sonucu ahşap veya kumaş için bildirir.",
+      "smallest_correction": "Ortak özetteki yalnız kumaş ifadesini ahşap veya kumaşın yarılması kullanımı olarak düzelt."
+    },
+    {
+      "target_ref": "root_000895/B003",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ses çıkararak yarılmak karşılığının uygulanabilirlik açıklaması yalnız kumaşı anar; kanıt bu bağlamı ahşap veya kumaş için verir.",
+      "smallest_correction": "İlgili uygulanabilirlik açıklamasını ahşap veya kumaşın yarılırken işitilebilir ses çıkarmasını kapsayacak biçimde genişlet."
+    },
+    {
+      "target_ref": "root_000895/B005",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F003, kaynakta açıkça Medine olarak verilen yöreyi belirsiz bir kent diye aktararak ayırt edici bilgiyi kaybeder.",
+      "smallest_correction": "Tanımda ve F003 ifadesinde belirsiz kent sözünü Medine adıyla değiştir."
+    },
+    {
+      "target_ref": "root_000895/B005",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, açık Medine bilgisini yalnız belirli bir kente bağlanma diye genelleştirir ve kaynağın ayırt edici yöre ayrıntısını örtüler.",
+      "smallest_correction": "Ortak özette çeşidin Medine hurmaları arasında sayıldığını açıkça belirt."
+    },
+    {
+      "target_ref": "root_000895/B005",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İkinci açıklayıcı karşılık ve açıklamaları, kaynakta açıkça verilen Medine adını belirsiz bir kent ifadesiyle değiştirir.",
+      "smallest_correction": "İkinci açıklayıcı karşılıkta ve ona bağlı açıklamalarda belirsiz kent ifadesini Medine ile değiştir."
+    }
+  ]
+}

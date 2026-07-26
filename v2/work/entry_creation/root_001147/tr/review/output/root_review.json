@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Dal kimlikleri, sözlükselleşme kapsamları, kavram haritaları ve karşılıklar kanıtla uyumludur. Ancak iki komşu ilişkisinde, aynı anlam sınırını değiştirmeyen bağımlı açıklamalar gerekçe gösterilerek tam eş anlamlılık gereksiz biçimde kısmi yakınlığa indirilmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_001147/B004",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Odak kanıtı da root_001581/B003 kartı da kanın karşılıksız kalıp onun için istemde bulunulmamasını aynı çekirdek ve sınırla verir. Komşu kartındaki bağışlama veya istemden vazgeçme, aynı sonucu doğuran bağımlı durumlar olup ayrı bir anlam kapsamı kurmaz.",
+      "smallest_correction": "root_001581/B003 satırını synonym ve exact olarak düzelt; focus_only ile neighbor_only alanlarını null yap ve gloss, shared_zone ile distinction metinlerini iki dalın aynı sınırdaki eşdeğerliğini yansıtacak en küçük ölçüde güncelle."
+    },
+    {
+      "target_ref": "root_001147/B005",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Odak kanıtı ile root_001450/B002 kartı aynı göndergeyi, erkeğin döl sıvısını, doğrudan verir. Komşu kartındaki çocuğun oluşumuna kaynak olma açıklaması bu sıvının bağımlı niteliğidir; anlam sınırını genişleten ayrı bir katılımcı, koşul veya kullanım alanı değildir.",
+      "smallest_correction": "root_001450/B002 satırını synonym ve exact olarak düzelt; focus_only ile neighbor_only alanlarını null yap ve gloss, shared_zone ile distinction metinlerini aynı gönderge ve sınırı belirtecek en küçük ölçüde güncelle."
+    }
+  ]
+}

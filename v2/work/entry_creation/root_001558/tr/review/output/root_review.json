@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "B001 ve B002 kanıtla uyumludur. B003'te eskimenin başlangıcı, kaynaklara özgü bir evre olmaktan çıkarılıp dalın ortak çekirdeğine taşınmıştır; tanım ve kavram karşılığı bu daraltmayı kaldıracak biçimde düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001558/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynakların ortak çekirdeği giysinin eskimesi ve yıpranma izlerinin belirmesidir; eskimenin başlaması ise bütün kaynakların zorunlu kıldığı bir sınır değildir. Tanımın temel anlamı 'eskimeye başlayıp' diye kurması, erken evre uzmanlaşmasını çekirdeğe taşıyarak dalı gereksiz yere daraltır.",
+      "smallest_correction": "B003 concept_map.definition içindeki ilk cümlede 'eskimeye başlayıp' ifadesini 'eskimesi ve' biçiminde düzelt; erken evreyi ikinci cümlede ve F002 uzmanlaşmasında bırak, diğer alanları değiştirme."
+    },
+    {
+      "target_ref": "root_001558/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı ortak çekirdeği temsil etmelidir; mevcut karşılık ve açıklaması eskimenin başlamasını çekirdeğin zorunlu parçası yapıyor. Oysa kanıt, başlangıcı yalnızca özel bir evre olarak destekler ve genel olarak eskime ile görünür yıpranma izlerini verir.",
+      "smallest_correction": "B003 concept_gloss.text değerini 'giysinin eskimesi ve yıpranma izleri göstermesi' yap; applicability ve error_profile.preserves metinlerinden başlangıç zorunluluğunu kaldır ve facet_ids listesini yalnızca F001 ile sınırla."
+    }
+  ]
+}

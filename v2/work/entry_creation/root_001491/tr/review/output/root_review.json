@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "B001 dalında küçük miktar adı, kesin kaynak ifadesinin desteklemediği biçimde birkaç alanda geride kalan miktar olarak daraltılmıştır. Kaynak yalnızca az miktarı veya bir çekimlik miktarı bildirir; kalan olma koşulu kaldırılmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001491/B001",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe, az miktar adını geride kalan miktar diye niteler. Kesin kaynak ifadesi az miktarı veya bir çekimlik miktarı bildirir, bunun mutlaka kalan miktar olduğunu söylemez.",
+      "smallest_correction": "Gerekçedeki geride kalan nitelemesini kaldırıp yalnızca az miktar adından söz edin."
+    },
+    {
+      "target_ref": "root_001491/B001",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F003, az su veya içeceği geride kalan miktar olarak sunar. Kesin kaynak yalnızca az miktar veya bir çekimlik miktar verir ve kalıntı koşulu koymaz.",
+      "smallest_correction": "Tanımda ve F003'te geride kalan ya da kalan nitelemesini kaldırın; az miktar ve tek seferde çekilen miktar ayrımını koruyun."
+    },
+    {
+      "target_ref": "root_001491/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet kaynakların az kalan miktarın adlandırılmasında birleştiğini söyler. Kaynakların ortak desteği az miktar veya bir çekimlik miktardır; kalan olma niteliği kaynakta yoktur.",
+      "smallest_correction": "Ortak özette az kalan miktar ifadesini az miktar olarak düzeltin."
+    },
+    {
+      "target_ref": "root_001491/B001",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F003'e bağlı açıklayıcı karşılık ve uygulanabilirlik açıklaması miktarı geride kalan olarak sınırlar. Kesin kaynak böyle bir kalıntı koşulu taşımaz.",
+      "smallest_correction": "Karşılıktaki kalan sözcüğünü ve uygulanabilirlik açıklamasındaki geride kalan ibaresini kaldırarak az miktar veya bir seferde alınan miktar biçiminde bırakın."
+    }
+  ]
+}

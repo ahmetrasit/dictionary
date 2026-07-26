@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak B003'te bol yağmurlu bulut kullanımı kanıtlanmayan bir süreğen sıvı çıkışı bağıyla açıklanmış, B006'da ise alma veya tutma buyruğuna kanıtta bulunmayan yönelme anlamı eklenmiştir. Bu eklemeler ilgili alanlardan çıkarılmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001052/B003",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt bol yağmurlu bulutu yalnızca ayrı bir tanıklanmış kullanım olarak verir; bu niteliğin süreğen sıvı çıkışı görüntüsüne bağlı olduğunu söylemez.",
+      "smallest_correction": "Tanımın son bölümünü, bol yağmurlu bulutu ayrıca tanıklanan bir niteleme olarak sunacak biçimde değiştir; süreğen sıvı çıkışıyla kurulan kanıtsız bağı kaldır."
+    },
+    {
+      "target_ref": "root_001052/B006",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt görevli biçimi belirtilen nesneyi alma veya ona bağlı kalma buyruğuyla sınırlar; nesneye yönelme anlamını bu biçime yüklemez.",
+      "smallest_correction": "Tanımdan ve F002 ifadesinden nesneye yönelme eklemesini çıkar; alma ve bağlı kalma ya da tutma kapsamını koru."
+    },
+    {
+      "target_ref": "root_001052/B006",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kaynakların desteklediği alma buyruğunun yanına bu görevli biçim için gösterilmeyen yönelme anlamını ekler.",
+      "smallest_correction": "Ortak özetteki yönelme ifadesini bağlı kalma veya tutma ifadesiyle değiştir."
+    },
+    {
+      "target_ref": "root_001052/B006",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_024"
+      ],
+      "evidence_conflict": "lu_024 alma veya bağlı kalma anlamındadır; hedef karşılıktaki 'ona yönel' bölümü bu sözcüksel birimin kanıtlanan anlamına ek kapsam getirir.",
+      "smallest_correction": "lu_024 hedef karşılığından 'ona yönel' bölümünü çıkar ve yalnızca alma ile bağlı kalma ya da tutma anlamlarını bırak."
+    }
+  ]
+}

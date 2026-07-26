@@ -1,0 +1,95 @@
+{
+  "inputs_sha256": "1c2bc8ed4d1275bcd1bd194ac53cea2225df8fa5bc23bae569a5febd6692d82f",
+  "verdict": "editorial_review",
+  "summary": "Yazar yanıtı dal ayrımlarını genel olarak koruyor; ancak ses dalını insanla sınırlayan anlatımlar kanıttaki mutlak kullanım ve kuş örneğiyle uyuşmuyor. Ayrıca yardım etme dalındaki kaynak ayrılığı sentezde görünmüyor, bir komşu sayısı yanlış veriliyor ve kuş adı tanımına kanıtsız nitelikler ekleniyor. Bu alanlar birlikte yayın öncesi editoryal düzeltme gerektiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_000855/B001",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe çekirdeği insan sesiyle sınırlandırıyor; oysa kanıt her ses çıkaran için bu adın kullanılabildiğini bildiriyor ve tavus kuşunun ses çıkarmasını örnekliyor.",
+      "smallest_correction": "Gerekçedeki insan sınırlamasını kaldırıp çekirdeği tiz veya güçlü ses çıkarma ve bu sesin sonucu olarak ifade edin."
+    },
+    {
+      "target_ref": "root_000855/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F001 temel anlamı yalnızca bir kişinin ses çıkarması olarak kuruyor; kanıttaki mutlak ses çıkaran kullanımı insan dışı bir örneği de kapsıyor.",
+      "smallest_correction": "F001 içindeki bir kişi ifadesini katılımcıyı tür bakımından sınırlamayan bir ses çıkarma anlatımıyla değiştirin."
+    },
+    {
+      "target_ref": "root_000855/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_009"
+      ],
+      "evidence_conflict": "lu_009 mutlak biçimde her ses çıkaranı anlatır ve kuş örneği verir; bağıran kimse karşılığı ise Türkçede insan katılımcıyı düşündürerek kapsamı daraltır.",
+      "smallest_correction": "lu_009 karşılığını bağıran veya ses çıkaran varlık gibi insanla sınırlı olmayan bir ifadeyle değiştirin."
+    },
+    {
+      "target_ref": "root_000855/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Genel işitilen ses komşusuyla karşılaştırmada odak dal yalnızca insanın bağırması olarak sunuluyor; dal kanıtı ses çıkaranı insanla sınırlamıyor.",
+      "smallest_correction": "root_000890/B001 karşılaştırmasındaki insanın ifadesini kaldırıp odağı tiz veya güçlü bağırma ve çıkan çığlık olarak belirtin."
+    },
+    {
+      "target_ref": "root_000855/B002",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu kapsama notu beş komşunun seçildiğini söylüyor, ancak yayımlanan neighbor_distinctions dizisinde yalnızca dört ilişki bulunuyor.",
+      "smallest_correction": "Kapsama notundaki beş sayısını dört olarak düzeltin."
+    },
+    {
+      "target_ref": "root_000855/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Sentez bütün kaynakları yalnızca ortak çekirdekte birleştiriyor; oysa kanıt bazı biçimlerin yardım eden mi yardım isteyen mi olduğu konusunda karşıt aktarımlar ve yardım eden anlamının kabulüne ilişkin açık bir kayıt ayrılığı içeriyor.",
+      "smallest_correction": "Ortak özeti koruyup kaynaklar arasındaki yardım eden-yardım isteyen karşıtlığını ve tartışmalı aktarımı kaynak bağımsız bir ayrılık cümlesiyle ekleyin."
+    },
+    {
+      "target_ref": "root_000855/B004",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanımdaki gösterişli ve geniş kuyruk tüyleri nitelemesi verilen tek sözlük kaydında bulunmuyor; kanıt yalnızca biçimin tavus kuşunun adı olduğunu destekliyor.",
+      "smallest_correction": "Tanımı tavus kuşunun sözlükte kaydedilmiş bağımsız bir adıyla sınırlayıp kanıtsız fiziksel nitelemeyi kaldırın."
+    },
+    {
+      "target_ref": "root_000855/B004",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Beyaz su kuşu komşusuyla ayrımda odak için gösterişli kuyruklu kara kuşu deniyor; odak kanıtı yalnızca tavus kuşu adını verir ve bu ek nitelikleri sağlamaz.",
+      "smallest_correction": "Ayrımı, odağın tavus kuşuna ve komşunun beyaz bir su kuşuna gönderme yaptığı bilgisiyle sınırlayın."
+    }
+  ]
+}

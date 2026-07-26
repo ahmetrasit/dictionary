@@ -1,0 +1,39 @@
+{
+  "verdict": "editorial_review",
+  "summary": "Bir tanım, yalnız keçiye bağlı açıklamayı bütün dişi hayvanlara genelliyor. Ayrıca iki dalda bağımsız sözlüksel yüzler kaynak değişkesi olarak sınıflandırılmış. Canlı yazar çıktısı, görev için belirlenen yazma sınırı dışında olduğundan düzeltmeler uygulanmadı.",
+  "issues": [
+    {
+      "target_ref": "root_000860/B010",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım, erkek hayvanı davranışıyla kendine yöneltmeyi bütün dişi hayvanlar için çekirdek durum gibi sunuyor. Kaynak ifadesinde genel kapsam dişinin erkeği istemesidir; erkeği kendine yöneltme açıklaması yalnız keçiyle kurulan özel adlandırmaya bağlıdır.",
+      "smallest_correction": "Tanımdan \"ve davranışıyla onu kendine yöneltmesi\" bölümünü çıkarın; bu açıklamayı yalnız keçiye bağlı uzmanlaşmada ve ilgili sözlüksel karşılıkta bırakın."
+    },
+    {
+      "target_ref": "root_000860/B012",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İyi şarap kullanımı bir kaynak değişkesi değildir; birden çok kaynakta süt kullanımından ayrı bir sözlüksel yüz olarak kaydedilir. Değişken olan, bu içki adının taze alınmaya veya başka bir ad bağlantısına dayandırılmasıdır.",
+      "smallest_correction": "F002 rolünü \"associated_use\" olarak değiştirin; taze alınma ile başka bir ad bağlantısı arasındaki açıklama ayrılığını aynı ifadede kaynak görüşü olarak koruyun."
+    },
+    {
+      "target_ref": "root_000860/B013",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kırmızı boya ve koyu kırmızı deri rengi, kaynaklar arasındaki değişken bir açıklama değil, katışıksızlık ve saf içki yüzünden ayrı olarak kaydedilen yerleşik bir sözlüksel kullanımdır.",
+      "smallest_correction": "F003 rolünü \"source_variant\" yerine \"associated_use\" yapın; facet ifadesini ve diğer alanları değiştirmeyin."
+    }
+  ]
+}

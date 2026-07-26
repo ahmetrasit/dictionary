@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak bir komşuluk kapsam notunda yayımlanmamış ilişki anılıyor, bir kavram karşılığı baş ile bakış seçeneklerini birlikte gerçekleşme şartına dönüştürüyor ve bir sözlüksel karşılık kaynakta olumsuzlanan örneğin kutbunu tersine çeviriyor. Bu üç sınırlı hata canlı çıktıda en küçük düzeltmelerle giderilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001551/B003",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşuluk kapsam notu yayımlanan ilişkilerin yaşlanma dalıyla uzak dönüş benzerliğini gösterdiğini söylüyor; oysa dalda yayımlanan iki ilişki yalnızca sağlık sorununun geri dönüşü ve genel yineleme alanlarına aittir.",
+      "smallest_correction": "Kapsam notundan yaşlanma dalıyla kurulan uzak dönüş benzerliği ifadesini çıkarıp notu gerçekten yayımlanan iki ilişkiyle sınırlandır."
+    },
+    {
+      "target_ref": "root_001551/B006",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt başın aşağı eğilmesini ve bakışların indirilmesini ayrı kullanımlar olarak verir; kavram karşılığındaki başını ve bakışlarını sözü ise ikisinin birlikte gerçekleşmesini gerektirerek dalı gereksiz yere daraltır.",
+      "smallest_correction": "Kavram karşılığında ve bağlacını veya olarak değiştir; diğer açıklamaları koru."
+    },
+    {
+      "target_ref": "root_001551/B006",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_018"
+      ],
+      "evidence_conflict": "Kaynak ifadesi, kişinin onuruna yediremediği bir iş için başını eğmediğini olumsuz biçimde bildirir. Sözlüksel karşılık ise aynı durumda başını eğdiğini söyleyerek kaynak örneğinin kutbunu tersine çevirir.",
+      "smallest_correction": "lu_018 karşılığını aşağılanma yüzünden başını eğme anlamını koruyacak ve onuruna yediremediği iş karşısındaki kullanımı açıkça olumsuzlayacak biçimde düzelt."
+    }
+  ]
+}

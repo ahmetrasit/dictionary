@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak B005 dalının root_001506/B003 ile ilişkisi, iki dalın da çekirdeği koklama olduğu halde bağımlı örneklerden ek bir sınır üretilerek yakın anlamlı ve kısmi gösterilmiştir. Bu tek ilişki, tam eş anlamlılık ve tam sınır eşleşmesi olarak düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001013/B005",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B005 için sağlanan çekirdek doğrudan koklamadır; root_001506/B003 sınır kartı da koklamayı açıkça çekirdek anlam olarak verir. Yazar, komşudaki kokulu hava örneğini ve burunla algılama anlatımını kurucu bir yöntem kısıtı sayarak ilişkiyi near_synonym/partial düzeyine indirmiştir. Bunlar çekirdeğin olağan gerçekleşmesi veya bağımlı örnekleridir ve iki anlamın sıradan kullanımda birbirinin yerine geçmesini engelleyen ayrı bir sınır oluşturmaz.",
+      "smallest_correction": "Yalnızca root_001506/B003 komşu satırını relation_type değeri synonym ve boundary_match değeri exact olacak biçimde düzelt; focus_only ile neighbor_only alanlarını boş bırak ve gloss, shared_zone ile distinction metinlerini iki dalın ortak koklama çekirdeğini ve sıradan kullanımda tam örtüşmesini yansıtacak en küçük değişikliklerle güncelle."
+    }
+  ]
+}

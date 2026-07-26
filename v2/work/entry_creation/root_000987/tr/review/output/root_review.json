@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B007 dalının anlam içeriği kanıtla uyumludur; ancak yaşayan yavru koşulunun yalnız dişi deve biçimine özgü olduğu yönündeki gerekli sınırlama, kimlik yargısının durumuna yansıtılmamıştır.",
+  "issues": [
+    {
+      "target_ref": "root_000987/B007",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, erken doğumu bütün gebe dişiler için verirken yavrunun yaşaması koşulunu yalnız dişi deve biçiminde bildirir. Yanıt bu ayrımı gerekçe ve tanımda doğru kurduğu halde kimlik yargısını accepted olarak kaydetmiştir; bu durum gerekli sınırlamayı yanlış temsil eder.",
+      "smallest_correction": "B007 identity_judgment.status değerini accepted yerine qualified olarak değiştirin; mevcut gerekçe ve sınır notu gerekli sınırlamayı zaten doğru açıkladığından başka alanı değiştirmeyin."
+    }
+  ]
+}

@@ -1,5 +1,17 @@
 {
-  "verdict": "pass",
-  "summary": "The staged Turkish entry is semantically consistent with the supplied evidence across branch definitions, source synthesis, glosses, and neighbor distinctions.",
-  "issues": []
+  "verdict": "repair",
+  "summary": "Yazar yanıtı üç dalın kimliğini, kapsamını, kavram haritasını, karşılıklarını ve komşu ayrımlarını genel olarak kanıtla uyumlu kuruyor. Yalnızca yol dalının kaynak sentezinde, kaynak ifadesinde aktarılan türetme görüşü yer almıyor; bu sınırlı eksiklik küçük bir eklemeyle giderilebilir.",
+  "issues": [
+    {
+      "target_ref": "root_000858/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi, bazı bilginlerin yol adını yolda ilerleyenin gözden kaybolmasına bağlayarak geçişte kaybolma anlamından türettiğini açıkça aktarır. Mevcut kaynak sentezi yol anlamını, düz yol özelleşmesini ve ses değişimini kapsıyor, fakat bu türetme görüşünü hiç belirtmiyor.",
+      "smallest_correction": "B001 source_synthesis.common_summary alanına, bir kaynakta bazı bilginlerin yol adını yolda ilerleyenin gözden kaybolması gerekçesiyle geçişte kaybolma anlamına bağladığını belirten tek bir cümle ekleyin; diğer alanları değiştirmeyin."
+    }
+  ]
 }

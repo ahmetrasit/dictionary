@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "root_001635/B003 dalında ayrılışta uğurlama çekirdeği, kaynakta köken veya ilişkili kullanım olarak verilen esenlik dileme unsuruyla zorunlu biçimde birleştirilmiştir. Bu aşırı daraltma kimlik yargısında, kavram haritasında, kaynak sentezinde ve kavram karşılığında düzeltilmelidir; diğer dallarda yayıma engel bir anlam sorunu görülmemiştir.",
+  "issues": [
+    {
+      "target_ref": "root_001635/B003",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kesin kaynak ifadesi dalın ortak çekirdeğini ayrılışta uğurlama olarak verir. Esenlik dileme ise bir kaynakta köken açıklaması, bir diğerinde selam ve esenlik sözünün yerine geçen kullanım olarak belirtilir; her uğurlamanın zorunlu bileşeni değildir. Bu nedenle dal çerçevesini koşulsuz kabul eden yargı fazla geniştir.",
+      "smallest_correction": "Durumu qualified yapın; gerekçede ayrılışta uğurlamayı çekirdek, esenlik dileme ve selam kullanımını kökensel veya ilişkili bir biçim olarak ayırın."
+    },
+    {
+      "target_ref": "root_001635/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F001, uğurlamayı mutlaka esenlik dileme yoluyla yapılan bir davranış sayıyor. Kaynak ise genel olarak ayrılışta uğurlamayı bildiriyor; yolcu için dua etme bir köken açıklaması, selam kullanımı da ilişkili bir gerçekleşmedir. Böylece bağımlı malzeme çekirdeğe yükseltilmiştir.",
+      "smallest_correction": "Tanımı ve F001'i ayrılışta vedalaşma veya uğurlama çekirdeğine indirin; esenlik dileme ve selam yönünü ayrı bir ilişkili kullanım ya da kaynak varyantı olarak gösterin. Canlı veya ölü kişiye yönelik olabilme kapsamını koruyun."
+    },
+    {
+      "target_ref": "root_001635/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kaynakların ayrılışta uğurlamada birleştiğini doğru söylüyor; ancak hemen ardından esenlik dileğini davranışın genel bir niteliği gibi sunuyor. Kanıt bunu bütün kaynakların ortak çekirdeği olarak değil, köken ve belirli kullanım açıklamaları olarak verir.",
+      "smallest_correction": "Ortak çekirdeği yalnızca ayrılışta uğurlama olarak bırakın; esenlik dileme ve selam yönünü bazı kaynakların köken veya kullanım açıklaması olarak niteleyin."
+    },
+    {
+      "target_ref": "root_001635/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı esenlik dilemeyi zorunlu kıldığı için kaynakların ortak ayrılışta uğurlama çekirdeğinden daha dardır. Buna rağmen hata profili hiçbir kayıp olmadığını ileri sürüyor.",
+      "smallest_correction": "Karşılığı ayrılışta uğurlama veya ayrılışta vedalaşma biçiminde genelleyin; applicability, error_profile ve facet_ids alanlarını düzeltilmiş çekirdekle uyumlu hale getirin."
+    }
+  ]
+}

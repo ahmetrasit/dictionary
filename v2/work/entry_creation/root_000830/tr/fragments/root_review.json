@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "52a3624186c59cf26a8b21da8cdd180f94d8ee0efc53ad7498eca811b7da7e1e",
+  "verdict": "repair",
+  "summary": "B001 dalı genel olarak doğru kurulmuş olsa da yetkili dal iddiasındaki yüzleri ısıyla kavurma kullanımı kavram haritasından ve kaynak sentezinden çıkarılmıştır. Bu sınırlı kapsam eksikliği iki alanda düzeltilmelidir; diğer dallarda yayıma engel bir anlam sorunu bulunmamıştır.",
+  "issues": [
+    {
+      "target_ref": "root_000830/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yetkili dal iddiası yüzlerin ısı etkisiyle kavrulmasını açıkça içerirken tanım ve kavram yüzleri yalnızca etin pişirilmesine, pişmiş yemeğe, yemek sunmaya, hayvan vermeye ve su ısıtmaya ayırıyor. Böylece et dışındaki bu doğrudan ısı etkisi dal kapsamından bütünüyle düşüyor.",
+      "smallest_correction": "Tanımı et dışındaki kullanımın da bulunduğunu belirtecek kadar niteleyin ve bc_001 ile desteklenen, yüzlerin güçlü ısıyla kavrulmasını sınırlı bir uzantı olarak kaydeden tek bir facet ekleyin; mevcut çekirdek ve öteki facetleri koruyun."
+    },
+    {
+      "target_ref": "root_000830/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak sentezi et pişirme, yemek sunma, hayvan verme ve su ısıtmayı topluyor, ancak bc_001 içindeki yüzleri kavurma örneğini hiç anmıyor. Bu, yetkili iddiadaki ayırt edici ve tek kaynağa özgü bir kullanımın sentezde kaybolmasına yol açıyor.",
+      "smallest_correction": "Mevcut ortak özeti bozmadan, bc_001 kapsamında yüzlerin güçlü ısıyla kavrulmasını et dışındaki sınırlı bir kullanım olarak bir cümleyle ekleyin."
+    }
+  ]
+}

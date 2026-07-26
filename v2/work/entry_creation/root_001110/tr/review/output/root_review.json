@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dalların kimliğini, kapsamını ve temel sınırlarını genel olarak kanıtla uyumlu kuruyor. Ancak B004 dalındaki bir sözlüksel karşılık, kanıtta açıkça verilen iki anlam seçeneğinden birini dışarıda bırakıyor.",
+  "issues": [
+    {
+      "target_ref": "root_001110/B004",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_023"
+      ],
+      "evidence_conflict": "lu_023 için sağlanan anlam hem daha önce var olmamayı hem de orada yaşamamayı seçenek olarak verir. Mevcut karşılık yalnızca orada yaşamamış olmayı aktardığı için var olmama seçeneğini daraltarak kaybediyor.",
+      "smallest_correction": "lu_023 target_gloss değerini iki seçeneği de koruyacak biçimde, örneğin \"sanki daha dün orada hiç var olmamış veya yaşamamıştı\" olarak düzeltin."
+    }
+  ]
+}

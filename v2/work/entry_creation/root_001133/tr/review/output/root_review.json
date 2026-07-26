@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dal kimliklerini ve temel anlam ayrımlarını genel olarak doğru kuruyor. Ancak B001 kaynak sentezi farklı sözlüklere özgü örnekleri ortak uzlaşma gibi sunuyor; B003'te bir sözlüksel karşılık da deve sınırlamasını kanıtın taşıdığından daha geniş uyguluyor. Bu iki alan küçük ve doğrudan düzeltmeler gerektiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_001133/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kaynakların arazi, avlu ve evler arası alan uygulamalarında birleştiğini söylüyor. Oysa toplu kanıtta evler arası açıklık yalnızca bir sözlükte, topluluğun bir kişinin çevresinden açılması da yalnızca başka bir sözlükte geçiyor; arazi ve avlu örneklerinin dağılımı da aynı değil.",
+      "smallest_correction": "Ortak özeti, bütün kaynaklara tek tek aynı örnekleri yüklemeyecek biçimde değiştir: tanıklıkların geniş açıklık çekirdeğini desteklediğini, farklı tanıklıkların arazi, avlu ve evler arası alan örneklerini verdiğini, topluluğun çevreden çekilmesinin ise ayrı bir tanıklıkta eylemsel uzantı olduğunu belirt."
+    },
+    {
+      "target_ref": "root_001133/B003",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_004"
+      ],
+      "evidence_conflict": "lu_004 için yazılan \"devenin aşıkları, uylukları veya dizleri arasındaki ayrıklık\" ifadesi, Türkçe sözdizimi bakımından uyluk ve dizleri de zorunlu olarak deveye bağlıyor. Kanıt deve sınırlamasını açıkça yalnızca aşıklar örneğinde verir; uyluk ve diz ayrıklığını bu kadar daraltmaz.",
+      "smallest_correction": "lu_004 hedef karşılığını \"devenin aşıkları arasındaki veya uyluklar ya da dizler arasındaki ayrıklık\" olarak değiştir; diğer sözlüksel karşılıkları koru."
+    }
+  ]
+}

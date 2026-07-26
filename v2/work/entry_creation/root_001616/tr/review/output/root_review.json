@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı kol kimliklerini, sözcükleşme kapsamlarını ve temel anlam sınırlarını kanıtla uyumlu biçimde koruyor. Yalnızca B002 kaynak sentezi, kanıtta açıkça yer alan ayırt edici ad türetimini ve kabile adı kullanımını aktarmadığı için küçük ve kesin bir onarım gerekiyor.",
+  "issues": [
+    {
+      "target_ref": "root_001616/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, Vail adının kurtulma anlamından türetilmesini ve ayrıca bir kabile adı olmasını açıkça kaydeder. Kaynak sentezi güvenli yer, sığınma, kurtulma ve yönelme yüzlerini topluyor, ancak bu ayırt edici türetim ve adlandırma tanıklığını hiç yansıtmıyor.",
+      "smallest_correction": "source_synthesis.common_summary sonuna, birleşik kanıtta kurtulma anlamından türetilmiş Vail adının ve kabile adı kullanımının da kaydedildiğini belirten tek bir cümle ekle; diğer alanları değiştirme."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Genel dal kimlikleri, kapsam sinirlari, kaynak sentezi ve komsu ayrimlari kanitla uyumlu. B004'te yayin onemi olan iki sinirli gloss sorunu var: kavram glossu dalin dusuk varlik uzantisini disarida birakiyor, ilk baglamsal gloss ise kanitta olmayan yumru/yuvarlak beden izlenimi ekliyor.",
+  "issues": [
+    {
+      "target_ref": "root_003303/B004",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B004 kaniti hem yumusak, henuz sertlesmemis cocuk veya genc evresini hem de tamamlanmadan dogan dusuk varligi ayni dalda verir. Yazar kavram haritasinda bunu dogru kuruyor, fakat concept_gloss metni 'cocukluk hali' ile sinirli kalip kendi hata profilinde dusuk varlik kapsamının kayboldugunu soyluyor.",
+      "smallest_correction": "B004 concept_gloss alanini, cocuk veya gencin henuz sertlesmemis gelisim haliyle tamamlanmadan dogan dusuk varligi ortak 'eksik/yumusak gelisim hali' cekirdeginde kapsayacak sekilde degistir; F003'u facet_ids listesine ekle ve hata profilini artik kayip kalmayacak bicimde guncelle."
+    },
+    {
+      "target_ref": "root_003303/B004",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B004 kaniti yumusaklik, henuz sertlesmeme ve tamamlanmamislik bildirir; yuvarlak veya yumru beden nitelemesi vermez. Ilk contextual_gloss 'yumru yumusak' diyerek kanitta bulunmayan bir gorunum ekliyor ve hata profili de bu eklemeyi kabul ediyor.",
+      "smallest_correction": "B004 contextual_glosses icindeki ilk gloss metninden kanitsiz 'yumru' nitelemesini kaldir; ilgili hata profilinde ekleme kalmadigini belirt."
+    }
+  ]
+}

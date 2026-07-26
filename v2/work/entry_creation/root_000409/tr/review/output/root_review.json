@@ -1,0 +1,61 @@
+{
+  "verdict": "repair",
+  "summary": "Dal kimlikleri, kapsamları, kavram haritaları, karşılıkları ve komşu sınırları kanıtla uyumludur. Ancak beş dalın kaynak bireşimi, sözlüklere özgü aktarımları ortak özet içinde birleştirip kaynak ayrıntılarını boş bıraktığı için kaynakların ayırt edici katkılarını yayıma uygun biçimde göstermemektedir.",
+  "issues": [
+    {
+      "target_ref": "root_000409/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kökün tek bir asla bağlanmasını, ad biçimlerinin eşdeğerliğini ve tartıda eksilme örneğini bütün kaynakların ortak anlatımı gibi sunuyor; oysa bu ayrıntılar farklı sözlüklere aittir ve kaynak ayrıntıları bütünüyle boştur.",
+      "smallest_correction": "Ortak özeti yalnızca genel eksilme çekirdeğiyle sınırla; tek asıl açıklamasını, ad biçimlerinin eşdeğerliğini ve tartı örneğini ilgili sözlük kodları altında ayrı kaynak ayrıntıları olarak ekle."
+    },
+    {
+      "target_ref": "root_000409/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kazanç doğmaması ile anaparanın azalmasını bütün kaynakların ortak çiftli açıklaması olarak veriyor; kanıtta ise ticaret, satış, anapara eksilmesi ve kazanç getirmeyen alışveriş aktarımları sözlüklere göre ayrışır ve hiçbir kaynak ayrıntısı gösterilmez.",
+      "smallest_correction": "Ortak özeti ticari kayıp çekirdeğine indir; satış kullanımı, anapara eksilmesi ve kazanç getirmeyen alışveriş ayrıntılarını yalnızca bunları aktaran sözlüklerin kaynak ayrıntılarına dağıt."
+    },
+    {
+      "target_ref": "root_000409/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, ölçü veya tartıyı eksiltme ile adaleti gözeten olumsuz emir yorumunu tek ortak anlatımda topluyor; kanıtta olumsuz emir ve adalet açıklaması yalnızca bir sözlükte, öteki işlem örnekleri ise farklı kaynaklarda yer alır.",
+      "smallest_correction": "Ortak özeti ölçü ve tartıda eksiltme çekirdeğiyle sınırla; olumsuz emir ve adalet açıklamasını ilgili tek sözlüğe, öteki ölçme ve tartma örneklerini de kendi sözlüklerine ait kaynak ayrıntıları olarak ekle."
+    },
+    {
+      "target_ref": "root_000409/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, sapma, yıkım, ceza, iyilikten uzaklaşma ve maddi olmayan kazanımların yitimini kaynakların ortak anlatımı gibi birleştiriyor; kanıtta bu öğeler farklı sözlüklere özgüdür ve kaynak ayrıntıları boştur.",
+      "smallest_correction": "Ortak özeti sapma ile yıkıcı yitim arasındaki genel kesişime indir; ceza ve iyilikten uzaklaştırılma açıklamasını ilgili kaynağa, sağlık, güvenlik, akıl, inanç ve karşılık listesini de onu tek başına veren kaynağa ait ayrıntılar olarak ekle."
+    },
+    {
+      "target_ref": "root_000409/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, genişlemiş biçimleri, güçsüz veya aşağı görülen kişi adlarını ve tekilsiz yıkım çoğulunu ortak kaynak anlatımı gibi sunuyor. Kanıtta kişi adları yalnızca bir sözlükte, tekilsiz yıkım çoğulu yalnızca öteki sözlükte yer alır.",
+      "smallest_correction": "Ortak özeti özel biçimlerin yitim ve yıkım alanındaki genel bağıyla sınırla; güçsüz veya aşağı görülen kişi adlarını birinci sözlüğün, tekilsiz yıkım çoğulunu ikinci sözlüğün kaynak ayrıntısına ayır."
+    }
+  ]
+}

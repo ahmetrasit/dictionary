@@ -1,0 +1,807 @@
+{
+  "format": 2,
+  "generated_by": "v2/scripts/build_branch_evidence.py",
+  "root_envelope_id": "root_001540",
+  "packet_path": "data/output/root_packets/root_001540.json",
+  "packet_sha256": "78b67ca315f1f165727fdf5ad9a23341eda37be998de210dd9dca247b47be9b7",
+  "furuq_path": "data/working/furuq_v4.sqlite",
+  "furuq_sha256": "1099db0d56515d2eb3e8d72f104f2e338c2c9a8c1fa6abbb046406d3b327e722",
+  "qnet_path": "data/upstream/qnet/incidence_full/raw_keyword_incidence.sqlite",
+  "qnet_sha256": "a5262b568203bff7ec04e6ca905781125beec83f90d62a5cf0cd6ff61049eee8",
+  "qnet_theme_path": "data/upstream/qnet/bridge_theme_full/bridge_theme_staging.sqlite",
+  "qnet_theme_sha256": "e4f590a111376e372eefef6d03b8694837ec9989017ce721d56db9828b2a734e",
+  "qnet_fix_manifest_path": "data/upstream/qnet/bridge_theme_full/latent_v11_qac_qnet_fix_manifest.json",
+  "qnet_fix_manifest_sha256": "b0ae3c19450a8019825321f6dc1e9f4c336249950f50267ed84eb3258756502c",
+  "branch": {
+    "root_id": "root_001540",
+    "branch_id": "B001",
+    "branch_image_ar": "استخلاص الشيء من ورطة أو يد غيره",
+    "what_is_ar": "كل فعل يدل على تخليص شيء أو نجاة شخص من غيره أو من ورطة، وصيغ نقذ وأنقذ واستنقذ وتنقذ بهذا المعنى، وما وقع عليه الإنقاذ من حيث هو مخلص.",
+    "what_is_not_ar": "لا يختص باسم الفرس أو الدرع المأخوذين من قوم آخرين أو من عدو؛ تلك صورة اسمية أخص في فرع مستقل.",
+    "source_phrase_ar": "أصل صحيح يدل على استخلاص شيء (maqayis)؛ وأنقذته منه خلصته وكل ما أنقذته فهو نقذ (maqayis)؛ أنقذه من فلان واستنقذه منه وتنقذه بمعنى أي نجاه وخلصه (sihah)؛ النقذ ما أنقذته (sihah;mufradat)؛ يقال نقذته وأنقذته واستنقذته وتنقذته أي خلصته ونجيته (tahdhib)؛ الإنقاذ التخليص من ورطة (mufradat)",
+    "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3683;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1512:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=b67c2523c72e8c4c;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D466%3Bsegment_index%3D103:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=c9c1c442d73b3474;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1532:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=32aa9b2f1f19f6eb",
+    "status": "accepted",
+    "contaminated": "no"
+  },
+  "dictionary_basis": {
+    "dictionary_count": 4,
+    "passage_count": 4,
+    "sources": [
+      {
+        "source_id": "maqayis",
+        "dictionary_name": "Maqāyīs al-Lugha",
+        "source_refs": [
+          "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3683"
+        ],
+        "passages": [
+          {
+            "source_ref": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3683",
+            "headword": "نقذ",
+            "route_status": "exact",
+            "entry_text_clean": "# | ( نقذ ) # | النون والقاف والذال أصل صحيح يدل على استخلاص شيء | وأنقذته منه خلصته ~~| وفرس نقيذ أخذ من قوم آخرين وأفراس نقائذ | وكل ما أنقذته فهو نقذ",
+            "origin_corpus": "quranic",
+            "section_path": "-",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      },
+      {
+        "source_id": "sihah",
+        "dictionary_name": "al-Ṣiḥāḥ",
+        "source_refs": [
+          "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1512:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=b67c2523c72e8c4c"
+        ],
+        "passages": [
+          {
+            "source_ref": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1512:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=b67c2523c72e8c4c",
+            "headword": "نقذ",
+            "route_status": "exact",
+            "entry_text_clean": "### | [نقذ] # أنقذه من فلان، واستنقذه منه، وتنقذه، بمعنى، أي نجاه وخلصه. والنقذ ~~بالتحريك: ما أنقذته، هو فعل بمعنى مفعول، مثل نفض وقبض. والنقائذ: من ~~الخيل: ما أنقذته من العدو وأخذته منهم، الواحدة نقيذة. ومنقذ: اسم رجل. ~~PageV02P572 ### | فصل الواو",
+            "origin_corpus": "quranic",
+            "section_path": "heading:1512",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      },
+      {
+        "source_id": "tahdhib",
+        "dictionary_name": "Tahdhīb al-Lugha",
+        "source_refs": [
+          "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D466%3Bsegment_index%3D103:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=c9c1c442d73b3474"
+        ],
+        "passages": [
+          {
+            "source_ref": "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D466%3Bsegment_index%3D103:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=c9c1c442d73b3474",
+            "headword": "نقذ",
+            "route_status": "exact",
+            "entry_text_clean": "# نقذ : وقال الليث : فرس نقذ : إذا أخذ من قوم آخرين . # أبو عبيد : النقائذ من الخيل التي تنقذت من أيدي الناس . # وقال لقيم بن أوس الشيباني : # أفكان شكري أن زعمت نفاسة # نقذيك أمس وليتني لم أشهد # قال ابن حبيب : نقذيك من الإنقاذ ، كما تقول : ضربيك . # قلت : يقال : نقذته وأنقذته ، واستنقذته وتنقذته ، أي : خلصته ونجيته . # وقال شمر فيما وجدته بخطه : النقيذة : الدرع المستنقذة من عدو . # وقال يزيد بن الصعق : # أعددت للحدثان كل نقيذة # أنف كلائحة المضل جرور",
+            "origin_corpus": "quranic",
+            "section_path": "parent_entry_id=466;segment_index=103",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      },
+      {
+        "source_id": "mufradat",
+        "dictionary_name": "al-Mufradāt fī Gharīb al-Qurʾān",
+        "source_refs": [
+          "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1532:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=32aa9b2f1f19f6eb"
+        ],
+        "passages": [
+          {
+            "source_ref": "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1532:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=32aa9b2f1f19f6eb",
+            "headword": "نقذ",
+            "route_status": "exact",
+            "entry_text_clean": "### | نقذ # الإنقاذ: التخليص من ورطة. قال تعالى: # وكنتم على شفا حفرة من النار فأنقذكم منها PageV01P820 # [آل عمران/ 103] والنقذ: ما أنقذته، وفرس نقيذ: مأخوذ من قوم آخرين كأنه ~~أنقذ منهم، وجمعه نقائذ.",
+            "origin_corpus": "quranic",
+            "section_path": "heading:1532",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      }
+    ]
+  },
+  "lexical_units": [
+    {
+      "lexical_unit_id": "lu_001",
+      "expression_ar": "أنقذ",
+      "unit_kind": "form",
+      "sense_ar": "خلّص غيره أو نجّاه من غيره أو من ورطة",
+      "source_phrase_ar": "أنقذته منه خلصته (maqayis)؛ أنقذه من فلان أي نجاه وخلصه (sihah)؛ يقال أنقذته أي خلصته ونجيته (tahdhib)؛ الإنقاذ التخليص من ورطة (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3683;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1512:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=b67c2523c72e8c4c;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D466%3Bsegment_index%3D103:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=c9c1c442d73b3474;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1532:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=32aa9b2f1f19f6eb",
+      "branch_source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3683;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1512:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=b67c2523c72e8c4c;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D466%3Bsegment_index%3D103:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=c9c1c442d73b3474;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1532:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=32aa9b2f1f19f6eb",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "accepted"
+    },
+    {
+      "lexical_unit_id": "lu_004",
+      "expression_ar": "النقذ",
+      "unit_kind": "form",
+      "sense_ar": "ما وقع عليه الإنقاذ؛ الشيء المخلَّص أو المنقَذ",
+      "source_phrase_ar": "كل ما أنقذته فهو نقذ (maqayis)؛ النقذ ما أنقذته هو فعل بمعنى مفعول (sihah)؛ النقذ ما أنقذته (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3683;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1512:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=b67c2523c72e8c4c;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1532:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=32aa9b2f1f19f6eb",
+      "branch_source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3683;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1512:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=b67c2523c72e8c4c;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D466%3Bsegment_index%3D103:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=c9c1c442d73b3474;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1532:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=32aa9b2f1f19f6eb",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "accepted"
+    },
+    {
+      "lexical_unit_id": "lu_006",
+      "expression_ar": "استنقذ",
+      "unit_kind": "form",
+      "sense_ar": "خلّص أو نجّى غيره من غيره",
+      "source_phrase_ar": "استنقذه منه بمعنى أي نجاه وخلصه (sihah)؛ استنقذته أي خلصته ونجيته (tahdhib)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1512:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=b67c2523c72e8c4c;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D466%3Bsegment_index%3D103:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=c9c1c442d73b3474",
+      "branch_source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3683;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1512:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=b67c2523c72e8c4c;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D466%3Bsegment_index%3D103:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=c9c1c442d73b3474;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1532:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=32aa9b2f1f19f6eb",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "accepted"
+    },
+    {
+      "lexical_unit_id": "lu_007",
+      "expression_ar": "تنقذ",
+      "unit_kind": "form",
+      "sense_ar": "خلّص أو نجّى غيره",
+      "source_phrase_ar": "تنقذه بمعنى أي نجاه وخلصه (sihah)؛ تنقذته أي خلصته ونجيته (tahdhib)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1512:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=b67c2523c72e8c4c;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D466%3Bsegment_index%3D103:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=c9c1c442d73b3474",
+      "branch_source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3683;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1512:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=b67c2523c72e8c4c;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D466%3Bsegment_index%3D103:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=c9c1c442d73b3474;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1532:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=32aa9b2f1f19f6eb",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "accepted"
+    },
+    {
+      "lexical_unit_id": "lu_011",
+      "expression_ar": "نقذيك",
+      "unit_kind": "review",
+      "sense_ar": "لفظة شاهدة منسوبة إلى الإنقاذ في معنى التخليص",
+      "source_phrase_ar": "نقذيك من الإنقاذ كما تقول ضربيك (tahdhib)",
+      "source_refs": "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D466%3Bsegment_index%3D103:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=c9c1c442d73b3474",
+      "branch_source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3683;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1512:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=b67c2523c72e8c4c;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D466%3Bsegment_index%3D103:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=c9c1c442d73b3474;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1532:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=32aa9b2f1f19f6eb",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "review"
+    },
+    {
+      "lexical_unit_id": "lu_012",
+      "expression_ar": "نقذ",
+      "unit_kind": "form",
+      "sense_ar": "خلّص أو نجّى غيره",
+      "source_phrase_ar": "يقال نقذته أي خلصته ونجيته (tahdhib)",
+      "source_refs": "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D466%3Bsegment_index%3D103:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=c9c1c442d73b3474",
+      "branch_source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3683;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1512:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=b67c2523c72e8c4c;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D466%3Bsegment_index%3D103:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=c9c1c442d73b3474;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1532:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=32aa9b2f1f19f6eb",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "accepted"
+    },
+    {
+      "lexical_unit_id": "lu_013",
+      "expression_ar": "الإنقاذ",
+      "unit_kind": "form",
+      "sense_ar": "التخليص من ورطة",
+      "source_phrase_ar": "الإنقاذ التخليص من ورطة (mufradat)",
+      "source_refs": "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1532:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=32aa9b2f1f19f6eb",
+      "branch_source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3683;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1512:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=b67c2523c72e8c4c;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D466%3Bsegment_index%3D103:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=c9c1c442d73b3474;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1532:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=32aa9b2f1f19f6eb",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "accepted"
+    }
+  ],
+  "qnet_candidates": [
+    {
+      "root_id": "root_000430",
+      "branch_id": "B002",
+      "root_norm": "خ ل ص",
+      "branch_image_ar": "خروج ونجاة من نشب",
+      "what_is_ar": "يدخل فيه خلص الشيء أو الشخص إذا كان قد نشب ثم نجا وسلم، وتخليصه وتنحيته من كل ما ينشب، والتخلص من الحبالة، وفرار خلبص مع زيادة الباء.",
+      "what_is_not_ar": "لا يدخل فيه مطلق الصفاء بلا علق، ولا الوصول إلى شخص، ولا اختصاص الشيء لشخص.",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:963;maqayis:root=%D8%AE%20%D9%84%20%D8%A8%20%D8%B5:headword=%D8%AE%D9%84%D8%A8%D8%B5:sha=82b0ace9b9f4b8a0;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A2616:headword=%D8%AE%D9%84%D8%B5:root=%D8%AE%20%D9%84%20%D8%B5:sha=d38280cb58b24b0a;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1594%3Asubentry%3A0%3A%D8%AE%D9%84%D8%B5:headword=%D8%AE%D9%84%D8%B5:root=%D8%AE%20%D9%84%20%D8%B5:sha=59f3a9bdc5563239;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2547:headword=%D8%AE%D9%84%D8%B5:root=%D8%AE%20%D9%84%20%D8%B5:sha=79c452d84ec4222e;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D350%3Bsegment_index%3D48:headword=%D8%AE%D9%84%D8%B5:root=%D8%AE%20%D9%84%20%D8%B5:sha=a40b2d5f4e79fb32",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "deliverance",
+        "release",
+        "rescue"
+      ]
+    },
+    {
+      "root_id": "root_001476",
+      "branch_id": "B001",
+      "root_norm": "ن ج و",
+      "branch_image_ar": "الخلاص بالانفصال",
+      "what_is_ar": "يدخل فيه نجا من الشر وأنجى غيره ونجاه والانفصال والخلاص من الشيء",
+      "what_is_not_ar": "ليس السرعة المجردة ولا المناجاة ولا النجو الخارج من البطن",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3548;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4247:headword=%D9%86%D8%AC%D9%88:root=%D9%86%20%D8%AC%20%D9%88:sha=f61b7c7c11566e53;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5572:headword=%D9%86%D8%AC%D8%A7:root=%D9%86%20%D8%AC%20%D8%A7:sha=8157e811649249fc;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D558%3Bsegment_index%3D4:headword=%D9%86%D8%AC%D8%A7:root=%D9%86%20%D8%AC%20%D8%A7:sha=b93c8563d09dafce;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1469:headword=%D9%86%D8%AC%D9%88:root=%D9%86%20%D8%AC%20%D9%88:sha=24f93a277398f40d",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "deliverance",
+        "release",
+        "rescue"
+      ]
+    },
+    {
+      "root_id": "root_001565",
+      "branch_id": "B004",
+      "root_norm": "ن و ش",
+      "branch_image_ar": "تناول المنكوب لإخراجه وإنقاذه",
+      "what_is_ar": "يدخل فيه انتاشني أو انتشتني من ظلمة أو هلكة، أي أخرجني أو أنقذني، على أنه بغير همز وبمعنى تناولني.",
+      "what_is_not_ar": "لا يدخل فيه المهموز انتأش بمعنى تأخر أو انتزع، ولا مجرد تناول الشيء بلا معنى إخراج أو إنقاذ.",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4504:headword=%D9%86%D9%88%D8%B4:root=%D9%86%20%D9%88%20%D8%B4:sha=f64ba3bf802d5d7d;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D600%3Bsegment_index%3D4:headword=%D9%86%D9%88%D8%B4:root=%D9%86%20%D9%88%20%D8%B4:sha=f0fc472aa5f77425",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "deliverance",
+        "extraction",
+        "rescue"
+      ]
+    },
+    {
+      "root_id": "root_001111",
+      "branch_id": "B001",
+      "root_norm": "غ و ث",
+      "branch_image_ar": "الغَوْث عند الشدة",
+      "what_is_ar": "الإعانة والنصرة والإغاثة عند الشدة وطلب الغوث",
+      "what_is_not_ar": "نداء واغوثاه المخصوص; أسماء الأعلام; الغيث المطر",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2554;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1138%3Asubentry%3A0%3A%D8%BA%D9%88%D8%AB:headword=%D8%BA%D9%88%D8%AB:root=%D8%BA%20%D9%88%20%D8%AB:sha=743c3c38ad7ad7bc;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A696:headword=%D8%BA%D9%88%D8%AB:root=%D8%BA%20%D9%88%20%D8%AB:sha=98ffcedb6f5ac56a;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1106:headword=%D8%BA%D9%88%D8%AB:root=%D8%BA%20%D9%88%20%D8%AB:sha=2de598e3e6d24fff",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "deliverance",
+        "rescue"
+      ]
+    },
+    {
+      "root_id": "root_001118",
+      "branch_id": "B004",
+      "root_norm": "غ ي ث",
+      "branch_image_ar": "إغاثة المبتلى وتفريجه",
+      "what_is_ar": "يدخل فيه الغياث وما أغاث الله به، وقول المبتلى أغثني بمعنى فرج عني، مع التنبه إلى تداخل ألفاظ الاستغاثة مع الغوث.",
+      "what_is_not_ar": "لا يدخل فيه الغوث بمعنى النصرة إذا كان من غ و ث مجردا عن غيث، ولا المطر إلا إذا قصد به الغيث.",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A5477:headword=%D8%BA%D9%8A%D8%AB:root=%D8%BA%20%D9%8A%20%D8%AB:sha=eeef02161f213332;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1106:headword=%D8%BA%D9%88%D8%AB:root=%D8%BA%20%D9%88%20%D8%AB:sha=2de598e3e6d24fff",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "deliverance",
+        "rescue"
+      ]
+    },
+    {
+      "root_id": "root_001152",
+      "branch_id": "B005",
+      "root_norm": "ف ز ع",
+      "branch_image_ar": "إغاثة المفزوع",
+      "what_is_ar": "إغاثة المستصرخ والمفزوع والنهوض له عند الفزع؛ ويشمل الإفزاع بمعنى الإغاثة",
+      "what_is_not_ar": "ليس التخويف؛ وليس مجرد اللجوء إلى المفزع؛ وليس إزالة الخوف بلفظ فزع عنه",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2756;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3064:headword=%D9%81%D8%B2%D8%B9:root=%D9%81%20%D8%B2%20%D8%B9:sha=7f9f731737ae1e99;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D127%3Bsegment_index%3D5:headword=%D9%81%D8%B2%D8%B9:root=%D9%81%20%D8%B2%20%D8%B9:sha=40ff6c6bb5ce747c;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1144:headword=%D9%81%D8%B2%D8%B9:root=%D9%81%20%D8%B2%20%D8%B9:sha=9af75e3b6cc931a0",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "deliverance",
+        "rescue"
+      ]
+    }
+  ],
+  "qnet_core_overlap_candidates": [
+    {
+      "root_id": "root_001139",
+      "branch_id": "B002",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "deliverance",
+        "recovery",
+        "release"
+      ]
+    },
+    {
+      "root_id": "root_001042",
+      "branch_id": "B011",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 0,
+      "shared_core_keywords": [
+        "escape",
+        "recovery",
+        "release"
+      ]
+    },
+    {
+      "root_id": "root_001113",
+      "branch_id": "B003",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "extraction",
+        "retrieval"
+      ]
+    },
+    {
+      "root_id": "root_001136",
+      "branch_id": "B002",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "recovery",
+        "release"
+      ]
+    },
+    {
+      "root_id": "root_001173",
+      "branch_id": "B002",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "deliverance",
+        "release"
+      ]
+    },
+    {
+      "root_id": "root_001345",
+      "branch_id": "B003",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "escape",
+        "rescue"
+      ]
+    },
+    {
+      "root_id": "root_001391",
+      "branch_id": "B001",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "escape",
+        "release"
+      ]
+    },
+    {
+      "root_id": "root_001443",
+      "branch_id": "B009",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "escape",
+        "release"
+      ]
+    }
+  ],
+  "qnet_bridge_overlap_candidates": [
+    {
+      "root_id": "root_001152",
+      "branch_id": "B003",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 4,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "crisis",
+        "protection",
+        "rescue",
+        "safety"
+      ]
+    },
+    {
+      "root_id": "root_000367",
+      "branch_id": "B004",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 4,
+      "consensus_keyword_count": 0,
+      "shared_bridge_keywords": [
+        "danger",
+        "protection",
+        "recovery",
+        "safety"
+      ]
+    },
+    {
+      "root_id": "root_001566",
+      "branch_id": "B003",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 2,
+      "shared_bridge_keywords": [
+        "protection",
+        "rescue",
+        "safety"
+      ]
+    },
+    {
+      "root_id": "root_000424",
+      "branch_id": "B003",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "protection",
+        "rescue",
+        "safety"
+      ]
+    },
+    {
+      "root_id": "root_000480",
+      "branch_id": "B001",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "conflict",
+        "protection",
+        "safety"
+      ]
+    },
+    {
+      "root_id": "root_001232",
+      "branch_id": "B010",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "crisis",
+        "danger",
+        "rescue"
+      ]
+    }
+  ],
+  "qnet_theme_overlap_candidates": [
+    {
+      "root_id": "root_001267",
+      "branch_id": "B007",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "conflict",
+        "control_restraint",
+        "danger_harm",
+        "motion",
+        "protection_security"
+      ]
+    },
+    {
+      "root_id": "root_001566",
+      "branch_id": "B002",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "conflict",
+        "control_restraint",
+        "danger_harm",
+        "motion",
+        "protection_security"
+      ]
+    },
+    {
+      "root_id": "root_001142",
+      "branch_id": "B001",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 0,
+      "shared_themes": [
+        "conflict",
+        "control_restraint",
+        "danger_harm",
+        "motion",
+        "protection_security"
+      ]
+    },
+    {
+      "root_id": "root_000430",
+      "branch_id": "B002",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "control_restraint",
+        "danger_harm",
+        "motion",
+        "protection_security"
+      ]
+    },
+    {
+      "root_id": "root_000455",
+      "branch_id": "B003",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "conflict",
+        "control_restraint",
+        "motion",
+        "protection_security"
+      ]
+    },
+    {
+      "root_id": "root_000480",
+      "branch_id": "B001",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "conflict",
+        "control_restraint",
+        "motion",
+        "protection_security"
+      ]
+    },
+    {
+      "root_id": "root_000839",
+      "branch_id": "B004",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "conflict",
+        "danger_harm",
+        "motion",
+        "protection_security"
+      ]
+    },
+    {
+      "root_id": "root_000931",
+      "branch_id": "B009",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "conflict",
+        "control_restraint",
+        "motion",
+        "protection_security"
+      ]
+    }
+  ],
+  "qnet_focus_coverage": {
+    "raw_keyword_exact_port": true,
+    "snapshot_exact_port": true,
+    "postfix_exact_port": false,
+    "theme_scope": "branch",
+    "focus_themes": [
+      "conflict",
+      "control_restraint",
+      "danger_harm",
+      "health_medicine",
+      "motion",
+      "protection_security"
+    ]
+  },
+  "furuq_candidates": [
+    {
+      "root_id": "root_000430",
+      "branch_id": "B002",
+      "root_norm": "خ ل ص",
+      "branch_image_ar": "خروج ونجاة من نشب",
+      "what_is_ar": "يدخل فيه خلص الشيء أو الشخص إذا كان قد نشب ثم نجا وسلم، وتخليصه وتنحيته من كل ما ينشب، والتخلص من الحبالة، وفرار خلبص مع زيادة الباء.",
+      "what_is_not_ar": "لا يدخل فيه مطلق الصفاء بلا علق، ولا الوصول إلى شخص، ولا اختصاص الشيء لشخص.",
+      "source_phrase_ar": "خلصته من كذا وخلص هو (maqayis)؛ كان قد نشب ثم نجا وسلم (ayn;tahdhib)؛ تخلص الظبي والطائر من الحبالة إذا أفلت منها (jamhara)؛ نجيته فتخلص (sihah)؛ التخليص التنحية من كل منشب (tahdhib)؛ خلبص الرجل إذا فر والباء فيه زائدة وهو من خلص (maqayis)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:963;maqayis:root=%D8%AE%20%D9%84%20%D8%A8%20%D8%B5:headword=%D8%AE%D9%84%D8%A8%D8%B5:sha=82b0ace9b9f4b8a0;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A2616:headword=%D8%AE%D9%84%D8%B5:root=%D8%AE%20%D9%84%20%D8%B5:sha=d38280cb58b24b0a;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1594%3Asubentry%3A0%3A%D8%AE%D9%84%D8%B5:headword=%D8%AE%D9%84%D8%B5:root=%D8%AE%20%D9%84%20%D8%B5:sha=59f3a9bdc5563239;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2547:headword=%D8%AE%D9%84%D8%B5:root=%D8%AE%20%D9%84%20%D8%B5:sha=79c452d84ec4222e;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D350%3Bsegment_index%3D48:headword=%D8%AE%D9%84%D8%B5:root=%D8%AE%20%D9%84%20%D8%B5:sha=a40b2d5f4e79fb32",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_packet",
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [
+        "deliverance",
+        "release",
+        "rescue"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "control_restraint",
+        "danger_harm",
+        "motion",
+        "protection_security"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_001139",
+      "branch_id": "B002",
+      "root_norm": "ف ر ج",
+      "branch_image_ar": "انفراج الهم والكرب",
+      "what_is_ar": "يدخل فيه ذهاب الغم، وانكشاف الكرب، والتفصي من هم أو غم أو حزن أو مرض، وتفريج الله للغم.",
+      "what_is_not_ar": "ليس كل شق حسي أو فرجة مكانية، ولا العورة، ولا الثغر.",
+      "source_phrase_ar": "الفرجة التفصي من هم أو غم (maqayis;sihah)؛ الفرج ذهاب الغم وفرجه الله تفريجا فانفرج (ayn;tahdhib)؛ الفرجة الراحة من حزن أو مرض والفرج ضد الهم (jamhara)؛ الفرج انكشاف الغم (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2752;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4132:headword=%D9%81%D8%B1%D8%AC:root=%D9%81%20%D8%B1%20%D8%AC:sha=03ced4c8c84eba26;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1244%3Asubentry%3A3%3A%D9%81%D8%B1%D8%AC:headword=%D9%81%D8%B1%D8%AC:root=%D9%81%20%D8%B1%20%D8%AC:sha=57ba2f94b9bbaa71;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A864:headword=%D9%81%D8%B1%D8%AC:root=%D9%81%20%D8%B1%20%D8%AC:sha=2360de03e4d6ffe8;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D547%3Bsegment_index%3D82:headword=%D9%81%D8%B1%D8%AC:root=%D9%81%20%D8%B1%20%D8%AC:sha=12324661c22d7a57;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1132:headword=%D9%81%D8%B1%D8%AC:root=%D9%81%20%D8%B1%20%D8%AC:sha=595dfafdb46cf5fd",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_core_overlap"
+      ],
+      "shared_consensus_core": [
+        "deliverance",
+        "recovery",
+        "release"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001152",
+      "branch_id": "B003",
+      "root_norm": "ف ز ع",
+      "branch_image_ar": "اللجوء إلى المفزع",
+      "what_is_ar": "اللجوء إلى شخص أو موضع عند دهم الأمر والاستغاثة به من الفزع؛ والمفزع الملجأ",
+      "what_is_not_ar": "ليس نفس الذعر؛ وليس الإغاثة الصادرة من الغير بعد اللجوء",
+      "source_phrase_ar": "هذا مفزع القوم إذا فزعوا إليه فيما يدهمهم (maqayis)؛ المفزعة المكان يلتجئ إليه الفزع (maqayis)؛ فزعنا إليهم إذا دهمنا أمر (ayn)؛ المفزع الملجأ (sihah)؛ فزعت إليه أي لجأت إليه (tahdhib)؛ فزع إليه إذا استغاث به عند الفزع (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2756;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A554:headword=%D9%81%D8%B2%D8%B9:root=%D9%81%20%D8%B2%20%D8%B9:sha=641f4ca0d9e1f2a9;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3064:headword=%D9%81%D8%B2%D8%B9:root=%D9%81%20%D8%B2%20%D8%B9:sha=7f9f731737ae1e99;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D127%3Bsegment_index%3D5:headword=%D9%81%D8%B2%D8%B9:root=%D9%81%20%D8%B2%20%D8%B9:sha=40ff6c6bb5ce747c;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1144:headword=%D9%81%D8%B2%D8%B9:root=%D9%81%20%D8%B2%20%D8%B9:sha=9af75e3b6cc931a0",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_bridge_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [
+        "crisis",
+        "protection",
+        "rescue",
+        "safety"
+      ],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001267",
+      "branch_id": "B007",
+      "root_norm": "ق و ب",
+      "branch_image_ar": "هرب وفرار",
+      "what_is_ar": "يدخل فيه قاب يقوب قوبا إذا هرب.",
+      "what_is_not_ar": "لا يدخل فيه قرب، ولا حفر، ولا تقشر الجلد.",
+      "source_phrase_ar": "قاب يقوب قوبا إذا هرب",
+      "source_refs": "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D484%3Bsegment_index%3D6:headword=%D9%82%D9%88%D8%A8:root=%D9%82%20%D9%88%20%D8%A8:sha=4dcef31109b7fad6",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "conflict",
+        "control_restraint",
+        "danger_harm",
+        "motion",
+        "protection_security"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_001476",
+      "branch_id": "B001",
+      "root_norm": "ن ج و",
+      "branch_image_ar": "الخلاص بالانفصال",
+      "what_is_ar": "يدخل فيه نجا من الشر وأنجى غيره ونجاه والانفصال والخلاص من الشيء",
+      "what_is_not_ar": "ليس السرعة المجردة ولا المناجاة ولا النجو الخارج من البطن",
+      "source_phrase_ar": "ينجو من شيء بذهاب عنه (maqayis)؛ نجا فلان من الشر ينجو نجاة (ayn)؛ نجوت من كذا نجاء ونجاة وأنجيت غيري ونجيته (sihah)؛ نجا الرجل من الشر ينجو نجوا أو نجاة (tahdhib)؛ أصل النجاء الانفصال من الشيء ومنه نجا فلان من فلان وأنجيته ونجيته (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3548;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4247:headword=%D9%86%D8%AC%D9%88:root=%D9%86%20%D8%AC%20%D9%88:sha=f61b7c7c11566e53;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5572:headword=%D9%86%D8%AC%D8%A7:root=%D9%86%20%D8%AC%20%D8%A7:sha=8157e811649249fc;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D558%3Bsegment_index%3D4:headword=%D9%86%D8%AC%D8%A7:root=%D9%86%20%D8%AC%20%D8%A7:sha=b93c8563d09dafce;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1469:headword=%D9%86%D8%AC%D9%88:root=%D9%86%20%D8%AC%20%D9%88:sha=24f93a277398f40d",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_packet"
+      ],
+      "shared_consensus_core": [
+        "deliverance",
+        "release",
+        "rescue"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001042",
+      "branch_id": "B011",
+      "root_norm": "ع ل و",
+      "branch_image_ar": "السلامة من النفاس أو العلة",
+      "what_is_ar": "يدخل فيه تعلت المرأة من نفاسها وتعلى الرجل من علته بمعنى سلم وارتفع عن الحالة",
+      "what_is_not_ar": "ليس مطلق الارتفاع ولا يقال في كل حال",
+      "source_phrase_ar": "للمرأة إذا طهرت من نفاسها قد تعلت (maqayis)؛ لا يقال إلا للنفساء (maqayis)؛ تعلت المرأة من نفاسها أي سلمت وتعلى الرجل من علته (sihah)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2335;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5458:headword=%D8%B9%D9%84%D8%A7:root=%D8%B9%20%D9%84%20%D8%A7:sha=aaf9272688f1326d",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_core_overlap"
+      ],
+      "shared_consensus_core": [
+        "escape",
+        "recovery",
+        "release"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000367",
+      "branch_id": "B004",
+      "root_norm": "ح و ج",
+      "branch_image_ar": "حوجا لك دعاء سلامة عند العثرة أو المصيبة",
+      "what_is_ar": "يشمل اللفظ اليماني حوجا لك يقال للمخاطب عند عثرة أو مصيبة بمعنى سلامة لك.",
+      "what_is_not_ar": "لا يشمل الحاجة والاحتياج ولا الحاج النبات.",
+      "source_phrase_ar": "الحوج لغة يمانية يقول الرجل للرجل عند العثرة أو المصيبة حوجا لك أي سلامة لك (jamhara)",
+      "source_refs": "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1192%3Asubentry%3A1%3A%D8%AD%D9%88%D8%AC:headword=%D8%AD%D9%88%D8%AC:root=%D8%AD%20%D9%88%20%D8%AC:sha=cf0fe89405e4a5b0",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_bridge_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [
+        "danger",
+        "protection",
+        "recovery",
+        "safety"
+      ],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001566",
+      "branch_id": "B002",
+      "root_norm": "ن و ص",
+      "branch_image_ar": "التأخر والفرار عن الشيء",
+      "what_is_ar": "يدخل فيه ناص عن قرنه، والتأخر، والفرار، والمراوغة أو الارتداد عن الشيء.",
+      "what_is_not_ar": "ليس مطلق الملجأ أو المغاث إلا من جهة اتصاله بالمناص، وليس التقدم الذي يسميه التهذيب بوصا.",
+      "source_phrase_ar": "ناص عن قرنه ينوص نوصا (maqayis)؛ النوص التباعد عن الشيء (ayn)؛ ناص عن قرنه ينوص نوصا ومناصا أي فر وراغ (sihah)؛ النوص التأخر (sihah;tahdhib)؛ استناص أي تأخر (sihah)؛ ليس بحين فرار (tahdhib)؛ ناص عنه ارتد (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3485;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4768:headword=%D9%86%D9%88%D8%B5:root=%D9%86%20%D9%88%20%D8%B5:sha=8ee0e7099d60c392;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2630:headword=%D9%86%D9%88%D8%B5:root=%D9%86%20%D9%88%20%D8%B5:sha=3f0b6a5d390cce2a;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D634%3Bsegment_index%3D6:headword=%D9%86%D9%88%D8%B5:root=%D9%86%20%D9%88%20%D8%B5:sha=94a2db344a46c551;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1555:headword=%D9%86%D9%88%D8%B5:root=%D9%86%20%D9%88%20%D8%B5:sha=0d6d0a73d839a269",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "conflict",
+        "control_restraint",
+        "danger_harm",
+        "motion",
+        "protection_security"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_001540",
+      "branch_id": "B002",
+      "root_norm": "ن ق ذ",
+      "branch_image_ar": "مأخوذ مستنقذ من قوم آخرين أو عدو",
+      "what_is_ar": "الأسماء والصفات للشيء المأخوذ أو المستخلص من قوم آخرين أو من العدو، خاصة الفرس النقذ أو النقيذ والنقائذ من الخيل، والدرع النقيذة.",
+      "what_is_not_ar": "ليس مطلق التخليص والنجاة من ورطة؛ ولا أسماء الأعلام مثل منقذ.",
+      "source_phrase_ar": "فرس نقيذ أخذ من قوم آخرين وأفراس نقائذ (maqayis)؛ فرس نقذ إذا أخذ من قوم آخرين (ayn;tahdhib)؛ النقائذ من الخيل ما أنقذته من العدو وأخذته منهم، الواحدة نقيذة (sihah)؛ النقيذة الدرع المستنقذة من عدو (tahdhib)؛ فرس نقيذ مأخوذ من قوم آخرين كأنه أنقذ منهم وجمعه نقائذ (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3683;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3287:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=05751b55a2636ecc;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1512:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=b67c2523c72e8c4c;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D466%3Bsegment_index%3D103:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=c9c1c442d73b3474;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1532:headword=%D9%86%D9%82%D8%B0:root=%D9%86%20%D9%82%20%D8%B0:sha=32aa9b2f1f19f6eb",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    }
+  ]
+}

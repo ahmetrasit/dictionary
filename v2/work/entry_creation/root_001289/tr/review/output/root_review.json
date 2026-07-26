@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak üç dalda yayıma yansıyan sınırlı sorunlar vardır. B001'de iki alandaki yazım yanlışı anlamı değiştiriyor, B008'de kanıtta bulunmayan süre ve zorluk koşulları ekleniyor, B009'da ise miskin kokusunu sonradan yitirdiği varsayılıyor.",
+  "issues": [
+    {
+      "target_ref": "root_001289/B001",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçedeki \"kazanın sert zemine ulaşması\" ifadesi kazı eylemini değil, Türkçede kazan adlı kabı bildiriyor; kanıt sert zemine ulaşan kazı veya kazıcıyı anlatır.",
+      "smallest_correction": "Gerekçede \"kazanın\" sözcüğünü \"kazının\" olarak düzelt."
+    },
+    {
+      "target_ref": "root_001289/B001",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanımdaki \"kazanın daha ileri gitmesi\" ifadesi yine kazı yerine kazan adlı kabı göstererek çekirdek olayı anlamsızlaştırıyor.",
+      "smallest_correction": "Tanımda \"kazanın\" sözcüğünü \"kazının\" olarak düzelt."
+    },
+    {
+      "target_ref": "root_001289/B008",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt yalnızca parmakların kazmaktan yorulduğunu söyler. Tanımın \"uzun veya zorlayıcı\" kazı şartı ile çekirdek fasetin kazma hareketinin tekrarını zorunlu kılması kanıtta bulunmayan koşullar ekleyerek dalı daraltır.",
+      "smallest_correction": "Tanımı \"Kazma yüzünden parmakların yorulup güçten düşmesidir.\" yap; F001 ifadesinden tekrar koşulunu çıkarıp kazma işinin parmakları yorduğunu ve güçlerini azalttığını belirt."
+    },
+    {
+      "target_ref": "root_001289/B009",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt miskte koku bulunmadığını bildirir, kokunun önceden var olup sonradan yitirildiğini bildirmez. \"Kokusunu yitirmiş misk\" bu desteklenmeyen zaman varsayımını ekler; bunu \"broadening\" diye sınıflandırmak da eklemenin yönünü doğru açıklamaz.",
+      "smallest_correction": "Bağlamsal karşılığı \"hiç kokusu olmayan misk\" yap; uygulanabilirlik ve hata profilini bu doğrudan karşılığa göre fit \"none\", adds null olacak biçimde güncelle."
+    }
+  ]
+}

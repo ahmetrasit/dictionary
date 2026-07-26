@@ -1,0 +1,72 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtla uyumlu, ancak B005 dalında dil kökü kullanımını ağırşağa biçim benzerliğiyle açıklamak kanıtta desteklenmiyor. B003 ve B004 kaynak sentezleri de sırasıyla dilbilgisel cinsiyet bilgisini ve türemiş çevrede dolanma kullanımını atlıyor.",
+  "issues": [
+    {
+      "target_ref": "root_001177/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi sözcüğün hem eril hem dişil kullanılabildiğini açıkça bildiriyor; kaynak sentezi yalnızca tekil, çoğul ve topluluk değerlerini aktarıp bu dilbilgisel değişkenliği dışarıda bırakıyor.",
+      "smallest_correction": "Ortak özete, sözcüğün hem eril hem dişil kullanılabildiğini belirten kısa bir cümle ekleyin."
+    },
+    {
+      "target_ref": "root_001177/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi çevresi açık kum tepesini vermekle birlikte, ondan türeyen ve bu tepenin çevresinde dolananı anlatan kullanımı da ayrıca bildiriyor. Sentez yalnızca tepeyi sayıyor ve bu türemiş kullanımı aktarmıyor.",
+      "smallest_correction": "Ortak özete, çevresi açık kum tepesinin çevresinde dolananı anlatan türemiş kullanımın da tanıklandığını ekleyin."
+    },
+    {
+      "target_ref": "root_001177/B005",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kimlik gerekçesi meme, dil kökü ve kalça kullanımlarının tümünü ağırşağa biçim benzerliği üzerinden bağlıyor. Kaynak biçim bağını meme ve kalça için desteklerken dil kökü için yalnızca onun kökündeki sert bölümü doğrudan adlandırıyor; biçim benzerliği açıklamıyor.",
+      "smallest_correction": "Durumu qualified yapın; gerekçe ve sınır notunda meme ile kalçanın biçim bağlantısını koruyup dil kökündeki sert bölümün biçimsel bağı açıklanmayan doğrudan tanıklanmış bir kullanım olduğunu belirtin."
+    },
+    {
+      "target_ref": "root_001177/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım, ağırşağa benzerliğin dil kökündeki sert bölüme de uygulandığını söylüyor. Kaynak bu bölümün sertliğini tanıklıyor, fakat ağırşağa benzediğini söylemiyor.",
+      "smallest_correction": "Tanımdaki biçim benzerliğini meme ve kalça kullanımlarıyla sınırlayın; dil kökündeki sert bölümü, kaynakta biçimsel bağı açıklanmadan aynı adla tanıklanan ilişkili kullanım olarak ayrı bir cümlede verin."
+    },
+    {
+      "target_ref": "root_001177/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak sentezi dil kökündeki sert bölümü de nesne adının biçim benzerliğiyle bedene aktarılması olarak açıklıyor. Supplied claim bu kullanım için yalnızca sert bölüm bilgisini verir ve benzerlik ilişkisi kurmaz.",
+      "smallest_correction": "Sentezde meme ve kalça kullanımlarını biçim benzerliği altında tutun; dil kökündeki sert bölümü ise kaynakta bağlantı gerekçesi verilmeyen ayrı bir beden kullanımı olarak niteleyin."
+    },
+    {
+      "target_ref": "root_001177/B005",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı yalnızca ağırşak ve ona benzeyen yuvarlak biçimleri kapsadığını söylerken F003 dil kökü kullanımını da temsil ettiğini bildiriyor. Dil kökündeki sert bölüm kanıtta tanıklıdır, fakat yuvarlak biçim veya ağırşak benzerliğiyle açıklanmamıştır.",
+      "smallest_correction": "Karşılık ve uygunluk açıklamasını, ağırşak ile açıkça ona benzeyen biçimlerin yanında dil kökündeki sert bölümü de ayrı bir ilişkili kullanım olarak kapsayacak biçimde dar kapsamlı olarak düzeltin; hata profilindeki bütün kullanımların biçim benzerliğiyle bağlı olduğu iddiasını kaldırın."
+    }
+  ]
+}

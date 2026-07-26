@@ -1,0 +1,61 @@
+{
+  "verdict": "repair",
+  "summary": "Yanit genel olarak kanitla uyumludur; ancak B002 dalinda kimlik durumu ve iki anlamsal siniflandirma duzeltilmeli, B003 ile B004 dallarindaki kavram karsiliklari da cekirdek ile daha dar veya eslik eden malzemeyi ayirmalidir.",
+  "issues": [
+    {
+      "target_ref": "root_001416/B002",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kesin dal iddiasi beyaz ve parlak taslari ve bunlardan ates cikarilmasini destekler, genel bir sertlik anlamini desteklemez. Yazar da sinir notunda genel sertligi disladigi halde dali accepted olarak isaretlemistir; bu durum gecici cercevedeki sertlik unsurunun reddedilmesiyle celisir.",
+      "smallest_correction": "identity_judgment.status degerini qualified yapin ve gerekcede kesin dal iddiasinin genel sertlik anlamini desteklemedigini acikca belirtin; mevcut tas, parlaklik ve ates cikarabilme sinirini koruyun."
+    },
+    {
+      "target_ref": "root_001416/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F003, tas adinin tekil ve cogul bicimleri arasindaki ve her iki kaynak parcasinda da bulunan adlandirma bagini source_variant olarak siniflandirir. Bu, kaynaklar arasinda degisen bir anlam anlatimi degil, ortak bicimsel adlandirma bilgisidir.",
+      "smallest_correction": "F003 rolunu source_variant yerine associated_use olarak degistirin; ifadeyi, kanit bagini ve diger yuzleri aynen koruyun."
+    },
+    {
+      "target_ref": "root_001416/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "common_summary, kanitlarin beyazlik ve parlaklikta birlestigini soyler. Kesin kaynak ifadesinde iki sozluk parlak tasi ortak verirken beyazlik ve ates cikarabilme ayrintisi yalniz kanitin bir bolumunde acikca yer alir; mevcut cumle ortakligi fazla genisletir.",
+      "smallest_correction": "common_summary ifadesini kaynaklarin parlak tas anlaminda birlestigini, kanitin bir bolumunun ayrica beyazlik ve ates cikarabilme ozelliklerini verdigini soyleyecek bicimde kaynak-tarafsiz olarak duzeltin."
+    },
+    {
+      "target_ref": "root_001416/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Dal cekirdegi karsilikli sozlu tartismadir. Kusku bulunan konu yalniz belirginlesmis bir kullanim, sozdeki sertlik ise eslik eden ve zorunlu olmayan bir nitelik olarak kavram haritasinda dogru ayrilmistir; buna karsin kavram karsiligi ikisini de zorunluymus gibi cekirdege tasir.",
+      "smallest_correction": "concept_gloss.text degerini karsilikli sozlu tartisma yapin; applicability ve error_profile metinlerini bu cekirdege gore daraltin ve facet_ids listesini yalniz F001 olarak duzeltin."
+    },
+    {
+      "target_ref": "root_001416/B004",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kesin kanit ve kimlik yargisi, tereddudu genel kuskuyla denk iki secenek olarak degil, kuskunun daha dar bir gerceklesmesi olarak ayirir. Kavram karsiligindaki kusku veya kararsizlik dizimi bu kapsam hiyerarsisini yuzey metninde kaybeder.",
+      "smallest_correction": "concept_gloss.text degerini kuskuyu cekirdek, karar verememe bicimindeki kararsizligi ise daha dar gorunum olarak acikca gosterecek bicimde, ornegin kusku; ozellikle karar verememe bicimindeki kararsizlik diye duzeltin; mevcut uygulama sinirini koruyun."
+    }
+  ]
+}

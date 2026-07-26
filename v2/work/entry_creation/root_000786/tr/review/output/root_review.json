@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "B002 dalında iki yüksek güvenli ve sınırlı düzeltme gerekiyor: bir sözlüksel karşılık kanıttan daha dar ve artıklı bir anlam ekliyor; bir komşuluk değerlendirmesi ise örnekleri kapsam sınırı sayarak ortak çekirdeği gereksiz yere kısmi gösteriyor.",
+  "issues": [
+    {
+      "target_ref": "root_000786/B002",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005"
+      ],
+      "evidence_conflict": "lu_005 için verilen anlam dağınık parçalardır. Hedef karşılıktaki \"kalıntılar\" sözü, parçaların bir olaydan geriye kalmış olmasını zorunlu kılar ve sözlüksel anlamda bulunmayan bir artık niteliği ekler.",
+      "smallest_correction": "lu_005 hedef karşılığını \"dağınık parçalar\" olarak değiştirin; öteki sözlüksel karşılıkları koruyun."
+    },
+    {
+      "target_ref": "root_000786/B002",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bu dal herhangi bir şeyin parçasını bildirir; root_001298/B004 sınır kartı da bir şeyin parçası veya bölümü çekirdeğini verir. Karşı kartta sayılan giysi, bulut, pamuk ve benzeri maddeler örnektir; bunları kurucu kapsam sınırı saymak, ortak genel çekirdeği gerekçesiz biçimde near_synonym ve partial düzeyine indirir.",
+      "smallest_correction": "root_001298/B004 satırını synonym ve exact olarak düzeltin; yalnızca örnek alanlarına dayanan focus_only, neighbor_only ve distinction metinlerini kaldırıp iki dalın genel parça çekirdeğinin örtüştüğünü belirten metin kullanın."
+    }
+  ]
+}

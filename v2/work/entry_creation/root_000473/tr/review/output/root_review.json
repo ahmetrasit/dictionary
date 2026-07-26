@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtı, dal kapsamlarını ve sözlüksel birimleri doğru yansıtıyor. İki sınırlı düzeltme gerekiyor: B002'nin kimlik hükmü uygulanan kapsam daraltmasını kaydetmeli, B003'ün komşu kapsama notu ise gerçekten seçilen iki karşıtlıkla uyumlu olmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_000473/B002",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kimlik hükmü \"accepted\" derken aynı dalın sınır notu ve collocation kapsamı, kaynak ifadesindeki genel amaç edinme çerçevesini yalnız baskın veya saldırı için hedef seçme yapısına daraltıyor. Bu nedenle hazırlanan geniş çerçeve değişmeden kabul edilmiş değildir.",
+      "smallest_correction": "identity_judgment.status değerini \"qualified\" yapın ve gerekçeyi, kaynak ifadesindeki genel amaç çekirdeğinin mekanik collocation profili uyarınca yalnız saldırı veya baskın yapısı içinde tutulduğunu açıkça kaydedecek biçimde düzeltin."
+    },
+    {
+      "target_ref": "root_000473/B003",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "neighbor_coverage_note dört karşıtlık seçildiğini ve dalın alıştırma hedefinden ayrıldığını söylüyor; oysa neighbor_distinctions dizisinde yalnız iki komşu vardır ve bunlar avcı siperi ile gece avıdır.",
+      "smallest_correction": "neighbor_coverage_note metnini, seçilen iki komşunun yöntemi avcı siperinden ve gece avından ayırdığını söyleyecek biçimde düzeltin; dört karşıtlık ve alıştırma hedefi iddialarını kaldırın."
+    }
+  ]
+}

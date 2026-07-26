@@ -1,0 +1,95 @@
+{
+  "verdict": "repair",
+  "summary": "B002 kavram haritasındaki sınırlı anlam genişlemesi ile B007 boyunca tatlılık niteliğinin ortak çekirdeğe taşınması düzeltilmelidir. B007'de tatlılık yalnızca kaynaklardan birinin ürün türü açıklamasına bağlanmalı; ortak çekirdek ağaçla ilişkili ürün düzeyinde tutulmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001096/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt suçu bağışlama ile kulun cezadan korunmasını destekler. Tanımdaki genel zararlı sonuç ifadesi ve F001'deki suçu silme seçeneği, verilen iddiadan daha geniş bir çekirdek kurar.",
+      "smallest_correction": "Tanımı suçun bağışlanması ve kişiyi o suçun cezasından koruma ile sınırla; F001'den suçu silme seçeneğini çıkar."
+    },
+    {
+      "target_ref": "root_001096/B007",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe tatlılığı kaynakların ortaklaştırdığı bir özellik sayıyor. Oysa kesin kaynak ifadesinde tatlılık yalnızca ürünün tatlı bir kurt olarak açıklandığı varyantta belirtiliyor; sakız benzeri madde ve ağaçtan toplama anlatımları bunu ortak özellik olarak vermiyor.",
+      "smallest_correction": "Nitelikli statüyü koru; ortak paydayı ağaçla ilişkili ürün olarak yaz ve tatlılığı yalnızca kurt açıklamasına bağlı bir kaynak varyantı olarak sınırla."
+    },
+    {
+      "target_ref": "root_001096/B007",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F001 tatlılığı bütün dalın çekirdeğine yükseltiyor; F004 de suyla karıştırılıp içilmeyi genel bir uzantı gibi sunuyor. Kanıt bunları yalnızca tatlı kurt açıklamasında verir.",
+      "smallest_correction": "Tanımı ağaçtan çıkan veya toplanan ürün olarak sınırla, F001'den tatlılığı çıkar ve F004'ü tatlı kurt açıklamasına bağlı bir kaynak varyantı olarak yeniden yaz."
+    },
+    {
+      "target_ref": "root_001096/B007",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet bütün kaynaklara tatlı ürün ve kimi anlatımda içecek olma çerçevesi yüklüyor. Kesin iddia yalnızca bir açıklamada tatlı kurt ve suyla içme ayrıntısını verir; öteki açıklamalar sakız benzeri madde veya ağaçtan toplanan ürün üzerindedir.",
+      "smallest_correction": "Ortak özeti ağaçla ilişkili ürün ve toplama çerçevesiyle sınırla; sakız benzeri madde ile suyla içilen tatlı kurt açıklamalarını kaynak varyantları olarak belirt."
+    },
+    {
+      "target_ref": "root_001096/B007",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı tatlılığı bütün dalı temsil eden çekirdek özelliğe dönüştürüyor. Bu nitelik yalnızca kaynak varyantlarından birinde açıkça bulunuyor.",
+      "smallest_correction": "Kavram karşılığını ağaçtan çıkan veya toplanan ürün olarak değiştir; uygulanabilirlik ve hata profilini bu ortak çekirdeğe göre düzelt ve yalnızca çekirdek yüzünü bağla."
+    },
+    {
+      "target_ref": "root_001096/B007",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tatlı ağaç salgısı karşılığı, farklı kaynak varyantlarındaki tatlılık ile sakız benzeri bitkisel maddeyi tek açıklamada birleştiriyor. Toplama karşılığı da toplama tanıklığına açıkça verilmeyen tatlılık niteliğini ekliyor.",
+      "smallest_correction": "İlk karşılığı sakız benzeri ağaç ürünü olarak, ikinciyi ağaç ürünü toplamak olarak yaz; uygulanabilirlik ve hata profillerini bu daraltmalara göre güncelle."
+    },
+    {
+      "target_ref": "root_001096/B007",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_030",
+        "lu_031",
+        "lu_032",
+        "lu_033"
+      ],
+      "evidence_conflict": "Dört sözlüksel karşılık da tatlılığı ürünün, ürünlerin ve toplama eylemlerinin genel niteliği olarak yayıyor. Kesin tanıklık tatlılığı yalnızca lu_030 içindeki tatlı kurt açıklamasında açıkça destekliyor.",
+      "smallest_correction": "lu_030'da tatlılığı yalnızca kurt varyantına bağla; lu_031, lu_032 ve lu_033 karşılıklarından tatlılığı çıkar."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök özeti B007'yi tatlı ağaç ürünü diye genelliyor; tatlılık o dalın bütün kaynak açıklamalarında ortak değildir.",
+      "smallest_correction": "Kök özetindeki tatlı ağaç ürünü ifadesini ağaçla ilişkili ürün olarak değiştir."
+    }
+  ]
+}

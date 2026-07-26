@@ -1,0 +1,94 @@
+{
+  "verdict": "repair",
+  "summary": "Üç çok kaynaklı dalda ortak özet, kaynakların farklı vurgularını bütün kaynakların ortak görüşü gibi sunuyor. Ayrıca B014 boyunca kanıttaki kesin Mekke konumu genel bir 'kutsal şehir' ifadesine dönüştürülerek yer bilgisi belirsizleştirilmiş. Bu sorunlar ilgili alanlarda dar kapsamlı metin düzeltmeleriyle giderilebilir.",
+  "issues": [
+    {
+      "target_ref": "root_001007/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, yardım ve savunmanın yüceltme ve saygıyla birleşmesini bütün kaynakların ortak çekirdeği sayıyor. Oysa kanıtta Sihah yalnız yüceltme ve saygıyı, Tahdhib ise sözle veya kılıçla savunmayı bildiriyor; bütün bileşenler her kaynakta birlikte yer almıyor.",
+      "smallest_correction": "common_summary metnini kaynaklar arası farkı kaynak adlarını yinelemeden gösterecek biçimde düzelt: tanıklıkların bir bölümü yardım ve savunmayı saygı veya yüceltmeyle ilişkilendirirken, sözlü ya da silahlı savunma ayrıntısının ayrı bir tanıklıkta bulunduğunu belirt."
+    },
+    {
+      "target_ref": "root_001007/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet bütün kaynakların caydırıcı terbiyeyi temel anlam saydığını ileri sürüyor. Kanıtta bütün tanıklıklar belirlenmiş ceza sınırının altındaki dayağı verirken, terbiyeyi temel sayma yalnız bazı tanıklıklarda bulunur; caydırma açıklaması de belirli kullanımın ayrıntısıdır.",
+      "smallest_correction": "common_summary metninde yalnız belirlenmiş ceza sınırının altındaki dayağı ortak nokta olarak sun; terbiyenin temel oluşunu bazı tanıklıkların açıklaması, kötülükten caydırmayı da belirli kullanımın ayrıntısı olarak ayır."
+    },
+    {
+      "target_ref": "root_001007/B006",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet bütün kaynakların birimi peygamber adı olarak bildirdiğini söylüyor. Kanıtta Tahdhib ile Mufradat peygamber adı bilgisini verirken, Sihah yalnız bunun bir ad olduğunu ve hafifliği nedeniyle çekime girdiğini belirtir.",
+      "smallest_correction": "common_summary metnini, tanıklıkların özel ad konusunda birleştiğini; peygamber adı bilgisinin bazı tanıklıklarda, hafiflik nedeniyle çekime girme bilgisinin ise ayrı bir tanıklıkta bulunduğunu söyleyecek biçimde düzelt."
+    },
+    {
+      "target_ref": "root_001007/B014",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt yeri açıkça Mekke'ye yakın olarak tanımlar. Gerekçe bunu 'kutsal şehre yakın' diye genelleştirip yaklaşık konumun korunduğunu söylüyor; bu ifade Mekke'yi kesin olarak belirlemez.",
+      "smallest_correction": "identity_judgment.rationale içindeki 'kutsal şehir' ifadesini doğrudan 'Mekke' ile değiştir ve kesin konum bilgisinin korunduğunu belirt."
+    },
+    {
+      "target_ref": "root_001007/B014",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F002, kanıttaki Mekke adını genel 'kutsal şehir' ifadesiyle değiştiriyor. Böylece yerin hangi şehre yakın olduğu çekirdek açıklamada belirsiz kalıyor.",
+      "smallest_correction": "concept_map.definition ve F002.statement içinde 'kutsal şehir' yerine 'Mekke' yaz; diğer kavramsal yapı ve facet rolleri değişmeden kalsın."
+    },
+    {
+      "target_ref": "root_001007/B014",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Hem common_summary hem sole_attestation özeti, kaynağın açıkça verdiği Mekke adını 'kutsal şehir' olarak genelleştiriyor ve tek tanıklığın ayırt edici konum bilgisini tam aktarmıyor.",
+      "smallest_correction": "source_synthesis.common_summary ile tek source_details satırındaki 'kutsal şehir' ifadelerini 'Mekke' olarak düzelt."
+    },
+    {
+      "target_ref": "root_001007/B014",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı 'kutsal şehre yakın bir yer adı' diyerek Mekke bilgisini kaybediyor; buna rağmen error_profile.fit değeri none ve preserves metni konumun korunduğunu ileri sürüyor.",
+      "smallest_correction": "concept_gloss.text içinde konumu 'Mekke' olarak belirt ve applicability ile error_profile.preserves metinlerini de aynı kesin konuma göre dar biçimde güncelle; fit değeri bundan sonra none kalabilir."
+    },
+    {
+      "target_ref": "root_001007/B014",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_021"
+      ],
+      "evidence_conflict": "lu_021 için sıradan karşılık, kaynakta açıkça verilen Mekke yakınlığını genel 'kutsal şehir' ifadesine dönüştürüyor. Bu, belirli yer adı biriminin ayırt edici konumunu belirsizleştiriyor.",
+      "smallest_correction": "lu_021 target_gloss değerini 'Mekke'ye yakın bir yerin özel adı' olarak düzelt."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "verdict": "editorial_review",
+  "summary": "Yazar yanıtı dal kimliklerini, kapsamları, kavram haritalarını, karşılıkları ve komşu sınırlarını genel olarak kanıtla uyumlu kuruyor. Ancak bazı sözlüğe özgü kısıtlamalar, özel kullanımlar ve türetim bilgileri kaynak bireşiminde kayboluyor veya ortak anlatım içinde kaynaklara topluca mal ediliyor. Sağlanan bc_001 kayıtları birden çok sözlüğü tek kimlikte birleştirdiğinden, tek sözlüğe çözülen ayrıntı satırları üretmek kanıt sahipliğinin yeniden ayrıştırılmasını gerektiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_001550/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak bireşimi, Tahdhib'e özgü olarak kişi nitelemesinde aynı anlamla ankar biçiminin kullanılmadığı kısıtlamasını hiç aktarmıyor. Bu, yayımlanacak kullanım sınırını doğrudan etkileyen sözlük-özel bir ayrıntıdır.",
+      "smallest_correction": "Tahdhib'e ait kullanım kısıtlamasını yalnız o sözlüğe bağlanan bir kaynak ayrıntısı olarak eklemek gerekir. Mevcut bc_001 birden çok sözlüğü topluca taşıdığı için önce bu desteğin kaynak düzeyinde ayrıştırılması gerekir."
+    },
+    {
+      "target_ref": "root_001550/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, irinli şişlikten çıkan irin veya cerahat ile kanla birlikte boşalma ayrıntılarını kaynakların ortak çekirdeği gibi sunuyor. Oysa ilk sözlük yalnız doğumla ilişkili keseden çıkan kan ve benzerini verir; irinli şişlik, irin veya cerahat ve boşaltma kalıbı Tahdhib'e özgüdür.",
+      "smallest_correction": "Ortak özeti iki kaynağın kesiştiği kanlı bedensel maddeyle sınırlandırmak, irinli şişlik ve boşaltma ayrıntılarını Tahdhib'e ait ayrı bir kaynak ayrıntısına taşımak gerekir. Bunun için çok kaynaklı bc_001 desteği kaynak düzeyinde ayrıştırılmalıdır."
+    },
+    {
+      "target_ref": "root_001550/B006",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, çirkin eylem, onu değiştirme veya yapanı caydırma ve seslerin en çirkini olma yönlerini tek bir birleşen kaynak anlatımı olarak veriyor. Kanıtta sağlıklı aklın çirkin bulduğu eylem ile caydırma Mufradat'a, en çirkin ses kullanımı ise yalnız Tahdhib'e özgüdür; bu ayırt edici dağılım kaynak bireşiminde görünmüyor.",
+      "smallest_correction": "Ortak özeti gerçekten paylaşılan alanla sınırlandırıp Mufradat'ın değerlendirme ve caydırma açıklamasını, Tahdhib'in ses kalıbını ayrı kaynak ayrıntılarında belirtmek gerekir. Tek bc_001 kimliği birden çok sözlüğü kapsadığı için kaynak sahipliği önce ayrıştırılmalıdır."
+    },
+    {
+      "target_ref": "root_001550/B007",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak bireşimi savaşma ve düşmanlık anlamını aktarıyor, fakat Mufradat'ın bu kullanımın savaşma alanına aktarılmış bir kullanım olduğu yönündeki türetim bilgisini atlıyor. Bu bilgi dalın kökteki tanımama alanıyla ilişkisini açıklayan sözlük-özel bir ayrıntıdır.",
+      "smallest_correction": "Aktarılmış kullanım açıklamasını yalnız Mufradat'a bağlanan bir kaynak ayrıntısı olarak eklemek gerekir. Mevcut bc_001 çok kaynaklı olduğundan bunu kurallı biçimde yapmak kaynak desteğinin ayrıştırılmasını gerektirir."
+    }
+  ]
+}

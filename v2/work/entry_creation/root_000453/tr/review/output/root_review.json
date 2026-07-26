@@ -1,0 +1,61 @@
+{
+  "verdict": "repair",
+  "summary": "B004 dalında kanıtlanmayan boynuz konumu beş alana taşınmıştır. Yetkili kanıt yalnızca beyazlığın başta belirmesini desteklediğinden, bu ek kapsam ilgili alanlardan çıkarılmalıdır. Diğer dallarda yayıma engel bir anlam, kapsam, kaynak sentezi, karşılık veya komşuluk sorunu bulunmamıştır.",
+  "issues": [
+    {
+      "target_ref": "root_000453/B004",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yetkili kaynak ifadesi beyazlığın başta belirmesini anlatır; kimlik sınırı buna ek olarak boynuzları da dala dahil etmektedir.",
+      "smallest_correction": "Sınır notundaki boynuz gönderimini kaldırıp dalı başta beliren ipliksi ilk aklıkla sınırlayın."
+    },
+    {
+      "target_ref": "root_000453/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım, beyazlığın boynuzlarda da belirdiğini söyler; bc_001 yalnızca baştaki beyazlığın iplik gibi belirmesini destekler.",
+      "smallest_correction": "Tanımdan boynuz seçeneğini çıkarın ve diğer kavram haritası içeriğini koruyun."
+    },
+    {
+      "target_ref": "root_000453/B004",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı ile uygulanabilirlik açıklaması boynuzları kapsama alır; yetkili dal kanıtı yalnızca baştaki belirişi verir.",
+      "smallest_correction": "Kavram karşılığından ve uygulanabilirlik açıklamasından boynuzları çıkararak yalnızca baştaki ipliksi aklık belirişini koruyun."
+    },
+    {
+      "target_ref": "root_000453/B004",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bağlamsal karşılığın kayıp açıklaması, boynuz kullanımını kanıtlanmış dal kapsamı gibi göstermektedir; bc_001 böyle bir konum içermez.",
+      "smallest_correction": "Kayıp açıklamasındaki boynuz kullanımı ibaresini kaldırın; iplik benzetmesinin açık söylenmemesi notunu koruyun."
+    },
+    {
+      "target_ref": "root_000453/B004",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_006"
+      ],
+      "evidence_conflict": "lu_006 için verilen kaynak ifadesi beyazlığın başta belirmesini aktarırken hedef karşılık boynuzları da eklemektedir.",
+      "smallest_correction": "lu_006 hedef karşılığını boynuzları anmadan, başta iplik gibi aklık belirmek biçiminde daraltın."
+    }
+  ]
+}

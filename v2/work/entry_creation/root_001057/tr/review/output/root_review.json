@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak B006 dalındaki bir sözlüksel karşılık, kaynakta bulunmayan satıcılık anlamını eklemektedir. Bu sınırlı ve yüksek güvenli hata düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001057/B006",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_022"
+      ],
+      "evidence_conflict": "lu_022 için kanıt, ilgili biçimi yalnızca fildişi sahibi olarak açıklar. Yazarın \"fildişi sahibi veya satıcısı\" karşılığı, kanıtta yer almayan satıcılık anlamını ekler.",
+      "smallest_correction": "lu_022 target_gloss değerini yalnızca \"fildişi sahibi\" olarak değiştir."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "cf75c54d1b3085215e9588d5aa872c3e8ed8ff1f6e56cc19dc51e4b6d8ebdee1",
+  "verdict": "repair",
+  "summary": "Iki bounded sorun bulundu ve bu turn icinde yalniz belirtilen alanlarda onarildi: B003 kavram karsiligi ettirgen acele ettirme uzantisini kapsadigini fazla soyluyordu; B004 kavram haritasi yer ayrintisini desteklenmeyen ada bolgesi ifadesiyle veriyordu.",
+  "issues": [
+    {
+      "target_ref": "root_002912/B003",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 hiz, acele, canli/sallantili hareket ve ayrica baskalarini acele ettirme kullanimini verir. Yazar F003'u extension olarak ayirmis olsa da concept_gloss 'hizli ve sarsintili hareket' metni F003 ettirgen acele ettirme uzantisini dogrudan karsilamaz; buna ragmen fit 'none', loses null ve facet_ids icinde F003 bulunuyordu.",
+      "smallest_correction": "B003 concept_gloss icinde F003'u facet_ids listesinden cikar; fit degerini 'narrowing' yap; loses alanina baskalarini acele ettirme uzantisini tek basina soylemedigini yaz; applicability metnini cekirdek ve ozel gorunumle sinirla."
+    },
+    {
+      "target_ref": "root_002912/B004",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 B004'u sinir bolgesiyle iliskili belirli bir yer adi olarak verir. Concept_map F002'deki 'ada bolgesi' ifadesi bu kanit paketindeki what_is_ar tarafindan desteklenmeyen bir cografi aciklama ekliyor ve dalin yayinlanacak tanim cevresini gereksiz genisletiyor.",
+      "smallest_correction": "B004 concept_map F002 statement alanini, yeri sinir bolgesiyle iliskili olarak tanitan ve ada bolgesi ifadesini kaldiran en kisa Turkce cumleyle degistir."
+    }
+  ]
+}

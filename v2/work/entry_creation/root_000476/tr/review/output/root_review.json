@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "B002 dalında kötü davranışlara sürükleme, kavram haritasında doğru biçimde bir uzantı olarak ayrılmıştır; ancak ana tanım ve kavram karşılığı bu bağımlı ayrıntıyı çekirdeğin eş düzeyli parçası hâline getirmektedir. Bu iki alan en küçük kapsam düzeltmesiyle onarılmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_000476/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram haritası kötü davranışların içine sürüklenmeyi F003 altında bir uzantı olarak sınıflandırdığı hâlde tanım, bunu benliği değerce düşürme ve köreltmeyle eş düzeyli bir çekirdek unsur olarak sunuyor. Kanıtın ortak çekirdeği arınmanın karşıtı olma ve benliği değerce düşürmedir; kötü davranışlara sokma bunun özel ahlaki gerçekleşmesidir.",
+      "smallest_correction": "Yalnızca B002 concept_map.definition metnini değiştirerek benliği değerce düşürme ve köreltmeyi ana tanımda bırakın; kötü davranışlara sürüklemeyi özel nesneli kullanımda görülen bir uzantı olarak ayrı cümlede niteleyin. Facetleri değiştirmeyin."
+    },
+    {
+      "target_ref": "root_000476/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı kötü davranışlara sürüklemeyi doğrudan çekirdek karşılığın içine alıyor ve hata profili hiçbir daralma olmadığını söylüyor; oysa aynı dalın kavram haritası bu öğeyi F003 altında uzantı olarak ayırıyor. Çekirdek karşılık arınmanın karşıtına düşürme ve değersizleştirme eksenini temsil etmelidir.",
+      "smallest_correction": "B002 concept_gloss alanını çekirdeği anlatacak biçimde daraltın: karşılık ve uygulanabilirlik metninde benliği arınmanın karşıtına düşürme ile değersizleştirmeyi öne çıkarın; F003 uzantısının tek başına belirtilmediğini hata profilinde kayıp olarak kaydedin ve facet_ids listesini F001 ile F002 ile sınırlayın."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "verdict": "repair",
+  "summary": "B003 dalının sadak veya sadak benzeri kap çekirdeği korunuyor; ancak deri, tahtasızlık, küçüklük ve yiyecek taşıma gibi kaynağa özgü ayrıntılar tanım ve sözlük karşılıklarında zorunlu ortak nitelikler gibi sunuluyor. Bu alanlar, çekirdek ile kaynak varyantlarını yeniden ayıracak biçimde dar kapsamlı olarak düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001667/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynaklar sadak veya sadak benzeri kap çekirdeğinde birleşir; deri ve tahtasız olma yalnız bir aktarımda, sadağa göre küçüklük ile yiyecek taşıma ise başka bir aktarımda belirtilir. Tanım ve F001 bu ayrıntıları dalın zorunlu ortak nitelikleri gibi sunarak F002 ve F003'teki kaynak özelliği ayrımını bozar.",
+      "smallest_correction": "Tanımı sadak veya sadak benzeri kap çekirdeğiyle başlatıp deri ve tahtasızlık ile küçüklük ve yiyecek taşımayı bazı aktarımlara bağla. F001'i yalnız ortak sadak veya sadak benzeri kap çekirdeğine indir; F002 ve F003'teki kaynağa özgü ayrıntıları koru."
+    },
+    {
+      "target_ref": "root_001667/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı deri, tahtasızlık ve küçüklüğü çekirdeğin zorunlu parçaları yapar; oysa bunlar bc_001 içindeki farklı aktarımlara özgü ayrıntılardır ve bütün kaynakların ortak sınırı değildir.",
+      "smallest_correction": "Kavram karşılığını sadak veya sadak benzeri kap olarak düzelt; applicability, error_profile ve facet_ids alanlarını bu çekirdek karşılığı yansıtacak biçimde yalnız gerekli ölçüde uyumla."
+    },
+    {
+      "target_ref": "root_001667/B003",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_014",
+        "lu_015"
+      ],
+      "evidence_conflict": "Her iki sözlük karşılığı da deri, tahtasızlık ve küçüklüğü birimlerin bütün kullanımlarına yükler. lu_014 ve lu_015 kanıtı sadak anlamını genel olarak verirken bu yapısal ayrıntıları yalnız belirli kaynak anlatımlarında destekler.",
+      "smallest_correction": "lu_014 karşılığını sadak veya sadak benzeri kap, lu_015 karşılığını sadaklar veya sadak benzeri kaplar yaparak kaynağa özgü nitelikleri genel sözlük karşılığından çıkar."
+    }
+  ]
+}

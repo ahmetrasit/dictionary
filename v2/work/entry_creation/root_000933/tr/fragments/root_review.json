@@ -1,0 +1,40 @@
+{
+  "inputs_sha256": "80e5fb59e4fad7e049214db443185c73f887cb1978270f1d2a89858d9b318c3f",
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak dal sınırlarını ve sözlükselleşme kapsamlarını doğru koruyor. Ancak B005'te kanıtta bulunmayan bir niteleme eklenmiş, B006'da ise kaynakta açıkça verilen Şam bağlantısı kaynak sentezi ve sözlüksel karşılıkta belirsizleştirilmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_000933/B005",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, karşılaştırma kalıbının sayılamayacak ölçüde çokluk bildirdiğini gösterir; F004'teki \"abartısız biçimde\" nitelemesini desteklemez.",
+      "smallest_correction": "F004'ün ifadesinden yalnızca \"abartısız biçimde\" sözlerini çıkararak karşılaştırmanın ölçülemez çokluk bildirdiğini koruyun."
+    },
+    {
+      "target_ref": "root_000933/B006",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt yemeği yapan topluluğu açıkça Şam halkı olarak belirtirken ortak özet bunu yalnızca \"belirli bir bölge halkı\" diye aktararak ayırt edici kaynak bilgisini gizler.",
+      "smallest_correction": "Ortak özetteki \"belirli bir bölge halkı\" ifadesini \"Şam halkı\" olarak değiştirin; diğer sentez içeriğini koruyun."
+    },
+    {
+      "target_ref": "root_000933/B006",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_015"
+      ],
+      "evidence_conflict": "lu_015 yemeğin Şam halkınca yapıldığını açıkça bildirir; \"belirli bir bölgeye özgü yemek türü\" karşılığı bu tanımlayıcı bölge bilgisini gereksiz yere belirsizleştirir.",
+      "smallest_correction": "lu_015 hedef karşılığını \"Şam halkının yaptığı bir yemek türü\" olarak değiştirin."
+    }
+  ]
+}

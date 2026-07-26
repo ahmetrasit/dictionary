@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dalların çoğunda kimlik, kapsam, sözlüksel karşılık ve komşu sınırlarını kanıtla uyumlu kuruyor. Ancak iki kavram tanımında kanıtın ilişki yapısı değişmiş, iki kaynak sentezinde de yayıma ilişkin belirgin ayrıntılar atlanmıştır; bunlar sınırlı ve yüksek güvenli düzeltmelerdir.",
+  "issues": [
+    {
+      "target_ref": "root_001239/B001",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 sert bir nesnenin kesilmesini bildirirken tanım, kesme işleminin sert bir nesnenin üzerinde yapılabildiğini söylüyor. Böylece kesilen nesne yanlışlıkla çalışma yüzeyine dönüştürülüyor.",
+      "smallest_correction": "Tanımdaki \"sert bir nesne üzerinde yapmak\" bölümünü \"sert bir nesneyi kesmek\" olarak değiştirin; tanımın geri kalanını koruyun."
+    },
+    {
+      "target_ref": "root_001239/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 yazılı belge ile ayrılmış payı alternatif göndergeler olarak verir; ayrılmış her payın bir belge tarafından belirlendiğini söylemez. Tanımın \"belgenin belirlediği ayrılmış pay\" ifadesi pay anlamını kanıtsız biçimde yazılı belgeye bağımlı kılar.",
+      "smallest_correction": "Tanımı, belge ile pay arasında zorunlu belirleme ilişkisi kurmadan \"Bir hak, ödül, geçim payı veya başka bir tahsisi bildiren yazılı belge ya da ayrılmış paydır\" biçiminde düzeltin."
+    },
+    {
+      "target_ref": "root_001239/B005",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 çok sıkı kıvırcıklığı belirli bir topluluğun saçıyla örnekleyen ayırt edici bir kaynak ayrıntısı içeriyor; kaynak sentezi bu örneği hiç kaydetmiyor.",
+      "smallest_correction": "common_summary sonuna, kaynaklarda çok sıkı kıvırcıklık için belirli bir topluluğun saçının da örnek verildiğini kaynaklar arası ve yansız biçimde belirten kısa bir cümle ekleyin."
+    },
+    {
+      "target_ref": "root_001239/B007",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 genel veya erkek kedi biçiminin bir dil kullanımında aktarıldığını ve bir kaynağın bunun doğru Arapça oluşundan kuşku duyduğunu bildiriyor. Sentez ise bütün kaynaklar koşulsuz biçimde birleşiyormuş gibi bu sözlüksel çekinceyi atlıyor.",
+      "smallest_correction": "common_summary içine, genel veya erkek kedi biçiminin kaynaklardan birinde dilsel doğruluğu kuşkulu bir aktarım olarak verildiğini kaynak adı belirtmeden ekleyin."
+    }
+  ]
+}

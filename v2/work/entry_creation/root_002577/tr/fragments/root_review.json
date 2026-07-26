@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": "533c82eb576ae85dd22b2291c52cf356c84a35e7cf4efbf615e452f77d99a52e",
+  "verdict": "repair",
+  "summary": "Kaynak temelli ana anlam, kimlik kararı, kapsam, glosslar, komşu alanı ve kök profili yayıma uygundur. Ancak kaynak sentezi, tek birleşik kanıttaki biçim bilgisi ve örnek dal kullanımını hiç disposition etmediği için sınırlı onarım gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_002577/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 yalnızca genel dal ile taze-yumuşak yıllık dal ayrımını değil, çoğul ve tekil biçim bilgisini ve belirli bir ağaç dalı örneğini de verir. Yazarın common_summary alanı bu ek biçim ve örnek bilgisini hiç hesaba katmıyor.",
+      "smallest_correction": "B001 source_synthesis.common_summary alanına, aynı birleşik iddianın çoğul/tekil biçim bilgisi ve belirli bir ağaç dalı örneği verdiğini ekle. source_details boş kalmalı, çünkü bc_001 tek kaynaklı bir iddia değildir."
+    }
+  ]
+}

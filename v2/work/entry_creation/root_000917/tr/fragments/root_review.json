@@ -1,0 +1,73 @@
+{
+  "inputs_sha256": "028367ec6b8d0d604127a8e6448640ac9c06e73edb0c8cb2a2068c8b1c586d7e",
+  "verdict": "repair",
+  "summary": "B001'in kaynak sentezi vahiy ve gayb bilgisini saklamamaya ilişkin ayırt edici olumsuz kalıbı dışarıda bırakıyor. B003 ise kaynakta yalnızca belirli bir güzel koku adı olarak verilen ürüne kanıtsız biçimde değerlilik ve karışım nitelikleri ekliyor; ayrıca yağla birlikte anılmayı iki ürün adına birden yayıyor. Bu sınırlı noktalar canlı girdide düzeltildi.",
+  "issues": [
+    {
+      "target_ref": "root_000917/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak kanıtı, genel cimrice elde tutma anlamının yanında gayb ve vahiy bilgisini saklamamayı bildiren ayırt edici olumsuz kalıbı da içeriyor; mevcut sentez bu kullanımı hiç anmıyor.",
+      "smallest_correction": "Ortak özete, olumsuz bir kalıpta vahiy veya gayb bilgisini saklamama ve iletmekten kaçınmama kullanımının da bulunduğunu belirten tek bir cümle eklemek."
+    },
+    {
+      "target_ref": "root_000917/B003",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi ürünü belirli bir güzel koku adı olarak tanımlar; mevcut gerekçe bunu kanıtta bulunmayan değerli bir koku karışımı olarak genişletir.",
+      "smallest_correction": "Gerekçedeki değerli bir koku karışımı sözünü belirli bir güzel koku ürünü sözüyle değiştirmek."
+    },
+    {
+      "target_ref": "root_000917/B003",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F002, kaynakta sadece belirli bir güzel koku adı olarak verilen ilk biçime değerlilik ve karışım özellikleri ekliyor.",
+      "smallest_correction": "Tanımda ve F002'de ilk biçimi yalnızca belirli bir güzel koku ürünü olarak anlatmak; ikinci biçime ilişkin yıkanma ve güzel koku ürünü ayrımını korumak."
+    },
+    {
+      "target_ref": "root_000917/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Sentez ilk ürünü kanıtsız biçimde değerli bir karışım diye niteler ve kaynakta yalnızca bir ürün adı yağ adıyla birlikte geçtiği halde bu ilişkiyi çoğul olarak ürün adlarına yükler.",
+      "smallest_correction": "İlk ürünü belirli bir güzel koku adı olarak vermek ve yağ adıyla birlikte anılma ayrıntısını yalnızca bu ürün adına bağlamak."
+    },
+    {
+      "target_ref": "root_000917/B003",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İlk bağlamsal karşılık ve açıklamaları, kaynakta bulunmayan değerlilik ve karışım özelliklerini ürüne ekliyor.",
+      "smallest_correction": "İlk bağlamsal karşılığı belirli bir güzel koku ürünü olarak daraltmak ve ilgili açıklamalardan değerlilik ile karışım eklemelerini çıkarmak."
+    },
+    {
+      "target_ref": "root_000917/B003",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_013"
+      ],
+      "evidence_conflict": "lu_013 kanıtı belirli bir güzel koku adını destekler; mevcut Türkçe karşılık buna değerli ve karışım niteliklerini ekler.",
+      "smallest_correction": "lu_013 karşılığını bir tür belirli güzel koku ürünü olarak düzeltmek."
+    }
+  ]
+}

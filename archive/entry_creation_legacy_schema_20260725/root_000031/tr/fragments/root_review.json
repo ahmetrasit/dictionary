@@ -1,0 +1,19 @@
+{
+  "inputs_sha256": "ca4f3d6a5fb9fb45b15cb051726374a54aa763fc950ff7f6c17c58726d025df3",
+  "verdict": "repair",
+  "summary": "B002 dalındaki bir komşuluk ilişkisi dışında yanıt, sunulan kanıtla yayın düzeyinde uyumludur.",
+  "issues": [
+    {
+      "target_ref": "root_000031/B002",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_006",
+        "lu_007"
+      ],
+      "evidence_conflict": "lu_006 ve lu_007 odak çekirdeğini kişinin veya herhangi bir şeyin kökü olarak verir; root_000027/B006 sınır kartı da yalnızca genel kök anlamını verir. Kişi, soy ve yerleşik şey ifadeleri ayrı bir sınır değil, bu genel çekirdeğin uygulamalarıdır; bu nedenle near_synonym ve partial sınıflaması kanıtlanmıyor.",
+      "smallest_correction": "root_000027/B006 ilişkisini synonym ve exact olarak değiştirin; focus_only ile neighbor_only alanlarını boş bırakıp ayrımı iki çekirdeğin olağan kullanımda birbirinin yerine geçebildiğini belirtecek biçimde daraltın."
+    }
+  ]
+}

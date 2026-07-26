@@ -1,0 +1,72 @@
+{
+  "verdict": "editorial_review",
+  "summary": "B002 dalında dal düzeyi kanıt ile sözcük birimi kanıtı arasında yayın kararını etkileyen bir kapsam uyuşmazlığı vardır. Yazar, kan, çığlık ve rüzgar kullanımlarını dalın çekirdeğine taşımış, ancak bunları desteklemek için yalnızca sel, deniz ve su kullanımlarını içeren bc_001 iddiasını göstermiştir. Bu kapsamın korunması mı yoksa dal düzeyi alanlardan çıkarılması mı gerektiği kanıt sahipliği kararı gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_000936/B002",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kabul gerekçesi kan, çığlık ve rüzgar kullanımlarını aynı fiziksel sınır aşımı yapısının parçaları sayıyor. Oysa bc_001 dal iddiasının tam kaynak ifadesi yalnızca sel, deniz ve suyu kapsıyor; öteki kullanımlar bu iddiada yer almıyor.",
+      "smallest_correction": "Kan, çığlık ve rüzgar dal kimliğinde tutulacaksa bunları destekleyen dal iddiaları kanıt sahibi tarafından sağlanmalıdır; sağlanmayacaksa kimlik gerekçesi ve sınır notu bc_001 içindeki su kullanımlarıyla sınırlandırılmalıdır."
+    },
+    {
+      "target_ref": "root_000936/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ile F002 ve F003, kanın coşmasını ve çığlık ile rüzgarın baskınlaşmasını bc_001 ile desteklenmiş dal kavramları olarak sunuyor. bc_001 bunların hiçbirini içermediğinden bu yüzler gösterilen dal iddiasından türemiyor.",
+      "smallest_correction": "Kanıt sahibi bu kullanımlar için uygun dal iddiaları eklemeli veya tanım su, sel ve deniz kapsamına çekilerek F002 ile F003 kaldırılmalıdır. Sözcük birimi kanıtını dal iddiası yerine yeniden atamak editör yetkisi gerektirir."
+    },
+    {
+      "target_ref": "root_000936/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kaynakların fiziksel taşkınlığı kan, çığlık ve rüzgara aktardığını bildiriyor. Gösterilen bc_001 ise yalnızca sel, deniz ve su ifadelerini topluyor; bu nedenle kaynaklara yüklenen daha geniş ortaklık iddia düzeyinde desteklenmiyor.",
+      "smallest_correction": "Özet bc_001 içindeki su taşkınlığı ortaklığıyla sınırlandırılmalı veya kan, çığlık ve rüzgar aktarımını kaynak düzeyinde taşıyan yeni dal iddiaları sağlanmalıdır."
+    },
+    {
+      "target_ref": "root_000936/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı kan, ses ve rüzgarı suyla birlikte dalın çekirdek haritasına dahil ediyor. Bu üç alan bc_001 içinde bulunmadığı için karşılık, gösterilen dal kanıtından daha geniştir.",
+      "smallest_correction": "Dal kanıtı değişmeyecekse kavram karşılığı su, sel ve denizin ölçüyü aşmasıyla sınırlandırılmalıdır; geniş karşılık korunacaksa önce eksik dal iddiaları eklenmelidir."
+    },
+    {
+      "target_ref": "root_000936/B002",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kan için coşmak ve ses ile rüzgar için baskın gelmek karşılıkları dal bağlam karşılıkları olarak yayımlanıyor. Bunlar sözcük birimi kayıtlarında görünse de bağlam karşılıklarının dayanması gereken bc_001 dal iddiasında bulunmuyor.",
+      "smallest_correction": "Kanıt paketi değişmeyecekse kan, ses ve rüzgara ayrılan bağlam karşılıkları çıkarılmalı; tutulacaklarsa bu kullanımları destekleyen dal iddiaları kanıt sahibi tarafından atanmalıdır."
+    },
+    {
+      "target_ref": "root_000936/B002",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_000937/B002 ile tam eşlik kararı, iki dalın kan, çığlık ve rüzgar kapsamını da paylaştığı gerekçesine dayanıyor. Odak dalın bc_001 iddiası bu ek alanları taşımadığından tam sınır örtüşmesi mevcut dal kanıtıyla doğrulanamıyor.",
+      "smallest_correction": "Önce B002 kapsamı kanıt sahibi tarafından kesinleştirilmelidir; kapsam su kullanımlarıyla sınırlı kalırsa ilişki near_synonym ve partial olarak düzeltilmeli, geniş kapsam onaylanırsa eksik dal iddiaları sağlanmalıdır."
+    }
+  ]
+}

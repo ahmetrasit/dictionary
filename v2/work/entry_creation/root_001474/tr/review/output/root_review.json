@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "B001 genel olarak kanıtla uyumludur; ancak boy abdesti gerektiren temizlenmemiş durum, üç yerde yalnız cinsel birleşme sonrasına indirgenmiştir. Bu daraltmalar küçük ve doğrudan düzeltilebilir niteliktedir.",
+  "issues": [
+    {
+      "target_ref": "root_001474/B001",
+      "field": "lexicalization_scope",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kapsam notu özel kullanımı yalnız cinsel birleşme sonrasındaki yıkanma durumuna bağlar; kanıt ise nedeni bu şekilde sınırlamadan, boy abdesti gerektiren durumda temizlenmemiş ve bunu önemsemeyen kişiyi bildirir.",
+      "smallest_correction": "Kapsam notundaki cinsel birleşme sonrası ifadesini, boy abdesti gerektiren durumda temizlenmemiş ve bunu önemsemeyen kişiye bağlı özel kullanım olarak değiştir."
+    },
+    {
+      "target_ref": "root_001474/B001",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F004, özel nitelemeyi cinsel birleşme sonrasına özgüler. Kanıt böyle bir neden sınırlaması koymaz; boy abdesti gerektiren durumda temizlenmemiş ve buna aldırmayan kişiyi anlatır.",
+      "smallest_correction": "F004'ü, boy abdesti gerektiren durumda olup gereken temizlenmeyi yapmamış ve bunu önemsemeyen kişi için kullanılan özel niteleme olarak düzelt."
+    },
+    {
+      "target_ref": "root_001474/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_004"
+      ],
+      "evidence_conflict": "lu_004 karşılığı anlamı cinsel birleşme sonrasına indirger; birim kanıtı nedeni sınırlamadan boy abdesti gerektiren durumda temizlenmemiş ve bunu önemsemeyen kişiyi bildirir.",
+      "smallest_correction": "lu_004 hedef karşılığını \"boy abdesti gerektiren durumda olup temizlenmemiş ve bunu önemsemeyen\" olarak değiştir."
+    }
+  ]
+}

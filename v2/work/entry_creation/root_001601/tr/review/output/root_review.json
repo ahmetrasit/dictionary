@@ -1,0 +1,61 @@
+{
+  "verdict": "repair",
+  "summary": "Dal yapısı ve temel anlamlar kanıtla uyumludur; ancak B001'de yalnız şeytanın gizli telkinini bildiren söz öbeği genel bir telkin anlamına genişletilmiş, B006'da ise aslanın adımı ile ısırışı arasındaki açık bırakılan açıklama yer yer her ikisinin de güçlü olduğu biçiminde kesinleştirilmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_001601/B001",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ile F003, gizli telkini katılımcısı belirtilmeyen genel bir kullanım olarak sunuyor. Kanıt ise bu kullanımı yalnız şeytanın kendi gizli telkiniyle kurulan söz öbeğinde verir; mekanik kapsam da bunu collocation olarak gösterir.",
+      "smallest_correction": "Tanımda ve F003'te telkini şeytanın kötü düşünceyi gizlice aşılamasıyla sınırla ve bunun belirli söz öbeğine bağlı olduğunu açıkça belirt; öteki kavram öğelerini değiştirme."
+    },
+    {
+      "target_ref": "root_001601/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, belli belirsiz telkini katılımcısız ve genel bir görünüm gibi anlatıyor; sağlanan kaynak sözü telkin kullanımını yalnız şeytanın gizli telkini olarak destekliyor.",
+      "smallest_correction": "Ortak özetteki genel telkin ifadesini şeytanın kötü düşünceyi gizlice aşılamasına bağlı kullanım olarak sınırla."
+    },
+    {
+      "target_ref": "root_001601/B001",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gizlice telkin etmek karşılığı ve uygulama açıklaması, yalnız belirli şeytan söz öbeğinde kanıtlanan anlamı herhangi bir özneyle kullanılabilen genel bir eyleme dönüştürüyor.",
+      "smallest_correction": "F003'e bağlı karşılığı ve açıklamasını şeytanın kötü düşünceyi gizlice aşılamasını anlatacak biçimde sınırla."
+    },
+    {
+      "target_ref": "root_001601/B006",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım, güçlü aslan nitelemesindeki gücün adımda ya da ısırmada görüldüğünü söylüyor. Kanıt ise aslanla ilgili açıklamayı adım ile ısırma arasında açık bırakır ve adımın güçlü olduğunu kesinleştirmez.",
+      "smallest_correction": "Tanımın son cümlesini, güçlü aslan nitelemesinin adımla mı ısırışla mı ilişkilendirildiğinin kesinleşmediğini söyleyecek biçimde düzelt; F003'ü ve öteki öğeleri koru."
+    },
+    {
+      "target_ref": "root_001601/B006",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Adımı veya ısırışı güçlü aslan karşılığı, güçlü sıfatını hem adıma hem ısırışa bağlayarak kanıttaki çözülmemiş iki olasılığı yanlış biçimde kesinleştiriyor.",
+      "smallest_correction": "F003'e bağlı karşılığı, adımıyla ya da ısırışıyla ilişkilendirilen güçlü aslan biçiminde düzelt ve uygulama ile koruma açıklamalarını da bu belirsizliği sürdürecek şekilde uyumlaştır."
+    }
+  ]
+}

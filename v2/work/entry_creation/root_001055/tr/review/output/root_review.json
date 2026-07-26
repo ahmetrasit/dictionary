@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "B006'nın ticari güvence çekirdeği doğru kurulmuştur; ancak yalnızca bağımlı bir kalıpta görülen zihin veya yazı zayıflığı, dal düzeyindeki yetkili kaynak ifadesinde bulunmadığı halde üç alanda dalın anlam uzantısı gibi sunulmuştur. Bu terfi kaldırılmalı, ilgili sözlüksel birim karşılığı ise korunmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001055/B006",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001'in kaynak ifadesi satış belgesini, güvence şartını, henüz sağlamlaştırılmamış işi, geri dönüşsüzlüğü ve onarım sorumluluğunu verir; zihin veya yazıdaki zayıflığı dal kimliğinin parçası olarak vermez. Gerekçedeki belirgin eksiklik kullanımları ifadesi bağımlı bir kalıp anlamını dal kimliğine taşır.",
+      "smallest_correction": "Kimlik gerekçesindeki sayımdan belirgin eksiklik kullanımlarını çıkarın; kabul durumunu, sınır notunu ve ticari güvence çerçevesini değiştirmeyin."
+    },
+    {
+      "target_ref": "root_001055/B006",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, zihin veya yazı gibi bir yetideki zayıflığı dal kavramı olarak desteklemez. Tanımdaki görünen eksiklik anlatımları ibaresi ile F005, yalnızca bağımlı sözlüksel birimde bulunan anlamı dal düzeyinde bir uzantı olarak yayımlar.",
+      "smallest_correction": "Tanımın ikinci cümlesinden görünen eksiklik anlatımlarını çıkarın ve F005'i silin. F001-F004'ü ve ilgili sözlüksel birim karşılığını aynen koruyun."
+    },
+    {
+      "target_ref": "root_001055/B006",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, bc_001'e dayanarak belirgin eksiklik kullanımına genişleme bildiriyor; oysa yetkili dal kaynağı bu bağımlı zihin veya yazı kalıbını içermez.",
+      "smallest_correction": "Ortak özetin son sayımından belirgin eksiklik kullanımlarına genişler bölümünü çıkarın; satış güvencesi, sorumluluk, güvenceden vazgeçme ve tamamlanmamış iş sentezini koruyun."
+    }
+  ]
+}

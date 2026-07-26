@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yaniti dallarin cogunda kanita bagli kaliyor; ancak B003 concept_gloss metni kanittaki iki parcali cekirdegin yalniz yere atilma tarafini dogrudan karsiliyor. Ayni claim, bir seyle yeri sertce vurma kullanimini da verdigi icin gloss metni daha kapsayici bir carpma ifadesine dar ve guvenli bicimde onarildi.",
+  "issues": [
+    {
+      "target_ref": "root_002898/B003",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B003 kaniti hem devenin kendini atmasini hem de bir seyle yeri sertce vurmayi verir. Concept_gloss.text alanindaki 'yere sertce atilma' ifadesi kendini yere atma tarafini karsilar, fakat bir nesneyle yeri vurma tarafini dogrudan tasimaz.",
+      "smallest_correction": "B003 concept_gloss.text degerini 'yere sertce carpma' yaparak hem kendini yere atma hem de bir seyle yeri vurma cekirdegini kapsamak."
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak B003 dalında bir şeyi yükseltme kullanımı yanlış biçimde kişisel ve toplumsal yüceltmeyle sınırlandırılmıştır. Ayrıca B009 dalındaki bir komşu, daha geniş kapsamına rağmen tam eş anlamlı gösterilmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_000751/B003",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi yükseltme ve üste çıkarma eylemini herhangi bir kişi ya da toplumsal konumla sınırlamaz. Buna karşılık gerekçe bunu birini yükseltme olarak daraltıyor, sınır notu ise fiziksel yükselişi açıkça dışlıyor.",
+      "smallest_correction": "Kabul durumunu koruyup gerekçedeki nesneyi bir şey olarak genelleştirin; sınır notunda fiziksel yükselişi dışlayan cümleyi kaldırarak ad kullanımlarındaki şeref ve soy yüksekliği ile bir şeyi yükseltme eylemini ayırın."
+    },
+    {
+      "target_ref": "root_000751/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F003, kaynakta sınırsız biçimde verilen bir şeyi yükseltip üste çıkarma eylemini yalnız bir kişiyi toplumsal bakımdan yüceltmeye dönüştürüyor.",
+      "smallest_correction": "Tanımdaki causative bölümü bir şeyi yükseltip yüceltme biçiminde genişletin ve F003 ifadesini aynı nesne ve kapsamla düzeltin; şeref ve soyla ilgili diğer yüzleri koruyun."
+    },
+    {
+      "target_ref": "root_000751/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kaynakların verdiği genel yükseltme eylemini başkasını yükseltme diye kişiyle sınırlandırıyor.",
+      "smallest_correction": "Ortak özetteki başkasını yükseltme sözünü bir şeyi yükseltme olarak değiştirin."
+    },
+    {
+      "target_ref": "root_000751/B003",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı yalnız yüksek saygınlık ve yüceliği adlandırdığı halde F003'ü de kapsadığını ve hiçbir kayıp bulunmadığını ileri sürüyor; kaynakta ayrıca bir şeyi yükseltme eylemi vardır.",
+      "smallest_correction": "Karşılığa genel yükseltme eylemini ekleyin ve uygulanabilirlik ile hata profilini bu kapsamı yansıtacak biçimde düzeltin."
+    },
+    {
+      "target_ref": "root_000751/B003",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Soyca yüksek sayılmak karşılığının kayıp açıklaması, dışarıda kalan causative kullanımı başkasını yükseltme diye daraltıyor; kanıt herhangi bir şeyi yükseltmeyi bildirir.",
+      "smallest_correction": "Kayıp açıklamasındaki başkasını yükseltme sözünü bir şeyi yükseltme olarak düzeltin."
+    },
+    {
+      "target_ref": "root_000751/B003",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Her iki komşu ayrımındaki odak dala özgü açıklamalar, dalın causative kapsamını birini veya başkasını toplumsal olarak yüceltmeye indiriyor. Kaynak ifadesindeki yükseltme eylemi bu katılımcı ve alan sınırlamasını taşımaz.",
+      "smallest_correction": "İki odak-dal açıklamasında da kişiyle sınırlı yüceltme yerine bir şeyi yükseltme eylemini yazın; mevcut ilişki türlerini ve diğer sınırları koruyun."
+    },
+    {
+      "target_ref": "root_000751/B009",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Odak dal yalnız belirli bir kalıpta bir şeyi bütünüyle almayı bildirir. Tam eş anlamlı gösterilen komşu ise bir şeyi bütünüyle alma yanında bütünüyle verme eylemini de kapsar; bu ek eylem alanı sınırların tam eşleşmesini engeller.",
+      "smallest_correction": "İlişkiyi near_synonym ve sınır eşleşmesini partial yapın; odak dala özgü bölümde belirli kalıptaki alma eylemini, komşuya özgü bölümde ise bütünüyle verme kapsamını belirtip ayrım metnini buna göre düzeltin."
+    }
+  ]
+}

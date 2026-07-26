@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "3e86c1454bf56590212d1002486c5a07b363b750242b518be3bde2355e11fd57",
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak bir tanım kanıtta bulunmayan fizyolojik bir neden eklemekte, bir sözlüksel karşılık ise verilen alternatif durumu atlamaktadır.",
+  "issues": [
+    {
+      "target_ref": "root_000946/B008",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt yalnız doğum sırasında kadına gelen doğum sancısını bildirir; tanımdaki sancının rahim kasılmasıyla oluştuğu ayrıntısı verilen kaynak ifadesinde yer almaz.",
+      "smallest_correction": "Tanımdan rahim kasılmasına ilişkin neden açıklamasını çıkarıp tanımı doğum sırasında kadına gelen sancıyla sınırlandır."
+    },
+    {
+      "target_ref": "root_000946/B010",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_032"
+      ],
+      "evidence_conflict": "lu_032, ağrısı dinmiş ısırılmış kişinin yanı sıra korkulan sancıların yeniden dönmesi ihtimalini de içerir; hedef karşılık yalnız ağrının dinmiş olmasını aktarıyor.",
+      "smallest_correction": "lu_032 hedef karşılığını, ağrısı dinmiş olma ile sancıların geri dönmesinden korkulma seçeneklerini birlikte koruyacak biçimde genişlet."
+    }
+  ]
+}

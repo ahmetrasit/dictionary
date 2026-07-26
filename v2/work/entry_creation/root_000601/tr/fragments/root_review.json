@@ -1,0 +1,51 @@
+{
+  "inputs_sha256": "7d4e4f1a61097286d8aebc2ee7833b0a0297a1f76bc2e7a3b53700933f89295a",
+  "verdict": "editorial_review",
+  "summary": "B008 dalinda olumlu kullanim ile olumsuz kaliplar birbirine karistirilmistir. Kanit, olumlu kullanimda konusmak icin agzi hareket ettirmeyi; ayri olumsuz kullanimlarda ise agzi hic hareket ettirmemeyi veya tek bir harf bile soylememeyi bildirir. Yazar yaniti, soz cikmamasini olumlu hareket anlaminin zorunlu sonucu haline getirdigi icin dalin kimligi ve temel anlam haritasi editoryal olarak yeniden ele alinmalidir.",
+  "issues": [
+    {
+      "target_ref": "root_000601/B008",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit, olumlu orneklerde konusmak amaciyla agzin hareket ettirilmesini verir; hic hareket etmeme ve hicbir harf soylememe ise ayri olumsuz yapilarda gecmektedir. Kabul gerekcesi bu iki yapisal durumu birlestirerek olumlu hareketin mutlaka acik soz veya ses cikarmadan gerceklestigini ileri suruyor.",
+      "smallest_correction": "Durumu accepted yerine qualified veya reframed olarak kaydedin ve gerekcede olumlu agiz hareketini, hareketin ya da harf soylemenin olumsuzlandigi kaliplardan acikca ayirin."
+    },
+    {
+      "target_ref": "root_000601/B008",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanim ve cekirdek facet, agzi konusmak icin hareket ettirmeye acik bir soz soylememe veya duyulur ses cikarmama kosulunu zorunlu olarak ekliyor. Oysa olumlu tanikliklar yalniz konusmaya yonelik agiz hareketini bildirir; soz veya harf cikmamasini bildiren tanikliklar olumsuz yapilardir.",
+      "smallest_correction": "Cekirdek tanimi konusmak icin agzi veya dudaklari hareket ettirmekle sinirlayin; hic hareket etmeme ve hicbir harf soylememe sonuclarini olumsuz kaliplara bagli ayri bir kullanim ya da ornek olarak gosterin."
+    },
+    {
+      "target_ref": "root_000601/B008",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak ozet, butun kanitlarin agiz hareketi bulunurken hic soz veya ses cikmamasi durumunda birlestigini soyluyor. Kanit bunun yerine olumlu hareket tanimlarini ve hareketin ya da harf soylemenin olumsuzlandigi ayri kaliplari birlikte sunuyor.",
+      "smallest_correction": "Ortak ozeti olumlu agiz hareketi anlamiyla sinirlayin ve olumsuz kaliplardaki hic hareket etmeme ya da hicbir harf soylememe bilgisini bagimli kullanim olarak ayri belirtin."
+    },
+    {
+      "target_ref": "root_000601/B008",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram glossunun metni olumlu hareket cekirdegine yakindir, ancak applicability ve error_profile acik soz veya ses cikmamasini dalin genel ve zorunlu parcasi sayiyor. Bu sinirlama yalniz olumsuz yapilardan cikmaktadir.",
+      "smallest_correction": "Gloss metnini koruyun; applicability ve error_profile alanlarini olumlu agiz hareketi cekirdegine gore duzeltin ve soz cikmamasini genel kapsamdan kaldirin."
+    }
+  ]
+}

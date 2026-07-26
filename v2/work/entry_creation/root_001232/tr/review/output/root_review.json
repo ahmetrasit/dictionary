@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtı doğru yansıtıyor; ancak iki dalın kavram haritasında küçük ve sınırları belirli düzeltmeler gerekiyor.",
+  "issues": [
+    {
+      "target_ref": "root_001232/B006",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F002, saç çizgisini ön saç tutamının bir uzmanlaşması olarak sınıflandırıyor; oysa kanıt bunu ayrı bir tamlama ve ayrı bir referans olarak, saçın ön veya arka bitiş sınırı biçiminde veriyor.",
+      "smallest_correction": "F002 rolünü specialization yerine associated_use olarak değiştirin; ifade metnini ve diğer alanları koruyun."
+    },
+    {
+      "target_ref": "root_001232/B009",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F002, otlaktan kalan otun hayvanlar tarafından izlenerek bulunduğunu söylüyor; kanıt yalnız otun geriye kaldığını ve izinin sürüldüğünü bildiriyor, iz süren katılımcıyı hayvan olarak belirlemiyor.",
+      "smallest_correction": "F002 ifadesinden hayvanlar katılımcısını çıkarıp ifadeyi otlaktan geriye kalan ve izi sürülen otla sınırlandırın."
+    }
+  ]
+}

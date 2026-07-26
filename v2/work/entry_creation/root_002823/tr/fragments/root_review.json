@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": "4d0c3431b55e075e8f703693539cdfd7210ee495cc9bec0d8070b6759bc9e350",
+  "verdict": "repair",
+  "summary": "Yazar çıktısı genel olarak kanıtla uyumlu; dalların kimliği, kapsamı, kaynak sentezi ve parlatmaları yayın açısından sağlam. B003 komşu kapsam notunda mevcut iki komşu ayrımı varken üç karşıtlıktan söz eden sayısal bir tutarsızlık vardı ve bu tek bounded düzeltme gerektiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_002823/B003",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B003 kanıtı fiziksel yükselti, basamak ve gözetleme noktası alanını verir; yazarın yayımladığı komşu ayrımları da yalnızca B002 ve B001 ile bu sınırı açıklar. Ancak komşu kapsam notu yayımlanan üç karşıtlık diyerek mevcut iki ayrımı yanlış sayıyor.",
+      "smallest_correction": "B003 neighbor_coverage_note içinde 'yayımlanan üç karşıtlık' ifadesini 'yayımlanan iki karşıtlık' olarak değiştir."
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın dal ayrımları ve genel örgüsü büyük ölçüde kanıtla uyumludur; ancak B001'de oruç ve haram ay sınırlamaları bazı yayın alanlarında silinmiş, B004'te ise ilerleme ve yükselme yüzlerine kanıtta bulunmayan kararlılık, engellenemezlik veya yenme içeriği eklenmiştir. Bu alanlar küçük ve yerel düzeltmelerle onarılabilir.",
+  "issues": [
+    {
+      "target_ref": "root_000695/B001",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F005 ve tanımdaki ay kullanımı yalnızca art arda gelen belirli üç ay diye genelleştirilmiştir. Kanıt bu birimi art arda gelen üç haram ay olarak sınırlar; haram ay niteliği örnekten çıkarılamaz.",
+      "smallest_correction": "Tanım ve F005'teki ay ifadesini art arda gelen üç haram ay olarak daralt; öteki yüzleri değiştirme."
+    },
+    {
+      "target_ref": "root_000695/B001",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Günleri ara vermeden sürdürmek biçimindeki bağlamsal karşılık, kanıttaki orucu herhangi bir gün dizisine dönüştürür. Art arda gelen üç ay karşılığı da bu ayların haram aylar olduğu sınırlamasını kaybeder.",
+      "smallest_correction": "İlk ilgili karşılığı orucu ara vermeden sürdürmek, ay karşılığını ise art arda gelen üç haram ay olarak düzelt; uygulama açıklamalarını da aynı sınırlarla uyumlu kıl."
+    },
+    {
+      "target_ref": "root_000695/B001",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003",
+        "lu_005"
+      ],
+      "evidence_conflict": "lu_003 için günleri ara vermeden sürdürmek karşılığı oruç anlamını taşımıyor. lu_005 için art arda gelen üç ay karşılığı ise kanıttaki haram ay niteliğini atlıyor.",
+      "smallest_correction": "lu_003 hedef karşılığını orucu ara vermeden sürdürmek, lu_005 hedef karşılığını art arda gelen üç haram ay yap."
+    },
+    {
+      "target_ref": "root_000695/B004",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F001 ileri gitmeyi engellenmeden ve kararlılıkla gerçekleşen bir hareket diye niteler. Kanıt yalnızca güçlü kişi veya ileri giden kişi anlamlarını verir; bu iki tarz niteliğini sağlamaz.",
+      "smallest_correction": "F001 ve tanımdan kararlılıkla ve engellenmeden eklerini çıkar; güçlü olma ile ileri gitmeyi kanıttaki gibi alternatif yüzler olarak koru."
+    },
+    {
+      "target_ref": "root_000695/B004",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Güçle ilerleme ifadesi, kanıttaki güçlü olma veya ileri gitme alternatiflerini tek bir güç kullanarak ilerleme anlamında birleştiriyor.",
+      "smallest_correction": "Kavram karşılığında güçlü olma ile ileri gitmeyi alternatif yüzler olarak ayır; yükselme ve üstün gelme yüzlerini koru."
+    },
+    {
+      "target_ref": "root_000695/B004",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Güçlü ve kararlılıkla ileri giden karşılığı, kanıttaki güçlü veya ileri giden seçeneklerini zorunlu bir birliktelik yapıyor ve ayrıca kararlılık niteliği ekliyor.",
+      "smallest_correction": "Karşılığı güçlü veya ileri giden biçiminde düzelt; uygulama ve koruma açıklamalarında da iki yüzü zorunlu olarak birleştirme."
+    },
+    {
+      "target_ref": "root_000695/B004",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_028"
+      ],
+      "evidence_conflict": "lu_028 için üstün gelme ve üzerine çıkma karşılığı yenme veya üstün gelme sonucunu ekliyor. Bu birimin kanıtı yalnızca yükselme ya da üstüne çıkma anlamını verir.",
+      "smallest_correction": "lu_028 hedef karşılığını yükselme veya üstüne çıkma ile sınırla."
+    },
+    {
+      "target_ref": "root_000695/B004",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_000257/B001 ile ortak alan, odak dalı kolayca durdurulamayan hareket diye tanımlıyor. Engellenemezlik komşu dalın sınırıdır; odak dalın kanıtı güçlü olma veya ileri gitmeyi verir.",
+      "smallest_correction": "Ortak alandan kolayca durdurulamayan niteliğini çıkar ve ortaklığı güçlü ileri hareketle sınırla; engellenemezliği yalnızca komşu dala özgü farkta tut."
+    }
+  ]
+}

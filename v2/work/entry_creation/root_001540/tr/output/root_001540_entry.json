@@ -1,0 +1,822 @@
+{
+  "inputs_sha256": "0b9b3e997e5d49aad552d0a59c1a3603310c708044ac98201688c397c2a5e171",
+  "artifact_format": "dictionary-v2-root-entry-draft-v1",
+  "generated_by": "v2/scripts/accept_root_writer.py",
+  "root_envelope_id": "root_001540",
+  "language": "tr",
+  "branches": [
+    {
+      "branch_ref": "root_001540/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, bir şeyi başka birinin elinden veya bir sıkıntıdan çekip çıkararak kurtarma çekirdeğini açıkça verir. Aynı ifade, çeşitli eylem biçimlerinin bu anlamı taşıdığını ve kurtarma eyleminden etkilenen şeyin de kurtarılmış nesne olarak adlandırılabildiğini gösterir; bu nedenle dalın eylem ile sonuç nesnesini birlikte ele alan çerçevesi kanıtla uyumludur.",
+        "boundary_note": "Dal, genel kaçış ya da kendiliğinden kurtuluşu değil, bir öznenin başka bir şeyi veya kişiyi etkin biçimde kurtarmasını ve bunun kurtarılmış nesnesini kapsar."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, çıplak anlam çekirdeğindeki kurtarma eylemini türemiş eylem biçimlerinden ve kurtarılmış nesneyi belirten sonuç adından ayırır; herhangi bir özel söz öbeğine özgü anlamı genelleştirmez."
+      },
+      "concept_map": {
+        "definition": "Bir şeyi başka birinin elinden ya da içine düştüğü bir sıkıntıdan etkin biçimde çekip çıkararak kurtarmaktır. Aynı anlam alanında, kurtarma eyleminin nesnesi kurtarılmış şey olarak da adlandırılır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Bir özne, bir şeyi veya kişiyi başka birinin elinden ya da sıkıntılı bir durumdan çekip çıkararak kurtarır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Eylem, kurtaran öznenin etkin müdahalesini ve kurtarılanın içinde bulunduğu bağdan veya güçlükten çıkarılmasını içerir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "extension",
+            "statement": "Kurtarma eyleminin nesnesi, eylemin sonucu öne çıkarılarak kurtarılmış şey diye adlandırılabilir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynakların ortak çekirdeği, bir şeyi veya kişiyi başka birinin elinden ya da bir sıkıntıdan kurtarıp çıkarmaktır. Eylem biçimlerinin yanında, bu eylemle kurtarılan nesneyi belirten sonuç odaklı bir kullanım da aynı anlam alanına bağlıdır.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "çekip çıkararak kurtarma ve kurtarılmış şey",
+        "applicability": "Dalın hem etkin kurtarma eylemini hem de bu eylemden etkilenmiş nesneye uzanan sonuç anlamını birlikte göstermek gerektiğinde kullanılır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Etkin çekip çıkarma yoluyla kurtarma çekirdeğini ve kurtarılmış nesne sonucunu birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "elinden kurtarmak",
+          "usage_role": "contextual",
+          "applicability": "Kurtarılan kişi veya şey başka bir kişinin denetiminde ya da elinde bulunduğunda doğal bir eylem karşılığıdır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Bir öznenin başkasının elindeki kişi veya şeyi etkin biçimde kurtarmasını korur.",
+            "loses": "Başka bir kişinin elinde bulunmayan, yalnızca sıkıntılı bir durumdan çıkarılma bağlamını ve sonuç nesnesi kullanımını dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "sıkıntıdan çekip çıkarmak",
+          "usage_role": "contextual",
+          "applicability": "Kurtarılanın bir güçlük veya tehlikeli durum içinde bulunduğu bağlamlarda eylemin müdahale yönünü belirginleştirir.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Sıkıntılı durumdan etkin müdahaleyle çıkarıp kurtarma işlemini korur.",
+            "loses": "Bir başkasının elinden kurtarma bağlamını ve kurtarılmış nesneyi adlandıran sonuç kullanımını kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "kurtarılmış şey",
+          "usage_role": "explanatory",
+          "applicability": "Eylemin kendisi değil, kurtarma işleminden etkilenen ve bu işlemin sonucu durumuna gelen nesne anlatıldığında kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Kurtarma eyleminin nesnesini sonuç durumuyla birlikte korur.",
+            "loses": "Etkin kurtarma işlemini ve kurtaran öznenin müdahalesini doğrudan ifade etmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_001",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kurtarmak; elinden veya sıkıntıdan çekip çıkarmak"
+        },
+        {
+          "lexical_unit_id": "lu_004",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kurtarılmış şey"
+        },
+        {
+          "lexical_unit_id": "lu_006",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kurtarmak; çekip çıkarmak"
+        },
+        {
+          "lexical_unit_id": "lu_007",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kurtarmak; çekip çıkarmak"
+        },
+        {
+          "lexical_unit_id": "lu_011",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kurtarma anlamında kullanılan tanıklık biçimi"
+        },
+        {
+          "lexical_unit_id": "lu_012",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kurtarmak; çekip çıkarmak"
+        },
+        {
+          "lexical_unit_id": "lu_013",
+          "rendering_kind": "ordinary",
+          "target_gloss": "sıkıntıdan kurtarma"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "kaçmak",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Tehlikeli veya sıkıntılı bir durumdan uzaklaşma sonucunu kısmen korur.",
+            "loses": "Başka bir öznenin etkin müdahalesini, bir nesneyi çekip çıkarma işlemini ve kurtarılmış nesne anlamını yitirir.",
+            "adds": "Kurtarıcı bir özne olmadan kişinin kendi eylemiyle uzaklaşması anlamını ekler.",
+            "collision": "Kurtarma eylemini, kurtarılanın kendi kaçış eylemiyle karıştırır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001476/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Kurtaran bir öznenin bir şeyi başka birinin elinden veya sıkıntıdan etkin biçimde çekip çıkarması ve kurtarılmış nesnenin sonuç adı bulunur.",
+          "neighbor_only": "Kişinin kendisinin kötülükten kurtulması ve genel ayrılma yoluyla kurtuluş da kapsama girer.",
+          "gloss": "ayrılıp kurtulma veya kurtarma",
+          "shared_zone": "Her iki dal da bir zarar, bağ veya sıkıntıdan kurtulma ya da başkasını kurtarma alanında örtüşür.",
+          "distinction": "Odak dal, kurtaran öznenin başka bir kişi veya nesne üzerindeki etkin müdahalesini ve çekip çıkarma sonucunu öne çıkarır; komşu dal ise kişinin kendi kurtuluşunu ve ayrılma boyutunu da bağımsız olarak kapsar."
+        },
+        {
+          "neighbor_ref": "root_000430/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bir başkasının elinden veya genel bir sıkıntıdan etkin biçimde kurtarma ve kurtarılmış nesneyi adlandırma kapsamı vardır.",
+          "neighbor_only": "Bir şeye takılmış olanın çözülmesi, tuzaktan sıyrılması ve kişinin kendi kaçışı özellikle öne çıkar.",
+          "gloss": "takıldığı yerden kurtulma",
+          "shared_zone": "İki dal da bir bağdan veya güçlükten çıkıp esenliğe ulaşma sonucunu paylaşır.",
+          "distinction": "Odak dalda başka bir öznenin kurtarıcı müdahalesi merkezîdir; komşuda takılma veya tuzaktan sıyrılma durumu ve kurtulanın kendi çıkışı daha belirleyicidir."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar karşılaştırıldı; yayımlanan iki komşu, etkin kurtarma ile kişinin kendi kurtuluşu ve takıldığı yerden sıyrılma arasındaki en yararlı sınırları gösterir. Öteki adaylar yalnızca tehlike, esenlik, kaçış veya uzaklaşma senaryosunu paylaşır ve dalın anlam sınırını ek bir karşıtlıkla keskinleştirmez.",
+      "branch_image_ar": "استخلاص الشيء من ورطة أو يد غيره",
+      "what_is_ar": "كل فعل يدل على تخليص شيء أو نجاة شخص من غيره أو من ورطة، وصيغ نقذ وأنقذ واستنقذ وتنقذ بهذا المعنى، وما وقع عليه الإنقاذ من حيث هو مخلص.",
+      "what_is_not_ar": "لا يختص باسم الفرس أو الدرع المأخوذين من قوم آخرين أو من عدو؛ تلك صورة اسمية أخص في فرع مستقل.",
+      "source_phrase_ar": "أصل صحيح يدل على استخلاص شيء (maqayis)؛ وأنقذته منه خلصته وكل ما أنقذته فهو نقذ (maqayis)؛ أنقذه من فلان واستنقذه منه وتنقذه بمعنى أي نجاه وخلصه (sihah)؛ النقذ ما أنقذته (sihah;mufradat)؛ يقال نقذته وأنقذته واستنقذته وتنقذته أي خلصته ونجيته (tahdhib)؛ الإنقاذ التخليص من ورطة (mufradat)",
+      "sources": [
+        "MQ",
+        "SI",
+        "TA",
+        "MU"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_001540/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, başka bir topluluktan alınmış atları, düşmandan kurtarılarak alınmış atları ve düşmandan geri kazanılmış zırhı aynı dar nesne-durumu çevresinde toplar. Dal çerçevesi bu özel adlandırmaları genel kurtarma eyleminden ayırdığı için kaynak kanıtını doğru temsil eder.",
+        "boundary_note": "Dal, her türlü kurtarma eylemini değil, başka bir topluluktan veya düşmandan alınmış ya da kurtarılarak geri kazanılmış belirli at ve zırh adlandırmalarını kapsar."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, atlara özgü söz öbeklerindeki tekil ve çoğul kullanımları, tek başına kullanıldığında bir atı veya düşmandan geri alınmış zırhı belirtebilen addan ayırır; bu özel kapsam çıplak kökün genel anlamı sayılmaz."
+      },
+      "concept_map": {
+        "definition": "Başka bir topluluktan veya düşmandan alınmış ya da kurtarılıp geri kazanılmış nesnenin durumunu anlatan, özellikle atlar için tekil ve çoğul adlandırmalarda ve düşmandan kurtarılmış zırh için kullanılan özel bir anlamdır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Nesne, başka bir topluluğun veya düşmanın elinden alınmış ya da kurtarılarak geri kazanılmış olma durumuyla nitelenir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Tekil veya çoğul adlandırma, başka bir topluluktan alınmış ya da düşmandan kurtarılmış atlar için kullanılır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "extension",
+            "statement": "Tekil ad, atların bir ferdini belirtebildiği gibi düşmandan kurtarılarak geri alınmış bir zırhı da belirtebilir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynakların ortak anlatımı, başka bir topluluktan alınmış veya düşmandan kurtarılarak geri kazanılmış atların tekil ve çoğul adlandırmalarını verir. Aynı tekil adın düşmandan geri alınmış bir zırh için de kullanılabildiği belirtilir.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "başka bir topluluktan veya düşmandan geri alınmış at ya da zırh",
+        "applicability": "Dalın ortak nesne durumunu, atlara özgü adlandırmaları ve zırh uzantısını tek bir açıklayıcı karşılıkta göstermek gerektiğinde kullanılır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Başka bir topluluktan veya düşmandan alma ya da kurtarıp geri kazanma koşulunu ve at ile zırh kapsamını korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "başka bir topluluktan alınmış at",
+          "usage_role": "contextual",
+          "applicability": "Tek bir atın başka bir topluluktan alınmış olması öne çıkarıldığında doğal ve doğrudan bir karşılıktır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Atın başka bir topluluğun elinden alınmış olma koşulunu korur.",
+            "loses": "Çoğul at adlandırmasını, özellikle düşmandan kurtarma vurgusunu ve zırh kullanımını kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "düşmandan kurtarılarak alınmış atlar",
+          "usage_role": "contextual",
+          "applicability": "Birden çok atın düşmanın elinden kurtarıldığı ve alındığı bağlamlarda çoğul karşılık olarak kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Atların düşmandan kurtarılıp alınması işlemini ve çoğul nesne kapsamını korur.",
+            "loses": "Düşman dışındaki başka bir topluluktan alma durumunu, tekil atı ve zırh kullanımını dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "düşmandan kurtarılmış zırh",
+          "usage_role": "contextual",
+          "applicability": "Adın at yerine düşmanın elinden kurtarılarak geri alınan bir zırhı belirttiği bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Zırhın düşmanın elinden kurtarılıp geri kazanılmış olma durumunu korur.",
+            "loses": "Başka bir topluluktan alınmış veya düşmandan kurtarılmış atlara ilişkin tekil ve çoğul kullanımları kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F003"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_002",
+          "rendering_kind": "ordinary",
+          "target_gloss": "başka bir topluluktan alınmış at"
+        },
+        {
+          "lexical_unit_id": "lu_003",
+          "rendering_kind": "ordinary",
+          "target_gloss": "başka bir topluluktan alınmış atlar"
+        },
+        {
+          "lexical_unit_id": "lu_005",
+          "rendering_kind": "ordinary",
+          "target_gloss": "başka bir topluluktan alınmış at"
+        },
+        {
+          "lexical_unit_id": "lu_008",
+          "rendering_kind": "ordinary",
+          "target_gloss": "düşmandan kurtarılarak alınmış atlar"
+        },
+        {
+          "lexical_unit_id": "lu_009",
+          "rendering_kind": "ordinary",
+          "target_gloss": "bu atlardan biri; düşmandan kurtarılmış zırh"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "ganimet",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Başkasından veya düşmandan alınmış bir mal olma yönünü kısmen korur.",
+            "loses": null,
+            "adds": "Her tür savaş kazancını ve bu özel kurtarıp geri alma koşulunu taşımayan malları da kapsar.",
+            "collision": "Belirli at ve zırh adlandırmalarını genel savaş kazancı kategorisiyle karıştırır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001109/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Başka bir topluluktan veya düşmandan alınmış ya da kurtarılmış atlar ile düşmandan geri alınmış zırha özgü adlandırma bulunur.",
+          "neighbor_only": "Daha önce sahip olunmayan herhangi bir şeyi edinme, kazanma ve düşman dışındaki yollardan elde etme kapsamı vardır.",
+          "gloss": "bir şeyi elde etme veya kazanma",
+          "shared_zone": "Başkasından ya da düşmandan bir nesnenin ele geçirilmesi ve yeni bir elde bulundurma durumunun doğması ortak alandır.",
+          "distinction": "Odak dal, nesnenin başka bir topluluktan veya düşmandan alınmış ya da kurtarılmış olmasıyla ve at ile zırh türleriyle sınırlıdır; komşu dal ise edinmeyi ve kazanmayı nesne türü ya da kurtarma koşulu aramadan geneller."
+        },
+        {
+          "neighbor_ref": "root_001540/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Başka bir topluluktan veya düşmandan alınmış atlara ve geri kazanılmış zırha özgü kalıplaşmış nesne adlandırmaları vardır.",
+          "neighbor_only": "Herhangi bir şeyi veya kişiyi başka birinin elinden ya da sıkıntılı bir durumdan çekip çıkararak kurtarma eylemi genel olarak kapsanır.",
+          "gloss": "kurtarma ve kurtarılmış şey",
+          "shared_zone": "Bir nesnenin başkasının veya düşmanın elinden kurtarılması ve kurtarılmış sonuç durumuna gelmesi iki dalı bağlar.",
+          "distinction": "Odak dal, kurtarma sonucunu belirli at ve zırh adlarına daraltır; komşu dal ise nesne türünü sınırlamadan kurtarma eylemini ve genel kurtarılmış nesneyi anlatır."
+        },
+        {
+          "neighbor_ref": "root_001505/B007",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Nesnenin başka bir topluluktan veya düşmandan alınmış ya da kurtarılmış at veya zırh olması belirleyicidir.",
+          "neighbor_only": "Ordunun veya yöneticinin yol üzerinde, hedefe varmadan ya da paylaşım öncesinde aldığı mal ve hayvanların zamanlama ve bölüşüm durumu belirleyicidir.",
+          "gloss": "paylaşım öncesi alınan savaş malı",
+          "shared_zone": "Her iki dal da askerî çatışma çevresinde elde edilen mal veya hayvanlarla ilişkilidir.",
+          "distinction": "Odak dal nesnenin kimden ve nasıl alındığına ve belirli nesne türlerine dayanır; komşu dal ise alınan şeyin sefer ve paylaşım sürecindeki konumuna dayanır."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar karşılaştırıldı; yayımlanan komşular özel geri-alınmış nesne anlamını genel edinme, genel kurtarma ve paylaşım öncesi savaş malı alanlarından ayırır. Zırh, seçilmiş pay, alıkoyma ve silaha yönelme gibi diğer adaylar yalnızca nesne veya senaryo alanını paylaşır; özel alma ya da kurtarma koşuluna daha keskin bir sınır eklemez.",
+      "branch_image_ar": "مأخوذ مستنقذ من قوم آخرين أو عدو",
+      "what_is_ar": "الأسماء والصفات للشيء المأخوذ أو المستخلص من قوم آخرين أو من العدو، خاصة الفرس النقذ أو النقيذ والنقائذ من الخيل، والدرع النقيذة.",
+      "what_is_not_ar": "ليس مطلق التخليص والنجاة من ورطة؛ ولا أسماء الأعلام مثل منقذ.",
+      "source_phrase_ar": "فرس نقيذ أخذ من قوم آخرين وأفراس نقائذ (maqayis)؛ فرس نقذ إذا أخذ من قوم آخرين (ayn;tahdhib)؛ النقائذ من الخيل ما أنقذته من العدو وأخذته منهم، الواحدة نقيذة (sihah)؛ النقيذة الدرع المستنقذة من عدو (tahdhib)؛ فرس نقيذ مأخوذ من قوم آخرين كأنه أنقذ منهم وجمعه نقائذ (mufradat)",
+      "sources": [
+        "MQ",
+        "AY",
+        "SI",
+        "TA",
+        "MU"
+      ],
+      "source_note": {}
+    }
+  ],
+  "root_profile": {
+    "summary": "Kökün anlam alanı, bir şeyi veya kişiyi başka birinin elinden ya da sıkıntıdan çekip çıkararak kurtarma çekirdeği çevresinde düzenlenir. Bundan, başka bir topluluktan veya düşmandan alınmış ya da kurtarılmış belirli at ve zırhları adlandıran daha dar bir nesne-durumu dalı gelişir.",
+    "polysemy": "polysemic",
+    "organization": "radial"
+  },
+  "occurrence_evidence": {
+    "summary": {
+      "morpheme_count": 5,
+      "word_count": 5,
+      "ayah_count": 5,
+      "surah_count": 4
+    },
+    "forms": [
+      {
+        "form_id": "F001",
+        "lemma_ar": "أَنقَذَ",
+        "stem_ar": "أَنقَذَ",
+        "pos": "V",
+        "measure": "IV",
+        "morph_features": "STEM|POS:V|PERF|(IV)|LEM:>anqa*a|ROOT:nq*|3MS",
+        "occurrence_count": 1
+      },
+      {
+        "form_id": "F002",
+        "lemma_ar": "يَسْتَنقِذُ",
+        "stem_ar": "يَسْتَنقِذُ",
+        "pos": "V",
+        "measure": "X",
+        "morph_features": "STEM|POS:V|IMPF|(X)|LEM:yasotanqi*u|ROOT:nq*|3MP|MOOD:JUS",
+        "occurrence_count": 1
+      },
+      {
+        "form_id": "F003",
+        "lemma_ar": "أَنقَذَ",
+        "stem_ar": "يُنقِذُ",
+        "pos": "V",
+        "measure": "IV",
+        "morph_features": "STEM|POS:V|IMPF|(IV)|LEM:>anqa*a|ROOT:nq*|3MP|MOOD:JUS",
+        "occurrence_count": 1
+      },
+      {
+        "form_id": "F004",
+        "lemma_ar": "أَنقَذَ",
+        "stem_ar": "يُنقَذُ",
+        "pos": "V",
+        "measure": "IV",
+        "morph_features": "STEM|POS:V|IMPF|PASS|(IV)|LEM:>anqa*a|ROOT:nq*|3MP",
+        "occurrence_count": 1
+      },
+      {
+        "form_id": "F005",
+        "lemma_ar": "أَنقَذَ",
+        "stem_ar": "تُنقِذُ",
+        "pos": "V",
+        "measure": "IV",
+        "morph_features": "STEM|POS:V|IMPF|(IV)|LEM:>anqa*a|ROOT:nq*|3FS",
+        "occurrence_count": 1
+      }
+    ],
+    "ayahs": [
+      {
+        "ayah_ref": "3:103",
+        "surface_ar": "وَٱعْتَصِمُوا۟ بِحَبْلِ ٱللَّهِ جَمِيعًا وَلَا تَفَرَّقُوا۟ وَٱذْكُرُوا۟ نِعْمَتَ ٱللَّهِ عَلَيْكُمْ إِذْ كُنتُمْ أَعْدَآءً فَأَلَّفَ بَيْنَ قُلُوبِكُمْ فَأَصْبَحْتُم بِنِعْمَتِهِۦٓ إِخْوَٰنًا وَكُنتُمْ عَلَىٰ شَفَا حُفْرَةٍ مِّنَ ٱلنَّارِ فَأَنقَذَكُم مِّنْهَا كَذَٰلِكَ يُبَيِّنُ ٱللَّهُ لَكُمْ ءَايَٰتِهِۦ لَعَلَّكُمْ تَهْتَدُونَ"
+      },
+      {
+        "ayah_ref": "22:73",
+        "surface_ar": "يَٰٓأَيُّهَا ٱلنَّاسُ ضُرِبَ مَثَلٌ فَٱسْتَمِعُوا۟ لَهُۥٓ إِنَّ ٱلَّذِينَ تَدْعُونَ مِن دُونِ ٱللَّهِ لَن يَخْلُقُوا۟ ذُبَابًا وَلَوِ ٱجْتَمَعُوا۟ لَهُۥ وَإِن يَسْلُبْهُمُ ٱلذُّبَابُ شَيْـًٔا لَّا يَسْتَنقِذُوهُ مِنْهُ ضَعُفَ ٱلطَّالِبُ وَٱلْمَطْلُوبُ"
+      },
+      {
+        "ayah_ref": "36:23",
+        "surface_ar": "ءَأَتَّخِذُ مِن دُونِهِۦٓ ءَالِهَةً إِن يُرِدْنِ ٱلرَّحْمَٰنُ بِضُرٍّ لَّا تُغْنِ عَنِّى شَفَٰعَتُهُمْ شَيْـًٔا وَلَا يُنقِذُونِ"
+      },
+      {
+        "ayah_ref": "36:43",
+        "surface_ar": "وَإِن نَّشَأْ نُغْرِقْهُمْ فَلَا صَرِيخَ لَهُمْ وَلَا هُمْ يُنقَذُونَ"
+      },
+      {
+        "ayah_ref": "39:19",
+        "surface_ar": "أَفَمَنْ حَقَّ عَلَيْهِ كَلِمَةُ ٱلْعَذَابِ أَفَأَنتَ تُنقِذُ مَن فِى ٱلنَّارِ"
+      }
+    ],
+    "occurrences": [
+      {
+        "qac_ref": "3:103:26:2",
+        "qac_word_ref": "3:103:26",
+        "surah": 3,
+        "ayah": 103,
+        "word_index": 26,
+        "morpheme_index": 2,
+        "surface_ar": "أَنقَذَ",
+        "stem_ar": "أَنقَذَ",
+        "lemma_ar": "أَنقَذَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "IV",
+        "aspect": "PERF",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:V|PERF|(IV)|LEM:>anqa*a|ROOT:nq*|3MS",
+        "ayah_ref": "3:103",
+        "form_id": "F001",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s003:103:pass1:frame:v8",
+          "attachment_word_unit_id": "q:3:103:35",
+          "qac_char_span": [
+            117,
+            124
+          ],
+          "attachment_char_spans": [
+            [
+              117,
+              124
+            ],
+            [
+              118,
+              122
+            ]
+          ],
+          "source_grammar": "Form IV perfect 3ms + 2mp object pronoun — divine agent rescuing the addressees",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s003:103:pass1:attach:a22",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:3:103:36",
+              "other_surface": "",
+              "other_root": "",
+              "other_form_tag": "",
+              "prep_base": "مِن",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s003:103:pass1:attach:a21",
+              "relation": "direct_object",
+              "focus_role": "head",
+              "other_unit_id": "q:3:103:35",
+              "other_surface": "",
+              "other_root": "",
+              "other_form_tag": "",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "22:73:24:1",
+        "qac_word_ref": "22:73:24",
+        "surah": 22,
+        "ayah": 73,
+        "word_index": 24,
+        "morpheme_index": 1,
+        "surface_ar": "يَسْتَنقِذُ",
+        "stem_ar": "يَسْتَنقِذُ",
+        "lemma_ar": "يَسْتَنقِذُ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "X",
+        "aspect": "IMPF",
+        "mood": "JUS",
+        "voice": "",
+        "morph_features": "STEM|POS:V|IMPF|(X)|LEM:yasotanqi*u|ROOT:nq*|3MP|MOOD:JUS",
+        "ayah_ref": "22:73",
+        "form_id": "F002",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s022:073:pass1:frame:v7",
+          "attachment_word_unit_id": "q:22:73:28",
+          "qac_char_span": [
+            95,
+            103
+          ],
+          "attachment_char_spans": [
+            [
+              95,
+              103
+            ],
+            [
+              96,
+              101
+            ]
+          ],
+          "source_grammar": "IV — Form X (istanqadha) imperfect 3mp, with 3ms object suffix -hu; subject = the idols/worshippers",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s022:073:pass1:attach:a17",
+              "relation": "prep_complement",
+              "focus_role": "head",
+              "other_unit_id": "q:22:73:29",
+              "other_surface": "",
+              "other_root": "",
+              "other_form_tag": "",
+              "prep_base": "مِن",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "case_government;local_syntax"
+            },
+            {
+              "attachment_id": "ae:v3:s022:073:pass1:attach:a16",
+              "relation": "direct_object",
+              "focus_role": "head",
+              "other_unit_id": "q:22:73:28",
+              "other_surface": "",
+              "other_root": "",
+              "other_form_tag": "",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology;local_syntax"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "36:23:15:1",
+        "qac_word_ref": "36:23:15",
+        "surah": 36,
+        "ayah": 23,
+        "word_index": 15,
+        "morpheme_index": 1,
+        "surface_ar": "يُنقِذُ",
+        "stem_ar": "يُنقِذُ",
+        "lemma_ar": "أَنقَذَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "IV",
+        "aspect": "IMPF",
+        "mood": "JUS",
+        "voice": "",
+        "morph_features": "STEM|POS:V|IMPF|(IV)|LEM:>anqa*a|ROOT:nq*|3MP|MOOD:JUS",
+        "ayah_ref": "36:23",
+        "form_id": "F003",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s036:023:pass1:frame:v4",
+          "attachment_word_unit_id": "q:36:23:17",
+          "qac_char_span": [
+            54,
+            60
+          ],
+          "attachment_char_spans": [
+            [
+              54,
+              60
+            ],
+            [
+              55,
+              58
+            ]
+          ],
+          "source_grammar": "imperfect 3MP with 1CS object suffix shortened; coordinated negative predicate after وَلَا",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s036:023:pass1:attach:a12",
+              "relation": "direct_object",
+              "focus_role": "head",
+              "other_unit_id": "q:36:23:17",
+              "other_surface": "",
+              "other_root": "",
+              "other_form_tag": "",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "morphology"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "36:43:9:1",
+        "qac_word_ref": "36:43:9",
+        "surah": 36,
+        "ayah": 43,
+        "word_index": 9,
+        "morpheme_index": 1,
+        "surface_ar": "يُنقَذُ",
+        "stem_ar": "يُنقَذُ",
+        "lemma_ar": "أَنقَذَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "IV",
+        "aspect": "IMPF",
+        "mood": "",
+        "voice": "PASS",
+        "morph_features": "STEM|POS:V|IMPF|PASS|(IV)|LEM:>anqa*a|ROOT:nq*|3MP",
+        "ayah_ref": "36:43",
+        "form_id": "F004",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s036:043:pass1:frame:v3",
+          "attachment_word_unit_id": "q:36:43:13",
+          "qac_char_span": [
+            27,
+            33
+          ],
+          "attachment_char_spans": [
+            [
+              27,
+              33
+            ],
+            [
+              28,
+              31
+            ]
+          ],
+          "source_grammar": "Form IV imperfect passive, third masculine plural; negated by lā; subject is hum; rare root with transitive rescue semantics",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s036:043:pass1:attach:a5",
+              "relation": "subject",
+              "focus_role": "head",
+              "other_unit_id": "q:36:43:12",
+              "other_surface": "هُمْ",
+              "other_root": "",
+              "other_form_tag": "PRON",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "agreement;word_order"
+            }
+          ]
+        }
+      },
+      {
+        "qac_ref": "39:19:7:1",
+        "qac_word_ref": "39:19:7",
+        "surah": 39,
+        "ayah": 19,
+        "word_index": 7,
+        "morpheme_index": 1,
+        "surface_ar": "تُنقِذُ",
+        "stem_ar": "تُنقِذُ",
+        "lemma_ar": "أَنقَذَ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "IV",
+        "aspect": "IMPF",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:V|IMPF|(IV)|LEM:>anqa*a|ROOT:nq*|3FS",
+        "ayah_ref": "39:19",
+        "form_id": "F005",
+        "alignment": {
+          "status": "aligned",
+          "method": "qac_character_span_root_form_monotonic",
+          "confidence": "high",
+          "attachment_unit_id": "ae:v3:s039:019:pass1:frame:v1",
+          "attachment_word_unit_id": "q:39:19:9",
+          "qac_char_span": [
+            25,
+            29
+          ],
+          "attachment_char_spans": [
+            [
+              25,
+              29
+            ],
+            [
+              26,
+              29
+            ]
+          ],
+          "source_grammar": "IV; Form IV imperfect 2MS verb taking man as direct object, with no expressed source except fī al-nār",
+          "attachments": [
+            {
+              "attachment_id": "ae:v3:s039:019:pass1:attach:a5",
+              "relation": "direct_object",
+              "focus_role": "head",
+              "other_unit_id": "q:39:19:10",
+              "other_surface": "مَنْ",
+              "other_root": "م ن ن",
+              "other_form_tag": "REL_PRON",
+              "prep_base": "",
+              "status": "syntactically_forced",
+              "confidence": "high",
+              "evidence": "local_syntax;word_order"
+            },
+            {
+              "attachment_id": "ae:v3:s039:019:pass1:attach:a4",
+              "relation": "subject",
+              "focus_role": "head",
+              "other_unit_id": "q:39:19:8",
+              "other_surface": "أَفَأَنْتَ",
+              "other_root": "",
+              "other_form_tag": "PRON",
+              "prep_base": "",
+              "status": "strongly_licensed",
+              "confidence": "high",
+              "evidence": "word_order;local_syntax"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

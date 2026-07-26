@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak iki dar anlam hatası düzeltilmelidir. B001'de bir ad biçiminin sözlüksel karşılığına başka bir biçime ait içte saklama anlamı eklenmiş, B004'te ise irinin yaradan akması ettirgen bir eylem gibi çevrilmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_001664/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_002"
+      ],
+      "evidence_conflict": "lu_002 kanıtı bu biçimi kalbin bir şeyi, özellikle söz veya benzeri bir içeriği koruması olarak açıklar. Yazarın \"akılda tutma; içte saklama\" karşılığı, içte saklama anlamını bu birime de yükler; o anlam kanıtta lu_004'e bağlıdır.",
+      "smallest_correction": "lu_002 için target_gloss değerini yalnızca \"akılda tutma\" olarak değiştirin."
+    },
+    {
+      "target_ref": "root_001664/B004",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, ayrı kaynak anlatımında irinin yaradan kendiliğinden aktığını bildirir. \"İrini akıtmak\" karşılığı ise bir failin irini akıtması biçiminde ettirgen ve geçişli bir eylem ekler.",
+      "smallest_correction": "F002'ye bağlı contextual_glosses satırındaki \"irini akıtmak\" metnini \"irinin yaradan akması\" olarak değiştirin."
+    }
+  ]
+}

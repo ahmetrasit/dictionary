@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın dal kimlikleri, kapsamları ve temel anlam haritaları genel olarak kanıtla uyumludur. Ancak B002'de dal iddiasının taşımadığı bir betimleme kavram haritasına alınmış, B004'te ayrı bir sözlüksel kullanım örnek olarak sınıflandırılmış ve B006'daki bağlamsal karşılık hem kanıtsız bir nitelik eklemiş hem de genişlemeyi daralma diye göstermiştir.",
+  "issues": [
+    {
+      "target_ref": "root_000475/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F002, yılanın iki ucundan hangisinin baş olduğunun ayırt edilememesini dal iddiasına bağlıyor; bc_001 ise yalnızca yer altında bulunma, beyaz veya sağır olma, toprağa dalma ve güneşe çıkmama niteliklerini verir.",
+      "smallest_correction": "F002'den iki ucun ayırt edilememesi nitelemesini çıkarıp beyaz ve sağır betimlemelerini korumak."
+    },
+    {
+      "target_ref": "root_000475/B004",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F003, okuyanlardan olmadıkları halde onların arasına giren gösterişçileri yalnızca bir örnek sayıyor; bc_001 bunu ayrı bir adlandırılmış kullanım olarak tanıklıyor.",
+      "smallest_correction": "F003'ün rolünü extension olarak değiştirip cümleyi bunun ayrı bir kullanım olduğunu belirtecek kadar düzeltmek."
+    },
+    {
+      "target_ref": "root_000475/B006",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bağlamsal karşılıktaki geleneksel nitelemesi bc_001'de yoktur; ayrıca göçebe topluluk sınırını kaldıran karşılık daha geniş olduğu halde hata profili narrowing olarak işaretlenmiştir.",
+      "smallest_correction": "Karşılığı çocukların oynadığı belirli bir oyun biçimine getirip geleneksel nitelemesini kaldırmak; hata profilini broadening yapmak ve başka toplulukların çocuk oyunlarını da kapsadığını adds alanında belirtmek."
+    }
+  ]
+}

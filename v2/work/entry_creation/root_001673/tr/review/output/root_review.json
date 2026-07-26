@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "B001 tanımı bağımlı sonuçları çekirdeğin zorunlu koşulu haline getiriyor. Ayrıca B001-B003 kaynak sentezleri, kaynaklara özgü ayrıntıları ortak anlatım gibi sunuyor. Bu dört sorun kendi alanlarında küçük ve kesin düzeltmelerle giderilebilir.",
+  "issues": [
+    {
+      "target_ref": "root_001673/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım, sert bir araçla acı verecek ölçüde vurmayı, vurmayı gevşeme, ölüm eşiği veya ölüme kadar sürdürme şartına bağlayan tek bir zorunlu süreç olarak kuruyor. Kanıt ise acı veren ya da şiddetli vurmayı çekirdek olarak verir; gevşeme, ölüm eşiği ve ölüm sonuçları belirli kullanımlarda ortaya çıkar.",
+      "smallest_correction": "Tanımın ilk cümlesinde ağır ve acı veren vurmayı çekirdek olarak bırak; gevşeme, ölüm eşiği ve ölüm sonuçlarını kimi kullanımlarda görülen uzmanlaşma veya sonuçlar olarak ayrı ve ihtimalli biçimde ifade et."
+    },
+    {
+      "target_ref": "root_001673/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet sert araç, gevşeme, ölüm eşiği ve ölüm ayrıntılarının tümünü kaynakların ortak çekirdeği olarak sunuyor. Oysa tahta ile vurma, acı veya vuruş şiddeti, gevşeyip ölüm eşiğine gelme, kesilmeden ölme ve yalnızca vuruşla öldürülme ayrıntıları farklı sözlüklere özgü dağılımlar gösteriyor.",
+      "smallest_correction": "Ortak özeti yalnızca kaynakların gerçekten paylaştığı ağır vurma alanıyla sınırla; tahta, gevşeme ve ölüm eşiği, kesilmeden ölme ve diğer ayırt edici ayrıntıları her biri tek sözlüğe çözümlenen kaynak ayrıntılarına taşı."
+    },
+    {
+      "target_ref": "root_001673/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet ağır hastalıkla çöküşü ve yaşayıp yaşamadığının anlaşılamamasını bütün kaynakların ortak anlatımı gibi birleştiriyor. Kanıtta ağır hasta ve ölüm eşiğinde olma bir kaynak grubunda, hareketsizlik ile bayılıp ölü mü sağ mı olduğunun bilinememesi ise ayrı kaynak ifadelerinde yer alıyor.",
+      "smallest_correction": "Ortak özeti ağırlaşmış ve tepkisiz kişi durumu düzeyinde tut; ağır hastalık ve ölüm eşiği ile bayılma ve yaşam kuşkusu ayrıntılarını ilgili tek sözlüklere çözümlenen kaynak ayrıntılarında ayrı ayrı belirt."
+    },
+    {
+      "target_ref": "root_001673/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet uykululuğun baskın gelmesini ve sarhoşu andıran görünümü birlikte ortaklaştırıyor. Uykululuğun bastırması iki kaynakta bulunurken sarhoş gibi olma açıklaması kanıtta yalnızca bir sözlüğe özgüdür.",
+      "smallest_correction": "Ortak özette yalnızca uykululuğun bastırıp ağırlaştırmasını bırak; sarhoşu andırma açıklamasını onu tek başına veren sözlüğe bağlı bir kaynak ayrıntısına taşı."
+    }
+  ]
+}

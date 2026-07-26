@@ -1,0 +1,26 @@
+{
+  "verdict": "repair",
+  "summary": "Girdi genel olarak kanıtı ve dal sınırlarını doğru koruyor. Ancak B004 kaynak sentezi kitap saklama işlevini iki kaynağın ortak çekirdeği gibi gösteriyor; ayrıca kök özeti ilk dalı kanıttaki gün veya kötülük niteliği yerine genel bir olaya genişletiyor. Bu iki küçük ve kesin hata en dar kapsamda düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001257/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kitapları koruyarak saklama işlevini kaynakların ortak çekirdeği sayıyor. Oysa ayn tanıklığı yalnız kamıştan örülen sandık benzeri kabı, sihah tanıklığı ise kitapların korunduğu kabı ve çoğul biçimi bildiriyor; iki kaynağın ortakça söylediği belirgin çekirdek yalnız kap oluşudur.",
+      "smallest_correction": "common_summary cümlesini, kitap saklama işlevini kaynakların ortak iddiası saymadan, kaynakların birlikte sandık benzeri ve kamıştan örülebilen bir kap ile kitap koruma işlevini ve çoğul biçimi verdiğini söyleyecek biçimde değiştir."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök özeti ilk dalı ağır ve kötülüğü yaygın bir gün ya da genel olay niteliği olarak aktarıyor. Dalın kanıtı ise günün şiddetini ve ayrıca ağır kötülüğün nitelenmesini bildiriyor; genel olay kapsamı verilmemiştir.",
+      "smallest_correction": "Özetin ilk unsurundaki gün ya da olay ifadesini, ağır ve kötülüğü yaygın gün ya da ağır kötülük niteliği olarak daralt."
+    }
+  ]
+}

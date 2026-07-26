@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B016 dalının kavram haritasında su ve hayvan kullanımları arasında kanıtın kurmadığı bir alt tür ilişkisi kurulmuştur. Bu tek ve sınırlı hata onarılmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001273/B016",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, suyun donup akmamasını ve hayvanın durması ya da yorgunluktan yürüyememesini iki ayrı özneye bağlı kullanım olarak verir. Mevcut harita su kullanımını çekirdek, hayvan kullanımını ise onun özelleşmesi sayarak ikincisini birincinin alt türü gibi yanlış hiyerarşileştirir.",
+      "smallest_correction": "F001 ve F002'yi iki ayrı özneye bağlı, eş düzeyli çekirdek facet olarak tutun; yalnız F002'nin rolünü specialization yerine core yapın. Tanımı, facet metinlerini ve diğer alanları değiştirmeyin."
+    }
+  ]
+}

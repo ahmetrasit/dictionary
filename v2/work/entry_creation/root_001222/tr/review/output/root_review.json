@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "B002 dalındaki genel toplama anlatımı kanıtlanmış kalıp sınırlarını aşmaktadır. B009 dalında ise tek bir ortak çekirdek bulunmadığı kabul edildiği halde iki bağımsız kullanım yanlış facet rolleriyle sunulmuştur. Bu sınırlı alanlar düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001222/B002",
+      "field": "lexicalization_scope",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Mekanik profil mixed_non_bare türündedir ve eylem tanıkları havuzda su toplama, ağızda bir şey toplama, devenin yanağında yem biriktirme ve yarada irin birikmesi gibi belirli kalıplardır. Mevcut not bunları genel bir toplama çekirdeği sayarak yalın ve sınırsız bir anlam izlenimi vermektedir.",
+      "smallest_correction": "Notu, genel bir yalın toplama anlamı ileri sürmediğini açıkça belirtecek ve kanıtlanmış kalıpları sonuç bildiren biçimlerden ayrı tutacak şekilde daralt."
+    },
+    {
+      "target_ref": "root_001222/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F001, yiyecek veya herhangi bir maddenin herhangi bir tutma yerinde toplanabileceği genel bir eylem anlamı kurmaktadır. Kaynak yalnızca suyun havuzda, bir şeyin ağızda ve yemin devenin yanağında toplanması ile irinin yarada birikmesi gibi sınırlı gerçekleşmeleri ve bunlara bağlı sonuç biçimlerini verir.",
+      "smallest_correction": "Tanımı ve F001 ifadesini yalnızca kanıtlanmış havuz, ağız, deve yanağı, yara, su birikimi ve kursak kullanımlarını sayacak biçimde daralt; öteki facetleri koru."
+    },
+    {
+      "target_ref": "root_001222/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bir yerde toplama ve birikme biçimindeki mevcut gloss ile bunun genel karşılık olduğunu söyleyen açıklama, mixed_non_bare dalı yalın ve üretken bir toplama anlamına genişletmektedir. Kanıt yalnızca belirli katılımcı ve yer kalıplarını destekler.",
+      "smallest_correction": "Glossu ve uygulanabilirlik açıklamasını havuz, ağız, deve yanağı, yara ve kursakta kanıtlanan toplama veya birikme kullanımlarıyla sınırla; hata profilini de bu sınırlamaya uyumlu hale getir."
+    },
+    {
+      "target_ref": "root_001222/B009",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kimlik yargısı bu dalda tek bir güncel kavram çekirdeği bulunmadığını ve kullanımların kaynak içi tarihsel bir küme olduğunu açıkça kabul eder. Buna rağmen dönem kullanımları F002'de core, deve ve rüzgar tanıkları F003'te associated_use olarak işaretlenmiş; kaynak bu kullanımlardan hiçbirini ötekine bağımlı veya merkez olarak sunmamıştır.",
+      "smallest_correction": "F002 ve F003 rollerini source_variant olarak değiştir; facet ifadelerini ve diğer alanları koru."
+    }
+  ]
+}

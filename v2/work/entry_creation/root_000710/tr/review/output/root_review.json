@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Dalın genel anlam çerçevesi ve kapsam nitelemesi kanıtla uyumludur. Ancak bir sözlüksel karşılık kanıtsız yoğunluk ekliyor, kaynak bireşiminde kaynaklara özgü tekil biçimler görünmüyor ve yalın açlık komşusuyla ortak çekirdek bağımlı değişkeler gerekçe gösterilerek gereksiz yere zayıflatılıyor.",
+  "issues": [
+    {
+      "target_ref": "root_000710/B001",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_004"
+      ],
+      "evidence_conflict": "Kanıt bu biçimi yalnızca acıkmış kişi anlamıyla ve bir biçim örüntüsü açıklamasıyla verir. Yazılan karşılık ise çokluk derecesi ile açlıktan bitkin düşme sonucunu ekliyor; bunların ikisi de bu sözlüksel birimin kanıtında bulunmuyor.",
+      "smallest_correction": "Bu birimin hedef karşılığını yalnızca aç veya acıkmış kişi anlamını verecek biçimde daraltın; çokluk ve bitkinlik eklerini kaldırın."
+    },
+    {
+      "target_ref": "root_000710/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ayrıntıları boş bırakıldığı için Cemhere'de tek başına kaydedilen ek mastar biçimi ile Sıhah'ta tek başına kaydedilen dişil sıfat biçimi kaynak bireşiminde görünmüyor. Genel özetteki toplu biçimler sözü bu iki kaynak-özel ayrıntıyı korumuyor.",
+      "smallest_correction": "Kaynak ayrıntılarına biri jamhara, diğeri sihah için olmak üzere bc_001'e bağlı iki kısa satır ekleyin; ilkinde kaynağa özgü ek mastar biçimini, ikincisinde kaynağa özgü dişil sıfat biçimini belirtin."
+    },
+    {
+      "target_ref": "root_000710/B001",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yalın açlık komşusuyla iki dalın çekirdeği olağan kullanımda aç olma durumudur. Yazı, yalnız bazı kaynaklardaki yorgunluk kaydını ve türemiş addaki kıtlık kullanımını dal sınırı gibi kullanarak ilişkiyi near_synonym ve partial yapıyor; bunlar bağımlı değişke ve türeme olduğundan ortak çekirdeğin tamlığını bozmaz.",
+      "smallest_correction": "root_000278/B001 ilişkisini synonym ve exact olarak düzeltin; odak-dala özgü alanı çekirdek sınır gibi sunan ifadeleri kaldırıp ayrımı yalnız bağımlı kaynak değişkeleri ve türemiş kullanım düzeyinde açıklayın."
+    }
+  ]
+}

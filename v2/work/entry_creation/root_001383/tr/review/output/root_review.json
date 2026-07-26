@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B003 dalının komşu ayrımları anlam bakımından kanıtla uyumludur; ancak kapsam notu yayımlanan karşılaştırma sayısını yanlış bildiriyor. Bu sayım hatası dışında yayına engel bir anlam sorunu saptanmadı.",
+  "issues": [
+    {
+      "target_ref": "root_001383/B003",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kapsam notu dört karşılaştırmanın yayımlandığını söylüyor, fakat neighbor_distinctions alanında yalnızca üç karşılaştırma bulunuyor.",
+      "smallest_correction": "neighbor_coverage_note içindeki \"dört karşılaştırma\" ifadesini \"üç karşılaştırma\" olarak değiştir."
+    }
+  ]
+}

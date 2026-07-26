@@ -1,0 +1,193 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dalların çoğunu kanıtla uyumlu kuruyor; ancak B001'de kavrama bütün kullanımlar için zorunlu hale getirilmiş, B002'de kaynakların ayrı insan nitelemeleri tek bir birleşik tipe dönüştürülmüş ve B004'te özel nesne adlarına kanıtlanmamış kalınlık ile güç özellikleri yüklenmiştir. B006'da da görevlinin buyruğu yürüttüğü ayrıntısı kanıtta yoktur. Bu yüksek güvenli ve alanı sınırlı sorunlar, yalnızca aşağıda belirtilen alanlarda küçük düzeltmeler gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_000980/B001",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe ve sınır notu, güçlü çekme, itme veya sürmenin her durumda bir yerden kavramayla başladığını söylüyor. Kanıt ise kavrama örneklerinin yanında doğrudan şiddetli çekme, itme ve sürme anlatımlarını da verir; kavrama bütün kullanımların zorunlu koşulu değildir.",
+      "smallest_correction": "Kabul durumunu koruyup gerekçe ile sınır notunda kavramayı çekirdek zorunluluk olmaktan çıkarın; çekirdeği şiddetle çekme, itme veya sürme olarak belirtin ve kavramayı tanıklanan gerçekleşmelerden biri sayın."
+    },
+    {
+      "target_ref": "root_000980/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ile F001, bütün eylemi önce bedenden, giysiden veya yulardan kavramaya bağlar. Kanıttaki doğrudan şiddetli çekme, itme ve sert sürme anlatımları böyle bir kavrama koşulu koymaz.",
+      "smallest_correction": "Tanımı ve F001'i şiddetle çekme, itme veya sürme çekirdeği üzerine kurun; insanı giysisinden ya da hayvanı yularından kavramayı özel gerçekleşme olarak koruyun."
+    },
+    {
+      "target_ref": "root_000980/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet bütün kaynak çekirdeğini kavramayla başlatıyor; oysa birleşik kanıtın bazı bölümleri yalnızca şiddetli çekme, itme veya sürmeyi bildiriyor.",
+      "smallest_correction": "Ortak özeti şiddetli çekme, itme ve sürme çevresinde kurun; kavramayı bazı tanıklıklardaki uygulama biçimi olarak ifade edin."
+    },
+    {
+      "target_ref": "root_000980/B001",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavrayıp zorla çekme biçimindeki kavram karşılığı, kavramanın belirtilmediği şiddetli çekme, itme ve sürme tanıklıklarını gereksiz biçimde daraltır.",
+      "smallest_correction": "Kavram karşılığından zorunlu kavrama öğesini çıkarıp şiddetle çekme, itme ve sürme çekirdeğini verin; hata profilini buna göre güncelleyin."
+    },
+    {
+      "target_ref": "root_000980/B002",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe, bedensel güç ile kaba yaradılışın aynı kişide birlikte bulunmasını kaynakların ortak nitelemesi gibi sunuyor. Kanıt bunları farklı kaynak açıklamaları olarak verir; aynı kullanımda birlikte bulunmalarını gerektirmez.",
+      "smallest_correction": "Kimlik durumunu qualified yapın ve dalı insana yönelik, kaynaklara göre bedensel güç, kaba yaradılış, oburluk ile vermeme, çekişmecilik veya kötülüğe çabuk yönelme bildiren alternatif nitelemeler kümesi olarak açıklayın."
+    },
+    {
+      "target_ref": "root_000980/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F001 güçlü ve sağlam beden ile kaba ve sert yaradılışı tek bir birleşik çekirdek yapıyor; F003 de ayrı kaynak nitelemelerini bu birleşik tipin uzantısı sayıyor. Kanıt bu özellikleri alternatif açıklamalar halinde sunar.",
+      "smallest_correction": "Tanımı alternatif insan nitelemelerini ayıracak biçimde düzeltin; ortak çekirdeği yalnızca insana yönelik niteleme düzeyinde tutun ve bedensel güç, kaba yaradılış, oburluk ile vermeme, çekişmecilik ve kötülüğe çabuk yönelmeyi kaynak varyantları olarak gösterin."
+    },
+    {
+      "target_ref": "root_000980/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet bedensel gücün kaba yaradılışla birleşmesini kaynakların ortak anlatımı sayıyor. Birleşik kanıtta bu iki yön farklı sözlük açıklamalarından gelir.",
+      "smallest_correction": "Özeti, kaynakların aynı insan nitelemesine farklı anlamlar verdiğini açıkça söyleyecek şekilde değiştirin ve özellikleri zorunlu bir bileşim olarak sunmayın."
+    },
+    {
+      "target_ref": "root_000980/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Güçlü, kaba ve kötülüğe yatkın kimse karşılığı, üç ayrı tanıklık yönünü tek kişide zorunlu olarak birleştiriyor.",
+      "smallest_correction": "Karşılığı alternatifliği gösterecek biçimde güçlü ve sağlam yapılı ya da kaba ve sert kimse düzeyinde düzeltin; hata profili ile facet bağlarını yeni kapsamla uyumlu hale getirin."
+    },
+    {
+      "target_ref": "root_000980/B002",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bedensel güç karşılığındaki iri sözü kanıtta yoktur; kanıt güçlü, kuvvetli ve bedeni sağlam bir adamı bildirir.",
+      "smallest_correction": "İlk bağlamsal karşılıktan iri öğesini çıkarın ve açıklama ile hata profilini güçlü ve sağlam beden kapsamına indirin."
+    },
+    {
+      "target_ref": "root_000980/B002",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005"
+      ],
+      "evidence_conflict": "lu_005 için iri, güçlü ve sağlam yapılı adam karşılığı, kaynakta bulunmayan iri özelliğini ekler.",
+      "smallest_correction": "lu_005 karşılığını güçlü ve sağlam yapılı adam olarak düzeltin."
+    },
+    {
+      "target_ref": "root_000980/B004",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe kalınlığı dalın bütün nesnelerine temel yaparak Fars yaylarını ve büyük toprak kesesini de kalınlık ile güç görünümü sayıyor. Kanıt kalınlığı yalnızca kargı için açıklar; yaylar ve toprak kesesi ayrı adlandırmalardır.",
+      "smallest_correction": "Kimlik durumunu qualified yapın; genel güç ve şiddet ilkesini, kalın kargı nitelemesini, Fars yayları ile büyük toprak kesesi adlarını ve ağır hastalık kuruluşunu birbirine özellik aktarmadan ayırın."
+    },
+    {
+      "target_ref": "root_000980/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım bütün nesneleri kalın ve güçlü sayıyor; F002 Fars yaylarına kanıtlanmamış güçlü ve kalın özelliklerini yüklüyor; F003 ise büyük toprak kesesi adını ortak özelliğin örneği yapıyor. Kanıt bu özel adlarda söz konusu özellikleri belirtmez.",
+      "smallest_correction": "Tanımı tanıklanan kullanımları ayrı ayrı sıralayacak biçimde daraltın; Fars yayları ile büyük toprak kesesini source_variant yapın ve yalnızca kargı için kalınlık, hastalık için ağırlık belirtin."
+    },
+    {
+      "target_ref": "root_000980/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Özet kargı, yay ve büyük toprak kesesini ortak güç ve kalınlık çekirdeğinin örnekleri sayıyor. Kanıt yayların yalnızca Fars yayları olduğunu, toprak kesesinin de büyük olduğunu söyler.",
+      "smallest_correction": "Ortak güç ve şiddet ilkesini ayrı tutun; kalın kargı, Fars yayları, büyük toprak kesesi ve ağır hastalığı özellikleri birbirine taşımadan tanıklanan ayrı görünümler olarak özetleyin."
+    },
+    {
+      "target_ref": "root_000980/B004",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Nesnede kalınlık ve güç karşılığı, özel ad olan Fars yayları ile büyük toprak kesesine de bu ortak niteliği yükler ve dalın kaynakça ayrık kullanımlarını eksik temsil eder.",
+      "smallest_correction": "Karşılığı güç ve şiddet çekirdeği ile tanıklanan kalınlık, özel nesne adları ve hastalık ağırlığını zorunlu tek özellikte birleştirmeyecek biçimde düzeltin; hata profilini buna uydurun."
+    },
+    {
+      "target_ref": "root_000980/B004",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kalın ve güçlü karşılığının uygulanabilirliği kargı veya başka bir somut nesneye genişletiliyor; kanıt kalınlığı yalnızca kargı kuruluşunda açıkça tanıklar.",
+      "smallest_correction": "İlk bağlamsal karşılığı ve uygulanabilirlik açıklamasını kalın kargı kullanımıyla sınırlandırın; hata profilini buna göre güncelleyin."
+    },
+    {
+      "target_ref": "root_000980/B006",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F003, görevli hizmet erinin buyruğu yürüttüğünü ekliyor. Kanıt bu kişi adını verir fakat buyruğu yürütme işlevini açıklamaz.",
+      "smallest_correction": "Buyruğu yürüten ayrıntısını tanımdan ve F003'ten çıkarın; kanıtın desteklediği görevli hizmet eri düzeyini koruyun."
+    },
+    {
+      "target_ref": "root_000980/B006",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_021"
+      ],
+      "evidence_conflict": "lu_021 karşılığındaki buyruğu yürüten ayrıntısı kaynak ifadesinde açıklanmamıştır.",
+      "smallest_correction": "lu_021 karşılığını görevli hizmet eri biçiminde daraltın."
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "verdict": "repair",
+  "summary": "B007 dalında tarihsel şans oyununda kullanılan kadah, kanıtın komşu sınırıyla birlikte oyun oku veya çubuğu olarak anlaşılırken yazar yanıtında sistemli biçimde oyun taşı olarak aktarılmıştır. Bu nesne türü hatası ilgili alanlarda oyun oku ya da oyun çubuğu denerek düzeltilmelidir; diğer dallarda yayın açısından belirleyici bir anlam çatışması saptanmamıştır.",
+  "issues": [
+    {
+      "target_ref": "root_001026/B007",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe kanıttaki kadahı belirli bir şans oyunu taşı diye adlandırıyor. Oysa kanıt bu nesneyi oyun bağlamındaki kadah olarak verir ve komşu sınırı kadahı ok gövdesi ile aynı nesne sınıfında açıklar; taş farklı bir nesne türüdür.",
+      "smallest_correction": "Gerekçedeki şans oyunu taşı ifadesini şans oyunu oku veya çubuğu olarak değiştirin; sınır notundaki her oyun taşı ifadesini de her oyun oku veya çubuğu biçiminde düzeltin."
+    },
+    {
+      "target_ref": "root_001026/B007",
+      "field": "lexicalization_scope",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kapsam notu kanıttaki kalıba bağlı kadahı oyun taşı diye tanımlayarak nesne türünü değiştiriyor. Kanıtın sınırlandırdığı birim taş değil, tarihsel oyunda kullanılan ok veya çubuktur.",
+      "smallest_correction": "Oyun taşı kalıbı ifadesini oyun oku veya çubuğu kalıbı olarak değiştirin."
+    },
+    {
+      "target_ref": "root_001026/B007",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve iki facet kanıttaki kadahı taş diye sınıflandırıyor. Kanıt, kazanç veya kayıp getirmeyen, kapta yeniden dolaşan ya da öteki kadahların pay yerlerinden ayrılan bir oyun oku veya çubuğunu anlatır.",
+      "smallest_correction": "Tanım ile F001 ve F002 içindeki taş sözcüklerini bağlama göre oyun oku veya oyun çubuğu ile değiştirin; işlev ve kaynak varyantlarına ilişkin kalan ifadeleri koruyun."
+    },
+    {
+      "target_ref": "root_001026/B007",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak özeti ve tek kaynak ayrıntısı, kaynakta kadah olarak verilen oyun okunu veya çubuğunu oyun taşı diye aktarıyor. Böylece tek kaynağın nesne sınıfı yanlış sentezleniyor.",
+      "smallest_correction": "Ortak özetteki oyun terimi ifadesi korunabilir; kaynak ayrıntısındaki özel oyun taşı ve devamındaki taş sözlerini özel oyun oku veya çubuğu biçiminde düzeltin."
+    },
+    {
+      "target_ref": "root_001026/B007",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı kazanç ve kayıp getirmeyen oyun taşı diyerek kadahın nesne türünü yanlış veriyor. Kanıtın çekirdeği tarihsel oyunda kullanılan bir ok veya çubuktur.",
+      "smallest_correction": "Karşılığı kazanç ve kayıp getirmeyen oyun oku veya çubuğu olarak değiştirin; uygulanabilirlik ve hata profilindeki taş sözlerini de aynı nesne türüyle uyumlu hale getirin."
+    },
+    {
+      "target_ref": "root_001026/B007",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Etkisiz oyun taşı karşılığı kanıttaki kadahı taşlaştırıyor. Daraltılmış bağlamsal karşılık dahi temel nesne sınıfını oyun oku veya çubuğu olarak korumalıdır.",
+      "smallest_correction": "Etkisiz oyun taşı karşılığını etkisiz oyun oku veya çubuğu olarak değiştirin ve açıklamalardaki taş göndergelerini buna uyarlayın."
+    },
+    {
+      "target_ref": "root_001026/B007",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_039",
+        "lu_040"
+      ],
+      "evidence_conflict": "Her iki sözlüksel karşılık da kadahı oyun taşı diye çeviriyor. Birim kanıtları kadahın tarihsel oyundaki ok veya çubuk olduğunu, farkların ise kazanç ve kayıp doğurmama, kapta dolaşma ve pay yerlerinden ayrılma özelliklerinde bulunduğunu gösterir.",
+      "smallest_correction": "lu_039 ve lu_040 içindeki oyun taşı sözlerini oyun oku veya oyun çubuğu olarak değiştirin; her birimin mevcut işlevsel ayrımını aynen koruyun."
+    },
+    {
+      "target_ref": "root_001026/B007",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu ayrımı odağı taş türü, ortak alanı da taş veya çubuk diye kuruyor. Komşu kanıtı genel kadahı hem ok gövdesi hem de oyun kadahı olarak sınırlar; odak ise bunun özel işlevli oyun oku veya çubuğu alt türüdür, taş değildir.",
+      "smallest_correction": "Odak ve ayrım metinlerinde taş türünü oyun oku veya çubuğu alt türü olarak düzeltin; ortak alandaki taş veya çubuk ifadesini ok veya çubuk yapın. near_neighbor ve partial değerlerini koruyun."
+    }
+  ]
+}

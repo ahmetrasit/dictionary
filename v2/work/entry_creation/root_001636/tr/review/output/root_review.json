@@ -1,0 +1,150 @@
+{
+  "verdict": "repair",
+  "summary": "Girdi genel olarak kanıtı ve dal sınırlarını doğru koruyor. Ancak B001'de yaklaşma örneği ettirgenleştirilmiş, B002'de seçenekli iki anlam zorunlu birliktelik gibi verilmiş, B006'da kanıtın yalnızca havada beliren bir oluşum dediği unsur özgül olarak sıcak hava dalgalanmasına çevrilmiş ve B008'de keskinlik anlamı kanıtsız biçimde metal alanıyla sınırlandırılmıştır. Bunlar ilgili alanlarda küçük ve yerel düzeltmeler gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_001636/B001",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yaklaşma kanıtında hayvanın suya yaklaştığı söylenir; ikinci bağlamsal karşılığın uygulanabilirlik notundaki \"bir hayvanın suya sokulması\" ifadesi ise ettirgenlik ve suya girme sonucu ekler.",
+      "smallest_correction": "Yalnızca ilgili uygulanabilirlik notundaki \"bir hayvanın suya sokulması\" sözünü \"bir hayvanın suya yaklaşması\" olarak değiştirin."
+    },
+    {
+      "target_ref": "root_001636/B002",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_007",
+        "lu_010"
+      ],
+      "evidence_conflict": "lu_007, çiftleşme isteğini veya bu isteğe bağlı ıslaklık göstermeyi seçenekli verir; mevcut karşılık bunları \"ve\" ile zorunlu olarak birleştirir. lu_010 da çiftleşme isteği durumunu veya ona bağlı ıslaklığı kapsarken karşılık yalnızca istek dönemini verir.",
+      "smallest_correction": "lu_007 karşılığını \"tırnaklı dişi kızgınlığa geldi veya buna bağlı ıslaklık gösterdi\", lu_010 karşılığını da \"tırnaklı dişinin çiftleşme isteği veya buna bağlı ıslaklık durumu\" yapın."
+    },
+    {
+      "target_ref": "root_001636/B006",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, şiddetli sıcakta havada beliren şeyi niteliğini belirlemeden bildirir. Tanım ve F002 bunu \"dalgalı\" ve \"titreşimli\" görünüm diye özgülleştirerek kanıtta bulunmayan bir fiziksel yorum ekler.",
+      "smallest_correction": "Tanımda ve F002'de dalgalı veya titreşimli nitelemesini kaldırıp unsuru yalnızca \"şiddetli sıcakta havada beliren görünüm\" olarak verin."
+    },
+    {
+      "target_ref": "root_001636/B006",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak özeti, kanıtın yalnızca şiddetli sıcakta havada beliren oluşum dediği unsuru \"dalgalı oluşum\" diye açıklayarak kaynakta olmayan bir nitelik ekler.",
+      "smallest_correction": "\"Dalgalı oluşum\" ifadesini \"havada beliren oluşum\" olarak değiştirin."
+    },
+    {
+      "target_ref": "root_001636/B006",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı ve koruma açıklaması, kanıtta niteliği belirtilmeyen hava görünümünü \"sıcak hava dalgalanması\" olarak adlandırır.",
+      "smallest_correction": "Karşılığı \"öğle vakti kavurucu sıcak ve sıcakta havada beliren görünüm\" yapın; koruma açıklamasında da dalgalanma yerine aynı yansız ifadeyi kullanın."
+    },
+    {
+      "target_ref": "root_001636/B006",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İkinci bağlamsal karşılık, şiddetli sıcakta havada beliren ancak niteliği açıklanmayan unsuru kesin olarak bir dalgalanma veya titreşim diye yorumlar.",
+      "smallest_correction": "İkinci karşılığın metnini \"şiddetli sıcakta havada beliren görünüm\" yapın ve açıklamalarındaki dalgalanma veya titreşim nitelemelerini kaldırın."
+    },
+    {
+      "target_ref": "root_001636/B006",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_019"
+      ],
+      "evidence_conflict": "lu_019 kanıtı, şiddetli sıcakta havada beliren şeyi türünü belirtmeden verir; \"sıcaktan havada oluşan dalgalanma\" karşılığı kanıtı gereksiz yere daraltır.",
+      "smallest_correction": "lu_019 karşılığını \"öğle vakti kavurucu sıcak veya şiddetli sıcakta havada beliren görünüm\" olarak değiştirin."
+    },
+    {
+      "target_ref": "root_001636/B006",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_001226/B002 ve root_000754/B006 karşılaştırmalarındaki odak açıklamaları, kanıtın yansız bıraktığı hava görünümünü \"dalgalı oluşum\" veya \"sıcaklık dalgalanması\" diye özgülleştirir.",
+      "smallest_correction": "Bu iki karşılaştırmada dalgalanma nitelemelerini kaldırıp \"şiddetli sıcakta havada beliren görünüm\" ifadesini kullanın; ilişki türlerini değiştirmeyin."
+    },
+    {
+      "target_ref": "root_001636/B008",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, anlamı keskinlik ve özellikle ağzı keskin kılıç üzerinden verir; gerekçedeki \"keskin metal\" ifadesi bunu bütün bir malzeme alanına taşıyarak kanıtsız bir metal sınırlaması ekler.",
+      "smallest_correction": "Gerekçedeki \"keskin metal\" ifadesini \"keskinlik niteliği\" olarak değiştirin; kabul durumunu koruyun."
+    },
+    {
+      "target_ref": "root_001636/B008",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F001 keskinliği genel olarak metal nesnelere bağlar. Kanıt ise malzemeyi değil, özellikle kılıç ağzında örneklenen keskin olma niteliğini bildirir.",
+      "smallest_correction": "Tanımı \"Özellikle kılıç ve benzeri bir kesici şeyin ağzının çok keskin olmasıdır\" biçiminde daraltın ve F001'den metal nesne koşulunu kaldırın."
+    },
+    {
+      "target_ref": "root_001636/B008",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak özeti, tek kaynağın nitelemeyi \"keskin metal\" için verdiğini söyler; kanıtın açıkladığı unsur metal türü değil keskinlik niteliğidir.",
+      "smallest_correction": "\"Keskin metal için verir\" sözünü \"keskinlik niteliği için verir\" olarak değiştirin."
+    },
+    {
+      "target_ref": "root_001636/B008",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığının uygulanabilirlik notu keskinliği metal kesici araçlarla sınırlar; kanıt yalnızca keskinlik niteliğini ve başlıca kılıç örneğini destekler.",
+      "smallest_correction": "Uygulanabilirlik notundaki \"Metal bir kesici aracın\" sözünü \"Bir kesici şeyin\" olarak değiştirin."
+    },
+    {
+      "target_ref": "root_001636/B008",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_000002/B005 karşılaştırmasında odak dalın sınırı metal alanı üzerinden kurulmuştur; bu malzeme sınırlaması odak kanıtında yoktur.",
+      "smallest_correction": "Bu karşılaştırmanın focus_only ve distinction metinlerinden metal koşulunu kaldırıp odağı, özellikle kılıçta örneklenen keskinlik nitelemesi olarak açıklayın; ilişki türünü koruyun."
+    }
+  ]
+}

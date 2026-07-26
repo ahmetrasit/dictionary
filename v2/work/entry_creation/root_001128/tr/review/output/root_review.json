@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtı ve dalların sözlüksel kapsamını doğru koruyor; ancak bir komşuluk ilişkisi bağımlı bir uzmanlaşma yüzünden gereksiz yere kısmi sayılmış, bolluk ağır durum diye nitelenmiş ve bir kaynak sentezi ayrı tanıklıkları ortak görüş gibi sunmuştur. Bu üç sınırlı alan düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001128/B001",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Odak dalın çekirdeği insanı veya şeyi sınayarak gerçek durumunu ve niteliğini açığa çıkarmaktır; komşu kart da insanı sınama ile işin gerçek durum ve niteliğinin ortaya çıkmasını verir. Madenin ateşte sınanması odak dalda açıkça bir uzmanlaşmadır, çekirdek sınır farkı değildir. Buna rağmen ilişki bu bağımlı uzmanlaşma gerekçesiyle near_synonym ve partial yapılmış, ayrıca komşuya özgü denilen insanın durumunu deneyimle açığa çıkarma odak dalın da kapsamındadır.",
+      "smallest_correction": "Komşuluk satırını çekirdeklerin tam örtüşmesini gösterecek biçimde synonym ve exact olarak düzelt; focus_only ile neighbor_only alanlarında çekirdeğe ait sahte asimetriler kurma ve maden örneğini yalnızca odak dala bağlı bir uzmanlaşma olarak belirt."
+    },
+    {
+      "target_ref": "root_001128/B004",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi sınamanın hem sıkıntı hem bolluk içinde gerçekleşebileceğini açıkça karşıtlar. Tanım ve F001 ise bolluğu da ağır durum diye niteleyerek kaynakta verilen rahatlık ve bolluk kutbunu gereksiz biçimde daraltır.",
+      "smallest_correction": "Tanımdaki ve F001 ifadesindeki ağır nitelemesini kaldır; sıkıntı ile bolluğu kişiyi sınayabilen iki karşıt durum olarak koru."
+    },
+    {
+      "target_ref": "root_001128/B007",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet kaynakların mal veya akıl kaybı sonucunda birleştiğini söylüyor. Oysa kesin kaynak ifadesinde bir tanıklık kişinin malını veya aklını yitirmesini, diğer tanıklık ise delilik ile delirmiş kişi anlamlarını verir; mal kaybı iki kaynağın ortak iddiası değildir.",
+      "smallest_correction": "Ortak özeti uzlaşma iddiası kurmayan kaynak-nötr bir karşılaştırma olarak yeniden yaz; bir tanıklığın mal veya akıl kaybını, ötekinin delilik ve delirmiş kişi anlamlarını verdiğini ayrı ayrı belirt."
+    }
+  ]
+}

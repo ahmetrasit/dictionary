@@ -2,82 +2,67 @@
   "branches": [
     {
       "branch_ref": "root_000151/B001",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi temel olarak bir yere, şeye veya belirlenmiş son sınıra ulaşmayı anlatır. Bununla birlikte kullanım yalnızca gerçekleşmiş varışı kapsamaz; kimi bağlamlarda sınıra yaklaşmayı ve bir çocuğun olgunluk çağına erişmesini de içerir.",
+        "boundary_note": "Dalın çekirdeği ulaşmadır; yaklaşma ve olgunlaşma, belirli bağlamlara bağlı ayrı uzanımlardır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım genel ulaşma çekirdeğiyle kalıp yer, süre, belirlenmiş sınır, yaklaşma ve olgunlaşma kalıplarını birbirine karıştırmadan ayırır."
+      },
       "concept_map": {
-        "definition": "Bir yere, şeye ya da önceden belirlenmiş bir sona varmak; bazı kullanımlarda o sona henüz varmadan iyice yaklaşmak veya gelişimde belirli bir eşiğe erişmektir.",
+        "definition": "Bir yere ya da şeye ulaşmak veya bir zamanın, işin ya da önceden belirlenmiş ölçünün son sınırına varmak. Bazı kalıplarda o sınıra yaklaşmayı ya da bir çocuğun olgunluk çağına erişmesini anlatır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Hareket, zaman ya da başka bir süreç belirli bir son noktaya erişir.",
+            "statement": "Bir yere veya şeye erişip varma temel anlamdır.",
             "claim_ids": [
-              "lu_001",
-              "lu_002"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "extension",
-            "statement": "Son noktaya tam erişme yerine ona çok yaklaşma da aynı anlatımla karşılanabilir.",
+            "statement": "Bir zamanın, işin veya belirlenmiş ölçünün en son sınırına varmayı da kapsar.",
             "claim_ids": [
-              "lu_003"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "specialization",
-            "statement": "Bir çocuk gelişim ve olgunluk eşiğine erişmiş olabilir.",
+            "role": "source_variant",
+            "statement": "Kimi kullanımlarda son sınıra gerçekten varmak yerine ona iyice yaklaşmak anlatılır.",
             "claim_ids": [
-              "lu_004"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F004",
-            "role": "example",
-            "statement": "Gücün olgun sınırına veya kırk yaş gibi belirlenmiş bir yaşa erişmek bu çekirdeğin örnekleridir.",
+            "role": "extension",
+            "statement": "Çocuk için kullanıldığında bedensel olgunluk çağına erişmeyi belirtir.",
             "claim_ids": [
-              "lu_005"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak çekirdek, bir yerin, şeyin veya belirlenmiş sonun sınırına erişmedir; süre sonu bağlamında tam erişmeden önceki yakınlık da anlatılabilir.",
+        "common_summary": "Kaynaklar, yer veya nesneye erişme ile bir süreç ya da ölçünün sonuna varma çekirdeğinde birleşir; yaklaşma ve çocuğun olgunlaşması bu çekirdeğin bağlama bağlı uzanımlarıdır.",
         "common_claim_ids": [
-          "lu_001",
-          "lu_003"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_002"
-            ],
-            "kind": "extension",
-            "summary": "Son nokta yalnızca mekanda değil, zamanda veya belirlenmiş bir işte de düşünülebilir."
-          },
-          {
-            "claim_ids": [
-              "lu_004"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Çocuğun gelişip olgunluk eşiğine erişmesi bu anlamın özel bir gerçekleşmesidir."
-          },
-          {
-            "claim_ids": [
-              "lu_005"
-            ],
-            "kind": "example",
-            "summary": "Gücün olgun sınırına ve kırk yaşına erişme, belirlenmiş sınıra varmanın örnekleri olarak verilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "belirli bir sona erişme veya yaklaşma",
-        "applicability": "Yer, şey, zaman, gelişim veya önceden belirlenmiş başka bir sınır söz konusu olduğunda bütün çekirdeği karşılar.",
+        "text": "bir yere, şeye veya son sınıra ulaşma; bağlama göre yaklaşma ya da olgunluğa erme",
+        "applicability": "Dalın genel ulaşma çekirdeğini ve kaynakta açıkça bulunan yaklaşma ile olgunlaşma uzanımlarını birlikte temsil eder.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Belirli bir sonu, o sona erişmeyi ve bağlama göre ona iyice yaklaşmayı birlikte korur.",
+          "preserves": "Ulaşma, son sınıra varma, yaklaşma ve olgunlaşma ayrımlarının tümünü korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -85,18 +70,19 @@
         "facet_ids": [
           "F001",
           "F002",
-          "F003"
+          "F003",
+          "F004"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "varmak",
-          "usage_role": "contextual",
-          "applicability": "Bir yere veya nesneye fiilen erişmenin anlatıldığı hareket bağlamlarında doğal karşılıktır.",
+          "text": "ulaşmak",
+          "usage_role": "general",
+          "applicability": "Bir yere veya nesneye gerçekten erişmenin anlatıldığı olağan bağlamlarda kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Bir hedefe yönelen sürecin son noktaya erişmesini korur.",
-            "loses": "Yaklaşma, yaş ve gelişim eşiğine erişme kapsamlarını tek başına göstermez.",
+            "fit": "none",
+            "preserves": "Gerçek erişme ve varma çekirdeğini doğal biçimde korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -105,19 +91,48 @@
           ]
         },
         {
-          "text": "eşiğine gelmek",
+          "text": "sonuna varmak",
           "usage_role": "contextual",
-          "applicability": "Bir sürenin sonuna veya gelişim sınırına erişmenin ya da çok yaklaşmanın öne çıktığı bağlamlara uygundur.",
+          "applicability": "Bir sürenin, işin veya belirlenmiş ölçünün son sınırına erişme bağlamına uygundur.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Belirlenmiş sınıra gelme ve ona çok yaklaşma yönlerini korur.",
-            "loses": "Bir yere veya nesneye sıradan biçimde varma kullanımını geri plana iter.",
+            "fit": "none",
+            "preserves": "Süreç veya ölçü bakımından son sınıra erişmeyi korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F002",
+            "F002"
+          ]
+        },
+        {
+          "text": "sınırına yaklaşmak",
+          "usage_role": "contextual",
+          "applicability": "Son noktaya henüz varılmadığı, fakat ona iyice yaklaşıldığı özel kullanımlara uygundur.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Gerçekleşmiş varıştan ayrılan yaklaşma değerini korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
             "F003"
+          ]
+        },
+        {
+          "text": "olgunluk çağına erişmek",
+          "usage_role": "contextual",
+          "applicability": "Bir çocuğun bedensel gelişiminde belirli olgunluk eşiğine gelmesini anlatır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Çocuğun gelişim eşiğine erişmesi anlamını korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F004"
           ]
         }
       ],
@@ -125,12 +140,12 @@
         {
           "lexical_unit_id": "lu_001",
           "rendering_kind": "ordinary",
-          "target_gloss": "bir yere ya da şeye varmak"
+          "target_gloss": "yere veya şeye ulaşmak"
         },
         {
           "lexical_unit_id": "lu_002",
           "rendering_kind": "ordinary",
-          "target_gloss": "mekan, zaman veya bir iş bakımından en son sınıra ulaşma"
+          "target_gloss": "yer, zaman veya iş bakımından en son sınıra varma"
         },
         {
           "lexical_unit_id": "lu_003",
@@ -140,12 +155,12 @@
         {
           "lexical_unit_id": "lu_004",
           "rendering_kind": "ordinary",
-          "target_gloss": "çocuğun gelişip olgunluk çağına erişmesi"
+          "target_gloss": "çocuğun olgunluk çağına erişmesi"
         },
         {
           "lexical_unit_id": "lu_005",
           "rendering_kind": "ordinary",
-          "target_gloss": "gücünün olgun sınırına veya kırk yaşına erişmek"
+          "target_gloss": "güç veya yaş bakımından belirlenmiş sınıra erişmek"
         }
       ],
       "excluded_glosses": [],
@@ -154,80 +169,82 @@
           "neighbor_ref": "root_000471/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Son sınıra yalnızca yaklaşmayı ve belirlenmiş zaman sonlarını da kapsar.",
-          "neighbor_only": "Peşinden yetişme, görme veya bilme yoluyla kavrama ve meyvenin olgunlaşması gibi ek alanları kapsar.",
-          "gloss": "yetişip erişme",
-          "shared_zone": "Her ikisi de bir şeye erişmeyi ve çocuğun olgunluk eşiğine gelmesini anlatabilir.",
-          "distinction": "Komşu dal erişmeyi yetişme ve kavrama yollarıyla genişletir; bu dal ise bir sürecin belirlenmiş sonuna varma veya o sona iyice yaklaşma sınırını öne çıkarır."
+          "focus_only": "Son sınıra yaklaşmayı ve bir çocuğun olgunluk çağına erişmesini ayrıca kapsar.",
+          "neighbor_only": "Erişmeyi özellikle yetişme, yakalama ve algı ya da bilgiyle kavrama yollarına bağlar.",
+          "gloss": "yetişerek erişme",
+          "shared_zone": "Her iki dalda da bir nesneye, aşamaya veya gelişim eşiğine erişme bulunur.",
+          "distinction": "Odak dalı genel varış ve son sınıra erişme çevresinde kuruludur; komşu dal ise erişmenin yetişme, yakalama veya kavrama biçimini öne çıkarır."
+        },
+        {
+          "neighbor_ref": "root_000430/B003",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Zaman ve iş sonu, yaklaşma ve olgunlaşma gibi yer dışı sınırları da kapsar.",
+          "neighbor_only": "Ulaşmayı bir engelden ya da aralıktan geçip öteki yana çıkma görünümüyle sınırlar.",
+          "gloss": "geçip ulaşma",
+          "shared_zone": "İki dal da bir hedefe varma ve orada sona erme anlamında buluşur.",
+          "distinction": "Odak dalında geçip çıkma koşulu yoktur; komşunun ayırt edici yanı, varışın bir geçiş veya sıyrılma sonrasında gerçekleşmesidir."
         },
         {
           "neighbor_ref": "root_001291/B003",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Hedefe gerçekten erişmeyi temel anlam olarak taşır.",
-          "neighbor_only": "Bir eylemin olmak üzere bulunması, güneşin batmaya veya kabın dolmaya yaklaşması gibi salt yakınlıkları kapsar.",
-          "gloss": "yaklaşma",
-          "shared_zone": "İki dal da henüz gerçekleşmemiş bir sona çok yaklaşmayı anlatabilir.",
-          "distinction": "Komşunun çekirdeği yakınlıktır; burada yakınlık, temel erişme anlamının bağlama bağlı bir uzantısıdır."
+          "focus_only": "Çekirdek anlamda hedefe veya son sınıra gerçek varış vardır.",
+          "neighbor_only": "Henüz gerçekleşmemiş bir eyleme, dolmaya veya batmaya yakın olmayı genel olarak kapsar.",
+          "gloss": "yakınlaşma",
+          "shared_zone": "Odak dalının yaklaşma kullanımı ile komşunun yakınlık çekirdeği kesişir.",
+          "distinction": "Yaklaşma odak dalında sınırlı bir kaynak çeşididir; komşu dalda ise varış gerektirmeyen yakınlık başlı başına çekirdektir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; erişme ile yaklaşma sınırını en açık gösteren iki karşıtlık yayımlandı."
+      "neighbor_coverage_note": "Bütün adaylar karşılaştırıldı; yalnızca ulaşma, geçerek varma ve yaklaşma sınırlarını belirginleştiren üç ilişki yayımlandı."
     },
     {
       "branch_ref": "root_000151/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, bir şeyi ve özellikle bir iletiyi alıcısına ulaştırma veya ulaşmasını sağlama anlamını doğrudan destekler. Bu işlem, kişinin kendisinin bir yere varmasından ve söz söyleme niteliğinden ayrıdır.",
+        "boundary_note": "Dalın çekirdeği aktarılacak şeyi hedefe ulaştırmaktır; yalnızca kişinin kendi varışı bu dala girmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Genel ettirgen ulaştırma ile iletiye bağlı kalıp ayrı tutulur; ileti kalıbı bütün kökün tek anlamı sayılmaz."
+      },
       "concept_map": {
-        "definition": "Bir şeyi, özellikle bir iletiyi, hedefindeki kişiye ulaştırmak veya onun hedefe erişmesini sağlamaktır.",
+        "definition": "Bir şeyi, özellikle bir iletiyi, hedefindeki kişiye veya yere ulaştırmak ya da ulaşmasını sağlamak.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir katılımcı bir şeyin hedefe erişmesini sağlar.",
+            "statement": "Bir nesnenin veya içeriğin hedefe erişmesini sağlama temel işlemdir.",
             "claim_ids": [
-              "lu_006"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Ulaştırılan şey bir ileti olduğunda görev, iletinin hedefe teslim edilmesidir.",
+            "statement": "İleti bağlamında içerik, göndericiden alıcıya aktarılır.",
             "claim_ids": [
-              "lu_007"
-            ]
-          },
-          {
-            "facet_id": "F003",
-            "role": "associated_use",
-            "statement": "Ulaştırma eyleminin kendisi de ayrı bir adla anılır.",
-            "claim_ids": [
-              "lu_008"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar, bir şeyi hedefe ulaştırma ile özellikle bir iletiyi yerine getirilmiş biçimde alıcısına iletme anlamlarında birleşir.",
+        "common_summary": "Kaynaklar, ettirgen ulaştırma işlemi ile iletinin yerine götürülmesi kullanımını ortak bir çekirdekte birleştirir.",
         "common_claim_ids": [
-          "lu_006",
-          "lu_007"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_008"
-            ],
-            "kind": "derivation",
-            "summary": "Ulaştırma ve iletme eyleminin adı olarak kullanılan bir ad biçimi ayrıca kaydedilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "hedefine ulaştırma",
-        "applicability": "Bir şeyin veya iletinin başka bir katılımcının aracılığıyla hedefine eriştiği tüm kullanımlara uygundur.",
+        "text": "bir şeyi, özellikle iletiyi, hedefine ulaştırma",
+        "applicability": "Genel ettirgen ulaştırmayı korurken iletinin aktarılması biçimindeki başlıca özel kullanımı da açıkça gösterir.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Bir aracının bir şeyi hedefine eriştirmesi biçimindeki ettirgen çekirdeği korur.",
+          "preserves": "Hedefe ulaştırma işlemini ve iletiye bağlı özel kullanımı birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -239,13 +256,28 @@
       },
       "contextual_glosses": [
         {
-          "text": "iletiyi yerine ulaştırmak",
-          "usage_role": "contextual",
-          "applicability": "Ulaştırılan nesnenin sözlü veya yazılı bir ileti olduğu bağlamlarda doğal karşılıktır.",
+          "text": "ulaştırmak",
+          "usage_role": "general",
+          "applicability": "Bir nesnenin veya içeriğin belirlenen hedefe erişmesini sağlama bağlamında kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "İletinin bir aracı tarafından hedef alıcıya ulaştırılmasını korur.",
-            "loses": "İleti dışındaki şeylerin ulaştırılmasını kapsamaz.",
+            "fit": "none",
+            "preserves": "Ettirgen hedefe eriştirme işlemini doğal biçimde korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "iletiyi yerine iletmek",
+          "usage_role": "contextual",
+          "applicability": "Bir sözün veya iletinin göndericiden amaçlanan alıcıya aktarılması bağlamına uygundur.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "İleti içeriğinin amaçlanan alıcıya aktarılmasını korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -268,97 +300,99 @@
         {
           "lexical_unit_id": "lu_008",
           "rendering_kind": "ordinary",
-          "target_gloss": "ulaştırma ve iletme işi"
+          "target_gloss": "iletme ve ulaştırma işi"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_001237/B002",
+          "neighbor_ref": "root_001355/B008",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "İleti dışındaki bir şeyi hedefe eriştirmeyi de kapsar.",
-          "neighbor_only": "Kesin bir öğüt veya yükümlülük bildirmeyi ve bir kimseyi haberdar etmeyi de kapsar.",
-          "gloss": "bildirip ulaştırma",
-          "shared_zone": "Her iki dal da bilgi veya sözün bir muhataba ulaştırılmasını anlatır.",
-          "distinction": "Bu dalın çekirdeği hedefe eriştirmedir; komşu dal bildirme, kesin öğüt verme ve muhataba yönelik bilgi aktarımı kapsamlarıyla daha geniştir."
+          "focus_only": "İleti dışındaki bir nesneyi ya da içeriği hedefe ulaştırmayı da kapsar.",
+          "neighbor_only": "Kullanımı bir başkasının sözlü iletisini belirli kişiye aktarma kalıbına bağlar.",
+          "gloss": "başkasının iletisini aktarma",
+          "shared_zone": "Her iki dal da bir iletinin amaçlanan alıcıya erişmesini sağlamayı anlatır.",
+          "distinction": "Odak dalı daha genel ettirgen ulaştırmayı da içerir; komşu ise başkasından alınan iletinin sözlü aktarımına daha sıkı bağlıdır."
         },
         {
-          "neighbor_ref": "root_001633/B001",
-          "relation_type": "same_field",
+          "neighbor_ref": "root_001237/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "İçeriğin yalnızca hedefe erişmesini sağlamak yeterlidir.",
+          "neighbor_only": "Bildirme yanında kesin bir buyruğu veya bağlayıcı sözü muhataba yöneltme değerini de taşır.",
+          "gloss": "bildirip kesinleştirme",
+          "shared_zone": "İki dalda da bilgi veya söz muhataba ulaştırılır.",
+          "distinction": "Odak dalının çekirdeği nötr ulaştırmadır; komşuda bildirme işlemi kesin hüküm ya da bağlayıcı söz işleviyle genişler."
+        },
+        {
+          "neighbor_ref": "root_000528/B001",
+          "relation_type": "near_neighbor",
           "boundary_match": "field_only",
-          "focus_only": "Aktarımın gizli olması gerekmez ve ileti dışındaki nesneler de ulaştırılabilir.",
-          "neighbor_only": "Bilgi veya sözün gizlice, örtük sözle ya da işaretle aktarılmasını zorunlu kılar.",
-          "gloss": "gizlice bilgi aktarma",
-          "shared_zone": "İki dal da bir içeriğin başka bir kişiye erişmesini konu edinir.",
-          "distinction": "Komşu dal aktarımın gizli yöntemine göre tanımlanır; bu dal ise yönteme bakmadan hedefe ulaştırma sonucuna göre tanımlanır."
+          "focus_only": "Belirli bir içerik, hedeflenen alıcıya ulaştırılır.",
+          "neighbor_only": "Bilginin halka yayılması, açığa çıkarılması ve gizli tutulmaması esastır.",
+          "gloss": "haberi yayma",
+          "shared_zone": "Her iki dal da bir içeriğin ilk sahibinden başkalarına geçmesini konu edinir.",
+          "distinction": "Ulaştırma belirli bir hedefe yapılabilir ve yayılma gerektirmez; komşu dalda içeriğin geniş çevreye açılması çekirdektir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel ulaştırma ile bildirme ve gizli aktarım arasındaki en yararlı iki sınır seçildi."
+      "neighbor_coverage_note": "Adayların tümü değerlendirildi; ileti aktarımı, bağlayıcı bildirim ve halka yayma sınırlarını gösteren üç karşılaştırma seçildi."
     },
     {
       "branch_ref": "root_000151/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, yaşamı sürdürmeye yetecek miktarı veya aracı ve kişinin elindekiyle yetinmesini birlikte destekler. Buradaki yeterlik, ileti ulaştırmaktan ayrı bir geçim ve yetme alanıdır.",
+        "boundary_note": "Dal, yaşamı sürdürmeye yetecek ölçü ve araçla sınırlıdır; bolluk veya kazanç edinme süreci değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Yeterlik bildiren adlar ile eldeki geçim aracıyla yetinme kalıbı ayrıştırılır; kalıp yalın köke genellenmez."
+      },
       "concept_map": {
-        "definition": "Bir ihtiyacı karşılayacak kadar yeterli olan şey, özellikle yaşamı sürdürmeye yetecek geçimlik veya azık ve bununla yetinmedir.",
+        "definition": "Bir konuda yeterli olma veya ihtiyacı karşılayacak ölçüde bulunma. Geçimlik, yiyecek ya da azık ve eldekiyle yetinme bu genel yeterlik çekirdeğinin özel kullanımlarıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Eldeki miktar ya da imkan belirli bir ihtiyacı karşılamaya yeter.",
+            "statement": "Bir konuda veya gereksinim karşısında yeterli olma temel anlamdır.",
             "claim_ids": [
-              "lu_009",
-              "lu_012"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Yeterli şey, insanın yaşamını sürdürmesini sağlayan geçimlik veya azık olabilir.",
+            "statement": "Yiyecek, azık ve öteki geçim araçları somut yeterlik biçimleridir.",
             "claim_ids": [
-              "lu_010"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "associated_use",
-            "statement": "Kişi elindeki şeyin yeterli olduğunu kabul ederek onunla yetinir.",
+            "statement": "Kişi elindeki yeterli şeyle yetinir.",
             "claim_ids": [
-              "lu_011"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak anlam, bir ihtiyacı karşılamaya yetecek miktar ile özellikle yaşamı sürdürmeye yarayan geçimlik veya azıktır.",
+        "common_summary": "Kaynaklar yeterli ölçü, yaşamı sürdüren yiyecek veya geçim aracı ve bunlarla yetinme kullanımlarını aynı geçim çekirdeği altında toplar.",
         "common_claim_ids": [
-          "lu_009",
-          "lu_010"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_011"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Eldeki şeyle yetinme eylemi, yeterlilik durumunun kişi açısından gerçekleşmesini anlatır."
-          },
-          {
-            "claim_ids": [
-              "lu_012"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Yeterlilik anlamında kullanılan ayrı bir eylem adı biçimi de kaydedilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "ihtiyacı karşılayacak yeterlilik",
-        "applicability": "Genel yeterlilik, yaşamı sürdürmeye yetecek geçimlik ve bununla yetinme kullanımlarının ortak çekirdeğini karşılar.",
+        "text": "yaşamı sürdürmeye yetecek ölçü ve geçim aracı",
+        "applicability": "Hem soyut yeterlik ölçüsünü hem de yiyecek gibi somut geçim aracını kapsar; yetinme kullanımı bu çekirdeğe bağlıdır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Bir ihtiyacın eldeki şeyle karşılanabilmesini ve yeterli olma sınırını korur.",
+          "preserves": "Yeterli ölçüyü, geçim aracını ve onunla yetinme ilişkisini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -371,13 +405,28 @@
       },
       "contextual_glosses": [
         {
-          "text": "geçinmeye yetecek azık",
-          "usage_role": "contextual",
-          "applicability": "Yeterli şeyin yiyecek veya yaşamı sürdüren başka bir geçim aracı olduğu bağlamlarda uygundur.",
+          "text": "geçinecek kadar",
+          "usage_role": "general",
+          "applicability": "Bir miktarın yaşamı sürdürmek için yeterli olduğunu belirtirken kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Yaşamı sürdürmeye yetecek miktar ve yarar yönlerini korur.",
-            "loses": "Yiyecek ve geçim dışındaki genel yeterlilik kullanımlarını kapsamaz.",
+            "fit": "none",
+            "preserves": "Yaşam gereksinimini karşılayan yeterli ölçüyü korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "azık ve geçimlik",
+          "usage_role": "contextual",
+          "applicability": "Yaşamı sürdürmeye yarayan yiyecek veya başka somut geçim araçları için uygundur.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Somut yiyecek ve geçim aracı değerini korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -386,13 +435,13 @@
           ]
         },
         {
-          "text": "onunla yetinmek",
+          "text": "elindekiyle yetinmek",
           "usage_role": "contextual",
-          "applicability": "Bir kişinin elindeki şeyi yeterli sayıp daha fazlasını aramadığı eylem bağlamlarında kullanılır.",
+          "applicability": "Kişinin belirli bir geçim aracını yeterli bulup onunla yaşamını sürdürmesi bağlamına uygundur.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Eldeki şeyin ihtiyacı karşılaması ve kişi tarafından yeterli sayılması yönlerini korur.",
-            "loses": "Yeterli şeyin kendisini adlandıran isim kullanımlarını kapsamaz.",
+            "fit": "none",
+            "preserves": "Eldeki sınırlı araçla yetinme eylemini korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -405,104 +454,114 @@
         {
           "lexical_unit_id": "lu_009",
           "rendering_kind": "ordinary",
-          "target_gloss": "ihtiyacı karşılayacak yeterlilik"
+          "target_gloss": "yeterli miktar veya yeten şey"
         },
         {
           "lexical_unit_id": "lu_010",
           "rendering_kind": "ordinary",
-          "target_gloss": "yaşamı sürdürmeye yetecek geçimlik veya azık"
+          "target_gloss": "yaşamı sürdürecek azık ve geçimlik"
         },
         {
           "lexical_unit_id": "lu_011",
           "rendering_kind": "ordinary",
-          "target_gloss": "onunla yetinmek"
+          "target_gloss": "eldeki şeyle yetinmek"
         },
         {
           "lexical_unit_id": "lu_012",
           "rendering_kind": "ordinary",
-          "target_gloss": "yeterlilik"
+          "target_gloss": "bir iş için yeterli olma"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_001268/B001",
+          "neighbor_ref": "root_001039/B006",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Yiyecek dışındaki herhangi bir ihtiyacı karşılayan şeyi ve onunla yetinmeyi kapsar.",
-          "neighbor_only": "Bedeni ayakta tutan yiyeceği ve bir başkasının geçimini sağlama eylemini özellikle kapsar.",
-          "gloss": "bedeni ayakta tutan azık",
-          "shared_zone": "Her iki dal da yaşamı sürdürmeye yetecek yiyecek veya geçimliği anlatabilir.",
-          "distinction": "Komşu dal bedeni besleyen azığa odaklanır; bu dalın çekirdeği ise daha genel olarak ihtiyacı karşılayan yeterliliktir."
+          "focus_only": "Yeterliği yiyecekle sınırlamaz ve kişinin elindeki araçla yetinmesini de kapsar.",
+          "neighbor_only": "Az miktardaki yiyeceği, özellikle insanı veya hayvanı sonraki döneme kadar ayakta tutan geçici kaynak olarak belirler.",
+          "gloss": "az miktarda geçici geçimlik",
+          "shared_zone": "Her iki dalda da az bir kaynak yaşamı sürdürmeye yeter.",
+          "distinction": "Odak dalı genel yeterlik ve geçim aracıdır; komşu dal azlık, geçicilik ve belirli insan ya da hayvan beslenmesi sınırlarını öne çıkarır."
         },
         {
           "neighbor_ref": "root_001308/B007",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Yeterli miktarın tam sınırda ve artıksız olmasını şart koşmaz.",
-          "neighbor_only": "Fazlası bulunmayan tam yeterlilik sınırını ve başkasından istemeye gerek bırakmamasını içerir.",
-          "gloss": "fazlasız yeter miktar",
-          "shared_zone": "Her iki dal da ihtiyacı karşılayan geçimlik veya az miktardaki yeterli kaynağı anlatır.",
-          "distinction": "Burada yeterli olma esastır; komşu dal yeterliliği artıksız alt sınır ve başkasına el açmama koşullarıyla daraltır."
+          "focus_only": "Yeterli aracın mutlaka artıksız olmasını veya başkasından istemeyi önlemesini gerektirmez.",
+          "neighbor_only": "Miktarı tam olarak fazlasız yeterlik ve insanı başkasından istemekten koruma koşuluyla sınırlar.",
+          "gloss": "fazlasız yeterlik",
+          "shared_zone": "İki dal da temel gereksinimi karşılayan yeterli geçim miktarını anlatır.",
+          "distinction": "Odak dalında yeterli olma esastır; komşu dal bunun üstüne fazlalık bulunmaması ve isteme gereğini kaldırma sınırını ekler."
+        },
+        {
+          "neighbor_ref": "root_001268/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Soyut yeterlik ölçüsünü ve yiyecek dışındaki geçim araçlarıyla yetinmeyi de kapsar.",
+          "neighbor_only": "Bedeni ayakta tutan yiyecek ile kişinin kendisini ve bakmakla yükümlü olduklarını beslemesini merkez alır.",
+          "gloss": "bedeni ayakta tutan yiyecek",
+          "shared_zone": "Somut yiyecek, her iki dalda yaşamı sürdürme aracıdır.",
+          "distinction": "Odak dalı yeterlik ve yetinme ilişkisine dayanır; komşu dal besleme işlevindeki yiyeceği ve bakım verme eylemini çekirdek yapar."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel yeterlilik ile azık ve artıksız geçim sınırlarını gösteren iki komşu seçildi."
+      "neighbor_coverage_note": "Bütün komşular incelendi; azlık, fazlasız yeterlik ve bedeni besleyen yiyecek sınırlarını açıklayan üç aday yayımlandı."
     },
     {
       "branch_ref": "root_000151/B004",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, konuşanın amaçladığı anlamı açık ve etkili sözle karşı tarafa ulaştırabilmesini doğrudan tanımlar. Nitelik hem konuşana hem de bu niteliği taşıyan söze yüklenebilir.",
+        "boundary_note": "Dal sözlü anlatım yetkinliğiyle sınırlıdır; genel kalite veya iletinin fiziksel aktarımı değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Konuşanın anlatım yetkinliği ile bu yetkinliği gösteren söz kalıbı ayrı yüzler olarak korunur."
+      },
       "concept_map": {
-        "definition": "Konuşanın amacını açık, etkili ve eksiksiz biçimde karşı tarafa ulaştırmasını sağlayan söz söyleme yetkinliğidir; bu yetkinlik kişiye ve söze de yüklenebilir.",
+        "definition": "Konuşanın amaçladığı anlamı açık, düzgün ve etkili sözle karşı tarafa ulaştırma yetkinliği; aynı nitelik bunu gerçekleştiren söz için de kullanılır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Konuşan, dildeki yetkinliği sayesinde anlatmak istediğini açık ve etkili biçimde karşı tarafa ulaştırır.",
+            "statement": "Konuşan kişi, anlatmak istediği anlamı açık ve etkili biçimde karşı tarafa ulaştırır.",
             "claim_ids": [
-              "lu_013"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "associated_use",
-            "statement": "Bu yetkinliğe sahip kişi, dili ve sözü güçlü biri olarak nitelenir.",
+            "role": "specialization",
+            "statement": "Bu anlatım yetkinliğini taşıyan kişi, dili güçlü ve amacını gerçekleştiren bir konuşmacı olarak nitelenir.",
             "claim_ids": [
-              "lu_014"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "associated_use",
-            "statement": "Amacı tam karşılayan açık ve etkili söz de aynı nitelikle tanımlanır.",
+            "role": "specialization",
+            "statement": "Söz de anlatılmak isteneni açık ve etkili biçimde ilettiğinde aynı nitelikle anılır.",
             "claim_ids": [
-              "lu_015"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar, söz söylemedeki açıklık ve etkililiğin konuşanın amacını dinleyene ulaştırması üzerinde birleşir; nitelik konuşana da yüklenir.",
+        "common_summary": "Kaynaklar, konuşanın amacını söz aracılığıyla ulaştıran güçlü anlatımı hem bir kişi yetkinliği hem de söz niteliği olarak sunar.",
         "common_claim_ids": [
-          "lu_013",
-          "lu_014"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_015"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Yalnız kişi değil, amacı tam karşılayan açık ve etkili sözün kendisi de bu nitelikle anılır."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "amacı açık ve etkili anlatma yetkinliği",
-        "applicability": "Konuşanın dil yetkinliğini, bu yetkinliğe sahip kişiyi ve amacı karşılayan sözün niteliğini ortak çekirdekte toplar.",
+        "text": "amacını açık ve etkili sözle anlatma yetkinliği",
+        "applicability": "Konuşanın yetkinliğini merkez alır ve aynı işlevi gerçekleştiren sözün niteliğini de kapsar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Açıklığı, etkililiği ve konuşanın amaçladığı anlamı dinleyene ulaştırma işlevini korur.",
+          "preserves": "Açıklığı, etkililiği ve amaçlanan anlamı karşı tarafa ulaştırma işlevini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -515,13 +574,13 @@
       },
       "contextual_glosses": [
         {
-          "text": "sözünü açık ve etkili anlatmak",
-          "usage_role": "contextual",
-          "applicability": "Bir kişinin konuşma yetkinliğinin eylem içindeki sonucunun anlatıldığı bağlamlarda doğaldır.",
+          "text": "açık ve etkili anlatım",
+          "usage_role": "general",
+          "applicability": "Konuşmanın amaçlanan anlamı güçlü ve anlaşılır biçimde iletmesi bağlamında kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Konuşanın amacını açık ve etkili biçimde dinleyene ulaştırmasını korur.",
-            "loses": "Yetkinliği bir özellik adı olarak ve sözün kalıcı niteliği olarak adlandırmaz.",
+            "fit": "none",
+            "preserves": "Anlamı açık ve etkili biçimde ulaştırma çekirdeğini korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -530,13 +589,28 @@
           ]
         },
         {
-          "text": "açık ve etkili söz",
+          "text": "sözünü güçlü anlatan",
           "usage_role": "contextual",
-          "applicability": "Niteliğin konuşana değil, söylenen sözün kendisine yüklendiği bağlamlarda uygundur.",
+          "applicability": "Bir kişinin dili kullanma ve amacını konuşmayla gerçekleştirme yetkinliği için uygundur.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Sözün açıklığını, etkililiğini ve amaçlanan anlamı karşılamasını korur.",
-            "loses": "Konuşanın genel dil yetkinliğini tek başına göstermez.",
+            "fit": "none",
+            "preserves": "Kişiye yüklenen güçlü anlatım yetkinliğini korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "anlamı yerini bulan söz",
+          "usage_role": "explanatory",
+          "applicability": "Sözün amaçlanan anlamı açık ve etkili biçimde dinleyene ulaştırdığı bağlamda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Söze yüklenen açıklık ve amaca erişme niteliğini korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -549,17 +623,17 @@
         {
           "lexical_unit_id": "lu_013",
           "rendering_kind": "ordinary",
-          "target_gloss": "amacı açık ve etkili anlatma yetkinliği"
+          "target_gloss": "amacını açık ve etkili sözle anlatma yetkinliği"
         },
         {
           "lexical_unit_id": "lu_014",
           "rendering_kind": "ordinary",
-          "target_gloss": "sözü açık ve etkili kişi"
+          "target_gloss": "dili güçlü, sözünü açık ve etkili anlatan kişi"
         },
         {
           "lexical_unit_id": "lu_015",
           "rendering_kind": "ordinary",
-          "target_gloss": "amacı tam karşılayan açık ve etkili söz"
+          "target_gloss": "anlatılmak isteneni açık ve etkili biçimde ileten söz"
         }
       ],
       "excluded_glosses": [],
@@ -568,73 +642,98 @@
           "neighbor_ref": "root_001355/B003",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Sözün amaçlanan anlamı dinleyene tam ulaştırmasını kurucu ölçüt sayar.",
-          "neighbor_only": "Kanıt ileri sürme gücünü ve dilin genel niteliğini de kapsar.",
-          "gloss": "dili güçlü ve açık olma",
-          "shared_zone": "Her iki dal da kişinin açık, düzgün ve etkili konuşma yetkinliğini anlatır.",
-          "distinction": "Bu dal sözün hedeflenen anlamı ulaştırmasına odaklanır; komşu dal genel dil gücü, açıklık ve kanıtlama yeteneği bakımından daha geniştir."
+          "focus_only": "Anlatımın konuşanın belirli amacını karşı tarafa ulaştırma sonucunu özellikle gerektirir.",
+          "neighbor_only": "Dil düzgünlüğü yanında tartışmada kanıt ileri sürme ve üstün gelme gücünü de kapsar.",
+          "gloss": "güçlü ve düzgün konuşma",
+          "shared_zone": "Her iki dal açık, düzgün ve güçlü söz söyleme yetkinliğini paylaşır.",
+          "distinction": "Odak dalında ölçüt, amaçlanan anlamın etkili biçimde yerine ulaşmasıdır; komşu dal dil ustalığı ve tartışma gücü bakımından daha geniştir."
+        },
+        {
+          "neighbor_ref": "root_001158/B002",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Sözün belirli bir iletişim amacını etkili biçimde gerçekleştirmesini içerir.",
+          "neighbor_only": "Yanlışsız dil kullanımı, belirli dilde konuşma ve yabancı söyleyişin karşıtı olma sınırlarını da içerir.",
+          "gloss": "düzgün ve akıcı konuşma",
+          "shared_zone": "İki dalda da dilin açık, düzgün ve akıcı kullanılması vardır.",
+          "distinction": "Odak dalı iletişim amacına erişmeye dayanır; komşu dal daha çok dilsel doğruluk, akıcılık ve belirli dile uygun konuşma ölçülerine dayanır."
         },
         {
           "neighbor_ref": "root_001070/B001",
-          "relation_type": "antonym",
+          "relation_type": "polarity_pair",
           "boundary_match": "opposed",
-          "focus_only": "Amaçlanan anlamı açık ve etkili biçimde dile getirme başarısı bulunur.",
-          "neighbor_only": "Konuşma, açıklama veya kanıt sunma sırasında sözün tutulması ve anlatımın başarısız olması bulunur.",
-          "gloss": "anlatımda tutulma",
-          "shared_zone": "İki dal da düşünceyi sözle açıklayabilme ekseni üzerinde yer alır.",
-          "distinction": "Bu dal anlatımın hedefe ulaşan başarılı ucudur; komşu dal ise açıklamanın tutulduğu ve sözün yetersiz kaldığı karşıt uçtur."
+          "focus_only": "Kişi anlatmak istediğini açık ve etkili biçimde dile getirir.",
+          "neighbor_only": "Kişi söz, düşünce veya kanıt bakımından kendini anlatamaz ve yanıt üretmekte tıkanır.",
+          "gloss": "anlatımda tıkanma",
+          "shared_zone": "İki dal, kişinin sözle kendini anlatabilme gücü ekseninin karşı yönlerini gösterir.",
+          "distinction": "Odak dalı anlatımın amacına ulaşan güçlü kutbudur; komşu dal aynı yetinin işlemediği veya belirgin biçimde zayıfladığı kutuptur."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; en yakın olumlu yetkinlik ile doğrudan karşıt anlatım yetersizliği yayımlandı."
+      "neighbor_coverage_note": "Tüm adaylar değerlendirildi; dil ustalığı, düzgün konuşma ve anlatım yetersizliğiyle olan üç belirleyici sınır yayımlandı."
     },
     {
       "branch_ref": "root_000151/B005",
+      "identity_judgment": {
+        "status": "reframed",
+        "rationale": "Kaynak ifadesi yalnızca yüksek kaliteyi değil, bir işte bütün gücü kullanıp eksik bırakmamayı ve pekiştirmenin son sınırına varmasını da kapsar. Bu nedenle dal, kalite başlığıyla sınırlanmayıp bir niteliği, işi veya pekiştirmeyi erişilebilecek en ileri dereceye götürme çevresinde yeniden kurulmalıdır.",
+        "boundary_note": "Yüksek kalite bu dalın yalnızca bir görünümüdür; çekirdek, ilgili ölçekte en ileri dereceye erişmedir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Yüksek nitelikli şey, çabada eksik bırakmama ve son derecedeki pekiştirme ayrı kalıplar olarak korunur."
+      },
       "concept_map": {
-        "definition": "Bir niteliğin, çabanın veya kesinliğin en ileri ve eksiksiz düzeye varmasıdır; bu, üstün nitelik, işte elinden geleni yapma ya da son derece güçlü vurgu olarak gerçekleşebilir.",
+        "definition": "Bir niteliği, işi veya pekiştirmeyi ulaşılabilecek en ileri dereceye götürmek ya da o derecede olmak. Yüksek nitelik, bütün gücü kullanarak eksik bırakmama ve en güçlü pekiştirme bunun ayrı gerçekleşmeleridir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir nitelik en ileri ve eksiksiz düzeyine ulaşır.",
+            "statement": "Bir ölçekte ulaşılabilecek en ileri dereceye erişme ortak anlam çekirdeğidir.",
             "claim_ids": [
-              "lu_016"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "extension",
-            "statement": "Bir işi yapan kişi çabasını son sınırına götürür ve hiçbir eksiğe yer bırakmaz.",
+            "role": "specialization",
+            "statement": "Bir şey nitelik bakımından çok iyi ve yetkin bir dereceye ulaşmış olabilir.",
             "claim_ids": [
-              "lu_017"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "extension",
-            "statement": "Bir buyruk veya yemin, kesinlik ve vurgu bakımından son derece güçlü hale gelir.",
+            "role": "specialization",
+            "statement": "Bir işi yapan kişi bütün gücünü kullanır ve işi eksik bırakmaz.",
             "claim_ids": [
-              "lu_018"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "specialization",
+            "statement": "Bir buyruk veya ant, tamamlanma ya da pekiştirme bakımından son dereceye ulaşır.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar, niteliğin veya çabanın son sınırına ulaşması üzerinde birleşir; bu çekirdek üstün nitelik, eksiksiz çaba ve en güçlü kesinlik alanlarına uzanır.",
+        "common_summary": "Kaynak anlatımı, yüksek nitelik, tüm gücü kullanarak eksik bırakmama ve tamamlanmış pekiştirme kullanımlarını bir derecenin sonuna erişme ortaklığında birleştirir.",
         "common_claim_ids": [
-          "lu_016",
-          "lu_017",
-          "lu_018"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "en ileri ve eksiksiz düzeye varma",
-        "applicability": "Nitelik, emek, buyruk veya vurgunun kendi ölçeğindeki son ve eksiksiz düzeye eriştiği kullanımları karşılar.",
+        "text": "bir şeyi ulaşılabilir en ileri dereceye götürme",
+        "applicability": "Nitelik, çaba ve pekiştirme alanlarının her birinde ortak olan son dereceye erişme yapısını temsil eder.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Derecenin son sınırını, eksiksizliği ve farklı alanlarda gerçekleşebilmesini birlikte korur.",
+          "preserves": "En ileri dereceyi, yetkin niteliği, eksik bırakmayan çabayı ve güçlü pekiştirmeyi korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -642,18 +741,34 @@
         "facet_ids": [
           "F001",
           "F002",
-          "F003"
+          "F003",
+          "F004"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "elinden geleni ardına koymamak",
-          "usage_role": "contextual",
-          "applicability": "Bir kişinin işte çabasını son sınırına kadar götürüp eksik bırakmadığı bağlamlarda doğaldır.",
+          "text": "son dereceye vardırmak",
+          "usage_role": "general",
+          "applicability": "Bir niteliğin veya eylemin ilgili ölçekte ulaşılabilecek en ileri düzeye götürülmesi bağlamına uygundur.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Çabanın son sınırına götürülmesini ve işte eksik bırakılmamasını korur.",
-            "loses": "Bir şeyin üstün niteliğini ve sözdeki güçlü kesinliği kapsamaz.",
+            "fit": "none",
+            "preserves": "Ölçekteki en ileri dereceye erişme çekirdeğini korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "çok nitelikli ve yetkin",
+          "usage_role": "contextual",
+          "applicability": "Bir şeyin kalite bakımından ileri ve tamamlanmış bir düzeyde olduğunu belirtir.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Yüksek ve tamamlanmış nitelik değerini korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -662,13 +777,13 @@
           ]
         },
         {
-          "text": "son derece güçlü ve kesin",
+          "text": "var gücüyle eksiksiz yapmak",
           "usage_role": "contextual",
-          "applicability": "Bir buyruğun veya yeminin vurgusunun en ileri düzeyde olduğu bağlamlara uygundur.",
+          "applicability": "Kişinin bir işte bütün çabasını kullanıp hiçbir yanı eksik bırakmaması bağlamına uygundur.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Vurgu ve kesinlik bakımından son sınıra erişmeyi korur.",
-            "loses": "Genel nitelik üstünlüğünü ve insan çabasını kapsamaz.",
+            "fit": "none",
+            "preserves": "Bütün gücü kullanma ve eksik bırakmama koşullarını korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -681,96 +796,125 @@
         {
           "lexical_unit_id": "lu_016",
           "rendering_kind": "ordinary",
-          "target_gloss": "niteliği tam ve yüksek şey"
+          "target_gloss": "iyi veya nitelikli şey"
         },
         {
           "lexical_unit_id": "lu_017",
           "rendering_kind": "ordinary",
-          "target_gloss": "işte elinden geleni ardına koymamak"
+          "target_gloss": "bütün gücünü kullanıp eksik bırakmamak"
         },
         {
           "lexical_unit_id": "lu_018",
           "rendering_kind": "ordinary",
-          "target_gloss": "son derece kesin yeminler veya tam etkili buyruk"
+          "target_gloss": "eksiksiz buyruk veya en güçlü biçimde pekiştirilmiş ant"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000274/B003",
-          "relation_type": "near_synonym",
+          "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Çabayı son sınırına götürmeyi ve vurgunun en ileri derecesini de kapsar.",
-          "neighbor_only": "Bir şeyi daha iyi duruma getirme ve onu iyi bulma eylemlerini de kapsar.",
-          "gloss": "iyi ve sağlam olma",
-          "shared_zone": "Her iki dal da bir şeyin yüksek nitelikte ve eksiksiz olmasını anlatabilir.",
-          "distinction": "Komşu dal doğrudan iyi olma ve iyileştirme alanındadır; bu dal ise bir ölçeğin son derecesine erişme fikrini çaba ve vurguya da taşır."
+          "focus_only": "Çabayı eksik bırakmamayı ve bir pekiştirmeyi son dereceye götürmeyi de kapsar.",
+          "neighbor_only": "Bir şeyin iyi, düzgün veya işe yarar olmasını ve onu bu duruma getirmeyi genel olarak kapsar.",
+          "gloss": "iyi ve düzgün olma",
+          "shared_zone": "Bir şeyin yüksek nitelikte olması iki dalın ortak bölgesidir.",
+          "distinction": "Odak dalı kaliteyi son dereceye erişme görünümüyle ve başka derece kullanımlarıyla birlikte kurar; komşu dalın çekirdeği doğrudan iyi ve düzgün olmadır."
         },
         {
           "neighbor_ref": "root_000670/B001",
-          "relation_type": "near_synonym",
+          "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Yoğun çaba ve güçlü vurgu gibi derece kullanımlarını içerir.",
-          "neighbor_only": "Bir işi tamamlama, bir yükümlülüğü yerine getirme ve bir nimeti genişletme eylemlerini içerir.",
-          "gloss": "tamamlanma ve eksiksizlik",
-          "shared_zone": "İki dal da bir şeyin eksiği kalmadan tam düzeye ulaşmasını anlatır.",
-          "distinction": "Komşunun çekirdeği tamamlanmış ve eksiksiz olma durumudur; burada tamlık, niteliğin, çabanın veya vurgunun en ileri derecesine varmasıdır."
+          "focus_only": "Bütün gücü kullanma ve pekiştirmeyi en ileri dereceye çıkarma değerlerini taşır.",
+          "neighbor_only": "Bir şeyin parçalarının tamamlanmasını, eksiğinin kalmamasını ve bütünlenmesini genel olarak anlatır.",
+          "gloss": "tamamlanma ve bütünlenme",
+          "shared_zone": "İki dalda da bir ölçünün sonuna erişme ve eksik bırakmama düşüncesi vardır.",
+          "distinction": "Odak dalı derece ve yoğunluk eksenindedir; komşu dal ise bir bütünün tamamlanması ve gereken parçaların yerine gelmesi eksenindedir."
+        },
+        {
+          "neighbor_ref": "root_001578/B008",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "İş çabası ve pekiştirme gibi kalite dışı alanlarda da en ileri dereceyi kapsar.",
+          "neighbor_only": "Özellikle güzellik, uzunluk veya irilikte benzerlerini aşan olağanüstü varlığı niteler.",
+          "gloss": "benzerlerini aşan üstünlük",
+          "shared_zone": "Her iki dal, bir niteliğin olağan ölçüyü aşacak kadar ileri olmasını anlatabilir.",
+          "distinction": "Odak dalı farklı ölçeklere uygulanabilen son derece yapısıdır; komşu dal belirli görünür niteliklerde olağanüstü üstünlüğe bağlıdır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; yüksek nitelik ile tamamlanma alanındaki en yakın iki sınır yayımlandı."
+      "neighbor_coverage_note": "Bütün adaylar incelendi; kalite, tamamlanma ve olağanüstü üstünlükle karışabilecek üç sınır seçildi."
     },
     {
       "branch_ref": "root_000151/B006",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, düşüncesizliği veya anlayış kıtlığı bulunmasına rağmen istediğini elde eden kişiyi anlatan sabit bir nitelemeyi açıkça destekler. Genel olarak hedefe ulaşmak ya da genel olarak düşüncesiz olmak bu özel birlikteliğin yerini tutmaz.",
+        "boundary_note": "İstenen sonuca ulaşma ile düşüncesizlik aynı kişide birlikte bulunmalıdır; dal bu kalıba özgüdür."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "non_bare",
+        "note": "Tanım yalnızca düşüncesizliğine karşın istediğine ulaşan kişiyi belirten özel nitelemeyle sınırlı tutulur."
+      },
       "concept_map": {
-        "definition": "Akılsızlığına rağmen istediği sonuca ulaşabilen kişi için kullanılan bir nitelemedir.",
+        "definition": "Düşüncesiz veya anlayışı kıt olduğu halde istediği sonuca ulaşabilen kişiyi niteleyen özel bir söz.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kişinin akılsızlığı, istediği sonucu elde etme becerisiyle birlikte bulunur.",
+            "statement": "Kişide düşüncesizlik veya anlayış kıtlığı niteliği bulunur.",
             "claim_ids": [
-              "lu_019"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "core",
+            "statement": "Aynı kişi bu niteliğine rağmen istediği sonucu elde eder.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynakların ortak tanımı, akılsız olmasına rağmen istediği şeyi elde edebilen kişiyi gösteren kalıplaşmış bir nitelemedir.",
+        "common_summary": "Kaynaklar, düşüncesizlik ile istenen sonucu elde etmenin beklenmedik biçimde aynı kişide birleştiği özel nitelemede uyuşur.",
         "common_claim_ids": [
-          "lu_019"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "akılsızlığına rağmen istediğini elde eden",
-        "applicability": "Akılsızlık ile amaca ulaşma becerisinin aynı kişide birlikte vurgulandığı nitelemeyi tam karşılar.",
+        "text": "düşüncesizliğine karşın istediğine ulaşan kişi",
+        "applicability": "Yalnızca kişinin düşüncesizliği ile istediğini elde etmesi birlikte anlatıldığında kullanılabilir.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Kişinin hem akılsızlığını hem de buna rağmen amacına ulaşabilmesini birlikte korur.",
+          "preserves": "Düşüncesizlik niteliğini ve buna rağmen hedefe erişme sonucunu birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "akılsız ama tuttuğunu koparan",
-          "usage_role": "contextual",
-          "applicability": "Kişinin yargısızlığına rağmen istediği sonucu elde etmesinin konuşma dilinde öne çıkarıldığı bağlamlarda kullanılabilir.",
+          "text": "akılsız ama istediğini elde ediyor",
+          "usage_role": "explanatory",
+          "applicability": "Bir kişinin anlayış kıtlığına rağmen amaçladığı sonuca ulaştığını açıklayan bağlamlarda uygundur.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Olumsuz akıl niteliği ile sonuca ulaşma becerisi arasındaki karşıtlığı korur.",
+            "preserves": "Olumsuz kişi niteliği ile başarılı sonucu aynı anda korur.",
             "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002"
           ]
         }
       ],
@@ -778,7 +922,7 @@
         {
           "lexical_unit_id": "lu_019",
           "rendering_kind": "ordinary",
-          "target_gloss": "akılsızlığına rağmen istediğini elde eden kişi"
+          "target_gloss": "düşüncesizliğine karşın istediğini elde eden kişi"
         }
       ],
       "excluded_glosses": [],
@@ -787,77 +931,106 @@
           "neighbor_ref": "root_000627/B006",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Amaca ulaşan kişinin akılsızlığı nitelemenin zorunlu parçasıdır.",
-          "neighbor_only": "İnsanın aradığı veya istediği şeyin son sınırına ulaşmasını kişi niteliğinden bağımsız anlatır.",
-          "gloss": "istenen sonuca ulaşma",
-          "shared_zone": "Her iki dal da kişinin istediği sonuca ulaşmasını içerir.",
-          "distinction": "Komşu dal amacın elde edilmesini tek başına anlatır; bu dal bunu akılsızlıkla beklenmedik biçimde bir arada bulunan kişi niteliği olarak kurar."
+          "focus_only": "Sonuca ulaşan kişinin düşüncesiz veya anlayışı kıt olması zorunludur.",
+          "neighbor_only": "Kişinin aradığı ve amaçladığı şeyin son noktasına ulaşmasını herhangi bir kişi niteliği olmadan anlatır.",
+          "gloss": "aranan sonuca ulaşma",
+          "shared_zone": "Her iki dalda da kişinin istediği bir sonuca erişmesi vardır.",
+          "distinction": "Odak dalı başarıyı düşüncesizlikle karşıtlık içinde veren özel bir nitelemedir; komşu yalnızca aranan sonuca ulaşmayı anlatır."
         },
         {
           "neighbor_ref": "root_001521/B008",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "Akılsız kişiye istediğini elde edebilme becerisi de yüklenir.",
-          "neighbor_only": "Yalnızca akılsız kişi nitelemesini taşır.",
+          "focus_only": "Düşüncesiz kişinin buna rağmen istediğini elde etmesi gerekir.",
+          "neighbor_only": "Yalnızca kişiyi anlayışsız veya akılsız olarak niteler; herhangi bir sonuç elde etme içermez.",
           "gloss": "akılsız kişi",
-          "shared_zone": "İki dal da bir kişiyi akılsızlık bakımından niteler.",
-          "distinction": "Komşu dalın bütünü akılsızlıktır; burada ayırt edici nokta, bu kusura rağmen kişinin istediğine ulaşmasıdır."
+          "shared_zone": "İki dal da kişiye düşüncesizlik veya anlayış kıtlığı yükler.",
+          "distinction": "Komşu dal kişi niteliğinde durur; odak dalı aynı niteliğe beklenmedik başarı sonucunu zorunlu olarak ekler."
+        },
+        {
+          "neighbor_ref": "root_000690/B008",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Sonucu elde eden kişinin düşüncesizliği nitelemenin kurucu parçasıdır.",
+          "neighbor_only": "Aranan nesneyi veya sonucu doğru biçimde bulup elde etme eylemini tek başına anlatır.",
+          "gloss": "aradığını bulma",
+          "shared_zone": "İki dal da amaçlanan veya aranan şeyin elde edilmesini içerir.",
+          "distinction": "Odak dalı kişi hakkında karşıtlık içeren bir yargıdır; komşu dal sonucun bulunmasına odaklanan yalın bir eylemdir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; birleşik niteliğin amaç başarısı ve akılsızlık bileşenlerini ayrı ayrı gösteren iki komşu seçildi."
+      "neighbor_coverage_note": "Tüm adaylar incelendi; sonuca ulaşma, düşüncesizlik ve aradığını bulma bileşenlerini ayıran üç karşılaştırma yayımlandı."
     },
     {
       "branch_ref": "root_000151/B007",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, binicinin atın koşusunu artırmak amacıyla dizgini tutan elini ileri uzatması biçimindeki özgül hareketi doğrudan verir. Anlam atın hızlı olması değil, binicinin hızı artırmaya yönelik dizgin hareketidir.",
+        "boundary_note": "Dal yalnızca binici, dizgin hareketi ve koşuyu artırma amacı birlikte bulunduğunda geçerlidir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım biniciye bağlı at ve dizgin kalıbıyla sınırlıdır; genel koşma, hızlanma veya bir yere varma anlamına genişletilmez."
+      },
       "concept_map": {
-        "definition": "Binicinin atın daha hızlı koşmasını sağlamak için elini ileri uzatıp dizgini gevşetmesi veya uzatmasıdır.",
+        "definition": "Binicinin, atın koşusunu hızlandırmak için dizgini tutan elini ileri uzatması.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Binici, atın koşusunu hızlandırmak amacıyla elini dizgin boyunca ileri uzatır.",
+            "statement": "Eylemi yapan binicidir ve hareket dizgini tutan elle gerçekleştirilir.",
             "claim_ids": [
-              "lu_020"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "core",
+            "statement": "Elin ve dizginin ileri verilmesindeki amaç atın koşusunu artırmaktır.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar, binicinin atın koşusunu artırmak amacıyla elini ileri götürüp dizgine daha çok pay vermesi anlamında birleşir.",
+        "common_summary": "Kaynaklar, binicinin dizgini tutan elini ileri vererek atın koşusunu artırmaya çalıştığı özgül binicilik hareketinde birleşir.",
         "common_claim_ids": [
-          "lu_020"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "atı hızlandırmak için dizgini uzatma",
-        "applicability": "Binicinin belirli el ve dizgin hareketini atın koşusunu artırma amacıyla yaptığı kullanımın tamamını karşılar.",
+        "text": "atı hızlandırmak için dizgini ileri verme",
+        "applicability": "Yalnızca binicinin atın koşusunu artırma amacıyla yaptığı belirli dizgin hareketini temsil eder.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Biniciyi, dizgini uzatma hareketini, atı ve koşuyu artırma amacını birlikte korur.",
+          "preserves": "Biniciyi, dizgin hareketini ve atı hızlandırma amacını birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "dizgine pay verip atı hızlandırmak",
+          "text": "dizgini ileri verip atı hızlandırmak",
           "usage_role": "explanatory",
-          "applicability": "Binicilik hareketinin sonucu ve amacıyla birlikte açıkça anlatılması gereken bağlamlarda uygundur.",
+          "applicability": "Binicinin atın koşusunu artırmak için elini ve dizgini ileri uzattığı sahnede kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Dizgini uzatma işlemini ve atın koşusunu artırma amacını korur.",
+            "preserves": "Araç olan dizgini, binicinin hareketini ve hızlandırma amacını korur.",
             "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002"
           ]
         }
       ],
@@ -865,7 +1038,7 @@
         {
           "lexical_unit_id": "lu_020",
           "rendering_kind": "ordinary",
-          "target_gloss": "binicinin atı hızlandırmak için dizgini uzatması"
+          "target_gloss": "binicinin atı hızlandırmak için dizgini ileri vermesi"
         }
       ],
       "excluded_glosses": [],
@@ -874,63 +1047,82 @@
           "neighbor_ref": "root_000934/B009",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Binici elini ileri uzatarak dizgine daha çok pay verir.",
-          "neighbor_only": "Atın koşmasını isteme ve bu isteği uyandırmaya yönelik başka bir işlem öne çıkar.",
-          "gloss": "attan koşmasını isteme",
-          "shared_zone": "İki dal da binicinin atın daha hızlı koşmasını istemesiyle ilgilidir.",
-          "distinction": "Komşu dal koşuyu isteme üzerinden tanımlanır; bu dal ise o amaçla yapılan belirli dizgin uzatma hareketini zorunlu kılar."
+          "focus_only": "Koşuyu artırma isteği belirli bir el ve dizgin hareketiyle gerçekleştirilir.",
+          "neighbor_only": "Atı koşmaya yöneltme, dizgin hareketi olmadan da genel bir isteme eylemi olarak anlatılır.",
+          "gloss": "atı koşmaya yöneltme",
+          "shared_zone": "Her iki dalda da kişi atın koşmasını veya daha hızlı koşmasını ister.",
+          "distinction": "Odak dalının ayırt edici yanı dizgini tutan eli ileri uzatmaktır; komşu dal atın koşusunu istemeyi daha genel biçimde verir."
         },
         {
           "neighbor_ref": "root_001431/B006",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "Koşuyu artırmak için binicinin yaptığı belirli dizgin hareketini anlatır.",
-          "neighbor_only": "Atın, kuşun veya başka bir canlının hızlı koşmasını ya da yarışmasını doğrudan anlatır.",
-          "gloss": "hızlı koşma",
-          "shared_zone": "Her iki dal atın hızlanması ve koşusuyla aynı sahnede yer alır.",
-          "distinction": "Komşunun çekirdeği hızlı koşma durumudur; burada çekirdek, bu hızı artırmak üzere binicinin dizginde yaptığı işlemdir."
+          "focus_only": "Binicinin atı hızlandırmak amacıyla yaptığı dizgin hareketini anlatır.",
+          "neighbor_only": "Atın, başka bir hayvanın veya binicinin gerçekleşmiş hızlı koşusunu ve yarışmasını anlatır.",
+          "gloss": "hızlı koşma ve yarışma",
+          "shared_zone": "İki dal atın koşusu ve hızının artması sahnesini paylaşır.",
+          "distinction": "Odak dalı hızı doğurmaya yönelik binici hareketidir; komşu dal ise hayvanın veya binicinin hızlı koşma durumudur."
+        },
+        {
+          "neighbor_ref": "root_000336/B003",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Dizgini ileri verme hareketinin amacı atın koşusunu artırmaktır.",
+          "neighbor_only": "Binek hayvanının yürüyüşe yüklenmesini ve güçlü, hızlı koşma biçimini doğrudan anlatır.",
+          "gloss": "bineğin güçlü ve hızlı koşması",
+          "shared_zone": "Her iki dal binek hayvanının hareketi ve hızlanması alanındadır.",
+          "distinction": "Odakta binicinin araca yaptığı müdahale, komşuda ise hayvanın kendi yürüyüş veya koşu biçimi çekirdektir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; belirli dizgin hareketini koşuyu isteme ve hızlı koşma durumundan ayıran iki komşu yayımlandı."
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; dizgin hareketini koşuyu isteme ve gerçekleşmiş hızlı koşudan ayıran üç ilişki seçildi."
     },
     {
       "branch_ref": "root_000151/B008",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, yokluğun veya hastalığın bir kimse üzerinde ağırlaşmasını belirli bir kalıp içinde anlatır. Bu, genel güçlük adı veya hastalığın kendisi değil, olumsuz durumun kişiyi giderek daha şiddetli biçimde sıkıştırmasıdır.",
+        "boundary_note": "Dal yokluk ya da hastalığın belirli bir kişi üzerinde şiddetlenmesi kalıbıyla sınırlıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Anlam yalnızca yokluk veya hastalığın bir kimse üzerinde ağırlaşmasını bildiren kalıba bağlanır."
+      },
       "concept_map": {
-        "definition": "Hastalık ya da yoksunluğun bir kimse üzerinde ağırlaşarak onu giderek daha çok zorlamasıdır.",
+        "definition": "Yokluğun veya hastalığın bir kimse üzerinde ağırlaşıp onu iyice sıkıştırması.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Olumsuz bir durum, maruz kalan kişi üzerinde şiddetini artırır.",
+            "statement": "Olumsuz durum, belirli bir kimseyi etkileyerek önceki düzeyinden daha ağır hale gelir.",
             "claim_ids": [
-              "lu_021"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Şiddetlenen durum hastalık veya maddi yoksunluk olabilir.",
+            "statement": "Ağırlaşan durum yokluk ya da hastalık olarak belirlenir.",
             "claim_ids": [
-              "lu_021"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynakların ortak çekirdeği, hastalığın veya maddi yoksunluğun bir kişi üzerinde ağırlaşması ve etkisini artırmasıdır.",
+        "common_summary": "Kaynaklar, yokluk veya hastalığın belirli bir kişinin üzerinde şiddetlenip ağırlaşması biçimindeki kalıplaşmış kullanımda birleşir.",
         "common_claim_ids": [
-          "lu_021"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "hastalık veya yoksunluğun ağırlaşması",
-        "applicability": "Hastalık ya da maddi yetersizliğin belirli bir kişi üzerindeki etkisinin şiddetlendiği kullanımları karşılar.",
+        "text": "yokluk veya hastalığın kişiyi iyice sıkıştırması",
+        "applicability": "Olumsuz durumun yalnızca bulunmasını değil, belirli kişi üzerinde ağırlaşmasını anlatan kalıba uygulanır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Olumsuz durumun türünü, kişi üzerindeki etkisini ve bu etkinin artmasını korur.",
+          "preserves": "Yokluk veya hastalığı, etkilenen kişiyi ve şiddetlenme sürecini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -942,18 +1134,19 @@
       },
       "contextual_glosses": [
         {
-          "text": "iyice ağırlaşmak",
+          "text": "üzerinde iyice ağırlaşmak",
           "usage_role": "contextual",
-          "applicability": "Hastalık veya yoksunluğun bir kişi üzerindeki etkisinin giderek arttığı cümlelerde doğal karşılıktır.",
+          "applicability": "Yokluk ya da hastalığın belirli bir kişiyi giderek daha ağır biçimde etkilediği bağlamda kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Olumsuz durumun şiddet kazanmasını ve kişi için daha zor hale gelmesini korur.",
-            "loses": "Tek başına hastalık ve yoksunluk alanlarını açıkça adlandırmaz.",
+            "fit": "none",
+            "preserves": "Kişiye yönelen etkiyi ve durumun şiddetlenmesini korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002"
           ]
         }
       ],
@@ -961,80 +1154,91 @@
         {
           "lexical_unit_id": "lu_021",
           "rendering_kind": "ordinary",
-          "target_gloss": "yoksunluğun ya da hastalığın bir kimseyi iyice zorlaması"
+          "target_gloss": "yokluğun veya hastalığın kişinin üzerinde ağırlaşması"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_001415/B001",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Hastalık veya yoksunluğun kişi üzerinde şiddetini artırmasını anlatır.",
-          "neighbor_only": "Hastalığın kendisini, hasta kişiyi ve bedendeki ya da maldaki genel bozukluğu kapsar.",
-          "gloss": "sağlıktan sapma",
-          "shared_zone": "İki dal da hastalık durumunu ve bunun kişiye etkisini içerebilir.",
-          "distinction": "Komşu dal hastalığın varlığına göre tanımlanır; bu dal ise hastalık dahil olumsuz bir durumun ağırlaşma evresine göre tanımlanır."
-        },
-        {
           "neighbor_ref": "root_001473/B005",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Şiddetin artması bir kişi üzerindeki hastalık veya yoksunluğa bağlanır.",
-          "neighbor_only": "Sıkıntı, daralma, acı ve mal ya da canla ilgili ağır güçlüğü daha geniş biçimde kapsar.",
+          "focus_only": "Yokluk veya hastalığın belirli bir kişi üzerinde giderek ağırlaşmasını anlatan kalıba bağlıdır.",
+          "neighbor_only": "Sıkıntı, daralma, ağrı ve maddi ya da bedensel güçlüğü genel adlar olarak kapsar.",
           "gloss": "ağır sıkıntı ve daralma",
-          "shared_zone": "Her iki dal da kişinin ağırlaşan bir güçlük altında zorlanmasını anlatır.",
-          "distinction": "Komşu dal ağır sıkıntının türlerini adlandırır; burada ayırt edici çekirdek, hastalık veya yoksunluğun kişi üzerinde giderek şiddetlenmesidir."
+          "shared_zone": "Her iki dalda da kişi ağır bir sıkıntı veya bedensel zorluk yaşar.",
+          "distinction": "Odak dalı durumun kişi üzerinde şiddetlenme sürecidir; komşu dal sıkıntı ve güçlüğün kendisini daha geniş biçimde adlandırır."
+        },
+        {
+          "neighbor_ref": "root_001415/B001",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Hastalığın kişi üzerinde daha da ağırlaşmasını anlatır ve yokluğu da kapsayabilir.",
+          "neighbor_only": "Sağlıklı ve dengeli durumdan çıkmayı, bedensel bozukluğu ve hastalık halini genel olarak tanımlar.",
+          "gloss": "sağlığın bozulması",
+          "shared_zone": "Hastalık, iki dalın kesiştiği durum alanıdır.",
+          "distinction": "Odak dalında hastalık zaten vardır ve şiddetlenir; komşu dal hastalık durumunun kendisini ve sağlıktan sapmayı anlatır."
+        },
+        {
+          "neighbor_ref": "root_000102/B006",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Şiddetin yokluk veya hastalık tarafından belirli kişiye yönelmesi gerekir.",
+          "neighbor_only": "Ağır darbe, ateşli hastalık, zarar ve genel güçlük gibi çok çeşitli şiddetli durumları kapsar.",
+          "gloss": "şiddetli zarar ve güçlük",
+          "shared_zone": "İki dalda da kişiyi zorlayan durumun şiddeti öne çıkar.",
+          "distinction": "Odak dalı iki belirli durumun ağırlaşma kalıbıdır; komşu dal farklı neden ve olaylardaki şiddeti geniş bir ad alanı olarak verir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; ağırlaşma evresini hastalığın kendisinden ve genel sıkıntıdan ayıran iki komşu seçildi."
+      "neighbor_coverage_note": "Tüm adaylar incelendi; şiddetlenme sürecini genel sıkıntıdan, hastalıktan ve geniş zarar alanından ayıran üç ilişki yayımlandı."
     },
     {
       "branch_ref": "root_000151/B009",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, üzücü bir olayın benzerini yalnızca duymayı, fakat olayın konuşanların başına gelmemesini veya tamamlanmamasını dileyen kalıplaşmış sözü destekler. Bu anlam sıradan duyma ya da haber ulaştırma değildir.",
+        "boundary_note": "Dal üzücü olay karşısındaki korunma dileğiyle sınırlıdır; yalın işitme veya haber alma anlamına açılmaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Kalıplaşmış korunma dileği dalın çekirdeğidir; üzücü haber adı ayrı bir sözlük birimi olarak tutulur."
+      },
       "concept_map": {
-        "definition": "Hoşa gitmeyen bir haber ve böyle bir haberin duyulsa bile gerçekleşmemesi ya da kişinin başına gelmemesi yönündeki dilektir.",
+        "definition": "Üzücü bir olayın benzerini yalnızca duymayı, onun konuşanların başına gelmemesini veya gerçekleşip tamamlanmamasını dileyen kalıplaşmış söz.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kişiye ulaşan haber, içeriği nedeniyle hoşnutsuzluk verir.",
+            "statement": "Konuşan, üzücü olayın benzerinden yalnızca uzaktan haber almayı kabul eder.",
             "claim_ids": [
-              "lu_022"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "associated_use",
-            "statement": "Haberin yalnızca duyulması, fakat gerçekleşmemesi veya konuşanın başına gelmemesi dilenir.",
+            "role": "core",
+            "statement": "Aynı olayın kendilerine ulaşmaması veya gerçekleşip tamamlanmaması dilenir.",
             "claim_ids": [
-              "lu_023"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Hoşa gitmeyen haber alanı, bu tür bir şeyin yalnız duyulup gerçekleşmemesi veya kişinin başına gelmemesi dileğiyle birleşir.",
+        "common_summary": "Kaynaklar, üzücü olayın yalnızca duyulmasıyla bağlantılı kalıplaşmış korunma dileğini verir; bir yorum olayın konuşanların başına gelmemesini, diğer yorum ise işitilip tamamlanmamasını korur.",
         "common_claim_ids": [
-          "lu_023"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_022"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Kişiye ulaşan ve onu hoşnutsuz eden haber için ayrı bir ad da kaydedilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "kötü haberin gerçekleşmemesi dileği",
-        "applicability": "Hoşa gitmeyen haberin duyulması ile onun tamamlanmaması veya kişiye dokunmaması dileğinin birlikte bulunduğu kullanımın çekirdeğini karşılar.",
+        "text": "üzücü olayı duyup ondan uzak kalmayı dileme",
+        "applicability": "Üzücü bir olay karşısında benzerinin konuşanlara erişmemesi veya gerçekleşmemesi dileğini anlatır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Kötü haberi, duyulmasını ve buna karşı gerçekleşmeme ya da başa gelmeme dileğini korur.",
+          "preserves": "Duyma ile olaydan korunma dileğini aynı kalıpta birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -1046,12 +1250,12 @@
       },
       "contextual_glosses": [
         {
-          "text": "duyulsun ama gerçekleşmesin",
+          "text": "duyalım ama başımıza gelmesin",
           "usage_role": "contextual",
-          "applicability": "Hoşa gitmeyen bir olayın haber olarak kalması ve tamamlanmaması dilendiğinde doğal karşılıktır.",
+          "applicability": "Üzücü bir olay duyulduğunda aynı durumun konuşanların başına gelmemesi dilenirken kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Duyma ile gerçekleşme arasındaki ayrımı ve olumsuz sonucun gerçekleşmemesi dileğini korur.",
+            "preserves": "Uzaktan duyma ile olaydan korunma karşıtlığını korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -1066,162 +1270,102 @@
         {
           "lexical_unit_id": "lu_022",
           "rendering_kind": "ordinary",
-          "target_gloss": "insana ulaşan hoşnutsuz edici haber"
+          "target_gloss": "insanı üzen ve kendisine ulaşan haber"
         },
         {
           "lexical_unit_id": "lu_023",
           "rendering_kind": "ordinary",
-          "target_gloss": "duyulsun ama gerçekleşmesin dileği"
+          "target_gloss": "duyalım ama başımıza gelmesin dileği"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000741/B011",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Kişiye ulaşan hoşnutsuz edici haber adı da odak dalın çekirdek kapsamındadır.",
+          "relation_type": "synonym",
+          "boundary_match": "exact",
+          "focus_only": null,
           "neighbor_only": null,
-          "gloss": "duyulsun ama ulaşmasın dileği",
-          "shared_zone": "Kötü haberin duyulup ilgili kişiye ulaşmaması veya gerçekleşmemesi yönündeki dilek ortak alandır.",
-          "distinction": "Komşu kart yalnız bu dilek veya sözü kapsar; odak dal ayrıca kişiye ulaşan hoşnutsuz edici haber adını içerdiği için sınırlar tam örtüşmez."
+          "gloss": "üzücü olayı duyup ondan uzak kalma dileği",
+          "shared_zone": "Her iki dal da üzücü olayın duyulmasını, fakat konuşana erişmemesini dileyen aynı kalıplaşmış sözü anlatır.",
+          "distinction": "Kaynak kartlarında kurucu koşul veya kapsam farkı görünmez; iki dal aynı korunma dileğini aynı sınırlarla verir."
+        },
+        {
+          "neighbor_ref": "root_000367/B004",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Üzücü olayın yalnızca duyulması ve konuşanlara erişmemesi istenir.",
+          "neighbor_only": "Tökezleyen veya kötü bir olay yaşayan muhatap için doğrudan esenlik dileğinde bulunulur.",
+          "gloss": "kötü olayda esenlik dileme",
+          "shared_zone": "İki dal da kötü bir olay karşısında zarar görmeme dileğini sözle ifade eder.",
+          "distinction": "Odak dalı olayı uzakta tutmaya yönelik birinci çoğul korunma sözüdür; komşu dal olayla karşılaşmış muhataba yöneltilen esenlik dileğidir."
+        },
+        {
+          "neighbor_ref": "root_000466/B001",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Zararın gerçekleşmemesi sözlü bir dilek olarak ifade edilir.",
+          "neighbor_only": "Bir nesne, düşman veya yaptırım etkin bir araçla geri çevrilir ya da engellenir.",
+          "gloss": "zararı etkin biçimde savma",
+          "shared_zone": "Her iki dalda da istenmeyen şeyin kişiye ulaşmaması amaçlanır.",
+          "distinction": "Odak dalı bir korunma dileğidir ve etkin müdahale içermez; komşu dal zararı fiilen geri çevirme veya önleme eylemidir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; aynı dileği aynı sınırlarla veren doğrudan eş anlamlı komşu yayımlandı."
+      "neighbor_coverage_note": "Bütün adaylar karşılaştırıldı; tam eşdeğer kalıp ile esenlik dileği ve etkin savma arasındaki iki senaryo sınırı yayımlandı."
     },
     {
       "branch_ref": "root_000151/B010",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Tek kaynak ifadesi, çoğul biçimi bir kimseyi çekiştirip başkasına, özellikle etkili bir makama bildiren kötüleyici sözler anlamında tanımlar. Bu kullanım nötr ileti aktarımından ve sıradan haber vermeden ayrıdır.",
+        "boundary_note": "Dal, başkasını kötüleyici bildirimlerle sınırlıdır; nötr rapor veya ileti aktarımı bu kapsama girmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım kanıtlanan yalın çoğul biçimin kötüleyici bildirim anlamıyla sınırlıdır ve kalıp dışı anlam eklemez."
+      },
       "concept_map": {
-        "definition": "Bir kimseyi başkasının gözünde zor duruma düşürmek amacıyla onun hakkında yapılan gizli suçlama veya kötüleyici bildirimlerdir.",
+        "definition": "Bir kimse hakkında başkasına taşınan kötüleyici bildirimler ve çekiştirmeler.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir kişi hakkında, ona zarar verecek biçimde başkasına gizli suçlama veya kötüleyici bilgi aktarılır.",
+            "statement": "Bir kişi hakkında kötüleyici bildirimler veya çekiştirmeler başkasına aktarılır.",
             "claim_ids": [
-              "lu_024"
-            ]
-          }
-        ]
-      },
-      "source_synthesis": {
-        "common_summary": "Tek kayıt, bir kimse hakkında başkasına iletilen ve onu zor duruma düşüren gizli suçlama veya kötüleyici bildirimler anlamını verir.",
-        "common_claim_ids": [
-          "lu_024"
-        ],
-        "source_details": [],
-        "supporting_claim_ids": [],
-        "duplicate_claims": []
-      },
-      "concept_gloss": {
-        "text": "zarar verici gizli suçlamalar",
-        "applicability": "Bir kimse hakkında onu zor duruma düşürmek amacıyla başkasına iletilen kötüleyici bildirimleri karşılar.",
-        "error_profile": {
-          "fit": "none",
-          "preserves": "Bir kişi aleyhindeki gizli bilgi aktarımını, suçlayıcı içeriği ve zarar verici yönü korur.",
-          "loses": null,
-          "adds": null,
-          "collision": null
-        },
-        "facet_ids": [
-          "F001"
-        ]
-      },
-      "contextual_glosses": [
-        {
-          "text": "aleyhte gizli bildirimler",
-          "usage_role": "contextual",
-          "applicability": "Bir kişinin başkasına şikayet edilir ya da kötülenir biçimde gizlice bildirildiği bağlamlarda kullanılabilir.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Kişi aleyhindeki gizli aktarımı ve onu zor duruma düşürme işlevini korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        }
-      ],
-      "lexical_glosses": [
-        {
-          "lexical_unit_id": "lu_024",
-          "rendering_kind": "ordinary",
-          "target_gloss": "zarar vermek amacıyla yapılan gizli suçlamalar"
-        }
-      ],
-      "excluded_glosses": [],
-      "neighbor_distinctions": [
-        {
-          "neighbor_ref": "root_001402/B002",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Çoğul haldeki suçlayıcı veya kötüleyici bildirimlerin kendisini adlandırır.",
-          "neighbor_only": "Bir kişi aleyhinde yöneticiye koşup bildirme eylemini ve onu suçlu göstermeyi özellikle içerir.",
-          "gloss": "aleyhte yetkiliye bildirme",
-          "shared_zone": "Her iki dal da bir kimseyi zor duruma düşürmek amacıyla onun hakkında olumsuz bilgi aktarmayı anlatır.",
-          "distinction": "Komşu dal bildirme eylemini ve özellikle yetkili hedefini öne çıkarır; bu dal kötüleyici bildirimlerin adı olarak daha az katılımcı ayrıntısı taşır."
-        },
-        {
-          "neighbor_ref": "root_001223/B002",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Aktarım, hedef kişi aleyhinde suçlama veya zarar verme işlevi taşır.",
-          "neighbor_only": "İnsanların sözlerini izleyip yaymayı, arkalarından konuşmayı ve söylenti dolaştırmayı kapsar.",
-          "gloss": "söz taşıma ve yayma",
-          "shared_zone": "İki dal da bir kişi hakkında olumsuz sözün başkasına aktarılması alanında buluşur.",
-          "distinction": "Komşunun çekirdeği sözün izlenip yayılmasıdır; bu dal ise kişinin aleyhine kullanılan gizli suçlayıcı bildirimlere odaklanır."
-        }
-      ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; gizli suçlayıcı bildirimi yetkiliye bildirme ve söz yayma alanlarından ayıran iki komşu seçildi."
-    },
-    {
-      "branch_ref": "root_000151/B011",
-      "concept_map": {
-        "definition": "Bir kimsenin veya topluluğun başına gelen ağır felaket ya da yıkıcı olaydır.",
-        "facets": [
-          {
-            "facet_id": "F001",
-            "role": "core",
-            "statement": "Ağır ve yıkıcı bir olay, kişi veya topluluğun başına gelir.",
-            "claim_ids": [
-              "lu_025"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "example",
-            "statement": "Olayın konuşan topluluğun başına geldiği, kalıplaşmış bir cümleyle ifade edilir.",
+            "role": "core",
+            "statement": "Aktarım nötr haber değil, kötüleyici bildirim veya çekiştirme niteliği taşır.",
             "claim_ids": [
-              "lu_026"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kayıtlar ağır ve yıkıcı bir felaketi adlandırır; ayrıca bu felaketin konuşan topluluğun başına geldiğini bildiren kalıplaşmış kullanım verilir.",
-        "common_claim_ids": [
-          "lu_025"
-        ],
+        "common_summary": "Bu dalın kanıtı tek bir sözlük tanıklığına dayanır; kötüleyici bildirim anlamının ayrıntısı özel kaynak notunda verilir.",
+        "common_claim_ids": [],
         "source_details": [
           {
             "claim_ids": [
-              "lu_026"
+              "bc_001"
             ],
-            "kind": "example",
-            "summary": "Ağır felaketin doğrudan konuşan topluluğun başına geldiği bir cümle örneğiyle gösterilir."
+            "kind": "sole_attestation",
+            "summary": "Çoğul biçim, bir kimse hakkında başkasına taşınan kötüleyici bildirimler ve çekiştirmeler için tanıklanır."
           }
         ],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "başa gelen ağır felaket",
-        "applicability": "Ağır ve yıkıcı olayın kendisini ve bunun bir kişi ya da topluluğun başına gelmesini birlikte karşılar.",
+        "text": "birini kötüleyici bildirimler",
+        "applicability": "Bir kişi hakkında zarar verici veya küçük düşürücü içeriğin başkasına taşındığı kullanımlara uygundur.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Olayın ağır felaket niteliğini ve maruz kalanların başına gelmesini korur.",
+          "preserves": "Bildirim eylemini, hedef alınan kişiyi ve kötüleyici yönelimi korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -1233,12 +1377,134 @@
       },
       "contextual_glosses": [
         {
-          "text": "başımıza ağır bir felaket geldi",
+          "text": "birini çekiştirip yetkiliye bildirme",
           "usage_role": "contextual",
-          "applicability": "Konuşanların kendilerini etkileyen yıkıcı bir olayı bildirdikleri cümle bağlamında doğal karşılıktır.",
+          "applicability": "Bir kişinin söz veya davranışları ona zarar verecek biçimde etkili bir makama taşındığında kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Ağır felaketi, onun gerçekleşmesini ve konuşan topluluğun maruz kalmasını korur.",
+            "preserves": "Kötüleyici içeriğin zarar verme yönelimiyle aktarılmasını korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_024",
+          "rendering_kind": "ordinary",
+          "target_gloss": "bir kimseyi kötüleyen bildirimler ve çekiştirmeler"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000709/B004",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Kötüleyici bildirimlerin mutlaka yöneticiye yönelmesi açık bir kurucu koşul değildir.",
+          "neighbor_only": "Bildirim özellikle yöneticiye taşınır ve hedef alınan kişiyi ağır zarara uğratma sonucu öne çıkar.",
+          "gloss": "yöneticiye kötüleyici bildirim",
+          "shared_zone": "Her iki dal bir kişiyi kötüleyerek başkasına bildirme eylemini anlatır.",
+          "distinction": "Odak dalı kötüleyici bildirimleri genel bırakır; komşu dal alıcıyı yöneticiyle ve sonucu hedef alınan kişinin zararıyla daha sıkı sınırlar."
+        },
+        {
+          "neighbor_ref": "root_001402/B002",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Çoğul bildirim adı olarak genel kötüleyici aktarımları kapsar.",
+          "neighbor_only": "Eylemi belirli bir kişi hakkında yöneticiye başvurma veya onu tanık göstererek suçlama kalıplarıyla verir.",
+          "gloss": "birini üst makama kötüleme",
+          "shared_zone": "İki dalda da bir kişi hakkında zarar verici bilgi etkili bir makama taşınabilir.",
+          "distinction": "Odak dalı kötüleyici bildirimlerin adıdır; komşu dal belirli eylem kalıpları ve üst makam yönelimiyle daha özeldir."
+        },
+        {
+          "neighbor_ref": "root_001223/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Aktarılan içerik hedef alınan kişiyi kötüleyici bir bildirim işlevi görür.",
+          "neighbor_only": "İnsanlar hakkında konuşmayı izleme, arkadan konuşma ve sözü çevreye yayma süreçlerini kapsar.",
+          "gloss": "arkadan konuşup sözü yayma",
+          "shared_zone": "Her iki dal başkası hakkındaki olumsuz sözün bir kişiden diğerine taşınmasını içerir.",
+          "distinction": "Odak dalında bildirim yoluyla kişiye zarar verme yönelimi belirgindir; komşu dal konuşmayı toplama ve çevreye yayma sürecini merkez alır."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; üst makama kötüleme ile arkadan konuşup yayma arasındaki başlıca üç sınır yayımlandı."
+    },
+    {
+      "branch_ref": "root_000151/B011",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Tek kaynak ifadesi, özel bir ad biçimini insanın veya topluluğun başına inen ağır ve yıkıcı büyük olay anlamında verir; ayrıca bu olayın konuşanların başına gelmesini anlatan bir kalıp tanıklar. Dal genel güçlükten daha ağır bir olay adıdır.",
+        "boundary_note": "Dal özel ad biçimi ve onunla kurulan başa gelme sözüyle sınırlıdır; her güçlük bu kapsama girmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Yıkıcı büyük olay adı ile bu olayın bir topluluğun başına gelmesini anlatan söz ayrı yüzler olarak korunur."
+      },
+      "concept_map": {
+        "definition": "Bir insanın veya topluluğun başına inen ağır, sarsıcı ve yıkıcı büyük olay; özel kalıpta böyle bir olayın topluluğun başına gelmesini de anlatır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Ağır, sarsıcı ve yıkıcı büyük bir olay söz konusudur.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "associated_use",
+            "statement": "Özel söz kalıbında bu yıkıcı olay bir insanın veya topluluğun başına gelir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Bu dalın kanıtı tek bir sözlük tanıklığına dayanır; ağır ve yıkıcı büyük olay ile onun başa gelme kalıbı özel kaynak notunda açıklanır.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Özel ad biçimi ağır ve yıkıcı büyük olayı, bağlı söz kalıbı da bu olayın bir topluluğun başına gelmesini anlatır."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "başa gelen ağır ve yıkıcı büyük olay",
+        "applicability": "Olağan bir güçlüğü değil, insanı veya topluluğu sarsan büyük ve ağır olayı adlandırır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Olayın büyüklüğünü, yıkıcılığını ve etkilenenlerin başına gelme ilişkisini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "başımıza yıkıcı bir olay geldi",
+          "usage_role": "contextual",
+          "applicability": "Ağır ve sarsıcı bir olayın bir insanı veya topluluğu doğrudan etkilediği bağlamda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Yıkıcı büyük olayın etkilenenlerin başına gelmesini korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -1253,42 +1519,52 @@
         {
           "lexical_unit_id": "lu_025",
           "rendering_kind": "ordinary",
-          "target_gloss": "ağır felaket"
+          "target_gloss": "ağır ve yıkıcı büyük olay"
         },
         {
           "lexical_unit_id": "lu_026",
           "rendering_kind": "ordinary",
-          "target_gloss": "başımıza ağır bir felaket geldi"
+          "target_gloss": "başımıza ağır ve yıkıcı bir olay geldi"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_001003/B010",
+          "neighbor_ref": "root_000883/B011",
           "relation_type": "synonym",
           "boundary_match": "exact",
           "focus_only": null,
           "neighbor_only": null,
-          "gloss": "ağır felaket",
-          "shared_zone": "Her iki dal da ağır ve yıkıcı bir felaketi başka bir kurucu koşul eklemeden adlandırır.",
-          "distinction": "Odak ve komşu kartlarının çekirdekleri aynı felaket kavramını aynı sınırlarla verir; anlam bakımından belirgin bir ayrım yoktur."
+          "gloss": "ağır ve yıkıcı büyük olay",
+          "shared_zone": "Her iki dal da özel bir ad biçimiyle ağır ve yıkıcı büyük olayı aynı çekirdek sınırlarla anlatır.",
+          "distinction": "Kaynak kartlarında kurucu anlam farkı görünmez; ayrım yalnızca aynı kavramı taşıyan söz biçimlerindedir."
         },
         {
           "neighbor_ref": "root_000498/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Felaketin konuşan topluluğun başına geldiğini bildiren kalıplaşmış kullanım içerir.",
-          "neighbor_only": "Kötülüğün güvenli sanılan yönden veya aldatmayla gelmesi gibi ek gerçekleşme biçimlerini kapsar.",
-          "gloss": "insanın başına gelen büyük kötülük",
-          "shared_zone": "İki dal da kişinin başına gelen ağır, yıkıcı ve kötü olayı anlatır.",
-          "distinction": "Bu dal ağır felaketi yalın biçimde adlandırır; komşu dal beklenmedik veya aldatıcı yönden gelen kötülük gibi daha geniş gerçekleşme ayrıntılarını da içerir."
+          "focus_only": "Özel ad biçimi ve olayın topluluğun başına gelmesini bildiren bağlı kullanım öne çıkar.",
+          "neighbor_only": "Kötü olayın güvenli sanılan yönden gelmesini, aldatmayı ve zamanın çeşitli ağır darbelerini de kapsar.",
+          "gloss": "kişiye beklenmedik kötülük gelmesi",
+          "shared_zone": "Her iki dal insanın başına gelen ağır, sarsıcı ve kötü olayı anlatır.",
+          "distinction": "Odak dalı özel bir ağır olay adında yoğunlaşır; komşu dal kötü etkinin geliş biçimini ve farklı büyük sıkıntıları daha geniş kapsar."
+        },
+        {
+          "neighbor_ref": "root_000299/B005",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Olayın ağır ve yıkıcı nitelikte olması kavramın merkezindedir.",
+          "neighbor_only": "Zaman içinde ortaya çıkan yeni olayları, dönemsel değişimleri ve türlü başa gelenleri ağırlık şartı olmadan kapsar.",
+          "gloss": "zamanın başa getirdiği olay",
+          "shared_zone": "İki dal da insanın veya topluluğun başına gelen olumsuz olayı kapsayabilir.",
+          "distinction": "Odak dalı yıkıcı büyüklük şartı taşır; komşu dal zamanın getirdiği olayları ve değişimleri daha geniş bir olay sınıfı olarak verir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; doğrudan eş anlamlı kart ile daha geniş gerçekleşme ayrıntıları taşıyan komşu yayımlandı."
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; tam eşdeğer ağır olay adı ile daha geniş kötü olay ve dönemsel olay alanlarını ayıran üç ilişki seçildi."
     }
   ],
   "root_profile": {
-    "summary": "Kökün dalları bir sona erişme çekirdeğinden ulaştırma, yeterlilik, etkili anlatım ve en ileri derece anlamlarına açılır; ayrıca akılsız ama başarılı kişi, binicilik hareketi, ağırlaşma, kötü haber dileği, gizli suçlama ve felaket için kalıplaşmış uzak kullanımlar taşır.",
+    "summary": "Kökün dalları bir hedefe veya son sınıra erişme çekirdeğinden; ulaştırma, geçimi sağlayan yeterlik, etkili anlatım ve en ileri derece kullanımlarına uzanır. Bunun yanında düşüncesiz kişiye, binicilik hareketine, durumun ağırlaşmasına, korunma dileğine, kötüleyici bildirime ve yıkıcı olaya bağlı kalıplaşmış özel dallar bulunur.",
     "polysemy": "polysemic",
     "organization": "mixed"
   }

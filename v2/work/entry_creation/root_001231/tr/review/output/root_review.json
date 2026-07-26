@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtı ve dalların kapsamını doğru koruyor; ancak B008'de kanıtta bulunmayan hayvan, deve ve at sınırlamaları eklenmiş, B014'te ise iki açıklamanın ayrı kaynak kimlikleri olmadığı yanlış biçimde söylenmiştir. Bu yüksek güvenli ve sınırlı sorunlar ilgili alanlarda en küçük düzeltmelerle giderilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001231/B008",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, hastalığın boyun dibinde ortaya çıktığını bildirir; hastalığı özellikle bir hayvana bağlamaz. Kimlik gerekçesindeki hayvan sınırlaması bu nedenle desteklenmemektedir.",
+      "smallest_correction": "Kimlik gerekçesinde hayvana yapılan göndermeyi kaldırıp yalnızca hastalığın bu boyun bölgesinde ortaya çıktığını söyleyin."
+    },
+    {
+      "target_ref": "root_001231/B008",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, boyun dibindeki bir hastalığı verir fakat tanım bunu hayvana, F003 ise özellikle deve veya ata özgüler. Bu katılımcı sınırlamaları verilen kaynak ifadesinde yoktur.",
+      "smallest_correction": "Tanımdaki hayvan ifadesini ve F003'teki deve veya at sınırlamasını kaldırarak hastalığı yalnızca boynun bu bölümünde ortaya çıkan hastalık olarak tanımlayın."
+    },
+    {
+      "target_ref": "root_001231/B008",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak özeti hastalığı hayvanın boyun bölgesine özgüler, oysa bc_001 yalnızca hastalığın boyun dibinde ortaya çıktığını bildirir ve bir canlı türü belirtmez.",
+      "smallest_correction": "Ortak özetteki hayvan sınırlamasını kaldırıp hastalığın bu boyun bölgesinde görüldüğünü söyleyin."
+    },
+    {
+      "target_ref": "root_001231/B014",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet iki açıklamanın ayrı kaynak kimlikleri olmadığını söylüyor; oysa bc_001 soğukluk açıklamasını sihah'a, otlağın yakınlığı açıklamasını tahdhib'e açıkça bağlamaktadır.",
+      "smallest_correction": "Ayrı kaynak kimlikleri olmadığı cümlesini kaldırın; iki açıklamanın kaynakta alternatif aktarımlar olarak verildiğini kaynak-nötr biçimde belirtin."
+    }
+  ]
+}

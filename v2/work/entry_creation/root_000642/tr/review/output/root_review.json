@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B001 dalının kavram karşılığı, kaynaklarda çekirdek olmayan işaret taşıma özelliğini bütün karar okları için zorunlu gösteriyor. Bu alan küçük ve doğrudan bir düzeltmeyle kanıta uygun hale getirilebilir.",
+  "issues": [
+    {
+      "target_ref": "root_000642/B001",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 içindeki ortak çekirdek, okun bir iş hakkında yön aramak için çekilmesidir; tüysüzlük birkaç kaynakta, buyruk ve yasak işaretleri ise yalnız ayrıntılı kaynak kaydında belirtilir. Yazarın \"karar için çekilen işaretli ok\" karşılığı, F002'de uzmanlaşma olarak ayırdığı işaret taşıma özelliğini çekirdeğin zorunlu parçasına dönüştürür ve işaret kaydı vermeyen kaynak anlatımlarını gereksiz yere daraltır.",
+      "smallest_correction": "concept_gloss.text değerini \"karar için çekilen tüysüz ok\" olarak değiştirin; applicability ve error_profile metinlerinden işaret taşımanın genel çekirdeğe ait olduğu izlenimini kaldırın ve facet_ids listesini yalnız \"F001\" ile sınırlandırın. İşaretli örnek F002 ve contextual_glosses altında korunmalıdır."
+    }
+  ]
+}

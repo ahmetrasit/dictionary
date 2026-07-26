@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Girdi genel olarak kanıtla uyumludur; ancak B005 dalının sözlükselleşme kapsamı, tek bir sesin yinelenmesi kullanımını dışlayarak kanıtı gereksiz biçimde daraltmaktadır.",
+  "issues": [
+    {
+      "target_ref": "root_001344/B005",
+      "field": "lexicalization_scope",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, topluluk sesleri ve karışan seslerin yanında bir sesin yinelenmesini de açıkça içerir; kapsam notu ise dalı yalnız insan veya topluluk seslerine bağlayarak bu kullanımı dışarıda bırakır.",
+      "smallest_correction": "Kapsam notunu, dalı ses veya sesler ile kurulan belirtilmiş yapılara bağlayacak ve yalın köke genel bir ses anlamı yüklemeyecek biçimde düzeltin."
+    }
+  ]
+}

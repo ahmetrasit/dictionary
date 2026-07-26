@@ -1,5 +1,5 @@
 {
-  "inputs_sha256": "45e22913c89b89cee811584152bda67eb786cdbd56d55e84b0b928c182a06c44",
+  "inputs_sha256": "330e1f8168e3003f5759c995681c1dcaef6ec3acc1e591052acaff9b7e0efebe",
   "artifact_format": "dictionary-v2-root-entry-draft-v1",
   "generated_by": "v2/scripts/accept_root_writer.py",
   "root_envelope_id": "root_000067",
@@ -7,117 +7,82 @@
   "branches": [
     {
       "branch_ref": "root_000067/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, bir şeyin başlangıcını ve zaman, sıra ya da ilerleyiş bakımından başkalarının önünde bulunmasını birlikte gösterir. Verilen dal çerçevesi bu çekirdeği doğru biçimde yansıtır.",
+        "boundary_note": "Bu dal yalnız başlangıç ve önde gelme alanındadır; sonuca dönme, aile, yönetme ve araç anlamlarını kapsamaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım genel başlangıç ve öncelik çekirdeğini korur; deve sürüsü, önceki yıl ve her şeyden önce olma kullanımları kendi kalıplarıyla sınırlıdır."
+      },
       "concept_map": {
-        "definition": "Bir şeyin başlangıç noktasında bulunması veya zaman, sıra, derece ya da ilerleyiş bakımından başkalarından önce gelmesidir. Bu anlam, bir topluluğun ya da sürünün önünde bulunmayı, önceki yılı ve her şeyden önce olmayı da kapsar.",
+        "definition": "Bir şeyin başladığı nokta veya zaman ile bir varlığın zaman, sıra, derece ya da ilerleyiş bakımından başkalarından önce bulunmasıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Başlangıçta bulunma ve zaman ya da sıra bakımından diğerlerinden önce gelme temel anlamdır.",
+            "statement": "Bir şeyin başlangıç noktasını veya ilk bölümünü belirtir.",
             "claim_ids": [
-              "lu_001",
-              "lu_002",
-              "lu_003"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Anlam, bir insan topluluğunun veya deve sürüsünün önünde ilerleyen kişi ya da hayvan için özelleşir.",
+            "role": "core",
+            "statement": "Bir varlığın zaman, sıra, derece ya da ilerleyişte önde bulunmasını belirtir.",
             "claim_ids": [
-              "lu_004",
-              "lu_005"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "extension",
-            "statement": "Zamansal kullanımda önceki yılı, mutlak kullanımda ise her şeyden önce bulunmayı bildirir.",
+            "role": "example",
+            "statement": "Sürüde önden giden deve, bu önceliğin hareket alanındaki özel bir örneğidir.",
             "claim_ids": [
-              "lu_006",
-              "lu_007"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynakların ortak çizgisi, başlangıçta bulunma ile zaman veya sıra bakımından önde gelmeyi birleştirir. Dişil ve çoğul biçimler aynı öncelik alanını taşır; zamansal kalıp önceki yılı anlatır.",
+        "common_summary": "Kaynaklar başlangıç ile önde gelmeyi ortak çekirdek sayar; önde gidiş, topluluğun başında bulunma ve zamansal öncelik bu çekirdeğin bağlama göre gerçekleşmeleridir.",
         "common_claim_ids": [
-          "lu_001",
-          "lu_002",
-          "lu_003",
-          "lu_006"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_004"
-            ],
-            "kind": "example",
-            "summary": "Bir kişinin topluluğun en önünde gelmesi, önceliğin insan grubu içindeki görünümüdür."
-          },
-          {
-            "claim_ids": [
-              "lu_005"
-            ],
-            "kind": "example",
-            "summary": "Deve sürüsünün önünde giden dişi ya da erkek deve için özel bir kullanım aktarılır."
-          },
-          {
-            "claim_ids": [
-              "lu_007"
-            ],
-            "kind": "extension",
-            "summary": "Kalıplaşmış ifade, herhangi bir şeyden mutlak biçimde önce olmayı belirtir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "ilk olma ve önde gelme",
-        "applicability": "Başlangıç, zaman, sıra, derece veya ilerleyiş bakımından önceliği birlikte anlatan genel karşılıktır.",
+        "text": "başlangıç ve öncelik",
+        "applicability": "Bir şeyin ilk noktasını ve zaman, sıra, derece ya da ilerleyiş bakımından önde olmayı birlikte anlatan genel karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Hem başlangıçta bulunmayı hem de başkalarından önce gelme ilişkisini korur.",
+          "preserves": "Başlangıç ile başkalarından önce bulunma çekirdeklerini birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
           "F001",
-          "F002",
-          "F003"
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
           "text": "ilk",
-          "usage_role": "general",
-          "applicability": "Bir dizide, zamanda veya derecede başta bulunan şey için doğal kullanımdır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Başlangıç ve sıra bakımından önceliği korur.",
-            "loses": "Sürünün ya da topluluğun önünde ilerleme görünümünü açıkça söylemez.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        },
-        {
-          "text": "önde gelen",
           "usage_role": "contextual",
-          "applicability": "Bir topluluğun veya sürünün önünde bulunan kişi ya da hayvan için uygundur.",
+          "applicability": "Bir zamanın, sıranın ya da şeyin başlangıçtaki öğesi doğal Türkçede nitelenirken kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Başkalarının önünde bulunma ve ilerleme ilişkisini korur.",
-            "loses": "Başlangıç ve önceki yıl kullanımlarını kapsamaz.",
+            "fit": "none",
+            "preserves": "Bağlam içinde başlangıçta veya sıranın önünde bulunmayı korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
+            "F001",
             "F002"
           ]
         }
@@ -126,27 +91,27 @@
         {
           "lexical_unit_id": "lu_001",
           "rendering_kind": "ordinary",
-          "target_gloss": "ilk; bir şeyin başlangıcı veya diğerlerinden önce geleni"
+          "target_gloss": "ilk; önde gelen"
         },
         {
           "lexical_unit_id": "lu_002",
           "rendering_kind": "ordinary",
-          "target_gloss": "ilk olan dişil varlık"
+          "target_gloss": "ilk olan kadın ya da dişil şey"
         },
         {
           "lexical_unit_id": "lu_003",
           "rendering_kind": "ordinary",
-          "target_gloss": "önde gelenler veya ilk şeyler"
+          "target_gloss": "ilkler; öncekiler"
         },
         {
           "lexical_unit_id": "lu_004",
           "rendering_kind": "ordinary",
-          "target_gloss": "topluluğun önünde gelme"
+          "target_gloss": "topluluğun önünde bulunma"
         },
         {
           "lexical_unit_id": "lu_005",
           "rendering_kind": "ordinary",
-          "target_gloss": "deve sürüsünün önünde giden dişi ya da erkek deve"
+          "target_gloss": "sürünün önünde giden dişi ya da erkek deve"
         },
         {
           "lexical_unit_id": "lu_006",
@@ -162,123 +127,74 @@
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_000091/B001",
+          "neighbor_ref": "root_000090/B003",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dalı, zaman ve sıra önceliğinin yanında bir grubun önünde gitmeyi de kapsar.",
-          "neighbor_only": "Komşu dal, bir işi açma ve başlatma eylemini daha doğrudan kapsar.",
-          "gloss": "başlangıç ve öncelik",
-          "shared_zone": "Her iki dal da bir şeyin başlangıcında bulunma anlamında örtüşür.",
-          "distinction": "Odak dalı ilk sırada bulunma ilişkisini öne çıkarırken komşu dal başlatma ve açılış eylemine uzanır."
-        },
-        {
-          "neighbor_ref": "root_001198/B002",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı, ilk unsurun kendisini ve başlangıç niteliğini adlandırır.",
-          "neighbor_only": "Komşu dal, zamanın yanında mekân ve yön bakımından ön tarafta olmayı da kapsar.",
-          "gloss": "önce ve ilk",
-          "shared_zone": "İki dal zaman ve sıralamada bir şeyden önce bulunmayı paylaşır.",
-          "distinction": "Odak dalı başlangıçtaki veya ilk sıradaki unsura, komşu dal ise daha geniş bir öncelik ve ön konum ilişkisine yönelir."
-        },
-        {
-          "neighbor_ref": "root_000143/B002",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı sıra, derece ve hareket bakımından önde gelmeyi de içerir.",
-          "neighbor_only": "Komşu dal, ilk ürün ve erken yetişen şey gibi tazelik ve erkencilik görünümlerini içerir.",
-          "gloss": "ilk ve ilk ürün",
-          "shared_zone": "Her iki dal da bir şeyin başlangıçtaki ilk bölümünü gösterebilir.",
-          "distinction": "Odak dalı genel öncelik ilişkisini kurar; komşu dal özellikle ilk ürün veya erken ortaya çıkan şeyi belirtir."
+          "focus_only": "Odak dal, egemenlik ya da söz hakkı bulunmadan yalnız zamansal, sırasal veya devinimsel önceliği de kapsar.",
+          "neighbor_only": "Komşu dal, egemenlikte, anılmada veya eylemde önce gelme ve önce başlama hakkını özellikle içerir.",
+          "gloss": "öncelik ve başlama üstünlüğü",
+          "shared_zone": "Her iki dal da başlangıçta veya başkalarından önce bulunmayı anlatır.",
+          "distinction": "Odak dal genel başlangıç ve öncelik kavramıdır; komşu dal ise bu önceliği egemenlik, anılma, eylem veya önce başlama hakkı gibi daha belirli alanlara bağlar."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar başlangıç, öncelik, yakınlık veya kökün diğer anlamları bakımından değerlendirildi; sınırı en açık gösteren üç karşıtlık yayımlandı.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; en yakın sınır karşılaştırması yayımlandı, kalanlar sonuç, aile, yönetim, durum, araç ve başka uzak alanlara aittir.",
       "branch_image_ar": "ابتداء الشيء وتقدمه",
       "what_is_ar": "يدخل فيه الأول والأولى والأوائل والأولية وما يدل على ابتداء الشيء أو تقدمه في الزمن أو الرتبة أو السير.",
+      "what_is_not_ar": "ليس من رجوع الشيء إلى مآله، ولا من آل الأهل، ولا من السياسة أو الخثور أو الآلة.",
       "source_phrase_ar": "الأول وهو مبتدأ الشيء؛ ناقة أولة وجمل أول إذا تقدما الإبل (maqayis)؛ أول في اللغة على الحقيقة ابتداء الشيء؛ جاء فلان في أولية الناس إذا جاء في أولهم (tahdhib)",
       "sources": [
         "MQ",
         "TA"
       ],
-      "source_note": {
-        "TA": "Bir kişinin topluluğun en önünde gelmesi, önceliğin insan grubu içindeki görünümüdür.",
-        "MQ": "Deve sürüsünün önünde giden dişi ya da erkek deve için özel bir kullanım aktarılır. Kalıplaşmış ifade, herhangi bir şeyden mutlak biçimde önce olmayı belirtir."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000067/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi hem geri dönme veya bir son duruma varmayı hem de sözün varacağı anlamı ortaya çıkarma işlemini açıkça içerir. Dal çerçevesi süreç, sonuç ve yorumlama bağlantısını korur.",
+        "boundary_note": "Bu dal sırf başlangıç, aile, yönetim ya da fiziksel koyulaşma değildir; bir varışa, sonuca veya anlama yönelme bağı zorunludur."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Genel geri dönme ve sonuca varma çekirdeği ile sözü anlamına döndürme, hükmü sahibine verme ve ödül arama kalıpları ayrı tutulur."
+      },
       "concept_map": {
-        "definition": "Bir şeyin geri dönmesi veya sonunda belirli bir duruma, yere ya da sonuca varmasıdır; söz için, varacağı anlam ya da sonuç üzerinden açıklanmasını da kapsar. Hükmü sahibine geri verme, bedenin zayıflaması ve bir işte sevap arama bunun özel ya da ilişkili kullanımlarıdır.",
+        "definition": "Bir şeyin geri dönerek ya da değişerek varacağı son duruma, yere veya sonuca ulaşmasıdır; söz alanında, anlatımı varacağı anlama döndürerek açıklamayı da kapsar.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir şeyin geri dönerek ya da dönüşerek sonunda belirli bir duruma veya sonuca varması temel anlamdır.",
+            "statement": "Bir şeyin geri dönmesi veya sonunda belirli bir duruma varmasıdır.",
             "claim_ids": [
-              "lu_008"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Söz alanında, ifadenin varacağı anlamı veya sonucu belirleyip açıklama anlamına gelir.",
+            "role": "extension",
+            "statement": "Bir sözün sonucunu ya da varacağı anlamı açıklamak, geri döndürme çekirdeğinin yorum alanındaki uzantısıdır.",
             "claim_ids": [
-              "lu_011",
-              "lu_012"
-            ]
-          },
-          {
-            "facet_id": "F003",
-            "role": "example",
-            "statement": "Hükmü yetkili sahibine geri verme ve bedenin zayıf bir duruma dönmesi, geri dönüşün özel örnekleridir.",
-            "claim_ids": [
-              "lu_009",
-              "lu_010"
-            ]
-          },
-          {
-            "facet_id": "F004",
-            "role": "associated_use",
-            "statement": "Bir kişinin işinde sevap gözetip aramak, sonuç beklentisine bağlı bir kullanımdır.",
-            "claim_ids": [
-              "lu_013"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak anlatım, geri dönme ile bir sonuca veya duruma varmayı aynı süreç içinde toplar. Sözün açıklanması da onun ulaştığı anlamın ya da sonucunun belirlenmesine bağlanır.",
+        "common_summary": "Kaynaklar geri dönüş, son varış ve sonuç anlamlarında birleşir; sözün açıklanması da onu ulaşacağı anlama veya sonuca bağlayan özel bir kullanımdır.",
         "common_claim_ids": [
-          "lu_008",
-          "lu_011",
-          "lu_012"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_009",
-              "lu_010"
-            ],
-            "kind": "example",
-            "summary": "Hükmün sahibine geri verilmesi ve bedenin zayıflığa dönmesi, sürecin iki somut örneğidir."
-          },
-          {
-            "claim_ids": [
-              "lu_013"
-            ],
-            "kind": "extension",
-            "summary": "Bir kişinin işi dolayısıyla sevap gözetip isteme yönünde ilişkili bir kullanım aktarılır."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "sonucuna dönme veya varma",
-        "applicability": "Geri dönüşü, bir duruma dönüşmeyi ve sonunda varılan anlam ya da sonucu birlikte karşılar.",
+        "text": "sonuca dönme ve varma",
+        "applicability": "Geri dönüşü, son duruma ulaşmayı ve sözün varacağı anlama bağlanmasını ortak çekirdekte anlatır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Hareketi, son durumu ve sonuca bağlı açıklama çekirdeğini korur.",
+          "preserves": "Geri dönme, sonuca varma ve anlamı açıklamak üzere ona döndürme bağını korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -290,13 +206,13 @@
       },
       "contextual_glosses": [
         {
-          "text": "geri dönmek",
+          "text": "sonunda ... olmak",
           "usage_role": "contextual",
-          "applicability": "Özne önceki bir yere veya duruma yeniden yöneldiğinde kullanılır.",
+          "applicability": "Bir varlığın süreç sonunda ulaştığı durum yüklemle belirtildiğinde kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Geri dönüş hareketini açık biçimde korur.",
-            "loses": "Yeni bir duruma varma ve sözün sonucunu açıklama yönlerini kapsamaz.",
+            "preserves": "Bir son duruma varma yönünü korur.",
+            "loses": "Geri dönme ve sözü anlamına döndürerek açıklama yönlerini dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
@@ -305,13 +221,13 @@
           ]
         },
         {
-          "text": "yorumlamak",
+          "text": "anlamını açıklamak",
           "usage_role": "contextual",
-          "applicability": "Bir sözün varacağı anlamı belirleyerek açıklama bağlamında uygundur.",
+          "applicability": "Bir sözün neye vardığı veya ne demek olduğu ortaya konurken kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Sözü anlamına götürerek açıklama işlemini korur.",
-            "loses": "Genel geri dönüş ve son duruma varma anlamlarını kapsamaz.",
+            "preserves": "Sözü varacağı anlama döndürme yönünü korur.",
+            "loses": "Genel geri dönüş ve bir son duruma varma yönlerini dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
@@ -324,32 +240,32 @@
         {
           "lexical_unit_id": "lu_008",
           "rendering_kind": "ordinary",
-          "target_gloss": "geri dönmek veya bir duruma varmak"
+          "target_gloss": "geri dönmek; sonunda bir duruma varmak"
         },
         {
           "lexical_unit_id": "lu_009",
           "rendering_kind": "ordinary",
-          "target_gloss": "hükmü sahibine geri vermek"
+          "target_gloss": "hükmü sahiplerine geri vermek"
         },
         {
           "lexical_unit_id": "lu_010",
           "rendering_kind": "ordinary",
-          "target_gloss": "bedeni zayıflayıp o duruma dönmek"
+          "target_gloss": "bedeni zayıflamak"
         },
         {
           "lexical_unit_id": "lu_011",
           "rendering_kind": "ordinary",
-          "target_gloss": "sözün sonucu veya varacağı anlama göre açıklanması"
+          "target_gloss": "sözün sonucu veya anlamının açıklanması"
         },
         {
           "lexical_unit_id": "lu_012",
           "rendering_kind": "ordinary",
-          "target_gloss": "yorumlamak veya kendi anlamına yöneltmek"
+          "target_gloss": "açıklamak; anlamına döndürmek"
         },
         {
           "lexical_unit_id": "lu_013",
           "rendering_kind": "ordinary",
-          "target_gloss": "birinin işinde sevap gözetip aramak"
+          "target_gloss": "onunla ilgili ödülü gözetmek ve aramak"
         }
       ],
       "excluded_glosses": [],
@@ -358,150 +274,95 @@
           "neighbor_ref": "root_000897/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dalı geri dönmeyi ve sözün varacağı anlam üzerinden açıklanmasını içerir.",
-          "neighbor_only": "Komşu dal, bir şeyi başka bir duruma sokan ettirgen dönüşümü de içerir.",
-          "gloss": "sonuca varma",
-          "shared_zone": "Her iki dal da bir şeyin sonunda belirli bir duruma veya sonuca ulaşmasını anlatır.",
-          "distinction": "Odak dalında geri dönüş ve yorumlama belirgindir; komşu dal daha genel oluşu ve ettirgen dönüştürmeyi de kapsar."
-        },
-        {
-          "neighbor_ref": "root_000065/B001",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı son duruma dönüşmeyi ve sözün sonucunu yorumlamayı kapsar.",
-          "neighbor_only": "Komşu dal, sığınağa veya belirli bir yere geri dönüşü ve orada toplanmayı öne çıkarır.",
-          "gloss": "geri dönüş",
-          "shared_zone": "İki dalın çekirdeğinde önceki bir yere veya duruma dönme bulunur.",
-          "distinction": "Odak dalı dönüşün ulaştığı sonuç ve anlama genişler; komşu dal dönüş yeri ve barınak yönünü belirginleştirir."
-        },
-        {
-          "neighbor_ref": "root_001033/B006",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı bir sonuca doğru dönme veya varma sürecini içerir.",
-          "neighbor_only": "Komşu dal sonucun, son bölümün veya eylemden doğan etkinin kendisini adlandırır.",
-          "gloss": "varış ve sonuç",
-          "shared_zone": "Her iki dal da bir olayın ulaştığı son durumla ilgilidir.",
-          "distinction": "Odak dalı sonuca yönelen süreci, komşu dal ise oluşmuş sonu ve onun etkisini merkez alır."
+          "focus_only": "Odak dal geri dönüşü ve sözün varacağı anlama döndürülerek açıklanmasını içerir.",
+          "neighbor_only": "Komşu dal bir şeyi belirli bir duruma sokma ve kararın ya da sağlam tutumun varacağı sonucu da içerir.",
+          "gloss": "bir son duruma dönüşme",
+          "shared_zone": "Her iki dal da bir süreç sonunda ulaşılan durumu, varışı veya sonucu anlatır.",
+          "distinction": "Komşu dal genel olarak olma ve bir şeyi oldurma alanına uzanır; odak dalda geri dönüş bağı ve sözün sonucunu ya da anlamını açıklama özel olarak belirgindir."
         }
       ],
-      "neighbor_coverage_note": "Dönüş, oluş, son durum ve yorum alanındaki bütün adaylar karşılaştırıldı; süreç ile sonuç sınırını en iyi gösteren üçü seçildi.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; yayımlanan komşu son duruma varma bakımından en yakın olandır, diğerleri dönüş, sonuç veya olay alanının daha dar parçalarını paylaşır.",
       "branch_image_ar": "رجوع الشيء إلى مآله وعاقبته",
       "what_is_ar": "يدخل فيه آل يؤول بمعنى رجع أو صار، والمآل والمرجع والمصير، وتأويل الكلام بمعنى ما يؤول إليه أو تفسيره برده إلى معناه.",
+      "what_is_not_ar": "ليس مجرد الأولية والابتداء، ولا أهل الرجل، ولا السياسة، ولا الخثور الحسي.",
       "source_phrase_ar": "آل يؤول أى رجع؛ تأويل الكلام وهو عاقبته وما يؤول إليه (maqayis)؛ التأويل تفسير ما يؤول إليه الشئ؛ آل أي رجع (sihah)؛ آل يؤول أي رجع وعاد؛ التأويل المرجع والمصير (tahdhib)",
       "sources": [
         "MQ",
         "SI",
         "TA"
       ],
-      "source_note": {
-        "MQ": "Hükmün sahibine geri verilmesi ve bedenin zayıflığa dönmesi, sürecin iki somut örneğidir.",
-        "TA": "Bir kişinin işi dolayısıyla sevap gözetip isteme yönünde ilişkili bir kullanım aktarılır."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000067/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi kişinin ev halkını, yakınlarını, bakmakla yükümlü olduklarını ve bağlılarını, kişinin onlara ve onların kişiye dönük aidiyetiyle tanımlar. Dal çerçevesi bu topluluk çekirdeğini doğru korur.",
+        "boundary_note": "Buradaki topluluk kişinin ailesi ve ona bağlı çevresidir; görünen siluet, yorumlama veya genel bir insan topluluğu değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım dalın yalın aile ve bağlı çevre anlamıyla sınırlıdır; başka dallardaki kalıplaşmış kullanımlar içeri alınmaz."
+      },
       "concept_map": {
-        "definition": "Bir kişinin kendisine bağlanan ve onun da kendilerine döndüğü aile, hane halkı, yakınlar ve kök ailesidir. Kapsam, o kişiye bağlı izleyicilere ve onun tarafında bulunanlara kadar genişleyebilir.",
+        "definition": "Bir kişinin ev halkı, ailesi, yakınları, bakmakla yükümlü oldukları ve ona bağlı olanlardan oluşan; karşılıklı aidiyetle kişiye bağlanan topluluktur.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kişinin evi, ailesi, bakmakla yükümlü oldukları ve yakınları temel topluluğu oluşturur.",
+            "statement": "Kişinin ev halkını, ailesini, yakınlarını ve bakmakla yükümlü olduğu kimseleri kapsar.",
             "claim_ids": [
-              "lu_014"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "extension",
-            "statement": "Kişinin izleyicileri, tarafında bulunanlar veya askerleri de bağlı topluluk olarak kapsama girebilir.",
+            "statement": "Kişinin izleyicileri ve onun tarafında bulunan bağlı kimseler de bu aidiyet çevresine katılabilir.",
             "claim_ids": [
-              "lu_015"
-            ]
-          },
-          {
-            "facet_id": "F003",
-            "role": "specialization",
-            "statement": "Kişinin sığındığı ev halkı ile kendisine bağlandığı kök aile ayrı biçimlerle belirtilir.",
-            "claim_ids": [
-              "lu_016",
-              "lu_017"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak çekirdek, kişinin ev halkını, ailesini, bakmakla yükümlü olduklarını ve yakınlarını onun bağlı bulunduğu topluluk olarak gösterir.",
+        "common_summary": "Kaynaklar kişinin ailesi ve ev halkında birleşir; yakınlar, bakmakla yükümlü olunanlar ve bağlı kimseler bu çekirdeğin kapsam genişlikleridir.",
         "common_claim_ids": [
-          "lu_014"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_015"
-            ],
-            "kind": "extension",
-            "summary": "Aile çevresinin ötesinde kişinin izleyicileri, tarafındakiler ve askerleri de kapsama alınır."
-          },
-          {
-            "claim_ids": [
-              "lu_016",
-              "lu_017"
-            ],
-            "kind": "restriction",
-            "summary": "İki özel biçimden biri sığınılan ev halkını, diğeri kişinin döndüğü kök ailesini belirtir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "aile, hane halkı ve bağlılar",
-        "applicability": "Kişinin yakınlarını, ev halkını ve ona bağlı daha geniş çevreyi birlikte anlatır.",
+        "text": "aile ve bağlı çevre",
+        "applicability": "Ev halkını, yakınları, bakmakla yükümlü olunanları ve kişiye bağlı kimseleri birlikte kapsayan genel karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Aile çekirdeğini, bağlılık ilişkisini ve izleyicilere uzanan kapsamı korur.",
+          "preserves": "Aile çekirdeğini ve kişiye bağlı daha geniş çevreyi birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
           "F001",
-          "F002",
-          "F003"
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "hane halkı",
+          "text": "ev halkı",
           "usage_role": "contextual",
-          "applicability": "Kişinin evi, ailesi ve bakmakla yükümlü olduğu yakınları kastedildiğinde uygundur.",
+          "applicability": "Kapsam kişinin aynı eve ve yakın aile çevresine bağlı kimseleriyle sınırlı olduğunda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Ev ve aile çevresindeki yakın topluluğu korur.",
-            "loses": "İzleyicileri, askerleri ve kişinin daha geniş bağlı çevresini dışarıda bırakır.",
+            "preserves": "Kişiye bağlı aile ve ev çevresi çekirdeğini korur.",
+            "loses": "Ev dışındaki izleyicileri ve daha geniş bağlı çevreyi dışarıda bırakabilir.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F001"
-          ]
-        },
-        {
-          "text": "yakınları ve izleyicileri",
-          "usage_role": "explanatory",
-          "applicability": "Aile ile kişiye bağlı topluluğun birlikte kastedildiği geniş bağlamlarda kullanılır.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Hem yakınlık hem de kişiye bağlı olma ilişkisini açıkça korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001",
-            "F002"
           ]
         }
       ],
@@ -509,12 +370,12 @@
         {
           "lexical_unit_id": "lu_014",
           "rendering_kind": "ordinary",
-          "target_gloss": "kişinin ailesi, hane halkı ve yakınları"
+          "target_gloss": "kişinin ailesi, ev halkı ve yakınları"
         },
         {
           "lexical_unit_id": "lu_015",
           "rendering_kind": "ordinary",
-          "target_gloss": "onun izleyicileri ve tarafında bulunanlar"
+          "target_gloss": "onun izleyicileri ve bağlıları"
         },
         {
           "lexical_unit_id": "lu_016",
@@ -524,7 +385,7 @@
         {
           "lexical_unit_id": "lu_017",
           "rendering_kind": "ordinary",
-          "target_gloss": "kişinin kökü ve bağlandığı kök ailesi"
+          "target_gloss": "kişinin kökü ve bağlı olduğu aile"
         }
       ],
       "excluded_glosses": [],
@@ -533,36 +394,17 @@
           "neighbor_ref": "root_000166/B002",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dalı aile yanında izleyicileri ve kişinin tarafında bulunanları da kapsar.",
-          "neighbor_only": "Komşu dal, ev adının kadın veya topluluk için eğretilemeli kullanımına uzanır.",
-          "gloss": "aile ve hane",
-          "shared_zone": "Her iki dal kişinin ailesi, ev halkı ve bakmakla yükümlü olduklarını anlatır.",
-          "distinction": "Odak dalındaki kişiye bağlılık çevresi daha geniştir; komşu dalın sınırı ev ve hane kavramına bağlıdır."
-        },
-        {
-          "neighbor_ref": "root_000030/B003",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı hane halkını, yakınları ve izleyicileri birlikte kapsar.",
-          "neighbor_only": "Komşu dal aileyi kişinin güç aldığı dayanışma grubu olarak sınırlar.",
-          "gloss": "aile çevresi",
-          "shared_zone": "İki dal kişinin yakın akraba ve aile topluluğunda örtüşür.",
-          "distinction": "Odak dalı aidiyet ve geri bağlanma ilişkisini, komşu dal ise destek ve güç alma işlevini öne çıkarır."
-        },
-        {
-          "neighbor_ref": "root_001016/B013",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı belirli bir kişiye bağlı aile ve izleyici çevresidir.",
-          "neighbor_only": "Komşu dal ortak işi olan kabile, topluluk veya aşiret gibi bağımsız grupları da kapsar.",
-          "gloss": "bağlı çevre ve topluluk",
-          "shared_zone": "Her iki dal akrabalık veya ortak bağla oluşmuş insan topluluklarını gösterebilir.",
-          "distinction": "Odak dalının merkezi bir kişiye aidiyettir; komşu dal daha genel ve kendi başına bir topluluk türünü adlandırır."
+          "focus_only": "Odak dal yakınların yanında izleyicileri ve kişiye bağlı daha geniş çevreyi de kapsayabilir.",
+          "neighbor_only": "Komşu dal ev benzetmesiyle bir kadın ya da topluluğun ev diye adlandırılmasına uzanır.",
+          "gloss": "ev halkı ve bakmakla yükümlü olunanlar",
+          "shared_zone": "Her iki dal da kişinin ev halkını, ailesini ve bakmakla yükümlü olduğu kimseleri kapsar.",
+          "distinction": "Odak dal karşılıklı aidiyet ve kişiye bağlı çevre üzerinden genişleyebilir; komşu dalın sınırı ev ve ev halkı merkezlidir ve ev benzetmeli adlandırmaları da içerir."
         }
       ],
-      "neighbor_coverage_note": "Aile, hane, yakın soy, kabile ve evlilik bağı adaylarının tümü incelendi; kişiye aidiyet sınırını en iyi açıklayan üçü yayımlandı.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; ev halkı komşusu en yakın sınırı verir, öteki adaylar soy, aşiret, evlilik veya genel topluluk yönlerinden daha özeldir.",
       "branch_image_ar": "آل الرجل من يرجع إليهم ويرجعون إليه",
       "what_is_ar": "يدخل فيه آل الرجل: أهل بيته وعياله وقرابته وأتباعه ومن إليه مآل الرجل أو مآلهم إليه، مع استعمال آل فلان في الرجل نفسه على جهة التعبير عنه بآله.",
+      "what_is_not_ar": "ليس الآل بمعنى الشخص المرئي أو السراب، ولا السياسة، ولا التأويل.",
       "source_phrase_ar": "آل الرجل أهل بيته؛ لأنه إليه مآلهم وإليهم مآله (maqayis)؛ آل الرجل أهله وقرابته (jamhara)؛ آل الرجل أهله وعياله؛ وآله أيضا أتباعه (sihah)؛ إلة الرجل أهل بيته؛ إيلة الرجل فهم أصله الذين يؤول إليهم (tahdhib)",
       "sources": [
         "MQ",
@@ -570,109 +412,72 @@
         "SI",
         "TA"
       ],
-      "source_note": {
-        "SI": "Aile çevresinin ötesinde kişinin izleyicileri, tarafındakiler ve askerleri de kapsama alınır.",
-        "TA": "İki özel biçimden biri sığınılan ev halkını, diğeri kişinin döndüğü kök ailesini belirtir."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000067/B004",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bir topluluğu veya malı iyi yönetme, gözetme, düzene koyma ve onarma işlemlerini birlikte verir. Dal çerçevesi yönetim ile iyileştirme arasındaki kurucu bağı doğru yansıtır.",
+        "boundary_note": "Bu dal salt sonuca varma ya da genel iyilik durumu değildir; sorumluluk üstlenerek yönetme, toplama veya düzeltme işlemi gerekir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Genel yönetme ve düzeltme çekirdeği korunur; halkı yönetme, malı düzeltme ve işi toparlama anlamları kendi söz dizimsel yapılarıyla belirtilir."
+      },
       "concept_map": {
-        "definition": "Bir işi, topluluğu veya malı iyi gözetip yöneterek düzene koyma ve iyileştirmedir. Dua kullanımında dağınık işlerin toplanması ve düzeltilmesi de bu çekirdeğe bağlanır.",
+        "definition": "Bir topluluğu, malı veya işi sorumluluk alarak iyi yönetmek, gözetmek, dağınıklığını toplamak ve işler duruma getirmektir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Yönetme, gözetme ve sorumluluğu iyi yürütme temel anlamı oluşturur.",
+            "statement": "Bir topluluğu veya işi iyi yönetip gözetmeyi ifade eder.",
             "claim_ids": [
-              "lu_018",
-              "lu_019"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "extension",
-            "statement": "Malın yönetilip düzeltilmesi ile genel düzeltme ve idare etme aynı çekirdeğin uzantılarıdır.",
+            "role": "core",
+            "statement": "Malı ya da dağınık bir işi düzeltip toparlayarak işler duruma getirmeyi ifade eder.",
             "claim_ids": [
-              "lu_020",
-              "lu_021"
-            ]
-          },
-          {
-            "facet_id": "F003",
-            "role": "associated_use",
-            "statement": "Dua kalıbında kişinin işlerinin bir araya getirilip düzeltilmesi istenir.",
-            "claim_ids": [
-              "lu_022"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak anlatım, yönetimi yalnızca yetki kullanımı olarak değil, sorumluluğu iyi gözetip düzgün yürütme olarak sunar. Yönetilen alan bir topluluk veya genel bir iş olabilir.",
+        "common_summary": "Kaynaklar iyi yönetme ve gözetme üzerinde birleşir; malı düzeltme, dağınık işi toplama ve düzene koyma aynı etkin çekirdeğin uygulamalarıdır.",
         "common_claim_ids": [
-          "lu_018",
-          "lu_019"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_020",
-              "lu_021"
-            ],
-            "kind": "extension",
-            "summary": "Anlam, malı yönetip iyileştirmeye ve genel olarak düzeltme ile idare etmeye genişler."
-          },
-          {
-            "claim_ids": [
-              "lu_022"
-            ],
-            "kind": "example",
-            "summary": "Dua kalıbı, dağınık işlerin toplanıp düzeltilmesi dileğini ifade eder."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "iyi yöneterek düzene koyma",
-        "applicability": "Topluluk, iş veya mal üzerinde gözetim, yönetim ve iyileştirmeyi birlikte anlatır.",
+        "text": "iyi yönetip düzene koyma",
+        "applicability": "Topluluk, mal veya iş üzerinde yönetme, gözetme, toplama ve düzeltme işlemlerini birlikte anlatır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Yönetme, iyi gözetme, düzeltme ve düzen kurma işlemlerini korur.",
+          "preserves": "Yönetme, gözetme, toparlama ve düzeltme işlemlerini korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
           "F001",
-          "F002",
-          "F003"
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "idare etmek",
-          "usage_role": "general",
-          "applicability": "Bir topluluğun veya işin yönetilmesi bağlamında doğal karşılıktır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Yönetim ve sorumluluğu yürütme işlemini korur.",
-            "loses": "Düzeltme ve iyi bakım sonucunu tek başına açık etmez.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        },
-        {
           "text": "çekip çevirmek",
           "usage_role": "contextual",
-          "applicability": "Bir malı veya işi hem yönetip hem düzeltme bağlamında uygundur.",
+          "applicability": "Bir topluluk, mal veya iş etkin biçimde yönetilip düzene konurken doğal bir karşılıktır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Pratik yönetimi, bakımı ve düzene koymayı birlikte korur.",
+            "preserves": "Yönetme, gözetme ve işleri düzene koyma yönlerini bağlam içinde korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -687,7 +492,7 @@
         {
           "lexical_unit_id": "lu_018",
           "rendering_kind": "ordinary",
-          "target_gloss": "iyi yönetim ve gözetim"
+          "target_gloss": "iyi yönetme ve gözetme"
         },
         {
           "lexical_unit_id": "lu_019",
@@ -697,162 +502,113 @@
         {
           "lexical_unit_id": "lu_020",
           "rendering_kind": "ordinary",
-          "target_gloss": "malını yönetip düzeltmek"
+          "target_gloss": "malını düzeltip iyi yönetmek"
         },
         {
           "lexical_unit_id": "lu_021",
           "rendering_kind": "ordinary",
-          "target_gloss": "düzeltme ve yönetme"
+          "target_gloss": "düzeltme ve iyi yönetme"
         },
         {
           "lexical_unit_id": "lu_022",
           "rendering_kind": "ordinary",
-          "target_gloss": "Tanrı işlerini toparlayıp düzeltsin"
+          "target_gloss": "Tanrı işini toparlayıp düzeltsin"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_000876/B001",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı yönetme, gözetme ve sorumluluğu yürütme işlemlerini içerir.",
-          "neighbor_only": "Komşu dal bozulmanın karşıtı olarak genel iyiliği ve yararı da kapsar.",
-          "gloss": "yönetme ve düzeltme",
-          "shared_zone": "Her iki dal bir şeyi daha iyi ve düzgün duruma getirmede örtüşür.",
-          "distinction": "Odak dalı iyileştirmeyi yönetim ve bakım yoluyla yapar; komşu dal yönetim gerektirmeyen genel düzelmeyi de kapsar."
-        },
-        {
-          "neighbor_ref": "root_001056/B007",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı topluluk, iş ve mal yönetimine uzanan genel bir işlemdir.",
-          "neighbor_only": "Komşu dal yalnızca mal üzerinde iyi durma niteliğini bildirir.",
-          "gloss": "malı iyi yönetme",
-          "shared_zone": "İki dal malı özenle gözetip iyi durumda tutma anlamında örtüşür.",
-          "distinction": "Odak dalı etkin yönetme ve düzeltme eylemidir; komşu dal bunu yapan kişinin mal konusundaki niteliğidir."
-        },
-        {
           "neighbor_ref": "root_000709/B003",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak dalı yönetimin iyi bakım, düzeltme ve düzen kurma biçimini anlatır.",
-          "neighbor_only": "Komşu dal görevi üstlenen yönetici veya görevlinin konumunu adlandırır.",
-          "gloss": "yönetim ve yöneticilik",
-          "shared_zone": "Her iki dal bir topluluk üzerinde sorumluluk ve yönetim ilişkisi kurar.",
-          "distinction": "Odak dalının çekirdeği yönetme eylemidir; komşu dal ise yetkiyi taşıyan kişi ve makam çevresindedir."
+          "focus_only": "Odak dal malı veya herhangi bir işi düzeltip toparlamaya da uygulanır.",
+          "neighbor_only": "Komşu dal belirli bir topluluk üzerinde görev, vergi toplama işi, başkanlık veya yöneticilik makamını içerir.",
+          "gloss": "topluluk üzerinde yöneticilik",
+          "shared_zone": "Her iki dal da bir topluluğun işlerini üstlenme ve onu yönetme alanında buluşur.",
+          "distinction": "Odak dal sorumluluk alanını iyi yönetip düzeltme eylemidir; komşu dal ise topluluk üzerindeki görevli veya yönetici konumunu ve bu konumun türlerini öne çıkarır."
         }
       ],
-      "neighbor_coverage_note": "Düzeltme, yönetim, mal bakımı, başkanlık ve engelleme adayları değerlendirildi; eylemin bakım ve yönetim sınırını açıklayan üçü seçildi.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; görev ve yöneticilik komşusu en açıklayıcı karşılaştırmadır, diğerleri yalnız düzeltme, engelleme veya bakım yanını paylaşır.",
       "branch_image_ar": "إيالة الأمر بإصلاحه وسياسته",
       "what_is_ar": "يدخل فيه الإيالة والسياسة، وآل الأمير رعيته إذا ساسها، وآل ماله إذا أصلحه، والائتيال والإصلاح وجمع الأمر أو رد الضالة في الدعاء.",
+      "what_is_not_ar": "ليس مجرد المآل والتفسير، ولا آل الأهل، ولا الأداة.",
       "source_phrase_ar": "الإيالة السياسة؛ آل الرجل رعيته يؤولها إذا أحسن سياستها (maqayis)؛ الايالة السياسة؛ آل الأمير رعيته يؤولها أولا وإيالا؛ آل ما له أي أصلحه وساسه (sihah)؛ ألت الشيء جمعته وأصلحته؛ أول الله عليك أمرك أي جمعه (tahdhib)",
       "sources": [
         "MQ",
         "SI",
         "TA"
       ],
-      "source_note": {
-        "SI": "Anlam, malı yönetip iyileştirmeye ve genel olarak düzeltme ile idare etmeye genişler.",
-        "TA": "Dua kalıbı, dağınık işlerin toplanıp düzeltilmesi dileğini ifade eder."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000067/B005",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi süt, katran veya bal gibi akışkanların koyulaşıp pıhtılaşmasını açıkça bildirir; bazı örneklerde bunun kendiliğinden, bazılarında ısıyla gerçekleştiği görülür. Dal çerçevesi fiziksel değişimi doğru sınırlar.",
+        "boundary_note": "Bu dal soyut bir sonuca varma değildir; akışkanın fiziksel olarak koyulaşması veya pıhtılaşması gerekir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın fiziksel koyulaşma dalına bağlıdır ve başka dallardaki soyut dönüş, yönetim veya araç anlamlarını içermez."
+      },
       "concept_map": {
-        "definition": "Süt, bal veya katran gibi akışkan bir maddenin sürecin sonunda koyulaşıp pıhtılaşması ya da katılaşmasıdır. Oluşan koyu süt de sonuç adı olarak bu anlam alanına girer.",
+        "definition": "Süt, katran veya bal gibi bir akışkanın süreç sonunda yoğunlaşarak koyulaşması, pıhtılaşması ya da katılaşmaya yaklaşmasıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Akışkan maddenin süreç sonunda koyulaşıp pıhtılaşması veya katılaşması temel anlamdır.",
+            "statement": "Bir akışkanın yoğunlaşıp koyulaşması veya pıhtılaşmasıdır.",
             "claim_ids": [
-              "lu_023",
-              "lu_024"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Sütün koyulaşmış ve pıhtılaşmış sonucu ayrı bir adla belirtilir.",
+            "statement": "Bal veya katranın ateşle koyulaştırılması, sürecin ısıyla gerçekleştirilen özel biçimidir.",
             "claim_ids": [
-              "lu_025"
-            ]
-          },
-          {
-            "facet_id": "F003",
-            "role": "source_variant",
-            "statement": "Bal veya katranın koyulaşması bazı aktarımlarda ateşle gerçekleştirilen bir katılaşma olarak sınırlandırılır.",
-            "claim_ids": [
-              "lu_024"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar süt, bal ve katranın koyulaşıp pıhtılaşmasında birleşir. Bal veya katran için aktarımlardan biri ateşle katılaştırma koşulunu ayrıca belirtir.",
+        "common_summary": "Kaynaklar süt, katran ve bal gibi maddelerin koyulaşıp pıhtılaşmasında birleşir; aktarım, sürecin kendiliğinden son aşamada veya ateşle gerçekleşebildiğini gösterir.",
         "common_claim_ids": [
-          "lu_023",
-          "lu_024"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_025"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Koyulaşıp pıhtılaşmış süt, sürecin ortaya çıkardığı ürün olarak ayrıca adlandırılır."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
         "text": "koyulaşıp pıhtılaşma",
-        "applicability": "Süt, bal ve katran gibi maddelerin akışkanlıktan koyu veya bağlı bir duruma geçişini anlatır.",
+        "applicability": "Akışkanın yoğunlaşarak koyulaşmasını veya pıhtılaşmasını süreç ve sonuç bağıyla anlatır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Koyulaşma sürecini, pıhtılaşmayı ve ortaya çıkan bağlı kıvamı korur.",
+          "preserves": "Fiziksel yoğunlaşma, koyulaşma ve pıhtılaşma çekirdeğini korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001",
-          "F002",
-          "F003"
+          "F001"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "pıhtılaşmak",
-          "usage_role": "general",
-          "applicability": "Özellikle sütün akışkanlığını kaybedip bağlı bir kıvam alması için uygundur.",
+          "text": "koyulaşmak",
+          "usage_role": "contextual",
+          "applicability": "Süt, katran veya bal gibi bir maddenin akışkanlığını yitirmesi anlatılırken kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Akışkan maddenin bağlı ve koyu bir duruma geçmesini korur.",
-            "loses": "Yalnızca genel koyulaşma olup belirgin pıhtı oluşturmayan durumları kapsamayabilir.",
+            "fit": "none",
+            "preserves": "Maddenin yoğunlaşıp daha az akışkan duruma gelmesini korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F001"
-          ]
-        },
-        {
-          "text": "koyulaşmak",
-          "usage_role": "contextual",
-          "applicability": "Bal veya katranın kıvam kazanması bağlamında doğal karşılıktır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Maddenin akışkanlığının azalmasını korur.",
-            "loses": "Pıhtılaşma veya katılaşmanın tamamlanmış sonucunu zorunlu olarak bildirmez.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001",
-            "F003"
           ]
         }
       ],
@@ -860,17 +616,17 @@
         {
           "lexical_unit_id": "lu_023",
           "rendering_kind": "ordinary",
-          "target_gloss": "süt koyulaşıp pıhtılaşmak"
+          "target_gloss": "sütün koyulaşıp pıhtılaşması"
         },
         {
           "lexical_unit_id": "lu_024",
           "rendering_kind": "ordinary",
-          "target_gloss": "katran veya bal koyulaşıp katılaşmak"
+          "target_gloss": "katranın veya balın koyulaşıp katılaşması"
         },
         {
           "lexical_unit_id": "lu_025",
           "rendering_kind": "ordinary",
-          "target_gloss": "koyulaşmış süt"
+          "target_gloss": "pıhtılaşmış süt"
         }
       ],
       "excluded_glosses": [],
@@ -879,242 +635,80 @@
           "neighbor_ref": "root_001280/B005",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dalı süt yanında bal ve katranı, ayrıca koyu süt sonucunu kapsar.",
-          "neighbor_only": "Komşu dal içeceğin karaciğere benzer ölçüde koyu bir kıvam almasını özellikle belirtir.",
-          "gloss": "içeceğin koyulaşması",
-          "shared_zone": "İki dal süt veya başka bir içeceğin koyulaşıp pıhtılaşmasında örtüşür.",
-          "distinction": "Odak dalının madde kapsamı daha geniştir; komşu dal içecek ve belirli yoğunluk benzetmesiyle sınırlıdır."
-        },
-        {
-          "neighbor_ref": "root_001034/B003",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı sütü ve koyulaşmış süt sonucunu özellikle kapsar.",
-          "neighbor_only": "Komşu dal yiyecek ve özsuyu da kapsar, ayrıca asma dalının kuruyup sertleşmesine uzanır.",
-          "gloss": "koyulaşıp katılaşma",
-          "shared_zone": "Bal ve benzeri akışkanların koyulaşıp sertleşmesi iki dalda ortaktır.",
-          "distinction": "Odak dalı belirli akışkanların süreç sonundaki pıhtılaşmasına, komşu dal daha geniş sertleşme ve kuruma alanına yönelir."
-        },
-        {
-          "neighbor_ref": "root_000933/B004",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı süt, katran ve balı kapsayan genel bir koyulaşma sürecidir.",
-          "neighbor_only": "Komşu dal yalnızca balın bağlanıp koyulaştırılmasını belirtir.",
-          "gloss": "balı koyulaştırma",
-          "shared_zone": "Balın kıvam kazanıp bağlanması iki dalda da bulunur.",
-          "distinction": "Odak dalı kendiliğinden veya süreç sonunda gerçekleşen daha geniş dönüşümü, komşu dal bal üzerindeki özel işlemi anlatır."
+          "focus_only": "Odak dal süt dışında katran ve balı, ayrıca ateşle koyulaştırma örneğini kapsar.",
+          "neighbor_only": "Komşu dal içeceğin karaciğere benzer ölçüde özel bir yoğunluğa ulaşmasını belirtir.",
+          "gloss": "içeceğin koyulaşıp pıhtılaşması",
+          "shared_zone": "Her iki dal da sütün veya başka bir içeceğin yoğunlaşıp pıhtılaşmasını anlatır.",
+          "distinction": "Komşu dal içeceklerle ve belirgin bir pıhtı kıvamıyla sınırlıdır; odak dalın madde kapsamı katran ve bala kadar genişler ve ısıyla koyulaştırmayı da içerebilir."
         }
       ],
-      "neighbor_coverage_note": "Koyulaşma, karışma, ısıtma ve süt ürününe ilişkin bütün adaylar değerlendirildi; gerçek pıhtılaşma sınırını gösteren üçü yayımlandı.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; içeceğin pıhtılaşması en yakın sınırı verir, kalanlar karıştırma, ufalama, yağ oluşumu veya yalnız ısıyla yoğunlaşma gibi ayrı süreçlerdir.",
       "branch_image_ar": "خثور السائل وانعقاده في آخر أمره",
       "what_is_ar": "يدخل فيه آل اللبن أو النبات أو القطران أو العسل إذا خثر أو انعقد، والآيل اللبن الخاثر.",
+      "what_is_not_ar": "ليس رجوعا معنويا ولا سياسة ولا أداة، وإن علله بعض المصدر بآخر الأمر.",
       "source_phrase_ar": "آل اللبن أي خثر؛ لا يخثر إلا آخر أمره؛ آل القطران إذا خثر (maqayis)؛ آل القطران أو العسل إذا أعقد بالنار (jamhara)؛ آل القطران والعسل أي خثر؛ الآيل اللبن الخاثر (sihah)",
       "sources": [
         "MQ",
         "JA",
         "SI"
       ],
-      "source_note": {
-        "SI": "Koyulaşıp pıhtılaşmış süt, sürecin ortaya çıkardığı ürün olarak ayrıca adlandırılır."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000067/B006",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi görünen kişi ya da nesne siluetini ve bir şeyin uçlarıyla yanlarını aynı dalda verir. Ayrıca sabah ve akşam görülen yükselmiş görüntünün serap olup olmadığı konusunda kaynak içi karşıt anlatım bulunduğundan dal ancak bu ayrım açıkça korunarak kullanılabilir.",
+        "boundary_note": "Görünen siluet, uzaktan beliren görüntü ve nesnenin uçları aynı aktarımda buluşur; görüntünün doğrudan serap sayılması kesinleştirilemez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın görünür siluet ve uç anlamlarını korur; aile veya başka kalıplaşmış anlamlar bu dala taşınmaz."
+      },
       "concept_map": {
-        "definition": "Uzaktan görünen kişi ya da şeyin silueti ile günün başında veya sonunda cisimleri yükseliyormuş gibi gösteren görünüş olgusudur. Dağ gibi bir şeyin dışa görünen uçları ve yanları da bu görünür sınır anlamının uzantısıdır.",
+        "definition": "Bir kişi ya da nesnenin uzaktan seçilen görünür silueti veya bir nesnenin dışa uzanan uçları ve yanlarıdır. Sabah ya da akşam cisimleri yükselmiş gibi gösteren görüntü de buraya aktarılır, ancak bunun serap sayılıp sayılmadığı kesin değildir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Uzaktan seçilen kişi veya şeyin görünür silueti temel görünüşü oluşturur.",
+            "statement": "Bir kişi veya nesnenin uzaktan seçilen görünür siluetidir.",
             "claim_ids": [
-              "lu_026",
-              "lu_027"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "source_variant",
-            "statement": "Günün başı ve sonundaki görünüş, bir aktarımda serap sayılırken diğerinde seraptan ayrılır.",
+            "role": "extension",
+            "statement": "Bir dağ gibi nesnenin dış uçları ve yanları, görünür dış çizgi anlamının uzantısıdır.",
             "claim_ids": [
-              "lu_026"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "extension",
-            "statement": "Bir dağın dıştan görünen uçları ve yanları, görünür sınır anlamının mekânsal uzantısıdır.",
+            "role": "source_variant",
+            "statement": "Sabah ve akşam görülen yükselmiş görüntü bir aktarımda serap sayılırken başka bir aktarımda seraptan ayrılır.",
             "claim_ids": [
-              "lu_028"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Anlatımlar uzaktan görünen siluet ile günün başı ve sonundaki yükseliyormuş izlenimi veren görünüşü aynı alanda toplar. Bu görünüşün serap olup olmadığı konusunda kaynaklar arasında açık bir ayrım vardır.",
+        "common_summary": "Aktarımlar görünür kişi veya nesne silueti ile dış uçları bildirir; sabah ve akşam cisimleri yükselmiş gibi gösteren görüntünün serapla özdeş olup olmadığı konusunda ise ayrışır.",
         "common_claim_ids": [
-          "lu_026"
-        ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_027"
-            ],
-            "kind": "restriction",
-            "summary": "Kişiyle ilgili kullanım, onun ailesini değil uzaktan görülen bedenini veya siluetini belirtir."
-          },
-          {
-            "claim_ids": [
-              "lu_028"
-            ],
-            "kind": "extension",
-            "summary": "Görünür dış sınır anlamı, dağın uçları ve çevresindeki yan bölümler için kullanılır."
-          }
-        ],
-        "supporting_claim_ids": [],
-        "duplicate_claims": []
-      },
-      "concept_gloss": {
-        "text": "uzaktan görünen siluet veya görünür kenar",
-        "applicability": "Görünen kişi ya da şeyin siluetini ve bir nesnenin dıştan seçilen uçlarını birlikte karşılar.",
-        "error_profile": {
-          "fit": "none",
-          "preserves": "Hem görünen cismi hem de onun belirgin dış uçlarına uzanan anlamı korur.",
-          "loses": null,
-          "adds": null,
-          "collision": null
-        },
-        "facet_ids": [
-          "F001",
-          "F002",
-          "F003"
-        ]
-      },
-      "contextual_glosses": [
-        {
-          "text": "siluet",
-          "usage_role": "contextual",
-          "applicability": "Uzaktaki kişi veya cismin biçimi seçildiğinde doğal karşılıktır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Uzaktan seçilen görünür kişi veya cisim biçimini korur.",
-            "loses": "Dağın yanları ve uçları anlamını kapsamaz.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001",
-            "F002"
-          ]
-        },
-        {
-          "text": "uçlar ve yanlar",
-          "usage_role": "contextual",
-          "applicability": "Dağ gibi büyük bir şeyin dıştan görünen çevre bölümleri için uygundur.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Nesnenin dış sınırını ve yan bölgelerini korur.",
-            "loses": "Uzaktan görünen insan veya cisim siluetini kapsamaz.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F003"
-          ]
-        }
-      ],
-      "lexical_glosses": [
-        {
-          "lexical_unit_id": "lu_026",
-          "rendering_kind": "ordinary",
-          "target_gloss": "uzaktan görünen siluet veya gün başı ve sonundaki görünüş"
-        },
-        {
-          "lexical_unit_id": "lu_027",
-          "rendering_kind": "ordinary",
-          "target_gloss": "kişinin görünen bedeni veya silueti"
-        },
-        {
-          "lexical_unit_id": "lu_028",
-          "rendering_kind": "ordinary",
-          "target_gloss": "dağın uçları ve yanları"
-        }
-      ],
-      "excluded_glosses": [],
-      "neighbor_distinctions": [
-        {
-          "neighbor_ref": "root_000416/B002",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı uzaktan görünen kişi veya cisim siluetini de kapsar.",
-          "neighbor_only": "Komşu dal kap, yük ve yastık gibi çok çeşitli nesnelerin köşe ve yanlarına uzanır.",
-          "gloss": "görünür yan ve uç",
-          "shared_zone": "İki dal bir nesnenin dışta kalan yanı veya ucu anlamında örtüşür.",
-          "distinction": "Odak dalında görünürlük ve siluet bağı korunur; komşu dal çok çeşitli nesnelerin yapısal yanlarını adlandırır."
-        },
-        {
-          "neighbor_ref": "root_000548/B003",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı kişi siluetini ve günün belirli saatlerindeki optik görünüşü içerir.",
-          "neighbor_only": "Komşu dal kuyu ve gökyüzü gibi şeylerin yan ve çevre bölümlerine daha genel biçimde uygulanır.",
-          "gloss": "kenar ve görünüş",
-          "shared_zone": "Dağın veya başka bir şeyin yanı ve çevresi iki dalın ortak bölgesidir.",
-          "distinction": "Odak dalı görülen dış biçimden kenara uzanır; komşu dal görünüş koşulu olmadan genel yan ve çevreyi bildirir."
-        }
-      ],
-      "neighbor_coverage_note": "Kenar, yan, yükseklik, yüzey ve siluetle ilgili bütün adaylar incelendi; görünürlük koşulunu en açık ayıran iki karşılaştırma seçildi.",
-      "branch_image_ar": "الشخص المترائي والطرف الظاهر",
-      "what_is_ar": "يدخل فيه الآل بمعنى الشخص أو ما يتراءى في أول النهار وآخره ويرفع الشخوص، وأطراف الشيء ونواحيه كآل الجبل والبعير والخيمة.",
-      "source_phrase_ar": "آل الرجل شخصه؛ آل كل شيء؛ آل الجبل أطرافه ونواحيه (maqayis)؛ الآل السراب؛ آل كل شيء شخصه (jamhara)؛ الآل الشخص؛ الآل الذي تراه في أول النهار وآخره كأنه يرفع الشخوص وليس هو السراب (sihah)",
-      "sources": [
-        "MQ",
-        "JA",
-        "SI"
-      ],
-      "source_note": {
-        "MQ": "Kişiyle ilgili kullanım, onun ailesini değil uzaktan görülen bedenini veya siluetini belirtir. Görünür dış sınır anlamı, dağın uçları ve çevresindeki yan bölümler için kullanılır."
-      }
-    },
-    {
-      "branch_ref": "root_000067/B007",
-      "concept_map": {
-        "definition": "Bir kişinin veya şeyin içinde bulunduğu mevcut hal ve durumdur; iyi ya da kötü oluş gibi bir nitelemeyle kullanılabilir.",
-        "facets": [
-          {
-            "facet_id": "F001",
-            "role": "core",
-            "statement": "Kişinin veya şeyin belirli bir anda içinde bulunduğu hal ve durum temel anlamdır.",
-            "claim_ids": [
-              "lu_029"
-            ]
-          },
-          {
-            "facet_id": "F002",
-            "role": "example",
-            "statement": "Kötü durumda bulunma ifadesi, hal anlamının nitelemeli kullanımına örnektir.",
-            "claim_ids": [
-              "lu_029"
-            ]
-          }
-        ]
-      },
-      "source_synthesis": {
-        "common_summary": "Kaynaklar, sözcüğü kişinin veya şeyin içinde bulunduğu hal ve durum olarak açıklar; kötü durum ifadesi bu genel anlamın örneğidir.",
-        "common_claim_ids": [
-          "lu_029"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "hal, durum",
-        "applicability": "Kişi veya şeyin belirli bir andaki durumunu genel ve doğal biçimde karşılar.",
+        "text": "görünür siluet ve dış uçlar",
+        "applicability": "Uzaktan seçilen kişi veya nesne görüntüsü ile nesnenin görünür uç ve yanlarını birlikte temsil eder.",
         "error_profile": {
           "fit": "none",
-          "preserves": "İçinde bulunulan mevcut hali herhangi bir ek koşul yüklemeden korur.",
+          "preserves": "Görünür siluet ile dış uç ve yanlar arasındaki kapsamı korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -1124,12 +718,154 @@
           "F002"
         ]
       },
-      "contextual_glosses": [],
+      "contextual_glosses": [
+        {
+          "text": "siluet",
+          "usage_role": "contextual",
+          "applicability": "Bir kişi ya da nesne uzaktan yalnız dış çizgileriyle seçildiğinde kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Uzaktan seçilen görünür kişi veya nesne biçimini korur.",
+            "loses": "Nesnenin uçları ve yanları anlamını dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_026",
+          "rendering_kind": "ordinary",
+          "target_gloss": "görünür siluet; uzaktan beliren görüntü"
+        },
+        {
+          "lexical_unit_id": "lu_027",
+          "rendering_kind": "ordinary",
+          "target_gloss": "adamın görünen silueti"
+        },
+        {
+          "lexical_unit_id": "lu_028",
+          "rendering_kind": "ordinary",
+          "target_gloss": "dağın uçları ve yanları"
+        }
+      ],
+      "excluded_glosses": [
+        {
+          "text": "serap",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Sabah veya akşam görülen uzaktan görüntü olma yönünü kısmen korur.",
+            "loses": "Kişi ya da nesnenin gerçek silueti ile nesnenin uçları ve yanlarını dışarıda bırakır.",
+            "adds": "Görüntünün kesinlikle ışık kırılmasına dayalı yanılsama olduğu anlamını ekler.",
+            "collision": "Kaynak aktarımının bir bölümü bu görüntüyü açıkça seraptan ayırır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000548/B003",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal kişi veya nesnenin uzaktan görünen siluetini ve günün belli saatlerinde beliren görüntüyü de içerir.",
+          "neighbor_only": "Komşu dal kuyu ve gök gibi alanların kenar ve yönlerine, ayrıca bu adın çekimli sayı biçimlerine uzanır.",
+          "gloss": "nesnenin kenarı ve yanı",
+          "shared_zone": "Her iki dal da bir nesnenin dış tarafını, yanını veya sınır bölgesini anlatabilir.",
+          "distinction": "Komşu dal somut kenar ve yan kavramına dayanır; odak dal bu alanı kapsamakla birlikte görünür siluet ve uzaktan beliren görüntü çekirdeğine de sahiptir."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; kenar ve yan komşusu uç anlamını en iyi sınırlar, diğer adaylar yükselti, yüzey veya beden yanı gibi daha dar alanlardadır.",
+      "branch_image_ar": "الشخص المترائي والطرف الظاهر",
+      "what_is_ar": "يدخل فيه الآل بمعنى الشخص أو ما يتراءى في أول النهار وآخره ويرفع الشخوص، وأطراف الشيء ونواحيه كآل الجبل والبعير والخيمة.",
+      "what_is_not_ar": "الجمهرة تسمي الآل السراب، والصحاح يقول ليس هو السراب؛ ولا يدخل فيه آل الأهل.",
+      "source_phrase_ar": "آل الرجل شخصه؛ آل كل شيء؛ آل الجبل أطرافه ونواحيه (maqayis)؛ الآل السراب؛ آل كل شيء شخصه (jamhara)؛ الآل الشخص؛ الآل الذي تراه في أول النهار وآخره كأنه يرفع الشخوص وليس هو السراب (sihah)",
+      "sources": [
+        "MQ",
+        "JA",
+        "SI"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_000067/B007",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi ilgili sözcüğü doğrudan bir kişi ya da şeyin içinde bulunduğu durum olarak tanımlar ve kötü durum örneği verir. Dal çerçevesi bu soyut durum anlamını doğru biçimde araç anlamından ayırır.",
+        "boundary_note": "Bu dal içinde bulunulan durumdur; kullanılan araç, taşıyıcı yapı veya nesnenin ilk bölümü değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalnız yalın durum anlamını verir ve aynı biçimin araç ya da taşıyıcı nesne anlamlarını içeri almaz."
+      },
+      "concept_map": {
+        "definition": "Bir kişinin ya da şeyin belirli bir anda içinde bulunduğu iyi, kötü veya başka türlü durumdur.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Bir kişi veya şeyin içinde bulunduğu mevcut durumu belirtir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "example",
+            "statement": "Kötü durumda bulunma, bu genel durum anlamının açık örneğidir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar bu kullanımı bir kişi ya da şeyin içinde bulunduğu durum olarak ortak biçimde tanımlar ve kötü durum anlatımını örnekler.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "içinde bulunulan durum",
+        "applicability": "Kişinin veya şeyin belirli andaki iyi, kötü ya da başka türlü durumunu genel olarak anlatır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Mevcut durumda bulunma çekirdeğini değer yönü eklemeden korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "hal",
+          "usage_role": "contextual",
+          "applicability": "Bir kişinin ya da şeyin o sıradaki durumu kısa ve doğal biçimde belirtilirken kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "İçinde bulunulan durumu bağlam içinde korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
       "lexical_glosses": [
         {
           "lexical_unit_id": "lu_029",
           "rendering_kind": "ordinary",
-          "target_gloss": "kişinin veya şeyin içinde bulunduğu hal"
+          "target_gloss": "içinde bulunulan durum"
         }
       ],
       "excluded_glosses": [],
@@ -1140,34 +876,15 @@
           "boundary_match": "exact",
           "focus_only": null,
           "neighbor_only": null,
-          "gloss": "hal, durum",
-          "shared_zone": "Her iki dal kişi veya şey için mevcut bir halin bulunmasını aynı sınırla anlatır.",
-          "distinction": "Verilen dal sınırlarında anlamı daraltan veya genişleten bir özellik bulunmadığından bunlar eş anlamlıdır."
-        },
-        {
-          "neighbor_ref": "root_000051/B001",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı yalnızca kişi veya şeyin içinde bulunduğu hali anlatır.",
-          "neighbor_only": "Komşu dal hal yanında iş, mesele ve genel konu anlamlarını da kapsar.",
-          "gloss": "durum ve mesele",
-          "shared_zone": "İki dal kişi veya şeyin hali anlamında örtüşür.",
-          "distinction": "Odak dalı mevcut durumla sınırlıdır; komşu dal bağımsız bir iş veya meseleye de ad olabilir."
-        },
-        {
-          "neighbor_ref": "root_000161/B006",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı herhangi bir kişi veya şeyin genel durumunu kapsar.",
-          "neighbor_only": "Komşu dal özellikle bulunulan yerin veya yaşam ortamının hal ve görünümüne yönelir.",
-          "gloss": "durum ve ortam hali",
-          "shared_zone": "Her iki dal iyi veya kötü diye nitelenebilen bir hali gösterebilir.",
-          "distinction": "Odak dalının kapsamı geneldir; komşu dal durumu yerleşim veya ortam görünümüyle ilişkilendirir."
+          "gloss": "mevcut durum",
+          "shared_zone": "Her iki dal da bir kişi ya da şeyin içinde bulunduğu mevcut durumu belirtir.",
+          "distinction": "Verilen kanıtlarda kapsam, koşul veya katılımcı ayrımı görünmediğinden iki dal aynı durum çekirdeğini ve aynı sınırı paylaşır."
         }
       ],
-      "neighbor_coverage_note": "Hal, mesele, ortam, kusur ve kötü nitelik adaylarının tümü değerlendirildi; biri tam eş anlamlı, ikisi sınır açıklayıcı olarak yayımlandı.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; tam eş anlamlı durum dalı yayımlandı, diğerleri aşama, ortam, eksiklik, kötülük veya durum değişikliği gibi ek sınırlar taşır.",
       "branch_image_ar": "آلة الحال التي يكون عليها الشيء",
       "what_is_ar": "يدخل فيه الآلة أو الألة بمعنى الحالة، كقولهم هو بآلة سوء.",
+      "what_is_not_ar": "ليس الآلة بمعنى الأداة أو الخشبات أو الجنازة، ولا آل الأهل.",
       "source_phrase_ar": "الآلة الحالة (maqayis)؛ والآلة الحالة (jamhara)؛ والآلة الحالة يقال هو بآلة سوء (sihah)",
       "sources": [
         "MQ",
@@ -1178,59 +895,59 @@
     },
     {
       "branch_ref": "root_000067/B008",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi genel aracı, çadırı taşıyan direkleri ve ölüyü taşıyan sedyeyi aynı taşıma ya da işe yarama alanında verir. Dal çerçevesi araç çekirdeği ile özel taşıyıcı örnekleri doğru biçimde ayırır.",
+        "boundary_note": "Bu dal iş görmeye veya taşımaya yarayan somut nesnedir; soyut durum anlamını kapsamaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın araç ve taşıyıcı nesne anlamını korur; çadır direkleri ile cenaze sedyesi bu çekirdeğin özel gerçekleşmeleridir."
+      },
       "concept_map": {
-        "definition": "Bir işte yararlanılan araç veya bir şeyi ayakta tutan ya da taşıyan düzenektir. Çadır direkleri ile ölüyü taşıyan tabut veya sedye bu genel işlevin özel örnekleridir.",
+        "definition": "Bir işin yapılmasına, bir yapının ayakta tutulmasına veya bir yükün taşınmasına yarayan somut araç ya da taşıyıcı düzendir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "İnsanın bir işi gerçekleştirmek için kullandığı araç temel anlamdır.",
+            "statement": "Bir işi yapmaya veya bir amacı gerçekleştirmeye yarayan somut araçtır.",
             "claim_ids": [
-              "lu_030"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Çadırı kurup ayakta tutan direkler, destekleyici araç işlevinin özel biçimidir.",
+            "statement": "Çadırı ayakta tutan direkler, destekleyici araç türüdür.",
             "claim_ids": [
-              "lu_031"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "specialization",
-            "statement": "Ölüyü taşımaya yarayan tabut veya taşıyıcı sedye, taşıma aracının özel biçimidir.",
+            "statement": "Ölüyü taşımaya yarayan sedye, taşıyıcı araç türüdür.",
             "claim_ids": [
-              "lu_032"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak anlatım, çadırın üzerine kurulduğu direkleri destekleyici bir düzenek olarak gösterir. Genel araç, çadır desteği ve cenaze taşıyıcısı kullanımları işlevsel bir araç alanında birleşir.",
+        "common_summary": "Kaynaklar somut araç ve taşıyıcı yapı alanını verir; çadır direkleri destekleme, cenaze sedyesi ise taşıma işlevinin özel örnekleridir.",
         "common_claim_ids": [
-          "lu_031"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_030",
-              "lu_032"
-            ],
-            "kind": "extension",
-            "summary": "Kapsam genel olarak kullanılan araçlara ve özel olarak ölüyü taşıyan tabut ya da sedyeye uzanır."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "araç veya taşıyıcı düzenek",
-        "applicability": "Genel aleti, destekleyici çadır parçalarını ve cenaze taşıyıcısını işlev temelinde birlikte karşılar.",
+        "text": "araç ve taşıyıcı düzen",
+        "applicability": "İş görmeye, desteklemeye veya taşımaya yarayan somut nesneleri ortak işlevleriyle kapsar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Kullanma, destekleme ve taşıma işlevlerinin oluşturduğu genel araç alanını korur.",
+          "preserves": "Genel araç, destekleyici yapı ve taşıyıcı düzen kapsamını korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -1245,32 +962,16 @@
         {
           "text": "araç",
           "usage_role": "general",
-          "applicability": "Bir işi yapmak için kullanılan genel nesne anlamında uygundur.",
+          "applicability": "Belirli bir işi yapmaya yarayan somut nesne genel olarak adlandırıldığında kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Bir işte yararlanılan nesne işlevini korur.",
-            "loses": "Tabut, sedye ve çadır direkleri gibi özel taşıyıcı yapıları açıkça göstermez.",
+            "fit": "none",
+            "preserves": "Bir amaca hizmet eden somut nesne çekirdeğini korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F001"
-          ]
-        },
-        {
-          "text": "taşıyıcı iskelet",
-          "usage_role": "contextual",
-          "applicability": "Çadırı ayakta tutan veya cenazeyi taşıyan yapı için açıklayıcı karşılıktır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Destekleme ve taşıma işlevini birlikte korur.",
-            "loses": "Her türlü genel araç kullanımını kapsamaz.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F002",
-            "F003"
           ]
         }
       ],
@@ -1278,120 +979,107 @@
         {
           "lexical_unit_id": "lu_030",
           "rendering_kind": "ordinary",
-          "target_gloss": "bir işte kullanılan araç"
+          "target_gloss": "araç"
         },
         {
           "lexical_unit_id": "lu_031",
           "rendering_kind": "ordinary",
-          "target_gloss": "çadırın direkleri veya taşıyıcı ağaçları"
+          "target_gloss": "çadır direkleri ve taşıyıcı ağaçları"
         },
         {
           "lexical_unit_id": "lu_032",
           "rendering_kind": "ordinary",
-          "target_gloss": "tabut veya ölünün taşındığı sedye"
+          "target_gloss": "cenaze veya ölüyü taşıyan sedye"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000021/B004",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı çadır direklerini ve cenaze taşıyıcısını özel olarak kapsar.",
-          "neighbor_only": "Komşu dal silahı, hazırlığı ve su kabını da araç alanına katar.",
-          "gloss": "araç ve donanım",
-          "shared_zone": "Her iki dal bir işi yapmaya yarayan araç veya donanım anlamında örtüşür.",
-          "distinction": "Odak dalı destekleme ve taşıma örneklerine uzanır; komşu dal daha geniş hazırlık ve donanım türlerini içerir."
-        },
-        {
-          "neighbor_ref": "root_000357/B006",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı genel araçları ve çadırın taşıyıcı direklerini de kapsar.",
-          "neighbor_only": "Komşu dal kılıç askısı, binek üzerindeki taşıma düzeneği ve yük hayvanlarına uzanır.",
-          "gloss": "taşıma aracı",
-          "shared_zone": "İki dal bir şeyi taşımaya yarayan düzenek anlamında kesişir.",
-          "distinction": "Odak dalında cenaze taşıyıcısı özel bir örnektir; komşu dal farklı yük ve binek taşıyıcılarını merkez alır."
-        },
-        {
-          "neighbor_ref": "root_000356/B005",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı kullanılabilir araç ve taşıyıcı düzenek kavramını içerir.",
-          "neighbor_only": "Komşu dal nesnelerin altına konan belirli destek taşlarını, ağaçları ve sehpaları adlandırır.",
-          "gloss": "araç ve destek",
-          "shared_zone": "Her iki dal başka bir şeyi taşıyan veya ayakta tutan nesneleri kapsar.",
-          "distinction": "Odak dalı işlevsel araç sınıfına uzanır; komşu dal doğrudan dayanak olan somut destek parçalarıyla sınırlıdır."
+          "relation_type": "synonym",
+          "boundary_match": "exact",
+          "focus_only": null,
+          "neighbor_only": null,
+          "gloss": "araç ve gereç",
+          "shared_zone": "Her iki dal da bir işin yapılmasına veya bir amacın gerçekleştirilmesine yarayan araç ve gereçleri anlatır.",
+          "distinction": "Verilen kanıtlarda çekirdek kapsamı değiştiren bir koşul, katılımcı veya kullanım sınırı görünmez; özel nesne türleri bağımlı örneklerdir."
         }
       ],
-      "neighbor_coverage_note": "Araç, taşıma, destek, dik parça ve belirli alet adaylarının tümü karşılaştırıldı; genel araç ile özel taşıyıcı sınırını gösteren üçü seçildi.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel araç dalı en yakın karşılaştırmadır, diğerleri belirli bir iğne, taşıt, destek, anahtar, eksen veya yapı parçasıyla sınırlıdır.",
       "branch_image_ar": "الآلة الحاملة أو الأداة",
       "what_is_ar": "يدخل فيه الآلة بمعنى الأداة، وخشبات الخيمة، والجنازة أو الحامل الذي يحمل عليه.",
+      "what_is_not_ar": "ليس الحالة، ولا التأويل، ولا آل الأهل.",
       "source_phrase_ar": "آل الخيمة العمد (maqayis)؛ الآلة الأداة؛ خشبات تبنى عليها الخيمة؛ الآلة الجنازة (sihah)",
       "sources": [
         "MQ",
         "SI"
       ],
-      "source_note": {
-        "SI": "Kapsam genel olarak kullanılan araçlara ve özel olarak ölüyü taşıyan tabut ya da sedyeye uzanır."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000067/B009",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bu adı dağ keçilerinin erkeği için açıkça verir; dağa sığınıp korunması adlandırmaya ilişkin bir açıklamadır, hayvan türünün kurucu tanımının yerine geçmez.",
+        "boundary_note": "Dal belirli bir erkek dağ keçisini adlandırır; genel olarak dağa sığınma eylemini ya da bütün dağ hayvanlarını kapsamaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın hayvan adını verir; dağa sığınma açıklaması bağımlı bir gerekçe olarak kalır ve genel fiil anlamına dönüştürülmez."
+      },
       "concept_map": {
-        "definition": "Dağa çekilip orada korunan erkek yaban keçisidir; adlandırma, hayvanın dağa sığınma davranışıyla açıklanır.",
+        "definition": "Dağlık yerde yaşayan yabani keçilerin erkek bireyidir; dağa sığınıp korunması, adın açıklaması olarak aktarılır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Erkek yaban keçisini adlandıran hayvan adı temel anlamdır.",
+            "statement": "Dağlık yerde yaşayan yabani keçilerin erkek bireyini adlandırır.",
             "claim_ids": [
-              "lu_033"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "associated_use",
-            "statement": "Hayvanın dağa dönüp sığınması, adın gerekçesi olarak aktarılır.",
+            "statement": "Hayvanın dağa sığınıp korunması, adlandırmayı açıklayan ilişkili bir özelliktir.",
             "claim_ids": [
-              "lu_033"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar sözcüğün erkek yaban keçisini gösterdiğinde birleşir. Adın, hayvanın korunmak için dağa çekilmesiyle açıklanan bir gerekçesi de aktarılır.",
+        "common_summary": "Kaynaklar adın erkek yabani dağ keçisini gösterdiğinde birleşir; dağa sığınıp korunma davranışı adlandırmanın açıklaması olarak eklenir.",
         "common_claim_ids": [
-          "lu_033"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "dağa sığınan erkek yaban keçisi",
-        "applicability": "Hayvanın türünü, erkek oluşunu ve dağa sığınma özelliğini birlikte belirtir.",
+        "text": "erkek yabani dağ keçisi",
+        "applicability": "Dağlık yerde yaşayan yabani keçinin erkek bireyini eksiksiz ve doğal biçimde belirtir.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Cinsiyet, hayvan türü ve dağa çekilme gerekçesini korur.",
+          "preserves": "Hayvan türü, yabani yaşam alanı ve erkek olma ayrımını korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001",
-          "F002"
+          "F001"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "erkek yaban keçisi",
-          "usage_role": "general",
-          "applicability": "Hayvanın doğrudan adlandırıldığı bağlamlarda doğal karşılıktır.",
+          "text": "erkek dağ keçisi",
+          "usage_role": "contextual",
+          "applicability": "Yabanilik bağlamdan açık olduğunda hayvanı doğal Türkçeyle adlandırmak için kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Hayvan türünü ve erkek oluşunu korur.",
-            "loses": "Dağa çekilip korunma davranışını açıkça belirtmez.",
+            "fit": "none",
+            "preserves": "Dağ keçisi türünü ve erkek birey ayrımını korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -1404,45 +1092,26 @@
         {
           "lexical_unit_id": "lu_033",
           "rendering_kind": "ordinary",
-          "target_gloss": "dağa sığınan erkek yaban keçisi"
+          "target_gloss": "erkek yabani dağ keçisi"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000615/B011",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı yalnız erkek hayvanı ve onun dağa sığınma gerekçesini belirtir.",
-          "neighbor_only": "Komşu dal özellikle dişiyi, bazı kullanımlarda ise iki cinsiyeti ve çoğulu kapsar.",
-          "gloss": "yaban keçisi",
-          "shared_zone": "Her iki dal yaban keçisi türündeki dağ hayvanını adlandırır.",
-          "distinction": "Odak dalının cinsiyeti erkektir; komşu dalın temel cinsiyet kapsamı dişi veya iki cinsiyetli kullanımdır."
-        },
-        {
-          "neighbor_ref": "root_001597/B005",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "Odak dalı erkek yaban keçisini adlandırır.",
-          "neighbor_only": "Komşu dal dağlarda yaşayan ceylanları topluluk olarak adlandırır.",
-          "gloss": "dağ hayvanları",
-          "shared_zone": "İki dal da dağlık alanda yaşayan toynaklı yaban hayvanları alanındadır.",
-          "distinction": "Hayvan türleri ve cinsiyet sınırları farklı olduğundan sıradan bağlamlarda birbirlerinin yerine kullanılamazlar."
-        },
-        {
-          "neighbor_ref": "root_001112/B003",
-          "relation_type": "thematic",
-          "boundary_match": "thematic_only",
-          "focus_only": "Odak dalı dağa sığınan hayvanın kendisini adlandırır.",
-          "neighbor_only": "Komşu dal hayvanın veya insanın sığınabileceği mağara ve alçak yeri adlandırır.",
-          "gloss": "sığınan hayvan ve sığınak",
-          "shared_zone": "İki dal da dağda korunmak için sığınma sahnesinde buluşur.",
-          "distinction": "Odak dalının göndergesi hayvandır; komşu dalın göndergesi sığınılan yerdir ve anlamsal çekirdekleri ayrıdır."
+          "focus_only": "Odak dal yalnız erkek yabani dağ keçisini adlandırır.",
+          "neighbor_only": "Komşu dal dişi yabani dağ keçisini, bazı aktarımlarda ise her iki cinsi ve çoğul topluluğu adlandırabilir.",
+          "gloss": "dişi ya da genel yabani dağ keçisi",
+          "shared_zone": "Her iki dal da dağlık yerde yaşayan yabani keçileri adlandırır.",
+          "distinction": "Odak dalın cinsiyet sınırı erkektir; komşu dalın temel kullanımı dişi bireydir ve bazı aktarımlarda cinsiyet kapsamı genişleyebilir."
         }
       ],
-      "neighbor_coverage_note": "Yaban keçisi, dağ ceylanı, barınak ve öteki hayvan adayları değerlendirildi; tür, cinsiyet ve sığınak ayrımını gösteren üçü yayımlandı.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; yabani dağ keçisi komşusu tür ve cinsiyet sınırını en iyi açıklar, diğer adaylar hastalık, farklı hayvan, barınak veya davranış alanındadır.",
       "branch_image_ar": "الأيل الذي يأوي إلى الجبل",
       "what_is_ar": "يدخل فيه الأيل: ذكر الوعول، مع تعليل تسميته بأنه يؤول إلى الجبل يتحصن.",
+      "what_is_not_ar": "ليس آل يؤول الفعل العام، ولا آل الأهل، ولا الآلة.",
       "source_phrase_ar": "الأيل الذكر من الوعول؛ لأنه يؤول إلى الجبل يتحصن (maqayis)؛ الايل أيضا الذكر من الاوعال (sihah)",
       "sources": [
         "MQ",
@@ -1452,42 +1121,57 @@
     },
     {
       "branch_ref": "root_000067/B010",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Tek kaynak ifadesi, içeceğin birkaç gün boyunca içinde toplanıp olgunlaştığı özel kabı doğrudan tanımlar. Dal çerçevesi kabın işlevini ve bekletme süresini eksiksiz korur.",
+        "boundary_note": "Bu dal herhangi bir kap değil, içeceği birkaç gün bekletip olgunlaştırmaya ayrılmış kaptır; koyulaşma sürecinin kendisi değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın özel kap adını korur; genel araç, genel içecek kabı veya içeceğin fiziksel değişimi anlamlarına genişletilmez."
+      },
       "concept_map": {
-        "definition": "Bir içeceğin birkaç gün tutulup tadının ve niteliğinin olgunlaşması için kullanıldığı kaptır.",
+        "definition": "İçeceğin birkaç gün boyunca içinde toplanıp bekletildiği ve böylece olgunlaşmasının sağlandığı özel kaptır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "İçeceği birkaç gün bir arada tutan kap temel göndergedir.",
+            "statement": "İçeceği birkaç gün toplu halde bekletmeye yarayan özel bir kaptır.",
             "claim_ids": [
-              "lu_034"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Kabın ayırt edici amacı, bekletilen içeceğin olgunlaşıp daha iyi duruma gelmesidir.",
+            "role": "core",
+            "statement": "Kabın işlevsel sonucu, içeceğin bekleme süresinde olgunlaşmasıdır.",
             "claim_ids": [
-              "lu_034"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Tek aktarım, kabı içeceğin birkaç gün boyunca toplandığı ve bu bekleme sonunda niteliğinin geliştiği bir saklama aracı olarak tanımlar.",
-        "common_claim_ids": [
-          "lu_034"
+        "common_summary": "Tek aktarım, kabı içeceğin birkaç gün bekletilip olgunlaştırıldığı özel bir kap olarak tanımlar.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Bu özel kap, içeceği birkaç gün bir arada bekleterek olgunlaştırmak için kullanılır."
+          }
         ],
-        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "içeceği olgunlaştırma kabı",
-        "applicability": "İçeceğin günlerce bekletilerek niteliğinin gelişmesini sağlayan özel kabı karşılar.",
+        "text": "içecek olgunlaştırma kabı",
+        "applicability": "İçeceğin birkaç gün bekletilerek olgunlaştırılmasına ayrılmış özel kabı kısa ve eksiksiz biçimde adlandırır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Kap olmayı, içeceği toplama süresini ve olgunlaştırma amacını korur.",
+          "preserves": "Kap olma, içeceği bekletme ve olgunlaştırma işlevlerini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -1501,12 +1185,12 @@
         {
           "text": "mayalama kabı",
           "usage_role": "contextual",
-          "applicability": "İçeceğin beklerken dönüşüp olgunlaşmasının mayalanma olduğu bağlamlarda kullanılabilir.",
+          "applicability": "İçeceğin bekletilerek olgunlaşması bağlamında kısa bir işlev adı gerektiğinde kullanılır.",
           "error_profile": {
             "fit": "broadening",
-            "preserves": "İçeceği dönüşüm için bir kapta bekletme işlevini korur.",
+            "preserves": "İçeceği bir süre bekleterek değiştirme ve olgunlaştırma işlevini korur.",
             "loses": null,
-            "adds": "Kanıtın açıkça belirtmediği belirli bir mayalanma sürecini zorunluymuş gibi ekleyebilir.",
+            "adds": "Kaynakta açıkça belirtilmeyen belirli bir mayalanma sürecini çağrıştırabilir.",
             "collision": null
           },
           "facet_ids": [
@@ -1519,89 +1203,87 @@
         {
           "lexical_unit_id": "lu_034",
           "rendering_kind": "ordinary",
-          "target_gloss": "içeceğin birkaç gün bekletilip olgunlaştırıldığı kap"
+          "target_gloss": "içecek olgunlaştırma kabı"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_000799/B006",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı kabın yapıldığı malzemeyi veya biçimini değil, içeceği günlerce olgunlaştırma amacını belirtir.",
-          "neighbor_only": "Komşu dal deriden yapılan, ayaklı ve havuz biçimli özel bir kabı tanımlar.",
-          "gloss": "içecek bekletme kabı",
-          "shared_zone": "Her iki dal bir içeceğin hazırlanmak üzere içinde bekletildiği kabı anlatır.",
-          "distinction": "Odak dalı süre ve olgunlaşma sonucuyla, komşu dal ise kabın deri malzemesi ve ayaklı yapısıyla sınırlanır."
-        },
-        {
-          "neighbor_ref": "root_001541/B005",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı içeceğin birkaç gün sonunda daha iyi duruma gelmesini amaçlar.",
-          "neighbor_only": "Komşu dal oyulmuş ağaç veya hurma gövdesinden yapılan belirli kabı ve ona ilişkin yasağı kapsar.",
-          "gloss": "içecek olgunlaştırma kabı",
-          "shared_zone": "İki dal içeceğin içinde bekletildiği özel kabı gösterir.",
-          "distinction": "Odak dalı işlev ve süreyi, komşu dal malzeme, yapım biçimi ve özel kullanım hükmünü öne çıkarır."
-        },
-        {
-          "neighbor_ref": "root_000286/B007",
+          "neighbor_ref": "root_000384/B006",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak dalı içeceği olgunlaştırmak için günlerce bekletme işlevini zorunlu kılar.",
-          "neighbor_only": "Komşu dal büyük küpü veya onun konduğu yeri genel olarak adlandırır.",
-          "gloss": "olgunlaştırma kabı ve küp",
-          "shared_zone": "Her iki dal sıvı veya içecek alabilen büyükçe bir kap alanında buluşur.",
-          "distinction": "Odak dalı özel bir hazırlama işleviyle tanımlanır; komşu dal biçim ve büyüklük merkezli genel bir kap adıdır."
+          "focus_only": "Odak dal içeceği birkaç gün bekletip olgunlaştırma işleviyle tanımlanır.",
+          "neighbor_only": "Komşu dal büyük küp ya da genel kap türüdür ve içeceği olgunlaştırma işlevi zorunlu değildir.",
+          "gloss": "büyük küp veya kap",
+          "shared_zone": "Her iki dal da sıvı veya içecek koyulabilen bir kap türünü anlatır.",
+          "distinction": "Komşu dal biçimsel olarak büyük bir küp veya genel kaptır; odak dalın ayırt edici sınırı içeceği birkaç gün bekletip olgunlaştırma işlevidir."
         }
       ],
-      "neighbor_coverage_note": "Küp, bardak, deri kap, tulum ve oyma kap adaylarının tümü değerlendirildi; olgunlaştırma işlevini en iyi ayıran üçü seçildi.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel büyük kap en yakın karşılaştırmadır, diğerleri bardak, deri tekne, tulum veya oyulmuş ağaç gibi farklı kap türleridir.",
       "branch_image_ar": "الإيال وعاء الشراب حتى يجود",
       "what_is_ar": "يدخل فيه الإيال: وعاء يجمع فيه الشراب أياما حتى يجود.",
+      "what_is_not_ar": "ليس الخثور نفسه، ولا الأداة العامة، ولا التأويل.",
       "source_phrase_ar": "الإيال على فعال وعاء يجمع فيه الشراب اياما حتى يجود (maqayis)",
       "sources": [
         "MQ"
       ],
-      "source_note": {}
+      "source_note": {
+        "MQ": "Bu özel kap, içeceği birkaç gün bir arada bekleterek olgunlaştırmak için kullanılır."
+      }
     },
     {
       "branch_ref": "root_000067/B011",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Tek kaynak ifadesi bu sözcüğü kumda yetişen ve eşeklerle yabani sığırların yediği belirli bir bitki adı olarak verir. Dalın, aynı biçimdeki söz açıklama anlamından ayrı tutulması kaynakla uyumludur.",
+        "boundary_note": "Bu dal yalnız belirli bir yem bitkisinin adıdır; söz açıklama, sonuç veya genel otlak anlamlarını kapsamaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "non_bare",
+        "note": "Tanım yalnız kanıtlanan özel bitki adına bağlıdır ve biçim benzerliğinden genel bir kök ya da söz açıklama anlamı çıkarılmaz."
+      },
       "concept_map": {
-        "definition": "Kumlu yerde yetişen ve eşeklerle yaban sığırlarının severek otladığı belirli bir bitki veya ottur.",
+        "definition": "Kumlu yerde yetişen, eşeklerin ve özellikle yabani sığırların severek yediği belirli bir yem bitkisinin adıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Hayvanların otladığı belirli bir bitki veya ot adı temel anlamdır.",
+            "statement": "Kumlu yerde yetişen belirli bir ot ya da bitkiyi adlandırır.",
             "claim_ids": [
-              "lu_035"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Bitkinin kumlu yerde yetişmesi ve eşeklerle yaban sığırlarınca yenmesi ayırt edici özellikleridir.",
+            "role": "associated_use",
+            "statement": "Eşekler ve yabani sığırlar tarafından yenmesi, bitkinin ilişkili yem özelliğidir.",
             "claim_ids": [
-              "lu_035"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Tek kaynak bitkiyi, eşeklerin ve yaban sığırlarının otladığı bir ot olarak aktarır; yaban sığırlarının ona düşkün olduğunu ve kumlu yerde yetiştiğini ayrıca belirtir.",
-        "common_claim_ids": [
-          "lu_035"
+        "common_summary": "Tek aktarım, adı kumda yetişen ve eşeklerle yabani sığırlar tarafından yenen belirli bir bitkiye verir.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Ad, kumlu yerde yetişen ve eşeklerle yabani sığırların yediği özel bir yem bitkisini gösterir."
+          }
         ],
-        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "hayvanların otladığı kumluk bitkisi",
-        "applicability": "Bitki oluşunu, kumlu yetişme yerini ve hayvanlarca yenmesini birlikte karşılar.",
+        "text": "kumda yetişen yem bitkisi",
+        "applicability": "Kumlu yerde yetişme ve hayvanlarca yenme özellikleriyle kanıtlanan özel bitki adını açıklayıcı biçimde verir.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Bitkinin türsel belirsizliğini, yetişme yerini ve yem olma özelliğini korur.",
+          "preserves": "Bitki olma, kumlu yerde yetişme ve yem olarak yenme özelliklerini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -1613,13 +1295,13 @@
       },
       "contextual_glosses": [
         {
-          "text": "yemlik bir kum bitkisi",
+          "text": "bir yem otu",
           "usage_role": "explanatory",
-          "applicability": "Bitkinin özel adı bilinmeden yetişme yeri ve hayvan yemi oluşu açıklanırken uygundur.",
+          "applicability": "Özel bitki adının Türkçede yerleşik karşılığı bulunmadığında türünü açıklamak için kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Kumlu yerde yetişme ve hayvanlarca yenme özelliklerini korur.",
-            "loses": "Özellikle eşek ve yaban sığırlarının bu bitkiyi yemesini açıkça belirtmez.",
+            "preserves": "Hayvanların yediği bir bitki olma özelliğini korur.",
+            "loses": "Kumda yetişme ve özellikle eşeklerle yabani sığırların yeme ayrıntılarını dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
@@ -1633,54 +1315,37 @@
         {
           "lexical_unit_id": "lu_035",
           "rendering_kind": "ordinary",
-          "target_gloss": "eşek ve yaban sığırlarının otladığı kumluk bitkisi"
+          "target_gloss": "kumda yetişen bir yem bitkisi"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_000141/B002",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı belirli bir yem bitkisinin kendisini adlandırır.",
-          "neighbor_only": "Komşu dal insanların veya hayvanların otu yemesi ve otlaması eylemini anlatır.",
-          "gloss": "yem bitkisi ve otlama",
-          "shared_zone": "İki dal eşeğin veya başka hayvanların bitki yemesi sahnesinde birleşir.",
-          "distinction": "Odak dalının göndergesi bitkidir; komşu dalın çekirdeği bitkiyi yeme ve otlama eylemidir."
-        },
-        {
           "neighbor_ref": "root_000160/B007",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı kumlu yerde yetişir ve eşeklerle yaban sığırlarının yemi olarak tanımlanır.",
-          "neighbor_only": "Komşu dal özellikle koyunların sevdiği, yeşil kaldığı sürece yenen başka bir bitkiyi ve onun kapladığı araziyi anlatır.",
-          "gloss": "otlak bitkisi",
-          "shared_zone": "Her iki dal hayvanların severek otladığı belirli bir yem bitkisidir.",
-          "distinction": "Bitki kimlikleri, yetişme koşulları ve onları otlayan hayvanlar farklı olduğundan kapsamları yalnız kısmen örtüşür."
-        },
-        {
-          "neighbor_ref": "root_000435/B007",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı tek bir bitki türünü ve onu yiyen hayvanları belirtir.",
-          "neighbor_only": "Komşu dal tatlı otların genel sınıfını, bu otların bulunduğu araziyi ve orada otlamayı kapsar.",
-          "gloss": "yem bitkisi ve tatlı otlak",
-          "shared_zone": "İki dal hayvanların yediği ot ve otlak alanında kesişir.",
-          "distinction": "Odak dalı özel bir bitki adıdır; komşu dal genel bir mera türü ile otlama kullanımına uzanır."
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Odak dal kumlu yerde yetişen ve eşeklerle yabani sığırların yediği özel bir bitkidir.",
+          "neighbor_only": "Komşu dal koyunların sevdiği, yeşil kaldığı sürece otlanan başka bir bitkiyi ve bu bitkinin bolca yetiştiği araziyi de adlandırır.",
+          "gloss": "koyunların otladığı yeşil yem bitkisi",
+          "shared_zone": "Her iki dal da otlayan hayvanların yediği belirli bir yem bitkisini adlandırır.",
+          "distinction": "Odak dal kumlu yer, eşek ve yabani sığır bağlantısıyla tanınır; komşu dal koyunların sevdiği başka bir bitkiyi ve onun bol yetiştiği araziyi kapsar."
         }
       ],
-      "neighbor_coverage_note": "Bitki adı, otlama eylemi, yem bitkileri, ağaç ve mera adaylarının tümü değerlendirildi; bitki ile otlak sınırını gösteren üçü yayımlandı.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; hayvanların otladığı belirli bitki komşusu en açıklayıcıdır, diğer adaylar farklı bitki türleri, otlak veya otlama eylemidir.",
       "branch_image_ar": "التأويل اسم بقلة معزول",
       "what_is_ar": "يدخل فيه التأويل اسما لنبت أو بقلة ترعاها البهائم، كما ورد في تهذيب اللغة.",
+      "what_is_not_ar": "ليس تأويل الكلام ولا المرجع والمصير.",
       "source_phrase_ar": "التأويل نبت يعتلفه الحمار؛ التأويل اسم بقلة يولع بها بقر الوحش تنبت في الرمل (tahdhib)",
       "sources": [
         "TA"
       ],
-      "source_note": {}
+      "source_note": {
+        "TA": "Ad, kumlu yerde yetişen ve eşeklerle yabani sığırların yediği özel bir yem bitkisini gösterir."
+      }
     }
   ],
   "root_profile": {
-    "summary": "Kök, başlangıç ve öncelik ile geri dönüş ve sonuca varma çevresinde güçlü bir anlam kümesi kurar; aile bağı, iyi yönetim, koyulaşma, görünür siluet ve kenar, hal ve araç anlamları ise ayrı dallar oluşturur. Erkek yaban keçisi, içecek olgunlaştırma kabı ve yem bitkisi adları, bu çok anlamlı yapının sözlüksel olarak daha yalıtık üyeleridir.",
+    "summary": "Bu kök, başlangıç ve öncelikten sonuca dönmeye, aile bağından iyi yönetime, fiziksel koyulaşmadan görünür siluete, durum ve araca kadar birçok ayrı dala yayılır; ayrıca bir erkek yabani dağ keçisini, içecek olgunlaştırma kabını ve özel bir yem bitkisini adlandırır.",
     "polysemy": "polysemic",
     "organization": "mixed"
   },

@@ -172,20 +172,28 @@
         "note": "Birim türü çözümlenmemiştir; tanım yalnız kaynakta verilen karşılıklı dövüş kullanımlarını kapsar ve çıplak kökün genel anlamı sayılmaz."
       },
       "concept_map": {
-        "definition": "İki tarafın yerde ya da yaya olarak, birbirine çok yaklaşarak karşılıklı dövüşmesidir. Özellikle kılıçlarla göğüs göğüse çarpışmayı anlatır ve binek üzerinde yapılan dövüşü kapsamaz.",
+        "definition": "İki tarafın karşılıklı dövüşmesidir. Kaynak kayıtları bu çekirdeği kimi yerde döşeli zeminde çok yakın dövüşme, kimi yerde kılıçla yaya çarpışma ve binek üzerinde olmama ayrıntılarıyla sınırlandırır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "İki tarafın yerde ve birbirine çok yakın biçimde karşılıklı dövüşmesidir.",
+            "statement": "İki tarafın birbirine karşı vuruşarak dövüşmesidir.",
             "claim_ids": [
               "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Kılıçla ve yaya yapılan göğüs göğüse çarpışmadır; binek üzerindeki dövüş bu kullanıma girmez.",
+            "role": "source_variant",
+            "statement": "Bir kayıt dövüşenlerin döşeli zeminde ve birbirine yapışacak kadar yakın olmasını bildirir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "source_variant",
+            "statement": "Başka kayıtlar kılıçla yaya çarpışmayı bildirir ve binek üzerindeki dövüşü dışarıda bırakır.",
             "claim_ids": [
               "bc_001"
             ]
@@ -202,18 +210,17 @@
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "yerde, yaya ve yakın kılıç dövüşü",
-        "applicability": "Kaynaklarda belirtilen yer, yaya olma, yakınlık ve kılıç koşullarını birlikte taşıyan kısa karşılıktır.",
+        "text": "karşılıklı dövüşme",
+        "applicability": "Kaynak kümesinin ortak çekirdeğini, zemin, yakınlık, kılıç ve yaya olma ayrıntılarını zorunlu tek sınır yapmadan karşılar.",
         "error_profile": {
-          "fit": "none",
-          "preserves": "Karşılıklılığı, yakın dövüşü, yerde veya yaya olmayı ve kılıç kullanımını korur.",
-          "loses": null,
+          "fit": "narrowing",
+          "preserves": "İki taraf arasında gerçekleşen karşılıklı dövüş çekirdeğini korur.",
+          "loses": "Döşeli zeminde çok yakın dövüşme ile kılıçla yaya çarpışma ayrıntılarını doğrudan söylemez.",
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001",
-          "F002"
+          "F001"
         ]
       },
       "contextual_glosses": [

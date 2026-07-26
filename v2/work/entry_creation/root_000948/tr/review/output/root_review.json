@@ -1,0 +1,29 @@
+{
+  "verdict": "repair",
+  "summary": "B001 dalinin genel kurulumu ve iki dalin ayrimi kanitla uyumludur. Ancak kaynak birestirimi, yalnizca bir kaynakta belirtilen tedirginlik sonrasi olma kaydini butun kaynaklarin ortak cizgisi gibi sunuyor; ayrica iki kucultme biciminin karsiliklarina kanitta bulunmayan sevecenlik anlami ekleniyor. Bu iki sinirli alan en kucuk duzeltmelerle onarilmalidir.",
+  "issues": [
+    {
+      "target_ref": "root_000948/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit, durulmayi kaynaklar arasindaki ortak eksen olarak desteklerken tedirginlikten sonra olma kaydini yalnizca bir kaynak ifadesinde verir. Mevcut ortak ozet bu kaydi kaynaklarin tumunun ortak cizgisiymis gibi genellestiriyor.",
+      "smallest_correction": "Ortak ozeti, kaynaklarin durulma ve sakinlesmede birlestigini soyleyecek; tedirginlikten sonra gelmeyi ise ortak olmayan ek bir kayit olarak ayiracak bicimde duzeltin. Diger kaynak birestirimi alanlarini koruyun."
+    },
+    {
+      "target_ref": "root_000948/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_014",
+        "lu_015"
+      ],
+      "evidence_conflict": "Her iki kanit satiri da ilgili sozun yalnizca bir kucultme bicimi oldugunu belirtir. Mevcut karsiliklar, kanitta yer almayan sevecen anlatim secenegini ekliyor.",
+      "smallest_correction": "lu_014 ve lu_015 karsiliklarindan sevecenlik secenegini kaldirin; bunlari sirasiyla dingin olanin ve dinginligin kucultme bicimi olarak verin."
+    }
+  ]
+}

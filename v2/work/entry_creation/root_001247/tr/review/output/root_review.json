@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "İki kavram karşılığı kanıt kapsamını eksik yansıtıyordu. B004'te asılsızlık bütün suçlama alanına yayılmış, B005'te ise bağımsız seçme ve tercih etme kullanımı kavram karşılığında görünmez kalmıştı.",
+  "issues": [
+    {
+      "target_ref": "root_001247/B004",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, iftira ve asılsız sözün yanı sıra bir kişiyi çirkin veya ahlaka aykırı bir fiille suçlamayı da kapsar. Kavram karşılığındaki \"asılsız\" nitelemesi bütün suçlama çekirdeğini gereksiz biçimde daraltır.",
+      "smallest_correction": "concept_gloss.text değerini \"çirkin fiille suçlama, iftira ve karalama\" olarak değiştir; diğer kavram karşılığı alanlarını koru."
+    },
+    {
+      "target_ref": "root_001247/B005",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, onurlandırılacak kişiye özel ikram ayırmanın yanında bir kişi veya şeyi genel olarak seçip tercih etme kullanımını da açıkça verir. Mevcut kavram karşılığı yalnız özel ikramı anlatmasına rağmen F003'ü kapsadığını ve kayıpsız olduğunu bildirir.",
+      "smallest_correction": "concept_gloss.text değerini \"özel ikram ayırma ve seçip tercih etme\" olarak değiştir; diğer kavram karşılığı alanlarını koru."
+    }
+  ]
+}

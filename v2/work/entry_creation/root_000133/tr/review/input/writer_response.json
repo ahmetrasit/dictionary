@@ -2,43 +2,48 @@
   "branches": [
     {
       "branch_ref": "root_000133/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, bir bütünün parçasını veya ondan bir bölümü adlandırma ile bir şeyi ayırıp parçalar haline getirme anlamlarını birlikte ve açıkça destekler. Geçişli bölme işlemi ile bu işlemin sonucunda parçalı duruma gelme, aynı anlam alanının farklı katmanlarıdır.",
+        "boundary_note": "Dal hem bütün karşısındaki parçayı hem de parçalar oluşturacak biçimde bölme işlemini kapsar; belirli bir kesir oranıyla sınırlı değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Çıplak dal, genel parça ve parçalara ayırma anlamlarıyla tanımlanır; belirli bir kalıba veya özel bir bölme oranına bağlanmaz."
+      },
       "concept_map": {
-        "definition": "Bir bütünün tamamına karşılık onun bir parçası veya bölümü ve bir şeyi ayırarak parçalara bölme anlam alanıdır; ayrılan şeyin parçalanmış duruma gelmesini de kapsar.",
+        "definition": "Bir bütünün kendisinden daha küçük parça veya bölümlerinden her birini ve bir şeyi ayırarak böyle parçalara dönüştürme işlemini anlatır. Dönüşlü kullanımda, şeyin parçalar halinde bir duruma gelmesini belirtir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir şeyin tamamına karşılık onun bir parçasını, bölümünü veya bunların çoğulunu belirtir.",
+            "statement": "Bir şeyin bütünü karşısında yer alan parçasını, bölümünü veya ondan ayrılan bir kesimi belirtir.",
             "claim_ids": [
-              "lu_001",
-              "lu_002"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "core",
-            "statement": "Bir şeyi birbirinden ayrılan parçalara bölme ve böylece bölümler oluşturma işlemini belirtir.",
+            "statement": "Bir şeyi ayırarak birden çok parçaya veya bölüme dönüştürme işlemini belirtir.",
             "claim_ids": [
-              "lu_003"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "core",
-            "statement": "Bölme işleminin sonucunda bir şeyin parçalara ayrılmış duruma gelmesini belirtir.",
+            "role": "specialization",
+            "statement": "Bölme işleminin ardından şeyin parçalara ayrılmış duruma gelmesini de kapsar.",
             "claim_ids": [
-              "lu_004"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar, bir bütünün karşısındaki parça veya bölümü ve bunun çoğulunu aynı çekirdekte toplar. Aynı anlam alanı, bir şeyi ayırıp parçalara bölme işlemiyle o şeyin parçalanmış duruma gelmesi arasındaki katılımcı yönü farkını da korur.",
+        "common_summary": "Kaynakların ortak çizgisi, parçayı bütünün bir bölümü olarak tanımlar ve bir şeyi ayırıp parçalar haline getiren geçişli işlemi gösterir. Kaynakların bir bölümü ayrıca bu işlemin ardından şeyin dönüşlü biçimde parçalı duruma gelmesini belirtir.",
         "common_claim_ids": [
-          "lu_001",
-          "lu_002",
-          "lu_003",
-          "lu_004"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
@@ -46,10 +51,10 @@
       },
       "concept_gloss": {
         "text": "parça ve parçalara ayırma",
-        "applicability": "Bir bütünün parçasını, parçaların çoğulunu, bölme işlemini ve bu işlemin sonucunu birlikte temsil eden genel kavram karşılığıdır.",
+        "applicability": "Dalın bütün karşısındaki parça anlamını, geçişli bölme işlemini ve bunun parçalı duruma varan sonucunu birlikte temsil eder.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Parça-bütün karşıtlığını, ayırarak bölme işlemini ve parçalanmış sonucu birlikte korur.",
+          "preserves": "Parça, bütün-parça ilişkisi, bölme işlemi ve parçalı sonucun tamamını korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -62,13 +67,13 @@
       },
       "contextual_glosses": [
         {
-          "text": "bir kısmı",
+          "text": "parça veya bölüm",
           "usage_role": "contextual",
-          "applicability": "Bir bütünün tamamı değil de belirsiz bir parçası veya bölümü kastedildiğinde doğal metin içi karşılıktır.",
+          "applicability": "Bir bütünün içinden alınan veya o bütünü oluşturan kesimden söz edilen ad kullanımlarına uygundur.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Bütünün karşısındaki belirsiz parça veya bölüm anlamını korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Bütün karşısındaki parça veya bölüm ilişkisini korur.",
+            "loses": "Bir şeyi parçalara ayırma işlemini ve parçalı duruma gelme aşamasını dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
@@ -79,11 +84,11 @@
         {
           "text": "parçalara ayırmak",
           "usage_role": "contextual",
-          "applicability": "Bir öznenin bir şeyi ayırarak birden çok parça veya bölüm oluşturduğu geçişli bağlamlarda kullanılır.",
+          "applicability": "Bir kişinin veya etkenin bir şeyi birden çok parçaya dönüştürdüğü geçişli kullanımlara uygundur.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Bir nesneyi ayırarak parçalara bölme işlemini ve öznenin etkin rolünü korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Ayırma yoluyla parçalar oluşturma işlemini korur.",
+            "loses": "Bütünün parçasını adlandıran anlamı ve dönüşlü olarak parçalı duruma gelmeyi dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
@@ -94,11 +99,11 @@
         {
           "text": "parçalara ayrılmak",
           "usage_role": "contextual",
-          "applicability": "Bir şeyin bölme veya dağılma sonucunda parçalardan oluşur duruma geldiği bağlamlarda kullanılır.",
+          "applicability": "Bir şeyin bölünme sonucunda parçalardan oluşan bir duruma geldiği dönüşlü kullanımlara uygundur.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Etkilenen şeyin parçalara bölünmüş duruma gelmesi sonucunu korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Şeyin parçalı duruma gelmesi sonucunu korur.",
+            "loses": "Parçanın ad olarak kullanımını ve dış bir etkenin yaptığı geçişli bölme işlemini dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
@@ -111,193 +116,180 @@
         {
           "lexical_unit_id": "lu_001",
           "rendering_kind": "ordinary",
-          "target_gloss": "bir şeyin bir kısmı veya parçası"
+          "target_gloss": "bir şeyin parçası, bölümü veya ondan bir kesim"
         },
         {
           "lexical_unit_id": "lu_002",
           "rendering_kind": "ordinary",
-          "target_gloss": "bir şeyin parçaları veya bölümleri"
+          "target_gloss": "parçalar, bölümler"
         },
         {
           "lexical_unit_id": "lu_003",
           "rendering_kind": "ordinary",
-          "target_gloss": "bir şeyi parçalara ayırdı"
+          "target_gloss": "bir şeyi parçalara ayırmak"
         },
         {
           "lexical_unit_id": "lu_004",
           "rendering_kind": "ordinary",
-          "target_gloss": "şey parçalara ayrıldı"
+          "target_gloss": "parçalara ayrılmak"
         }
       ],
-      "excluded_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "kesir",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Bütünün bir bölümünü gösterme yönünü kısmen korur.",
+            "loses": "Genel parça anlamını, topluluk veya kesim kapsamını ve parçalara ayırma işlemini kaybeder.",
+            "adds": null,
+            "collision": "Belirli bir sayısal oran veya matematiksel gösterim çağrıştırabilir."
+          }
+        }
+      ],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000241/B002",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Ayırarak bölme işlemini ve bölünen şeyin parçalanmış duruma gelmesini açıkça kapsar.",
-          "neighbor_only": "Parçaların bir araya gelerek bir bütün oluşturması ilişkisini ayrıca öne çıkarır.",
-          "gloss": "parça ve bölüm",
-          "shared_zone": "Her iki dal da bir bütünün karşısındaki parçayı veya bölümü ve bir şeyi parçalara ayırmayı kapsar.",
-          "distinction": "Çekirdekleri büyük ölçüde örtüşür; ancak odak dal ayırma işlemi ile bunun sonucunu belirginleştirirken komşu dal parçaların bütünü meydana getirmesi yönünü de sınırına alır."
+          "focus_only": "Şeyin parçalar halinde bir duruma gelmesini dönüşlü biçimde de açıkça kapsar.",
+          "neighbor_only": "Parçaların bir araya gelerek bir toplamı meydana getirmesi yönünü ayrıca öne çıkarır.",
+          "gloss": "parça, bölüm ve bölme",
+          "shared_zone": "Her iki dal da bir bütünün parçasını veya bölümünü ve şeyi parçalara ayırmayı kapsar.",
+          "distinction": "Çekirdekleri büyük ölçüde örtüşür; ancak komşu dal parçaların toplamı kurma yönünü de içerirken odak dal parçalı duruma gelme sonucunu kendi biçim ailesi içinde belirginleştirir."
         },
         {
           "neighbor_ref": "root_000957/B004",
-          "relation_type": "near_synonym",
+          "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Genel parça-bütün karşıtlığını ve bir şeyi ayırarak parçalara bölme işlemini kapsar.",
-          "neighbor_only": "İnsan topluluğunu ve özellikle bir şeyden ya da kumaştan kesilmiş parçayı kapsar.",
-          "gloss": "topluluk veya kesilmiş parça",
-          "shared_zone": "Her iki dal da bir şeyin tamamından ayrılan parça veya bölüm anlamında buluşur.",
-          "distinction": "Komşu dal topluluk ve kesilmiş parça türlerini öne çıkaran daha özel bir kapsama sahiptir; odak dal ise herhangi bir şeyin parçasını ve parçalama işlemini daha genel biçimde kapsar."
+          "focus_only": "Her tür şeyde parça-bütün ilişkisini ve şeyi parçalara ayırma işlemini kapsar.",
+          "neighbor_only": "Özellikle insan topluluğu veya bir nesneden alınan parça gibi toplu ve somut kullanımları öne çıkarır.",
+          "gloss": "topluluk veya parça",
+          "shared_zone": "İki dal da bir şeyden ayrılan bölüm veya topluluk fikrinde kesişir.",
+          "distinction": "Komşu dal belirli topluluk ve parça kullanımlarına yönelir; odak dal ise genel parça kavramının yanında parçalama işlemini de çekirdeğine alır."
         },
         {
           "neighbor_ref": "root_000775/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Bir bütünün parçasını adlandırır ve kontrollü biçimde parçalara ayırma işlemini kapsar.",
-          "neighbor_only": "Bir topluluğun dağılması, insanların ayrı ayrı gelmesi ve türlerin ya da görüşlerin ayrışması gibi geniş kapsamları içerir.",
-          "gloss": "dağılma ve ayrışma",
-          "shared_zone": "Her iki dalda da daha önce bir arada bulunan şeylerin birbirinden ayrılması ortak bölgedir.",
-          "distinction": "Odak dalın merkezinde parça-bütün ilişkisi ve parçaların oluşturulması vardır; komşu dalın merkezinde ise toplulukların, kişilerin, türlerin veya görüşlerin dağılması ve ayrışması bulunur."
+          "focus_only": "Bütüne bağlı bir parçayı adlandırır ve bölmenin ortaya çıkardığı parçalı yapıyı kapsar.",
+          "neighbor_only": "Topluluğun dağılması, insanların ayrı ayrı gelmesi, türlerin veya görüşlerin farklılaşması gibi ayrışmaları kapsar.",
+          "gloss": "ayrılma ve dağılma",
+          "shared_zone": "Her iki dalda da bir arada olan şeylerin ayrılması veya ayrıştırılması bulunur.",
+          "distinction": "Odak dal ayrılmanın ürünü olan parçayı ve parçalama işlemini anlatır; komşu dalın çekirdeği ise dağılma, ayrışma ve çeşitlenme olaylarıdır."
         },
         {
           "neighbor_ref": "root_001016/B003",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Parçanın büyüklüğünü veya sayısal oranını belirlemeden her tür parçayı ve parçalama işlemini kapsar.",
-          "neighbor_only": "Yalnızca bir bütünün onda birine karşılık gelen belirli sayısal payı belirtir.",
+          "focus_only": "Herhangi bir büyüklükteki parçayı ve genel parçalama işlemini kapsar.",
+          "neighbor_only": "Yalnızca bütünün onda birine karşılık gelen belirli sayısal payı belirtir.",
           "gloss": "onda bir",
-          "shared_zone": "Her iki dal da bir bütünün tamamından daha küçük bir payı veya parçayı belirtir.",
-          "distinction": "Komşu dal sayısal olarak onda birle sınırlı özel bir paydır; odak dal ise oranı belirlenmemiş parçaları ve bunların oluşturulma işlemini kapsayan genel alandır."
+          "shared_zone": "Her iki dal da bir bütünün kendisinden küçük bir bölümünü belirtir.",
+          "distinction": "Odak dal oran belirtmeyen genel parça kavramıdır; komşu dal ise parçayı sabit olarak onda bir oranıyla sınırlar."
         },
         {
-          "neighbor_ref": "root_000203/B002",
+          "neighbor_ref": "root_000849/B006",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Herhangi bir oranla sınırlanmayan parçayı ve bir şeyi değişik sayıda parçaya bölmeyi kapsar.",
-          "neighbor_only": "Üçte bir, üçte iki ve bir şeyi üç eşit parçaya bölme gibi üç sayısına bağlı payları kapsar.",
-          "gloss": "üçte bir ve üçte iki",
-          "shared_zone": "Her iki dalda da bir bütünün paylara ayrılması ve bu paylardan birinin belirtilmesi söz konusudur.",
-          "distinction": "Komşu dal üç sayısına dayalı belirli oranları ve üçe bölmeyi anlatır; odak dalın parça ve bölme anlamı herhangi bir sayısal oranla sınırlandırılmamıştır."
+          "focus_only": "Genel parça-bütün ilişkisini, bölme işlemini ve parçalı duruma gelmeyi birlikte kapsar.",
+          "neighbor_only": "Belirli bir sözcüğün bir şeyden alınan kesim anlamındaki özel kullanımını temsil eder.",
+          "gloss": "bir şeyden bir kesim",
+          "shared_zone": "İki dal da bir şeyin tamamından daha küçük bir kesimi adlandırabilir.",
+          "distinction": "Komşu dal tek bir özel parça kullanımına dayanır; odak dal ise parça kavramını genel olarak ve onunla bağlantılı bölme süreciyle birlikte kurar."
         }
       ],
-      "neighbor_coverage_note": "Verilen bütün komşular değerlendirildi; en yakın genel parça anlamı, özel parça türü, ayrışma alanı ve belirli sayısal paylarla sınırı açıklayan beş karşıtlık yayımlandı. Diğer adaylar aynı ayrımı yinelediği veya yalnızca uzak bir alan ortaklığı sunduğu için eklenmedi."
+      "neighbor_coverage_note": "Bütün komşu adayları değerlendirildi. Genel parça, belirli kesim, ayrışma ve belirli oran sınırlarını açıklayan beş karşılaştırma seçildi; üçte bir ve beşte bir adayları onda bir karşılaştırmasını yineler, birliktelik anlamı örtüşmez, sivrisinek dalı ise yalnızca biçimsel ortaklık taşır."
     },
     {
       "branch_ref": "root_000133/B002",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynakların çoğunluk çizgisi tekil ve topluluk adında sivrisinek kimliğini destekler. Kaynak ifadesi ayrıca yazın ısırma zararını, bir topluluğa zarar vermeyi ve bir yerde çokça bulunmayı bu dalda verir. Bununla birlikte bir kaynak topluluk adını tahtakurusu olarak açıklar; küçük gövdeye dayandırılan sözcük açıklaması ise böceğin kimliğinin yerine geçmeyen bağımlı bir kaynak yorumudur.",
+        "boundary_note": "Dalın ana çekirdeği sivrisinektir, ancak bir kaynak topluluk biçimini tahtakurusu olarak açıklar; zarar verme ve bir yerde bulunma anlamları yalnızca belirtilen türemiş biçim ve söz kalıplarında geçerlidir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Sivrisineği adlandıran yalın biçimler ile zarar, çokluk ve bir yerde bulunma bildiren kalıba bağlı kullanımlar ayrı tutulur; ikinciler genel bir yalın kök anlamına dönüştürülmez."
+      },
       "concept_map": {
-        "definition": "Isırarak zarar veren küçük uçan böceği ve bu böceklerin topluluğunu belirtir; buna bağlı kullanımlar, böceğin bir yerde çok bulunmasını, insanlara verdiği zararı ve küçüklüğü yüzünden elde edilemeyecek bir şeyi anlatır.",
+        "definition": "Sivrisineği tekil veya topluluk halinde belirtir. Bir kaynak topluluk adını tahtakurusu olarak açıklar. Başka bir kaynak yazın ısırarak verdiği zararı vurgular; belirli türemiş biçimler sivrisineklerin bir topluluğa zarar vermesini ya da bir gece veya yerde çokça bulunmasını anlatır; bir kaynak açıklaması da adı böceğin gövde küçüklüğüyle ilişkilendirir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Isırarak zarar veren küçük uçan böceği tekil olarak veya bu böceklerin topluluğunu belirtir.",
+            "statement": "Tekil veya topluluk halinde sivrisineği adlandırır.",
             "claim_ids": [
-              "lu_006",
-              "lu_007"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "associated_use",
-            "statement": "Bir gecede bu böceklerin çok sayıda bulunmasını anlatan kalıplaşmış bir kullanım vardır.",
+            "statement": "Belirli türemiş kullanımlarda sivrisineklerin bir topluluğa zarar vermesini veya bir yerde bulunmasını belirtir.",
             "claim_ids": [
-              "lu_008"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "associated_use",
-            "statement": "Böceklerin bir topluluğa zarar vermesini ve o topluluğun bu zarara uğramış olmasını anlatır.",
+            "role": "source_variant",
+            "statement": "Bir kaynak açıklaması, böceğin adını gövdesinin küçüklüğü üzerinden parça anlamıyla ilişkilendirir.",
             "claim_ids": [
-              "lu_009",
-              "lu_010"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F004",
-            "role": "associated_use",
-            "statement": "Bir topluluğun toprağında veya belirli bir arazide bu böceklerin bulunmasını anlatır.",
+            "role": "source_variant",
+            "statement": "Bir kaynak sivrisineği özellikle yazın ısırarak zarar veren böcek olarak niteler.",
             "claim_ids": [
-              "lu_011",
-              "lu_012"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F005",
-            "role": "example",
-            "statement": "Böceğin aşırı küçüklüğünden hareketle elde edilemeyecek veya var olmayacak bir şeyi anlatan bir sözde kullanılır.",
+            "role": "source_variant",
+            "statement": "Bir kaynak, topluluk adını sivrisinek yerine tahtakurusu olarak açıklar.",
             "claim_ids": [
-              "lu_013"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak kaynak anlatımı, tek bir zararlı ve ısırıcı küçük uçan böcekle bu böceklerin topluluğunu aynı ad altında verir. Diğer kullanımlar bu çekirdeğe bağlı olarak bolluk, zarar görme, belirli bir yerde bulunma ve aşırı küçüklük nedeniyle olanaksızlık anlamları geliştirir.",
+        "common_summary": "Kaynakların çoğunluk çizgisi, böceğin tekil ve topluluk adını sivrisinek olarak verir. Ayrıntılarda bazı kaynaklar yazın ısırarak verdiği zararı, topluluğa zarar verme ve bir yerde bulunma türevlerini veya adın gövde küçüklüğüne dayandırılmasını belirtirken bir kaynak topluluk adını tahtakurusu olarak açıklar.",
         "common_claim_ids": [
-          "lu_006",
-          "lu_007"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_008"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Böceklerin çok olduğu bir geceyi niteleyen iki eşdeğer kalıplaşmış biçim aktarılır."
-          },
-          {
-            "claim_ids": [
-              "lu_009",
-              "lu_010"
-            ],
-            "kind": "derivation",
-            "summary": "Böceklerin bir topluluğa zarar vermesi ile o topluluğun zarara uğramış durumunu karşılayan bağlantılı biçimler verilir."
-          },
-          {
-            "claim_ids": [
-              "lu_011",
-              "lu_012"
-            ],
-            "kind": "derivation",
-            "summary": "Bir topluluğun toprağında böcek bulunmasını ve böcek bulunan araziyi karşılayan bağlantılı biçimler verilir."
-          },
-          {
-            "claim_ids": [
-              "lu_013"
-            ],
-            "kind": "example",
-            "summary": "Aşırı küçük olduğu için elde edilmesi olanaksız veya var olmayan bir şey, böceğin özü üzerinden kurulan bir sözle örneklenir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "sivrisinek",
-        "applicability": "Tek böceği, türü veya bağlama göre böcek topluluğunu karşılayan en doğal genel Türkçe karşılıktır.",
+        "text": "sivrisinek ve ona bağlı zarar veya bulunma kullanımları",
+        "applicability": "Sivrisinek adını çekirdek tutarken, yalnızca türemiş biçimlerde görülen zarar verme ve bir yerde bulunma anlamlarını da dal kapsamında gösterir.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Isırarak zarar veren küçük uçan böcek çekirdeğini ve bağlamsal topluluk okumasını korur.",
+          "preserves": "Böcek kimliğini, ısırarak zarar vermeyi ve kalıba bağlı bulunma veya çokluk kullanımlarını korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "sivrisinekler",
+          "text": "sivrisinek",
           "usage_role": "general",
-          "applicability": "Böceklerin bir topluluğundan söz edilen çoğul bağlamlarda doğal running-text karşılığıdır.",
+          "applicability": "Böceğin tekil adı veya türü doğrudan belirtildiğinde kullanılan doğal karşılıktır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Zararlı küçük uçan böceklerin topluluk veya çoğul anlamını korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Dalın çekirdeğindeki küçük, ısırıcı böcek kimliğini korur.",
+            "loses": "Topluluğa zarar verme ve bir yerde sivrisinek bulunma bildiren türemiş kullanımları dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
@@ -306,49 +298,33 @@
           ]
         },
         {
-          "text": "sivrisinek basmış",
+          "text": "sivrisineklerden zarar görmek",
           "usage_role": "contextual",
-          "applicability": "Bir gece veya yerde böceklerin rahatsız edici ölçüde çok bulunduğu durumları doğal biçimde aktarır.",
+          "applicability": "Bir topluluğun sivrisineklerin ısırması veya eziyetiyle karşılaştığını bildiren türemiş kullanımlara uygundur.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Belirli bir zaman veya yerde böceklerin çok bulunması anlamını korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Sivrisineklerin bir topluluğa zarar vermesi ilişkisini korur.",
+            "loses": "Böceğin yalın adını ve bir yerde çokça bulunmasını bildiren diğer kullanımları dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F002",
-            "F004"
+            "F002"
           ]
         },
         {
-          "text": "sivrisineklerin ısırdığı",
+          "text": "sivrisinek bulunmak",
           "usage_role": "contextual",
-          "applicability": "Bir topluluğun bu böceklerin saldırısı veya ısırıkları yüzünden zarar gördüğü bağlamlarda kullanılır.",
+          "applicability": "Bir arazide, yerde veya gecede sivrisineklerin varlığını ya da çokluğunu bildiren türemiş kullanımlara uygundur.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Böceklerin insan topluluğuna zarar vermesini ve topluluğun etkilenmesini korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Bir yerde sivrisinek varlığı veya çokluğu anlamını korur.",
+            "loses": "Sivrisineğin yalın adını ve bir topluluğa verdiği zararı dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F003"
-          ]
-        },
-        {
-          "text": "elde edilmesi olanaksız şey",
-          "usage_role": "explanatory",
-          "applicability": "Aşırı küçüklük ve erişilemezlik üzerinden var olmayan veya elde edilemeyen bir şeyin anlatıldığı söz bağlamında kullanılır.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Küçüklüğe bağlı erişilemezlik veya olanaksızlık sonucunu açık biçimde korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F005"
+            "F002"
           ]
         }
       ],
@@ -356,12 +332,12 @@
         {
           "lexical_unit_id": "lu_006",
           "rendering_kind": "ordinary",
-          "target_gloss": "ısıran ve zarar veren sivrisinek"
+          "target_gloss": "sivrisinek"
         },
         {
           "lexical_unit_id": "lu_007",
           "rendering_kind": "ordinary",
-          "target_gloss": "sivrisinekler"
+          "target_gloss": "sivrisinekler, sivrisinek topluluğu veya tahtakurusu"
         },
         {
           "lexical_unit_id": "lu_008",
@@ -371,7 +347,7 @@
         {
           "lexical_unit_id": "lu_009",
           "rendering_kind": "ordinary",
-          "target_gloss": "sivrisinekler topluluğa zarar verdi"
+          "target_gloss": "topluluğa sivrisineklerin zarar vermesi"
         },
         {
           "lexical_unit_id": "lu_010",
@@ -381,7 +357,7 @@
         {
           "lexical_unit_id": "lu_011",
           "rendering_kind": "ordinary",
-          "target_gloss": "topraklarında sivrisinek vardı"
+          "target_gloss": "bulundukları yerde sivrisinek olması"
         },
         {
           "lexical_unit_id": "lu_012",
@@ -391,68 +367,60 @@
         {
           "lexical_unit_id": "lu_013",
           "rendering_kind": "ordinary",
-          "target_gloss": "elde edilmesi olanaksız veya var olmayan şey"
+          "target_gloss": "aşırı küçüklüğü veya olanaksızlığı yüzünden elde edilemeyen şey"
         }
       ],
-      "excluded_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "böcek",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Canlıyı küçük bir böcek olarak sınıflandırma yönünü korur.",
+            "loses": null,
+            "adds": "Sivrisinek olmayan çok sayıda böcek türünü de kapsama alır.",
+            "collision": "Dalın belirli sivrisinek kimliğini genel böcek sınıfıyla karıştırır."
+          }
+        }
+      ],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000787/B009",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Gerçek sivrisineği, onun ısırarak verdiği zararı ve bulunduğu yerle ilgili kullanımları kapsar.",
-          "neighbor_only": "Sivrisineğe benzeyen ya da yüzü kaplayan, fakat ısırmayan başka bir zararlı şeyi belirtir.",
-          "gloss": "ısırmayan sivrisinek benzeri zararlı",
-          "shared_zone": "Her iki dal da insana sıkıntı veren sivrisinek benzeri küçük bir zararlıyı konu eder.",
-          "distinction": "Odak dalın çekirdeği ısıran gerçek sivrisinektir; komşu dal ise sivrisineğe benzeyen veya yüzü kaplayan, açıkça ısırmadığı belirtilen başka bir zararlı şeydir."
+          "focus_only": "Isıran sivrisineği ve onun bir yerde bulunması veya insanlara zarar vermesiyle ilgili türemiş kullanımları kapsar.",
+          "neighbor_only": "Yüzü kaplayan, sivrisineğe benzetilen fakat ısırmadığı belirtilen başka bir küçük zararlıyı veya onun eziyetini kapsar.",
+          "gloss": "sivrisineğe benzer, ısırmayan küçük zararlı",
+          "shared_zone": "İki dal da insanı rahatsız eden sivrisinek benzeri küçük canlılar alanında buluşur.",
+          "distinction": "Odak dal gerçek sivrisineği ve ısırmasına bağlı zararı belirtir; komşu dal ise yüze üşüşen ancak ısırmayan benzer bir canlıyı ayırır."
         },
         {
           "neighbor_ref": "root_000324/B004",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Belirli bir ısırıcı uçan böceği ve ona bağlı zarar, bolluk ve yer bildiren kullanımları kapsar.",
-          "neighbor_only": "Çok çeşitli küçük kara hayvanlarını ve benzerlerini içine alan genel bir canlı sınıfını belirtir.",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Belirli olarak sivrisineği, ısırma zararını ve sivrisinek varlığına bağlı türemiş anlamları gösterir.",
+          "neighbor_only": "Küçük kara hayvanlarının ve birbirinden farklı küçük canlıların geniş bir üst sınıfını kapsar.",
           "gloss": "küçük kara canlıları",
-          "shared_zone": "Sivrisinek, küçük zararlı canlıları anlatan daha geniş alanın bir üyesi olarak bu komşuyla kesişir.",
-          "distinction": "Komşu dal farklı türlerden küçük kara canlılarını kapsayan genel sınıftır; odak dal yalnızca sivrisineğe ve bu böceğin bulunması ya da zarar vermesine bağlı kullanımlara ayrılmıştır."
+          "shared_zone": "Her iki dal küçük canlılar ve böcekler alanında kullanılabilir.",
+          "distinction": "Komşu dal geniş ve türce karışık bir küçük canlılar sınıfıdır; odak dalın göndergesi ise sivrisinekle sınırlıdır."
         },
         {
           "neighbor_ref": "root_001259/B001",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "Uçan, ısıran sivrisineği ve bu böceğin bir toplulukta veya arazide bulunmasını belirtir.",
-          "neighbor_only": "Bitleri ve başta, deride ya da ekinde görülen başka küçük zararlı canlı türlerini kapsar.",
-          "gloss": "bitler ve küçük zararlılar",
-          "shared_zone": "Her iki dal küçük, rahatsızlık veren ve insan çevresinde bulunabilen zararlı canlılar alanındadır.",
-          "distinction": "Ortaklık yalnızca canlı türlerinin ait olduğu genel alandadır: odak dal sivrisinektir, komşu dal ise bit ve ona benzetilen çeşitli küçük zararlıları kapsar."
-        },
-        {
-          "neighbor_ref": "root_000234/B004",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "İnsanı ısıran sivrisineği ve onun insanlara verdiği zararı anlatır.",
-          "neighbor_only": "Bitkiyi yiyip çıplak bırakan çekirgeyi, onun yediği ekini ve yenmesinden doğan ağrıyı kapsar.",
-          "gloss": "çekirge ve bitkiye verdiği zarar",
-          "shared_zone": "Her iki dal zararlı bir böceği ve bu böceğin canlılara ya da çevreye verdiği zararı konu eder.",
-          "distinction": "Odak dal insanı ısıran sivrisineğe bağlıdır; komşu dal ise bitki örtüsünü yiyen çekirgeye, yenmiş ekine ve çekirge tüketiminin etkilerine bağlı ayrı bir böcek alanıdır."
-        },
-        {
-          "neighbor_ref": "root_000133/B001",
-          "relation_type": "thematic",
-          "boundary_match": "thematic_only",
-          "focus_only": "Sivrisineği ve onun bolluğu, zararı ya da bir yerde bulunmasıyla ilgili kullanımları kapsar.",
-          "neighbor_only": "Bir bütünün parçasını ve bir şeyi birbirinden ayrılan parçalara bölme işlemini kapsar.",
-          "gloss": "parça ve bölme",
-          "shared_zone": "Yalnızca böceğin küçüklüğünün parça kavramıyla ilişkilendirildiği adlandırma açıklamasında dolaylı bir bağ bulunur.",
-          "distinction": "İki dalın güncel kavram çekirdekleri farklıdır: biri sivrisineği, diğeri parça-bütün ilişkisi ile parçalama işlemini anlatır; küçüklüğe dayalı adlandırma açıklaması bunları eş anlamlı yapmaz."
+          "focus_only": "Uçan ve ısıran sivrisineği, ayrıca onun zararını ve bir yerde bulunmasını belirtir.",
+          "neighbor_only": "Bitleri ve saçta, ekinde veya başka ortamlarda bulunan çeşitli küçük canlıları kapsar.",
+          "gloss": "bitler ve başka küçük canlılar",
+          "shared_zone": "İki dal da insanı veya çevresini etkileyebilen küçük canlıları adlandırır.",
+          "distinction": "Odak dal sivrisinek türüne bağlıdır; komşu dal bit ve ona benzetilen başka küçük canlılardan oluşan ayrı, daha geniş bir kümeyi gösterir."
         }
       ],
-      "neighbor_coverage_note": "Verilen bütün komşular değerlendirildi; gerçek sivrisinekle en yakın karışabilecek benzer zararlı, genel küçük canlı sınıfı, iki ayrı böcek alanı ve kök içindeki parça dalı yayımlandı. Kalan adaylar aynı genel canlı alanını tekrarladığı ve daha keskin bir sınır sunmadığı için eklenmedi."
+      "neighbor_coverage_note": "Bütün komşu adayları değerlendirildi. Sivrisineğe en yakın ısırmayan benzer canlı ile iki geniş küçük-canlı alanı sınırı açıklamak için seçildi; çekirge, örümceğimsi, kene ve öteki küçük hayvan adayları yalnızca genel canlı alanını yineler, parça dalı ise biçimsel ortaklık dışında ayrı bir çekirdeğe sahiptir."
     }
   ],
   "root_profile": {
-    "summary": "Kök, bir yanda bütünün parçasını ve parçalara ayırma sürecini, diğer yanda sivrisineği ve bu böceğin bolluk, zarar ve bulunduğu yerle ilgili kullanımlarını taşır. Böceğin küçüklüğüyle parça kavramı arasında bir adlandırma bağı kurulsa da iki dalın kavram çekirdekleri ayrıdır.",
+    "summary": "Kök, bir yanda bütünün parçası ile parçalara ayırmayı, öte yanda sivrisineği ve ona bağlı zarar veya bulunma kullanımlarını taşır. Sivrisinek adını küçüklük üzerinden ilk merkeze bağlayan bir kaynak açıklaması bulunsa da iki dal kavramsal olarak ayrı merkezler oluşturur.",
     "polysemy": "polysemic",
-    "organization": "multi_branch"
+    "organization": "mixed"
   }
 }

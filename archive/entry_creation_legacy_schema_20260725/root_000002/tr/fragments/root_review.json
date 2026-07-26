@@ -1,0 +1,30 @@
+{
+  "inputs_sha256": "8bc3f7f785d509957e860427011af9b96c3613c401ed28a54e23c033f79e58c5",
+  "verdict": "repair",
+  "summary": "Kaynak sentezindeki bir süre kısıtı eksik bırakılmış, bir komşu dalın bileme kapsamı da kanıta aykırı biçimde daraltılmıştır. Bu iki sınırlı düzeltmeden sonra metin yayıma hazır olabilir.",
+  "issues": [
+    {
+      "target_ref": "root_000002/B007",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_030"
+      ],
+      "evidence_conflict": "lu_030 kaynak ifadesindeki ayırt edici kısıt, yas süresini dört ay on gün olarak belirtir. Yazar ise tanımda ve ortak özette yalnızca belirsiz bir süre veya yas süresi diyerek bu yayın açısından anlamlı süre bilgisini aktarmamıştır.",
+      "smallest_correction": "common_summary içine, söz konusu aktarımın süreyi dört ay on gün olarak belirlediğini kaynak kodu vermeden ve lu_030 desteğiyle ekleyin."
+    },
+    {
+      "target_ref": "root_000002/B008",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_035",
+        "lu_036"
+      ],
+      "evidence_conflict": "root_000750/B003 sınır kartı bilemeyi yalnızca bileği taşıyla yapılan bir işlemle sınırlamaz; demiri, bıçağı ve mızrak ucunu bilemeyi, ayrıca bileği taşını ve ortaya çıkan parlatmayı kapsar. Yazarın gloss, neighbor_only ve distinction metinleri komşu dalı bileği taşına özgü göstererek sınırı gereksiz yere daraltmaktadır.",
+      "smallest_correction": "root_000750/B003 karşılaştırmasındaki gloss ve neighbor_only alanlarını demir, bıçak ve mızrak ucunun bilenmesi ile bileği taşı ve parlatma kapsamını yansıtacak biçimde değiştirin; distinction metnini de farkı yalnızca kullanılan araca bağlamadan komşu dalın daha geniş bileme nesneleri ve parlatma kapsamı üzerinden kurun."
+    }
+  ]
+}

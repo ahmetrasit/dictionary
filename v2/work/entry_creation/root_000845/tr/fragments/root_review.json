@@ -1,0 +1,62 @@
+{
+  "inputs_sha256": "42020e2d7a0b1587b7dc061bcac352e7421eb479fa09ec51f7dc3cfc7a3f355c",
+  "verdict": "editorial_review",
+  "summary": "Anlamsal cerceve genel olarak kanitla uyumludur; ancak bes dalin kaynak sentezi, sozluge ozgu veya tek kaynakta bulunan ayrintilari ortak anlatim icinde eritmekte ve source_details alanini bos birakmaktadir. Bu durum kaynaklar arasindaki destek dagilimini yayin duzeyinde yanlis gosterebilir.",
+  "issues": [
+    {
+      "target_ref": "root_000845/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak ozet, genisleme cekirdegiyle birlikte yeryuzu yuzunu ve yuz derisini kaynaklarin ortak cercevesi gibi sunuyor. Oysa yeryuzu yuzu Maqayis'te, yuz derisi Ayn'da, yayilmis sey ve yuz ornegi ise Mufradat'ta ayri bicimlerde kaydedilmistir; source_details bu dagilimi hic gostermiyor.",
+      "smallest_correction": "common_summary alanini yalniz ortak genisleme ve genis yuzey cekirdegiyle sinirlayip yeryuzu yuzu, yuz derisi ve yayilmis sey ornegini ilgili sozluk kodlariyla ayri source_details satirlarina tasiyin."
+    },
+    {
+      "target_ref": "root_000845/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak ozet kitap kullanimini ve farkli cogullari kaynaklarin toplu destegi gibi sunuyor. Kanitta kitap anlami yalniz Sihah'ta, seyrek cogul ise yalniz Jamhara'da acikca bulunuyor; bos source_details bu tekil tanikliklari gizliyor.",
+      "smallest_correction": "common_summary alanini yazilan yaprak cekirdegi ve yaygin cogullarla sinirlayin; kitap kullanimini Sihah'a, seyrek cogulu Jamhara'ya baglayan ayri source_details satirlari ekleyin."
+    },
+    {
+      "target_ref": "root_000845/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak ozet, yapraklarin iki kapak arasinda toplanmasini kaynaklarin ortak anlatimi sayiyor. Toplama ve butunlestirme butun kaynaklarda desteklenirken iki kapak ayrintisi yalniz Ayn ifadesinde aciktir; source_details bu siniri belirtmiyor.",
+      "smallest_correction": "common_summary alaninda yalniz yazili yapraklari toplayarak bir butun olusturma cekirdegini birakin ve iki kapak ayrintisini Ayn'a bagli bir source_details satirina tasiyin."
+    },
+    {
+      "target_ref": "root_000845/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ozet, kucuk su biriktirme yerleri kullanimini kaynak birliginin adsiz bir parcasi olarak veriyor. Kanitta bu kullanim yalniz Maqayis'te yer alirken diger kaynaklar genis ve yayvan canagi destekliyor; bos source_details tek kaynakli uzantiyi gostermiyor.",
+      "smallest_correction": "common_summary alanini genis ve yayvan canak cekirdegiyle sinirlayin; kucuk su biriktirme yerleri kullanimini Maqayis'a baglayan ayri bir source_details satiri ekleyin."
+    },
+    {
+      "target_ref": "root_000845/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ozet, yanlisi aktaran kisi kullanimini kaynaklarin birlesik anlatimina dahil ediyor. Bu kisi adlandirmasi yalniz Ayn'da bulunuyor; Sihah ve Mufradat olay anlamini destekliyor ve source_details bu tekil tanikligi ayirmiyor.",
+      "smallest_correction": "common_summary alaninda yanlis okuma veya aktarim olayini tutun; bu hatayi yapan kisi kullanimini Ayn'a bagli ayri bir source_details satirinda belirtin."
+    }
+  ]
+}

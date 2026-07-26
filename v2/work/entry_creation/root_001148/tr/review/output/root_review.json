@@ -1,0 +1,83 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtla uyumludur; ancak B002 komşu ayrımı komşu dalın ettirgen ayırma kapsamını yanlışlıkla dışarıda bırakıyor. B013 ise kaynakların yalnızca böbrek yağı dediği dokuyu kanıtsız biçimde böbreğin çevresindeki yağ olarak daraltıyor. Bu iki sorun, aşağıda belirtilen alanlarda küçük ve doğrudan düzeltmeler gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_001148/B002",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Seçilen komşunun sınır kartı hem bir şeyi ayırmayı hem de şeyin veya topluluğun dağılıp çözülmesini kapsar. Yanıttaki neighbor_only ve distinction ise komşuyu yalnızca kendiliğinden dağılma ve sonuç durumu olarak göstererek karttaki ettirgen ayırma kapsamını dışarıda bırakıyor.",
+      "smallest_correction": "İlişki türünü ve sınır eşleşmesini koruyup neighbor_only ile distinction metinlerini, komşunun hem ayırma hem dağılmayı kapsadığını söyleyecek biçimde düzeltin; odak dalı çoklu parçalara veya zamanlara dağıtma ve belirli bağları bozma ayrıntılarıyla ayırın."
+    },
+    {
+      "target_ref": "root_001148/B013",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi adı böbreğin veya iki böbreğin yağı olarak tanımlar; yağın özellikle böbreği çevrelediğini söylemez. boundary_note içindeki çevresel konum, kanıtın verdiğinden daha dar bir anatomik iddiadır.",
+      "smallest_correction": "boundary_note içindeki çevre konumu iddiasını kaldırıp anlamı böbreğe veya böbreklere ait özel yağla sınırlayın."
+    },
+    {
+      "target_ref": "root_001148/B013",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F001, kaynakların böbrek yağı ifadesini böbreği çevreleyen yağ dokusu olarak özelleştiriyor. Kaynakta çevreleme veya belirli bir anatomik konum bulunmadığından bu ayrıntı desteklenmiyor.",
+      "smallest_correction": "Tanım ile F001'i böbreğe veya böbreklere ait özel yağ dokusu olarak yazın; tekil ve ikil aktarım ayrımını koruyun."
+    },
+    {
+      "target_ref": "root_001148/B013",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı ve kullanım açıklaması, kanıttaki böbrek yağını böbrek çevresi yağına dönüştürüyor. Çevresel konum kaynak ifadesinde yoktur.",
+      "smallest_correction": "Karşılığı böbrek yağı olarak daraltın ve kullanım açıklamasında yalnız böbreğe veya böbreklere ait olma ilişkisini koruyun."
+    },
+    {
+      "target_ref": "root_001148/B013",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bağlamsal karşılık böbreklerin çevresindeki yağ dokusu diyerek kaynakta belirtilmeyen bir konum ekliyor.",
+      "smallest_correction": "Bağlamsal karşılığı böbreklere ait yağ dokusu olarak değiştirin ve açıklamasındaki çevresel konum iddiasını kaldırın."
+    },
+    {
+      "target_ref": "root_001148/B013",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_025"
+      ],
+      "evidence_conflict": "lu_025 yalnız böbreğin veya böbreklerin yağını bildirir; sözlüksel karşılık bunu böbreklerin çevresindeki yağ olarak gereksiz biçimde daraltıyor.",
+      "smallest_correction": "lu_025 karşılığını böbreğin veya böbreklerin yağı olarak değiştirin."
+    },
+    {
+      "target_ref": "root_001148/B013",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu ayrımındaki focus_only ve distinction, odak dalı böbrek çevresindeki yağ olarak tanımlıyor; kaynak yalnız böbreğin veya böbreklerin yağını destekliyor.",
+      "smallest_correction": "Komşu ayrımındaki odak tanımını böbreğe veya böbreklere ait yağ olarak değiştirin; komşunun işkembe ve bağırsakları örten ince yağ olmasıyla kurulan organ ve doku farkını koruyun."
+    }
+  ]
+}

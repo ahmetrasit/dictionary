@@ -1,40 +1,17 @@
 {
   "verdict": "repair",
-  "summary": "Girdi genel olarak kanıtı ve komşu sınırlarını koruyor; ancak bir kavram karşılığı optik görünüşü dışarıda bırakıyor, iki sözlüksel karşılık doğal Türkçe kurmuyor ve bitki tanımı yeme isteğini eşeğe de yayıyor.",
+  "summary": "B008 dalındaki komşuluk ilişkisi, çekirdek sınırlar aynı olduğu halde bağımlı örneklerdeki farklılıklara dayanılarak yakın eş anlamlı sayılmıştır. Bu alan en küçük düzeltmeyle tam eş anlamlı ilişki olarak düzenlenmelidir.",
   "issues": [
     {
-      "target_ref": "root_000067/B006",
-      "field": "concept_gloss",
-      "severity": "minor",
+      "target_ref": "root_000067/B008",
+      "field": "neighbor_distinctions",
+      "severity": "major",
       "confidence": "high",
       "claim_ids": [
-        "lu_026"
+        "bc_001"
       ],
-      "evidence_conflict": "Kavram karşılığı yalnızca uzaktan görünen silueti ve görünür kenarı veriyor. Oysa kanıt, günün başında ve sonunda cisimleri yükseliyormuş gibi gösteren, bir kaynakta serap sayılıp diğerinde seraptan ayrılan optik görünüşü de dalın temel kapsamına alıyor.",
-      "smallest_correction": "Kavram karşılığına, kaynak ayrımını bozmadan, sabah ve akşam görülen serap benzeri optik görünüşü de ekleyin."
-    },
-    {
-      "target_ref": "root_000067/B005",
-      "field": "lexical_glosses",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_023",
-        "lu_024"
-      ],
-      "evidence_conflict": "\"Süt koyulaşıp pıhtılaşmak\" ve \"katran veya bal koyulaşıp katılaşmak\" karşılıkları, kanıttaki özne ile geçişsiz oluş ilişkisini Türkçede doğal ve dil bilgisel biçimde kurmuyor.",
-      "smallest_correction": "Karşılıkları \"sütün koyulaşıp pıhtılaşması\" ve \"katranın veya balın koyulaşıp katılaşması\" biçiminde kurun."
-    },
-    {
-      "target_ref": "root_000067/B011",
-      "field": "concept_map",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_035"
-      ],
-      "evidence_conflict": "Tanımdaki \"eşeklerle yaban sığırlarının severek otladığı\" sözü, özel düşkünlük niteliğini iki hayvana da yüklüyor. Kanıt yalnızca eşeğin bitkiyi yediğini, yaban sığırının ise ona özellikle düşkün olduğunu bildiriyor.",
-      "smallest_correction": "Tanımı, bitkinin eşekçe yendiğini ve yaban sığırınca özellikle sevildiğini ayrı ayrı belirtecek biçimde düzeltin."
+      "evidence_conflict": "Odak dalın çekirdeği bir işte kullanılan somut araçtır; komşu dalın çekirdeği de eylem için hazırlanan araç, gereç ve donanımdır. Çadır direkleri, cenaze sedyesi, silah ve su kabı gibi bağımlı örnekler çekirdek sınırı değiştirmez. Bu nedenle örnek farklılıklarına dayanan near_synonym ve partial sınıflandırması kanıtlanan sınırlarla uyuşmaz.",
+      "smallest_correction": "B008 neighbor_distinctions satırında relation_type değerini synonym, boundary_match değerini exact yap; focus_only ve neighbor_only alanlarını null yap; gloss, shared_zone ve distinction metinlerini iki dalın aynı araç ve gereç çekirdeğini ve aynı sınırı paylaştığını belirtecek biçimde yalnız bu satır içinde düzelt."
     }
   ]
 }

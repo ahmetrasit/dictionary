@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "On duzeltme yazar ciktisi ana kanitla uyumlu; yalniz B005 komsu kapsama notu, bu dal icin sunulan komsu adaylari arasinda olmayan B006/nefsin ic hareketi alanini en yakin sinir gibi sayiyor. Not yalniz B005'in sunulan komsu adaylariyla sinirlanarak duzeltildi.",
+  "issues": [
+    {
+      "target_ref": "root_003283/B005",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B005 icin hazir kanitta komsu adaylari B001, B002, B003 ve B004'tur; B006 bu dalin komsu adaylari arasinda verilmemistir. Buna ragmen neighbor_coverage_note nefsin ic hareketini en yakin adaylardan biri sayarak B005 komsu kapsaminin disina cikiyor.",
+      "smallest_correction": "B005 neighbor_coverage_note alanindan nefsin ic hareketi atfini kaldirin; notu ihtiyac en yakin sinir, soz, bag ve vadi daha uzak ayrimlar olarak sinirlayin."
+    }
+  ]
+}

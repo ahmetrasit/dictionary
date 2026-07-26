@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur. Ancak B008 dalında kesin kaynak ifadesinin belirtmediği sağlamlık niteliği, hayvan derilerinin ortak özelliği olarak kavram haritasına ve kavram karşılığına taşınmıştır. Bu iki alanda küçük ve yüksek güvenli bir düzeltme gereklidir.",
+  "issues": [
+    {
+      "target_ref": "root_001092/B008",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kesin kaynak ifadesi yaşlı dağ keçisinin yüzülmüş derisini, kaplumbağa derisini ve kalkan gibi katlanan deve derisi parçasını sayar; bu derilerin tümüne ortak bir sağlamlık niteliği yüklemez. Tanım ile F001 ise sağlamlığı genel ve çekirdek bir özellik olarak sunmaktadır.",
+      "smallest_correction": "Tanımdaki ve F001 ifadesindeki “sağlam” nitelemesini kaldırarak belirli hayvan derisi referentlerini ve katlanmış deve derisi kullanımını aynen korumak."
+    },
+    {
+      "target_ref": "root_001092/B008",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı, uygulanabilirlik açıklaması ve hata profili sağlamlığı kanıtlanmış ortak özellik saymaktadır; kesin kaynak ifadesi yalnızca hayvan türlerini, yüzülmüş deriyi ve kalkan benzeri katlamayı destekler.",
+      "smallest_correction": "Kavram karşılığını belirli hayvan derilerini ve kalkan gibi katlanmış deriyi anlatacak biçimde düzenlemek; uygulanabilirlik ile korunan özellikler metinlerinden desteklenmeyen sağlamlık nitelemesini kaldırmak."
+    }
+  ]
+}

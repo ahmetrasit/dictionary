@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak B003 bütün kaynaklara borç ve katılık şartı yüklemekte, B008 ise deve adlandırmasına ilişkin açık kaynak itirazını aktarmamaktadır.",
+  "issues": [
+    {
+      "target_ref": "root_001012/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet bütün kaynakların darlıktaki borçludan alacağı süre tanımadan ve katılıkla istemede birleştiğini söylüyor. Oysa kanıttaki bir aktarım yalnız darlık sırasında bir şey istenmesini bildirir; borç şartını vermez. Yumuşak davranmama da bütün aktarımların ortak ifadesi değildir.",
+      "smallest_correction": "Ortak özeti, darlık sırasında talepte bulunmayı ortak alan olarak verecek biçimde düzeltin; borç istemeyi çoğu aktarımın özel çerçevesi, süre tanımama ve yumuşak davranmamayı ise bunları açıkça bildiren aktarımlara özgü ayrıntılar olarak belirtin."
+    },
+    {
+      "target_ref": "root_001012/B008",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, eğitilmeden binilen deve için verilen adlandırmalardan birini bir aktarımda kaydederken başka bir aktarımın aynı açıklamayı açıkça yanlış saydığını bildiriyor. Kaynak özeti bu görüş ayrılığını hiç aktarmadan kullanımı ortak ve tartışmasız gösteriyor.",
+      "smallest_correction": "Mevcut ortak özete, eğitilmeden binilen deveye ilişkin ilgili adlandırmanın bir kaynakta verildiğini fakat başka bir kaynakta açıkça reddedildiğini belirten kaynak yansız bir karşıtlık cümlesi ekleyin."
+    }
+  ]
+}

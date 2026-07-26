@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın dal ayrımları ve sözlükçe karşılıkları genel olarak sağlamdır; ancak iki çekirdek yön ifadesi kaynakta ayrı verilen gerçekleşmeleri gereğinden fazla birleştirmekte, bulantı dalı ise bir fiil biçimi hakkındaki açık kaynak itirazını kimlik değerlendirmesine ve kaynak sentezine yansıtmamaktadır.",
+  "issues": [
+    {
+      "target_ref": "root_001073/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F001, selin otlağı yığıp tadını gidermesi ile bitkinin kurutulup ufalanmış ota çevrilmesini tek bir zorunlu kuru ve ufalanmış sonuç olarak sunuyor. Kaynak ifadesi ise bunları iki ayrı gerçekleşme olarak verir; yığma ve tadı giderme kullanımında kuruluk ile ufalanma açıkça kurulmaz.",
+      "smallest_correction": "F001 ifadesini iki gerçekleşmeyi ayıracak biçimde düzeltin: otlak sel tarafından yığılıp tadını yitirir ya da bitki yeşillikten sonra kuru ve ufalanmış hale getirilir. Tanımın mevcut ayrımlı yapısını koruyun."
+    },
+    {
+      "target_ref": "root_001073/B003",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kimlik değerlendirmesi bütün fiil biçimlerini çekincesiz kabul ediyor. Oysa kaynak ifadesinde bir sözlük ikinci fiil biçimini aktarırken başka bir sözlük bu aktarımı sonraki dönem kullanımına ait sayarak açıkça itiraz eder.",
+      "smallest_correction": "Durumu qualified olarak değiştirin ve gerekçeye, bulantı çekirdeği kabul edilmekle birlikte ikinci fiil biçiminin kaynaklar arasında tartışmalı olduğu kaydını ekleyin. Dalı bölmeyin ve biçimi başka bir dala taşımayın."
+    },
+    {
+      "target_ref": "root_001073/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak sentezi yalnız ortak bulantı çekirdeğini veriyor ve bir fiil biçiminin geçerliliği hakkındaki açık sözlük ayrılığını tamamen atlıyor. Bu ayrılık, sağlanan kaynak ifadesinin ayırt edici ve yayıma ilişkin bir parçasıdır.",
+      "smallest_correction": "Ortak özeti koruyun; kaynak ayrıntısına, bir sözlüğün ikinci fiil biçimini aktardığını, diğerinin ise bunu sonraki dönem kullanımına ait saydığını yalnız ilgili sözlük kodlarına özgü ifadelerle ekleyin ve bc_001 ile ilişkilendirin."
+    },
+    {
+      "target_ref": "root_001073/B004",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F001, hem insan topluluğuna hem şeye değersiz görülme ve önemsenmeden ortadan kaybolma özelliklerini birlikte yüklüyor. Kaynakta aşağı görülen insanlar bir kullanımdır; önemsenmeden boşa gidip kaybolma ise şeylere uzanan ayrı kullanımdır.",
+      "smallest_correction": "F001 ifadesini dağılımı açıkça koruyacak biçimde değiştirin: insan topluluğu aşağı ve değersiz görülmesi bakımından, şey ise önemsenmeden boşa gidip kaybolması bakımından sel döküntüsüne benzetilir. F002 ve F003'ü değiştirmeyin."
+    }
+  ]
+}

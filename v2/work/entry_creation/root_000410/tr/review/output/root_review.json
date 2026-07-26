@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın dal ayrımları, kapsam türleri ve komşu sınırları genel olarak kanıtla uyumludur. Ancak B001'de bir sözlüksel karşılık özneyi yanlış konumlandırıyor, B002'de kaynaklar arası ortaklık olduğundan geniş sunuluyor ve B007'de kalıba bağlı iki kullanım genel bir taşıyıcı anlamına dönüştürülüyor. Bu üç sınırlı alan doğrudan düzeltilebilir.",
+  "issues": [
+    {
+      "target_ref": "root_000410/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003"
+      ],
+      "evidence_conflict": "lu_003, yerin kişiyle birlikte çöküp onu içine almasını bildirir. Mevcut karşılıktaki \"yerin altında çöküp\" sözü ise çöken özneyi belirsiz bırakıp olayı yerin altında gerçekleşen ayrı bir çökme gibi kuruyor.",
+      "smallest_correction": "lu_003 hedef karşılığını \"yerin çöküp onu içine alması\" olarak değiştir."
+    },
+    {
+      "target_ref": "root_000410/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001'de Ay kullanımı yalnız maqayis, sihah ve mufradat'ta yer alırken ayn ve tahdhib Güneş kullanımını verir. \"Ayın ışığının kaybolması ortak tanıklıktır\" cümlesi bu nedenle bütün kaynaklara yayılan bir ortaklık izlenimi oluşturuyor.",
+      "smallest_correction": "Ortak özetin ilk cümlesini Ay kullanımının birkaç kaynakta ortak olduğunu açıkça belirtecek biçimde daralt; kaynak ayrılıklarını anlatan devam cümlesini koru."
+    },
+    {
+      "target_ref": "root_000410/B007",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 yalnız bol su taşıyan bulut ile bol sütlü dişi deveyi tanıklar ve mekanik profil mixed_non_bare'dır. Mevcut tanım ile F001 bunu herhangi bir taşıyıcının yararlı sıvı barındırması veya üretmesi biçiminde genel bir üst anlama dönüştürüyor.",
+      "smallest_correction": "Tanımın ilk cümlesini ve F001'i doğrudan bulutun bol su taşıması ile dişi devenin bol süt vermesine bağla; deve sütündeki kışın çabuk kesilme sınırını ve öteki facetleri koru."
+    }
+  ]
+}

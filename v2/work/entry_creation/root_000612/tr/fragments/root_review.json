@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": "c5db9158cc1c730dfbb9a5790a6410eeb0d4e862bcb999d1961a5e629591b838",
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak B001 dalındaki bir sözlüksel karşılık, kaynakta bulunmayan bir yoğunluk derecesi eklemektedir.",
+  "issues": [
+    {
+      "target_ref": "root_000612/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_004"
+      ],
+      "evidence_conflict": "lu_004 için verilen anlam ve kaynak ifadesi yalnızca başkasını korkutmayı bildirir. \"iyice korkuttu\" karşılığı ise kanıtta bulunmayan bir yoğunluk derecesi ekler.",
+      "smallest_correction": "lu_004 hedef karşılığındaki \"iyice\" sözcüğünü kaldırıp karşılığı \"korkuttu\" veya \"korkuttu, ürküttü\" olarak verin."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak B003 kolundaki bir komşuluk ilişkisi, kolların kapsamları aynı olmadığı halde tam eş anlamlılık olarak gösterilmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_001346/B003",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_001289/B006 kartı yalnız istekte üstelemeyi kapsar. Odak kolunun bc_001 kanıtı ise bu çekirdeğe ek olarak bıyığı aşırı ölçüde kesmeye bağlı özel kullanımı da içerir; dolayısıyla iki kolun kullanım sınırları aynı değildir.",
+      "smallest_correction": "root_001289/B006 ilişkisini relation_type için near_synonym, boundary_match için partial olarak değiştirin; focus_only alanında odak koluna özgü bıyığı aşırı kesme kullanımını belirtin ve distinction metnini bu kapsam farkını açıklayacak biçimde daraltın."
+    }
+  ]
+}

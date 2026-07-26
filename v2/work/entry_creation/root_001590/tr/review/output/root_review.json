@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Girdi genel olarak kanıtı ve dalların sözlüksel sınırlarını doğru koruyor. Ancak bir sözlüksel karşılık fiziksel çatlamayı kanıtsız biçimde ses veya soluk niteliğine çeviriyor; ayrıca son dalın kavram karşılığı, kanıtta yer alan oyunun kendisi değişkesini dışarıda bırakıyor. Bu iki alan en küçük düzeltmelerle onarılmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001590/B003",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_016"
+      ],
+      "evidence_conflict": "lu_016, atın koşma yüzünden çatlayıp yarılmasını bildirir; mevcut hedef karşılık ise kanıtta bulunmayan bir ses veya soluk kesikliği anlamı kuruyor.",
+      "smallest_correction": "Yalnızca lu_016 hedef karşılığını, atın koşmaktan bedenen çatlayıp yarılmasını anlatacak biçimde değiştir."
+    },
+    {
+      "target_ref": "root_001590/B010",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 aynı adın hem oyun araçlarını hem de başı örtülen çocuğa vurulan bir oyun türünü bildirdiğini gösterir; mevcut kavram karşılığı yalnızca oyuncak ve oyun sopasını adlandırarak oyunun kendisi değişkesini dışarıda bırakıyor.",
+      "smallest_correction": "Kavram karşılığına çocuk oyununun kendisini açıkça ekle; diğer araç ve kısa sopa değişkelerini koru."
+    }
+  ]
+}

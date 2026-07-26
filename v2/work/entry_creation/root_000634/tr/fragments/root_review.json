@@ -1,0 +1,95 @@
+{
+  "inputs_sha256": "08f490676b071df1cf82532cccd9d9205cf83354dc7e1aaa8e304c4ed5dd6512",
+  "verdict": "editorial_review",
+  "summary": "B001'de yolcu donanımı ve büyük ırmak, bağımsız sözlüksel uzantılar olmalarına rağmen örnek düzeyine indirilmiştir. B003'te ise tür belirtmeyen omuz başı ve bitişiği tanıklığı birçok alanda ata özgüymüş gibi daraltılmıştır. Bu sınıflandırma ve kapsam sorunları yayın öncesinde eşgüdümlü olarak düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000634/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F005, yolcu donanımı ile çok su taşıyan büyük ırmağı yalnızca örnek olarak sınıflandırıyor. Kanıt bunları taşıma çekirdeğini gösteren rastgele örnekler değil, doğrudan adlandırılan ayrı sözlüksel anlamlar olarak veriyor.",
+      "smallest_correction": "F005'in rolünü extension olarak değiştirin ve ifadesini yolcu donanımı ile büyük ırmağın taşıma ilişkisine dayalı sözlüksel uzantılar olduğunu belirtecek biçimde daraltın."
+    },
+    {
+      "target_ref": "root_000634/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, yolcu donanımı ile büyük ırmağı nesne ve benzetme örnekleri diye sunuyor. Kanıtta her ikisi de kökün doğrudan kaydedilmiş sözlüksel kullanımlarıdır.",
+      "smallest_correction": "Ortak özette bu iki kullanımı örnek diye nitelemek yerine, sırasıyla nesneye bağlı ve benzetmeli sözlüksel uzantılar olarak tanımlayın."
+    },
+    {
+      "target_ref": "root_000634/B003",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe, omuz başı çevresini at bedenine bağlar ve sınır notu bütün beden kullanımlarını belirli hayvan adlandırmalarıyla sınırlar. Yetkili tanıklık omuz başı ve bitişiği için herhangi bir hayvan türü belirtmez; at sınırlaması yalnız gövde ortası ve göğüs bölgesine ait tanıklıklarda bulunur.",
+      "smallest_correction": "Gerekçede omuz başı ve bitişiğini tür belirtmeyen ayrı bir beden bölgesi olarak yazın; sınır notundaki hayvan sınırlamasını da yalnız gerçekten türle kayıtlı kullanımlara bağlayın."
+    },
+    {
+      "target_ref": "root_000634/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F002, omuz başı ile bitişiğini at bedenindeki bir bölge olarak sunuyor. Kanıt bu kullanımda atı belirtmez; at kaydı gövde ortası ve göğüs bölgesi için ayrıdır.",
+      "smallest_correction": "Tanımda ve F002'de omuz başı ile bitişiğini at sınırlamasından çıkarın; atı yalnız gövde ortası ve göğüs bölgesi tanıklıklarında koruyun."
+    },
+    {
+      "target_ref": "root_000634/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, omuz başı çevresini atın gövde bölgelerinden biri olarak birleştiriyor. Yetkili tanıklık omuz başı ve bitişiğini tür belirtmeden verir.",
+      "smallest_correction": "Ortak özette atın gövde ortası ve göğüs bölgesini tür belirtmeyen omuz başı ve bitişiği kullanımından ayırın."
+    },
+    {
+      "target_ref": "root_000634/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığının uygulanabilirlik açıklaması omuz bölgesini atla sınırlar. Kanıttaki omuz başı ve bitişiği kullanımı böyle bir tür koşulu taşımaz.",
+      "smallest_correction": "Uygulanabilirlik açıklamasında at sınırlamasını yalnız atın orta ve göğüs bölgelerine bağlayın; omuz başı ve bitişiğini tür belirtmeden ayrı tutun."
+    },
+    {
+      "target_ref": "root_000634/B003",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İkinci bağlamsal karşılık ve açıklaması, omuz başı ile bitişiğini at bedenine özgü gösteriyor. Yetkili tanıklık bu beden bölgesi için tür belirtmez.",
+      "smallest_correction": "İkinci bağlamsal karşılığı tür belirtmeyen omuz başı ve bitişiği kullanımı ile ata özgü göğüs bölgesi kullanımını ayıracak biçimde düzeltin."
+    },
+    {
+      "target_ref": "root_000634/B003",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Beden ve göğüs eti komşularıyla yapılan karşılaştırmalarda odak dalın omuz başı kullanımı ata özgü gösteriliyor. Kanıt omuz başı ve bitişiği için böyle bir tür sınırı koymaz.",
+      "smallest_correction": "Etkilenen komşu karşılaştırmalarında omuz başı ve bitişiğini tür belirtmeden yazın; at sınırlamasını yalnız kanıtta ata bağlanan gövde ortası ve göğüs bölgesi için koruyun."
+    }
+  ]
+}

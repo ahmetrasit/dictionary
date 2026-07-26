@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B008 dalındaki komşuluk sınıflandırması dışında yanıt, sağlanan kanıtla ve kapsam sınırlarıyla uyumludur. Bu satırda iki dalın çekirdek anlamı aynıdır; belirtilen ayrımlar yalnızca araştırma yöntemleri ve yürütülme koşullarıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001480/B008",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Odak dal da root_000321/B004 de bir haber hakkında bilgi edinmek için haberi arayıp izlemeyi çekirdek anlam olarak taşır. Gizli veya açık yürütme ile soru, dinleme ya da gözlem yolları dal sınırını değiştiren ek kapsamlar değil, aynı eylemin bağımlı yöntem ve koşullarıdır; bu yüzden near_synonym ve partial sınıflandırması kanıtlanan çekirdek eşdeğerliğini gereksiz yere düşürür.",
+      "smallest_correction": "root_000321/B004 komşuluk satırında relation_type değerini synonym, boundary_match değerini exact yapın; focus_only ve neighbor_only metinlerini çekirdek kapsam farkı ileri sürmeyecek biçimde kaldırın veya eşdeğerliği belirten metinlerle değiştirin ve distinction metnini yöntem örneklerinin ortak çekirdeği bozmadığını söyleyecek biçimde daraltın."
+    }
+  ]
+}

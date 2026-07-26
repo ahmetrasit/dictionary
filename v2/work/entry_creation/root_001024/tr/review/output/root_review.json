@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B008 dalının kavram haritası, dal iddiasının desteklemediği semizlik bilgisini tanıma ve ilişkili kullanım yüzeyine taşıyor. Bu bilgi çıkarılarak harita yalnızca yem sınıfı ile develerin bu yemi yemesine daraltılmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001024/B008",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 yalnızca yem sınıfını ve develerin bu yemi yemesini destekler; semizliğin bu yeme bağlanması dal iddiasında yer almadığı halde tanıma ve F002 yüzeyine taşınmıştır.",
+      "smallest_correction": "Tanımdan semizlik bölümünü çıkarın; F002'yi yalnızca develerin bu yemi yemesini anlatacak biçimde daraltın."
+    }
+  ]
+}

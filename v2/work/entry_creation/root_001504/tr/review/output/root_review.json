@@ -1,0 +1,72 @@
+{
+  "verdict": "repair",
+  "summary": "Girdi genel olarak kanıtı ve dalların kapsamını koruyor; ancak B001'de diz sağrı olarak çevrilmiş, B003'te kavram karşılığı kapsamadığı bir yan kullanıma bağlanmış, B004'te kocaya ait açık eylem sözlüksel karşılıkta silinmiş ve B005'te kanıtın kurmadığı bir nedensellik eklenmiş. Bu sınırlı alanlar doğrudan düzeltilebilir.",
+  "issues": [
+    {
+      "target_ref": "root_001504/B001",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve uzmanlaşma yüzü, bedensel çıkıntı örnekleri arasına sağrıyı katıyor. Kanıt sağrıyı desteklemiyor; ilgili birim dizdeki çıkıntıyı bildiriyor.",
+      "smallest_correction": "Tanımda ve F002 ifadesinde geçen sağrı sözünü diz olarak değiştir."
+    },
+    {
+      "target_ref": "root_001504/B001",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Çıkıntılı karşılığının uygulanabilirlik açıklaması sağrıyı örnek veriyor; sağrı kanıtta yoktur ve ilgili beden örneği dizdir.",
+      "smallest_correction": "Uygulanabilirlik açıklamasındaki sağrı sözünü diz olarak değiştir."
+    },
+    {
+      "target_ref": "root_001504/B001",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_006"
+      ],
+      "evidence_conflict": "lu_006 dizdeki çıkıntıyı bildirirken hedef karşılık bunu çıkıntılı sağrı olarak veriyor; böylece beden bölümü değişiyor.",
+      "smallest_correction": "lu_006 hedef karşılığını çıkıntılı diz olarak değiştir."
+    },
+    {
+      "target_ref": "root_001504/B003",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı yalnızca kemikleri yerlerine kaldırıp birleştirme işlemini ifade ediyor, fakat facet_ids listesi canlanmaya ilişkin associated_use yüzü F003'ü de kapsadığını bildiriyor.",
+      "smallest_correction": "Kavram karşılığının facet_ids listesinden F003'ü çıkar; F001 ve F002'yi koru."
+    },
+    {
+      "target_ref": "root_001504/B004",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_013"
+      ],
+      "evidence_conflict": "lu_013 kocanın eşine yüz çevirmesini, ondan hoşlanmamasını veya ona vurmasını açıkça verir. Hedef karşılıktaki genel sert davranma sözü vurma eylemini ve hoşlanmama seçeneğini belirsizleştiriyor.",
+      "smallest_correction": "lu_013 hedef karşılığını kocanın eşinden yüz çevirmesi, ondan hoşlanmaması veya ona vurması biçiminde değiştir."
+    },
+    {
+      "target_ref": "root_001504/B005",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım, muhatabın öfke nedeniyle ayağa kalktığını bu öfkeyle sözüyle ileri sürüyor. Kanıt sözün hem öfkelendirdiğini hem ayağa kaldırdığını bildirir, fakat ikinci sonucu öfkenin sonucu olarak kurmaz.",
+      "smallest_correction": "Tanımdaki bu öfkeyle ibaresini çıkararak iki sonucu da doğrudan söze bağla."
+    }
+  ]
+}

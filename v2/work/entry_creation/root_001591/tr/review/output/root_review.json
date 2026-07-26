@@ -1,0 +1,61 @@
+{
+  "verdict": "repair",
+  "summary": "B001 ve B002 kanıt sınırlarını, B003 ise genel kavram çerçevesini doğru koruyor. Bununla birlikte B003'te bir sözlüksel karşılık isteme bağlamını soru sorma olarak daraltıyor. B004'te at için ayrı kaynaklarda verilen çok terleme ile katı yapılı olmama açıklamaları birkaç alanda birlikte bulunması zorunlu özelliklere dönüştürülmüş; bunlar alternatif kaynak açıklamaları olarak ayrılmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001591/B003",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_021"
+      ],
+      "evidence_conflict": "Kanıt, bu birimi kendisinden bir şey istendiğinde sevinen ve olumlu karşılık veren kişi olarak dalın istek karşısındaki kolaylık yönüne bağlar. \"Kendisine bir şey sorulduğunda\" ifadesi bunu yalnızca soru yöneltme bağlamına kaydırır.",
+      "smallest_correction": "lu_021 hedef karşılığını \"kendisinden bir şey istendiğinde sevinen kimse\" olarak değiştir."
+    },
+    {
+      "target_ref": "root_001591/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıtta at, bazı kaynaklarda çok terleyen, başka kaynaklarda ise katı yapılı olmayan hayvan olarak açıklanır; iki niteliğin aynı anda bulunduğu söylenmez. Tanım ve özellikle F002, bu iki ayrı açıklamayı birlikte bulunan ya da birbirini açıklayan nitelikler haline getiriyor.",
+      "smallest_correction": "Tanımda atın çok terleyen veya katı yapılı olmayan biçiminde nitelenebildiğini belirt; F002'deki \"birlikte ya da birbirini açıklayan\" kaydını kaldırıp iki açıklamayı alternatif kaynak tanımları olarak ver."
+    },
+    {
+      "target_ref": "root_001591/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, atın çok terlemesi ile katı yapılı olmayışını \"ve\" ile tek birleşik gerçekleşme olarak sunuyor. Kaynak ifadesi bu açıklamaları farklı sözlüklerde alternatif biçimde verir ve aralarında zorunlu birlik kurmaz.",
+      "smallest_correction": "Atla ilgili cümlede \"ve\" yerine alternatifliği açıkça gösteren \"veya\" kullan; iki niteliğin farklı kaynak açıklamaları olduğunu koru."
+    },
+    {
+      "target_ref": "root_001591/B004",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "\"Yumuşak yapılı ve çok terleyen at\" karşılığı ile uygulama ve koruma açıklamaları, kanıtta ayrı ayrı verilen iki at niteliğini zorunlu olarak birleştiriyor.",
+      "smallest_correction": "At bağlamındaki karşılığı \"çok terleyen veya katı yapılı olmayan at\" biçiminde düzelt ve aynı alternatifliği applicability ile preserves metinlerinde koru."
+    },
+    {
+      "target_ref": "root_001591/B004",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003"
+      ],
+      "evidence_conflict": "lu_003 kanıtı at için \"çok terleyen\" ile \"katı yapılı olmayan\" açıklamalarını alternatif olarak verir. Hedef karşılıktaki \"ve\" bu alternatifleri tek ve zorunlu bir özellik kümesine dönüştürür.",
+      "smallest_correction": "lu_003 hedef karşılığını \"çok terleyen veya katı yapılı olmayan at\" olarak değiştir."
+    }
+  ]
+}

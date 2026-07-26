@@ -1,0 +1,61 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak dört sınırlı düzeltme gerekir. İlk dalın tanımı ve kavram karşılığı, kaynakta açıkça bulunan yalın içeri girme kullanımını gereksiz biçimde yerleşme veya derine ilerleme şartına bağlamaktadır. B010'da kaynakta bulunmayan hazırlanma ve kuruluk nitelemeleri eklenmiştir. B012'de ise hayvan derisini yüzen kişi yanlışlıkla yüzme sporu yapan kişiyi belirten bir sözcükle adlandırılmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_001102/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi yalın biçimde bir şeyin içine girmeyi de bildirir. Mevcut tanım ise geçişsiz kullanımı aralıklara ve orta kısma kadar ilerleme şartına bağlayarak bu açık anlamı gereksiz biçimde daraltır.",
+      "smallest_correction": "Tanımda geçişsiz çekirdeği yalnız bir şeyin içine girmek olarak verin; aralıklara veya orta kısma kadar ilerlemeyi bazı biçimlere bağlı ayrı bir gerçekleşme olarak koruyun."
+    },
+    {
+      "target_ref": "root_001102/B001",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı ve uygunluk açıklaması, her içeri girişte yerleşme ve kalıcı yer tutma bulunduğunu ileri sürer. Kaynak yalın içeri girme kullanımını da verdiği için bu zorunlu sonuç kanıtlanmamaktadır.",
+      "smallest_correction": "Kavram karşılığını içeri girme ile içeri sokup sabitleme seçeneklerini kapsayacak biçimde düzeltin; uygunluk ve hata profili metinlerinden zorunlu kalıcılık iddiasını çıkarın."
+    },
+    {
+      "target_ref": "root_001102/B010",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe, hurma çekirdeğinin ezilmiş veya önceden hazırlanmış olduğunu söyler. Kaynak yalnız çekirdeğin bitkisel yemle karıştırılıp deveye yedirildiğini bildirir; ezme veya başka bir ön hazırlık belirtmez.",
+      "smallest_correction": "Gerekçeden ezilmiş veya hazırlanmış nitelemesini çıkarın ve yalnız çekirdeğin yemle karıştırılıp deveye verilmesini koruyun."
+    },
+    {
+      "target_ref": "root_001102/B010",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Katkılı deve suyu komşusuyla karşılaştırmadaki odak metni çekirdeği kuru diye niteler. Dal kanıtı çekirdeğin kuruluğunu belirtmez.",
+      "smallest_correction": "İlgili focus_only metninden kuru nitelemesini çıkarın; çekirdeğin bitkisel yemle karıştırılması ve deveye yedirilmesi ayrımını değiştirmeyin."
+    },
+    {
+      "target_ref": "root_001102/B012",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İlk çekirdek yüzeyde kasabın yanında yüzücü denmektedir; bu sözcük Türkçede hayvan derisini yüzen kişiyi değil, suda yüzen kişiyi belirtir ve kaynakta anlatılan katılımcıyı yanlış tanımlar.",
+      "smallest_correction": "İlk çekirdek yüzeydeki yüzücü sözünü deriyi yüzen kişi ile değiştirin; yüzme işlemi ve deride doku bırakma sınırını aynen koruyun."
+    }
+  ]
+}

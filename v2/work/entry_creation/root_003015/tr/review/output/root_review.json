@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B001 disindaki dallar kaynak ifadesi, mekanik kapsam ve komsu sinirlariyla uyumlu. B001 source_synthesis alaninda ise istenmeyen seyi kisiye yoneltme ayrintisi iki kaynagin ortak verdigi unsur gibi sunulmus; bu ayrinti birlesik claim icinde yer alir, fakat ortak cekirdek olarak yalniz zarar ve agir kotuluk guvenle soylenebilir.",
+  "issues": [
+    {
+      "target_ref": "root_003015/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B001 kaynak ifadesinde iki kaynak zarar ve kotuluk alaninda birlesir; ancak kisiye hoslanmadigi seyi yoneltme ayrintisi claim icindeki ayri bir ifade olarak gelir. Yazar common_summary alaninda bu ayrintiyi kaynaklarin ortak verdigi unsur gibi sunarak ortak kaynak sentezini genisletmis.",
+      "smallest_correction": "B001 source_synthesis.common_summary metnini, ortak cekirdegi zarar ve agir kotuluk olarak verecek; istenmeyen seyi kisiye yoneltmeyi ise ayni kaynak ifadesinde yer alan iliskili kullanim olarak ayiracak sekilde daralt."
+    }
+  ]
+}

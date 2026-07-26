@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtının dal kimlikleri, kapsamları ve komşu ayrımları genel olarak kanıtla uyumludur. Ancak ikinci dalın tanımı sınırlı bir sürü koşulunu bütün mali ortaklıklara taşımakta, üçüncü dal ise hastalığın karınla temasını kanıtta bulunmayan yayılma ve yerleşme sonuçlarıyla genişletmektedir.",
+  "issues": [
+    {
+      "target_ref": "root_000431/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, malların birbirine katılmasını genel olarak verirken yalnızca sürü ortakları için malların henüz bölüşülmemiş olmasını belirtir. Tanımdaki \"ayrılmaz bir ortaklık\" sözü bu özel koşulu bütün mali ortaklıkların zorunlu sınırı gibi gösterir.",
+      "smallest_correction": "Tanımdaki \"mallarını ayrılmaz bir ortaklıkta birleştirmesi\" ifadesini \"mallarını ortak bir düzende birleştirmesi\" olarak değiştirin; diğer kavram haritası içeriğini koruyun."
+    },
+    {
+      "target_ref": "root_000431/B003",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt hastalığın karınla karışmasını veya temasını bildirir; yayılma sonucu bildirmez. F004'teki \"karışıp yayılması\" ifadesi kaynakta bulunmayan bir sonuç ekler.",
+      "smallest_correction": "F004 ifadesini hastalığın karın içine karışması veya karınla temas etmesiyle sınırlayın ve \"yayılması\" sözünü kaldırın."
+    },
+    {
+      "target_ref": "root_000431/B003",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt yalnızca hastalığın karınla karışmasını bildirir. İlgili bağlamsal karşılıktaki \"yayılması\" ve açıklamadaki \"yerleşmesini\" sözleri kanıtlanmamış ek sonuçlardır.",
+      "smallest_correction": "İlgili karşılığı \"hastalığın karın içine karışması\" yapın; uygulanabilirlik ve korunan anlam açıklamalarından yayılma ve yerleşme iddialarını çıkarın."
+    },
+    {
+      "target_ref": "root_000431/B003",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_024"
+      ],
+      "evidence_conflict": "lu_024 hastalığın karınla karışmasını bildirir, fakat hedef karşılık buna \"yayılması\" sonucunu ekler.",
+      "smallest_correction": "lu_024 hedef karşılığını \"hastalığın karın içine karışması\" olarak değiştirin."
+    }
+  ]
+}

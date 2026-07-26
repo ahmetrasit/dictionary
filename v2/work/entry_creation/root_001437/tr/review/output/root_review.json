@@ -1,0 +1,50 @@
+{
+  "verdict": "editorial_review",
+  "summary": "B001 dalında bekleme, bütün kullanımları yöneten ortak çekirdek olarak kurulmuş; ancak kanıt, bir yerde kalma anlamını bağımsız biçimde verir ve bunun bekleme sayılmasını değişken bir kaynak yorumu olarak sunar. Bu temel çözümleme birden çok bağlı alanı etkilediği için editoryal değerlendirme gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_001437/B001",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kimlik yargısı dal çerçevesini bütünüyle kabul ediyor. Oysa kanıt, kalma anlamını doğrudan verirken bunun bekleme anlamında sayılmasını ihtimalli bir aktarım olarak ayrıca belirtir; dolayısıyla her kalışı bekleyişle birlikte düşünmek zorunlu değildir.",
+      "smallest_correction": "Durumu kabul edilmiş yerine nitelendirilmiş olarak kaydedip gerekçede bekleme ile bir yerde kalmanın kanıtta yan yana bulunduğunu, fakat her kalma kullanımının zorunlu olarak bekleme içermediğini belirtin."
+    },
+    {
+      "target_ref": "root_001437/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F002, bir yerde kalmayı bekleyiş çekirdeğinin yer bildiren görünümü sayıyor. Kanıt ise kalma ve ikamet etme yönünü kendi başına tanıklıyor; onu beklemenin alt türü olarak kurmuyor.",
+      "smallest_correction": "Tanımı durma, oyalanma veya bir yerde kalma ile bekleme yönlerini kapsayacak biçimde nitelendirin; F002'yi bekleyişe bağımlı bir uzmanlaşma olmaktan çıkarıp bağımsız tanıklanan kalma yönü olarak düzenleyin."
+    },
+    {
+      "target_ref": "root_001437/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet bütün tanıklığı durup bekleme çevresinde birleştiriyor ve bir yerde kalmayı bunun bağlamsal görünümü yapıyor. Kanıtta ise kaynaklar bekleme, oyalanma ve kalma arasında farklı ağırlıklar taşır; bir kaynak kalmayı verir ve bekleme eşitlemesini ihtimalli biçimde aktarır.",
+      "smallest_correction": "Ortak özeti, kaynakların durma ve süre geçirme alanında buluştuğunu; bekleme ile bir yerde kalmanın farklı kaynaklarda ayrı ayrı veya birlikte öne çıktığını söyleyecek biçimde sınırlayın."
+    },
+    {
+      "target_ref": "root_001437/B001",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı olan bekleyerek durup kalma, bekleme unsurunu dalın her kullanımına zorunlu olarak ekler. Bu, kanıtta bağımsız biçimde verilen bir yerde kalma ve oyalanma kapsamını daraltır.",
+      "smallest_correction": "Kavram karşılığını beklemeyi zorunlu koşmadan durup kalma ve bekleme yönlerini birlikte temsil eden bir ifadeyle değiştirin; uygulanabilirlik ve hata profilini de aynı sınırla uyumlu hale getirin."
+    }
+  ]
+}

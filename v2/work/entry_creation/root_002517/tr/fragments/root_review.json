@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": "e6375daabdfd6aa2d197d71ea9705f18efdba4317d914de51550a26fab73eb88",
+  "verdict": "repair",
+  "summary": "B006 disindaki dallar kanitla uyumlu gorunuyor. B006 concept_gloss alani, kaynakta birlikte verilen ic kirginlik uyandirma ve birine karsi ic tepki duyma kapsamindan yalnizca uyandirma yonunu tasidigi icin sinirli bir duzeltme gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_002517/B006",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001; birinin gogus veya ic alaninda kizginlik uyandirmayi ve birine karsi kizginlik ya da kirginlik duymayi birlikte verir. Yazar tanimi bu iki yonu korurken concept_gloss metni yalnizca \"icte kirginlik uyandirma\" diyerek karsi tarafa duyulan ic tepkiyi glossun cekirdeginden dusuruyor.",
+      "smallest_correction": "Yalnizca root_002517/B006 concept_gloss alanini, ic kirginligi uyandirma ile birine karsi ic kirginlik veya kizginlik duyma yonlerini birlikte tasiyacak bicimde degistirin; text, applicability ve error_profile aciklamalarini bu sinira uyarlayin."
+    }
+  ]
+}

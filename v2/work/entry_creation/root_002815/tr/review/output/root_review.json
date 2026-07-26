@@ -1,0 +1,83 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar cikisi genel olarak delile bagli; ancak yayin anlamini etkileyen dar kusurlar var. B010 sicaklik dalinda hayvani cokturen sonuc cekirdek sinirdan ikincil ornege itilmis. B011 ve ona bakan komsu glossu besin/sut kapsamını yalniz sute daraltiyor. B012 ve ona bakan komsu glossunda 'degersiz' cekirdegi bozan yazim hatasi var. B014 ve ona bakan komsu glossu isabetin oldurdugu hedefi yanlis yonlendiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_002815/B010",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Delil gunes sicaginin hayvani cokturmesine kadar siddetlenmesini verir ve her siddetli sicagi kapsamaz. Facet F001 bunu yalniz gunes sicaginin cok siddetlenmesi diye cekirdeklestirip hayvanin cokmesini F002'de specialization olarak ikincil gosteriyor.",
+      "smallest_correction": "B010 concept_map icinde F001 core ifadesini hayvani cokup kalacak duruma getiren sicaklik sinirini icerecek sekilde duzelt; F002'yi bu etkinin koyun veya ceylan uzerindeki verilen gorunumu olarak example yap."
+    },
+    {
+      "target_ref": "root_002815/B011",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Delil sutu, toplulugu doyurup kandirmayi ve insani ayakta tutan genel besin/azik yeterliligini birlikte verir. Concept gloss 'doyurup cokturen sut' diyerek kendi error_profile'inda da kaydedildigi gibi genel azik ve besin kapsamını kaybediyor.",
+      "smallest_correction": "B011 concept_gloss metnini ve ona bagli applicability/error_profile ifadelerini 'doyurup agirlastiran besin' cekirdegine gore duzelt; fit degerini none yap ve loses alanini null'a indir."
+    },
+    {
+      "target_ref": "root_002815/B010",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B010 icindeki B011 komsu glossu 'doyurup cokturen sut' diyerek B011 delilindeki sut veya azik/besin kapsamını daraltiyor.",
+      "smallest_correction": "B010 neighbor_distinctions icinde neighbor_ref root_002815/B011 olan satirin gloss alanini 'doyurup agirlastiran besin' olarak degistir."
+    },
+    {
+      "target_ref": "root_002815/B012",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Delil kisiyi degersiz, onemsiz veya bilinmeyen biri olarak verir. Concept gloss 'degemsiz siradan kisi' biciminde bozuk bir kelimeyle bu cekirdegi yayin glossunda bozuyor.",
+      "smallest_correction": "B012 concept_gloss.text alanini 'degersiz siradan kisi' yap."
+    },
+    {
+      "target_ref": "root_002815/B013",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B013 icindeki B012 komsu glossu da ayni bozuk 'degemsiz' bicimini tasiyor; B012 delili ise degersiz/onemsiz kisi tipidir.",
+      "smallest_correction": "B013 neighbor_distinctions icinde neighbor_ref root_002815/B012 olan satirin gloss alanini 'degersiz siradan kisi' olarak degistir."
+    },
+    {
+      "target_ref": "root_002815/B014",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Delil atisi veya nazari isabet eden kisinin hedefini oldurmesi, yani isabet ettirdigi seyin kalkmamasidir. Concept gloss 'isabet edeni oldurme' diyerek oldurulen hedefi degil isabet eden faili/unsuru cagristiriyor.",
+      "smallest_correction": "B014 concept_gloss.text alanini 'isabet ettigini oldurme' yap."
+    },
+    {
+      "target_ref": "root_002815/B016",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B016 icindeki B014 komsu glossu 'isabet edeni oldurme' bicimiyle B014 delilindeki hedefi oldurme anlamini yanlis yonlendiriyor.",
+      "smallest_correction": "B016 neighbor_distinctions icinde neighbor_ref root_002815/B014 olan satirin gloss alanini 'isabet ettigini oldurme' olarak degistir."
+    }
+  ]
+}

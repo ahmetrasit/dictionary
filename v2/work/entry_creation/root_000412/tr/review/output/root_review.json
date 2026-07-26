@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın dal ayrımları genel olarak kanıtla uyumludur. Ancak B003 kavram haritasındaki fazla dizi kapanışı ile B005 kimlik yargısındaki yinelenen gerekçe anahtarı yapıyı bozmaktadır. Ayrıca B003 ile güneşin olağan batışını bildiren komşu arasındaki ilişki, tutulmayı gözden kaybolma sayarak gereğinden fazla yakın kurulmuştur.",
+  "issues": [
+    {
+      "target_ref": "root_000412/B003",
+      "field": "concept_map",
+      "severity": "blocker",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, güneş ve yıldız kullanımlarını üç fasette düzenli biçimde temsil etmeye elverirken F003 kaydından sonraki fazladan dizi kapanışı concept_map yapısını geçersiz kılmaktadır.",
+      "smallest_correction": "F003 kaydından sonra yinelenen fazladan kapanış köşeli parantezini kaldır; fasetlerin metnini ve kimliklerini değiştirme."
+    },
+    {
+      "target_ref": "root_000412/B003",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt odak dalda güneş için tutulmayı, komşuda ise güneşin ufukta olağan batışını bildirir. Buna rağmen ilişki near_synonym olarak kurulmuş ve ortak alan güneşin gözden kaybolması diye sunulmuştur; tutulma zorunlu olarak gözden kaybolma değildir ve iki olay sıradan kullanımda birbirinin yerine geçmez.",
+      "smallest_correction": "root_001112/B004 kaydında relation_type değerini near_neighbor yap; shared_zone ve distinction metinlerini yalnız görünürlüğün azalması ortaklığı ile tutulma-batış süreç farkını belirtecek biçimde düzelt."
+    },
+    {
+      "target_ref": "root_000412/B005",
+      "field": "identity_judgment",
+      "severity": "blocker",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt tek bir kabul gerekçesini desteklerken identity_judgment içinde aynı rationale anahtarı ve aynı metin iki kez yinelenmiştir; bu, tekil alan yapısını bozar.",
+      "smallest_correction": "Yinelenen rationale anahtarlarından birini kaldır ve kalan gerekçe metnini değiştirme."
+    }
+  ]
+}

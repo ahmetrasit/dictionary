@@ -1,0 +1,809 @@
+{
+  "format": 2,
+  "generated_by": "v2/scripts/build_branch_evidence.py",
+  "root_envelope_id": "root_001266",
+  "packet_path": "data/output/root_packets/root_001266.json",
+  "packet_sha256": "1ff9f12a2663221d118b3445325165d6a2a299b356c232771745b672a71f2a35",
+  "furuq_path": "data/working/furuq_v4.sqlite",
+  "furuq_sha256": "1099db0d56515d2eb3e8d72f104f2e338c2c9a8c1fa6abbb046406d3b327e722",
+  "qnet_path": "data/upstream/qnet/incidence_full/raw_keyword_incidence.sqlite",
+  "qnet_sha256": "a5262b568203bff7ec04e6ca905781125beec83f90d62a5cf0cd6ff61049eee8",
+  "qnet_theme_path": "data/upstream/qnet/bridge_theme_full/bridge_theme_staging.sqlite",
+  "qnet_theme_sha256": "e4f590a111376e372eefef6d03b8694837ec9989017ce721d56db9828b2a734e",
+  "qnet_fix_manifest_path": "data/upstream/qnet/bridge_theme_full/latent_v11_qac_qnet_fix_manifest.json",
+  "qnet_fix_manifest_sha256": "b0ae3c19450a8019825321f6dc1e9f4c336249950f50267ed84eb3258756502c",
+  "branch": {
+    "root_id": "root_001266",
+    "branch_id": "B002",
+    "branch_image_ar": "لحم تأخذه النار فيسيل ماؤه ويتغير",
+    "what_is_ar": "يدخل فيه قهر اللحم إذا طبخ أو أخذته النار حتى يسيل ماؤه ويتغير.",
+    "what_is_not_ar": "لا يدخل فيه قهر الناس بالغلبة ولا القهقرى ولا أسماء الحجر والطعام.",
+    "source_phrase_ar": "قهر اللحم طبخ حتى يسيل ماؤه (maqayis)؛ قهر اللحم إذا أخذته النار وسال ماؤه (sihah)؛ قهرنا اللحم وذلك أول ما تأخذ فيه النار فيسيل ماؤه (tahdhib)؛ ضبحته النار وضبته وقهرته إذا غيرته (tahdhib)",
+    "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2849;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1888:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=1c6ab5566e9d0db8;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D288%3Bsegment_index%3D2:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=fca3c1435f5a1ecf",
+    "status": "accepted",
+    "contaminated": "no"
+  },
+  "dictionary_basis": {
+    "dictionary_count": 3,
+    "passage_count": 3,
+    "sources": [
+      {
+        "source_id": "maqayis",
+        "dictionary_name": "Maqāyīs al-Lugha",
+        "source_refs": [
+          "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2849"
+        ],
+        "passages": [
+          {
+            "source_ref": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2849",
+            "headword": "قهر",
+            "route_status": "exact",
+            "entry_text_clean": "# | ( قهر ) # | القاف والهاء والراء كلمة صحيحة تدل على غلبة وعلو | يقال قهره يقهره ~~قهرا | والقاهر الغالب | وأقهر الرجل إذا صير في حال يذل فيها | قال # % تمنى حصين أن يسود جذاعه % % فأمسى حصين قد أذل وأقهرا % % وقهر إذا ~~غلب | ومن الباب قهر اللحم طبخ حتى يسيل ماؤه والقهقر فيما يقال التيس | ~~فإن كان صحيحا فلعله من القياس الذي ذكرناه والقهقر الحجر الصلب | وليس ~~يبعد عن الأصل الذي بنى عليه الباب | ومما شذ عن ذلك رجع القهقرى إذا رجع ~~إلى خلفه",
+            "origin_corpus": "quranic",
+            "section_path": "-",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      },
+      {
+        "source_id": "sihah",
+        "dictionary_name": "al-Ṣiḥāḥ",
+        "source_refs": [
+          "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1888:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=1c6ab5566e9d0db8"
+        ],
+        "passages": [
+          {
+            "source_ref": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1888:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=1c6ab5566e9d0db8",
+            "headword": "قهر",
+            "route_status": "exact",
+            "entry_text_clean": "### | [قهر] # قهره قهرا: غلبه. وأقهرته: وجدته مقهورا. قال أبو عبيد: ومنه قول المخبل ~~(1) : تمنى حصين أن يسود جذاعه * فأمسى حصين قد أذل وأقهرا - على ما لم يسم ~~فاعله، أي وجد كذلك. ويروى: \" قد أذل وأقهرا \"، أي صار أمره إلى الذل ~~والقهر. وهو من قياس قولهم: أحمد الرجل: صار أمره إلى الحمد. وحصين: اسم ~~الزبرقان. وجذاعه: رهطه من تميم. وقهز: غلب. وقهر اللحم أيضا، إذا أخذته ~~النار وسال ماؤه. ويقال: أخذت فلانا قهرة بالضم، أي اضطرارا. ويقال: أخذت ~~فلانا قهرة بالضم، أي اضطرارا. والقهقرى: الرجوع إلى خلف. فإذا قلت: ms0587 رجعت ~~القهقرى، فكأنك قلت: رجعت الرجوع الذي يعرف بهذا الاسم، لأن القهقرى ضرب من ~~الرجوع. والقهقرى بتشديد الراء: الحجر الصلب. وكان أحمد بن يحيى يقول وحده: ~~القهقار.",
+            "origin_corpus": "quranic",
+            "section_path": "heading:1888",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      },
+      {
+        "source_id": "tahdhib",
+        "dictionary_name": "Tahdhīb al-Lugha",
+        "source_refs": [
+          "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D288%3Bsegment_index%3D2:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=fca3c1435f5a1ecf"
+        ],
+        "passages": [
+          {
+            "source_ref": "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D288%3Bsegment_index%3D2:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=fca3c1435f5a1ecf",
+            "headword": "قهر",
+            "route_status": "exact",
+            "entry_text_clean": "# قهر : قال الليث : القهر : الغلبة والأخذ من فوق ، والله القاهر القهار ، ~~قهر خلقه بقدرته وسلطانه ، فصرفهم على ما أراد طوعا أو كرها . ويقال أخذ ~~القوم قهرا : إذا أخذوا دون رضاهم على سبيل الغلبة . ابن السكيت : قال ~~الطائي : القهيرة : محض يلقى فيه الرضف فإذا غلى ذر عليه الدقيق وسيط به ثم ~~أكل . وقال غيره : قهرنا اللحم نقهره : وذلك أول ما تأخذ فيه النار فيسيل ~~ماؤه ؛ قال الشاعر : # فلما أن تلهوجنا شواء # به اللهبان مقهورا ضبيحا # يقال : ضبحته النار وضبته وقهرته : إذا غيرته . أبو عبيد عن الكسائي : ~~أقهرنا فلانا : وجدناه مقهورا ؛ ومنه قول المخبل : # تمنى حصين أن يسود جذاعه # فأمسى حصين لو أذل وأقهرا ms1502 # قال أبو عبيد : ورواه الأصمعي : قد أذل وأقهرا ؛ أي : صار أصحابه أذلاء ~~مقهورين . # قال شمر : قال أبو عمرو : القهقر : الحجر الأملس ، وقال أبو خيرة : ~~القهقر والقهاقر ، وهو ما سهكت به الشيء . قال : والقهر أعظم منه ؛ وقال ~~الكميت : # وكأن خلف حجاجها من رأسها # وأمام مجمع أخدعيها ، القهقرا # شمر عن أبي عبيدة قال : القهقر ، بتشديد الراء ؛ قال الجعدي : # بأخضر كالقهقر ينفض رأسه # أمام رعال الخيل ، وهي تقرب PageV05P257 # وأخبرني الإيادي عن شمر أنه قال : القهقر ، بالتخفيف : الطعام الكثير ~~الذي في الأوعية منضودا ؛ وأنشد : # بات ابن أدماء يسامي القهقرا # قال شمر : والقهقر : الطعام الكثير الذي في العيبة . قال : والقهيقران : ~~دويبة . أبو عبيد : القهقرى : التراجع إلى الخلف ، يقال : رجع فلان القهقرى ~~: إذا رجع على عقبه وقد قهقر : إذا فعل ذلك . ابن الأنباري : إذا ثنيت ~~القهقرى والخوزلى تثنيه بإسقاط الياء ، فقلت القهقران والخوزلان ، استثقالا ~~للياء مع التثنية ، وياء التثنية . وقد جاء في حديث رواه عكرمة عن ابن عباس ~~عن عمرو ، أن النبي صلى الله عليه وسلم قال : ( إني أمسك بحجزكم ، هلم إلى ~~النار ، وتقاحمون فيها تقاحم الفراش ، وتردون على الحوض ، ويذهب بكم ذات ~~الشمال ، فأقول : يا رب ، أمتي فيقال : إنهم كانوا يمشون بعدك القهقرى ) . ~~قلت : معناه : الارتداد عما كانوا عليه .",
+            "origin_corpus": "quranic",
+            "section_path": "parent_entry_id=288;segment_index=2",
+            "page_or_volume_ref": "PageV05P257"
+          }
+        ]
+      }
+    ]
+  },
+  "lexical_units": [
+    {
+      "lexical_unit_id": "lu_010",
+      "expression_ar": "قهر اللحم",
+      "unit_kind": "collocation",
+      "sense_ar": "طبخ اللحم أو أخذته النار حتى سال ماؤه وتغير",
+      "source_phrase_ar": "قهر اللحم طبخ حتى يسيل ماؤه (maqayis)؛ قهر اللحم إذا أخذته النار وسال ماؤه (sihah)؛ قهرنا اللحم وذلك أول ما تأخذ فيه النار فيسيل ماؤه (tahdhib)؛ قهرته إذا غيرته (tahdhib)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2849;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1888:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=1c6ab5566e9d0db8;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D288%3Bsegment_index%3D2:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=fca3c1435f5a1ecf",
+      "branch_source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2849;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1888:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=1c6ab5566e9d0db8;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D288%3Bsegment_index%3D2:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=fca3c1435f5a1ecf",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "accepted"
+    }
+  ],
+  "qnet_candidates": [
+    {
+      "root_id": "root_000321",
+      "branch_id": "B008",
+      "root_norm": "ح س س",
+      "branch_image_ar": "الحسحسة شواء على جمر",
+      "what_is_ar": "جعل اللحم على الجمر؛ ورد النار على الشواء أو خبز الملة لينضج",
+      "what_is_not_ar": "إحراق البرد للنبات؛ القتل بالسيف",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:679;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2179:headword=%D8%AD%D8%B3%D8%B3:root=%D8%AD%20%D8%B3%20%D8%B3:sha=dbe4f5f6cf8f4a03;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D222%3Bsegment_index%3D4:headword=%D8%AD%D8%B3:root=%D8%AD%20%D8%B3:sha=01db2a08518fb7ed",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "cooking",
+        "meat"
+      ]
+    },
+    {
+      "root_id": "root_000361",
+      "branch_id": "B001",
+      "root_norm": "ح ن ذ",
+      "branch_image_ar": "إنضاج الشواء بالحجارة المحماة",
+      "what_is_ar": "كل إنضاج للشواء أو اللحم بالحجارة المحماة أو بين حجرين أو في غم الأرض حتى يكون حنيذا أو محنوذا",
+      "what_is_not_ar": "ليس إعراق الفرس بالجلال ولا تقليل ماء الشراب ولا اسم الموضع",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:810;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1677:headword=%D8%AD%D9%86%D8%B0:root=%D8%AD%20%D9%86%20%D8%B0:sha=4fc5318795210414;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1375%3Asubentry%3A0%3A%D8%AD%D9%86%D8%B0:headword=%D8%AD%D9%86%D8%B0:root=%D8%AD%20%D9%86%20%D8%B0:sha=c7ec9a4c98b37feb;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1478:headword=%D8%AD%D9%86%D8%B0:root=%D8%AD%20%D9%86%20%D8%B0:sha=161e17c0fbc841bd;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D68:headword=%D8%AD%D9%86%D8%B0:root=%D8%AD%20%D9%86%20%D8%B0:sha=f0480b99968dce81;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A367:headword=%D8%AD%D9%86%D8%B0:root=%D8%AD%20%D9%86%20%D8%B0:sha=f0f6efa79ff05bf7",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "cooking",
+        "meat"
+      ]
+    },
+    {
+      "root_id": "root_000600",
+      "branch_id": "B005",
+      "root_norm": "ر م ض",
+      "branch_image_ar": "الشواء على الرضف",
+      "what_is_ar": "يدخل فيه رمض اللحم أو الشاة على الرضف أو الرضاف المحرقة حتى ينضج، واللحم المرموض والمرمض موضعه.",
+      "what_is_not_ar": "لا يدخل فيه مجرد إحراق الرمضاء للقدم، ولا ترقيق النصل بين حجرين.",
+      "source_refs": "maqayis:root=%D8%B1%20%D9%85%20%D8%B6:headword=%D8%B1%D9%85%D8%B6:sha=5adcd4d657853b82;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2669:headword=%D8%B1%D9%85%D8%B6:root=%D8%B1%20%D9%85%20%D8%B6:sha=dc39771bb38f3c6e;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D612%3Bsegment_index%3D41:headword=%D8%B1%D9%85%D8%B6:root=%D8%B1%20%D9%85%20%D8%B6:sha=84716cf3eaeacb24",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "cooking",
+        "meat"
+      ]
+    },
+    {
+      "root_id": "root_000830",
+      "branch_id": "B001",
+      "root_norm": "ش و ي",
+      "branch_image_ar": "الإنضاج بالحرارة والشواء",
+      "what_is_ar": "يدخل فيه شوي اللحم واتخاذ الشواء وانشواء اللحم وإطعام الشواء وإعطاء الشاة لتشوى وتسخين الماء",
+      "what_is_not_ar": "ليس الأطراف ولا البقية ولا رديء المال",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4533:headword=%D8%B4%D9%88%D9%8A:root=%D8%B4%20%D9%88%20%D9%8A:sha=3d49b5dee78dae49;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A71%3A%D8%B4%D9%88%D9%8A:headword=%D8%B4%D9%88%D9%8A:root=%D8%B4%20%D9%88%20%D9%8A:sha=f106affef725f5c3;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A594%3Asubentry%3A78%3A%D8%B4%D9%88%D9%8A:headword=%D8%B4%D9%88%D9%8A:root=%D8%B4%20%D9%88%20%D9%8A:sha=764e1456f73265c3;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5398:headword=%D8%B4%D9%88%D9%89:root=%D8%B4%20%D9%88%20%D9%8A:sha=3bb7c88b7fbbee65;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D603%3Bsegment_index%3D12:headword=%D8%B4%D9%88%D9%89:root=%D8%B4%20%D9%88%20%D9%89:sha=df16f834e875af4a;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A827:headword=%D8%B4%D9%88%D9%89:root=%D8%B4%20%D9%88%20%D9%8A:sha=659c15260e38951d;0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1862;maqayis:root=%D8%B4%20%D9%88%20%D9%8A:headword=%D8%B4%D9%88%D9%8A:sha=675c7a61a500a590",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "cooking",
+        "meat"
+      ]
+    },
+    {
+      "root_id": "root_001513",
+      "branch_id": "B001",
+      "root_norm": "ن ض ج",
+      "branch_image_ar": "بلوغ تمام الطبخ والنضج",
+      "what_is_ar": "دخول اللحم والثمر والعنب والجلد ونحوه في تمام النضج والإدراك بالطبخ أو الشي أو أثر الحرارة",
+      "what_is_not_ar": "ليس نضيج الرأي ولا الناقة التي جاوزت وقت ولادها",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3624;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4012:headword=%D9%86%D8%B6%D8%AC:root=%D9%86%20%D8%B6%20%D8%AC:sha=0a835883aecc8556;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1296%3Asubentry%3A0%3A%D9%86%D8%B6%D8%AC:headword=%D9%86%D8%B6%D8%AC:root=%D9%86%20%D8%B6%20%D8%AC:sha=2f36d86883d207c8;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A904:headword=%D9%86%D8%B6%D8%AC:root=%D9%86%20%D8%B6%20%D8%AC:sha=7d540cd0a657c8d5;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D546%3Bsegment_index%3D34:headword=%D9%86%D8%B6%D8%AC:root=%D9%86%20%D8%B6%20%D8%AC:sha=15683db9eb302e77;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1507:headword=%D9%86%D8%B6%D8%AC:root=%D9%86%20%D8%B6%20%D8%AC:sha=38b6c543704a61eb",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "cooking",
+        "meat"
+      ]
+    }
+  ],
+  "qnet_core_overlap_candidates": [
+    {
+      "root_id": "root_000350",
+      "branch_id": "B007",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "moisture",
+        "softening"
+      ]
+    },
+    {
+      "root_id": "root_000862",
+      "branch_id": "B009",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "alteration",
+        "fire"
+      ]
+    },
+    {
+      "root_id": "root_000871",
+      "branch_id": "B003",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "cooking",
+        "meat"
+      ]
+    },
+    {
+      "root_id": "root_000885",
+      "branch_id": "B008",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "fire",
+        "meat"
+      ]
+    },
+    {
+      "root_id": "root_000535",
+      "branch_id": "B006",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 0,
+      "shared_core_keywords": [
+        "moisture",
+        "softening"
+      ]
+    },
+    {
+      "root_id": "root_000787",
+      "branch_id": "B005",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 0,
+      "shared_core_keywords": [
+        "cooking",
+        "meat"
+      ]
+    },
+    {
+      "root_id": "root_001413",
+      "branch_id": "B004",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 0,
+      "shared_core_keywords": [
+        "moisture",
+        "softening"
+      ]
+    },
+    {
+      "root_id": "root_001435",
+      "branch_id": "B005",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 0,
+      "shared_core_keywords": [
+        "moisture",
+        "softening"
+      ]
+    }
+  ],
+  "qnet_bridge_overlap_candidates": [
+    {
+      "root_id": "root_001122",
+      "branch_id": "B001",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 4,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "food",
+        "heat",
+        "preparation",
+        "transformation"
+      ]
+    },
+    {
+      "root_id": "root_001108",
+      "branch_id": "B007",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 3,
+      "shared_bridge_keywords": [
+        "food",
+        "heat",
+        "transformation"
+      ]
+    },
+    {
+      "root_id": "root_000115",
+      "branch_id": "B003",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 2,
+      "shared_bridge_keywords": [
+        "food",
+        "preparation",
+        "transformation"
+      ]
+    },
+    {
+      "root_id": "root_000252",
+      "branch_id": "B009",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 2,
+      "shared_bridge_keywords": [
+        "food",
+        "preparation",
+        "transformation"
+      ]
+    },
+    {
+      "root_id": "root_000438",
+      "branch_id": "B005",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 2,
+      "shared_bridge_keywords": [
+        "food",
+        "preparation",
+        "transformation"
+      ]
+    },
+    {
+      "root_id": "root_000535",
+      "branch_id": "B006",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 2,
+      "shared_bridge_keywords": [
+        "food",
+        "preparation",
+        "transformation"
+      ]
+    }
+  ],
+  "qnet_theme_overlap_candidates": [
+    {
+      "root_id": "root_000205",
+      "branch_id": "B004",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 6,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "agency_action",
+        "change_transition",
+        "cooking_drink",
+        "food_nutrition",
+        "provision_resource",
+        "substance_texture"
+      ]
+    },
+    {
+      "root_id": "root_000252",
+      "branch_id": "B009",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 5,
+      "shared_themes": [
+        "agency_action",
+        "change_transition",
+        "cooking_drink",
+        "food_nutrition",
+        "substance_texture"
+      ]
+    },
+    {
+      "root_id": "root_000430",
+      "branch_id": "B008",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 5,
+      "shared_themes": [
+        "agency_action",
+        "cooking_drink",
+        "food_nutrition",
+        "provision_resource",
+        "substance_texture"
+      ]
+    },
+    {
+      "root_id": "root_001108",
+      "branch_id": "B007",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 5,
+      "shared_themes": [
+        "change_transition",
+        "cooking_drink",
+        "fire_heat",
+        "food_nutrition",
+        "substance_texture"
+      ]
+    },
+    {
+      "root_id": "root_000600",
+      "branch_id": "B005",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "agency_action",
+        "change_transition",
+        "cooking_drink",
+        "fire_heat",
+        "food_nutrition"
+      ]
+    },
+    {
+      "root_id": "root_000361",
+      "branch_id": "B001",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "agency_action",
+        "change_transition",
+        "cooking_drink",
+        "fire_heat",
+        "food_nutrition"
+      ]
+    },
+    {
+      "root_id": "root_000415",
+      "branch_id": "B004",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "agency_action",
+        "change_transition",
+        "cooking_drink",
+        "food_nutrition",
+        "substance_texture"
+      ]
+    },
+    {
+      "root_id": "root_001203",
+      "branch_id": "B005",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "agency_action",
+        "cooking_drink",
+        "food_nutrition",
+        "provision_resource",
+        "substance_texture"
+      ]
+    }
+  ],
+  "qnet_focus_coverage": {
+    "raw_keyword_exact_port": true,
+    "snapshot_exact_port": true,
+    "postfix_exact_port": false,
+    "theme_scope": "branch",
+    "focus_themes": [
+      "agency_action",
+      "change_transition",
+      "cooking_drink",
+      "fire_heat",
+      "food_nutrition",
+      "provision_resource",
+      "substance_texture"
+    ]
+  },
+  "furuq_candidates": [
+    {
+      "root_id": "root_000321",
+      "branch_id": "B008",
+      "root_norm": "ح س س",
+      "branch_image_ar": "الحسحسة شواء على جمر",
+      "what_is_ar": "جعل اللحم على الجمر؛ ورد النار على الشواء أو خبز الملة لينضج",
+      "what_is_not_ar": "إحراق البرد للنبات؛ القتل بالسيف",
+      "source_phrase_ar": "حسحست الشيء من اللحم إذا جعلته على الجمرة (maqayis)؛ قبل أن يحسحسوا من جزورهم أي يجعلوا اللحم على النار (maqayis)؛ حسست اللحم وحسحسته إذا جعلته على الجمر (sihah;tahdhib)؛ حسست النار إذا رددتها على الشواء (sihah)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:679;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2179:headword=%D8%AD%D8%B3%D8%B3:root=%D8%AD%20%D8%B3%20%D8%B3:sha=dbe4f5f6cf8f4a03;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D222%3Bsegment_index%3D4:headword=%D8%AD%D8%B3:root=%D8%AD%20%D8%B3:sha=01db2a08518fb7ed",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_packet"
+      ],
+      "shared_consensus_core": [
+        "cooking",
+        "meat"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000350",
+      "branch_id": "B007",
+      "root_norm": "ح ل ق",
+      "branch_image_ar": "إرطاب البسر إلى حلقه",
+      "what_is_ar": "يدخل فيه الحلقان والحلقانة والمحلقن من البسر إذا بلغ الإرطاب ثلثيه أو أرطب من حلقه",
+      "what_is_not_ar": "لا يدخل فيه حلق الإنسان ولا الحلقان بمعنى حلقة القوم",
+      "source_phrase_ar": "رطبة حلقانة إذا أرطبت من حلقها (jamhara)؛ الحلقان البسر إذا بلغ الإرطاب ثلثيه وكذلك المحلقن والبسرة حلقانة ومحلقنة (sihah)؛ حلقن البسر فهو محلقن إذا بلغ الإرطاب ثلثيه (sihah heading 4858)؛ المحلقن من البسر أن يبلغ الإرطاب ثلثيه وإنما هو من الحلق؛ الحلقان الواحدة حلقانة (maqayis)",
+      "source_refs": "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1474%3Asubentry%3A0%3A%D8%AD%D9%84%D9%82:headword=%D8%AD%D9%84%D9%82:root=%D8%AD%20%D9%84%20%D9%82:sha=ee40663e5dbcb74c;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3537:headword=%D8%AD%D9%84%D9%82:root=%D8%AD%20%D9%84%20%D9%82:sha=9be4079d88ba243c;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4858:headword=%D8%AD%D9%84%D9%82:root=%D8%AD%20%D9%84%20%D9%82:sha=24675741ffe45b99;maqayis:root=%D8%A7%20%D9%84%20%D9%85%20%D8%AD%20%D9%84%20%D9%82%20%D9%86:headword=%D8%A7%D9%84%D9%85%D8%AD%D9%84%D9%82%D9%86:sha=429bdd7127ffdcc7",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_core_overlap"
+      ],
+      "shared_consensus_core": [
+        "moisture",
+        "softening"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001122",
+      "branch_id": "B001",
+      "root_norm": "ف ء د",
+      "branch_image_ar": "حمى النار التي تشوي وتخبز وتوقد",
+      "what_is_ar": "يدخل فيه الحمى وشدة الحرارة، وشوي اللحم وخبز الخبزة في الملة، وإيقاد النار والنار نفسها، والفئيد المشوي أو المخبوز، وما به أو فيه الشوي والخبز من مفأد وسفود وموضع وقود.",
+      "what_is_not_ar": "لا يدخل فيه الفؤاد بوصفه القلب إلا من جهة تعليل التسمية بالحرارة، ولا إصابة الفؤاد أو داؤه، ولا وصف الجبان بضعف الفؤاد.",
+      "source_phrase_ar": "أصل صحيح يدل على حمى وشدة حرارة (maqayis)؛ فأدت اللحم شويته ولحم فئيد أي مشوي (maqayis;sihah;mufradat)؛ فأدت الخبزة مللتها أو خبزتها في الملة (maqayis;sihah;tahdhib)؛ افتأد القوم إذا أوقدوا نارا والفئيد النار نفسها (tahdhib)؛ المفأد السفود أو ما يخبز ويشوى به والمفتأد موضع الوقود (maqayis;sihah;tahdhib)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2702;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1368:headword=%D9%81%D8%A3%D8%AF:root=%D9%81%20%D8%A1%20%D8%AF:sha=f775a9c30d1c7ea9;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D725%3Bsegment_index%3D4:headword=%D9%81%D8%A3%D8%AF:root=%D9%81%20%D8%A3%20%D8%AF:sha=9cc738f989183388;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1174:headword=%D9%81%D8%A3%D8%AF:root=%D9%81%20%D8%A1%20%D8%AF:sha=232bfd7088c103d4",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_bridge_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [
+        "food",
+        "heat",
+        "preparation",
+        "transformation"
+      ],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000205",
+      "branch_id": "B004",
+      "root_norm": "ث م ر",
+      "branch_image_ar": "ثميرة اللبن",
+      "what_is_ar": "ثميرة اللبن وتحبيبه وظهور الزبد أو اجتماعه في السقاء والمخاض",
+      "what_is_not_ar": "ليس ثمر الشجر ولا المال ولا طرف السوط",
+      "source_phrase_ar": "الثميرة من اللبن حين يثمر (maqayis)؛ ما يظهر من الزبد قبل أن يجتمع (sihah)؛ قد ثمر السقاء تثميرا وكذلك أثمر (sihah)؛ أثمر الزبد اجتمع (tahdhib)؛ إذا أدرك اللبن ليمخض فظهر عليه تحبب وزبد فهو المثمر (tahdhib)؛ الثميرة من اللبن ما تحبب من الزبد (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:490;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1588:headword=%D8%AB%D9%85%D8%B1:root=%D8%AB%20%D9%85%20%D8%B1:sha=ca594aaee940a0bd;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D772%3Bsegment_index%3D18:headword=%D8%AB%D9%85%D8%B1:root=%D8%AB%20%D9%85%20%D8%B1:sha=739cb57a6eda2b26;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A209:headword=%D8%AB%D9%85%D8%B1:root=%D8%AB%20%D9%85%20%D8%B1:sha=399301f9527c16f0",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "agency_action",
+        "change_transition",
+        "cooking_drink",
+        "food_nutrition",
+        "provision_resource",
+        "substance_texture"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000361",
+      "branch_id": "B001",
+      "root_norm": "ح ن ذ",
+      "branch_image_ar": "إنضاج الشواء بالحجارة المحماة",
+      "what_is_ar": "كل إنضاج للشواء أو اللحم بالحجارة المحماة أو بين حجرين أو في غم الأرض حتى يكون حنيذا أو محنوذا",
+      "what_is_not_ar": "ليس إعراق الفرس بالجلال ولا تقليل ماء الشراب ولا اسم الموضع",
+      "source_phrase_ar": "شواء حنيذ أي منضج (maqayis)؛ الحنذ اشتواء اللحم المحنوذ بالحجارة المسخنة (ayn;tahdhib)؛ حنذت اللحم وهو أن تشويه على الحجارة حتى ينضج (jamhara)؛ حنذت الشاة أي شويتها وجعلت فوقها حجارة محماة لتنضجها (sihah)؛ بعجل حنيذ أي مشوي بين حجرين (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:810;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1677:headword=%D8%AD%D9%86%D8%B0:root=%D8%AD%20%D9%86%20%D8%B0:sha=4fc5318795210414;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1375%3Asubentry%3A0%3A%D8%AD%D9%86%D8%B0:headword=%D8%AD%D9%86%D8%B0:root=%D8%AD%20%D9%86%20%D8%B0:sha=c7ec9a4c98b37feb;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1478:headword=%D8%AD%D9%86%D8%B0:root=%D8%AD%20%D9%86%20%D8%B0:sha=161e17c0fbc841bd;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D68:headword=%D8%AD%D9%86%D8%B0:root=%D8%AD%20%D9%86%20%D8%B0:sha=f0480b99968dce81;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A367:headword=%D8%AD%D9%86%D8%B0:root=%D8%AD%20%D9%86%20%D8%B0:sha=f0f6efa79ff05bf7",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_packet",
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [
+        "cooking",
+        "meat"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "agency_action",
+        "change_transition",
+        "cooking_drink",
+        "fire_heat",
+        "food_nutrition"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000862",
+      "branch_id": "B009",
+      "root_norm": "ص ع د",
+      "branch_image_ar": "تصعيد بالنار وتغيير",
+      "what_is_ar": "يدخل فيه التصعيد بمعنى الإذابة والمعالجة بالنار حتى يتحول لون الشيء أو طعمه والشجر المسمى الصعد المتصل بالقار المذاب",
+      "what_is_not_ar": "ليس الصعود الحسي ولا المشقة ولا الصعيد الأرض",
+      "source_phrase_ar": "الصعد شجر يذاب منه القار (tahdhib)؛ التصعيد الإذابة (tahdhib)؛ خل مصعد وشراب مصعد إذا عولج بالنار حتى يحول عما هو عليه لونا وطعما (tahdhib)",
+      "source_refs": "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D107%3Bsegment_index%3D4:headword=%D8%B5%D8%B9%D8%AF:root=%D8%B5%20%D8%B9%20%D8%AF:sha=781fdd45f341f979",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_core_overlap"
+      ],
+      "shared_consensus_core": [
+        "alteration",
+        "fire"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001108",
+      "branch_id": "B007",
+      "root_norm": "غ م م",
+      "branch_image_ar": "غلظ اللبن بالتسخين",
+      "what_is_ar": "الغميم للبن يسخن حتى يغلظ",
+      "what_is_not_ar": "الكلأ الغميس؛ الغمام؛ الغم والكربة؛ قعر النحي",
+      "source_phrase_ar": "الغميم لبين يسخن حتى يغلظ (sihah)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4635:headword=%D8%BA%D9%85%D9%85:root=%D8%BA%20%D9%85%20%D9%85:sha=8593b3d71a417602",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_bridge_overlap",
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [
+        "food",
+        "heat",
+        "transformation"
+      ],
+      "shared_themes": [
+        "change_transition",
+        "cooking_drink",
+        "fire_heat",
+        "food_nutrition",
+        "substance_texture"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000252",
+      "branch_id": "B009",
+      "root_norm": "ج ل ب",
+      "branch_image_ar": "جلبة اللبن للروبة",
+      "what_is_ar": "يدخل فيه الجلبة في اللغة اليمانية بمعنى الروبة التي تصب على اللبن الحليب ليروب.",
+      "what_is_not_ar": "لا يدخل فيه الجلبة الصوتية ولا جلبة الجرح.",
+      "source_phrase_ar": "الجلبة لغة يمانية وهي الروبة التي تصب على اللبن الحليب ليروب (jamhara)",
+      "source_refs": "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A644%3Asubentry%3A2%3A%D8%AC%D9%84%D8%A8:headword=%D8%AC%D9%84%D8%A8:root=%D8%AC%20%D9%84%20%D8%A8:sha=018006af4b0ca25a",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_bridge_overlap",
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [
+        "food",
+        "preparation",
+        "transformation"
+      ],
+      "shared_themes": [
+        "agency_action",
+        "change_transition",
+        "cooking_drink",
+        "food_nutrition",
+        "substance_texture"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_001266",
+      "branch_id": "B001",
+      "root_norm": "ق ه ر",
+      "branch_image_ar": "غلبة من علو تقهر المقهور وتذلله",
+      "what_is_ar": "يدخل فيه قهره إذا غلبه، والقاهر والقهار، والأخذ قهرا بغير رضا، والتذليل والإكراه، وأقهره إذا وجده مقهورا أو سلط عليه من يقهره.",
+      "what_is_not_ar": "لا يدخل فيه رجوع القهقرى، ولا قهر اللحم بالنار، ولا القهقر للحجر أو الطعام أو الدويبة إلا في فروعها المستقلة.",
+      "source_phrase_ar": "تدل على غلبة وعلو (maqayis)؛ القاهر الغالب (maqayis)؛ القهر الغلبة والأخذ من فوق (ayn;tahdhib)؛ أخذهم قهرا أي من غير رضاهم (ayn)؛ أخذوا دون رضاهم على سبيل الغلبة (tahdhib)؛ الغلبة والتذليل معا (mufradat)؛ فلا تقهر أي لا تذلل (mufradat)؛ أقهره سلط عليه من يقهره (mufradat)؛ أقهرته وجدته مقهورا (sihah)؛ أقهر الرجل إذا صير في حال يذل فيها (maqayis)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2849;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A2009:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=01f7407659cba0f7;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1888:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=1c6ab5566e9d0db8;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D288%3Bsegment_index%3D2:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=fca3c1435f5a1ecf;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1256:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=54eb1cb8647accdf",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001266",
+      "branch_id": "B003",
+      "root_norm": "ق ه ر",
+      "branch_image_ar": "قهيرة من محض تسخنه الرضف ويذر عليه الدقيق",
+      "what_is_ar": "يدخل فيه القهيرة: محض تلقى فيه الرضف فإذا غلى ذر عليه الدقيق وسيط به ثم أكل.",
+      "what_is_not_ar": "لا يدخل فيه قهر اللحم ولا القهقر الطعام الكثير المنضود.",
+      "source_phrase_ar": "القهيرة محض يلقى فيه الرضف فإذا غلى ذر عليه الدقيق وسيط به ثم أكل (tahdhib)",
+      "source_refs": "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D288%3Bsegment_index%3D2:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=fca3c1435f5a1ecf",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001266",
+      "branch_id": "B004",
+      "root_norm": "ق ه ر",
+      "branch_image_ar": "حجر قهقر صلب أو أملس يسحق به",
+      "what_is_ar": "يدخل فيه القهقر أو القهاقر للحجر الصلب أو الأملس، وما يسحق به الشيء، ومعه قول تهذيب اللغة إن القهر أعظم منه.",
+      "what_is_not_ar": "لا يدخل فيه القهقرى بمعنى الرجوع إلى الخلف، ولا القهقر الطعام الكثير، ولا القهيقران الدويبة.",
+      "source_phrase_ar": "القهقر الحجر الصلب (maqayis)؛ القهقر الحجر (ayn)؛ القهقرى بتشديد الراء الحجر الصلب (sihah)؛ القهقر الحجر الأملس (tahdhib)؛ القهقر والقهاقر وهو ما سهكت به الشيء والقهر أعظم منه (tahdhib)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2849;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A2009:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=01f7407659cba0f7;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1888:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=1c6ab5566e9d0db8;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D288%3Bsegment_index%3D2:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=fca3c1435f5a1ecf",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001266",
+      "branch_id": "B005",
+      "root_norm": "ق ه ر",
+      "branch_image_ar": "رجوع القهقرى إلى خلف",
+      "what_is_ar": "يدخل فيه رجع القهقرى، والتراجع أو المشي إلى الخلف على العقب، واستعماله في معنى الارتداد عما كان عليه إذا صرح به المصدر.",
+      "what_is_not_ar": "لا يدخل فيه القهر بمعنى الغلبة والتذليل، ولا القهقر الحجر أو الطعام.",
+      "source_phrase_ar": "رجع القهقرى إذا رجع إلى خلفه (maqayis)؛ القهقرى الرجوع إلى خلف (sihah)؛ القهقرى التراجع إلى الخلف (tahdhib)؛ رجع فلان القهقرى إذا رجع على عقبه (tahdhib)؛ القهقرى المشي إلى خلف (mufradat)؛ معناه الارتداد عما كانوا عليه (tahdhib)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2849;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1888:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=1c6ab5566e9d0db8;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D288%3Bsegment_index%3D2:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=fca3c1435f5a1ecf;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1256:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=54eb1cb8647accdf",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001266",
+      "branch_id": "B006",
+      "root_norm": "ق ه ر",
+      "branch_image_ar": "قهقر طعام كثير منضود في وعاء",
+      "what_is_ar": "يدخل فيه القهقر بمعنى الطعام الكثير في الأوعية أو في العيبة منضودا.",
+      "what_is_not_ar": "لا يدخل فيه القهقر الحجر ولا القهقرى الرجوع إلى الخلف.",
+      "source_phrase_ar": "القهقر بالتخفيف الطعام الكثير الذي في الأوعية منضودا (tahdhib)؛ القهقر الطعام الكثير الذي في العيبة (tahdhib)",
+      "source_refs": "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D288%3Bsegment_index%3D2:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=fca3c1435f5a1ecf",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001266",
+      "branch_id": "B007",
+      "root_norm": "ق ه ر",
+      "branch_image_ar": "قهيقران دويبة",
+      "what_is_ar": "يدخل فيه القهيقران اسم دويبة كما في تهذيب اللغة.",
+      "what_is_not_ar": "لا يدخل فيه القهقر للحجر أو الطعام ولا القهقرى للرجوع.",
+      "source_phrase_ar": "القهيقران دويبة (tahdhib)",
+      "source_refs": "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D288%3Bsegment_index%3D2:headword=%D9%82%D9%87%D8%B1:root=%D9%82%20%D9%87%20%D8%B1:sha=fca3c1435f5a1ecf",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    }
+  ]
+}

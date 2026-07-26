@@ -1,0 +1,94 @@
+{
+  "verdict": "repair",
+  "summary": "B001 kanıtla uyumludur. B002'de çekimli ifade, kanıtın söylemediği bir parçalama eylemine dönüştürülmüştür; bu yorum ilgili alanlardan çıkarılmalıdır. B003'te kaynak sentezi ve doğrudan sözcüksel karşılık, kanıtta açıkça verilen İbrahim adını korumalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001262/B002",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, çekimli ifadeyi kantar ve miktarıyla ilişkili olarak verir ve her parçanın kırk ukiyye olduğunu söyler; miktarı parçalara ayırma eylemi bildirdiğini söylemez. Gerekçedeki 'çekimli bir parçalama kullanımı' bu nedenle kanıtı aşar.",
+      "smallest_correction": "Gerekçede ifadeyi yalnızca kantar ve miktarıyla bağlantılı çekimli kullanım olarak tanımlayın; parçalama eylemi yüklemeyin."
+    },
+    {
+      "target_ref": "root_001262/B002",
+      "field": "lexicalization_scope",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kapsam notu çekimli birimi 'parçalama kullanımı' diye sınırlar, ancak kanıt yalnızca kantarla ilgili çekimli ifadeyi ve her parçanın kırk ukiyye oluşunu destekler.",
+      "smallest_correction": "Notu, çıplak miktar adı ile her parçanın kırk ukiyye olduğu belirtilen bağlantılı çekimli ifadeyi ayıracak biçimde düzeltin."
+    },
+    {
+      "target_ref": "root_001262/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F003, çekimli kullanımın miktarı parçalara ayırmayı anlattığını ileri sürer. Kaynak cümlesi bir ayırma eylemi kurmaz; yalnızca çekimli ifadeyi ve parçaların kırk ukiyyelik niteliğini verir.",
+      "smallest_correction": "Tanımın son cümlesi ile F003'ü, çekimli ifadenin kantarla bağlantısını ve her parçanın kırk ukiyye oluşunu söyleyecek, ayırma eylemi yüklemeyecek biçimde düzeltin."
+    },
+    {
+      "target_ref": "root_001262/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kaynağın çekimli kullanımını 'her parçayı kırk ons kabul eden' bir işlem gibi sunar. Kanıt, her parçanın kırk ukiyye olduğunu bildirir; kabul etme veya parçalama işlemi bildirmez.",
+      "smallest_correction": "Ortak özette çekimli ifadenin ayrıca aktarıldığını ve onda her parçanın kırk ukiyye olarak belirtildiğini söyleyin."
+    },
+    {
+      "target_ref": "root_001262/B002",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İkinci bağlamsal karşılık ve açıklamaları çekimli ifadeyi 'parçalara ayırmak' eylemi olarak çevirir. Kanıt bu eylem anlamını sağlamaz.",
+      "smallest_correction": "İkinci karşılığı, kantarla ilgili ve her parçanın kırk ukiyye olduğu belirtilen çekimli ifade olarak açıklayın; parçalama eylemini kaldırın."
+    },
+    {
+      "target_ref": "root_001262/B002",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003"
+      ],
+      "evidence_conflict": "lu_003 için 'bir miktarı ... parçalara ayırmak' karşılığı, birimin kanıtlanan genel anlamını aşarak belirli bir eylem üretir.",
+      "smallest_correction": "lu_003 karşılığını, kantar ve miktarıyla ilgili, her parçanın kırk ukiyye olduğu belirtilen çekimli ifade olarak verin."
+    },
+    {
+      "target_ref": "root_001262/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt kadın kölenin İbrahim'e çocuk doğurduğunu açıkça belirtirken ortak özet bunu 'adı verilen erkek' diye belirsizleştirir ve ayırt edici kaynak ayrıntısını kaybeder.",
+      "smallest_correction": "Ortak özette 'adı verilen erkek' yerine kanıttaki İbrahim adını kullanın."
+    },
+    {
+      "target_ref": "root_001262/B003",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005"
+      ],
+      "evidence_conflict": "lu_005'in kanıtlanan anlamı İbrahim'i açıkça adlandırır; 'kaynakta adı verilen erkek' karşılığı bu doğrudan kimlik bilgisini gereksiz biçimde kaybeder.",
+      "smallest_correction": "lu_005 karşılığında 'kaynakta adı verilen erkeğe' yerine 'İbrahim'e' yazın."
+    }
+  ]
+}

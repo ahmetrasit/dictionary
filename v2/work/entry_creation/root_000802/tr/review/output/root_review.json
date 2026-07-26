@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B001-B005 dalları kanıtla uyumludur. B006 dalındaki iki komşu ayrımı ise çift görmenin nedeni ve görüntünün açıklığı konusunda kanıtın vermediği ek kapsamlar içeriyor; bu iki dar ifade düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000802/B006",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, çift görmeyi görme zayıflığına bağlar ve görüntünün berrak kaldığını söylemez. Buna karşılık root_000658/B002 ayrımı neden ne olursa olsun diyerek nedeni sınırsızlaştırıyor; root_001094/B002 ayrımı da görüntü açık olsa bile diyerek kanıtlanmamış bir açıklık koşulu ekliyor.",
+      "smallest_correction": "root_000658/B002 ayrımındaki neden ne olursa olsun ifadesini görme zayıflığı nedeniyle olarak değiştirin. root_001094/B002 ayrımındaki görüntü açık olsa bile sözlerini kaldırıp yalnızca tek nesnenin iki ayrı görüntüye bölünmesi farkını koruyun."
+    }
+  ]
+}

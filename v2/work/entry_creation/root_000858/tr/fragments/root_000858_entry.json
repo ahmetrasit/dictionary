@@ -1,5 +1,5 @@
 {
-  "inputs_sha256": "e93bda5fbd83ff4d85c0ffbbef121be82dd37bc74e1edfc517f40b405cf45786",
+  "inputs_sha256": "93c6f69cf45e041125e9a9bb883455a87c0e4184c3bb80aa58e2a5b3cf54315c",
   "artifact_format": "dictionary-v2-root-entry-draft-v1",
   "generated_by": "v2/scripts/accept_root_writer.py",
   "root_envelope_id": "root_000858",
@@ -7,64 +7,59 @@
   "branches": [
     {
       "branch_ref": "root_000858/B001",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi bu dalın temel anlamını genel olarak yol diye verir; düz yol ise bu temel anlamın özellikle öne çıkan bir türüdür. Bu nedenle yalnızca düz yolla sınırlı bir dal kimliği kaynak ifadesini gereğinden fazla daraltır.",
+        "boundary_note": "Dal, genel yol anlamını kapsar; düz yol anlamı bunun içinde özel olarak vurgulanan kullanımdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın dal anlamıyla sınırlıdır ve herhangi bir kalıba özgü ek anlamı genel anlama taşımaz."
+      },
       "concept_map": {
-        "definition": "Yol anlamındaki kullanımdır; özellikle sapmadan gidilen düz ve doğru yolu belirtir. Aynı yol anlamı birkaç ses biçimiyle kaydedilir, fakat çekirdek yine üzerinde yürünülen ya da izlenen yoldur.",
+        "definition": "Bir yerden başka bir yere gitmeye yarayan yol; bu genel anlam içinde özellikle doğrultusu düzgün olan yol.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Çekirdek anlam, bir yerden bir yere gidilen yol veya izlenen güzergâhtır.",
+            "statement": "Temel gönderim, üzerinde ilerlenen yoldur.",
             "claim_ids": [
-              "lu_001",
-              "lu_002",
-              "lu_003"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Yol özellikle düz, sapmasız ve doğru oluşuyla öne çıkar.",
+            "statement": "Yolun düz ve sapmasız olması özellikle öne çıkarılabilir.",
             "claim_ids": [
-              "lu_001",
-              "lu_002"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "source_variant",
-            "statement": "Aynı yol anlamı farklı ses biçimleriyle aktarılır.",
+            "statement": "Aynı yol anlamı, kaynakta üç ayrı söyleniş biçimiyle tanıklanır.",
             "claim_ids": [
-              "lu_001",
-              "lu_002",
-              "lu_003"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynakların ortak noktası, bu dalın yol anlamını taşımasıdır; bazı kayıtlar bunun özellikle düz ve doğru yol olduğunu açıklaştırır. Biçimler arası fark, anlam sınırını değiştiren ayrı bir kavram değil, aynı yol çekirdeğinin sesçe değişen görünümleridir.",
+        "common_summary": "Kaynakların ortak alanı yol anlamıdır. Bazı anlatımlarda bu alan genel bırakılırken bazılarında yolun düz olması belirginleştirilir; ayrıca söyleniş çeşitliliğinin bir bölümü ses değişimiyle açıklanır. Bazı bilginler yol adını, yolda ilerleyenin gözden kaybolması üzerinden yutma anlamıyla ilişkilendiren bir türetme de önerir.",
         "common_claim_ids": [
-          "lu_001",
-          "lu_002"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_003"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Tek kaynaklı biçim, aynı yol anlamını başka bir ses görünümüyle kaydeder."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "düz ve doğru yol",
-        "applicability": "Yol anlamının çekirdeğini ve özellikle sapmasız, doğru yol vurgusunu birlikte karşılar.",
+        "text": "yol, özellikle düz yol",
+        "applicability": "Genel yol anlamını ve kaynaklarda öne çıkan düz yol özelleşmesini birlikte karşılayan ana anlatımdır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Yol olma, izlenebilir güzergâh olma ve düz/doğru oluş bileşenlerini korur.",
+          "preserves": "Hem genel yol çekirdeğini hem de düz yol özelleşmesini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -78,11 +73,11 @@
         {
           "text": "yol",
           "usage_role": "general",
-          "applicability": "Düzlük veya doğruluk vurgusu öne çıkarılmadan sırf gidilen güzergâh kastedildiğinde uygundur.",
+          "applicability": "Bağlam yalnızca bir güzergahı gösteriyor ve yolun düzlüğünü ayrıca belirtmiyorsa doğal karşılıktır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Bir yerden bir yere gidilen yol çekirdeğini korur.",
-            "loses": "Özellikle düz ve doğru yol olma vurgusunu açıkça söylemez.",
+            "preserves": "Üzerinde ilerlenen yol çekirdeğini eksiksiz korur.",
+            "loses": "Düz ve sapmasız yolun özellikle vurgulanmasını açıkça söylemez.",
             "adds": null,
             "collision": null
           },
@@ -91,15 +86,15 @@
           ]
         },
         {
-          "text": "doğru yol",
+          "text": "düz yol",
           "usage_role": "contextual",
-          "applicability": "Sapmadan izlenen yol vurgusunun anlatıldığı bağlamlarda doğal bir karşılıktır.",
+          "applicability": "Bağlam yolun doğrultusunun düzgün olduğunu özellikle öne çıkarıyorsa uygun karşılıktır.",
           "error_profile": {
-            "fit": "broadening",
-            "preserves": "Yolun doğru ve sapmasız oluşunu korur.",
-            "loses": null,
-            "adds": "Türkçede ahlaki veya dinî yöneliş anlamını ayrıca çağrıştırabilir.",
-            "collision": "Salt fiziksel yol anlamıyla mecazi rehberlik anlamı karışabilir."
+            "fit": "narrowing",
+            "preserves": "Yol çekirdeğini ve düz olma özelliğini birlikte korur.",
+            "loses": "Düzlük belirtilmeden kullanılan genel yol kapsamını dışarıda bırakır.",
+            "adds": null,
+            "collision": null
           },
           "facet_ids": [
             "F001",
@@ -111,12 +106,12 @@
         {
           "lexical_unit_id": "lu_001",
           "rendering_kind": "ordinary",
-          "target_gloss": "yol, özellikle düz ve doğru yol"
+          "target_gloss": "yol, özellikle düz yol"
         },
         {
           "lexical_unit_id": "lu_002",
           "rendering_kind": "ordinary",
-          "target_gloss": "yol veya doğru yol"
+          "target_gloss": "yol veya düz yol"
         },
         {
           "lexical_unit_id": "lu_003",
@@ -126,161 +121,163 @@
       ],
       "excluded_glosses": [
         {
-          "text": "sırat",
-          "category": "common_loanword",
+          "text": "doğru yol",
+          "category": "confusable",
           "error_profile": {
-            "fit": "drifted_loanword",
-            "preserves": "Doğru yol çağrışımının bir bölümünü korur.",
-            "loses": "Genel yol anlamını ve biçimlerin sıradan güzergâh kapsamını bulanıklaştırır.",
-            "adds": "Türkçede belirli dinî ifade kalıplarını çağrıştırarak kavramı dar bir kullanıma taşıyabilir.",
-            "collision": "Açıklayıcı Türkçe karşılık yerine kaynak dilden gelen özel terim gibi algılanabilir."
+            "fit": "displacement",
+            "preserves": "Düz ve sapmasız yol düşüncesini kısmen korur.",
+            "loses": "Düzlük belirtilmeyen genel yol anlamını geri plana iter.",
+            "adds": "Ahlakça veya düşüncece doğru olma yorumunu çağrıştırabilir.",
+            "collision": "Fiziksel doğrultu ile değer yargısı anlamındaki doğruluk karışabilir."
           }
         }
       ],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_000672/B001",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dal, yol anlamını özellikle düz ve doğru yol vurgusuyla verir.",
-          "neighbor_only": "Komşu dal, yolun yanında bir şeye ulaştıran sebep, bağlantı, çare ve ana yol anlamlarını da kapsar.",
-          "gloss": "yol ve ulaşma vasıtası",
-          "shared_zone": "İki dal da bir yerden bir yere gidilen ya da izlenen yol anlamında örtüşür.",
-          "distinction": "Temel yol alanında yakınlaşırlar; fakat komşu dal araç ve ulaşma sebebi alanına açılırken odak dal daha çok yolun düz ve doğru oluşuyla sınırlanır."
-        },
-        {
           "neighbor_ref": "root_000342/B007",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal, yolun kendisini ve düz/doğru olmasını belirtir.",
-          "neighbor_only": "Komşu dal, izi kesilmeyen, açık ve koruyucu nitelikte bir yolu öne çıkarır.",
-          "gloss": "açık ve izi süren yol",
-          "shared_zone": "İki dal da düz ve izlenebilir yol alanında güçlü biçimde kesişir.",
-          "distinction": "Odak dal yolun doğruluğunu ve düzlüğünü söyler; komşu dal ise yolun açıkça seçilmesi, izinin korunması ve kesintisizliği gibi ek sınırlar taşır."
+          "focus_only": "Genel yol anlamı, düz ya da kesintisiz olma şartı bulunmadan da geçerlidir.",
+          "neighbor_only": "Yolun açık, düzgün ve izinin kesintisiz olması ayrıca kurucu bir sınırdır.",
+          "gloss": "açık ve kesintisiz düz yol",
+          "shared_zone": "Her iki dal da üzerinde ilerlenen yolu ve bu yolun düzgün doğrultusunu kapsar.",
+          "distinction": "Odak dalında düzlük öne çıkan bir özelleşmedir; komşu dal ise yolun düzgünlüğünü, açıklığını ve izinin kesilmemesini birlikte sınırın parçası yapar."
         },
         {
-          "neighbor_ref": "root_000565/B001",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Odak dal, üzerinde gidilen yolun kendisini adlandırır.",
-          "neighbor_only": "Komşu dal, yanlıştan uzak doğru yönelişi, rehberliği ve yola yöneltmeyi anlatır.",
-          "gloss": "doğruluk ve rehberlik",
-          "shared_zone": "İki dal doğru yol ve sapmadan gitme alanında aynı sahneyi paylaşır.",
-          "distinction": "Odak dal güzergâhı adlandırır; komşu dal ise doğruya yönelme, doğruyu bulma veya birine yolu gösterme işlevini merkeze alır."
-        },
-        {
-          "neighbor_ref": "root_001230/B002",
-          "relation_type": "near_neighbor",
+          "neighbor_ref": "root_000672/B001",
+          "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal, düz ve doğru yolun adıdır.",
-          "neighbor_only": "Komşu dal, yolun, yürüyüşün veya işin düzgün ve dengeli olma niteliğini anlatır.",
-          "gloss": "düzgünlük ve istikamet",
-          "shared_zone": "İki dal yolun düz ve sapmasız oluşu noktasında temas eder.",
-          "distinction": "Odak dal nesne olarak yolu verir; komşu dal yol dahil çeşitli şeylerin düzgünlük ve doğruluk niteliğini kavramlaştırır."
+          "focus_only": "Düz yol özelleşmesi odak dalında belirgin biçimde yer alır.",
+          "neighbor_only": "Bir amaca ulaştıran araç, bağlantı veya çare gibi yol dışı uzantılar da kapsanır.",
+          "gloss": "yol ve ulaştıran araç",
+          "shared_zone": "İki dalın ortak çekirdeğinde bir yere ulaşmak için izlenen yol bulunur.",
+          "distinction": "Odak dalı somut yol göndermesini ve özellikle düz yolu öne çıkarır; komşu dal ise yol anlamından bir amaca ulaştıran araç ve çarelere doğru genişler."
         },
         {
-          "neighbor_ref": "root_000858/B002",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Odak dal, gidilen güzergâh olarak yolu anlatır.",
-          "neighbor_only": "Komşu dal, yiyeceğin yutulup geçiş içinde gözden kaybolmasını anlatır.",
-          "gloss": "geçiş hattı ve yutma",
-          "shared_zone": "İki dalda da bir hattın veya kanalın içinde ilerleme düşüncesi bulunur.",
-          "distinction": "Bu dal ilerlenen yolu adlandırır; komşu dal ise nesnenin boğazdan geçerek kaybolması eylemini ve buna bağlı özellikleri anlatır."
+          "neighbor_ref": "root_000658/B001",
+          "relation_type": "polarity_pair",
+          "boundary_match": "opposed",
+          "focus_only": "Üzerinde ilerlenen yol ve özellikle onun düzgün doğrultusu anlatılır.",
+          "neighbor_only": "Düzgün doğrultudan ayrılma ve yana sapma anlatılır.",
+          "gloss": "düz doğrultudan sapma",
+          "shared_zone": "İki dal, yolun veya yönelişin düzgün doğrultuda bulunması ekseninde karşılaşır.",
+          "distinction": "Odak dalı yolu, özellikle düzgün doğrultulu haliyle adlandırır; komşu dal aynı eksende bu doğrultudan uzaklaşmayı bildirir."
         }
       ],
-      "neighbor_coverage_note": "Yol, doğruluk ve sapma alanındaki adaylar değerlendirildi; yalnızca yolun kendisiyle karışabilecek ya da sınırı belirginleştiren komşular yayımlandı.",
+      "neighbor_coverage_note": "Bütün adaylar incelendi; yalnızca yolun sınırını açıklayan iki yakın anlamlı dal ile düzlük eksenindeki karşıt kutup yayımlandı. Öteki adaylar alan ortaklığından, bağımlı ayrıntıdan ya da yalnızca ses benzerliğinden ileri gitmedi.",
       "branch_image_ar": "الطريق المستقيم",
       "what_is_ar": "يدخل فيه الصراط والسراط والزراط بمعنى الطريق، وخاصة الطريق المستقيم",
+      "what_is_not_ar": "لا يدخل فيه بلع الطعام ولا السيف القاطع إلا من جهة الاشتقاق أو الاشتراك في لفظ السراط عند مقاييس",
       "source_phrase_ar": "الصراط والسراط والزراط: الطريق (sihah)؛ الصراط: الطريق المستقيم؛ ويقال له سراط (mufradat)؛ صرط من باب الإبدال وقد ذكر في السين وهو الطريق (maqayis 2074)؛ بعض أهل العلم يقول السراط مشتق من ذلك لأن الذاهب فيه يغيب (maqayis 1774)",
       "sources": [
         "SI",
         "MU",
         "MQ"
       ],
-      "source_note": {
-        "SI": "Tek kaynaklı biçim, aynı yol anlamını başka bir ses görünümüyle kaydeder."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000858/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi çekirdeği bir şeyin geçiş sırasında gözden kaybolması olarak kurar ve yiyeceği yutmayı bunun doğrudan gerçekleşmesi sayar. Kolay yutulan yiyecek ile geniş boğaz nitelemeleri de bu çekirdeğe bağlı kullanımlar olarak verildiğinden hazırlanmış dal sınırı kaynakla uyumludur.",
+        "boundary_note": "Kurucu anlam geçiş ve gidiş sırasında gözden kaybolmadır; yiyeceği yutma bunun doğrudan uygulaması, yiyeceğin kolay yutulması ve boğaz genişliği ise buna bağlı kullanımlardır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın geçişte kaybolma çekirdeğini verir; yiyeceği yutma bunun doğrudan özelleşmesi, örnek yiyecek ve boğaz niteliği ise bu çekirdeğe bağlı kullanımlardır."
+      },
       "concept_map": {
-        "definition": "Yiyeceği yutup boğazdan geçirme, böylece yiyeceğin geçiş içinde gözden kaybolmasıdır. Kolay yutulan yiyecek ve boğazı geniş kimse bu yutma ve geçirme çekirdeğine bağlı özel kullanımlardır.",
+        "definition": "Geçiş ve gidiş sırasında gözden kaybolmak; özellikle bir şeyi, başta yiyeceği, boğazdan geçirerek yutmak. Kolay yutulan yiyecek ve geniş boğaz nitelemeleri bu çekirdeğe bağlı kullanımlardır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Yiyecek yutulur ve boğazdan geçerek gözden kaybolur.",
+            "statement": "Temel anlam, bir şeyin geçiş ve gidiş sırasında gözden kaybolmasıdır.",
             "claim_ids": [
-              "lu_004"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Kolay yutulduğu için geçişi zahmetsiz olan tatlı yiyecek bu çekirdeğe bağlanır.",
+            "role": "example",
+            "statement": "Pelte kıvamlı bir tatlı, kolayca yutulması bakımından bu eylemle ilişkilendirilir.",
             "claim_ids": [
-              "lu_005"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "extension",
-            "statement": "Boğazı geniş kişi, yutma ve geçirme yeteneğinin bedenî özelliğiyle adlandırılır.",
+            "role": "associated_use",
+            "statement": "Boğazı geniş olan kimse, yutmayı kolaylaştıran yapısı bakımından bu çekirdeğe bağlanır.",
             "claim_ids": [
-              "lu_006"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "specialization",
+            "statement": "Bir şeyi, özellikle yiyeceği, boğazdan geçirerek yutmak geçişte kaybolma çekirdeğinin doğrudan uygulamasıdır.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Bu dal tek kaynaklı kayıtlarla yiyeceğin yutulup geçişte kaybolmasını çekirdek alır. Kolay yutulan tatlı yiyecek ve geniş boğazlı kişi de aynı yutma-geçirme düşüncesinden türeyen bağlı kullanımlardır.",
-        "common_claim_ids": [
-          "lu_004",
-          "lu_005",
-          "lu_006"
+        "common_summary": "Anlam örgüsü, geçiş sırasında kaybolma çekirdeğinden yiyeceği yutmaya uzanır. Kolay yutulan pelte kıvamlı tatlı ve geniş boğazlı kimse bu eylemin iki ayrı bağımlı görünümüdür.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek kaynak tanıklığı, geçişte kaybolma ile yutmayı birleştirir ve kolay yutulan tatlı ile geniş boğaz nitelemelerini bu çekirdekten açıklar."
+          }
         ],
-        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "yutup geçirme",
-        "applicability": "Yiyeceğin boğazdan geçirilip gözden kaybolduğu temel eylemi kısa ve doğal biçimde karşılar.",
+        "text": "geçişte gözden kaybolmak; özellikle yiyeceği yutmak",
+        "applicability": "Geçişte kaybolma çekirdeğini ve yiyeceği yutmanın bu çekirdeğe bağlı doğrudan kullanımını birlikte anlatan ana karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Yutma, geçiş ve yutulan şeyin görünmez hale gelmesi bileşenlerini korur.",
+          "preserves": "Geçiş ve gidiş sırasında gözden kaybolmayı, ayrıca bunun yiyeceği yutmadaki doğrudan uygulamasını korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F004"
         ]
       },
       "contextual_glosses": [
         {
           "text": "yutmak",
           "usage_role": "general",
-          "applicability": "Yiyeceğin ağza alınıp boğazdan geçirildiği yalın bağlamlarda kullanılır.",
+          "applicability": "Bir şeyi, özellikle yiyeceği, boğazdan geçirip kaybetme kullanımında doğal kısa karşılıktır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Yutma eylemini korur.",
-            "loses": "Geçiş içinde kaybolma vurgusunu açıkça belirtmez.",
+            "preserves": "Yiyeceğin boğazdan geçiş sırasında kaybolmasını ve yutma özelleşmesini korur.",
+            "loses": "Yutma dışındaki geçiş ve gidiş sırasında gözden kaybolma kapsamını vermez.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F001",
+            "F004"
           ]
         },
         {
-          "text": "kolay yutulan yiyecek",
+          "text": "kolay yutulan pelte kıvamlı tatlı",
           "usage_role": "explanatory",
-          "applicability": "Yutulması kolay olan özel yiyecek adı açıklanırken uygundur.",
+          "applicability": "Dalın kolay yutulma özelliğiyle adlandırılan yiyecek örneğini açıklamak için kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Yiyeceğin kolayca boğazdan geçmesi ve bu nedenle adlandırılması bilgisini korur.",
+            "preserves": "Yiyecek örneğini ve bu örneği çekirdeğe bağlayan kolay yutulma özelliğini korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -292,10 +289,10 @@
         {
           "text": "geniş boğazlı",
           "usage_role": "contextual",
-          "applicability": "Kişinin boğaz genişliği ve yutma kapasitesi öne çıkarıldığında kullanılır.",
+          "applicability": "Bir kimsenin boğaz genişliğini yutma kolaylığıyla bağlantılı olarak niteleyen kullanımda geçerlidir.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Boğazın geniş oluşunu ve bunun yutma çekirdeğiyle bağlantısını korur.",
+            "preserves": "Boğaz genişliğini ve bunun yutma eylemine bağlı niteliğini korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -309,155 +306,145 @@
         {
           "lexical_unit_id": "lu_004",
           "rendering_kind": "ordinary",
-          "target_gloss": "yiyeceği yutup geçirme"
+          "target_gloss": "yiyeceği boğazdan geçirip gözden kaybolacak biçimde yutmak"
         },
         {
           "lexical_unit_id": "lu_005",
           "rendering_kind": "ordinary",
-          "target_gloss": "kolay yutulan tatlı yiyecek"
+          "target_gloss": "kolayca yutulan pelte kıvamlı tatlı"
         },
         {
           "lexical_unit_id": "lu_006",
           "rendering_kind": "ordinary",
-          "target_gloss": "geniş boğazlı kişi"
+          "target_gloss": "geniş boğazlı"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "yemek",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "displacement",
-            "preserves": "Yiyecekle ilgili olma yönünü korur.",
-            "loses": "Boğazdan geçirip gözden kaybettirme işlemini siler.",
-            "adds": "Çiğneme, tüketme ve genel beslenme anlamlarını ekler.",
-            "collision": "Yutma eylemi yerine genel yeme eylemiyle karışır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000150/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal, yutulan yiyeceğin geçişte gözden kaybolmasını ve buna bağlı geniş boğazlılık ile kolay yutulan yiyecek adını içerir.",
-          "neighbor_only": "Komşu dal, suyu veya yiyeceği boğaza sokma, yutma yeri ve yemek borusu alanını da kapsar.",
-          "gloss": "boğaza yutma",
-          "shared_zone": "İki dal da yiyecek veya içeceğin boğazdan geçirilmesi anlamında örtüşür.",
-          "distinction": "Temel yutma alanında çok yakındırlar; odak dal geçişte kaybolma ve ona bağlı türevleri vurgularken komşu dal yutma yeri ve boğaz kanalı adlarına daha geniş biçimde açılır."
+          "focus_only": "Yutulan şeyin geçiş sırasında gözden kaybolması özellikle kurucu biçimde vurgulanır.",
+          "neighbor_only": "Yutma yeri ve yiyecek geçidi gibi beden bölümleri de bağımsız kapsam kazanır.",
+          "gloss": "yutmak ve yutma geçidi",
+          "shared_zone": "Her iki dalın ortak çekirdeği, yiyecek veya başka bir şeyi boğazdan geçirerek yutmaktır.",
+          "distinction": "Odak dalı geçişte kaybolma sonucunu ve buna bağlı kolay yutulma ile boğaz genişliği kullanımlarını öne çıkarır; komşu dal yutma eyleminin yanında yutma yerini de kapsar."
+        },
+        {
+          "neighbor_ref": "root_001381/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Geçiş sırasında kaybolma ve boğazın genişliğiyle kurulan bağlantı belirgindir.",
+          "neighbor_only": "Şiddetle yeme ve eldekinin tamamını tüketme anlamları da kapsanır.",
+          "gloss": "iştahla yutup tüketmek",
+          "shared_zone": "İki dal da bir şeyi ağızdan alıp yutma eylemini kapsar.",
+          "distinction": "Odak dalında nesnenin boğazdan geçerek kaybolması kurucudur; komşu dal ise yutmayı güçlü yeme ve bütünü tüketme yönünde genişletir."
         },
         {
           "neighbor_ref": "root_000761/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak dal, yiyeceği yutup geçirmek ve gözden kaybettirmek eylemidir.",
-          "neighbor_only": "Komşu dal, yiyecek veya içeceğin boğazdan kolay ve pürüzsüz biçimde inmesini anlatır.",
-          "gloss": "boğazdan kolay inme",
-          "shared_zone": "İki dalda da yutulan şeyin boğazdan geçmesi vardır.",
-          "distinction": "Odak dal eylemin gerçekleşmesini ve geçişte kaybolmayı merkeze alır; komşu dal geçişin kolaylığı ve pürüzsüzlüğünü merkeze alır."
+          "focus_only": "Bir şeyi gerçekten yutup geçişte gözden kaybettirme eylemi anlatılır.",
+          "neighbor_only": "Yiyecek veya içeceğin boğazdan rahat geçebilme niteliği anlatılır.",
+          "gloss": "boğazdan rahat geçmek",
+          "shared_zone": "Her iki dal boğazdan geçiş ve yutma kolaylığı alanında buluşur.",
+          "distinction": "Odak dalı yutma olayını ve sonucunu bildirir; komşu dal ise yutulan şeyin geçişinin rahat ve engellsiz olmasına odaklanır."
         },
         {
-          "neighbor_ref": "root_001381/B001",
+          "neighbor_ref": "root_001371/B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak dal, yiyeceğin boğazdan geçirilip kaybolmasıdır.",
-          "neighbor_only": "Komşu dal, bir şeyi yutup bitirme, şiddetli yeme ve tamamen tüketme yönünü kapsar.",
-          "gloss": "yutup tüketme",
-          "shared_zone": "İki dal da yutma veya ağız yoluyla içeri alma sahnesini paylaşır.",
-          "distinction": "Odak dal geçiş kanalındaki kaybolmaya bakar; komşu dal yeme yoğunluğu ve bir şeyi tamamen tüketme sonucunu öne çıkarır."
-        },
-        {
-          "neighbor_ref": "root_001409/B004",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Odak dal, yiyeceği yutma ve geçirme eylemini anlatır.",
-          "neighbor_only": "Komşu dal, yiyecek ve içeceğin geçtiği organ ya da kanalın adıdır.",
-          "gloss": "yemek borusu",
-          "shared_zone": "İki dal da yiyecek ve içeceğin boğazdan aşağı geçiş alanına aittir.",
-          "distinction": "Odak dal eylemdir; komşu dal bu eylemin gerçekleştiği beden kanalını adlandırır."
-        },
-        {
-          "neighbor_ref": "root_000858/B001",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Odak dal, yutulan şeyin boğazdan geçişini anlatır.",
-          "neighbor_only": "Komşu dal, üzerinde gidilen düz ve doğru yolu anlatır.",
-          "gloss": "yol ve geçiş",
-          "shared_zone": "İki dalda da bir kanal veya hat boyunca ilerleme düşüncesi bulunur.",
-          "distinction": "Bu dal beden içinde gerçekleşen yutma geçişidir; komşu dal dış dünyada izlenen güzergâhın adıdır."
+          "focus_only": "Yiyeceğin boğazdan geçirilip gözden kaybolması aşaması anlatılır.",
+          "neighbor_only": "Yiyeceğin ağızla alınması ve ağıza verilmesi aşaması anlatılır.",
+          "gloss": "lokma alıp ağza koymak",
+          "shared_zone": "İki dal aynı yeme sürecinin art arda gelen ağıza alma ve yutma aşamalarına katılır.",
+          "distinction": "Komşu dal yiyeceğin ağıza alınmasına odaklanır; odak dalı ise bundan sonraki boğazdan geçirme ve kaybolma aşamasını bildirir."
         }
       ],
-      "neighbor_coverage_note": "Yutma, boğaz kanalı, kolay geçiş ve yemek alanındaki adaylar değerlendirildi; yayımlanan ilişkiler çekirdeği en çok karıştırabilecek sınırları gösterir.",
+      "neighbor_coverage_note": "Bütün adaylar incelendi; yutmanın kendisi, iştahla tüketme, rahat geçiş ve ağıza alma aşamasıyla kurulan dört ayrım yayımlandı. Beden organları, yemekten sonraki ağırlık ve öteki iki kök dalı yalnızca aynı olay alanına katıldığından dışarıda bırakıldı.",
       "branch_image_ar": "الغيبة في المرور والبلع",
       "what_is_ar": "يدخل فيه سرط الطعام بمعنى بلعه وغيبته في المرور، وما يتصل بسهولة الابتلاع وسعة الحلق",
+      "what_is_not_ar": "لا يدخل فيه الطريق المستقيم بوصفه طريقا، ولا السيف القاطع",
       "source_phrase_ar": "أصل صحيح واحد يدل على غيبة في مر وذهاب؛ سرطت الطعام إذا بلعته لأنه إذا سرط غاب؛ السرطراط على فعلال الفالوذ لأنه يسترط (maqayis 1774)؛ السرطم: الواسع الحلق، والميم فيه زائدة، وإنما هو من سرط، إذا بلع (maqayis السرطم)",
       "sources": [
         "MQ"
       ],
-      "source_note": {}
+      "source_note": {
+        "MQ": "Tek kaynak tanıklığı, geçişte kaybolma ile yutmayı birleştirir ve kolay yutulan tatlı ile geniş boğaz nitelemelerini bu çekirdekten açıklar."
+      }
     },
     {
       "branch_ref": "root_000858/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bu dalı vuruş sırasında ilerleyen ve kesen kılıç olarak açıkça sınırlar. Hazırlanmış dal anlatımı kesme, ilerleme ve vuruş bağlamını birlikte koruduğu için kaynakla uyumludur.",
+        "boundary_note": "Dal herhangi bir kesici ucu değil, vuruşta keserek ilerleyen kılıcı adlandırır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın adlandırmayı korur ve anlamı belirli bir söz kalıbına bağlamaz."
+      },
       "concept_map": {
-        "definition": "Vuruşta kesip işleyen, darbe boyunca ilerleyen keskin kılıç için kullanılan addır. Burada çekirdek, kılıcın nesne olarak kendisi değil yalnızca genel kılıçlık değil, kesici ve darbede geçip giden etkin niteliğidir.",
+        "definition": "Vuruş sırasında hedefi kesip içinde ilerleyen etkili kılıç.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kılıç keskindir, keser ve vuruş içinde etkili biçimde ilerler.",
+            "statement": "Gönderim, kesme gücü bulunan bir kılıçtır.",
             "claim_ids": [
-              "lu_007"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Kılıç vuruş sırasında hedefin içinde ilerleyerek etkisini sürdürür.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Bu dal tek kaynaklı bir kayıtla, darbede kesen ve ilerleyen kılıç anlamını verir. Anlam, sıradan kılıç adından çok kılıcın keskin, geçirici ve etkili vuruş niteliğine bağlıdır.",
-        "common_claim_ids": [
-          "lu_007"
+        "common_summary": "Dalın anlamı, kılıcın yalnızca keskin olmasını değil, vuruş sırasında keserek ilerlemesini de içerir.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek kaynak tanıklığı, adı doğrudan vuruşta kesip ilerleyen kılıçla sınırlar."
+          }
         ],
-        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "vuruşta işleyen keskin kılıç",
-        "applicability": "Kılıcın kesici oluşunu ve darbede ilerleyip etkisini göstermesini birlikte karşılar.",
+        "text": "vuruşta kesip ilerleyen kılıç",
+        "applicability": "Kılıcın hem kesme gücünü hem de vuruş sırasında hedef içinde ilerlemesini birlikte karşılayan ana anlatımdır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Kılıç olma, keskinlik, kesme ve darbede ilerleme bileşenlerini korur.",
+          "preserves": "Kılıcı, kesme işlevini ve vuruşta ilerleme özelliğini birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
           "text": "keskin kılıç",
-          "usage_role": "general",
-          "applicability": "Darbede ilerleme ayrıntısının bağlamdan anlaşılabildiği yerlerde doğal bir kısa karşılıktır.",
+          "usage_role": "contextual",
+          "applicability": "Vuruşta ilerleme özelliği bağlamdan açıkça anlaşılıyorsa kısa ve doğal bir karşılık olabilir.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Kılıç olma ve keskin kesme niteliğini korur.",
-            "loses": "Vuruş içinde ilerleyip geçme ayrıntısını açıkça söylemez.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        },
-        {
-          "text": "darbede geçen kılıç",
-          "usage_role": "explanatory",
-          "applicability": "Kılıcın vuruş içinde ilerleyip kesici etkisini göstermesi açıklanacaksa uygundur.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Kılıcın darbede ilerlemesini ve kesici etkisini korur.",
-            "loses": null,
+            "preserves": "Kılıç gönderimini ve güçlü kesme niteliğini korur.",
+            "loses": "Kılıcın vuruş sırasında hedef içinde ilerlemesini açıkça belirtmez.",
             "adds": null,
             "collision": null
           },
@@ -470,88 +457,69 @@
         {
           "lexical_unit_id": "lu_007",
           "rendering_kind": "ordinary",
-          "target_gloss": "vuruşta işleyen keskin kılıç"
+          "target_gloss": "vuruşta kesip ilerleyen kılıç"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "kılıç",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Silahın kılıç olduğunu korur.",
-            "loses": "Keskinlik, kesme ve darbede ilerleme niteliklerini dışarıda bırakır.",
-            "adds": null,
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_001456/B008",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dal, kılıcın vuruşta kesip ilerlemesini belirtir.",
-          "neighbor_only": "Komşu dal, kılıcın darbe içinde hareket edip dalgalanır gibi işlemesini özellikle öne çıkarır.",
-          "gloss": "darbede işleyen kılıç",
-          "shared_zone": "İki dal da vuruşta etkili biçimde ilerleyen kesici kılıcı anlatır.",
-          "distinction": "Anlam alanları çok yakındır; odak dal kesme ve darbede geçme sonucunu öne çıkarırken komşu dal darbe içindeki hareket görünümünü ayrıca belirginleştirir."
+          "relation_type": "synonym",
+          "boundary_match": "exact",
+          "focus_only": null,
+          "neighbor_only": null,
+          "gloss": "vuruşta ilerleyen kesici kılıç",
+          "shared_zone": "Her iki dal da vuruş sırasında keserek ilerleyen kılıcı aynı sınırlarla adlandırır.",
+          "distinction": "Verilen kanıtta kurucu bir kapsam, koşul veya sonuç ayrımı yoktur; iki dal aynı kılıç niteliğini karşılar."
         },
         {
-          "neighbor_ref": "root_000258/B009",
+          "neighbor_ref": "root_000719/B006",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal, kılıcın darbede ilerleyip kesmesini açıkça içerir.",
-          "neighbor_only": "Komşu dal, kılıcın son derece keskin ve sert oluşunu niteler.",
-          "gloss": "keskin ve sert kılıç",
-          "shared_zone": "İki dal da kesici gücü yüksek kılıç niteliğinde örtüşür.",
-          "distinction": "Odak dal vuruş sırasında işleyişe bakar; komşu dal keskinlik ve sertlik niteliğini daha statik bir sıfat olarak verir."
+          "focus_only": "Vuruşta kesip ilerleme vardır, fakat hedefi mutlaka bütünüyle aşma şartı yoktur.",
+          "neighbor_only": "Kılıcın hedefi geçip yere veya hedefin ötesine ulaşması gerekir.",
+          "gloss": "hedefi aşıp geçen kılıç",
+          "shared_zone": "İki dal da kılıcın vuruşta kesmesi ve hedefin içine doğru ilerlemesi alanında örtüşür.",
+          "distinction": "Odak dalı keserek ilerlemeyi yeterli görür; komşu dal bunu hedefin tümünü aşıp ötesine ulaşan daha ileri bir sonuçla sınırlar."
         },
         {
           "neighbor_ref": "root_000884/B011",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal, darbede kesip ilerleyen kılıcı anlatır.",
-          "neighbor_only": "Komşu dal, bükülmeyen, kemikte bile işleyen çok keskin kılıçları kapsar.",
-          "gloss": "bükülmeyen keskin kılıç",
-          "shared_zone": "İki dal da yüksek kesme gücüne sahip kılıç alanında buluşur.",
-          "distinction": "Odak dal darbe içindeki geçiş ve kesme hareketini vurgular; komşu dal kılıcın bükülmezliği ve kemik içinde işleyebilmesi gibi ek nitelikler taşır."
+          "focus_only": "Vuruşta ilerleme kurucudur, fakat bükülmeme veya kemiği geçme şartı yoktur.",
+          "neighbor_only": "Kılıcın bükülmemesi ya da kemiklerin içinden geçmesi ayrıca belirtilir.",
+          "gloss": "bükülmeyen güçlü kesici kılıç",
+          "shared_zone": "Her iki dal kesme gücü yüksek ve vuruşta etkisini sürdüren kılıcı anlatır.",
+          "distinction": "Odak dalı vuruşta keserek ilerlemeye dayanır; komşu dal bu gücü bükülmeme veya kemiği aşma gibi ek dayanıklılık sonuçlarıyla niteler."
         },
         {
-          "neighbor_ref": "root_000719/B006",
-          "relation_type": "near_neighbor",
+          "neighbor_ref": "root_000258/B009",
+          "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal, kılıcın vuruşta kesip ilerlediğini söyler.",
-          "neighbor_only": "Komşu dal, kılıcın hedefi aşarak yere veya ötesine varacak kadar geçmesini anlatır.",
-          "gloss": "hedefi aşan kılıç",
-          "shared_zone": "İki dal da kılıcın darbede keserek ilerlemesi sahnesini paylaşır.",
-          "distinction": "Odak dal kesici geçişi yeterli görür; komşu dal darbede aşırı geçme ve hedefin ötesine ulaşma sonucunu ayrıca şart koşar."
-        },
-        {
-          "neighbor_ref": "root_000002/B005",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Odak dal, keskin ve darbede işleyen kılıcın kendisini adlandırır.",
-          "neighbor_only": "Komşu dal, kılıç, bıçak veya mızrak gibi şeylerin keskin ucu ve nüfuz edici keskinliği alanındadır.",
-          "gloss": "keskin uç ve nüfuz",
-          "shared_zone": "İki dal da keskinlik ve nüfuz eden etki alanına aittir.",
-          "distinction": "Odak dal belirli bir kılıç niteliği verir; komşu dal keskin uç ve keskinleştirme gibi daha genel alet-nitelik alanını kapsar."
+          "focus_only": "Kılıcın vuruş sırasında hedefin içinde ilerlemesi açıkça gereklidir.",
+          "neighbor_only": "Keskin ve kesici olma yeterlidir; vuruş içinde ilerleme ayrıca şart değildir.",
+          "gloss": "keskin ve kesici kılıç",
+          "shared_zone": "İki dal da güçlü biçimde kesen kılıcı adlandırır.",
+          "distinction": "Komşu dal genel keskinlik ve kesicilik niteliğinde kalır; odak dalı buna vuruş boyunca ilerleme sınırını ekler."
         }
       ],
-      "neighbor_coverage_note": "Kılıç, keskinlik, darbe ve nüfuz alanındaki adaylar değerlendirildi; yayımlananlar kılıç niteliğini en iyi ayıran komşulardır.",
+      "neighbor_coverage_note": "Bütün adaylar incelendi; tam örtüşen kılıç niteliği ile hedefi aşma, bükülmeme ve genel keskinlik sınırlarını gösteren dört karşılaştırma yayımlandı. Kesici uç, kesme çizgisi ve vurma olayı kılıcın kendisiyle aynı çekirdeği taşımadığı için dışarıda bırakıldı.",
       "branch_image_ar": "السيف القاطع الماضي في الضربة",
       "what_is_ar": "يدخل فيه إطلاق السراط على السيف القاطع النافذ الماضي في الضريبة",
+      "what_is_not_ar": "لا يدخل فيه الطريق، ولا بلع الطعام أو سعة الحلق",
       "source_phrase_ar": "والسراط السيف القاطع الماضي في الضريبة (maqayis 1774)",
       "sources": [
         "MQ"
       ],
-      "source_note": {}
+      "source_note": {
+        "MQ": "Tek kaynak tanıklığı, adı doğrudan vuruşta kesip ilerleyen kılıçla sınırlar."
+      }
     }
   ],
   "root_profile": {
-    "summary": "Bu kökte anlamlar bir hat veya kanal boyunca geçiş fikri çevresinde örgütlenir: izlenen düz yol, yiyeceğin boğazdan geçip kaybolması ve kılıcın darbede keserek ilerlemesi. Dallar birbirinin yerine geçmez, fakat yol, yutma ve kesici darbe alanlarında ortak ilerleme/geçiş imgesiyle bağlıdır.",
+    "summary": "Kök üç ayrı anlam dalında örgütlenir: genel yol ve özellikle düz yol, yutulan şeyin geçişte kaybolması, bir de vuruş sırasında keserek ilerleyen kılıç. Yol anlamı ile yutmadaki kaybolma arasında kaynakta bir türetme önerisi bulunsa da kılıç dalı ve güncel dal sınırları ayrı kavram çekirdekleri olarak korunur.",
     "polysemy": "polysemic",
-    "organization": "radial"
+    "organization": "multi_branch"
   },
   "occurrence_evidence": {
     "summary": {

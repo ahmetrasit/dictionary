@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak dalın çekirdeğini ve bağlama bağlı kullanımlarını doğru kuruyor; ancak kaynak sentezi bütün kaynaklara ortak olmayan ayrıntıları ortak anlatım gibi sunuyor ve bir sözlük birimi çevirisi kaynakta verilen ikinci anlamı atlıyor. Bu iki sınırlı alan canlı çıktıya en küçük düzeltmelerle işlenmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001129/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, açıklama, sorma, cevabın adlandırılması ve rüya yorumlama yönlerini kaynakların ortak anlatımı olarak sunuyor. Oysa toplu kaynak ifadesinde rüya yorumlama yalnız Tahdhib'de, bir hüküm ortaya koyma yönü de yine Tahdhib'de geçiyor; kaynakların her biri özetlenen bütün yönleri birlikte vermiyor.",
+      "smallest_correction": "Yalnız common_summary metnini değiştirerek ana çekirdeğin kaynaklar bütününden çıktığını söyle; rüya yorumlamanın tek kaynakta tanıklanan bağlama bağlı kullanım, bir hüküm ortaya koymanın da tek kaynakta verilen ek açıklama olduğunu kaynak kodu eklemeden açıkça ayır."
+    },
+    {
+      "target_ref": "root_001129/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005"
+      ],
+      "evidence_conflict": "lu_005 için kaynak anlamı, güç hükümleri açıklama eyleminin yanında bir hüküm ortaya koymayı da açıkça verir. Hedef karşılık yalnız açıklama ve cevaplama işini koruduğu için bu ikinci alternatifi kaybediyor.",
+      "smallest_correction": "Yalnız lu_005 target_gloss değerini \"anlaşılması güç bir hükmü açıklama veya bir hüküm ortaya koyma işi\" olarak değiştir."
+    }
+  ]
+}

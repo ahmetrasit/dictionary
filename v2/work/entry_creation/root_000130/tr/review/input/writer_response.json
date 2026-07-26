@@ -2,89 +2,83 @@
   "branches": [
     {
       "branch_ref": "root_000130/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, gömülü olanın üstündeki toprağı çevirip kaldırmayı, mezarlardakileri yerinden çıkarıp dışarı almayı ve örtülü bir şeyi açığa çıkarmayı birlikte bildirir. Verilen dal çerçevesi bu işlem dizisini ve ortaya çıkarma sonucunu doğru biçimde korur.",
+        "boundary_note": "Bu dal genel bir dağıtma ya da yıkma eylemini değil, toprağı çevirerek gömülü veya örtülü olanı ortaya çıkarma eylemini anlatır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın eylemin kapsamını verir; eşya dağıtma ve havuz yıkma gibi yalnızca belirli yapılarda görülen anlamlar bu dala katılmaz."
+      },
       "concept_map": {
-        "definition": "Toprağı altüst ederek gömülü olanı çıkarıp açığa vurma ya da daha genel olarak saklı bir şeyi çıkarıp görünür kılma eylemidir.",
+        "definition": "Bir şeyin üzerindeki toprağı altüst edip onu gömülü olduğu yerden çıkarmak ve mezardakileri dışarı almak; ayrıca daha genel olarak bir şeyi çıkarıp açığa kavuşturmaktır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Toprak, gömülü olanın üzerinden kaldırılacak biçimde altüst edilir; içerideki şey yerinden çıkarılıp görünür duruma getirilir.",
+            "statement": "Gömülü şeyin üzerindeki toprak çevrilip kaldırılır.",
             "claim_ids": [
-              "lu_001",
-              "lu_002"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "extension",
-            "statement": "Eylem, yalnızca gömülü nesnelerle sınırlı kalmayıp genel olarak saklı bir şeyi çıkarma ve açığa vurma anlamına da uzanır.",
+            "role": "specialization",
+            "statement": "Mezarlardakiler yerinden kaldırılıp dışarı çıkarılır.",
             "claim_ids": [
-              "lu_001"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "extension",
+            "statement": "Örtülü veya saklı bir şey çıkarılarak görünür duruma getirilir.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Anlam alanında iki destekli kullanım birlikte bulunur: gömülü olanın üzerindeki toprağı altüst edip onu ortaya çıkarma ve daha genel olarak saklı bir şeyi çıkarıp görünür kılma; mezarların içindekilerin çıkarılması fiziksel kullanımın belirgin gerçekleşmesidir.",
+        "common_summary": "Kaynak dizisi, toprağı çevirerek gömülüyü ve mezardakileri çıkarma çekirdeğinin yanında, aynı ayrıntıları zorunlu kılmadan bir şeyi çıkarıp açığa kavuşturan daha genel bir uzantı da verir.",
         "common_claim_ids": [
-          "lu_001"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_002"
-            ],
-            "kind": "derivation",
-            "summary": "Eylemin ad biçimi, gömülünün üzerindeki toprağı altüst edip içeridekini ortaya çıkarma sürecini karşılar."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "gömülü ya da saklı olanı çıkarıp açığa vurmak",
-        "applicability": "Toprak altındaki gömülünün ortaya çıkarıldığı fiziksel kullanımı da, örtü türünün belirtilmediği genel saklı şeyi çıkarma kullanımını da karşılar.",
+        "text": "toprağı çevirip gömülüyü çıkarma; bir şeyi çıkarıp açığa kavuşturma",
+        "applicability": "İlk bölüm toprağı çevirip gömülüyü çıkarma çekirdeğini, ikinci bölüm ise toprak koşulu taşımayan genel çıkarıp açığa kavuşturma uzantısını karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Gömülü veya saklı olanın bulunduğu durumdan çıkarılmasını ve görünür kılınmasını birlikte korur.",
+          "preserves": "Toprağı çevirip gömülüyü çıkarma çekirdeğini ve bir şeyi toprak koşulu olmadan çıkarıp açığa kavuşturma uzantısını ayrı ayrı korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
           "F001",
-          "F002"
+          "F002",
+          "F003"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "mezarın toprağını altüst edip içindekileri çıkarmak",
+          "text": "toprağı eşeleyip ortaya çıkarmak",
           "usage_role": "contextual",
-          "applicability": "Eylemin mezar toprağına ve mezarda bulunanların dışarı çıkarılmasına yöneldiği bağlamlarda kullanılır.",
+          "applicability": "Gömülü bir nesnenin üstündeki toprağın karıştırılıp kaldırıldığı somut bir anlatımda doğal bir karşılıktır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Toprağın altüst edilmesiyle gömülü olanın dışarı çıkarılması çekirdeğini korur.",
-            "loses": "Mezar dışındaki örtülü veya saklı şeyleri açığa çıkarma kapsamını dışarıda bırakır.",
+            "preserves": "Toprağı hareket ettirerek gömülü şeyi ortaya çıkarma işlemini korur.",
+            "loses": "Mezarlardakilerin topluca dışarı çıkarılması ile genel olarak örtülü bir şeyi açığa çıkarma uzantısını açıkça söylemez.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F001"
-          ]
-        },
-        {
-          "text": "saklı şeyi çıkarıp açığa vurmak",
-          "usage_role": "contextual",
-          "applicability": "Saklı bir şeyin bulunduğu yerden çıkarılarak görünür kılındığı, örtünün türünün öne çıkmadığı bağlamlara uygundur.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Saklı olanı çıkarma ve görünür kılma sonucunu açık biçimde korur.",
-            "loses": "Toprağın veya örtünün fiziksel olarak altüst edilmesi işlemini belirtmez.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F002"
           ]
         }
       ],
@@ -92,99 +86,102 @@
         {
           "lexical_unit_id": "lu_001",
           "rendering_kind": "ordinary",
-          "target_gloss": "gömülünün toprağını altüst edip onu ortaya çıkarmak ya da saklı bir şeyi çıkarıp açığa vurmak"
+          "target_gloss": "toprağı altüst edip gömülüyü ortaya çıkarmak; örtülü şeyi çıkarıp açığa kavuşturmak"
         },
         {
           "lexical_unit_id": "lu_002",
           "rendering_kind": "ordinary",
-          "target_gloss": "toprağı altüst edip gömülü olanı ortaya çıkarma"
+          "target_gloss": "gömülüyü ortaya çıkarmak için toprağı altüst etme"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "kazmak",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Toprakla yapılan fiziksel müdahale alanını kısmen korur.",
-            "loses": "Gömülü veya saklı olanı çıkarıp görünür kılma sonucunu zorunlu olarak taşımaz.",
-            "adds": null,
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000428/B003",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Toprağın fiziksel olarak altüst edilip gömülünün çıkarılması özel kullanım olarak kalır; dal ayrıca saklı şeyi çıkarıp açığa vurma yönüne de uzanır.",
-          "neighbor_only": "Bir şeyi, onu örten tabakayı altüst etmeden yalnızca görünür kılma veya saklandığı yerden çıkarma kullanımlarını da kapsar.",
-          "gloss": "gizliliği giderip ortaya çıkarmak",
-          "shared_zone": "Her iki dal da saklı olanın gizli durumdan çıkarılıp görünür hale gelmesi alanında örtüşür.",
-          "distinction": "Odak dalın genel çıkarıp açığa vurma uzantısı komşuyla örtüşür, fakat odak dalda toprağı altüst etme ve mezardakini dışarı çıkarma özel bir gerçekleşme olarak ayrıca belirgindir; komşu dal gizliliğin giderilmesini daha geniş biçimde kurar."
-        },
-        {
-          "neighbor_ref": "root_000482/B003",
-          "relation_type": "polarity_pair",
-          "boundary_match": "opposed",
-          "focus_only": "Toprak kaldırılıp altüst edilerek gömülü olan dışarı çıkarılır.",
-          "neighbor_only": "Toprak bir şeyin üzerine yığılarak o şey gömülür ve görünmez hale getirilir.",
-          "gloss": "toprakla örtüp gömmek",
-          "shared_zone": "İki dal da toprak ile toprağın altında kalan şey arasındaki fiziksel ilişkiyi değiştirir.",
-          "distinction": "Odak dal gömülü olanı dışarı çıkarıp açığa vururken komşu dal ters yönde işleyerek bir şeyi toprak altında bırakır."
+          "focus_only": "Dal genel çıkarıp açığa kavuşturmayı da kapsar; ayırt edici özel çekirdeğinde ise toprak çevrilerek gömülü olan veya mezardakiler çıkarılır.",
+          "neighbor_only": "Gizliliği kaldırma, bir şeyi yerinden çıkarmadan yalnız görünür kılmaya ve yağmurun canlıları yuvalarından çıkarması gibi başka çıkarma durumlarına da uzanır.",
+          "gloss": "gizliyi ortaya çıkarma",
+          "shared_zone": "Her iki dal da bir şeyi çıkarıp açığa kavuşturma uzantısında örtüşür.",
+          "distinction": "Bu dal genel çıkarıp açığa kavuşturma uzantısını komşuyla paylaşır, ancak özel çekirdeğinde toprağı çevirip gömülüyü veya mezardakileri çıkarır. Komşu dal gizliliği kaldırmayı toprak işleminden bağımsız biçimde daha geniş tutar ve başka çıkarma kullanımlarına da uzanır."
         },
         {
           "neighbor_ref": "root_000130/B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Altüst etmenin amacı örtülü veya gömülü olanı çıkarıp açığa vurmaktır.",
-          "neighbor_only": "Eşyalar dağıtılır ve parçaları birbirinin üzerine devrilir; saklı bir şeyi çıkarma gerekmez.",
-          "gloss": "eşyayı dağıtıp altüst etmek",
-          "shared_zone": "Her iki dalda da fiziksel bir düzenin bozulması ve parçaların altüst edilmesi bulunur.",
-          "distinction": "Odak dal örtünün altındaki şeyi ortaya çıkaran bir açma işlemidir; komşu dal ise eşyaların dağıtılıp birbirinin üzerine devrilmesiyle oluşan düzensizliği anlatır."
+          "focus_only": "Toprak gömülü şeyin üzerinden kaldırılır ve saklı olan açığa çıkarılır.",
+          "neighbor_only": "Eşyalar birbirinden ayrılır, dağıtılır ve parçaları birbirinin üstüne çevrilir.",
+          "gloss": "eşyayı dağıtıp altüst etme",
+          "shared_zone": "İki dalda da bir düzeni bozacak biçimde çevirme ve yer değiştirme görüntüsü vardır.",
+          "distinction": "Bu dalın sonucu gömülünün açığa çıkmasıdır. Komşu dal ise yalnız eşya üzerinde gerçekleşen dağıtma ve parçaları üst üste çevirme işlemidir; saklı bir şeyi çıkarma içermez."
+        },
+        {
+          "neighbor_ref": "root_000130/B003",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Toprağın çevrilmesi, altındaki gömülü veya örtülü şeyi ortaya çıkarır.",
+          "neighbor_only": "Havuz yıkılır ve yapının alt bölümü üste gelecek biçimde tersine çevrilir.",
+          "gloss": "havuzu yıkıp tersine çevirme",
+          "shared_zone": "Her iki dalda da altı üstüne getiren güçlü bir çevirme işlemi bulunur.",
+          "distinction": "Bu dalda çevirme, toprağın altındakini açığa çıkaran araçtır ve nesnenin yok edilmesini gerektirmez. Komşu dalda ise havuzun yıkılması ve altının üste gelmesi doğrudan sonuçtur."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; yayımlanmayanlar mezar ve gömü alanındaki nesneleri adlandırıyor, saklama ya da yok olma gibi ayrı çekirdeklere dayanıyor veya seçilen karşıtlığı tekrarladığı için dal sınırını ayrıca keskinleştirmiyor."
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; gizliyi ortaya çıkarma dalı ile iki kardeş dal sınırı keskinleştirdi. Kalan adaylar mezar, gömme, yok olma veya ilgili nesneler bakımından yalnızca uzak alan ortaklığı taşıdığı için yayımlanmadı."
     },
     {
       "branch_ref": "root_000130/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bir kimsenin eşyasını birbirinden ayırmasını, dağıtmasını ve parçalarını birbirinin üstüne gelecek biçimde çevirmesini açıkça birlikte verir. Dal çerçevesi bu üç bileşeni korur ve kullanımı belirtilen nesneyle sınırlar.",
+        "boundary_note": "Bu anlam yalnız eşya üzerinde kurulan kullanımda geçerlidir; genel dağıtma anlamına veya gömülü olanı açığa çıkarma dalına genişletilemez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım yalnız eşya üzerinde kurulan yapıya bağlıdır; dağıtma ve altüst etme bileşimi yalın eylemin genel anlamı gibi sunulmaz."
+      },
       "concept_map": {
-        "definition": "Eşyaları birbirinden ayırıp çevreye dağıtma ve parçalarını birbirinin üzerine devirecek biçimde altüst etme eylemidir.",
+        "definition": "Bir kimsenin eşyasını birbirinden ayırıp dağıtması ve parçalarını birbirinin üstüne gelecek biçimde altüst etmesidir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir arada duran eşyalar birbirinden ayrılarak farklı yönlere dağıtılır ve düzenleri bozulur.",
+            "statement": "Eşyalar birbirinden ayrılarak çeşitli yönlere dağıtılır.",
             "claim_ids": [
-              "lu_003"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "core",
-            "statement": "Dağıtılan eşyaların parçaları birbirinin üzerine devrilir; eylem yalnızca ayırmayı değil, altüst etmeyi de içerir.",
+            "statement": "Eşyanın parçaları birbirinin üstüne gelecek biçimde çevrilip altüst edilir.",
             "claim_ids": [
-              "lu_003"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Anlam, bir kişinin eşyalarını dağıtıp düzenini bozması ve parçaları birbirinin üzerine devirecek biçimde altüst etmesidir.",
-        "common_claim_ids": [
-          "lu_003"
+        "common_summary": "Bu dal genel bir dağıtmayı değil, eşya üzerinde gerçekleşen dağıtma ve altüst etme bileşimini anlatır.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek tanıklık, eşyanın ayrılıp dağıtılmasını ve parçalarının birbirinin üstüne çevrilmesini birlikte verir."
+          }
         ],
-        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "eşyayı dağıtıp parçalarını birbirinin üzerine devirmek",
-        "applicability": "Eşyaların hem birbirinden ayrılıp dağıtıldığı hem de parçalarının birbirinin üstüne devrilerek altüst edildiği bağlamları karşılar.",
+        "text": "eşyayı dağıtıp altüst etme",
+        "applicability": "Eşyanın hem ayrılıp dağıtıldığı hem de parçalarının birbirinin üstüne çevrildiği kullanımı eksiksiz karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Eşyaya yönelmeyi, dağıtmayı, düzeni bozmayı ve parçaları birbirinin üstüne devirmeyi birlikte korur.",
+          "preserves": "Eşya sınırını, dağıtma işlemini ve parçaları üst üste gelecek biçimde çevirme işlemini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -196,14 +193,145 @@
       },
       "contextual_glosses": [
         {
-          "text": "eşyalarını dağıtıp altüst etmek",
-          "usage_role": "general",
-          "applicability": "Eşyaların yerlerinden edilip düzensiz biçimde çevreye yayıldığı günlük bağlamlarda doğal bir karşılıktır.",
+          "text": "eşyasını darmadağın etmek",
+          "usage_role": "contextual",
+          "applicability": "Eşyanın düzensiz biçimde dağıtıldığı bir olayın akıcı anlatımında kullanılabilir.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Eşyaların dağıtılması ve mevcut düzenin bütünüyle bozulması anlamını korur.",
-            "loses": "Parçaların özellikle birbirinin üzerine devrilmesi işlemini açıkça belirtmez.",
+            "preserves": "Eşyanın dağıtılması ve önceki düzeninin bozulması yönlerini korur.",
+            "loses": "Parçaların birbirinin üstüne gelecek biçimde çevrilmesini açıkça belirtmez.",
             "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_003",
+          "rendering_kind": "ordinary",
+          "target_gloss": "eşyasını ayırıp dağıtmak ve parçalarını birbirinin üstüne gelecek biçimde altüst etmek"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000083/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Eşyayı dağıtırken parçaları birbirinin üstüne çevirmek de anlamın gerekli bir parçasıdır.",
+          "neighbor_only": "Dağıtma çok çeşitli nesnelere, canlı kümelerine ve yayılma olaylarına uzanır.",
+          "gloss": "nesneleri dağıtıp yayma",
+          "shared_zone": "Her iki dal da bir arada bulunan şeyleri ayırıp çevreye dağıtmayı içerir.",
+          "distinction": "Bu dal eşya ile sınırlıdır ve dağıtmaya parçaları birbirinin üstüne çevirme işlemini ekler. Komşu dal daha geniş nesne ve olaylara yayılır, fakat bu özel altüst etme koşulunu gerektirmez."
+        },
+        {
+          "neighbor_ref": "root_000098/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Eşya dağıtılırken parçaları da birbirinin üstüne gelecek biçimde çevrilir.",
+          "neighbor_only": "Tohum ekmek amacıyla saçılabilir ve dağıtma belirli bir üretim amacına bağlı olabilir.",
+          "gloss": "tohumu saçıp dağıtma",
+          "shared_zone": "İki dal da çok sayıdaki parçayı bulundukları yerden ayırıp çeşitli yönlere dağıtabilir.",
+          "distinction": "Bu dalın nesnesi eşyadır ve altüst etme bileşeni zorunludur. Komşu dalın belirgin örneği tohumu ekmek için saçmaktır; parçaları üst üste çevirme içermez."
+        },
+        {
+          "neighbor_ref": "root_000130/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Eşya parçaları ayrılır, dağıtılır ve birbirinin üstüne çevrilir.",
+          "neighbor_only": "Toprak kaldırılarak gömülü veya örtülü olan şey yerinden çıkarılıp açığa kavuşturulur.",
+          "gloss": "gömülüyü ortaya çıkarma",
+          "shared_zone": "İki dalda da nesnelerin önceki yerleşimini bozan bir çevirme hareketi bulunur.",
+          "distinction": "Bu dal eşyanın dağıtılmasıyla sonuçlanır; saklı bir şeyi bulup çıkarma amacı taşımaz. Komşu dalda toprak çevirme, gömülünün açığa çıkarılmasına hizmet eder."
+        },
+        {
+          "neighbor_ref": "root_000130/B003",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bir eşya topluluğu ayrılıp dağıtılır ve parçaları birbirinin üstüne çevrilir.",
+          "neighbor_only": "Tek bir havuz yapısı yıkılır ve alt bölümü üste gelecek biçimde bütünüyle ters çevrilir.",
+          "gloss": "havuzu yıkıp altını üste getirme",
+          "shared_zone": "Her iki dal da bir düzeni bozup parçaların veya bölümlerin konumunu tersine çevirir.",
+          "distinction": "Bu dal çok parçalı eşyanın dağıtılmasına bağlıdır. Komşu dal dağıtmayı değil, havuzun yıkılıp altının üste getirilmesini anlatır."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel yayma ve tohum saçma dalları ile iki kardeş dal en yararlı sınırları verdi. Kalan adaylar dağılma, eşya veya alma alanını paylaşsa da işlem bileşimini daha iyi açıklamadığı için yayımlanmadı."
+    },
+    {
+      "branch_ref": "root_000130/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi havuzun yıkılmasını ve alt bölümünün üste gelecek biçimde çevrilmesini aynı kullanımın iki kurucu parçası olarak verir. Dal çerçevesi hem yıkma işlemini hem de ortaya çıkan ters dönmüş durumu doğru biçimde korur.",
+        "boundary_note": "Bu anlam havuz üzerinde kurulan kullanıma bağlıdır; genel yıkılma, eşya dağıtma veya toprağı çevirme anlamı değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım yalnız havuz üzerinde kurulan yapıyı kapsar; yıkıp altını üste getirme anlamı yalın eyleme veya bütün yapılara genellenmez."
+      },
+      "concept_map": {
+        "definition": "Bir havuzu yıkmak ve yapının alt bölümünü üste gelecek biçimde tersine çevirmektir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Havuzun yapısı yıkılarak bütünlüğü ortadan kaldırılır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "core",
+            "statement": "Yıkılan havuzun alt bölümü üste gelecek biçimde ters çevrilir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Bu dal, havuzun yıkılmasını ve altının üste getirilmesini birbirinden ayrılmaz iki sonuç olarak birleştirir.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek tanıklık, havuzu yıkma eylemini yapının altını üste getirme sonucuyla birlikte bildirir."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "havuzu yıkıp altını üste çevirme",
+        "applicability": "Bir havuzun hem yıkıldığı hem de alt bölümünün üste gelecek biçimde tersine çevrildiği kullanımın tamamını karşılar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Havuz sınırını, yıkma işlemini ve alt bölümü üste getiren tersine çevirme sonucunu korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "havuzu yerle bir edip ters çevirmek",
+          "usage_role": "contextual",
+          "applicability": "Havuzun yapısının bütünüyle bozulduğu ve bölümlerinin ters konuma geldiği bir olay anlatımında doğal bir karşılıktır.",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Havuzu yıkma ve yapıyı ters konuma getirme bileşenlerini korur.",
+            "loses": null,
+            "adds": "Yerle bir etme sözü, kaynakta zorunlu olmayan tam düzleşme veya daha ileri ölçüde yok olma izlenimi ekleyebilir.",
             "collision": null
           },
           "facet_ids": [
@@ -214,190 +342,70 @@
       ],
       "lexical_glosses": [
         {
-          "lexical_unit_id": "lu_003",
-          "rendering_kind": "ordinary",
-          "target_gloss": "eşyalarını dağıtıp parçalarını birbirinin üzerine devirmek"
-        }
-      ],
-      "excluded_glosses": [
-        {
-          "text": "karıştırmak",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Eşyanın düzeninin bozulması yönünü kısmen korur.",
-            "loses": null,
-            "adds": "Dağıtma veya parçaları birbirinin üzerine devirme bulunmadan yapılan genel karıştırmayı da kapsar.",
-            "collision": null
-          }
-        }
-      ],
-      "neighbor_distinctions": [
-        {
-          "neighbor_ref": "root_000083/B001",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Dağıtılan şey eşyadır ve parçaların birbirinin üzerine devrilerek altüst edilmesi anlamın zorunlu bölümüdür.",
-          "neighbor_only": "Yayma ve saçma çok çeşitli nesnelere, canlı topluluklarına ve havaya kalkan maddelere uygulanabilir; birbirinin üstüne devirme gerekmez.",
-          "gloss": "şeyleri ayırıp çevreye yaymak",
-          "shared_zone": "Her iki dal da bir arada bulunan şeylerin ayrılıp çevreye dağılması anlamını paylaşır.",
-          "distinction": "Odak dal eşyayla sınırlı, düzen bozucu ve devirici bir dağıtmadır; komşu dal ise nesneleri yayma ve saçma eylemini çok daha geniş bir alanda karşılar."
-        },
-        {
-          "neighbor_ref": "root_000098/B001",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Eşyanın düzeni bozulur ve parçaları birbirinin üzerine devrilir.",
-          "neighbor_only": "Tohum, ekim amacıyla farklı yönlere serpilir; düzensizlik veya altüst etme zorunlu değildir.",
-          "gloss": "tohumu serpip dağıtmak",
-          "shared_zone": "Her iki dalda da bir aradaki parçaların farklı yönlere dağıtılması vardır.",
-          "distinction": "Odak dal eşyayı düzensizleştirip altüst ederken komşu dal özellikle tohumu yayarak ekmeye yönelen bir serpme eylemini de içerir."
-        },
-        {
-          "neighbor_ref": "root_000130/B001",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Eşyalar dağıtılır ve parçaları birbirinin üzerine devrilerek düzenleri bozulur.",
-          "neighbor_only": "Toprak veya örtü altüst edilerek altında saklı bulunan şey çıkarılıp açığa vurulur.",
-          "gloss": "örtüyü altüst edip saklı olanı çıkarmak",
-          "shared_zone": "Her iki dal fiziksel bir bütünü altüst ederek önceki düzenini bozar.",
-          "distinction": "Odak dalda sonuç dağılmış eşya yığınıdır; komşu dalda altüst etme, örtünün altındaki şeyi bulup dışarı çıkaran bir araçtır."
-        },
-        {
-          "neighbor_ref": "root_000130/B003",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Eşya bütünüyle yok edilmez; parçaları dağıtılıp birbirinin üzerine devrilir.",
-          "neighbor_only": "Bir havuz yıkılır ve alt bölümü üste gelecek biçimde yapı ters çevrilir.",
-          "gloss": "havuzu yıkıp altını üstüne getirmek",
-          "shared_zone": "Her iki dalda da parçaların konumu değişir ve mevcut fiziksel düzen altüst olur.",
-          "distinction": "Odak dal eşyaların dağıtılmasına, komşu dal ise belirli bir yapının yıkılıp altının üste getirilmesine dayanır."
-        }
-      ],
-      "neighbor_coverage_note": "Adayların tamamı değerlendirildi; öteki adaylar genel dağılma ifadelerini tekrarlıyor, eşyayı yalnızca adlandırıyor ya da tutma, alma ve toplulukların dağılması gibi farklı çekirdeklere dayandığı için ek bir sınır sağlamıyor."
-    },
-    {
-      "branch_ref": "root_000130/B003",
-      "concept_map": {
-        "definition": "Bir havuzu yıkıp yapının alt bölümünü üste gelecek biçimde ters çevirerek düzenini bütünüyle bozma eylemidir.",
-        "facets": [
-          {
-            "facet_id": "F001",
-            "role": "core",
-            "statement": "Eylemin nesnesi olan havuz, yapısal bütünlüğü ortadan kalkacak biçimde yıkılır.",
-            "claim_ids": [
-              "lu_004"
-            ]
-          },
-          {
-            "facet_id": "F002",
-            "role": "core",
-            "statement": "Yıkım sırasında havuzun alt bölümü üste getirilir; böylece yalnızca çökme değil, yapının ters çevrilmesi de gerçekleşir.",
-            "claim_ids": [
-              "lu_004"
-            ]
-          }
-        ]
-      },
-      "source_synthesis": {
-        "common_summary": "Anlam, bir havuzun yıkılması ve alt bölümünün üste gelecek biçimde ters çevrilerek yapısal düzeninin ortadan kaldırılmasıdır.",
-        "common_claim_ids": [
-          "lu_004"
-        ],
-        "source_details": [],
-        "supporting_claim_ids": [],
-        "duplicate_claims": []
-      },
-      "concept_gloss": {
-        "text": "havuzu yıkıp altını üstüne getirmek",
-        "applicability": "Bir havuzun hem yıkıldığı hem de alt bölümü üste gelecek biçimde ters çevrildiği çekirdek kullanımı tam olarak karşılar.",
-        "error_profile": {
-          "fit": "none",
-          "preserves": "Havuz nesnesini, yapının yıkılmasını ve alt bölümünün üste getirilmesini birlikte korur.",
-          "loses": null,
-          "adds": null,
-          "collision": null
-        },
-        "facet_ids": [
-          "F001",
-          "F002"
-        ]
-      },
-      "contextual_glosses": [
-        {
-          "text": "havuzu yerle bir etmek",
-          "usage_role": "contextual",
-          "applicability": "Bağlamın havuzun bütünüyle yıkılmasına odaklandığı ve ters çevirme ayrıntısını ayrıca gerektirmediği durumlarda kullanılabilir.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Havuzun yapısal bütünlüğünün bozularak tamamen yıkılması sonucunu korur.",
-            "loses": "Havuzun alt bölümünün özellikle üste getirildiği ters çevirme işlemini belirtmez.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        }
-      ],
-      "lexical_glosses": [
-        {
           "lexical_unit_id": "lu_004",
           "rendering_kind": "ordinary",
-          "target_gloss": "havuzu yıkıp altını üstüne getirmek"
+          "target_gloss": "havuzunu yıkıp alt bölümünü üste gelecek biçimde ters çevirmek"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "yıkmak",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Havuzun yapısal bütünlüğünün bozulması sonucunu korur.",
-            "loses": "Havuzun alt bölümünün üste getirildiği ters çevirme işlemini belirtmez.",
-            "adds": null,
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000204/B004",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Yıkım özellikle bir havuza yönelir ve yapının alt bölümünün üste getirilmesini içerir.",
-          "neighbor_only": "Ev ve başka yapıları yıkmanın yanı sıra bir düzenin çökmesi, düşüş, güç kaybı ve yok oluş gibi geniş kapsamları da taşır.",
-          "gloss": "yapıyı yıkıp düzenini ortadan kaldırmak",
+          "focus_only": "Yıkılan nesne havuzdur ve alt bölümünün üste getirilmesi zorunlu sonuçtur.",
+          "neighbor_only": "Yıkma ev ve başka nesnelere, kendiliğinden çöküşe ve düzen ya da saygınlık kaybına uzanabilir.",
+          "gloss": "yapıyı yıkıp dayanağını bozma",
           "shared_zone": "Her iki dal da bir yapının bütünlüğünü bozarak onu ayakta tutan düzeni ortadan kaldırır.",
-          "distinction": "Odak dal havuzla ve altın üste getirilmesiyle sınırlandırılmış özel bir yıkımdır; komşu dal genel yıkım ve çöküş alanına uzanır."
+          "distinction": "Bu dal yalnız havuzun yıkılıp altının üste getirilmesini anlatır. Komşu dalın yıkma ve çöküş alanı daha geniştir ve ters çevirme sonucunu zorunlu kılmaz."
         },
         {
-          "neighbor_ref": "root_000450/B002",
+          "neighbor_ref": "root_001580/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Havuzun alt bölümünün üste gelecek biçimde çevrilmesi yıkmanın kurucu sonucudur.",
+          "neighbor_only": "Şiddetli kırma ve yıkma duvar, bina, dağ ve dayanak gibi çok çeşitli nesnelere uygulanabilir.",
+          "gloss": "şiddetle kırıp yıkma",
+          "shared_zone": "Her iki dal da sağlam bir yapıyı güçlü biçimde bozup yıkmayı içerir.",
+          "distinction": "Bu dal nesne olarak havuzu ve sonuç olarak altın üste gelmesini şart koşar. Komşu dal şiddetli kırma ve yıkmayı daha geniş nesnelere uygular, fakat ters dönmeyi gerektirmez."
+        },
+        {
+          "neighbor_ref": "root_000130/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Bir havuz etkin biçimde yıkılır ve alt bölümü üste getirilir.",
-          "neighbor_only": "Bir şey kendiliğinden ya da belirtilmeyen bir nedenle düşebilir, çökmüş olabilir veya kökünden sökülebilir.",
-          "gloss": "düşmek veya çökmek",
-          "shared_zone": "Her iki dalda da bir yapının önceki dik ve bütün durumunu kaybetmesi sonucu bulunur.",
-          "distinction": "Odak dal belirli bir nesneye uygulanan, ters çevirmeyi de içeren yıkıcı eylemdir; komşu dal esas olarak düşme ve çökme olayını anlatır."
+          "focus_only": "Havuz yıkılır ve alt bölümü üste gelecek biçimde tersine çevrilir.",
+          "neighbor_only": "Toprak çevrilip kaldırılarak altındaki gömülü veya örtülü şey açığa çıkarılır.",
+          "gloss": "toprağı çevirip gömülüyü çıkarma",
+          "shared_zone": "İki dalda da alt ve üst konumlarını değiştiren güçlü bir çevirme görüntüsü vardır.",
+          "distinction": "Bu dalda çevirme, havuzun yıkılmasıyla birlikte doğrudan sonuçtur. Komşu dalda ise toprağı çevirme, saklı olanı ortaya çıkarmaya yarar ve bir yapıyı yıkmayı gerektirmez."
         },
         {
           "neighbor_ref": "root_000130/B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Havuzun yapısal bütünlüğü yıkılır ve alt bölümü üste getirilir.",
-          "neighbor_only": "Eşyalar yapısal olarak yıkılmak yerine birbirinden ayrılıp çevreye dağıtılır ve üst üste devrilir.",
-          "gloss": "eşyayı dağıtıp altüst etmek",
-          "shared_zone": "Her iki dalda da parçaların eski konumu bozulur ve fiziksel düzen altüst edilir.",
-          "distinction": "Odak dal bir havuzun yıkılıp ters çevrilmesidir; komşu dal ise eşya parçalarının dağıtılması ve birbirinin üzerine devrilmesidir."
+          "focus_only": "Tek bir havuz yapısı yıkılır ve altı üste gelecek biçimde ters çevrilir.",
+          "neighbor_only": "Çok parçalı eşya birbirinden ayrılır, dağıtılır ve parçaları birbirinin üstüne çevrilir.",
+          "gloss": "eşyayı dağıtıp altüst etme",
+          "shared_zone": "Her iki dal da önceki düzeni bozarak bölümlerin veya parçaların konumunu değiştirir.",
+          "distinction": "Bu dal havuzun yıkılmasına ve ters dönmesine bağlıdır. Komşu dalda yapısal yıkım yoktur; eşyanın ayrılması, dağıtılması ve üst üste çevrilmesi vardır."
+        },
+        {
+          "neighbor_ref": "root_000016/B007",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Bir havuzun yıkılması ve alt bölümünün üste gelecek biçimde çevrilmesi anlatılır.",
+          "neighbor_only": "Suyun toplandığı geniş bir havuz veya su biriktirme yeri bir nesne olarak adlandırılır.",
+          "gloss": "su biriktirme havuzu",
+          "shared_zone": "İki dal aynı tür su yapısını konu edinir.",
+          "distinction": "Bu dal havuz üzerinde gerçekleştirilen yıkıcı bir işlemi bildirir. Komşu dal ise suyu toplamak için kullanılan yapının kendisini adlandırır; yıkma veya ters çevirme anlamı taşımaz."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; yayımlanmayan genel kırma ve yıkma adayları seçilen yıkım karşılaştırmasını tekrarlıyor, diğerleri ise çukur, havuz, taban veya aralık gibi aynı sahnedeki nesneleri adlandırıp eylemin sınırına ek bir açıklık getirmiyor."
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel yıkma dalları, iki kardeş dal ve havuzun kendisini adlandıran dal en açıklayıcı karşılaştırmaları sağladı. Kalan adaylar çökme, yarılma, çukur veya havuz bölümü gibi yalnızca yakın alanları paylaştığı için yayımlanmadı."
     }
   ],
   "root_profile": {
-    "summary": "Kökün üç dalı fiziksel düzeni altüst etme görüntüsü çevresinde örgütlenir: örtüyü bozup saklı olanı çıkarma, eşyayı dağıtıp üst üste devirme ve havuzu yıkıp altını üste getirme.",
+    "summary": "Kökün anlamları, toprağı altüst ederek gömülüyü açığa çıkarma; eşyayı dağıtıp parçalarını birbirinin üstüne çevirme; havuzu yıkıp altını üste getirme olmak üzere üç ayrı dalda düzenlenir.",
     "polysemy": "polysemic",
-    "organization": "radial"
+    "organization": "multi_branch"
   }
 }

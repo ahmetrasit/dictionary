@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Dal kimlikleri, kapsamları, kavram haritaları, karşılıkları ve komşu sınırları kanıtla uyumludur. Ancak üç dalın kaynak sentezi, yalnızca belirli sözlüklerde bulunan ayrıntıları ortak anlatım içinde sunup kaynak ayrıntılarını boş bırakmaktadır; bu ayrıntıların sözlük bazında ayrıştırılması gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_001061/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kişinin duraksamasını, zamanın uğraşlarını ve iyilikten caydırmayı kaynakların ortak anlatımı gibi bir araya getirirken kaynak ayrıntıları boştur. Kanıtta duraksama ve zamanın uğraşları Sihah'a, iyilikten caydırmanın farklı anlatımları ise Ayn, Tahdhib ve Mufradat'a özgü ayrıntılar taşır; ayrıca meşgul eden iş Tahdhib'de tekil olarak geçer.",
+      "smallest_correction": "Engelleme ve amaçtan çevirme çekirdeğini ortak özette bırakın; duraksama, zamanın uğraşları, iyilikten caydıran kişi ve meşgul eden iş ayrıntılarını bc_001 ile, yalnızca onları bildiren sözlük kodlarına ait ayrı kaynak ayrıntılarına taşıyın."
+    },
+    {
+      "target_ref": "root_001061/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, putun eski bir dönemde bir toplulukça tapınılan varlık olduğu ayrıntısını toplu kaynak anlatımına katmaktadır. Dal kanıtında özel adın bir puta ait oluşu üç kaynakça desteklenirken Nuh döneminde tapınılması yalnızca Tahdhib'in verdiği ayırt edici ayrıntıdır.",
+      "smallest_correction": "Ortak özeti sözün belirli bir putun özel adı olmasıyla sınırlayın; Nuh döneminde tapınılma ayrıntısını bc_001 ile yalnızca Tahdhib'e ait bir kaynak ayrıntısında belirtin."
+    },
+    {
+      "target_ref": "root_001061/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, yıldızın iki farklı konum betimini ve adın iki olası kök yapısını toplu kaynak anlatımı olarak sunmaktadır. Kanıtta Samanyolu'nun sağ kenarında Ülker'i izleme Sihah'a; Ülker'in karşısında bulunma ve adın iki farklı kökten gelebileceği kaydı ise Tahdhib'e özgüdür.",
+      "smallest_correction": "Kırmızı, parlak ve Ülker yakınındaki belirli yıldız çekirdeğini ortak özette bırakın; konum betimlerini ilgili sözlüklerin ayrı kaynak ayrıntılarına ayırın ve kök yapısındaki belirsizliği bc_001 ile yalnızca Tahdhib ayrıntısında verin."
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "inputs_sha256": "837a9626e7808335d6901744790db8214559af742ae58b39fedbf3002b7b3fc9",
+  "verdict": "editorial_review",
+  "summary": "Yazar yanıtı dalların çoğunu kanıtla uyumlu kuruyor; ancak B004'te anatomik kapsam belirsizleşiyor, B005'te tekil benzetmeli kullanım gereksiz biçimde genelleniyor, B006'da kaynakların ortaklığı olduğundan geniş gösteriliyor ve B007'de ayrı kullanımlar arasında kanıtlanmamış bir sonuç ilişkisi kuruluyor. Bu düzeltmeler canlı yazar çıktısına müdahale gerektirdiğinden editoryal inceleme gereklidir.",
+  "issues": [
+    {
+      "target_ref": "root_003353/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt kadın cinsel organının iki kenarını, yanını veya ucunu açıkça belirtirken tanım ve çekirdek faset yalnızca 'mahrem beden bölgesi' diyor. Bu ifade göğüs veya kalça gibi başka bölgeleri de kapsayabilecek kadar geniştir.",
+      "smallest_correction": "Tanım ile F001'i, genel 'mahrem beden bölgesi' yerine kadın cinsel organının iki kenarını veya yanını açıkça belirtecek biçimde daraltın; çift kenar vurgusunu koruyun."
+    },
+    {
+      "target_ref": "root_003353/B004",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "'Mahrem beden kenarı' karşılığı kanıttaki belirli kadın anatomisini göstermiyor ve başka mahrem beden bölgelerini de kapsıyor; buna rağmen hata profili uyumu 'none' olarak işaretliyor.",
+      "smallest_correction": "Kavram karşılığını 'kadın cinsel organının kenarı' gibi kanıttaki anatomik sınırı koruyan doğal bir Türkçe açıklamayla değiştirin."
+    },
+    {
+      "target_ref": "root_003353/B005",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kesin kaynak ifadesi benzetmeli aktarım olarak yalnızca Habeslinin dudaklarını verir. Gerekçe bunu 'başka insan veya hayvan dudakları' biçiminde sınırsız bir canlı grubuna genişletiyor.",
+      "smallest_correction": "Gerekçedeki genellemeyi kaldırın ve benzetmeli aktarımı yalnızca kanıtta belirtilen Habeslinin dudaklarıyla sınırlandırın."
+    },
+    {
+      "target_ref": "root_003353/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F003, benzetmeli adlandırmayı bütün 'başka canlılar' için geçerli sayıyor. Kesin kaynak ifadesi yalnızca Habeslinin dudaklarına yapılan aktarımı destekliyor.",
+      "smallest_correction": "Tanım ile F003'teki 'başka canlılar' kapsamını Habeslinin dudakları için yapılan benzetmeli kullanımla değiştirin; devenin dudağına ilişkin çekirdeği aynen koruyun."
+    },
+    {
+      "target_ref": "root_003353/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet 'başka dudaklara' yönelen genel bir söyleyişten söz ediyor; kanıtın aktardığı tek deve dışı örnek Habeslinin dudaklarıdır.",
+      "smallest_correction": "Ortak özetteki genel 'başka dudaklar' ifadesini, Habeslinin dudakları için verilen benzetmeli kullanımla sınırlandırın."
+    },
+    {
+      "target_ref": "root_003353/B005",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İkinci bağlamsal karşılığın uygulanabilirlik açıklaması bütün 'başka canlılar' için kullanım bildiriyor; kesin kaynak yalnızca Habeslinin dudaklarını anıyor.",
+      "smallest_correction": "İkinci bağlamsal karşılığın uygulanabilirliğini Habeslinin dudaklarına yönelik benzetmeli kullanımla sınırlandırın."
+    },
+    {
+      "target_ref": "root_003353/B006",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet bütün kaynakların uzun veya iri kulak özelliğinde birleştiğini söylüyor. Oysa kaynak demetinde kulaktaki kıl, bacağın ortasındaki tırnak ve insan için kullanım gibi farklı ve ayırt edici ayrıntılar da vardır; Sihah satırı kulak uzunluğu veya iriliği değil kulaktaki kılı belirtir.",
+      "smallest_correction": "Ortak anlaşma iddiasını yalnızca hayvan türü düzeyinde tutun; kaynak demetindeki uzun veya iri kulak, kulaktaki kıl, bacağın ortasındaki tırnak ve uzun kulaklı insan nitelemesini, bütün kaynaklara mal etmeden kaynak-nötr biçimde özetleyin."
+    },
+    {
+      "target_ref": "root_003353/B007",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım dar geçimi eksiltmeden 'doğan' bir durum, F003 de eksilme sonucunun yaşam koşuluna yansıması sayıyor. Kanıt zarar verme, eksiltme, malı azaltma, dar geçim ve giderlerin eksilmesini sıralıyor; aralarında nedensel veya türetimsel ilişki kurmuyor.",
+      "smallest_correction": "Tanımda dar geçimi ayrı bir kullanım olarak 'ayrıca' ile verin; F003'ün rolünü 'associated_use' yapıp kanıtlanmamış sonuç ilişkisini kaldırın."
+    },
+    {
+      "target_ref": "root_003353/B007",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tek kaynak özeti mal kaybı ile geçim darlığını zarar ve eksiltmenin 'sonucu' olarak sunuyor. Kanıt bu kullanımları birlikte sıralasa da böyle bir neden-sonuç bağı belirtmiyor.",
+      "smallest_correction": "Tek kaynak özetinde sonuç ilişkisini kaldırın; zarar verme ve eksiltme eylemlerinin yanında mal azalması ile dar geçimi ayrı attested kullanımlar olarak sıralayın."
+    },
+    {
+      "target_ref": "root_003353/B007",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "'Zarar verip eksiltme' karşılığı dar geçim kullanımını ifade etmediği halde F003'e bağlanmış ve kayıpsız uyumlu gösterilmiştir.",
+      "smallest_correction": "Karşılığı F001 ve F002 ile sınırlandırın; uyumu 'narrowing' yapıp dar geçim kullanımının kaybolduğunu hata profilinde belirtin."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B010 dalındaki bir komşuluk ilişkisi, iki dalın aynı beden bölümünü adlandıran çekirdekleri tam örtüştüğü halde kaynaklara özgü betimleme farkları nedeniyle kısmi yakın anlamlılık olarak sınıflandırılmıştır. Bu ilişki tam eş anlamlılık olarak düzeltilmelidir; bunun dışında yayıma engel bir anlam sorunu saptanmamıştır.",
+  "issues": [
+    {
+      "target_ref": "root_001010/B010",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B010 kanıtının çekirdeği kıç beden bölümünü adlandırır; root_000599/B003 sınır kartı da aynı beden bölümünü adlandırır. B010'daki sertlik ve sıkılık nitelemesi ile komşu dalın kaynaklarda verilen kapanma veya dalgalanma açıklaması kapsamı, katılımcıyı ya da kullanım koşulunu değiştiren sınırlar değildir. Bu nedenle ilişkiyi near_synonym ve partial olarak göstermek, kaynaklara özgü açıklamaları dal sınırı sayarak tam ikame edilebilir çekirdekleri gereksiz yere ayırır.",
+      "smallest_correction": "Yalnızca root_000599/B003 komşuluk satırında relation_type değerini synonym, boundary_match değerini exact yapın; focus_only ve neighbor_only alanlarını gerçek bir kapsam ayrımı ileri sürmeyecek biçimde düzenleyip shared_zone ve distinction metinlerinde iki adın aynı beden bölümünü gösterdiğini, farklı kaynak betimlemelerinin bu tam örtüşmeyi bozmadığını belirtin."
+    }
+  ]
+}

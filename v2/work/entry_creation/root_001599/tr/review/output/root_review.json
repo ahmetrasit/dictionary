@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Girdi genel olarak kanıtla uyumludur; ancak B003'te yalnızca bir kaynağa ait dökme benzetisi bütün kaynakların ortak açıklaması ve anlamın genel bir parçası gibi sunulmuş, B006'nın kimlik gerekçesine ise kanıtta bulunmayan bir jilet benzetisi eklenmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_001599/B003",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıtta malı döker gibi verme benzetisi yalnızca maqayis açıklamasında yer alır; sihah ve mufradat yapıyı yalnızca malından verme olarak açıklar. Tanımın ikinci cümlesi ve F002 bu kaynağa özgü açıklamayı bütün kullanımın taşıdığı genel bir tasvir gibi sunuyor.",
+      "smallest_correction": "Tanımın ikinci cümlesini bu benzetinin bir kaynak açıklaması olduğunu belirtecek biçimde nitelendir; F002 rolünü source_variant yap ve ifadesini de benzetinin bir açıklamada verildiğini gösterecek şekilde daralt."
+    },
+    {
+      "target_ref": "root_001599/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kaynakların tümünün aktarımı dökme benzetisiyle açıkladığını söylüyor. Oysa bc_001 içinde bu benzetiyi yalnızca maqayis verir; sihah ve mufradat ortak olarak sadece verme anlamını kaydeder.",
+      "smallest_correction": "Ortak özeti, kaynakların malından verme anlamında birleştiğini ve yalnızca bir açıklamanın bunu dökme benzetisiyle tasvir ettiğini söyleyecek biçimde düzelt."
+    },
+    {
+      "target_ref": "root_001599/B006",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kimlik gerekçesindeki \"jilet gibi toplama\" ifadesinin bc_001'de karşılığı yoktur. Kanıt yalnızca bir şeyi sıyırıp süpürür gibi topluca alma ve alma çerçevesini destekler; jilet imgesi dal sınırına kanıtsız bir unsur ekler.",
+      "smallest_correction": "Gerekçedeki \"jilet gibi toplama ve alma\" sözünü \"sıyırıp süpürür gibi topluca alma\" olarak değiştir; gerekçenin kalanını koru."
+    }
+  ]
+}

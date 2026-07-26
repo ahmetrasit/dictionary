@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtla uyumludur; ancak B002 dalının bir komşu ayrımında hızlı akış yanlış biçimde yalnızca odak dala özgü gösterilmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_000730/B002",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B002 için hızlı akış kanıtlanmaktadır, fakat root_000731/B001 sınır kartı da hızlı akışı açıkça kapsar. Buna rağmen focus_only alanı güçlü ve hızlı akışı birlikte yalnızca odak dala özgü saymakta, distinction alanı da hız vurgusunu komşudan ayırmaktadır.",
+      "smallest_correction": "root_000731/B001 karşılaştırmasında yalnızca güçlü akışı ve hızlı akan her pınara genel ad olma seçeneğini odak dala özgü bırakın; hızlı akışı ortak alana taşıyın ve ayrım cümlesini buna göre daraltın."
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın büyük bölümü kanıtla uyumludur; ancak B015 dalında geçici çerçevedeki güç ve kararlılık nitelikleri, yetkili kaynak ifadesinde bulunmadığı halde yayımlanabilir anlamın çeşitli alanlarına taşınmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_000734/B015",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yetkili kaynak ifadesi yalnızca dişi devenin yolunda ilerlediğini bildirir. Gerekçedeki kararlılık yorumu ve dal çerçevesinin koşulsuz kabulü, kesin kaynakta yer almayan güç ve kararlılık niteliklerini onaylamaktadır.",
+      "smallest_correction": "Durumu qualified olarak değiştirin ve gerekçede kesin kaynağın yalnızca yolunda ilerleyen dişi deveyi desteklediğini, güç veya kararlılık derecesini doğrulamadığını belirtin."
+    },
+    {
+      "target_ref": "root_000734/B015",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ile çekirdek yüz, dişi devenin kararlı, güçlü ve duraksamadan ilerlediğini söyler. Kesin kaynak ifadesi yalnızca onun yolunda ilerlediğini belirtir; bu yoğunluk ve süreklilik niteliklerini vermez.",
+      "smallest_correction": "Tanımı ve çekirdek yüzü, yalnızca yolunda ilerleyen veya yürüyüşünü sürdüren dişi deve nitelemesiyle sınırlandırın; kararlı, güçlü ve duraksamadan sözlerini çıkarın."
+    },
+    {
+      "target_ref": "root_000734/B015",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, tek kaydın dişi devenin yürüyüşünü kararlı biçimde sürdürdüğünü söylediğini ileri sürer. Tek kaynak kaydı yalnızca devenin yolunda ilerlediğini bildirir.",
+      "smallest_correction": "Ortak özetteki kararlı biçimde ifadesini kaldırın ve kaydı, dişi devenin yolunda ilerlemesini bildiren dar bir niteleme olarak aktarın."
+    },
+    {
+      "target_ref": "root_000734/B015",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bağlamsal karşılık ve açıklaması kararlı, güçlü ve duraksamadan ilerleme özellikleri ekler. Bu özellikler kesin kaynak ifadesinde bulunmaz.",
+      "smallest_correction": "Karşılığı yolunda ilerleyen dişi deve biçimine indirin ve uygulanabilirlik açıklamasından güç, kararlılık ve duraksamama niteliklerini çıkarın."
+    },
+    {
+      "target_ref": "root_000734/B015",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_045"
+      ],
+      "evidence_conflict": "lu_045 için hedef karşılık kararlı biçimde sözünü ekler; eşgüdüm kanıtındaki anlam yalnızca yolunda ilerleyen dişi devedir.",
+      "smallest_correction": "lu_045 hedef karşılığını yolunda ilerleyen dişi deve olarak değiştirin."
+    },
+    {
+      "target_ref": "root_000734/B015",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşuluk açıklaması ortak alanı güçlü ve kararlı yol alma olarak kurar. Kesin odak kanıtı güç veya kararlılık bildirmediği için bu ortak alan odak dalın sınırını olduğundan yoğun gösterir.",
+      "smallest_correction": "Ortak alanı dişi devenin yol almasıyla sınırlandırın; güç ve hız özelliklerini yalnızca komşu dala bırakın ve odak dalı hayvan adına bağlı ilerleme nitelemesi olarak açıklayın."
+    }
+  ]
+}

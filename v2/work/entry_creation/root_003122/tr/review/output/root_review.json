@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "B003 genel olarak kanita sadik, ancak lifli malzeme dalinda hayvan kılı/tüyü icin kullanilan 'ince kil' ifadesi Turkcede kil/toprak anlamina kayarak kanittaki kıl/tüy anlamini bozuyor. Bu hata yalniz B003 concept_map ve source_synthesis alanlarinda geciyor ve cerrahi olarak duzeltilebilir.",
+  "issues": [
+    {
+      "target_ref": "root_003122/B003",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B003 kaniti dusen tuy, pamuk, yun ve wabar/hayvan kılı gibi lifli maddeleri toplar. concept_map F003'teki 'ince kil' Turkcede toprak/kil anlamina gider ve lifli madde kanitini yanlis yansitir.",
+      "smallest_correction": "B003 concept_map F003'teki 'ince kil' ifadesini lif anlamini acik veren 'ince kıl' olarak degistir."
+    },
+    {
+      "target_ref": "root_003122/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B003 source_synthesis, kanittaki yun ve wabar/hayvan kılı unsurunu 'ince kil' diye veriyor. Bu Turkcede kil/toprak olarak okunur ve lifli malzeme alanina destek veren kanitla catismali hale gelir.",
+      "smallest_correction": "B003 source_synthesis common_summary icindeki 'ince kil' ifadesini 'ince kıl' olarak degistir."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Uc sinirli sorun bulundu: B002 boundary note, kanitin desteklemedigi kazilmaya elverislilik ifadesini ekliyordu; B012 identity_judgment ve source_synthesis ise kasra vokalizasyon notunu seslenis bicimi gibi okuyordu. Bu alanlar disinda yazar cikisi yayin acisindan kanitla uyumlu gorundu.",
+  "issues": [
+    {
+      "target_ref": "root_003406/B002",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit, cikarilan toprak, gevsek toprakli cukur ve daha once kazilmamis araziyi bildirir; 'kazilmaya elverisli' olma niteligini soylemez.",
+      "smallest_correction": "boundary_note alaninda 'kazilmaya elverisli' ifadesini, kanittaki 'kazilmis ya da daha once kazilmamis toprak alanidir' siniriyla degistir."
+    },
+    {
+      "target_ref": "root_003406/B012",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit 'al-shiyam bi-l-kasr' biciminde harekeleme/vokalizasyon bilgisini verir; bu, Turkcedeki 'seslenis bicimi' yani hitap veya cagirma bicimi degildir.",
+      "smallest_correction": "identity_judgment.rationale alaninda 'belirli bir seslenis bicimiyle fare' ifadesini 'belirli bir harekeleme bicimiyle fare' olarak daralt."
+    },
+    {
+      "target_ref": "root_003406/B012",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "source_details ozeti de ayni bicimde 'belirli sesleme bicimi' diyerek kasra notunu yanlis tanimliyor.",
+      "smallest_correction": "source_synthesis.source_details[0].summary alaninda ve live output icindeki bundan tureyen source_note.TA metninde 'belirli sesleme bicimiyle' ifadesini 'belirli harekeleme bicimiyle' olarak degistir."
+    }
+  ]
+}

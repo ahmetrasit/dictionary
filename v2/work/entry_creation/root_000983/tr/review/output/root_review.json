@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtının dal ayrımları, kavram haritaları ve komşu sınırları genel olarak kanıtla uyumludur. Ancak bir kaynağa özgü güvenilirlik çekincesi kaynak sentezinde atlanmış, ayrıca bir sözlüksel birimde iki alternatif anlam tek bir birleşik karşılığa dönüştürülmüştür.",
+  "issues": [
+    {
+      "target_ref": "root_000983/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, Cemhere aktarımında bozmak anlamındaki kullanımın sağlam veya sabit sayılmadığı yönünde açık bir çekince içerir. Mevcut kaynak sentezi ortak bozma anlamını, ağır dereceyi ve yeryüzü bağlamını aktarıyor; fakat bu kaynağa özgü güvenilirlik çekincesini bütünüyle atlıyor.",
+      "smallest_correction": "Ortak özeti değiştirmeden, Cemhere'ye özgü kaynak ayrıntısına bu kullanımın sağlam veya sabit görülmediği yönündeki çekinceyi ekleyin."
+    },
+    {
+      "target_ref": "root_000983/B002",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011"
+      ],
+      "evidence_conflict": "lu_011 kanıtı iri sırtlan ile erkek sırtlan okumalarını alternatif olarak verir. Mevcut \"iri erkek sırtlan\" karşılığı bu iki okumayı birleştirerek hem iriliği hem erkekliği aynı anda zorunlu kılar ve kanıttaki alternatifliği kaybeder.",
+      "smallest_correction": "lu_011 hedef karşılığını \"iri sırtlan veya erkek sırtlan\" olarak değiştirin."
+    }
+  ]
+}

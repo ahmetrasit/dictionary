@@ -1,0 +1,149 @@
+{
+  "verdict": "editorial_review",
+  "summary": "Yanıtın büyük bölümü kanıtla uyumludur; ancak B001'de kanıtlanmış bir kullanım kavram haritası ile kaynak sentezinden düşmüş, B002 ve B004'te kaynaklara özgü nitelikler çekirdeğe taşınmış, B005'te iki küçük kapsam genişlemesi yapılmış ve B009 boyunca kanıtın açıkça kurmadığı renk kökeni ortak çerçeve haline getirilmiştir. Özellikle B009'daki sorun birden çok alanın birlikte yeniden çerçevelenmesini gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_000631/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, elde edilemeyecek bir şeye tamah edenler anlamındaki ayrı kullanımı açıkça verir; tanım ve facet listesi bu kullanımı hiç temsil etmez.",
+      "smallest_correction": "Tanıma bu ayrı aktarılmış kullanımı ekleyin ve onu çekirdeğe katmadan associated_use rolünde yeni bir facet ile gösterin."
+    },
+    {
+      "target_ref": "root_000631/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak sentezi renk, göz, susuzluk, duruluk, parıltı ve kalıplaşmış adları anarken elde edilemeyecek şeye tamah etme aktarımını bütünüyle dışarıda bırakır.",
+      "smallest_correction": "Common summary metnine, bu kullanımın kanıtta bulunan ayrı bir aktarım olduğunu belirten kısa ve kaynak yansız bir ifade ekleyin."
+    },
+    {
+      "target_ref": "root_000631/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_010"
+      ],
+      "evidence_conflict": "Kanıt ilgili biçimi maviliği çok güçlü olan diye açıklar; hedef karşılıktaki 'çok koyu mavi' ise yoğunluk yerine ışık değerinin koyuluğunu zorunlu kılar.",
+      "smallest_correction": "Hedef karşılığı 'çok yoğun mavi' gibi maviliğin şiddetini bildiren, koyuluk eklemeyen bir ifadeyle değiştirin."
+    },
+    {
+      "target_ref": "root_000631/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Açık renk niteliği yalnızca kaynak anlatımlarından birindeki dar tanımın parçasıdır; kavram karşılığı bunu bütün dalın zorunlu çekirdek niteliği yapar ve buna rağmen fit değerini none olarak gösterir.",
+      "smallest_correction": "Kavram karşılığını 'avda kullanılan yırtıcı kuş' veya 'bir yırtıcı kuş türü' düzeyinde tutun; açık renk niteliğini kaynak varyantında bırakın."
+    },
+    {
+      "target_ref": "root_000631/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıtın ortak kısmı kısa mızrakla atmadır; yalnızca bir aktarım atmanın ardından saplamayı da söyler. Tanım ve core facet ise her olayda hedefe saplanma ve delici sonuç bulunmasını zorunlu kılar.",
+      "smallest_correction": "Çekirdeği kısa mızrağı hedefe atmak olarak düzeltin; saplamayı kaynaklara özgü ek ayrıntı olarak ayrı bir source_variant facetinde gösterin."
+    },
+    {
+      "target_ref": "root_000631/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Common summary bütün kanıtların atma ve saplamada birleştiğini söyler; oysa saplama yalnızca bir kaynak parçasında yer alır, diğerleri yalnızca kısa mızrakla atmayı verir.",
+      "smallest_correction": "Ortak noktayı kısa mızrakla atma olarak yazın ve saplamayı kaynaklara özgü ek ayrıntı olarak kaynak yansız biçimde ayırın."
+    },
+    {
+      "target_ref": "root_000631/B005",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bağlamsal karşılığın applicability metni eylemi deve yanında 'başka bir taşıyıcıya' da genişletir; kanıt yalnızca deve üzerindeki eyer veya yükü bildirir.",
+      "smallest_correction": "Applicability metninden başka taşıyıcıları çıkarın ve kullanımı deve üzerindeki eyer ya da yükle sınırlandırın."
+    },
+    {
+      "target_ref": "root_000631/B005",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_024"
+      ],
+      "evidence_conflict": "Kanıt insan kullanımını sırtüstü uzanmak olarak verir; hedef karşılıktaki 'sırtüstü düşmek' istemsiz düşme sonucunu ekler.",
+      "smallest_correction": "Hedef karşılığı 'arkaya kaymak veya sırtüstü uzanmak' olarak değiştirin."
+    },
+    {
+      "target_ref": "root_000631/B009",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yetkili ifade iki özel adı ve topluluk adının belirli bir kişiye nispetini verir; kum tepelerinin veya kişi adının renkten türediğini açıkça söylemez. Gerekçe buna rağmen ikisini ortak bir renk aktarımı olarak kabul eder.",
+      "smallest_correction": "Kimlik yargısını, kanıtlanmış iki özel ad kullanımını koruyup ortak renk kökeni iddiasını reddedecek biçimde yeniden çerçeveleyin."
+    },
+    {
+      "target_ref": "root_000631/B009",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve iki facet, iki adın da renk kökenli olduğunu ileri sürer. Kanıt yalnızca belirli kum tepelerinin adını ve belirli bir kişiye nispet edilen topluluk adını kaydeder; ortak etimolojiyi kurmaz.",
+      "smallest_correction": "Tanımı iki kanıtlanmış özel ad kullanımıyla sınırlandırın; renk kökeni ve renk sıfatından türeme iddialarını facetlerden çıkarın."
+    },
+    {
+      "target_ref": "root_000631/B009",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı 'renkten türemiş' diyerek kanıtlanmamış ortak bir etimolojiyi dalın çekirdeği yapar.",
+      "smallest_correction": "Karşılığı 'belirli yer ve topluluk adları' gibi yalnızca kanıtlanan adlaşmış kullanımları bildiren bir ifadeyle değiştirin."
+    },
+    {
+      "target_ref": "root_000631/B009",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bağlamsal karşılık ve applicability metni özel adların renkten aktarıldığını kesin bilgi olarak sunar; bu türetim yetkili ifadede bulunmaz.",
+      "smallest_correction": "Bağlamsal karşılığı ve açıklamasını etimoloji ileri sürmeden yerleşik yer veya topluluk adı oluşunu anlatacak biçimde düzeltin."
+    },
+    {
+      "target_ref": "root_000631/B009",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B001 ile kurulan ayrımın focus_only ve shared_zone alanları B009 adlarının tarihsel temelinin mavi renk olduğunu kesinleştirir; yetkili ifade bu tarihsel bağı açıklamaz.",
+      "smallest_correction": "B001 karşılaştırmasını yalnızca biçimsel yakınlık ve özel ad ile betimleyici renk kullanımı ayrımı üzerinden kurun; tarihsel renk kökeni iddiasını çıkarın."
+    }
+  ]
+}

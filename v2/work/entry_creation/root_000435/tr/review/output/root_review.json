@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dal kimliklerini, kapsam türlerini, kaynak sentezlerini, sözlüksel karşılıkları ve komşu sınırlarını genel olarak kanıtla uyumlu kuruyor. Ancak B013'te kanıtın genel ham hurma kapsamına sertlik koşulu eklenmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_000435/B013",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt çekirdeği yalnızca ham hurma adını verir; ayrıca komşu kart, sertleşme öncesi evreyi bu genel alanın içinde daha dar bir aşama olarak gösterir. Tanım ve çekirdek facet ise bütün dalı taze ve sert olma koşuluyla sınırlandırarak kanıtta bulunmayan ve komşu sınırıyla uyuşmayan bir özellik ekler.",
+      "smallest_correction": "Tanımdan ve F001 ifadesinden taze ve sert olma koşulunu çıkar; çekirdeği yalnızca henüz tam olgunlaşmamış ham hurma olarak bırak."
+    }
+  ]
+}

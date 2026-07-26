@@ -1,18 +1,23 @@
 {
+  "inputs_sha256": "eb8411727869f496619243f7ce821f1faa3a46bb2b1ce6010d0639c78f56fee6",
+  "artifact_format": "dictionary-v2-root-entry-draft-v1",
+  "generated_by": "v2/scripts/accept_root_writer.py",
+  "root_envelope_id": "root_001011",
+  "language": "tr",
   "branches": [
     {
       "branch_ref": "root_001011/B001",
       "identity_judgment": {
         "status": "accepted",
-        "rationale": "Kaynak ifadesi, bir kişiyi babasına veya bağlı olduğu kökene bağlayarak tanıtma eylemini, kişinin bu bağı benimseyip mensubiyetini bildirmesini ve savaşta soy ya da yoldaşlık bağıyla kendini tanıtmasını birlikte gösterir. Verilen dal çerçevesi bu geçişli eylem, katılımcı değişimi ve özel savaş kullanımı arasındaki ilişkiyi doğru biçimde korur.",
-        "boundary_note": "Dal, gerçek bir akrabalık bağı kurmayı değil, var sayılan soy veya topluluk bağını bir kişiye yüklemeyi ve kişinin bu bağı mensubiyet olarak bildirmesini anlatır."
+        "rationale": "Kaynak ifadesi, bir kişiyi babasına veya bağlı olduğu kökene bağlayarak tanıtma eylemini, kişinin bu soy veya topluluğa mensup olmasını ve savaşta soy ya da yoldaşlık bağıyla kendini tanıtmasını birlikte gösterir. Verilen dal çerçevesi bu geçişli eylem, katılımcı değişimi ve özel savaş kullanımı arasındaki ilişkiyi doğru biçimde korur.",
+        "boundary_note": "Dal, gerçek bir akrabalık bağı kurmayı değil, var sayılan soy veya topluluk bağını bir kişiye yüklemeyi ve kişinin bu soy veya topluluğa mensup olmasını anlatır."
       },
       "lexicalization_scope": {
         "branch_kind": "mixed_non_bare",
-        "note": "Tanım, birini soyuna bağlayan kullanımla kişinin kendi mensubiyetini bildiren biçimleri ayırır; savaşta kendini soy veya yoldaşlık bağıyla tanıtma ise yalnızca ilgili yapıya bağlı özel bir kullanımdır."
+        "note": "Tanım, birini soyuna bağlayan kullanımla kişinin bir soy veya topluluğa mensup olduğu biçimleri ayırır; savaşta kendini soy veya yoldaşlık bağıyla tanıtma ise yalnızca ilgili yapıya bağlı özel bir kullanımdır."
       },
       "concept_map": {
-        "definition": "Bir kişiyi babasına ya da bağlı olduğu kökene bağlayarak tanıtmak ve bu bağın kişi tarafından benimsenip mensubiyet olarak bildirilmesidir. Savaş bağlamındaki özel kullanımda kişi, kimin oğlu veya yoldaşı olduğunu söyleyerek bağlılığını ilan eder.",
+        "definition": "Bir kişiyi babasına ya da bağlı olduğu kökene bağlayarak tanıtmak ve kişinin bu soy veya topluluğa mensup olmasıdır. Savaş bağlamındaki özel kullanımda kişi, kimin oğlu veya yoldaşı olduğunu söyleyerek bağlılığını ilan eder.",
         "facets": [
           {
             "facet_id": "F001",
@@ -25,7 +30,7 @@
           {
             "facet_id": "F002",
             "role": "core",
-            "statement": "Bağlanan kişi bu bağı benimser ve kendisini o kökene ya da topluluğa mensup olarak bildirir.",
+            "statement": "Bağlanan kişi o kökene ya da topluluğa mensup olur.",
             "claim_ids": [
               "bc_001"
             ]
@@ -41,7 +46,7 @@
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynakların ortak anlatımı, önce bir kişiyi babasına veya başka bir aidiyet dayanağına bağlamayı, ardından o kişinin bu bağı üstlenerek mensubiyetini bildirmesini içerir. Savaşta kişinin soyunu ya da yoldaşlık bağını söylemesi bu çekirdeğin özel bir uygulamasıdır.",
+        "common_summary": "Kaynakların ortak anlatımı, önce bir kişiyi babasına veya başka bir aidiyet dayanağına bağlamayı, ardından o kişinin ilgili soy veya topluluğa mensup olmasını içerir. Savaşta kişinin soyunu ya da yoldaşlık bağını söylemesi bu çekirdeğin özel bir uygulamasıdır.",
         "common_claim_ids": [
           "bc_001"
         ],
@@ -50,11 +55,11 @@
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "birini soyuna bağlama ve bu bağı üstlenerek mensubiyet bildirme",
-        "applicability": "Dalın geçişli bağlama eylemi ile kişinin bu bağı benimseyip kendi mensubiyeti olarak bildirmesinden oluşan tam çekirdeğini karşılar.",
+        "text": "birini soyuna bağlama ve o soy veya topluluğa mensup olma",
+        "applicability": "Dalın geçişli bağlama eylemi ile kişinin ilgili soy veya topluluğa mensup olmasından oluşan tam çekirdeğini karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Hem bir kişiyi soy veya köken bağına yerleştirme eylemini hem de kişinin bu bağı üstlenerek aidiyetini bildirmesini korur.",
+          "preserves": "Hem bir kişiyi soy veya köken bağına yerleştirme eylemini hem de kişinin ilgili soy veya topluluğa mensup olmasını korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -81,12 +86,12 @@
           ]
         },
         {
-          "text": "mensubiyetini bildirerek bağını üstlenmek",
+          "text": "bir soya veya topluluğa mensup olmak",
           "usage_role": "explanatory",
-          "applicability": "Kişinin kendisine yüklenen soy veya topluluk bağını kabul edip aidiyetini açıkladığı kullanım için uygundur.",
+          "applicability": "Kişinin ilgili soy veya topluluğa mensup olduğu kullanım için uygundur.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Kişinin bağı benimsemesini ve kendisini o bağ üzerinden mensup olarak bildirmesini korur.",
+            "preserves": "Kişinin ilgili soy veya topluluğa mensup olmasını korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -125,22 +130,22 @@
         {
           "lexical_unit_id": "lu_003",
           "rendering_kind": "ordinary",
-          "target_gloss": "soyuna veya topluluğuna mensup olduğunu bildirdi"
+          "target_gloss": "soyuna veya topluluğuna mensup oldu"
         },
         {
           "lexical_unit_id": "lu_004",
           "rendering_kind": "ordinary",
-          "target_gloss": "mensubiyetini bildirip bağını üstlendi"
+          "target_gloss": "bir soya veya topluluğa mensup oldu"
         },
         {
           "lexical_unit_id": "lu_005",
           "rendering_kind": "ordinary",
-          "target_gloss": "mensubiyet bildirimi veya dayanak gösterilen soy bağı"
+          "target_gloss": "mensubiyet veya mensup olunan soy bağı"
         },
         {
           "lexical_unit_id": "lu_006",
           "rendering_kind": "ordinary",
-          "target_gloss": "İslam öncesi döneme ait soy bağıyla mensubiyet bildirme"
+          "target_gloss": "Cahiliye soy bağı"
         },
         {
           "lexical_unit_id": "lu_011",
@@ -177,17 +182,17 @@
           "neighbor_ref": "root_001494/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Kişinin kendisine yüklenen bağı üstlenmesi ve savaşta soy ya da yoldaşlık ilişkisiyle kendini tanıtması bu dala özgüdür.",
+          "focus_only": "Kişinin ilgili soy veya topluluğa mensup olması ve savaşta soy ya da yoldaşlık ilişkisiyle kendini tanıtması bu dala özgüdür.",
           "neighbor_only": "Soyların kaydını ve bilgisini, ayrıca kişiyi yer, meslek veya başka alanlara bağlayan daha geniş adlandırmaları kapsar.",
           "gloss": "soy ve mensubiyet bağı",
           "shared_zone": "İki dal da bir kişiyi babasına, soyuna veya bağlı olduğu çevreye bağlayarak tanıtma alanında örtüşür.",
-          "distinction": "Bu dal, bağlama eyleminden kişinin o bağı benimseyerek aidiyet bildirmesine uzanan katılımcı değişimini öne çıkarır. Komşu dal ise soy ilişkilerini ve farklı dayanaklara göre adlandırmayı daha geniş bir alan olarak kapsar."
+          "distinction": "Bu dal, bağlama eyleminden kişinin ilgili soy veya topluluğa mensup olmasına uzanan katılımcı değişimini öne çıkarır. Komşu dal ise soy ilişkilerini ve farklı dayanaklara göre adlandırmayı daha geniş bir alan olarak kapsar."
         },
         {
           "neighbor_ref": "root_000812/B006",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Soy veya topluluk bağının tarafsız biçimde yüklenmesi ve kişi tarafından mensubiyet olarak benimsenmesi bulunur.",
+          "focus_only": "Soy veya topluluk bağının tarafsız biçimde yüklenmesi ve kişinin ilgili soy veya topluluğa mensup olması bulunur.",
           "neighbor_only": "Kişinin gerçekte ait olmadığı bir soya bağlanması ve bu yanlış bağın sonucu olan iddiacı kimlik bulunur.",
           "gloss": "kişiyi bir soya bağlama",
           "shared_zone": "Her iki dalda da bir kişi belirli bir soy çizgisine bağlanarak tanıtılır.",
@@ -201,20 +206,29 @@
           "neighbor_only": "Bağ, evlilik ve eş sahibi olma üzerinden kişi ile başka bir topluluk arasında kurulur.",
           "gloss": "bir topluluğa bağlanma",
           "shared_zone": "İki dal da kişinin bir insan çevresiyle bağlantılı sayılması alanına girer.",
-          "distinction": "Bu dal soy veya ilan edilen aidiyet üzerinden işleyen bir mensubiyet eylemidir. Komşu dalda bağlantının kurucu ilişkisi evliliktir; bu nedenle kullanımlar birbirinin yerine geçmez."
+          "distinction": "Bu dal soy veya topluluk mensubiyeti üzerinden işleyen bir aidiyet ilişkisidir. Komşu dalda bağlantının kurucu ilişkisi evliliktir; bu nedenle kullanımlar birbirinin yerine geçmez."
         },
         {
           "neighbor_ref": "root_000030/B003",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "Kişiyi bir kökene bağlama ve kişinin bu bağı mensubiyet olarak açıklaması işlemleri bulunur.",
+          "focus_only": "Kişiyi bir kökene bağlama ve kişinin ilgili soy veya topluluğa mensup olması bulunur.",
           "neighbor_only": "Kişinin güç ve destek aldığı yakın aile veya topluluk doğrudan bir insan grubu olarak gösterilir.",
           "gloss": "soy çevresi ve aidiyet",
           "shared_zone": "Her iki dal kişinin aile, soy veya yakın topluluk çevresiyle ilişkisini konu edinir.",
-          "distinction": "Bu dal ilişkiyi yükleme ve üstlenme eylemlerini anlatır; komşu dal ise eylemi değil, kişinin dayanıp güç aldığı topluluğun kendisini adlandırır."
+          "distinction": "Bu dal kişiyi bir kökene bağlama ve o kökene mensup olma anlamlarını anlatır; komşu dal ise eylemi değil, kişinin dayanıp güç aldığı topluluğun kendisini adlandırır."
         }
       ],
-      "neighbor_coverage_note": "Bütün aday komşular değerlendirildi. Soy ve mensubiyet, yanlış soy bağı, evlilik bağı ve destek çevresiyle ilgili dört karşılaştırma sınırı açıklığa kavuşturduğu için yayımlandı; kabile adları, yalnızca adlandırma örnekleri, anlamsız aynı kök benzerliği ve tekrar eden tematik bağlantılar elendi."
+      "neighbor_coverage_note": "Bütün aday komşular değerlendirildi. Soy ve mensubiyet, yanlış soy bağı, evlilik bağı ve destek çevresiyle ilgili dört karşılaştırma sınırı açıklığa kavuşturduğu için yayımlandı; kabile adları, yalnızca adlandırma örnekleri, anlamsız aynı kök benzerliği ve tekrar eden tematik bağlantılar elendi.",
+      "branch_image_ar": "العَزْو والانتساب",
+      "what_is_ar": "يدخل فيه عَزْو الشخص إلى أبيه أو قومه، والاعتزاء والتعزي بمعنى الانتماء والانتساب، ونداء الانتساب في الحرب",
+      "what_is_not_ar": "الجماعات المتفرقة؛ الصبر والتأسي",
+      "source_phrase_ar": "عَزَوْته إلى أبيه وعزيته إذا نسبته إليه (sihah)؛ فاعتزى هو وتعزى أي انتمى وانتسب (sihah)؛ عَزَوْته فاعتزى أي نسبته فانتسب (mufradat)؛ الاعتزاء في الحرب أن يقول أنا ابن فلان وصاحب فلان (mufradat)",
+      "sources": [
+        "SI",
+        "MU"
+      ],
+      "source_note": {}
     },
     {
       "branch_ref": "root_001011/B002",
@@ -426,12 +440,83 @@
           "distinction": "Bu dalın çekirdeği ayrı insan topluluklarının kendisidir. Komşu dal, grupları ayıran farklı görüş ve yolları ve ayrışma sürecini de anlamın içine alır."
         }
       ],
-      "neighbor_coverage_note": "Bütün aday komşular değerlendirildi. Ayrı topluluklar, genel insan grupları, görüş çevresinde birleşen taraflar, yoğun kümeler ve farklı görüşlerle ayrılan kesimler sınırı belirginleştirdiği için yayımlandı; genel parça adları, toplumsal tabaka, din topluluğu, anlamsız aynı kök benzerliği ve tekrar eden adaylar elendi."
+      "neighbor_coverage_note": "Bütün aday komşular değerlendirildi. Ayrı topluluklar, genel insan grupları, görüş çevresinde birleşen taraflar, yoğun kümeler ve farklı görüşlerle ayrılan kesimler sınırı belirginleştirdiği için yayımlandı; genel parça adları, toplumsal tabaka, din topluluğu, anlamsız aynı kök benzerliği ve tekrar eden adaylar elendi.",
+      "branch_image_ar": "الجماعات المتفرقة",
+      "what_is_ar": "يدخل فيه العِزَة بمعنى الفرقة من الناس، وعِزَى وعِزون وعِزين بمعنى جماعات وأصناف من الناس في تفرقة",
+      "what_is_not_ar": "نسبة الشخص إلى أبيه أو قومه؛ الاعتزاء في الحرب؛ الصبر والتأسي",
+      "source_phrase_ar": "العِزَة الفرقة من الناس والجمع عِزَى وعِزون (sihah)؛ عِزين أي جماعات في تفرقة واحدتها عِزَة (mufradat)؛ في الدار عِزون أي أصناف من الناس (sihah)",
+      "sources": [
+        "SI",
+        "MU"
+      ],
+      "source_note": {}
     }
   ],
   "root_profile": {
-    "summary": "Kök iki bağımsız anlam dalı taşır: biri bir kişiyi soyuna veya kökenine bağlayıp bu bağın mensubiyet olarak bildirilmesini, diğeri ise insanlardan oluşan bir bölüğü ve birbirinden ayrı insan topluluklarını anlatır.",
+    "summary": "Kök iki bağımsız anlam dalı taşır: biri bir kişiyi soyuna veya kökenine bağlamayı ve kişinin bir soy veya topluluğa mensup olmasını, diğeri ise insanlardan oluşan bir bölüğü ve birbirinden ayrı insan topluluklarını anlatır.",
     "polysemy": "polysemic",
     "organization": "multi_branch"
+  },
+  "occurrence_evidence": {
+    "summary": {
+      "morpheme_count": 1,
+      "word_count": 1,
+      "ayah_count": 1,
+      "surah_count": 1
+    },
+    "forms": [
+      {
+        "form_id": "F001",
+        "lemma_ar": "عِزِين",
+        "stem_ar": "عِزِينَ",
+        "pos": "N",
+        "measure": "",
+        "morph_features": "STEM|POS:N|LEM:Eiziyn|ROOT:Ezw|MP|ACC",
+        "occurrence_count": 1
+      }
+    ],
+    "ayahs": [
+      {
+        "ayah_ref": "70:37",
+        "surface_ar": "عَنِ ٱلْيَمِينِ وَعَنِ ٱلشِّمَالِ عِزِينَ"
+      }
+    ],
+    "occurrences": [
+      {
+        "qac_ref": "70:37:5:1",
+        "qac_word_ref": "70:37:5",
+        "surah": 70,
+        "ayah": 37,
+        "word_index": 5,
+        "morpheme_index": 1,
+        "surface_ar": "عِزِينَ",
+        "stem_ar": "عِزِينَ",
+        "lemma_ar": "عِزِين",
+        "source_pos": "N",
+        "pos": "N",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:N|LEM:Eiziyn|ROOT:Ezw|MP|ACC",
+        "ayah_ref": "70:37",
+        "form_id": "F001",
+        "alignment": {
+          "status": "unmatched",
+          "method": "no_compatible_form",
+          "confidence": "high",
+          "attachment_unit_id": "",
+          "attachment_word_unit_id": "",
+          "qac_char_span": [
+            17,
+            21
+          ],
+          "attachment_char_spans": [],
+          "source_grammar": "",
+          "attachments": []
+        }
+      }
+    ]
   }
 }

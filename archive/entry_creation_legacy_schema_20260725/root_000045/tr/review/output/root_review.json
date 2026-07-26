@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "B004 dalındaki sözcüksel karşılık, kanıtta yer alan alışma veya alıştırma yorumunu atlıyor. Aynı dalın iki bağlamsal karşılığı da anlattıkları anlam yönleri yerine yanlış facet kimliklerine bağlanmış.",
+  "issues": [
+    {
+      "target_ref": "root_000045/B004",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_009"
+      ],
+      "evidence_conflict": "lu_009, kış ve yaz yolculuklarına alışma veya yolculuklara alışkanlık kazandırma yorumunu açıkça alternatifler arasına koyar. target_gloss ise yalnız yolculukları bağlayıp sürdürme, hazırlama ve güvence altına alma seçeneklerini verir; alışma veya alıştırma seçeneği kaybolur.",
+      "smallest_correction": "lu_009 target_glossuna, mevcut alternatiflik yapısını koruyarak yolculuklara alışma veya alıştırma karşılığını ekleyin."
+    },
+    {
+      "target_ref": "root_000045/B004",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_009"
+      ],
+      "evidence_conflict": "İlk bağlamsal karşılık yolculukları birbirine bağlama yorumunu anlattığı halde yalnız F001'e bağlanmıştır; bu yorum F002'dir. İkinci karşılık hazırlama ile güvenceyi anlattığı halde F003 ve F004'e bağlanmıştır; F003 alışma yorumudur, hazırlama ve güvence yönleri F004 ile F005'tir.",
+      "smallest_correction": "İlk bağlamsal karşılığın facet_ids değerini F002, ikinci karşılığın facet_ids değerlerini F004 ve F005 olarak düzeltin."
+    }
+  ]
+}

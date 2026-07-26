@@ -1,5 +1,5 @@
 {
-  "inputs_sha256": "e3bde3496c731ec8210fa526f0fed7788693df4f74e4c94805ed9f82a494926e",
+  "inputs_sha256": "a785b86d8d060d6005cb2b74f1fb40358ec24f4b887be7364b7bd56b9125657c",
   "artifact_format": "dictionary-v2-root-entry-draft-v1",
   "generated_by": "v2/scripts/accept_root_writer.py",
   "root_envelope_id": "root_000110",
@@ -7,75 +7,77 @@
   "branches": [
     {
       "branch_ref": "root_000110/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, ipi dayanıklı biçimde bükme işlemini bir işi sağlamlaştırıp bozulmayacak şekilde kesinleştirme uzantısıyla doğrudan birleştirir. İki ayrı bükülmüş telden yapılan ip, iplik veya kumaş da fiziksel çekirdeğin özel bir gerçekleşmesidir.",
+        "boundary_note": "Dal, sağlam ve çoğu kez çift katlı bükümü gevşek ya da tek katlı bükümden ayırır; soyut kesinleştirme fiziksel çekirdeğin uzantısıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, sağlam bükme çekirdeğini çift katlı ürünlerden ve bir işi kesin karara bağlayan yapıya bağlı kullanımdan ayrı yüzler olarak gösterir."
+      },
       "concept_map": {
-        "definition": "Bir işi ya da nesneyi sıkıca bağlayıp sağlamlaştırma; somut kullanımda ipliği veya halatı dayanıklı biçimde bükme ve iki katı birlikte burma işlemidir.",
+        "definition": "Bir ipi ya da lif demetini tekrar tekrar bükerek sağlam ve çözülmeye dirençli duruma getirmektir. Bu çekirdek, iki katlı bükülmüş ürüne ve bir işi bozulmayacak biçimde kesinleştirmeye uzanır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir işi kesinleştirip sağlamlaştırma ve çözülmeyecek biçimde bağlama anlamını taşır.",
+            "statement": "İp, halat veya lifler sıkı ve dayanıklı olacak biçimde bükülür.",
             "claim_ids": [
-              "lu_001",
-              "lu_002"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Halatı art arda bükerek sıkı ve dayanıklı duruma getirme, temel işlemin somut gerçekleşmesidir.",
+            "statement": "İki ayrı bükülmüş telin bir araya getirilmesiyle çift katlı ip, iplik veya kumaş oluşur.",
             "claim_ids": [
-              "lu_003"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "specialization",
-            "statement": "İki iplik katının birlikte sıkıca burulmasıyla oluşan iplik, halat veya kumaşı belirtir.",
+            "role": "extension",
+            "statement": "Bir işi sıkıca bağlayıp bozma veya çözmenin karşıtı olacak biçimde kesinleştirmek, fiziksel sağlamlaştırmanın soyut uzantısıdır.",
             "claim_ids": [
-              "lu_004",
-              "lu_005"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak çekirdek, bir işi sağlam ve çözülmez duruma getirmek ile iplik ya da halatı sıkıca bükmek arasında kurulur. Somut sonuç, özellikle iki katın birlikte burulduğu dayanıklı iplik, halat veya kumaştır.",
+        "common_summary": "Kaynakların ortak çekirdeği, ipi sağlam bükme ile bir şeyi sıkıca kurup kesinleştirmedir. Çift katlı ip ve iplik fiziksel sonucu, bir işi bozulmayacak duruma getirme ise aynı sağlamlık düşüncesinin soyut uzantısını gösterir.",
         "common_claim_ids": [
-          "lu_001",
-          "lu_002",
-          "lu_003",
-          "lu_004",
-          "lu_005"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "sıkıca büküp sağlamlaştırma",
-        "applicability": "Hem bir işi sağlama bağlama hem de iplik ya da halatı sıkı biçimde bükme çekirdeğini birlikte anlatır.",
+        "text": "sağlam büküm ve kesin karara bağlama",
+        "applicability": "Fiziksel sıkı bükme çekirdeğini ve bundan gelişen soyut kesinleştirme anlamını birlikte adlandıran üst anlatımdır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Sağlamlaştırma sonucunu ve bu sonuca götüren sıkı bükme işlemini birlikte korur.",
+          "preserves": "Sağlam bükme işlemini ve bir işi geri dönülmez biçimde kesinleştirme uzantısını korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
           "F001",
-          "F002",
           "F003"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "sağlama bağlama",
+          "text": "sağlamca bükmek",
           "usage_role": "contextual",
-          "applicability": "Bir işin kesinleştirilip sağlamlaştırıldığı soyut bağlamlarda doğal karşılıktır.",
+          "applicability": "İp, halat veya liflerin sıkı ve dayanıklı duruma getirildiği fiziksel bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Bir işi sağlam ve çözülmez duruma getirme sonucunu korur.",
-            "loses": "İplik veya halatın sıkıca bükülmesi ve iki katlı somut ürün kapsamını dışarıda bırakır.",
+            "preserves": "Fiziksel bükme işlemini ve ortaya çıkan sağlamlığı korur.",
+            "loses": "Bir işi kesin karara bağlama uzantısını ve çift katlı ürün özelleşmesini tek başına göstermez.",
             "adds": null,
             "collision": null
           },
@@ -84,19 +86,33 @@
           ]
         },
         {
-          "text": "iki katı sıkıca burma",
+          "text": "kesin karara bağlamak",
           "usage_role": "contextual",
-          "applicability": "İplik, halat veya kumaşın iki katının birlikte büküldüğü somut bağlamlarda kullanılır.",
+          "applicability": "Bir işin sağlamlaştırılıp bozma veya geri alma karşıtı biçimde sonuçlandırıldığı bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Sıkı bükme işlemini ve iki katlı yapıyı açıkça korur.",
-            "loses": "Bir işi soyut olarak kesinleştirip sağlama bağlama kullanımını dışarıda bırakır.",
+            "preserves": "Soyut sağlamlaştırma ve kesinleştirme sonucunu korur.",
+            "loses": "İp veya lifin fiziksel olarak sıkı bükülmesini ve çift katlı ürünü göstermez.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F002",
             "F003"
+          ]
+        },
+        {
+          "text": "çift kat bükülmüş iplik",
+          "usage_role": "explanatory",
+          "applicability": "İki bükülmüş telin birleştirildiği ip, iplik veya dokuma ürününü açıklamak için kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "İki telin birlikte bükülmesiyle oluşan özel ürünü korur.",
+            "loses": "Genel bükme işlemini ve soyut kesinleştirme uzantısını kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
           ]
         }
       ],
@@ -104,67 +120,76 @@
         {
           "lexical_unit_id": "lu_001",
           "rendering_kind": "ordinary",
-          "target_gloss": "işi sağlama bağlamak"
+          "target_gloss": "işi kesin karara bağlamak"
         },
         {
           "lexical_unit_id": "lu_002",
           "rendering_kind": "ordinary",
-          "target_gloss": "sağlamlaştırma ve çözülmeye karşı bağlama"
+          "target_gloss": "sağlamlaştırma ve kesinleştirme"
         },
         {
           "lexical_unit_id": "lu_003",
           "rendering_kind": "ordinary",
-          "target_gloss": "halatı sıkıca bükmek"
+          "target_gloss": "ipi sağlamca bükmek"
         },
         {
           "lexical_unit_id": "lu_004",
           "rendering_kind": "ordinary",
-          "target_gloss": "iki kat bükülmüş iplik veya kumaş"
+          "target_gloss": "çift kat bükülmüş iplik veya kumaş"
         },
         {
           "lexical_unit_id": "lu_005",
           "rendering_kind": "ordinary",
-          "target_gloss": "iki kat bükülmüş halat veya iplik"
+          "target_gloss": "iki telin birlikte büküldüğü ip veya iplik"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "kararlaştırma",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Bir işi kesin bir sonuca bağlama yönünü kısmen korur.",
-            "loses": "Sağlamlaştırma niteliğini ve somut sıkı bükme işlemini kaybeder.",
-            "adds": null,
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000229/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal çift katlı iplik ürününü ve bir işi kesin karara bağlama uzantısını da içerir.",
+          "neighbor_only": "Komşu dal yular, kuşak, örgü zırh ve yuvarlak demir gibi başka sıkı işlenmiş nesnelere yayılır.",
+          "gloss": "sıkı büküm",
+          "shared_zone": "Her iki dalın ortak alanı, ip veya benzeri malzemeyi sıkı bükerek sağlamlaştırmaktır.",
+          "distinction": "Komşu dal sıkı bükümün çeşitli maddi uygulamalarını genişletirken odak dal çift tel sonucunu ve bir işin kesinleştirilmesi yönündeki soyut uzantıyı belirgin biçimde taşır."
+        },
         {
           "neighbor_ref": "root_001127/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Bir işi soyut olarak sağlama bağlama ve iki katlı ürünü adlandırma kapsamları bulunur.",
-          "neighbor_only": "Herhangi bir nesneyi ip ya da fitil görünümünde eğip bükme kapsamı daha geneldir.",
-          "gloss": "bükme ve sağlamlaştırma",
-          "shared_zone": "Her iki dal da halatın veya benzeri bir nesnenin burularak bükülmesini kapsar.",
-          "distinction": "Odak dalda sıkı ve dayanıklı sonuç ile işi kesinleştirme belirleyicidir; komşu dal ise bükme biçimini sonuçtaki sağlamlığı şart koşmadan kapsar."
+          "focus_only": "Odak dal sağlamlık, çift katlı yapı ve soyut kesinleştirme koşullarını taşır.",
+          "neighbor_only": "Komşu dal halat biçimindeki herhangi bir şeyi bükmeye uzanır ve sıkılık sonucunu zorunlu kılmaz.",
+          "gloss": "bükmek ve burmak",
+          "shared_zone": "İki dal da halatın veya halata benzer bir şeyin burularak biçimlendirilmesini anlatır.",
+          "distinction": "Odak dalda bükümün dayanıklı ve sıkı olması anlam kurucudur; komşu dalın daha geniş burma alanında bu sonuç ve işin kesinleştirilmesi bulunmayabilir."
         },
         {
           "neighbor_ref": "root_000684/B007",
           "relation_type": "polarity_pair",
           "boundary_match": "opposed",
-          "focus_only": "Sıkı, sağlam ve özellikle iki katlı büküm bulunur.",
-          "neighbor_only": "Gevşek veya tek katlı büküm bulunur.",
-          "gloss": "sıkı ve gevşek büküm",
-          "shared_zone": "İki dal da iplik, ip veya halatın bükülme yapısını aynı eksende niteler.",
-          "distinction": "Odak dal dayanıklı ve sıkı bükümü, komşu dal ise gevşek ya da tek katlı bükümü gösterir; karşıtlık bükümün sıkılığı ve kat yapısındadır."
+          "focus_only": "Odak dal sıkı, dayanıklı ve çoğu kez iki telin birleştiği bükümü gösterir.",
+          "neighbor_only": "Komşu dal gevşek bükülmüş veya tek kat bırakılmış ipi gösterir.",
+          "gloss": "sıkı büküm ve gevşek büküm",
+          "shared_zone": "Her iki dal ip veya lifin bükülme derecesini ve kat sayısını aynı eksen üzerinde değerlendirir.",
+          "distinction": "Odak dal sıkı ve çift katlı uca, komşu dal gevşek veya tek katlı uca yerleşir; karşıtlık bükümün sağlamlığı ve katlanma derecesindedir."
+        },
+        {
+          "neighbor_ref": "root_001348/B012",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal çift katlı iplik sonucunu ve bir işin kesinleştirilmesi uzantısını içerir.",
+          "neighbor_only": "Komşu dal ip dışındaki sıkı maddi iç içe geçme biçimlerini de kapsar.",
+          "gloss": "şiddetli büküm ve sıkı geçme",
+          "shared_zone": "İki dal da kuvvetli bükülme ve parçaların sıkı biçimde birbirine geçmesi üzerinde örtüşür.",
+          "distinction": "Komşu dalın çekirdeği güçlü maddi iç içe geçmedir; odak dal ise özellikle sağlam bükümü, çift katlı ürünü ve bundan gelişen soyut kesinleştirmeyi düzenler."
         }
       ],
-      "neighbor_coverage_note": "Bütün komşu adayları değerlendirildi; bükme işleminin genel sınırını ve gevşek büküm karşıtlığını en açık gösteren iki ayrım yayımlandı.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; seçilen dört komşu sıkılık, kat sayısı, maddi kapsam ve soyut kesinleştirme sınırlarını açıklar. Aynı kökün öteki dalları ve yalnızca ip alanını paylaşan daha uzak adaylar tekrarı önlemek için yayımlanmadı.",
       "branch_image_ar": "إحكام الفتل",
       "what_is_ar": "يدخل فيه إبرام الأمر وإحكامه وإبرام الحبل والغزل والثوب المفتول على طاقين",
+      "what_is_not_ar": "لا يدخل فيه الضجر ولا اختلاط اللونين إذا كان المقصود اللون لا الإحكام",
       "source_phrase_ar": "أبرمت الأمر أحكمته؛ أبرمت الحبل إذا فتلته متينا (maqayis)؛ الإبرام إحكام الشيء (ayn)؛ الإبرام خلاف النقض (jamhara)؛ المبرم والبريم الحبل الذي جمع بين مفتولين (sihah)؛ البريم خيط يفتل على طاقين (tahdhib)؛ أصله من إبرام الحبل (mufradat)",
       "sources": [
         "MQ",
@@ -178,87 +203,92 @@
     },
     {
       "branch_ref": "root_000110/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bir şeyden bıkıp usanmayı, onu ağır bulmayı ve yorgun düşmeyi; ayrıca başkasını bezdirmeyi ve ısrarıyla çevresine yük olan kişiyi açıkça birlikte verir. Dal çerçevesi bu durum, ettirgen etki ve kişi niteliği ayrımını korur.",
+        "boundary_note": "Çekirdek bıkkınlık ve usanmadır; başkasını bezdirme ile çekilmez, ısrarcı kişi bu çekirdeğe bağlı kullanımlardır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, bir şeyden bıkma yapısını başkasını bezdiren yapıdan ve kişi bildiren yalın biçimlerden ayırır."
+      },
       "concept_map": {
-        "definition": "Bir şeyden usanıp onu ağır, yorucu veya baş edilmez bulma durumudur. Ettirgen kullanımda başkasını bezdirip yormayı; bağımlı kişi kullanımlarında ise ısrarıyla çevresine yük olan kimseyi anlatır.",
+        "definition": "Bir şeyden bıkıp usanmak, onu ağır bulmak ve ona karşı bezginlik ya da yorgunluk duymaktır. Aynı alan, başkasını bezdirmeyi ve ısrarı veya ağır tavrıyla çevresine yük olan kişiyi de kapsar.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir şeyden bıkma, usanma, onu artık çekilmez bulma veya onunla baş etmekte zorlanma durumudur.",
+            "statement": "Bir şey veya kişi ağır gelerek bıkkınlık, usanma ve bezginlik doğurur.",
             "claim_ids": [
-              "lu_006",
-              "lu_008"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "extension",
-            "statement": "Katılımcı değiştiğinde birini bezdirme, yorma veya sabrını tüketme anlamına uzanır.",
+            "statement": "Bir kimseyi yormak, bezdirmek veya usandırmak, yaşanan durumun ettirgen uzantısıdır.",
             "claim_ids": [
-              "lu_007"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "associated_use",
-            "statement": "Sürekli üsteleyen, tatsız konuşan veya arkadaşlarına yük olan kişi için kullanılır.",
+            "statement": "Israrı, gereksiz sözü veya ağır tavrıyla çevresine yük olan kimse bu alan içinde nitelenir.",
             "claim_ids": [
-              "lu_009"
-            ]
-          },
-          {
-            "facet_id": "F004",
-            "role": "source_variant",
-            "statement": "Tek kaynaklı topluluk kullanımında kötü huylu kimseleri topluca belirtir.",
-            "claim_ids": [
-              "lu_010"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Paylaşılan anlam, bir şeyden bıkıp onu ağır bulmayı ve bu duyguyu bir başkasında meydana getirmeyi kapsar. Kişi nitelemesinde ısrarcı, tatsız konuşan veya çevresine yük olan kimse öne çıkar.",
+        "common_summary": "Ortak anlatım, bir şeyden bıkma, usanma ve onu ağır bulma durumunu başkasında aynı bezginliği doğurma eylemiyle birleştirir. Israr eden, tatsız konuşan veya çevresine yük olan kişi de bu etkinin taşıyıcısı olarak nitelenir.",
         "common_claim_ids": [
-          "lu_006",
-          "lu_007",
-          "lu_008",
-          "lu_009"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_010"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Ayrı bir topluluk adı olarak kötü huylu kimseler anlamı da kaydedilmiştir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "usanıp ağır bulma",
-        "applicability": "Bir şey karşısındaki bıkkınlık ve onu çekilmez bulma çekirdeğini en kısa biçimde verir.",
+        "text": "bıkıp usanma ve bezdirme",
+        "applicability": "Yaşanan bıkkınlık durumuyla bu durumu başkasında oluşturma eylemini birlikte gösteren üst anlatımdır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Bıkkınlık duygusunu ve nesnesinin kişiye ağır gelmesini birlikte korur.",
+          "preserves": "Bıkkınlık ve ağırlık duygusunu, ayrıca başkasını usandıran ettirgen yönü korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "bezdirip yormak",
-          "usage_role": "contextual",
-          "applicability": "Bir kişinin davranışıyla başkasında bıkkınlık veya yorgunluk oluşturduğu ettirgen bağlamlarda kullanılır.",
+          "text": "bıkıp usanmak",
+          "usage_role": "general",
+          "applicability": "Bir iş, durum veya kişiden bezginlik duyup onu ağır bulma bağlamlarında kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Bıkkınlığın başka bir katılımcıda meydana getirilmesi yönünü korur.",
-            "loses": "Kişinin kendi başına usanması ve ağır bulması durumunu dışarıda bırakır.",
+            "preserves": "Yaşayan kişinin bıkkınlık, usanma ve ağırlık duygusunu korur.",
+            "loses": "Başkasını bezdirme eylemini ve çekilmez kişi nitelemesini göstermez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "bezdirip usandırmak",
+          "usage_role": "contextual",
+          "applicability": "Bir kişinin davranışıyla başka birini yorduğu ve bıkkınlığa sürüklediği bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Bıkkınlığı başkasında doğuran ettirgen etkiyi korur.",
+            "loses": "Kişinin kendi yaşadığı usanma durumunu ve kalıcı kişi nitelemesini kapsamaz.",
             "adds": null,
             "collision": null
           },
@@ -269,17 +299,16 @@
         {
           "text": "çekilmez ve ısrarcı kimse",
           "usage_role": "explanatory",
-          "applicability": "Üstelemesi, tatsız konuşması veya huyuyla çevresine yük olan kişi ve topluluk nitelemelerinde kullanılır.",
+          "applicability": "Israrı, gereksiz konuşması veya ağır tavrıyla çevresine yük olan kişiyi anlatır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Başkalarını bezdiren kişinin yük oluşunu ve olumsuz huyunu korur.",
-            "loses": "Bir şeyden usanma durumunu ve ettirgen eylemi doğrudan anlatmaz.",
+            "preserves": "Çevresini bezdiren ağır ve ısrarcı kişi niteliğini korur.",
+            "loses": "Bıkkınlık durumunu ve birini bezdirme eylemini bağımsız olarak göstermez.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F003",
-            "F004"
+            "F003"
           ]
         }
       ],
@@ -287,17 +316,17 @@
         {
           "lexical_unit_id": "lu_006",
           "rendering_kind": "ordinary",
-          "target_gloss": "bir şeyden bıkıp usanmak veya onunla baş edememek"
+          "target_gloss": "bir şeyden bıkıp usanmak"
         },
         {
           "lexical_unit_id": "lu_007",
           "rendering_kind": "ordinary",
-          "target_gloss": "birini bezdirip yormak"
+          "target_gloss": "onu bezdirip usandırmak"
         },
         {
           "lexical_unit_id": "lu_008",
           "rendering_kind": "ordinary",
-          "target_gloss": "bıkkınlık ve ağır bulma"
+          "target_gloss": "bıkkınlık ve usanma"
         },
         {
           "lexical_unit_id": "lu_009",
@@ -307,7 +336,7 @@
         {
           "lexical_unit_id": "lu_010",
           "rendering_kind": "ordinary",
-          "target_gloss": "kötü huylu kimseler"
+          "target_gloss": "kötü huylu topluluk"
         }
       ],
       "excluded_glosses": [],
@@ -316,26 +345,47 @@
           "neighbor_ref": "root_000662/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Başkasını bezdirme ve çevresine yük olan ısrarcı kişiyi niteleme uzantıları vardır.",
-          "neighbor_only": "Uzun sürme veya tekrarlanma, bıkkınlığın belirtilen başlıca nedenidir.",
-          "gloss": "bıkma ve usanma",
-          "shared_zone": "Her iki dal da bir şeyden bıkıp usanma ve artık ona katlanmak istememe durumunu kapsar.",
-          "distinction": "Odak dal ağır bulmayı, ettirgen bezdirmeyi ve çekilmez kişiyi de kapsar; komşu dal ise özellikle uzun süre veya tekrar yüzünden oluşan usanmayı sınırlar."
+          "focus_only": "Odak dal başkasını bezdirme eylemini ve çevresine yük olan ısrarcı kişiyi de içerir.",
+          "neighbor_only": "Komşu dal bıkkınlığın özellikle uzun sürme veya tekrardan doğmasını öne çıkarır.",
+          "gloss": "uzunluktan veya tekrardan bıkma",
+          "shared_zone": "İki dal da sürmekte olan bir şeyden bıkıp usanma durumunu anlatır.",
+          "distinction": "Komşu dal bıkkınlığın süre ve tekrar nedenini sınırlar; odak dal neden konusunda daha geniştir ve ettirgen bezdirme ile kişi nitelemesine de uzanır."
+        },
+        {
+          "neighbor_ref": "root_000134/B007",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal yorgun düşme, başkasını bezdirme ve çekilmez kişi nitelemesini de kapsar.",
+          "neighbor_only": null,
+          "gloss": "bir şeyden sıkılma",
+          "shared_zone": "Her iki dal bir şey karşısında sıkılma, bıkma ve hoşnutsuzluk duyma çekirdeğini paylaşır.",
+          "distinction": "Komşu dal doğrudan sıkılma durumuyla sınırlıyken odak dal aynı çekirdeğin ettirgen ve kişiyi niteleyen kullanımlarını da düzenler."
         },
         {
           "neighbor_ref": "root_000944/B003",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Duygusal bıkkınlık, ağır bulma ve başkasını bezdirme bulunur.",
-          "neighbor_only": "Yolculuk veya yürüyüşten doğan bedensel bitkinlik ve zayıflama bulunur.",
-          "gloss": "bıkkınlık ve bitkinlik",
-          "shared_zone": "Her iki dalda kişinin gücünün tükenmesi veya bir şeyi sürdürmekte zorlanması görülebilir.",
-          "distinction": "Odak dal sabrın tükenmesine ve usanma duygusuna dayanır; komşu dalın çekirdeği bedensel yorgunluk ve zayıflamadır."
+          "focus_only": "Odak dal ruhsal bıkkınlığı, bir şeyi ağır bulmayı ve başkasını bezdirmeyi öne çıkarır.",
+          "neighbor_only": "Komşu dal yolculuk veya yürüyüşten doğan bedensel bitkinlik ve zayıflamayı içerir.",
+          "gloss": "yorgunluk ve zayıflama",
+          "shared_zone": "İki dal da gücün tükenmesi ve bir şeye devam edemeyecek kadar yorulma alanında buluşur.",
+          "distinction": "Odak dalda yorgunluk bıkkınlık ve usanmayla iç içedir; komşu dalda ise hareketten doğan bedensel bitkinlik ve zayıflama çekirdektir."
+        },
+        {
+          "neighbor_ref": "root_000510/B005",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Odak dalın başkasında oluşturduğu etki bıkkınlık, usanma ve bezginliktir.",
+          "neighbor_only": "Komşu dal başkasını kızdırma, kışkırtma ve birine karşı doldurma eylemini anlatır.",
+          "gloss": "bezdirme ve kızdırma",
+          "shared_zone": "İki dal da bir kişinin davranışıyla başka birinde olumsuz duygu oluşturması alanındadır.",
+          "distinction": "Odak dalın sonucu usanma ve ağırlık duygusudur; komşu dalın sonucu öfke ve kışkırtılmış karşıtlıktır, bu yüzden birbirinin yerine kullanılamaz."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar karşılaştırıldı; en olası karışıklık olan genel usanma ile bedensel bitkinlik sınırlarını gösteren iki komşu seçildi.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; yayımlanan dört karşılaştırma bıkkınlığın nedeni, ettirgen yönü ve ruhsal-bedensel yorgunluk ayrımını açıklar. Yalnızca genel yorgunluk alanını yineleyen veya başka kök dallarıyla ses dışında bağı olmayan adaylar çıkarıldı.",
       "branch_image_ar": "ضجر واستثقال",
       "what_is_ar": "يدخل فيه الضجر والسآمة والإعياء وإضجار الغير والإلحاح والثقل على الجليس",
+      "what_is_not_ar": "لا يدخل فيه إحكام الحبل ولا ترك الميسر",
       "source_phrase_ar": "برمت بالأمر عييت به؛ برمت بكذا أي ضجرت به برما (maqayis)؛ برمت بكذا أي ضجرت منه؛ أبرمني فلان إبراما (ayn)؛ الذي يتبرم بالناس؛ تبرمت بالشيء تبرما إذا استثقلته (jamhara)؛ برم به إذا سئمه؛ أبرمه أي أمله وأضجره (sihah)؛ لا تبرمني بكثرة فضولك؛ المبرم الثقيل (tahdhib)؛ المبرم الذي يلح ويشدد في الأمر (mufradat)",
       "sources": [
         "MQ",
@@ -345,95 +395,116 @@
         "TA",
         "MU"
       ],
-      "source_note": {
-        "TA": "Ayrı bir topluluk adı olarak kötü huylu kimseler anlamı da kaydedilmiştir."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000110/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, toplulukla oynanan paylı şans oyununa katılmayan veya oradan pay almayan kişiyi merkeze alır ve cimriliği yalnız bu bağlamda açıklar. Hurmayı ikişer yeme örneği de aynı kişi tipini ağırlaştıran bağımlı bir atasözü kullanımıdır.",
+        "boundary_note": "Dal genel cimriliği değil, ortak paylı oyuna katılmama tutumunu ve ona bağlı ikişer hurma yeme örneğini kapsar."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, kişi adını ve çoğulunu oyuna katılmama çekirdeğinde tutar; ikişer hurma yeme anlatımını yalnız atasözüne bağlı örnek olarak verir."
+      },
       "concept_map": {
-        "definition": "Bir topluluğun şans oyununa veya ortak payına katılmaktan cimrilikle geri durma durumudur; buna rağmen paydan aşırı biçimde yararlanma davranışı da kınayıcı örnek olarak bu tipe bağlanır.",
+        "definition": "Toplulukla oynanan paylı şans oyununa katılmayan veya oyundan pay almayan kişidir; bu davranış o bağlamda cimrilik sayılır. Hurmayı ikişer yeme davranışı da aynı kişiyi daha ağır biçimde kınayan atasözü örneğidir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Topluluğun şans oyununa ve ortak katkısına girmeyen, bu alanda cimri davranan kişiyi belirtir.",
+            "statement": "Kişi toplulukla oynanan paylı şans oyununa girmez veya oyundan pay almaz.",
             "claim_ids": [
-              "lu_011"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "associated_use",
-            "statement": "Bu katılmayan ve cimri kişilerin çoğul adı, aynı davranışı topluluk düzeyinde bildirir.",
+            "role": "specialization",
+            "statement": "Katılmama tutumu, genel bir huy değil özellikle bu oyun bağlamındaki cimrilik olarak nitelenir.",
             "claim_ids": [
-              "lu_012"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "example",
-            "statement": "Katkıya girmediği halde hurmayı ikişer ikişer alan kişi, cimriliği artıran atasözü örneğidir.",
+            "statement": "Oyuna ortak olmayan kişinin hurmayı ikişer yemesi, tutumundaki bencilliği artıran atasözü örneğidir.",
             "claim_ids": [
-              "lu_013"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynakların ortak sınırı, toplulukla birlikte yürütülen şans oyununa veya ortak paya katılmayan cimri kişidir. Çoğul biçim aynı grubu adlandırır; katkı yapmadığı halde hurmayı ikişer ikişer alma örneği davranışın ayıbını pekiştirir.",
+        "common_summary": "Kaynakların birleştiği anlam, topluluğun paylı şans oyununa girmeyen veya oradan pay almayan kişidir. Bu kişiye yüklenen cimrilik oyun bağlamıyla sınırlıdır; ikişer hurma yeme anlatımı ise aynı tutarsız ve bencil tutumu kınayan örnektir.",
         "common_claim_ids": [
-          "lu_011",
-          "lu_012",
-          "lu_013"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "ortak paya katılmayan cimri",
-        "applicability": "Topluluğun şans oyununa veya ortak katkısına girmeyen kişiyi alanına özgü biçimde anlatır.",
+        "text": "paylı şans oyununa katılmayan cimri",
+        "applicability": "Topluluğun ortak oyununa katılmayan ve bu özel bağlamda cimrilikle nitelenen kişiyi gösterir.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Katılmama davranışını, ortak pay bağlamını ve cimrilik değerlendirmesini birlikte korur.",
+          "preserves": "Oyuna katılmayan kişi çekirdeğini ve cimriliğin bu bağlama bağlı oluşunu korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "katkı yapmadan çok pay alan",
-          "usage_role": "explanatory",
-          "applicability": "Ortak katkıya girmeyip yine de hurmayı ikişer ikişer alma yönünü vurgulayan kınayıcı örnekte kullanılır.",
+          "text": "oyuna ortak olmayan kimse",
+          "usage_role": "contextual",
+          "applicability": "Kişinin toplulukla oynanan paylı oyuna girmediğinin öne çıktığı anlatımlarda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Katılmama ile paydan aşırı yararlanma arasındaki kınayıcı karşıtlığı korur.",
-            "loses": "Genel kişi adını ve bu kişilerin çoğul adını tek başına karşılamaz.",
+            "preserves": "Ortak oyuna girmeme ve oyundan pay almama çekirdeğini korur.",
+            "loses": "Bu tutumun cimrilik sayılmasını ve ikişer hurma yeme örneğini göstermez.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F003"
+            "F001"
           ]
         },
         {
-          "text": "ortak oyuna katılmayanlar",
-          "usage_role": "contextual",
-          "applicability": "Aynı davranışı gösteren kişilerin çoğul olarak anıldığı bağlamlarda kullanılır.",
+          "text": "oyun bağlamında cimri kimse",
+          "usage_role": "explanatory",
+          "applicability": "Cimrilik nitelemesinin yalnız topluluğun paylı oyununa katılmama davranışına bağlandığı yerde kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Topluluğun ortak oyununa katılmayan kişiler grubunu korur.",
-            "loses": "Tekil kişi adını ve aşırı pay alma örneğini dışarıda bırakır.",
+            "preserves": "Cimrilik nitelemesinin özel oyun bağlamıyla sınırlı oluşunu korur.",
+            "loses": "Oyundan pay almama ayrıntısını ve ikişer hurma yeme örneğini tek başına vermez.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F002"
+          ]
+        },
+        {
+          "text": "hurmayı ikişer yiyen kimse",
+          "usage_role": "contextual",
+          "applicability": "Oyuna katılmayan kişinin buna rağmen hurmaları ikişer almasını kınayan atasözü bağlamında kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Atasözündeki ikişer hurma yeme davranışını korur.",
+            "loses": "Kişinin paylı oyuna katılmama kimliğini tek başına açıklamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
           ]
         }
       ],
@@ -441,57 +512,66 @@
         {
           "lexical_unit_id": "lu_011",
           "rendering_kind": "ordinary",
-          "target_gloss": "topluluğun ortak oyununa katılmayan cimri"
+          "target_gloss": "topluluğun paylı şans oyununa katılmayan kimse"
         },
         {
           "lexical_unit_id": "lu_012",
           "rendering_kind": "ordinary",
-          "target_gloss": "ortak oyuna katılmayan cimriler"
+          "target_gloss": "paylı şans oyununa katılmayan kimseler"
         },
         {
           "lexical_unit_id": "lu_013",
           "rendering_kind": "ordinary",
-          "target_gloss": "katılmadığı halde hurmayı ikişer alan kimse için söz"
+          "target_gloss": "oyuna ortak olmayıp hurmayı da ikişer yiyen kimse"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "cimri",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Kişinin paylaşmaya isteksiz oluşunu genel olarak korur.",
-            "loses": null,
-            "adds": "Ortak oyun veya pay bağlamı bulunmayan her türlü cimrilik durumunu da kapsar.",
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000906/B004",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Ortak şans oyununa katkı yapmama, cimrilik ve paydan yararlanma değerlendirmesi bulunur.",
-          "neighbor_only": "Herhangi bir işten el çekme, yüz çevirme veya birini o işten uzaklaştırma kapsamı bulunur.",
+          "focus_only": "Odak dal belirli bir paylı oyuna katılmamayı ve bunun cimrilik sayılmasını anlatır.",
+          "neighbor_only": "Komşu dal herhangi bir işten el çekme, yüz çevirme veya dışarı çıkmayıp evde kalma alanına yayılır.",
           "gloss": "katılmama ve geri durma",
-          "shared_zone": "İki dal da kişinin belirli bir işe girmemesi veya ondan geri durması durumunda buluşur.",
-          "distinction": "Odak dal belirli bir ortak oyun ve paylaşım düzenindeki cimri katılmamayı adlandırır; komşu dal genel olarak bir işten geri durma veya uzaklaştırmadır."
+          "shared_zone": "İki dal da kişinin bir işe girmekten veya onu sürdürmekten geri durmasını içerir.",
+          "distinction": "Odak dalın geri duruşu topluluk oyunu ve pay alma düzeniyle sınırlıdır; komşu dal neden ve bağlam belirtmeyen genel çekilme davranışıdır."
+        },
+        {
+          "neighbor_ref": "root_000994/B003",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal oyuna katılmayan kişiyi ve bu kişiye yönelik cimrilik yargısını adlandırır.",
+          "neighbor_only": "Komşu dal kişinin kendisini bir şeyden çekmesini, başkasını engellemesini ve bir alışkanlıktan ayırmayı kapsar.",
+          "gloss": "kaçınma ve engelleme",
+          "shared_zone": "Her iki dal bir etkinliğe girmeme veya ondan uzak kalma davranışında buluşur.",
+          "distinction": "Komşu dal genel kaçınma ve başkasını önleme eylemidir; odak dal ise ortak paylı oyuna girmeyen belirli kişi tipidir."
         },
         {
           "neighbor_ref": "root_001030/B014",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Ortak oyuna ve katkıya girmeyen kişi ile katkısız pay alma örneği bulunur.",
-          "neighbor_only": "Komşusuna armağan vermeyen veya vermeyi sürdürmeyen kadın nitelemesi bulunur.",
-          "gloss": "paylaşmaya katılmama",
-          "shared_zone": "Her iki dal topluluk içindeki karşılıklı verme ve paylaşma beklentisinin yerine getirilmemesini konu edinir.",
-          "distinction": "Odak dal ortak oyun ve pay düzenine özgüdür; komşu dal komşuya armağan verme davranışına özgü ayrı bir kişi nitelemesidir."
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal ortak oyuna katılmayı ve oyundaki pay düzenini konu alır.",
+          "neighbor_only": "Komşu dal komşusuna armağan vermeyen veya armağanı sürdürmeyen kişiyi konu alır.",
+          "gloss": "paylaşmayan kişi",
+          "shared_zone": "İki dal da toplumsal alışverişe katılmayan ve eli sıkı görülen bir kişi tipini anlatır.",
+          "distinction": "Odak dalda eksik katılım ortak oyuna ve onun payına ilişkindir; komşu dalda eksik davranış komşuya armağan vermemektir."
+        },
+        {
+          "neighbor_ref": "root_001553/B004",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dalın katılmama nedeni kaynakta cimrilik ve pay düzeniyle ilişkilidir.",
+          "neighbor_only": "Komşu dal gurur, onur ve kendini üstün tutma nedeniyle bir şeyi reddetmeyi anlatır.",
+          "gloss": "katılmama ve onurlu ret",
+          "shared_zone": "İki dal da kişinin bir şeye yanaşmayıp açık veya örtülü biçimde hayır demesini içerir.",
+          "distinction": "Davranış yüzeyde benzer olsa da odak dal topluluk oyunundaki eli sıkılığı, komşu dal ise gururdan doğan geri çekilmeyi gösterir."
         }
       ],
-      "neighbor_coverage_note": "Adayların tümü değerlendirildi; genel geri durma ile paylaşma görevini yerine getirmeme alanlarını ayıran iki karşılaştırma yeterli bulundu.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; seçilen dört komşu genel geri durma, engelleme, armağan vermeme ve gururdan reddetme ile oyun bağlamındaki cimriliği ayırır. Öteki adaylar yalnız uzak bir toplumsal alanı paylaştığı veya sesçe ilişkili başka dallar olduğu için yayımlanmadı.",
       "branch_image_ar": "انقباض عن المشاركة",
       "what_is_ar": "يدخل فيه البرم الذي لا يشارك القوم في الميسر والبخيل في هذا الباب ومن يشدد أخذه بأكل تمرتين تمرتين",
+      "what_is_not_ar": "لا يدخل فيه مجرد الضجر ولا مطلق البخل بغير شاهد",
       "source_phrase_ar": "البرم الذي لا يياسر القوم ولا يدخل معهم في الميسر (ayn)؛ الذي لا يأخذ في الميسر (jamhara)؛ الذي لا يدخل مع القوم في الميسر (sihah;tahdhib)؛ قيل للبخيل الذي لا يدخل في الميسر برم؛ من يأكل تمرتين تمرتين برم (mufradat)",
       "sources": [
         "AY",
@@ -504,79 +584,67 @@
     },
     {
       "branch_ref": "root_000110/B004",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi iki rengin veya iki türün tek bir bütün içinde bulunmasını doğrudan çekirdek sayar. İki renkli ip ve kumaş, karma ordu ve sürü, sabah aydınlığıyla gece karanlığı, sürmeli gözyaşı ile karaciğer ve hörgüç yağı bu çekirdeğin farklı gerçekleşmeleridir.",
+        "boundary_note": "Dal yalnız büküm tekniğini değil görünür renk veya tür ikiliğini gerektirir; karma topluluklar bu ikiliğin kapsam uzantısıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım iki renk veya tür çekirdeğini yalın biçimlerde korur; sabah, sürü ve eşleştirilmiş yiyecek anlatımlarını kendi yapılarına bağlı örnekler olarak ayırır."
+      },
       "concept_map": {
-        "definition": "İki rengin veya iki ayrı türün tek bir varlıkta ya da toplulukta bir araya gelmesidir. Bu karışım ipte, sürüde, orduda, tan ışığında ve farklı renkli iki yiyeceğin birlikte sunulmasında görünür.",
+        "definition": "İki ayrı rengin veya türün tek bir nesne ya da topluluk içinde karışarak birlikte bulunmasıdır. Karma ordu ve sürü, sabah ışığıyla gece karanlığı ve karşıt renkli iki yiyeceğin sarılması bu çekirdeğe bağlı örneklerdir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "İki rengin veya iki ayrı bileşenin aynı varlıkta birleşmiş olmasını belirtir.",
+            "statement": "İki renk veya iki ayrı tür tek bir bütün içinde birbirine karışarak birlikte bulunur.",
             "claim_ids": [
-              "lu_014"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "extension",
-            "statement": "Farklı kökenlerden iki ordunun veya iki hayvan türünden oluşan sürünün karışımına uzanır.",
+            "statement": "Farklı kökenlerden askerlerin oluşturduğu ordu ve koyun ile keçiden oluşan sürü, tür karışımının topluluklara uzanışıdır.",
             "claim_ids": [
-              "lu_015",
-              "lu_016"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "example",
-            "statement": "Tan yerinin aklığı ile gecenin kalan karanlığının birlikte görünmesi iki renkli karışıma örnektir.",
+            "statement": "İlk sabah aydınlığının geceden kalan karanlıkla birlikte görünmesi iki renkli görünüme örnektir.",
             "claim_ids": [
-              "lu_017"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F004",
             "role": "example",
-            "statement": "Açık renkli yağ dokusu ile koyu renkli karaciğerin birlikte sarılıp sunulması somut bir örnektir.",
+            "statement": "Siyah karaciğer ile beyaz hörgüç yağının birlikte kesilip sarılması karşıt renkli bir çift oluşturur.",
             "claim_ids": [
-              "lu_018"
-            ]
-          },
-          {
-            "facet_id": "F005",
-            "role": "associated_use",
-            "statement": "Boncuk dizilmiş ve bele ya da kola bağlanan ip, bu adın ilişkili nesne kullanımıdır.",
-            "claim_ids": [
-              "lu_019"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Genel anlam, iki rengin veya iki farklı bileşenin bir arada bulunmasıdır. Bu yapı renkli ipte, karanlıkla karışan tan ışığında ve iki renkli yiyecek birleşiminde somutlaşır; sürü kullanımı ceylan sürüsü ile koyun-keçi karışımı arasında, boncuklu ip kullanımı da bel veya kol bağı ile çocuk üzerinde koruyucu asma arasında değişir.",
+        "common_summary": "Ortak çekirdek, iki rengin veya iki türün aynı bütünde birleşmesidir. Kaynak anlatımı iki renkli halatı, sürmeyle karışmış gözyaşını, ipek ve ketenli kumaşı, karma orduyu, koyun-keçi sürüsünü, sabah ışığıyla gece karanlığını ve birlikte sarılan karaciğer ile hörgüç yağını bu düzenin örnekleri olarak bir araya getirir.",
         "common_claim_ids": [
-          "lu_014",
-          "lu_016",
-          "lu_017",
-          "lu_018",
-          "lu_019"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_015"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Farklı kökenlerden iki ordunun karışmış bir bütün oluşturması ayrıca kaydedilmiştir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "iki renkli veya iki bileşenli karışım",
-        "applicability": "Renklerin, türlerin veya topluluk bileşenlerinin tek bütünde birleştiği bütün çekirdek kullanımları kapsar.",
+        "text": "iki renkli veya iki türden oluşan karışım",
+        "applicability": "Nesnelerdeki renk ikiliğini ve topluluklardaki tür karışımını birlikte kapsayan en kısa üst anlatımdır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "İkili yapıyı, renk ayrımını ve farklı bileşenlerin bir araya gelişini korur.",
+          "preserves": "İki rengin ya da iki türün tek bütün içinde birlikte bulunması çekirdeğini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -588,13 +656,28 @@
       },
       "contextual_glosses": [
         {
-          "text": "karışık sürü veya birlik",
-          "usage_role": "contextual",
-          "applicability": "İki hayvan türünün aynı sürüde ya da farklı kökenlerden kişilerin aynı askerî toplulukta birleştiği bağlamlarda kullanılır.",
+          "text": "iki renkli",
+          "usage_role": "general",
+          "applicability": "İp, kumaş veya başka bir nesnede iki ayrı rengin birlikte göründüğü bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "İki ayrı türden veya topluluktan oluşan karışık bütünü korur.",
-            "loses": "Renkli nesne, tan ışığı, yiyecek ve boncuklu ip kullanımlarını dışarıda bırakır.",
+            "preserves": "Tek bir nesnedeki iki renkli görünümü korur.",
+            "loses": "Farklı türlerden oluşan karma toplulukları ve özel örnekleri kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "karma topluluk",
+          "usage_role": "contextual",
+          "applicability": "Farklı kökenlerden askerlerin veya farklı hayvan türlerinin tek topluluk oluşturduğu yerde kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "İki ayrı türün tek toplulukta karışmasını korur.",
+            "loses": "Nesnelerdeki iki renkli görünümü ve ışık-karanlık örneğini göstermez.",
             "adds": null,
             "collision": null
           },
@@ -603,13 +686,13 @@
           ]
         },
         {
-          "text": "geceyle karışık tan ışığı",
-          "usage_role": "explanatory",
-          "applicability": "Sabahın ilk aklığının geceden kalan karanlıkla birlikte göründüğü özel bağlam için uygundur.",
+          "text": "gece karanlığına karışan sabah aydınlığı",
+          "usage_role": "contextual",
+          "applicability": "Sabahın ilk ışığının geceden kalan karanlıkla aynı anda göründüğü geçiş anını anlatır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Açık ve koyu iki görünümün aynı anda bulunmasını korur.",
-            "loses": "Diğer nesne ve topluluklardaki iki bileşenli karışımları kapsamaz.",
+            "preserves": "Sabah aydınlığı ile gece karanlığının renk ikiliğini korur.",
+            "loses": "Nesne ve topluluklardaki öteki renk veya tür karışımlarını kapsamaz.",
             "adds": null,
             "collision": null
           },
@@ -618,33 +701,18 @@
           ]
         },
         {
-          "text": "sarılı karaciğer ve yağ dokusu",
+          "text": "karaciğerle hörgüç yağından sarılmış çift",
           "usage_role": "explanatory",
-          "applicability": "Koyu karaciğer ile açık renkli yağ dokusunun birlikte sarılıp sunulduğu yiyecek bağlamı için uygundur.",
+          "applicability": "Siyah karaciğer ile beyaz hörgüç yağının uzun kesilip birlikte sarıldığı yiyecek örneğini açıklar.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Farklı renkli iki yiyecek parçasının birlikte sarılıp sunulmasını korur.",
-            "loses": "Karışık topluluk, tan ışığı ve boncuklu ip kapsamlarını dışarıda bırakır.",
+            "preserves": "Karşıt renkli iki yiyeceğin birlikte sarılması örneğini korur.",
+            "loses": "Dalın genel iki renk veya iki tür karışımı kapsamını göstermez.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F004"
-          ]
-        },
-        {
-          "text": "boncuk dizili bağ ipi",
-          "usage_role": "explanatory",
-          "applicability": "Bele ya da kola takılan, çocuk üzerinde koruyucu amaçla da asılabilen boncuk dizili ip için kullanılır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Boncuk dizili ipin bağlanma veya asılma nesnesi oluşunu korur.",
-            "loses": "İki renkli görünüş, karışık topluluk, tan ışığı ve yiyecek kapsamlarını dışarıda bırakır.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F005"
           ]
         }
       ],
@@ -652,72 +720,91 @@
         {
           "lexical_unit_id": "lu_014",
           "rendering_kind": "ordinary",
-          "target_gloss": "iki renkli veya iki karışımlı şey"
+          "target_gloss": "iki renkli veya iki türden oluşan karışım"
         },
         {
           "lexical_unit_id": "lu_015",
           "rendering_kind": "ordinary",
-          "target_gloss": "farklı kökenlerden karışmış iki ordu"
+          "target_gloss": "Arap ve Arap olmayan savaşçılardan oluşan iki ordu"
         },
         {
           "lexical_unit_id": "lu_016",
           "rendering_kind": "ordinary",
-          "target_gloss": "iki hayvan türünden karışık sürü"
+          "target_gloss": "koyun ve keçilerden oluşan karma sürü"
         },
         {
           "lexical_unit_id": "lu_017",
           "rendering_kind": "ordinary",
-          "target_gloss": "gecenin karanlığıyla karışık ilk tan ışığı"
+          "target_gloss": "gece karanlığıyla karışık ilk sabah aydınlığı"
         },
         {
           "lexical_unit_id": "lu_018",
           "rendering_kind": "ordinary",
-          "target_gloss": "birlikte sarılan karaciğer ile yağ dokusu"
+          "target_gloss": "birlikte sarılan karaciğer ve hörgüç yağı"
         },
         {
           "lexical_unit_id": "lu_019",
           "rendering_kind": "ordinary",
-          "target_gloss": "bele veya kola bağlanan boncuk dizili ip"
+          "target_gloss": "boncuk dizilmiş, bele veya kola bağlanan ip"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "alacalı",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Bir nesnede iki rengin birlikte görünmesini doğal biçimde korur.",
-            "loses": "Farklı türlerden oluşan sürü veya ordu gibi renge dayanmayan karışımları kaybeder.",
-            "adds": null,
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000108/B005",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Renk dışındaki iki türün karışması ile sürü, ordu, yiyecek ve boncuklu ip uzantıları bulunur.",
-          "neighbor_only": "Arazi, taş, kum, göz ve çekirge gibi siyah ile beyazın birleştiği daha geniş örnek dizisi bulunur.",
-          "gloss": "iki rengin karışması",
-          "shared_zone": "Her iki dal tek bir varlıkta iki rengin, özellikle açık ve koyu renklerin birlikte görünmesini kapsar.",
-          "distinction": "Odak dal iki farklı tür veya topluluk bileşenine de uzanır; komşu dalın merkezi siyah ile beyazın ya da iki rengin görünüşte birleşmesidir."
+          "focus_only": "Odak dal renk dışındaki tür ikiliğini, karma ordu ve sürüyü ve sabah örneğini de kapsar.",
+          "neighbor_only": "Komşu dal siyah ile beyazın taş, toprak, göz, hayvan ve arazi üzerindeki alacalı görünümünü geniş biçimde işler.",
+          "gloss": "iki renkli alacalık",
+          "shared_zone": "İki dal da tek bir şeyde iki farklı rengin, özellikle siyah ile beyazın birlikte görünmesini anlatır.",
+          "distinction": "Komşu dal görünür alacalık ve maddi yüzeyler üzerinde yoğunlaşır; odak dal iki türün karıştığı topluluklara ve belirli eşleştirmelere de uzanır."
+        },
+        {
+          "neighbor_ref": "root_000415/B003",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal her renk çiftini ve renk dışındaki iki türün karışmasını kapsayabilir.",
+          "neighbor_only": "Komşu dal siyah-beyaz birlikteliğini, hayvanların alacalı görünümünü ve saça ak düşmesini öne çıkarır.",
+          "gloss": "siyah-beyaz alacalık",
+          "shared_zone": "İki dal da siyah ve beyazın tek bir ipte, hayvanda veya görünümde birleşmesi üzerinde örtüşür.",
+          "distinction": "Komşu dal belirgin biçimde siyah-beyaz alacılığa bağlıdır; odak dal renk çiftini genelleştirir ve türce karma toplulukları da içine alır."
+        },
+        {
+          "neighbor_ref": "root_000400/B007",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal farklı türlerden oluşan ordu ve sürü gibi karma toplulukları açıkça içerir.",
+          "neighbor_only": "Komşu dal renklerin bölge bölge kesilmesine ve yazı, iş veya yıl gibi soyut benzetmelere uzanır.",
+          "gloss": "iki rengin ayrışması",
+          "shared_zone": "İki dal da tek bir şey üzerinde iki ayrı rengin bulunmasını ve yer yer ayrışmasını anlatır.",
+          "distinction": "Odak dal karışarak birlikte bulunmayı ve tür ikiliğini öne çıkarır; komşu dal renk bölgelerinin kesintili dağılışını ve daha uzak benzetmeleri de kapsar."
         },
         {
           "neighbor_ref": "root_001365/B003",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "İki renkli nesneler ve ışık ile karanlığın görsel birleşimi bulunur.",
-          "neighbor_only": "Çeşitli kabilelerden insanların, askerî birliklerin veya en az iki tür yemeğin tek toplulukta karışması bulunur.",
-          "gloss": "farklı türlerin karışması",
-          "shared_zone": "Her iki dal farklı köken veya türden bileşenlerin tek bir bütün içinde birleşmesini kapsayabilir.",
-          "distinction": "Odak dal iki renkli görünüşü çekirdek alıp belirli topluluklara uzanır; komşu dalın çekirdeği renk şartı olmadan çeşitli unsurların topluca karışmasıdır."
+          "focus_only": "Odak dal iki görünür rengin aynı nesnede bulunmasını ve ışık-karanlık çiftini kapsar.",
+          "neighbor_only": "Komşu dal ikiden fazla soy, birlik veya yiyecek türünün tek toplulukta toplanmasına uzanır.",
+          "gloss": "karma topluluk ve karışım",
+          "shared_zone": "İki dal da farklı türlerin tek topluluk veya bütün içinde bir araya gelmesini anlatır.",
+          "distinction": "Komşu dalın çekirdeği çoklu toplumsal veya maddi karışımdır; odak dalın çekirdeği iki renk ya da iki türden oluşan belirgin ikiliktir."
+        },
+        {
+          "neighbor_ref": "root_000803/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal sabahın beyaz aydınlığı ile gecenin kalan karanlığını ve başka iki renkli örnekleri içerir.",
+          "neighbor_only": "Komşu dal gün batımından sonraki kızıllığı ve akşam karanlığına kadar süren gök ışığını anlatır.",
+          "gloss": "geçiş ışığı",
+          "shared_zone": "İki dal da gün ile gece arasındaki geçişte ışık ve karanlığın birlikte görünmesini içerir.",
+          "distinction": "Odak örneği sabah başlangıcındaki beyazlık-karanlık karışımıdır; komşu dal akşam gün batımından sonraki kızıl ışığın özel adıdır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar incelendi; renk karışımına en yakın dal ile renkten bağımsız topluluk karışımını ayıran dal yayımlanmaya değer bulundu.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; seçilen beş komşu siyah-beyaz alacılık, genel iki renklilik, topluluk karışımı ve sabah-akşam geçişi sınırlarını ayırır. Aynı ayrımı yineleyen veya yalnız uzak bir örneği paylaşan adaylar yayımlanmadı.",
       "branch_image_ar": "اختلاط لونين",
       "what_is_ar": "يدخل فيه البريم لكل ذي لونين والحبل أو الخيط الملون والخرز المشدود والجيش المختلط والقطيع المختلط وضوء الصبح مع سواد الليل والكبد مع السنام",
+      "what_is_not_ar": "لا يدخل فيه إحكام الفتل إذا خلا من معنى اللونين ولا ثمر الشجر",
       "source_phrase_ar": "البريمين النوعان من كل ذي خلطين؛ الدمع مع الإثمد بريم؛ الصبح أول ما يبدو بريما؛ لفيفهم من كل لون (maqayis)؛ البريم كل ذي لونين (ayn)؛ كل لونين اجتمعا فهو بريم؛ قطيع بريم (jamhara)؛ الحبل المفتول يكون فيه لونان؛ الجيش بريم؛ بريميها أي من الكبد والسنام (sihah)؛ كل ذي لونين بريم؛ البريمان الجيشان عرب وعجم؛ ضوء الشمس مع بقية سواد الليل؛ القطيع من الغنم من ضأن ومعزى؛ ثوب فيه قز وكتان (tahdhib)؛ سمي كل ذي لونين به من جيش مختلط أسود وأبيض ولغنم مختلط (mufradat)",
       "sources": [
         "MQ",
@@ -727,95 +814,79 @@
         "TA",
         "MU"
       ],
-      "source_note": {
-        "TA": "Farklı kökenlerden iki ordunun karışmış bir bütün oluşturması ayrıca kaydedilmiştir."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000110/B005",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesinin ana gövdesi belirli dikenli ağaçların meyve ve çiçeklerini destekler; ancak çok küçük üzüm tanelerini de ayrıca bu dala katar. Bu nedenle verilen ağaç ürünü çerçevesi kullanılabilir, fakat üzüm uzantısı ve meyveyi toplayan kişi çekirdekten ayrı tutulmalıdır.",
+        "boundary_note": "Çekirdek belirli dikenli ağaçların meyve veya çiçeğidir; çok küçük üzüm taneleri kapsam uzantısı, toplayıcı ise türemiş kişi kullanımıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım yalın bitki ürünü anlamını korur; ilk ürün verme yapısını, küçük üzüm tanesi uzantısını ve toplayıcı adını ayrı yüzler olarak gösterir."
+      },
       "concept_map": {
-        "definition": "Dikenli ağaçların ve benzeri ağaçların meyvesidir; ayrıca belirli türlerin çiçeği veya ilk meyve evresi, ilk meyve çıkarma eylemi ve çok küçük yeni üzüm taneleri bağlı kullanımlar olarak kapsama girer.",
+        "definition": "Belirli dikenli ağaçlarda oluşan meyve veya çiçek için kullanılan bitki adıdır; bir kapsam uzantısı çok küçük üzüm tanelerini de içerir. Bu ürünü toplayan kişi türemiş bir kullanımdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Dikenli ağaçların ve özellikle misvak elde edilen ağacın meyvesini belirtir.",
+            "statement": "Belirli dikenli ağaçların meyvesi bu dalın temel bitki ürünüdür.",
             "claim_ids": [
-              "lu_020"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Belirli dikenli ağaçların beyaz veya sarı çiçeği ya da çiçek içindeki ilk meyvesi için kullanılır.",
+            "statement": "Aynı ağaç grubundaki bazı türlerin beyaz veya sarı çiçeği de bu adla anılır.",
             "claim_ids": [
-              "lu_021"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "associated_use",
-            "statement": "Bir akasya türünün ilk meyvesini çıkarmaya başlamasını bildiren gelişim eylemine uzanır.",
+            "role": "extension",
+            "statement": "Karınca başı büyüklüğündeki çok küçük üzüm taneleri bitki ürünü alanının ayrı bir uzantısıdır.",
             "claim_ids": [
-              "lu_022"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F004",
-            "role": "extension",
-            "statement": "Üzümün karınca başı büyüklüğünü biraz aşmış çok küçük yeni taneleri de aynı adla anılır.",
+            "role": "associated_use",
+            "statement": "Bu ağaç meyvesini toplayan kişi, ürün adından türemiş bir kullanımla belirtilir.",
             "claim_ids": [
-              "lu_023"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F005",
-            "role": "associated_use",
-            "statement": "Bu meyveyi, özellikle misvak elde edilen ağaçtan toplayan kişiyi adlandırır.",
+            "role": "example",
+            "statement": "Bu ağaç türlerinden birinin meyvesi, grubun en hoş kokulu örneği olarak belirtilir.",
             "claim_ids": [
-              "lu_024"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak alan, dikenli ağaçların meyvesi ile kimi türlerin beyaz veya sarı çiçeği ve ilk meyve evresidir. Çekirdek anlam özellikle misvak elde edilen ağaç ve benzeri türlerle ilişkilidir.",
+        "common_summary": "Kaynak anlatımı belirli dikenli ağaçların meyvesini ortak merkez yapar; bazı türlerde beyaz veya sarı çiçeği, bir türde ilk çıkan meyveyi ve en hoş kokulu örneği ayrıca belirtir. Çok küçük üzüm taneleri kapsam uzantısı, bu meyveyi toplayan kişi ise türemiş kullanımdır.",
         "common_claim_ids": [
-          "lu_020",
-          "lu_021"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_022"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Bir akasya türünün ilk meyvesini çıkarmaya başlaması ayrı bir eylem olarak kaydedilmiştir."
-          },
-          {
-            "claim_ids": [
-              "lu_023"
-            ],
-            "kind": "extension",
-            "summary": "Çok küçük ve yeni oluşmuş üzüm taneleri, ağaç meyvesi anlamından ayrı bir kapsam uzantısıdır."
-          },
-          {
-            "claim_ids": [
-              "lu_024"
-            ],
-            "kind": "derivation",
-            "summary": "Meyveyi, özellikle misvak elde edilen ağaçtan toplayan kişi için türemiş bir ad bulunur."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "dikenli ağaçların meyvesi veya çiçeği",
-        "applicability": "Meyve çekirdeğini ve bazı dikenli ağaçlardaki çiçek ya da ilk meyve nesnesini karşılar; eylem ve küçük üzüm tanesi uzantısı ayrı bağlamsal karşılıklara bırakılır.",
+        "text": "dikenli ağaç meyvesi veya çiçeği",
+        "applicability": "Dalın ana bitki ürünü çekirdeğini, meyve ve çiçek ayrımını silmeden veren üst anlatımdır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Dikenli ağaç ürününü, meyve oluşunu ve çiçek ya da ilk meyve nesnesi kapsamını korur.",
+          "preserves": "Belirli dikenli ağaçların meyve ve çiçek olarak adlandırılan ürünlerini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -827,48 +898,48 @@
       },
       "contextual_glosses": [
         {
-          "text": "ilk meyvesini vermek",
-          "usage_role": "contextual",
-          "applicability": "Belirli akasya türünün meyvesini ilk kez çıkarmaya başladığını bildiren eylem bağlamında kullanılır.",
+          "text": "dikenli ağaç meyvesi",
+          "usage_role": "general",
+          "applicability": "Belirli dikenli ağaçların verdiği meyvenin anlatıldığı temel bitki bağlamında kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Ağacın ilk meyve çıkarma evresini ve gelişim değişimini korur.",
-            "loses": "Meyve ve çiçeğin adını, üzüm tanesi uzantısını ve toplayıcı adını kapsamaz.",
+            "preserves": "Dalın temel meyve anlamını ve ağaç ürünü oluşunu korur.",
+            "loses": "Çiçek kullanımını, küçük üzüm tanelerini ve meyve toplayan kişiyi göstermez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "ağacın beyaz veya sarı çiçeği",
+          "usage_role": "contextual",
+          "applicability": "Ağaç türüne göre beyaz ya da sarı olan çiçeğin adlandırıldığı yerde kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Ağaç çiçeği anlamını ve kaynakta belirtilen renk ayrımını korur.",
+            "loses": "Meyve çekirdeğini, üzüm uzantısını ve toplayıcı adını kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "çok küçük üzüm taneleri",
+          "usage_role": "contextual",
+          "applicability": "Üzüm tanelerinin karınca başı kadar küçük olduğu özel kullanımda tercih edilir.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Çok küçük üzüm taneleri uzantısını korur.",
+            "loses": "Dikenli ağaç meyvesi ve çiçeği çekirdeğini kapsamaz.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F003"
-          ]
-        },
-        {
-          "text": "çok küçük yeni üzüm taneleri",
-          "usage_role": "explanatory",
-          "applicability": "Üzüm tanelerinin karınca başından biraz büyük olduğu erken gelişim evresine özgüdür.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Üzüm tanesinin çok küçük ve yeni oluşmuş olmasını açıkça korur.",
-            "loses": "Dikenli ağaçların meyve ve çiçek kapsamını dışarıda bırakır.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F004"
-          ]
-        },
-        {
-          "text": "ağaç meyvesi toplayıcısı",
-          "usage_role": "explanatory",
-          "applicability": "Bu dalda adlandırılan meyveyi ağaçtan toplayan kişinin meslek veya işlev adı olarak kullanılır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Kişinin belirli ağaç meyvesini toplama işlevini korur.",
-            "loses": "Meyvenin kendisini, çiçeği ve bitkinin gelişim evresini karşılamaz.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F005"
           ]
         }
       ],
@@ -881,22 +952,22 @@
         {
           "lexical_unit_id": "lu_021",
           "rendering_kind": "ordinary",
-          "target_gloss": "dikenli ağacın çiçeği veya ilk meyvesi"
+          "target_gloss": "dikenli bir ağacın beyaz veya sarı çiçeği ya da meyvesi"
         },
         {
           "lexical_unit_id": "lu_022",
           "rendering_kind": "ordinary",
-          "target_gloss": "ilk meyvesini çıkarmak"
+          "target_gloss": "ağaç ilk meyvesini verdi"
         },
         {
           "lexical_unit_id": "lu_023",
           "rendering_kind": "ordinary",
-          "target_gloss": "çok küçük yeni üzüm taneleri"
+          "target_gloss": "karınca başı büyüklüğündeki çok küçük üzüm taneleri"
         },
         {
           "lexical_unit_id": "lu_024",
           "rendering_kind": "ordinary",
-          "target_gloss": "ağaç meyvesi toplayan kimse"
+          "target_gloss": "dikenli ağaç meyvesini toplayan kişi"
         }
       ],
       "excluded_glosses": [],
@@ -905,26 +976,47 @@
           "neighbor_ref": "root_000104/B007",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Çiçek, ilk meyve çıkarma, küçük üzüm tanesi ve meyve toplayıcısı kapsamları bulunur.",
-          "neighbor_only": "Misvak elde edilen ağacın meyvesine benzeyen öteki dikenli ağaç meyveleri daha genel biçimde kapsanır.",
-          "gloss": "ağaç meyvesi",
-          "shared_zone": "İki dal da misvak elde edilen ağacın meyvesini ve ona benzeyen dikenli ağaç meyvelerini kapsar.",
-          "distinction": "Odak dal meyvenin yanında çiçeği, erken gelişim evresini ve toplayıcıyı içerir; komşu dal doğrudan meyve adına odaklanır."
+          "focus_only": "Odak dal çiçek kullanımını, başka dikenli ağaç meyvelerini ve çok küçük üzüm tanelerini de içerir.",
+          "neighbor_only": "Komşu dal belirli bir dikenli ağacın meyvesini ve yalnız ona benzeyen meyveleri adlandırmaya odaklanır.",
+          "gloss": "belirli dikenli ağaç meyvesi",
+          "shared_zone": "İki dal da aynı dikenli ağacın meyvesini ve ona benzeyen ağaç meyvelerini kapsar.",
+          "distinction": "Komşu dal belirli meyve adında yoğunlaşır; odak dal daha geniş ağaç grubunu, çiçekleri, küçük üzüm tanelerini ve toplayıcı türevini bir arada düzenler."
         },
         {
           "neighbor_ref": "root_000111/B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Belirli dikenli ağaçların meyve ve çiçeği ile küçük üzüm tanesi bulunur.",
-          "neighbor_only": "Bir ağacın yaprak, çiçek ve meyvesinin birlikte toplanıp görünmesi bulunur.",
-          "gloss": "çiçek ve meyvenin gelişimi",
-          "shared_zone": "Her iki dal ağaçta çiçek ve meyvenin belirmesiyle ilgili bir gelişim evresini kapsar.",
-          "distinction": "Odak dal belirli ürünlerin adıdır ve ilk meyveyi de belirtir; komşu dal ürün adı değil, yaprak, çiçek ve meyvenin bir araya gelme durumudur."
+          "focus_only": "Odak dal belirli meyve ve çiçeklerin adı ile çok küçük üzüm tanelerini içerir.",
+          "neighbor_only": "Komşu dal bir ağaçta yaprak, çiçek ve meyvenin aynı zamanda toplanması gelişim durumunu anlatır.",
+          "gloss": "ağacın çiçeklenip meyvelenmesi",
+          "shared_zone": "İki dal ağaçta çiçek ve meyvenin ortaya çıkması alanını paylaşır.",
+          "distinction": "Odak dal ortaya çıkan bitki ürününün adıdır; komşu dal yaprak, çiçek ve meyvenin birlikte belirdiği gelişim evresini anlatır."
+        },
+        {
+          "neighbor_ref": "root_000840/B009",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Odak dal birden çok dikenli ağaç meyvesini, bazı çiçekleri ve küçük üzüm tanelerini kapsar.",
+          "neighbor_only": "Komşu dal ekşi, geniş kırmızı çekirdekli tek bir ağaç meyvesini gösterir.",
+          "gloss": "ağaç meyvesi adları",
+          "shared_zone": "İki dal da belirli ağaçların yenebilir veya tanınan meyvelerini adlandırır.",
+          "distinction": "Paylaşılan alan yalnız ağaç meyvesidir; odak dalın dikenli ağaç grubu ve çiçek uzantısı, komşunun tek ekşi meyve kimliğinden ayrıdır."
+        },
+        {
+          "neighbor_ref": "root_000521/B005",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Odak dal meyvenin veya çiçeğin kendisini adlandırır ve tür grubuna bağlıdır.",
+          "neighbor_only": "Komşu dal meyvenin sap ucundan başlayarak olgunlaşması sürecini anlatır.",
+          "gloss": "meyve ve olgunlaşma",
+          "shared_zone": "İki dal ağaç meyvesi ve onun gelişimiyle ilgili aynı bitki alanında yer alır.",
+          "distinction": "Odak dal bir ürün adıdır; komşu dal belirli bir meyvede olgunlaşmanın başladığı yönü ve süreci gösterir."
         }
       ],
-      "neighbor_coverage_note": "Tüm adaylar değerlendirildi; aynı ağaç meyvesini adlandıran en yakın dal ile çiçek ve meyve gelişimini anlatan komşu ayrıştırıldı.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; seçilen dört komşu aynı meyveye yakın adlandırmayı, çiçek-meyve gelişimini, tek meyve adını ve olgunlaşma sürecini ayırır. Yalnız genel bitki alanını paylaşan daha uzak adaylar ve başka kök dalları çıkarıldı.",
       "branch_image_ar": "ثمر العضاه وزهره",
       "what_is_ar": "يدخل فيه البرم والبرمة من ثمر العضاه والأراك والعلف والسلم والعرفط والطلح وزهرة الحبلة وحب العنب الصغير",
+      "what_is_not_ar": "لا يدخل فيه القدر ولا القراد ولا البريم ذو اللونين",
       "source_phrase_ar": "البرم وأطيبها ريحا برم السلم؛ برمة العرفط؛ أبرم الطلح؛ البرمة الزهرة التي تخرج فيها الحبلة؛ البرم حبوب العنب (maqayis)؛ البرم ثمر الأراك وشبهه من الأشجار (ayn)؛ البرم ثمر العلف (jamhara)؛ البرم ثمر العضاه؛ برمة السلم أطيب البرم ريحا (sihah)؛ المبرم الذي يجني البرم وهو ثمر الأراك (tahdhib)",
       "sources": [
         "MQ",
@@ -933,68 +1025,63 @@
         "SI",
         "TA"
       ],
-      "source_note": {
-        "MQ": "Bir akasya türünün ilk meyvesini çıkarmaya başlaması ayrı bir eylem olarak kaydedilmiştir. Çok küçük ve yeni oluşmuş üzüm taneleri, ağaç meyvesi anlamından ayrı bir kapsam uzantısıdır.",
-        "TA": "Meyveyi, özellikle misvak elde edilen ağaçtan toplayan kişi için türemiş bir ad bulunur."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000110/B006",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesinin yarısı taşı açıkça belirten tencereleri destekler, ancak diğer yarısı kabı malzeme belirtmeden yalnız tencere diye verir. Taş tencere çerçevesi bu yüzden ana kimlik olarak korunabilir; genel kap anlatımı kaynak varyantı, yapan ve yontan usta ise bağımlı kişi kullanımıdır.",
+        "boundary_note": "Çekirdek taş tenceredir; malzemesiz tencere anlatımı kaynak varyantı, bu kapları yontan usta ise türemiş kullanımdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın adın taş tencere çekirdeğini verir; malzemeyi belirtmeyen kaynak varyantını ve zanaatkar türevini çekirdeğe karıştırmaz."
+      },
       "concept_map": {
-        "definition": "Taştan yapılmış pişirme kabı ve bu kapların tekil ya da çoğul adlarıdır; ayrıca bu taş kapları biçimlendirip yontan ustayı belirtir.",
+        "definition": "Taştan yapılmış veya taştan oyulmuş bir pişirme kabıdır; bazı kaynak anlatımlarında malzeme belirtilmeden yalnız tencere denir. Bu kapları biçimlendirip yontan usta, kap adından türemiş bağlı bir kullanımdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Taştan yapılmış, yemek pişirmede kullanılan kabı belirtir.",
+            "statement": "Kap, taştan yapılmış veya oyulmuş bir tenceredir.",
             "claim_ids": [
-              "lu_025"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "associated_use",
-            "statement": "Taş pişirme kaplarının farklı sayılardaki çoğul biçimlerini kapsar.",
+            "role": "source_variant",
+            "statement": "Bazı kaynak anlatımlarında taş malzemesi belirtilmeden yalnız tencere anlamı verilir.",
             "claim_ids": [
-              "lu_026",
-              "lu_027"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "associated_use",
-            "statement": "Bu kapları düzelten, biçimlendiren, kesen ve yontan ustayı adlandırır.",
+            "statement": "Bu tencereleri biçimlendiren, kesen ve taştan yontan usta ürün adına bağlı olarak nitelenir.",
             "claim_ids": [
-              "lu_028"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar taş pişirme kabını ve bu kapların çoğul adlarını ortak biçimde verir. Çoğul biçimlerden biri sayı azlığı veya çokluğuna göre ayrı kullanımlara sahip olabilir.",
+        "common_summary": "Kaynakların ortak alanı tenceredir; kaynakların yarısı bunun taştan yapılmış kap olduğunu açıklar, diğer yarısı ise malzemeyi belirtmeden genel adı verir. Aynı söz varlığında çoğul kap adları ile bu taş kapları biçimlendirip yontan ustanın adı da yer alır.",
         "common_claim_ids": [
-          "lu_025",
-          "lu_026",
-          "lu_027"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_028"
-            ],
-            "kind": "derivation",
-            "summary": "Taş kapları kesip yontarak biçimlendiren usta için ayrı bir türemiş kişi adı kaydedilmiştir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "taş pişirme kabı",
-        "applicability": "Dalın nesne çekirdeğini, malzemesini ve temel kullanımını doğrudan karşılar.",
+        "text": "taş tencere",
+        "applicability": "Dalın malzeme ve kap türünü birlikte koruyan temel, doğal karşılığıdır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Kabın taştan yapılmasını ve yemek pişirme işlevini birlikte korur.",
+          "preserves": "Tencerenin taştan yapılmış veya oyulmuş olması çekirdeğini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -1005,13 +1092,28 @@
       },
       "contextual_glosses": [
         {
-          "text": "taş pişirme kapları",
-          "usage_role": "contextual",
-          "applicability": "Aynı taş kabın çeşitli çoğul biçimlerle anıldığı bağlamlarda doğal çoğul karşılıktır.",
+          "text": "taştan oyulmuş pişirme kabı",
+          "usage_role": "explanatory",
+          "applicability": "Kabın yapıldığı malzeme ve pişirme işlevinin açıkça anlatılması gereken yerde kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Taştan yapılmış pişirme kaplarının çoğul nesne anlamını korur.",
-            "loses": "Tekil kabı ve bu kapları yapan ustayı doğrudan karşılamaz.",
+            "fit": "none",
+            "preserves": "Taş malzemeyi, oyularak biçimlenmeyi ve kap işlevini korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "tencere",
+          "usage_role": "contextual",
+          "applicability": "Kaynak anlatımının kabın malzemesini belirtmeden yalnız kap türünü verdiği bağlamda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Malzeme belirtilmeyen kaynak varyantındaki genel tencere anlamını korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -1020,13 +1122,13 @@
           ]
         },
         {
-          "text": "taş kap yontucusu",
+          "text": "taş tencere ustası",
           "usage_role": "contextual",
-          "applicability": "Taş pişirme kaplarını kesip yontarak biçimlendiren ustanın adı olarak kullanılır.",
+          "applicability": "Taş tencereleri kesen, biçimlendiren ve yontan kişiyi anlatmak için kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Ustanın taş kabı yontup biçimlendirme işlevini korur.",
-            "loses": "Kabın kendisini ve çoğul biçimlerini karşılamaz.",
+            "fit": "none",
+            "preserves": "Kapları taştan biçimlendiren ve yontan kişi anlamını korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -1039,62 +1141,81 @@
         {
           "lexical_unit_id": "lu_025",
           "rendering_kind": "ordinary",
-          "target_gloss": "taştan pişirme kabı"
+          "target_gloss": "taş tencere"
         },
         {
           "lexical_unit_id": "lu_026",
           "rendering_kind": "ordinary",
-          "target_gloss": "taş pişirme kapları"
+          "target_gloss": "taş tencereler"
         },
         {
           "lexical_unit_id": "lu_027",
           "rendering_kind": "ordinary",
-          "target_gloss": "az veya çok sayıdaki taş pişirme kapları"
+          "target_gloss": "az veya çok sayıdaki taş tencereler"
         },
         {
           "lexical_unit_id": "lu_028",
           "rendering_kind": "ordinary",
-          "target_gloss": "taş kapları yontup biçimlendiren usta"
+          "target_gloss": "taş tencere yapan ve yontan usta"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "tencere",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Yemek pişirmede kullanılan kap işlevini korur.",
-            "loses": null,
-            "adds": "Taştan yapılma şartı bulunmayan metal veya başka malzemeli kapları da kapsar.",
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_001205/B007",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Kabın taştan yapılması ve onu yontan ustanın adı bulunur.",
-          "neighbor_only": "Kapta pişen yemek veya et suyu ile kesim ve pişirme işini yürüten kişi kapsamları bulunur.",
-          "gloss": "pişirme kabı",
-          "shared_zone": "Her iki dal yemek pişirmeye yarayan kabı doğrudan adlandırır.",
-          "distinction": "Odak dal malzemeyi taşla sınırlar ve kap yontucusunu içerir; komşu dal malzemeyi sınırlamaz, pişen yemeğe ve ilgili görevlilere uzanır."
+          "focus_only": "Odak dal taş malzemeyi ve bu kapları yontan ustayı içerir.",
+          "neighbor_only": "Komşu dal her malzemeden pişirme kabına, içinde pişen yemeğe ve kesim ile pişirmeyi yürüten kişiye uzanır.",
+          "gloss": "pişirme tenceresi",
+          "shared_zone": "İki dal da yemek pişirmede kullanılan tencereyi temel nesne olarak gösterir.",
+          "distinction": "Odak dal kabı taş malzemeyle sınırlar ve taş ustasını adlandırır; komşu dal malzemeyi sınırlamaz, pişen yemek ile pişirme işini yapan kişiye de uzanır."
+        },
+        {
+          "neighbor_ref": "root_001306/B005",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal taş malzemeyi ve kabı yontan ustayı öne çıkarır.",
+          "neighbor_only": "Komşu dal küçük boy tencereyi ve iki sıkıntının yan yana gelişini anlatan atasözü kullanımını içerir.",
+          "gloss": "küçük tencere",
+          "shared_zone": "İki dal da belirli bir tencere türünün adı olarak kullanılabilir.",
+          "distinction": "Odak dalın belirleyici sınırı taş malzemedir; komşu dalın belirleyici sınırı küçük boy ve ona bağlı atasözü anlatımıdır."
         },
         {
           "neighbor_ref": "root_000063/B004",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Taştan yapılma, pişirme işlevi ve kabı yontan usta bulunur.",
-          "neighbor_only": "İçine herhangi bir şey konabilen bütün kap türlerini kapsayan genel üst alan bulunur.",
-          "gloss": "kap ve taş pişirme kabı",
-          "shared_zone": "Taş pişirme kabı, içine bir şey konan kapların genel alanına girer.",
-          "distinction": "Odak dal belirli malzeme ve pişirme işleviyle sınırlı bir kap türüdür; komşu dal bütün kapları kapsayan genel sınıftır."
+          "focus_only": "Odak dal pişirme işlevini, taş malzemeyi ve özel tencere biçimini gerektirir.",
+          "neighbor_only": "Komşu dal içine herhangi bir şey konabilen bütün kap ve kap türlerini kapsar.",
+          "gloss": "kap ve taş tencere",
+          "shared_zone": "Taş tencere de içine bir şey konan kapların genel alanına girer.",
+          "distinction": "Komşu dal üst düzey genel kap adıdır; odak dal bunun taştan yapılmış ve pişirmede kullanılan özel bir alt türüdür."
+        },
+        {
+          "neighbor_ref": "root_000259/B012",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal kabın taş oluşunu ve onu yapan ustayı belirtir.",
+          "neighbor_only": "Komşu dal tencerenin özellikle çok büyük ve dolgun görünmesini belirtir.",
+          "gloss": "büyük tencere",
+          "shared_zone": "İki dalın merkezinde yemek pişirmeye yarayan tencere bulunur.",
+          "distinction": "Odak dal malzemeye göre, komşu dal ise boyut ve dolgunluk görünümüne göre özelleşir; bu iki sınır birbirinin yerine geçmez."
+        },
+        {
+          "neighbor_ref": "root_000250/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal taştan yapılmış pişirme tenceresidir.",
+          "neighbor_only": "Komşu dal yemeğin sunulduğu geniş çanağı ve ona benzetilen küçük kuyuyu kapsar.",
+          "gloss": "pişirme kabı ve sunum çanağı",
+          "shared_zone": "İki dal yiyecek hazırlama veya sunmada kullanılan kapları gösterir.",
+          "distinction": "Odak nesne ateşte pişirmeye yarayan taş tenceredir; komşu nesne yemeğin konup sunulduğu çanaktır ve kuyu benzetmesine de uzanır."
         }
       ],
-      "neighbor_coverage_note": "Bütün komşular karşılaştırıldı; genel pişirme kabı ile en geniş kap üst alanı, dalın taş malzeme sınırını en iyi açıklayan adaylardır.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; seçilen beş komşu genel tencere, küçük ve büyük tencere, üst kap türü ve sunum çanağı sınırlarını gösterir. Sepet, eşya taşıyıcısı ve yer fırını gibi yalnız kap alanını paylaşan adaylar ile başka kök dalları yayımlanmadı.",
       "branch_image_ar": "قدر من حجر",
       "what_is_ar": "يدخل فيه البرمة والبرام والبرم للقدور الحجرية وصانع البرام ونحاتها",
+      "what_is_not_ar": "لا يدخل فيه ثمر الشجر ولا القراد وإن ذكرتهما بعض المصادر قريبا من القدر",
       "source_phrase_ar": "البرمة وهي القدر (maqayis)؛ البرام جمع البرمة وهو قدر من حجر (ayn)؛ البرمة والجمع برم وبرم وبرام قدور من حجارة (jamhara)؛ البرام جمع برمة وهي القدر (sihah)؛ البرم قدور من حجارة؛ المبرم الذي يسوي البرام وينحتها ويقطعها (tahdhib)؛ البرمة في الأصل هي القدر المبرمة وجمعها برام (mufradat)",
       "sources": [
         "MQ",
@@ -1104,71 +1225,102 @@
         "TA",
         "MU"
       ],
-      "source_note": {
-        "TA": "Taş kapları kesip yontarak biçimlendiren usta için ayrı bir türemiş kişi adı kaydedilmiştir."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000110/B007",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi kene adını, özellikle iri kene nitelemesini ve bu hayvanın sıkıca yapışmasını doğrudan birlikte verir. Birinin çok sıkı yapışmasını keneyle karşılaştıran anlatım, hayvan kimliğini değiştirmeyen bağımlı bir kullanımdır.",
+        "boundary_note": "Çekirdek özellikle iri ve sıkıca tutunan kenedir; aşırı yapışkanlık karşılaştırması yalnız bu özelliğe dayanan bağlı kullanımdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım yalın kene adını fiziksel çekirdek olarak tutar ve yapışkanlık karşılaştırmasını yalnız kendi kalıbına bağlı bir uzantı olarak verir."
+      },
       "concept_map": {
-        "definition": "Büyük veya deriye sıkıca tutunan kenedir; hayvanın güçlü yapışması, çok sıkı tutunan kimse ya da şey için benzetme ölçüsü olur.",
+        "definition": "Özellikle iri ve konağına sıkıca yapışan kene adıdır. Bu yapışkanlık, birinin bir şeye çok sıkı tutunmasını anlatan kalıplaşmış karşılaştırmaya kaynak olur.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Büyük veya konakçısına sıkıca tutunmuş keneyi belirtir.",
+            "statement": "Ad, keneyi ve özellikle iri kene türünü gösterir.",
             "claim_ids": [
-              "lu_029"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "associated_use",
-            "statement": "Keneden daha yapışkan olma biçimindeki kalıp söz, aşırı sıkı tutunmayı anlatır.",
+            "role": "specialization",
+            "statement": "Kenenin konağına sıkıca tutunması, hayvan adının belirgin niteliğidir.",
             "claim_ids": [
-              "lu_030"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "associated_use",
+            "statement": "Keneden daha sıkı yapışma karşılaştırması, bırakmayan kişi veya şey için kalıplaşmış anlatım oluşturur.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Paylaşılan anlam büyük ya da sıkıca tutunan kenedir. Kenenin konakçısına güçlü biçimde yapışması, bir kimsenin veya şeyin aşırı yapışkanlığını anlatan kalıp karşılaştırmaya temel olur.",
+        "common_summary": "Kaynaklar kene adında birleşir; bir anlatım iri oluşunu, birden çok anlatım ise sıkı yapışmasını öne çıkarır. Keneden daha sıkı yapışan biçimindeki karşılaştırma, hayvanın bu gözlenen özelliğine dayanır.",
         "common_claim_ids": [
-          "lu_029",
-          "lu_030"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "büyük ve sıkıca tutunan kene",
-        "applicability": "Hayvanın türünü, görece büyüklüğünü ve ayırt edici yapışma davranışını birlikte karşılar.",
+        "text": "iri, sıkıca yapışan kene",
+        "applicability": "Hayvanın türünü, öne çıkan büyüklüğünü ve konağa tutunma niteliğini birlikte gösterir.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Kene oluşunu, büyüklük niteliğini ve güçlü biçimde tutunmasını birlikte korur.",
+          "preserves": "Kene kimliğini, iri oluşunu ve sıkıca yapışma niteliğini korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "kene gibi yapışmak",
-          "usage_role": "contextual",
-          "applicability": "Bir kimsenin veya şeyin bırakmayacak kadar sıkı tutunduğunu bildiren benzetmeli bağlamlarda kullanılır.",
+          "text": "iri kene",
+          "usage_role": "general",
+          "applicability": "Hayvanın adı ve özellikle büyüklüğü öne çıktığında kullanılan doğal karşılıktır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Kenenin güçlü yapışmasını benzetme yoluyla korur.",
-            "loses": "Hayvanın büyük oluşunu ve doğrudan kene adını tek başına karşılamaz.",
+            "preserves": "Kene kimliğini ve iri olma özelliğini korur.",
+            "loses": "Sıkı yapışma niteliğini ve buna dayanan karşılaştırmayı açıkça göstermez.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F002"
+            "F001"
+          ]
+        },
+        {
+          "text": "kene gibi sıkıca yapışan",
+          "usage_role": "contextual",
+          "applicability": "Bir kişi veya şeyin tuttuğu yeri bırakmamasını kenenin yapışmasına benzeten bağlamda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Kenenin sıkı tutunmasını ve karşılaştırmalı yapışkanlık anlatımını korur.",
+            "loses": "Hayvanın iri oluşunu bağımsız bir tür niteliği olarak göstermez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002",
+            "F003"
           ]
         }
       ],
@@ -1176,12 +1328,12 @@
         {
           "lexical_unit_id": "lu_029",
           "rendering_kind": "ordinary",
-          "target_gloss": "büyük veya sıkıca tutunan kene"
+          "target_gloss": "iri veya sıkıca yapışmış kene"
         },
         {
           "lexical_unit_id": "lu_030",
           "rendering_kind": "ordinary",
-          "target_gloss": "keneden daha yapışkan"
+          "target_gloss": "keneden daha sıkı yapışan"
         }
       ],
       "excluded_glosses": [],
@@ -1190,36 +1342,57 @@
           "neighbor_ref": "root_000944/B004",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Kenenin sıkı yapışması ve bu özelliğe dayanan kalıp benzetme bulunur.",
-          "neighbor_only": "Kenenin zayıf veya cılız görünümü ayrıca belirtilir.",
-          "gloss": "büyük kene",
-          "shared_zone": "Her iki dal da özellikle büyük olabilen bir keneyi adlandırır.",
-          "distinction": "Odak dal yapışma davranışını ve bundan doğan benzetmeyi öne çıkarır; komşu dal aynı hayvanı zayıflık ya da büyüklük nitelemesiyle sınırlar."
+          "focus_only": "Odak dal kenenin yapışkanlığını ve bundan doğan kalıplaşmış karşılaştırmayı içerir.",
+          "neighbor_only": "Komşu dal keneyi özellikle zayıf veya iri görünümüyle niteleyen ayrı bir adı içerir.",
+          "gloss": "iri veya zayıf kene",
+          "shared_zone": "İki dal da keneyi, özellikle beden görünümüyle belirginleşen iri keneyi adlandırır.",
+          "distinction": "Hayvan kimliği büyük ölçüde örtüşür; odak dal sıkı yapışmayı ve benzetmeyi öne çıkarırken komşu dal zayıflık veya irilik nitelemesiyle sınır çizer."
         },
         {
           "neighbor_ref": "root_000965/B010",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Sıkıca tutunma özelliği ve yapışkanlık benzetmesi bulunur.",
-          "neighbor_only": "Yalnızca büyük kenelerin topluluk adı olma kapsamı bulunur.",
+          "focus_only": "Odak dal genel kene adını, sıkı tutunmayı ve yapışkanlık karşılaştırmasını da kapsar.",
+          "neighbor_only": "Komşu dal yalnız iri kenelerin toplu adıyla sınırlıdır.",
           "gloss": "iri keneler",
-          "shared_zone": "İki dalın ortak alanı büyük kenelerin adlandırılmasıdır.",
-          "distinction": "Odak dal tekil hayvanı yapışmasıyla birlikte kavrar ve benzetmeye açılır; komşu dal yalnız büyük kenelerin topluluk adıdır."
+          "shared_zone": "İki dal iri kene anlamında doğrudan örtüşür.",
+          "distinction": "Komşu dal yalnız iri kenelerin adı olarak kalır; odak dal büyüklük sınırını gevşetir ve kenenin sıkı yapışmasına dayanan anlatımı da içerir."
+        },
+        {
+          "neighbor_ref": "root_000352/B005",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal özellikle iri ve sıkıca tutunan keneyi, ayrıca yapışkanlık benzetmesini anlatır.",
+          "neighbor_only": "Komşu dal çıkıntılı bir kene türünden beden üzerindeki meme ucu benzetmelerine uzanır.",
+          "gloss": "kene ve çıkıntılı benzerleri",
+          "shared_zone": "İki dal da kene türünü veya kene görünümündeki küçük çıkıntıyı içerir.",
+          "distinction": "Odak dalda ayırıcı özellik büyüklük ve yapışmadır; komşu dalda ayırıcı özellik çıkıntılı biçim ve bu biçimin beden bölümlerine aktarılmasıdır."
         },
         {
           "neighbor_ref": "root_001039/B003",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Büyük veya yapışmış kene ve onun yapışkanlığına dayalı benzetme bulunur.",
-          "neighbor_only": "Pıhtılaşmış kan ile suda yaşayan, kan emen sülük benzeri canlı bulunur.",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal karada konağına yapışan kene türünü ve iriliğini gösterir.",
+          "neighbor_only": "Komşu dal koyu veya donmuş kanı ve suda yaşayan, kan emen kırmızı solucanı da kapsar.",
           "gloss": "yapışan kan emici",
-          "shared_zone": "Her iki dal bir konağa tutunup kan emebilen küçük canlılar alanında buluşur.",
-          "distinction": "Odak dal kenedir ve büyüklük ile yapışmayı öne çıkarır; komşu dal sülük benzeri ayrı bir canlıyı ve pıhtılaşmış kanı kapsar."
+          "shared_zone": "İki dal konağa tutunabilen ve kanla ilişkilenen küçük canlılar alanında buluşur.",
+          "distinction": "Odak canlı kenedir; komşu canlı suda yaşayabilen kan emici solucandır ve aynı dalda koyulaşmış kan anlamı da bulunur."
+        },
+        {
+          "neighbor_ref": "root_001059/B004",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal yapışan varlığın kene olmasını ve iri oluşunu gerektirir.",
+          "neighbor_only": "Komşu dal bitki, et veya yer parçası gibi çok çeşitli şeylerin bir şeye bitişik kalmasını kapsar.",
+          "gloss": "yapışma ve bitişiklik",
+          "shared_zone": "İki dal da bir varlığın başka bir şeye sıkıca tutunması veya ondan ayrılmaması durumunu içerir.",
+          "distinction": "Odak dal hayvan adıdır ve yapışmayı onun özelliği olarak taşır; komşu dal canlı türü sınırlaması olmayan genel bitişiklik alanıdır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; aynı hayvanı büyüklük bakımından adlandıran iki dal ile farklı bir kan emiciyi ayıran komşu yayımlandı.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; seçilen beş komşu iri kene adlarını, biçim benzerliğini, kan emen canlıyı ve genel yapışmayı ayırır. Kurumuş kan, yaralı deve sırtı ve renk gibi yalnız uzak çağrışım taşıyan adaylar ile başka kök dalları yayımlanmadı.",
       "branch_image_ar": "قراد لاصق",
       "what_is_ar": "يدخل فيه البرام للقراد الكبير ومثل اللصوق به",
+      "what_is_not_ar": "لا يدخل فيه القدر ولا ثمر الشجر",
       "source_phrase_ar": "البرام وهو القراد الكبير؛ هو ألزق من برام (maqayis)؛ البرام القراد؛ لصوق البرام (jamhara)؛ البرام بالضم القراد (sihah)",
       "sources": [
         "MQ",
@@ -1230,56 +1403,95 @@
     },
     {
       "branch_ref": "root_000110/B008",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Tek kaynak ifadesi, küçük dağ doruklarını açıkça verir ve ardından bunları kum dağları veya kum tepeleri olarak açıklar. Verilen dal çerçevesi hem küçüklük koşulunu hem dağ ve kum arazisi ayrımını korur.",
+        "boundary_note": "Dal yüksek veya büyük dağları değil küçük doruk ve tepecikleri, özellikle kumdan oluşan yükseltileri kapsar."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın coğrafya adını küçük dağ dorukları çekirdeğinde tutar ve kum tepelerini bunun açık özelleşmesi olarak verir."
+      },
       "concept_map": {
-        "definition": "Dağlarda veya kumluk alanda yükselen küçük sivri tepeciklerin toplu adıdır; tek bir küçük kum tepesi de bunun tekili olarak anlaşılır.",
+        "definition": "Küçük dağ dorukları veya tepeciklerdir. Kaynak açıklaması özellikle kumdan oluşan küçük dağ ve tepeleri bu coğrafi adın kapsamına alır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Dağlık veya kumluk arazide bulunan küçük sivri tepeleri topluca belirtir.",
+            "statement": "Coğrafi biçim, küçük bir dağ doruğu veya tepeciktir.",
             "claim_ids": [
-              "lu_031"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Kumdan oluşan küçük dağ veya kum tepesi, çekirdeğin açıkça belirtilen özel türüdür.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Anlam, dağların küçük sivri tepeleri veya kumdan oluşmuş küçük yükseltilerdir; verilen biçim bunları topluluk olarak adlandırır.",
-        "common_claim_ids": [
-          "lu_031"
+        "common_summary": "Dal tek bir sözlük tanıklığına dayanır; küçük dağ doruğu çekirdeği ile kumdan oluşan yükselti özelleşmesi aynı coğrafi anlam içinde ayrıştırılır.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek tanıklık, çoğulu küçük dağ dorukları olarak açıklar ve özellikle kum dağlarını bu adın kapsamına yerleştirir."
+          }
         ],
-        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
         "text": "küçük dağ veya kum tepeleri",
-        "applicability": "Hem kayalık dağ çevresindeki hem de kumluk alandaki küçük sivri yükseltileri kapsar.",
+        "applicability": "Küçük dağ doruklarını ve bunların kumdan oluşan özel türünü birlikte gösterir.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Yükseltilerin küçük oluşunu, tepe biçimini ve dağ ya da kum alanında bulunmasını korur.",
+          "preserves": "Küçük yükselti koşulunu, dağ doruğunu ve kum tepesi özelleşmesini korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "küçük kum tepeleri",
-          "usage_role": "contextual",
-          "applicability": "Yükseltilerin özellikle kumdan oluştuğunun belirtildiği arazi bağlamlarında kullanılır.",
+          "text": "küçük dağ dorukları",
+          "usage_role": "general",
+          "applicability": "Yükseltinin küçük bir dağın tepesi veya doruğu olarak anlatıldığı bağlamda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Küçük tepe biçimini ve kumdan oluşma özelliğini korur.",
-            "loses": "Kayalık dağlardaki küçük sivri tepeleri dışarıda bırakır.",
+            "preserves": "Küçük dağ doruğu çekirdeğini korur.",
+            "loses": "Kumdan oluşma özelleşmesini açıkça göstermez.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F001"
+          ]
+        },
+        {
+          "text": "küçük kum tepeleri",
+          "usage_role": "contextual",
+          "applicability": "Küçük yükseltilerin kumdan oluştuğunun açık olduğu arazi bağlamında kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Kumdan oluşan küçük yükselti özelleşmesini korur.",
+            "loses": "Kum dışındaki küçük dağ doruklarını kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
           ]
         }
       ],
@@ -1287,66 +1499,77 @@
         {
           "lexical_unit_id": "lu_031",
           "rendering_kind": "ordinary",
-          "target_gloss": "küçük dağ veya kum tepeleri"
+          "target_gloss": "küçük dağ dorukları veya kum tepeleri"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "dağ",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Yeryüzündeki belirgin yükselti alanını genel olarak korur.",
-            "loses": null,
-            "adds": "Küçüklük ve sivri tepecik sınırı bulunmayan bütün dağları kapsar.",
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000298/B001",
-          "relation_type": "near_neighbor",
+          "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Dağ veya kum alanındaki küçük sivri tepelerin topluluk adı bulunur.",
-          "neighbor_only": "Yerden yükselen tümsek, tepe veya kalın yükseltiyi boyut ve malzeme sınırı olmadan kapsar.",
-          "gloss": "küçük tepeler ve yükselti",
-          "shared_zone": "Her iki dal yeryüzünün çevresine göre yükselmiş bölümünü anlatır.",
-          "distinction": "Odak dal küçük, sivri ve çoğul tepelerle sınırlıdır; komşu dal herhangi bir yer yükseltisini daha genel biçimde kapsar."
+          "focus_only": "Odak dal küçük dağ doruklarını ve özellikle kum tepelerini adlandırır.",
+          "neighbor_only": "Komşu dal topraktan yükselen her türlü tümsek, tepe ve kum kabartısını daha geniş ölçekte kapsar.",
+          "gloss": "yerden yükselen tepe",
+          "shared_zone": "İki dal da çevresindeki araziden yükselen küçük tepe veya kum yükseltisini içerir.",
+          "distinction": "Komşu dal genel yükselmiş arazi biçimidir; odak dal küçüklük ve dağ doruğu kimliğini korur, kum tepelerini özel olarak belirtir."
         },
         {
           "neighbor_ref": "root_000052/B003",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Birden çok küçük sivri dağ veya kum tepesi bulunur.",
-          "neighbor_only": "Yaklaşık bir mil genişliğinde olabilen, çevresinden ayrı tek bir kum sırtı bulunur.",
+          "focus_only": "Odak dal tek tek küçük doruk veya tepeciklerden oluşur.",
+          "neighbor_only": "Komşu dal yaklaşık bir mil genişliğinde olabilen, çevresinden ayrılmış uzun kum sırtını gösterir.",
           "gloss": "kum tepesi ve kum sırtı",
-          "shared_zone": "Her iki dal kumdan oluşan belirgin arazi yükseltilerini kapsar.",
-          "distinction": "Odak dal küçük tepelerin topluluk adıdır; komşu dal daha uzun, geniş ve çevresinden ayrılmış tek bir kum sırtını belirtir."
+          "shared_zone": "İki dal kumdan oluşan ve çevresindeki araziden yükselen yer biçimlerini anlatır.",
+          "distinction": "Odak biçim küçük ve doruk benzeridir; komşu biçim uzamış, ayrık ve belirgin ölçüde geniş bir kum sırtıdır."
         },
         {
           "neighbor_ref": "root_000817/B001",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Küçük dağ veya kum tepeleri bulunur.",
-          "neighbor_only": "Göğe doğru yükselen heybetli dağlar ve yüksek doruklar bulunur.",
-          "gloss": "küçük tepeler ve yüksek doruklar",
-          "shared_zone": "Her iki dal da dağlık arazinin yükselen tepe ve doruk biçimlerini konu edinir.",
-          "distinction": "Odak dal küçüklüğü ve kum tepesi olasılığını şart koşar; komşu dal yüksekliği ve göğe doğru uzanan büyük dorukları öne çıkarır."
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dalın ayırıcı koşulu dorukların küçük olması ve kumdan oluşabilmesidir.",
+          "neighbor_only": "Komşu dal göğe yükselen büyük, görkemli dağları ve yüksek sivri dorukları öne çıkarır.",
+          "gloss": "küçük ve yüksek dağ dorukları",
+          "shared_zone": "İki dal da dağın çevresinden yükselen doruk veya tepe bölümünü adlandırır.",
+          "distinction": "Odak dal küçük doruklara, komşu dal ise büyüklük ve göğe yükselme izlenimi veren yüksek dağlara yönelir; ölçek sınırları karşıttır."
+        },
+        {
+          "neighbor_ref": "root_000697/B015",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal kum yükseltisinin kendisini küçük dağ veya tepe olarak adlandırır.",
+          "neighbor_only": "Komşu dal mevcut bir tepeciğin üzerinde birikmiş kum tabakasını anlatır.",
+          "gloss": "kum tepesi ve tepe üstü kumu",
+          "shared_zone": "İki dal kum ile küçük yükselti arasındaki coğrafi ilişkiyi anlatır.",
+          "distinction": "Odak dalda kum yükseltinin yapısını oluşturur; komşu dalda kum, önceden var olan bir tepeciğin üzerinde bulunan ayrı malzemedir."
+        },
+        {
+          "neighbor_ref": "root_000871/B005",
+          "relation_type": "antonym",
+          "boundary_match": "opposed",
+          "focus_only": "Odak dal çevresindeki araziden yükselen küçük doruk ve tepecikleri gösterir.",
+          "neighbor_only": "Komşu dal düz, pürüzsüz, kimi anlatımlarda bitkisiz ve yükseltisiz araziyi gösterir.",
+          "gloss": "tepelik ve düzlük",
+          "shared_zone": "İki dal arazi yüzeyini yükselti ekseni üzerinde karşıt biçimlerde tanımlar.",
+          "distinction": "Odak dal küçük de olsa belirgin yükselti gerektirir; komşu dal yüzeyin düz ve pürüzsüz olmasını gerektirir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel yer yükseltisi, tek kum sırtı ve yüksek dağ doruğu küçük tepecik sınırını en açık gösteren üç karşılaştırmadır.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; seçilen beş komşu genel yükseltiyi, kum sırtını, yüksek dağı, tepe üstü kumunu ve düz arazi karşıtını açıklar. Yol ve vadi kıvrımları ile özel dağ adı, doruk kimliğini keskinleştirmediği için yayımlanmadı.",
       "branch_image_ar": "قنان صغار",
       "what_is_ar": "يدخل فيه البرم للقنان الصغار من الجبال وجبال الرمل",
+      "what_is_not_ar": "لا يدخل فيه القدور الحجرية وإن قرب لفظ البرمة",
       "source_phrase_ar": "البرم قنان صغار من الجبال الواحدة برمة يعني جبال الرمل (ayn)",
       "sources": [
         "AY"
       ],
-      "source_note": {}
+      "source_note": {
+        "AY": "Tek tanıklık, çoğulu küçük dağ dorukları olarak açıklar ve özellikle kum dağlarını bu adın kapsamına yerleştirir."
+      }
     }
   ],
   "root_profile": {
-    "summary": "Kök, sıkıca büküp sağlamlaştırma çekirdeğinin yanında usanma, ortak paya katılmama, iki bileşenli karışım, bitki ürünü, taş kap, yapışan kene ve küçük tepe gibi birbirinden belirgin biçimde ayrılmış ad alanları taşır.",
+    "summary": "Bu kök, sağlam bükme ve kesinleştirme; bıkma ve bezdirme; paylı oyuna katılmayan kişi; iki renk veya tür karışımı olmak üzere belirgin soyut ve toplumsal dallar taşır. Ayrıca dikenli ağaç ürünü, taş tencere, sıkıca yapışan kene ve küçük dağ ya da kum tepesi gibi birbirinden ayrılmış somut adları kapsar.",
     "polysemy": "polysemic",
     "organization": "multi_branch"
   },

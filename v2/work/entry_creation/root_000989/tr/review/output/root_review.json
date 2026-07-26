@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dalların kimliğini, kapsamını ve sözlüksel karşılıklarını genel olarak kanıtla uyumlu kuruyor. Ancak B005 kaynak sentezi, yayın tekrarlı hareketi ile sesi arasındaki açık kaynak ayrımının yalnızca hareket tarafını aktarıyor.",
+  "issues": [
+    {
+      "target_ref": "root_000989/B005",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, yayla ilgili kullanımı bir kaynakta belirli aralıklarla yapılan titreşim, diğer kaynaklarda ise yayın sesi olarak verir. Ortak özet yalnızca tekrarlı hareketi anarak ses çözümlemesini dışarıda bırakıyor ve bu açık kaynak ayrımını eksik yansıtıyor.",
+      "smallest_correction": "Ortak özetteki yayın tekrarlı hareketi ifadesini yayın tekrarlı hareketi veya sesi olarak değiştir; diğer bütün alanları koru."
+    }
+  ]
+}

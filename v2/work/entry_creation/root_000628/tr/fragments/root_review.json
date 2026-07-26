@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "79f3b07ea1d352e35f5c4868819f6e74bc09fa92328a01501cd5603e9e370fb1",
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dal kimliklerini ve temel kapsamları genel olarak kanıta uygun koruyor. Ancak bir sözlüksel karşılık özel gönderimi gereksiz biçimde genelliyor ve bir kaynak özeti yalnız tek aktarımda bulunan uzantıyı kaynakların ortak görüşü gibi sunuyor.",
+  "issues": [
+    {
+      "target_ref": "root_000628/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_006"
+      ],
+      "evidence_conflict": "lu_006, nakış ve resimlerin özellikle Kâbe'yi süslediğini bildiriyor; \"kutsal yapıyı süsleyen\" karşılığı bu özel gönderimi bütün kutsal yapılara genişletiyor.",
+      "smallest_correction": "lu_006 target_gloss değerini \"Kâbe'yi süsleyen nakışlar ve resimler\" olarak değiştirin."
+    },
+    {
+      "target_ref": "root_000628/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, başka yanıltma biçimlerine benzetme uzantısını kaynakların birleştiği bir nokta olarak sunuyor. Oysa bc_001 içinde süslü ve aldatıcı söz tahdhib ile mufradat tarafından desteklenirken her türlü perdelenmiş ve sahteleştirilmiş şeye benzetme yalnız sihah aktarımında yer alıyor.",
+      "smallest_correction": "common_summary metninde ortak çekirdeği süslü ve aldatıcı sözle sınırlandırın; genel yanıltma ve sahteleştirme uzantısını ise yalnız bir aktarımın eklediğini açıkça belirtin."
+    }
+  ]
+}

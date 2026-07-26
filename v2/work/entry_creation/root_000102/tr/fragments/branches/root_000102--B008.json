@@ -1,28 +1,45 @@
 {
-  "root_inputs_sha256": "bbaa44ef1911ac985cf9967ae7c4d3f712f9d1b49b4f9713377e7c05470fd091",
+  "root_inputs_sha256": "06af86ba0fdaa4a27dc642740e29ca129ce7f0f3b6c32699dbe3862692999109",
   "root_id": "root_000102",
   "branch_id": "B008",
   "language": "tr",
   "image_transliteration": "berha inde hata'i'r-rami",
-  "summary": "Bir okçu hedefi vuramadığında ona söylenen, başarısız atışı işaretleyen kalıplaşmış bir ünlemdir.",
+  "summary": "Bir atıcının hedefi ıskalaması üzerine söylenen geleneksel sesleniştir; bir kaynak çeşidi benzer seslenişi şaşma ve hayranlık bildiren kullanım alanına da taşır.",
   "concept_map": {
-    "definition": "Bir okçu hedefi vuramadığında ona söylenen, başarısız atışı işaretleyen kalıplaşmış bir ünlemdir.",
+    "definition": "Bir atıcının hedefi ıskalaması üzerine söylenen geleneksel sesleniştir; bir kaynak çeşidi benzer seslenişi şaşma ve hayranlık bildiren kullanım alanına da taşır.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Okçunun atışı hedefi ıskaladığında, bu başarısızlığı karşılayan kalıplaşmış söz söylenir.",
+        "statement": "Sesleniş, atıcının hedefi vuramayıp ıskaladığı anda söylenir.",
         "claim_ids": [
-          "lu_035"
+          "bc_001"
+        ]
+      },
+      {
+        "facet_id": "F002",
+        "role": "source_variant",
+        "statement": "Toplu kaydın bir çeşidinde benzer sesleniş şaşma ve hayranlık bildirmek için de kullanılır.",
+        "claim_ids": [
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Kaynaklar sözü okçunun atışı hedefi bulamadığında verilen kalıplaşmış tepki olarak açıklar. İsabet anında söylenen hayranlık sözüyle karşıtlık kurması, kullanım sınırını belirler.",
+  "identity_judgment": {
+    "status": "qualified",
+    "rationale": "Kaynak ifadesinin ana ve ortak bölümü, atıcının hedefi ıskalaması üzerine söylenen özel seslenişi destekler; aynı toplu ifade ayrıca benzer bir biçimin şaşma ve hayranlık için kullanılabildiğini kaydeder.",
+    "boundary_note": "Dalın çekirdeği atışın ıskalanmasına bağlı sesleniştir; daha geniş hayranlık kullanımı ayrı bir kaynak çeşidi olarak tutulmalıdır."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "non_bare",
+    "note": "Tanım yalnızca kaydedilmiş özel seslenişi kapsar; bunu genel bir ıskalama fiiline veya her türlü ünleme genişletmez."
+  },
+  "source_summary": "Toplu kaynak kaydı, atıcının ıskalamasında söylenen seslenişi hedefi vurunca söylenen karşılıkla ayırır; ayrıca bir çeşit, benzer söyleyişi şaşma ve hayranlık alanına genişletir.",
   "source_synthesis": {
-    "common_summary": "Kaynaklar sözü okçunun atışı hedefi bulamadığında verilen kalıplaşmış tepki olarak açıklar. İsabet anında söylenen hayranlık sözüyle karşıtlık kurması, kullanım sınırını belirler.",
+    "common_summary": "Toplu kaynak kaydı, atıcının ıskalamasında söylenen seslenişi hedefi vurunca söylenen karşılıkla ayırır; ayrıca bir çeşit, benzer söyleyişi şaşma ve hayranlık alanına genişletir.",
     "common_claim_ids": [
-      "lu_035"
+      "bc_001"
     ],
     "source_details": [],
     "supporting_claim_ids": [],
@@ -34,24 +51,25 @@
     {
       "lexical_unit_id": "lu_035",
       "rendering_kind": "ordinary",
-      "target_gloss": "ıskaladın!; hedefi vuramayan okçuya söylenen söz"
+      "target_gloss": "atıcı hedefi ıskaladığında söylenen sesleniş"
     }
   ],
   "glosses": {
-    "semantic_definition": "Bir okçu hedefi vuramadığında ona söylenen, başarısız atışı işaretleyen kalıplaşmış bir ünlemdir.",
+    "semantic_definition": "Bir atıcının hedefi ıskalaması üzerine söylenen geleneksel sesleniştir; bir kaynak çeşidi benzer seslenişi şaşma ve hayranlık bildiren kullanım alanına da taşır.",
     "concept": {
       "rank": 1,
-      "text": "ıskalayan okçuya söylenen ünlem",
+      "text": "ıskada söylenen sesleniş; kaynakta benzer biçimle hayranlık",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Atışın hedefi bulmaması üzerine okçuya yöneltilen özel tepki sözünü eksiksiz açıklar.",
+      "applicability": "İlk bölüm atıcının hedefi ıskaladığı ana, ikinci bölüm ise benzer biçimli kaynak çeşidinin şaşma ve hayranlık işlevine karşılık gelir.",
       "facet_ids": [
-        "F001"
+        "F001",
+        "F002"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Okçuyu, başarısız atışı ve bu olay üzerine söylenen kalıplaşmış tepkiyi korur.",
+        "preserves": "Iskaya bağlı temel seslenişi, hayranlık bildiren benzer biçimli kaynak çeşidinden ayırarak korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -60,17 +78,35 @@
     "contextual": [
       {
         "rank": 2,
-        "text": "ıskaladın!",
+        "text": "Iska!",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Okçunun hedefi vuramadığı anda doğrudan tepki olarak kullanılabilecek doğal karşılıktır.",
+        "applicability": "Atıcının hedefi vuramadığı anda sonucu bildiren kısa ve doğal Türkçe sesleniş olarak kullanılır.",
         "facet_ids": [
           "F001"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Atışın hedefi bulmadığını ve sözün doğrudan okçuya yöneltildiğini korur.",
+          "preserves": "Hedefin ıskalandığı anda söylenen kısa sesleniş işlevini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        }
+      },
+      {
+        "rank": 3,
+        "text": "Ne şaşırtıcı!",
+        "loanword_status": "none",
+        "usage_role": "contextual",
+        "selection_role": "contextual_gloss",
+        "applicability": "Kaydedilmiş ikincil kullanımda bir kişi veya durum karşısındaki şaşma ve hayranlığı bildirir.",
+        "facet_ids": [
+          "F002"
+        ],
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Şaşma ve hayranlık bildiren ikincil sesleniş işlevini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -80,17 +116,18 @@
     "selected": [
       {
         "rank": 1,
-        "text": "ıskalayan okçuya söylenen ünlem",
+        "text": "ıskada söylenen sesleniş; kaynakta benzer biçimle hayranlık",
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Atışın hedefi bulmaması üzerine okçuya yöneltilen özel tepki sözünü eksiksiz açıklar.",
+        "applicability": "İlk bölüm atıcının hedefi ıskaladığı ana, ikinci bölüm ise benzer biçimli kaynak çeşidinin şaşma ve hayranlık işlevine karşılık gelir.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Okçuyu, başarısız atışı ve bu olay üzerine söylenen kalıplaşmış tepkiyi korur.",
+          "preserves": "Iskaya bağlı temel seslenişi, hayranlık bildiren benzer biçimli kaynak çeşidinden ayırarak korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -98,17 +135,35 @@
       },
       {
         "rank": 2,
-        "text": "ıskaladın!",
+        "text": "Iska!",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Okçunun hedefi vuramadığı anda doğrudan tepki olarak kullanılabilecek doğal karşılıktır.",
+        "applicability": "Atıcının hedefi vuramadığı anda sonucu bildiren kısa ve doğal Türkçe sesleniş olarak kullanılır.",
         "facet_ids": [
           "F001"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Atışın hedefi bulmadığını ve sözün doğrudan okçuya yöneltildiğini korur.",
+          "preserves": "Hedefin ıskalandığı anda söylenen kısa sesleniş işlevini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        }
+      },
+      {
+        "rank": 3,
+        "text": "Ne şaşırtıcı!",
+        "loanword_status": "none",
+        "usage_role": "contextual",
+        "selection_role": "contextual_gloss",
+        "applicability": "Kaydedilmiş ikincil kullanımda bir kişi veya durum karşısındaki şaşma ve hayranlığı bildirir.",
+        "facet_ids": [
+          "F002"
+        ],
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Şaşma ve hayranlık bildiren ikincil sesleniş işlevini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -123,40 +178,40 @@
       "neighbor_branch_id": "B002",
       "relation_type": "polarity_pair",
       "boundary_match": "opposed",
-      "focus_only": "Atışın hedefi bulmaması üzerine söylenen olumsuz tepki sözüdür.",
-      "neighbor_only": "Atışın hedefi bulması üzerine hayranlık ve beğeni bildiren olumlu tepki sözüdür.",
+      "focus_only": "Odak dal atıcının hedefi ıskalaması üzerine söylenen seslenişi belirtir.",
+      "neighbor_only": "Komşu dal atıcının hedefi vurması üzerine övgü ve hayranlıkla söylenen karşı seslenişi belirtir.",
       "expression_transliteration": "kavlu merha li'l-icab",
-      "gloss": "ıskalama ve isabet ünlemleri",
-      "shared_zone": "İki dal da okçunun atış sonucuna hemen verilen kalıplaşmış bir sözlü tepkidir.",
-      "distinction": "Bu dal başarısız atışı ve ıskalamayı işaretler; komşu dal başarılı atışı ve isabeti beğeniyle karşılar."
+      "gloss": "ıskalama ve vurma seslenişleri",
+      "shared_zone": "İkisi de atış sonucuna anında tepki veren geleneksel kısa seslenişlerdir.",
+      "distinction": "Odak ıskalama kutbuna, komşu hedefi vurma ve övgü kutbuna bağlıdır; aynı olay dizisinin karşıt sonuçlarını işaretler."
     },
     {
       "neighbor_root_id": "root_000420",
       "neighbor_branch_id": "B001",
       "relation_type": "near_neighbor",
       "boundary_match": "partial",
-      "focus_only": "Yanlış atışın ardından okçuya söylenen özel ve kalıplaşmış bir ünlemdir.",
-      "neighbor_only": "Doğru sonuca ulaşamamayı, hedefi bulamamayı ve amaç dışı eylemi genel olarak anlatır.",
+      "focus_only": "Odak dal doğrudan yanlış yapmayı değil, atıştaki yanlış sonuca verilen kalıplaşmış sözlü tepkiyi belirtir.",
+      "neighbor_only": "Komşu dal hedefi tutturamama dışında doğru yoldan sapma, istemeden yanlış yapma ve beklenmeyen sonuçları genel olarak kapsar.",
       "expression_transliteration": "mucavezatu's-savab ve ademu isabetihi",
-      "gloss": "ıskalama ve hata",
-      "shared_zone": "Her iki dal da amaçlanan hedefe veya doğru sonuca ulaşamama durumuyla ilişkilidir.",
-      "distinction": "Komşu dal başarısızlığın kendisini genel bir hata olarak adlandırır; bu dal o başarısız atış üzerine söylenen tepki sözüdür."
+      "gloss": "ıskalama ve yanlış yapma",
+      "shared_zone": "Atıcının amaçladığı hedefi vuramaması, genel yanlış veya başarısız sonuç alanıyla kesişir.",
+      "distinction": "Komşunun çekirdeği yanlışın kendisidir; odak ise yalnız bu yanlışın atışta gerçekleşmesine verilen özel sesleniştir."
     },
     {
-      "neighbor_root_id": "root_000651",
-      "neighbor_branch_id": "B003",
-      "relation_type": "thematic",
-      "boundary_match": "thematic_only",
-      "focus_only": "Atış sonucuna verilen sözlü tepkiyi adlandırır, okun hareket biçimini değil.",
-      "neighbor_only": "Okun hedefi aşarak arkasına düşmesi gibi belirli bir ıskalama yolunu anlatır.",
-      "expression_transliteration": "mucavezatu'l-gaye ve'l-hata anha",
-      "gloss": "hedefi aşan ok ve ıskalama sözü",
-      "shared_zone": "İki dal aynı okçuluk sahnesinde hedefi bulamayan bir atışla bağlantılıdır.",
-      "distinction": "Bu dal ıskalamaya verilen ünlemdir; komşu dal ise okun hedefin ötesine geçmesiyle oluşan belirli fiziksel hareketi ifade eder."
+      "neighbor_root_id": "root_000458",
+      "neighbor_branch_id": "B018",
+      "relation_type": "same_field",
+      "boundary_match": "field_only",
+      "focus_only": "Odak dal okun nereye gittiğini değil, hedefin ıskalanması üzerine söylenen seslenişi anlatır.",
+      "neighbor_only": "Komşu dal okun hedefin arkasına geçmesi veya oraya düşmesi biçimindeki özel yörünge sonucunu anlatır.",
+      "expression_transliteration": "dbr alshm alhdf",
+      "gloss": "okun hedefi ıskalaması",
+      "shared_zone": "Her ikisi de atışın hedefte sonuçlanmaması ve okun hedefi tutturamaması alanına bağlıdır.",
+      "distinction": "Komşu okun hedef arkasına geçişini betimler; odak atış sonucuna söylenen sözü adlandırır ve belirli bir yörünge şartı koymaz."
     }
   ],
   "neighbor_coverage": {
     "assessment": "complete",
-    "note": "Adayların tümü incelendi; isabet karşıtı ünlem, genel hata ve hedefi aşan okla kurulan üç yararlı ilişki yayımlandı."
+    "note": "Bütün adaylar değerlendirildi; seçilenler vurma karşıtlığını, genel yanlış kavramını ve okun hedef arkasına geçmesini ayırır, diğerleri yalnız sesleniş, atış veya uzak tema ortaklığı taşır."
   }
 }

@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar çıktısı genel olarak dal kimliklerini ve kapsam sınırlarını koruyor. Ancak B002 ve B003 concept_gloss alanları, kendi bağlı oldukları facet listesindeki çekirdek veya uzantı kapsamını görünür kısa karşılıkta eksik bırakıyor. Bu nedenle yalnız bu iki concept_gloss alanında sınırlı onarım gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_003257/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, hem kılıçla vurmayı hem de tarafların kılıçlarla karşılıklı çarpışmasını verir. Mevcut concept_gloss metni yalnız 'kılıçla çarpışmak' diyor; hata profili de tek taraflı vurmayı açıkça söylemediğini kabul ettiği halde F001 ve F002'ye birlikte bağlı.",
+      "smallest_correction": "B002 concept_gloss alanında text değerini 'kılıçla vurmak veya çarpışmak' yap; applicability ve error_profile metinlerini hem tekil vurmayı hem karşılıklı çarpışmayı koruyacak biçimde güncelle, facet_ids listesini koru."
+    },
+    {
+      "target_ref": "root_003257/B003",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, kılıcı olan kişiyi, üzerinde kılıç bulunanı ve kılıçları savunma dayanağı olan topluluğu birlikte verir. Mevcut concept_gloss 'kılıçlı kişi' diyerek topluluk yönünü görünür karşılıkta düşürüyor; buna rağmen F001 ve F002'ye birlikte bağlı.",
+      "smallest_correction": "B003 concept_gloss alanında text değerini 'kılıçlı kişi veya topluluk' yap; applicability ve error_profile metinlerini kişi ve topluluk kapsamını birlikte koruyacak biçimde güncelle, facet_ids listesini koru."
+    }
+  ]
+}

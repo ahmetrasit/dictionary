@@ -1,0 +1,63 @@
+{
+  "inputs_sha256": "5e96b7ea65963d60018eea42b2859100ab62dfd016b1ef50b1e42c571596217e",
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dalların genel ayrımını koruyor; ancak uygunluk dalındaki bir komşuluk ilişkisi yalnızca tanığın olumsuz kuruluşuna dayanılarak gereksiz yere daraltılmıştır. Ayrıca kişi ve yer adı dallarında kanıtın verdiği sabit adlar, kimlik için gerekli oldukları halde genel betimlemelere çevrilmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_000876/B003",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Odak dal bir şeyin kişiye uygun düşmesini, root_000637/B004 sınır kartı da uygunluk ve yakışmayı anlatır. Mevcut ayrım, komşu tanığın olumsuz cümlede geçmesini anlam sınırı sayarak near_synonym/partial seçiyor; oysa olumluluk ile olumsuzluk çekirdek anlamı veya ikame edilebilirliği değiştirmez.",
+      "smallest_correction": "root_000637/B004 ilişkisini synonym/exact olarak düzeltin; focus_only, neighbor_only ve distinction metinlerinden olumlu ve olumsuz tanık farkını anlamsal sınır gibi sunan ifadeleri çıkarıp ortak kişiye uygunluk çekirdeğini belirtin."
+    },
+    {
+      "target_ref": "root_000876/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt belirli kişi adlarını tek tek verir ve Salih'in bir peygamber adı olduğunu bildirir. Tanım ile çekirdek yüz ise bunları kimliği belirsiz kök türevleri olarak genelleştirerek bu özel ad dalının sabit göndergelerini gizler.",
+      "smallest_correction": "Tanım ve ilgili yüzlerde kişi adlarını Türkçe aktarımıyla tek tek belirtin ve Salih'in peygamber adı olduğunu açıkça koruyun; dalı üretken bir genel kişi adı anlamı gibi göstermeyin."
+    },
+    {
+      "target_ref": "root_000876/B004",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "lu_012 kanıtı Salih, Suleyh ve Muslih biçimlerinin kişi adı olduğunu ve Salih'in peygamber adı olduğunu ayırt eder. Hedef karşılık yalnızca bu kökten türemiş kişi adları diyerek kimliğin gerekli olduğu bir özel ad birimini genel bir yer tutucuya dönüştürür.",
+      "smallest_correction": "lu_012 hedef karşılığında üç kişi adını Türkçe aktarımıyla belirtin ve bunlardan Salih'in peygamber adı olduğunu söyleyin."
+    },
+    {
+      "target_ref": "root_000876/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt sabit olarak bir biçimin Mekke'nin adı, diğerinin Meysan'daki bir nehrin adı olduğunu bildirir. Tanım ile çekirdek yüzler bu kimlikleri belirli bir kent ve belirli bir nehir diye genelleştirerek özel ad dalının asıl göndergelerini kaybeder.",
+      "smallest_correction": "Tanım ve ilgili yüzlerde kent göndergesini Mekke, nehir göndergesini Meysan'daki nehir olarak açıkça belirtin; iki kullanımın genel kent veya nehir adı üretmediği sınırı koruyun."
+    },
+    {
+      "target_ref": "root_000876/B005",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_013",
+        "lu_014"
+      ],
+      "evidence_conflict": "lu_013 doğrudan Mekke adını, lu_014 ise Meysan'daki nehri tanımlar. Mevcut hedef karşılıklar yalnızca belirli bir kent ve belirli bir nehir diyerek söz konusu özel adların hangi göndergeleri adlandırdığını yayımdan kaldırır.",
+      "smallest_correction": "lu_013 hedef karşılığını Mekke'nin özel adı, lu_014 hedef karşılığını Meysan'daki bir nehrin özel adı olarak somutlaştırın."
+    }
+  ]
+}

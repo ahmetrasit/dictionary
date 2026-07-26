@@ -1,0 +1,40 @@
+{
+  "verdict": "editorial_review",
+  "summary": "B008 dalında teknik kök harfi sınıfı gereğinden geniş bir karşılıkla aktarılmıştır. B009 dalındaki kavram karşılığı ise kanıtta bağımsız olarak verilen yalın yeme anlamını dışarıda bırakmaktadır.",
+  "issues": [
+    {
+      "target_ref": "root_001365/B008",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, sözcüğün kökünde iki zayıf harf ya da bir zayıf harfle bir ikiz harf bulunmasına dayalı belirli bir dil bilgisi sınıfını bildirir. Kavram haritasındaki \"değişken kök harfi\" ifadesi bu teknik sınıfı herhangi bir nedenle değişebilen kök harflerine açarak gereğinden genişletir.",
+      "smallest_correction": "Kavram haritasındaki \"değişken kök harfi\" ifadelerini, kanıttaki teknik sınıfı açıklayan \"zayıf kök harfi\" karşılığıyla değiştirin; iki zayıf harf ile bir zayıf ve bir ikiz harf seçeneklerini aynen koruyun."
+    },
+    {
+      "target_ref": "root_001365/B008",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_034",
+        "lu_035"
+      ],
+      "evidence_conflict": "lu_034 ve lu_035, belirli zayıf kök harfi birleşimlerini ve ayrı olarak harfin harfe katılmasını bildirir. İki sözlüksel karşılıktaki \"değişken kök harfi\" anlatımı, bu teknik harf türünü doğru sınırla aktarmamaktadır.",
+      "smallest_correction": "lu_034 ve lu_035 karşılıklarında \"değişken kök harfi\" yerine \"zayıf kök harfi\" kullanın; harf kaynaşması açıklamasını değiştirmeyin."
+    },
+    {
+      "target_ref": "root_001365/B009",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 yalın yeme anlamını bağımsız olarak verir; türleri karıştırarak çok yeme ve hiçbir şey bırakmama ise daha özel kullanımlardır. Mevcut kavram karşılığı yalnız bu özel kullanımı gösterdiği hâlde bütün yüzleri kayıpsız koruduğunu belirtmektedir.",
+      "smallest_correction": "Kavram karşılığını \"yemek; türleri karıştırarak çok ve eksiksiz tüketmek\" biçiminde genişletin ve uygulanabilirlik ile hata profilini yalın yeme anlamının da korunduğunu gösterecek biçimde uyarlayın."
+    }
+  ]
+}

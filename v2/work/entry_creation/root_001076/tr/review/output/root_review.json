@@ -1,0 +1,51 @@
+{
+  "verdict": "repair",
+  "summary": "Girdi genel olarak kanıtla uyumludur; ancak iki sözcük birimi karşılığında anlam genişlemesi, bir komşu sınırında yön ilişkisi hatası ve erken öğünün karşıtı konusunda iki alanı etkileyen aşırı genelleme vardır.",
+  "issues": [
+    {
+      "target_ref": "root_001076/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_002",
+        "lu_008"
+      ],
+      "evidence_conflict": "lu_002 yalnızca günün ilk vaktini bildirirken karşılık bu birime ayrıca gidiş anlamı yüklüyor. lu_008 ise sabahları ve akşamları birinin yanına gelmeyi bildirirken karşılık çift yönlü gidip gelme anlamı ekliyor.",
+      "smallest_correction": "lu_002 karşılığını \"günün ilk vakti\", lu_008 karşılığını da \"sabahları ve akşamları yanına gitmek\" olarak düzeltin."
+    },
+    {
+      "target_ref": "root_001076/B003",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_001431/B001 için neighbor_only metni yağmur suyunun buluttan göğe döküldüğünü söylüyor. Komşu sınır kartı ise gökten veya buluttan dökülen suyu anlatır; mevcut yön ilişkisi kanıtı tersine çeviriyor.",
+      "smallest_correction": "İlgili neighbor_only metnini \"Gökten veya buluttan dökülen yağmur suyunu ve yağma eylemini bildirir.\" olarak düzeltin."
+    },
+    {
+      "target_ref": "root_001076/B004",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F001, erken öğünü herhangi bir daha geç öğünün karşısına koyuyor. Kanıtın verdiği özel karşıt akşam yemeğidir; mevcut ifade kapsamı gereksiz biçimde bütün sonraki öğünlere genişletiyor.",
+      "smallest_correction": "F001 içindeki \"daha geç yenilen öğünün karşısında duran\" sözünü \"akşam yemeğinin karşısında duran\" olarak değiştirin."
+    },
+    {
+      "target_ref": "root_001076/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kaynakta akşam yemeğiyle kurulan belirli karşıtlığı belirsiz bir \"daha geç yenilen öğün\" karşıtlığına dönüştürüyor ve böylece kaynak ayrıntısını genişletiyor.",
+      "smallest_correction": "common_summary içindeki \"daha geç yenilen öğünden\" sözünü \"akşam yemeğinden\" olarak değiştirin."
+    }
+  ]
+}

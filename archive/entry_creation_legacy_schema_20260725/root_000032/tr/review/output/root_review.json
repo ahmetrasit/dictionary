@@ -1,0 +1,61 @@
+{
+  "verdict": "repair",
+  "summary": "B003'te tek bir kaynakta verilen açıklayıcı gerekçe çekirdek anlama taşınmış; B005'te ise kanıtın vermediği bir zaman sırası kurulmuş ve temel kavram karşılığı Kureyş sınırlamasını yitirmiştir. Bu alanlar düzeltilmeden kayıt yayına hazır değildir.",
+  "issues": [
+    {
+      "target_ref": "root_000032/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_009"
+      ],
+      "evidence_conflict": "lu_009'un kaynaklar arasındaki doğrudan ortak karşılığı köledir. Baskı altında ve kederli olma yalnızca bir aktarımda bu adlandırmanın gerekçesi olarak verilir; buna karşılık tanım ve F001 bu özellikleri köle göndergesinin zorunlu çekirdeği yapmaktadır.",
+      "smallest_correction": "Tanım ile F001'de çekirdeği yalnızca köle olarak kurun; baskı altında ve kederli olmayı kaynakla sınırlı açıklayıcı gerekçe olarak çekirdekten ayırın. Zorla hizmet ettirilen kişiye uzanan F002 korunabilir."
+    },
+    {
+      "target_ref": "root_000032/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_009"
+      ],
+      "evidence_conflict": "Kavram karşılığındaki 'ezilmiş köle' ifadesi, lu_009'da tek bir aktarımın gerekçelendirdiği ezilmişlik niteliğini bütün köle kullanımlarının zorunlu koşulu gibi sunuyor. Hata profili de bu ek koşulu kayıp ya da daralma olarak tanımıyor.",
+      "smallest_correction": "Kavram karşılığını 'köle veya zorla hizmet ettirilen kişi' gibi doğrudan anlam ile genişlemeyi veren bir ifadeye çevirin ve hata profilini buna göre düzeltin."
+    },
+    {
+      "target_ref": "root_000032/B005",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_013"
+      ],
+      "evidence_conflict": "lu_013 bazı aktarımlarda iki adı bir erkek ile kadın, başka bir aktarımda iki put olarak verir; ancak bu kişilerin 'önce' insan olduğu yönünde bir zaman sırası veya dönüşüm bildirmez. Tanım ve F003 kanıtta bulunmayan bu kronolojiyi ekliyor.",
+      "smallest_correction": "Tanım ile F003'ten 'önce' sözünü ve zaman sırası imasını çıkarın; yalnızca bazı aktarımların çifti bir erkek ile kadın olarak tanıttığını belirtin."
+    },
+    {
+      "target_ref": "root_000032/B005",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_013"
+      ],
+      "evidence_conflict": "Ortak özet, insan çifti ile iki put anlatımlarını 'karşıt aktarım' diye niteliyor ve insan oluşuna yine 'önce' ekliyor. lu_013 bu bildirimlerin farklı olduğunu gösterir, fakat aralarında zorunlu bir çelişki ya da kronolojik ilişki kurmaz.",
+      "smallest_correction": "Özeti kaynaklar üstü ve yansız biçimde, bazı aktarımların çifti erkek ile kadın, bir aktarımın ise iki put olarak verdiğini söyleyecek şekilde düzenleyin; 'önce' ve 'karşıt' nitelemelerini kaldırın."
+    },
+    {
+      "target_ref": "root_000032/B005",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "lu_012 çekirdeği Kureyş'e ait belirli bir putun özel adıyla sınırlar. 'Bir putun özel adı' karşılığı bu ayırt edici sınırlamayı kaldırarak herhangi bir put adını kapsayacak ölçüde genişliyor; buna rağmen hata profili kayıp olmadığını söylüyor.",
+      "smallest_correction": "Karşılığı 'Kureyş'e ait bir putun özel adı' biçiminde daraltın ve hata profilinde bu sınırlamanın korunduğunu belirtin."
+    }
+  ]
+}

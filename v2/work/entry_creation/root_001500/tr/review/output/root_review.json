@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Dalın kimliği, yalın kapsamı, kavram çekirdeği, karşılıkları ve komşu ayrımları kanıtla uyumludur. Ancak yalnızca sihah kaynağında bulunan küçültme türevleri ortak kaynak özeti içinde sunulmuş ve kaynağa özgü ayrıntı olarak belirtilmemiştir.",
+  "issues": [
+    {
+      "target_ref": "root_001500/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 içinde iki küçültme biçimi yalnızca sihah kaynağının ifadesinde geçer. Buna karşılık common_summary bu türevleri birleşik kaynak tanıklığının ortak bildirimi içinde sunuyor ve source_details alanı boş bırakıldığı için bu tekil kaynak katkısı doğru kaynağa bağlanmıyor.",
+      "smallest_correction": "common_summary alanını üç kaynağın ortaklaştığı kadın topluluğunu bildiren, tekil kadın adından ayrı biçimli çoğullar çekirdeğiyle sınırla; iki küçültme biçimini bc_001 ile desteklenen, yalnızca sihah kaynağına ait tek bir source_details satırına taşı."
+    }
+  ]
+}

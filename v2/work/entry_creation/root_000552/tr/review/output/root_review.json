@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "B004 dalinin genel cercevesi korunabilir; ancak tanim, yalnizca koyuna ait sislik belirtisini butun katilimcilara yayiyor ve lu_019 karsiligi dogum sonrasi kosulunu kosulsuzlastiriyor. Bu iki sinirli genisletme en kucuk duzeltmelerle giderilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000552/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanimdaki ortak ozne kurulusu, dol yatagi sisligini disi deveye ve kadina da uygulanabilir gosteriyor. Kanit ise sisligi yalnizca koyun veya koyun surusu icin bildiriyor; deve ve kadin icin agrima ya da hastalanma bildiriliyor.",
+      "smallest_correction": "Tanimdaki ilk cumleyi katilimci sinirini acik koruyacak bicimde duzelt: disi deve, koyun veya kadinda agrima ya da hastalanmayi belirt; sisligi ayrica yalnizca koyuna bagla. Diger kavram haritasi ogelerini degistirme."
+    },
+    {
+      "target_ref": "root_000552/B004",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_019"
+      ],
+      "evidence_conflict": "lu_019 karsiligi dogum sonrasi kosulunu butun agrima ve hastalanma kullanimlarina zorunlu olarak bagliyor. Kanit, dogum sonrasi sikayetin yaninda dol yataginda hastalik veya genel sikayet kullanimlarini da ayri olarak destekliyor.",
+      "smallest_correction": "Yalnizca lu_019 target_gloss degerini, dogum sonrasini zorunlu kilmadan sikayet veya hastaligi kapsayacak ve dogum sonrasini tipik bir kosul olarak koruyacak bicimde duzelt."
+    }
+  ]
+}

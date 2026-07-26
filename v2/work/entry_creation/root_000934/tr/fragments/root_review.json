@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": "cc83962087aaf04f2d6dddb37ed20deff1640d50e2f6ad7aaf98737caf70b4ca",
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur. Ancak B012 dalının kavram haritasında, boğazı sıkma eylemine kanıtta bulunmayan hareketi baskılama sonucu eklenmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_000934/B012",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, boğma veya kavga sırasında kişinin boğazından tutulup sıkılmasını bildirir; F001 ise buna ayrıca kişinin hareketinin baskılanması sonucunu ekler.",
+      "smallest_correction": "F001 ifadesindeki hareketin baskılanmasına ilişkin bölümü kaldırıp yalnızca boğazı kavrama, sıkma ve nefesi baskılama anlamını koruyun."
+    }
+  ]
+}

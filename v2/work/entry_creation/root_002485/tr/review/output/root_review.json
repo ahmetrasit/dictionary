@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Kayıt genel olarak iki dalı kanıta uygun ayırıyor. B001'de inci örneği için kanıt yalnızca delinmemiş olmayı verirken metin ayrıca işlenmemişlik dili ekliyor; bu desteklenmeyen küçük genişletme canlı çıktıda cerrahi olarak düzeltilecektir.",
+  "issues": [
+    {
+      "target_ref": "root_002485/B001",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B001 kanıtında inci örneği delinmemiş kalma ile sınırlıdır. Concept_map içindeki F003 ise bunu delinmemiş ve işlenmemiş kalma diye vererek kanıtta bulunmayan işlenme boyutunu ekliyor.",
+      "smallest_correction": "B001 concept_map.facets içindeki F003 statement alanından 've işlenmemiş' ifadesini çıkarıp örneği yalnızca delinmemiş kalma olarak bırak."
+    },
+    {
+      "target_ref": "root_002485/B001",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B001 kanıtında inci için desteklenen özellik delinmemiş olmasıdır. 'delinmemiş inci' glossunun applicability alanı ise delme veya işleme diye genişleyerek kanıtta bulunmayan işleme fikrini ekliyor.",
+      "smallest_correction": "B001 contextual_glosses içindeki 'delinmemiş inci' maddesinin applicability alanından 'veya işleme' ifadesini çıkarıp bağlamı delme ile sınırlı tut."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın dal ayrımları ve temel anlam haritası büyük ölçüde kanıtla uyumludur. Bununla birlikte bir komşu karşılaştırması yanlış dalın sınırlarını kullanmakta, karma dalda yalın biçimlerin kapsamı gereğinden dar gösterilmekte ve iki ayırt edici kaynak kaydı sentezde yer almamaktadır. Bu dört sınırlı sorun canlı çıktıda en küçük değişikliklerle düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001615/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Sentez gömme eylemini ortaklaştırıyor, ancak bir aktarımın adlandırmayı canlı gömülen kişinin üstünde yükselen toprağın oluşturduğu ağırlıkla açıklayan ayırt edici gerekçesini aktarmıyor.",
+      "smallest_correction": "Ortak özete, bir aktarımın adlandırmayı gömülen kişinin üstündeki toprağın ağırlığıyla açıkladığını kaynak adı vermeden belirten tek bir cümle ekleyin."
+    },
+    {
+      "target_ref": "root_001615/B001",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_001585/B004 için verilen karşılaştırma, bu komşunun toprak içinde kaybolma alanını değil root_001615/B004 dalındaki yerin özne olduğu kalıplaşmış gizleme anlamını anlatıyor. Böylece komşu kimliği ile yayımlanan sınır kartı uyuşmuyor.",
+      "smallest_correction": "Yalnızca root_001585/B004 satırını korunan ilişki türüyle yeniden yazın; odak dalın insan eliyle canlı gömmesini, komşunun ise bir şeyin toprakta kaybolması veya yeryüzünde uzaklaşması gibi daha geniş alanını karşılaştırın."
+    },
+    {
+      "target_ref": "root_001615/B002",
+      "field": "lexicalization_scope",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kapsam notu yalın kullanımları yalnız ağır ve yavaş yürüyüşe, bir işte ölçülü davranmayı ise kalıplaşmış kullanımlara bağlıyor. Oysa sağlanan yalın biçimler arasında acele etmeme, ağırdan alma ve temkinle davranma anlamlarını doğrudan taşıyan birimler de vardır.",
+      "smallest_correction": "Dal türünü değiştirmeden kapsam notunu, yalın biçimlerin hem ağır yürüyüşü hem de acele etmeden ölçülü davranmayı bildirebildiğini ve kalıpların bu anlamları yürüyüş ya da iş bağlamında özelleştirdiğini söyleyecek biçimde düzeltin."
+    },
+    {
+      "target_ref": "root_001615/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım, bir işte düşünüp tartarak ve yavaş davranma anlamını yalnız kalıplaşmış kullanımlara yerleştiriyor. Kanıttaki yalın biçimler de bu genel acele etmeme ve temkin anlamını taşır.",
+      "smallest_correction": "Tanımdaki yalın-kalıplaşmış karşıtlığını kaldırın; dalın ağır yürüyüşü ve genel ölçülü davranmayı anlattığını, kalıpların bu çekirdeği belirli yürüyüş ve iş bağlamlarında gerçekleştirdiğini belirtin. Mevcut facetleri koruyun."
+    },
+    {
+      "target_ref": "root_001615/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Sentez ortak anlamları veriyor, ancak bir aktarımın teüde biçimindeki t sesinin aslını vava bağlarken bu biçimin burada ele alınmasına koyduğu ayırt edici kayıt ve sınıflandırma çekincesini yansıtmıyor.",
+      "smallest_correction": "Ortak özete, bir aktarımın ses kökenini vava bağladığını fakat biçimin bu maddede ele alınmasına çekince koyduğunu kaynak adı vermeden belirten tek bir cümle ekleyin."
+    }
+  ]
+}

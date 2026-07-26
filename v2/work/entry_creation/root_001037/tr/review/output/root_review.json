@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Girdi genel olarak kanıtı ve dalların sözlüksel sınırlarını doğru koruyor. Ancak B017 tanımı, yalnızca bir işe veya meseleye girmeyi bildiren kaynak söyleyişine başlama ve uğraşma unsurlarını ekleyerek çekirdeği gereksiz biçimde daraltıyor; bu sınırlı taşma canlı girdide düzeltildi.",
+  "issues": [
+    {
+      "target_ref": "root_001037/B017",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak iddia yalnızca bir işe veya meseleye girmeyi bildirir. Tanım ile çekirdek yüz ise bunun uğraşmaya yönelme ve uğraşmaya başlama olduğunu zorunlu kılıyor; bu başlangıç unsuru kanıtta yer almıyor ve komşu kartında ayrıca ayrıştırılıyor.",
+      "smallest_correction": "B017 concept_map.definition değerini \"Bir işe, konuya ya da meseleye girmektir.\" olarak, F001 statement değerini de \"Kişinin bir işin veya meselenin içine girmesidir.\" olarak değiştir; diğer alanları koru."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı iki dalın kimliğini, kapsamını, kavram haritasını, sözlüksel karşılıklarını ve komşu sınırlarını genel olarak kanıtla uyumlu kuruyor. Ancak B001 komşu kapsam notu, yayımlanan ayrım sayısını ve içeriğini yanlış özetliyor; bu küçük ve kesin hata canlı girdide dar bir düzeltme gerektiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_001540/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu ayrımları yalnızca root_001476/B001 ile kişinin kendi kurtuluşunu ve root_000430/B002 ile takıldığı yerden sıyrılmayı yayımlıyor. Buna karşın neighbor_coverage_note üç komşu yayımlandığını söylüyor ve yayımlanmamış olan belirli bir bağdan özgürleştirme sınırını da özete katıyor.",
+      "smallest_correction": "B001 neighbor_coverage_note içindeki yayımlanan komşu sayısını üçten ikiye indirin ve yayımlanmamış belirli bir bağdan özgürleştirme karşıtlığını nottan çıkarın; diğer komşu alanlarına dokunmayın."
+    }
+  ]
+}

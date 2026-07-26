@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "B002, B003, B004 ve kök profili kanıtla uyumludur. B001'de ise kaynak bireşimi dal iddiasında bulunmayan bir ayrıntıyı içeriyor; ayrıca iki sözlüksel karşılık, verilen anlamları doğru aktarmıyor.",
+  "issues": [
+    {
+      "target_ref": "root_000661/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, emir biçiminin aynı tanıklık kümesinde yer aldığını söylüyor; ancak bc_001 soru ve istek eylemini, eylem adlarını, çok soran kişiyi ve yardım isteyen yoksulu tanıklarken emir biçimini içermiyor.",
+      "smallest_correction": "Ortak özetten emir biçimine ilişkin ifadeyi çıkarın; desteklenen eylem adları ve kişi adlandırmaları aynen korunabilir."
+    },
+    {
+      "target_ref": "root_000661/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003"
+      ],
+      "evidence_conflict": "lu_003 hem sorma veya istemenin eylem adını hem de sorulan ya da istenen şeyi bildiriyor. Mevcut 'soru veya istek konusu' karşılığı eylem adı anlamını aktarmıyor.",
+      "smallest_correction": "lu_003 hedef karşılığını 'sorma veya isteme; sorulan ya da istenen şey' olarak değiştirin."
+    },
+    {
+      "target_ref": "root_000661/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "lu_012, hemzenin hafifletildiği bir söyleyiş biçimidir. Mevcut karşılık bunu ilk sesin düşürülmesi olarak tanımlayarak hem sesin yerini hem de işlemi yanlış aktarıyor.",
+      "smallest_correction": "lu_012 hedef karşılığını 'hemzesi hafifletilerek söylenen sormak biçimi' olarak değiştirin."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "verdict": "editorial_review",
+  "summary": "Yanıt genel olarak kanıtı dikkatle izliyor; ancak iki dalın kavram tanımı kaynak ifadesinin sınırını değiştiriyor. B001 hareket ve akış çekirdeğini canlılarla sınırlıyor, B004 ise kayış benzerliğini yalnızca dokumaya ait olmaktan çıkarıp giysi ve okta çizgi oluşturma eylemine de yayıyor.",
+  "issues": [
+    {
+      "target_ref": "root_000769/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi dalın aslını ilerleme ve akış olarak verir; buna karşılık tanım ve çekirdek yüzey, yalın hareketi yalnızca bir canlının yeryüzünde yol almasıyla sınırlar. Böylece kaynakta açıkça bulunan ve canlılık şartı taşımayan akış yönü kavram haritasından düşer.",
+      "smallest_correction": "Tanım ile F001'i canlılık şartı koymadan ilerleme, yol alma veya akışı kapsayacak biçimde düzeltin; geçişli kullanımdaki bir kimseyi ya da şeyi ilerletme açıklamasını koruyun."
+    },
+    {
+      "target_ref": "root_000769/B004",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak, giysi ve ok için yalnızca üzerlerinde çizgiler oluşturulduğunu söyler; kayışlara benzer olma niteliğini ise çizgili dokumaya bağlar. Tanım, giysi veya ok üzerinde oluşturulan çizgileri de kayışa benzer diye niteleyerek bu özelliği kanıtlanan kapsamın dışına taşır.",
+      "smallest_correction": "Tanımı, giysi veya ok üzerinde çizgiler oluşturma ile kayışlara benzer çizgiler taşıyan dokumayı ayrı anlatacak biçimde düzeltin; kayış benzerliğini çizgi oluşturma eyleminin genel şartı yapmayın."
+    }
+  ]
+}

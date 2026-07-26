@@ -1,0 +1,40 @@
+{
+  "inputs_sha256": "f46275cad235e943f22e6e612d851c281302e5edf39d2f5076fc3740f2b794da",
+  "verdict": "repair",
+  "summary": "Yanit genel olarak dallari ayri tutuyor, ancak yayin oncesi onarim gerektiren uc anlamsal sorun var: yer adi dalinda Umman siniri cekirdekte kayboluyor, at kosusu dalinin kavram karsiligi at oznesini tasimiyor, son eylem dalinda ise kaynakta verilmeyen acma ve erisilebilir kilma yorumu merkeze aliniyor.",
+  "issues": [
+    {
+      "target_ref": "root_001994/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak iddiasi bu dali Umman'da, sahil tarafinda bulunan belirli bir yer adi ve ona nispet edilen inci ile sinirlar. Tanim ve cekirdek facet ise Umman sinirini dusurerek dali genel bir kiyi yerlesimi adina genisletiyor.",
+      "smallest_correction": "Tanim ve cekirdek facet, bunun Umman'da sahil tarafindaki belirli yer adi oldugunu acikca tasimali; inci kullanimi da bu yere nispet edilen iliskili kullanim olarak kalmali."
+    },
+    {
+      "target_ref": "root_001994/B004",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak iddiasi anlami ata baglar: bir atin kosudan sonra kosu getirmesi. 'ardisik kosu' kavram karsiligi at oznesini disarida birakarak genel bir tekrarli kosu ifadesine aciliyor.",
+      "smallest_correction": "Kavram karsiligini 'atin ardisik kosusu' gibi at oznesini ve pes pese kosu cekirdegini birlikte koruyan bir ifadeye daralt."
+    },
+    {
+      "target_ref": "root_001994/B006",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak iddiasi yalnizca kisa bir eslem verir: bu eylem 'afdaaha' diye aciklanir. Yanit, bunu 'acma', 'ulastirma' ve 'erisilebilir kilma' sonucuna cevirerek kanitta ayrintilandirilmayan bir mekanizma ve sonuc ekliyor.",
+      "smallest_correction": "Tanim ve facet, ek iceri gecirme veya erisilebilir kilma sonucu kurmadan, kaynakta verilen kisa es eylemle sinirli ve ihtiyatli bir Turkce aciklama kullanmali."
+    }
+  ]
+}

@@ -1,38 +1,53 @@
 {
-  "root_inputs_sha256": "c73fc31893291c06f31deb9a53ac2ec2ddf3dd39d3069118fdbdce0646e4a6f8",
+  "root_inputs_sha256": "4cd81621384fe3b24aa2eed94c8b06cce81752c40a4bd440eb6dfda02154183f",
   "root_id": "root_000130",
   "branch_id": "B003",
   "language": "tr",
   "image_transliteration": "havuzu yıkma ve altını üstüne getirme",
-  "summary": "Bir havuzu yıkıp yapının alt bölümünü üste gelecek biçimde ters çevirerek düzenini bütünüyle bozma eylemidir.",
+  "summary": "Bir havuzu yıkmak ve yapının alt bölümünü üste gelecek biçimde tersine çevirmektir.",
   "concept_map": {
-    "definition": "Bir havuzu yıkıp yapının alt bölümünü üste gelecek biçimde ters çevirerek düzenini bütünüyle bozma eylemidir.",
+    "definition": "Bir havuzu yıkmak ve yapının alt bölümünü üste gelecek biçimde tersine çevirmektir.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Eylemin nesnesi olan havuz, yapısal bütünlüğü ortadan kalkacak biçimde yıkılır.",
+        "statement": "Havuzun yapısı yıkılarak bütünlüğü ortadan kaldırılır.",
         "claim_ids": [
-          "lu_004"
+          "bc_001"
         ]
       },
       {
         "facet_id": "F002",
         "role": "core",
-        "statement": "Yıkım sırasında havuzun alt bölümü üste getirilir; böylece yalnızca çökme değil, yapının ters çevrilmesi de gerçekleşir.",
+        "statement": "Yıkılan havuzun alt bölümü üste gelecek biçimde ters çevrilir.",
         "claim_ids": [
-          "lu_004"
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Anlam, bir havuzun yıkılması ve alt bölümünün üste gelecek biçimde ters çevrilerek yapısal düzeninin ortadan kaldırılmasıdır.",
+  "identity_judgment": {
+    "status": "accepted",
+    "rationale": "Kaynak ifadesi havuzun yıkılmasını ve alt bölümünün üste gelecek biçimde çevrilmesini aynı kullanımın iki kurucu parçası olarak verir. Dal çerçevesi hem yıkma işlemini hem de ortaya çıkan ters dönmüş durumu doğru biçimde korur.",
+    "boundary_note": "Bu anlam havuz üzerinde kurulan kullanıma bağlıdır; genel yıkılma, eşya dağıtma veya toprağı çevirme anlamı değildir."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "collocation",
+    "note": "Tanım yalnız havuz üzerinde kurulan yapıyı kapsar; yıkıp altını üste getirme anlamı yalın eyleme veya bütün yapılara genellenmez."
+  },
+  "source_summary": "Bu dal, havuzun yıkılmasını ve altının üste getirilmesini birbirinden ayrılmaz iki sonuç olarak birleştirir.",
   "source_synthesis": {
-    "common_summary": "Anlam, bir havuzun yıkılması ve alt bölümünün üste gelecek biçimde ters çevrilerek yapısal düzeninin ortadan kaldırılmasıdır.",
-    "common_claim_ids": [
-      "lu_004"
+    "common_summary": "Bu dal, havuzun yıkılmasını ve altının üste getirilmesini birbirinden ayrılmaz iki sonuç olarak birleştirir.",
+    "common_claim_ids": [],
+    "source_details": [
+      {
+        "claim_ids": [
+          "bc_001"
+        ],
+        "kind": "sole_attestation",
+        "summary": "Tek tanıklık, havuzu yıkma eylemini yapının altını üste getirme sonucuyla birlikte bildirir."
+      }
     ],
-    "source_details": [],
     "supporting_claim_ids": [],
     "duplicate_claims": []
   },
@@ -42,25 +57,25 @@
     {
       "lexical_unit_id": "lu_004",
       "rendering_kind": "ordinary",
-      "target_gloss": "havuzu yıkıp altını üstüne getirmek"
+      "target_gloss": "havuzunu yıkıp alt bölümünü üste gelecek biçimde ters çevirmek"
     }
   ],
   "glosses": {
-    "semantic_definition": "Bir havuzu yıkıp yapının alt bölümünü üste gelecek biçimde ters çevirerek düzenini bütünüyle bozma eylemidir.",
+    "semantic_definition": "Bir havuzu yıkmak ve yapının alt bölümünü üste gelecek biçimde tersine çevirmektir.",
     "concept": {
       "rank": 1,
-      "text": "havuzu yıkıp altını üstüne getirmek",
+      "text": "havuzu yıkıp altını üste çevirme",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Bir havuzun hem yıkıldığı hem de alt bölümü üste gelecek biçimde ters çevrildiği çekirdek kullanımı tam olarak karşılar.",
+      "applicability": "Bir havuzun hem yıkıldığı hem de alt bölümünün üste gelecek biçimde tersine çevrildiği kullanımın tamamını karşılar.",
       "facet_ids": [
         "F001",
         "F002"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Havuz nesnesini, yapının yıkılmasını ve alt bölümünün üste getirilmesini birlikte korur.",
+        "preserves": "Havuz sınırını, yıkma işlemini ve alt bölümü üste getiren tersine çevirme sonucunu korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -69,19 +84,20 @@
     "contextual": [
       {
         "rank": 2,
-        "text": "havuzu yerle bir etmek",
+        "text": "havuzu yerle bir edip ters çevirmek",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Bağlamın havuzun bütünüyle yıkılmasına odaklandığı ve ters çevirme ayrıntısını ayrıca gerektirmediği durumlarda kullanılabilir.",
+        "applicability": "Havuzun yapısının bütünüyle bozulduğu ve bölümlerinin ters konuma geldiği bir olay anlatımında doğal bir karşılıktır.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
-          "fit": "narrowing",
-          "preserves": "Havuzun yapısal bütünlüğünün bozularak tamamen yıkılması sonucunu korur.",
-          "loses": "Havuzun alt bölümünün özellikle üste getirildiği ters çevirme işlemini belirtmez.",
-          "adds": null,
+          "fit": "broadening",
+          "preserves": "Havuzu yıkma ve yapıyı ters konuma getirme bileşenlerini korur.",
+          "loses": null,
+          "adds": "Yerle bir etme sözü, kaynakta zorunlu olmayan tam düzleşme veya daha ileri ölçüde yok olma izlenimi ekleyebilir.",
           "collision": null
         }
       }
@@ -89,18 +105,18 @@
     "selected": [
       {
         "rank": 1,
-        "text": "havuzu yıkıp altını üstüne getirmek",
+        "text": "havuzu yıkıp altını üste çevirme",
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Bir havuzun hem yıkıldığı hem de alt bölümü üste gelecek biçimde ters çevrildiği çekirdek kullanımı tam olarak karşılar.",
+        "applicability": "Bir havuzun hem yıkıldığı hem de alt bölümünün üste gelecek biçimde tersine çevrildiği kullanımın tamamını karşılar.",
         "facet_ids": [
           "F001",
           "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Havuz nesnesini, yapının yıkılmasını ve alt bölümünün üste getirilmesini birlikte korur.",
+          "preserves": "Havuz sınırını, yıkma işlemini ve alt bölümü üste getiren tersine çevirme sonucunu korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -108,19 +124,20 @@
       },
       {
         "rank": 2,
-        "text": "havuzu yerle bir etmek",
+        "text": "havuzu yerle bir edip ters çevirmek",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Bağlamın havuzun bütünüyle yıkılmasına odaklandığı ve ters çevirme ayrıntısını ayrıca gerektirmediği durumlarda kullanılabilir.",
+        "applicability": "Havuzun yapısının bütünüyle bozulduğu ve bölümlerinin ters konuma geldiği bir olay anlatımında doğal bir karşılıktır.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
-          "fit": "narrowing",
-          "preserves": "Havuzun yapısal bütünlüğünün bozularak tamamen yıkılması sonucunu korur.",
-          "loses": "Havuzun alt bölümünün özellikle üste getirildiği ters çevirme işlemini belirtmez.",
-          "adds": null,
+          "fit": "broadening",
+          "preserves": "Havuzu yıkma ve yapıyı ters konuma getirme bileşenlerini korur.",
+          "loses": null,
+          "adds": "Yerle bir etme sözü, kaynakta zorunlu olmayan tam düzleşme veya daha ileri ölçüde yok olma izlenimi ekleyebilir.",
           "collision": null
         }
       }
@@ -133,40 +150,64 @@
       "neighbor_branch_id": "B004",
       "relation_type": "near_synonym",
       "boundary_match": "partial",
-      "focus_only": "Yıkım özellikle bir havuza yönelir ve yapının alt bölümünün üste getirilmesini içerir.",
-      "neighbor_only": "Ev ve başka yapıları yıkmanın yanı sıra bir düzenin çökmesi, düşüş, güç kaybı ve yok oluş gibi geniş kapsamları da taşır.",
+      "focus_only": "Yıkılan nesne havuzdur ve alt bölümünün üste getirilmesi zorunlu sonuçtur.",
+      "neighbor_only": "Yıkma ev ve başka nesnelere, kendiliğinden çöküşe ve düzen ya da saygınlık kaybına uzanabilir.",
       "expression_transliteration": "yıkım ve düzeni bozan çöküş",
-      "gloss": "yapıyı yıkıp düzenini ortadan kaldırmak",
+      "gloss": "yapıyı yıkıp dayanağını bozma",
       "shared_zone": "Her iki dal da bir yapının bütünlüğünü bozarak onu ayakta tutan düzeni ortadan kaldırır.",
-      "distinction": "Odak dal havuzla ve altın üste getirilmesiyle sınırlandırılmış özel bir yıkımdır; komşu dal genel yıkım ve çöküş alanına uzanır."
+      "distinction": "Bu dal yalnız havuzun yıkılıp altının üste getirilmesini anlatır. Komşu dalın yıkma ve çöküş alanı daha geniştir ve ters çevirme sonucunu zorunlu kılmaz."
     },
     {
-      "neighbor_root_id": "root_000450",
-      "neighbor_branch_id": "B002",
+      "neighbor_root_id": "root_001580",
+      "neighbor_branch_id": "B001",
+      "relation_type": "near_synonym",
+      "boundary_match": "partial",
+      "focus_only": "Havuzun alt bölümünün üste gelecek biçimde çevrilmesi yıkmanın kurucu sonucudur.",
+      "neighbor_only": "Şiddetli kırma ve yıkma duvar, bina, dağ ve dayanak gibi çok çeşitli nesnelere uygulanabilir.",
+      "expression_transliteration": "kesrun şedidun ve hedm",
+      "gloss": "şiddetle kırıp yıkma",
+      "shared_zone": "Her iki dal da sağlam bir yapıyı güçlü biçimde bozup yıkmayı içerir.",
+      "distinction": "Bu dal nesne olarak havuzu ve sonuç olarak altın üste gelmesini şart koşar. Komşu dal şiddetli kırma ve yıkmayı daha geniş nesnelere uygular, fakat ters dönmeyi gerektirmez."
+    },
+    {
+      "neighbor_root_id": "root_000130",
+      "neighbor_branch_id": "B001",
       "relation_type": "near_neighbor",
       "boundary_match": "partial",
-      "focus_only": "Bir havuz etkin biçimde yıkılır ve alt bölümü üste getirilir.",
-      "neighbor_only": "Bir şey kendiliğinden ya da belirtilmeyen bir nedenle düşebilir, çökmüş olabilir veya kökünden sökülebilir.",
-      "expression_transliteration": "düşme ve yıkılıp çökme",
-      "gloss": "düşmek veya çökmek",
-      "shared_zone": "Her iki dalda da bir yapının önceki dik ve bütün durumunu kaybetmesi sonucu bulunur.",
-      "distinction": "Odak dal belirli bir nesneye uygulanan, ters çevirmeyi de içeren yıkıcı eylemdir; komşu dal esas olarak düşme ve çökme olayını anlatır."
+      "focus_only": "Havuz yıkılır ve alt bölümü üste gelecek biçimde tersine çevrilir.",
+      "neighbor_only": "Toprak çevrilip kaldırılarak altındaki gömülü veya örtülü şey açığa çıkarılır.",
+      "expression_transliteration": "toprağı altüst etme ve gömülüyü açığa çıkarma",
+      "gloss": "toprağı çevirip gömülüyü çıkarma",
+      "shared_zone": "İki dalda da alt ve üst konumlarını değiştiren güçlü bir çevirme görüntüsü vardır.",
+      "distinction": "Bu dalda çevirme, havuzun yıkılmasıyla birlikte doğrudan sonuçtur. Komşu dalda ise toprağı çevirme, saklı olanı ortaya çıkarmaya yarar ve bir yapıyı yıkmayı gerektirmez."
     },
     {
       "neighbor_root_id": "root_000130",
       "neighbor_branch_id": "B002",
       "relation_type": "near_neighbor",
       "boundary_match": "partial",
-      "focus_only": "Havuzun yapısal bütünlüğü yıkılır ve alt bölümü üste getirilir.",
-      "neighbor_only": "Eşyalar yapısal olarak yıkılmak yerine birbirinden ayrılıp çevreye dağıtılır ve üst üste devrilir.",
+      "focus_only": "Tek bir havuz yapısı yıkılır ve altı üste gelecek biçimde ters çevrilir.",
+      "neighbor_only": "Çok parçalı eşya birbirinden ayrılır, dağıtılır ve parçaları birbirinin üstüne çevrilir.",
       "expression_transliteration": "eşyayı dağıtma ve altını üstüne getirme",
-      "gloss": "eşyayı dağıtıp altüst etmek",
-      "shared_zone": "Her iki dalda da parçaların eski konumu bozulur ve fiziksel düzen altüst edilir.",
-      "distinction": "Odak dal bir havuzun yıkılıp ters çevrilmesidir; komşu dal ise eşya parçalarının dağıtılması ve birbirinin üzerine devrilmesidir."
+      "gloss": "eşyayı dağıtıp altüst etme",
+      "shared_zone": "Her iki dal da önceki düzeni bozarak bölümlerin veya parçaların konumunu değiştirir.",
+      "distinction": "Bu dal havuzun yıkılmasına ve ters dönmesine bağlıdır. Komşu dalda yapısal yıkım yoktur; eşyanın ayrılması, dağıtılması ve üst üste çevrilmesi vardır."
+    },
+    {
+      "neighbor_root_id": "root_000016",
+      "neighbor_branch_id": "B007",
+      "relation_type": "thematic",
+      "boundary_match": "thematic_only",
+      "focus_only": "Bir havuzun yıkılması ve alt bölümünün üste gelecek biçimde çevrilmesi anlatılır.",
+      "neighbor_only": "Suyun toplandığı geniş bir havuz veya su biriktirme yeri bir nesne olarak adlandırılır.",
+      "expression_transliteration": "el-Me'cel: havdun yectemi'u fihi'l-ma'",
+      "gloss": "su biriktirme havuzu",
+      "shared_zone": "İki dal aynı tür su yapısını konu edinir.",
+      "distinction": "Bu dal havuz üzerinde gerçekleştirilen yıkıcı bir işlemi bildirir. Komşu dal ise suyu toplamak için kullanılan yapının kendisini adlandırır; yıkma veya ters çevirme anlamı taşımaz."
     }
   ],
   "neighbor_coverage": {
     "assessment": "complete",
-    "note": "Bütün adaylar değerlendirildi; yayımlanmayan genel kırma ve yıkma adayları seçilen yıkım karşılaştırmasını tekrarlıyor, diğerleri ise çukur, havuz, taban veya aralık gibi aynı sahnedeki nesneleri adlandırıp eylemin sınırına ek bir açıklık getirmiyor."
+    "note": "Bütün adaylar değerlendirildi; genel yıkma dalları, iki kardeş dal ve havuzun kendisini adlandıran dal en açıklayıcı karşılaştırmaları sağladı. Kalan adaylar çökme, yarılma, çukur veya havuz bölümü gibi yalnızca yakın alanları paylaştığı için yayımlanmadı."
   }
 }

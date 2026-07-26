@@ -1,0 +1,61 @@
+{
+  "verdict": "repair",
+  "summary": "B002 dalında geçici çerçevedeki ihtiyaç sonrası artan pay koşulu, yetkili kaynak ifadesinde bulunmadığı hâlde çeşitli alanlara taşınmıştır. B007 dalında ise komşunun ek nesne ve kullanım kapsamı gözden kaçırılarak tam eş anlamlılık kurulmuştur. Bu iki sınır sorunu küçük ve yerel düzeltmelerle giderilebilir.",
+  "issues": [
+    {
+      "target_ref": "root_001264/B002",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yetkili kaynak ifadesi bir şeyi kendisi için edinme, ticarete ayırmama ve saklama anlamlarını verir; saklanan şeyin yalnız yeterlilikten sonra kalan pay olduğu koşulunu vermez. Gerekçedeki bu koşul kanıt sınırını daraltmaktadır.",
+      "smallest_correction": "Gerekçedeki yeterlilikten sonra saklanan şey ifadesini, koşulsuz biçimde bir şeyi saklama anlamı olarak değiştir."
+    },
+    {
+      "target_ref": "root_001264/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F003, saklama anlamını ihtiyaç karşılandıktan sonra geriye kalan payla sınırlar. Yetkili bc_001 yalnız bir şeyi saklamayı bildirir ve bu zaman ya da miktar koşulunu desteklemez.",
+      "smallest_correction": "Tanımdaki yeterli miktarın ardından saklanan pay sözünü genel saklama anlamıyla değiştir; F003'ü de bir şeyi ileride kullanmak üzere saklama biçiminde düzelt."
+    },
+    {
+      "target_ref": "root_001264/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet saklanan şeyi artan pay diye niteler, fakat bc_001'de saklamanın ihtiyaç fazlasıyla sınırlı olduğuna dair bir ifade yoktur.",
+      "smallest_correction": "Ortak özetteki saklanan artan pay ifadesini, koşul eklemeden saklama anlamı olarak değiştir."
+    },
+    {
+      "target_ref": "root_001264/B002",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İhtiyaçtan artanı biriktirmek karşılığı ve açıklaması, bc_001'in genel saklama ifadesine kanıtsız bir ihtiyaç sonrası kalıntı koşulu ekler.",
+      "smallest_correction": "Bu karşılığı bir şeyi ilerisi için saklamak olarak değiştir; uygulanabilirlik ve koruma açıklamalarından yeterli miktar ve kalan pay koşullarını çıkar."
+    },
+    {
+      "target_ref": "root_001264/B007",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_001265/B007 komşusunun sınırı mızrak, su yolu ve sırt hattına ek olarak tahta ya da değnek kullanımını ve bazı kaynaklardaki boy kapsamını içerir. Odak dalın yetkili bc_001 sınırında bu ek kapsam yoktur; bu yüzden çekirdekler tam ikame edilebilir değildir.",
+      "smallest_correction": "İlişkiyi near_synonym ve partial olarak değiştir; ortak alanı mızrak, su yolu ve sırt hattıyla sınırla, komşuya özgü tahta, değnek ve boy kapsamını neighbor_only alanında belirt."
+    }
+  ]
+}

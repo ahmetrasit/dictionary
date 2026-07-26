@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Dal kimliği, karma yalın olmayan kapsam, kavram haritası, karşılıklar ve komşu ayrımları kanıtla uyumludur. Ancak kaynak sentezi, yalnızca tek bir sözlükte bulunan ayrıntıları iki kaynağın ortak anlatımı gibi sunmaktadır.",
+  "issues": [
+    {
+      "target_ref": "root_000746/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, mısır ve pirinç başağı örneğini ve tek bir başağın adlandırılmasını kaynakların ortak içeriği sayıyor. Oysa bc_001 içinde mısır ve pirinç ayrıntısı yalnızca ayn'a, tekil başak açıklaması ise yalnızca sihah'a aittir; boş source_details dizisi bu kaynaklara özgü katkıları görünmez kılmaktadır.",
+      "smallest_correction": "Ortak özeti iki kaynağın gerçekten paylaştığı başak ve ekinin başak çıkarması çekirdeğiyle sınırla. Ardından ayn için mısır ve pirinç başağı örneğini, sihah için tekil başak açıklamasını ve o kaynağa özgü biçim ayrıntılarını ayrı source_details satırlarında bc_001 ile kaydet."
+    }
+  ]
+}

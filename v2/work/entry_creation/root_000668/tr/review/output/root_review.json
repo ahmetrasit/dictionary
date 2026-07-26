@@ -1,0 +1,72 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın dal ayrımları ve kapsamlarının büyük bölümü kanıtla uyumludur. Ancak üç dalda yayıma etki eden sınırlı sorunlar vardır: soy dalındaki bir sözlüksel karşılık İsrailoğulları referansını düşürür, mimari geçit tanımı geçişli yolu kanıtsız biçimde işlek yol diye niteler ve takvim dalı kanıtta açıkça belirtilen Şubat ayını belirsiz bir kış ayına dönüştürür.",
+  "issues": [
+    {
+      "target_ref": "root_000668/B003",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "lu_012, İsrailoğullarının kabilelerini ve aynı soydan gelen kollarını adlandırır. \"Aynı atadan gelen on iki kabile\" karşılığı İsrailoğulları referansını kaldırarak ifadeyi herhangi bir on iki kabile topluluğuna genelleştirir.",
+      "smallest_correction": "lu_012 hedef karşılığını \"İsrailoğullarının on iki kabilesi\" biçiminde daraltın."
+    },
+    {
+      "target_ref": "root_000668/B006",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, yapının altındaki yolun geçişli ve açık bir yol olduğunu bildirir; yolun yoğun kullanılan veya işlek olduğunu bildirmez. Tanım ve F002 bu geçiş özelliğini \"işlek\" sözüyle kanıtsız biçimde genişletir.",
+      "smallest_correction": "Tanımdaki \"işlek bir yol\" ifadesini \"geçişe açık bir yol\" olarak değiştirin; F002'de de \"açık ve işlek\" yerine yalnızca \"geçişe açık\" kullanın."
+    },
+    {
+      "target_ref": "root_000668/B009",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, dalı Romalıların Şubat adını verdiği belirli ay olarak tanımlar. Tanım ve F001 ise ayı yalnızca \"kış mevsiminde yer alan belirli bir takvim ayı\" diye bırakarak hangi ay olduğuna ilişkin çekirdek kimliği kaybeder.",
+      "smallest_correction": "Tanım ve F001'de ayı açıkça Romalıların Şubat adını verdiği kış ayı olarak belirtin; gün kesirleriyle ilgili F002'yi bağımlı takvim açıklaması olarak koruyun."
+    },
+    {
+      "target_ref": "root_000668/B009",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 kaynakların bunun Roma dilindeki Şubat ayı adı olduğunu söylediğini kaydeder. Ortak özet yalnızca belirsiz bir kış ayından söz ederek kaynakların verdiği adlandırmayı ve Roma bağlantısını aktarmamaktadır.",
+      "smallest_correction": "Ortak özette belirsiz \"belirli bir ay\" anlatımı yerine kaynakların bunu Roma dilindeki Şubat ayı adı olarak verdiğini belirtin."
+    },
+    {
+      "target_ref": "root_000668/B009",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "\"Kış mevsimindeki belirli bir takvim ayı\" karşılığı Şubat kimliğini korumaz ve birden fazla kış ayına uygulanabilir. Bu nedenle error_profile içindeki tam uyum ve kimliği koruma beyanları da karşılığın gerçek kaybıyla çelişir.",
+      "smallest_correction": "Kavram karşılığını \"Romalıların Şubat adını verdiği kış ayı\" olarak belirginleştirin ve error_profile metnini bu düzeltilmiş karşılığa göre güncelleyin."
+    },
+    {
+      "target_ref": "root_000668/B009",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_023"
+      ],
+      "evidence_conflict": "lu_023, Roma dilindeki Şubat ayının adını belirtir. \"Kış mevsimindeki belirli bir ayın adı\" karşılığı özgül ayı tanımlamaz ve kanıttaki sözlüksel kimliği belirsizleştirir.",
+      "smallest_correction": "lu_023 hedef karşılığını \"Şubat ayı\" olarak değiştirin."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "17a93eac94b553d286145ff983bd4f455e9e9e36a5954d73ffcd9ebac31b2f80",
+  "verdict": "editorial_review",
+  "summary": "Yazar yanıtında iki sınırlı yayın sorunu vardır: bir sözlüksel karşılık kanıttaki nesneyi doğrudan günah diye daraltıyor ve deve sürme sözüne ilişkin tekil köken sınırlaması kaynak sentezinde yer almıyor. İzin verilen çalışma alanı yalnızca inceleme dosyası olduğundan yazar çıktısı değiştirilmedi.",
+  "issues": [
+    {
+      "target_ref": "root_000365/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005"
+      ],
+      "evidence_conflict": "Kanıt, bu birimi kişinin kendisinden dolayı günaha girmekten çekindiği şey olarak verir. Mevcut karşılık ise o şeyi doğrudan günah diye adlandırarak kanıttaki daha genel nesne alanını daraltır.",
+      "smallest_correction": "lu_005 karşılığını \"kişinin günah sayıp çekindiği şey\" olarak değiştir."
+    },
+    {
+      "target_ref": "root_000365/B006",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesindeki tekil bir tanıklık, deve sürme sözünün başka bir kökten türemediğini özellikle belirtir. Kaynak sentezi sürme sözünü, eylemi ve deve adını kapsasa da bu köken sınırlamasını bütünüyle atlar.",
+      "smallest_correction": "Kaynak sentezine, bunu bütün tanıklıklara mal etmeden, bir tanıklığın sürme sözünü başka bir kökten türemeyen bağımsız bir sesleniş saydığını ekle."
+    }
+  ]
+}

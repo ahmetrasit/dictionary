@@ -1,0 +1,50 @@
+{
+  "verdict": "editorial_review",
+  "summary": "Dört yüksek güvenli ve alanla sınırlı anlam sorunu saptandı. B003 sınır anlatımı ile iki karşılıklı komşu ayrımı, kaynakta bulunan kötülük yapan kişi kullanımını dışarıda bırakıyor; B004 içindeki bir sözlüksel karşılık ise karşıtlık bildiren yapıya kaynakta bulunmayan bir değiştirme eylemi yüklüyor. Canlı yazar çıktısı hazırlanmış başka bir görevin girdi sahipliği altında olduğundan düzeltme bu sahiplik sınırını aşar; yazar çıktısı değiştirilmedi.",
+  "issues": [
+    {
+      "target_ref": "root_000386/B003",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Sınır notu dalın başkasını bozmayı veya kötü bir çevreyi zorunlu kıldığını söylüyor. Oysa kaynak ifadesi, türemiş kişi nitelemesinin kötülük yapan kişiyi de gösterebildiğini açıkça içeriyor; bu kullanım başkasına aktarım ya da kötü çevre gerektirmiyor.",
+      "smallest_correction": "Sınır notunu, yalın kişisel kötülüğü dışarıda tutarken türemiş biçimlerde başkasını bozma, kötü çevre edinme veya kötülük yapma yönlerinden birinin öne çıkabileceğini belirtecek şekilde düzeltmek."
+    },
+    {
+      "target_ref": "root_000386/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B003 ile kurulan ayrım, komşu dalı yalnızca kötülüğün başkasına aktarılması veya kötü çevre kurulmasıyla sınırlandırıyor. Komşu sınır kartı ve kaynak ifadesi, türemiş kişi nitelemesinde kötülük yapan kişiyi de kapsıyor.",
+      "smallest_correction": "Yalnızca B003 komşu satırındaki komşuya özgü alanı ve ayrım cümlesini, kötülük yapan kişi kullanımını da içerecek biçimde genişletmek."
+    },
+    {
+      "target_ref": "root_000386/B003",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B001 ile kurulan ayrım, bu dalda etkileşim veya kötü çevre ilişkisini zorunlu gösteriyor. Kaynak ifadesindeki kötülük yapan kişi kullanımı ise türemiş nitelemenin ilişkisel olmayan bir davranış yönü de taşıyabildiğini gösteriyor.",
+      "smallest_correction": "Yalnızca B001 komşu satırındaki bu dala özgü alanı ve ayrım cümlesini, türemiş biçimde kötülük yapma yönünü de kapsayacak şekilde düzeltmek."
+    },
+    {
+      "target_ref": "root_000386/B004",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_016"
+      ],
+      "evidence_conflict": "Sözlüksel karşılık yasak olanı izin verilenle değiştirme eylemi veriyor. Sağlanan birim anlamı ise yalnızca yasak olanın izin verilenin karşısındaki konumunu bildiriyor; bağımsız bir değiştirme eylemi kanıtlanmıyor.",
+      "smallest_correction": "lu_016 karşılığını, eylem eklemeden yasak olanın izin verilenin karşısında oluşunu anlatan doğal bir Türkçe ifadeyle değiştirmek."
+    }
+  ]
+}

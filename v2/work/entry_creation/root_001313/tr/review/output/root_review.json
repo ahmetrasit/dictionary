@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B001-B005 dalları sağlanan kanıtlarla uyumludur. B006 dalının çekirdek tanımı ise tek kaynaklı gülümseme anlamına kanıtlanmayan bir hafiflik derecesi eklemektedir; bu sınırlı ifade düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001313/B006",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak iddiası eylemi yalnızca gülümsemek olarak verir ve hafiflik derecesi belirtmez. Buna karşılık çekirdek tanım, yüzde hafif bir gülüş ifadesi oluşturmayı anlamın zorunlu parçası yapmaktadır.",
+      "smallest_correction": "B006 concept_map.definition içindeki hafif nitelemesini kaldırıp tanımı yüzde bir gülüş ifadesi oluşturacak biçimde gülümsemek olarak bırakın."
+    }
+  ]
+}

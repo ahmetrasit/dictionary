@@ -1,0 +1,40 @@
+{
+  "inputs_sha256": "74b0453298e8919ec63a4e5d13888cb2e3601d00a98e991833407ae927521fe6",
+  "verdict": "repair",
+  "summary": "Yanıtın dal ayrımları ve sözlükselleşme kapsamları genel olarak kanıtla uyumludur. Ancak zaman dalında yalnızca ölümle ilgili kalıba ait vakit korkusu bütün dala yayılmış, gereksinim dalında ise açıklayıcı bir bağlı özellik ana kavram karşılığına taşınmıştır. Bu üç sınırlı alan düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000616/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, zamanın değişimleri ve olaylarını genel dal çekirdeği olarak verir; olayın gerçekleşmesinden değil vaktinden korkma ayrımını ise yalnızca ölümle ilgili kalıba bağlar. Tanımın ikinci cümlesi ve F002 bu vakit belirsizliğini herhangi bir zaman olayı için geçerliymiş gibi sunuyor.",
+      "smallest_correction": "Tanımın ikinci cümlesini ve F002'yi yalnızca ölümle ilgili kalıpta olayın geliş vaktinden korkulmasıyla sınırlandır; zamanın değişimleri ve olaylarını F001'de genel çekirdek olarak bırak."
+    },
+    {
+      "target_ref": "root_000616/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ana karşılık olan \"zamanın kaygı veren olayları\" ve uygulanabilirlik açıklaması, vaktin bilinmemesinden doğan kaygıyı bütün zaman kalıplarının zorunlu içeriği yapıyor. Kanıtta bu özel zaman kaygısı yalnızca ölümle ilgili kalıp için belirtilirken genel çekirdek zamanın değişimleri ve olaylarıdır.",
+      "smallest_correction": "Ana karşılığı \"zamanın değişimleri ve olayları\" yap, uygulanabilirliği genel kalıplaşmış zaman kullanımlarıyla sınırla ve yalnızca F001'e bağla; vakit korkusunu mevcut açıklayıcı bağlamsal karşılıkta tut."
+    },
+    {
+      "target_ref": "root_000616/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt dalın doğrudan gönderimini gereksinim olarak verir; onu elde edememe korkusu gereksinimi arayan kişinin tutumunu açıklayan bağlı unsurdur. \"Elden kaçırma kaygısıyla aranan gereksinim\" ana karşılığı bu bağlı unsuru çekirdeğin zorunlu parçasına dönüştürüyor; yanıtın kendi kimlik yargısı ve kavram haritası da bunun yalnızca bağlı özellik olduğunu kabul ediyor.",
+      "smallest_correction": "Ana kavram karşılığını \"gereksinim\" yap, uygulanabilirlik ve hata profilini çekirdek gönderime göre düzenle ve yalnızca F001'e bağla; elden kaçırma kaygısını mevcut açıklayıcı bağlamsal karşılıkta bırak."
+    }
+  ]
+}

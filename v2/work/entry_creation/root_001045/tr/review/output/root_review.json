@@ -1,0 +1,103 @@
+{
+  "verdict": "repair",
+  "summary": "B001 ve B002 kanıtla uyumludur. B003'te ise yalnızca belirli bir evde hak bulunmasını bildiren kalıplaşmış kullanım, bütün taşınmazları kapsayacak biçimde genişletilmiştir. Bu sistematik kapsam genişlemesi ilgili alanlarda evle sınırlandırılmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001045/B003",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt yalnızca belirli bir evde hak bulunup bulunmadığını bildiren kalıbı doğrular; gerekçe ve sınır notundaki genel taşınmaz ifadesi bu nesne kapsamını genişletir.",
+      "smallest_correction": "Gerekçe ve sınır notunda taşınmaz yerine ev kullanarak kimlik yargısını kanıttaki nesneyle sınırlandır."
+    },
+    {
+      "target_ref": "root_001045/B003",
+      "field": "lexicalization_scope",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kalıplaşmış kullanımın kanıtlanan tamamlayıcısı evdir; kapsam notu bunu herhangi bir taşınmaza genelleştirir.",
+      "smallest_correction": "Kapsam notundaki taşınmaz sözcüğünü ev olarak değiştir ve kalıp sınırlamasını aynen koru."
+    },
+    {
+      "target_ref": "root_001045/B003",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve çekirdek yüz, kanıttaki belirli ev kullanımını genel taşınmaz hakkına dönüştürüyor.",
+      "smallest_correction": "Tanım ve çekirdek yüzdeki taşınmaz ifadelerini ev ile değiştir; hak veya pay açıklamasını ve olumlu-olumsuz karşıtlığını koru."
+    },
+    {
+      "target_ref": "root_001045/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tek kaynak tanıklığı belirli bir evdeki hakkı bildirir; ortak özet ve tek tanıklık ayrıntısı bunu taşınmazların tamamına yayar.",
+      "smallest_correction": "Ortak özet ile tek tanıklık özetindeki taşınmaz ifadelerini ev olarak daralt."
+    },
+    {
+      "target_ref": "root_001045/B003",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı ve uygulanabilirlik açıklaması genel taşınmaz kapsamı verir, oysa kanıt yalnızca evle kurulan ifadeyi destekler.",
+      "smallest_correction": "Kavram karşılığını ve açıklamalarını evde sabit hak veya pay biçiminde sınırlandır."
+    },
+    {
+      "target_ref": "root_001045/B003",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bağlamsal karşılıklar taşınmazı ve hatta ev dışındaki taşınmazları açıkça kapsıyor; kanıtın nesnesi yalnızca evdir.",
+      "smallest_correction": "İki bağlamsal karşılığı ve bunların açıklamalarını yalnızca belirtilen evde hak veya pay bulunmasına göre düzelt."
+    },
+    {
+      "target_ref": "root_001045/B003",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011"
+      ],
+      "evidence_conflict": "lu_011 evle kurulan kalıbı verir; hedef karşılık bunu genel bir taşınmaz olarak çevirir.",
+      "smallest_correction": "Hedef karşılığı \"bu evde sabit hakkım var\" olarak değiştir."
+    },
+    {
+      "target_ref": "root_001045/B003",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu ayrımlarında odak dal tekrar tekrar genel taşınmaz hakkı olarak anlatılıyor; odak kanıtı yalnızca evde hak bildiren özel kalıbı destekler.",
+      "smallest_correction": "Komşu ayrımlarında odak dala ilişkin taşınmaz ifadelerini evle sınırlandır; komşu dalların kendi daha geniş kapsamlarını değiştirme."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök özeti üçüncü dalı genel taşınmaz hakkı olarak sunarak dalın evle kurulan özel kalıp sınırını kaybediyor.",
+      "smallest_correction": "Kök özetinde üçüncü dalı ev üzerinde hak bildiren yapıya bağlı ayrı anlam olarak belirt."
+    }
+  ]
+}

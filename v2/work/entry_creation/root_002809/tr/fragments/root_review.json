@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": "8a4353aa7ecabbb9102f0e92f298bcc84bf50d95c266b005fb7e10f26a2f6905",
+  "verdict": "repair",
+  "summary": "B003 icin kaynak sentezi, ortak karisma ve dagilma cekirdegini dogru veriyor; ancak Tahdhib'deki ayirt edici aciklayici ornegi tamamen atliyor. Bu tek eksik, B003 source_synthesis alaninda ortak ozete sinirli bir ek yapilarak onarildi.",
+  "issues": [
+    {
+      "target_ref": "root_002809/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B003 bc_001, Tahdhib'de dagilma ve toparlanamama aciklamasina ek olarak sasirma ve yaylari ters cevirme anlamli ayirt edici bir aciklama verir. Yazar source_synthesis alani yalniz ortak karisma, zayiflama, agirlayip dagilma ve toparlanamama zincirini ozetliyor; bu ayirt edici aciklayici ornegi kaydetmiyor.",
+      "smallest_correction": "B003 source_synthesis.common_summary metnine, Tahdhib'in dagilma anlamini sasirma ve yaylari ters cevirme aciklamasiyla somutladigini belirten kisa bir cumle ekle; bc_001 tek claim oldugu icin claim'i source_details alaninda ikinci kez kullanma."
+    }
+  ]
+}

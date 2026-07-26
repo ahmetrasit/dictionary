@@ -1,0 +1,17 @@
+{
+  "verdict": "editorial_review",
+  "summary": "B006 dalındaki bir komşuluk ilişkisi, eylemin katılımcı sınırındaki farkı yok sayarak tam eş anlamlılık kuruyor. Diğer dallarda yayıma engel olacak belirgin bir kanıt çatışması bulunmadı.",
+  "issues": [
+    {
+      "target_ref": "root_001501/B006",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B006 kanıtı sopa adını ve özellikle deveyi bu sopayla vurup sürme eylemini verir. root_001493/B002 ise deveyi veya genel olarak hayvanı sopayla sürmenin yanı sıra bir şeyi sopayla itmeyi de kapsar. Bu ek katılımcı ve eylem kapsamı, iki dalın olağan kullanımda bütünüyle birbirinin yerine geçmesini engeller; bu nedenle synonym ve exact değerleri kanıt sınırlarıyla uyuşmaz.",
+      "smallest_correction": "root_001493/B002 satırını near_synonym ve partial olarak değiştirip focus_only alanında B006 eyleminin deveye bağlı olduğunu, neighbor_only alanında komşunun genel hayvan sürme ve sopayla nesne itme kapsamını belirtin; shared_zone ve distinction metinlerini bu kısmi örtüşmeye göre daraltın."
+    }
+  ]
+}

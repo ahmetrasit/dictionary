@@ -1,0 +1,94 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın büyük bölümü kanıtla uyumludur; ancak B005 dalı kaynakta açıkça bulunan genel öldürme alanını ölümcül isabete indirgemiştir. B012 dalında ise sopaya kanıtsız fiziksel özellikler eklenmiş ve yalnızca bağımlı bir ticaret kullanımı nedeniyle bir eş anlamlılık ilişkisi gereksiz yere zayıflatılmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_001230/B005",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 yalnızca ok veya yılan kaynaklı ölümcül isabeti değil, bulunduğu yerde öldürmeyi ve ayrıca herhangi bir durumda öldürmeyi de açıkça kaydeder. Gerekçe ile sınır notu ise genel öldürmeyi dışlayıp dalı zorunlu olarak bir isabete bağlamaktadır.",
+      "smallest_correction": "Nitelikli durumunu koruyup gerekçe ile sınır notunu, ölümcül isabetin önemli bir gerçekleşme olduğunu fakat kanıtın öldürmeyi yalnızca isabetle sınırlamadığını belirtecek biçimde düzeltin."
+    },
+    {
+      "target_ref": "root_001230/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve çekirdek facet, öldürmeyi ok veya yılan ısırığı gibi bir isabetin hedefi vurduğu yerde öldürmesine indirger. bc_001 ise yerinde öldürmenin yanında genel öldürme ifadesini de verir; ok ve yılan örnekleri bu daha geniş alanın gerçekleşmeleridir.",
+      "smallest_correction": "Tanımı ve çekirdek faceti öldürme, özellikle bulunduğu yerde öldürme alanını kapsayacak biçimde genişletin; ok isabeti ile yılan ısırığını specialization veya example olarak bırakın ve sonuç merkezli ölme kullanımını koruyun."
+    },
+    {
+      "target_ref": "root_001230/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet kaynakları ok veya yılanın kurbanı yerinde öldürmesinde birleştirirken bc_001 içindeki genel öldürme kaydını atlar. Böylece kaynak kanıtının belirgin kapsam genişliği yayıma taşınmamaktadır.",
+      "smallest_correction": "Ortak özete öldürme ve bulunduğu yerde öldürme kapsamını ekleyin; ok, yılan ve etkilenen canlının ölmesi kullanımlarını bunun kanıtlanmış gerçekleşmeleri olarak sunun."
+    },
+    {
+      "target_ref": "root_001230/B005",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı olan isabet ettiği yerde öldürmek, bc_001 içindeki isabete bağlı olmayan öldürme kapsamını dışlar; buna rağmen hata profili hiçbir kayıp olmadığını bildirir.",
+      "smallest_correction": "Kavram karşılığını öldürmek, özellikle bulunduğu yerde öldürmek kapsamını taşıyan kısa bir Türkçe ifadeyle değiştirin ve hata profilini buna göre güncelleyin; ölümcül isabeti bağlamsal karşılıklarda tutun."
+    },
+    {
+      "target_ref": "root_001230/B005",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_013"
+      ],
+      "evidence_conflict": "lu_013 öldürmeyi bulunduğu yerde gerçekleşen bir eylem olarak verir ve ayrıca kaynak ifadesinde genel öldürme kaydı bulunur. Vurulan yerde öldürme karşılığı, sözlüksel birimin zorunlu olmayan bir isabet sonucu taşıdığını varsayar.",
+      "smallest_correction": "lu_013 karşılığını bulunduğu yerde öldürme veya oracıkta öldürme olarak değiştirip vurulma koşulunu kaldırın."
+    },
+    {
+      "target_ref": "root_001230/B005",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Üç komşu ayrımının odak sınırları dalın mutlaka tek bir isabetle ve hemen öldürmeyi gerektirdiğini söyler. bc_001 genel öldürmeyi de içerdiğinden bu zorunluluk odak dalın gerçek sınırını daraltır.",
+      "smallest_correction": "Mevcut komşuları koruyarak focus_only ve distinction metinlerini genel öldürme çekirdeğini kabul edecek biçimde düzeltin; ölümcül ok isabeti ve yılan ısırığını yalnızca ilgili karşılaştırmalardaki özel gerçekleşmeler olarak kullanın."
+    },
+    {
+      "target_ref": "root_001230/B012",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 yalnızca nesnenin sopa olduğunu bildirir. Tanım ve çekirdek facet ise elde tutulma, uzunluk, sertlik ve kullanım özelliklerini kanıtsız biçimde kurucu niteliklere dönüştürmektedir.",
+      "smallest_correction": "Tanımı yalnızca sopa olarak adlandırılan nesne düzeyine indirin; çekirdek facetten elde tutulma, uzunluk, sertlik ve kullanım iddialarını çıkarın."
+    },
+    {
+      "target_ref": "root_001230/B012",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_001536/B003 komşusunun çekirdeği de genel sopa adıdır. Sopalarla ticaret, komşu kanıtındaki bağımlı bir kullanım olduğundan iki sopa çekirdeği arasındaki tam ikame edilebilirliği bozmaz; mevcut near_synonym ve partial sınıflaması yalnızca bu bağımlı kullanıma dayanır.",
+      "smallest_correction": "root_001536/B003 ilişkisini synonym ve exact olarak değiştirin; focus_only ile neighbor_only alanlarını null yapıp ortak alan ve ayrım metinlerini verilen kanıt düzeyinde çekirdek sınır farkı bulunmadığını söyleyecek biçimde güncelleyin."
+    }
+  ]
+}

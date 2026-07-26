@@ -1,0 +1,72 @@
+{
+  "verdict": "editorial_review",
+  "summary": "B005'te yetkili kaynak ifadesinin dişi deveyle sınırladığı süt verimi, benzer süt hayvanlarına genellenmiştir. Ayrıca B008'de lu_030 için verilen Türkçe karşılık, kaynak cümlesindeki tüketen taraf ile sonuç durumunu belirsizleştirmektedir. İkinci nokta birden fazla makul düzeltmeye açık olduğundan yazar çıktısı değiştirilmeden editoryal inceleme gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_000873/B005",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yetkili kaynak ifadesi süt verimi tarafında yalnız dişi deveyi, diğer verim tarafında ise hurma ağacını destekler. Gerekçe bunu dişi deve veya benzer süt hayvanı biçiminde genişletirken geçici dal çerçevesini koşulsuz kabul etmektedir.",
+      "smallest_correction": "Kimlik durumunu qualified yapın; gerekçe ile sınır notunda süt verimini yalnız dişi deveye, meyve verimini hurma ağacına bağlayın ve benzer süt hayvanları genellemesini kaldırın."
+    },
+    {
+      "target_ref": "root_000873/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanımdaki bir süt hayvanı ve F001'deki dişi deve veya benzer bir süt hayvanı ifadeleri, yetkili kaynakta yalnız dişi deve için verilen bol süt anlamını türler üstü bir niteliğe dönüştürmektedir.",
+      "smallest_correction": "Tanımda bir süt hayvanı yerine dişi deve deyin; F001'i yalnız dişi devenin bol süt vermesiyle sınırlandırın. Hurma ağacı yüzünü değiştirmeyin."
+    },
+    {
+      "target_ref": "root_000873/B005",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bol sütlü hayvan karşılığı, yetkili kaynakta dişi deveyle sınırlı olan anlamı bütün süt hayvanlarına açmaktadır; applicability ve error_profile bu genişlemeyi eksiksiz uyum olarak kaydetmektedir.",
+      "smallest_correction": "Kavram karşılığını bol sütlü dişi deve veya çok meyveli hurma ağacı olarak daraltın ve applicability ile error_profile metinlerini aynı sınıra uyarlayın."
+    },
+    {
+      "target_ref": "root_000873/B005",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bol süt veren karşılığının applicability metni başka bir süt hayvanını da kapsadığını söyler; yetkili kaynak ifadesi bu kullanım için yalnız dişi deveyi verir.",
+      "smallest_correction": "İlk bağlamsal karşılığın applicability metnini yalnız dişi devenin yüksek süt verimiyle sınırlandırın."
+    },
+    {
+      "target_ref": "root_000873/B005",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_000200/B005 karşılaştırmasındaki focus_only ve distinction, odak dalın süt verimini başka süt hayvanlarına genişlettiğini söyler. Yetkili odak iddiası yalnız dişi deve ve çok meyveli hurma ağacını destekler.",
+      "smallest_correction": "Başka süt hayvanları ifadesini iki alandan da kaldırın; sınır farkını odak dalın hurma ağacını da kapsaması ve komşu dalın dişi develer arasındaki özel süt bolluğu betimlemesi üzerinden kurun."
+    },
+    {
+      "target_ref": "root_000873/B008",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "lu_030"
+      ],
+      "evidence_conflict": "Erkeğin üreme sıvısını tüketmesi karşılığı, erkeği tüketen özne gibi okumaya açıktır. Kaynak cümlesi kadınların erkeğin üreme sıvısını tüketmesini söylerken birim anlamı sonucu erkeğin sıvısının tükenmesi olarak özetler.",
+      "smallest_correction": "Özne tartışmasını büyütmeden hedef karşılığı erkeğin üreme sıvısının tükenmesi olarak verin; editoryal tercih açık özne istiyorsa kadınların erkeğin üreme sıvısını tüketmesi karşılığını ayrıca değerlendirin."
+    }
+  ]
+}

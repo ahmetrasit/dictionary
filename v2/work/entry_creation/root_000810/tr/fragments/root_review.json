@@ -1,0 +1,28 @@
+{
+  "inputs_sha256": "4a727b91db2350f546e9dec33f664e6948bd544d1b748aa5e1e91e9373db7482",
+  "verdict": "editorial_review",
+  "summary": "B007 dalındaki iki sözlüksel karşılık, kanıtta verilen boy kimliklerini yayımlanabilir Türkçe açıklamalara taşımıyor. Ayrıca kök profili, kanıtın desteklemediği tarihsel kol ayrımı ileri sürüyor. Bu düzeltmeler yazar çıktısına müdahale gerektirdiğinden editoryal incelemeye bırakıldı.",
+  "issues": [
+    {
+      "target_ref": "root_000810/B007",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_034",
+        "lu_035"
+      ],
+      "evidence_conflict": "Her iki karşılık da yalnızca \"kanıtta belirtilen bir boy\" diyerek asıl sözlüksel bilgiyi dışarıdaki kanıta havale ediyor. lu_034, adın Rebîa'dan bir boya; lu_035 ise Yemen'deki Hemdân'dan bir boya gönderdiğini bildirirken mevcut karşılıklar bu iki ayrı kimliği ve aralarındaki ayrımı kaybediyor.",
+      "smallest_correction": "lu_034 karşılığını Rebîa'dan bir boyun adı, lu_035 karşılığını da Yemen'deki Hemdân'dan bir boyun adı olarak açıkça yaz; iç kanıta gönderme yapan genel ifadeleri kaldır."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kanıt dalların güncel anlam sınırlarını ve sözlüksel kullanımlarını verir, ancak cinsel kullanım ile özel adların ayrı tarihsel kollardan geldiğini gösteren tarihsel veya köken bilgisi sunmaz. Bu nedenle \"ayrı tarihsel kollar\" nitelemesi kanıtı aşar.",
+      "smallest_correction": "\"Ayrı tarihsel kollar\" ifadesini tarihsel köken ileri sürmeyen \"ayrı anlam alanları\" gibi betimleyici bir ifadeyle değiştir."
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "verdict": "repair",
+  "summary": "B004 dalı genel olarak doğru hareket alanına yerleştirilmiş, ancak dal düzeyindeki anlatım hızlı ilerlemenin mutlaka baş veya uzuv sallanmasıyla gerçekleştiğini varsayarak kanıtın tanıkladığı yalın hız kullanımlarını dışarıda bırakmıştır. Bu daraltma kimlik sınırında, kavram haritasında, kaynak sentezinde, kavram ve bağlamsal karşılıklarda, ayrıca kök özetinde en küçük kapsam düzeltmeleriyle giderilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001014/B004",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak sözü hızlı ilerlemeyi ve koşar adımı bağımsız olarak tanıklarken gerekçe bütün canlı hareketlerini baş veya uzuv sallanmasına bağlamakta, sınır notu da yalın hızı açıkça dışlamaktadır.",
+      "smallest_correction": "Gerekçeyi hem şiddetli sallanmayı hem hızlı ilerlemeyi kapsayacak biçimde düzeltin; baş veya uzuv sallanmasını yalnız bazı hızlı hareket örneklerinin ayrıntısı yapın ve sınır notundan yalın hızı dışlayan ifadeyi kaldırın."
+    },
+    {
+      "target_ref": "root_001014/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım hızlı ilerlemeyi ancak başın veya uzuvların belirgin biçimde sallanması koşuluyla kapsıyor; oysa kanıt hızlı gitme ve koşar adım anlamlarını bu zorunlu koşul olmadan da veriyor.",
+      "smallest_correction": "Tanımı ve hızlı hareket fasetini, şiddetli sallanma veya çalkalanmanın yanında hızlı ilerlemeyi ayrı bir görünüm olarak kapsayacak biçimde genişletin; baş ve uzuv sallanmasını olası bir örnek olarak koruyun."
+    },
+    {
+      "target_ref": "root_001014/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet hızlı gidişi yalnız eşlik eden baş ve uzuv hareketi üzerinden açıklıyor, fakat aynı kanıt hızlı ilerleme ve koşar adımı sallanma koşulu olmadan da tanıklıyor.",
+      "smallest_correction": "Ortak özette şiddetli sallanma ve çalkalanma ile hızlı ilerlemeyi yan yana verin; baş veya uzuv hareketini hızlı gidişin zorunlu şartı değil, tanıklı görünümlerinden biri olarak belirtin."
+    },
+    {
+      "target_ref": "root_001014/B004",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı yalnız 'sallantılı hızlı ilerleme' diyerek kanıttaki sallanma şartı taşımayan hızlı gidiş anlamını kaybediyor.",
+      "smallest_correction": "Kavram karşılığını ve hata profilini şiddetli sallanma veya çalkalanma ile hızlı ilerlemeyi birlikte kapsayacak şekilde düzeltin; hızlı ilerlemeyi sallantıya bağlamayın."
+    },
+    {
+      "target_ref": "root_001014/B004",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Hız bağlamı için verilen 'sallana sallana hızla ilerlemek' karşılığı, kanıtta yalnız hız veya koşar adım bildiren kullanımlara uygulanamaz.",
+      "smallest_correction": "İkinci bağlamsal karşılığı 'hızla ilerlemek' olarak daraltmadan düzeltin; uygulanabilirlik ve hata profilinde baş veya uzuv sallanmasını zorunlu koşul olmaktan çıkarın."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök özeti B004'ü yalnız 'sallantılı hız' diye sunarak dalın sallanma koşulu taşımayan hızlı ilerleme kapsamını yansıtmıyor.",
+      "smallest_correction": "Kök özetindeki 'sallantılı hız' ifadesini şiddetli sallanma ile hızlı ilerlemeyi ayrı ayrı kapsayan kısa bir ifadeyle değiştirin."
+    }
+  ]
+}

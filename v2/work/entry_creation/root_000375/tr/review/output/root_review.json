@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın dal kimliği, kapsamı, kavram çekirdeği ve komşu ayrımları genel olarak kanıtla uyumludur. Ancak ortak kaynak özeti iki kaynağa özgü ayrıntıları bütün kaynakların ortak çekirdeği gibi sunuyor; ayrıca lu_004 için verilen karşılık, biçimin lehçe varyantı olma niteliğini kaybediyor. Bu iki alan küçük ve yüksek güvenli düzeltmeler gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_000375/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, ardından gelen yan tümceyle açıklanmayı ve bulunulan ya da istenen yönelme yerini göstermeyi bütün kaynakların ortak çekirdeği gibi sunuyor. bc_001 içinde yan tümce açıklaması mufradat'a, bulunulan veya istenen yere ilişkin ayrıntı ise tahdhib'e özgü olarak veriliyor.",
+      "smallest_correction": "common_summary alanında ortak çekirdeği yer bildirme ve başlangıçtaki belirsizlikle sınırla; yan tümceyle açıklanma ile bulunulan veya istenen yeri gösterme ayrıntılarını kaynaklarda ayrıca belirtilen özellikler olarak, ortaklık iddiası olmadan ifade et."
+    },
+    {
+      "target_ref": "root_000375/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_004"
+      ],
+      "evidence_conflict": "lu_004 kanıtı bu biçimi aynı yer göstericisinin lehçe varyantı olarak tanımlar. Mevcut hedef karşılık yalnızca bulunulan ya da belirtilen yer anlamını verir ve varyant kimliğini tamamen düşürür.",
+      "smallest_correction": "Yalnızca lu_004 target_gloss değerini, yer anlamını korurken bunun aynı yer göstericisinin lehçe varyantı olduğunu açıkça belirtecek biçimde değiştir."
+    }
+  ]
+}

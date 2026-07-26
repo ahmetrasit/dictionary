@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "B003 dalının kavram düzeyindeki üç bağlı alanı dışında yanıt kanıtla uyumludur. Sırtlanı kandırmaya yönelik avcı sözü lexical_unit kanıtında bulunsa da B003 için yetkili bc_001 dal iddiasında yer almaz; bu nedenle kavram haritasına ve dal sentezine bu iddiayla taşınamaz.",
+  "issues": [
+    {
+      "target_ref": "root_000438/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B003 içindeki F004, sırtlanı yaklaşmaya veya gizlenmeye çağıran avcı sözünü bc_001 ile destekliyor; oysa bc_001 yalnızca hastalık veya hüznün karışmasını, yere bağlı kalmayı ve yaklaşma-karışma anlamını içeriyor.",
+      "smallest_correction": "B003 concept_map.facets dizisinden yalnızca F004 öğesini kaldır; tanımı ve F001-F003 öğelerini değiştirme."
+    },
+    {
+      "target_ref": "root_000438/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B003 common_summary, özel avcı sözünü bc_001 kapsamındaymış gibi sentezliyor; bc_001 bu kullanımı aktarmıyor.",
+      "smallest_correction": "B003 source_synthesis.common_summary içinden özel avcı sözü ve aldatma bağlamına ilişkin son bölümü kaldır; diğer sentez alanlarını koru."
+    },
+    {
+      "target_ref": "root_000438/B003",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B003 concept_gloss.facet_ids, bc_001 tarafından desteklenmeyen F004 öğesine de bağlanıyor.",
+      "smallest_correction": "B003 concept_gloss.facet_ids dizisinden yalnızca F004 kimliğini kaldır."
+    }
+  ]
+}

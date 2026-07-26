@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtı ve dalların sözcükselleşme sınırlarını doğru koruyor. Ancak B008'deki bir komşu karşılaştırması, seçilen komşunun sınır kartına başka bir komşuya ait bulut ve çizgi kullanımlarını ekliyor; bu satır kanıta göre dar biçimde düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000483/B008",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_000336/B004 için yazılan neighbor_only alanı bulut ve çizgideki düzlüğü bu komşuya yüklüyor. Verilen sınır kartı ise basık yanları olan kız, sırt veya gövde düzlüğü, pürüzsüzlük ve yuvarlak çıkıntılı ayak bileği kullanımlarını kapsıyor; bulut ve çizgi bu kartta bulunmuyor.",
+      "smallest_correction": "Yalnızca root_000483/B008 içindeki root_000336/B004 karşılaştırmasının neighbor_only metnini, basık veya düz gövde-sırt görünümü, genel pürüzsüzlük ve yuvarlak çıkıntılı ayak bileği kapsamını anlatacak şekilde değiştir; focus_only, ilişki sınıfları ve diğer karşılaştırmaları koru."
+    }
+  ]
+}

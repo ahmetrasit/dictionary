@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dalların kimliğini, kapsamını ve temel ayrımlarını genel olarak doğru koruyor. Bununla birlikte bir sözlüksel karşılık suya kanıtta bulunmayan akış özelliğini ekliyor; B004'ün tanımı ile tek kaynak ayrıntısı da benzetilen yaşamsal damara kanıtta belirtilmeyen bir bağlanma yeri yüklüyor.",
+  "issues": [
+    {
+      "target_ref": "root_001622/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_002"
+      ],
+      "evidence_conflict": "Kanıt suyu sürekli ve kesilmeyen diye niteler; onun aktığını söylemez. \"Kesilmeden akan sürekli su\" karşılığı bu nedenle sözlüksel birime kanıtsız bir akış özelliği ekliyor.",
+      "smallest_correction": "lu_002 hedef karşılığını \"kesilmeyen sürekli su\" olarak değiştir."
+    },
+    {
+      "target_ref": "root_001622/B004",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak, birine yaşamsal damarın yakınlığı gibi yaklaşmayı söyler; damarın bağlı bulunduğu bir yerden söz etmez. Tanım benzetmeyi \"yaşamsal ana damarın bağlı bulunduğu yere yakınlığı\" biçiminde tamamlayarak kanıtsız bir ilişki ekliyor.",
+      "smallest_correction": "Tanımı \"Birine, yaşamsal ana damarın yakınlığına benzetilecek ölçüde çok yakın olmaktır.\" biçiminde düzelt."
+    },
+    {
+      "target_ref": "root_001622/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tek kaynak ayrıntısı yakınlık ölçüsünü damarın \"bağlı bulunduğu yere\" yakınlığıyla açıklıyor; oysa kaynak yalnız yaşamsal damarın yakınlığını benzetme ölçüsü yapıyor ve böyle bir bağlanma yeri belirtmiyor.",
+      "smallest_correction": "Tek kaynak ayrıntısının özetini \"Yakınlığın ölçüsü, yaşamsal ana damarın yakınlığıyla açıklanır.\" olarak değiştir."
+    }
+  ]
+}

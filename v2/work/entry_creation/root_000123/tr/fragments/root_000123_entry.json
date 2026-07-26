@@ -1,5 +1,5 @@
 {
-  "inputs_sha256": "34865bf4f6a17d99011211421495c24be7bcc851c9530853439e8010026ffd71",
+  "inputs_sha256": "0680f7bd013407124ce3a4951ee8498beba830efb7e0eeecb2a64fde61250ef1",
   "artifact_format": "dictionary-v2-root-entry-draft-v1",
   "generated_by": "v2/scripts/accept_root_writer.py",
   "root_envelope_id": "root_000123",
@@ -7,88 +7,75 @@
   "branches": [
     {
       "branch_ref": "root_000123/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, bir eti ya da başka bir nesneyi kesip parçalara ayırma işlemini ve bu işlemle ayrılan parçayı açıkça birlikte verir. Yara, kesme aracı, kılıç ve sürü kullanımları bu çekirdeğin özel ya da belirli yapılara bağlı gerçekleşimleridir.",
+        "boundary_note": "Dal, alışverişe ayrılan varlığı, cinsel örtmeceyi, belirsiz sayıyı, yer adını ve susuzluğun giderilmesini kapsamaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, yalın kesme ve parça anlamını yapıya bağlı yara, sürü, araç ve kılıç kullanımlarından ayırır."
+      },
       "concept_map": {
-        "definition": "Eti ya da başka bir şeyi kesip parçalara ayırma ve böylece oluşan parçadır; bu çekirdekten etli olma, eti yaran kesik, sürüden ayrılmış küme ve kesici araç kullanımları doğar.",
+        "definition": "Bir eti ya da başka bir nesneyi keserek parçalara ayırma ve bu işlem sonucunda bütünden ayrılan parçadır. Yara, kesme aracı, kılıç, bedenin etliliği ve sürüden ayrılan topluluk bu çekirdeğe bağlı özel kullanımlardır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir şeyi, özellikle eti, keserek parçalara ayırma işlemidir.",
+            "statement": "Et ya da başka bir nesne kesilerek birden çok parçaya ayrılır.",
             "claim_ids": [
-              "lu_001"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "core",
-            "statement": "Kesme sonucunda ortaya çıkan toplu et parçasını belirtir.",
+            "statement": "Kesme sonucunda bütünden ayrılan parça, özellikle toplu bir et parçası olarak adlandırılır.",
             "claim_ids": [
-              "lu_002"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "extension",
-            "statement": "Bedendeki etin kendisini ya da etin bol oluşunu anlatır.",
+            "role": "specialization",
+            "statement": "Deriyi geçip eti yaran kesik, kesme çekirdeğinin yara alanındaki özel gerçekleşimidir.",
             "claim_ids": [
-              "lu_003"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F004",
-            "role": "specialization",
-            "statement": "Deriyi geçip eti yaran baş kesisi için kullanılır.",
+            "role": "associated_use",
+            "statement": "Bedendeki et ve etin çokluğu, bu dala bağlı nötr bir ilişkili kullanımdır.",
             "claim_ids": [
-              "lu_004"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F005",
-            "role": "extension",
-            "statement": "Ana sürüden ayrılmış koyun kümesini kesilip ayrılan parçaya benzetir.",
-            "claim_ids": [
-              "lu_005"
-            ]
-          },
-          {
-            "facet_id": "F006",
             "role": "associated_use",
-            "statement": "Damarı veya deriyi kesmeye yarayan araç ile bir parçayı kesip ayıran kılıcı belirtir.",
+            "statement": "Sürüden ayrılmış koyun topluluğu ile parça koparan kılıç ve kesme aracı yalnız belirli kullanımlarda bu dala bağlanır.",
             "claim_ids": [
-              "lu_006",
-              "lu_007"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynakların ortak çekirdeği, eti veya başka bir şeyi keserek parçalara ayırmak ve kesilmiş toplu bir et parçasıdır. Buna bedendeki etin bolluğu, eti yaran baş kesisi, sürüden kopmuş koyun kümesi ve kesme aracı kullanımları eklenir.",
+        "common_summary": "Bütün kaynakların ortak çekirdeği, et ya da başka bir nesneyi kesme işlemidir. Et parçası ve eti yaran kesik, aynı dal içinde ayrı kaynak kümelerince desteklenen bağlı kullanımlardır; etlilik, sürü parçası, kılıç ve araç kullanımları buna ek olarak bağlıdır.",
         "common_claim_ids": [
-          "lu_001",
-          "lu_002",
-          "lu_003",
-          "lu_004",
-          "lu_005",
-          "lu_006"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_007"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Tek kaynakta, önüne gelen şeyden bir parça kesip ayıran kılıç için özel bir niteleme verilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "kesip parçalara ayırma ve kesilmiş parça",
-        "applicability": "İşlem ile onun temel sonucu olan parçayı birlikte karşılayan en kapsamlı kısa anlatımdır.",
+        "text": "kesip parçalara ayırma ve ayrılan parça",
+        "applicability": "Kesme işlemi ile onun doğrudan sonucu olan parçayı birlikte anlatan dal çekirdeği için uygundur.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Kesme işlemini ve bu işlemle oluşan parçayı birlikte korur.",
+          "preserves": "Hem kesme işlemini hem de bütünden ayrılan parçayı korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -102,10 +89,10 @@
         {
           "text": "eti parçalara ayırmak",
           "usage_role": "contextual",
-          "applicability": "Eylemin doğrudan et üzerinde gerçekleştiği anlatımlarda kullanılır.",
+          "applicability": "Eylemin et ya da benzeri bir nesneyi keserek parçalara ayırdığı bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Kesme eylemini, et nesnesini ve parçalama sonucunu korur.",
+            "preserves": "Kesme eylemini ve parçalama sonucunu birlikte korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -115,33 +102,18 @@
           ]
         },
         {
-          "text": "toplu et parçası",
+          "text": "kesilmiş et parçası",
           "usage_role": "contextual",
-          "applicability": "Kesilmiş etin tek ve toplu bir parçasının adlandırıldığı yerde kullanılır.",
+          "applicability": "Kesme sonucunda ayrılan toplu et parçasının adlandırıldığı bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Kesme sonucu ortaya çıkan toplu et parçasını korur.",
+            "preserves": "Ayrılan parçayı ve onun etten oluştuğunu açıkça korur.",
             "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F002"
-          ]
-        },
-        {
-          "text": "eti yaran baş kesisi",
-          "usage_role": "explanatory",
-          "applicability": "Deriyi aşıp ete giren özel yara türünü açıklamak için kullanılır.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Yaranın deriden sonra eti de yarması koşulunu korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F004"
           ]
         }
       ],
@@ -159,77 +131,66 @@
         {
           "lexical_unit_id": "lu_003",
           "rendering_kind": "ordinary",
-          "target_gloss": "et; etli ve dolgun oluş"
+          "target_gloss": "et ve bedendeki etlilik"
         },
         {
           "lexical_unit_id": "lu_004",
           "rendering_kind": "ordinary",
-          "target_gloss": "eti yaran baş kesisi"
+          "target_gloss": "deriyi geçip eti yaran kesik"
         },
         {
           "lexical_unit_id": "lu_005",
           "rendering_kind": "ordinary",
-          "target_gloss": "sürüden ayrılmış koyun kümesi"
+          "target_gloss": "sürüden ayrılmış koyun topluluğu"
         },
         {
           "lexical_unit_id": "lu_006",
           "rendering_kind": "ordinary",
-          "target_gloss": "damar veya deri kesme aracı"
+          "target_gloss": "damar ya da deri kesme aracı"
         },
         {
           "lexical_unit_id": "lu_007",
           "rendering_kind": "ordinary",
-          "target_gloss": "parça koparan keskin kılıç"
+          "target_gloss": "değdiği yerden parça koparan kılıç"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "doğramak",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Bir şeyi keserek birden çok parçaya ayırma işlemini korur.",
-            "loses": "Kesilmiş parçanın adı ile öteki uzantıları karşılamaz.",
-            "adds": null,
-            "collision": "Çoğu bağlamda küçük ve düzenli parçalar oluşturmayı düşündürür."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_000401/B002",
+          "neighbor_ref": "root_000081/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Kesilmiş parça, et bolluğu, yara, ayrılmış sürü ve araç uzantılarını da kapsar.",
-          "neighbor_only": "Eti özellikle küçük parçalara ayırma koşulunu öne çıkarır.",
-          "gloss": "eti küçük küçük doğrama",
-          "shared_zone": "Her ikisi de etin kesilerek birden çok parçaya ayrılmasını anlatır.",
-          "distinction": "Komşu dalda küçük parça sonucu kurucu bir koşuldur; odak dalda parça boyutu belirlenmez ve işlemden doğan birçok adlandırma da kapsama girer."
+          "focus_only": "Odak dal, kesme sonucundaki parçayı, et yarasını ve yapıya bağlı parça kullanımlarını da kapsar.",
+          "neighbor_only": "Komşu dal, kulak gibi bir bölümü kökünden ayırmayı ve saç ya da tüyü çekip koparmayı özellikle kapsar.",
+          "gloss": "kesme ve ayırma",
+          "shared_zone": "Her iki dalda da bir bütün kesme ya da koparma yoluyla ayrılır.",
+          "distinction": "Odak dalın merkezinde parçalama ile ortaya çıkan parça birlikte bulunur; komşu dalda ise bir bölümün bütünden kesilip ayrılması öne çıkar."
         },
         {
-          "neighbor_ref": "root_000419/B006",
-          "relation_type": "near_synonym",
+          "neighbor_ref": "root_000401/B002",
+          "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "İşlemin yanı sıra kesilmiş parçayı ve ona bağlı adlandırmaları içerir.",
-          "neighbor_only": null,
-          "gloss": "eti kesmek",
-          "shared_zone": "İki dalın eylem çekirdeğinde de eti kesme vardır.",
-          "distinction": "Komşu dal yalnızca eti kesme eylemine karşılık gelir; odak dal ise başka şeylerin kesilmesini, oluşan parçayı ve çeşitli uzantıları da içerir."
+          "focus_only": "Odak dal, eti ya da başka bir nesneyi çeşitli büyüklüklerde kesmeyi ve ayrılan parçayı kapsar.",
+          "neighbor_only": "Komşu dal yalnız eti küçük parçalara doğramayı belirtir.",
+          "gloss": "eti parçalara kesme",
+          "shared_zone": "İki dal da etin kesilerek parçalara ayrılması alanında buluşur.",
+          "distinction": "Komşu dal küçük parça sonucunu zorunlu kılan dar bir doğrama eylemidir; odak dalda parça küçüklüğü koşulu yoktur ve sonuç parçası ayrıca adlandırılır."
         },
         {
           "neighbor_ref": "root_000024/B003",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Parçanın kesme yoluyla oluşturulmasını ve kesme eylemini belirtir.",
-          "neighbor_only": "Bir şeyin doğal organını, bölümünü veya payını kesilme koşulu olmadan da belirtir.",
-          "gloss": "parça, organ veya pay",
-          "shared_zone": "Her ikisi de bir bütünden ayrılan veya bütüne bağlı bir parçayı adlandırabilir.",
-          "distinction": "Odak dalın parçası kesme işlemiyle bağlantılıdır; komşu dalın parça kavramı daha genel olup organı ve payı da kapsar."
+          "focus_only": "Odak dal, parçanın kesmeyle bütünden ayrılmış olmasını ve kesme işlemini öne çıkarır.",
+          "neighbor_only": "Komşu dal, doğal beden bölümünü, genel bir bölümü ya da payı kesilmiş olma koşulu olmadan kapsar.",
+          "gloss": "parça ve bölüm",
+          "shared_zone": "Her iki dal bir bütünün parçasını anlatabilir.",
+          "distinction": "Odak dal kesmeyle oluşan parçaya bağlıdır; komşu dalın doğal organ, genel bölüm ve pay kapsamı böyle bir oluşum koşulu taşımaz."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; kesme ve parça sınırını en açık gösteren üç karşılaştırma yayımlandı, yalnızca aynı kökün uzak uzantıları ile zayıf senaryo ortaklıkları elendi.",
+      "neighbor_coverage_note": "Bütün adaylar kesme, parça, özel araç ve kökün öteki dalları bakımından karşılaştırıldı; yayımlanan üç karşıtlık dal sınırını en doğrudan açıklayanlardır.",
       "branch_image_ar": "قطعة مقطوعة من لحم أو شيء",
       "what_is_ar": "يدخل فيه القطع والتبضيع، والقطعة من اللحم أو الشيء، وحسن كثرة اللحم، والشجة الباضعة، والفرقة المنقطعة من الغنم، وما يبضعه السيف أو المبضع.",
+      "what_is_not_ar": "لا يدخل فيه بضاعة التجارة، ولا كناية النكاح، ولا عدد البضع، ولا الموضع أو الجزيرة، ولا الري والشفاء بالكلام.",
       "source_phrase_ar": "بضعت اللحم أي قطعته (maqayis;ayn;sihah;tahdhib;mufradat)؛ والبضعة القطعة وهي الهبرة (maqayis;ayn;sihah;tahdhib)؛ الباضعة الشجة التي تشق اللحم (maqayis;sihah;tahdhib;mufradat)",
       "sources": [
         "MQ",
@@ -238,429 +199,71 @@
         "TA",
         "MU"
       ],
-      "source_note": {
-        "SI": "Tek kaynakta, önüne gelen şeyden bir parça kesip ayıran kılıç için özel bir niteleme verilir."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000123/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, kişinin varlığından alışveriş amacıyla ayırdığı payı ve bu amaçla edinilen ya da getirilen ürünü ortak bir çekirdekte verir. Saygınlığı alınıp satılan bir nesne gibi görme kullanımı bu çekirdeğe bağlı bir benzetmedir.",
+        "boundary_note": "Dal genel kesilmiş parçayı, satış işleminin kendisini, bedeli, evlilik kullanımını ve belirsiz sayıyı kapsamaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, alışverişe ayrılmış varlık çekirdeğini belirli yapılarla anlatılan ayırma, getirme ve benzetme kullanımlarından ayırır."
+      },
       "concept_map": {
-        "definition": "Bir mal varlığından ayrılıp kazanç amacıyla alınıp satılmak üzere hazırlanan pay ya da maldır; bir şeyi bu duruma getirme, bu malları taşıyıp getiren kişi ve kişinin saygınlığını satılık mala benzetme de buna bağlıdır.",
+        "definition": "Alım satım yoluyla kazanç sağlamak üzere kişinin varlığından ayrılan pay ya da bu amaçla edinilen, gönderilen veya getirilen üründür. Saygınlığı alınıp satılır bir nesne gibi görmek, bu çekirdeğin yapıya bağlı benzetmeli uzantısıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Mal varlığından ayrılan ve kazanç amacıyla alınıp satılmak üzere tutulan pay veya maldır.",
+            "statement": "Kişinin varlığından bir pay alım satım amacıyla ayrılır.",
             "claim_ids": [
-              "lu_008"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "associated_use",
-            "statement": "Bir şeyi alınıp satılacak mal durumuna getirme eylemidir.",
+            "role": "core",
+            "statement": "Alım satım için edinilen, gönderilen ya da getirilen ürün bu ayrılmış payın somut gerçekleşimidir.",
             "claim_ids": [
-              "lu_009"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "associated_use",
-            "statement": "Bir topluluğun satılacak mallarını taşıyıp getiren kişiyi belirtir.",
+            "statement": "Bir topluluğun ürünlerini getiren kişi, alışverişe ayrılmış varlığın dolaşımındaki katılımcıyı belirtir.",
             "claim_ids": [
-              "lu_010"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F004",
             "role": "extension",
-            "statement": "Kişinin saygınlığını alınıp satılan bir mal gibi kullanmasını mecaz yoluyla anlatır.",
+            "statement": "Saygınlığı alınıp satılan bir nesne gibi görmek, yalnız belirli bir yapıda kullanılan benzetmeli uzantıdır.",
             "claim_ids": [
-              "lu_011"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak anlatım, bir mal varlığından ayrılan payın ya da bir malın kazanç için alınıp satılmak üzere hazırlanmasına dayanır. Kaynaklar ayrıca bir şeyi bu amaçla ayırma eylemini ve satılacak malları getiren kişiyi bildirir.",
+        "common_summary": "Kaynaklar, alım satım amacıyla ayrılan varlık payı ile bu amaçla gönderilen veya edinilen ürünü ortak biçimde belirtir. Tek kaynak, ürünler için yük veya binek hayvanlarını da bu adla verir; ürün getiren kişi ve saygınlık benzetmesi buna bağlı kullanımlardır.",
         "common_claim_ids": [
-          "lu_008",
-          "lu_009",
-          "lu_010"
-        ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_011"
-            ],
-            "kind": "extension",
-            "summary": "Tek kaynak, kişinin saygınlığını alınıp satılan bir mal gibi kullanmasını yergili bir benzetmeyle aktarır."
-          }
-        ],
-        "supporting_claim_ids": [],
-        "duplicate_claims": []
-      },
-      "concept_gloss": {
-        "text": "satış için ayrılmış mal veya pay",
-        "applicability": "Bir varlıktan ayrılma ile kazanç için satışa sunulma özelliklerini birlikte taşır.",
-        "error_profile": {
-          "fit": "none",
-          "preserves": "Ayrılmış mal veya payı ve satış amacını eksiksiz korur.",
-          "loses": null,
-          "adds": null,
-          "collision": null
-        },
-        "facet_ids": [
-          "F001"
-        ]
-      },
-      "contextual_glosses": [
-        {
-          "text": "satılacak mal",
-          "usage_role": "general",
-          "applicability": "Malın kazanç amacıyla alışverişe ayrıldığı gündelik bağlamlarda kullanılır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Malın satış amacıyla tutulduğu temel işlevi korur.",
-            "loses": "Mal varlığından ayrılmış bir pay olabileceği bilgisini açıkça vermez.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        },
-        {
-          "text": "satışa ayırmak",
-          "usage_role": "contextual",
-          "applicability": "Bir şeyin alınıp satılacak mal durumuna getirildiği eylem bağlamında kullanılır.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Bir şeyi satış amacıyla ayırıp bu duruma getirme eylemini korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F002"
-          ]
-        }
-      ],
-      "lexical_glosses": [
-        {
-          "lexical_unit_id": "lu_008",
-          "rendering_kind": "ordinary",
-          "target_gloss": "satış için ayrılmış mal veya pay"
-        },
-        {
-          "lexical_unit_id": "lu_009",
-          "rendering_kind": "ordinary",
-          "target_gloss": "bir şeyi satışa ayırmak"
-        },
-        {
-          "lexical_unit_id": "lu_010",
-          "rendering_kind": "ordinary",
-          "target_gloss": "satılacak malları getiren kişi"
-        },
-        {
-          "lexical_unit_id": "lu_011",
-          "rendering_kind": "ordinary",
-          "target_gloss": "saygınlığını satılık mala çevirmek"
-        }
-      ],
-      "excluded_glosses": [
-        {
-          "text": "ürün",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Alınıp satılabilecek bir nesne olma ihtimalini korur.",
-            "loses": null,
-            "adds": "Satış için ayrılmamış her türlü üretim sonucunu da kapsar.",
-            "collision": "Üretim sonucu anlamı, mal varlığından ayrılma özelliğini gölgeler."
-          }
-        }
-      ],
-      "neighbor_distinctions": [
-        {
-          "neighbor_ref": "root_000176/B001",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Kazanç için ayrılmış malı veya mal payını nesne olarak belirtir.",
-          "neighbor_only": "Kazanç aramak üzere mal üzerinde yürütülen alışveriş etkinliğini belirtir.",
-          "gloss": "kazanç amaçlı alışveriş",
-          "shared_zone": "Her iki dalda da malın kazanç amacıyla alışverişe konu edilmesi vardır.",
-          "distinction": "Odak dal alışverişe ayrılan malı, komşu dal ise bu mal üzerinde kazanç amacıyla yürütülen etkinliği merkez alır."
-        },
-        {
-          "neighbor_ref": "root_001001/B008",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Malın özellikle kazanç için satışa ayrılmış olmasını gerektirir.",
-          "neighbor_only": "Para dışındaki malı, dünyalık yararı ve bir hakkın yerine verilen karşılığı da kapsar.",
-          "gloss": "para dışı mal veya karşılık",
-          "shared_zone": "Her iki dal da para dışındaki bir malı alışveriş bağlamında gösterebilir.",
-          "distinction": "Komşu dal mal türünü veya karşılığı bildirir; odak dalın ayırıcı özelliği ise malın satış amacıyla ayrılmış olmasıdır."
-        },
-        {
-          "neighbor_ref": "root_000906/B016",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Satışa ayrılan malın kendisini belirtir ve ortaklık şartı taşımaz.",
-          "neighbor_only": "Bir tarafın para, öteki tarafın emek koyduğu ve kazancı paylaştığı sözleşmeli düzeni belirtir.",
-          "gloss": "sermaye ile emek ortaklığı",
-          "shared_zone": "İki dal da malın kazanç elde etmek üzere işletildiği alışveriş alanındadır.",
-          "distinction": "Komşu dal taraflar ve kazanç paylaşımı bulunan bir ortaklık düzenidir; odak dal yalnızca satışa ayrılan mal veya paydır."
-        }
-      ],
-      "neighbor_coverage_note": "Tüm adaylar gözden geçirildi; mal, alışveriş etkinliği ve ortaklık düzeni arasındaki sınırı gösteren üç aday seçildi, salt fiyat ve pay yakınlıkları yinelenen bulundu.",
-      "branch_image_ar": "قطعة مال تصير بضاعة للتجارة",
-      "what_is_ar": "يدخل فيه بضاعة التاجر: قطعة من المال أو سلعة تجعل للتجارة، وما يجلب من بضائع، واستعمال العرض كبضاعة، والبضائع كالعلائق والجنائب على قول ابن الأعرابي.",
-      "source_phrase_ar": "بضاعة التاجر من ماله طائفة منه (maqayis)؛ البضاعة طائفة من مالك تبعثها للتجارة (sihah)؛ البضاعة السلعة وأصلها القطعة من المال الذي يتجر فيه (tahdhib)؛ قطعة وافرة من المال تقتنى للتجارة (mufradat)؛ البضائع كالعلائق وهي الجنائب (maqayis)",
-      "sources": [
-        "MQ",
-        "SI",
-        "TA",
-        "MU"
-      ],
-      "source_note": {
-        "MQ": "Tek kaynak, kişinin saygınlığını alınıp satılan bir mal gibi kullanmasını yergili bir benzetmeyle aktarır."
-      }
-    },
-    {
-      "branch_ref": "root_000123/B003",
-      "concept_map": {
-        "definition": "Cinsel organı, cinsel birleşmeyi veya evlenmeyi örtülü biçimde anlatan bir kullanımdır; buna bir kadınla evlenme bağını edinme ve doğrudan bedensel yakınlaşma ya da cinsel birleşme anlatımları dahildir.",
-        "facets": [
-          {
-            "facet_id": "F001",
-            "role": "core",
-            "statement": "Cinsel organ, evlenme veya cinsel birleşme için kullanılan örtülü bir anlatımdır.",
-            "claim_ids": [
-              "lu_012"
-            ]
-          },
-          {
-            "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Bir kadınla evlenme bağını kurmayı veya onunla evlenmiş olmayı belirtir.",
-            "claim_ids": [
-              "lu_013"
-            ]
-          },
-          {
-            "facet_id": "F003",
-            "role": "associated_use",
-            "statement": "Doğrudan bedensel yakınlaşmayı ve cinsel birleşmeyi anlatır.",
-            "claim_ids": [
-              "lu_014",
-              "lu_015"
-            ]
-          },
-          {
-            "facet_id": "F004",
-            "role": "source_variant",
-            "statement": "Kaynak anlatımları çekirdek sözün cinsel organı mı, birleşmeyi mi yoksa evlenmeyi mi gösterdiği konusunda ayrılır.",
-            "claim_ids": [
-              "lu_012"
-            ]
-          }
-        ]
-      },
-      "source_synthesis": {
-        "common_summary": "Kaynaklar bu söz alanını cinsel organ, evlenme ve cinsel birleşme arasında değişen örtülü bir anlatım olarak verir. Bir kadınla evlenme bağını edinme ve bedensel yakınlaşma veya cinsel birleşme, bu alanın yerleşik kullanımlarıdır; çekirdek sözün kesin kapsamı kaynak anlatımlarında tek bir karşılığa indirgenmez.",
-        "common_claim_ids": [
-          "lu_012",
-          "lu_013",
-          "lu_014",
-          "lu_015"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "cinsel organ, evlenme veya birleşme için örtülü anlatım",
-        "applicability": "Kaynakların birbirinden farklı verdiği üç temel gönderimi tek bir üst anlatımda korur.",
+        "text": "alım satıma ayrılmış varlık payı veya ürün",
+        "applicability": "Kazanç amaçlı alışveriş için ayrılan varlığı ve onun ürün biçimindeki gerçekleşimini birlikte anlatır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Cinsel organ, evlenme ve cinsel birleşme seçenekleriyle örtülülüğü korur.",
-          "loses": null,
-          "adds": null,
-          "collision": null
-        },
-        "facet_ids": [
-          "F001",
-          "F004"
-        ]
-      },
-      "contextual_glosses": [
-        {
-          "text": "cinsel birleşme",
-          "usage_role": "contextual",
-          "applicability": "Sözün doğrudan eşler arasındaki bedensel birleşmeyi anlattığı bağlamlarda kullanılır.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Bedensel yakınlaşma ve birleşme olayını açık biçimde korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F003"
-          ]
-        },
-        {
-          "text": "evlenme bağını edinmek",
-          "usage_role": "explanatory",
-          "applicability": "Bir kadınla evlilik bağının kurulmasını anlatan kalıp için kullanılır.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Evlilik bağının kurulması ve eş olma sonucunu korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F002"
-          ]
-        }
-      ],
-      "lexical_glosses": [
-        {
-          "lexical_unit_id": "lu_012",
-          "rendering_kind": "ordinary",
-          "target_gloss": "cinsel organ, evlenme veya birleşme için örtülü söz"
-        },
-        {
-          "lexical_unit_id": "lu_013",
-          "rendering_kind": "ordinary",
-          "target_gloss": "onunla evlenme bağını edinmek"
-        },
-        {
-          "lexical_unit_id": "lu_014",
-          "rendering_kind": "ordinary",
-          "target_gloss": "bedensel olarak yakınlaşıp cinsel birleşmede bulunmak"
-        },
-        {
-          "lexical_unit_id": "lu_015",
-          "rendering_kind": "ordinary",
-          "target_gloss": "cinsel birleşme"
-        }
-      ],
-      "excluded_glosses": [
-        {
-          "text": "evlilik",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Evlenme bağına ilişkin kullanımı korur.",
-            "loses": "Cinsel organ ve cinsel birleşme gönderimlerini dışarıda bırakır.",
-            "adds": null,
-            "collision": "Sürekli toplumsal bağı, tekil bedensel olayla karıştırabilir."
-          }
-        }
-      ],
-      "neighbor_distinctions": [
-        {
-          "neighbor_ref": "root_001548/B001",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Cinsel organı ve bir kadınla evlenme bağını edinmeyi de kapsar.",
-          "neighbor_only": "Bedensel birleşmeyi açıkça anlatan ayrı bir eylem sözünü de merkezine alır.",
-          "gloss": "cinsel birleşme ve örtülü evlenme sözü",
-          "shared_zone": "İki dal da cinsel birleşmeyi ve bunu örtülü biçimde anlatan evlenme sözünü kapsar.",
-          "distinction": "Odak dalın sınırı cinsel organ ile evlenme hakkına kadar uzanır; komşu dalda doğrudan bedensel birleşme eylemi daha belirleyicidir."
-        },
-        {
-          "neighbor_ref": "root_000259/B006",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Cinsel organı ve evlenme bağının edinilmesini de belirtir.",
-          "neighbor_only": null,
-          "gloss": "cinsel birleşme",
-          "shared_zone": "Her iki dal da eşler arasındaki cinsel birleşmeyi adlandırır.",
-          "distinction": "Komşu dal birleşme olayına odaklanır; odak dal ise aynı alanı örten sözün organ ve evlenme bağı gönderimlerini de taşır."
-        },
-        {
-          "neighbor_ref": "root_001423/B002",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Evlenme bağı ve cinsel organ gönderimlerini ayrıca kapsar.",
-          "neighbor_only": "Dokunma ve temas sözlerinin birleşme için örtülü kullanımına dayanır.",
-          "gloss": "dokunma sözüyle örtülen cinsel birleşme",
-          "shared_zone": "Her ikisi de cinsel birleşmeyi doğrudan söylemeden anlatabilir.",
-          "distinction": "Komşu dal örtmeyi temas görüntüsü üzerinden kurar; odak dalın söz alanı ise organ, evlenme ve birleşme arasında değişir."
-        }
-      ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; organ, evlenme bağı ve birleşme olayının sınırlarını en iyi ayıran üç yakın anlamlı dal yayımlandı, yalnızca aynı senaryoyu paylaşan daha uzak dallar elendi.",
-      "branch_image_ar": "بضع مكنى به عن موضع النكاح والجماع",
-      "what_is_ar": "يدخل فيه البضع كناية عن الفرج أو موضع الغشيان، وملك بضع المرأة بمعنى عقد نكاحها أو التزوج بها، والمباضعة والبضاع بمعنى المباشرة أو الجماع.",
-      "source_phrase_ar": "المباضعة المباشرة أو المجامعة (maqayis;sihah;tahdhib;mufradat)؛ ملك فلان بضع فلانة أي عقدة نكاحها أو تزوجها (maqayis;sihah;tahdhib;mufradat)؛ كني بالبضع عن الفرج (mufradat)",
-      "sources": [
-        "MQ",
-        "SI",
-        "TA",
-        "MU"
-      ],
-      "source_note": {}
-    },
-    {
-      "branch_ref": "root_000123/B004",
-      "concept_map": {
-        "definition": "Kaynaklara göre üst sınırı dokuz veya on olan belirsiz küçük bir sayıdır; kaynaklar bunu çoğunlukla üçten dokuza ya da ona uzanan aralıkta verir, kimi anlatımda yedi sayısına veya onluk ve yarısının altında kalma ölçüsüne bağlar.",
-        "facets": [
-          {
-            "facet_id": "F001",
-            "role": "core",
-            "statement": "Üst sınırı kaynaklara göre dokuz veya on olabilen, sınırları kesinleşmemiş küçük bir sayı miktarıdır.",
-            "claim_ids": [
-              "lu_016"
-            ]
-          },
-          {
-            "facet_id": "F002",
-            "role": "source_variant",
-            "statement": "Alt ve üst sınır üç ile dokuz veya on arasında değişir; ayrıca yedi sayısı ve onluğun yarısına varmama görüşleri aktarılır.",
-            "claim_ids": [
-              "lu_016"
-            ]
-          },
-          {
-            "facet_id": "F003",
-            "role": "example",
-            "statement": "Sayısı bu belirsiz aralıkta kalan birkaç yıllık süre için kullanılır.",
-            "claim_ids": [
-              "lu_017"
-            ]
-          },
-          {
-            "facet_id": "F004",
-            "role": "source_variant",
-            "statement": "Yirmiden sonra bu belirsiz sayı sözünün kullanılabilirliği konusunda kaynak anlatımları birbiriyle uyuşmaz.",
-            "claim_ids": [
-              "lu_018"
-            ]
-          }
-        ]
-      },
-      "source_synthesis": {
-        "common_summary": "Ortak çekirdek, tam bir onluğa ulaşmayan belirsiz küçük bir sayıdır ve özellikle yılların sayısını belirtir. Aralığın üçten dokuza mı yoksa ona mı uzandığı, yalnızca yediyi mi gösterdiği ve yirmiden sonra kullanılıp kullanılamayacağı konusunda kaynak anlatımları ayrılır.",
-        "common_claim_ids": [
-          "lu_016",
-          "lu_017",
-          "lu_018"
-        ],
-        "source_details": [],
-        "supporting_claim_ids": [],
-        "duplicate_claims": []
-      },
-      "concept_gloss": {
-        "text": "üç ile dokuz ya da on arasında belirsiz sayı",
-        "applicability": "Belirsiz küçük sayı çekirdeğini ve kaynaklardaki üst sınır ayrılığını birlikte gösterir.",
-        "error_profile": {
-          "fit": "none",
-          "preserves": "Alt sınırı, değişken üst sınırı ve sayının belirsizliğini korur.",
+          "preserves": "Ayrılmış payı, alışveriş amacını ve ürün gerçekleşimini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -672,32 +275,356 @@
       },
       "contextual_glosses": [
         {
-          "text": "birkaç yıl",
+          "text": "satılmak üzere ayrılmış ürün",
           "usage_role": "contextual",
-          "applicability": "Belirsiz küçük sayının yıllık bir süreyi nitelediği doğal anlatımlarda kullanılır.",
+          "applicability": "Ayrılan varlığın somut bir ürün olarak gönderildiği, getirildiği ya da satışa sunulduğu bağlamlarda kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Az ve kesin olmayan sayıda yıl anlamını doğal biçimde korur.",
-            "loses": "Aralığın kesin alt ve üst sınırlarını görünür kılmaz.",
+            "fit": "none",
+            "preserves": "Ürünün alım satım amacıyla ayrılmış olmasını korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "alışverişe ayrılan sermaye payı",
+          "usage_role": "contextual",
+          "applicability": "Kişinin varlığından kazanç amaçlı alışverişe ayırdığı payın öne çıktığı bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Varlıktan ayrılan payı ve kazanç amacını açıkça korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_008",
+          "rendering_kind": "ordinary",
+          "target_gloss": "alım satıma ayrılmış varlık payı veya ürün"
+        },
+        {
+          "lexical_unit_id": "lu_009",
+          "rendering_kind": "ordinary",
+          "target_gloss": "bir şeyi satılacak ürün olarak ayırmak"
+        },
+        {
+          "lexical_unit_id": "lu_010",
+          "rendering_kind": "ordinary",
+          "target_gloss": "topluluğun satılacak ürünlerini getiren kişi"
+        },
+        {
+          "lexical_unit_id": "lu_011",
+          "rendering_kind": "ordinary",
+          "target_gloss": "saygınlığını alınıp satılan bir şey gibi görmek"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000176/B001",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Odak dal, kazanç amacıyla ayrılan varlık payını ya da ürünü adlandırır.",
+          "neighbor_only": "Komşu dal, para veya ürün üzerinde kazanç sağlamak için yürütülen alım satım etkinliğini adlandırır.",
+          "gloss": "ürün ile alışveriş etkinliği",
+          "shared_zone": "Her iki dal kazanç amaçlı alım satım alanına aittir.",
+          "distinction": "Odak dal etkinliğin konusu olan ayrılmış varlıktır; komşu dal ise bu varlık üzerinde yürütülen kazanç amaçlı etkinliğin kendisidir."
+        },
+        {
+          "neighbor_ref": "root_001001/B008",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dalda varlık ya da ürün özellikle kazanç amaçlı alım satıma ayrılmıştır.",
+          "neighbor_only": "Komşu dal, alım satım amacı bulunmayan dünya varlığını, para dışı eşyayı, payı ve bir hakkın karşılığını da kapsar.",
+          "gloss": "ürün ve genel varlık",
+          "shared_zone": "İki dal da para dışındaki bir varlığı ya da ürünü anlatabilir.",
+          "distinction": "Odak dalın belirleyici koşulu alışveriş amacıyla ayrılmadır; komşu dalın genel eşya, karşılık ve dünya payı kapsamı bu koşulla sınırlı değildir."
+        },
+        {
+          "neighbor_ref": "root_001217/B004",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Odak dal, alım satıma ayrılan varlık payını veya ürünü tek başına adlandırır.",
+          "neighbor_only": "Komşu dal, varlığı bir işleticiye verip kazancı önceden belirlenen koşulla paylaşmaya dayalı ortaklık düzenini anlatır.",
+          "gloss": "ayrılmış varlık ve ortaklık düzeni",
+          "shared_zone": "Her iki dalda bir varlık payı kazanç sağlamak üzere kullanılır.",
+          "distinction": "Odak dalda işleticiyle kazanç paylaşımı zorunlu değildir; komşu dalın çekirdeği varlığı veren ile işleten arasındaki koşullu ortaklıktır."
+        }
+      ],
+      "neighbor_coverage_note": "Adayların tümü ürün, bedel, alım satım, ortaklık, bekletme ve kökün öteki dalları açısından değerlendirildi; en yararlı üç alan sınırı yayımlandı.",
+      "branch_image_ar": "قطعة مال تصير بضاعة للتجارة",
+      "what_is_ar": "يدخل فيه بضاعة التاجر: قطعة من المال أو سلعة تجعل للتجارة، وما يجلب من بضائع، واستعمال العرض كبضاعة، والبضائع كالعلائق والجنائب على قول ابن الأعرابي.",
+      "what_is_not_ar": "لا يدخل فيه مطلق القطعة من اللحم، ولا النكاح، ولا العدد، ولا الجزيرة.",
+      "source_phrase_ar": "بضاعة التاجر من ماله طائفة منه (maqayis)؛ البضاعة طائفة من مالك تبعثها للتجارة (sihah)؛ البضاعة السلعة وأصلها القطعة من المال الذي يتجر فيه (tahdhib)؛ قطعة وافرة من المال تقتنى للتجارة (mufradat)؛ البضائع كالعلائق وهي الجنائب (maqayis)",
+      "sources": [
+        "MQ",
+        "SI",
+        "TA",
+        "MU"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_000123/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi cinsel organı, cinsel birleşmeyi ve evlilik bağıyla edinilen birliktelik hakkını doğrudan söylemeden anlatan kullanımları birlikte verir. Dalın bir nesne ya da eylemden çok, birbirine bağlı üç gönderimi olan örtmeceli bir kullanım alanı olarak tanımlanması kaynağa uygundur.",
+        "boundary_note": "Dal kesme eylemini, alışveriş ürününü ve belirsiz sayıyı kapsamaz; evlilikteki genel arkadaşlık ve iyi geçim de çekirdeğe girmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, yalın örtmeceli adlandırmaları evlilik hakkını bildiren belirli yapıdan ayırarak organ, birleşme ve hak gönderimlerini korur."
+      },
+      "concept_map": {
+        "definition": "Cinsel organı, cinsel birleşmeyi veya evlilik bağıyla edinilen cinsel birliktelik hakkını doğrudan söylemeden anlatan örtmeceli kullanımdır. Organ, eylem ve hukuki ilişki birbirine bağlı fakat ayrı gönderimlerdir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Cinsel organ doğrudan adlandırılmadan örtmeceli biçimde belirtilir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "core",
+            "statement": "Cinsel birleşme ya da bedensel yakınlaşma örtmeceli bir eylem olarak anlatılır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "specialization",
+            "statement": "Belirli bir yapıda, bir kadınla evlilik bağı kurma ve bu bağdan doğan birliktelik hakkı belirtilir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar, cinsel birleşme ve bedensel yakınlaşma ile evlilik bağıyla edinilen birliktelik hakkını aynı örtmeceli kullanım alanında birleştirir. Cinsel organın örtmeceli biçimde belirtilmesi ise tek kaynakta bulunan ayrı bir tanıklıktır.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "cinsel organ, birleşme veya evlilik hakkı için örtmece",
+        "applicability": "Dalın organı, eylemi ve evlilik bağına dayalı birliktelik hakkını kapsayan tam örtmeceli alanını anlatır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Üç ayrı gönderimi ve bunların örtmeceli niteliğini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "cinsel birleşmede bulunmak",
+          "usage_role": "contextual",
+          "applicability": "Örtmeceli sözün doğrudan cinsel birleşme ya da bedensel yakınlaşma eylemini bildirdiği bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Cinsel birleşme eylemini açık ve doğal biçimde korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "evlilik bağı kurma hakkını elde etmek",
+          "usage_role": "explanatory",
+          "applicability": "Belirli yapının bir kadınla evlenmeyi ve evlilikten doğan birliktelik hakkını anlattığı bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Evlilik bağını ve bu bağla edinilen hakkı birlikte korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F003"
           ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_012",
+          "rendering_kind": "ordinary",
+          "target_gloss": "cinsel organ, evlilik veya cinsel birleşme için örtmece"
         },
         {
-          "text": "yirmi küsur",
+          "lexical_unit_id": "lu_013",
+          "rendering_kind": "ordinary",
+          "target_gloss": "onunla evlenmek veya evlilik akdini elinde bulundurmak"
+        },
+        {
+          "lexical_unit_id": "lu_014",
+          "rendering_kind": "ordinary",
+          "target_gloss": "cinsel birleşmede bulunma"
+        },
+        {
+          "lexical_unit_id": "lu_015",
+          "rendering_kind": "ordinary",
+          "target_gloss": "cinsel birleşme"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001423/B002",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal, cinsel organı ve evlilik bağıyla edinilen birliktelik hakkını da kapsar.",
+          "neighbor_only": "Komşu dal, dokunma ve karşılıklı temas görüntüsünü cinsel birleşmenin örtmecesi olarak kullanır.",
+          "gloss": "cinsel birleşme örtmecesi",
+          "shared_zone": "Her iki dal cinsel birleşmeyi doğrudan söylemeden anlatabilir.",
+          "distinction": "Birleşme bağlamında yakın karşılık olabilirler; ancak odak dalın organ ve evlilik hakkı gönderimleri komşu dalda bulunmaz, komşu dalda ise temas görüntüsü belirleyicidir."
+        },
+        {
+          "neighbor_ref": "root_000259/B006",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal, cinsel organı ve evlilik hakkını da örtmeceli alanına alır.",
+          "neighbor_only": "Komşu dal, birleşme ve bir araya gelme düşüncesini cinsel birleşme ya da evlilik için kullanır.",
+          "gloss": "birleşme ve evlilik",
+          "shared_zone": "İki dal cinsel birleşmeyi ve bazı bağlamlarda evliliği anlatabilir.",
+          "distinction": "Odak dal belirli bir örtmeceli sözün organ ve hak gönderimlerini taşır; komşu dalın çekirdeği bir araya gelme ve birleşmedir."
+        },
+        {
+          "neighbor_ref": "root_000134/B005",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal, cinsel organı, birleşmeyi ve evlilik hakkını örtmeceli biçimde belirtir.",
+          "neighbor_only": "Komşu dal, eşler arasındaki oyun, konuşma, iyi geçinme ve karşılıklı uyum gibi daha geniş birliktelik davranışlarını kapsar.",
+          "gloss": "cinsel birliktelik ve eşlerin ilişkisi",
+          "shared_zone": "Her iki dal evli eşlerin cinsel yakınlığıyla ilgili olabilir.",
+          "distinction": "Odak dalın çekirdeği örtmeceli cinsel gönderimdir; komşu dal eşlerin cinselliği aşan karşılıklı yaşam ve davranış alanını da kapsar."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar organ, cinsel birleşme, evlilik hakkı, bedensel temas ve eşler arası genel ilişki sınırları bakımından değerlendirildi; üç yakın karşıtlık seçildi.",
+      "branch_image_ar": "بضع مكنى به عن موضع النكاح والجماع",
+      "what_is_ar": "يدخل فيه البضع كناية عن الفرج أو موضع الغشيان، وملك بضع المرأة بمعنى عقد نكاحها أو التزوج بها، والمباضعة والبضاع بمعنى المباشرة أو الجماع.",
+      "what_is_not_ar": "لا يدخل فيه القطع الحسي، ولا بضاعة المال، ولا عدد البضع.",
+      "source_phrase_ar": "المباضعة المباشرة أو المجامعة (maqayis;sihah;tahdhib;mufradat)؛ ملك فلان بضع فلانة أي عقدة نكاحها أو تزوجها (maqayis;sihah;tahdhib;mufradat)؛ كني بالبضع عن الفرج (mufradat)",
+      "sources": [
+        "MQ",
+        "SI",
+        "TA",
+        "MU"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_000123/B004",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi onluk sınırına varmayan belirsiz bir sayı çerçevesini destekler; ancak üst sınırın dokuz mu yoksa ona kadar mı olduğu konusunda farklı anlatımlar verir ve ayrıca sayıyı yedi olarak belirleyen bir görüş aktarır. Bu nedenle dal korunabilir, fakat tek ve kesin bir aralık gibi sunulmamalıdır.",
+        "boundary_note": "Sayı çoğunlukla üçten dokuza uzanan belirsiz bir aralıktır; kimi anlatım üst sınırı ona dek götürür, bir görüş ise yediyi belirtir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, belirsiz sayı çekirdeğini yıl ve birleşik sayı yapılarından ayırır ve kaynaklardaki sınır ayrılığını korur."
+      },
+      "concept_map": {
+        "definition": "Çoğunlukla üçten dokuza kadar uzanan, kimi anlatımda üst sınırı ona dek götürülen belirsiz bir sayıdır; ayrıca sayıyı yedi olarak belirleyen bir görüş vardır. Yıl bildiren kullanım bu sayı çekirdeğinin belirli bir yapıda gerçekleşmesidir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Belirsiz sayı, alt sınırı üç olan ve çoğunlukla dokuzu aşmayan bir aralığı bildirir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "source_variant",
+            "statement": "Üst sınırın dokuz ya da ona kadar oluşu konusunda farklı anlatımlar bulunur.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "source_variant",
+            "statement": "Bir görüş, belirsiz aralık yerine bu sayının özellikle yedi olduğunu belirtir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "example",
+            "statement": "Birkaç yıllık bir süreyi anlatan yapı, sayı anlamının ortak ve açık bir örneğidir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar, üçten başlayan ve bir sonraki onluğa yaklaşan belirsiz sayı aralığını ve yıl kullanımını ortak çekirdek olarak verir. Sayıyı özellikle yedi kabul eden görüş, yalnız iki kaynakta bulunan bir varyanttır.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "üçten dokuza, kimi görüşte ona dek olan veya özellikle yediyi belirten sayı",
+        "applicability": "Kesin bir değer yerine üçten başlayan dar sayı aralığını ve üst sınır ayrılığını anlatmak için uygundur.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Alt sınırı, yaygın üst sınırı ve farklı üst sınır görüşünü korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "birkaç yıl",
           "usage_role": "contextual",
-          "applicability": "Belirsiz sayı parçasının yirmiden sonra kullanılabildiğini kabul eden anlatım için uygundur.",
+          "applicability": "Sayı sözünün yıllarla birlikte kesin olmayan, üçten başlayan sınırlı bir süre bildirdiği bağlamlarda kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Yirminin üstündeki belirsiz küçük ek sayıyı korur.",
-            "loses": "Bu kuruluşu geçersiz sayan kaynak görüşünü yansıtmaz.",
+            "fit": "none",
+            "preserves": "Belirsiz sayı değerini ve süre bağlamını doğal biçimde korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
+            "F001",
             "F004"
           ]
         }
@@ -706,7 +633,7 @@
         {
           "lexical_unit_id": "lu_016",
           "rendering_kind": "ordinary",
-          "target_gloss": "üç ile dokuz ya da on arasında belirsiz sayı"
+          "target_gloss": "üçten dokuza, kimi kaynaklarda ona dek belirsiz sayı"
         },
         {
           "lexical_unit_id": "lu_017",
@@ -716,57 +643,46 @@
         {
           "lexical_unit_id": "lu_018",
           "rendering_kind": "ordinary",
-          "target_gloss": "yirmi küsur; kullanımı tartışmalı sayı kuruluşu"
+          "target_gloss": "kullanımı tartışmalı yirmili belirsiz sayı kalıbı"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "yedi",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Kaynaklardan birinde bildirilen belirli sayıyı korur.",
-            "loses": "Çoğu anlatımdaki belirsiz sayı aralığını ve sınır ayrılığını kaldırır.",
-            "adds": null,
-            "collision": "Belirsiz miktarı kesin bir sayı gibi gösterir."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000203/B001",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "Üçten başlayabilen fakat tek değeri belirlenmemiş bir sayı aralığını gösterir.",
-          "neighbor_only": "Kesin olarak üç sayısını ve onun türlü sayı kuruluşlarını gösterir.",
-          "gloss": "üç sayısı",
-          "shared_zone": "Her iki dal da üç değerini içerebilen sayı anlatımlarıdır.",
-          "distinction": "Komşu dal kesin üçtür; odak dal ise alt sınırı üç olabilen fakat üst sınırı ve gerçek değeri bağlama göre belirsiz kalan bir miktardır."
+          "focus_only": "Odak dal, üçten başlayıp dokuz ya da ona dek uzanan belirsiz bir aralık bildirir.",
+          "neighbor_only": "Komşu dal, kesin olarak üç sayısını ve bu sayının düzenli çekim ve dağıtım biçimlerini bildirir.",
+          "gloss": "belirsiz aralık ve kesin üç",
+          "shared_zone": "Her iki dal sayı alanındadır ve odak aralığı üçü içerebilir.",
+          "distinction": "Odak dal tek bir kesin değer seçmez; komşu dalın çekirdeği tam olarak üçtür ve belirsiz aralık anlamı taşımaz."
         },
         {
           "neighbor_ref": "root_001016/B001",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Tam onluğa ulaşmadan önce kalan belirsiz küçük sayıyı belirtir.",
-          "neighbor_only": "Tam onluk sayısını ve onun sayı kuruluşlarını belirtir.",
-          "gloss": "on sayısı",
-          "shared_zone": "İki dal aynı sayı ölçeğinde onluk sınırının çevresinde yer alır.",
-          "distinction": "Odak dal onluk eşiğinin altında kalan belirsiz miktardır; komşu dal bu eşiğin kendisi olan kesin on sayısını gösterir."
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Odak dal, bir sonraki onluğa yaklaşan fakat çoğunlukla onun altında kalan belirsiz sayıyı anlatır.",
+          "neighbor_only": "Komşu dal, kesin on sayısını, yirmiyi ve bunlara bağlı sayı biçimlerini anlatır.",
+          "gloss": "onluğa yaklaşan sayı ve on",
+          "shared_zone": "İki dal aynı sayı dizisinde üst sınıra komşu olabilir.",
+          "distinction": "On, odak dalın belirsiz aralığı için sınır işlevi görür; komşu dalda ise on sayısının kendisi kesin değerdir."
         },
         {
           "neighbor_ref": "root_001694/B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Sayılabilir bir değeri belirli bir küçük sayı aralığına bağlar.",
-          "neighbor_only": "Sayı aralığı vermeden herhangi bir şeyin azlığını veya sürenin kısalığını bildirir.",
-          "gloss": "az miktar",
-          "shared_zone": "Her ikisi de büyük olmayan bir miktarı anlatabilir.",
-          "distinction": "Odak dal sayısal ve sınırlandırılmış bir belirsizliktir; komşu dal ise sayısal aralık gerektirmeyen genel azlık niteliğidir."
+          "focus_only": "Odak dal, alt ve üst sınırları tartışılan belirli bir sayısal aralığı bildirir.",
+          "neighbor_only": "Komşu dal, sayı aralığı vermeden herhangi bir şeyin ya da sürenin azlığını belirtir.",
+          "gloss": "birkaç ve az",
+          "shared_zone": "Her iki dal bağlama göre az miktar ya da kısa süre izlenimi verebilir.",
+          "distinction": "Odak dal sayılabilir bir aralığa bağlıdır; komşu dalın azlık anlamı ölçüseldir ve üçten başlayan belirli bir sayı sınırı gerektirmez."
         }
       ],
-      "neighbor_coverage_note": "Bütün sayı adayları incelendi; kesin alt değer, onluk eşiği ve genel azlıkla karşıtlığı gösteren üç ilişki seçildi, yalnızca ölçme alanını paylaşan uzak adaylar çıkarıldı.",
+      "neighbor_coverage_note": "Bütün sayı adayları kesin değer, belirsiz aralık, azlık, sayma işlemi ve miktar sınırı açısından değerlendirildi; üç, on ve azlık en açıklayıcı karşıtlardır.",
       "branch_image_ar": "عدد منقطع دون العقد",
       "what_is_ar": "يدخل فيه البضع في العدد، وخاصة بضع سنين، مع اختلاف المصادر في الحد: بين الثلاثة والتسعة أو العشرة، وقول بأنه سبعة، وقول بأنه ما لم يبلغ العقد ولا نصفه.",
+      "what_is_not_ar": "لا يدخل فيه القطعة الحسية ولا التجارة ولا النكاح.",
       "source_phrase_ar": "البضع من العدد ما بين الثلاثة إلى العشرة أو التسع (maqayis;sihah;tahdhib;mufradat)؛ بضع سنين (maqayis;sihah;tahdhib;mufradat)؛ البضع سبعة (maqayis;tahdhib)",
       "sources": [
         "MQ",
@@ -778,101 +694,97 @@
     },
     {
       "branch_ref": "root_000123/B005",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi aynı biçimin bir yer ya da ülke adı, denizdeki veya karadan kopuk ada için ad ve belirli bir kuyu adının parçası olarak kullanıldığını gösterir. Bunlar tek bir genel yer kavramına indirgenmemeli; ortak yer alanı içinde özel ad kullanımları ile ada anlamı ayrılmalıdır.",
+        "boundary_note": "Dal, genel olarak her yeri ya da her adayı değil, kaynakta bu biçimle adlandırılan yerleri ve karadan kopuk ada anlamını kapsar."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, yalın yer ve ada adlandırmasını belirli yer ve kuyu adı kullanımlarından ayırır; özel adların yüzey biçimini üretmez."
+      },
       "concept_map": {
-        "definition": "Karadan ayrılmış ada veya belirli bir yer, ülke ya da su kaynağının adı olarak kullanılan yer bildirimidir.",
+        "definition": "Bir yer ya da ülke için kullanılan adlandırmayı ve denizde bulunan ya da karadan kopuk adayı belirtir. Ayrıca belirli bir yer adı ve belirli bir kuyu adı olarak kullanılan biçimler bu yer alanına bağlıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Denizde bulunan veya karadan kopuk ada ile belirli bir yer ya da ülkeyi bildirir.",
+            "statement": "Biçim, bir yer ya da ülke için adlandırma olarak kullanılır.",
             "claim_ids": [
-              "lu_019"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "example",
-            "statement": "Belirli bir yer için kullanılan ayrı bir yer adıdır.",
+            "role": "core",
+            "statement": "Denizde bulunan veya ana karadan kopuk kara parçası bu adlandırmanın ortak ada anlamıdır.",
             "claim_ids": [
-              "lu_020"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "example",
-            "statement": "Belirli bir kuyuyu gösteren kalıplaşmış bir kuyu adıdır.",
+            "statement": "Belirli bir kuyu adı, genel yer alanındaki özel ad kullanımının kaynakta verilen örneğidir.",
             "claim_ids": [
-              "lu_021"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ana kullanım belirli bir yeri veya ülkeyi, özellikle denizdeki ya da karadan ayrılmış bir adayı gösterir. Bunun yanında iki ayrı söz, yalnızca belirli bir yerin ve belirli bir kuyunun adı olarak tanıklanır.",
+        "common_summary": "Kaynakların ortak çekirdeği, denizdeki ya da karadan kopuk ada anlamıdır. Yer veya ülke adlandırması daha dar kaynak desteğiyle aynı yer alanına bağlanır; belirli kuyu adı ise tek kaynakta tanıklanan özel örnektir.",
         "common_claim_ids": [
-          "lu_019"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_020"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Tek kaynak, sözü açıklama eklemeden belirli bir yer adı olarak kaydeder."
-          },
-          {
-            "claim_ids": [
-              "lu_021"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Başka bir tek kaynak, kalıplaşmış sözü anlatıda geçen belirli bir kuyunun adı olarak verir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "karadan ayrılmış ada veya belirli yer",
-        "applicability": "Hem ada niteliğini hem de daha genel belirli yer kullanımını koruyan kısa karşılıktır.",
+        "text": "yer adı veya karadan kopuk ada",
+        "applicability": "Yer adlandırması ile denizdeki ya da karadan kopuk ada anlamını birlikte temsil etmek için uygundur.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Karadan ayrılmış ada ile belirli yer seçeneklerini birlikte korur.",
+          "preserves": "Hem yer adı kullanımını hem de ayrılmış kara parçası anlamını korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
           "text": "karadan kopuk ada",
           "usage_role": "contextual",
-          "applicability": "Sözün denizde bulunan veya karayla bağlantısı kesilmiş adayı anlattığı yerde kullanılır.",
+          "applicability": "Sözün denizde bulunan ya da ana karadan ayrılmış kara parçasını anlattığı bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Adanın denizde bulunmasını veya karadan ayrılmış olmasını korur.",
+            "preserves": "Ada olma ve karadan ayrılmış bulunma özelliklerini korur.",
             "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F002"
           ]
         },
         {
-          "text": "bir kuyu adı",
+          "text": "bir yer adı",
           "usage_role": "explanatory",
-          "applicability": "Belirli kuyuyu gösteren kalıplaşmış adın işlevini açıklamak için kullanılır.",
+          "applicability": "Biçimin belirli bir yer, ülke ya da kuyu için özel ad işlevinde bulunduğu bağlamları açıklar.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Sözün belirli bir kuyuyu adlandırma işlevini korur.",
+            "preserves": "Kullanımın bir yeri adlandırma işlevini korur.",
             "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
+            "F001",
             "F003"
           ]
         }
@@ -881,7 +793,7 @@
         {
           "lexical_unit_id": "lu_019",
           "rendering_kind": "ordinary",
-          "target_gloss": "karadan ayrılmış ada; belirli yer veya ülke"
+          "target_gloss": "yer, ülke veya karadan kopuk ada"
         },
         {
           "lexical_unit_id": "lu_020",
@@ -894,54 +806,43 @@
           "target_gloss": "bir kuyu adı"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "ada",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Denizde veya karadan ayrılmış kara parçası anlamını korur.",
-            "loses": "Genel yer, ülke ve özel kuyu adı kullanımlarını dışarıda bırakır.",
-            "adds": null,
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000148/B001",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Karadan ayrılmış ada görüntüsünü ve belirli ad kullanımlarını taşır.",
-          "neighbor_only": "Bayındır, ıssız, boş veya yerleşilmiş her türlü sınırlı yeri genel olarak kapsar.",
-          "gloss": "sınırlı yer veya ülke",
-          "shared_zone": "Her iki dal da belirli bir yeri veya ülkeyi gösterebilir.",
-          "distinction": "Komşu dal genel yer kavramıdır; odak dal ise ada veya belirli ad olarak daha dar ve kalıplaşmış bir yer bildirimidir."
-        },
-        {
-          "neighbor_ref": "root_000006/B008",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "Ada niteliği taşıyabilir ve birden fazla yer adı kullanımına uzanır.",
-          "neighbor_only": "Yalnızca kendine özgü tek bir yer adını ve biçim değişkesini belirtir.",
-          "gloss": "belirli bir yer adı",
-          "shared_zone": "İki dal da sözlükte belirli yerleri adlandıran kullanımları içerir.",
-          "distinction": "Ortaklık yalnızca yer adı alanındadır; odak dalın ada anlamı vardır, komşu dal ise başka bir belirli yer adına bağlıdır."
+          "focus_only": "Odak dal, belirli bir adlandırmayı ve denizdeki ya da karadan kopuk adayı kapsar.",
+          "neighbor_only": "Komşu dal, yerleşik, boş, bayındır ya da ıssız olmasına bakmadan yeryüzündeki her türlü sınırlandırılmış yeri kapsar.",
+          "gloss": "özel yer adlandırması ve genel yer",
+          "shared_zone": "Her iki dal yeryüzündeki bir yeri anlatabilir.",
+          "distinction": "Odak dal belirli bir sözün yer adı ve ada kullanımıyla sınırlıdır; komşu dal genel yer kavramını çok daha geniş kapsamda verir."
         },
         {
-          "neighbor_ref": "root_000993/B009",
+          "neighbor_ref": "root_000341/B010",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Odak dalda yer adı kullanımı yanında karadan kopuk ada anlamı da bulunur.",
+          "neighbor_only": "Komşu dal, başka biçimlerle adlandırılan belirli yerleri ve bilinen kuyuları topluca kapsar.",
+          "gloss": "yer adları",
+          "shared_zone": "İki dal da belirli yerlerin ya da kuyuların adı olarak kullanılan biçimleri içerir.",
+          "distinction": "Ortaklık yalnız özel ad işlevindedir; odak dalın ada anlamı komşuda yoktur ve komşunun adlandırdığı yerler odak biçimin gönderimleri değildir."
+        },
+        {
+          "neighbor_ref": "root_000123/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Karadan ayrılmış bütün bir ada veya adlandırılmış yer gösterir.",
-          "neighbor_only": "Vadi, ırmak ya da dağın yanını ve kıyısını gösterir.",
-          "gloss": "yan, kıyı veya yamaç",
-          "shared_zone": "Her iki dal kara ile su veya başka yer şekilleri arasındaki konumu anlatabilir.",
-          "distinction": "Odak dal ayrılmış kara parçasının veya yerin bütününü, komşu dal ise bir yer şeklinin kenarını ya da yanını belirtir."
+          "focus_only": "Odak dal, karadan kopuk kara parçasını ve yer adı kullanımlarını belirtir.",
+          "neighbor_only": "Komşu dal, bir nesneyi gerçekten keserek parçalara ayırmayı ve kesilen parçayı belirtir.",
+          "gloss": "kopuk ada ve kesilmiş parça",
+          "shared_zone": "İki dalda da bir bütünden ayrılmış parça görüntüsü bulunabilir.",
+          "distinction": "Odak dalda ayrılma, ada ve yer adlandırmasının özelliğidir; komşu dalda ise somut kesme işlemi ve bu işlemle oluşan parça çekirdektir."
         }
       ],
-      "neighbor_coverage_note": "Tüm yer adayları değerlendirildi; genel yer, salt yer adı ve kıyı kavramıyla sınırı gösteren üçü yayımlandı, yalnızca başka özel adları sıralayan adaylar yinelenen sayıldı.",
+      "neighbor_coverage_note": "Bütün adaylar genel yer, özel yer adı, ada, kıyı, kara parçası ve kökün kesme dalı açısından değerlendirildi; üç karşıtlık sınırı yeterince keskinleştirir.",
       "branch_image_ar": "بقعة أو جزيرة منقطعة",
       "what_is_ar": "يدخل فيه البضيع اسما لموضع أو بلد أو حبل أو بحر، والجزيرة في البحر أو المنقطعة عن البر، وبئر بضاعة اسما لموضع.",
+      "what_is_not_ar": "لا يدخل فيه بضاعة التجارة ولا عدد البضع ولا الري.",
       "source_phrase_ar": "البضيع بلد أو موضع (maqayis;sihah;tahdhib)؛ البضيع الجزيرة في البحر أو المنقطعة عن البر (maqayis;sihah;tahdhib;mufradat)؛ بئر بضاعة (sihah)",
       "sources": [
         "MQ",
@@ -949,84 +850,90 @@
         "TA",
         "MU"
       ],
-      "source_note": {
-        "MQ": "Tek kaynak, sözü açıklama eklemeden belirli bir yer adı olarak kaydeder.",
-        "SI": "Başka bir tek kaynak, kalıplaşmış sözü anlatıda geçen belirli bir kuyunun adı olarak verir."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000123/B006",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi yalnız belirli yapılarda su içerek susuzluğun giderilmesini, suyun birini doyurmasını, açıklamayla sorunun giderilip kişinin içinin rahatlatılmasını ve benzetme yoluyla birinden bıkmayı verir. Dal başlığı ilk üç kullanımı iyi karşılar, fakat bıkma uzantısı ayrıca belirtilmelidir.",
+        "boundary_note": "Bu anlamlar yapıya bağlıdır; kökün yalın ve genel anlamı gibi sunulamaz, suyla doyma ile açıklamayla rahatlama da tek bir eyleme indirgenemez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım yalnız kanıtlanan su, açıklama ve kişiden bıkma yapılarıyla sınırlıdır; bunlardan bağımsız yalın bir anlam çıkarmaz."
+      },
       "concept_map": {
-        "definition": "Su içerek susuzluğu tamamen giderme veya suyun birini bu duruma ulaştırmasıdır; aynı sonuç görüntüsü, bir soruyu açıklayıp kişiyi doyurucu yanıta ulaştırmaya aktarılır, kişiden bıkma ise benzetmeye dayalı ayrı bir uzantıdır.",
+        "definition": "Yalnız belirli yapılarda, suyla susuzluğun giderilmesini, suyun birini doyurmasını, açıklamayla bir sorunun giderilip kişinin içinin rahatlatılmasını ve benzetme yoluyla birinden bıkmayı anlatır. Su ve açıklama kullanımları gereksinimin yeterince karşılanmasında buluşur.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Su içerek susuzluğu gidermiş ve yeterince içmiş duruma gelmektir.",
+            "statement": "Su içen kişinin susuzluğu gider ve kişi yeterince suya kavuşur.",
             "claim_ids": [
-              "lu_022"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Suyun içen kişiyi susuzluğu giderilmiş duruma ulaştırmasını belirtir.",
+            "statement": "Neden olan yapıda su, kişinin susuzluğunu giderip onu doyurur.",
             "claim_ids": [
-              "lu_023"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "extension",
-            "statement": "Bir sorunu açıklığa kavuşturup soran ya da çekişen kişiyi doyurucu yanıta ulaştırmayı anlatır.",
+            "statement": "Bir soru ya da anlaşmazlık yeterince açıklanarak kişinin bilgi gereksinimi giderilir ve içi rahatlatılır.",
             "claim_ids": [
-              "lu_024"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F004",
-            "role": "extension",
-            "statement": "Bir kişiden veya ona sürekli söz söylemekten bıkmayı benzetme yoluyla anlatır.",
+            "role": "associated_use",
+            "statement": "Bir kişiden bıkma, doyma sınırının aşılmasına dayanan benzetmeli ve yapıya bağlı kullanımdır.",
             "claim_ids": [
-              "lu_025"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar su içenin susuzluğunu tam gidermesini ve suyun içeni bu sonuca ulaştırmasını ortak biçimde verir. Aynı doyuma ulaşma görüntüsü, bir anlaşmazlığı açıklayıp karşıdakini doyurucu yanıta kavuşturmaya aktarılır; bir kişiden bıkma kullanımı ise benzetmeli bir yan uzantıdır.",
+        "common_summary": "Üç kaynak, su içerek susuzluğun giderilmesini ve açıklamayla sorunun çözülüp kişinin rahatlatılmasını birlikte verir. Suyun kişiyi doyuran neden olması ile kişiden bıkma kullanımı, iki kaynakta bulunan ek yapılardır.",
         "common_claim_ids": [
-          "lu_022",
-          "lu_023",
-          "lu_024",
-          "lu_025"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "susuzluğu tümüyle giderip doyuma ulaşma",
-        "applicability": "Su içme çekirdeğindeki yeterlilik ve tamamlanmış sonuç durumunu birlikte karşılar.",
+        "text": "susuzluğu veya bilgi gereksinimini giderme; birinden bıkma",
+        "applicability": "Yalnız kanıtlanan yapılarda suyla doyma, açıklamayla rahatlama ve kişiden bıkma kullanımlarını birlikte gösterir.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Su içmeyi, susuzluğun giderilmesini ve doyum sonucunu korur.",
+          "preserves": "Su, açıklama ve bıkma kullanımlarının ayrı kapsamlarını korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002",
+          "F003",
+          "F004"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "kana kana içmek",
+          "text": "sudan doyasıya içmek",
           "usage_role": "contextual",
-          "applicability": "İçenin suyla susuzluğunu tamamen giderdiği doğal anlatımlarda kullanılır.",
+          "applicability": "Öznenin su içerek susuzluğunu giderdiği ve yeterince suya kavuştuğu yapıda kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Yeterince su içme ve susuzluğu tümüyle giderme sonucunu korur.",
+            "preserves": "Su içme ve susuzluğun giderilmesi sonucunu korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -1036,12 +943,12 @@
           ]
         },
         {
-          "text": "doyurucu biçimde açıklamak",
-          "usage_role": "explanatory",
-          "applicability": "Bir soruyu veya anlaşmazlığı karşıdakini tatmin edecek açıklığa ulaştırma bağlamında kullanılır.",
+          "text": "açıklayarak içini rahatlatmak",
+          "usage_role": "contextual",
+          "applicability": "Bir soruyu ya da anlaşmazlığı yeterince açıklayıp kişinin bilgi gereksinimini giderme yapısında kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Açıklama yoluyla belirsizliği giderme ve kişiyi doyuma ulaştırma sonucunu korur.",
+            "preserves": "Açıklama eylemini ve tatmin edici sonucunu birlikte korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -1053,10 +960,10 @@
         {
           "text": "birinden bıkmak",
           "usage_role": "contextual",
-          "applicability": "Bir kişiden veya ona buyurmaktan usanmayı anlatan benzetmeli kullanım içindir.",
+          "applicability": "Yalnız kişiden usanmayı anlatan benzetmeli ve yapıya bağlı kullanımda geçerlidir.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Kişiye karşı sabrın tükenmesi ve usanma durumunu korur.",
+            "preserves": "Kişiye yönelik bıkma ve usanma sonucunu korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -1070,7 +977,7 @@
         {
           "lexical_unit_id": "lu_022",
           "rendering_kind": "ordinary",
-          "target_gloss": "sudan kanmak, susuzluğu gidermek"
+          "target_gloss": "sudan doyasıya içmek"
         },
         {
           "lexical_unit_id": "lu_023",
@@ -1080,7 +987,7 @@
         {
           "lexical_unit_id": "lu_024",
           "rendering_kind": "ordinary",
-          "target_gloss": "doyurucu biçimde açıklayıp içini rahatlatmak"
+          "target_gloss": "açıklayarak içini rahatlatmak"
         },
         {
           "lexical_unit_id": "lu_025",
@@ -1088,54 +995,43 @@
           "target_gloss": "birinden bıkmak"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "içmek",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Suyu ağız yoluyla alma eylemini korur.",
-            "loses": null,
-            "adds": "Susuzluğun giderilmediği her türlü içme olayını da kapsar.",
-            "collision": "Eylemi, gerekli tamamlanmış doyum sonucundan ayırır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000615/B001",
-          "relation_type": "synonym",
-          "boundary_match": "exact",
-          "focus_only": null,
-          "neighbor_only": null,
-          "gloss": "suya kanma ve susuzluğun karşıtı",
-          "shared_zone": "İki dal da su içerek susuzluğun tamamen giderilmesini anlatır.",
-          "distinction": "Suya kanma çekirdeğinde sınırları eşleşir; bağımlı uzantı ve türetimler bu temel eşdeğerliği bozmaz."
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal, suyun birini doyurmasını, açıklamayla rahatlatmayı ve kişiden bıkmayı da belirli yapılarda kapsar.",
+          "neighbor_only": "Komşu dal, susuzluğun karşıtı olan genel doygunluk durumunu ve suyun ya da kaynağın susuzluğu giderme niteliğini kapsar.",
+          "gloss": "susuzluğun giderilmesi",
+          "shared_zone": "İki dal da su içen kişinin susuzluğunun giderilmesini anlatır.",
+          "distinction": "Su içme bağlamında yakın karşılıktırlar; odak dal yalnız belirli yapılarda ayrıca açıklama ve bıkma uzantılarını taşırken komşu dal genel suya doyma alanını verir."
         },
         {
           "neighbor_ref": "root_001544/B002",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Birinden bıkma benzetmesini ve tartışmayı açıklayarak bitirme kullanımını içerir.",
-          "neighbor_only": "Haber veya görüşle kişinin gönlünü yatıştırma ve suyun susuzluğu giderme niteliğini genişçe kapsar.",
-          "gloss": "susuzluğu giderme veya içi rahatlatma",
-          "shared_zone": "Her iki dal suyla doyumu ve bilginin kişiyi rahatlatmasını ilişkilendirir.",
-          "distinction": "Odak dal açıklamayla belirli bir çekişmeyi çözüme ulaştırır; komşu dal haber ya da görüşle genel iç rahatlığına da uzanır."
+          "focus_only": "Odak dalda kişiden bıkma kullanımı ve suyun kişiyi doyurduğu ayrı neden olan yapı bulunur.",
+          "neighbor_only": "Komşu dal, susuzluğu gideren suyu ve haber ya da görüşle ruhsal yatışmayı daha genel biçimde kapsar.",
+          "gloss": "suya doyma ve bilgiyle rahatlama",
+          "shared_zone": "Her iki dal hem susuzluğun giderilmesini hem de bilgiyle iç rahatlamasını anlatabilir.",
+          "distinction": "Odak dal kanıtlanan özel yapılara bağlıdır ve bıkma uzantısını içerir; komşu dal suyun niteliğini ve ruhsal yatışmayı daha genel bir kapsamda verir."
         },
         {
-          "neighbor_ref": "root_001509/B004",
+          "neighbor_ref": "root_000286/B006",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "İnsan içenin doyması ile açıklama ve bıkma uzantılarını kapsar.",
-          "neighbor_only": "Özellikle develerin yeterince ve isteyerek su içirilmesini anlatır.",
-          "gloss": "develeri suya kandırma",
-          "shared_zone": "İki dalda da su içme sonunda susuzluğun giderilmesi vardır.",
-          "distinction": "Komşu dal hayvan ve ettirgen sulama bağlamıyla sınırlıdır; odak dal genel içen durumundan düşünsel doyuma kadar uzanır."
+          "focus_only": "Odak dal, içenin susuzluğunun giderilmesini ve açıklamayla bilgi gereksiniminin karşılanmasını anlatır.",
+          "neighbor_only": "Komşu dal, hayvanın suya doymasının başlangıcını ve bir kabın suyla dolmasını da kapsar.",
+          "gloss": "suya doyma ve dolma",
+          "shared_zone": "İki dal suyla yeterli bir düzeye ulaşmayı anlatabilir.",
+          "distinction": "Odak dalda kişinin susuzluğu giderilir; komşu dal doymanın ilk aşamasını ve kabın fiziksel olarak dolmasını da çekirdeğine alır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar incelendi; suya kanma çekirdeği, düşünsel doyum uzantısı ve ettirgen hayvan bağlamını ayıran üç ilişki seçildi, yalnızca su çıkarma veya tehdit alanındaki uzak adaylar elendi.",
+      "neighbor_coverage_note": "Bütün adaylar suya doyma, suyla doldurma, bilgiyle rahatlatma, tartışma ve bıkma kullanımları açısından değerlendirildi; üç yakın sınır yayımlandı.",
       "branch_image_ar": "بلوغ الري أو الشفاء بالبيان",
       "what_is_ar": "يدخل فيه بضعت من الماء بمعنى رويت، وأبضعني الماء بمعنى أرواني، وإبضاع السائل أو الخصم بمعنى إشفائه وبيان ما تنازعه، والسآمة من الشخص على التشبيه.",
+      "what_is_not_ar": "لا يدخل فيه القطع الحسي، ولا بضاعة المال، ولا عدد البضع.",
       "source_phrase_ar": "بضعت من الماء رويت (maqayis;sihah;tahdhib)؛ أبضعني الماء أرواني (sihah;tahdhib)؛ أبضعته إذا شفيته أو بينت له حتى يشتفي (maqayis;sihah;tahdhib)؛ بضعت من فلان إذا سئمت منه (sihah;tahdhib)",
       "sources": [
         "MQ",
@@ -1146,102 +1042,106 @@
     },
     {
       "branch_ref": "root_000123/B007",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi alında terin çıkıp akmasını, bu akışın açılarak ve kesintili biçimde gerçekleşmesini ve aynı biçimin ter adı olarak kullanılmasını açıkça verir. Süreç ile çıkan sıvı aynı dalda tutulabilir, ancak biri ötekine indirgenmemelidir.",
+        "boundary_note": "Dal etin yarılmasını, suyla susuzluğun giderilmesini ve yer ya da ada adlandırmasını kapsamaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, alınla kurulan belirli akış yapısını yalın süreç ve ter adı kullanımlarından ayırarak her üçünü korur."
+      },
       "concept_map": {
-        "definition": "Terle açılma ve özellikle alından terin kesik kesik akmasıdır; çıkan sıvının kendisi de ter adıyla bu dala girer.",
+        "definition": "Terin çıkıp akmasıdır. Özel bir anlatımda ter çıkışı açılarak ve kesintili biçimde gerçekleşir; ayrı bir kullanım ise terin kendisini adlandırır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Alından ter çıkıp akması olayını belirtir.",
+            "statement": "Ter dışarı çıkar ve akmaya başlar.",
             "claim_ids": [
-              "lu_026"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Terle açılmayı ve terin kesik kesik akmasını özellikle belirtir.",
+            "role": "source_variant",
+            "statement": "Özel anlatımda ter çıkışı açılarak başlar ve akış kesik kesik sürer.",
             "claim_ids": [
-              "lu_027"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "associated_use",
-            "statement": "Akış olayının ürünü olan ter sıvısının kendisini adlandırır.",
+            "role": "example",
+            "statement": "Alnın ter akıtması, sürecin kaynakta verilen belirli beden bölgesi örneğidir.",
             "claim_ids": [
-              "lu_028"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "source_variant",
+            "statement": "Ayrı bir kullanım, akış sürecini değil terin kendisini adlandırır.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak çekirdek, alından terin çıkıp akmasıdır. Tek kaynaklı ek tanıklıklar, bu akışın gözeneklerin açılmasıyla ve kesik kesik gerçekleştiğini belirtir ve çıkan sıvının kendisi için ayrı bir ad verir.",
+        "common_summary": "İki kaynak alnın ter akıtması kullanımını paylaşır. Bir kaynak ter çıkışını açılma ve kesintili akışla nitelerken diğeri aynı sözle terin kendisini adlandırır.",
         "common_claim_ids": [
-          "lu_026"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_027"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Tek kaynak, terlemenin gözeneklerin açılmasıyla başlayıp kesik kesik akış halinde sürdüğünü özellikle belirtir."
-          },
-          {
-            "claim_ids": [
-              "lu_028"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Başka bir tek kaynak, olaydan çıkan sıvının kendisini doğrudan ter anlamında adlandırır."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "terin açılıp kesik kesik akması",
-        "applicability": "Terin çıkışını, akışını ve aralıklı gerçekleşme biçimini birlikte korur.",
+        "text": "terin akması veya terin kendisi",
+        "applicability": "Terin dışarı çıkıp akması ile ayrı kullanımda terin kendisini adlandırmayı birlikte ve nötr biçimde kapsar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Terin gözeneklerden çıkmasını ve kesik kesik akmasını korur.",
+          "preserves": "Ter akışını ve ter adını korur; kesik kesik akışı dalın bütününe yaymaz.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
           "F001",
-          "F002"
+          "F004"
         ]
       },
       "contextual_glosses": [
         {
           "text": "alnından ter akmak",
           "usage_role": "contextual",
-          "applicability": "Terlemenin özellikle alın üzerindeki görünür akışını anlatan cümlelerde kullanılır.",
+          "applicability": "Belirli yapının alında oluşan terin dışarı çıkıp akmasını anlattığı bağlamda kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Alın bölgesini ve terin görünür biçimde akmasını korur.",
+            "preserves": "Beden bölgesini, teri ve akış eylemini birlikte korur.",
             "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F001",
+            "F003"
           ]
         },
         {
-          "text": "kesik kesik terlemek",
-          "usage_role": "explanatory",
-          "applicability": "Terin gözeneklerden aralıklı biçimde çıktığını vurgulayan bağlamda kullanılır.",
+          "text": "kesik kesik ter akıtmak",
+          "usage_role": "contextual",
+          "applicability": "Terin deriden açılarak bölüm bölüm ve kesintili biçimde aktığı eylem bağlamında kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Ter çıkışının aralıklı ve akışlı gerçekleşmesini korur.",
+            "preserves": "Ter akışını ve akışın kesintili biçimini korur.",
             "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
+            "F001",
             "F002"
           ]
         }
@@ -1255,7 +1155,7 @@
         {
           "lexical_unit_id": "lu_027",
           "rendering_kind": "ordinary",
-          "target_gloss": "terle açılıp kesik kesik akmak"
+          "target_gloss": "terleyip kesik kesik akmak"
         },
         {
           "lexical_unit_id": "lu_028",
@@ -1263,99 +1163,92 @@
           "target_gloss": "ter"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "terlemek",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Bedenden ter çıkması olayını korur.",
-            "loses": "Gözeneklerin açılması, akış ve kesik kesik gerçekleşme özelliklerini siler.",
-            "adds": null,
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
-        {
-          "neighbor_ref": "root_001518/B003",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Terin özellikle gözeneklerden açılıp kesik kesik ve alından akmasını belirtir.",
-          "neighbor_only": "Su, yağmur, burun akıntısı ve henüz katılaşmamış maddelerin damlama ya da akışını da kapsar.",
-          "gloss": "damlama veya sürekli akma",
-          "shared_zone": "Her iki dal terin veya başka bir sıvının damlayıp akmasını anlatabilir.",
-          "distinction": "Odak dal ter ve onun aralıklı çıkışıyla sınırlıdır; komşu dal çok çeşitli sıvıların damlaması ve sürekli akması için daha geniştir."
-        },
-        {
-          "neighbor_ref": "root_001221/B010",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Terin bedenden çıkma ve akma sürecini anlatır.",
-          "neighbor_only": "Tek bir ter boşalımını veya atın bir terleme nöbetini ölçü birimi gibi adlandırır.",
-          "gloss": "bir ter boşalımı",
-          "shared_zone": "İki dal da terin belirgin biçimde çıkıp akmasını konu edinir.",
-          "distinction": "Odak dal akış biçimine, komşu dal ise bu akışın tek bir nöbet ya da boşalım olarak sayılmasına odaklanır."
-        },
         {
           "neighbor_ref": "root_001420/B007",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Terin açılıp kesik kesik akması olayını da kapsar.",
-          "neighbor_only": "Özellikle görünür veya az miktardaki terin adıyla sınırlıdır.",
-          "gloss": "görünür az ter",
-          "shared_zone": "Her iki dal çıkan sıvının kendisini ter olarak adlandırabilir.",
-          "distinction": "Ad olarak ter anlamında yaklaşırlar; odak dal ayrıca terin gözeneklerden çıkıp akma sürecini kurucu biçimde taşır."
+          "focus_only": "Odak dal, terin deriden açılarak ve kesintili biçimde akma sürecini de kapsar.",
+          "neighbor_only": "Komşu dal, görünen ya da az miktardaki teri süreç ve akış biçimi belirtmeden adlandırır.",
+          "gloss": "akan ter ve görünen ter",
+          "shared_zone": "Her iki dal ter sıvısının kendisini adlandırabilir.",
+          "distinction": "Ter adı olarak yakınlaşırlar; odak dalın deriden çıkma ve kesintili akış çekirdeği komşu dalda bulunmaz, komşu dal ise azlık niteliğini taşıyabilir."
+        },
+        {
+          "neighbor_ref": "root_001221/B010",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal, terin gözeneklerden açılıp kesintili biçimde akmasını ve terin kendisini kapsar.",
+          "neighbor_only": "Komşu dal, terlemenin tek bir atımını ya da özellikle atın bir terleme nöbetini belirtir.",
+          "gloss": "kesintili ter akışı ve terleme nöbeti",
+          "shared_zone": "İki dal terin bölüm bölüm ortaya çıkmasını anlatabilir.",
+          "distinction": "Odak dal kesintili akış sürecine bağlıdır; komşu dal akış biçiminden çok tek atımı ya da ayrı bir terleme nöbetini sayılabilir olay olarak öne çıkarır."
+        },
+        {
+          "neighbor_ref": "root_001518/B003",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal yalnız terin deriden açılarak kesintili akışını ve ter sıvısını anlatır.",
+          "neighbor_only": "Komşu dal su, yağmur, burun akıntısı ve akışkan yiyecek gibi çok çeşitli sıvıların damlamasını ya da akmasını kapsar.",
+          "gloss": "ter akışı ve genel damlama",
+          "shared_zone": "Her iki dal bir sıvının damlayarak ya da akarak ilerlemesini anlatabilir.",
+          "distinction": "Odak dal ter ve onun deriden çıkış biçimiyle sınırlıdır; komşu dalın çekirdeği sıvı türünden bağımsız damlama ve akmadır."
         }
       ],
-      "neighbor_coverage_note": "Bütün akış ve ter adayları değerlendirildi; genel sıvı akışı, tek ter boşalımı ve terin adıyla ayrımı gösteren üç aday seçildi, yalnızca beden bölgesi veya genel hareket ortaklığı taşıyanlar elendi.",
+      "neighbor_coverage_note": "Bütün adaylar terin adı, çıkış noktası, akış biçimi, tek terleme nöbeti ve genel sıvı akışı bakımından değerlendirildi; üç karşıtlık seçildi.",
       "branch_image_ar": "تفتح العرق وسيلانه",
       "what_is_ar": "يدخل فيه جبهة تتبضع أي تسيل عرقا، ويتبضع بمعنى يتفتح بالعرق ويسيل متقطعا، والبضيع بمعنى العرق.",
+      "what_is_not_ar": "لا يدخل فيه شق اللحم نفسه، ولا الري بالماء، ولا الموضع المسمى البضيع.",
       "source_phrase_ar": "جبهته تتبضع أي تسيل عرقا (sihah;tahdhib)؛ يتبضع يتفتح بالعرق ويسيل متقطعا (tahdhib)؛ البضيع العرق (sihah)",
       "sources": [
         "SI",
         "TA"
       ],
-      "source_note": {
-        "TA": "Tek kaynak, terlemenin gözeneklerin açılmasıyla başlayıp kesik kesik akış halinde sürdüğünü özellikle belirtir.",
-        "SI": "Başka bir tek kaynak, olaydan çıkan sıvının kendisini doğrudan ter anlamında adlandırır."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000123/B008",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi tekil ve çoğul biçimlerde doğrudan ortak ya da ortakları adlandırır. Dal, ortaklığın kurulması veya payların bölünmesi eylemini değil, paya ya da işe birlikte katılan kişiyi merkez alır.",
+        "boundary_note": "Dal alışverişe ayrılan varlığı, paylaştırma işlemini, ücret karşılığını ve yalnızca arkadaşlık ilişkisini kapsamaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın kişi adlandırmasını verir ve komşu ortaklık, paylaşma ya da arkadaşlık yapılarından ek anlam taşımaz."
+      },
       "concept_map": {
-        "definition": "Bir payda, malda veya işte başkasıyla birlikte hak ve sorumluluk taşıyan kişidir; çoğul biçimi aynı konumdaki birden çok kişiyi gösterir.",
+        "definition": "Bir paya, varlığa ya da işe başkasıyla birlikte katılan ortak kişidir. Tekil ve çoğul biçimler aynı kişi rolünü sayı bakımından ayırır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Ortak bir payda veya işte birlikte hak ve sorumluluk taşıyan tek kişiyi belirtir.",
+            "statement": "Kişi bir paya, varlığa ya da işe başka biriyle birlikte katılır.",
             "claim_ids": [
-              "lu_029"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "associated_use",
-            "statement": "Aynı payı veya işi paylaşan birden çok kişiyi çoğul olarak belirtir.",
+            "role": "example",
+            "statement": "Aynı ortak kişi rolü tekil biçimde bir kişiyi, çoğul biçimde birden çok kişiyi adlandırır.",
             "claim_ids": [
-              "lu_030"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Tek sözlükte tanıklanan bu dal, bir payı veya işi birlikte yürüten kişiyi ortak olarak adlandırır. Aynı söz alanının çoğul biçimi, bu konumdaki birden çok ortağı gösterir.",
-        "common_claim_ids": [
-          "lu_029"
-        ],
+        "common_summary": "Dal, pay ya da iş ortaklığı içindeki kişiyi adlandırır; tekil ve çoğul biçimler kişi rolünü değiştirmeden sayıyı ayırır.",
+        "common_claim_ids": [],
         "source_details": [
           {
             "claim_ids": [
-              "lu_030"
+              "bc_001"
             ],
-            "kind": "derivation",
-            "summary": "Aynı kaynak, tek kişiyi gösteren adın çoğul biçimini birden çok ortak için ayrıca kaydeder."
+            "kind": "sole_attestation",
+            "summary": "Tek tanıklık, ortak kişi adının hem tekil hem de çoğul biçimini açıkça verir."
           }
         ],
         "supporting_claim_ids": [],
@@ -1363,10 +1256,10 @@
       },
       "concept_gloss": {
         "text": "pay veya iş ortağı",
-        "applicability": "Bir payı ya da işi başkasıyla birlikte taşıyan kişiyi doğal ve kısa biçimde karşılar.",
+        "applicability": "Bir paya, varlığa ya da işe başka biriyle birlikte katılan kişiyi doğal biçimde adlandırır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Pay veya iş ortaklığını ve kişi rolünü birlikte korur.",
+          "preserves": "Ortak olunan alanı ve ortak kişi rolünü birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -1379,30 +1272,32 @@
         {
           "text": "ortağım",
           "usage_role": "contextual",
-          "applicability": "Konuşanın bir payı veya işi birlikte yürüttüğü tek kişiyi gösterdiği yerde kullanılır.",
+          "applicability": "Konuşanın paya, varlığa ya da işe birlikte katıldığı tek bir kişiyi belirttiği bağlamda kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Tek ortak kişiyi ve konuşana bağlılık ilişkisini korur.",
+            "preserves": "Tekil ortak kişi rolünü ve konuşana bağlılığı korur.",
             "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002"
           ]
         },
         {
           "text": "ortaklarım",
           "usage_role": "contextual",
-          "applicability": "Konuşanın payı veya işi birlikte yürüttüğü birden çok kişiyi gösterdiği yerde kullanılır.",
+          "applicability": "Konuşanın paya, varlığa ya da işe birlikte katıldığı birden çok kişiyi belirttiği bağlamda kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Birden çok ortak kişiyi ve konuşana bağlılık ilişkisini korur.",
+            "preserves": "Çoğul ortak kişi rolünü ve konuşana bağlılığı korur.",
             "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
+            "F001",
             "F002"
           ]
         }
@@ -1419,65 +1314,54 @@
           "target_gloss": "ortaklarım"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "arkadaş",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "İki kişi arasındaki yakın veya birlikte bulunma ilişkisini korur.",
-            "loses": null,
-            "adds": "Ortak pay ya da iş bulunmayan kişisel yakınlık ilişkilerini de kapsar.",
-            "collision": "Pay ve sorumluluk ortaklığını salt yakınlık gibi gösterebilir."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000791/B001",
-          "relation_type": "near_synonym",
+          "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Ortaklık ilişkisindeki kişiyi tekil veya çoğul ad olarak gösterir.",
-          "neighbor_only": "Ortak olma durumunu, katılma eylemini, ortak payı ve ortak kaynağı da kapsar.",
-          "gloss": "ortaklık ve ortak olma",
-          "shared_zone": "İki dal da bir şeyin iki veya daha çok kişi arasında ortak olmasına dayanır.",
-          "distinction": "Odak dal ilişkideki kişiyi adlandırır; komşu dal ise ilişkinin kendisini, kurulmasını ve ortak payı daha geniş biçimde kapsar."
+          "focus_only": "Odak dal, ortaklık içindeki kişiyi tekil ya da çoğul olarak adlandırır.",
+          "neighbor_only": "Komşu dal, iki ya da daha çok kişinin bir şeyde birlikte hak sahibi olması, birbirine karışması veya birini ortak etmesi ilişkisini kapsar.",
+          "gloss": "ortak kişi ve ortaklık ilişkisi",
+          "shared_zone": "İki dalda da bir şeyin birden çok kişi arasında ortak olması bulunur.",
+          "distinction": "Odak dal ilişkinin katılımcısını adlandırır; komşu dal ise ortak olma durumunu, katılma eylemini ve ortak payı daha geniş biçimde anlatır."
         },
         {
           "neighbor_ref": "root_001221/B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Bir pay veya iş üzerinde ortak hak ve sorumluluk gerektirir.",
-          "neighbor_only": "Pay ya da ortak iş gerektirmeden birlikte bulunan eş, arkadaş veya yoldaşı gösterebilir.",
-          "gloss": "eşlik eden arkadaş",
-          "shared_zone": "Her iki dal da başka biriyle yakın ve sürekli bağlantı içindeki kişiyi gösterebilir.",
-          "distinction": "Odak dalda ortak pay veya iş kurucudur; komşu dalda birlikte bulunma ve eşlik etme yeterlidir."
+          "focus_only": "Odak dalda kişi bir paya, varlığa ya da işe ortak olarak katılır.",
+          "neighbor_only": "Komşu dalda kişi yalnız birlikte bulunan arkadaş, eş ya da insana eşlik eden kişi olabilir; ortak pay zorunlu değildir.",
+          "gloss": "ortak ve arkadaş",
+          "shared_zone": "Her iki dal başka biriyle bağlantılı bir kişiyi adlandırabilir.",
+          "distinction": "Odak dal ortak pay veya iş ilişkisi gerektirir; komşu dalın arkadaşlık ve eşlik ilişkisi böyle bir ortak hak ya da çalışma koşulu taşımaz."
         },
         {
           "neighbor_ref": "root_000836/B004",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "Ortak mülkiyet dışında bir işi paylaşan kişiyi de kapsar.",
-          "neighbor_only": "Bölünmemiş ev veya topraktaki ortak payın hukuki durumunu belirtir.",
-          "gloss": "bölünmemiş ortak pay",
-          "shared_zone": "İki dal da bir maldaki payın birden çok kişi arasında ortak olmasına ilişkindir.",
-          "distinction": "Komşu dal payın bölünmemiş mülkiyet durumudur; odak dal ise bu ya da başka bir ortak iş içindeki kişiyi adlandırır."
+          "focus_only": "Odak dal, ortak paya sahip olan ya da ortak işe katılan kişiyi belirtir.",
+          "neighbor_only": "Komşu dal, bölünmemiş ev ya da toprak üzerindeki ortak ve henüz ayrılmamış payın mülkiyet durumunu belirtir.",
+          "gloss": "ortak kişi ve bölünmemiş pay",
+          "shared_zone": "İki dal ortak pay ve birlikte hak sahipliği alanında buluşur.",
+          "distinction": "Odak dal kişi rolüdür ve ortak işi de kapsayabilir; komşu dalın çekirdeği taşınmazdaki bölünmemiş payın mülkiyet niteliğidir."
         }
       ],
-      "neighbor_coverage_note": "Bütün ortaklık adayları değerlendirildi; kişi, ortaklık ilişkisi, arkadaşlık ve bölünmemiş pay arasındaki sınırı en iyi gösteren üç aday yayımlandı, paylaşımın sona ermesine ilişkin adaylar tematik kaldı.",
+      "neighbor_coverage_note": "Bütün adaylar ortak kişi, ortaklık ilişkisi, bölünmemiş pay, paylaşma, arkadaşlık, edinme ve ücret alanları bakımından değerlendirildi; üç sınır yayımlandı.",
       "branch_image_ar": "شريك في نصيب أو عمل",
       "what_is_ar": "يدخل فيه بضيعي وبضعائي بمعنى شريكي وشركائي.",
+      "what_is_not_ar": "لا يدخل فيه بضاعة التجارة نفسها، ولا قطعة اللحم، ولا بضع النكاح.",
       "source_phrase_ar": "هو شريكي وبضيعي وهم بضعائي وشركائي (tahdhib)",
       "sources": [
         "TA"
       ],
       "source_note": {
-        "TA": "Aynı kaynak, tek kişiyi gösteren adın çoğul biçimini birden çok ortak için ayrıca kaydeder."
+        "TA": "Tek tanıklık, ortak kişi adının hem tekil hem de çoğul biçimini açıkça verir."
       }
     }
   ],
   "root_profile": {
-    "summary": "Kök, kesip ayırma ve ortaya çıkan parça görüntüsünden satışa ayrılmış mala, belirsiz küçük sayıya ve karadan ayrılmış yere uzanır; cinsel örtmece, suya veya açıklamaya doyma, ter akışı ve ortak kişi anlamları daha bağımsız dallar oluşturur. Sekiz dal, tarihsel çağrışımları yer yer paylaşsa da güncel kavram sınırları bakımından belirgin biçimde çok anlamlıdır.",
+    "summary": "Kök; kesme ve ayrılan parçadan alışverişe ayrılmış ürüne, cinsel örtmeceye, belirsiz sayıya, yer ve ada adlandırmasına, susuzluk ya da bilgi gereksiniminin giderilmesine, ter akışına ve ortak kişiye uzanan çok dallı bir anlam yapısı taşır. Bazı dallar ayrılma veya yeterli düzeye ulaşma görüntüleriyle ilişkilendirilebilse de kullanım sınırları birbirinden ayrıdır.",
     "polysemy": "polysemic",
     "organization": "mixed"
   },

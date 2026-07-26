@@ -1,0 +1,72 @@
+{
+  "verdict": "editorial_review",
+  "summary": "Yazar yanıtı dal kimliklerini ve kapsam türlerini genel olarak doğru koruyor; ancak B003'te tekil bir özelleşme çekirdeğe taşınmış, B007'de kavram karşılığının kapsamadığı ilişkili kullanım facet listesine eklenmiş, B008'de bir katılımcı ilişkisi yanlış çevrilmiş ve B010'da tam eşdeğer kişi anlamı yalnızca komşu daldaki türevler nedeniyle gereksiz yere kısmi sayılmıştır. Bu düzeltmeler canlı yazar çıktısına müdahale gerektirdiğinden editoryal inceleme gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_001355/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak kümesinin ortak çekirdeği güzel ve açık konuşmadır; güçlü gerekçeyle üstün gelme yalnızca kaynak ifadesindeki özel bir ayrıntıdır. Facet doğru biçimde specialization sayıldığı halde tanım bu ayrıntıyı çekirdeğin eş düzeyli parçası yapıyor.",
+      "smallest_correction": "Tanımı yalnızca açık, düzgün ve etkili konuşma yetkinliğiyle sınırlandırın; gerekçeyle üstün gelme bilgisini mevcut specialization facetinde bırakın."
+    },
+    {
+      "target_ref": "root_001355/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, bütün kaynakları gerekçe sunma gücünde birleştiriyor; oysa bu ayrıntı toplu kaynak ifadesinde yalnızca bir sözlüğe özgüdür. Kaynaklar arası ortak alan güzel ve açık konuşmadır.",
+      "smallest_correction": "Ortak özeti, kaynakların güzel ve açık konuşma çekirdeğinde birleştiğini ve güçlü gerekçe sunma gücünün toplu tanıklıkta görülen bir özelleşme olduğunu belirtecek biçimde kaynak-yansız olarak düzeltin."
+    },
+    {
+      "target_ref": "root_001355/B003",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığının metni yalnızca açık ve etkili konuşma çekirdeğini verir; buna rağmen applicability, preserves ve facet_ids alanları kaynak-özel gerekçelendirme özelleşmesini de karşıladığını ileri sürer.",
+      "smallest_correction": "Karşılık metnini koruyun; applicability ve preserves açıklamalarını konuşma açıklığı ile etkili anlatımla sınırlandırın ve facet_ids listesinden F002'yi çıkarın."
+    },
+    {
+      "target_ref": "root_001355/B007",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı ödünç yavruyla süt indirtme işlemini anlatır, fakat facet_ids listesi işlemdeki yavrusuz dişi devenin ayrı adlandırılışını bildiren associated_use F003'ü de kapsadığını gösterir.",
+      "smallest_correction": "Kavram karşılığını ve açıklamasını koruyun; kapsamadığı ilişkili adlandırmayı göstermemesi için facet_ids listesinden F003'ü çıkarın."
+    },
+    {
+      "target_ref": "root_001355/B008",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_024"
+      ],
+      "evidence_conflict": "lu_024, sözün belirli bir kişiden veya o kişiye iletilmesini bildirir. Yazarın 'o kişiyle ilgili' karşılığı kaynak ve hedef katılımcı ilişkisini konu ilişkisine dönüştürüyor.",
+      "smallest_correction": "lu_024 target_gloss alanını 'o kişiden veya o kişiye sözü benim için ilet' olarak değiştirin."
+    },
+    {
+      "target_ref": "root_001355/B010",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Odak dal ile root_000693/B005 komşusunun kişi çekirdeği aynı biçimde 'yalancı'dır. Komşu dalda yalan söyleme eylemi ve uydurulmuş söz türevlerinin de bulunması, kişi anlamının sınırını değiştirmez; bu nedenle near_synonym/partial sınıflaması gereksiz bir düşürmedir.",
+      "smallest_correction": "Bu ilişkinin relation_type değerini synonym, boundary_match değerini exact yapın; focus_only, neighbor_only ve distinction metinlerini kişi anlamındaki tam eşdeğerliği gösterecek ve türevleri sınır farkı saymayacak biçimde daraltın."
+    }
+  ]
+}

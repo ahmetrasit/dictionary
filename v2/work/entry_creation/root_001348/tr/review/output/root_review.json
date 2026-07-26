@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "B003 dalında avdan rızıklanma anlamı birkaç alanda avı besleme olarak ters çevrilmiştir. Bu katılımcı yönü hatası, yalnız ilgili ifadeler avla beslenme veya avdan nasiplenme biçiminde düzeltilerek giderildi.",
+  "issues": [
+    {
+      "target_ref": "root_001348/B003",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak, ilgili kişiyi avdan rızıklanan veya avla beslenen kişi olarak verir; gerekçedeki \"avı besleyen kişi\" ifadesi katılımcı yönünü tersine çevirir.",
+      "smallest_correction": "Gerekçedeki \"avdan nasipli ya da avı besleyen kişiyi\" bölümünü \"avla beslenen ya da avdan nasiplenen kişiyi\" olarak değiştir."
+    },
+    {
+      "target_ref": "root_001348/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F003, kişinin avı beslediğini söyler; kaynak ise kişinin avdan rızıklanmasını veya avla beslenmesini bildirir.",
+      "smallest_correction": "Tanımın sonunu kişinin av sayesinde beslenmesi olarak düzelt; F003'teki \"avı beslemesini\" ifadesini \"avla beslenmesini\" olarak değiştir."
+    },
+    {
+      "target_ref": "root_001348/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kaynaklardaki avdan rızıklanma yönünü \"avı besleme\" diye aktararak anlam ilişkisini ters kurar.",
+      "smallest_correction": "Ortak özetteki \"avdan nasiplenme veya avı besleme\" ifadesini \"avla beslenme veya avdan nasiplenme\" olarak değiştir."
+    },
+    {
+      "target_ref": "root_001348/B003",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011"
+      ],
+      "evidence_conflict": "lu_011 için kaynak anlamı avdan rızıklanan veya avla beslenen kişidir; \"avı besleyen adam\" karşılığı özne ile besin kaynağının yönünü tersine çevirir.",
+      "smallest_correction": "lu_011 hedef karşılığını \"avla beslenen veya avdan nasiplenen adam\" olarak değiştir."
+    }
+  ]
+}

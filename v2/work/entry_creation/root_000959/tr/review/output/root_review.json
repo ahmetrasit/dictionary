@@ -1,0 +1,61 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtla uyumludur; ancak B001'de uzunluk ile genişlik arasındaki ölçü ayrımı nesne niteliklerinin karşıtlığı gibi kurulmuş, B008'de ise öldürmeye bağlı öç alacağı kanıtsız biçimde genel ağır zarara genişletilmiştir. Bu iki sınır, belirtilen alanlarda küçük ve doğrudan düzeltmeler gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_000959/B001",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 uzunluğu genişlikten ayrı bir ölçü yönü ve kısalığın karşıtı olarak verir. Tanımdaki 'kısa ya da enli olmanın karşıtı' ifadesi ise uzun ve enli olmayı birbirini dışlayan nesne nitelikleri gibi gösterir; oysa bir şey aynı anda hem uzun hem enli olabilir.",
+      "smallest_correction": "Tanımın ilk cümlesini, uzunluğu kısalığın karşıtı ve genişlikten ayrı bir ölçü yönü olarak ifade edecek biçimde düzelt; diğer tanımı ve facet satırlarını koru."
+    },
+    {
+      "target_ref": "root_000959/B008",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 düşmanlık, öç alacağı ve özellikle bir öldürme nedeniyle izlenen kan davasını destekler; genel bir ağır zararı öç alacağının alternatif kaynağı olarak belirtmez. Gerekçedeki 'öldürme ya da zarar' ifadesi dal sınırını kanıtın ötesine genişletir.",
+      "smallest_correction": "Gerekçeden genel zarar alternatifini çıkar ve kimliği süren düşmanlık ile öldürmeye bağlı öç alacağı üzerinden açıkla; accepted durumunu ve sınır notunu koru."
+    },
+    {
+      "target_ref": "root_000959/B008",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F002, öç alacağını 'bir öldürme ya da ağır zarar'dan doğmuş sayar. bc_001 genel düşmanlığı ve öldürmeye bağlı öç alacağını kanıtlar, fakat ağır zararı ikinci bir kurucu neden olarak kanıtlamaz.",
+      "smallest_correction": "Tanım ve F002'deki 'ya da ağır zarar' genişletmesini kaldır; düşmanlık, öldürmeden doğan öç alacağı ve kan davasına ilişkin kalan ifadeleri değiştirme."
+    },
+    {
+      "target_ref": "root_000959/B008",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet geçmiş bir öldürmenin yanına genel zararı da öç nedeni olarak ekler. bc_001 kaynakları düşmanlık ve öç alacağı çevresinde birleştirir ve öldürmeye bağlı örneği verir; genel zarar nedeni sağlamaz.",
+      "smallest_correction": "Ortak özetteki 'ya da zararın' sözünü kaldır ve öç alacağını geçmiş bir öldürmenin karşılığıyla sınırla."
+    },
+    {
+      "target_ref": "root_000959/B008",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İkinci bağlamsal karşılığın uygulanabilirlik ve koruma açıklamaları öldürmenin yanında ağır zararı da kurucu neden yapar. bc_001 bu geniş nedeni değil, öldürmeye bağlı öç alacağını destekler.",
+      "smallest_correction": "İkinci bağlamsal karşılığın uygulanabilirlik ve koruma açıklamalarından ağır zarar seçeneğini çıkar; kan davası ve öç isteme anlatımını koru."
+    }
+  ]
+}

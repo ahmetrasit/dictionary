@@ -1,0 +1,73 @@
+{
+  "inputs_sha256": "499301ee5d6a162f14e9bab3042704bee852fb3baee217e33e6c2fd1ec170832",
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtı ve sözlükselleşme kapsamlarını dikkatle koruyor; ancak üç dalda yayıma etkili, sınırlı düzeltmeler gerekiyor. B001 yalın öldürme anlamını toplu yok etmeye daraltıyor, B003 işitmeden bağımsız algılanabilen hareket yüzünü ses içinde eritiyor, B015 ise bölgesel bir kaydı ve kanıtlanmayan saklama amacını çekirdek tanıma taşıyor.",
+  "issues": [
+    {
+      "target_ref": "root_000321/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt yalın biçim için öldürmeyi, ayrıca kökünü kazıma ve yok etmeyi verir. Tanım ile F001 ise öldürmeyi yalnız bir topluluğu geride kimse bırakmadan ortadan kaldırma biçiminde sunarak yalın öldürme kapsamını gereksiz yere daraltıyor.",
+      "smallest_correction": "Tanımı öldürmeyi bağımsız olarak koruyacak biçimde düzeltin; örneğin başlangıcı 'Öldürmek, bir topluluğun kökünü kazımak' olsun. F001'i de sıradan öldürme ile kökten yok etmeyi birbirine zorunlu olarak bağlamayacak biçimde yeniden kurun."
+    },
+    {
+      "target_ref": "root_000321/B003",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt hem hafif sesi hem de görülmeden duyusal olarak fark edilen hareketi kapsıyor ve hareket ile sesi ayrı açıklar. Gerekçe ile sınır notu dalı görünmeyen ama mutlaka işitilen hareket belirtisine indiriyor.",
+      "smallest_correction": "Kabul durumunu koruyup gerekçe ile sınır notunu, görülmeden işitilen hafif sesin yanı sıra işitmeye indirgenmeyen gizli hareketin duyusal olarak fark edilmesini de açıkça kapsayacak biçimde düzeltin."
+    },
+    {
+      "target_ref": "root_000321/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım hareketi yalnız işitme yoluyla fark edilen bir olguya, iki facet de hareketi hafif sesin belirtisine çeviriyor. Oysa kanıt gizli ses ile görülmeden duyusal olarak algılanan hareketi ayrı fakat ilişkili yüzler olarak verir.",
+      "smallest_correction": "Tanımda hafif ses ile görülmeden algılanan hareketi iki seçenek olarak koruyun. Facetleri de hareketi zorunlu olarak ses üretmeye bağlamadan, biri hafif ses diğeri görülmeden fark edilen hareket olacak biçimde sınırlandırın."
+    },
+    {
+      "target_ref": "root_000321/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet bütün kaynak malzemesini görünmeyen hareketi hafif ses üzerinden işitme çekirdeğinde birleştiriyor. Kanıtın bir bölümü hareketi sesten ayırır ve hareketin kendisini duyusal algı konusu yapar.",
+      "smallest_correction": "Ortak özeti, görünmeden fark edilen hafif ses veya hareket biçimindeki iki kanıtlı yüzü birlikte koruyacak ve hareketi yalnız ses aracılığına bağlamayacak şekilde düzeltin."
+    },
+    {
+      "target_ref": "root_000321/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı yalnız 'işitilen hafif hareket sesi'ni veriyor; böylece kanıttaki görülmeden algılanan hareket yüzünü kaybediyor.",
+      "smallest_correction": "Kavram karşılığını hem hafif sesi hem de görülmeden fark edilen hareketi içerecek kısa bir üst karşılıkla değiştirin ve koruma açıklamasını aynı kapsama uyarlayın."
+    },
+    {
+      "target_ref": "root_000321/B015",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak çekirdek yalnız kurutulan küçük balıktır. Belirli bir bölgede bulunma tek kaynağın ayrıntısıdır ve facetlerde doğru biçimde kaynak varyantı olarak ayrılmıştır; buna rağmen tanım bu ayrıntıyı çekirdeğe taşıyor. Tanımdaki 'saklamak için' amacı da kanıtta belirtilmiyor.",
+      "smallest_correction": "Tanımı yalnız 'Kurutulan küçük balık.' çekirdeğine indirin. Bölgesel bilgiyi mevcut kaynak varyantı facetinde bırakın ve kanıtlanmayan saklama amacını kaldırın."
+    }
+  ]
+}

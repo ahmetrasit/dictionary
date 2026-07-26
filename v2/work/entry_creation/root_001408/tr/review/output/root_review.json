@@ -1,0 +1,61 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtının dal ayrımları, sözlükselleşme kapsamları ve komşu sınırları genel olarak kanıtla uyumludur. Ancak B003 boyunca kaynakta açıkça verilen Şuayb kimliği belirsiz bir peygamber göndergesine dönüştürülmüş, B001 içindeki lu_010 karşılığı da Kisra kimliğini düşürmüştür. Bu sınırlı kimlik kayıpları ilgili alanlarda giderilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001408/B003",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt özel yer adını açıkça Şuayb peygamberin köyü olarak tanımlar; tanım ve çekirdek yön ise bu ayırt edici kimliği yalnız kaynakta belirtilen peygamber biçiminde belirsizleştirir.",
+      "smallest_correction": "Tanımda ve F001 yönünde kaynakta belirtilen peygamber sözünü Şuayb peygamber ile değiştirerek diğer ifadeleri koru."
+    },
+    {
+      "target_ref": "root_001408/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tek kaynaklı iddianın ayırt edici ayrıntısı köyün Şuayb peygamberle ilişkisidir; ortak özet ve tek tanıklık ayrıntısı bu adı genel bir peygamber göndergesine indirger.",
+      "smallest_correction": "Ortak özette ve tek tanıklık özetinde belirsiz peygamber göndergesi yerine Şuayb peygamber adını yaz."
+    },
+    {
+      "target_ref": "root_001408/B003",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı ilgili peygamber diyerek kanıttaki Şuayb kimliğini kaybeder ve tek yer göndergesinin hangi ilişkiyle belirlendiğini kendi başına açıklamaz.",
+      "smallest_correction": "Kavram karşılığındaki ilgili peygamber ifadesini Şuayb peygamber olarak değiştir."
+    },
+    {
+      "target_ref": "root_001408/B003",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_005"
+      ],
+      "evidence_conflict": "lu_005 kanıtı köyü açıkça Şuayb peygambere bağlar; hedef karşılık bunu kaynakta belirtilen peygamber diye belirsizleştirerek sözlük biriminin ayırt edici yer kimliğini eksiltir.",
+      "smallest_correction": "lu_005 hedef karşılığında kaynakta belirtilen peygamber yerine Şuayb peygamber yaz."
+    },
+    {
+      "target_ref": "root_001408/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_010"
+      ],
+      "evidence_conflict": "lu_010 kanıtı mensubiyeti Kisra'nın kentlerine bağlar; hedef karşılık bunu yalnız belirli tarihî kentler topluluğu diye vererek ayırt edici Kisra kimliğini düşürür.",
+      "smallest_correction": "lu_010 hedef karşılığını Kisra'nın kentlerine mensup biçiminde düzelt."
+    }
+  ]
+}

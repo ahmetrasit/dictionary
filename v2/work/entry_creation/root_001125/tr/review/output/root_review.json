@@ -1,0 +1,83 @@
+{
+  "verdict": "repair",
+  "summary": "B001 ve B003 kanıtla uyumludur. B002'de ise kaynak kanıtının açıkça birlikte koruduğu peygamber ve elçi seçenekleri, kimlik açıklamasından sözlüksel karşılığa kadar yalnızca elçilere indirgenmiştir. Bu daraltma ilgili alanlarda küçük ve kesin bir düzeltme gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_001125/B002",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe kaynakların dalı yalnızca art arda gelen iki elçiyle sınırladığını söylüyor; oysa kanıt bir kaynakta iki peygamberi, diğerinde iki elçiyi açıkça anıyor.",
+      "smallest_correction": "Kabul durumunu koruyup gerekçedeki sınırı art arda gelen iki peygamber veya iki elçi arasındaki dönem olarak genişletin."
+    },
+    {
+      "target_ref": "root_001125/B002",
+      "field": "lexicalization_scope",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Dal türü doğru olsa da kapsam notu yalın anlamı yalnızca iki elçinin arasındaki dönemle sınırlar; kanıt iki peygamber arasındaki dönemi de kapsar.",
+      "smallest_correction": "Dal türünü değiştirmeden nottaki iki elçi ifadesini iki peygamber veya iki elçi olarak düzeltin."
+    },
+    {
+      "target_ref": "root_001125/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve iki çekirdek yüz, dönemin sınırlarını yalnızca elçilerin gelişiyle kuruyor; kanıt aynı anlamı iki peygamber veya iki elçi arasındaki dönem olarak verir.",
+      "smallest_correction": "Tanımda ve F001 ile F002'de elçi sözcüğünü peygamber veya elçi biçiminde genişletin; dönem ve gelmeyiş koşulunu aynen koruyun."
+    },
+    {
+      "target_ref": "root_001125/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet bütün kaynakları iki elçi arasındaki dönem ifadesinde birleştiriyor ve bir kaynağın iki peygamber biçimindeki açık kaynak varyantını kaybediyor.",
+      "smallest_correction": "Ortak özeti, kaynakların aralığı iki peygamber veya iki elçi arasında ifade ettiğini ve bu sırada yeni bir peygamber ya da elçinin gelmediğini belirtecek şekilde düzeltin."
+    },
+    {
+      "target_ref": "root_001125/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı yalnızca iki elçinin gelişi arasındaki dönemi adlandırdığı için kanıttaki iki peygamber seçeneğini dışarıda bırakıyor.",
+      "smallest_correction": "Karşılık metnini iki peygamber veya elçinin gelişi arasındaki dönem olarak genişletin ve uygulanabilirlik ile hata profili açıklamalarını aynı sınıra uyarlayın."
+    },
+    {
+      "target_ref": "root_001125/B002",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Her iki bağlamsal karşılık ve açıklamaları dönemi yalnızca elçiler üzerinden kuruyor; kanıt peygamberler arasındaki dönemi de aynı dalda içeriyor.",
+      "smallest_correction": "İki bağlamsal karşılığı ve bunların açıklamalarını peygamber veya elçi seçeneklerinin ikisini de koruyacak biçimde genişletin."
+    },
+    {
+      "target_ref": "root_001125/B002",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_009"
+      ],
+      "evidence_conflict": "lu_009 anlamı iki peygamber veya iki elçi arasındaki dönemi bildirirken Türkçe karşılık yalnızca iki elçiyi içeriyor.",
+      "smallest_correction": "lu_009 karşılığını iki peygamber veya elçinin gelişi arasındaki, yeni bir peygamber ya da elçinin gelmediği dönem olarak düzeltin."
+    }
+  ]
+}

@@ -362,8 +362,8 @@
           },
           {
             "facet_id": "F004",
-            "role": "specialization",
-            "statement": "Düz ve geniş bir yerin yalnızca belirli bir bitki türünü yetiştirmesi, bitki örtüsü bakımından sınırlı bir özel görünüm oluşturur.",
+            "role": "source_variant",
+            "statement": "Tek bir kaynak, düz ve geniş yeri yalnızca belirli bir bitki türünün yetiştiği alan olarak betimler.",
             "claim_ids": [
               "bc_001"
             ]
@@ -447,20 +447,20 @@
       "branch_ref": "root_001947/B005",
       "identity_judgment": {
         "status": "qualified",
-        "rationale": "Kaynak ifadesi bir savunma yapısı, bir bölge veya şehir, bir at, bir ip ve ışık geçiren taşlar gibi birbirinden farklı sabit adlandırmaları aynı dökümde toplar. Dal, bunların ortak bir nesne anlamına sahip olduğu şeklinde değil, üretken olmayan özel adlar ve kalıplaşmış nesne adları envanteri olarak tutulduğunda kaynağa uygundur.",
-        "boundary_note": "Bu dal ortak bir nesne türü tanımlamaz; yalnızca çeşitli varlıklara verilmiş sabit adlandırmaları toplar."
+        "rationale": "Kaynak ifadesi bir savunma yapısı, bir bölge veya şehir ve bir at için özel adları, ışık geçiren taşlar için yerleşik bir nesne adını ve bir ip için sıradan bir renk nitelemesini aynı dökümde toplar. Dal, bütün tanıklıklar sabit ad sayılmadan bu farklı kullanımlar ayrıldığında kaynağa uygundur.",
+        "boundary_note": "Bu dal ortak bir nesne türü tanımlamaz; özel ve yerleşik adlandırmaları, ipteki sıradan renk nitelemesinden ayırır."
       },
       "lexicalization_scope": {
         "branch_kind": "unresolved",
         "note": "Mekanik sınıflandırma çözümsüzdür; tanım bu adlandırmaları yalın ve üretken bir kök anlamına genellemeden envanter niteliğinde sunar."
       },
       "concept_map": {
-        "definition": "Ortak bir nesne türü oluşturmayan; yer, yapı, hayvan ve bazı nesnelere verilmiş özel veya kalıplaşmış sabit adlandırmalar topluluğudur.",
+        "definition": "Aynı kökten gelen biçimlerin yer, yapı ve hayvanlar için özel ad, ışık geçiren taşlar için yerleşik nesne adı ve bir ip için sıradan renk nitelemesi olarak kullanıldığı heterojen bir dökümdür.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Dalın birliği ortak nesne özelliklerinden değil, aynı kökten gelen biçimlerin sabit ad olarak kullanılmasından doğar.",
+            "statement": "Dalın birliği ortak nesne özelliklerinden değil, aynı kökten gelen biçimlerin özel veya yerleşik adlarla sıradan bir renk nitelemesine dağılan kullanımlarından doğar.",
             "claim_ids": [
               "bc_001"
             ]
@@ -476,7 +476,15 @@
           {
             "facet_id": "F003",
             "role": "example",
-            "statement": "Belirli bir ip ile arkasını aydınlatacak ölçüde ışık geçiren taşlara verilen sabit nesne adları da bu gruptadır.",
+            "statement": "Arkasını aydınlatacak ölçüde ışık geçiren taşlara yerleşik bir nesne sınıfı adı verilir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "source_variant",
+            "statement": "Bir kaynakta ip, sabit bir nesne adıyla adlandırılmaz; yalnızca alaca renkli olarak nitelenir.",
             "claim_ids": [
               "bc_001"
             ]
@@ -516,7 +524,7 @@
           "error_profile": {
             "fit": "narrowing",
             "preserves": "Belirli tek bir varlığa verilmiş sabit ad olma işlevini korur.",
-            "loses": "İp ve ışık geçiren taşlar gibi kalıplaşmış nesne adlarını kapsamaz.",
+            "loses": "İpteki sıradan renk nitelemesini ve ışık geçiren taşların yerleşik sınıf adını kapsamaz.",
             "adds": null,
             "collision": null
           },
@@ -527,16 +535,31 @@
         {
           "text": "kalıplaşmış nesne adı",
           "usage_role": "explanatory",
-          "applicability": "Belirli bir ip veya ışık geçiren taş türü gibi nesne adlandırmalarını açıklayan bağlamlarda kullanılır.",
+          "applicability": "Işık geçiren taş türünün yerleşik adlandırmasını açıklayan bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Belirli nesnelere yerleşmiş sabit adlandırma işlevini korur.",
-            "loses": "Yer, yapı ve hayvanlara verilmiş bireysel özel adları kapsamaz.",
+            "preserves": "Işık geçiren taşlara yerleşmiş sınıf adı olma işlevini korur.",
+            "loses": "Yer, yapı ve hayvanlara verilmiş bireysel özel adları ve ipteki sıradan renk nitelemesini kapsamaz.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F003"
+          ]
+        },
+        {
+          "text": "alaca ip",
+          "usage_role": "contextual",
+          "applicability": "İpin sabit bir adla değil, alaca renk görünümüyle nitelendiği bağlamda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "İpteki sıradan renk nitelemesini korur.",
+            "loses": "Yer, yapı ve hayvanlara verilmiş özel adları ve ışık geçiren taşların yerleşik sınıf adını kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F004"
           ]
         }
       ],
@@ -578,7 +601,7 @@
         "note": "Mekanik sınıflandırma çözümsüzdür; tanım sözleri yalın kök anlamına çevirmeden yalnızca kalıplaşmış kullanım düzeyinde tutar."
       },
       "concept_map": {
-        "definition": "Belirli adlar üzerinden başarıya rağmen kınanmayı, aşılamaz gücü veya gerçekleşmesi mümkün olmayan bir isteği bildiren kalıplaşmış sözler topluluğudur.",
+        "definition": "Belirli adlar üzerinden koştuğu halde kınanmayı, aşılamaz gücü veya gerçekleşmesi mümkün olmayan bir isteği bildiren kalıplaşmış sözler topluluğudur.",
         "facets": [
           {
             "facet_id": "F001",
@@ -591,7 +614,7 @@
           {
             "facet_id": "F002",
             "role": "example",
-            "statement": "Bir söz, koşup başarı gösterdiği halde kınanan bir varlık üzerinden haksız veya süregelen yergiyi anlatır.",
+            "statement": "Bir söz, koşan bir varlığın buna karşın kınanmasını anlatır.",
             "claim_ids": [
               "bc_001"
             ]
@@ -642,12 +665,12 @@
       },
       "contextual_glosses": [
         {
-          "text": "başarısına rağmen kınanmak",
+          "text": "koştuğu halde kınanmak",
           "usage_role": "contextual",
-          "applicability": "Koşup görevini yerine getirdiği halde yergiden kurtulamayan varlık üzerinden kurulan sözün anlamını aktarmada kullanılır.",
+          "applicability": "Koşma ile kınanmayı birlikte veren kalıplaşmış sözün anlamını aktarmada kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Başarı gösterilmesine karşın kınanma iletisini korur.",
+            "preserves": "Koşmayı ve buna karşın kınanma iletisini korur.",
             "loses": "Aşılmazlık ve gerçekleşmesi olanaksız istek bildiren diğer kalıplaşmış sözleri kapsamaz.",
             "adds": null,
             "collision": null

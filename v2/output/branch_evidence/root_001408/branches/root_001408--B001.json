@@ -1,0 +1,910 @@
+{
+  "format": 2,
+  "generated_by": "v2/scripts/build_branch_evidence.py",
+  "root_envelope_id": "root_001408",
+  "packet_path": "data/output/root_packets/root_001408.json",
+  "packet_sha256": "8c16d824f58db96e53302a63b9bbf402f6bb8aab33935102cf20ac1b04584e90",
+  "furuq_path": "data/working/furuq_v4.sqlite",
+  "furuq_sha256": "1099db0d56515d2eb3e8d72f104f2e338c2c9a8c1fa6abbb046406d3b327e722",
+  "qnet_path": "data/upstream/qnet/incidence_full/raw_keyword_incidence.sqlite",
+  "qnet_sha256": "a5262b568203bff7ec04e6ca905781125beec83f90d62a5cf0cd6ff61049eee8",
+  "qnet_theme_path": "data/upstream/qnet/bridge_theme_full/bridge_theme_staging.sqlite",
+  "qnet_theme_sha256": "e4f590a111376e372eefef6d03b8694837ec9989017ce721d56db9828b2a734e",
+  "qnet_fix_manifest_path": "data/upstream/qnet/bridge_theme_full/latent_v11_qac_qnet_fix_manifest.json",
+  "qnet_fix_manifest_sha256": "b0ae3c19450a8019825321f6dc1e9f4c336249950f50267ed84eb3258756502c",
+  "branch": {
+    "root_id": "root_001408",
+    "branch_id": "B001",
+    "branch_image_ar": "المدينة الجامعة",
+    "what_is_ar": "اسم مدينة أو بلد أو أرض مبنية ذات حصن، ويدخل فيه جمعها مدن ومدائن ومدينة الرسول.",
+    "what_is_not_ar": "ليس فرع الأمة المملوكة، ولا اسم مدين قرية شعيب، ولا مجرد فعل الإقامة أو إتيان المدينة.",
+    "source_phrase_ar": "ليس فيه إلا مدينة ... ويجمعونها مدنا (maqayis)؛ المدينة، وهي فعيلة، وتجمع على مدائن ... وعلى مدن (sihah)؛ كل أرض يبنى بها حصن في أصطمتها فهي مدينة (tahdhib)؛ المدينة فعيلة عند قوم، وجمعها مدن (mufradat)",
+    "source_refs": "maqayis:root=%D9%85%20%D8%AF%20%D9%86:headword=%D9%85%D8%AF%D9%86:sha=4794b8ddb0cf8bf8;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5068:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=d754f6031c4b886e;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D80:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=46c0645a8effd82a;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1400:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=28086186de748847",
+    "status": "accepted",
+    "contaminated": "no"
+  },
+  "dictionary_basis": {
+    "dictionary_count": 4,
+    "passage_count": 4,
+    "sources": [
+      {
+        "source_id": "maqayis",
+        "dictionary_name": "Maqāyīs al-Lugha",
+        "source_refs": [
+          "maqayis:root=%D9%85%20%D8%AF%20%D9%86:headword=%D9%85%D8%AF%D9%86:sha=4794b8ddb0cf8bf8"
+        ],
+        "passages": [
+          {
+            "source_ref": "maqayis:root=%D9%85%20%D8%AF%20%D9%86:headword=%D9%85%D8%AF%D9%86:sha=4794b8ddb0cf8bf8",
+            "headword": "مدن",
+            "route_status": "exact",
+            "entry_text_clean": "(مدن) الميم والدال والنون ليس فيه إلا مدينة، إن كانت على فعيلة، ويجمعونها مدنا. ومدنت مدينة.",
+            "origin_corpus": "quranic",
+            "section_path": "-",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      },
+      {
+        "source_id": "sihah",
+        "dictionary_name": "al-Ṣiḥāḥ",
+        "source_refs": [
+          "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5068:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=d754f6031c4b886e"
+        ],
+        "passages": [
+          {
+            "source_ref": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5068:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=d754f6031c4b886e",
+            "headword": "مدن",
+            "route_status": "exact",
+            "entry_text_clean": "### | [مدن] # مدن بالمكان: أقام به. ومنه سميت. المدينة، وهي فعيلة، وتجمع على مدائن ~~بالهمز، وتجمع أيضا على مدن ومدن، بالتخفيف والتثقيل. وفيه قول آخر: أنها ~~مفعلة من دنت، أي ملكت. وفلان مدن المدائن، كما يقال: مصر الامصار. وسألت ~~أبا على الفسوى عن همز مدائن فقال: فيه قولان، من جعله فعيلة من قولك: مدن ~~بالمكان، أي أقام به، همزه. ومن جعله مفعلة من قولك دين، أي ملك لم يهمزه، ~~كما لا يهمز معايش. وإذا نسبت إلى مدينة الرسول صلى الله عليه وسلم قلت ~~مدني، وإلى مدينة المنصور مديني، وإلى مدائن كسرى مدائني، للفرق بين النسب، ~~لئلا يختلط. ومدين: قرية شعيب عليه السلام. PageV06P2201",
+            "origin_corpus": "quranic",
+            "section_path": "heading:5068",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      },
+      {
+        "source_id": "tahdhib",
+        "dictionary_name": "Tahdhīb al-Lugha",
+        "source_refs": [
+          "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D80:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=46c0645a8effd82a"
+        ],
+        "passages": [
+          {
+            "source_ref": "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D80:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=46c0645a8effd82a",
+            "headword": "مدن",
+            "route_status": "exact",
+            "entry_text_clean": "# مدن : قال الليث : المدينة فعيلة تهمز في الفعائل لأن الياء زائدة ولا ~~تهمز ياء المعايش ، لأن الياء أصلية ، ونحو ذلك قال الفراء وغيره . # وقال الليث : المدينة اسم مدينة الرسول عليه السلام خاصة ، والنسبة ~~للإنسان مدني ، فأما الطير ونحوه فلا يقال إلا مديني وحمامة مدينية وجارية ~~مدينية ms3884 وكل أرض يبنى بها حصن في أصطمتها فهي مدينة ، والنسبة إليها مدني ، ~~ويقال للرجل العالم بالأمر : هو ابن بجدتها ، وابن مدينتها ، وقال الأخطل : # ربت وربا في كرمها ابن مدينة # يظل على مسحاته يتوكل # ابن مدينة أي العالم بأمرها ، ويقال للأمة : مدينة أي مملوكة والميم ميم ~~مفعول ، ومدن الرجل إذا أتى المدينة .",
+            "origin_corpus": "quranic",
+            "section_path": "parent_entry_id=717;segment_index=80",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      },
+      {
+        "source_id": "mufradat",
+        "dictionary_name": "al-Mufradāt fī Gharīb al-Qurʾān",
+        "source_refs": [
+          "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1400:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=28086186de748847"
+        ],
+        "passages": [
+          {
+            "source_ref": "mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1400:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=28086186de748847",
+            "headword": "مدن",
+            "route_status": "exact",
+            "entry_text_clean": "### | مدن # المدينة فعيلة عند قوم، وجمعها مدن، وقد مدنت مدينة، وناس يجعلون الميم ~~زائدة، قال تعالى: ومن أهل المدينة مردوا على النفاق [التوبة/ 101] قال: ~~وجاء من أقصا المدينة رجل يسعى [يس/ 20] ، ودخل المدينة على حين غفلة من ~~أهلها [القصص/ 15] .",
+            "origin_corpus": "quranic",
+            "section_path": "heading:1400",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      }
+    ]
+  },
+  "lexical_units": [
+    {
+      "lexical_unit_id": "lu_001",
+      "expression_ar": "المدينة",
+      "unit_kind": "form",
+      "sense_ar": "اسم مدينة أو بلد أو أرض مبنية ذات حصن، ويدخل فيه استعمال مدينة الرسول",
+      "source_phrase_ar": "ليس فيه إلا مدينة (maqayis)؛ المدينة، وهي فعيلة (sihah)؛ كل أرض يبنى بها حصن في أصطمتها فهي مدينة (tahdhib)؛ المدينة فعيلة عند قوم (mufradat)",
+      "source_refs": "maqayis:root=%D9%85%20%D8%AF%20%D9%86:headword=%D9%85%D8%AF%D9%86:sha=4794b8ddb0cf8bf8;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5068:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=d754f6031c4b886e;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D80:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=46c0645a8effd82a;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1400:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=28086186de748847",
+      "branch_source_refs": "maqayis:root=%D9%85%20%D8%AF%20%D9%86:headword=%D9%85%D8%AF%D9%86:sha=4794b8ddb0cf8bf8;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5068:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=d754f6031c4b886e;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D80:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=46c0645a8effd82a;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1400:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=28086186de748847",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "review"
+    },
+    {
+      "lexical_unit_id": "lu_002",
+      "expression_ar": "مُدُن",
+      "unit_kind": "form",
+      "sense_ar": "جمع المدينة",
+      "source_phrase_ar": "ويجمعونها مُدُنا (maqayis)؛ وتجمع أيضا على مُدُن ومُدْن (sihah)؛ وجمعها مُدُن (mufradat)",
+      "source_refs": "maqayis:root=%D9%85%20%D8%AF%20%D9%86:headword=%D9%85%D8%AF%D9%86:sha=4794b8ddb0cf8bf8;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5068:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=d754f6031c4b886e;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1400:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=28086186de748847",
+      "branch_source_refs": "maqayis:root=%D9%85%20%D8%AF%20%D9%86:headword=%D9%85%D8%AF%D9%86:sha=4794b8ddb0cf8bf8;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5068:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=d754f6031c4b886e;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D80:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=46c0645a8effd82a;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1400:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=28086186de748847",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "accepted"
+    },
+    {
+      "lexical_unit_id": "lu_003",
+      "expression_ar": "مَدائِن",
+      "unit_kind": "form",
+      "sense_ar": "جمع المدينة",
+      "source_phrase_ar": "المدينة، وهي فعيلة، وتجمع على مَدائِن بالهمز (sihah)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5068:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=d754f6031c4b886e",
+      "branch_source_refs": "maqayis:root=%D9%85%20%D8%AF%20%D9%86:headword=%D9%85%D8%AF%D9%86:sha=4794b8ddb0cf8bf8;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5068:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=d754f6031c4b886e;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D80:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=46c0645a8effd82a;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1400:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=28086186de748847",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "review"
+    },
+    {
+      "lexical_unit_id": "lu_008",
+      "expression_ar": "مدني",
+      "unit_kind": "form",
+      "sense_ar": "منسوب إلى مدينة الرسول للإنسان، ومنسوب إلى المدينة عامة",
+      "source_phrase_ar": "إذا نسبت إلى مدينة الرسول قلت مدني (sihah)؛ المدينة اسم مدينة الرسول عليه السلام خاصة، والنسبة للإنسان مدني (tahdhib)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5068:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=d754f6031c4b886e;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D80:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=46c0645a8effd82a",
+      "branch_source_refs": "maqayis:root=%D9%85%20%D8%AF%20%D9%86:headword=%D9%85%D8%AF%D9%86:sha=4794b8ddb0cf8bf8;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5068:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=d754f6031c4b886e;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D80:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=46c0645a8effd82a;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1400:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=28086186de748847",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "accepted"
+    },
+    {
+      "lexical_unit_id": "lu_009",
+      "expression_ar": "مديني",
+      "unit_kind": "form",
+      "sense_ar": "منسوب إلى مدينة غير المخصوصة بمدني، ويقال للطير ونحوه",
+      "source_phrase_ar": "وإلى مدينة المنصور مديني (sihah)؛ فأما الطير ونحوه فلا يقال إلا مديني وحمامة مدينية وجارية مدينية (tahdhib)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5068:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=d754f6031c4b886e;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D80:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=46c0645a8effd82a",
+      "branch_source_refs": "maqayis:root=%D9%85%20%D8%AF%20%D9%86:headword=%D9%85%D8%AF%D9%86:sha=4794b8ddb0cf8bf8;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5068:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=d754f6031c4b886e;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D80:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=46c0645a8effd82a;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1400:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=28086186de748847",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "accepted"
+    },
+    {
+      "lexical_unit_id": "lu_010",
+      "expression_ar": "مدائني",
+      "unit_kind": "form",
+      "sense_ar": "منسوب إلى مدائن كسرى",
+      "source_phrase_ar": "وإلى مدائن كسرى مدائني (sihah)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5068:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=d754f6031c4b886e",
+      "branch_source_refs": "maqayis:root=%D9%85%20%D8%AF%20%D9%86:headword=%D9%85%D8%AF%D9%86:sha=4794b8ddb0cf8bf8;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5068:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=d754f6031c4b886e;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D80:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=46c0645a8effd82a;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1400:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=28086186de748847",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "accepted"
+    }
+  ],
+  "qnet_candidates": [
+    {
+      "root_id": "root_000050",
+      "branch_id": "B004",
+      "root_norm": "ء م د",
+      "branch_image_ar": "آمِد اسم بلد",
+      "what_is_ar": "يدخل فيه اسم الموضع المعروف آمد",
+      "what_is_not_ar": "ليس الغاية ولا الغضب ولا المملوء",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1208:headword=%D8%A3%D9%85%D8%AF:root=%D8%A1%20%D9%85%20%D8%AF:sha=5eed6adacd799243;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D727%3Bsegment_index%3D10:headword=%D8%A3%D9%85%D8%AF:root=%D8%A3%20%D9%85%20%D8%AF:sha=0272a67370f2efcb",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "city",
+        "settlement",
+        "town"
+      ]
+    },
+    {
+      "root_id": "root_000487",
+      "branch_id": "B004",
+      "root_norm": "د م ر",
+      "branch_image_ar": "تدمر البلد",
+      "what_is_ar": "اسم مدينة أو بلد بالشام",
+      "what_is_not_ar": "الهلاك؛ الدخول؛ التَّدْمُرِيّ من اليرابيع؛ نفي أحد في الدار",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A5350:headword=%D8%A8%D9%84%D9%86%D8%B7:root=%D8%A8%20%D9%84%20%D9%86%20%D8%B7:sha=8f001c8dc5b5aed5;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1674:headword=%D8%AF%D9%85%D8%B1:root=%D8%AF%20%D9%85%20%D8%B1:sha=3590cd7aa1c880e0;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D49:headword=%D8%AF%D9%85%D8%B1:root=%D8%AF%20%D9%85%20%D8%B1:sha=d1340b5cdc23aaeb",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "city",
+        "settlement",
+        "town"
+      ]
+    },
+    {
+      "root_id": "root_000504",
+      "branch_id": "B006",
+      "root_norm": "د ي ن",
+      "branch_image_ar": "مدينة الطاعة",
+      "what_is_ar": "المدينة بمعنى المصر والموضع الذي تقام فيه طاعة ذوي الأمر",
+      "what_is_not_ar": "ليست المدينة الأمة المملوكة ولا العبد المدين في هذا الفرع",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1152;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4886:headword=%D8%AF%D9%8A%D9%86:root=%D8%AF%20%D9%8A%20%D9%86:sha=04d0947cb0d32de5;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A507:headword=%D8%AF%D9%8A%D9%86:root=%D8%AF%20%D9%8A%20%D9%86:sha=57aee2192e6512b8",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "city",
+        "settlement",
+        "town"
+      ]
+    },
+    {
+      "root_id": "root_001428",
+      "branch_id": "B003",
+      "root_norm": "م ص ر",
+      "branch_image_ar": "البلد الممصّر",
+      "what_is_ar": "يدخل فيه المصر بمعنى الكورة أو البلد أو المدينة المعروفة، والأمصار، والمصران للكوفة والبصرة",
+      "what_is_not_ar": "ليس مطلق الحد والحاجز إذا لم يدل على بلد أو كورة",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3393;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4725:headword=%D9%85%D8%B5%D8%B1:root=%D9%85%20%D8%B5%20%D8%B1:sha=166ac0dee27d0e8a;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1919:headword=%D9%85%D8%B5%D8%B1:root=%D9%85%20%D8%B5%20%D8%B1:sha=73c0c53917601b38;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D628%3Bsegment_index%3D47:headword=%D9%85%D8%B5%D8%B1:root=%D9%85%20%D8%B5%20%D8%B1:sha=f8ba5370deb8eab1;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1419:headword=%D9%85%D8%B5%D8%B1:root=%D9%85%20%D8%B5%20%D8%B1:sha=4eb8acdabccbd6f1",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "city",
+        "settlement",
+        "town"
+      ]
+    },
+    {
+      "root_id": "root_000197",
+      "branch_id": "B003",
+      "root_norm": "ث ر ب",
+      "branch_image_ar": "اسم موضع",
+      "what_is_ar": "يدخل فيه يثرب اسما للمدينة، والنسبة يثربي وأثربي، وأثارب موضعا بالشام.",
+      "what_is_not_ar": "لا يدخل فيه فعل اللوم والتوبيخ ولا الشحم الرقيق.",
+      "source_refs": "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A615%3Asubentry%3A3%3A%D8%AB%D8%B1%D8%A8:headword=%D8%AB%D8%B1%D8%A8:root=%D8%AB%20%D8%B1%20%D8%A8:sha=50b395b58f027ff6;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A206:headword=%D8%AB%D8%B1%D8%A8:root=%D8%AB%20%D8%B1%20%D8%A8:sha=e28909ccbecac10c;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D772%3Bsegment_index%3D11:headword=%D8%AB%D8%B1%D8%A8:root=%D8%AB%20%D8%B1%20%D8%A8:sha=2eb7f5ee0a3cb887;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A202:headword=%D8%AB%D8%B1%D8%A8:root=%D8%AB%20%D8%B1%20%D8%A8:sha=b258e310b8b72955",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "city",
+        "settlement"
+      ]
+    },
+    {
+      "root_id": "root_000275",
+      "branch_id": "B007",
+      "root_norm": "ج و ر",
+      "branch_image_ar": "جُور اسم بلد",
+      "what_is_ar": "يدخل فيه جور إذا كان اسم بلد يذكر ويؤنث",
+      "what_is_not_ar": "لا يدخل فيه الجور بمعنى الظلم ولا صفة الطريق الجور",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1610:headword=%D8%AD%D9%88%D8%B1:root=%D8%AD%20%D9%88%20%D8%B1:sha=148d9a321ca2caa3",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "settlement",
+        "town"
+      ]
+    },
+    {
+      "root_id": "root_000333",
+      "branch_id": "B002",
+      "root_norm": "ح ض ر",
+      "branch_image_ar": "سكون الحضر وترك البدو",
+      "what_is_ar": "الحضر والحاضرة والحضارة والإقامة في الأمصار والقرى والريف خلاف البدو والبادية",
+      "what_is_not_ar": "الحضور بمعنى الشهود؛ الرجوع إلى الماء خاصة؛ عدو الدابة",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:758;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1496:headword=%D8%AD%D8%B6%D8%B1:root=%D8%AD%20%D8%B6%20%D8%B1:sha=9c9c0b45f14196b7;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1382%3Asubentry%3A0%3A%D8%AD%D8%B6%D8%B1:headword=%D8%AD%D8%B6%D8%B1:root=%D8%AD%20%D8%B6%20%D8%B1:sha=369bb788bee59f2f;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1629:headword=%D8%AD%D8%B6%D8%B1:root=%D8%AD%20%D8%B6%20%D8%B1:sha=95a3b374d728b723;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D236%3Bsegment_index%3D102:headword=%D8%AD%D8%B6%D8%B1:root=%D8%AD%20%D8%B6%20%D8%B1:sha=7aee4277ec4ca9c0;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A336:headword=%D8%AD%D8%B6%D8%B1:root=%D8%AD%20%D8%B6%20%D8%B1:sha=68767da5a059b934",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "settlement",
+        "town"
+      ]
+    },
+    {
+      "root_id": "root_000583",
+      "branch_id": "B010",
+      "root_norm": "ر ف ق",
+      "branch_image_ar": "اسم بلد",
+      "what_is_ar": "الرافقة اسم بلد",
+      "what_is_not_ar": "ليس وصفا للين ولا للصحبة",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3585:headword=%D8%B1%D9%81%D9%82:root=%D8%B1%20%D9%81%20%D9%82:sha=9784049e53cd092d",
+      "status": "accepted",
+      "contaminated": "no",
+      "shared_consensus_core": [
+        "settlement",
+        "town"
+      ]
+    }
+  ],
+  "qnet_core_overlap_candidates": [
+    {
+      "root_id": "root_001569",
+      "branch_id": "B004",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 2,
+      "shared_core_keywords": [
+        "city",
+        "habitation",
+        "settlement"
+      ]
+    },
+    {
+      "root_id": "root_001044",
+      "branch_id": "B003",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "building",
+        "habitation",
+        "settlement"
+      ]
+    },
+    {
+      "root_id": "root_001617",
+      "branch_id": "B007",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "city",
+        "land",
+        "settlement"
+      ]
+    },
+    {
+      "root_id": "root_000229",
+      "branch_id": "B009",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 0,
+      "shared_core_keywords": [
+        "building",
+        "fortification",
+        "fortress"
+      ]
+    },
+    {
+      "root_id": "root_001159",
+      "branch_id": "B007",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 0,
+      "shared_core_keywords": [
+        "city",
+        "fortification",
+        "fortress"
+      ]
+    },
+    {
+      "root_id": "root_001655",
+      "branch_id": "B009",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 0,
+      "shared_core_keywords": [
+        "habitation",
+        "land",
+        "settlement"
+      ]
+    },
+    {
+      "root_id": "root_000744",
+      "branch_id": "B007",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 2,
+      "shared_core_keywords": [
+        "settlement",
+        "town"
+      ]
+    },
+    {
+      "root_id": "root_000961",
+      "branch_id": "B005",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 2,
+      "shared_core_keywords": [
+        "city",
+        "settlement"
+      ]
+    }
+  ],
+  "qnet_bridge_overlap_candidates": [
+    {
+      "root_id": "root_000768",
+      "branch_id": "B001",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 5,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "architecture",
+        "community",
+        "geography",
+        "habitation",
+        "settlement"
+      ]
+    },
+    {
+      "root_id": "root_000957",
+      "branch_id": "B010",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 5,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "architecture",
+        "defense",
+        "geography",
+        "settlement",
+        "urbanism"
+      ]
+    },
+    {
+      "root_id": "root_000229",
+      "branch_id": "B009",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 5,
+      "consensus_keyword_count": 0,
+      "shared_bridge_keywords": [
+        "architecture",
+        "defense",
+        "fortification",
+        "settlement",
+        "urbanism"
+      ]
+    },
+    {
+      "root_id": "root_000374",
+      "branch_id": "B005",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 5,
+      "consensus_keyword_count": 0,
+      "shared_bridge_keywords": [
+        "architecture",
+        "community",
+        "geography",
+        "habitation",
+        "settlement"
+      ]
+    },
+    {
+      "root_id": "root_000351",
+      "branch_id": "B002",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 4,
+      "consensus_keyword_count": 2,
+      "shared_bridge_keywords": [
+        "community",
+        "geography",
+        "habitation",
+        "settlement"
+      ]
+    },
+    {
+      "root_id": "root_000549",
+      "branch_id": "B001",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 4,
+      "consensus_keyword_count": 2,
+      "shared_bridge_keywords": [
+        "architecture",
+        "geography",
+        "habitation",
+        "settlement"
+      ]
+    }
+  ],
+  "qnet_theme_overlap_candidates": [
+    {
+      "root_id": "root_000166",
+      "branch_id": "B001",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "architecture_construction",
+        "household_community",
+        "place_location",
+        "protection_security",
+        "religion_worship"
+      ]
+    },
+    {
+      "root_id": "root_001428",
+      "branch_id": "B003",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "architecture_construction",
+        "geography_landscape",
+        "household_community",
+        "place_location",
+        "politics_order"
+      ]
+    },
+    {
+      "root_id": "root_000957",
+      "branch_id": "B010",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "architecture_construction",
+        "geography_landscape",
+        "place_location",
+        "protection_security"
+      ]
+    },
+    {
+      "root_id": "root_001330",
+      "branch_id": "B005",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "geography_landscape",
+        "household_community",
+        "place_location",
+        "politics_order"
+      ]
+    },
+    {
+      "root_id": "root_000156",
+      "branch_id": "B003",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "architecture_construction",
+        "geography_landscape",
+        "place_location",
+        "religion_worship"
+      ]
+    },
+    {
+      "root_id": "root_000374",
+      "branch_id": "B005",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "architecture_construction",
+        "geography_landscape",
+        "household_community",
+        "place_location"
+      ]
+    },
+    {
+      "root_id": "root_000768",
+      "branch_id": "B001",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "architecture_construction",
+        "geography_landscape",
+        "household_community",
+        "place_location"
+      ]
+    },
+    {
+      "root_id": "root_000961",
+      "branch_id": "B005",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "geography_landscape",
+        "household_community",
+        "place_location",
+        "religion_worship"
+      ]
+    }
+  ],
+  "qnet_focus_coverage": {
+    "raw_keyword_exact_port": true,
+    "snapshot_exact_port": true,
+    "postfix_exact_port": false,
+    "theme_scope": "branch",
+    "focus_themes": [
+      "architecture_construction",
+      "geography_landscape",
+      "household_community",
+      "place_location",
+      "politics_order",
+      "protection_security",
+      "religion_worship"
+    ]
+  },
+  "furuq_candidates": [
+    {
+      "root_id": "root_000050",
+      "branch_id": "B004",
+      "root_norm": "ء م د",
+      "branch_image_ar": "آمِد اسم بلد",
+      "what_is_ar": "يدخل فيه اسم الموضع المعروف آمد",
+      "what_is_not_ar": "ليس الغاية ولا الغضب ولا المملوء",
+      "source_phrase_ar": "آمِد بلد في الثغور (sihah)؛ آمد بلد معروف (tahdhib)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1208:headword=%D8%A3%D9%85%D8%AF:root=%D8%A1%20%D9%85%20%D8%AF:sha=5eed6adacd799243;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D727%3Bsegment_index%3D10:headword=%D8%A3%D9%85%D8%AF:root=%D8%A3%20%D9%85%20%D8%AF:sha=0272a67370f2efcb",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_packet"
+      ],
+      "shared_consensus_core": [
+        "city",
+        "settlement",
+        "town"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001569",
+      "branch_id": "B004",
+      "root_norm": "ن و ن",
+      "branch_image_ar": "نينوى المدينة",
+      "what_is_ar": "يدخل فيه نينوى علما على المدينة التي أرسل إليها يونس.",
+      "what_is_not_ar": "لا يدخل الحوت ولا لقب يونس ولا حرف النون.",
+      "source_phrase_ar": "نينوى المدينة التي أرسل إليها يونس (ayn)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A5446:headword=%D9%86%D9%88%D9%86:root=%D9%86%20%D9%88%20%D9%86:sha=861a9dfaf778ed90",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_core_overlap"
+      ],
+      "shared_consensus_core": [
+        "city",
+        "habitation",
+        "settlement"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000768",
+      "branch_id": "B001",
+      "root_norm": "س ي ح",
+      "branch_image_ar": "الساحة والفضاء",
+      "what_is_ar": "يدخل فيه فضاء الدار وما بين دور الحي والمكان الواسع",
+      "what_is_not_ar": "ليس الماء الجاري ولا الذهاب في الأرض",
+      "source_phrase_ar": "الساحة فضاء يكون بين دور الحي (ayn)؛ الساحة المكان الواسع ومنه ساحة الدار (mufradat)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1786:headword=%D8%B3%D9%8A%D8%AD:root=%D8%B3%20%D9%8A%20%D8%AD:sha=97d131390c7795fb;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A747:headword=%D8%B3%D8%A7%D8%AD:root=%D8%B3%20%D8%A7%20%D8%AD:sha=86e0db8e3ebd1adc",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_bridge_overlap",
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [
+        "architecture",
+        "community",
+        "geography",
+        "habitation",
+        "settlement"
+      ],
+      "shared_themes": [
+        "architecture_construction",
+        "geography_landscape",
+        "household_community",
+        "place_location"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000166",
+      "branch_id": "B001",
+      "root_norm": "ب ي ت",
+      "branch_image_ar": "المأوى والمسكن",
+      "what_is_ar": "المسكن والمأوى والموضع الذي يبات فيه وما يسمى بيتا لمأواه أو جمعه كبيت الله وبيت العنكبوت والخباء والقصر",
+      "what_is_not_ar": "ليس عيال الرجل ولا بيت الشعر ولا عمل الليل نفسه",
+      "source_phrase_ar": "أصل واحد وهو المأوى والمآب ومجمع الشمل (maqayis)؛ البيت معروف (jamhara;sihah)؛ البيت سمي بيتا لأنه يبات فيه (tahdhib)؛ أصل البيت مأوى الإنسان بالليل (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:361;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A611%3Asubentry%3A0%3A%D8%A8%D9%8A%D8%AA:headword=%D8%A8%D9%8A%D8%AA:root=%D8%A8%20%D9%8A%20%D8%AA:sha=1f812bf5f041925d;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A523:headword=%D8%A8%D9%8A%D8%AA:root=%D8%A8%20%D9%8A%20%D8%AA:sha=57559b5c5e24c12e;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D741%3Bsegment_index%3D7:headword=%D8%A8%D9%8A%D8%AA:root=%D8%A8%20%D9%8A%20%D8%AA:sha=8e4a58b5f1ac4d94;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A157:headword=%D8%A8%D9%8A%D8%AA:root=%D8%A8%20%D9%8A%20%D8%AA:sha=3e156cf3195bd5f1",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "architecture_construction",
+        "household_community",
+        "place_location",
+        "protection_security",
+        "religion_worship"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000487",
+      "branch_id": "B004",
+      "root_norm": "د م ر",
+      "branch_image_ar": "تدمر البلد",
+      "what_is_ar": "اسم مدينة أو بلد بالشام",
+      "what_is_not_ar": "الهلاك؛ الدخول؛ التَّدْمُرِيّ من اليرابيع؛ نفي أحد في الدار",
+      "source_phrase_ar": "تدمر اسم مدينة بناها الشياطين (ayn); تدمر بلد بالشام (sihah); تدمر اسم مدينة بالشام (tahdhib)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A5350:headword=%D8%A8%D9%84%D9%86%D8%B7:root=%D8%A8%20%D9%84%20%D9%86%20%D8%B7:sha=8f001c8dc5b5aed5;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1674:headword=%D8%AF%D9%85%D8%B1:root=%D8%AF%20%D9%85%20%D8%B1:sha=3590cd7aa1c880e0;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D49:headword=%D8%AF%D9%85%D8%B1:root=%D8%AF%20%D9%85%20%D8%B1:sha=d1340b5cdc23aaeb",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_packet"
+      ],
+      "shared_consensus_core": [
+        "city",
+        "settlement",
+        "town"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001044",
+      "branch_id": "B003",
+      "root_norm": "ع م ر",
+      "branch_image_ar": "إزالة الخراب بعمارة المكان",
+      "what_is_ar": "يدخل فيه عمارة الأرض والبيت والمسجد والخراب، والسكنى، والعمران، والاستعمار بمعنى التفويض في العمارة.",
+      "what_is_not_ar": "لا يدخل فيه طول العمر في البدن، ولا الزيارة المحضة إلا إذا صارت إقامة أو عمارة.",
+      "source_phrase_ar": "عمارة الأرض، يعمرونها وهي عامرة معمورة، استعمر الله تعالى الناس في الأرض ليعمروها (maqayis)؛ عمرت الخراب أعمره عمارة فهو عامر أي معمور، استعمركم فيها جعلكم عمارها (sihah)؛ استعمركم فيها أي أذن لكم في عمارتها، عمر فلان بيتا، دار معمورة (tahdhib)؛ العمارة نقيض الخراب، أعمرته الأرض واستعمرته إذا فوضت إليه العمارة (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2350;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1825:headword=%D8%B9%D9%85%D8%B1:root=%D8%B9%20%D9%85%20%D8%B1:sha=ce49cf38a05e16a8;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D174%3Bsegment_index%3D2:headword=%D8%B9%D9%85%D8%B1:root=%D8%B9%20%D9%85%20%D8%B1:sha=4fa17412075d40a2;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1036:headword=%D8%B9%D9%85%D8%B1:root=%D8%B9%20%D9%85%20%D8%B1:sha=faa5d49fa8fccff7",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_core_overlap"
+      ],
+      "shared_consensus_core": [
+        "building",
+        "habitation",
+        "settlement"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000957",
+      "branch_id": "B010",
+      "root_norm": "ط و ف",
+      "branch_image_ar": "طائف الحائط والبلد",
+      "what_is_ar": "الطائف الحائط الحصين المبني حول الموضع؛ واسم البلد المنسوب إلى ذلك",
+      "what_is_not_ar": "ليس اسم الفاعل العام للطائف العاس إلا من جهة الدوران والحياطة",
+      "source_phrase_ar": "الطائف الذي بالغور سمي به الحائط الذي بنوا حولها في الجاهلية حصنوها به (ayn)؛ طائف بلاد ثقيف (sihah)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A5310:headword=%D8%B7%D9%88%D9%81:root=%D8%B7%20%D9%88%20%D9%81:sha=01413823b8225709;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3379:headword=%D8%B7%D9%88%D9%81:root=%D8%B7%20%D9%88%20%D9%81:sha=998751e6f1eaa0a4",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_bridge_overlap",
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [
+        "architecture",
+        "defense",
+        "geography",
+        "settlement",
+        "urbanism"
+      ],
+      "shared_themes": [
+        "architecture_construction",
+        "geography_landscape",
+        "place_location",
+        "protection_security"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_001428",
+      "branch_id": "B003",
+      "root_norm": "م ص ر",
+      "branch_image_ar": "البلد الممصّر",
+      "what_is_ar": "يدخل فيه المصر بمعنى الكورة أو البلد أو المدينة المعروفة، والأمصار، والمصران للكوفة والبصرة",
+      "what_is_not_ar": "ليس مطلق الحد والحاجز إذا لم يدل على بلد أو كورة",
+      "source_phrase_ar": "المصر كل كورة يقسم فيها الفيء والصدقات (maqayis)؛ كل كورة تقام فيها الحدود وتغزى منها الثغور ويقسم فيها الفيء والصدقات (ayn;tahdhib)؛ مصر هي المدينة المعروفة والمصر واحد الأمصار (sihah)؛ المصر اسم لكل بلد ممصور (mufradat)؛ المصران الكوفة والبصرة (sihah;tahdhib)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3393;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4725:headword=%D9%85%D8%B5%D8%B1:root=%D9%85%20%D8%B5%20%D8%B1:sha=166ac0dee27d0e8a;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1919:headword=%D9%85%D8%B5%D8%B1:root=%D9%85%20%D8%B5%20%D8%B1:sha=73c0c53917601b38;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D628%3Bsegment_index%3D47:headword=%D9%85%D8%B5%D8%B1:root=%D9%85%20%D8%B5%20%D8%B1:sha=f8ba5370deb8eab1;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1419:headword=%D9%85%D8%B5%D8%B1:root=%D9%85%20%D8%B5%20%D8%B1:sha=4eb8acdabccbd6f1",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_packet",
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [
+        "city",
+        "settlement",
+        "town"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "architecture_construction",
+        "geography_landscape",
+        "household_community",
+        "place_location",
+        "politics_order"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_001408",
+      "branch_id": "B002",
+      "root_norm": "م د ن",
+      "branch_image_ar": "الإقامة بالمكان",
+      "what_is_ar": "فعل مدن بالمكان بمعنى أقام به، وما صرحت به الصحاح من جعل تسمية المدينة منه.",
+      "what_is_not_ar": "ليس اسم المدينة نفسه، ولا إتيان المدينة خاصة، ولا مدين علما.",
+      "source_phrase_ar": "مدن بالمكان: أقام به؛ ومنه سميت المدينة (sihah)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5068:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=d754f6031c4b886e",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001408",
+      "branch_id": "B003",
+      "root_norm": "م د ن",
+      "branch_image_ar": "مدين قرية شعيب",
+      "what_is_ar": "اسم العلم مدين بوصفه قرية شعيب عليه السلام.",
+      "what_is_not_ar": "ليس جمع مدائن ولا المدينة العامة.",
+      "source_phrase_ar": "مدين: قرية شعيب عليه السلام (sihah)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5068:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=d754f6031c4b886e",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001408",
+      "branch_id": "B004",
+      "root_norm": "م د ن",
+      "branch_image_ar": "ابن مدينتها العالم بأمرها",
+      "what_is_ar": "التعبير ابن مدينتها في معنى العالم بأمرها، مع نظيره ابن بجدتها.",
+      "what_is_not_ar": "ليس النسبة إلى المدينة، ولا المدينة المكانية.",
+      "source_phrase_ar": "هو ابن بجدتها، وابن مدينتها؛ ابن مدينة أي العالم بأمرها (tahdhib)",
+      "source_refs": "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D80:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=46c0645a8effd82a",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001408",
+      "branch_id": "B005",
+      "root_norm": "م د ن",
+      "branch_image_ar": "إتيان المدينة",
+      "what_is_ar": "فعل مدن الرجل إذا أتى المدينة.",
+      "what_is_not_ar": "ليس مطلق الإقامة بالمكان في الصحاح، ولا اسم المدينة.",
+      "source_phrase_ar": "مدن الرجل إذا أتى المدينة (tahdhib)",
+      "source_refs": "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D717%3Bsegment_index%3D80:headword=%D9%85%D8%AF%D9%86:root=%D9%85%20%D8%AF%20%D9%86:sha=46c0645a8effd82a",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    }
+  ]
+}

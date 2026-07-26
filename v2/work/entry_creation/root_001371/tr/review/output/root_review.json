@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dalların kimliğini, kapsamını, kavram çekirdeklerini, sözlük karşılıklarını ve komşu sınırlarını genel olarak kanıtla uyumlu kuruyor. Ancak B006'nın tek kaynaklı sentezi, iki biçimin genişlik anlamlarını aktarırken kaynağın açık türetim çözümlemesini dışarıda bırakıyor; bu sınırlı eksiklik canlı çıktıda giderilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001371/B006",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tek tanıklık özeti iki biçimin genişlik ve geniş karınlılık anlamlarını veriyor, fakat kaynak ifadesinin her biçimi ikişer öğeden kurulmuş sayan ve incelenen kökü bu öğelerden biri olarak gösteren açık türetim çözümlemesini aktarmıyor.",
+      "smallest_correction": "B006 source_details içindeki mevcut sole_attestation özetine, ilk ve ikinci biçimin ayrı ikili birleşimler olarak çözümlendiğini ve incelenen kökün her ikisinde de kurucu öğelerden biri sayıldığını belirten kısa bir cümle ekleyin."
+    }
+  ]
+}

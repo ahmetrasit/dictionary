@@ -1,0 +1,61 @@
+{
+  "verdict": "repair",
+  "summary": "B002'nin branch düzeyindeki anlatımı, bc_001'de bulunmayan geri dönme veya bozguna uğrayıp çekilme anlamını ve gemi örneğini genel kavram haritasına taşıyor. Bu unsurlar yalnız ilgili sözlüksel birim düzeyinde tutulmalı; branch kimliği, kavram haritası, kaynak özeti, bağlamsal karşılıklar ve komşu ayrımları bc_001'in desteklediği eğme, ters çevirme, yönünden döndürme, yürürken sallanma ve yüz veya renk değişmesi sınırına çekilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001305/B002",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kimlik gerekçesi ve sınır notu, topluluğun geri dönmesini veya geri çekilmesini branchin bağımlı uzantısı sayıyor; bc_001 ise topluluğu amaçladığı yönden başka yöne çevirme kullanımını içeriyor, kendiliğinden geri dönme veya bozguna uğrama anlamını içermiyor.",
+      "smallest_correction": "Gerekçe ve sınır notundan geri dönme veya geri çekilme atıflarını çıkarıp diğer destekli çekirdek ve uzantıları aynen koruyun."
+    },
+    {
+      "target_ref": "root_001305/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ile F003, geri dönme ve bozguna uğrayarak çekilmeyi bc_001'e bağlı branch anlamı olarak sunuyor; F002 ayrıca bc_001'de yer almayan sudaki tekneyi branch örneğine dönüştürüyor. bc_001 yalnız eğme, kabı ters çevirme, topluluğu başka yöne çevirme, yürüyüşte sallanma ve yüz veya renk değişmesini destekliyor.",
+      "smallest_correction": "Tanım ve F003'ten geri dönme veya çekilme anlamını, F002'den tekne örneğini çıkarın; desteklenen eğme, ters çevirme, yönünden döndürme, yürüyüşte sallanma ve yüz veya renk değişmesi içeriğini koruyun."
+    },
+    {
+      "target_ref": "root_001305/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet geri çekilmeyi bc_001'in branch uzantıları arasında sayıyor; bu id'nin kaynak ifadesinde geri dönme veya yenilgiyle çekilme bulunmuyor.",
+      "smallest_correction": "Ortak özetten geri çekilme atfını çıkarıp yön değiştirme, yürüyüşte sallanma ve görünüş değişmesi sentezini koruyun."
+    },
+    {
+      "target_ref": "root_001305/B002",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bağlamsal karşılıklar, geri dönmek veya çekilmek için ayrı bir branch karşılığı yayımlıyor; bc_001 bu anlamı desteklemezken yüzün düşmesi ve rengin değişmesini açıkça destekliyor.",
+      "smallest_correction": "Desteksiz geri dönme veya çekilme karşılığını, F003'ün bc_001'deki destekli yüz veya renk değişmesi kullanımını açıklayan bir karşılıkla değiştirin."
+    },
+    {
+      "target_ref": "root_001305/B002",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu ayrımları, B002'nin sınırına geri çekilme ve hareketi geri yöne döndürme özelliklerini ekliyor. bc_001 yalnız nesneyi veya topluluğu bulunduğu ya da amaçladığı yönden başka yöne çevirme anlamını destekliyor.",
+      "smallest_correction": "B002'ye ait focus_only, shared_zone ve distinction metinlerinden geri çekilme veya kendiliğinden geri dönüş iddialarını çıkarın; yönünden başka yöne çevirme ortaklığını ve destekli öteki ayrımları koruyun."
+    }
+  ]
+}

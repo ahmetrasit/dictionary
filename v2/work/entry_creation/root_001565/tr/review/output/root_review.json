@@ -1,0 +1,83 @@
+{
+  "verdict": "repair",
+  "summary": "B001'de havuz suyuna üstten erişme örneği, nesnenin yukarıda bulunduğu veya bitkiye de yukarı yönde uzanıldığı biçiminde genişletilmiş. B005'te ise kanıtın bildirdiği ince et niteliğine ayrıca azlık eklenmiş. Bu iki anlam kayması ilgili alanlarda küçük ve kesin düzeltmeler gerektiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_001565/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, havuz suyunun üstten alındığını ve hayvanın bitkiye erişip onu aldığını ayrı örnekler olarak verir. Tanım ile F002, bunu yukarıda bulunan bir şeye erişme şeklinde tersine çeviriyor ve yukarı yönünü bitki örneğine de taşıyor.",
+      "smallest_correction": "Tanımdaki yukarıda bulunan şey ifadesini genel erişip alma örneğiyle değiştir; F002'de üstten erişme ayrıntısını yalnızca havuz suyuna bağla ve bitki örneğini yön belirtmeden ver."
+    },
+    {
+      "target_ref": "root_001565/B001",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yukarı uzanıp almak ifadesi, hareketin yukarı yöneldiğini bildiriyor. Kanıttaki yön ayrıntısı yalnızca havuz suyuna üstten erişmedir; bitkiye erişme örneğinde yön belirtilmez.",
+      "smallest_correction": "Bağlamsal karşılığı üstten erişip almak olarak düzelt ve uygulanabilirliğini yalnızca havuz suyu örneğine bağla; bitki örneğini bu yönlü karşılığın kapsamından çıkar."
+    },
+    {
+      "target_ref": "root_001565/B005",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tek kanıt dişi devenin etini ince diye niteler; etin miktarının az olduğunu ayrıca söylemez. Tanım ve F001, ince niteliğine azlık ekliyor.",
+      "smallest_correction": "Tanımda ve F001'de yer alan ve az sözlerini kaldır; yalnızca etin ince oluşunu koru."
+    },
+    {
+      "target_ref": "root_001565/B005",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tek kaynak tanıklığının özeti, kanıttaki ince et niteliğini ince ve az biçiminde genişletiyor.",
+      "smallest_correction": "Tek tanıklık özetinden ve az ifadesini çıkar."
+    },
+    {
+      "target_ref": "root_001565/B005",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığının metni kanıtla uyumlu olsa da uygulanabilirlik açıklaması eti ince ve az diyerek desteklenmeyen bir miktar niteliği ekliyor.",
+      "smallest_correction": "Uygulanabilirlik açıklamasındaki ve az sözlerini kaldır; karşılık metnini ve diğer unsurları koru."
+    },
+    {
+      "target_ref": "root_001565/B005",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bağlamsal karşılığın açıklaması ve koruma beyanı, kanıtın ince et niteliğine etin az olduğu iddiasını ekliyor.",
+      "smallest_correction": "Uygulanabilirlik ve koruma metinlerindeki azlık ifadelerini kaldır; yalnızca dişi devenin etinin ince oluşunu belirt."
+    },
+    {
+      "target_ref": "root_001565/B005",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu ayrımlarındaki odak ve ortak alan cümleleri bu dalı birkaç yerde et azlığıyla tanımlıyor. Dalın kendi kanıtı yalnızca dişi devenin etinin ince olduğunu bildiriyor; azlık komşu dallara ait kapsamdan bu dala aktarılmamalı.",
+      "smallest_correction": "B005'i tanımlayan odak cümlelerinden azlık ifadelerini çıkar; ortak alanları da B005 için ince et niteliğini, komşular için azlık veya cılızlığı ayrı ayrı koruyacak biçimde daralt."
+    }
+  ]
+}

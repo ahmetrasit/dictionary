@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B003 dalının genel kavram karşılığı, yalnızca belirli kemik kullanımına bağlı oyuklaşmayı çekirdek anlam düzeyine çıkarıyor. Bu sınırlı sorun dışında yayıma engel bir anlam çatışması saptanmadı.",
+  "issues": [
+    {
+      "target_ref": "root_001482/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıtın genel çekirdeği bir şeyin çürüyüp ufalanmasıdır; içinin boşalması ise rüzgarın girip çıktığı kısmen kalmış kemik kullanımına bağlı bir özelleşmedir. Kavram karşılığındaki \"ve içinin boşalması\" ifadesi bu bağımlı özelliği bütün dala yayıyor.",
+      "smallest_correction": "B003 concept_gloss.text değerini \"çürüyüp ufalanma\" yap; applicability ve error_profile.preserves metinlerinden genel oyuklaşma iddiasını çıkar ve facet_ids listesini yalnızca F001 ile sınırla."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "verdict": "editorial_review",
+  "summary": "B003 dalında yiyeceğin azlığı, kesin kaynak ifadesini aşarak yoğun talebin sonucu gibi sunulmuştur; bu nedensel genişletme kavram haritası, kaynak sentezi ve bağlamsal karşılıkta yinelenir. Ayrıca B003 kavram karşılığının hata profili az isteme kullanımını kapsadığını yanlış bildirir. B001 komşu kapsam notu ise yayımlanan üç ilişkiyi dört ilişki olarak sayar. Görev sınırı canlı yazar çıktısının düzenlenmesine izin vermediğinden sorunlar inceleme için kaydedilmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_000804/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ile F003, insanların yoğun yönelişinin hem suyu hem yiyeceği azalttığını söyler. Kesin kaynak ifadesi yoğun yöneliş ve tüketilme nedenini su için verir; yiyecek için yalnızca onun az olduğunu bildirir. Bu nedenle yiyeceğin azlığını yoğun talebe bağlamak kanıtlanmayan bir nedensellik ekler.",
+      "smallest_correction": "Tanımda ve F003'te yoğun yönelişten doğan azalma veya tükenmeyi yalnızca suya bağla; yiyeceği ise belirli yapıda bildirilen bağımsız bir azlık durumu olarak ifade et."
+    },
+    {
+      "target_ref": "root_000804/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, talep yükünün suyu ve yiyeceği azaltabileceğini belirterek yiyecek için kaynakta bulunmayan nedensel bağı tekrarlar. Kaynakta kalabalık yönelişiyle azalma suya, yalın azlık ise yiyeceğe aittir.",
+      "smallest_correction": "Ortak özette yoğun talebin suyu azaltabildiğini söyle; yiyeceğin azlığını ayrı ve nedensiz bir yapı-bağımlı kullanım olarak kaydet."
+    },
+    {
+      "target_ref": "root_000804/B003",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "\"Yoğun kullanımla azalmış\" karşılığının uygulanabilirliği hem suyu hem yiyeceği kapsar. Kesin kaynak yoğun kullanım veya kalabalık talep koşulunu yalnızca su için destekler; yiyecek için sadece azlık bildirir.",
+      "smallest_correction": "Bu bağlamsal karşılığın uygulanabilirliğini suyla sınırla; yiyecek kullanımını yoğun talep nedeni eklemeden \"az yiyecek\" olarak bırak."
+    },
+    {
+      "target_ref": "root_000804/B003",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı yalnızca meşgul etme, yoğun taleple tüketme ve kıtlaştırmayı adlandırdığı halde hata profili az isteme karşıt derecesini de koruduğunu, hiçbir kayıp bulunmadığını ve F005'i kapsadığını bildirir. \"İnsanlardan az isteyen\" kullanımı bu karşılıkta temsil edilmez.",
+      "smallest_correction": "Hata profilini daralma olarak işaretle, az isteme kullanımını kayıp olarak belirt ve F005'i bu kavram karşılığının facet_ids listesinden çıkar."
+    },
+    {
+      "target_ref": "root_000804/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu kapsam notu dört ilişkinin yayımlandığını söyler, ancak neighbor_distinctions dizisinde yalnızca üç ilişki vardır. Not, yayımlanan içeriğin sayısını yanlış bildirir.",
+      "smallest_correction": "Komşu kapsam notundaki \"dört ilişki\" ifadesini \"üç ilişki\" olarak düzelt."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın dal kimlikleri, kapsamları, kaynak sentezleri ve sözlük karşılıkları genel olarak kanıtla uyumludur. Yalnız B001'in sıcaklık komşusuyla karşılaştırmasında kanıtta bulunmayan bir ılımlı sıcaklık ile yoğun sıcaklık ayrımı kurulmuştur; bu sınırlı karşılaştırma düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000479/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B001'in yetkili iddiası hem soğuğun karşıtı olan sıcaklığı hem de sıcaklık derecesi bakımından daha güçlü ifadeyi kapsar. Buna karşın root_000306/B001 karşılaştırması odak dalı ılımlı, komşu dalı yoğun sıcaklıkla ayırarak kanıtlanmayan bir derece sınırı eklemektedir.",
+      "smallest_correction": "root_000306/B001 satırındaki focus_only, neighbor_only ve distinction metinlerinden ılımlı ile yoğun karşıtlığını kaldırın. Ayrımı, B001'e özgü sıcak tutan nesne ve sıcak korunak kullanımları ile komşunun gün, beden, hava ve tat gibi daha geniş sıcaklık kullanımları üzerinden kurun."
+    }
+  ]
+}

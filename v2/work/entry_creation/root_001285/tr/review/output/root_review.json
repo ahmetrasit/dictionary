@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "B001, B002, B003 ve B005 kanıtla uyumludur. B004'te küçük ok, atış öğrenme oku ve metal uçsuz-tüysüz oyun oku kaynaklarda alternatif veya kaynağa özgü betimlemelerken lu_014 karşılığı bunları tek bir zorunlu özellik kümesinde birleştiriyor. Ayrıca bağlamsal hata profilindeki zararsızlık çıkarımı kanıtlanmıyor.",
+  "issues": [
+    {
+      "target_ref": "root_001285/B004",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_014"
+      ],
+      "evidence_conflict": "lu_014 kanıtı küçük oku, çocukların atış öğreniminde kullandığı küçük oku ve yalnız bir anlatımdaki metal uçsuz-tüysüz oyun okunu ayırır. Mevcut karşılık küçüklük, çocuk kullanımı, oyun veya alıştırma amacı ile metal uçsuz ve tüysüz olmayı bütün kullanımlar için birlikte zorunlu kılıyor.",
+      "smallest_correction": "lu_014 hedef karşılığını kaynak seçeneklerini koruyacak biçimde \"küçük ok; çocukların atış öğreniminde kullandığı veya metal uçsuz ve tüysüz olarak oynadığı ok\" olarak değiştirin."
+    },
+    {
+      "target_ref": "root_001285/B004",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 oyun okunun bir anlatımda metal uç ve tüy taşımadığını bildirir, fakat zararsız olduğunu bildirmez. \"oyuncak ok\" hata profilindeki \"küçük ve zararsız\" ifadesi desteklenmeyen bir güvenlik özelliği ekliyor.",
+      "smallest_correction": "\"oyuncak ok\" girdisinin preserves alanındaki \"ve zararsız\" sözlerini kaldırın."
+    }
+  ]
+}

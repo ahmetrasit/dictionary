@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": "1138cddf4cd8c54d39a8ed35c4e2627c13ba67ec194864916ecb6ea932d6f6c5",
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak B001 dalının root_001321/B001 ile ilişkisi, aynı genel kesme ve ayırma çekirdeğine rağmen yalnız bağımlı kullanım örnekleri gerekçe gösterilerek gereksiz yere yakın anlamlı ve kısmi olarak sınıflandırılmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_000861/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B001 kanıtı genel kesme, ayırma ve kopmayı; komşu kartı da bir şeyi kesip ayırmayı çekirdek olarak verir. Sözün, süren işin veya teşekkür bağının kesilmesi gibi örnekler dal sınırını değiştiren ek koşullar değildir; bu nedenle near_synonym ve partial etiketleri çekirdeklerin olağan kullanımdaki karşılanabilirliğini olduğundan düşük gösterir.",
+      "smallest_correction": "root_001321/B001 satırında relation_type değerini synonym, boundary_match değerini exact yapın; focus_only, neighbor_only ve distinction metinlerini örnek farklarını sınır farkı gibi sunmayacak biçimde en az ölçüde düzeltin."
+    }
+  ]
+}

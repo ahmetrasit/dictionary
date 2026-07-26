@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": "0f87a36e22ac66351bc30b57cdc5d465f28ea8c1377f3fe22c897da3a10be5c8",
+  "verdict": "repair",
+  "summary": "Girdi genel olarak kanıtla uyumludur; ancak B005 dalındaki bir komşuluk ilişkisi, kanıtlanan kapsam farkına rağmen tam eş anlamlılık olarak sınıflandırılmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_000905/B005",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B005 yalnız belirli kişi özneli fiil yapısında öfkelenmeyi kanıtlarken root_000050/B002 komşusu genel öfke alanını ve birine öfkelenme yapısını da kapsar. Bu ek biçim ve katılımcı kapsamı nedeniyle ilişkinin exact ve synonym olarak verilmesi, ayrıca katılımcı sınırlarının aynı olduğunun söylenmesi kanıtla uyuşmaz.",
+      "smallest_correction": "root_000050/B002 ilişkisini near_synonym ve partial olarak değiştirin; B005'e özgü belirli fiil yapısını focus_only alanında, komşunun genel öfke ve birine öfkelenme kapsamını neighbor_only alanında belirtin ve distinction metnini bu sınır farkını yansıtacak biçimde düzeltin."
+    }
+  ]
+}

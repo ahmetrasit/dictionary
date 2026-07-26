@@ -1,0 +1,52 @@
+{
+  "inputs_sha256": "1ee2a73ffbf775c43a96ccf9490c58b628393fddb9967c28c030dbbc2a736734",
+  "verdict": "editorial_review",
+  "summary": "B001 ve B002 yayıma elverişlidir. B003 ise dışarıdan gelen sarsıcı bir etkiyi bütün dal için zorunlu kılarak kaynakta doğrudan ölüm diye verilen kullanımı daraltmaktadır. Bu daralma birden çok yayın alanına yayıldığı için yazar çıktısına dokunulmadan editoryal incelemeye bırakılmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_000864/B003",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe dalı güçlü ses, göksel çarpma, sıcaklık veya benzeri bir dış etkinin sonucu olarak kabul ediyor. Oysa bc_001, bu nedenli örneklerin yanında fiili doğrudan öldü anlamıyla da verir; dış neden her kullanımın sınır koşulu değildir.",
+      "smallest_correction": "Durumu qualified yapıp gerekçede bilinç kaybı ve ölümün çekirdek olduğunu, ses, göksel çarpma ve sıcaklığın ise tanıklı nedenler olup zorunlu olmadığını belirtin."
+    },
+    {
+      "target_ref": "root_000864/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ile F001, bilinç kaybı veya ölümden önce mutlaka dış bir etki bulunmasını çekirdeğe yerleştiriyor. bc_001 ise neden belirten kullanımların yanı sıra doğrudan öldü anlamını da tanıklıyor; böylece ilişkili neden çekirdek koşula yükseltilmiş oluyor.",
+      "smallest_correction": "Tanım ve F001'de çekirdeği bayılma veya bilinç yitimi ile ölüm olarak verin; güçlü ses, göksel çarpma, sıcaklık ve benzeri nedenleri F002'de zorunlu olmayan tanıklı gerçekleşmeler olarak koruyun."
+    },
+    {
+      "target_ref": "root_000864/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı sarsıcı bir etkiyi zorunlu kılıyor, fakat bc_001 dalın ölüm kullanımını her yerde böyle bir nedene bağlamıyor. Karşılık bu nedenle çekirdek kapsamdan daha dardır.",
+      "smallest_correction": "Kavram karşılığını dış nedeni zorunlu kılmadan bilinç yitirme veya ölme çekirdeğini verecek biçimde düzeltin; nedenleri uygulanabilirlik açıklamasında örnek olarak tutun."
+    },
+    {
+      "target_ref": "root_000864/B003",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_008",
+        "lu_012"
+      ],
+      "evidence_conflict": "lu_008 doğrudan ölmek anlamını taşırken karşılık bunu sarsıcı bir etkinin sonucu diye daraltıyor. lu_012 ise hem göksel çarpmaya uğrayanı hem genel olarak bu eyleme maruz kalanı kapsadığı halde yalnız göksel çarpma ile sınırlandırılıyor.",
+      "smallest_correction": "lu_008 karşılığını doğrudan ölmek olarak verin. lu_012 karşılığını göksel nedeni zorunlu kılmadan bu eyleme uğrayıp bayılmış veya ölmüş kimse biçiminde genişletin."
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "verdict": "repair",
+  "summary": "B001 dalinda belirli bir kaynak ayrintisi cekirdek anlama genellenmis; B003 dalinda ise hizli hareket etmek, hizini artirmak olarak aktarilmistir. Bu iki anlam kaymasi, ilgili kavram ve karsilik alanlarinda sinirli duzeltmeler gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_001594/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kayitlarin ortak cekirdegi bakisi bir seye yoneltme ve surdurmedir; gozleri acik tutma ayrintisi yalnizca belirli bir aciklamada yer alir. Tanim ile F002 bu ayrintiyi butun dalin zorunlu cekirdek ozelligi yapmistir.",
+      "smallest_correction": "Tanimdan gozleri acik tutma kosulunu kaldirip cekirdegi bakisi bir seye yoneltme ve onun uzerinde surdurme olarak verin; gozlerin acik tutulmasini F002'de kaynaga bagli bir ozellesme olarak sinirlayin."
+    },
+    {
+      "target_ref": "root_001594/B001",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karsiligi, gozleri acik tutmayi dalin her kullaniminda gerekli gosteriyor; oysa kanitin geneline yayilan unsur bakisin hedefe yoneltilmesi ve surdurulmesidir.",
+      "smallest_correction": "Kavram karsiligini \"bakisini bir seye yoneltip ayirmamak\" olarak degistirin; applicability ve error_profile metinlerinden gozleri acik tutmanin cekirdege ait oldugu iddiasini kaldirin."
+    },
+    {
+      "target_ref": "root_001594/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit kosuda veya gidiste hizli hareket etmeyi bildirir; hareket sirasinda onceki hizin artirilmasini bildirmez. Tanimdaki \"hizlanmak\" ve F001'deki \"hizini artirir\" ifadeleri kanitta bulunmayan bir hiz degisimi ekler.",
+      "smallest_correction": "Tanimin ilk cumlesini kosuda ya da gidiste hizli hareket etmek biciminde kurun ve F001'i kisi veya hayvanin kosuda ya da gidiste hizli hareket ettigini soyleyecek sekilde duzeltin."
+    },
+    {
+      "target_ref": "root_001594/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak ozet, kaynaklarin bildirdigi hizli hareketi \"hizlanma\" diye aktararak hareketin hizinda artis oldugunu ima ediyor.",
+      "smallest_correction": "Ortak ozetteki \"hizlanma\" ifadelerini \"hizli ilerleme\" veya \"hizli hareket etme\" ile degistirin; korkuyla yonelmenin ozel kullanim oldugu ayrimini koruyun."
+    },
+    {
+      "target_ref": "root_001594/B003",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_004",
+        "lu_008"
+      ],
+      "evidence_conflict": "lu_004 ve lu_008 hizli kosma veya gitmeyi bildirir; \"hizlanmak\" karsiliklari ise onceki hizin artirilmasi anlamini ekler.",
+      "smallest_correction": "lu_004 karsiligini \"kosuda ya da gidiste hizli hareket etmek\", lu_008 karsiligini \"gidiste hizli hareket etmek\" olarak degistirin."
+    }
+  ]
+}

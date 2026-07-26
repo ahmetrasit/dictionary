@@ -1,0 +1,84 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yaniti genel dal yapisini ve kapsam profillerini koruyor; ancak B004, B007, B009 ve B010'da yayin anlamini etkileyen sinirli duzeltmeler gerekiyor. Hurma meyvesi ve melek sinifi daha belirgin aktarilmali, bagimsiz yukleme kullanimi kaynak varyanti sayilmamali, kamis ile kargi kapsami genellestirilmemelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001291/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit, yaprak diplerinde kalan ve toplanan seyi ozellikle hurma olarak verir; tanim ile F003 bunu yalnizca genel meyve diye aktararak nesnenin ayirt edici turunu kaybediyor.",
+      "smallest_correction": "Tanim ve F003'teki genel meyve ifadelerini hurma meyvesi olarak daralt; yaprak dipleriyle ve hasat sonrasi toplamayla ilgili diger anlatimi koru."
+    },
+    {
+      "target_ref": "root_001291/B004",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_019",
+        "lu_020"
+      ],
+      "evidence_conflict": "lu_019 ile lu_020, yaprak diplerinden toplanan seyi hurma olarak sinirlar; hedef karsiliklar genel meyve diyerek bu leksik ayrintiyi eksiltiyor.",
+      "smallest_correction": "Iki hedef karsilikta da meyve yerine hurma meyvesi kullan; toplama eylemi ve konum bilgisini degistirme."
+    },
+    {
+      "target_ref": "root_001291/B007",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit sinifi acikca melekler olarak belirler ve yakinlik, meleklerin onderleri olma ve Ars'i tasiyanlara en yakin melekler olma anlatimlarini verir. Tanim ile facetler bunu daha genis olan goksel varlik sinifina ceviriyor ve yakinligin hedefini kanitta acikca bulunmayan Tanri olarak sabitliyor.",
+      "smallest_correction": "Tanim ve facetlerde sinifi melekler olarak belirt; yakinligi nesnesiz birak ve onderlik ile Ars'i tasiyanlara yakinligi kaynak varyantlari olarak koru."
+    },
+    {
+      "target_ref": "root_001291/B007",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_026"
+      ],
+      "evidence_conflict": "lu_026 belirli varliklari melekler diye sinirlar; hedef karsilik daha genis goksel varliklar ifadesini kullanip ayrica yakinligin hedefini Tanri olarak ekliyor.",
+      "smallest_correction": "Hedef karsiligi yakin veya yuksek dereceli melekler seklinde duzelt; kanitta acikca verilmeyen yakinlik hedefini ekleme."
+    },
+    {
+      "target_ref": "root_001291/B009",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Deveyi yukleme, su kabini doldurma anlaminin baska bir kaynak anlatimi degil, ayri nesne ve eylem siniri olan ikinci bagli kullanimdir. F002'nin source_variant rolu bu iki leksik kullanimi yanlis iliskilendiriyor.",
+      "smallest_correction": "F002'nin rolunu associated_use olarak degistir; facet metnini ve iki kullanimi ayri tutan tanimi koru."
+    },
+    {
+      "target_ref": "root_001291/B010",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit nesne kapsamını kamis veya kargi ile sinirlar. Tanim ve F001, kargiyi belirsiz benzeri saplar kategorisine genellestiriyor; ayrica uzun, ici bos ve sert niteliklerini kanittaki dal iddiasina ekliyor.",
+      "smallest_correction": "Tanim ile F001'i kamisin veya karginin bogum yeri olarak sinirla; benzeri saplar genellemesini ve kanitta verilmeyen nitelikleri kaldir."
+    },
+    {
+      "target_ref": "root_001291/B010",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_032"
+      ],
+      "evidence_conflict": "lu_032'nin anlami kamis veya kargi bogumunu kapsar; hedef karsilik yalniz kamisi vererek ikinci kanitli nesneyi dusuruyor.",
+      "smallest_correction": "Hedef karsiligi kamisin veya karginin bogum yeri olarak duzelt."
+    }
+  ]
+}

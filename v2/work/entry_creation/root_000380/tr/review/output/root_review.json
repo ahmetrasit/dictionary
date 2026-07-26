@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Dal ayrımı, kapsam ve temel karşılıklar kanıtla uyumludur. Ancak B002'de kaynak yalnızca nesnenin yanlarından alınıp eksiltilmesini bildirirken bazı ifadeler işlemi yinelemeli veya aşamalı gösteriyor; bu özellik komşu dalın ayırıcı unsurudur.",
+  "issues": [
+    {
+      "target_ref": "root_000380/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, nesnenin yanlarından alınmasını ve kenarlarından eksiltilmesini destekler; işlemin parça parça veya süreğen olduğunu belirtmez. Bu aşamalılık ayrıca root_001268/B004 komşusunun ayırıcı özelliğidir.",
+      "smallest_correction": "Tanımdaki \"parça parça\" sözünü ve F002'deki süreklilik bildiren \"süren\" sözünü kaldır; yanlardan alma ve kenarlardan eksiltme çekirdeğini aynen koru."
+    },
+    {
+      "target_ref": "root_000380/B002",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "\"Kenarlarından ala ala eksiltme\" ve uygulanabilirlik açıklamasındaki \"giderek\" sözleri, bc_001'de bulunmayan yineleme ve aşamalılık anlamı ekler.",
+      "smallest_correction": "Kavram karşılığını \"kenarlarından alarak eksiltme\" yap ve uygulanabilirlik açıklamasındaki \"giderek\" sözünü kaldır; diğer alanları değiştirme."
+    },
+    {
+      "target_ref": "root_000380/B002",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_001268/B004 ile ortak alan açıklaması iki dalda da yinelenen küçük almalar bulunduğunu söylüyor. Küçük ve yinelenen alma yalnızca komşu kartında vardır; bc_001 yalnızca yanlardan almayı bildirir.",
+      "smallest_correction": "root_001268/B004 satırının shared_zone değerini, yineleme ve küçüklük eklemeden iki dalda da bir nesneden almanın azalmaya yol açtığını söyleyecek biçimde düzelt."
+    }
+  ]
+}

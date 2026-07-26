@@ -1,0 +1,105 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıta bağlı ve dalları doğru ayırıyor; ancak bir sözlüksel karşılık kaynakta verilen kullanım ayrıntısını düşürüyor, iki kaynak özeti ortak olmayan ayrıntıları ortakmış gibi sunuyor, bir kavram karşılığı biçime özgü sarık koşulunu bütün dala yayıyor ve seçme dalı yetkili dal iddiasını aşarak kişi seçimini çekirdeğe katıyor. Bu sorunlar ilgili alanlarda küçük ve kesin düzeltmelerle giderilebilir.",
+  "issues": [
+    {
+      "target_ref": "root_001063/B002",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_004"
+      ],
+      "evidence_conflict": "Bu birimin kaynak anlamı yalnızca yıl ve mevsim çevrimini değil, sözcüğün özellikle bolluk ve verimlilik bağlamında kullanılmasını da belirtir. Mevcut hedef karşılık bu ayırt edici kullanım ayrıntısını tamamen düşürüyor.",
+      "smallest_correction": "lu_004 hedef karşılığına, yıl anlamını koruyarak özellikle bolluk ve verimlilik döneminde kullanılma ayrıntısını kısa bir Türkçe ifadeyle ekleyin."
+    },
+    {
+      "target_ref": "root_001063/B006",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Mevcut ortak özet, dallardan ve benzeri malzemelerden yapılmayı bütün kaynakların ortak tanımı gibi gösteriyor. Oysa kaynakların ortak alanı su üzerinde binilen saldır; malzeme ve nehir geçişi ayrıntısı yalnızca tanıklıklardan birinde yer alır.",
+      "smallest_correction": "common_summary alanını, ortak çekirdeği su üzerinde binilen sal olarak veren ve dal malzemesi ile nehir geçişini tanıklıklardan birinin ek ayrıntısı olarak kaynak yansız biçimde ayıran bir cümleyle değiştirin."
+    },
+    {
+      "target_ref": "root_001063/B007",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Mevcut özet kaynakların uzaktan görünen binici başında birleştiğini söylüyor. Kanıtta bir kaynak görünür binici başını ve belirli biçimde sarık koşulunu verirken diğer kaynak aynı biçimi sarığın baş çevresindeki kıvrımı olarak verir; bu yüzden ortak bir baş anlamında birleşme yoktur.",
+      "smallest_correction": "common_summary alanını, uzaktan görünen binici başı ile sarık kıvrımını kaynakların ayrı kullanımları olarak sunacak ve ortaklık iddiasını kaldıracak biçimde değiştirin."
+    },
+    {
+      "target_ref": "root_001063/B007",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığındaki sarıklı nitelemesi, yalnızca belirli bir biçim için geçerli olan sarık koşulunu görünür binici başını adlandıran bütün biçimlerin ortak çekirdeğine taşıyor. Kanıt, genel görünür baş kullanımını sarık koşullu özel biçimden ayırır.",
+      "smallest_correction": "Kavram karşılığını uzaktan görünen binici başı olarak daraltın; applicability, error_profile ve facet_ids alanlarını yalnızca genel görünür baş çekirdeğini temsil edecek biçimde uyarlayın."
+    },
+    {
+      "target_ref": "root_001063/B008",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yetkili dal iddiası kişinin malının en iyi bölümünü seçmeyi ve ölümün canları seçmesi benzetmesini verir; genel olarak bir kişiyi seçme anlamı vermez. Gerekçe kişi seçimini dal çekirdeğine ekleyerek kimliği genişletiyor.",
+      "smallest_correction": "identity_judgment gerekçesinden genel kişi seçimi iddiasını çıkarın; malın en iyi bölümünü seçme çekirdeğini ve ölüm benzetmesini koruyun."
+    },
+    {
+      "target_ref": "root_001063/B008",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve çekirdek yüz, bir kişiyi seçip ayırmayı dalın temel anlamına katıyor. Yetkili dal iddiası yalnızca bir kimsenin malının en iyi bölümünü seçmeyi destekler; kişi okuması dal iddiasında bulunmaz.",
+      "smallest_correction": "Tanımı ve F001 çekirdek yüzünü yalnızca bir kimsenin malı içinden en iyi olanı seçip ayırmaya bağlayın; ölümün canları seçmesi benzetmesini F002 içinde koruyun."
+    },
+    {
+      "target_ref": "root_001063/B008",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tek tanıklık özeti en iyi kişiyi seçmeyi kaynak ayrıntısı olarak bildiriyor, fakat yetkili dal iddiası malın en iyi bölümünün seçilmesini ve ölüm benzetmesini verir. Böylece özet desteklenmeyen bir katılımcı türü ekliyor.",
+      "smallest_correction": "Tek tanıklık özetinden kişi seçimini çıkarın; malın en iyi bölümünü seçme çekirdeği ile ölümün canları seçmesi benzetmesini belirtin."
+    },
+    {
+      "target_ref": "root_001063/B008",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kısa kavram metni tek başına uygun olsa da applicability ve preserves açıklamaları kişi seçimini yetkili dal çekirdeğinin bir parçası olarak sunuyor. Dal iddiası bu katılımcıyı desteklemiyor.",
+      "smallest_correction": "Kavram metnini koruyun; applicability ve preserves açıklamalarını bir kimsenin malı içinden en iyi olanı seçip ayırma çekirdeğiyle sınırlandırın."
+    },
+    {
+      "target_ref": "root_001063/B008",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Genel bağlamsal karşılığın uygulanabilirlik açıklaması, bir kişinin en iyi üye olarak seçilmesini yetkili dal iddiasına dahil ediyor. Kanıt burada yalnızca mal topluluğunun en iyi bölümünü seçmeyi destekler.",
+      "smallest_correction": "İlk bağlamsal karşılığın applicability açıklamasından kişi seçimini çıkarın ve kullanımı bir kimsenin malı içinden en iyisini seçmeyle sınırlandırın."
+    }
+  ]
+}

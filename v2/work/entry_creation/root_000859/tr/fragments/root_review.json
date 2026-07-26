@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": "c8910ae275682f62a9fa042d000ef8d9bc4b881b8cc7ecb516a095fec51d79cf",
+  "verdict": "repair",
+  "summary": "B005 dalındaki bir komşuluk ilişkisi dışında yazar yanıtı kanıtla uyumludur. Sabah ve akşam çekirdeğini aynen paylaşan komşu, yalnızca odak dalın bağlı olay kullanımları gerekçe gösterilerek kısmi yakın anlamlı sayılmıştır; bu ilişki tam eş anlamlı olarak düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000859/B005",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Odak dalın çekirdeği sabah ile akşamdan oluşur; root_001215/B009 sınır kartı da doğrudan sabah ve akşamı verir. Odak daldaki iki vakitte gelme ve sağım kullanımları çekirdeğin sınırını değiştiren ek kapsamlar değil, ona bağlı kullanımlardır. Bu nedenle ilişkinin near_synonym ve partial olarak yazılması, tam ikame edilebilir çekirdeği gereksiz yere daraltır.",
+      "smallest_correction": "root_001215/B009 satırında relation_type değerini synonym, boundary_match değerini exact yapın; focus_only ve neighbor_only değerlerini null yapın ve distinction metnini iki dalın sabah-akşam çekirdeğinde tam eş anlamlı olduğunu, odak daldaki gelme ve sağım kullanımlarının bu eşitliği bozmadığını belirtecek biçimde sınırlı olarak güncelleyin."
+    }
+  ]
+}

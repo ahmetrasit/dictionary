@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": "0dfc91f887b12a8dc2232704c00f0a0ae9d7a9544579cedfb10f2aef6fc9983b",
+  "verdict": "repair",
+  "summary": "Bütün dal kimlikleri ve temel anlam sınırları kanıtla uyumludur. Ancak B004 dalının komşu kapsam notu, seçilen ilişkiler arasında bulunmayan tam eşdeğer bir dalın gösterildiğini söylüyor; bu tek ifade dar kapsamlı olarak düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000923/B004",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kapsam notu seçilen ilişkilerin tam eşdeğer bir dalı gösterdiğini belirtiyor; oysa yayımlanan üç ilişkinin ikisi near_neighbor ve partial, biri thematic ve thematic_only olarak sınıflandırılmıştır. Dolayısıyla not, dalın kanıtlanan sınırlarını aşan ve ilişki listesince desteklenmeyen bir eşdeğerlik iddiası içeriyor.",
+      "smallest_correction": "B004 neighbor_coverage_note içindeki \"tam eşdeğer dalı ve\" sözlerini kaldırarak notu yalnız gerçekten seçilmiş çokluk, genel yayılma ve meşguliyet komşularına bağlayın."
+    }
+  ]
+}

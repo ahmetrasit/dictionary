@@ -1,0 +1,72 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dal düzenini ve kanıtın ana anlam ayrımlarını genel olarak koruyor; ancak beş alanda kanıtın sınırını aşan, özgül kullanımı genelleştiren veya kaynakta açıkça verilen bir türetme bilgisini atlayan düzeltilebilir sorunlar bulunuyor. Aşağıdaki düzeltmeler dal yapısını, kanıt sahipliğini ve etkilenmeyen alanları değiştirmeden uygulanmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001445/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım, bıkmayı bir şeyin sürmesi veya tekrarlanmasının zorunlu sonucu olarak kuruyor; F002 de bir şeyi uzatmayı ayrıca neden olarak ekliyor. Kanıt bıkma, yüz çevirme ve başkasına güçlük vererek onu bıktırmayı bildiriyor, fakat sürme, tekrarlanma veya uzatma koşulu koymuyor.",
+      "smallest_correction": "Tanımın başındaki sürme veya tekrarlanma koşulunu kaldırıp doğrudan bir şeyden bıkma anlamını verin; F002'deki bir şeyi uzatma ekini çıkararak yalnızca birine güçlük verip onu bıktırma yönünü koruyun."
+    },
+    {
+      "target_ref": "root_001445/B002",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bezmek karşılığının uygulanabilirlik açıklaması, kullanımı uzayan veya tekrarlanan şeylerle sınırlandırıyor. Kanıt böyle bir gerçekleşme koşulu vermeden genel olarak bir şeyden bıkmayı ve usanmayı bildiriyor.",
+      "smallest_correction": "Uygulanabilirlik açıklamasından uzama ve tekrarlanma koşulunu çıkarıp karşılığı kişinin bir şeyden bıkmasını anlatan özne merkezli bağlamlarla sınırlandırın."
+    },
+    {
+      "target_ref": "root_001445/B003",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_013"
+      ],
+      "evidence_conflict": "lu_013 yalnızca İbrahim'e nispet edilen inanç yolunu bildirirken hedef karşılık bunu herhangi bir peygamberin bildirdiği düzene genelliyor ve özgül adı kaybediyor.",
+      "smallest_correction": "lu_013 hedef karşılığını İbrahim'e özgü nispeti koruyan 'İbrahim'e nispet edilen inanç yolu' biçimine getirin."
+    },
+    {
+      "target_ref": "root_001445/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak sentezi söyleyerek yazdırma eylemini ve borç örneğini kapsıyor, fakat kanıtta açıkça yer alan, inanç yolu anlamındaki adın bu yazdırma fiilinden türediği yönündeki kaynak görüşünü atlıyor.",
+      "smallest_correction": "Ortak özeti bozmadan sonuna, kaynaklardan birinin inanç yolu anlamındaki adın bu yazdırma fiilinden türediğini ileri sürdüğünü belirten kaynak-nötr bir cümle ekleyin."
+    },
+    {
+      "target_ref": "root_001445/B007",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt çubuğun gözün içinde çevrildiğini bildirirken tanım ve F002 bunu göz çevresinde gezdirmeye kadar genişletiyor. Göz çevresi, yetkili kaynak ifadesinin verdiği kullanım alanından daha geniştir.",
+      "smallest_correction": "Tanımda 'göz çevresinde' ifadesini 'gözde' ile değiştirin; F002'deki 'veya göz çevresinde' seçeneğini kaldırarak çevrilme hareketini yalnızca göz içinde bırakın."
+    },
+    {
+      "target_ref": "root_001445/B009",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ilk dikişi ayrıca geçici diye niteliyor. Kanıt yalnızca bunun kenar bitirme işleminden önceki ilk dikiş olduğunu söyler; dikişin daha sonra söküldüğünü veya geçici olduğunu bildirmez.",
+      "smallest_correction": "Tanımdan 'geçici' nitelemesini kaldırın; ilk dikiş ve sonraki kenar bitirme işleminden önce gelme sınırlarını aynen koruyun."
+    }
+  ]
+}

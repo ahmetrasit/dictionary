@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak B005 dalının bir komşuluk ilişkisi, aynı çekirdek ve sınıra rağmen kısmi yakın anlamlılık olarak sınıflandırılmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_001566/B005",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bu dal güneşin kaybolup batmasını bildirir; root_001112/B004 sınır kartı da güneşin ufukta kaybolmasını, batmasını veya görünmez olmasını verir. Yazarın komşuya yüklediği bağımsız çekirdek ve ufka gömülme görüntüsü ek kapsam, katılımcı ya da koşul oluşturmaz; bu yüzden near_synonym ve partial sınıflandırması kanıtlanan sınırları olduğundan farklı gösterir.",
+      "smallest_correction": "root_001112/B004 ilişkisini synonym ve exact olarak değiştirin; focus_only, neighbor_only ve distinction metinlerindeki kanıtlanmamış sınır farkını kaldırıp iki dalın güneşin batması çekirdeğinde ve sınırında tam örtüştüğünü belirtin."
+    }
+  ]
+}

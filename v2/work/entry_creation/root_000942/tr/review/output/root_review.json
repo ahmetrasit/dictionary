@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B006 dalındaki kişi anlamı komşuyla örtüşse de odak dal ayrıca çağrısız katılma eylemini de kapsar. Bu nedenle dal düzeyindeki tam eş anlamlılık sınıflandırması kısmi yakın eş anlamlılık olarak düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000942/B006",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, odak dalda hem çağrılmadan yemeğe veya davete katılma eylemini hem de bunu yapan kişiyi tanıklar; komşu kartı ise yalnız çağrısız katılan kişiyi adlandırır. Bu kapsam farkı varken dallar ordinary kullanımda bütünüyle birbirinin yerine geçemez ve exact sınır eşleşmesi kurulamaz.",
+      "smallest_correction": "root_001216/B009 karşılaştırmasında relation_type değerini near_synonym, boundary_match değerini partial yap; kişi anlamındaki ortaklığı koru ve focus_only alanına odak dalın ayrıca çağrısız katılma eylemini kapsadığını ekle."
+    }
+  ]
+}

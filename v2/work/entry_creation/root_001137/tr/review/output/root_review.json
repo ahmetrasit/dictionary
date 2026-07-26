@@ -1,0 +1,62 @@
+{
+  "verdict": "repair",
+  "summary": "B001 ve B003 kanıtla uyumludur. B002 ise özel adların kimliğini genelleştirerek Kûfe, Fırat ve Düceyl ayrıntılarını yayıma dönük temel alanlardan düşürmektedir; bu alanlarda sınırlı bir onarım gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_001137/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt tekil biçimi Kûfe nehri Fırat'ın özel adı, ikil biçimi de Fırat ile Düceyl'in birlikte adı olarak belirler. Tanım ve iki yön ise bunları belirsiz bir kent, nehir ve ikinci nehir diye genelleştirerek dalın ayırt edici kimliğini kaybeder.",
+      "smallest_correction": "Yalnız B002 tanımında ve F001-F002 yönlerinde belirsiz göndermeleri Kûfe nehri Fırat ve Fırat ile Düceyl adlarıyla değiştir; yön rolleri ile kimlikleri koru."
+    },
+    {
+      "target_ref": "root_001137/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tek kaynaklı tanıklığın ayırt edici ayrıntıları Kûfe, Fırat ve Düceyl adlarıdır. Ortak özet ile tek tanıklık özeti bu adları belirsiz karşılıklarla değiştirerek kanıtın özel kimliklerini aktarmamaktadır.",
+      "smallest_correction": "Ortak özeti ve tek tanıklık özetini, Fırat'ın Kûfe nehri adı olduğunu ve ikil biçimin Fırat ile Düceyl'i birlikte gösterdiğini açıkça söyleyecek kadar düzelt."
+    },
+    {
+      "target_ref": "root_001137/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı yalnız belirsiz bir nehir adı ve iki belirsiz nehirden söz ettiği için kanıtlanan özel ad haritasını temsil etmez; hangi nehirlerin kastedildiği kaybolur.",
+      "smallest_correction": "Kavram karşılığında tekil özel adı Fırat, ikil biçimin gösterdiği ikiliyi Fırat ile Düceyl olarak belirt; uygulanabilirlik ve korunan içerik açıklamalarını da aynı kimliklerle sınırla."
+    },
+    {
+      "target_ref": "root_001137/B002",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İki bağlamsal karşılık, kanıttaki Fırat ve Fırat-Düceyl kimlikleri yerine belirsiz nehir anlatımları verir. Böylece her karşılık kendi bağlamında koruması gereken özel ad bilgisini yitirir.",
+      "smallest_correction": "İlk karşılığı Fırat'ın Kûfe nehri adı, ikinciyi Fırat ile Düceyl'in ortak ikili adı olarak belirt; yalnız bu iki satırın uygulanabilirlik ve hata profili metinlerini aynı ölçüde somutlaştır."
+    },
+    {
+      "target_ref": "root_001137/B002",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_004",
+        "lu_005"
+      ],
+      "evidence_conflict": "lu_004 ve lu_005 karşılıkları özel adları tamamen belirsizleştirir. Kanıt lu_004 için Kûfe nehri Fırat'ı, lu_005 için Fırat ile Düceyl'i açıkça tanımlar; kimlik gerektiği halde bu bilgi hedef karşılıklarda yoktur.",
+      "smallest_correction": "lu_004 hedef karşılığını Kûfe nehri Fırat'ın özel adı, lu_005 hedef karşılığını Fırat ile Düceyl'i birlikte gösteren ikili ad olarak değiştir."
+    }
+  ]
+}

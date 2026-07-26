@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "4313179752f4f76f9b0c41c69e31c4a322d6e7d70fff4118df4ae9ca0667eb0c",
+  "verdict": "editorial_review",
+  "summary": "Yazar yanıtında iki sınırlı anlamsal sorun vardır. B003 dalının genel kavram karşılığı, yalnızca belirli çoğul özne kalıplarında görülen art arda ilerlemeyi çekirdeğe taşımaktadır. B005 dalındaki bir komşu karşılaştırması ise bu dal için kanıtlanmayan uzun boyun özelliğini kullanarak ilişkiyi gereğinden yakın göstermektedir. Bu görev yazar çıktısını değiştirmeye izin vermediğinden düzeltmeler editoryal incelemeye bırakılmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_000608/B003",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Genel kavram karşılığı olan \"yumuşak, kesintisiz ve art arda ilerleyiş\", art arda oluşu bütün dalın zorunlu parçası gibi sunmaktadır. Kanıt bu özelliği at, deve ve insan topluluklarına bağlı özel kalıplarda verir; yalın çekirdek ise yumuşak, düzgün ve kesintisiz ilerleyiştir.",
+      "smallest_correction": "Kavram karşılığını \"yumuşak ve kesintisiz ilerleyiş\" olarak daraltın; applicability ve error_profile metinlerinden genel art arda oluş iddiasını çıkarın ve facet_ids listesini yalnızca bu genel çekirdeği destekleyen yüzlerle sınırlandırın."
+    },
+    {
+      "target_ref": "root_000608/B005",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_001007/B008 ile karşılaştırma, iki dalı uzun boyunlu olabilecek su kuşları alanında buluşturmaktadır. Sunulan kanıt B005 için yalnızca turna veya turnaya benzeyen bir su kuşu aktarır; uzun boyun özelliğini vermez. Bu nedenle near_neighbor ve partial sınıflaması kanıtlanan ortaklığın ötesine geçer.",
+      "smallest_correction": "Bu karşılaştırmada relation_type değerini same_field, boundary_match değerini field_only yapın; shared_zone ve distinction metinlerini yalnızca iki adın su kuşları alanında bulunmasına dayandırın ve B005 için uzun boyun çıkarımını kaldırın."
+    }
+  ]
+}

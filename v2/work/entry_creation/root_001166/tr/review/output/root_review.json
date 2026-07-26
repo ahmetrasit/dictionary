@@ -1,0 +1,72 @@
+{
+  "verdict": "repair",
+  "summary": "B001 ve B002 kanıtla uyumludur. B003 ise damızlık erkek hayvana ait üreme sıvısı çekirdeğini insan erkeğine de genişletiyor; bu desteklenmeyen kapsam tanıma, kaynak sentezine, kavram ve sözlük karşılıklarına ve komşu ayrımlarına yayılmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_001166/B003",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe, sağlam çekirdeği hem insan erkeğine hem damızlık erkek hayvana ait sıvı olarak kuruyor. Kanıtın sağlam çekirdeği damızlık erkek hayvanın sıvısıdır; insan erkeğine ait sıvı belirtilmez. Kadına ait sıvı ise yalnızca güvenilir sayılmayan değişkedir.",
+      "smallest_correction": "Gerekçe ve sınır notunda sağlam çekirdeği damızlık erkek hayvanın üreme sıvısıyla sınırla; kadına ait sıvıyı güvenilir sayılmayan kaynak değişkesi olarak koru ve insan erkeği kapsamını kaldır."
+    },
+    {
+      "target_ref": "root_001166/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F001, insan erkeğine ait üreme sıvısını dalın temel anlamına ekliyor. Kanıt, damızlık erkek hayvanın sıvısını ve bunun dişinin rahmindeki özel görünümünü destekler; insan erkeği kapsamını desteklemez.",
+      "smallest_correction": "Tanımdan ve F001'den insan erkeğini çıkar; çekirdeği damızlık erkek hayvanın üreme sıvısı olarak yaz. F002'de dişinin rahminde bulunma özelleşmesini, F003'te güvenilir sayılmayan kadın sıvısı değişkesini koru."
+    },
+    {
+      "target_ref": "root_001166/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, çekirdeği genel erkek üreme sıvısı sayıp hayvan kapsamını yalnızca özel bir bağlam gibi sunuyor. Kanıtın doğrulanmış ortak noktası damızlık erkek hayvanın sıvısıdır; insan erkeğine uzanan daha genel bir çekirdek verilmez.",
+      "smallest_correction": "Ortak özeti damızlık erkek hayvanın üreme sıvısı çekirdeğine göre daralt; dişinin rahmindeki görünümü kanıtlı özelleşme, kadın sıvısı yorumunu güvenilir sayılmayan değişke olarak bırak."
+    },
+    {
+      "target_ref": "root_001166/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığının uygulanabilirlik açıklaması insan ve hayvan erkeğini birlikte kapsadığını açıkça söylüyor. İnsan erkeği kapsamı kanıtta yoktur ve karşılığı gereğinden genişletir.",
+      "smallest_correction": "Kavram karşılığını damızlık erkek hayvanın üreme sıvısını belirtecek biçimde daralt; uygulanabilirlik ve hata profilindeki insan kapsamını kaldır."
+    },
+    {
+      "target_ref": "root_001166/B003",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_010"
+      ],
+      "evidence_conflict": "lu_010 için verilen 'erkek üreme sıvısı' karşılığı insan erkeğini de kapsayabilecek kadar geniştir. Birimin kanıtı damızlık erkek hayvanın sıvısını, ayrıca güvenilir sayılmayan kadın sıvısı aktarımını verir.",
+      "smallest_correction": "Hedef karşılığı 'damızlık erkek hayvanın üreme sıvısı; güvenilir sayılmayan bir aktarıma göre kadın üreme sıvısı' biçiminde daralt."
+    },
+    {
+      "target_ref": "root_001166/B003",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_001147/B005, root_001450/B002 ve root_000630/B004 satırları, odak dalın insan erkeğine ait sıvıyı da kapsadığı varsayımıyla ortak gönderge ve yakın eş anlamlılık kuruyor. Odak kanıt damızlık erkek hayvana, bu üç komşu ise insan erkeğine veya insanın oluşumuna bağlıdır; sıradan kullanımda çekirdekleri ikame edilemez.",
+      "smallest_correction": "Bu üç satırdan insan erkeği kapsamını ve ortak gönderge iddiasını kaldır; ilişkileri tür ve katılımcı sınırını yansıtacak biçimde yakın eş anlamlılık yerine aynı alan düzeyinde kur ve ayrımları hayvan ile insan kapsamı üzerinden yeniden yaz."
+    }
+  ]
+}

@@ -1,62 +1,6 @@
 {
-  "inputs_sha256": "74f23d889afe9d635ee350ffc785476652b2ee822de30f5b9d8504cca139e0e3",
-  "verdict": "repair",
-  "summary": "B001, B002 ve B004 yayinlanabilir durumdadir. B003 ise lu_004'un yalnizca yabanci kokenli bir ozel ad oldugunu bildirmesine karsin adi erkek adi olarak daraltiyor; bu desteklenmeyen niteleme etkilenen alanlardan kaldirilmalidir.",
-  "issues": [
-    {
-      "target_ref": "root_000111/B003",
-      "field": "concept_map",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_004"
-      ],
-      "evidence_conflict": "lu_004 birimi adi yabanci kokenli bir ozel ad olarak tanimlar, ancak definition ve F001 buna erkek olma kosulu ekler. Supplied evidence bu daraltmayi desteklemez.",
-      "smallest_correction": "Definition ve F001 icindeki erkek nitelemesini kaldirip cekirdegi yabanci kokenli ozel ad olarak birak."
-    },
-    {
-      "target_ref": "root_000111/B003",
-      "field": "source_synthesis",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_004"
-      ],
-      "evidence_conflict": "Common summary, lu_004'un verdigi yabanci kokenli ozel ad bilgisini erkek adi diye daraltiyor; claim bu ek siniflandirmayi icermiyor.",
-      "smallest_correction": "Common summary icindeki erkek nitelemesini kaldir ve metni yabanci kokenli ozel ad uzerinden kur."
-    },
-    {
-      "target_ref": "root_000111/B003",
-      "field": "concept_gloss",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_004"
-      ],
-      "evidence_conflict": "Concept gloss metni, applicability ve preserves aciklamasi adi erkek ozel adi olarak sunuyor; lu_004 yalnizca yabanci kokenli bir ozel ad oldugunu destekler.",
-      "smallest_correction": "Concept gloss boyunca erkek nitelemesini kaldir; glossu yabanci kokenli ozel ad olarak duzelt."
-    },
-    {
-      "target_ref": "root_000111/B003",
-      "field": "lexical_glosses",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_004"
-      ],
-      "evidence_conflict": "lu_004 icin target_gloss yabanci kokenli erkek adi diyor, fakat kaynak iddia erkeklik bilgisini vermiyor.",
-      "smallest_correction": "lu_004 target_gloss degerini yabanci kokenli ozel ad olarak degistir."
-    },
-    {
-      "target_ref": "root_000111/B003",
-      "field": "neighbor_distinctions",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_004"
-      ],
-      "evidence_conflict": "root_000797/B008 ile shared_zone ve root_001033/B014 ile shared_zone odak dali erkek ozel adi sayiyor. lu_004 odak adin erkek oldugunu belirtmedigi icin bu ortakliklar desteklenmeyen bir sinir ozelligi kullaniyor.",
-      "smallest_correction": "Bu iki shared_zone icinde odak dal icin erkek nitelemesini kaldir ve ortakligi yalnizca ozel ad olma duzeyinde ifade et."
-    }
-  ]
+  "inputs_sha256": "d8b78133269feaf7af014166c01e817de8c4d28459acf2bf87a028f84403ab00",
+  "verdict": "pass",
+  "summary": "Dört dalın kimlik değerlendirmeleri, sözlükselleşme kapsamları, kavram haritaları, kaynak sentezleri, karşılıkları ve yayımlanan komşu ayrımları sağlanan kanıtlarla uyumludur. Yazar çıktısında düzeltme gerektiren yayınsal bir anlam kusuru bulunmamıştır.",
+  "issues": []
 }

@@ -1,0 +1,95 @@
+{
+  "inputs_sha256": "c78ffdf046c4a7467baec4a726326e4eda6c41fb6b3bce3db50a3799fa143c40",
+  "verdict": "editorial_review",
+  "summary": "B001 dalının kaynak bireşimi, yalnızca belirli kaynakta bulunan aktarmaları ortak çizgi gibi sunuyor ve kanıttaki gerçek istek ile yalancı istek ayrımını kapsamıyor. B002 dalında ise bir başkası için isteme veya arama anlamı, kanıtın göstermediği sonuç bildirimiyle sağlama olarak genişletiliyor. Bu genişletme birden çok yayın alanına yayıldığı için editoryal düzeltme gerekiyor.",
+  "issues": [
+    {
+      "target_ref": "root_000825/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, istenen nesne ile isteme gücünün aynı adla gösterilmesini kaynakların ortak çizgisi olarak sunuyor; oysa verilen kanıtta bu iki aktarma yalnızca tek kaynakta yer alıyor. Özet ayrıca karşılanmadığında bedenin bozulup bozulmamasına dayanan gerçek istek ile yalancı istek ayrımını hiç kaydetmiyor.",
+      "smallest_correction": "Ortak özeti bütün kaynakların paylaştığı genel isteme çekirdeğiyle sınırla; istenen nesneye ve isteme gücüne aktarmayı, gerçek ile yalancı istek ayrımını ve yeme isteğini uyandıran kullanımını kaynaklar arası ortaklık ileri sürmeden kaynak-yansız biçimde ekle."
+    },
+    {
+      "target_ref": "root_000825/B002",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe, kocanın istenen şeyi arayıp sağladığını söylüyor. Kanıt yalnızca kadının istediğini onun için isteme veya arama eylemini destekliyor; şeyin elde edilip teslim edildiği sonucunu bildirmiyor.",
+      "smallest_correction": "Gerekçedeki arayıp sağlama anlatımını, kadının istediğini onun için isteme veya arama anlatımıyla değiştir."
+    },
+    {
+      "target_ref": "root_000825/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ile F003, kocanın kadının istediğini sağlamaya çalıştığını ileri sürüyor. Verilen kaynak sözü arama veya onun adına istemeyi gösteriyor, sağlama sonucunu göstermiyor.",
+      "smallest_correction": "Tanım ile F003 içindeki sağlama sonucunu kaldır; eylemi kadının istediği şeyi onun için istemek veya aramak olarak sınırla."
+    },
+    {
+      "target_ref": "root_000825/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, iki kaynağın kocanın istenen şeyi kadın adına sağladığını verdiğini söylüyor. Kaynakların ortak ifadesi onun için isteme veya aramadır; tamamlanmış sağlama sonucu kanıtta yoktur.",
+      "smallest_correction": "Ortak özetteki sağlama ifadesini onun için isteme veya arama ile değiştir ve sonuç elde edildiği çıkarımını kaldır."
+    },
+    {
+      "target_ref": "root_000825/B002",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı ile koruma açıklaması eş için sağlama anlamını çekirdeğe katıyor. Kanıt eş için isteme veya aramayı destekliyor, sağlamayı değil.",
+      "smallest_correction": "Kavram karşılığındaki eş için sağlama bölümünü eş için isteme veya arama olarak düzelt; uygulanabilirlik ve hata profilini aynı sınırla uyumlu hale getir."
+    },
+    {
+      "target_ref": "root_000825/B002",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F003 için verilen bağlamsal karşılık ve açıklamaları kadının istediğini onun için sağlama sonucu olarak kuruyor. Kanıtın sınırı onun için isteme veya arama eylemidir.",
+      "smallest_correction": "F003 karşılığını kadının istediğini onun için istemek veya aramak biçiminde daralt ve ilgili uygulanabilirlik ile hata profili metinlerinden sağlama sonucunu çıkar."
+    },
+    {
+      "target_ref": "root_000825/B002",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_017"
+      ],
+      "evidence_conflict": "lu_017 karşılığı arayıp sağlamak diyerek aramanın başarıyla sonuçlandığını ekliyor. Birimin verilen anlamı, kadın için onun istediği şeyi veya isteklerini istemek ya da aramaktır.",
+      "smallest_correction": "lu_017 karşılığını kadının istediği şeyi onun için istemek veya aramak olarak değiştir."
+    },
+    {
+      "target_ref": "root_000825/B002",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu ayrımlarında B002 dalının eşler arası yüzü birkaç kez isteme ve sağlama düzeni olarak tanımlanıyor. Sağlama sonucu kanıt sınırını aşıyor ve dalın komşulara karşı çizilen sınırını gereğinden güçlü kılıyor.",
+      "smallest_correction": "B002 dalını anlatan komşu ayrımlarındaki sağlama ifadelerini onun için isteme veya arama ile değiştir; diğer karşılaştırma unsurlarını koru."
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "verdict": "editorial_review",
+  "summary": "B001-B005 kanıtla uyumludur. B006'da ise harekesiz kaynak biçiminin ilk açıklaması ter ve damar okumalarını ayırt ettirmediği halde yanıt bütün alanlarda yalnızca anatomik damar yorumunu benimser. Sağlanan kanıt bu seçimi kesinleştirmediğinden editoryal sözlük kararı gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_003416/B006",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001'deki ilk açıklamanın harekesiz ana sözcüğü hem at teri hem de at damarı olarak okunabilir. Kimlik gerekçesi ve sınır notu bu belirsizliği kaydedip korumak yerine ilk açıklamayı kesin biçimde damar sayar.",
+      "smallest_correction": "İlk açıklamanın ter mi damar mı olduğuna editoryal olarak karar verin; karar verilemiyorsa kimlik gerekçesi ile sınır notunda bu iki okumayı açıkça koruyun ve humma açıklamasını ayrı kaynak varyantı olarak bırakın."
+    },
+    {
+      "target_ref": "root_003416/B006",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ile F002, bc_001'deki belirsiz ilk açıklamayı yalnızca anatomik damar olarak sunar. Kaynak biçimi ter okumasını da mümkün kıldığı için kavram haritası kanıtın izin verdiğinden daha dar ve kesin bir nesne seçer.",
+      "smallest_correction": "Editoryal karara göre tanımı ve F002'yi ter ya da damar olarak düzeltin; karar verilemiyorsa F002'de iki okumayı da açıkça belirtin. F001 ile humma varyantını veren F003'ü koruyun."
+    },
+    {
+      "target_ref": "root_003416/B006",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, bc_001'in ilk açıklamasını kesin bir damar açıklaması diye aktarır ve harekesiz kaynak biçiminin ter okumasına açık olduğunu yansıtmaz.",
+      "smallest_correction": "Ortak özette ilk açıklamayı editoryal olarak doğrulanan karşılıkla verin; karar verilemiyorsa ter-damar okuma belirsizliğini koruyup bunu humma varyantından ayırın."
+    },
+    {
+      "target_ref": "root_003416/B006",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram glossu ve hata profili, ilk kaynak açıklamasını tartışmasız biçimde damar diye çevirir. bc_001'in harekesiz yazımı bu anatomik seçimi tek başına güvenceye almaz.",
+      "smallest_correction": "Editoryal çözümden sonra glossu ve hata profilini doğrulanan ter ya da damar karşılığıyla güncelleyin; çözüm yoksa glossun belirsizliği açıkça korumasını sağlayın."
+    },
+    {
+      "target_ref": "root_003416/B006",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İlk bağlamsal gloss yalnızca atlara özgü damar adını verir. bc_001'deki ilk açıklama ter olarak da okunabildiğinden bu gloss kanıtlanmamış bir sözlüksel çözümü yayıma hazır karşılık haline getirir.",
+      "smallest_correction": "İlk bağlamsal glossu editoryal olarak doğrulanan okumaya göre değiştirin; karar verilemiyorsa damar glossunu kesin karşılık olarak yayımlamayın ve belirsizliği açıklayan bir karşılık kullanın."
+    },
+    {
+      "target_ref": "root_003416/B006",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B001 ve B002 karşılaştırmalarındaki odak ve ayrım metinleri B006'yı damar ya da humma adı olarak kesinleştirir. bc_001 ilk öğede ter okumasını dışlamadığı için komşu sınırları da aynı çözülmemiş seçimi tekrarlar.",
+      "smallest_correction": "Editoryal karar kesinleşince yalnızca B006'nın ilk açıklamasını adlandıran komşu metinlerini aynı karşılıkla güncelleyin; karar yoksa ter-damar belirsizliğini bu metinlerde koruyun."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "medium",
+      "claim_ids": [],
+      "evidence_conflict": "Kök özeti B006'yı belirsiz damar ya da hastalık adı diye tanıtır; oysa B006'nın ilk kaynak açıklamasındaki ter-damar okuması sağlanan kanıtla çözülememiştir.",
+      "smallest_correction": "B006 için alınacak editoryal kararı kök özetine yansıtın; karar verilemiyorsa özette ilk açıklamanın ter-damar belirsizliğini koruyun."
+    }
+  ]
+}

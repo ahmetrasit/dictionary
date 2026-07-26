@@ -1,0 +1,40 @@
+{
+  "inputs_sha256": "038185c8c2f81021a764a6a8b4810c1fe237ded2b1a1012c4b45ce6600ae7eb6",
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dört kolu genel olarak doğru ayırıyor; ancak iki kavram haritasında kanıtı aşan veya yanlış sınıflanan ifadeler ve eritme kolunun kaynak sentezinde belirgin bir kapsam eksikliği bulunuyor.",
+  "issues": [
+    {
+      "target_ref": "root_000888/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F003, ateşte pişirilmiş veya közlenmiş yiyeceği eritme çekirdeğinin özel bir gerçekleşmesi sayıyor. Kanıt pişmiş yiyecek kullanımını verir, fakat pişirme ya da közlemenin erimeyi gerçekleştirdiğini göstermez; bu kullanım çekirdeğin zorunlu sonucu değildir.",
+      "smallest_correction": "F003 rolünü associated_use olarak değiştirin ve ifadesini, ateşte pişmiş veya közlenmiş yiyeceğin bu anlam alanına bağlı ayrı bir kullanım olduğunu söyleyecek biçimde düzeltin; onu eritmenin gerçekleşmesi olarak nitelemeyin."
+    },
+    {
+      "target_ref": "root_000888/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak sentezi ateşte pişirme, sıcaklık, parıldama ve yemin kullanımlarını anıyor; ancak yalnız Tahdhib tarafından verilen ekmeğe erimiş yağ katma, ayaklara yağ sürme ve başa erimiş yağ sürme örneklerini bütünüyle atlıyor. Bunlar kolun kavram haritasında ve sözlüksel karşılıklarında kullanıldığı hâlde sentezdeki tek kaynaklı ayrıntılar arasında yer almıyor.",
+      "smallest_correction": "Ortak özeti değiştirmeden, Tahdhib için tek bir source_details satırında ekmeğe erimiş yağ katma ile ayaklara ve başa yağ sürme kullanımlarını bc_001 desteğiyle belirtin."
+    },
+    {
+      "target_ref": "root_000888/B004",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F001, ev eşyasının bu altlığın üstünde taşındığını veya tutulduğunu söylüyor. Kanıt yalnız ev eşyasının altlığın üzerine konduğunu bildirir; altlığın eşyayı bir yerden başka yere taşımak için kullanıldığını desteklemez.",
+      "smallest_correction": "F001 içindeki \"üstüne konup taşındığı veya tutulduğu\" ifadesini \"üzerine konduğu ve desteklendiği\" biçiminde değiştirin; taşıma eylemi eklemeyin."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "İki komşuluk kaydı, dal çekirdeğini değiştirmeyen bağımlı kullanım ayrıntıları nedeniyle yanlış biçimde kısmi yakın anlamlı sayılmıştır. Bu kayıtlar tam eş anlamlılık sınırına getirilmeli; diğer alanlar korunmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001029/B002",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Odak dalın kanıtı bir şeyin çoğunu ve büyük bölümünü, root_001331/B005 sınır kartı da doğrudan bir şeyin çoğunu bildirir. İnsanların çoğunluğuna katılma kalıbı bu ortak çekirdeği değiştirmeyen bağımlı bir kullanımdır; bu nedenle near_synonym ve partial sınıflaması desteklenmez.",
+      "smallest_correction": "Yalnız root_001331/B005 kaydında relation_type değerini synonym, boundary_match değerini exact yapın; focus_only ve neighbor_only alanlarını null olarak ayarlayıp distinction metnini çekirdek anlam ile kullanım sınırının aynı olduğunu belirtecek biçimde düzeltin."
+    },
+    {
+      "target_ref": "root_001029/B004",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Odak dalın kanıtı ağır ve şiddetli bir felaketi, root_000621/B005 sınır kartı da ağır felaketi adlandırır. Çözülmesi güç olma ayrıntısı yalnız belirli bir biçimin açıklamasıdır ve dal çekirdeğine ek sınır koymaz; bu nedenle near_synonym ve partial sınıflaması desteklenmez.",
+      "smallest_correction": "Yalnız root_000621/B005 kaydında relation_type değerini synonym, boundary_match değerini exact yapın; focus_only ve neighbor_only alanlarını null olarak ayarlayıp distinction metnini ağır felaket çekirdeği ile kullanım sınırının aynı olduğunu belirtecek biçimde düzeltin."
+    }
+  ]
+}

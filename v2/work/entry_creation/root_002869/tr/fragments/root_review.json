@@ -1,0 +1,51 @@
+{
+  "inputs_sha256": "baf090b37189e0dcce106d561fda710b191f79fe30e5624b9da07eb8a61f0ba4",
+  "verdict": "repair",
+  "summary": "Yazar cikisi dal ayrimlarini genel olarak kanita uygun kuruyor. Ancak B002'de bir baglamsal gloss deveye ait otlama fiilini nedensel otlatma gibi verirken, B004'te bazi alanlar gok gurultusu ile hayvan bogaz sesi orneklerini gereksiz bicimde birlikte bogazli ve gurultulu sayarak cekirdegi daraltiyordu. Bu alanlar cercevesinde sinirli onarim gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_002869/B002",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanitta otlak orneginin oznesi develerdir ve iki otlak arasinda karisik yararlanmayi anlatir. Baglamsal glossun 'karisik otlatmak' bicimi Turkcede bir baskasina otlatma yaptirma cagrisimi ekler.",
+      "smallest_correction": "B002 contextual_glosses icindeki 'karisik otlatmak' metnini 'karisik otlamak' olarak degistir."
+    },
+    {
+      "target_ref": "root_002869/B004",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanitta gok gurultusu, devenin agzini acmadan bogazdan cikardigi ses ve yirtici hayvan sesleri ayni dalda verilir. Definition'daki 'bogazli ve gurultulu' ifadesi gok gurultusunu da bogazli sayarak ornekleri gereginden dar bir ortak nitelige baglar.",
+      "smallest_correction": "B004 concept_map.definition icinde 'bogazli ve gurultulu bir sestir' ifadesini 'gurultulu ya da bogazli bir sestir' olarak degistir."
+    },
+    {
+      "target_ref": "root_002869/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanittaki gok gurultusu ornegi bogazdan gelen ses degildir; bogaz niteligi deve orneginde belirgindir. Common summary'nin 'gurultulu ve bogazli ses alani' demesi ortak alanı gereksiz bicimde daraltir.",
+      "smallest_correction": "B004 source_synthesis.common_summary icindeki 'gurultulu ve bogazli ses alaninda' ifadesini 'gurultulu ya da bogazli ses alaninda' olarak degistir."
+    },
+    {
+      "target_ref": "root_002869/B004",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Concept gloss 'bogazli gurultulu ses' diye iki niteligi birlikte zorunlu kiliyor. Kanit ise gok gurultusu, bogazdan cikan deve sesi ve yirtici hayvan gurlemesini ayni isitsel dalda toplar; her ornek bogazli olmak zorunda degildir.",
+      "smallest_correction": "B004 concept_gloss.text degerini 'gurultulu veya bogazli ses' yap; ayni alandaki preserves cumlesini de bu veya iliskisini koruyacak bicimde duzelt."
+    }
+  ]
+}

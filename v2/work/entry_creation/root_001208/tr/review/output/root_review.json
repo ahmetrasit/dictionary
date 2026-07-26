@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak bir bağlamsal karşılık kendi uygulama alanındaki haber kullanımına uymamakta, bir komşu ayrımı da komşu dal için kanıtta bulunmayan hoş koku niteliğini eklemektedir. Bu iki sınırlı alan en küçük düzeltmeyle onarılmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001208/B003",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "\"Doğru yolda olmak\" karşılığı, uygulama alanında haberin doğru ve tutarlı çıkmasını da kapsadığını söylüyor; bu ifade haber bağlamında doğal ve geçerli bir karşılık değildir.",
+      "smallest_correction": "İlgili bağlamsal karşılığın text alanını \"doğru olmak\" olarak değiştir; uygulama alanını, hata profilini ve facet bağlantısını koru."
+    },
+    {
+      "target_ref": "root_001208/B005",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_001003/B014 ile ortak alan, etin güzel koku taşıması diye sunulmuştur; oysa sağlanan komşu sınırı yalnızca et ve etin hoş niteliğini bildirir, koku niteliğini açıkça vermez.",
+      "smallest_correction": "Bu komşu ayrımındaki shared_zone alanını, koku eklemeden etin hoş ve beğenilen niteliğini iki dalın kesişimi olarak ifade edecek biçimde değiştir; diğer komşu alanlarını koru."
+    }
+  ]
+}

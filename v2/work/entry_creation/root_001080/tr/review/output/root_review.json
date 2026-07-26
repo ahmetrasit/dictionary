@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "B004 dalındaki aşırılığa varma yönündeki atasözü niteliğindeki kullanım, sözlüksel karşılıkta korunmasına rağmen kavram haritası ile kaynak sentezinde yer almıyordu. Bu iki sınırlı eksik dışında yanıt kanıtla uyumludur.",
+  "issues": [
+    {
+      "target_ref": "root_001080/B004",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, yayın son sınırına kadar çekilmesinin aşırılık ve ölçüyü kaçırma için atasözü niteliğinde kullanıldığını bildirir; kavram haritasında bu bağımlı kullanım için bir facet yoktur.",
+      "smallest_correction": "Mevcut çekirdek tanımı değiştirmeden, bu okçuluk görüntüsünün aşırılık ve ölçüyü kaçırma için kullanıldığını belirten bir associated_use facet ekleyin."
+    },
+    {
+      "target_ref": "root_001080/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak sentezi teknik çekiş ayrıntısını aktarırken kanıttaki aşırılık ve ölçüyü kaçırma yönündeki tek kaynaklı atasözü kullanımını anmıyor.",
+      "smallest_correction": "Mevcut common_summary sonuna, bu çekiş görüntüsünün aşırılık ve ölçüyü kaçırma için atasözü niteliğinde de kullanıldığını belirten kısa bir cümle ekleyin."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "verdict": "editorial_review",
+  "summary": "B001-B006 dallarında yayıma engel açık bir anlam çatışması görülmedi. B007'de ise yetkili kaynak ifadesindeki bir kaynağa özgü seçip ayırma okuması yanıtta dışlanmış ve bütün kaynaklar tek bir uzaklaşma çekirdeğinde uzlaşıyormuş gibi sunulmuştur. Bu okumanın kaynak varyantı olarak aynı dalda tutulması ile ayrı dala ayrılması veya yeniden atanması arasında editoryal karar gerektiğinden yazar çıktısı değiştirilmedi.",
+  "issues": [
+    {
+      "target_ref": "root_001538/B007",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yetkili iddia, uzaklaşma, sıyrılma, özür ve inkâr açıklamalarının yanında Mufradat'a ait bir şeyden seçip ayırma okumasını da içerir. Gerekçe bunu değerlendirmeden ortak çekirdeği yalnızca bağı veya yapılan işi reddederek sıyrılma olarak kuruyor; ayrıca yanıttaki dışlanan seçenek seçme anlamını kanıta aykırı biçimde geçersiz sayıyor.",
+      "smallest_correction": "Önce Mufradat'taki seçip ayırma okumasının bu dalda kaynak varyantı olarak korunup korunmayacağına karar verilmeli. Aynı dalda kalırsa qualified gerekçesi kaynak ayrılığını açıkça kaydetmeli; ayrı bir anlam sayılırsa dal ayırma veya kanıtı yeniden atama işlemi editoryal olarak yapılmalı."
+    },
+    {
+      "target_ref": "root_001538/B007",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım yalnızca bağ ve sorumluluğu reddederek uzaklaşmayı kapsıyor. F005 de kaynak varyantını ses değişimiyle aynı uzaklaşma anlamına bağlayarak Mufradat'taki seçip ayırma okumasını temsil etmiyor.",
+      "smallest_correction": "Editoryal kimlik kararı aynı dalı korursa seçip ayırma okumasını bağımlı bir source_variant facet olarak ekleyip F005'i yalnızca gerçekten desteklenen ses değişimi ilişkisiyle sınırlandırın; karar ayrı dal yönündeyse bu okumayı mevcut kavram haritasına eklemeyin ve ilgili kanıtı yeniden atayın."
+    },
+    {
+      "target_ref": "root_001538/B007",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet kaynakların ortak alanını yalnızca uzaklaşma olarak bildiriyor ve biçim varyantını aynı anlamlı gösteriyor. Oysa aynı iddiadaki Mufradat parçası seçip ayırma yönünde ayrışır; bu kaynak farkı sentezde hiç görünmez.",
+      "smallest_correction": "Ortak özeti bütün kaynakların uzlaştığı izlenimini vermeyecek biçimde sınırlandırın ve Mufradat'taki seçip ayırma okumasını kaynak ayrılığı olarak açıkça kaydedin; kanıt ayrı dala atanırsa sentezi yalnızca dalda kalan kaynaklarla yeniden kurun."
+    }
+  ]
+}

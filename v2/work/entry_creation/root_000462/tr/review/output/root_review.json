@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın dal ayrımları ve kaynak kapsamı genel olarak sağlamdır. Ancak B001 kavram karşılığı yeryüzüne özgü genişletme yönünü genel çekirdeğe taşımakta, B004 ise iki ayrı tanıklığı kaynakta bulunmayan ortak bir bedensel yayılma ve yerleşme anlamında birleştirmektedir. Bu yüksek güvenli sorunlar yalnızca belirtilen alanlarda dar düzeltmeler gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_000462/B001",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesinde genel nesne için yayma ve düzleme bildirilirken genişletme yalnızca yeryüzü anlatımlarında açıkça yer alır. Mevcut kavram karşılığı genişletmeyi genel çekirdeğe katmakta ve uzmanlaşma faceti F003'ü kavram karşılığının kapsamına almaktadır.",
+      "smallest_correction": "Kavram karşılığını 'yayıp düzlemek' olarak daralt; uygulanabilirlik ve hata profilini genel yayma-düzleme çekirdeğine göre güncelle ve facet_ids listesini yalnız F001 ile F002 olarak bırak."
+    },
+    {
+      "target_ref": "root_000462/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi insan için geniş yerde uzanmayı, develer için kolay dinlenme yerlerini eşip çukur izler bırakmayı ayrı kullanımlar olarak verir. Mevcut tanım ve F001, her ikisi için bedeni açık zemine yayarak yerleşme biçiminde ortak bir çekirdek kurmakta; bu ortaklaştırma kaynakta bulunmamaktadır.",
+      "smallest_correction": "Tanımı iki kullanımı paralel ve ayrık biçimde verecek şekilde değiştir; F001'i de kaynakta bulunmayan ortak bedensel yayılma ve yerleşme iddiası yerine bu iki kullanımın dalda birlikte kapsandığını belirtecek biçimde düzelt. F002 ve F003'ü koru."
+    },
+    {
+      "target_ref": "root_000462/B004",
+      "field": "lexicalization_scope",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Mekanik branch_kind değeri doğru olsa da mevcut not, iki biçim kullanımını ortak bir 'bedeni yayarak yerleşme' çıplak anlamında toplar. Kaynak, develer için uzanmayı değil dinlenme yerini eşip çukur bırakmayı bildirir.",
+      "smallest_correction": "branch_kind değerini koru; notu insanın geniş yerde uzanması ile develerin kolay dinlenme yerini eşmesi şeklindeki iki çıplak biçim kullanımını ayrı belirtecek ve ikinciyi birinciye genellemeyecek biçimde düzelt."
+    },
+    {
+      "target_ref": "root_000462/B004",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Mevcut 'açık zemine yayılıp yerleşmek' karşılığı insan kullanımını genelleştirerek develere de uygular ve develerin dinlenme yerini eşip çukur bırakması yönünü kavram haritasından düşürür. Kaynak iki kullanımı da dal kapsamında açıkça verir.",
+      "smallest_correction": "Kavram karşılığını iki kullanımı birlikte fakat ayrık biçimde anlatan 'geniş yerde uzanmak veya dinlenme yerini eşmek' ifadesiyle değiştir; uygulanabilirlik, hata profili ve facet_ids alanlarını iki kullanımı da koruyacak biçimde güncelle."
+    }
+  ]
+}

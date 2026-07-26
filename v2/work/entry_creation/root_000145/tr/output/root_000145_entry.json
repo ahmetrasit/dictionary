@@ -1,113 +1,84 @@
 {
-  "inputs_sha256": "fcfceef2b2982b20246d3039e8f158bf663559989f3d2665309132316cd49bc7",
-  "artifact_format": "dictionary-v2-root-entry-draft-v1",
-  "generated_by": "v2/scripts/accept_root_writer.py",
-  "root_envelope_id": "root_000145",
-  "language": "tr",
   "branches": [
     {
       "branch_ref": "root_000145/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Dalın kaynak ifadesi, konuşamayan kişiyi ve konuşmanın tümüyle yokluğunu merkeze alır; doğuştan konuşamama ile dilin kesilmesine bağlı konuşamama da bu çekirdeğin özel gerçekleşmeleridir. Bu nedenle verilen çerçeve kaynak ifadesini doğru temsil eder.",
+        "boundary_note": "Bu dal, yalnızca cevap vermekte zorlanmayı veya konuşabilecek durumdayken susmayı değil, konuşma yetisinin bulunmamasını anlatır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın dalı kapsar; herhangi bir özel söz dizimine bağlı anlamı ya da isteğe bağlı susmayı bu dala taşımaz."
+      },
       "concept_map": {
-        "definition": "Doğuştan, dilin kesilmesiyle veya başka bir nedenle konuşamama durumu ve bu durumdaki kişidir.",
+        "definition": "Kişinin konuşamaması; bu durum doğuştan bulunabileceği gibi dilin kesilmesi sonucunda da ortaya çıkabilir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Çekirdek anlam, konuşma yetisinin bulunmaması ve kişinin konuşamamasıdır.",
+            "statement": "Çekirdek anlam, kişinin konuşma yetisinin bulunmaması ve bu nedenle konuşamamasıdır.",
             "claim_ids": [
-              "lu_001",
-              "lu_003",
-              "lu_006"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Konuşamama doğuştan gelebilir veya dilin kesilmesi sonucunda ortaya çıkabilir.",
+            "statement": "Konuşamama doğuştan olabilir veya dilin kesilmesi gibi bedensel bir nedenle sonradan oluşabilir.",
             "claim_ids": [
-              "lu_001"
-            ]
-          },
-          {
-            "facet_id": "F003",
-            "role": "associated_use",
-            "statement": "Konuşamayan kişiyi kadın veya çoğul olarak adlandıran ayrı biçimler de bu çekirdeğe bağlıdır.",
-            "claim_ids": [
-              "lu_004",
-              "lu_005",
-              "lu_007",
-              "lu_008"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak çekirdek, konuşamayan kişi ile konuşma yetisinin yokluğudur; doğuştan konuşamayan veya dili kesildiği için konuşamayan kişi de buna dahildir. Birbirine denk kişi adları ve bunların ortaklaşa kaydedilen çoğul biçimleri de aynı anlam çevresindedir.",
+        "common_summary": "Kaynak anlatımları, konuşamayan kişiyi ortak çekirdek olarak verir; doğuştan konuşamayan kişi ile dili kesildiği için konuşamayan kişi bu çekirdeğin belirtilen özel örnekleridir.",
         "common_claim_ids": [
-          "lu_001",
-          "lu_003",
-          "lu_004",
-          "lu_006",
-          "lu_007"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_005"
-            ],
-            "kind": "derivation",
-            "summary": "Konuşamayan bir kadın için ayrı bir dişil kişi adı kaydedilir."
-          },
-          {
-            "claim_ids": [
-              "lu_008"
-            ],
-            "kind": "derivation",
-            "summary": "Konuşamayan kişiyi bildiren ana ad için ayrıca başka bir çoğul biçimi kaydedilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "konuşamama veya konuşamayan kişi",
-        "applicability": "Hem konuşma yetisinin yokluğunu hem de bu durumdaki kişiyi kapsayan genel karşılıktır.",
+        "text": "konuşamama",
+        "applicability": "Konuşma yetisinin yokluğunu en kısa ve doğal biçimde karşılayan genel kavram anlatımıdır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Konuşma yetisinin yokluğunu ve bu durumdaki kişiyi birlikte korur.",
+          "preserves": "Konuşma yetisinin bulunmaması ve bunun sonucunda kişinin konuşamaması çekirdeğini korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001",
-          "F002"
+          "F001"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "dilsizlik",
-          "usage_role": "contextual",
-          "applicability": "Kalıcı bir konuşamama durumu kısa bir adla anıldığında uygundur.",
+          "text": "konuşma yetisinin olmaması",
+          "usage_role": "explanatory",
+          "applicability": "Durumun isteğe bağlı bir susma değil, bir yeti yokluğu olduğunu açıkça belirtmek gereken bağlamlarda kullanılır.",
           "error_profile": {
-            "fit": "broadening",
-            "preserves": "Konuşma yetisinin bulunmaması çekirdeğini korur.",
+            "fit": "none",
+            "preserves": "Konuşamamanın bir konuşma yetisi yokluğundan kaynaklandığını açık biçimde korur.",
             "loses": null,
-            "adds": "Mecazi olarak iletişimsizliği veya suskunluğu da anlatabilir.",
-            "collision": "İsteyerek susma anlamıyla karışabilir."
+            "adds": null,
+            "collision": null
           },
           "facet_ids": [
             "F001"
           ]
         },
         {
-          "text": "konuşamayan kişi",
-          "usage_role": "explanatory",
-          "applicability": "Söz konusu olan konuşma yetisinden yoksun bir kişi olduğunda kullanılır.",
+          "text": "doğuştan ya da sonradan konuşamayan",
+          "usage_role": "contextual",
+          "applicability": "Kişiyi niteleyen akıcı bir söz öbeği gerektiğinde ve durumun farklı başlangıç biçimleri birlikte anıldığında uygundur.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Kişinin konuşma yetisinden yoksun oluşunu korur.",
-            "loses": "Durumun soyut ad olarak kullanımını dışarıda bırakır.",
+            "fit": "none",
+            "preserves": "Kişinin konuşamamasını ve durumun doğuştan ya da sonradan oluşabilmesini korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -121,17 +92,17 @@
         {
           "lexical_unit_id": "lu_001",
           "rendering_kind": "ordinary",
-          "target_gloss": "konuşamayan, dilsiz"
+          "target_gloss": "konuşamayan, konuşma yetisi olmayan kişi"
         },
         {
           "lexical_unit_id": "lu_003",
           "rendering_kind": "ordinary",
-          "target_gloss": "konuşamama, dilsizlik"
+          "target_gloss": "konuşamama, konuşma yetisinin olmaması"
         },
         {
           "lexical_unit_id": "lu_004",
           "rendering_kind": "ordinary",
-          "target_gloss": "konuşamayanlar"
+          "target_gloss": "konuşamayan kişiler"
         },
         {
           "lexical_unit_id": "lu_005",
@@ -141,29 +112,29 @@
         {
           "lexical_unit_id": "lu_006",
           "rendering_kind": "ordinary",
-          "target_gloss": "konuşamayan, dilsiz"
+          "target_gloss": "konuşamayan, konuşma yetisi olmayan kişi"
         },
         {
           "lexical_unit_id": "lu_007",
           "rendering_kind": "ordinary",
-          "target_gloss": "konuşamayanlar"
+          "target_gloss": "konuşamayan kişiler"
         },
         {
           "lexical_unit_id": "lu_008",
           "rendering_kind": "ordinary",
-          "target_gloss": "konuşamayanlar"
+          "target_gloss": "konuşamayan kişiler"
         }
       ],
       "excluded_glosses": [
         {
-          "text": "sessizlik",
+          "text": "susma",
           "category": "confusable",
           "error_profile": {
             "fit": "displacement",
-            "preserves": "Ortada konuşma bulunmaması görünümünü korur.",
-            "loses": "Konuşma yetisinin bulunmaması koşulunu tamamen siler.",
-            "adds": "Ortamın sessizliği veya kişinin isteyerek susması anlamını ekler.",
-            "collision": "Konuşmaktan geri durma dalıyla karışır."
+            "preserves": "Konuşma sesinin ortaya çıkmaması biçimindeki dış görünüşü korur.",
+            "loses": "Kişinin konuşma yetisinin bulunmaması anlamını ortadan kaldırır.",
+            "adds": "Konuşabilecek kişinin geçici veya istekli biçimde konuşmaması anlamını ekler.",
+            "collision": "Konuşma yetisinin yokluğu ile konuşmama davranışını birbirine karıştırır."
           }
         }
       ],
@@ -172,180 +143,127 @@
           "neighbor_ref": "root_000145/B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Konuşma yetisinin hiç bulunmaması, doğuştan yoksunluk ve dilin kesilmesi bu dala özgüdür.",
-          "neighbor_only": "Sözü açık kuramama, cevabı kavrayamama veya zihinsel yetersizlik yüzünden konuşmada güçsüz kalma öteki dala özgüdür.",
-          "gloss": "ifade ve cevap yetersizliği",
-          "shared_zone": "Her iki dalda da kişi konuşmayı olağan biçimde gerçekleştiremez.",
-          "distinction": "Bu dal konuşma yetisinin yokluğunu bildirir; komşu dal ise kişinin konuşabilse bile düşüncesini açıkça aktaramaması veya uygun cevap kuramaması üzerinde durur."
+          "focus_only": "Bu dalda konuşma yetisinin kendisi yoktur; doğuştanlık veya dilin kesilmesi buna örnek olabilir.",
+          "neighbor_only": "Komşu dalda sorun, açık ve yerinde anlatma ya da cevabı kavrayıp verme güçlüğüdür.",
+          "gloss": "konuşamama ile kendini ifade edememe",
+          "shared_zone": "Her iki dal da kişinin sözlü iletişim kuramaması biçiminde görünebilir.",
+          "distinction": "Buradaki çekirdek konuşma yetisinin yokluğudur; komşu dal ise konuşmanın açıklığı, yerindeliği ve cevap verme yeterliğiyle ilgilidir."
         },
         {
           "neighbor_ref": "root_000145/B003",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Kişi konuşma yetisinden yoksundur ve bu yüzden konuşamaz.",
-          "neighbor_only": "Kişi bilgisizlikten veya bilerek konuşmaktan geri durur.",
-          "gloss": "konuşmaktan geri durma",
-          "shared_zone": "İki dalın dışarıdan görülen sonucu da konuşmanın gerçekleşmemesidir.",
-          "distinction": "Bu dalda konuşmama bir yeti yokluğudur; komşu dalda ise konuşmadan geri durma söz konusudur."
+          "focus_only": "Bu dal, kişinin konuşma yetisi bulunmadığı için konuşamamasını anlatır.",
+          "neighbor_only": "Komşu dal, konuşabilen kişinin bilgisizlikten veya bilerek konuşmadan geri durmasını anlatır.",
+          "gloss": "konuşamama ile konuşmaktan geri durma",
+          "shared_zone": "İki durum da dışarıdan konuşmanın gerçekleşmemesi olarak gözlenebilir.",
+          "distinction": "Bu dalda konuşmama bir yeti yokluğunun sonucudur; komşu dalda ise belirli bir eylem kullanımında konuşmadan geri durma söz konusudur."
         },
         {
           "neighbor_ref": "root_000288/B006",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Tam konuşamama ile doğuştan veya dilin kesilmesinden doğan durum bu dala özgüdür.",
-          "neighbor_only": "Dilin ağırlaşması, konuşmanın güçleşmesi ve kimi bağlamlarda sessizlik komşu dalın daha geniş alanıdır.",
-          "gloss": "konuşmanın tutulması",
-          "shared_zone": "Her iki dal konuşmanın engellenmesi veya gerçekleşememesi alanında buluşur.",
-          "distinction": "Bu dal konuşma yetisinin yokluğuna odaklanır; komşu dal kısmi konuşma güçlüğünü ve sessizliği de içine alır."
-        },
-        {
-          "neighbor_ref": "root_001036/B003",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Doğuştan konuşamayan kişi ve dili kesildiği için konuşamayan kişi açıkça bu dalın kapsamındadır.",
-          "neighbor_only": "Dilin tutulması veya konuşamayacak biçimde engellenmesi komşu dalın süreç görünümüdür.",
-          "gloss": "dilin tutulup konuşamaması",
-          "shared_zone": "İki dal da kişinin konuşamaz durumda olmasını doğrudan ifade eder.",
-          "distinction": "Sonuç bakımından güçlü biçimde örtüşürler; bu dal kişiyi ve kalıcı nedenleri kapsarken komşu dal dilin tutulması veya engellenmesini öne çıkarır."
-        },
-        {
-          "neighbor_ref": "root_001373/B001",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Konuşma yetisinin yokluğu ve hiç konuşamama bu dala özgüdür.",
-          "neighbor_only": "Söyleyiş bozukluğu, yabancı söyleyiş izi ve sesleri farklı çıkarma komşu dala özgüdür.",
-          "gloss": "söyleyiş bozukluğu",
-          "shared_zone": "İki dal da dil ve konuşma işlevindeki bir aksaklığı konu edinir.",
-          "distinction": "Bu dal konuşmanın gerçekleşmemesini bildirir; komşu dalda konuşma vardır fakat söyleyiş olağan değildir."
+          "focus_only": "Bu dal konuşma yetisinin bulunmamasını ve konuşmanın gerçekleşememesini merkeze alır.",
+          "neighbor_only": "Komşu dal dilde ağırlık, konuşma güçlüğü veya konuşmanın tutulması gibi daha geniş durumları içerir.",
+          "gloss": "konuşamama ile konuşma güçlüğü",
+          "shared_zone": "Her iki dalda da söz üretimi engellenebilir veya belirgin biçimde aksayabilir.",
+          "distinction": "Buradaki anlam tam konuşamama üzerinedir; komşu alan, konuşmanın zorlaşması ve tutulması gibi tam yeti yokluğu gerektirmeyen durumları da kapsar."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; konuşma yetisi, ifade güçlüğü, isteyerek susma, konuşmanın tutulması ve söyleyiş bozukluğu arasındaki sınırı en açık gösteren komşular yayımlandı.",
-      "branch_image_ar": "انحباس النطق",
-      "what_is_ar": "الأبكم والبكيم بمعنى الأخرس أو من لا يتكلم، ويدخل فيه من ولد أخرس وقطع اللسان",
-      "source_phrase_ar": "الأبكم الأخرس لا يتكلم (maqayis;ayn)؛ البكم الخرس (jamhara)؛ أبكم وبكيم أي أخرس (sihah)؛ ولد أخرس (maqayis;ayn;mufradat)؛ الأقطع اللسان (tahdhib)",
-      "sources": [
-        "MQ",
-        "AY",
-        "JA",
-        "SI",
-        "TA",
-        "MU"
-      ],
-      "source_note": {
-        "JA": "Konuşamayan bir kadın için ayrı bir dişil kişi adı kaydedilir.",
-        "TA": "Konuşamayan kişiyi bildiren ana ad için ayrıca başka bir çoğul biçimi kaydedilir."
-      }
+      "neighbor_coverage_note": "Verilen komşu adaylarının tümü değerlendirildi; en yakın üç karşıtlık yayımlandı, kalanlar yalnızca konuşma organı, söyleyiş bozukluğu, susma veya aynı iletişim alanıyla daha gevşek bağ kurduğu için elendi."
     },
     {
       "branch_ref": "root_000145/B002",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi tek biçimli bir zihinsel yetersizlik tanımı vermez: açık konuşamama, cevap verememe ve sözün doğru yolunu kuramama ortak alanda buluşurken bazı anlatımlar bunları zihinsel zayıflıkla ilişkilendirir. Dal korunabilir, ancak zihinsel zayıflık bütün kullanımların zorunlu koşulu sayılmamalıdır.",
+        "boundary_note": "Dal, salt konuşma yetisinin yokluğundan ve bilerek susmaktan ayrılır; ancak bir kaynak varyantı konuşamama ile zihinsel yetersizliğin birlikte bulunmasını şart koşar."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, yalın kişi nitelemesini açık konuşma ve cevap verme güçlüğü olarak verir; zihinsel zayıflık yüzünden konuşamaz duruma gelmeyi anlatan bağlı eylem kullanımını ayrıca sınırlar."
+      },
       "concept_map": {
-        "definition": "Kişinin düşüncesini açıkça dile getirememesi, cevabı kavrayıp uygun karşılık verememesi veya zihinsel yetersizlik yüzünden konuşmada güçsüz kalmasıdır.",
+        "definition": "Yalın nitelemede kişinin sözünü açık ve yerinde kuramaması ya da cevabı kavrayıp verememesi anlatılır; bir kaynak varyantı ise konuşamama ile zihinsel yetersizliğin birlikte bulunmasını şart koşar. Bağlı eylem kullanımında zihinsel zayıflık yüzünden konuşmada güçsüzleşip konuşamaz duruma gelme belirtilir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kişi sözünü açık kuramaz, cevabı kavrayamaz veya uygun karşılık vermekte yetersiz kalır.",
+            "statement": "Yalın kişi nitelemesinin çekirdeği, sözünü açık ve yerinde kuramama veya uygun cevabı kavrayıp verememedir.",
             "claim_ids": [
-              "lu_002"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "source_variant",
-            "statement": "Bazı betimlemelerde konuşamama ile kavrayış kıtlığı birlikte aranırken bazılarında ifade ve cevap güçlüğü öne çıkar.",
+            "statement": "Bir kaynak varyantı, yalın kişi nitelemesinde konuşamama ile zihinsel yetersizliğin birlikte bulunmasını şart koşar.",
             "claim_ids": [
-              "lu_002"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "extension",
-            "statement": "Zihinsel güçsüzlük yüzünden konuşmada zayıflayıp bu duruma gelmek de kapsama girer.",
+            "role": "associated_use",
+            "statement": "Bağlı eylem kullanımı, zihinsel zayıflık yüzünden konuşmada güçsüzleşip konuşamaz duruma gelmeyi anlatır.",
             "claim_ids": [
-              "lu_010"
-            ]
-          },
-          {
-            "facet_id": "F004",
-            "role": "extension",
-            "statement": "Sözü toparlayamaz ve cevap veremez duruma gelme de bu anlamın bir oluş biçimidir.",
-            "claim_ids": [
-              "lu_011"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak anlam, kişinin açık konuşamaması, cevabı kavrayıp uygun karşılık verememesi ve sözünü gerektiği gibi kuramamasıdır. Betimlemelerin bir bölümü konuşamama ile kavrayış kıtlığını birlikte şart koşarken bir bölümü ifade ve cevap yetersizliğini öne çıkarır.",
+        "common_summary": "Kaynak anlatımları açık konuşamama, cevap verme yetersizliği ve sözün uygun biçimini kuramama çevresinde birleşir; bir kaynak varyantı konuşamama ile zihinsel yetersizliğin birlikte bulunmasını şart koşarken bağlı eylem kullanımı zihinsel zayıflık nedeniyle konuşmada güçsüzleşmeyi belirtir.",
         "common_claim_ids": [
-          "lu_002"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_010"
-            ],
-            "kind": "derivation",
-            "summary": "Zihinsel güçsüzlük yüzünden konuşmada zayıflayıp konuşamaz gibi olmayı bildiren bir kullanım kaydedilir."
-          },
-          {
-            "claim_ids": [
-              "lu_011"
-            ],
-            "kind": "derivation",
-            "summary": "Sözü toparlayamaz ve cevap veremez duruma girmeyi bildiren oluş biçimleri kaydedilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "kendini ifade edip cevap verememe",
-        "applicability": "Açık konuşma, cevabı kavrama ve uygun karşılık kurma yetersizliğini birlikte anlatır.",
+        "text": "kendini sözle açıkça ifade edememe",
+        "applicability": "Yalın dalın açık konuşamama ve sözünü uygun biçimde kuramama çekirdeği için genel kavram karşılığıdır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "İfade açıklığını, cevabı kavramayı ve karşılık kurmayı kapsayan yetersizliği korur.",
+          "preserves": "Kişinin sözünü anlaşılır ve yerinde biçimde kuramaması çekirdeğini korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001",
-          "F002",
-          "F003",
-          "F004"
+          "F001"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "sözü toparlayamama",
+          "text": "cevap vermekte aciz kalma",
           "usage_role": "contextual",
-          "applicability": "Kişinin söyleyeceğini düzenleyip açıkça dile getiremediği bağlamlarda uygundur.",
+          "applicability": "Özellikle bir cevabı kavrama ve uygun biçimde verme yetersizliğinin öne çıktığı bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Açık ve düzenli bir söz kuramama yönünü korur.",
-            "loses": "Cevabı kavrayamama ve zihinsel yetersizlik yönlerini açıkça taşımaz.",
+            "preserves": "Cevabı kavrayıp uygun karşılık verememe yönünü korur.",
+            "loses": "Cevap bağlamı dışındaki genel açık konuşma ve kendini ifade etme güçlüğünü dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001",
-            "F004"
+            "F001"
           ]
         },
         {
-          "text": "ifade yetersizliği",
+          "text": "zihinsel zayıflık yüzünden konuşamaz duruma gelme",
           "usage_role": "explanatory",
-          "applicability": "Sorun genel olarak kişinin kendini açıkça anlatamaması olduğunda kullanılabilir.",
+          "applicability": "Yalnızca zihinsel zayıflığın neden olduğu bağlı eylem kullanımını açıklamak için uygundur.",
           "error_profile": {
-            "fit": "broadening",
-            "preserves": "Kendini açıkça anlatamama yönünü korur.",
-            "loses": "Uygun cevabı kavrayıp kuramama koşulunu belirgin biçimde taşımaz.",
-            "adds": "Yazılı anlatımdaki yetersizlikleri de kapsayabilir.",
+            "fit": "narrowing",
+            "preserves": "Zihinsel zayıflık yüzünden konuşmada güçsüzleşme ve konuşamaz duruma gelme ilişkisini korur.",
+            "loses": "Zihinsel zayıflık koşulu taşımayan yalın kişi nitelemesini kapsam dışı bırakır.",
+            "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001",
+            "F002",
             "F003"
           ]
         }
@@ -354,17 +272,17 @@
         {
           "lexical_unit_id": "lu_002",
           "rendering_kind": "ordinary",
-          "target_gloss": "kendini açıkça ifade edip cevap veremeyen"
+          "target_gloss": "kendini açıkça ifade edemeyen, cevap vermekte aciz kalan"
         },
         {
           "lexical_unit_id": "lu_010",
           "rendering_kind": "ordinary",
-          "target_gloss": "zihinsel yetersizlik yüzünden konuşamaz hâle gelmek"
+          "target_gloss": "zihinsel zayıflık yüzünden konuşamaz duruma gelmek"
         },
         {
           "lexical_unit_id": "lu_011",
           "rendering_kind": "ordinary",
-          "target_gloss": "sözü toparlayamaz hâle gelmek"
+          "target_gloss": "açık konuşamaz ve kendini anlatamaz duruma gelmek"
         }
       ],
       "excluded_glosses": [
@@ -372,11 +290,11 @@
           "text": "konuşamama",
           "category": "confusable",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Konuşmanın başarılamaması sonucunu korur.",
-            "loses": "Açık ifade, cevabı kavrama ve uygun karşılık kurma bileşenlerini siler.",
-            "adds": null,
-            "collision": "Konuşma yetisinin yokluğunu bildiren dalla karışır."
+            "fit": "broadening",
+            "preserves": "Sözlü anlatımın gerçekleşmemesi yönünü genel olarak korur.",
+            "loses": null,
+            "adds": "Konuşma yetisinin bedensel olarak tümüyle bulunmadığı durumları da kapsama ekler.",
+            "collision": "İfade ve cevap verme güçlüğünü konuşma yetisinin yokluğuyla karıştırabilir."
           }
         }
       ],
@@ -385,107 +303,92 @@
           "neighbor_ref": "root_001070/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Cevabı kavrayamama ve zihinsel yetersizlik yüzünden konuşmada güçsüz kalma bu dalda belirgindir.",
-          "neighbor_only": "Sözlü savunmadaki yetersizlik ile güzel ve etkili anlatımın karşıtı olma komşu dalın daha geniş kapsamındadır.",
-          "gloss": "anlatım yetersizliği",
-          "shared_zone": "Her iki dal açık ve etkili söz üretme yetersizliğini kapsar.",
-          "distinction": "Bu dal özellikle cevabı kavrayıp uygun karşılık kuramayan kişiyi anlatır; komşu dal söz, dil ve savunmadaki anlatım yetersizliğini daha genel biçimde kapsar."
+          "focus_only": "Bu dal, uygun cevabı kavrayıp verememeyi ve bazı anlatımlarda zihinsel zayıflığı özellikle içerir.",
+          "neighbor_only": "Komşu dal, dil ve kanıtlamadaki anlatım güçsüzlüğünü, açıklık ve güzel anlatımın karşıtı olarak daha geniş biçimde kapsar.",
+          "gloss": "ifade yetersizliği",
+          "shared_zone": "Her iki dalın merkezinde düşünceyi sözle açık ve etkili biçimde ortaya koyamama bulunur.",
+          "distinction": "Bu dal cevap verme yeterliğini ve kimi anlatımlarda zihinsel zayıflığı öne çıkarır; komşu dalın alanı dilsel ve kanıtlayıcı anlatım yetersizliğine daha geniş yayılır."
         },
         {
           "neighbor_ref": "root_000145/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Açık ifade kuramama, cevabı kavrayamama ve zihinsel yetersizlik bu dala özgüdür.",
-          "neighbor_only": "Konuşma yetisinin yokluğu, doğuştan konuşamama ve dilin kesilmesi komşu dala özgüdür.",
-          "gloss": "konuşma yetisinin yokluğu",
-          "shared_zone": "İki dalda da olağan konuşma başarısız olur.",
-          "distinction": "Bu dal ifade ve cevap kurma yetersizliğidir; komşu dal ise kişinin konuşma yetisinden yoksun olmasıdır."
+          "focus_only": "Bu dal genel olarak tam konuşamama gerektirmeden sözünü açıkça kuramama veya uygun cevabı verememeyi anlatır; bir kaynak varyantı konuşamama ile zihinsel yetersizliğin birlikte bulunmasını şart koşar.",
+          "neighbor_only": "Komşu dalda konuşma yetisinin kendisi bulunmaz ve kişi konuşamaz.",
+          "gloss": "ifade edememe ile konuşamama",
+          "shared_zone": "Her iki dal sözlü iletişimin kurulamaması biçiminde dışa vurulabilir.",
+          "distinction": "Bu dal genel olarak ifade ve cevap verme yeterliğiyle ilgilenir; özel varyantında konuşamama ile zihinsel yetersizlik birlikte aranır. Komşu dal ise zihinsel yetersizlik koşulu olmaksızın konuşma yetisinin yokluğunu anlatır."
         },
         {
           "neighbor_ref": "root_001034/B007",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Cevabı kavrayamama ve zihinsel güçsüzlük bu dalın ayırıcı yönleridir.",
-          "neighbor_only": "Dilin fiziksel olarak düğümlenmesi ve sözün kapalı, güç anlaşılır oluşu komşu dalın ayırıcı yönleridir.",
-          "gloss": "dil tutulması ve kapalı anlatım",
-          "shared_zone": "Her iki dalda da sözün açık ve rahat biçimde kurulması engellenir.",
-          "distinction": "Bu dal kişinin ifade ve cevap yeterliğine odaklanır; komşu dal dildeki tutulmayı ve sözün anlaşılma güçlüğünü de kapsar."
+          "focus_only": "Bu dal açık konuşamama ve cevabı kavrayıp verememe yeterliğiyle ilgilidir.",
+          "neighbor_only": "Komşu dal dilin tutulması ile sözün düğümlü, karmaşık veya kapalı oluşunu içerir.",
+          "gloss": "ifade yetersizliği ile düğümlü konuşma",
+          "shared_zone": "İki dalda da konuşma anlaşılmaz, eksik veya güç kurulmuş olabilir.",
+          "distinction": "Bu dal kişinin anlatım ve cevap verme yeterliğini odağa alır; komşu dal konuşmanın tutulması veya sözün yapısal kapalılığı üzerinde durur."
         },
         {
           "neighbor_ref": "root_000145/B003",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Kişi ifade veya kavrayış yetersizliği yüzünden söz ve cevap üretemez.",
-          "neighbor_only": "Kişi bilgisizlikten ya da bilerek konuşmaktan geri durur.",
-          "gloss": "konuşmaktan geri durma",
-          "shared_zone": "Her iki durumda da beklenen söz veya cevap ortaya çıkmayabilir.",
-          "distinction": "Bu dal bir ifade ve cevap yetersizliğini, komşu dal ise konuşmaya girişmeme veya konuşmayı bırakma tutumunu bildirir."
-        },
-        {
-          "neighbor_ref": "root_000369/B006",
-          "relation_type": "thematic",
-          "boundary_match": "thematic_only",
-          "focus_only": "Cevabı kavrayıp uygun karşılık verememe bu dalın çekirdeğidir.",
-          "neighbor_only": "Karşılıklı konuşma, söz alışverişi ve cevap verme komşu dalın çekirdeğidir.",
-          "gloss": "karşılıklı konuşma ve cevap",
-          "shared_zone": "İki dal da konuşma sırasında söz ve cevap ilişkisini konu edinir.",
-          "distinction": "Bu dal cevap üretme yetersizliğini anlatır; komşu dal ise cevabın verildiği karşılıklı konuşma eylemini anlatır."
+          "focus_only": "Bu dalda konuşmama, açık anlatma veya cevap verme yetersizliğinden doğar.",
+          "neighbor_only": "Komşu dalda kişi bilgisizlikten ya da bilerek konuşma eyleminden geri durur.",
+          "gloss": "ifade edememe ile konuşmaktan kaçınma",
+          "shared_zone": "Her iki dal da konuşmanın gerçekleşmemesi veya iletişimin kesilmesi sonucunu doğurabilir.",
+          "distinction": "Burada yeterlik sorunu vardır; komşu dalda ise belirli bir bağlı kullanım içinde konuşmadan geri durma davranışı vardır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; ifade ve cevap yetersizliğini konuşma yetisi yokluğundan, dil tutulmasından, susmaktan ve olağan söz alışverişinden ayıran komşular yayımlandı.",
-      "branch_image_ar": "تعذر الإفصاح والعقل بالجواب",
-      "what_is_ar": "الأبكم الذي لا يفصح أو يعيى بالجواب أو يضعف عن الكلام لضعف عقله",
-      "source_phrase_ar": "لا يفصح (maqayis;ayn)؛ الخرس والبله (jamhara)؛ العي المفحم؛ لا يعقل الجواب؛ لا يحسن وجه الكلام (tahdhib)؛ ضعف عنه لضعف عقله (mufradat)",
-      "sources": [
-        "MQ",
-        "AY",
-        "JA",
-        "TA",
-        "MU"
-      ],
-      "source_note": {
-        "MU": "Zihinsel güçsüzlük yüzünden konuşmada zayıflayıp konuşamaz gibi olmayı bildiren bir kullanım kaydedilir.",
-        "TA": "Sözü toparlayamaz ve cevap veremez duruma girmeyi bildiren oluş biçimleri kaydedilir."
-      }
+      "neighbor_coverage_note": "Bütün komşu adayları karşılaştırıldı; ifade yetersizliğinin sınırını en iyi gösteren dört aday seçildi, yalnızca işitme, karşılıklı konuşma, söz söyleme veya cevap verme alanını paylaşan daha uzak adaylar yayımlanmadı."
     },
     {
       "branch_ref": "root_000145/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, konuşma eyleminden bilgisizlik nedeniyle ya da bilerek geri durmayı açıkça belirtir ve bunu belirli bir bağlı eylem kullanımıyla sınırlar. Verilen dal çerçevesi bu iki neden seçeneğini ve eylemsel çekirdeği doğru biçimde korur.",
+        "boundary_note": "Bu anlam doğuştan konuşamamayı veya cevap kurma yetersizliğini değil, konuşma eyleminden bilgisizlikle ya da bilinçli olarak geri durmayı anlatır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "non_bare",
+        "note": "Tanım yalnızca konuşmadan geri durmayı belirten bağlı eylem kullanımı için geçerlidir; yalın köke genel bir susma veya konuşamama anlamı yüklenmez."
+      },
       "concept_map": {
-        "definition": "Kişinin bilgisizlik yüzünden veya bilerek konuşmaktan geri durmasıdır.",
+        "definition": "Belirli bir bağlı eylem kullanımında, bilgisizlik nedeniyle ya da bilerek konuşma eyleminden geri durmak.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Çekirdek anlam, kişinin konuşmaya girişmemesi veya konuşmayı sürdürmemesidir.",
+            "statement": "Çekirdek anlam, konuşma eyleminden geri durmak ve konuşmayı gerçekleştirmemektir.",
             "claim_ids": [
-              "lu_009"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "source_variant",
-            "statement": "Konuşmaktan geri durma bilgisizlikten kaynaklanabileceği gibi bilinçli bir seçim de olabilir.",
+            "role": "specialization",
+            "statement": "Geri durma bilgisizlikten kaynaklanabileceği gibi bilinçli ve amaçlı da olabilir.",
             "claim_ids": [
-              "lu_009"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak anlatım, kişinin konuşmaktan geri durmasını bildirir; bu geri durma bilgisizlikten doğabilir veya bilinçli ve amaçlı olabilir.",
+        "common_summary": "Kaynak anlatımları, konuşmadan geri durmayı belirli bir bağlı eylem kullanımıyla verir ve bu geri duruşun bilgisizlikten ya da bilinçli bir tutumdan doğabileceğini belirtir.",
         "common_claim_ids": [
-          "lu_009"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "bilmeden veya bilerek konuşmaktan geri durma",
-        "applicability": "Konuşmamanın bilgisizlikten ya da bilinçli bir seçimden kaynaklandığı bütün çekirdek kullanımları kapsar.",
+        "text": "bilgisizlikten ya da bilerek konuşmaktan geri durmak",
+        "applicability": "Yalnızca kaynakta belirtilen bağlı eylem kullanımını ve iki neden seçeneğini birlikte karşılayan kavram anlatımıdır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Konuşmadan geri durmayı ve bunun iki ayrı nedenini birlikte korur.",
+          "preserves": "Konuşmadan geri durma eylemini ve bunun bilgisizlikten ya da bilinçli seçimden kaynaklanabilmesini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -499,11 +402,11 @@
         {
           "text": "konuşmaktan kaçınmak",
           "usage_role": "contextual",
-          "applicability": "Kişinin bilinçli biçimde söz söylememeyi seçtiği bağlamlarda uygundur.",
+          "applicability": "Geri duruşun bilinçli ve amaçlı olduğu bağlamlarda doğal bir eylem karşılığı olarak kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Bilinçli olarak konuşmadan geri durma yönünü korur.",
-            "loses": "Bilgisizlikten kaynaklanan geri durmayı kapsamaz.",
+            "preserves": "Konuşma eylemini gerçekleştirmemeye yönelik bilinçli geri duruşu korur.",
+            "loses": "Bilgisizlik nedeniyle konuşmadan geri durma seçeneğini dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
@@ -513,18 +416,19 @@
           ]
         },
         {
-          "text": "konuşmamak",
-          "usage_role": "general",
-          "applicability": "Nedenin bağlamdan anlaşıldığı ve yalnızca konuşmanın gerçekleşmediğinin söylendiği yerlerde kullanılabilir.",
+          "text": "bilmediği için söz söylememek",
+          "usage_role": "contextual",
+          "applicability": "Geri duruşun bilgisizlikten kaynaklandığı bağlamlarda doğal ve açıklayıcı bir karşılıktır.",
           "error_profile": {
-            "fit": "broadening",
-            "preserves": "Konuşmanın gerçekleşmemesi sonucunu korur.",
-            "loses": "Bilgisizlik veya bilinçli seçim nedenini kendi başına göstermez.",
-            "adds": "Başka nedenlerle ortaya çıkan her türlü susmayı da kapsayabilir.",
-            "collision": "Konuşma yetisinin yokluğu sanılabilir."
+            "fit": "narrowing",
+            "preserves": "Bilgisizlik nedeniyle konuşmanın gerçekleştirilmemesini korur.",
+            "loses": "Bilerek ve amaçlı biçimde konuşmadan geri durma seçeneğini dışarıda bırakır.",
+            "adds": null,
+            "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002"
           ]
         }
       ],
@@ -532,7 +436,7 @@
         {
           "lexical_unit_id": "lu_009",
           "rendering_kind": "ordinary",
-          "target_gloss": "bilgisizlikten veya bilerek konuşmaktan geri durmak"
+          "target_gloss": "bilgisizlikten ya da bilerek konuşmaktan geri durmak"
         }
       ],
       "excluded_glosses": [
@@ -541,10 +445,10 @@
           "category": "confusable",
           "error_profile": {
             "fit": "displacement",
-            "preserves": "Konuşmanın gerçekleşmemesi sonucunu korur.",
-            "loses": "Bilgisizlikten veya bilinçli seçimden doğan geri durmayı siler.",
-            "adds": "Konuşma yetisinin bulunmadığı anlamını ekler.",
-            "collision": "Konuşma yetisi yokluğu dalıyla doğrudan karışır."
+            "preserves": "Konuşmanın gerçekleşmemesi biçimindeki görünür sonucu korur.",
+            "loses": "Bilgisizlikten veya bilinçli olarak konuşmadan geri durma eylemini ortadan kaldırır.",
+            "adds": "Konuşma yetisinin bulunmaması ya da geçici bir yetersizlik anlamını ekler.",
+            "collision": "Konuşmadan geri durmayı konuşma yetisinin yokluğuyla karıştırır."
           }
         }
       ],
@@ -553,487 +457,49 @@
           "neighbor_ref": "root_000145/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Bilgisizlikten veya bilinçli seçimden doğan konuşmama bu dala özgüdür.",
-          "neighbor_only": "Konuşma yetisinin yokluğu, doğuştan konuşamama ve dilin kesilmesi komşu dala özgüdür.",
-          "gloss": "konuşma yetisinin yokluğu",
-          "shared_zone": "İki dalda da konuşma gerçekleşmez.",
-          "distinction": "Bu dalda kişi konuşmaktan geri durur; komşu dalda ise konuşma yetisi bulunmadığı için konuşamaz."
+          "focus_only": "Bu dalda kişi bilgisizlikten ya da bilerek konuşma eyleminden geri durur.",
+          "neighbor_only": "Komşu dalda kişinin konuşma yetisi bulunmadığı için konuşma gerçekleşmez.",
+          "gloss": "konuşmaktan geri durma ile konuşamama",
+          "shared_zone": "Her iki dal dışarıdan konuşmanın gerçekleşmemesi olarak görünebilir.",
+          "distinction": "Burada belirli bir bağlı kullanım içinde geri durma davranışı vardır; komşu dalda ise konuşma yetisinin yokluğu söz konusudur."
         },
         {
           "neighbor_ref": "root_000145/B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Konuşmaya girişmeme veya konuşmayı bırakma bu dalın çekirdeğidir.",
-          "neighbor_only": "Sözü açık kuramama, cevabı kavrayamama ve zihinsel yetersizlik komşu dala özgüdür.",
-          "gloss": "ifade ve cevap yetersizliği",
-          "shared_zone": "İki dalda da beklenen söz veya cevap ortaya çıkmayabilir.",
-          "distinction": "Bu dal konuşmadan geri durmayı anlatır; komşu dal konuşmaya çalışsa da kendini ifade veya cevap üretme bakımından yetersiz kalan kişiyi anlatır."
+          "focus_only": "Bu dal, konuşma eylemini bilgisizlikten veya bilerek gerçekleştirmemeyi anlatır.",
+          "neighbor_only": "Komşu dal, sözünü açık ve yerinde kuramama ya da uygun cevabı verememe yetersizliğini anlatır.",
+          "gloss": "konuşmaktan geri durma ile ifade edememe",
+          "shared_zone": "Her iki dalda da sözlü iletişim kurulmayabilir veya kesilebilir.",
+          "distinction": "Bu dalın çekirdeği konuşmadan geri durmaktır; komşu dalın çekirdeği ise açık anlatım ve cevap verme yeterliğinin bulunmamasıdır."
         },
         {
           "neighbor_ref": "root_001260/B004",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Bilgisizlikten veya genel bir bilinçli tercihten doğan konuşmama bu dalın daha geniş kapsamıdır.",
-          "neighbor_only": "Konuşmama ibadet sırasında insan sözü söylemeyip ibadete yönelme koşuluyla sınırlıdır.",
-          "gloss": "ibadet sırasında konuşmama",
-          "shared_zone": "Her iki dal bilinçli biçimde konuşmaktan geri durmayı kapsar.",
-          "distinction": "Bu dal nedeni bilgisizlik veya genel bir seçim olan konuşmamayı kapsar; komşu dal aynı davranışı belirli bir ibadet bağlamıyla sınırlar."
-        },
-        {
-          "neighbor_ref": "root_001678/B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Bilgisizlikten veya bilinçli seçimden doğan konuşmama bu dalın çekirdeğidir.",
-          "neighbor_only": "Bir şeyi vermemek üzere elde tutma veya ağzı bağlayıp sözü kapatma komşu dalın daha geniş alanıdır.",
-          "gloss": "ağzı bağlayıp sözü kapatma",
-          "shared_zone": "Her iki dal konuşmanın durması veya önünün kapanması alanında buluşur.",
-          "distinction": "Bu dal kişinin konuşmaktan geri durmasını anlatır; komşu dal dıştan ağzı kapatmayı ve verme konusundaki sıkılığı da kapsar."
+          "focus_only": "Bu dal geri duruşun nedenini bilgisizlik veya bilinçli tutum olarak verir ve belirli bir ibadet durumuyla sınırlamaz.",
+          "neighbor_only": "Komşu dal konuşmadan geri durmayı ibadet sırasında ve o ibadete yönelme koşuluyla sınırlar.",
+          "gloss": "konuşmaktan geri durma ile ibadet sırasında susma",
+          "shared_zone": "Her iki dalda kişi konuşmayı gerçekleştirmenin önünde kendi tutumuyla durur.",
+          "distinction": "Buradaki kullanım bilgisizlik veya kasıt nedenlerine bağlıdır; komşu dal ise özel bir ibadet bağlamındaki susmayı anlatır."
         },
         {
           "neighbor_ref": "root_001329/B003",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Konuşmaktan geri durma ve bunun bilgisizlik ya da bilinçli seçimle ilişkisi bu dala özgüdür.",
-          "neighbor_only": "Vermeyi veya herhangi bir eylemi reddetmenin olumsuz söz kalıplarıyla bildirilmesi komşu dala özgüdür.",
-          "gloss": "bir eylemi reddetme",
-          "shared_zone": "İki dalda da beklenen bir eylemin yapılmaması söz konusudur.",
-          "distinction": "Bu dal yalnızca konuşmama davranışını anlatır; komşu dal verme ve yapma dahil daha genel reddetme alanındadır."
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bu dalın geri duruşu yalnızca konuşma eylemine bağlıdır.",
+          "neighbor_only": "Komşu dal olumsuzlama yoluyla verme veya başka bir eylemi yapmayı reddetme alanına uzanır.",
+          "gloss": "konuşmadan geri durma ile eylemi reddetme",
+          "shared_zone": "Her iki dalda da belirli bir eylemin gerçekleştirilmemesi ve ondan geri durma bulunur.",
+          "distinction": "Bu dal konuşmayı gerçekleştirmemeye özgüdür; komşu dalın çekirdeği ise daha genel bir verme veya eyleme geçme reddidir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; konuşmaktan geri durmayı konuşma yetersizliğinden, belirli bağlamlardaki susmadan ve genel eylem reddinden ayıran komşular yayımlandı.",
-      "branch_image_ar": "الإمساك عن الكلام",
-      "what_is_ar": "بكم عن الكلام إذا امتنع منه جهلا أو تعمدا",
-      "source_phrase_ar": "امتنع من الكلام جهلا أو تعمدا؛ بكم عن الكلام (maqayis;ayn;tahdhib)",
-      "sources": [
-        "MQ",
-        "AY",
-        "TA"
-      ],
-      "source_note": {}
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; konuşma yetisi, ifade yeterliği, özel susma bağlamı ve genel eylem reddiyle sınırı gösteren dört komşu seçildi, yalnızca aynı senaryoya uzaktan katılan adaylar elendi."
     }
   ],
   "root_profile": {
-    "summary": "Kökün dalları konuşmanın kesintiye uğraması çevresinde düzenlenir: konuşma yetisinin yokluğu, açık ifade ve cevap yetersizliği, ayrıca bilgisizlikten veya bilerek konuşmaktan geri durma.",
+    "summary": "Kökün anlam alanı üç ayrı dalda düzenlenir: konuşma yetisinin yokluğu, açık ve yerinde ifade veya cevap verme yetersizliği ve bilgisizlikten ya da bilinçli olarak konuşmadan geri durma. Dallar dışarıdan benzer bir konuşmama görünümü verse de yeti, anlatım yeterliği ve tutum bakımından ayrılır.",
     "polysemy": "polysemic",
-    "organization": "radial"
-  },
-  "occurrence_evidence": {
-    "summary": {
-      "morpheme_count": 6,
-      "word_count": 6,
-      "ayah_count": 6,
-      "surah_count": 5
-    },
-    "forms": [
-      {
-        "form_id": "F001",
-        "lemma_ar": "أَبْكَم",
-        "stem_ar": "بُكْمٌ",
-        "pos": "N",
-        "measure": "",
-        "morph_features": "STEM|POS:N|LEM:>abokam|ROOT:bkm|P|INDEF|NOM",
-        "occurrence_count": 3
-      },
-      {
-        "form_id": "F002",
-        "lemma_ar": "أَبْكَم",
-        "stem_ar": "بُكْمُ",
-        "pos": "N",
-        "measure": "",
-        "morph_features": "STEM|POS:N|LEM:>abokam|ROOT:bkm|P|NOM",
-        "occurrence_count": 1
-      },
-      {
-        "form_id": "F003",
-        "lemma_ar": "أَبْكَم",
-        "stem_ar": "أَبْكَمُ",
-        "pos": "N",
-        "measure": "",
-        "morph_features": "STEM|POS:N|LEM:>abokam|ROOT:bkm|M|NOM",
-        "occurrence_count": 1
-      },
-      {
-        "form_id": "F004",
-        "lemma_ar": "أَبْكَم",
-        "stem_ar": "بُكْمًا",
-        "pos": "N",
-        "measure": "",
-        "morph_features": "STEM|POS:N|LEM:>abokam|ROOT:bkm|P|INDEF|ACC",
-        "occurrence_count": 1
-      }
-    ],
-    "ayahs": [
-      {
-        "ayah_ref": "2:18",
-        "surface_ar": "صُمٌّۢ بُكْمٌ عُمْىٌ فَهُمْ لَا يَرْجِعُونَ"
-      },
-      {
-        "ayah_ref": "2:171",
-        "surface_ar": "وَمَثَلُ ٱلَّذِينَ كَفَرُوا۟ كَمَثَلِ ٱلَّذِى يَنْعِقُ بِمَا لَا يَسْمَعُ إِلَّا دُعَآءً وَنِدَآءً صُمٌّۢ بُكْمٌ عُمْىٌ فَهُمْ لَا يَعْقِلُونَ"
-      },
-      {
-        "ayah_ref": "6:39",
-        "surface_ar": "وَٱلَّذِينَ كَذَّبُوا۟ بِـَٔايَٰتِنَا صُمٌّ وَبُكْمٌ فِى ٱلظُّلُمَٰتِ مَن يَشَإِ ٱللَّهُ يُضْلِلْهُ وَمَن يَشَأْ يَجْعَلْهُ عَلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ"
-      },
-      {
-        "ayah_ref": "8:22",
-        "surface_ar": "إِنَّ شَرَّ ٱلدَّوَآبِّ عِندَ ٱللَّهِ ٱلصُّمُّ ٱلْبُكْمُ ٱلَّذِينَ لَا يَعْقِلُونَ"
-      },
-      {
-        "ayah_ref": "16:76",
-        "surface_ar": "وَضَرَبَ ٱللَّهُ مَثَلًا رَّجُلَيْنِ أَحَدُهُمَآ أَبْكَمُ لَا يَقْدِرُ عَلَىٰ شَىْءٍ وَهُوَ كَلٌّ عَلَىٰ مَوْلَىٰهُ أَيْنَمَا يُوَجِّههُّ لَا يَأْتِ بِخَيْرٍ هَلْ يَسْتَوِى هُوَ وَمَن يَأْمُرُ بِٱلْعَدْلِ وَهُوَ عَلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ"
-      },
-      {
-        "ayah_ref": "17:97",
-        "surface_ar": "وَمَن يَهْدِ ٱللَّهُ فَهُوَ ٱلْمُهْتَدِ وَمَن يُضْلِلْ فَلَن تَجِدَ لَهُمْ أَوْلِيَآءَ مِن دُونِهِۦ وَنَحْشُرُهُمْ يَوْمَ ٱلْقِيَٰمَةِ عَلَىٰ وُجُوهِهِمْ عُمْيًا وَبُكْمًا وَصُمًّا مَّأْوَىٰهُمْ جَهَنَّمُ كُلَّمَا خَبَتْ زِدْنَٰهُمْ سَعِيرًا"
-      }
-    ],
-    "occurrences": [
-      {
-        "qac_ref": "2:18:2:1",
-        "qac_word_ref": "2:18:2",
-        "surah": 2,
-        "ayah": 18,
-        "word_index": 2,
-        "morpheme_index": 1,
-        "surface_ar": "بُكْمٌ",
-        "stem_ar": "بُكْمٌ",
-        "lemma_ar": "أَبْكَم",
-        "source_pos": "N",
-        "pos": "N",
-        "morpheme_role": "STEM",
-        "measure": "",
-        "aspect": "",
-        "mood": "",
-        "voice": "",
-        "morph_features": "STEM|POS:N|LEM:>abokam|ROOT:bkm|P|INDEF|NOM",
-        "ayah_ref": "2:18",
-        "form_id": "F001",
-        "alignment": {
-          "status": "aligned",
-          "method": "qac_character_span_root_form_monotonic",
-          "confidence": "high",
-          "attachment_unit_id": "ae:v3:s002:018:noun:2",
-          "attachment_word_unit_id": "q:2:18:2",
-          "qac_char_span": [
-            2,
-            5
-          ],
-          "attachment_char_spans": [
-            [
-              2,
-              5
-            ]
-          ],
-          "source_grammar": "nominative indefinite plural adjective, predicate",
-          "attachments": [
-            {
-              "attachment_id": "ae:v3:s002:018:pass1:attach:a1",
-              "relation": "conjoined",
-              "focus_role": "dependent",
-              "other_unit_id": "q:2:18:1",
-              "other_surface": "صُمٌّ",
-              "other_root": "ص م م",
-              "other_form_tag": "ADJ_QUALIT",
-              "prep_base": "",
-              "status": "strongly_licensed",
-              "confidence": "high",
-              "evidence": "parallelism;local_syntax"
-            }
-          ]
-        }
-      },
-      {
-        "qac_ref": "2:171:14:1",
-        "qac_word_ref": "2:171:14",
-        "surah": 2,
-        "ayah": 171,
-        "word_index": 14,
-        "morpheme_index": 1,
-        "surface_ar": "بُكْمٌ",
-        "stem_ar": "بُكْمٌ",
-        "lemma_ar": "أَبْكَم",
-        "source_pos": "N",
-        "pos": "N",
-        "morpheme_role": "STEM",
-        "measure": "",
-        "aspect": "",
-        "mood": "",
-        "voice": "",
-        "morph_features": "STEM|POS:N|LEM:>abokam|ROOT:bkm|P|INDEF|NOM",
-        "ayah_ref": "2:171",
-        "form_id": "F001",
-        "alignment": {
-          "status": "aligned",
-          "method": "qac_character_span_root_form_monotonic",
-          "confidence": "high",
-          "attachment_unit_id": "ae:v3:s002:171:noun:18",
-          "attachment_word_unit_id": "q:2:171:18",
-          "qac_char_span": [
-            49,
-            52
-          ],
-          "attachment_char_spans": [
-            [
-              49,
-              52
-            ]
-          ],
-          "source_grammar": "nominative indefinite adjective (qualitative), second member of the sensory-deprivation triad",
-          "attachments": [
-            {
-              "attachment_id": "ae:v3:s002:171:pass1:attach:a12",
-              "relation": "conjoined",
-              "focus_role": "dependent",
-              "other_unit_id": "q:2:171:17",
-              "other_surface": "صُمٌّ",
-              "other_root": "ص م م",
-              "other_form_tag": "ADJ_QUALIT",
-              "prep_base": "",
-              "status": "strongly_licensed",
-              "confidence": "high",
-              "evidence": "parallelism;local_syntax"
-            }
-          ]
-        }
-      },
-      {
-        "qac_ref": "6:39:5:2",
-        "qac_word_ref": "6:39:5",
-        "surah": 6,
-        "ayah": 39,
-        "word_index": 5,
-        "morpheme_index": 2,
-        "surface_ar": "بُكْمٌ",
-        "stem_ar": "بُكْمٌ",
-        "lemma_ar": "أَبْكَم",
-        "source_pos": "N",
-        "pos": "N",
-        "morpheme_role": "STEM",
-        "measure": "",
-        "aspect": "",
-        "mood": "",
-        "voice": "",
-        "morph_features": "STEM|POS:N|LEM:>abokam|ROOT:bkm|P|INDEF|NOM",
-        "ayah_ref": "6:39",
-        "form_id": "F001",
-        "alignment": {
-          "status": "aligned",
-          "method": "qac_character_span_root_form_monotonic",
-          "confidence": "high",
-          "attachment_unit_id": "ae:v3:s006:039:noun:8",
-          "attachment_word_unit_id": "q:6:39:8",
-          "qac_char_span": [
-            20,
-            24
-          ],
-          "attachment_char_spans": [
-            [
-              20,
-              24
-            ],
-            [
-              21,
-              24
-            ]
-          ],
-          "source_grammar": "adjective, qualitative, masculine plural, nominative indefinite — second predicate conjoined with ṣumm",
-          "attachments": [
-            {
-              "attachment_id": "ae:v3:s006:039:pass1:attach:a4",
-              "relation": "conjoined",
-              "focus_role": "dependent",
-              "other_unit_id": "q:6:39:6",
-              "other_surface": "صُمٌّ",
-              "other_root": "ص م م",
-              "other_form_tag": "ADJ_QUALIT",
-              "prep_base": "",
-              "status": "strongly_licensed",
-              "confidence": "high",
-              "evidence": "parallelism;local_syntax"
-            }
-          ]
-        }
-      },
-      {
-        "qac_ref": "8:22:7:2",
-        "qac_word_ref": "8:22:7",
-        "surah": 8,
-        "ayah": 22,
-        "word_index": 7,
-        "morpheme_index": 2,
-        "surface_ar": "بُكْمُ",
-        "stem_ar": "بُكْمُ",
-        "lemma_ar": "أَبْكَم",
-        "source_pos": "N",
-        "pos": "N",
-        "morpheme_role": "STEM",
-        "measure": "",
-        "aspect": "",
-        "mood": "",
-        "voice": "",
-        "morph_features": "STEM|POS:N|LEM:>abokam|ROOT:bkm|P|NOM",
-        "ayah_ref": "8:22",
-        "form_id": "F002",
-        "alignment": {
-          "status": "aligned",
-          "method": "qac_character_span_root_form_monotonic",
-          "confidence": "high",
-          "attachment_unit_id": "ae:v3:s008:022:noun:7",
-          "attachment_word_unit_id": "q:8:22:7",
-          "qac_char_span": [
-            21,
-            26
-          ],
-          "attachment_char_spans": [
-            [
-              23,
-              26
-            ]
-          ],
-          "source_grammar": "qualitative adjective, nominative (second predicate stacked with al-ṣumm); definite plural; masculine",
-          "attachments": [
-            {
-              "attachment_id": "ae:v3:s008:022:pass1:attach:a6",
-              "relation": "predication",
-              "focus_role": "dependent",
-              "other_unit_id": "q:8:22:1",
-              "other_surface": "إِنَّ",
-              "other_root": "",
-              "other_form_tag": "ANNUL_PART",
-              "prep_base": "",
-              "status": "strongly_licensed",
-              "confidence": "high",
-              "evidence": "local_syntax;case_government"
-            },
-            {
-              "attachment_id": "ae:v3:s008:022:pass1:attach:a7",
-              "relation": "adjective",
-              "focus_role": "head",
-              "other_unit_id": "q:8:22:8",
-              "other_surface": "الَّذِينَ",
-              "other_root": "ل ل ذ",
-              "other_form_tag": "REL_PRON",
-              "prep_base": "",
-              "status": "strongly_licensed",
-              "confidence": "high",
-              "evidence": "agreement;local_syntax"
-            }
-          ]
-        }
-      },
-      {
-        "qac_ref": "16:76:6:1",
-        "qac_word_ref": "16:76:6",
-        "surah": 16,
-        "ayah": 76,
-        "word_index": 6,
-        "morpheme_index": 1,
-        "surface_ar": "أَبْكَمُ",
-        "stem_ar": "أَبْكَمُ",
-        "lemma_ar": "أَبْكَم",
-        "source_pos": "N",
-        "pos": "N",
-        "morpheme_role": "STEM",
-        "measure": "",
-        "aspect": "",
-        "mood": "",
-        "voice": "",
-        "morph_features": "STEM|POS:N|LEM:>abokam|ROOT:bkm|M|NOM",
-        "ayah_ref": "16:76",
-        "form_id": "F003",
-        "alignment": {
-          "status": "aligned",
-          "method": "qac_character_span_root_form_monotonic",
-          "confidence": "high",
-          "attachment_unit_id": "ae:v3:s016:076:noun:7",
-          "attachment_word_unit_id": "q:16:76:7",
-          "qac_char_span": [
-            23,
-            27
-          ],
-          "attachment_char_spans": [
-            [
-              23,
-              27
-            ]
-          ],
-          "source_grammar": "elative/intensive adjective (ism tafḍīl/ṣifa mushabbaha on ʾafʿal pattern), nominative as khabar (predicate) of aḥaduhumā",
-          "attachments": [
-            {
-              "attachment_id": "ae:v3:s016:076:pass1:attach:a4",
-              "relation": "predication",
-              "focus_role": "dependent",
-              "other_unit_id": "q:16:76:6",
-              "other_surface": "أَحَدُهُمَا",
-              "other_root": "أ ح د",
-              "other_form_tag": "NOUN_NUM",
-              "prep_base": "",
-              "status": "strongly_licensed",
-              "confidence": "high",
-              "evidence": "local_syntax"
-            }
-          ]
-        }
-      },
-      {
-        "qac_ref": "17:97:20:2",
-        "qac_word_ref": "17:97:20",
-        "surah": 17,
-        "ayah": 97,
-        "word_index": 20,
-        "morpheme_index": 2,
-        "surface_ar": "بُكْمًا",
-        "stem_ar": "بُكْمًا",
-        "lemma_ar": "أَبْكَم",
-        "source_pos": "N",
-        "pos": "N",
-        "morpheme_role": "STEM",
-        "measure": "",
-        "aspect": "",
-        "mood": "",
-        "voice": "",
-        "morph_features": "STEM|POS:N|LEM:>abokam|ROOT:bkm|P|INDEF|ACC",
-        "ayah_ref": "17:97",
-        "form_id": "F004",
-        "alignment": {
-          "status": "aligned",
-          "method": "qac_character_span_root_form_monotonic",
-          "confidence": "high",
-          "attachment_unit_id": "ae:v3:s017:097:noun:27",
-          "attachment_word_unit_id": "q:17:97:27",
-          "qac_char_span": [
-            79,
-            84
-          ],
-          "attachment_char_spans": [
-            [
-              79,
-              84
-            ],
-            [
-              80,
-              83
-            ]
-          ],
-          "source_grammar": "Adjective; broken plural of abkam; accusative (ḥāl, parallel to ʿumyan); indefinite",
-          "attachments": [
-            {
-              "attachment_id": "ae:v3:s017:097:pass1:attach:a13",
-              "relation": "conjoined",
-              "focus_role": "dependent",
-              "other_unit_id": "q:17:97:25",
-              "other_surface": "عُمْيَاً",
-              "other_root": "ع م ي",
-              "other_form_tag": "ADJ_QUALIT",
-              "prep_base": "",
-              "status": "strongly_licensed",
-              "confidence": "high",
-              "evidence": "parallelism;local_syntax"
-            }
-          ]
-        }
-      }
-    ]
+    "organization": "multi_branch"
   }
 }

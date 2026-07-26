@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Girdi genel olarak kanıtla uyumludur. Ancak B001'deki yay çekme kullanımı, kanıtın bildirdiği güçlü ve ileri ölçüde çekişten fiziksel son sınıra ulaşma anlamına taşınmıştır; bu dar ve yüksek güvenli sorun ilgili kavram haritası ile sözlüksel karşılıkta düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001441/B001",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, yay çekişinin güçlendirilmesini ve ileri ölçüde yapılmasını bildirir; tanım ile F004 ise bunu yayın fiziksel olarak son sınırına kadar çekilmesi biçiminde daha dar ve daha güçlü bir koşula dönüştürür.",
+      "smallest_correction": "Tanımdaki son sınıra kadar çekme ifadesini yayı güçlüce çekme olarak değiştirin; F004'te de son sınıra vardırma koşulunu kaldırıp çekişi güçlendirme ve ileri ölçüde yapma anlamını koruyun."
+    },
+    {
+      "target_ref": "root_001441/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_008"
+      ],
+      "evidence_conflict": "lu_008 için kanıt, yay çekişini güçlendirme ve ileri ölçüde yapma anlamını verir; mevcut karşılık ise kanıtta bulunmayan zorunlu bir son noktaya ulaşma koşulu ekler.",
+      "smallest_correction": "lu_008 hedef karşılığını yayı güçlüce çekmek olarak değiştirin."
+    }
+  ]
+}

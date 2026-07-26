@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Girdi genel olarak kanıtla uyumludur. B001 dalındaki komşuluk ayrımı ise ortak çekirdekleri aynı olduğu halde kaynağa özgü yön ve örnek ayrıntılarını sınır farkı sayarak tam eş anlamlılığı gereksiz yere zayıflatmaktadır.",
+  "issues": [
+    {
+      "target_ref": "root_001165/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Odak dalın kanıtı yarılma ve açılmayı, komşu kartı da bir şeyin yarılıp açılmasını çekirdek yapmaktadır. Uzunlamasına yön yalnızca kaynaklardan birinin ayrıntısıdır; kumaş, deri, yer, dağ, tan yeri ve diş gibi unsurlar da bağımlı örneklerdir. Bunlar çekirdek sınırını değiştirmediği için near_synonym ve partial sınıflandırmasını desteklemez.",
+      "smallest_correction": "B001 komşuluk ilişkisinde relation_type değerini synonym, boundary_match değerini exact yap; focus_only, neighbor_only ve distinction metinlerini ayrı bir çekirdek sınırı bulunmadığını, yön ile örnek ayrıntılarının tam eş anlamlılığı bozmadığını belirtecek kadar dar biçimde düzelt."
+    }
+  ]
+}

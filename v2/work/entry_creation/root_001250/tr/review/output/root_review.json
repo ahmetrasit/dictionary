@@ -1,0 +1,72 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtla uyumludur; ancak B002'de nesne anlamları eyleme dönüştürülmüş, B004'te kaynakta aktarılan ek kişi nitelemeleri atlanmış ve B018'de özel adın gösterdiği kişilerin kimliği yayıma yansıtılmamıştır. Bu alanlarda sınırlı ve yüksek güvenli düzeltmeler gereklidir.",
+  "issues": [
+    {
+      "target_ref": "root_001250/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, yerden koparılıp atılan taş, toprak veya kerpiç parçasını ve taş atmaya yarayan aracı adlandırır. Tanım ise bunları parça atma ve araç kullanma eylemleri olarak sunarak iki nesne anlamının sözlüksel türünü değiştiriyor.",
+      "smallest_correction": "Yalnız tanımı, yerden koparılıp atılan taş, toprak veya kerpiç parçası ya da taş fırlatmaya yarayan özel araç biçiminde düzelt; mevcut yüzleri koru."
+    },
+    {
+      "target_ref": "root_001250/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, görevden alınmış yönetici ile kötüleyerek makamdan ettiren kişinin yanında bu ad için polis, pezevenk, mezar soyguncusu ve yalancı aktarımlarını da açıkça içeriyor. Kavram haritası bu kaynak varyantlarını bütünüyle atlıyor.",
+      "smallest_correction": "Mevcut tanımı ve yüzleri değiştirmeden, polis, pezevenk, mezar soyguncusu ve yalancı nitelemelerini kaynak varyantı rolünde tek bir ek yüzde belirt."
+    },
+    {
+      "target_ref": "root_001250/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak sentezi yalnız görevden alınan yönetici ve kötüleme yoluyla makamdan ettiren kişiyi aktarıyor; kanıttaki polis, pezevenk, mezar soyguncusu ve yalancı nitelemeleri sentezde karşılanmıyor.",
+      "smallest_correction": "Ortak özeti, bu ek nitelemelerin ayrıca kaynak varyantları olarak aktarıldığını belirtecek tek bir cümlecikle tamamla."
+    },
+    {
+      "target_ref": "root_001250/B018",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Dalın bütün anlamı, Beni Nümeyr'den Amr'ın oğulları Salâe ile Şüreyh'i birlikte gösteren özel addır. Tanım ve çekirdek yüz bunu yalnız aynı topluluktan iki belirli erkek diye genelleştirerek adın gösterdiği kişileri ve soy bilgisini kaybediyor.",
+      "smallest_correction": "Tanımda ve mevcut çekirdek yüzde Salâe ile Şüreyh'in Amr'ın oğulları ve Beni Nümeyr mensupları olduğunu açıkça belirt."
+    },
+    {
+      "target_ref": "root_001250/B018",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İki kaynak belirli kişilerin adları ve soy bağı üzerinde birleşirken ortak özet yalnız iki belirsiz erkekten söz ediyor; bu özel ad dalının ayırt edici kanıtı sentezlenmiyor.",
+      "smallest_correction": "Ortak özette kişileri Salâe ile Şüreyh, soy bağını Amr'ın oğulları ve topluluğu Beni Nümeyr olarak açıkça ver."
+    },
+    {
+      "target_ref": "root_001250/B018",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_041"
+      ],
+      "evidence_conflict": "lu_041 belirli iki kişinin ortak adını ifade eder; buna karşılık hedef karşılık yalnız aynı topluluktan iki belirli erkeğin ortak adı diyerek özel adın referansını tanımlamaz.",
+      "smallest_correction": "lu_041 hedef karşılığını Beni Nümeyr'den Amr'ın oğulları Salâe ile Şüreyh'in ortak adı olarak düzelt."
+    }
+  ]
+}

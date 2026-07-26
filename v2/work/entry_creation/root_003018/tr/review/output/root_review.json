@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar çıktısı genel olarak dal kimliklerini ve kapsam sınırlarını koruyor; ancak üç kavram glossu kanıttaki alternatifleri veya çekirdek varyantları tam temsil etmiyor. Bu yüzden yalnız ilgili concept_gloss metinleri için sınırlı onarım gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_003018/B001",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt atma ve itme çekirdeğini alternatifli biçimde verir; mevcut gloss metni bunları ardışık ya da birlikte yapılan tek işlem gibi gösterebilir.",
+      "smallest_correction": "concept_gloss.text değerini \"kuvvetle atmak veya itmek\" olarak değiştir."
+    },
+    {
+      "target_ref": "root_003018/B004",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt erkek deve kuşunun sıvısı veya menisi ile yumurtaya/yumurtadaki maddeyi birlikte verir; mevcut gloss yalnız yumurta maddesi izlenimi bırakarak sıvı varyantını metinde göstermiyor.",
+      "smallest_correction": "concept_gloss.text değerini \"deve kuşu sıvısı veya yumurta maddesi\" olarak değiştir."
+    },
+    {
+      "target_ref": "root_003018/B006",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt zayıflık, korkaklık ve bedensel güçsüzlüğü aynı alandaki varyantlar olarak verir; mevcut gloss bunları zorunlu iki nitelik gibi birleştiriyor.",
+      "smallest_correction": "concept_gloss.text değerini \"zayıf veya korkak adam\" olarak değiştir."
+    }
+  ]
+}

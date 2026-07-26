@@ -1,0 +1,160 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıt sınırlarını koruyor; ancak B004'te dilbilgisel mastar kullanımı fiziksel kaynak olarak yorumlanmış, B009'da yetkili dal iddiasında bulunmayan dinleme amacı dal çekirdeğine taşınmış ve B014'te bağımsız ağaç kümesi kullanımı nemli araziye bağlanmıştır. Bu alanlar küçük ve kanıta bağlı düzeltmeler gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_000783/B004",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe, yetkili ifadede yer alan mastar kullanımını fiziksel bir içme kaynağı olarak sunuyor. İfade, sözcüğün yer adı yanında içme eyleminin mastarı olarak da kullanılmasını bildirir.",
+      "smallest_correction": "Nitelikli kimlik hükmünü koruyup gerekçedeki fiziksel kaynak yorumunu içme eylemini adlandıran mastar kullanımıyla değiştirin."
+    },
+    {
+      "target_ref": "root_000783/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F001, mastarı içmenin dayandığı fiziksel kaynak diye yorumluyor. Kanıt yer kullanımıyla birlikte içme eylemini adlandıran dilbilgisel mastar kullanımını verir.",
+      "smallest_correction": "Tanım ve F001'deki fiziksel kaynak öğesini içme eyleminin adı veya mastarı olarak düzeltin; yön, yer, kap, oda ve sulama havuzu yüzlerini değiştirmeyin."
+    },
+    {
+      "target_ref": "root_000783/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kanıttaki mastar kullanımını fiziksel içme kaynağı olarak yeniden ifade ediyor.",
+      "smallest_correction": "Özetteki fiziksel kaynak ifadesini içme eylemini adlandıran mastar kullanımıyla değiştirin; diğer kaynak yüzlerini koruyun."
+    },
+    {
+      "target_ref": "root_000783/B004",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı ve koruma açıklaması fiziksel içme kaynağını dalın bir yüzü sayıyor, fakat yetkili kanıt yer adı ve mastar ayrımını verir.",
+      "smallest_correction": "Karşılıktaki kaynak öğesini içme eylemi veya mastar ile değiştirin ve koruma açıklamasını aynı ayrımı yansıtacak biçimde daraltın."
+    },
+    {
+      "target_ref": "root_000783/B004",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İlk bağlamsal karşılık, mastar kullanımını fiziksel içme kaynağıyla birleştirerek kanıttaki dilbilgisel ayrımı kaybediyor.",
+      "smallest_correction": "İlk karşılığı ve açıklamalarını içme yönü veya yeri ile içme eylemi kullanımını ayıracak biçimde düzeltin; kap karşılığını değiştirmeyin."
+    },
+    {
+      "target_ref": "root_000783/B004",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011"
+      ],
+      "evidence_conflict": "lu_011 karşılığındaki kaynak sözü, bir yerle birlikte mastar olabilen biçimi fiziksel su kaynağına dönüştürüyor.",
+      "smallest_correction": "lu_011 karşılığını içme yönü veya yeri ve içme eyleminin mastarı ayrımını açıkça koruyacak şekilde düzeltin."
+    },
+    {
+      "target_ref": "root_000783/B004",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu ayrımındaki odak sınırı fiziksel içme kaynağını B004 kapsamına alıyor; yetkili iddia bunun yerine yer ve mastar kullanımını destekler.",
+      "smallest_correction": "Odak sınırındaki kaynak sözünü içme eylemi veya mastar ile değiştirin; komşu ilişkinin türünü ve su teknesi ayrımını koruyun."
+    },
+    {
+      "target_ref": "root_000783/B009",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe, yetkili dal iddiasının boyun uzatmayı dinleme amacıyla da verdiğini söylüyor. bc_001 yalnızca bakmak, bir şeye yukarıdan yönelmek ve yükselmek öğelerini destekler.",
+      "smallest_correction": "Kabul durumunu koruyup gerekçeden dinleme amacını çıkarın; bakma, yukarıdan yönelme ve başı veya boynu kaldırma öğelerini bırakın."
+    },
+    {
+      "target_ref": "root_000783/B009",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F002, duymayı hareketin amaçlarından biri yapıyor; bu ayrıntı yetkili bc_001 ifadesinde yoktur.",
+      "smallest_correction": "Tanımdan duymayı ve F002'den dinlemeyi çıkarın; hareketi görmek veya bir şeye yukarıdan bakmak için başı kaldırıp boynu uzatmakla sınırlayın."
+    },
+    {
+      "target_ref": "root_000783/B009",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet dinlemeyi kaynakların ortak açıkladığı bir bağlam gibi gösteriyor, fakat bc_001 bu amacı kaydetmez.",
+      "smallest_correction": "Özetten dinlemeyi çıkarın ve bakma, yukarıdan yönelme ile başı veya boynu kaldırma ortaklığını koruyun."
+    },
+    {
+      "target_ref": "root_000783/B009",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı dinlemek için boyun uzatmayı çekirdeğe katıyor; yetkili iddia bu amacı desteklemiyor.",
+      "smallest_correction": "Karşılığı bakmak veya bir şeye yukarıdan yönelmek için boynunu uzatmakla sınırlandırın ve hata profilinden dinleme iddiasını çıkarın."
+    },
+    {
+      "target_ref": "root_000783/B009",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bağlamsal karşılığın kayıp açıklaması, dinleme amacını dalın kanıtlanmış bir yüzü sayıyor.",
+      "smallest_correction": "İlk karşılığın hata profilinden dinleme kaybını çıkarın ve uyum derecesini düzeltilmiş bakma çekirdeğine göre ayarlayın."
+    },
+    {
+      "target_ref": "root_000783/B009",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu ayrımının odak ve sonuç cümleleri duymayı B009'un ayırt edici amacı olarak kullanıyor; bc_001 yalnızca görmeye ve yükselerek yönelmeye dayanak verir.",
+      "smallest_correction": "Odak ve ayrım cümlelerinden duymayı çıkarın; bakma amacı ile komşudaki boynu görünür kılma amacı arasındaki karşıtlığı koruyun."
+    },
+    {
+      "target_ref": "root_000783/B014",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanımdaki bu arazideki sözü, ağaç kümesi ve yoğun ağaçlık kullanımlarını zorunlu olarak yumuşak, sürekli yeşil ve suya doymuş araziye bağlıyor. Kanıt bunları ayrı adlandırma seçenekleri olarak verir.",
+      "smallest_correction": "Tanımdan bu arazideki bağlantısını çıkarın ve yumuşak nemli araziyi, belirgin ağaç kümesini ve çok ağaçlı araziyi bağımsız seçenekler olarak sıralayın."
+    }
+  ]
+}

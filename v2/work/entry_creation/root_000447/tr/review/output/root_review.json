@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın dal kimlikleri, kapsamları, tanımları, sözlük karşılıkları ve komşu ayrımları kanıtla genel olarak uyumludur. Ancak B001 kaynak sentezi, çoğul biçimin bu köke aidiyeti hakkındaki açık kaynak ayrılığını aktarmamaktadır; bu sınırlı eksiklik onarılmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_000447/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, çoğul biçimi bazı tanıklıklarda korku anlamındaki tekilin çoğulu olarak verirken başka bir tanıklığın onu bu kök bölümüne ait saymadığını açıkça bildirir. Mevcut ortak özet yalnızca paylaşılan korku çekirdeğini aktarıyor ve bu kaynak ayrılığını bütünüyle atlıyor.",
+      "smallest_correction": "B001 source_synthesis.common_summary alanına, kaynakların çoğul biçimin bu kök altında değerlendirilmesi konusunda ayrıldığını kaynak kodu belirtmeden söyleyen tek bir cümle ekleyin; diğer source_synthesis alanlarını değiştirmeyin."
+    }
+  ]
+}

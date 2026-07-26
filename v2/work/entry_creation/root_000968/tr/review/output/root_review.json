@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "B001 dalında iki sınırlı düzeltme gereklidir: kimlik gerekçesindeki ettirgen yön doğru adlandırılmalı, ayrıca genel susuzluk çekirdeğini paylaşan iki komşuyla ilişki, yalnız bağımlı türetim farkları yüzünden kısmi sayılmamalıdır. Diğer dalların kimlik, kapsam, kavram, kaynak, karşılık ve komşu sınırları verilen kanıtla uyumludur.",
+  "issues": [
+    {
+      "target_ref": "root_000968/B001",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe, kaynakların ettirgen kullanımı \"susatılma\" diye verdiğini söylüyor; oysa kanıttaki ettirgen biçim birini susatmayı, yani susuzluğu başkasında meydana getirmeyi bildirir.",
+      "smallest_correction": "Kimlik gerekçesindeki \"susatılma\" sözünü \"susatma\" olarak değiştirin; gerekçenin kalanını koruyun."
+    },
+    {
+      "target_ref": "root_000968/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_000853/B006 ve root_000274/B007 komşularının kanıt kartlarında çekirdek anlam genel susuzluktur ve odak dalının çekirdeğiyle örtüşür. Mevcut satırlar, susatma, kişi nitelemesi veya tek seferlik susama gibi bağımlı türetim ve görünüm farklarını çekirdek sınırı farkı sayarak ilişkiyi \"near_synonym\" ve \"partial\" olarak gösteriyor.",
+      "smallest_correction": "Bu iki komşu satırında ilişkiyi \"synonym\" ve sınır eşleşmesini \"exact\" yapın; odak ve komşuya özgü metinlerde yalnız ayrıca tanıklanan bağımlı türetimleri belirtin ve ayrım metnini bu türetim farklarının ortak genel susuzluk çekirdeğini değiştirmediğini söyleyecek biçimde düzeltin."
+    }
+  ]
+}

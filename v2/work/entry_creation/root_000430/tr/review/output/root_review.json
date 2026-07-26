@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtı ve dal sınırlarını doğru koruyor. Ancak B004 kavram karşılığı topluluğun başkalarından ayrılması kullanımını dışarıda bırakıyor; B006 ise yalnız Tanrı'nın seçip kendine ayırmasını bildiren kanıtı herhangi bir seçen tarafa genişletiyor. Bu üç sınırlı alan düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000430/B004",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı F003 yüzünü de üstlendiği halde yalnız bir şeyi birine ayırmayı anlatıyor. Kanıt, bir topluluğun ötekilerden ayrılıp kendi başına kalmasını da dalın kurucu kullanımları arasında veriyor.",
+      "smallest_correction": "Kavram karşılığının metnini, uygulanabilirlik açıklamasını ve hata profilini hem bir şeyi belirli tarafa özgülemeyi hem de bir topluluğun başkalarından ayrılmasını açıkça koruyacak biçimde dar kapsamlı olarak güncelle."
+    },
+    {
+      "target_ref": "root_000430/B006",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, seçilmiş kişileri ve Tanrı'nın onları yalnız kendisine ayırmasını bildiriyor. Tanım ile F001 ve F002 ise seçen tarafı herhangi bir kişi veya taraf olabilecek biçimde genelleştiriyor; Tanrı'yı yalnız bir uzmanlaşma yüzüne indiriyor.",
+      "smallest_correction": "Tanımı ve ilgili yüz ifadelerini, seçen ve kendine ayıran tarafın Tanrı olduğunu çekirdekte açıkça belirtecek biçimde düzelt; mevcut yüz kimliklerini ve kanıt bağlarını koru."
+    },
+    {
+      "target_ref": "root_000430/B006",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığındaki genel 'seçip yalnız kendine ayırma' anlatımı, kanıtın Tanrı'nın belirli kişileri seçip kendisine ayırmasıyla sınırlı dinsel katılımcı düzenini herhangi bir seçen tarafa genişletiyor.",
+      "smallest_correction": "Karşılık metnini ve uygulanabilirlik açıklamasını Tanrı'nın belirli kişileri seçip yalnız kendisine ayırmasını açıkça bildirecek şekilde sınırla; hata profilini bu düzeltilmiş kapsama uyumlu tut."
+    }
+  ]
+}

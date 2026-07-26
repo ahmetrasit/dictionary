@@ -1,0 +1,127 @@
+{
+  "verdict": "repair",
+  "summary": "Girdi genel olarak kaynak sınırlarını ve söz kalıbı kapsamlarını koruyor. Bununla birlikte B006'da yalnız yüz kullanımında açık olan su ve gençlik imgesi bütün kullanımların ortak çekirdeğine taşınmış, B008'de ise yalnız bazı aktarımların verdiği anlayış kıtlığı açıklaması bütün kalıplara genellenmiştir. Ayrıca dört dalın kaynak sentezi, kaynaklara özgü ayrıntıları bütün aktarımların ortak görüşü gibi sunmaktadır. Bu alanlarda küçük ve doğrudan düzeltmeler gereklidir.",
+  "issues": [
+    {
+      "target_ref": "root_001458/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, aktarımların bilinen su anlamı ile çoğul ve küçültme biçimlerinde birleştiğini söylüyor; oysa bc_001 içindeki kaynak parçaları bu ayrıntıları farklı dağılımlarla verir ve her aktarım hem çoğulu hem küçültmeyi bildirmez.",
+      "smallest_correction": "Yalnız common_summary metnini, kaynakların su adını ve biçim ailesini farklı ayrıntılarla aktardığını söyleyecek biçimde değiştir; çoğul ve küçültmenin bütün aktarımlarca ortaklaşa verildiği izlenimini kaldır."
+    },
+    {
+      "target_ref": "root_001458/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet aktarımların kuyu ve gemi örneklerinde birleştiğini söylüyor; bc_001 ise gemi örneğini yalnız kaynakların bir bölümünde, kuyu, toprak, gök ve meyve ayrıntılarını da farklı dağılımlarda verir.",
+      "smallest_correction": "Yalnız common_summary metnini, kuyu kullanımının birden çok aktarımda yer aldığını ve gemi, toprak, gök ile meyve kullanımlarının kaynaklar arasında dağıldığını belirten kaynak-yansız bir özetle değiştir."
+    },
+    {
+      "target_ref": "root_001458/B005",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet bütün aktarımların alttaki metalin başka olduğunu açık tuttuğunu söylüyor; bc_001 içinde bakır veya demir altlık ayrıntısını açıkça yalnız bir aktarım verir, yanıltma uzantısı da kaynakların tamamında bulunmaz.",
+      "smallest_correction": "Yalnız common_summary metnini değiştir: altın veya gümüş kaplamayı ortak nokta olarak koru, başka metal altlık ayrıntısı ile yanıltma uzantısını kaynaklar arasında değişen ek bilgiler olarak sun."
+    },
+    {
+      "target_ref": "root_001458/B006",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe yüz, söz, hayvan varlığı ve üzüm kullanımlarını aynı su benzetmeli görünüş alanında topluyor. bc_001 su ve gençlik imgesini yüz için açıklar; söz için güzellik ve tatlılık, üzüm için olgunluk ve renk, hayvan varlığı için semirme verir, fakat bu son üç kullanımı su benzetmesi diye nitelemez.",
+      "smallest_correction": "qualified durumunu koru; rationale ve boundary_note içinde su benzetmesini yalnız yüz kullanımına bağla, öteki kullanımları aynı biçim ailesinin ayrı söz kalıpları olarak belirt ve bütün dal için ortak bir su benzetmesi ileri sürme."
+    },
+    {
+      "target_ref": "root_001458/B006",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım bütün gerçekleşmeleri suya benzetilen canlı bir görünüşün türleri olarak sunuyor. bc_001 bu ortak çekirdeği desteklemez; yalnız yüz kullanımında su ve gençlik görünüşü vardır, diğer kalıplar doğrudan söz tatlılığı, üzüm olgunluğu ve renk güzelliği ile hayvan varlığının semirmesini bildirir.",
+      "smallest_correction": "Yalnız definition metnindeki ortak su benzetmesi iddiasını kaldır ve belirtilen kalıpları kaynakta verilen ayrı gerçekleşmeler olarak sırala; mevcut facet ayrımlarını koru."
+    },
+    {
+      "target_ref": "root_001458/B006",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı bütün dalı su gibi canlı güzellik kazanma çerçevesine sokuyor. bc_001 söz, üzüm ve hayvan varlığı kullanımlarında böyle bir benzetme kurmadan sırasıyla güzellik ve tatlılık, olgunluk ve renk güzelliği, semirme anlamlarını verir.",
+      "smallest_correction": "text alanını, söz kalıbına bağlı yüz gençliği ve güzelliği, söz tatlılığı, üzüm olgunluğu ile hayvan varlığının semirmesini genellemeden sıralayan bir karşılıkla değiştir; error_profile.preserves metninden ortak su benzetmesi iddiasını çıkar."
+    },
+    {
+      "target_ref": "root_001458/B007",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet bütün aktarımların ayna anlamını suyla ilişkilendirdiğini söylüyor. bc_001 iki aktarımda ayna anlamını verir, fakat suyla ilişkilendirme yalnız birinde, kaya kristali anlamı ise yalnız ötekinde yer alır.",
+      "smallest_correction": "Yalnız common_summary metnini değiştir: ayna anlamını ortak nokta olarak ver, suyla ilişkilendirme ile kaya kristali anlamını kaynaklar arasında değişen ayrı ayrıntılar olarak belirt."
+    },
+    {
+      "target_ref": "root_001458/B008",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe kaynak ifadesinin verilen kalıbı anlayışı kıt ve ağır kişi nitelemesi olarak açıkladığını bütün aktarımlar için ileri sürüyor. bc_001 içindeki iki aktarım bu açıklamayı verirken bir aktarım yalnız gönül suyunun çokluğunu bildirir.",
+      "smallest_correction": "accepted durumunu koru; rationale metninde bütün aktarımların gönül suyunun çokluğu kalıbında birleştiğini, anlayış kıtlığı açıklamasını ise yalnız aktarımların bir bölümünün verdiğini açıkça belirt."
+    },
+    {
+      "target_ref": "root_001458/B008",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve facet düzeni anlayış kıtlığını bütün belirtilen kalıpların çekirdeği yapıyor. bc_001 bütün kaynaklarda gönülde su çokluğu ifadesini destekler, fakat bunun anlayış kıtlığı anlamına geldiğini yalnız iki kaynak parçası açıklar.",
+      "smallest_correction": "definition metninde ortak çekirdeği gönülde su çokluğuyla kurulan erkek nitelemesi yap ve anlayış kıtlığını bazı aktarımların açıklaması olarak sınırla; F001'i bu ortak kalıp, F002'yi anlayış kıtlığı açıklaması olacak biçimde en küçük rol ve statement değişiklikleriyle düzelt."
+    },
+    {
+      "target_ref": "root_001458/B008",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet bütün aktarımların gönül suyu kalıbını anlayış ve kavrayış ağırlığı için kullandığını söylüyor; bc_001 içindeki bir aktarım bu kalıbı verirken anlayış kıtlığı yorumunu vermez.",
+      "smallest_correction": "Yalnız common_summary metnini, gönülde su çokluğu kalıbını ortak bilgi, anlayış kıtlığı açıklamasını ise aktarımların bir bölümüne ait bilgi olarak sunacak biçimde değiştir."
+    },
+    {
+      "target_ref": "root_001458/B008",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı anlayış kıtlığı ve ağırlığı bütün dalın ortak anlamı olarak veriyor. bc_001 içindeki bir kaynak parçası yalnız gönül suyunun çok olduğu erkek nitelemesini destekler ve bu yorumu eklemez.",
+      "smallest_correction": "text alanını ortak gönül suyu kalıbını önceleyen ve anlayış kıtlığını bazı aktarımlarla sınırlayan bir karşılıkla değiştir; applicability ve error_profile.preserves metinlerini de aynı kaynak dağılımını yansıtacak kadar düzelt."
+    }
+  ]
+}

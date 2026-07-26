@@ -1,0 +1,27 @@
+{
+  "inputs_sha256": "745ca0549a24d6dfd9a238fb541fbb1bf405b41e579efe20605028cb297fe037",
+  "verdict": "editorial_review",
+  "summary": "Yazar yaniti genel olarak kanitla uyumludur; ancak B001 kaynak sentezi acik bir kaynak ayriligini atliyor ve kok profili nedensellik iliskisini karsilik iliskisine donusturuyor. Bu iki nokta yayindan once sinirli bir editor duzeltmesi gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_000607/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak sentezi, erhene biciminin kabul edilebilirligi konusundaki acik ayriligi hic kaydetmiyor. Kanitta bir aktarim bu bicimi temel fiille esdeger sayarken baska bir aktarim onu reddediyor; mevcut ortak ozet butun kullanimlari tartismasiz bir cerceve gibi sunuyor.",
+      "smallest_correction": "Ortak ozete, ettirgen erhene biciminin bazi aktarımlarda kabul edilip bazilarinda reddedildigini kaynak-yansiz bicimde belirten tek bir cumle ekleyin; diger sentez alanlarini degistirmeyin."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Profildeki 'hak veya neden karsiliginda' sozu, bir seyin hak ya da baska bir neden yuzunden tutulmasini alisveris veya bedel karsiligi tutulma gibi gosteriyor. Kanittaki iliski karsilik degil, nedensellik ve baglilik iliskisidir.",
+      "smallest_correction": "Ozette 'hak veya neden karsiliginda' ifadesini 'bir hak veya baska bir neden dolayisiyla' olarak degistirin; profilin kalanini koruyun."
+    }
+  ]
+}

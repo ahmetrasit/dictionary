@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "B001 dalında kaynakların ortak çekirdeği düz arazidir; pürüzsüzlük yalnız bir kaynakta açıkça bulunan daha dar bir niteliktir. Yazar yanıtı bu niteliği ortak ve zorunlu çekirdeğe yükselttiği için kimlik yargısı, kavram haritası, kaynak sentezi ve kavram karşılığı sınırlı biçimde düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000870/B001",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesindeki üç tanım düz arazi üzerinde birleşir; pürüzsüzlük yalnızca bir tanımda açıkça yer alır. Buna karşın kabul yargısı geçici çerçevedeki düz ve pürüzsüz araziyi bütünüyle ortak kimlik olarak onaylar.",
+      "smallest_correction": "Durumu qualified yap ve gerekçede ortak çekirdeğin düz arazi, pürüzsüz açık kır görünümünün ise kaynaklardan birindeki daha dar gerçekleşme olduğunu belirt."
+    },
+    {
+      "target_ref": "root_000870/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ile F002 pürüzsüzlüğü zorunlu çekirdek sayar; oysa kaynakların ikisi yalnız düz araziyi bildirir, pürüzsüzlük ise diğer kaynağın düz ve açık kır tasvirine bağlıdır.",
+      "smallest_correction": "Tanımı düz arazi çekirdeğiyle kur; F001'i core olarak koru, pürüzsüzlüğü F002'de specialization yap ve F003'teki açık kır gerçekleşmesiyle uyumlu biçimde sun."
+    },
+    {
+      "target_ref": "root_000870/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet pürüzsüz yüzeyi ortak anlatım gibi sunarken kaynakların ortak paydası yalnız düz arazidir; ayrıca tek sıra görünümü benzetmesi sentezde aktarılmaz.",
+      "smallest_correction": "Ortak özeti, kaynakların düz arazide birleştiğini; pürüzsüz açık kır tasviri ile tek sıra görünümü benzetmesinin kaynaklardaki ayrı ayrıntılar olduğunu belirtecek biçimde düzelt."
+    },
+    {
+      "target_ref": "root_000870/B001",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı pürüzsüzlüğü zorunlu kılar ve yalnız düz arazi olarak tanımlanan kaynak kullanımlarını dışarıda bırakır.",
+      "smallest_correction": "Kavram karşılığını düz arazi olarak daraltmadan ver; pürüzsüzlük bilgisini yalnız uygun bağlamsal karşılıkta koru."
+    }
+  ]
+}

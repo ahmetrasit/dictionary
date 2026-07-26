@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B004 dalındaki bir komşuluk ilişkisi, çekirdek anlamların örtüşmesine karşın dala bağlı yan kullanım gerekçe gösterilerek gereksiz biçimde yakın eş anlamlı düzeyine indirilmiştir. Bu alan dışında yazar yanıtı sağlanan kanıtla uyumludur.",
+  "issues": [
+    {
+      "target_ref": "root_000533/B004",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B004 dalının yalın çekirdeği tekil veya topluluk halinde küçük deve yavrusudur; root_000988/B007 de küçük develeri doğrudan adlandırır. Konuklar için kesme anlamı yalnızca B004 içindeki yapıya bağlı bir yan kullanımdır ve çekirdeklerin olağan kullanımdaki eş değerliğini bozmaz.",
+      "smallest_correction": "root_000988/B007 satırında relation_type değerini synonym, boundary_match değerini exact yapın; focus_only, neighbor_only ve distinction metinlerini çekirdek sınırların eşleştiğini, konuklar için kesme yapısının ise eş anlamlılık derecesini değiştirmeyen bağımlı bir kullanım olduğunu belirtecek kadar daraltın."
+    }
+  ]
+}

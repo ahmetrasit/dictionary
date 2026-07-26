@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak iki dalda sınırlı düzeltme gerekir. B003'te kanıtın belirtmediği dışarıdan bir fail eklenmiş, B013'te ise ayrı kaynak varyantları tek bir bağlamsal anlatımda birleştirilmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_001036/B003",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, dilin tutulup konuşmanın engellenmesini bildirir; başka bir kişinin dışarıdan engelleyen fail olduğunu belirtmez. Gerekçedeki iki katılımcı ve dışarıdan uygulama çerçevesi kanıta ek bir katılımcı yüklemektedir.",
+      "smallest_correction": "Gerekçeyi ve sınır notunu fail bakımından yansızlaştır; kendiliğinden tutulma ile dilin konuşmaktan alıkonması ayrımını koru, fakat ikinci bir kişinin varlığını ileri sürme."
+    },
+    {
+      "target_ref": "root_001036/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve kaynak varyantı, konuşma engelini dışarıdan uygulanan bir eylem olarak kuruyor. Kanıt yalnız dilin tutulmasını veya konuşmaktan alıkonmasını verir ve dış fail belirtmez.",
+      "smallest_correction": "Tanımdaki dışarıdan uygulama ifadesini kaldır ve F002'yi, dilin tutulması ile konuşmaktan alıkonması arasındaki fail bakımından yansız kaynak varyantı olarak yaz."
+    },
+    {
+      "target_ref": "root_001036/B003",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bağlamsal karşılığın uygulanabilirlik açıklaması, bir kişinin başka birinin konuşmasını engellediğini söylüyor; kanıtta bu iki ayrı kişi ilişkisi yoktur.",
+      "smallest_correction": "Karşılığı ve açıklamasını, kişinin dilini tutması veya dilin konuşmaktan alıkonması biçiminde ikinci bir fail varsaymadan ifade et."
+    },
+    {
+      "target_ref": "root_001036/B013",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt bir kaynakta göçebe kadınların kullandığı giysiyi, başka tanıklıklarda kırmızı giysi ve desenli dokuma varyantlarını ayrı ayrı verir. Bağlamsal karşılık bunları göçebe kadınların giydiği kırmızı dokuma olarak tek nesnede birleştiriyor.",
+      "smallest_correction": "Bağlamsal karşılığı yalnız göçebe kadınların kullandığı giysi olarak yaz; renk ve dokuma niteliklerini bu bağlama ekleme."
+    }
+  ]
+}

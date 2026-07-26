@@ -1,0 +1,50 @@
+{
+  "verdict": "editorial_review",
+  "summary": "Yanıtın dal ayrımları ve sözlükselleşme kapsamları genel olarak kanıtla uyumludur; ancak B001'de kaynaklara özgü nitelikler çekirdek kavram karşılığında birlikte zorunluymuş gibi birleştirilmiş ve bir sözlük biriminin adlandırma seçeneği atlanmıştır. B004'te ise iki ayrı kaynak kullanımı arasında kanıtın kurmadığı bir uzmanlaşma ilişkisi kurulmuştur. Bu görev yalnızca inceleme çıktısını değiştirmeye izin verdiğinden düzeltmeler yazar çıktısına uygulanmamıştır.",
+  "issues": [
+    {
+      "target_ref": "root_000731/B001",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı tatlılık, duruluk, serinlik ve hızlı akışı tek bir suyun birlikte taşıdığı çekirdek özellikler gibi sunuyor. Oysa kanıtta serinlik yalnızca bir aktarım seçeneği, hızlı akış ise özellikle Selsebil anlatımının bir yönüdür; bütün bu nitelikler dalın her kullanımında birlikte bulunmaz.",
+      "smallest_correction": "Kavram karşılığını boğazdan kolay geçme veya kolay akma çekirdeği etrafında kurun; tatlılık ve duruluğu yaygın nitelikler, serinlik ile hızlı akışı ise kullanıma bağlı seçenekler olarak ayırın ve hata profilini buna göre güncelleyin."
+    },
+    {
+      "target_ref": "root_000731/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_006"
+      ],
+      "evidence_conflict": "lu_006 için verilen karşılık kolay içilen veya hızlı akan suyu ve genel bir pınarı kapsıyor, fakat kanıttaki 'cennetteki bir pınarın adı' seçeneğini adlandırma olarak yansıtmıyor. Genel 'hızlı akan pınar' ifadesi özel ad olasılığının yerini tutmaz.",
+      "smallest_correction": "lu_006 hedef karşılığına ayrı bir seçenek olarak 'cennetteki bir pınarın adı' ifadesini ekleyin; mevcut kolay içim ve hızlı akış karşılıklarını koruyun."
+    },
+    {
+      "target_ref": "root_000731/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım kılıç yüzeyindeki parıltıyı genel kararsız hareketin görünümüne dayanan bir kullanım olarak türetiyor. Kanıt ise bir kaynakta şeyin tedirgin ya da tekrarlı hareketini, diğerinde kılıç yüzeyinin parıltısı ve onun ilerleyişini ayrı kayıtlar olarak verir; aralarında türetme ilişkisi kurmaz.",
+      "smallest_correction": "İlk cümlede genel tedirgin veya tekrarlı hareketi koruyun; ikinci cümlede kılıç yüzeyindeki ilerleyen parıltıyı bu hareketten türetmeden ayrı bir ilişkili kullanım olarak belirtin."
+    },
+    {
+      "target_ref": "root_000731/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kılıç parıltısını kararsız hareketin görsel uzmanlaşması sayarak iki kaynak ayrıntısını tek bir ortak anlam ilişkisine dönüştürüyor. Sağlanan kaynak ifadesi bu uzmanlaşma bağını desteklemez.",
+      "smallest_correction": "Ortak özeti, kaynakların tekrarlı veya tedirgin hareket ile kılıç yüzeyindeki ilerleyen parıltı kullanımlarını kaydettiğini söyleyen tarafsız bir birleşim olarak yeniden kurun; parıltıyı hareketin uzmanlaşması olarak nitelemeyin."
+    }
+  ]
+}

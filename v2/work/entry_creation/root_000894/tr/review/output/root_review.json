@@ -1,0 +1,105 @@
+{
+  "verdict": "repair",
+  "summary": "B005 dalında Hüzeyl diline özgü olma kaydı belirsiz bir yöresellik ifadesine indirgenmiş; B007 dalında ise kaynakta açıkça Ramazan olarak belirlenen zaman kullanımı genel bir oruç ayına dönüştürülmüştür. Bu iki yüksek güvenli anlam kaybı, ilgili alanlarda küçük ve doğrudan düzeltmeler gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_000894/B005",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt ağacın adını açıkça Hüzeyl diline bağlarken tanım ve çekirdek yüzü yalnızca kimliği belirsiz bir yöresel söyleyişten söz ediyor; böylece kaynakta verilen özgül dil kaydı kayboluyor.",
+      "smallest_correction": "Tanımda ve F001 çekirdek ifadesinde belirsiz yöresellik yerine ağacın Hüzeyl dilindeki adı olduğunu belirt."
+    },
+    {
+      "target_ref": "root_000894/B005",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, iki kaynağın açıkça verdiği Hüzeyl dili sınırlamasını yalnızca belirli bir yöresel söyleyiş diye aktarıyor ve ayırt edici kaynak ayrıntısını yayıma taşımıyor.",
+      "smallest_correction": "Ortak özette ağaç adının Hüzeyl dilinde kullanıldığını açıkça yaz; fiil kullanımına ilişkin mevcut ayrı cümleyi koru."
+    },
+    {
+      "target_ref": "root_000894/B005",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_017"
+      ],
+      "evidence_conflict": "lu_017 kanıtı biçimi Hüzeyl dilindeki ağaç adı olarak sınırlar; mevcut karşılık bu özgül kaydı belirsiz bir yöresel söyleyişe çevirir.",
+      "smallest_correction": "lu_017 hedef karşılığını Hüzeyl dilinde kullanılan bir ağaç adı olarak düzelt."
+    },
+    {
+      "target_ref": "root_000894/B007",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak çoğul biçimi doğrudan iki Ramazan diye açıklar. Gerekçe ve sınır notu bunu iki genel oruç ayına çevirerek Ramazan kimliğini siler ve kalışın yalnızca iki aylık kesintisiz bir süre olduğu izlenimini doğurur.",
+      "smallest_correction": "Gerekçe ve sınır notunda kullanımı kaynak örneğindeki iki Ramazan dönemiyle sınırla; tekil biçime ilişkin ihtiyat kaydını koru."
+    },
+    {
+      "target_ref": "root_000894/B007",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve iki yüz, kaynakta açıkça Ramazan olan göndergeden yalnızca ilgili dini ay veya oruç ayı diye söz ediyor. Ayrıca iki oruç ayı boyunca kalma ifadesi, iki Ramazanla sayılan kalış süresini iki aylık bir süreye daraltıyor.",
+      "smallest_correction": "Tanım ile F001 ve F002 ifadelerinde zaman birimini Ramazan veya Ramazan dönemi olarak adlandır; örneği bir yerde iki Ramazan dönemi kalmak biçiminde ver."
+    },
+    {
+      "target_ref": "root_000894/B007",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tek kaynak tanıklığının özeti açık iki Ramazan karşılığını iki genel oruç ayı diye aktarıyor ve kaynağın ayırt edici eşitlemesini korumuyor.",
+      "smallest_correction": "Tek tanıklık özetinde çoğul biçimin iki Ramazan anlamında kullanıldığını belirt."
+    },
+    {
+      "target_ref": "root_000894/B007",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Oruç ayı karşılığı Ramazan dışındaki oruçla ilişkili ayları da kapsayabilecek kadar geniştir; kanıt ise göndergenin Ramazan olduğunu doğrudan bildirir.",
+      "smallest_correction": "Kavram karşılığını Ramazan ayı olarak değiştir ve açıklama ile hata profilini bu özgül göndergede uyumlu hale getir."
+    },
+    {
+      "target_ref": "root_000894/B007",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İki oruç ayı bağlamsal karşılığı, kaynakta verilen iki Ramazan kimliğini genelleştirir ve kalışı yalnızca iki aylık süre gibi okumaya açıktır.",
+      "smallest_correction": "Bağlamsal karşılığı iki Ramazan dönemi olarak değiştir ve uygulanabilirlik metnini aynı süre sayımına göre düzelt."
+    },
+    {
+      "target_ref": "root_000894/B007",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_020"
+      ],
+      "evidence_conflict": "lu_020 kanıtı çoğul biçimin anlamını doğrudan iki Ramazan olarak verir; mevcut iki oruç ayı karşılığı bu özgül eşdeğeri korumaz.",
+      "smallest_correction": "lu_020 hedef karşılığını iki Ramazan olarak değiştir."
+    }
+  ]
+}

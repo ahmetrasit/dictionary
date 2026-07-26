@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Genel olarak sekiz dal kanıtla uyumludur. Ancak B005 için yayımlanan komşu ilişkisinde, komşu dalın ek ad kapsamı göz ardı edilerek tam eş anlamlılık kurulmuştur; bu sınırlandırılmış alan düzeltildiğinde kayıt yayıma uygundur.",
+  "issues": [
+    {
+      "target_ref": "root_001131/B005",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Odak dal yalnızca devekuşunun dışkısını atma eylemini kapsar. Komşu kartı ise aynı eylemin yanında devekuşu dışkısını adlandıran bir ad kullanımını da kapsar. Bu ek ad kapsamı nedeniyle synonym ve exact değerleri, dalların bütün sınırlarında ikame edilebilirlik bulunduğunu yanlış bildirir.",
+      "smallest_correction": "İlişkiyi near_synonym ve partial olarak değiştirin. neighbor_only alanında komşu dalın ayrıca devekuşu dışkısını adlandıran bir ad kullanımını kapsadığını belirtin; distinction alanını da eylem anlamındaki örtüşmeye karşı komşunun ek ad kapsamını açıklayacak biçimde güncelleyin."
+    }
+  ]
+}

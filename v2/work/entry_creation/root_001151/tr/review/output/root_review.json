@@ -1,0 +1,61 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dal kimliklerini, sözlükselleşme kapsamlarını ve temel anlam ayrımlarını genel olarak doğru kuruyor. Bununla birlikte bir sözlüksel karşılık kanıtta bulunmayan çeviklik anlamını ekliyor; yara dalında kaynakta verilmeyen bir zaman sırası iki alana taşınıyor; irinli yara komşusunun dışarı irin çıkışını da kapsayan sınırı daraltılıyor; bir hayvan komşusunun karşılığı ise bütün göndergeleri genç ve hafif yapılı gösteriyor. Bu sınırlı alanlar en küçük düzeltmelerle onarılmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001151/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_008"
+      ],
+      "evidence_conflict": "lu_008 yalnızca kişinin veya niteliğin hafif olduğunu bildirir; \"hafif veya çevik kimse\" karşılığındaki \"çevik\" anlamı kanıtta yer almaz.",
+      "smallest_correction": "lu_008 target_gloss değerini \"hafif kimse\" olarak değiştirin."
+    },
+    {
+      "target_ref": "root_001151/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak yaranın nemlenmesini ve içindekinin akmasını birlikte verir, fakat bunlar arasında önce-sonra sırası kurmaz. F001 içindeki \"önce\" sözü kanıtsız bir zaman sırası ekler.",
+      "smallest_correction": "F001 ifadesini \"Yara nemli ve sızıntılı bir duruma gelir.\" biçiminde değiştirin."
+    },
+    {
+      "target_ref": "root_001151/B002",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "\"yara akıntı yaptı\" karşılığının loses alanı nemlenmenin akıştan önce bulunabileceğini söylüyor; kaynak yalnızca nemlenme ile akışı birlikte bildiriyor ve böyle bir zaman sırasını desteklemiyor.",
+      "smallest_correction": "İlgili loses değerini \"Nemlenme yönünü belirgin biçimde anlatmaz.\" olarak değiştirin."
+    },
+    {
+      "target_ref": "root_001151/B002",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_001407/B007 sınırı irinin yaradan çıkmasını veya yarada birikmesini kapsar. Yazarın neighbor_only ve distinction metinleri komşuyu yalnız yaranın içinde irin oluşup kalmasına indirerek dışarı çıkma seçeneğini siliyor.",
+      "smallest_correction": "root_001407/B007 satırında neighbor_only alanını irinin çıkmasını veya birikmesini kapsayacak biçimde düzeltin; distinction alanında ayrımı içeri-dışarı yönüne değil, odak dalın genel yara içeriğine karşı komşunun özellikle irin ve uzayan irin sürecine dayanmasına bağlayın."
+    },
+    {
+      "target_ref": "root_001151/B003",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_001030/B004 ceylan yavrusu, yaban ineği yavrusu, erkek ceylanlar ve bir rivayette hafif eşek gibi değişken göndergeler içerir. \"hafif yapılı genç hayvan\" karşılığı bu göndergelerin tümüne kanıtsız biçimde gençlik ve hafiflik yükler.",
+      "smallest_correction": "root_001030/B004 satırındaki gloss değerini \"çeşitli hayvan adları\" olarak değiştirin."
+    }
+  ]
+}

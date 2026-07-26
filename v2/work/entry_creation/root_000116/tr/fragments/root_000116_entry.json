@@ -1,5 +1,5 @@
 {
-  "inputs_sha256": "73365f69ac4de9ca60c0177fa80ff08473ad020b5b8d880f159651f90cd14976",
+  "inputs_sha256": "4aee462442426240b9eaba99b9352f9c44712f5c56df2a995bcd08b2a650041e",
   "artifact_format": "dictionary-v2-root-entry-draft-v1",
   "generated_by": "v2/scripts/accept_root_writer.py",
   "root_envelope_id": "root_000116",
@@ -7,47 +7,51 @@
   "branches": [
     {
       "branch_ref": "root_000116/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, bir şeyi enine ya da başka bir yönde uzatmayı; yayma, genişletme ve yere serilme görünümleriyle birlikte, toplamanın karşıtı olarak verir. Sağlanan dal çerçevesi bu fiziksel çekirdeği doğru yansıtır.",
+        "boundary_note": "Anlam, soyut genişlikten ya da belirli el hareketlerinden önce bir şeyin fiziksel olarak yayılıp uzamasıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın dalı kapsar; araziye, ele veya başka bir kalıba özgü anlamları buraya taşımaz."
+      },
       "concept_map": {
-        "definition": "Bir şeyi kapalı ya da toplanmış durumdan çıkararak yaymak, uzatmak veya genişletmek; şeyin yere doğru açılıp yayılması da bu çekirdeğe girer.",
+        "definition": "Bir şeyi toplanmış ya da kapalı durumdan çıkarıp bir veya birden çok yönde yaymak, uzatmak ve kapladığı alanı genişletmek; ayrıca şeyin bu biçimde yere yayılmasıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Temel hareket, bir şeyi yayarak boyutunu ya da kapladığı alanı artırmaktır.",
+            "statement": "Bir şeyi toplamanın karşıtı olacak biçimde yayma, uzatma ve genişletme işlemi temel anlamdır.",
             "claim_ids": [
-              "lu_001",
-              "lu_002"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Şeyin yere doğru kendiliğinden uzanıp yayılması ve aynı eylemin sesçe değişmiş bir söyleyişi de bu kapsamdadır.",
+            "role": "extension",
+            "statement": "Bir şeyin yere yayılarak uzanmış durumda bulunması aynı fiziksel çekirdeğin sonuç görünümüdür.",
             "claim_ids": [
-              "lu_003",
-              "lu_004"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar yayma, uzatma ve genişletmeyi ortak çekirdek sayar; bunu sıkıp toplamanın karşıtı olarak gösterir. Yere yayılma ve sesçe değişmiş söyleyiş de aynı anlam alanında yer alır.",
+        "common_summary": "Kaynaklar, yayma ve uzatma çekirdeğinde birleşir; toplamanın karşıtlığı ile yere yayılma bu çekirdeğin işlem ve sonuç yönlerini belirginleştirir.",
         "common_claim_ids": [
-          "lu_001",
-          "lu_002",
-          "lu_003",
-          "lu_004"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "yaymak ve genişletmek",
-        "applicability": "Bir şeyin açılarak uzatıldığı, yayıldığı veya kapladığı alanın büyütüldüğü genel durumlarda kullanılır.",
+        "text": "yaymak ve uzatmak",
+        "applicability": "Bir şeyin fiziksel olarak açılıp alan kaplayacak biçimde uzatıldığı yalın kullanımların tamamında uygundur.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Yayma, uzatma ve alanı genişletme çekirdeğinin tümünü korur.",
+          "preserves": "Yayma işlemini, yönlü uzamayı ve alanın genişlemesini birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -59,17 +63,18 @@
       },
       "contextual_glosses": [
         {
-          "text": "yere serilip yayılmak",
+          "text": "yere sermek",
           "usage_role": "contextual",
-          "applicability": "Öznenin bir yüzey üzerinde uzanıp yayıldığı geçişsiz kullanım için uygundur.",
+          "applicability": "Nesnenin özellikle yer üzerinde açılıp yayılması anlatıldığında doğal bir karşılıktır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Yere doğru uzanma ve yayılma görünümünü korur.",
-            "loses": "Bir başkasının şeyi yayması ve genel genişletme anlamını dışarıda bırakır.",
+            "preserves": "Yayma işlemini ve yer üzerinde uzanan sonuç durumunu korur.",
+            "loses": "Yere bağlı olmayan yönlerdeki genel uzatma ve genişletme kapsamını dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
+            "F001",
             "F002"
           ]
         }
@@ -83,35 +88,36 @@
         {
           "lexical_unit_id": "lu_002",
           "rendering_kind": "ordinary",
-          "target_gloss": "açılma ve uzama; sıkıp toplamanın karşıtı"
+          "target_gloss": "toplamanın karşıtı olan yayılma ve açılma"
         },
         {
           "lexical_unit_id": "lu_003",
           "rendering_kind": "ordinary",
-          "target_gloss": "yere doğru uzanıp yayılmak"
+          "target_gloss": "bir şeyin yere yayılıp uzanması"
         },
         {
           "lexical_unit_id": "lu_004",
           "rendering_kind": "ordinary",
-          "target_gloss": "yaymak; sesçe değişmiş söyleyiş"
+          "target_gloss": "bir şeyi yaymak"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000928/B001",
-          "relation_type": "synonym",
-          "boundary_match": "exact",
-          "focus_only": null,
-          "neighbor_only": null,
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal, yaymayı toplamanın açık karşıtı olarak kurar ve işlemin sonuç durumunu da içerir.",
+          "neighbor_only": "Komşu dal, araziyi ve genel fiziksel genişliği daha açık biçimde kendi kapsamına alır.",
           "gloss": "yayma ve uzatma",
-          "shared_zone": "Her iki dal da bir şeyi yayma, uzatma ve alanını genişletme çekirdeğini taşır.",
-          "distinction": "Verilen sınırlar aynı temel işlemi ve aynı genişleme sonucunu kapsadığından olağan bağlamlarda birbirinin yerine geçebilir."
+          "shared_zone": "Her iki dal da bir şeyin fiziksel olarak yayılması, uzaması ve daha geniş alan kaplaması bölgesinde örtüşür.",
+          "distinction": "Komşu büyük ölçüde aynı fiziksel hareket alanındadır; ancak arazi ve genişlik kapsamı daha belirgindir. Odak dalın sınırı ise toplamanın karşıtı olan yayma işlemine dayanır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; yalnızca çekirdek ve sınırları tam örtüşen en yararlı eş anlamlı ilişki yayımlandı.",
+      "neighbor_coverage_note": "Adayların tümü karşılaştırıldı; en güçlü anlam örtüşmesini gösteren komşu yayımlandı, diğerleri yön, alan veya ayrı dal uzmanlaşmaları nedeniyle ek açıklama sağlamadı.",
       "branch_image_ar": "النشر والامتداد ضد القبض",
       "what_is_ar": "يدخل فيه بسط الشيء ونشره وتوسيعه وانبساطه على الأرض وكون الشيء مبسوطا",
+      "what_is_not_ar": "لا يدخل فيه خصوص الأرض الواسعة ولا السعة المعنوية ولا مد اليد لمعنى مخصوص إلا بقرينة",
       "source_phrase_ar": "أصل واحد وهو امتداد الشيء في عرض أو غير عرض (maqayis)؛ البسط نقيض القبض (ayn)؛ بسط الشيء نشره وانبسط الشيء على الأرض (sihah)؛ البسط نقيض القبض (tahdhib)؛ بسط الشيء نشره وتوسيعه (mufradat)",
       "sources": [
         "MQ",
@@ -124,47 +130,51 @@
     },
     {
       "branch_ref": "root_000116/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi hem yere serilen eşyayı hem de serilmiş gibi geniş, düz araziyi adlandırır. Dal çerçevesi bu iki bağlı gerçekleşimi korur ve soyut genişlik ya da bileşiksizlik anlamlarını haklı olarak dışarıda bırakır.",
+        "boundary_note": "Çekirdek, serilmiş nesne ile seriliş benzerliği taşıyan geniş ve düz arazi arasındadır; genel genişlik tek başına yeterli değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım yalın adlandırmaları ve yer bildiren kalıpları ayrı görünümler olarak tutar; kalıba bağlı düzlük anlamını her kullanıma yaymaz."
+      },
       "concept_map": {
-        "definition": "Yere serilen bir örtü ya da onun gibi genişçe yayılmış, düz ve açık arazi veya yer.",
+        "definition": "Yere serilen bir yaygı veya serilmiş bir yüzey gibi geniş ve düz uzanan arazi ya da yerdir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Çekirdek, serilmiş bir nesneyi ve ona benzer biçimde genişçe yayılmış yeri birlikte kapsar.",
+            "statement": "Yere serilen ve yüzey kaplayan eşya, dalın somut nesne çekirdeğini oluşturur.",
             "claim_ids": [
-              "lu_005",
-              "lu_006",
-              "lu_007"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Arazi kullanımında yüzeyin düz ve çıkıntısız olması özellikle belirtilir.",
+            "role": "extension",
+            "statement": "Geniş, düz ve yayılmış görünüşlü arazi, serili nesne imgesinden gelişen yer anlamıdır.",
             "claim_ids": [
-              "lu_008"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynakların ortak çizgisi, yere serilen eşya ile genişçe yayılmış arazi arasındaki biçim benzerliğidir. Yer için genişlik, düzlük ve çıkıntısızlık öne çıkar.",
+        "common_summary": "Kaynaklar serilen eşya ile geniş ve düz araziyi aynı yayılmış yüzey imgesinde birleştirir; düzlük ve genişlik yer kullanımının sınırlarıdır.",
         "common_claim_ids": [
-          "lu_005",
-          "lu_006",
-          "lu_007",
-          "lu_008"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "sergi ya da geniş düz yer",
-        "applicability": "Hem yere yayılan eşya hem de geniş, yayılmış ve düz yer anlamlarını birlikte temsil eder.",
+        "text": "yaygı; geniş ve düz arazi",
+        "applicability": "Hem serilen eşyayı hem de ona benzetilen geniş, düz yer yüzeyini birlikte temsil eden üst karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Serilmiş nesne ile geniş ve düz arazi arasındaki ortak biçimi korur.",
+          "preserves": "Serilen nesne ile geniş ve düz arazi arasındaki iki bağlı anlamı korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -176,18 +186,17 @@
       },
       "contextual_glosses": [
         {
-          "text": "geniş ve düz arazi",
+          "text": "geniş ve düz yer",
           "usage_role": "contextual",
-          "applicability": "Söz konusu olan yayılmış, düz veya çıkıntısız bir yeryüzü parçasıysa kullanılır.",
+          "applicability": "Arazi veya mekanın yayılmış, geniş ve çıkıntısız görünümü söz konusu olduğunda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Genişlik, yayılmışlık ve düzlük özelliklerini korur.",
-            "loses": "Yere serilen eşya anlamını dışarıda bırakır.",
+            "preserves": "Arazi görünümündeki genişlik, düzlük ve yayılmış yüzey özelliklerini korur.",
+            "loses": "Yere serilen eşya anlamını karşılamaz.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001",
             "F002"
           ]
         }
@@ -196,22 +205,22 @@
         {
           "lexical_unit_id": "lu_005",
           "rendering_kind": "ordinary",
-          "target_gloss": "sergi; genişçe yayılmış arazi"
+          "target_gloss": "yaygı veya geniş, yayılmış arazi"
         },
         {
           "lexical_unit_id": "lu_006",
           "rendering_kind": "ordinary",
-          "target_gloss": "geniş ve yayılmış arazi"
+          "target_gloss": "yayılmış, geniş arazi"
         },
         {
           "lexical_unit_id": "lu_007",
           "rendering_kind": "ordinary",
-          "target_gloss": "geniş ya da yayılmış yer"
+          "target_gloss": "geniş veya yayılmış yer"
         },
         {
           "lexical_unit_id": "lu_008",
           "rendering_kind": "ordinary",
-          "target_gloss": "çıkıntısız düz arazi"
+          "target_gloss": "çıkıntısız, düz arazi"
         }
       ],
       "excluded_glosses": [],
@@ -220,16 +229,17 @@
           "neighbor_ref": "root_001164/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Yere serilen eşya ile arazi arasındaki biçim benzerliğini de kapsar.",
-          "neighbor_only": "Geniş saha ve dışarı çıkma anlamlarına, serilmiş eşya bağlantısı olmadan da uzanır.",
-          "gloss": "geniş açık alan",
-          "shared_zone": "Her iki dal geniş, açık veya düz bir yeri anlatabilir.",
-          "distinction": "Odak dal serilmiş yüzey imgesini ve sergi anlamını korurken komşu dal daha genel bir açık alan ve saha kavramıdır."
+          "focus_only": "Odak dal, yere serilen eşyayı ve araziyi aynı yayılmış yüzey imgesinde birleştirir.",
+          "neighbor_only": "Komşu dal, açık alan ve avlu gibi geniş mekanları serilmiş eşya ilişkisi olmadan kapsar.",
+          "gloss": "geniş düz alan",
+          "shared_zone": "İki dal geniş veya düz bir yer yüzeyini anlatan mekan kullanımlarında belirgin biçimde örtüşür.",
+          "distinction": "Komşunun çekirdeği açık ve geniş mekandır; odak dalda ise mekan, serilmiş bir yüzey gibi düz ve yaygın oluşuyla adlandırılır ve aynı dal gerçek yaygıyı da kapsar."
         }
       ],
-      "neighbor_coverage_note": "Tüm yer ve yüzey adayları değerlendirildi; serilmiş eşya bağlantısını en iyi açıklayan tek karşılaştırma seçildi.",
+      "neighbor_coverage_note": "Bütün adaylar incelendi; açık ve geniş mekan dalı en yararlı sınır karşılaştırmasını verdi, öteki adaylar yalnız düzlük, sertlik veya arazi türü paylaştı.",
       "branch_image_ar": "الأرض والبساط المبسوط",
       "what_is_ar": "يدخل فيه البساط والبسيطة من الأرض، والمكان البسيط أو البساط، والأرض العريضة الواسعة المستوية، وما يبسط من المتاع",
+      "what_is_not_ar": "لا يدخل فيه السعة المجردة في العلم أو الجسم ولا البسيط بمعنى العروض أو عدم التركيب",
       "source_phrase_ar": "البساط ما يبسط والبساط الأرض وهي البسيطة (maqayis)؛ البسيطة من الأرض كالبساط من المتاع (ayn)؛ البساط ما يبسط والبساط الأرض الواسعة ومكان بسيط وبساط (sihah)؛ البساط الأرض العريضة الواسعة وأرض بساط مستوية لا نبك فيها (tahdhib)؛ البساط اسم لكل مبسوط والله جعل لكم الأرض بساطا (mufradat)",
       "sources": [
         "MQ",
@@ -242,58 +252,59 @@
     },
     {
       "branch_ref": "root_000116/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi genişlik, artış ve başkasına göre üstünlüğü; geçim, beden, erişim, bilgi ve yeterli yatak gibi alanlarda örnekler. Dal çerçevesi fiziksel yaymadan ayrılan bu niceliksel ve niteliksel genişlemeyi doğru kurar.",
+        "boundary_note": "Anlam, bir şeyin yayılma hareketi değil kapasite, miktar, kapsam veya üstünlük bakımından daha geniş ve fazla olmasıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Yalın genişlik ve artış adları ile geçim, bilgi, beden ve yatak kalıpları ayrı tutulur; kalıp örnekleri genel anlamın tamamı sayılmaz."
+      },
       "concept_map": {
-        "definition": "Bir şeyde genişlik, bolluk, artış veya başkasına göre üstünlük bulunması; geçim, bilgi, beden, erişim alanı ve kişiyi alacak yer bu genişliğin özel görünümleridir.",
+        "definition": "Bir şeyin kapasite, miktar, kapsam veya yeterlilik bakımından geniş olması ya da artması; kimi kullanımda başkasına göre üstünlük sağlamasıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Ana anlam, ölçü, miktar ya da yeterlik bakımından genişlik ve artıştır.",
+            "statement": "Kapasite, miktar veya kapsam bakımından genişlik ve artış temel anlamdır.",
             "claim_ids": [
-              "lu_009"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "extension",
-            "statement": "Geçimin çoğalması, bilgi ve beden genişliği, uzun erişim ve kişiyi rahatça alan yatak bu çekirdeğin alanlara uygulanmasıdır.",
+            "statement": "Genişlik, karşılaştırmalı kullanımda fazlalık ve üstünlük olarak gerçekleşebilir.",
             "claim_ids": [
-              "lu_011",
-              "lu_012",
-              "lu_013",
-              "lu_014"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "source_variant",
-            "statement": "Genişlik veya artış anlamı sesçe değişmiş bir söyleyişle de aktarılır.",
+            "role": "example",
+            "statement": "Geçim, beden, erişim, bilgi ve sahibini alacak yatak bu genişliğin farklı uygulama alanlarıdır.",
             "claim_ids": [
-              "lu_010"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar genişlik, artış ve üstünlüğü ortak çekirdek olarak verir. Bu çekirdek geçim bolluğuna, bilgi ve beden kapasitesine, erişim uzunluğuna ve yatağın kişiyi rahatça almasına uygulanır; ayrıca sesçe değişmiş bir söyleyiş kaydedilir.",
+        "common_summary": "Kaynaklar genişlik ve artışta birleşir; üstünlük, bol geçim, geniş beden veya erişim, bilgi ve yeterli yatak bu ortak çekirdeğin alanlara göre gerçekleşimleridir.",
         "common_claim_ids": [
-          "lu_009",
-          "lu_010",
-          "lu_011",
-          "lu_012",
-          "lu_013",
-          "lu_014"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "genişlik ve artış",
-        "applicability": "Miktar, kapasite, beden, bilgi, geçim veya erişim bakımından genişlemeyi anlatan genel kullanımdır.",
+        "text": "genişlik, artış ve üstünlük",
+        "applicability": "Kapasite veya miktar genişliğini, artışı ve karşılaştırmalı fazlalığı birlikte kapsayan genel açıklamadır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Genişlik, artış ve bunların farklı alanlara uygulanmasını korur.",
+          "preserves": "Genişlik, niceliksel artış ve karşılaştırmalı üstünlük bileşenlerini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -306,19 +317,19 @@
       },
       "contextual_glosses": [
         {
-          "text": "bolluk ve kapasite",
+          "text": "bolluk ve genişlik",
           "usage_role": "contextual",
-          "applicability": "Geçim, bilgi, beden ya da bir yerin kişiyi alması gibi yeterlik bağlamlarında uygundur.",
+          "applicability": "Geçim, imkan, kapasite veya bir şeyin sahibine yetmesi bağlamlarında doğal karşılıktır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Miktar ve yeterlik bakımından geniş olma özelliğini korur.",
-            "loses": "Başkalarına göre üstünlük ve salt uzun erişim anlamlarını tam belirtmez.",
+            "preserves": "Miktar ve kapasite bakımından genişlik ile yeterlilik yönünü korur.",
+            "loses": "Karşılaştırmalı üstünlük ve bilgi ya da beden artışı gibi bazı özel alanları açıkça taşımaz.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F001",
-            "F002"
+            "F003"
           ]
         }
       ],
@@ -331,45 +342,46 @@
         {
           "lexical_unit_id": "lu_010",
           "rendering_kind": "ordinary",
-          "target_gloss": "genişlik veya artış anlamındaki söyleyiş çeşidi"
+          "target_gloss": "genişlik veya artış"
         },
         {
           "lexical_unit_id": "lu_011",
           "rendering_kind": "ordinary",
-          "target_gloss": "geçimi genişletip çoğaltmak"
+          "target_gloss": "geçim imkanlarını genişletip çoğaltmak"
         },
         {
           "lexical_unit_id": "lu_012",
           "rendering_kind": "ordinary",
-          "target_gloss": "bilgi ve bedence genişlik ve artış"
+          "target_gloss": "bilgi ve bedende genişlik ve artış"
         },
         {
           "lexical_unit_id": "lu_013",
           "rendering_kind": "ordinary",
-          "target_gloss": "iri yapılı veya erişimi uzun"
+          "target_gloss": "geniş yapılı veya erişimi uzun"
         },
         {
           "lexical_unit_id": "lu_014",
           "rendering_kind": "ordinary",
-          "target_gloss": "kişiyi rahatça alacak geniş yatak"
+          "target_gloss": "sahibini rahatça alacak geniş yatak"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_001693/B014",
+          "neighbor_ref": "root_000959/B004",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Artış, üstünlük, bilgi, beden ve erişim gibi çok sayıda alana uygulanır.",
-          "neighbor_only": "Özellikle yaşam koşulları ile giysinin genişliğine bağlıdır.",
-          "gloss": "genişlik ve ferahlık",
-          "shared_zone": "Her iki dal kapasite veya yaşam alanı bakımından genişliği ifade edebilir.",
-          "distinction": "Odak dal genel artış ve kapasiteyi birçok alana taşırken komşu dal yaşam ve giysi bağlamındaki genişlikle sınırlıdır."
+          "focus_only": "Odak dal, beden, bilgi, erişim ve yatak gibi alanlardaki kapasite artışını da kapsar.",
+          "neighbor_only": "Komşu dal, güç, zenginlik, iyilik ve harcama yeterliği gibi imkan yönlerini özellikle içerir.",
+          "gloss": "genişlik ve imkan",
+          "shared_zone": "Her iki dal kapasite, bolluk, fazlalık ve başkasına göre üstünlük bildiren kullanımlarda örtüşür.",
+          "distinction": "Odak dalın çekirdeği farklı alanlara uygulanabilen genişlik ve artıştır; komşu ise güç, servet ve sağlanan imkan çevresinde daha belirgin bir değer alanı kurar."
         }
       ],
-      "neighbor_coverage_note": "Bütün bolluk, büyüklük ve yeterlik adayları değerlendirildi; kapsam farkını en açık gösteren ilişki yayımlandı.",
+      "neighbor_coverage_note": "Tüm adaylar değerlendirildi; güç ve imkan dalı çekirdeğe en yakın karşılaştırmayı sağladı, diğer adaylar yalnız büyüklük, çokluk, yeterlilik veya belirli alanları paylaştı.",
       "branch_image_ar": "السعة والزيادة والفضل",
       "what_is_ar": "يدخل فيه البسطة بمعنى السعة والزيادة والفضيلة، وبسط الرزق، وبسطة الجسم والباع والعلم، والفراش الذي يسع صاحبه",
+      "what_is_not_ar": "لا يدخل فيه نشر الثوب نفسه ولا الأرض بوصفها بساطا إلا من جهة السعة",
       "source_phrase_ar": "البسطة في كل شيء السعة وهو بسيط الجسم والباع والعلم (maqayis)؛ البسطة الفضيلة على غيرك (ayn)؛ البسطة السعة وفلان بسيط الجسم والباع وفراش يبسطك إذا كان واسعا (sihah)؛ فالبسطة الزيادة وفراش يبسطني إذا كان سابغا (tahdhib)؛ ولو بسط الله الرزق أي وسعه وزاده بسطة أي سعة (mufradat)",
       "sources": [
         "MQ",
@@ -382,77 +394,74 @@
     },
     {
       "branch_ref": "root_000116/B004",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi eli, kolu veya avucu uzatıp serbest bırakmayı; isteme, alma, saldırma ve verme amaçlarıyla sınırlar. Cömertlik bu hareketin bir gerçekleşimidir, dalın tek başına soyut çekirdeği değildir.",
+        "boundary_note": "Bu dal yalnız el, kol veya avucun uzatılıp kullanıldığı kalıplara aittir; genel genişlik ya da salt cömertlik değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım el, kol ve avuçla kurulan kalıplara bağlıdır; buradan yalın kök için bağımsız bir verme veya saldırma anlamı çıkarılmaz."
+      },
       "concept_map": {
-        "definition": "El, avuç ya da kolları istemek, almak, saldırmak veya vermek amacıyla uzatıp serbest bırakmak; vermeye açık el de bu görünümden doğar.",
+        "definition": "El, kol veya avucu bir şeye doğru uzatıp serbestçe kullanmak; bağlama göre isteme, alma, saldırma ya da verme yönelimi taşımaktır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Temel hareket elin veya kolun bir amaca yöneltilerek uzatılması ve serbest bırakılmasıdır.",
+            "statement": "Elin, kolun veya avucun uzatılıp hareket alanına çıkarılması temel fiziksel işlemdir.",
             "claim_ids": [
-              "lu_015"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "extension",
-            "statement": "Vermeye açık el, uzatma hareketinden cömertlik ve harcama eğilimine aktarılır.",
+            "role": "specialization",
+            "statement": "Bu hareket isteme, alma, saldırma veya bolca verme amaçlarından biriyle belirlenir.",
             "claim_ids": [
-              "lu_016"
-            ]
-          },
-          {
-            "facet_id": "F003",
-            "role": "example",
-            "statement": "Kolları ileri uzatmak ve istemek için avuçları suya doğru açmak hareketin somut örnekleridir.",
-            "claim_ids": [
-              "lu_017",
-              "lu_018"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar eli, avucu veya kolları uzatma hareketini isteme, alma, saldırma ve verme amaçlarıyla ilişkilendirir. Vermeye açık el ayrıca cömertlik ve serbestçe harcama anlamı taşır.",
+        "common_summary": "Kaynaklar uzatılmış ve serbest bırakılmış el imgesinde birleşir; isteme, alma, saldırma ve verme bu ortak hareketin bağlamsal yönelimleridir.",
         "common_claim_ids": [
-          "lu_015",
-          "lu_016",
-          "lu_017",
-          "lu_018"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "eli ya da kolu uzatmak",
-        "applicability": "Elin, avucun veya kolun bir şeye yöneltilip açıldığı tüm temel amaçlarda kullanılabilir.",
+        "text": "eli uzatıp serbestçe kullanmak",
+        "applicability": "El, kol veya avucun isteme, alma, saldırma ya da verme amacıyla uzatıldığı kalıplarda kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Uzuvların uzatılması, serbest bırakılması ve amaca yöneltilmesi çekirdeğini korur.",
+          "preserves": "Fiziksel uzatmayı, serbest kullanımı ve farklı amaçlara açık yönelimi birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
           "F001",
-          "F002",
-          "F003"
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "vermeye eli açık olmak",
+          "text": "eli açık olmak",
           "usage_role": "contextual",
-          "applicability": "Uzatılmış elin cömertlik ve serbestçe verme eğilimini anlattığı kullanım için uygundur.",
+          "applicability": "Elin serbestliği özellikle bolca verme ve harcama yönünde kullanıldığında doğal karşılıktır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Elin verme amacıyla açık ve serbest oluşunu korur.",
-            "loses": "İsteme, alma, saldırma ve salt bedensel uzatma amaçlarını dışarıda bırakır.",
+            "preserves": "Serbest el imgesini ve verme yönelimini korur.",
+            "loses": "İsteme, alma ve saldırma amaçlı el uzatma kullanımlarını dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
+            "F001",
             "F002"
           ]
         }
@@ -466,35 +475,36 @@
         {
           "lexical_unit_id": "lu_016",
           "rendering_kind": "ordinary",
-          "target_gloss": "vermeye açık el; cömertlik"
+          "target_gloss": "vermeye açık ve serbest el"
         },
         {
           "lexical_unit_id": "lu_017",
           "rendering_kind": "ordinary",
-          "target_gloss": "kollarını uzatmış"
+          "target_gloss": "iki kolunu uzatmış"
         },
         {
           "lexical_unit_id": "lu_018",
           "rendering_kind": "ordinary",
-          "target_gloss": "suya doğru avuçlarını uzatmış"
+          "target_gloss": "istemek için iki avucunu suya doğru uzatan"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_000092/B007",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "İsteme, alma, saldırma ve verme gibi çeşitli amaçları ve cömertlik uzantısını kapsar.",
-          "neighbor_only": "Elin özellikle yere doğru uzatılmasını belirtir.",
-          "gloss": "eli uzatmak",
-          "shared_zone": "Her iki dalda elin bedenden dışarı doğru uzatılması vardır.",
-          "distinction": "Odak dal hareketin amaçlarını ve vermeye açıklık uzantısını içerir; komşu dal yönü yere sabitlenmiş daha dar bir harekettir."
+          "neighbor_ref": "root_001448/B001",
+          "relation_type": "polarity_pair",
+          "boundary_match": "opposed",
+          "focus_only": "Odak dalda el verme dahil çeşitli amaçlarla uzatılır ve kullanım alanına çıkarılır.",
+          "neighbor_only": "Komşu dalda el özellikle vermekten alıkonur; engelleme, cimrilik ve tutma öne çıkar.",
+          "gloss": "eli açmak; eli kısmak",
+          "shared_zone": "İki dal elin verme alanındaki serbestliği veya tutulması üzerinden ortak bir davranış ekseni kurar.",
+          "distinction": "Verme bağlamında odak elin açılması ve serbest kullanılması yönündedir, komşu ise vermeyi engelleme yönündedir. Odak dalın isteme, alma ve saldırma kapsamı bu karşıtlık eksenini aşar."
         }
       ],
-      "neighbor_coverage_note": "Bütün el ve verme adayları değerlendirildi; bedensel hareket ile amaç kapsamını ayıran en yakın komşu yayımlandı.",
+      "neighbor_coverage_note": "Bütün adaylar incelendi; elin vermeye açılması ile vermekten tutulması arasındaki karşıtlık en açıklayıcı sınırı verdi, diğer adaylar yalnız el temasını veya tek bir hareketi paylaştı.",
       "branch_image_ar": "مد اليد وإطلاقها",
       "what_is_ar": "يدخل فيه بسط اليد والذراع والكف للطلب أو الأخذ أو الصولة أو البذل والإعطاء، واليد المطلقة أو المبسوطة",
+      "what_is_not_ar": "لا يدخل فيه السعة العامة ولا مجرد الكرم إذا خلا من صورة اليد المبسوطة",
       "source_phrase_ar": "يد فلان بسط إذا كان منفاقا (maqayis)؛ بسط إلينا فلان يده بما نحب ونكره (ayn)؛ يد بسط أي مطلقة وبل يداه بسطان (sihah)؛ بسط فلان يده بما يحب ويكره وبسطان مبسوطتان (tahdhib)؛ بسط اليد مدها وبسط الكف للطلب والأخذ والصولة والبذل (mufradat)",
       "sources": [
         "MQ",
@@ -507,47 +517,51 @@
     },
     {
       "branch_ref": "root_000116/B005",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi dilin rahat ve açık oluşunu, çekingenliğin bırakılmasını ve insanlara sevimli gelen açık yüzü birlikte verir. Dal çerçevesi içteki sevinci değil, konuşma ve ilişkide görünen rahatlığı temel alarak bu sınırı doğru korur.",
+        "boundary_note": "Çekirdek, konuşma ve yüz ifadesiyle dışa vuran sosyal rahatlıktır; yalnız içsel sevinç bu dala girmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Kişiyi ve rahat ilişki kurma durumunu adlandıran yalın biçimler ile yüz kalıbı ayrı tutulur; yüz anlamı bütün dala genellenmez."
+      },
       "concept_map": {
-        "definition": "Konuşmada veya insanlarla ilişkide çekingenliği bırakıp rahat, açık ve kolay davranmak; bunun yüzdeki görünümü insanlara sevimli gelen açıklıktır.",
+        "definition": "Konuşmada ve insanlarla ilişkide çekingenliği bırakıp rahat, açık ve cana yakın davranmak; bu açıklığı dilde veya yüzde göstermektir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kişinin konuşurken ve başkalarıyla kaynaşırken çekingenliği bırakıp rahat davranması çekirdeği oluşturur.",
+            "statement": "Çekingenliği bırakıp konuşmada ve ilişkide rahat, açık davranmak temel anlamdır.",
             "claim_ids": [
-              "lu_019",
-              "lu_020",
-              "lu_021"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "associated_use",
-            "statement": "Açık ve sevimli yüz, toplumsal rahatlığın dışarıdan görülen ilişkili belirtisidir.",
+            "role": "extension",
+            "statement": "Rahatlık, akıcı konuşan kişi veya insanlara sevimli gelen açık yüz niteliği olarak görünür.",
             "claim_ids": [
-              "lu_022"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar konuşma rahatlığını, çekingenliği bırakmayı ve insanlarla kolay kaynaşmayı aynı alan içinde verir. Açık ve sevimli yüz bu toplumsal rahatlığın görünür karşılığıdır.",
+        "common_summary": "Kaynaklar sosyal çekingenliğin kalkması ve rahat iletişim çekirdeğinde birleşir; dil açıklığı ile sevimli yüz bu tutumun iki görünümüdür.",
         "common_claim_ids": [
-          "lu_019",
-          "lu_020",
-          "lu_021",
-          "lu_022"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "rahat ve açık davranmak",
-        "applicability": "Konuşmada, yüz ifadesinde ve insanlarla ilişkide çekingenliğin bırakıldığı durumları kapsar.",
+        "text": "rahat ve açık ilişki kurmak",
+        "applicability": "Konuşma, yüz ifadesi ve insanlarla ilişki sırasında çekingenliğin bırakıldığı kullanımları kapsar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Konuşma rahatlığı, toplumsal açıklık ve yüzün sevimli görünümünü korur.",
+          "preserves": "Sosyal rahatlığı, konuşma açıklığını ve cana yakın dış görünümü birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -559,18 +573,19 @@
       },
       "contextual_glosses": [
         {
-          "text": "çekinmeden kaynaşmak",
+          "text": "çekinmeden konuşmak",
           "usage_role": "contextual",
-          "applicability": "Kişinin resmiyeti ve çekingenliği bırakıp başkalarıyla rahatça ilişki kurduğu bağlamlarda uygundur.",
+          "applicability": "Anlam özellikle dilin açılması ve konuşmadaki tutukluğun kalkması üzerinden gerçekleştiğinde uygundur.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Toplumsal rahatlık ve çekingenliği bırakma özelliklerini korur.",
-            "loses": "Yüz ifadesi ile yalnızca akıcı konuşmaya özgü görünümü belirtmez.",
+            "preserves": "Çekingenliğin bırakılmasını ve dildeki rahatlığı korur.",
+            "loses": "Yüz açıklığını ve konuşma dışındaki sosyal ilişki rahatlığını açıkça taşımaz.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002"
           ]
         }
       ],
@@ -578,22 +593,22 @@
         {
           "lexical_unit_id": "lu_019",
           "rendering_kind": "ordinary",
-          "target_gloss": "konuşması rahat ve akıcı erkek"
+          "target_gloss": "rahat ve akıcı konuşan erkek"
         },
         {
           "lexical_unit_id": "lu_020",
           "rendering_kind": "ordinary",
-          "target_gloss": "konuşması rahat veya geçimi kolay kadın"
+          "target_gloss": "rahat konuşan veya kolay ilişki kuran kadın"
         },
         {
           "lexical_unit_id": "lu_021",
           "rendering_kind": "ordinary",
-          "target_gloss": "çekingenliği bırakıp rahatça kaynaşma"
+          "target_gloss": "çekingenliği bırakıp rahatça ilişki kurma"
         },
         {
           "lexical_unit_id": "lu_022",
           "rendering_kind": "ordinary",
-          "target_gloss": "açık ve sevimli yüz"
+          "target_gloss": "insanlara sevimli gelen açık yüz"
         }
       ],
       "excluded_glosses": [],
@@ -602,16 +617,17 @@
           "neighbor_ref": "root_000563/B007",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Konuşma akıcılığı ile açık ve sevimli yüzü ayrıca kapsar.",
-          "neighbor_only": "Bir insana veya şeye karşı duyulan güven ve iç huzurunu özellikle içerir.",
+          "focus_only": "Odak dal konuşma açıklığını, çekingenliği bırakmayı ve açık yüzü özellikle içerir.",
+          "neighbor_only": "Komşu dal bir insana veya şeye güvenle yönelme, alışma ve iç rahatlığını da kapsar.",
           "gloss": "rahatça yakınlık kurmak",
-          "shared_zone": "Her iki dal çekingenliğin azalması ve rahat ilişki kurulması alanında buluşur.",
-          "distinction": "Odak dal dışa dönük konuşma, davranış ve yüz görünümüne ağırlık verir; komşu dal iç güven ve alışmışlık durumunu da gerektirir."
+          "shared_zone": "Her iki dal insanla ilişkide rahatlama, açılma ve davranıştaki kasılmanın çözülmesi alanında örtüşür.",
+          "distinction": "Odak dışa vuran konuşma ve yüz rahatlığına dayanır; komşuda ise alışma, güven ve iç huzuru daha belirgindir ve yönelim yalnız insanlarla sınırlı değildir."
         }
       ],
-      "neighbor_coverage_note": "Bütün toplumsal yakınlık ve konuşma adayları değerlendirildi; iç rahatlık ile dışa dönük açıklığı ayıran ilişki seçildi.",
+      "neighbor_coverage_note": "Adayların hepsi karşılaştırıldı; alışma ve rahat yönelme dalı en yakın sınırı gösterdi, diğerleri yalnız yakınlık, sevinç, kabalık veya yapmacık yumuşaklık yönlerinden ilişkiliydi.",
       "branch_image_ar": "انبساط اللسان والوجه والمعاشرة",
       "what_is_ar": "يدخل فيه الرجل المنبسط اللسان، والمرأة البسيطة، والانبساط بمعنى ترك الاحتشام، والوجه البسط المحبوب للناس",
+      "what_is_not_ar": "لا يدخل فيه السرور الواقع في القلب إلا إذا دل اللفظ على أثر الانبساط في المعاشرة",
       "source_phrase_ar": "البسيط الرجل المنبسط اللسان والمرأة بسيطة (ayn)؛ الانبساط ترك الاحتشام وبسطت من فلان فانبسط (sihah)؛ البسيط الرجل المنبسط اللسان وليكن وجهك بسطا (tahdhib)",
       "sources": [
         "AY",
@@ -622,51 +638,69 @@
     },
     {
       "branch_ref": "root_000116/B006",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi belirli bir söz kalıbında, başkasını sevindiren şeyin konuşanı da sevindirmesini anlatır ve bunu üzmenin karşısına koyar. Dal çerçevesi bu duygusal etkiyi sosyal rahatlıktan ayırarak doğru sınırlar.",
+        "boundary_note": "Anlam yalnız sevindirme etkisini bildiren söz kalıbına aittir; genel neşe veya sosyal açıklık anlamı değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım tanıklanan sevindirme kalıbına bağlıdır; bu kullanımdan yalın kök için genel bir sevinç anlamı çıkarılmaz."
+      },
       "concept_map": {
-        "definition": "Başkasını sevindiren şeyin kişiyi de sevindirmesi ve içini rahatlatması.",
+        "definition": "Birini sevindiren şeyin başka birini de sevindirmesi, ona iç açıcı ve hoş bir duygu vermesidir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Sevinç, başka bir kişinin sevindiği şeye ortak olmaktan doğar ve üzüntünün karşısında yer alır.",
+            "statement": "Bir durumun kişide sevinç ve iç rahatlığı doğurması temel etkidir.",
             "claim_ids": [
-              "lu_023"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Tanıklanan kalıp, konuşanın sevincini karşısındaki kişinin sevincine paralel kurar.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar ifadeyi, başkasını sevindiren şeyden sevinç duymak ve onu üzen şeyden üzüntü duymak biçiminde açıklar.",
+        "common_summary": "Kaynaklar aynı söz kalıbını aynı biçimde açıklar: birini sevindiren durum konuşanı da sevindirir ve bunun karşı kutbunda üzülme bulunur.",
         "common_claim_ids": [
-          "lu_023"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "sevincine ortak olmak",
-        "applicability": "Birinin sevindiği şeyin konuşanı da sevindirdiğini anlatan ilişkisel bağlamda kullanılır.",
+        "text": "beni de sevindirir",
+        "applicability": "Başkasını sevindiren şeyin konuşanda da aynı olumlu duyguyu doğurduğunu bildiren kalıpta kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Sevincin başka kişinin sevincine bağlı oluşunu ve duygudaşlığı korur.",
+          "preserves": "Sevindiren etkiyi, konuşan kişiyi ve paylaşılan duygu bağlantısını korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "seni sevindiren beni de sevindirir",
-          "usage_role": "explanatory",
-          "applicability": "Kaynakta verilen karşılıklı duygu bağını tam cümleyle açıklamak gerektiğinde uygundur.",
+          "text": "içimi açar",
+          "usage_role": "contextual",
+          "applicability": "Sevincin ferahlama ve hoşnutluk etkisiyle doğal Türkçe içinde aktarılması gerektiğinde kullanılabilir.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Sevincin nedeni ile iki katılımcı arasındaki ortaklığı bütünüyle korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Olumlu duygusal etkiyi ve kişide oluşan ferahlığı korur.",
+            "loses": "Sevincin karşıdaki kişinin sevincine paralel kurulmasını açıkça göstermez.",
             "adds": null,
             "collision": null
           },
@@ -686,18 +720,19 @@
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000158/B002",
-          "relation_type": "near_neighbor",
+          "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Sevincin başka bir kişinin sevindiği şeye bağlı olduğunu bildirir.",
-          "neighbor_only": "Sevincin genel durumunu, böyle bir kişiler arası bağ gerektirmeden kapsar.",
-          "gloss": "sevinç duymak",
-          "shared_zone": "Her iki dal olumlu bir duygulanma ve sevinç durumunu içerir.",
-          "distinction": "Odak dal duygunun paylaşılma ilişkisini kurar; komşu dal ise sevincin kendisini daha genel biçimde adlandırır."
+          "focus_only": "Odak dal, sevindiren etkiyi başkasının sevinciyle paralellik kuran belirli bir söz kalıbında anlatır.",
+          "neighbor_only": "Komşu dal sevinç, neşe ve coşkuyu kalıptan bağımsız genel bir duygu alanı olarak kapsar.",
+          "gloss": "sevindirmek ve sevinmek",
+          "shared_zone": "İki dal olumlu duygu, sevinç ve kişiyi hoşnut eden durum alanında doğrudan örtüşür.",
+          "distinction": "Odak, bir şeyin kişiyi sevindirmesi ve iki kişinin sevincinin paralel kurulmasıdır; komşu ise sevinç durumunu ve onu doğuran şeyi genel olarak adlandırır."
         }
       ],
-      "neighbor_coverage_note": "Bütün sevinç ve iç ferahlığı adayları değerlendirildi; ilişkisel sevinci genel sevinçten ayıran karşılaştırma yayımlandı.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel sevinç dalı en yakın anlam sınırını sağladı, öteki adaylar kaygısızlık, iç ferahlığı, bolluk veya sosyal rahatlık gibi yan alanlarda kaldı.",
       "branch_image_ar": "السرور والإراحة النفسية",
       "what_is_ar": "يدخل فيه قولهم يبسطني ما بسطك أي يسرني ما سرك ويقابل يقبضني بمعنى يسوءني",
+      "what_is_not_ar": "لا يدخل فيه الانبساط الاجتماعي أو مد اليد إلا بقرينة السرور",
       "source_phrase_ar": "إنه ليبسطني ما بسطك ويقبضني ما قبضك أي يسرني ما سرك ويسوءني ما ساءك (ayn)؛ إنه ليبسطني ما بسطك ويقبضني ما قبضك أي يسرني ما سرك ويسوءني ما ساءك (tahdhib)",
       "sources": [
         "AY",
@@ -707,32 +742,40 @@
     },
     {
       "branch_ref": "root_000116/B007",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bir yandan ülkede enine boyuna dolaşmayı, öte yandan hoş kokulu bitkilerin bulunduğu yerde gezintiye çıkmayı bildirir. Dal çerçevesi bu iki hareket görünümünü arazi anlamıyla karıştırmadan korur.",
+        "boundary_note": "Çekirdek bir yerde hareket edip dolaşmaktır; geniş arazi veya fiziksel yayma kendi başına bu dala girmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Mekanik sınıflandırma gereği yalın dal tanımlanır; ülke ve gezinti örnekleri anlamı gösterir, başka kalıplardan ek kapsam alınmaz."
+      },
       "concept_map": {
-        "definition": "Bir ülkeyi enine boyuna dolaşmak; bunun özel bir görünümü, güzel kokulu bitkilerin bulunduğu kırda gezinti amacıyla dışarı çıkmaktır.",
+        "definition": "Bir ülke veya arazi içinde farklı yönlere giderek dolaşmak; özel olarak hoş bir açık alanda gezinti amacıyla yürümektir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Temel eylem, bir ülkenin farklı yönlerinde dolaşarak alanı kat etmektir.",
+            "statement": "Bir yer içinde enine boyuna hareket edip dolaşmak temel anlamdır.",
             "claim_ids": [
-              "lu_024"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Güzel kokulu kırda dinlenme ve gezinti amacıyla dışarı çıkmak bu dolaşmanın özel türüdür.",
+            "statement": "Dolaşma, hoş kokulu bitkilerin bulunduğu açık alanda dinlenme amaçlı gezinti olarak özelleşebilir.",
             "claim_ids": [
-              "lu_025"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar iki bağlantılı kullanım verir: ülkeyi farklı yönlerde dolaşmak ve güzel kokulu bitkiler bulunan kırda gezinti için dışarı çıkmak.",
+        "common_summary": "Toplu tanıklık dolaşma çekirdeğini iki görünümle verir: geniş bir ülkede farklı yönlere gitme ve hoş bir açık alanda gezinti yapma. İkinci görünüm amaç ve çevre bakımından daha özeldir.",
         "common_claim_ids": [
-          "lu_024",
-          "lu_025"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
@@ -740,10 +783,10 @@
       },
       "concept_gloss": {
         "text": "dolaşmak ve gezintiye çıkmak",
-        "applicability": "Hem bir ülkeyi genişçe dolaşmayı hem de kırda dinlenme amaçlı gezintiyi kapsar.",
+        "applicability": "Hem bir ülkede farklı yönlere dolaşmayı hem de açık alandaki dinlenme gezintisini kapsar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Alan içinde dolaşma ile özel gezinti amacını birlikte korur.",
+          "preserves": "Yer içinde dolaşma hareketini ve dinlenme amaçlı özel gezinti görünümünü korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -755,18 +798,18 @@
       },
       "contextual_glosses": [
         {
-          "text": "ülkeyi enine boyuna dolaşmak",
+          "text": "kır gezisine çıkmak",
           "usage_role": "contextual",
-          "applicability": "Yolculuğun bir ülkenin farklı yönlerini kat etmeyi anlattığı bağlam için uygundur.",
+          "applicability": "Hareket özellikle bitkili, hoş bir açık alanda dinlenme ve gezinti amacı taşıdığında uygundur.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Geniş bir alanı farklı yönlerde dolaşma hareketini korur.",
-            "loses": "Kır gezisinin dinlenme ve güzel kokulu bitkilerle ilgili özel bağlamını dışarıda bırakır.",
+            "preserves": "Açık alanda dinlenme amaçlı dolaşma görünümünü korur.",
+            "loses": "Ülke içinde amaç belirtilmeden enine boyuna dolaşma kapsamını dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F002"
           ]
         }
       ],
@@ -774,30 +817,31 @@
         {
           "lexical_unit_id": "lu_024",
           "rendering_kind": "ordinary",
-          "target_gloss": "ülkeyi enine boyuna dolaşmak"
+          "target_gloss": "ülkede enine boyuna dolaşmak"
         },
         {
           "lexical_unit_id": "lu_025",
           "rendering_kind": "ordinary",
-          "target_gloss": "güzel kokulu kırda gezintiye çıkmak"
+          "target_gloss": "bitkili açık alanda gezintiye çıkmak"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_001539/B006",
+          "neighbor_ref": "root_000768/B003",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Dinlenme amacıyla güzel kokulu kırda gezintiye çıkmayı kapsar.",
-          "neighbor_only": "Araştırma, yoklama, arama ve çıkış yolu bulma amaçlarını kapsar.",
-          "gloss": "ülkeyi dolaşmak",
-          "shared_zone": "Her iki dal bir ülkenin veya geniş arazinin içinde dolaşmayı anlatır.",
-          "distinction": "Odak dal genişçe dolaşma ve gezinti amacına yönelir; komşu dal dolaşmaya araştırma ve arama işlevleri ekler."
+          "focus_only": "Odak dal, hoş kokulu bitkilerin bulunduğu yerde dinlenme amaçlı gezintiyi de içerir.",
+          "neighbor_only": "Komşu dal, ülkeler arasında yer değiştirme, yerleşik kalmama ve ayrıca söz taşıma kullanımını kapsar.",
+          "gloss": "yeryüzünde dolaşmak",
+          "shared_zone": "Her iki dal ülke veya arazi içinde yer değiştirerek dolaşma ve farklı yerlere gitme alanında örtüşür.",
+          "distinction": "Odak dal genel dolaşmanın yanında gezinti görünümünü taşır; komşu ise süreklilik ve yerleşik olmama yönü güçlü seyahati, ayrıca ayrı bir söz taşıma kullanımını içerir."
         }
       ],
-      "neighbor_coverage_note": "Bütün yolculuk ve arazi adayları değerlendirildi; gezinti ile araştırma amaçlarını ayıran en yakın ilişki seçildi.",
+      "neighbor_coverage_note": "Tüm adaylar karşılaştırıldı; yeryüzünde dolaşma dalı en güçlü örtüşmeyi gösterdi, diğerleri arama, kazanç, bilinmezlik, otlakta dolaşma veya belirli arazi türleri ekledi.",
       "branch_image_ar": "السير في البلاد والتنزه",
       "what_is_ar": "يدخل فيه تبسط في البلاد بمعنى سار فيها طولا وعرضا، والتبسط بمعنى الخروج للتنزه في أرض ذات رياحين",
+      "what_is_not_ar": "لا يدخل فيه الأرض الواسعة نفسها ولا مجرد مد الشيء",
       "source_phrase_ar": "تبسط في البلاد أي سار فيها طولا وعرضا (sihah)؛ التبسط التنزه خرج يتبسط مأخوذ من البساط وهي الأرض ذات الرياحين (tahdhib)",
       "sources": [
         "SI",
@@ -807,41 +851,40 @@
     },
     {
       "branch_ref": "root_000116/B008",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, yavrusuyla birlikte bırakılan ve yavrusundan esirgenmeyen dişi deveyi tutarlı biçimde adlandırır; ayrıca onu bu durumda bırakma eylemini verir. Dal çerçevesi anne-yavru ilişkisini ve serbest bırakılma koşulunu doğru korur.",
+        "boundary_note": "Yalnız yavrusuyla bırakılan ve yavrusundan engellenmeyen dişi deve söz konusudur; genel hayvan salma anlamı değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın hayvan adını ve aynı kökten bırakma eylemini kapsar; otlatma veya başka salıverme kalıplarını içeri almaz."
+      },
       "concept_map": {
-        "definition": "Dişi devenin kendi yavrusuyla birlikte, yavrunun ondan yararlanması engellenmeden baş başa bırakılması; adlandırma tekil ve çoğul hayvanı, eylem ise bırakmayı gösterebilir.",
+        "definition": "Yavrusuyla birlikte serbest bırakılan ve yavrusunun emmesine ya da yanında kalmasına engel olunmayan dişi devedir; aynı dal onu yavrusuyla bu durumda bırakmayı da anlatır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Çekirdek durum, dişi devenin kendi yavrusuyla bırakılması ve yavrunun ona erişiminin engellenmemesidir.",
+            "statement": "Dişi devenin kendi yavrusuyla birlikte bırakılması ve yavrudan esirgenmemesi temel koşuldur.",
             "claim_ids": [
-              "lu_026"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "extension",
-            "statement": "Aynı adlandırma, yavrularıyla bırakılmış dişi develerin çoğulu için de kullanılır.",
-            "claim_ids": [
-              "lu_027"
-            ]
-          },
-          {
-            "facet_id": "F003",
             "role": "associated_use",
-            "statement": "Dişi deveyi yavrusuyla bırakma eylemi, durumun oluşturulmasını bildirir.",
+            "statement": "Aynı anlam alanı, dişi deveyi yavrusuyla serbest bırakma eylemini de adlandırır.",
             "claim_ids": [
-              "lu_028"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar dişi devenin kendi yavrusuyla bırakılıp yavrunun ondan engellenmemesinde birleşir. Tekil hayvan, bu durumdaki hayvanların çoğulu ve hayvanı yavrusuyla bırakma eylemi ayrı biçimlerde kaydedilir.",
+        "common_summary": "Kaynaklar dişi devenin kendi yavrusuyla bırakılması ve ondan engellenmemesi koşulunda birleşir; adlandırma ile bu durumu sağlama eylemi aynı çekirdeğe bağlıdır.",
         "common_claim_ids": [
-          "lu_026",
-          "lu_027",
-          "lu_028"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
@@ -849,34 +892,33 @@
       },
       "concept_gloss": {
         "text": "yavrusuyla serbest bırakılan dişi deve",
-        "applicability": "Dişi devenin kendi yavrusuyla bırakıldığı ve yavrunun ona erişiminin engellenmediği durum için kullanılır.",
+        "applicability": "Dişi devenin kendi yavrusuyla kalmasına ve yavrunun ondan yararlanmasına engel olunmadığı durumda kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Hayvanı, kendi yavrusunu, birlikte bırakılmayı ve engellenmeme koşulunu korur.",
+          "preserves": "Dişi deve katılımcısını, kendi yavrusunu ve engellenmeden birlikte bırakılma koşulunu korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
           "F001",
-          "F002",
-          "F003"
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "dişi deveyi yavrusuyla bırakmak",
+          "text": "deveyi yavrusuyla baş başa bırakmak",
           "usage_role": "contextual",
-          "applicability": "Hayvanın durumunu değil, bu durumu oluşturan bırakma eylemini anlatırken uygundur.",
+          "applicability": "Adlandırmadan çok dişi deveyi yavrusuyla serbest bırakma eylemi anlatıldığında uygundur.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Dişi deve ile yavrusunu birlikte ve engelsiz bırakma işlemini korur.",
-            "loses": "Bu durumdaki tekil veya çoğul hayvanın adlandırılmasını dışarıda bırakır.",
+            "preserves": "Anne ile yavrunun birlikte ve engellenmeden bırakılması işlemini korur.",
+            "loses": "Bu durumda bulunan dişi devenin kalıcı adlandırmasını doğrudan karşılamaz.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F003"
+            "F002"
           ]
         }
       ],
@@ -884,12 +926,12 @@
         {
           "lexical_unit_id": "lu_026",
           "rendering_kind": "ordinary",
-          "target_gloss": "yavrusuyla baş başa bırakılan dişi deve"
+          "target_gloss": "yavrusuyla bırakılan ve ondan esirgenmeyen dişi deve"
         },
         {
           "lexical_unit_id": "lu_027",
           "rendering_kind": "ordinary",
-          "target_gloss": "yavrularıyla bırakılan dişi develer"
+          "target_gloss": "yavrularıyla serbest bırakılmış dişi develer"
         },
         {
           "lexical_unit_id": "lu_028",
@@ -903,16 +945,17 @@
           "neighbor_ref": "root_000546/B014",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Dişi devenin kendi yavrusuyla bırakılmış durumunu ve hayvanın adını kapsar.",
-          "neighbor_only": "Yavrunun annesiyle gönderilip dilediği zaman emmesine odaklanır.",
-          "gloss": "ana ile yavruyu birlikte bırakmak",
-          "shared_zone": "Her iki dal ana ile yavrunun ayrılmaması ve emmeye erişim senaryosunu paylaşır.",
-          "distinction": "Odak dal annenin bırakılmış durumunu adlandırır; komşu dal ise yavruyu annesiyle salma eylemini ve emme serbestliğini merkez alır."
+          "focus_only": "Odak dal dişi deveyi yavrusuyla bırakır ve anne hayvanı bu durum üzerinden adlandırır.",
+          "neighbor_only": "Komşu dal yavruyu annesiyle salar ve onun istediği zaman emebilmesini özellikle öne çıkarır.",
+          "gloss": "anne ile yavruyu birlikte bırakma",
+          "shared_zone": "İki dal anne hayvan ile yavrusunu ayırmama ve emmeye engel olmama olayında örtüşür.",
+          "distinction": "Aynı olayın katılımcı odağı farklıdır: odak dal anne dişi devenin bırakılmış durumunu, komşu ise yavrunun annesiyle salınması işlemini merkez alır."
         }
       ],
-      "neighbor_coverage_note": "Bütün deve, otlatma ve serbest bırakma adayları değerlendirildi; katılımcı farkını gösteren en yakın ilişki yayımlandı.",
+      "neighbor_coverage_note": "Adayların tümü değerlendirildi; yavrunun annesiyle salınması en yakın olay yapısını verdi, diğerleri otlatma, genel özgürlük, doğum veya farklı anne-yavru durumlarıyla sınırlı kaldı.",
       "branch_image_ar": "الناقة المخلاة مع ولدها",
       "what_is_ar": "يدخل فيه البسط أو البساط من النوق، وهي الناقة التي تركت مع ولدها أو خليت لا يمنع منها ولا تعطف على غير ولدها",
+      "what_is_not_ar": "لا يدخل فيه بسط اليد أو الأرض إلا من جهة كون الناقة مبسوطة أو مخلاة",
       "source_phrase_ar": "الناقة التي خليت هي وولدها لا تمنع منه بسط (maqayis)؛ الأبساط من النوق التي معها أولادها والواحد بسط (ayn)؛ البسط الناقة تخلى مع ولدها لا يمنع منها (sihah)؛ البساط جمع بسط وهي الناقة التي تركت وولدها لا يمنع منها (tahdhib)؛ البسط الناقة تترك مع ولدها وقد أبسط ناقته أي تركها مع ولدها (mufradat)",
       "sources": [
         "MQ",
@@ -925,23 +968,32 @@
     },
     {
       "branch_ref": "root_000116/B009",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi sözcüğü doğrudan şiir ölçüsü türü veya cinsi olarak tanımlar. Dal çerçevesi bunu genişlik, yayılmışlık ya da bileşiksizlik anlamlarından ayırdığı için kaynak sınırına uygundur.",
+        "boundary_note": "Bu dal yalnız belirli bir şiir ölçüsünün adıdır; sözcüğün başka alanlardaki nitelik anlamları buraya girmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın terim adlandırmasını kapsar ve başka şiir terimlerinden ya da sözcüğün genel nitelik anlamlarından kapsam almaz."
+      },
       "concept_map": {
-        "definition": "Şiir dizelerinin kuruluşunu belirleyen ölçü türlerinden biri.",
+        "definition": "Şiirde dizelerin ritmik kuruluşunu belirleyen belirli bir ölçü türünün adıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bu kullanım belirli bir şiir ölçüsü türünün adıdır.",
+            "statement": "Belirli bir şiir ölçüsü türünü adlandıran teknik kullanım dalın tamamını oluşturur.",
             "claim_ids": [
-              "lu_029"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar bir şiir ölçüsü türünü veya ölçü sınıfını adlandırdığı konusunda birleşir.",
+        "common_summary": "Kaynaklar, bu kullanımın şiir ölçüleri sistemi içindeki belirli bir türün teknik adı olduğu konusunda birleşir.",
         "common_claim_ids": [
-          "lu_029"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
@@ -949,10 +1001,10 @@
       },
       "concept_gloss": {
         "text": "belirli bir şiir ölçüsü",
-        "applicability": "Şiir ölçüsü türünün teknik olarak adlandırıldığı bağlamlarda kullanılır.",
+        "applicability": "Sözcük şiirin ritmik kalıbını belirleyen teknik ölçü adı olarak kullanıldığında tam karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Belirli bir ölçü türü veya sınıfı olma niteliğini korur.",
+          "preserves": "Teknik adlandırmayı, şiir alanını ve belirli bir ölçü türü olma özelliğini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -966,7 +1018,7 @@
         {
           "lexical_unit_id": "lu_029",
           "rendering_kind": "ordinary",
-          "target_gloss": "şiirde belirli bir ölçü türü"
+          "target_gloss": "belirli bir şiir ölçüsü türü"
         }
       ],
       "excluded_glosses": [],
@@ -975,16 +1027,17 @@
           "neighbor_ref": "root_000694/B010",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "Kendi kalıbıyla tanımlanan ayrı bir ölçü türüdür.",
-          "neighbor_only": "Başka bir kalıba sahip farklı bir ölçü türüdür.",
-          "gloss": "başka bir şiir ölçüsü",
-          "shared_zone": "Her iki dal şiirin ölçü düzeni içinde adlandırılmış türlerdir.",
-          "distinction": "Aynı teknik alana ait olsalar da ayrı ölçü türlerini adlandırırlar ve birbirinin yerine kullanılamazlar."
+          "focus_only": "Odak dal şiir ölçüleri sistemindeki kendi belirli ritmik türünü adlandırır.",
+          "neighbor_only": "Komşu dal aynı sistem içinde başka bir ritmik şiir ölçüsü türünü adlandırır.",
+          "gloss": "ayrı şiir ölçüleri",
+          "shared_zone": "İki dal da şiirde kullanılan adlandırılmış ölçü türleri olarak aynı teknik sınıfa girer.",
+          "distinction": "Ortak alan dışında anlam çekirdekleri örtüşmez; bunlar aynı ölçünün değişken adları değil, şiir ölçüleri sistemi içindeki ayrı tür adlarıdır."
         }
       ],
-      "neighbor_coverage_note": "Bütün şiir ölçüsü ve ölçü kusuru adayları değerlendirildi; aynı alandaki ayrı türü gösteren tek karşılaştırma seçildi.",
+      "neighbor_coverage_note": "Tüm adaylar incelendi; başka bir şiir ölçüsü aynı alanı en temiz biçimde gösterdi, uyak ve ölçü kusurları ise tür adı değil ayrı teknik işlemler veya bozukluklardır.",
       "branch_image_ar": "بحر البسيط في العروض",
       "what_is_ar": "يدخل فيه البسيط بوصفه نوعا أو جنسا من العروض",
+      "what_is_not_ar": "لا يدخل فيه البسيط بمعنى الواسع أو المبسوط أو غير المركب",
       "source_phrase_ar": "البسيط نحو من العروض (ayn)؛ البسيط جنس من العروض (sihah)",
       "sources": [
         "AY",
@@ -994,34 +1047,49 @@
     },
     {
       "branch_ref": "root_000116/B010",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi kalıbı doğrudan, bir kusur veya davranış için sunulan gerekçeyi kabul etme olarak açıklar. Dal çerçevesi bu dar edimi fiziksel yayma ve genel genişlikten ayırarak doğru temsil eder.",
+        "boundary_note": "Anlam yalnız sunulan gerekçeyi kabul etme kalıbıdır; gerekçe sunma veya genel bağışlama edimiyle özdeş değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım yalnız tanıklanan gerekçeyi kabul etme kalıbına bağlıdır; yalın köke bağımsız bir kabul anlamı verilmez."
+      },
       "concept_map": {
-        "definition": "İleri sürülen bir özrü geçerli sayıp kabul etmek.",
+        "definition": "Bir kusur veya davranış için sunulan açıklayıcı gerekçeyi geçerli sayıp kabul etmektir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Çekirdek işlem özrün söylenmesi değil, dinleyen tarafından kabul edilmesidir.",
+            "statement": "Sunulan bağışlanma gerekçesini geçerli sayarak kabul etme edimi temel ve tek anlamdır.",
             "claim_ids": [
-              "lu_030"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynak kullanımı doğrudan özrü kabul etme eylemi olarak açıklar.",
-        "common_claim_ids": [
-          "lu_030"
+        "common_summary": "Çok kaynaklı ortak bir özet yoktur; dal aşağıdaki tekil tanıklığın verdiği dar kabul anlamıyla sınırlıdır.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Kalıp, bir kusur için sunulan açıklayıcı gerekçeyi kabul etme anlamında tanıklanır."
+          }
         ],
-        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "özrü kabul etmek",
-        "applicability": "Bir kişinin sunduğu gerekçenin dinleyen tarafından geçerli sayıldığı durumda kullanılır.",
+        "text": "sunulan gerekçeyi kabul etmek",
+        "applicability": "Bir kişinin kusuru veya davranışı için sunduğu açıklama geçerli sayılıp kabul edildiğinde kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Özrü ve onu kabul eden tarafın sonucunu tam olarak korur.",
+          "preserves": "Sunulan gerekçeyi, onu geçerli sayma yargısını ve kabul etme edimini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -1035,103 +1103,104 @@
         {
           "lexical_unit_id": "lu_030",
           "rendering_kind": "ordinary",
-          "target_gloss": "özrü kabul etmek"
+          "target_gloss": "kusur için sunulan gerekçeyi kabul etmek"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000995/B001",
-          "relation_type": "near_synonym",
+          "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Yalnızca sunulan özrün kabul edilmesi sonucunu bildirir.",
-          "neighbor_only": "Özrün kendisini, özür dilemeyi ve bağışlanma istemeyi de kapsar.",
-          "gloss": "özür ve özrü kabul",
-          "shared_zone": "Her iki dalda bir kusura karşı ileri sürülen gerekçenin kabul edilmesi bulunur.",
-          "distinction": "Odak dal kabul işlemiyle sınırlıdır; komşu dal özrün içeriğini ve özür dileme sürecini de içine alan daha geniş bir alandır."
+          "focus_only": "Odak dal, sunulmuş gerekçeyi kabul eden kişinin edimini özellikle adlandırır.",
+          "neighbor_only": "Komşu dal gerekçenin kendisini, onu sunmayı, kabulünü ve kusurun silinmesini daha geniş biçimde kapsar.",
+          "gloss": "gerekçeyi kabul etme",
+          "shared_zone": "İki dal kusur karşısında açıklayıcı gerekçe sunulması ve bunun kabul edilmesi olayında örtüşür.",
+          "distinction": "Odak yalnız kabul aşamasına bağlı dar bir kalıptır; komşu ise gerekçenin varlığından sunulmasına ve kabul sonucuna kadar daha geniş bir alanı kapsar."
         }
       ],
-      "neighbor_coverage_note": "Bütün özür, bağışlama ve suçlama adayları değerlendirildi; kabul işlemini daha geniş özür alanından ayıran ilişki seçildi.",
+      "neighbor_coverage_note": "Bütün adaylar karşılaştırıldı; gerekçe ve kabul alanını birlikte kapsayan komşu en yakın sınırı verdi, diğerleri gerekçeyi gösterme, bağışlama, suçlama veya haksızlığa sapma yönlerinde ayrıldı.",
       "branch_image_ar": "قبول العذر",
       "what_is_ar": "يدخل فيه بسط العذر بمعنى قبوله",
+      "what_is_not_ar": "لا يدخل فيه نشر الشيء ولا السعة ولا مد اليد",
       "source_phrase_ar": "بسط العذر قبوله (sihah)",
       "sources": [
         "SI"
       ],
-      "source_note": {}
+      "source_note": {
+        "SI": "Kalıp, bir kusur için sunulan açıklayıcı gerekçeyi kabul etme anlamında tanıklanır."
+      }
     },
     {
       "branch_ref": "root_000116/B011",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi uzun ve uzak bir geçit ile ayakta duran kişinin elini de uzatarak ulaştığı düşey ölçüyü birlikte verir. Dal çerçevesi uzunluk, uzaklık ve erişim bağını doğru korur; genel genişliği bu dala katmaz.",
+        "boundary_note": "Anlam yalnız tanıklanan mesafe ve ölçü kalıplarındadır; soyut genişlik ya da her türlü uzama bu dalın parçası değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım uzak geçit ve tam uzanmış boy ölçüsü kalıplarına bağlıdır; bunlardan yalın kök için genel uzaklık anlamı çıkarılmaz."
+      },
       "concept_map": {
-        "definition": "Uzaklık veya uzunluk bildiren bir ölçü görünümü; uzun yol bölümünü, insan boyuna yukarı uzatılmış elin eklenmesiyle bulunan derinliği ve rahatça aşılabilir uzaklığı kapsar.",
+        "definition": "Bir yol bölümünün uzun ve uzak olması ya da bir kişinin ayakta durup elini yukarı uzattığında ulaştığı tam boy mesafesidir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Temel görünüm, yol veya mesafenin uzun ve uzak olmasıdır.",
+            "statement": "Bir geçidin kat edilmesi uzun ve uzak bir mesafe oluşturması dalın yatay görünümüdür.",
             "claim_ids": [
-              "lu_031"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "İnsan boyu ile yukarı uzatılmış elin toplamı, kazı derinliği için bedene dayalı özel bir ölçüdür.",
+            "statement": "Ayakta duran kişinin uzattığı eliyle birlikte tam erişim yüksekliği, ölçüye bağlı düşey görünümdür.",
             "claim_ids": [
-              "lu_032"
-            ]
-          },
-          {
-            "facet_id": "F003",
-            "role": "source_variant",
-            "statement": "Bir millik uzaklığın rahatça aşılabilir sayılması, mesafenin erişilebilirliğini bildiren ayrı bir kullanımdır.",
-            "claim_ids": [
-              "lu_033"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar uzun ve uzak yol bölümünü, insan boyuna uzatılmış elin eklenmesiyle ölçülen kazı derinliğini ve suya kadar rahatça aşılabilir bir millik uzaklığı kaydeder.",
+        "common_summary": "Kaynaklar uzun ve uzak geçit anlamını paylaşır; toplu tanıklık ayrıca kişinin ayakta durup elini uzatarak belirlediği tam erişim yüksekliğini verir.",
         "common_claim_ids": [
-          "lu_031",
-          "lu_032",
-          "lu_033"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "uzunluk ve erişim uzaklığı",
-        "applicability": "Yolun uzaklığını veya beden ve erişimle belirlenen özel mesafe ölçülerini birlikte temsil eder.",
+        "text": "uzak mesafe ve tam uzanma erişimi",
+        "applicability": "Uzun bir yol bölümünü veya kişinin eli yukarı uzatılmış durumdaki tam boy erişimini açıklamak için kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Uzunluk, uzaklık ve uzatılmış elle belirlenen erişim ölçüsünü korur.",
+          "preserves": "Yatay uzaklığı, uzunluğu ve beden ile uzatılmış elin oluşturduğu düşey erişimi korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
           "F001",
-          "F002",
-          "F003"
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "boy ve uzatılmış el kadar",
+          "text": "uzun ve uzak geçit",
           "usage_role": "contextual",
-          "applicability": "Kazı derinliğinin kişinin boyuna yukarı uzattığı elin erişimi eklenerek ölçüldüğü bağlamda kullanılır.",
+          "applicability": "Yolun veya geçidin kat edilmesi uzun bir uzaklık oluşturduğu kullanımda doğrudan karşılıktır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Beden boyu ile uzatılmış elin oluşturduğu ölçüyü tam olarak korur.",
-            "loses": "Uzun yol ve rahatça aşılabilir bir millik uzaklık kullanımlarını dışarıda bırakır.",
+            "preserves": "Yatay mesafenin uzunluk ve uzaklık niteliklerini korur.",
+            "loses": "Kişinin elini uzatarak belirlediği düşey erişim ölçüsünü dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F002"
+            "F001"
           ]
         }
       ],
@@ -1139,35 +1208,36 @@
         {
           "lexical_unit_id": "lu_031",
           "rendering_kind": "ordinary",
-          "target_gloss": "uzun ve uzak yol bölümü"
+          "target_gloss": "uzun ve uzak geçit"
         },
         {
           "lexical_unit_id": "lu_032",
           "rendering_kind": "ordinary",
-          "target_gloss": "boy ve yukarı uzatılmış el kadar derinlik"
+          "target_gloss": "ayakta durup eli uzatarak ulaşılan tam boy mesafesi"
         },
         {
           "lexical_unit_id": "lu_033",
           "rendering_kind": "ordinary",
-          "target_gloss": "rahatça aşılabilir bir millik uzaklık"
+          "target_gloss": "ulaşılabilir bir millik mesafe"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_001432/B001",
+          "neighbor_ref": "root_000929/B003",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Uzak yol, kazı derinliği ve aşılabilir uzaklık gibi ölçüleşmiş kullanımları kapsar.",
-          "neighbor_only": "Nesne, beden, el ve gözün genel uzatılma hareketini kapsar.",
-          "gloss": "uzatma ve uzanma",
-          "shared_zone": "Her iki dal uzunluk ve bir sınırdan öteye erişme görünümünü paylaşır.",
-          "distinction": "Odak dal uzunluğu ölçü ve mesafe olarak adlandırır; komşu dal ise uzatma hareketini ve genel uzanmayı merkez alır."
+          "focus_only": "Odak dal, uzun geçit ile beden ve uzatılmış el üzerinden ölçülen tam erişimi belirli kalıplarda verir.",
+          "neighbor_only": "Komşu dal yapı, bitki, silah, bakış ve atış gibi çok çeşitli varlıklardaki uzunluk ve uzağa erişmeyi kapsar.",
+          "gloss": "uzunluk ve uzak erişim",
+          "shared_zone": "İki dal fiziksel uzunluk, mesafe ve bir noktadan uzağa erişme alanında belirgin biçimde örtüşür.",
+          "distinction": "Odak yalnız belirli yol ve beden ölçüsü kalıplarında gerçekleşir; komşunun uzunluk ve uzağa erişme kapsamı çok sayıda nesneye uygulanabilen daha genel bir niteliktir."
         }
       ],
-      "neighbor_coverage_note": "Bütün uzaklık, adım ve uzatma adayları değerlendirildi; ölçüleşmiş uzunluğu genel uzatmadan ayıran ilişki yayımlandı.",
+      "neighbor_coverage_note": "Tüm adaylar değerlendirildi; genel uzunluk ve uzağa erişme dalı en yakın karşılaştırmayı sağladı, diğerleri yalnız uzaklık, adım, ölçü birimi, uzatma, yükseklik veya genişlik paylaştı.",
       "branch_image_ar": "الطول والبعد ومدى اليد",
       "what_is_ar": "يدخل فيه العقبة الباسطة بمعنى البعيدة الطويلة، والقامة الباسطة وهي مدى القامة مع مد اليد",
+      "what_is_not_ar": "لا يدخل فيه السعة المعنوية أو الأرض الواسعة إلا إن كان السياق في مسافة أو مدى",
       "source_phrase_ar": "سرنا عقبة باسطة وهي البعيدة (sihah)؛ عقبة باسطة أي بعيدة طويلة وقامة باسطة إذا حفر مدى قامته وقد مد يده (tahdhib)",
       "sources": [
         "SI",
@@ -1177,48 +1247,88 @@
     },
     {
       "branch_ref": "root_000116/B012",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, parçalardan kurulma, birleştirilme veya düzenlenme düşünülemeyen her şey için aktarılmış bir kullanımı bildirir. Dal çerçevesi bu teknik yalınlık anlamını arazi, şiir ölçüsü ve fiziksel yayılmadan doğru biçimde ayırır.",
+        "boundary_note": "Çekirdek, yapısal olarak bileşik olmamaktır; düz, geniş, tek renkli veya kolay anlaşılır olmak tek başına yeterli değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın teknik kullanımı kapsar; belirli arazi ve şiir kalıplarından ya da gündelik kolaylık anlamından ek kapsam almaz."
+      },
       "concept_map": {
-        "definition": "Parçaların birleştirilmesi, düzenlenmesi veya belli bir kuruluş içinde sıralanması düşünülemeyen yalın durum.",
+        "definition": "Parçalardan kurulması, birleştirilmesi veya belli bir düzen içinde örülmesi düşünülemeyen; yapısal olarak bileşik olmayan şeyin niteliğidir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Çekirdek özellik, bir şeyin bileşik parçalardan kurulmuş veya düzenlenmiş olarak düşünülememesidir.",
+            "statement": "Bir şeyin parçalardan oluşmuş bir yapı, birleşim veya düzen taşımaması temel anlamdır.",
             "claim_ids": [
-              "lu_034"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "source_variant",
+            "statement": "Kullanım, fiziksel yayma alanından yapısal bileşiksizliğe aktarılmış bir adlandırmadır.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynak bu kullanımı, birleşim, düzenleme ve kuruluş tasarlanamayan her şeye aktarılmış bir yalınlık anlamı olarak verir.",
-        "common_claim_ids": [
-          "lu_034"
+        "common_summary": "Çok kaynaklı ortak bir özet yoktur; dal aşağıdaki tekil tanıklığın verdiği aktarılmış yapısal bileşiksizlik anlamıyla sınırlıdır.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tekil tanıklık, parçalardan kurulması veya düzenlenmesi düşünülemeyen şeyi aktarılmış bir kullanımla adlandırır."
+          }
         ],
-        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "bileşimsiz yalınlık",
-        "applicability": "Bir şeyin parçalardan kurulmuş veya düzenlenmiş sayılmadığı kavramsal bağlamlarda kullanılır.",
+        "text": "yapısal olarak bileşiksiz",
+        "applicability": "Bir şeyin parçalardan kurulmuş, birleştirilmiş veya düzenlenmiş bir yapı taşımadığı teknik bağlamlarda kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Birleşim, düzenleme ve kuruluşun düşünülememesi koşulunu korur.",
+          "preserves": "Parçalardan oluşmama, birleştirilmemiş olma ve düzenli bir bileşim taşımama sınırlarını korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
-      "contextual_glosses": [],
+      "contextual_glosses": [
+        {
+          "text": "parçalardan oluşmayan",
+          "usage_role": "explanatory",
+          "applicability": "Teknik terim yerine yapısal bileşiksizlik açık ve doğrudan anlatılmak istendiğinde uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Parçalardan kurulmamış olma yönünü açıkça korur.",
+            "loses": "Birleştirme ve düzenleme tasavvurunun bütünüyle dışlanmasını ayrı ayrı belirtmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
       "lexical_glosses": [
         {
           "lexical_unit_id": "lu_034",
           "rendering_kind": "ordinary",
-          "target_gloss": "bileşimsiz ve düzenlenmemiş olma"
+          "target_gloss": "parçalardan oluşması veya düzenlenmesi düşünülemeyen"
         }
       ],
       "excluded_glosses": [],
@@ -1227,60 +1337,85 @@
           "neighbor_ref": "root_000160/B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Parçalardan kurulma ve düzenlenme olanağının bulunmamasını belirtir.",
-          "neighbor_only": "Renk, ses, gece veya yaşam durumunda işaret ya da karışım bulunmamasını belirtir.",
-          "gloss": "karışımsız olma",
-          "shared_zone": "Her iki dal bir şeyde çoğulluk veya karışım bulunmaması fikrine yaklaşır.",
-          "distinction": "Odak dal yapısal bileşimsizliği anlatır; komşu dal ise gözlenebilir karışımın, işaretin veya eşlik eden özelliğin yokluğunu anlatır."
+          "focus_only": "Odak dal, bir şeyin yapısal olarak parçalardan kurulmamış ve bileşik olmamasını bildirir.",
+          "neighbor_only": "Komşu dal renk, ses, gece veya yaşam durumunda başka bir belirti ya da karışım bulunmamasını kapsar.",
+          "gloss": "bileşiksizlik ve karışımsızlık",
+          "shared_zone": "İki dal bir şeyde çoğulluk, ek unsur veya karışım bulunmaması düşüncesinde sınırlı biçimde örtüşür.",
+          "distinction": "Odak yapının parçalardan oluşmamasıdır; komşu ise var olan yüzey, ses veya durumda başka bir renk, yankı, ışık ya da dünya etkisinin karışmamasıdır."
         }
       ],
-      "neighbor_coverage_note": "Bütün birlik, sınıflama ve karışım adayları değerlendirildi; yapısal bileşimsizlikle karışımsızlığı ayıran ilişki seçildi.",
+      "neighbor_coverage_note": "Bütün adaylar incelendi; karışımsızlık dalı en yararlı yakın sınırı verdi, diğerleri birlik, tanım, tür, sınıflandırma veya benzerlik yoluyla karışma gibi ayrı çekirdeklere sahipti.",
       "branch_image_ar": "البساطة وعدم التركيب",
       "what_is_ar": "يدخل فيه استعمال البسط في كل شيء لا يتصور فيه تركيب وتأليف ونظم",
+      "what_is_not_ar": "لا يدخل فيه الأرض البسيطة ولا بحر البسيط إلا بقرينة عدم التركيب",
       "source_phrase_ar": "استعار قوم البسط لكل شيء لا يتصور فيه تركيب وتأليف ونظم (mufradat)",
       "sources": [
         "MU"
       ],
-      "source_note": {}
+      "source_note": {
+        "MU": "Tekil tanıklık, parçalardan kurulması veya düzenlenmesi düşünülemeyen şeyi aktarılmış bir kullanımla adlandırır."
+      }
     },
     {
       "branch_ref": "root_000116/B013",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi deve semeri türünü çatallı olanın karşıtı olarak tanımlar ve aynı nesne için hem yalın ad hem niteleme kalıbı verir. Dal çerçevesi nesne türünü ve çatalsız kuruluş sınırını doğru korur.",
+        "boundary_note": "Yalnız çatallı olmayan belirli deve semeri yapısı söz konusudur; genel yaygı, arazi veya başka semer parçaları bu dala girmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Yalın semer adı ile çatalsız semeri niteleyen kalıp ayrı lexical gerçekleşimlerdir; niteleme bütün semer araçlarına genellenmez."
+      },
       "concept_map": {
-        "definition": "Parçaları birbirinden ayrılmamış biçimde yapılmış belirli bir deve semeri türü.",
+        "definition": "Çatallı biçimde ayrılmamış, yayvan ve tek parça kuruluşlu belirli bir deve semeri türüdür.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Ayırt edici özellik, deve semerinin ayrık parçalara bölünmemiş ve yayılmış bir yapıda olmasıdır.",
+            "statement": "Deve semerinin çatallı veya ayrık olmaması, türü karşıtından ayıran temel yapısal özelliktir.",
             "claim_ids": [
-              "lu_035",
-              "lu_036"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "source_variant",
+            "statement": "Aynı semer türü hem yalın bir adla hem de çatalsız yapısını bildiren niteleme kalıbıyla adlandırılır.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynak, parçaları ayrılmış türün karşıtı olan belirli bir deve semerini hem tek sözcüklü adla hem de açıklayıcı bir söz öbeğiyle kaydeder; söz öbeğinin çoğulu da belirtilir.",
-        "common_claim_ids": [
-          "lu_035",
-          "lu_036"
+        "common_summary": "Çok kaynaklı ortak bir özet yoktur; dal aşağıdaki tekil tanıklığın belirlediği çatalsız deve semeri türüyle sınırlıdır.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tekil tanıklık, çatallı semerin karşıtı olan türü yalın adla ve niteleme kalıbıyla birlikte verir."
+          }
         ],
-        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "parçaları ayrılmamış deve semeri",
-        "applicability": "Deve semerinin ayrık parçalara bölünmemiş özel yapısını adlandırmak için kullanılır.",
+        "text": "çatallı olmayan deve semeri",
+        "applicability": "Deve semerinin ayrık veya çatallı olmayan özel kuruluş türü adlandırıldığında tam karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Nesne türünü ve parçalarının ayrılmamış olması koşulunu tam korur.",
+          "preserves": "Deve semeri türünü, çatalsız yapıyı ve karşıt semer türünden ayrımı korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [],
@@ -1288,39 +1423,42 @@
         {
           "lexical_unit_id": "lu_035",
           "rendering_kind": "ordinary",
-          "target_gloss": "parçaları ayrılmamış deve semeri"
+          "target_gloss": "çatallı olmayan deve semeri"
         },
         {
           "lexical_unit_id": "lu_036",
           "rendering_kind": "ordinary",
-          "target_gloss": "parçaları ayrılmamış deve semeri"
+          "target_gloss": "çatalsız, yayvan deve semeri"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000551/B002",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Parçaları birbirinden ayrılmamış özel bir yapıyı şart koşar.",
-          "neighbor_only": "Deve üzerine konan semer ve benzeri donanımın genel adlarını kapsar.",
-          "gloss": "deve semeri",
-          "shared_zone": "Her iki dal devenin sırtına konan semer ve taşıma donanımı alanındadır.",
-          "distinction": "Odak dal yapısı ayrılmamış özel bir semer türüdür; komşu dal ise yapı koşulu getirmeyen genel semer alanını kapsar."
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal deve semerinin çatallı olmayan özel bir yapısal türünü adlandırır.",
+          "neighbor_only": "Komşu dal devenin sırtına konan semeri ve benzer binek donanımını genel sınıf olarak kapsar.",
+          "gloss": "özel semer türü ve genel semer",
+          "shared_zone": "İki dal da devenin sırtında kullanılan semer ve binek donanımı alanına aittir.",
+          "distinction": "Odak genel nesne adı değil, çatalsız kuruluşla ayrılan özel bir semer türüdür; komşu ise bu yapısal koşulu taşımayan üst sınıf adlandırmasıdır."
         }
       ],
-      "neighbor_coverage_note": "Bütün semer parçaları ve donanım adayları değerlendirildi; özel yapıyı genel semer alanından ayıran ilişki yayımlandı.",
+      "neighbor_coverage_note": "Tüm adaylar karşılaştırıldı; genel deve semeri dalı üst sınıf sınırını en iyi gösterdi, diğerleri semerin açıklığı, örtüsü, tahtası, destekleri, kayışları veya alt yaygısı gibi parçalardı.",
       "branch_image_ar": "القتب المبسوط غير المفروق",
       "what_is_ar": "يدخل فيه الباسوط من الأقتاب ضد المفروق والقتب المبسوط الذي يجمع على مباسيط",
+      "what_is_not_ar": "لا يدخل فيه البساط من الأرض أو المتاع ولا بسط اليد",
       "source_phrase_ar": "الباسوط من الأقتاب ضد المفروق ويقال قتب مبسوط ويجمع مباسيط (tahdhib)",
       "sources": [
         "TA"
       ],
-      "source_note": {}
+      "source_note": {
+        "TA": "Tekil tanıklık, çatallı semerin karşıtı olan türü yalın adla ve niteleme kalıbıyla birlikte verir."
+      }
     }
   ],
   "root_profile": {
-    "summary": "Kökün dalları, fiziksel yayma ve genişlemeden yer, bolluk, uzuv uzatma, toplumsal rahatlık ve uzaklık ölçülerine uzanan bir anlam ağı kurar; ayrıca deve yetiştiriciliği, şiir ölçüsü, özür kabulü, yapısal yalınlık ve semer türü gibi kalıplaşmış uzmanlık alanları içerir.",
+    "summary": "Kökün merkezinde fiziksel olarak yayma ve uzatma bulunur; buradan serili yüzey, genişlik ve artış, elin uzatılması, sosyal rahatlık, sevindirme, dolaşma ve serbest bırakma gibi bağlantılı anlamlar gelişir. Şiir ölçüsü, gerekçe kabulü, mesafe ölçüsü, yapısal bileşiksizlik ve özel deve semeri adları ise daha uzmanlaşmış dallar oluşturur.",
     "polysemy": "polysemic",
     "organization": "mixed"
   },

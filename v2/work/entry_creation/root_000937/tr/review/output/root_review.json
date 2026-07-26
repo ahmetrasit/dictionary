@@ -1,0 +1,61 @@
+{
+  "verdict": "repair",
+  "summary": "B001, B002, B004, B005 ve kok profili kanitla uyumludur. B003 ise kaynak ifadesinde bagimsiz olarak kapsanan her sinir asan kisiyi saptirma islevine baglayarak daraltiyor; bu daralma kimlik, kavram, kavram karsiligi ve sozluk birimi karsiliginda giderilmeli, bunun sonucunda daha dar komsu dalla tam es anlamlilik da kismi yakinliga indirilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000937/B003",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Sinir notu kategorinin her sinir asan kisiyi kapsamadigini soyluyor. Oysa yetkili kaynak ifadesi her sinir asani, iyilik yolundan ceviren kisiden ayri ve bagimsiz bir kategori uyesi olarak veriyor.",
+      "smallest_correction": "Nedeni ve nitelikli durumu koruyup sinir notunu, sinir asan kisiyi bagimsiz olarak kapsayacak; fakat her zorba veya yalnizca azgin sifatini tasiyan kisiyi otomatik olarak kapsamayacak bicimde duzelt."
+    },
+    {
+      "target_ref": "root_000937/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanim ve F004, sinir asan kisiyi ancak baskalarini iyi yoldan uzaklastirdiginda kategoriye aliyor. Kaynak ifadesi her sinir asani bagimsiz olarak kapsiyor; iyi yoldan ceviren ise ayrica sayilan bir kullanimdir.",
+      "smallest_correction": "Tanima sinir asan kisiyi bagimsiz bir kategori uyesi olarak ekle ve F004'te sinir asma ile iyi yoldan cevirme kosullarini birbirine baglamadan iki ayri gerceklesme olarak ifade et."
+    },
+    {
+      "target_ref": "root_000937/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karsiligi yalniz yanlis yol onderini, tapinilan varligi ve saptirici zorba gucu vererek saptirma islevi bulunmayan sinir asan kisiyi cekirdek haritadan dusuruyor.",
+      "smallest_correction": "Karsiliga ve uygulanabilirlik aciklamasina sinir asan kisiyi bagimsiz bir secenek olarak ekle; mevcut diger kategori uyelerini koru."
+    },
+    {
+      "target_ref": "root_000937/B003",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "lu_012 icin hedef karsilik, kanitlanan her sinir asan kisi anlamini saptirici zorba guc ifadesine daraltiyor. Birimin kaynak anlami sinir asani ve iyilikten saptirani ayri kapsam ogeleri olarak veriyor.",
+      "smallest_correction": "lu_012 hedef karsiligina sinir asan kisiyi ayri bir secenek olarak ekle ve iyilikten saptiran kisi veya guc ifadesini bagimsiz tut."
+    },
+    {
+      "target_ref": "root_000937/B003",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_000936/B003 komsu karti yanlis yolun basi, falci, kotucul guc ve Tanri disinda tapinilan varlik kapsamlarini veriyor; odak dalin yetkili kaynak ifadesindeki her sinir asan kisi ve iyilik yolundan ceviren kapsamini vermiyor. Bu nedenle cekirdek ve sinirlar tam ikame edilebilir degildir.",
+      "smallest_correction": "root_000936/B003 iliskisini near_synonym ve partial olarak degistir; odaga ozgu alanda her sinir asan kisiyi ve iyilik yolundan cevireni, ortak alanda ise yanlis yolun basi ile Tanri disinda tapinilan varlik kapsamlarini belirt."
+    }
+  ]
+}

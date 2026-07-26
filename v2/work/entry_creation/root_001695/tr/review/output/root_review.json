@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Dal kimlikleri, kapsamları ve temel anlam haritaları kanıtla uyumludur. Ancak B003 dalının bir komşu ayrımında, komşu kanıtında da bulunan toprak kaldırma eylemi yalnızca odak dala özgü gösterilmiştir; bu sınır kaydı dar kapsamlı olarak düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001695/B003",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_001576/B001 komşu kartı toprak kaldırma eylemini de açıkça kapsadığı hâlde ilgili kaydın focus_only ve distinction alanları, tozu veya toprağı hareket ettirme eylemini odak dala özgü sayıyor ve komşuyu yalnızca yükselen toz ile havadaki görünümüne indiriyor.",
+      "smallest_correction": "Yalnızca root_001576/B001 komşu kaydını düzelt: focus_only alanını belirli kullanımlar ile eyleyeni niteleme unsuruna sınırla; shared_zone alanında toprak veya toz kaldırma eylemini iki dalın ortak alanı olarak belirt; distinction alanında komşunun da toprak kaldırmayı kapsadığını, ayrıca yükselen tozu ve havadaki görünümü adlandırdığını açıkla."
+    }
+  ]
+}

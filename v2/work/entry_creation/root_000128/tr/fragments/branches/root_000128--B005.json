@@ -1,79 +1,53 @@
 {
-  "root_inputs_sha256": "2b0b157171b3d490574dc3832d83169c6241488c6de10d0b09c8eaccee25058b",
+  "root_inputs_sha256": "ea28b219e39e427134f20ee3fe42d12879d84a7d3f075ba95785c63082815c6c",
   "root_id": "root_000128",
   "branch_id": "B005",
   "language": "tr",
   "image_transliteration": "karnın doluluk veya hastalık durumu",
-  "summary": "Karnın görünüş, doluluk, hastalık ve yeme davranışı bakımından aldığı durumları ve bu durumlarla nitelenen kişiyi bildirir.",
+  "summary": "Karnın iri ya da çökük oluşu, yiyecekle dolması, kişinin aşırı yemesi veya karın bölgesinin rahatsız olması gibi durumları belirtir. Bunlar aynı beden bölümüne ilişkin karşıt veya farklı nitelemelerdir.",
   "concept_map": {
-    "definition": "Karnın görünüş, doluluk, hastalık ve yeme davranışı bakımından aldığı durumları ve bu durumlarla nitelenen kişiyi bildirir.",
+    "definition": "Karnın iri ya da çökük oluşu, yiyecekle dolması, kişinin aşırı yemesi veya karın bölgesinin rahatsız olması gibi durumları belirtir. Bunlar aynı beden bölümüne ilişkin karşıt veya farklı nitelemelerdir.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Çekirdek, karınla ilgili bedensel görünüş, sağlık, doluluk ve yeme davranışı durumlarından oluşan bir durum ailesidir.",
+        "statement": "Karın iri, şiş, çökük veya zayıf görünüşüyle nitelenebilir.",
         "claim_ids": [
-          "lu_021",
-          "lu_022",
-          "lu_023",
-          "lu_024",
-          "lu_025",
-          "lu_026"
+          "bc_001"
         ]
       },
       {
         "facet_id": "F002",
         "role": "specialization",
-        "statement": "Büyük karın, kişinin bedensel görünüşünü belirleyen bir nitelik olarak adlandırılır.",
+        "statement": "Yiyecekle aşırı dolma ve çok yeme, karın durumunu yeme davranışıyla ilişkilendirir.",
         "claim_ids": [
-          "lu_021"
+          "bc_001"
         ]
       },
       {
         "facet_id": "F003",
         "role": "specialization",
-        "statement": "Karın hastalığı veya karından yakınma, beden bölümünün sağlık durumuna dayanan ayrı bir niteliktir.",
+        "statement": "Karın rahatsızlığı veya karından yakınma, aynı beden bölümünün hastalıklı durumudur.",
         "claim_ids": [
-          "lu_022"
-        ]
-      },
-      {
-        "facet_id": "F004",
-        "role": "specialization",
-        "statement": "Çok yeme, sürekli büyük karınlı olma ve yalnız yemeyi önemseme, iştah ve davranışa bağlı kullanımlardır.",
-        "claim_ids": [
-          "lu_023",
-          "lu_026"
-        ]
-      },
-      {
-        "facet_id": "F005",
-        "role": "specialization",
-        "statement": "İnce veya çökmüş karın, karın görünüşünün zayıf ya da içe çekilmiş değeridir.",
-        "claim_ids": [
-          "lu_024"
-        ]
-      },
-      {
-        "facet_id": "F006",
-        "role": "specialization",
-        "statement": "Yemekle karnın aşırı dolması ve bundan doğan ağırlık, geçici doluluk durumunu oluşturur.",
-        "claim_ids": [
-          "lu_025"
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Kaynaklar karın durumlarını büyük, hasta, çok yemekten sürekli iri, ince veya çökmüş ve yemekle aşırı dolmuş olarak ayırır. Çok yiyen ya da yalnız karnını düşünen kişi, bedensel doluluğun davranış ve iştah yönündeki uzantısıdır.",
+  "identity_judgment": {
+    "status": "accepted",
+    "rationale": "Kaynak ifadesi karınla ilgili birkaç karşıt durumu aynı dalda açıkça sıralar: irilik, yiyecekle doluluk, aşırı yeme, çöküklük ve rahatsızlık. Dal bu durumları tek bir sonuç gibi değil, aynı beden bölümüne yüklenen ayrı nitelemeler olarak tutmalıdır.",
+    "boundary_note": "Bu dal karın bölümünün kendisini değil, onun büyüklük, doluluk, çöküklük, yeme ve rahatsızlık bakımından durumunu anlatır."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "mixed_non_bare",
+    "note": "Tanım, karın durumlarını ortak alan olarak verir; iri karın, aşırı doluluk ve yeme, çökük karın ile rahatsızlık anlamlarını ayrı tutar."
+  },
+  "source_summary": "Kaynaklar iri karın, aşırı yeme ve yiyecekle dolma yanında çökük karın ile karın rahatsızlığını da sıralar. Ortaklık tek bir sonuçta değil, karın durumunun nitelenmesindedir.",
   "source_synthesis": {
-    "common_summary": "Kaynaklar karın durumlarını büyük, hasta, çok yemekten sürekli iri, ince veya çökmüş ve yemekle aşırı dolmuş olarak ayırır. Çok yiyen ya da yalnız karnını düşünen kişi, bedensel doluluğun davranış ve iştah yönündeki uzantısıdır.",
+    "common_summary": "Kaynaklar iri karın, aşırı yeme ve yiyecekle dolma yanında çökük karın ile karın rahatsızlığını da sıralar. Ortaklık tek bir sonuçta değil, karın durumunun nitelenmesindedir.",
     "common_claim_ids": [
-      "lu_021",
-      "lu_022",
-      "lu_023",
-      "lu_024",
-      "lu_025",
-      "lu_026"
+      "bc_001"
     ],
     "source_details": [],
     "supporting_claim_ids": [],
@@ -90,48 +64,46 @@
     {
       "lexical_unit_id": "lu_022",
       "rendering_kind": "ordinary",
-      "target_gloss": "karın hastası; karnından yakınan"
+      "target_gloss": "karın rahatsızlığı olan kişi"
     },
     {
       "lexical_unit_id": "lu_023",
       "rendering_kind": "ordinary",
-      "target_gloss": "çok yiyen ve bu yüzden karnı sürekli iri olan"
+      "target_gloss": "çok yiyen, karnı sürekli şiş kişi"
     },
     {
       "lexical_unit_id": "lu_024",
       "rendering_kind": "ordinary",
-      "target_gloss": "karnı ince veya çökmüş"
+      "target_gloss": "karnı çökük kişi"
     },
     {
       "lexical_unit_id": "lu_025",
       "rendering_kind": "ordinary",
-      "target_gloss": "yemekten karnın aşırı dolması"
+      "target_gloss": "tıka basa doyma ve karın doluluğu"
     },
     {
       "lexical_unit_id": "lu_026",
       "rendering_kind": "ordinary",
-      "target_gloss": "yalnız yemeyi düşünen obur adam"
+      "target_gloss": "yemekten başka şey düşünmeyen kişi"
     }
   ],
   "glosses": {
-    "semantic_definition": "Karnın görünüş, doluluk, hastalık ve yeme davranışı bakımından aldığı durumları ve bu durumlarla nitelenen kişiyi bildirir.",
+    "semantic_definition": "Karnın iri ya da çökük oluşu, yiyecekle dolması, kişinin aşırı yemesi veya karın bölgesinin rahatsız olması gibi durumları belirtir. Bunlar aynı beden bölümüne ilişkin karşıt veya farklı nitelemelerdir.",
     "concept": {
       "rank": 1,
-      "text": "karın görünüşü, doluluğu, hastalığı veya yeme durumu",
+      "text": "karın görünüşü, doluluğu, yeme düşkünlüğü ya da rahatsızlığı",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Karın büyüklüğü ve inceliği, aşırı doluluk, çok yeme veya yalnız yemeyi önemseme ve karın hastalığından oluşan durum ailesini temsil eder.",
+      "applicability": "Karın görünüşü, yeme ve doluluk durumu ile karın rahatsızlığı aynı anlam alanı içinde topluca anlatıldığında kullanılır.",
       "facet_ids": [
         "F001",
         "F002",
-        "F003",
-        "F004",
-        "F005"
+        "F003"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Karın görünüşünü, doluluk ve hastalık halini, iştah ve yeme davranışıyla ilgili nitelemeyi birlikte korur.",
+        "preserves": "İrilik ve çöküklüğü, doluluk ve aşırı yemeyi, ayrıca rahatsızlığı birlikte korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -140,36 +112,36 @@
     "contextual": [
       {
         "rank": 2,
-        "text": "tıka basa doymuşluk",
+        "text": "tıka basa doluluk",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Yemekle karnın aşırı dolması ve bunun verdiği ağırlık özellikle anlatıldığında uygundur.",
+        "applicability": "Yemekten sonra karnın aşırı dolması ve bunun verdiği ağırlık öne çıktığında kullanılır.",
         "facet_ids": [
-          "F006"
+          "F002"
         ],
         "error_profile": {
           "fit": "narrowing",
-          "preserves": "Aşırı yeme sonucundaki karın doluluğunu ve rahatsızlığı korur.",
-          "loses": "Büyük, ince veya hasta karın ile kişilik nitelemelerini kapsamaz.",
+          "preserves": "Yiyecekle aşırı dolmuş karın durumunu korur.",
+          "loses": "İri veya çökük karın ile karın rahatsızlığını dışarıda bırakır.",
           "adds": null,
           "collision": null
         }
       },
       {
         "rank": 3,
-        "text": "karın hastası",
+        "text": "karın rahatsızlığı",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Karnında hastalık bulunan veya karnından yakınan kişi için kullanılır.",
+        "applicability": "Kişinin karnından yakınması veya karın bölgesinde hastalık bulunması kastedildiğinde kullanılır.",
         "facet_ids": [
           "F003"
         ],
         "error_profile": {
           "fit": "narrowing",
           "preserves": "Karın bölgesindeki hastalık ve yakınma durumunu korur.",
-          "loses": "Doluluk, büyüklük, incelik ve çok yeme anlamlarını dışarıda bırakır.",
+          "loses": "Karın iriliği, çöküklüğü, doluluğu ve aşırı yeme anlamlarını karşılamaz.",
           "adds": null,
           "collision": null
         }
@@ -178,21 +150,19 @@
     "selected": [
       {
         "rank": 1,
-        "text": "karın görünüşü, doluluğu, hastalığı veya yeme durumu",
+        "text": "karın görünüşü, doluluğu, yeme düşkünlüğü ya da rahatsızlığı",
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Karın büyüklüğü ve inceliği, aşırı doluluk, çok yeme veya yalnız yemeyi önemseme ve karın hastalığından oluşan durum ailesini temsil eder.",
+        "applicability": "Karın görünüşü, yeme ve doluluk durumu ile karın rahatsızlığı aynı anlam alanı içinde topluca anlatıldığında kullanılır.",
         "facet_ids": [
           "F001",
           "F002",
-          "F003",
-          "F004",
-          "F005"
+          "F003"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Karın görünüşünü, doluluk ve hastalık halini, iştah ve yeme davranışıyla ilgili nitelemeyi birlikte korur.",
+          "preserves": "İrilik ve çöküklüğü, doluluk ve aşırı yemeyi, ayrıca rahatsızlığı birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -200,36 +170,36 @@
       },
       {
         "rank": 2,
-        "text": "tıka basa doymuşluk",
+        "text": "tıka basa doluluk",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Yemekle karnın aşırı dolması ve bunun verdiği ağırlık özellikle anlatıldığında uygundur.",
+        "applicability": "Yemekten sonra karnın aşırı dolması ve bunun verdiği ağırlık öne çıktığında kullanılır.",
         "facet_ids": [
-          "F006"
+          "F002"
         ],
         "error_profile": {
           "fit": "narrowing",
-          "preserves": "Aşırı yeme sonucundaki karın doluluğunu ve rahatsızlığı korur.",
-          "loses": "Büyük, ince veya hasta karın ile kişilik nitelemelerini kapsamaz.",
+          "preserves": "Yiyecekle aşırı dolmuş karın durumunu korur.",
+          "loses": "İri veya çökük karın ile karın rahatsızlığını dışarıda bırakır.",
           "adds": null,
           "collision": null
         }
       },
       {
         "rank": 3,
-        "text": "karın hastası",
+        "text": "karın rahatsızlığı",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Karnında hastalık bulunan veya karnından yakınan kişi için kullanılır.",
+        "applicability": "Kişinin karnından yakınması veya karın bölgesinde hastalık bulunması kastedildiğinde kullanılır.",
         "facet_ids": [
           "F003"
         ],
         "error_profile": {
           "fit": "narrowing",
           "preserves": "Karın bölgesindeki hastalık ve yakınma durumunu korur.",
-          "loses": "Doluluk, büyüklük, incelik ve çok yeme anlamlarını dışarıda bırakır.",
+          "loses": "Karın iriliği, çöküklüğü, doluluğu ve aşırı yeme anlamlarını karşılamaz.",
           "adds": null,
           "collision": null
         }
@@ -243,16 +213,28 @@
       "neighbor_branch_id": "B005",
       "relation_type": "near_neighbor",
       "boundary_match": "partial",
-      "focus_only": "Karın büyüklüğü, doluluğu, inceliği ve çok yeme gibi hastalık dışı durumları da kapsar.",
-      "neighbor_only": "Belirli bir karın ağrısı türünü adlandırmakla sınırlıdır.",
+      "focus_only": "İrilik, çöküklük, aşırı yeme ve doluluk gibi hastalık dışı durumları da kapsar.",
+      "neighbor_only": "Karında görülen belirli bir ağrının özel adını bildirir.",
       "expression_transliteration": "karın ağrısı",
-      "gloss": "karın durumu ile karın ağrısı",
-      "shared_zone": "İki dal da karın bölgesindeki rahatsızlık veya hastalık alanında kesişir.",
-      "distinction": "Bu dal karınla ilgili görünüş, iştah, doluluk ve hastalıktan oluşan geniş bir durum ailesidir; komşu yalnız belirli bir karın ağrısını adlandırır."
+      "gloss": "karın durumu ve belirli karın ağrısı",
+      "shared_zone": "Her iki dal da karın bölgesindeki rahatsızlıkla ilgili olabilir.",
+      "distinction": "Odak dal çok sayıda karın durumunu toplar; komşu dal ise yalnızca özel olarak adlandırılmış bir karın ağrısına karşılık gelir."
+    },
+    {
+      "neighbor_root_id": "root_001347",
+      "neighbor_branch_id": "B004",
+      "relation_type": "near_neighbor",
+      "boundary_match": "partial",
+      "focus_only": "Karın iriliği, doluluğu, yeme düşkünlüğü ve karın rahatsızlığını da kapsar.",
+      "neighbor_only": "Bütün bedenin zayıflayıp erimesini anlatır.",
+      "expression_transliteration": "dmwr albdn wnhwlh",
+      "gloss": "çökük karın ve genel zayıflama",
+      "shared_zone": "Her iki dal da bedendeki incelme veya çökme görünümüne değinebilir.",
+      "distinction": "Odak dalda çöküklük yalnızca karna ilişkin seçeneklerden biridir; komşu dal tüm bedenin zayıflamasını çekirdek alır."
     }
   ],
   "neighbor_coverage": {
-    "assessment": "single_sufficient",
-    "note": "Bütün adaylar değerlendirildi; hastalık kesişimini gösteren karın ağrısı komşusu, dalın daha geniş durum ailesini açıklamak için seçildi."
+    "assessment": "complete",
+    "note": "Bütün aday kartlar değerlendirildi; belirli karın ağrısı ile genel beden zayıflaması, dalın hastalık ve çöküklük sınırlarını en iyi gösterdi."
   }
 }

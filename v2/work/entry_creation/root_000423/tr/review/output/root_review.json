@@ -1,0 +1,18 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtı ve dal sınırlarını doğru koruyor. Yalnızca B004 içindeki iki sözlüksel karşılık, kanıtta alternatif olarak verilen hız ve boyun çekilişini birlikte zorunlu kılarak anlamı gereksiz yere daraltıyor.",
+  "issues": [
+    {
+      "target_ref": "root_000423/B004",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_016",
+        "lu_018"
+      ],
+      "evidence_conflict": "lu_016, devenin hızlı ilerlemesini veya yürüyüşte boynunun çekilişini alternatifli verir; lu_018 de yürüyüş hızını veya çekilişini bildirir. Mevcut karşılıklar iki niteliği birlikte zorunlu tutarak kanıttaki alternatif kapsamı daraltıyor.",
+      "smallest_correction": "lu_016 karşılığını \"hızla ilerleyen veya yürürken boynu çekilir gibi görünen deve\", lu_018 karşılığını da \"hızlı yürüyüş veya yürüyüşte çekiliş\" olarak değiştir; diğer sözlüksel karşılıkları koru."
+    }
+  ]
+}

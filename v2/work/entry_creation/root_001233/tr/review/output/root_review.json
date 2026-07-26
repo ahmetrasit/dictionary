@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B005 dalının genel anlamı doğru kurulmuş, ancak kavram karşılığı gök gürültüsüne özgü çatallı veya kırık ses niteliğini bütün ses kullanımlarının ortak çekirdeği gibi göstermiştir. Bu özelleşme kavram karşılığından çıkarılmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001233/B005",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, kırık veya çatallı ses niteliğini yalnız gök gürültüsü kullanımında belirtir; deve dişlerinin gıcırdaması, erkek devenin gürlemesi ve çalgı sesi için ortak çekirdek güçlü ve yüksek sestir. \"gür ve çatallı ses\" karşılığı bu özelleşmeyi bütün dala taşır.",
+      "smallest_correction": "concept_gloss.text değerini \"gür ve güçlü ses\" olarak değiştirin, facet_ids listesini yalnız F001 ile sınırlandırın ve applicability ile error_profile metinlerinden çatallı sesin dal genelinde korunduğu iddiasını çıkarın."
+    }
+  ]
+}

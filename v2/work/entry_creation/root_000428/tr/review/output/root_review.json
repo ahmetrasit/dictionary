@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtla uyumlu, dal sınırlarını ve sözlükselleşme kapsamlarını koruyor. Yalnızca B002 kavram haritasında kuyu ve koruluk anlamları, kaynakta yerleşmiş sözlüksel değerler olmasına rağmen örnek düzeyine indirilmiş; bu sınıflandırma küçük ve kesin bir düzeltme gerektiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_000428/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi ilgili biçimi doğrudan kuyu ve koruluk anlamlarıyla verir; bunlar genel bir gizli yer çekirdeğinin rastlantısal örnekleri değil, biçime bağlı yerleşmiş sözlüksel anlamlardır. F004'ün \"example\" rolü ve \"somut örnekleridir\" sözü bu ayrımı yanlış kuruyor.",
+      "smallest_correction": "Yalnızca F004'ün rolünü \"specialization\" olarak değiştir ve cümle sonunu bu yer anlamlarını sözlüksel uzmanlaşmalar olarak niteleyecek biçimde düzelt; diğer facetleri ve alanları koru."
+    }
+  ]
+}

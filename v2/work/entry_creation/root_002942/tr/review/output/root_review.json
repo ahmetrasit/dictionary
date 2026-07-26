@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Genel dal ayrımları ve kaynak dayanakları korunabilir; yalnızca B003 kavram karşılığı, söz çekirdeğini açıklarken kişi süslenmesi uzantısını da kapsıyormuş gibi işaretlediği için sınırlı düzeltme gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_002942/B003",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, sözün sahteleştirilip süslenmesini çekirdek kullanım olarak, kadının süslenmesini ise ayrı bir uzantı olarak verir. Yazarın kavram karşılığı 'sözü süsleyip çarpıtma' yalnızca söz çekirdeğini açıklar, fakat facet_ids içinde kişi süslenmesi uzantısı olan F002'yi de kapsanmış gösterir.",
+      "smallest_correction": "B003 concept_gloss.facet_ids alanından F002 çıkarılmalı ve karşılık yalnızca F001 söz çekirdeğine bağlanmalıdır."
+    }
+  ]
+}

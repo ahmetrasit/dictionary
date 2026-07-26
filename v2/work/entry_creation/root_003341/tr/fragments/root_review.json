@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "8d78db05a9991b52f0d3fdc0560750fca62ba340a107977ee3d4e58cabacd952",
+  "verdict": "repair",
+  "summary": "B008 dalinin teknik vezin aciklamasi, kanitta verilen kesin son ayak donusumunu belirsiz bir kalip degisimi olarak aktararak ayirt edici bilgiyi kaybediyor. Diger dallarda yayin acisindan duzeltme gerektiren belirgin bir anlamsal sorun bulunmuyor.",
+  "issues": [
+    {
+      "target_ref": "root_003341/B008",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit, hafif vezninin sonunda failun kalibinin yerini mefulun kalibinin almasini acikca belirtir. Tanim ve cekirdek yuz ise bunu yalnizca beklenen kalibin belirsiz bir baska kaliba donusmesi olarak vererek dalin teknik kimligini belirleyen iki kalibi kaybediyor.",
+      "smallest_correction": "B008 concept_map tanimini ve F001 cekirdek ifadesini, hafif vezninde son ayagin failun yerine mefulun olmasini acikca belirtecek sekilde dar kapsamli olarak duzelt."
+    },
+    {
+      "target_ref": "root_003341/B008",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tek kaynakli kanitin ayirt edici ayrintisi, son konumda failun yerine mefulun gelmesidir. Ortak ozet ve tekil tanik satiri bu ayrintiyi genel bir son ayak kalibi degisimi diye aktararak kaynagin ozgul bilgisini sentezlemiyor.",
+      "smallest_correction": "B008 source_synthesis icindeki common_summary ve sole_attestation ozetine, son ayagin failun yerine mefulun olmasi ayrintisini ekle."
+    }
+  ]
+}

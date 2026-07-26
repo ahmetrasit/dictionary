@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın ana anlam ayrımları ve sözlükselleşme kapsamları kanıtla uyumludur. Ancak bir bağlamsal karşılık soğuğun derecesini kanıtsız biçimde artırmakta, torba dalındaki kimlik durumu yapılan yeniden çerçevelemeyle çelişmekte ve aynı dalın komşu kapsama notu yayımlanan ilişkilerde bulunmayan bir işlemi anmaktadır.",
+  "issues": [
+    {
+      "target_ref": "root_000403/B005",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak yalnızca açlık ile soğuğun birlikte bulunmasını bildirir; \"donmuş\" karşılığı ise donma ya da aşırı soğuk derecesi ekler.",
+      "smallest_correction": "İlk bağlamsal karşılığın metnini \"aç ve üşümüş\" olarak değiştir; diğer bağlam ve hata profili alanlarını koru."
+    },
+    {
+      "target_ref": "root_000403/B008",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Geçici dal çerçevesi torbayı adlandırırken yanıt, sözlükselleşme kanıtına dayanarak dalı torbaya koyma eylemiyle sınırlar ve yalın torba anlamını açıkça dışlar; bu karar \"accepted\" değil yeniden çerçevelemedir.",
+      "smallest_correction": "Mevcut gerekçe ile sınır notunu koruyarak identity_judgment.status değerini \"reframed\" yap."
+    },
+    {
+      "target_ref": "root_000403/B008",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu kapsama notu dalı \"kına koyma işleminden\" ayırdığını söyler; yayımlanan iki komşu ise arkada taşınan çanta ile büyük torbadır ve kanıtta kına işlemi yoktur.",
+      "smallest_correction": "Kapsama notundaki \"kına koyma işleminden\" ifadesini yayımlanan ilk komşuya uygun olarak \"arkada taşınan çantadan\" biçiminde değiştir."
+    }
+  ]
+}

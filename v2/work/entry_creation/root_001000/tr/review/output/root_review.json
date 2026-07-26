@@ -1,0 +1,51 @@
+{
+  "verdict": "repair",
+  "summary": "B008 dalının genel çerçevesi doğrudur; ancak iki özel gök adlandırması Türkçe metinde anonimleştirilmiş, böylece hangi yıldız gruplarının kastedildiği kaybolmuştur. İlgili alanlarda adları açıklamayla birlikte geri koyan sınırlı bir düzeltme gereklidir.",
+  "issues": [
+    {
+      "target_ref": "root_001000/B008",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt Simak'ın Arşı'nı Avva'nın altındaki dört yıldız, Süreyya'nın Arşı'nı ise Süreyya yakınındaki yıldızlar olarak ayrı ayrı tanımlar. Tanım ve iki faset bunları yalnızca belirsiz bir yıldız ile belirsiz bir yıldız kümesine bağladığı için özel göndergeler Türkçe kavram haritasından çıkarılamaz.",
+      "smallest_correction": "Yalnız tanımı ve F001 ile F002 ifadelerini değiştirerek Simak'ın Arşı ile Süreyya'nın Arşı adlarını, sırasıyla Avva'nın altındaki dört küçük yıldız ve Süreyya yakınındaki yıldız açıklamalarıyla birlikte belirt."
+    },
+    {
+      "target_ref": "root_001000/B008",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet kanıttaki Simak'ın Arşı ve Süreyya'nın Arşı ayrımını adsız bir gök adı ile başka bir yıldız kümesine indirgiyor. Böylece toplu iddianın iki ayırt edici özel adlandırması kaynak sentezinde kayboluyor.",
+      "smallest_correction": "Yalnız common_summary metninde iki adı geri koy; Simak'ın Arşı'nı Avva'nın altındaki dört küçük yıldız, Süreyya'nın Arşı'nı Süreyya yakınındaki yıldızlar olarak açıklamayı koru."
+    },
+    {
+      "target_ref": "root_001000/B008",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı yalnızca özel adlarla anılan iki yıldız grubu diyor ve kanıttaki adların hiçbirini vermiyor. Bu ifade, aynı genel tanıma uyan başka yıldız gruplarından dalı ayırmaya yetmiyor.",
+      "smallest_correction": "Kavram karşılığının text, applicability ve error_profile.preserves metinlerinde Simak'ın Arşı ile Süreyya'nın Arşı kimliklerini açıklayıcı yıldız grubu anlatımıyla birlikte belirt; diğer alanları koru."
+    },
+    {
+      "target_ref": "root_001000/B008",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_021",
+        "lu_022"
+      ],
+      "evidence_conflict": "lu_021 karşılığı Simak ve Avva kimliklerini, ayrıca grubun Aslan'ın arka kısmı sayıldığı kaynak varyantını kaybediyor; lu_022 karşılığı da Süreyya kimliğini belirsiz bir yıldız kümesine çeviriyor. İki sıradan karşılık bu nedenle kanıttaki özel gök birimlerini tanımlamıyor.",
+      "smallest_correction": "Yalnız iki target_gloss değerini düzelt: lu_021 için Simak'ın Arşı adıyla Avva'nın altında bulunan ve Aslan'ın arka kısmı sayılan dört küçük yıldızı, lu_022 için Süreyya'nın Arşı adıyla Süreyya yakınındaki yıldızları açıkça yaz."
+    }
+  ]
+}

@@ -1,28 +1,39 @@
 {
   "verdict": "repair",
-  "summary": "B005 dalındaki sıradan renk nitelemesi kavram haritasında doğru biçimde ayrılmıştır; ancak kaynak sentezi ve kavram karşılığı bu tanıklığı yeniden sabit adlar kapsamına sokmakta veya kapsam dışında bırakmaktadır. Bu iki alan düzeltilmeden yanıt yayıma hazır değildir.",
+  "summary": "Yanit genel olarak kanit paketine sadik, ancak B003 dalinda cadir anlami gereksiz bicimde buyukluk ve kullanim amaci eklenerek genisletilmis. Bu ekler kanitta verilmedigi icin yayindan once sade bir cadir adlandirmasina cekilmeli.",
   "issues": [
     {
-      "target_ref": "root_001947/B005",
-      "field": "source_synthesis",
-      "severity": "major",
+      "target_ref": "root_001947/B003",
+      "field": "concept_map",
+      "severity": "minor",
       "confidence": "high",
       "claim_ids": [
         "bc_001"
       ],
-      "evidence_conflict": "Kaynak ifadesindeki alaca ip tanıklığı sıradan bir renk nitelemesidir ve dalın kimlik yargısı ile F004 bunu doğru biçimde belirtir. Buna karşılık common_summary, tanıklıkların yer, yapı, hayvan ve nesneler için sabit adlar gösterdiğini söyleyerek ip nitelemesini ya sabit bir nesne adına dönüştürür ya da sentezden çıkarır.",
-      "smallest_correction": "common_summary metnini, özel ve yerleşik adlandırmaların yanında ipin sıradan biçimde alaca diye nitelendiğini de açıkça söyleyecek biçimde düzeltin; tek sözlükle çözümlenemeyen claim kimliği için kaynak ayrıntısı eklemeyin."
+      "evidence_conflict": "Kanit B003 icin sozcugun cadir veya fustat adlandirmasi oldugunu verir; barinma ya da toplanma amaci ve buyukluk kosulu belirtmez. Yanitin tanimi ve F001 yuzeyi bunu buyuk, kurulmus ve belli amaclarla kullanilan bir cadir turu gibi sunarak kanitta olmayan ozellikleri cekirdege ekliyor.",
+      "smallest_correction": "B003 concept_map tanimini ve ilgili yuzeyi yalnizca cadir veya cadir yapisi adlandirmasi olarak sadeleştirin; buyukluk, barinma/toplanma amaci ve siradan ortu karsitligini cekirdek kosulu olmaktan cikarin."
     },
     {
-      "target_ref": "root_001947/B005",
-      "field": "concept_gloss",
-      "severity": "major",
+      "target_ref": "root_001947/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
       "confidence": "high",
       "claim_ids": [
         "bc_001"
       ],
-      "evidence_conflict": "Kavram karşılığı yalnızca sabit özel ad veya nesne adı derken F001'in kapsadığı sıradan renk nitelemesini ve kaynak ifadesindeki alaca ip kullanımını temsil etmez. Buna rağmen hata profili karşılığı eksiksiz saymakta, hiçbir kayıp bildirmemekte ve F001'i korunmuş göstererek kendi kavram haritasıyla çelişmektedir.",
-      "smallest_correction": "Kavram karşılığını sabit adlandırmalarla birlikte sıradan renk nitelemesi istisnasını da temsil edecek biçimde genişletin; uygulanabilirlik ve hata profilini de bu geniş kapsamla uyumlu hale getirin."
+      "evidence_conflict": "Kanit ortak tanikligi cadir/fustat adlandirmasiyla sinirlar. Source_synthesis common_summary ise ortak tanikliklarin buyuk cadir anlaminda birlestigini soyluyor; buyukluk kanitlanmis ortak unsur degildir.",
+      "smallest_correction": "B003 source_synthesis common_summary ifadesindeki buyukluk vurgusunu kaldirin ve ortak sentezi cadir/fustat adlandirmasi ile siirsel ornegin bu adlandirmayi gostermesiyle sinirlayin."
+    },
+    {
+      "target_ref": "root_001947/B003",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit dalin karsiligini cadir/fustat olarak verir; concept_gloss metni ise buyuk cadir diyerek kanitta belirtilmeyen bir boyut kosulu ekliyor.",
+      "smallest_correction": "B003 concept_gloss metnini cadir veya cadir yapisi gibi boyut kosulu tasimayan bir Turkce karsiliga cevirin; uygulanabilirlik ve hata profilindeki buyukluk savlarini da kaldirin."
     }
   ]
 }

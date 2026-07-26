@@ -1,0 +1,61 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın dal ayrımları ve kapsam profilleri genel olarak kanıtla uyumludur. Bununla birlikte B001'de kaynak ifadesinde bulunmayan üstünlük ve düzgünlük öğeleri kavram ile kaynak sentezine taşınmış, B003'te seçim adı veya hakkı seçenek diye genişletilmiş, B004'te ise çokluk ya da övülen edinme yolu kısıtı kanıtsız biçimde değerlilik olarak sunulmuştur. Bu sınırlı alanlar doğrudan düzeltilebilir.",
+  "issues": [
+    {
+      "target_ref": "root_000452/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi genel olumlu değeri arzu edilme, kötülüğe karşıtlık ve bağlama göre zarara karşıtlık üzerinden kurar; üstünlük ile düzgünlüğü bu dalın anlam öğeleri olarak vermez. Tanım ve F002 bu iki öğeyi kanıtsız biçimde ekliyor.",
+      "smallest_correction": "Tanımdan ve F002'den üstünlük ile düzgünlük öğelerini çıkarıp yalnızca bağlama göre yarar yönünün öne çıkması ve zarara karşıtlık anlatımını korumak."
+    },
+    {
+      "target_ref": "root_000452/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet üstünlük yönünü kaynak sentezinin parçası yapıyor, ancak bc_001 yalnızca arzu edilme, kötülüğe karşıtlık ve bazı bağlamlarda zarara karşıtlık bildiriyor.",
+      "smallest_correction": "Ortak özetten üstünlük sözünü çıkarıp yarar ve zarara karşıtlık anlatımını korumak."
+    },
+    {
+      "target_ref": "root_000452/B003",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_009"
+      ],
+      "evidence_conflict": "lu_009 seçim adını ve kişiye bırakılan seçim hakkını bildirir; hedef karşılıktaki seçenek sözü ise seçilebilecek alternatif nesneyi ekleyerek kapsamı genişletir.",
+      "smallest_correction": "lu_009 hedef karşılığını seçim veya seçim hakkı olarak değiştirmek."
+    },
+    {
+      "target_ref": "root_000452/B004",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 mal anlamını bazı kullanımlarda çokluk ve övülen bir edinme yolu ile sınırlar; malın değerli olmasını ayrı bir koşul olarak bildirmez. Tanım değerli öğesini bu iki kanıtlı kısıta ekliyor.",
+      "smallest_correction": "Tanımdaki değerli sözünü çıkarıp özellikle çok veya övülen bir yoldan edinilmiş mal anlatımını korumak."
+    },
+    {
+      "target_ref": "root_000452/B004",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı ile hata profili kanıtlı çokluk ve övülen edinme yolu kısıtını değerli servet biçiminde değiştiriyor. Değerlilik bc_001'de verilen kapsam ölçüsü değildir.",
+      "smallest_correction": "Kavram karşılığını mal, özellikle çok veya övülen bir yoldan edinilmiş servet olarak düzeltmek; uygulanabilirlik ve korunan öğe açıklamalarında değer yerine çokluk ile edinme yolu kısıtını kullanmak."
+    }
+  ]
+}

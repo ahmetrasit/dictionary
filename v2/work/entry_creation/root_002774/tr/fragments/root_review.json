@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": "2292bd93dc814f6d12befeb20e79ca0dcfabdd37e71b02bbc24586f0a907b2e3",
+  "verdict": "repair",
+  "summary": "Yazar çıktısı genel olarak kanıtla uyumlu; ancak B003 kaynak sentezi, Tahdhib tanıklığını temasla tetiklenen ortak deve tepkisine dahil ederek ortak alanı fazla genelliyor. Bu alan tek ve dar bir düzeltmeyle onarıldı.",
+  "issues": [
+    {
+      "target_ref": "root_002774/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt Maqayis ve Sihah'ta temas edilince tepki veren deve veya dişi deveyi verirken, Tahdhib aynı dalda aklını yitirmiş veya taşkın davranan deve niteliğini verir. Yazarın ortak çerçeveyi temasla tetiklenen hayvan davranışı diye sunması Tahdhib varyantını ortak temas bağlamına taşır.",
+      "smallest_correction": "B003 source_synthesis alanında common_summary ifadesini deveye bağlı ortak alanı koruyup temasla ürkme ile aklını yitirmiş veya taşkın davranma varyantlarını ayıracak biçimde daralt; diğer alanlara dokunma."
+    }
+  ]
+}

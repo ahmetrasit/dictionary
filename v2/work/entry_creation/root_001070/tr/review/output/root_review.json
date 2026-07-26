@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Bütün dallar genel olarak kanıtla uyumludur; ancak B007'deki tek kaynak tanıklığı özeti, olumsuz kuruluşun evrensel tanınmışlık anlamını zayıflatan bir niceleyici hatası içerir.",
+  "issues": [
+    {
+      "target_ref": "root_001070/B007",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tek kaynak tanıklığı özetindeki \"hiç kimsenin onu tanımadığı söylenemeyecek\" ifadesi yalnızca kişiyi en az birinin tanıdığını gerektirir. Kanıt ise kişiyi tanımayan hiç kimsenin bulunmadığını, yani kişinin herkesçe tanındığını bildirir.",
+      "smallest_correction": "Kaynak ayrıntısı özetindeki sorunlu bölümü \"onu tanımayan hiç kimsenin bulunmadığı ölçüde tanınmış olma\" olarak değiştirin; diğer source_synthesis alanlarını koruyun."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak bir sözlüksel karşılık hayvan anlamını yanlışlıkla kazanma dalına taşımakta, bir bağlamsal karşılık da kaynakta bulunmayan tek amaç olma koşulunu eklemektedir.",
+  "issues": [
+    {
+      "target_ref": "root_001109/B002",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_006"
+      ],
+      "evidence_conflict": "lu_006, kazanma ve bir şeye erişme dalında yer alır; verilen anlam bir şeyi elde etmeyi veya kazanmayı bildirir. Türkçe karşılıktaki \"küçükbaş hayvan elde etmek\" ifadesi B001'e ait hayvan anlamını bu birime taşımakta ve B002'nin açık sınırıyla çatışmaktadır.",
+      "smallest_correction": "lu_006 için target_gloss değerini \"bir şeyi elde etmek veya kazanmak\" olarak değiştirin."
+    },
+    {
+      "target_ref": "root_001109/B003",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, belirtilen işi kişinin amacı ve elde edeceği kazanç olarak açıklar; başka amaçların bulunmadığını söylemez. \"Tek amacın bunu yapmak olsun\" karşılığı bu nedenle kaynakta desteklenmeyen bir münhasırlık ekler.",
+      "smallest_correction": "Bağlamsal karşılığı \"amacın bunu yapmak olsun\" biçiminde düzeltin ve ilgili error_profile metninden tek amaç olma iddiasını kaldırın; kazanç bileşeninin açıkça söylenmediğine ilişkin narrowing kaydı korunabilir."
+    }
+  ]
+}

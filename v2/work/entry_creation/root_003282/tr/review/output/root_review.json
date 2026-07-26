@@ -1,0 +1,70 @@
+{
+  "verdict": "repair",
+  "summary": "B003 genel olarak doğru ayrılmış, ancak dalın bazı alanları kanıttaki uzunluk ve uzanım varyantını deve bacaklarıyla sınırlıymış gibi sunuyor. Bu yüzden B003 kimlik, kavram haritası, kaynak sentezi, kavram karşılığı, komşu ayrımları ve kök özeti için dar onarım gerekiyor.",
+  "issues": [
+    {
+      "target_ref": "root_003282/B003",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B003 kanıtı deve bacaklarının hızlı taşınmasını ve sağlamlığını verirken ayrıca uzunluk ve uzanım varyantını da kaydeder. Mevcut kimlik notu dalı deve bacaklarının hareketi, sağlamlığı ve uzunluğu ile sınırlayarak bu uzunluk varyantını fazla daraltıyor.",
+      "smallest_correction": "B003 kimlik gerekçesi ve sınır notunu, merkezde deve bacağı hareketi ve sağlamlığı bulunduğunu ama uzunluk ve uzanım varyantının yalnız deveyle sınırlı olmadığını açıkça gösterecek kadar değiştir."
+    },
+    {
+      "target_ref": "root_003282/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B003 kavram haritası erkek ve dişi deve formlarını bacak hareketi ve yapı niteliğinin taşıyıcıları olarak anlatıyor, fakat aynı kanıt uzunluk ve uzanım varyantını ayrıca verir. Tanım ve F002 bu varyantı deve bacağı çekirdeğine indirgememelidir.",
+      "smallest_correction": "B003 tanımını ve ilgili facetleri, deve bacaklarının hızlı ve sağlam taşınması yanında uzunluk veya uzanımın kaynak varyantı olduğunu; erkek ve dişi deve örneklerinin yalnız deve kullanımlarını karşıladığını belirtecek şekilde düzelt."
+    },
+    {
+      "target_ref": "root_003282/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B003 kaynak sentezi kaynakların dalı yalnız deve ve bacak bağlamında verdiğini söylüyor. Kanıt ise deve bacağı hızı ve sağlamlığıyla birlikte uzunluk ve uzanım açıklamasını da ayrı bir kaynak varyantı olarak içerir.",
+      "smallest_correction": "B003 ortak özetini, deve bacağı hızı ve sağlamlığını korurken uzunluk ve uzanım açıklamasını deveyle sınırlı olmayan kaynak varyantı olarak ekleyecek şekilde dar biçimde düzelt."
+    },
+    {
+      "target_ref": "root_003282/B003",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B003 kavram karşılığı hızlılık ve sağlamlığı koruyor, fakat kanıttaki uzunluk ve uzanım yönünü kayıpsız sayıyor. Bu, dalın yayın karşılığını fazla dar gösterir.",
+      "smallest_correction": "B003 kavram karşılığını ve hata profilini, hızlılık, sağlamlık ve uzunluk yönlerinin üçünü de koruyan kısa Türkçe ifadeyle değiştir."
+    },
+    {
+      "target_ref": "root_003282/B003",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B003 kendi komşu ayrımlarında odağı yer yer yalnız deve yürüyüşü veya bacak niteliği diye verir. Kanıt, hızlı taşıma ve sağlamlık yanında uzunluk ve uzanım varyantını da bu dalın sınırı içinde tutar.",
+      "smallest_correction": "B003 komşu ayrımlarında yalnızca B003 odak ifadelerini ve kapsam notunu, uzunluk ve uzanım yönünü de içerecek şekilde düzelt; komşu dalların anlamlarını değiştirme."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök özeti B003 dalını deve bacaklarının hızlı ve sağlam taşınması olarak özetliyor, fakat gözden geçirilen B003 kanıtı uzunluk ve uzanım varyantını da içeriyor.",
+      "smallest_correction": "Kök özetindeki B003 ifadesine uzunluk ve uzanım yönünü ekle."
+    }
+  ]
+}

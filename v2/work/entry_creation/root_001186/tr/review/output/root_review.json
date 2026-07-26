@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B003 dalının bir komşuluk karşılaştırmasında, yalnız komşu dala ait yönünü şaşırma özelliği ortak alana taşınmıştır. Bu sınırlı ve yüksek güvenli hata dışında incelenen anlam çerçevesi kanıtla uyumludur.",
+  "issues": [
+    {
+      "target_ref": "root_001186/B003",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_000191/B003 için verilen kanıt, yolcunun yönünü şaşırmasını ve yol bulamamasını komşu dalın ayırıcı özelliği olarak gösterir. Buna karşılık ortak alan cümlesi, yön bulmanın güçleşmesini iki dala birden yükleyerek odak dalın susuzluk ve ölüm tehlikesi sınırını kanıtsız biçimde genişletmektedir.",
+      "smallest_correction": "root_000191/B003 karşılaştırmasındaki shared_zone cümlesini, yön bulma güçlüğünü ortak özellik saymadan iki dalın yolcu için tehlikeli ıssız araziyi anlatmakta buluştuğunu söyleyecek biçimde düzeltin; diğer komşuluk alanlarını değiştirmeyin."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B003 dalındaki bir komşu ayrımı, sağlanan sınır kartında bulunmayan bir küçüklük koşulu ekliyor. Bunun dışındaki incelenen alanlar kanıtla uyumludur.",
+  "issues": [
+    {
+      "target_ref": "root_000716/B003",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_000631/B007 için sağlanan sınır kartı, komşunun gemi veya gemi türlerinden biri olduğunu bildirir; boyutla ilgili bir sınırlama vermez. Yazarın komşuyu küçük tekne türüne yönelen bir anlam olarak sunması, kanıtta bulunmayan bir küçüklük koşulu ekler.",
+      "smallest_correction": "root_000631/B007 karşılaştırmasında küçük nitelemesini kaldırıp komşuyu yalnızca bir gemi veya gemi türü olarak tanımlayın. near_synonym ve partial değerleri korunabilir."
+    }
+  ]
+}

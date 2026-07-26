@@ -1,0 +1,40 @@
+{
+  "inputs_sha256": "1b25f62284effa6dd8ebf32a3622f8418fcbf7cdbad509f4af1c7d1e228ccc04",
+  "verdict": "editorial_review",
+  "summary": "Yazar yanıtı genel olarak kanıtı dikkatle izliyor; ancak bir sözlüksel karşılık anlam yerine köken tartışmasını öne çıkarıyor, bir kaynak örneği dal tanımına taşınıyor ve bayrak dalına kanıtta bulunmayan konumsal bir koşul ekleniyor. Bu alanlar yayımdan önce düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000615/B009",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_029"
+      ],
+      "evidence_conflict": "lu_029 görünür güzellik anlamını verir; mevcut karşılık ise anlamı doğrudan karşılamak yerine biçimin kökeninin tartışmalı olduğunu söyleyen sözlükbilimsel bir açıklamaya dönüşür. Bu, ordinary politikasına uygun doğal bir hedef dil karşılığı değildir.",
+      "smallest_correction": "lu_029 target_gloss değerini yalnız anlamı veren doğal bir karşılıkla, örneğin \"görünen güzellik; güzellikle dolmuş gibi hoş görünüş\" biçiminde değiştirin; köken tartışmasını sözlüksel karşılıktan çıkarın."
+    },
+    {
+      "target_ref": "root_000615/B011",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 içindeki deve kuşuyla birlikte anmama sözü, hayvan anlamını gösteren bir kaynak örneğidir; ayrı bir dal anlamı veya hayvan adının bağlı kullanımı değildir. Mevcut tanım ve F004 bu örneği kavram haritasına associated_use olarak yükseltiyor.",
+      "smallest_correction": "Deve kuşuyla ilgili cümleyi definition alanından çıkarın ve F004'ü yalnız kadın adı kullanımına ayırın; söz konusu ifadeyi gerekirse kaynak örneği olarak source_synthesis içinde tutun."
+    },
+    {
+      "target_ref": "root_000615/B012",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 yalnız bayrak anlamını destekler. Mevcut definition ve F001 bayrağın kaldırılmış ve bir topluluğu ya da birliği temsil ediyor olmasını zorunlu çekirdek özellikler gibi ekliyor; ayrıca aynı yanıtın komşu ayrımı, dikilmiş veya kurulmuş olma koşulunun odak dalda bulunmadığını açıkça belirtiyor.",
+      "smallest_correction": "Definition alanını \"Bayrak ya da sancaktır.\" biçiminde yalınlaştırın ve F001'den kaldırılmış olma ile belirli bir topluluğu temsil etme koşullarını çıkarın."
+    }
+  ]
+}

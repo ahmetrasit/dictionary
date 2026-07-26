@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak bir sözlüksel karşılık üç yaprak sınırını daraltmakta ve bir komşuluk ilişkisi daha geniş kapsamlı komşuyu tam eş anlamlı saymaktadır. Bu iki sınırlı hata en küçük düzeltmelerle giderildi.",
+  "issues": [
+    {
+      "target_ref": "root_001143/B008",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_022"
+      ],
+      "evidence_conflict": "Kanıt, ekinin üç yapraklı veya daha fazla olmasını bildirirken hedef karşılık yalnız üçten çok yapraklanan ekini kapsıyor ve tam üç yapraklı durumu dışarıda bırakıyor.",
+      "smallest_correction": "lu_022 hedef karşılığındaki 'üçten çok yapraklanan' sözünü 'en az üç yapraklı' olarak değiştir."
+    },
+    {
+      "target_ref": "root_001143/B016",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Odak dalın kanıtı yalanı ve yalan söylemeyi verirken root_001290/B001 komşusu yalanı hem sözde hem eylemde kapsar. Komşudaki bu ek eylem kapsamı, dalların olağan kullanım sınırlarının tam olarak birbirinin yerine geçmesini engeller.",
+      "smallest_correction": "root_001290/B001 ilişkisini near_synonym ve partial olarak değiştir; odak dalın sözde yalana, komşunun ise söz ve eylemde yalana uzandığını focus_only, neighbor_only ve distinction alanlarında belirt."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dal kimliğini, kapsamı, anlam çekirdeğini, kaynak sentezini ve sözlüksel karşılıkları kanıtla uyumlu biçimde kuruyor. Ancak bir komşu karşılaştırması, verilen sınır kartında bulunmayan yurt, kaçaklık ve toplumsal konum ayrıntıları ekliyor; bu sınırlı taşma komşu ayrımında düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000460/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_000930/B001 kartı kişiyi kovma, uzaklaştırma, yana çekme, sürme ve çıkarma kapsamını verir; yurdundan çıkarılmayı, kaçak konumunu veya bunun toplumsal bir konum doğurduğunu belirtmez. Mevcut neighbor_only ve distinction metinleri bu desteklenmeyen ayrıntıları komşunun zorunlu sınırı gibi sunuyor.",
+      "smallest_correction": "Yalnızca root_000930/B001 satırındaki neighbor_only ve distinction metinlerini değiştir; komşuya özgü alanı kişiye yönelen kovma, sürme ve bulunduğu yerden çıkarma olarak ifade et, yurt, kaçaklık ve toplumsal konum eklerini kaldır."
+    }
+  ]
+}

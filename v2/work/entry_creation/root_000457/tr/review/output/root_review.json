@@ -1,0 +1,84 @@
+{
+  "verdict": "repair",
+  "summary": "B014 dalında kaynak yalnızca bir ses türünü ve köprü üzerindeki atların sesini örnek olarak verir. Yanıtın tok, yinelenen, vuruntu ve ardışık niteliklerini çekirdeğe taşıması desteklenmediğinden bu nitelikler ilgili alanlardan çıkarılmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_000457/B014",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yetkili ifade yalnızca bir ses türünü belirtip köprü üzerindeki atların sesini örnekler; sesin tok veya yinelenen olduğunu söylemez.",
+      "smallest_correction": "Gerekçeden tok ve yinelenen niteliklerini çıkarıp dalı, atların köprü üzerindeki sesiyle örneklenen bir ses türü olarak kaydedin."
+    },
+    {
+      "target_ref": "root_000457/B014",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve çekirdek yüz, art arda vuruş, tokluk ve yinelenme özelliklerini kaynakta bulunmadığı halde anlamın zorunlu parçaları yapıyor.",
+      "smallest_correction": "Tanımı ve yüzleri bir ses türü ile atların köprü üzerindeki sesi örneğine indirgeyin; art arda vuruş, tokluk ve yinelenme eklerini çıkarın."
+    },
+    {
+      "target_ref": "root_000457/B014",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak özeti, kaynakta yer almayan yinelenme ve ardışık ayak sesi özelliklerini kaynak bildirimi gibi sunuyor.",
+      "smallest_correction": "Özeti, kaynağın bir ses türü tanımladığı ve atların köprü üzerindeki sesini örnek verdiği bilgisiyle sınırlayın."
+    },
+    {
+      "target_ref": "root_000457/B014",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı ve uygulanabilirlik metni, tok vuruntu ve düzenli ya da düzensiz yinelenme koşullarını kanıtsız biçimde ekliyor.",
+      "smallest_correction": "Kavram karşılığını ve hata profilini niteliği ayrıca belirtilmeyen bir ses türünü anlatacak biçimde daraltın."
+    },
+    {
+      "target_ref": "root_000457/B014",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bağlamsal karşılık, kaynak örneğine tok, ardışık ve ayak sesi nitelikleri ekliyor; kanıt yalnızca atların köprü üzerindeki sesini verir.",
+      "smallest_correction": "Bağlamsal karşılığı atların köprü üzerindeki sesiyle sınırlayın ve desteklenmeyen ses niteliklerini çıkarın."
+    },
+    {
+      "target_ref": "root_000457/B014",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_025",
+        "lu_026"
+      ],
+      "evidence_conflict": "lu_025 için tok, yinelenen ve vuruntu; lu_026 için tok ve ayak sesi nitelikleri ilgili birim kanıtlarında yer almıyor.",
+      "smallest_correction": "lu_025 karşılığını bir tür ses, lu_026 karşılığını atların köprü üzerindeki sesi olarak düzeltin."
+    },
+    {
+      "target_ref": "root_000457/B014",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu ayrımları odak dalın sınırını kaynakta bulunmayan tok, yinelenen ve vuruntu özellikleri üzerinden kuruyor.",
+      "smallest_correction": "İlişki türlerini koruyup odak tarafını yalnızca genel ses türü ve atların köprü üzerindeki sesi örneğine dayandırın; komşuların kendi ayırt edici özelliklerini koruyun."
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B001 dalının genel tükenme ve kesilme çekirdeği doğru kurulmuştur; ancak aynı çekirdeği taşıyan root_001491/B001 ile ilişki, komşu daldaki bağımlı örnekler yüzünden gereksiz biçimde yakın eş anlamlılığa indirilmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_001530/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Odak dalın kanıtı bir şeyin tükenip kesilmesini bildirir; root_001491/B001 komşusunun çekirdeği de bir şeyin genel olarak tükenip kesilmesidir. Suya, azar azar bitmeye ve az kalana ilişkin görünümler bağımlı örnek veya uzantılardır; çekirdek sınırını değiştirmez ve exact eş anlamlılığı düşürmez.",
+      "smallest_correction": "root_001491/B001 ilişkisinde relation_type değerini synonym, boundary_match değerini exact yapın; odak ve komşuya özgü alanları çekirdeklerin örtüştüğünü gösterecek biçimde düzeltin, su ve az kalma görünümlerini yalnızca komşunun bağımlı uzantıları olarak belirtin."
+    }
+  ]
+}

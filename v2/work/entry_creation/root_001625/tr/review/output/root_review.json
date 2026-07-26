@@ -1,0 +1,72 @@
+{
+  "verdict": "editorial_review",
+  "summary": "B003 dalındaki kaynak, satış kesinleştikten sonra her gün bir parçanın alınmasını bildiriyor; ancak alınan şeyin satılan mal mı yoksa bedel mi olduğunu açıkça belirlemiyor. Yanıt bu belirsizliği bedelin taksitli tahsili olarak yaygınlaştırıyor ve komşu ayrımlarını da ödeme zamanlaması üzerine kuruyor. Zamirin gönderimi yalnız verilen kanıtla kesinleştirilemediği için editoryal karar gerekiyor.",
+  "issues": [
+    {
+      "target_ref": "root_001625/B003",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak, kesinleşen satıştan her gün bir parça alınmasını bildirir; alınan unsurun bedel olduğunu söylemez. Sınır notu ise satış konusu ile bedeli eşit iki açık olasılık olarak sunarak kanıtın çözmediği bir ayrımı dal kimliğine yerleştiriyor.",
+      "smallest_correction": "Zamirin gönderimi editoryal olarak belirlenene kadar bedel seçeneğini dal sınırından kaldırın veya bu noktanın kaynakta açık olmadığını belirtin."
+    },
+    {
+      "target_ref": "root_001625/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım, her gün alınan parçayı satılan şey veya bedel diye açıklar ve işlemi aşamalı tahsil olarak kavramlaştırır. Verilen iddia yalnız her gün bir parça alınıp bütünün tamamlanmasını destekler; bedel yorumunu açıkça desteklemez.",
+      "smallest_correction": "Tanım ve çekirdek ifadeyi, her gün satıştan bir parça alınıp bütünün tamamlanması şeklinde tarafsızlaştırın; bedel yorumunu ancak zamirin gönderimi editoryal olarak doğrulanırsa ekleyin."
+    },
+    {
+      "target_ref": "root_001625/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kaynakların satış konusu veya bedelin tümüyle tahsil edilmesinde birleştiğini söyler. Kaynaklar günlük parça alma konusunda birleşir, fakat parçanın bedelden alındığını veya işlemin parasal tahsil olduğunu açıklamaz.",
+      "smallest_correction": "Ortak özeti, satış kesinleştikten sonra her gün bir parçanın alınıp bütünün tamamlanması ile sınırlayın ve çözülemeyen nesneyi bedel diye adlandırmayın."
+    },
+    {
+      "target_ref": "root_001625/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı ve uygulanabilirlik metni tahsil sözcüğüyle finansal ödeme okumasını çekirdekleştiriyor. Kanıt, günlük alınan parçanın satış bedeli olduğunu kesinleştirmiyor.",
+      "smallest_correction": "Karşılığı, her gün bir bölümü alınarak tamamlanan kesinleşmiş satış gibi nesne bakımından tarafsız bir ifadeyle verin."
+    },
+    {
+      "target_ref": "root_001625/B003",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tek bağlamsal karşılık doğrudan bedelin her gün bir bölümünün alınmasını söyler. Verilen kanıt içinde bu parasal bağlamı açıklayan ayrı bir tanıklık yoktur.",
+      "smallest_correction": "Bağlamsal karşılığı satıştan veya satılan şeyden her gün bir bölüm alma şeklinde tarafsızlaştırın; bedel karşılığını yalnız ek kanıtla koruyun."
+    },
+    {
+      "target_ref": "root_001625/B003",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Vadeli finansman ve peşin ödeme komşularıyla kurulan ayrımlar, odak dalın çekirdeğini ödeme zamanı ve bedel tahsili olarak varsayar. Odak iddia yalnız günlük parça alma koşulunu verir; bunun bedel ödemesi olduğunu göstermediği için özellikle peşin ödemeyle kutupluluk ilişkisi kanıtlanmaz.",
+      "smallest_correction": "Bedel yorumu doğrulanmadıkça vadeli finansman ve peşin ödeme satırlarını yeniden sınıflandırın veya kaldırın; komşu ayrımlarını yalnız günlük parça alma koşulunun desteklediği sınırlarla kurun."
+    }
+  ]
+}

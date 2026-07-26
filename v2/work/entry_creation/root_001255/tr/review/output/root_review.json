@@ -1,0 +1,94 @@
+{
+  "verdict": "repair",
+  "summary": "B009'da ay aydınlığı kaynakta uykusuzluğun gerçekleştiği koşuldur; yazar bunu çeşitli alanlarda kanıtlanmamış bir nedensel etkiye dönüştürmüştür. B012'de ise Hicaz kaydı belirsiz ve dışlayıcı bir bölge sınırlaması olarak aktarılmıştır. Aşağıdaki dar kapsamlı düzeltmeler canlı çıktıya uygulanmıştır.",
+  "issues": [
+    {
+      "target_ref": "root_001255/B009",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak yalnızca kişinin ay aydınlığında uykusunun kaçtığını ve uyuyamadığını bildirir; ay ışığının buna neden olduğunu söylemez. Gerekçe ve sınır notundaki \"etkisiyle\" anlatımı koşulu nedene çevirir.",
+      "smallest_correction": "Durumu ay aydınlığında gerçekleşen uykusuzluk olarak anlatın; ay ışığının etkisi veya nedeni olduğu iddiasını kaldırın."
+    },
+    {
+      "target_ref": "root_001255/B009",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve çekirdek faset, ay aydınlığının uykusuzluğa neden olduğunu ileri sürer. bc_001 yalnızca uykusuzluğun ay aydınlığında gerçekleştiğini doğrular.",
+      "smallest_correction": "Tanımı ve F001'i, kişinin ay aydınlığında uykusunun kaçıp uyuyamaması biçiminde nedensellik yüklemeden yeniden kurun."
+    },
+    {
+      "target_ref": "root_001255/B009",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet ay aydınlığının uyku üzerindeki etkisinden söz ederek kaynakta bulunmayan bir neden-sonuç ilişkisi kurar.",
+      "smallest_correction": "Ortak özeti, ay aydınlığında yaşanan uykusuzluğu bildiren dar kullanım olarak ifade edin."
+    },
+    {
+      "target_ref": "root_001255/B009",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığının uygulama ve hata profili, ay aydınlığını uykuyu engelleyen neden olarak sunar; kaynak yalnızca ay ışığı koşulunu verir.",
+      "smallest_correction": "Mevcut karşılık metnini koruyun; uygulama ve korunan özellik açıklamalarını nedensellik yerine ay aydınlığında gerçekleşme koşuluna bağlayın."
+    },
+    {
+      "target_ref": "root_001255/B009",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bağlamsal karşılığın uygulama açıklamasındaki \"ay aydınlığı yüzünden\" sözü kanıtlanmamış nedensellik ekler.",
+      "smallest_correction": "Uygulama açıklamasını kişinin ay aydınlığında gece uyuyamadığı bağlamla sınırlayın."
+    },
+    {
+      "target_ref": "root_001255/B012",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak kuşun meskenini açıkça Hicaz olarak verir. Gerekçedeki \"belirli bir bölgeyle sınırlar\" ifadesi hem bu özgül bilgiyi siler hem de kaydın dışlayıcı olduğunu ima eder.",
+      "smallest_correction": "Aktarımın Hicaz'ı kuşun yaşam alanı olarak belirttiğini söyleyin; dışlayıcı sınırlama kurmayın."
+    },
+    {
+      "target_ref": "root_001255/B012",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F002, bc_001'deki Hicaz ayrıntısını adsız bir bölgeye indirger ve yaşam alanını yalnızca orayla sınırlıyormuş gibi anlatır.",
+      "smallest_correction": "F002'de bir aktarımın Hicaz'ı yaşam alanı olarak belirttiğini açıkça yazın."
+    },
+    {
+      "target_ref": "root_001255/B012",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynağa özgü Hicaz ayrıntısı ortak özette \"belirli bir bölge\" diye belirsizleştirilmiş ve \"sınırlar\" sözüyle gereğinden güçlü aktarılmıştır.",
+      "smallest_correction": "Ortak özette bir anlatımın Hicaz'ı kuşun yaşam alanı olarak belirttiğini doğrudan kaydedin."
+    }
+  ]
+}

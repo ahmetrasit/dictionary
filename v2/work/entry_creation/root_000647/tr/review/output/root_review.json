@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yaniti genel olarak kanitla uyumludur. Ancak B003 dalinin kimlik yargisi, disi koyuna ozgu kullanimda fiziksel bir sarkinti bulunmadigini dogru bicimde kabul eden tanimla tutarsiz olarak gecici dal cercevesini kosulsuz kabul etmektedir.",
+  "issues": [
+    {
+      "target_ref": "root_000647/B003",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit, sarkik damganin develerde degeri gosterdigini, disi koyuna ozgu nitelemenin ise dogrudan degerli olmayi bildirdigini ayirir. Yazar da tanim ve kavram haritasinda disi koyun kullaniminda fiziksel sarkinti gerekmedigini belirtir; buna ragmen kimlik durumunu accepted secerek butun cerceveyi kosulsuz kabul eder.",
+      "smallest_correction": "B003 identity_judgment.status degerini qualified yapin ve gerekceyi, fiziksel damga cercevesinin develer icin kabul edildigini fakat disi koyun kullaniminda nitelemenin fiziksel sarkinti gerektirmeden degerli olmayi bildirdigini aciklayacak bicimde sinirlayin."
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak iki sınırlı anlam düzeltmesi gerekir. Bir sözlüksel karşılık kanıtta bulunmayan kum unsurunu eklemekte, bir kavram karşılığı ise yalnızca bazı kullanımlara ait yetiştirme uzantısını dalın genel çekirdeğine taşımaktadır.",
+  "issues": [
+    {
+      "target_ref": "root_001502/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_006"
+      ],
+      "evidence_conflict": "lu_006 yalnızca yükseltilmiş zıbaları bildirir; \"yükseltilmiş kum tepeleri\" karşılığı, kanıtta yer almayan kum malzemesini anlama ekler.",
+      "smallest_correction": "lu_006 target_gloss değerini \"yükseltilmiş tepeler\" olarak değiştirerek yükseltilmiş olma niteliğini koruyun ve kanıtsız kum unsurunu kaldırın."
+    },
+    {
+      "target_ref": "root_001502/B006",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Dalın ortak çekirdeği bir şeyi yaratıp var etmektir; yetiştirme ve geliştirme yalnızca Mufradat'ın özellikle canlılara ilişkin uzantısıdır. \"var edip geliştirmek\" karşılığı bu bağımlı uzantıyı bütün dalın kavram karşılığına yükseltir.",
+      "smallest_correction": "concept_gloss.text değerini \"yaratıp var etmek\" yapın, applicability ve error_profile metnini yalnızca bu çekirdeğe göre daraltın ve facet_ids listesinden uzantı olan F002'yi çıkarın."
+    }
+  ]
+}

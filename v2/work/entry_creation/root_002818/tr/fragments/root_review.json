@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": "89b22569a078938c65ea467881949312cd19ded50b0535b99a696b36dcd123af",
+  "verdict": "repair",
+  "summary": "Genel dal ayrimlari ve tanimlar delille uyumlu. Yalniz B005 kaynak sentezi, tek kaynaktaki rubk ile rumk esitlemesini atladigi icin kaynak varyanti bilgisini kisaca eklemek gerekiyor; bu onarim yalniz source_synthesis alanina sinirlidir.",
+  "issues": [
+    {
+      "target_ref": "root_002818/B005",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B005 delili, deve rengini anlatmanin yaninda rubk ile rumk bicimlerinin bir sayildigini da bildirir. Yazar sentezi ise tek kaynak ayrintisini yalniz renk ve beden bolgeleriyle ozetlemis, bu kaynak varyanti bilgisini disarida birakmistir.",
+      "smallest_correction": "B005 source_synthesis icinde mevcut tek kaynakli ozet korunarak rubk ile rumk bicimlerinin esitlendigini belirten kisa bir kaynak varyanti notu eklenmelidir."
+    }
+  ]
+}

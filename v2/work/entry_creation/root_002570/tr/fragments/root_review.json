@@ -1,0 +1,82 @@
+{
+  "inputs_sha256": "c9a21f98cad284e74c82d3c017d6589ac14f3441f567930a0f7725702425094f",
+  "verdict": "repair",
+  "summary": "B005 dışındaki dallar kanıtla uyumlu. B005'te bc_001'in erkek kişi için daha güçlü bir akılsızlık nitelemesi verdiği yerde yazar metni bunu birkaç yayınla ilgili alanda daha zayıf olan düşüncesizlik şeklinde aktarmış. Aşağıdaki sınırlı düzeltmeler uygulanmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_002570/B005",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 bu dalı erkek kişi için ahmak ya da akılsız niteleme alanında kurar; identity_judgment bunu düşüncesiz erkek diye yumuşatıyor.",
+      "smallest_correction": "B005 identity_judgment içindeki düşüncesiz erkek ifadelerini akılsız erkek nitelemesi olarak değiştir; koşullu ses kaydı ve qualified status aynen kalsın."
+    },
+    {
+      "target_ref": "root_002570/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001'in çekirdeği erkek kişi için ahmaklık veya akılsızlık nitelemesidir; concept_map tanım ve core facet bunu düşüncesizlik seviyesine indiriyor.",
+      "smallest_correction": "B005 concept_map definition ve F001 statement metinlerinde düşüncesiz erkek yerine akılsız erkek nitelemesini kullan; F002 biçim kaydı korunur."
+    },
+    {
+      "target_ref": "root_002570/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001'in tekil tanıklığı erkek kişi için akılsız veya ahmak nitelemeyi verir; source_synthesis source detail bunu düşüncesiz erkek diye zayıf aktarıyor.",
+      "smallest_correction": "B005 source_synthesis içindeki ilgili özetlerde düşüncesiz erkek yerine akılsız erkek nitelemesi yaz; tekil tanıklık ve koşullu biçim sınırı korunur."
+    },
+    {
+      "target_ref": "root_002570/B005",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001'in uygun Türkçe çekirdeği akılsız erkek nitelemesidir; concept_gloss bunu düşüncesiz erkek nitelemesi olarak veriyor.",
+      "smallest_correction": "B005 concept_gloss text, applicability ve error_profile preserves metinlerinde düşüncesiz yerine akılsız erkek nitelemesini kullan."
+    },
+    {
+      "target_ref": "root_002570/B005",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 akılsız veya ahmak erkek nitelemesini destekler; contextual gloss düşüncesiz adam diyerek çekirdeği zayıflatıyor.",
+      "smallest_correction": "B005 contextual_glosses içindeki düşüncesiz adam ve düşüncesiz erkek ifadelerini akılsız adam veya akılsız erkek olarak değiştir; biçim kaydı kaybı notu kalsın."
+    },
+    {
+      "target_ref": "root_002570/B005",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B005 komşu ayrımlarında odak dalın kişi nitelemesi doğru, ancak B003 ayrımında çekirdek düşüncesizlik diye zayıf adlandırılıyor.",
+      "smallest_correction": "B005 neighbor_distinctions içinde B003'e karşı focus_only metnindeki düşüncesizliğini ifadesini akılsızlığını olarak değiştir."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Root profile özeti B005'i düşüncesiz erkek nitelemesi diye adlandırarak aynı zayıflamayı kök düzeyine taşıyor.",
+      "smallest_correction": "root_profile summary içindeki düşüncesiz erkek nitelemesi ifadesini akılsız erkek nitelemesi olarak değiştir."
+    }
+  ]
+}

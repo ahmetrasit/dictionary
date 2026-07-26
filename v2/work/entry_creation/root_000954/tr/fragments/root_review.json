@@ -1,0 +1,62 @@
+{
+  "inputs_sha256": "30d72cd2c183fc2075ff6d0fe5d872cdbeb0d0af927ccdeabf4e49944e0c4eaa",
+  "verdict": "repair",
+  "summary": "Yanit, uc dalin temel ayrimlarini ve sozcuksellesme kapsamlarini genel olarak koruyor. Bununla birlikte ilk dalin tanimi kanitta bulunmayan goreli belirginlik kosulu ekliyor; hareket dalinda ise ettirgen kullanimdaki katilimci rolleri ters kuruluyor ve gecim amaci daglarda dolasmaya da yayiliyor. Kavram karsiligi da ettirgen yuzun surukleme veya sevk etme anlamini zayiflatiyor.",
+  "issues": [
+    {
+      "target_ref": "root_000954/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit cekirdegi yalnizca buyuk dag anlamini verir. Tanimdaki cevresindeki yer sekillerine gore ve belirgin olma kosullari, mutlak buyukluk yerine goreli bir karsilastirma ve ek bir gorunurluk kosulu getirir.",
+      "smallest_correction": "Tanimi Buyuk bir dagdir olarak degistir; goreli cevre karsilastirmasini ve belirginlik ekini kaldir."
+    },
+    {
+      "target_ref": "root_000954/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F002, bir kisinin baska biri araciligiyla suruklendigini soyleyerek arac ve etkilenen katilimci rollerini karistiriyor. Kanit, bir kisinin baska birini oradan oraya savurmasi veya cesitli yonlere sevk etmesi yonundeki ettirgen kullanimi verir.",
+      "smallest_correction": "F002 ifadesini Ettirgen kullanimda bir kisi baska birini oradan oraya surukler ya da cesitli yonlere sevk eder olarak degistir."
+    },
+    {
+      "target_ref": "root_000954/B002",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karsiligindaki dolastirma, kanitin baskasini oradan oraya savurma, surukleme veya cesitli yonlere sevk etme yuzunu gerektiginden yumusatarak siradan gezdirme gibi okunabilir.",
+      "smallest_correction": "Kavram karsiligini yollarda dolasma, oradan oraya surukleme ve dolasilan yollar olarak degistir; uygulanabilirlik ve hata profili metnini de bu sinirli degisiklige uyacak bicimde duzelt."
+    },
+    {
+      "target_ref": "root_000954/B002",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gecim icin dolasma karsiliginin uygulanabilirligi, gecim amacini ulkenin yaninda daglik bolgelere de bagliyor. Kanit daglarda dolasmayi ayri aktarir; gecim amacini ise ulkede dolasma kullanimina baglar.",
+      "smallest_correction": "Ilk baglamsal karsiligin uygulanabilirliginden veya daglik bolgelerde sozlerini kaldir ve gecim amacini yalnizca ulkede dolasma kullanimina bagla."
+    },
+    {
+      "target_ref": "root_000954/B002",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003"
+      ],
+      "evidence_conflict": "lu_003 karsiligi gecim arama amacini hem daglarda hem de ulkede dolasmaya uyguluyor. Birlik kaydi daglarda dolasma ile gecim aramak icin ulkede dolasmayi ayri kapsamlarla verir.",
+      "smallest_correction": "lu_003 hedef karsiligini daglarda dolasmak veya gecim aramak icin ulkede dolasmak olarak degistir."
+    }
+  ]
+}

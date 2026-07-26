@@ -1,0 +1,83 @@
+{
+  "verdict": "editorial_review",
+  "summary": "İki dalda kaynak sınırını aşan anlam genişletmeleri vardır. B002, yalnız Kur'an'a bağlı tanıklık kullanımını belirsiz bir metne geneller. B010 ise kaynakta yalnız bedenin değişmesi denirken zayıflama ve çöküş sonuçları ekler. Bu çalışma yalnız inceleme çıktısına izin verdiği için yazar çıktısı değiştirilmemiştir.",
+  "issues": [
+    {
+      "target_ref": "root_001402/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak iddiası aleyhte tanıklık kullanımını yalnız Kur'an için verir. Tanım ve F002 bunu 'belirli bir metin' ve 'özel bir metin' biçiminde yazarak başka metinlere de uygulanabilecek genel bir anlam oluşturur.",
+      "smallest_correction": "Tanım ile F002'de belirsiz metin ifadelerini Kur'an olarak sınırlandır; Kur'an'ın kendisini ihmal eden kişi aleyhine doğru tanıklık etmesi açıklamasını koru."
+    },
+    {
+      "target_ref": "root_001402/B010",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak, kovalanıp yorulmayı ve bedenin değişmesini bildirir; bedenin çöktüğünü veya zayıfladığını söylemez. Gerekçe ile sınır notundaki 'çökmüş' ve 'beden çöküşü' ifadeleri kaynağa yeni bir sonuç ekler.",
+      "smallest_correction": "Çöküş ve zayıflama ifadelerini kaldır; ikinci kullanımın yalnız bedenin ya da görünüşün belirgin biçimde değişmesi olduğunu belirt."
+    },
+    {
+      "target_ref": "root_001402/B010",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F002, beden değişimini zayıflamanın sonucu olarak sunar. bc_001 yalnız bedenin değiştiğini bildirir ve bu değişimin yönünü veya nedenini belirtmez.",
+      "smallest_correction": "Tanımdaki 'bedeni zayıflayarak' ve F002'deki 'bedeni zayıflayıp' sözlerini kaldır; ikinci varyantı bedeni veya görünüşü belirgin biçimde değişmiş kişi olarak bırak."
+    },
+    {
+      "target_ref": "root_001402/B010",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, tek kaynaktaki beden değişimini 'bedenin zayıflayıp görünüşünün değişmesi' diye aktarır. Kaynak zayıflama yönünü vermediği için bu sentez desteklenmeyen bir nedensel niteleme ekler.",
+      "smallest_correction": "Özetteki zayıflama ifadesini çıkar ve ikinci betimlemeyi yalnız bedenin ya da görünüşün değişmesi olarak aktar."
+    },
+    {
+      "target_ref": "root_001402/B010",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığındaki 'bedeni çökmüş' sözü ve hata profilindeki 'beden çöküşü' açıklaması, kaynakta bulunmayan ileri bir fiziksel bozulma derecesi ekler.",
+      "smallest_correction": "Kavram karşılığını 'kovalanmaktan tükenmiş veya bedeni değişmiş' biçiminde sınırla; uygulanabilirlik ve hata profilindeki çöküş ifadelerini de beden değişimiyle değiştir."
+    },
+    {
+      "target_ref": "root_001402/B010",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İkinci bağlamsal karşılık ile açıklamaları 'bedeni zayıflayıp değişmiş', 'bedenindeki çöküş' ve 'gözle görülür zayıflama' der. bc_001 değişimin zayıflama veya çöküş biçiminde olduğunu belirtmez.",
+      "smallest_correction": "İkinci bağlamsal karşılığı 'bedeni değişmiş' olarak daralt; uygulanabilirlik ve hata profilinde yalnız görünür beden değişimini koru."
+    },
+    {
+      "target_ref": "root_001402/B010",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_014"
+      ],
+      "evidence_conflict": "lu_014 için verilen karşılık, beden değişiminin zayıflama yoluyla gerçekleştiğini söyler. Birimin kaynak anlamı yalnız kovalanıp yorulmayı veya bedenin değişmesini destekler.",
+      "smallest_correction": "Hedef karşılıktaki 'bedeni zayıflayarak değişmiş' bölümünü 'bedeni değişmiş' olarak düzelt."
+    }
+  ]
+}

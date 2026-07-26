@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "a4f898a816eee1053de8a63897d94f4d6ab5cc74dffa81ba348fc7dc18491bba",
+  "verdict": "repair",
+  "summary": "Dal kimlikleri, kapsamlar, kavram haritaları, karşılıklar ve komşu ayrımları kanıtla uyumludur. Ancak iki dalın kaynak sentezi, sözlüklere özgü ayrıntıları ortak özette eriterek tekil tanıklıkları ve ikinci daldaki tarihsel açıklamaların tam içeriğini kaynaklarına bağlamadan bırakmaktadır.",
+  "issues": [
+    {
+      "target_ref": "root_000837/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, çocuğun ön dişinin sürmesi, topluluğun karşısına çıkma ve yıldızın doğması örneklerini topluca verir; oysa bu üç örnek sağlanan kanıtta yalnızca Sihah tarafından aktarılır. Kaynak ayrıntıları boş olduğu için bu tekil tanıklıkların sözlük aidiyeti korunmamıştır.",
+      "smallest_correction": "Ortak çekirdek özetini koruyup Sihah'a özgü bu üç örneği bc_001 ile bağlı tek bir kaynak ayrıntısı satırına taşıyın; ortak özette bunların bütün kaynaklarca paylaşıldığı izlenimini kaldırın."
+    },
+    {
+      "target_ref": "root_000837/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak sentezi, topluluğun tarihsel niteliğine ilişkin ayrımları yalnızca başka bir dine benzerlik, kutsal kitap geleneği ve eski bir peygamber biçiminde genelleştirir. Kanıt ise Ayn'ın Hristiyanlığa benzerlik, Sihah'ın kitap ehlinden olma ve Mufradat'ın Nuh'un dini üzerinde bulunma açıklamalarını ayrı ayrı verir; boş kaynak ayrıntıları bu özgül içerikleri ve aidiyetlerini kaybeder.",
+      "smallest_correction": "Ortak eylem ve adlandırma özetini koruyun; Ayn, Sihah ve Mufradat için bc_001 ile bağlı ayrı kaynak ayrıntıları ekleyerek sırasıyla Hristiyanlığa benzerlik, kitap ehlinden olma ve Nuh'un dini açıklamalarını açıkça belirtin."
+    }
+  ]
+}

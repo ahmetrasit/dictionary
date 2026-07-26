@@ -1,0 +1,63 @@
+{
+  "inputs_sha256": "4c0444552a0c017f0034830e8e88d450e9b4fa9eb2dd1ec2f47fa677f8800182",
+  "verdict": "editorial_review",
+  "summary": "B005 dalında kaynakların genel öfke, hiddet ve onuruna yedirmeme alanı, korunmaya değer bir bağın, yakının ya da saygınlığın çiğnenmesi koşuluna daraltılmıştır. Bu koşul bazı kullanımları açıklayabilse de bütün dalın zorunlu sınırı değildir; kimlik, kavram haritası, kaynak sentezi ve ilgili karşılıklar birlikte düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000342/B005",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 çekirdeği genel öfke, hiddet, onuruna yedirmeme ve öfkelendirme kullanımlarıyla verir. Kimlik gerekçesi ile sınır notu ise korunmaya değer bir bağa, yakına ya da saygınlığa dokunulmasını dalın zorunlu nedeni yaparak bu alanı kanıttan daha dar kurar.",
+      "smallest_correction": "Kabul durumunu koruyup gerekçe ile sınır notunu genel öfke, hiddet ve onuruna yedirmeme çekirdeğine göre yeniden sınırlandırın; korunan bir değerin çiğnenmesini bütün dalın koşulu değil, yalnız uygun kullanımlarda görülen özel bir bağlam olarak belirtin."
+    },
+    {
+      "target_ref": "root_000342/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F001, öfkenin ancak korunmaya değer bir bağa, yakına ya da saygınlığa saldırıldığında doğduğunu ileri sürer. bc_001 ise genel öfke ve hiddeti de doğrudan kapsar; böyle bir saldırı koşulunu bütün kullanımlar için zorunlu kılmaz.",
+      "smallest_correction": "Tanımı ve çekirdek yönü genel öfke, hiddet ve onuruna yedirmeme tepkisini kapsayacak biçimde genişletin. Korunan bir değere saldırı karşısındaki tepkiyi çekirdeğin zorunlu koşulu olmaktan çıkarıp uygun bir uzmanlaşma ya da örnek yönü olarak tutun; öfkelendirme uzantısını koruyun."
+    },
+    {
+      "target_ref": "root_000342/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kaynakların sıradan öfkeden daha dar ve zorunlu olarak koruma duygusu ile saygınlığa bağlı bir tepki kurduğunu söyler. bc_001 içindeki tanıklıklar öfke, hiddet ve onuruna yedirmeme alanını birlikte verir; koruyucu nedeni hepsinin ortak kısıtı yapmaz.",
+      "smallest_correction": "Ortak özeti öfke, hiddet, onuruna yedirmeme ve öfkelendirme alanına dayandırın. Koruma veya çiğnenen saygınlık bağlamını ortak çekirdek diye genellemeden, yalnız onu destekleyen kullanımın özel ayrıntısı olarak ifade edin."
+    },
+    {
+      "target_ref": "root_000342/B005",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığındaki koruyucu nitelemesi, bc_001 ile verilen genel öfke ve hiddet kullanımlarını dışarıda bırakıp özel bir nedeni bütün çekirdeğe yükler.",
+      "smallest_correction": "Kavram karşılığını koruyucu koşulu zorunlu kılmayan, öfke, hiddet ve onurlu tepki alanını birlikte gösteren doğal bir Türkçe ifadeyle değiştirin; uygulanabilirlik ve hata profilini de aynı sınıra göre düzeltin."
+    },
+    {
+      "target_ref": "root_000342/B005",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_014",
+        "lu_015"
+      ],
+      "evidence_conflict": "lu_014 genel öfke ve hiddet tanıklıklarının yanında yalnız bir tanıklıkta çiğnenen dokunulmazlık bağlamını taşır; lu_015 ise içte bulunan öfkeyi anlatır. Yazar iki karşılığa da koruyucu niteliğini zorunlu biçimde ekleyerek kaynak kapsamını daraltır.",
+      "smallest_correction": "lu_014 karşılığını genel öfke, hiddet ve onuruna yedirmeme tepkisini kapsayacak biçimde, lu_015 karşılığını ise içte bekleyen öfke veya hiddet biçiminde verin; koruyucu nedeni bu iki birimin zorunlu anlamı olarak sunmayın."
+    }
+  ]
+}

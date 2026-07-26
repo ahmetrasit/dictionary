@@ -1,0 +1,40 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dalların genel ayrımını, kapsam türlerini ve temel anlamlarını büyük ölçüde kanıta uygun kuruyor. Bununla birlikte B001'de iki sözcüksel karşılık kanıttaki alternatif gerçekleşmeleri daraltıyor, B005'in kaynak sentezi kalp bağlantısına ilişkin ayırt edici ayrıntıyı atlıyor ve B006'daki bir komşu ayrımı dalın odağı olarak barınak yerine hayvanı gösteriyor. Bunlar sınırlı ve yüksek güvenli düzeltmelerle giderilebilir.",
+  "issues": [
+    {
+      "target_ref": "root_000872/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_005"
+      ],
+      "evidence_conflict": "lu_001, dördüncü ayağın kaldırılmasının yanında tırnak ucunun yere değdirilmesi aktarımını da içerirken karşılık yalnızca kaldırmayı veriyor. lu_005 ise hem ayakta durma hem de bir ön ayağı bağlı biçimde üç ayak üzerinde durma aktarımlarını içerirken karşılık yalnızca bağlı duruşu veriyor.",
+      "smallest_correction": "lu_001 karşılığına dördüncü ayağın tırnak ucunu yere değdirme seçeneğini, lu_005 karşılığına da yalnızca ayakta durma seçeneğini ekleyin; mevcut bağlı üç ayaklı duruş ifadelerini koruyun."
+    },
+    {
+      "target_ref": "root_000872/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi, iç sırt bölgesindeki damarın kalbin asıcı bağına bağlı olduğunu açıkça aktarır. Kaynak sentezi konum ayrılıklarını ve deveye özgü adı veriyor ancak bu ayırt edici bağlantıyı bütünüyle atlıyor.",
+      "smallest_correction": "common_summary metnine, iç sırt bölgesindeki damar aktarımının damarı kalbin asıcı bağına bağlı gösterdiğini belirten kısa ve kaynaklar arası tarafsız bir cümlecik ekleyin."
+    },
+    {
+      "target_ref": "root_000872/B006",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_000462/B003 satırının focus_only metni dalın yaban arısına benzer hayvanın kendisini ve yapma eylemini içerdiğini söylüyor. Kanıta göre dalın adlandırdığı şey hayvanın kendisi değil, onun yaprak veya ottan yaptığı barınak ve bu barınağı yapma eylemidir.",
+      "smallest_correction": "İlgili focus_only metnini, yaban arısına benzer hayvanın yaprak veya ottan kurduğu katmanlı barınağı ve bu barınağı yapma eylemini kapsadığını söyleyecek biçimde düzeltin."
+    }
+  ]
+}

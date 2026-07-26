@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yaniti genel olarak kanitla uyumludur; ancak B002'nin kimlik siniri kaynakta bulunan eylem kullanimini dislamakta, B003'te ise gecissiz bir bicim gecisli eylem gibi cevrilmektedir.",
+  "issues": [
+    {
+      "target_ref": "root_000687/B002",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Sinir notu bu dalin kapatma eyleminin kendisini kapsamadigini soyluyor. Oysa kaynak iddiasi, sinir gediginin atli ve yayalarla kapatilmasini ve korunmasini acikca bu dalda verir; bu kullanim yalnizca kapatmaya yarayan bir nesne degildir.",
+      "smallest_correction": "Sinir notundaki eylemi genel olarak dislayan cumleyi kaldirin veya niteleyin; cekirdegin kapatici arac ya da yeterli pay oldugunu, fakat sinir gedigi kalibinda kapatma ve koruma eyleminin de yer aldigini belirtin."
+    },
+    {
+      "target_ref": "root_000687/B003",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_018"
+      ],
+      "evidence_conflict": "lu_018 icin verilen anlam gecissizdir: bicim dogrulmayi veya kolun atis amaciyla saglamlasmasini anlatir. Hedef karsiliktaki 'kolunu saglamlastirmak' ise oznenin kolu uzerinde yaptigi gecisli bir eylem bildirir.",
+      "smallest_correction": "lu_018 hedef karsiligini 'dogrulmak; kolu atis icin saglamlasmak ya da gerilmek' gibi gecissiz bir anlatimla degistirin."
+    }
+  ]
+}

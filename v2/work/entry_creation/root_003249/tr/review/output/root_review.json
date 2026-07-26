@@ -1,0 +1,61 @@
+{
+  "verdict": "repair",
+  "summary": "B001 genel olarak kanita uyuyor, ancak namaz ornegini ibadet veya rituel eylem diye genelleyerek kaynakta verilmeyen daha genis bir alan ekliyor. Bu, yalniz B001 icindeki ilgili prose alanlarinda namaz odagina cekilerek cerrahi olarak duzeltilebilir.",
+  "issues": [
+    {
+      "target_ref": "root_003249/B001",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 namazda dalma veya bir seyin farkina varamama ornegini verir; writer ise bunu ibadet sirasinda diye daha genis bir alana tasir.",
+      "smallest_correction": "identity_judgment.rationale icindeki ibadet sirasinda ifadesini namaz sirasinda olarak daralt."
+    },
+    {
+      "target_ref": "root_003249/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 ozel uygulama olarak namazi verir; concept_map.definition ve F002 bunu rituel eylem diye genelleyerek kanit disi uygulama alani ekler.",
+      "smallest_correction": "concept_map.definition ve F002 statement icindeki rituel eylem ifadelerini namaz olarak daralt."
+    },
+    {
+      "target_ref": "root_003249/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 namaz baglamini destekler; source_synthesis.common_summary ise ibadet sirasindaki yanilma diyerek kaynak ornegini genellestirir.",
+      "smallest_correction": "source_synthesis.common_summary icindeki ibadet sirasindaki yanilma ifadesini namaz sirasindaki yanilma olarak degistir."
+    },
+    {
+      "target_ref": "root_003249/B001",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 namazdaki sahv ornegini verir; concept_gloss.applicability bunu rituel eylemdeki yanilma diye daha genis soyler.",
+      "smallest_correction": "concept_gloss.applicability icindeki rituel eylemdeki yanilma ifadesini namazdaki yanilma olarak daralt."
+    },
+    {
+      "target_ref": "root_003249/B001",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 namaz baglamini verir; contextual_glosses icindeki ibadette yanilma ve rituel eylem baglami ifadeleri kaniti ibadet geneline yayar.",
+      "smallest_correction": "Ikinci contextual_gloss text degerini namazda yanilma yap; ilgili applicability, preserves ve loses metinlerinde rituel eylem veya ibadet yerine namaz kullan."
+    }
+  ]
+}

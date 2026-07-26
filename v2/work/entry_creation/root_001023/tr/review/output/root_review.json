@@ -1,0 +1,59 @@
+{
+  "verdict": "repair",
+  "summary": "B004 dalında kesme aracı kanıtta bulunmayan bir ağırlık niteliğiyle dört ayrı alanda daraltılmıştır. Ayrıca kök özeti, kanıtın ayrı bir köken olarak sunduğu kesme eksenini üst kol merkezli ağın içinde göstermektedir. Bunların dışındaki dal kimlikleri, kapsamlar, kaynak sentezleri, karşılıklar ve komşu ayrımları verilen kanıtla uyumludur.",
+  "issues": [
+    {
+      "target_ref": "root_001023/B004",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe kesme aracını ağır diye nitelendiriyor. Kanıt, ağacı kesmekte kullanılan bir kılıç veya alet ile kasapların kemik kesmekte kullandığı kılıcı bildiriyor; aracın ağırlığına ilişkin bir sınırlama vermiyor.",
+      "smallest_correction": "Kimlik gerekçesindeki ağır nitelemesini kaldırıp aracı yalnızca kesici alet olarak belirtin."
+    },
+    {
+      "target_ref": "root_001023/B004",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ile F001 ve F003, kesme aracına kanıtlanmayan bir ağırlık özelliği ekliyor. Kaynak ifadesi aracın ağaç veya kemik kesme işlevini destekliyor, fiziksel ağırlığını desteklemiyor.",
+      "smallest_correction": "Tanımda, F001'de ve F003'te ağır nitelemesini kaldırın; kesici alet, kılıç veya doğrama aracı ifadelerini diğer yönleriyle koruyun."
+    },
+    {
+      "target_ref": "root_001023/B004",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kemik kesme karşılığı ve onun hata profili aracı ağır diye sınırlandırıyor; verilen kanıt yalnızca kasapların kemik kesmekte kullandığı kılıç veya alet kullanımını destekliyor.",
+      "smallest_correction": "Bağlamsal karşılıktaki ve preserves açıklamasındaki ağır nitelemesini kaldırın."
+    },
+    {
+      "target_ref": "root_001023/B004",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_014"
+      ],
+      "evidence_conflict": "lu_014 için hedef karşılık aleti ağır kılıç olarak veriyor. Birimin kanıtı ağaç kesmekte kullanılan kılıç veya aleti ve kemik kesme kullanımını gösteriyor, ağırlık özelliği vermiyor.",
+      "smallest_correction": "lu_014 hedef karşılığından ağır sözcüğünü kaldırın."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök özeti kesme dalını üst kol merkezli anlam ağının bu merkezle ilişkili üyelerinden biri gibi sunuyor. Verilen B004 kanıtı ise kesmeyi açıkça ayrı bir köken olarak ayırıyor; mevcut özet kökün ikinci üretken anlam eksenini görünmez kılıyor.",
+      "smallest_correction": "Özeti üst kol ve kesmeyi iki ayrı ana eksen olarak gösterecek biçimde düzeltin; diğer dalların ve sözlüksel olarak özelleşmiş adların mevcut kısa dökümünü koruyun."
+    }
+  ]
+}

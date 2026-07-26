@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B001 disinda yayin acisindan anlam kusuru bulunmadi. B001 concept_gloss metni, kanitin verdigi deger-derece cekirdeginin yaninda denklik ve nazirlik boyutunu da tasidigini soyluyor; ancak gorunen kisa gloss bu boyutu acikca tasimiyor. Bu nedenle yalniz B001 concept_gloss alaninda sinirli bir duzeltme gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_002531/B001",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 kaynaklari B001 icin mevki, deger ve seref yaninda bir seyin misli, naziri ve adli olma boyutunu da verir. Yazar concept_gloss icinde F003'u baglayip denkligi korudugunu soyluyor, fakat gloss metni yalniz 'deger ve derece' diyerek denklik boyutunu gorunur karsilikta eksik birakiyor.",
+      "smallest_correction": "B001 concept_gloss alaninda text degerini 'deger, derece ve denklik' yap; preserves cumlesini de ayni kisa karsiligin deger, derece, olcu ve denklik cekirdegini korudugunu soyleyecek bicimde daralt."
+    }
+  ]
+}

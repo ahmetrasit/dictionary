@@ -1,0 +1,51 @@
+{
+  "verdict": "repair",
+  "summary": "B001, B002, B003, B005 ve B006 kanıtla uyumludur. B004'te ise kaynakların alternatif olarak verdiği değerleme ve karşılıklı fiyat artırma yolları bazı alanlarda zorunlu tek bir birleşik süreç gibi sunulmuştur; bu alanlar en küçük kapsam düzeltmeleriyle onarılmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001274/B004",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe, ortakların malı hem değerleyip hem de birbirlerinin üstüne fiyat vermesini tek zorunlu zincir olarak anlatıyor. Oysa bc_001, kaynaklarda değerleme ile karşılıklı fiyat artırmayı işlemin alternatif fiyat belirleme yolları olarak veriyor.",
+      "smallest_correction": "Gerekçedeki birleşik koşulu, ortak malın değerlenmesi veya karşılıklı fiyat artırımıyla bir bedele ulaştırılması biçiminde alternatifli olarak ifade et."
+    },
+    {
+      "target_ref": "root_001274/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım değerleme ile karşılıklı fiyat artırmayı birlikte zorunlu kılıyor; F002 de her durumda fiyatın en yüksek düzeye çıkmasını şart koşuyor. bc_001 ise bir aktarımda karşılıklı artırımla en yüksek bedele ulaşmayı, diğerinde ortakların değerleyip belirlenen bedelde bir ortağın malı almasını verir.",
+      "smallest_correction": "Tanımda değerleme ile karşılıklı fiyat artırmayı alternatif yap; F002'de sonucu, fiyat en yüksek düzeye geldiğinde değil bedel belirlendiğinde bir ortağın diğer payı alması olarak yaz."
+    },
+    {
+      "target_ref": "root_001274/B004",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı yalnız fiyat artırma yolunu adlandırdığı hâlde hata profili tam uyum bildiriyor. bc_001, ortak malın değerlenmesi yolunu da ayrı bir işlem biçimi olarak içeriyor.",
+      "smallest_correction": "Karşılıkta ve açıklamalarında değerleme veya fiyat artırma alternatiflerini birlikte koru."
+    },
+    {
+      "target_ref": "root_001274/B004",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_025",
+        "lu_027"
+      ],
+      "evidence_conflict": "lu_025 ve lu_027 karşılıkları değerleme ile fiyat artırmayı birlikte gerçekleşen aşamalar gibi gösteriyor. Her iki sözlüksel birimin kanıtı bu iki yolu alternatif olarak verir.",
+      "smallest_correction": "lu_025 ve lu_027 karşılıklarında değerleme ile fiyat artırma arasındaki bağlacı 'veya' yap; diğer işlem unsurlarını değiştirme."
+    }
+  ]
+}

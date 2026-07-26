@@ -1,0 +1,40 @@
+{
+  "inputs_sha256": "ccc12cf9fd47fb3b80ec872b82977c594902637bd94fe3716aca82fe561bfd20",
+  "verdict": "repair",
+  "summary": "B009 disinda yazar ciktisi verilen kanitla uyumlu. B009'da kaynak katilimciyi genel bir kadin olarak degil, erkege bagli kadin kole/hizmetkar olarak verir; bu sinir kimlik, tanim ve tek kaynak notunda dar bir onarim gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_002645/B009",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak iddiasi eylemin yoneldigi kisiyi genel kadin olarak degil, erkegin kendisine bagli kadin kole/hizmetkar olarak sinirlar. Yazar gerekcesi ve sinir notu bu katilimci sinirini genellestiriyor.",
+      "smallest_correction": "Kimlik gerekcesi ve sinir notunda genel 'kadin' ifadesini, erkege bagli kadin kole/hizmetkar katilimcisini koruyacak bicimde daralt."
+    },
+    {
+      "target_ref": "root_002645/B009",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak iddiasi cinsel kinayeyi belirli fail ve ona bagli kadin kole/hizmetkar iliskisiyle verir. Tanim ve F002 bunu herhangi bir kadina yonelen eylem gibi genellestiriyor.",
+      "smallest_correction": "Tanimda ve F002 ifadesinde katilimciyi erkege bagli kadin kole/hizmetkar olarak belirt; cinsel kinaye cekirdegini ve diger facetleri koru."
+    },
+    {
+      "target_ref": "root_002645/B009",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tek kaynak ozeti, kaynak iddiasindaki dar katilimciyi 'kadin' diye genellestiriyor.",
+      "smallest_correction": "Tek kaynak ozetindeki 'kadinla cinsel birliktelik' sozunu erkege bagli kadin kole/hizmetkarla cinsel birliktelik olarak daralt."
+    }
+  ]
+}

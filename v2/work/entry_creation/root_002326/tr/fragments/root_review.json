@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "364e5cc3a3381152edeba1287e3b133b75f9b4624909e9bab6fcc70ea2ecaaa8",
+  "verdict": "repair",
+  "summary": "Girdi genel olarak beş dalı kanıtla uyumlu ayırıyor. Ancak B003'te yakın adım ayrıntısı, kanıtta yalnızca ek bir niteleme olarak dururken kısa ve toplu bedenin sonucu gibi sunulmuş. Bu, iki sınırlı alanda cerrahi düzeltme gerektiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_002326/B003",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 kısa adam, toplu yaratılış ve yakın adım bilgisini birlikte verir; yakın adımı beden yapısına bağlı bir görünüm ya da sonuç olarak kurmaz.",
+      "smallest_correction": "B003 concept_map alanındaki F002 ifadesini, yakın adımı kısa ve toplu bedenin sonucu değil ek bir niteleme olarak tanıtacak biçimde değiştir."
+    },
+    {
+      "target_ref": "root_002326/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 yakın adım bilgisini attested bir niteleme olarak destekler; kaynak sentezindeki sonuç ilişkisi kanıtta açıkça desteklenmez.",
+      "smallest_correction": "B003 source_synthesis.common_summary içinde yakın adım bilgisini beden yapısının görünür sonucu gibi değil, kaynakta gelen ek bir niteleme olarak belirt."
+    }
+  ]
+}

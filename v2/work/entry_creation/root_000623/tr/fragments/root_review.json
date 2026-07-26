@@ -1,0 +1,148 @@
+{
+  "inputs_sha256": "f18f29a2e83f852ef1a33674c2de364224996f4c9a924c4b5940b7215d4a9159",
+  "verdict": "editorial_review",
+  "summary": "Yazar yanıtında üç yayınsal sorun var. B004, kutsal metin kullanımındaki kandil kaydını saydam dış kap olarak yeniden yorumluyor. B005, kaynakta türü belirtilmeyen fahl sözcüğünü atla sınırlı aygır karşılığına daraltıyor. B006 ise nesneyi kişiden uzağa atma kaydına kanıtsız tehlike ve yük amacı ekliyor. Bu düzeltmeler yazar çıktısındaki birden çok alanı etkiliyor; görev yalnız inceleme çıktısını değiştirmeye izin verdiği için editoryal inceleme gerekiyor.",
+  "issues": [
+    {
+      "target_ref": "root_000623/B004",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi kutsal metindeki kullanımı açıkça kandil olarak verir. Gerekçe ise bunun kandilin kendisi olmadığını, ışık kaynağını çevreleyen saydam kap olduğunu ileri sürerek doğrudan kaydı reddediyor.",
+      "smallest_correction": "Durumu accepted olarak koruyup gerekçenin son cümlesini, kutsal metin kullanımında sözcüğün kaynak kaydına göre kandili gösterdiğini belirtecek biçimde düzeltin."
+    },
+    {
+      "target_ref": "root_000623/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F003, kutsal metin kullanımını ışık kaynağını çevreleyen saydam kap olarak açıklıyor. Sağlanan kaynak ifadesi bu kullanımı kandil diye tanımlar; dış kap yorumu kanıtta yoktur.",
+      "smallest_correction": "Tanımın son cümlesini ve F003 ifadesini, belirli metin bağlamında kandili anlattığını söyleyecek biçimde değiştirin; cam maddesi ve cam kapla ilgili diğer kapsamları koruyun."
+    },
+    {
+      "target_ref": "root_000623/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, metne bağlı örneği ışık kaynağının yer aldığı saydam kap olarak sunuyor. Oysa kanıttaki ayırt edici sözlük kaydı bu örneği kandil olarak açıklar.",
+      "smallest_correction": "Ortak özetin son cümlesinde saydam dış kap yorumunu kaldırıp kaynakta metne bağlı kullanımın kandil diye açıklandığını belirtin."
+    },
+    {
+      "target_ref": "root_000623/B004",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Saydam cam kap bağlamsal karşılığı F003 ile kutsal metin kullanımına bağlanıyor, fakat bu kullanım için verilen kaynak açıklaması kandildir.",
+      "smallest_correction": "F003'e bağlı bağlamsal karşılığı kandil olarak değiştirin ve applicability ile error_profile metinlerini aynı dar kapsamı yansıtacak ölçüde güncelleyin."
+    },
+    {
+      "target_ref": "root_000623/B004",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_020"
+      ],
+      "evidence_conflict": "lu_020 için ışık kaynağını çevreleyen cam kap karşılığı verilmiş. Birimin kaynak ifadesi kutsal metindeki sözcüğü kandil diye açıklar.",
+      "smallest_correction": "Yalnız lu_020 target_gloss değerini kandil olarak değiştirin."
+    },
+    {
+      "target_ref": "root_000623/B005",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak fahl sözcüğünü kullanır ve herhangi bir hayvan türü belirtmez. Gerekçe ile sınır notu bunu aygıra, yani erkek ata özgü bir adlandırma olarak daraltıyor.",
+      "smallest_correction": "Gerekçe ve sınır notundaki aygır ifadelerini tür belirtmeyen damızlık erkek hayvan karşılığıyla değiştirin; diş türü ve öteki dal sınırlarını koruyun."
+    },
+    {
+      "target_ref": "root_000623/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F001, kanıtta bulunmayan at türünü ekleyerek anlamı aygırın dişleriyle sınırlar. Kaynak yalnız fahl ve onun köpek dişlerini verir.",
+      "smallest_correction": "Tanım ile F001'de aygır yerine damızlık erkek hayvan deyin; köpek dişleri ve hayvana bağlı özel kullanım kapsamını değiştirmeyin."
+    },
+    {
+      "target_ref": "root_000623/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kaynakların aygırın köpek dişlerinde birleştiğini söylüyor. Kaynaklar tür belirtmeden fahl sözcüğünün köpek dişlerini kaydeder.",
+      "smallest_correction": "Ortak özette aygır yerine damızlık erkek hayvan karşılığını kullanın."
+    },
+    {
+      "target_ref": "root_000623/B005",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Aygırın köpek dişleri kavram karşılığı ve hata profili, kanıtta olmayan at türünü ekleyip kapsamı daraltıyor.",
+      "smallest_correction": "Kavram karşılığını damızlık erkek hayvanın köpek dişleri olarak değiştirin ve applicability ile error_profile metninden aygır sınırlamasını kaldırın."
+    },
+    {
+      "target_ref": "root_000623/B005",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_021"
+      ],
+      "evidence_conflict": "lu_021 için aygırın köpek dişleri karşılığı verilmiş, ancak birimin kaynak ifadesi tür belirtmeden fahl sözcüğünün dişlerini verir.",
+      "smallest_correction": "Yalnız lu_021 target_gloss değerini damızlık erkek hayvanın köpek dişleri olarak değiştirin."
+    },
+    {
+      "target_ref": "root_000623/B005",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu ayrımlarındaki focus_only ve açıklamalar dalı tekrar aygıra özgü sayıyor. Kaynakta at türü sınırı bulunmadığından bu karşılaştırmalar da yanlış daralmayı yayıyor.",
+      "smallest_correction": "B005 komşu ayrımlarında aygır geçen odak ve ayrım metinlerini tür belirtmeyen damızlık erkek hayvan ifadesiyle değiştirin; ilişki türlerini ve komşu sınırlarını koruyun."
+    },
+    {
+      "target_ref": "root_000623/B006",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F002, nesneyi kişiden uzağa atma kaydını tehlikeyi veya yükü savma amacıyla sınırlar. Kanıt nesnenin türünü ya da böyle bir amacı belirtmez.",
+      "smallest_correction": "F002'yi yalnız bir nesneyi kendinden uzağa atmayı anlatacak biçimde düzeltin; tehlike ve yük eklemelerini kaldırın."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök özeti B005'i kanıtsız biçimde aygır dişleri diye daraltıyor ve B006'daki nesneyi elden atıp uzaklaştırma dalını anlam alanları arasında belirtmiyor.",
+      "smallest_correction": "Özette aygır dişleri yerine damızlık erkek hayvanın dişleri ifadesini kullanın ve nesneyi elden atıp uzaklaştırma eylemini ayrı anlam alanı olarak ekleyin."
+    }
+  ]
+}

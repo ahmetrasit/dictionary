@@ -1,0 +1,61 @@
+{
+  "verdict": "repair",
+  "summary": "B012 dalının eğrilik ve güçlük çekirdeği doğru aktarılmıştır; ancak tek sözlük tanıklığı, biçimin dilde seyrek olduğu sonucuna dönüştürülmüştür. Kanıt yalnızca bu veri paketindeki tek kaynaklı tanıklığı gösterdiğinden, ilgili alanlardaki seyrek nitelemesi kaldırılmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_000993/B012",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi biçimi eğrilik ve güçlük olarak tanımlar ve aynı kökteki başka bir biçimle ilişkilendirir; biçimin seyrek olduğunu bildirmez. Tek kaynakta yer alması, dilde seyrek olduğunu kanıtlamaz.",
+      "smallest_correction": "Gerekçe ve sınır notundaki seyrek nitelemesini kaldırın; tek kaynaklı oluşu ancak tanıklık kapsamı olarak belirtin."
+    },
+    {
+      "target_ref": "root_000993/B012",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F002, biçimi seyrek diye niteler; bc_001 ise yalnızca eğrilik, güçlük ve aynı kökteki başka bir biçimle ilişkiyi destekler.",
+      "smallest_correction": "Tanımdan ve F002 ifadesinden seyrek nitelemesini çıkarın; eğrilik-güçlük çekirdeğini ve kök içi ilişkiyi aynen koruyun."
+    },
+    {
+      "target_ref": "root_000993/B012",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tek kaynaklı tanıklık doğru kaydedilmiştir, fakat kaynak ayrıntısındaki seyrek biçim sözü bu tanıklıktan desteklenmeyen bir kullanım sıklığı sonucu çıkarır.",
+      "smallest_correction": "Kaynak ayrıntısı özetindeki seyrek sözcüğünü kaldırın; sole_attestation türünü ve tek sözlük tanıklığı bilgisini koruyun."
+    },
+    {
+      "target_ref": "root_000993/B012",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bağlamsal karşılığın uygulanabilirlik açıklaması biçimi seyrek sayar; bc_001 böyle bir sıklık bilgisi sağlamaz.",
+      "smallest_correction": "Uygulanabilirlik açıklamasındaki seyrek nitelemesini kaldırın; iki bileşenli anlamı açıklama işlevini koruyun."
+    },
+    {
+      "target_ref": "root_000993/B012",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu ayrımının focus_only alanı odak biçimi seyrek diye niteler; kanıt yalnızca anlamını ve kök içi ilişkisini verir, kullanım sıklığını vermez.",
+      "smallest_correction": "focus_only alanından seyrek nitelemesini çıkarın; eğrilik ile güçlüğün tek biçimde birlikte adlandırılması ayrımını koruyun."
+    }
+  ]
+}

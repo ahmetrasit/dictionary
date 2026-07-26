@@ -1,0 +1,28 @@
+{
+  "verdict": "editorial_review",
+  "summary": "Anlam haritası büyük ölçüde kanıtla uyumludur; ancak B009 komşu asimetrisi komşu kartını yanlış sınırlar ve B010 tek kaynaklı erkek böcek aktarımını ortak özete yerleştirir. Bu iki alan yayımdan önce düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001217/B009",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Seçilen komşu yalnızca ardında kimse kalmayan bir kuşağın tükenmesiyle sınırlı değildir; komşu kartı bir şeyin sona ermesini, kuşakların art arda tükenmesini ve kişinin ardıl bırakmadan ölmesini de kapsar. Bu nedenle bireysel ölümü ve geride kimse kalmadan toplu tükenişi odak dalına özgü gösteren focus_only ve neighbor_only alanları kanıttaki ortak bölgeyi yanlış kurar.",
+      "smallest_correction": "Aynı komşuyu ve near_synonym/partial sınıflandırmasını koruyun; focus_only alanını yalnızca özel kalıptaki ölüm eşiği veya dünyayla bağın kopmasıyla sınırlandırın, neighbor_only alanında ise genel bir şeyin sona ermesi ile kuşakların art arda tükenmesini belirtin ve distinction metnini bu asimetriye göre düzeltin."
+    },
+    {
+      "target_ref": "root_001217/B010",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Erkek böcek adı yalnızca tahdhib aktarımında bulunur; buna karşılık ortak özet bu sınırlı kullanımı üç kaynağın paylaştığı küçük hayvan tanımıyla aynı ortak cümlede verir ve tek kaynaklı ayrıntı için source_details satırı içermez.",
+      "smallest_correction": "common_summary alanını üç kaynağın paylaştığı uzun sırtlı, güvercin öldüren küçük hayvan adıyla sınırlayın; erkek böcek adını bc_001 ile bağlantılı bir sole_attestation source_details satırına taşıyın."
+    }
+  ]
+}

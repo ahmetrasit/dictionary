@@ -1,0 +1,72 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yaniti genel olarak dal sinirlarini koruyor; ancak dort dalda yayina yansiyacak anlamsal kapsam sorunlari var. Deveye ozgu ilk binis hayvanlara genellenmis, gebeligin daha once fark edilmemesi tek kaynaga ozgu bir ayrintiyken ortak cekirdege tasinmis, genel hastalik kapsami daraltilmis ve son dalin kavram karsiligi dogrudan yuzlesme anlamini disarida birakmis.",
+  "issues": [
+    {
+      "target_ref": "root_001213/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak iddiasi ilk binis uygulamasini yalniz deveyle sinirlar. Tanim ve F004 ise bunu herhangi bir hayvana ilk kez binme olarak genelleyerek katilimci sinirini genisletiyor.",
+      "smallest_correction": "Tanimdaki ve F004'teki hayvan ifadelerini deve olarak daralt; ilk kez binilmis olma kosulunu aynen koru."
+    },
+    {
+      "target_ref": "root_001213/B003",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_015"
+      ],
+      "evidence_conflict": "lu_015 yalniz daha once binilmemis deveye ilk binisi bildirir. Hedef karsilik bunu hayvana ilk kez binme diye vererek deve sinirini kaldiriyor.",
+      "smallest_correction": "lu_015 hedef karsiligini deveye ilk kez bindi biciminde daralt."
+    },
+    {
+      "target_ref": "root_001213/B006",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak kaynak cekirdegi disi devenin gebeliginin belirginlesmesidir. Daha once gebe sanilmama kosulu yalniz kaynak ifadesindeki bir aciklamaya aittir; tanim ve F001 bunu zorunlu ortak kosula donusturuyor.",
+      "smallest_correction": "Cekirdegi disi devenin gebeliginin belirginlesmesi olarak yaz; daha once gebe sanilmama ayrintisini source_variant rolunde bagimli bir yuz olarak tut."
+    },
+    {
+      "target_ref": "root_001213/B006",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "common_summary, gebe olmadigi sanilma ayrintisini butun kaynaklarin ortak aciklamasi gibi sunuyor. Supplied claimde ortak olan nokta yalniz gebeligin belirginlesmesidir.",
+      "smallest_correction": "Ortak ozeti gebeligin belirginlesmesiyle sinirla; onceki yanlis kanaati ortaklik iddiasi olmadan ilgili kaynak varyanti olarak belirt."
+    },
+    {
+      "target_ref": "root_001213/B008",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak iddiasi insan icin cicek, kizamik ve vebanin yaninda genel olarak hastaliga hic yakalanmamayi da kapsar. Tanim bunu yalniz dokuntulu veya salgin hastaliklarla sinirlayarak genel hastalik kapsamini eksiltiyor.",
+      "smallest_correction": "Tanimda insan icin belirli bir hastaliga hic yakalanmamis olmayi cekirdek yap; dokuntulu ve salgin hastaliklari ornek veya specialization olarak koru."
+    },
+    {
+      "target_ref": "root_001213/B011",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Dal hem birini gercekle yuzlestiren bagli kullanimi hem de dogrudan karsilasma veya yuzlesme adini kapsar. Kavram karsiligi yalniz gercekle yuzlestirmeyi verip ikinci cekirdek kullanimi disarida birakiyor.",
+      "smallest_correction": "Kavram karsiligini dogrudan yuzlesme ile gercekle yuzlestirmeyi birlikte gosterecek bicimde genislet ve kayip profilini buna gore duzelt."
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "inputs_sha256": "248bfb51720cecbcc1b8a9976409a53b49c923b33f8b1fd4b85d8cc459d2904b",
+  "verdict": "repair",
+  "summary": "B001-B005 kanitla uyumlu gorunuyor. B006 ise tek kaynakli dali alicinin bir seyi duymasi veya ondan haberdar olmasi diye ters yonde okuyor; kanit cercevesi bir seyi duyurma ya da isittirme eylemini gosteriyor. Bu katilimci yonu B006 boyunca ve kok ozetinde cerrahi olarak duzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_003310/B006",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B006 kaniti dali bir seyi duyurma veya isittirme yonunde cerceveler; yazar ise bunu bir seyi isitmek ya da ondan haberdar olmak diye alici merkezli anlatmistir.",
+      "smallest_correction": "Rationale ve boundary_note metinlerini alici merkezli duyma yerine bir seyi duyurma veya isittirme eylemiyle sinirli olacak sekilde degistir."
+    },
+    {
+      "target_ref": "root_003310/B006",
+      "field": "lexicalization_scope",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Lexicalization notu mekanik kapsam acisindan dogru olsa da anlami tek kanit satirindaki isitme-haberdar olma kullanimi diye yanlis yonde tanimliyor.",
+      "smallest_correction": "branch_kind degerini koru; note metnini tek kanit satirindaki duyurma veya isittirme kullanimiyla sinirli oldugunu soyleyecek sekilde duzelt."
+    },
+    {
+      "target_ref": "root_003310/B006",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Concept map tanimi ve facetleri dali bilginin aliciya ulasmasi olarak kuruyor; kanit ise oznenin bir seyi duyurmasi veya isittirmesi eylemini destekliyor.",
+      "smallest_correction": "Definition ve iki facet statementini, dali bir seyi duyurma ya da isittirme anlaminda dar ve tek kaynakli bir kullanim olarak gosterecek sekilde degistir."
+    },
+    {
+      "target_ref": "root_003310/B006",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Source synthesis tek kaydi duyma veya haberdar olma diye ozetliyor ve duyurma anlamina genisletilmemesi gerektigini soyluyor; bu, kanitin duyurma-isittirme yonuyle celisiyor.",
+      "smallest_correction": "Common summary ve sole-attestation detail metnini tek kaynakli duyurma veya isittirme kaydi diye duzelt; claim dizilerini ve detail turunu koru."
+    },
+    {
+      "target_ref": "root_003310/B006",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Concept gloss olarak verilen haberdar olma, alicinin bilgi edinmesini anlatir; kanit cekirdegi ise oznenin bir seyi duyurmasi veya isittirmesidir.",
+      "smallest_correction": "Concept gloss metnini duyurma gibi eylem merkezli bir karsilikla degistir ve applicability ile error_profile metinlerini buna gore sinirli bicimde guncelle."
+    },
+    {
+      "target_ref": "root_003310/B006",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Contextual gloss onu duydu, alici merkezli isitmeyi verir; kanit yonu bir seyi duyurmak veya isittirmektir.",
+      "smallest_correction": "Tek contextual glossu onu duyurdu seklinde degistir; applicability ve error_profile metinlerini duyurma-isittirme yonune uydur."
+    },
+    {
+      "target_ref": "root_003310/B006",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Neighbor ayrimlari B006 tarafini bilgi edinme veya duyma durumu diye kuruyor; bu, kanittaki duyurma-isittirme yonunu komsulara karsi yanlis sinirliyor.",
+      "smallest_correction": "B003 ve B002 ayrimlarinda focus_only, gloss, shared_zone ve distinction metinlerini B006 icin duyurma veya isittirme eylemini gosterecek sekilde guncelle; relation_type, boundary_match ve neighbor_ref degerlerini koru."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kok ozeti B006'yi tek kayitli duyma kullanimi diye adlandiriyor; B006 icin yapilan kanit duzeltmesi bu etiketi duyurma veya isittirme olarak gerektirir.",
+      "smallest_correction": "Root profile summary icindeki tek kayitli duyma ifadesini tek kayitli duyurma-isittirme kullanimi olarak degistir; polysemy ve organization degerlerini koru."
+    }
+  ]
+}

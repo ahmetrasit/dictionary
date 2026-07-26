@@ -1,0 +1,94 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dalların çoğunda kanıtı doğru koruyor. Ancak B006, yalnızca bir kaynak kullanımında belirtilen ağır iş koşulunu dalın genel çekirdeğine yayıyor; B007 ise yağmur siperine kanıtta bulunmayan küçüklük özelliğini ekliyor. Bu iki sorun, aşağıda belirtilen alanlarda dar ve yüksek güvenli düzeltmeler gerektiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_001062/B006",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Sınır notu dalı ağır gelen bir işte başkasını dayanak seçmeyle sınırlandırıyor. Oysa kanıt, ağır iş kullanımının yanında herhangi bir konuda birine dayanma, yalnız onu seçme, işi ona bırakma ve yardım isteme kullanımlarını da veriyor.",
+      "smallest_correction": "Sınır notundaki ağır gelen iş koşulunu kaldırın; genel sınırı birine dayanma, işi ona bırakma veya ondan yardım alma olarak kurun ve ağırlığı yalnızca kaynakta bulunan özel kullanım olarak bırakın."
+    },
+    {
+      "target_ref": "root_001062/B006",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F001, ağır gelen işi dalın zorunlu çekirdek koşulu yapıyor. Kanıttaki birine dayanma, yalnız onu seçme, işi ona bırakma ve dilediği konuda yardım isteme örnekleri ağır bir işle sınırlı değildir; ağırlık yalnızca başkasına dayanmanın bir kaynak açıklamasında geçer.",
+      "smallest_correction": "Tanımdan ve F001'den zorunlu ağır iş koşulunu çıkarın; çekirdeği genel olarak birini dayanak seçme, işi ona bırakma ve yardımına başvurma biçiminde verin. Ağır gelen işte dayanmayı ayrı bir uzmanlaşma veya ilişkili kullanım olarak koruyun."
+    },
+    {
+      "target_ref": "root_001062/B006",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığının metni genel çekirdeğe uyuyor, fakat uygulanabilirlik ve korunan özellikler açıklamaları bu karşılığı yalnızca ağır gelen işe yöneltiyor. Kanıt dalın genel dayanma ve yardım isteme kullanımlarını da kapsıyor.",
+      "smallest_correction": "Karşılık metnini koruyun; uygulanabilirlik ve korunan özellikler açıklamalarından ağır iş zorunluluğunu kaldırarak bunları genel dayanma, işi başkasına bırakma ve yardım isteme çekirdeğine bağlayın."
+    },
+    {
+      "target_ref": "root_001062/B006",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İki komşu ayrımında da odak dalının kurucu sınırı ağır işin başka birine yöneltilmesi olarak sunuluyor. Kanıt, ağır iş bağlamını zorunlu kılmadan dayanma, yardım isteme, yalnız birini seçme ve işi ona bırakma kullanımlarını içeriyor.",
+      "smallest_correction": "Odak dala ait açıklamalardan zorunlu ağır iş koşulunu çıkarın; komşulardan ayrımı yardım isteme, işi dayanağa bırakma ve kimi kullanımda yalnız o dayanakla yetinme özellikleri üzerinden koruyun."
+    },
+    {
+      "target_ref": "root_001062/B007",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım yağmurdan korunmaya yarayan üst siperi küçük diye niteliyor. Kanıt yapının gölgelik benzeri olduğunu ve yağmurdan korunmak için kullanıldığını bildiriyor, fakat boyutuna ilişkin bir sınır vermiyor.",
+      "smallest_correction": "Tanımdan küçük nitelemesini kaldırın; yağmurdan korunma amacı ile gölgelik benzeri üst siper niteliğini aynen koruyun."
+    },
+    {
+      "target_ref": "root_001062/B007",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tek kaynak ayrıntısının özeti siperi küçük olarak aktarıyor. Kaynak iddiası yalnızca gölgelik benzeri, yağmurdan koruyan bir siper ile onu kurma eylemini destekliyor.",
+      "smallest_correction": "Tek kaynak ayrıntısındaki küçük nitelemesini kaldırın; kalan yağmurdan korunma, üst siper ve kurma bilgilerini koruyun."
+    },
+    {
+      "target_ref": "root_001062/B007",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığının uygulanabilirlik açıklaması yapıyı küçük diye sınırlandırıyor. Bu boyut özelliği kanıtta bulunmuyor ve kavram karşılığının geçerli alanını gereksiz yere daraltıyor.",
+      "smallest_correction": "Karşılık metnini koruyun ve uygulanabilirlik açıklamasından küçük nitelemesini kaldırın."
+    },
+    {
+      "target_ref": "root_001062/B007",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Genel üst örtü komşusuna karşı odak dala özgü özellikler arasında küçüklük sayılıyor. Kanıtın desteklediği ayırıcı özellik, boyut değil yağmurdan korunma amacıyla kurulan özel siper oluşudur.",
+      "smallest_correction": "Odak dala özgü açıklamadan küçük nitelemesini kaldırın; ayrımı yağmurdan korunma amacı ve özel siper yapısı üzerinden sürdürün."
+    }
+  ]
+}

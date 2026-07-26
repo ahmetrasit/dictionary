@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur; ancak iki kavram karşılığı dal çekirdeğini gereksiz biçimde daraltmaktadır. B004 karşılığı insan kullanımlarını dışarıda bırakırken B011 karşılığı kemiğin kaynamış olmasını kanıtta bulunmayan bir ön koşula dönüştürmektedir.",
+  "issues": [
+    {
+      "target_ref": "root_000977/B004",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "\"Üç ayakla aksayarak ilerleme\" karşılığı ve hayvanla sınırlı uygulanabilirlik açıklaması yalnızca deve kullanımını temsil eder. Kanıt aynı dalın çekirdeğine insanın tek ayak üzerinde sıçramasını ve uzvu kesik kişinin tahta üzerinde yürümesini de dahil eder.",
+      "smallest_correction": "Kavram karşılığını \"eksilmiş ayak desteğiyle aksak ilerleme\" gibi hayvanın üç ayakla yürümesini, insanın tek ayakla sıçramasını ve tahta destekle ilerlemeyi kapsayan bir ifadeyle değiştirin; uygulanabilirlik ve hata profilini de bu kapsamla uyumlu hale getirin."
+    },
+    {
+      "target_ref": "root_000977/B011",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "\"Kaynamış kemiğin yeniden kırılması\" karşılığı kemiğin bütünüyle kaynamış olmasını zorunlu kılar. Kanıt yalnızca kemiğin daha önce düzeltilmiş veya onarılmış olmasını ve onarım sonrasında yeniden kırılmasını bildirir.",
+      "smallest_correction": "Kavram karşılığındaki \"kaynamış\" sözünü \"onarılmış\" veya \"yerine getirilmiş\" ile değiştirerek kanıtta bulunmayan tamamlanmış kaynama koşulunu kaldırın."
+    }
+  ]
+}

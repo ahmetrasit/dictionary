@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt dalların temel anlamlarını ve sözlüksel kapsamlarını büyük ölçüde doğru kuruyor. Bununla birlikte ikinci dalın kimlik sınırı ile kapsam notu, Tanrı'nın doğrudan özne olmadığı ettirgen kullanımı dışlayacak biçimde gereğinden dar yazılmıştır. Birinci dalın iki komşu ayrımında da kanıtın sınırlamadığı süreklilik ve öç alma özellikleri genelleştirilmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_000686/B002",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, hem Tanrı'nın cezayı verdiği kullanımı hem de bir davranışın Tanrı'nın cezalandırıcı karşılığını gerektirdiği ettirgen kullanımı bu dala bağlar. boundary_note ise dalı yalnızca Tanrı'nın özne olduğu ifadeyle sınırlandırarak ikinci kullanımı dışlıyor.",
+      "smallest_correction": "boundary_note içindeki yalnızca Tanrı öznesiyle kurulma şartını, Tanrı'yla kurulan bu iki belirli kullanımı kapsayacak biçimde değiştirin; genel insan hoşnutsuzluğunun dışarıda kaldığı sınırı koruyun."
+    },
+    {
+      "target_ref": "root_000686/B002",
+      "field": "lexicalization_scope",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kapsam notu anlamı yalnızca Tanrı'nın özne olduğu ifadelere bağlar. Oysa kanıtta iki kalıplaşmış kullanım vardır ve bunlardan ettirgen olanında Tanrı doğrudan özne değildir; davranış, Tanrı'nın cezalandırıcı karşılığını gerektirir.",
+      "smallest_correction": "branch_kind değerini koruyun ve nottaki Tanrı öznesi şartını, Tanrı'ya atfedilen ceza ile bu cezayı gerektiren ettirgen kullanımı birlikte kapsayan iki kalıplaşmış ifadeye gönderme yapacak şekilde düzeltin."
+    },
+    {
+      "target_ref": "root_000686/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_001092/B001 ayrımında öç alma yönelimi komşu dalın genel özelliği gibi sunuluyor. Sağlanan komşu kartı öç alma açıklamasını yalnızca Tanrı'ya atfedilen öfkeye bağlar.",
+      "smallest_correction": "neighbor_only ve distinction metinlerinde öç alma yönelimini Tanrı'ya atfedilen kullanımla açıkça sınırlayın; şiddetli, sık veya çabuk öfke ayrımlarını olduğu gibi koruyun."
+    },
+    {
+      "target_ref": "root_000686/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_000136/B001 ayrımındaki kalıcı iticilik nitelemesi komşu karta dayanmayan bir süre sınırı ekler. Kart yalnızca sevginin karşıtı olan sevmeme ve iticiliği bildirir.",
+      "smallest_correction": "neighbor_only içindeki kalıcı nitelemesini kaldırın; sevginin karşıtı olan sevmeme ve iticilik sınırını koruyun."
+    }
+  ]
+}

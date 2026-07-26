@@ -1,0 +1,83 @@
+{
+  "verdict": "repair",
+  "summary": "Girdi genel olarak dal sınırlarını ve yapı bağımlı kullanımları koruyor; ancak bazı kaynak özetleri ayırt edici tanıklıkları atlıyor, iki kavram sunumu kanıt kapsamını daraltıyor veya genişletiyor ve bir komşuluk açıklaması kanıtta bulunmayan nedensellik kuruyor. Aşağıdaki sınırlı düzeltmeler bu sorunları dal yapısını değiştirmeden giderir.",
+  "issues": [
+    {
+      "target_ref": "root_001547/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak özeti eski dokumanın yeniden eğrilmek üzere sökülmesini anıyor, fakat tanıklıklardan birindeki sökülen ipliklerin yeni yünle karıştırılıp yeniden eğrilmesi ayrıntısını kapsamıyor.",
+      "smallest_correction": "Ortak özete, kaynak adı yüklemeden, bir tanıklığın sökülen eski ipliklerin yeni yünle karıştırılıp yeniden eğrildiğini de belirttiğini ekle."
+    },
+    {
+      "target_ref": "root_001547/B001",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığındaki tek birleşik ifade, bütün iplikli yapı çözmelerini yeniden eğirmeye hazırlama olarak gösteriyor; kanıtta yeniden eğirme amacı eski dokuma ve çadır bezi ipliklerine bağlı özel bir uygulamadır.",
+      "smallest_correction": "Karşılık metninde genel çözme çekirdeğini noktalı virgülle özel yeniden eğirme uygulamasından ayır; genel ip çözmeye yeniden eğirme amacı yükleme."
+    },
+    {
+      "target_ref": "root_001547/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Özet sözleşme, bağlılık sözü ve ant örneklerini kapsıyor; ancak bazı tanıklıkların anlamı ip çözmeden benzetim veya aktarma yoluyla açıkladığını ve topluluğun karşılıklı sözlerini bozması kullanımını belirtmiyor.",
+      "smallest_correction": "Ortak özete bu iki ayırt edici unsuru kaynaklar arası, kaynak adı taşımayan bir cümleyle ekle."
+    },
+    {
+      "target_ref": "root_001547/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve çekirdek yüz, kanıttaki tırnak diplerinde bulunan benzer şeyin soyulmasını açıkça korumuyor; ayrıca ikinci yüzdeki kendiliğinden sözü, yalnız ucun liflenmiş duruma geldiğini bildiren kanıta nedensiz gerçekleşme koşulu ekliyor.",
+      "smallest_correction": "Tanım ile F001'e tırnak diplerinde bulunan benzer şeyi açıkça ekle ve F002'den kendiliğinden sözünü çıkar."
+    },
+    {
+      "target_ref": "root_001547/B003",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı yalnız çubuk ucuna odaklandığı için kanıttaki tırnak diplerinde bulunan benzer şeyin soyulup liflendirilmesi kullanımını dışarıda bırakıyor; buna karşın hata profili kayıp olmadığını söylüyor.",
+      "smallest_correction": "Karşılığı uç veya benzer yüzeyi kapsayacak biçimde genişlet ve uygulanabilirlik ile korunanlar açıklamalarını bu kapsama uyumlu hâle getir."
+    },
+    {
+      "target_ref": "root_001547/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak özeti çetin iş, güçlü yaradılış ve gücün son sınırına varmayı topluyor, fakat kanıttaki develerin güçlerini çoğul bir adla ifade eden ayırt edici kullanımı kapsamıyor.",
+      "smallest_correction": "Ortak özete develerin güçlerini adlandıran çoğul kullanımın da bulunduğunu ekle."
+    },
+    {
+      "target_ref": "root_001547/B006",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_000736/B008 ile ortak alan, iki dalda da hastalığın canlıyı zayıflattığını söylüyor. Odak dalın kanıtı hastalık adını ve ayrı bir semizken zayıflamış deve kalıbını yan yana verir, fakat hastalığın bu zayıflamaya neden olduğunu bildirmez.",
+      "smallest_correction": "Ortak alanı hastalık ve bedensel zayıflık alanlarının birlikteliği olarak yaz; odak dalın hastalığı ile zayıflama kullanımı arasında neden bağı kurma."
+    }
+  ]
+}

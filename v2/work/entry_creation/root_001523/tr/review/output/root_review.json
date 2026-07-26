@@ -1,0 +1,64 @@
+{
+  "verdict": "repair",
+  "summary": "B001 dalında kaynaklara göre dağılan çağırma ve azarlayarak yönlendirme işlevleri, yanıtta her kullanımın birlikte taşıdığı tek bir çekirdek gibi sunulmuştur. Ortak çekirdek çobanın koyunlara yönelik seslenişi olarak korunmalı, iki işlev ise kaynakların farklı vurguları olarak ayrıştırılmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001523/B001",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe, dalın çağırma ve yönlendirme biçimindeki iki işlevi birlikte koruduğunu söyler. Oysa bc_001 çağırmayı özellikle tahdhib aktarımında, azarlayarak yöneltmeyi ise maqayis, ayn ve sihah aktarımlarında öne çıkarır; mufradat yalnızca çobanın seslenişini bildirir.",
+      "smallest_correction": "accepted durumunu koruyup gerekçeyi, ortak kimliğin çobanın koyunlara seslenişi olduğunu ve çağırma ile azarlayarak yöneltmenin kaynaklara göre değişen işlev vurguları olduğunu belirtecek şekilde düzelt."
+    },
+    {
+      "target_ref": "root_001523/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ile F002, koyunları çağırma ve davranışlarını yönlendirmeyi her kullanımda birlikte bulunan iki çekirdek işlev yapar. bc_001 içindeki aktarımlar bu işlevleri birlikte zorunlu kılmaz: bazıları azarlayarak yöneltmeyi, tahdhib çağırmayı, mufradat ise yalnızca çobanın sesini verir.",
+      "smallest_correction": "Tanımda ortak çekirdeği çobanın koyunlara yönelik seslenişi olarak kur; çağırma ile azarlayarak yöneltmeyi alternatif kaynak vurguları olarak ifade et. F002'yi de bu iki işlevi zorunlu bir birleşim olmaktan çıkaracak biçimde düzelt; özel buyruk kullanımını ayrı tut."
+    },
+    {
+      "target_ref": "root_001523/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "common_summary bütün kaynakların ortak çekirdeğine hem çağırmayı hem yönlendirmeyi yerleştirir. bc_001 için kaynaklar yalnızca çobanın koyunlara yönelik sesinde birleşir; çağırma, azarlayarak yöneltme ve yalnızca ses çıkarma ayrıntıları kaynaklar arasında farklı dağılır.",
+      "smallest_correction": "common_summary içindeki ortak çekirdeği çobanın koyunlara yönelik sesiyle sınırla ve çağırma, azarlayarak yöneltme ve genel sesleniş vurgularını kaynaklar arasındaki farklar olarak kaynak-nötr biçimde belirt."
+    },
+    {
+      "target_ref": "root_001523/B001",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "koyunları çağırıp yönlendiren çoban sesi karşılığı, çağırma ile yönlendirmeyi tek olayda birlikte zorunlu kılar. bc_001 için güvenli ortak anlam çobanın koyunlara yönelik sesidir; iki amaç farklı kaynak vurgularıdır.",
+      "smallest_correction": "Kavram karşılığını, iki işlevi alternatif tutan koyunları çağıran veya sesle yönlendiren çoban sesi biçiminde düzelt ve hata profilini bu ayrışık çekirdeğe göre güncelle."
+    },
+    {
+      "target_ref": "root_001523/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_001",
+        "lu_002",
+        "lu_003",
+        "lu_004"
+      ],
+      "evidence_conflict": "lu_001 ve lu_002 karşılıkları çağırma ile yönlendirmeyi birlikte zorunlu gösterir. Ayrıca aynı sihah açıklamasına dayanan lu_003 ve lu_004 için çağırma kanıtlanmadığı halde ikisine de çağırma eklenmiş, biri ses diğeri eylem olarak gerekçesiz biçimde ayrıştırılmıştır.",
+      "smallest_correction": "lu_001 ve lu_002 karşılıklarında çağırma ile sesle yönlendirmeyi alternatif tut. lu_003 ve lu_004'ü aynı kaynak anlamına uygun olarak çobanın koyunlara bağırarak onları yönlendirmesi biçiminde hizala; lu_005'i değiştirme."
+    }
+  ]
+}

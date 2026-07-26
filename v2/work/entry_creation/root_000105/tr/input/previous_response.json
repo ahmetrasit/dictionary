@@ -2,88 +2,77 @@
   "branches": [
     {
       "branch_ref": "root_000105/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, bir şeyin gizlilikten çıkıp görünmesi ile bir şeyi görünür kılmayı aynı anlam çekirdeğinde toplar. Kitap için görünür ya da yayımlanmış olma, bu çekirdeğin sözlüksel olarak sınırlı bir gerçekleşmesidir.",
+        "boundary_note": "Genel çekirdek görünür olma veya kılmadır; kitapla ilgili yayımlanma yorumu bütün kullanımlara yayılmaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, yalın görünme anlamını korurken ettirgen biçimleri ve kitapla sınırlı yayımlanma kullanımını ayrı tutar."
+      },
       "concept_map": {
-        "definition": "Bir şeyin gizliyken kendiliğinden görünür ve açık duruma gelmesi ya da bir şeyin, özellikle bir yazının, görünür veya yayımlanmış duruma getirilmesidir.",
+        "definition": "Bir şeyin gizliyken ortaya çıkıp görünür olması veya üzerindeki örtünün kalkması; ettirgen kullanımlarda bir şeyi ya da kitabı görünür kılmaktır. Kitap nitelemesinde ayrıca yayımlanmış olma anlamı bulunur.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Gizli veya örtülü olan şey kendiliğinden görünür ve açık duruma gelir.",
+            "statement": "Bir şey kendiliğinden gizlilikten çıkar, belirir ve görünür olur.",
             "claim_ids": [
-              "lu_001"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "extension",
-            "statement": "Bir kişi başka bir şeyi göstererek, açıklayarak veya yayımlayarak görünür duruma getirir.",
+            "statement": "Bir kişi bir şeyi görünür duruma getirir, açıkça gösterir veya belirginleştirir.",
             "claim_ids": [
-              "lu_002",
-              "lu_003"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "specialization",
-            "statement": "Bir yazı görünür, ortaya çıkarılmış veya yayımlanmış olarak nitelenebilir.",
+            "role": "source_variant",
+            "statement": "Kitapla ilgili türemiş kullanımlarda görünür olmanın yanında yayımlanmış olma yorumu da vardır.",
             "claim_ids": [
-              "lu_004",
-              "lu_005"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynakların ortak çekirdeği, gizli olanın görünmesi ile bir şeyin başkası tarafından görünür kılınmasını bir arada kapsar. Yazı söz konusu olduğunda görünür kılma, yayımlama sonucunu da taşıyabilir.",
+        "common_summary": "Kaynaklar görünme, gizlilikten çıkma ve görünür kılma çekirdeğinde birleşir. Kitaba ilişkin nitelemelerde görünür olma ile yayımlanmış olma yorumları birlikte aktarılır.",
         "common_claim_ids": [
-          "lu_001",
-          "lu_002",
-          "lu_004"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_003"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Tek kaynak, yoğunlaştırılmış biçimin bir şeyi gösterip açıklama anlamını ayrıca kaydeder."
-          },
-          {
-            "claim_ids": [
-              "lu_005"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Tek kaynak, yazıya ilişkin özel birleşimi doğrudan yayımlanmış veya görünür yazı olarak açıklar."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "görünür duruma gelme veya getirme",
-        "applicability": "Hem bir şeyin kendiliğinden ortaya çıkmasını hem de başka biri tarafından gösterilmesini kapsayan genel karşılıktır.",
+        "text": "görünür hâle gelme veya getirme",
+        "applicability": "Hem kendiliğinden belirme çekirdeğini hem de bir şeyi görünür kılan ettirgen uzantıyı birlikte karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Gizlilikten görünürlüğe geçişi ve bu geçişin ettirgen biçimini birlikte korur.",
+          "preserves": "Belirme, açığa çıkma ve görünür kılma ayrımını korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
           "F001",
-          "F002",
-          "F003"
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
           "text": "ortaya çıkmak",
           "usage_role": "contextual",
-          "applicability": "Özne daha önce gizliyken kendiliğinden görünür olduğunda doğal bir kullanım sağlar.",
+          "applicability": "Gizli ya da örtülü bir şeyin kendiliğinden görünür olduğu cümlelerde kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Gizli bir şeyin görünür hale gelmesini korur.",
-            "loses": "Başkasının bir şeyi gösterme veya yayımlama eylemini karşılamaz.",
+            "fit": "none",
+            "preserves": "Gizlilikten görünürlüğe geçişi doğal bir eylemle anlatır.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -92,13 +81,28 @@
           ]
         },
         {
-          "text": "yayımlamak",
+          "text": "ortaya çıkarmak",
           "usage_role": "contextual",
-          "applicability": "Bir yazının okuyucuya açık duruma getirilmesi bağlamında kullanılır.",
+          "applicability": "Bir kişinin bir şeyi görünür kıldığı veya belirginleştirdiği ettirgen bağlamlara uygundur.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Yazıyı görünür ve erişilebilir duruma getirme sonucunu korur.",
-            "loses": "Kendiliğinden görünme ile yazı dışındaki şeyleri gösterme kapsamını kaybeder.",
+            "fit": "none",
+            "preserves": "Ettirgen görünür kılma işlemini ve sonucu korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "yayımlanmış",
+          "usage_role": "contextual",
+          "applicability": "Yalnızca kitap nitelemesindeki yayıma çıkarılmış olma yorumunda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Kitaba bağlı özel yayımlanma yorumunu korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -111,83 +115,101 @@
         {
           "lexical_unit_id": "lu_001",
           "rendering_kind": "ordinary",
-          "target_gloss": "gizlilikten sonra ortaya çıkmak, görünmek"
+          "target_gloss": "gizlilikten çıkıp görünmek"
         },
         {
           "lexical_unit_id": "lu_002",
           "rendering_kind": "ordinary",
-          "target_gloss": "bir şeyi veya yazıyı görünür kılmak"
+          "target_gloss": "görünür kılmak, ortaya çıkarmak"
         },
         {
           "lexical_unit_id": "lu_003",
           "rendering_kind": "ordinary",
-          "target_gloss": "bir şeyi gösterip açıklamak"
+          "target_gloss": "bir şeyi gösterip belirginleştirmek"
         },
         {
           "lexical_unit_id": "lu_004",
           "rendering_kind": "ordinary",
-          "target_gloss": "görünür veya yayımlanmış olan"
+          "target_gloss": "görünür; kitap için yayımlanmış"
         },
         {
           "lexical_unit_id": "lu_005",
           "rendering_kind": "ordinary",
-          "target_gloss": "yayımlanmış veya görünür yazı"
+          "target_gloss": "yayımlanmış veya görünür durumdaki kitap"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000097/B001",
-          "relation_type": "synonym",
-          "boundary_match": "exact",
-          "focus_only": null,
-          "neighbor_only": null,
-          "gloss": "gizliyken görünme ve görünür kılma",
-          "shared_zone": "İki dal da gizli bir şeyin ortaya çıkmasını ve başka bir şeyin görünür kılınmasını anlatır.",
-          "distinction": "Çekirdek ve sınır aynıdır; yazı ve görünür görüş gibi örnek ayrıntıları eşanlamlılığı bozmaz."
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal, kitap için görünür kılma ve yayımlanmış olma kullanımını da kapsar.",
+          "neighbor_only": "Komşu dal, görünüşteki kanaat veya ilk bakışta beliren görüş kullanımına da uzanır.",
+          "gloss": "gizlilikten çıkıp görünme",
+          "shared_zone": "Her iki dal da gizli bir şeyin görünmesini ve bir şeyin görünür kılınmasını anlatır.",
+          "distinction": "Ortak görünme çekirdeğine rağmen odak dalın kitapla sınırlı sözlüksel uzantısı ile komşunun kanaat alanındaki uzantısı birbirinin yerine kullanılamaz."
+        },
+        {
+          "neighbor_ref": "root_000970/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal ettirgen görünür kılmayı ve kitapta yayımlanmış olma yorumunu içerir.",
+          "neighbor_only": "Komşu dal, bir şeyin içte değil dışta ve açıkça görünür olmasını ayrıca öne çıkarır.",
+          "gloss": "belirme ve açığa çıkma",
+          "shared_zone": "İki dal da bir şeyin görünmesi, açılması ve belirginleşmesi alanında örtüşür.",
+          "distinction": "Komşu daha çok görünür durumda bulunmayı anlatırken odak dal görünme sürecini, ettirgen göstermeyi ve kitap kullanımını birlikte taşır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; en doğrudan eşanlamlı dal sınırı göstermek için yayımlandı, daha uzak alan ve karşıtlık adayları elendi."
+      "neighbor_coverage_note": "Adayların tümü karşılaştırıldı; dalın sınırını en açık gösteren iki yakın anlam ilişkisi seçildi."
     },
     {
       "branch_ref": "root_000105/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, üstü örtülmeyen geniş araziyi ve bir kişinin böyle bir yere çıkmasını açıkça birlikte verir. Çıkma eylemi, yer adının bütün anlamını değil, o yere yönelmeyi anlatan bağımlı kullanımdır.",
+        "boundary_note": "Dal, her tür boşluğu değil, açık ve geniş araziyi ve bu araziye çıkmayı kapsar."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, açık araziyi yalın yer anlamı olarak; oraya çıkmayı ise belirli bir söz öbeğine bağlı uzantı olarak ayırır."
+      },
       "concept_map": {
-        "definition": "Örtüsüz, geniş ve açık bir kara parçası ile bir kişinin böyle bir açık alana çıkması veya orada bulunmasıdır.",
+        "definition": "Çukur, oyuk veya bitki örtüsüyle kapanmamış, uzakta ve genişçe uzanan açık arazidir. Kişi için kullanıldığında böyle bir açık alana çıkmayı veya orada bulunmayı anlatır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Yer, genişliği ve üstünü örten bir şey bulunmaması bakımından açık bir alandır.",
+            "statement": "Yer, geniş, açık, görünür ve örtüsüz bir arazi parçasıdır.",
             "claim_ids": [
-              "lu_006"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "associated_use",
-            "statement": "Bir kişi kapalı veya örtülü yerden bu açık alana çıkar ya da orada bulunur.",
+            "role": "extension",
+            "statement": "Bir kişi kapalı yerden çıkarak bu açık araziye gider veya orada bulunur.",
             "claim_ids": [
-              "lu_007"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar alanı geniş, örtüsüz ve görünür bir yer olarak tanımlar. Kişinin bu alana çıkmasını veya orada bulunmasını anlatan kullanım, yer anlamına bağlıdır.",
+        "common_summary": "Kaynaklar, geniş ve örtüsüz arazi anlamında ve insanın bu araziye çıkması kullanımında birleşir. Arazi, çukur ya da bitkiyle kapalı bir yerin karşıtı olarak betimlenir.",
         "common_claim_ids": [
-          "lu_006",
-          "lu_007"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "geniş açık alan",
-        "applicability": "Örtüsüz ve geniş kara parçasını adlandıran, dalın yer merkezli çekirdeğini veren karşılıktır.",
+        "text": "geniş ve açık arazi",
+        "applicability": "Yer adının açık, örtüsüz ve geniş arazi çekirdeğini doğrudan karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Alanın genişliğini, açıklığını ve yer niteliğini korur.",
+          "preserves": "Arazinin genişliğini, açıklığını ve örtüsüzlüğünü korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -200,16 +222,15 @@
         {
           "text": "açık alana çıkmak",
           "usage_role": "contextual",
-          "applicability": "Bir kişinin kapalı bir yerden geniş ve örtüsüz alana yönelmesi anlatıldığında kullanılır.",
+          "applicability": "Bir kişinin kapalı veya örtülü yerden geniş ve açık araziye yöneldiği bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Kişinin dalın tanımladığı açık alana çıkma hareketini korur.",
+            "preserves": "Kişinin belirli türdeki açık yere çıkışını korur.",
             "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001",
             "F002"
           ]
         }
@@ -218,12 +239,12 @@
         {
           "lexical_unit_id": "lu_006",
           "rendering_kind": "ordinary",
-          "target_gloss": "geniş ve örtüsüz açık alan"
+          "target_gloss": "geniş, açık ve örtüsüz arazi"
         },
         {
           "lexical_unit_id": "lu_007",
           "rendering_kind": "ordinary",
-          "target_gloss": "açık alana çıkmak veya orada bulunmak"
+          "target_gloss": "açık araziye çıkmak veya orada bulunmak"
         }
       ],
       "excluded_glosses": [],
@@ -232,87 +253,100 @@
           "neighbor_ref": "root_001164/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal, yerin özellikle örtüsüz ve görünür olmasını sınırın parçası yapar.",
-          "neighbor_only": "Komşu dal avlu, düz yer ve genel geniş alan gibi daha çeşitli yer türlerini kapsar.",
+          "focus_only": "Odak dal, arazinin örtüsüz ve görünür olmasını ve kişinin oraya çıkmasını özellikle belirtir.",
+          "neighbor_only": "Komşu dal, avlu, düzlük ve genel olarak genişleyen yerleri de kapsayan daha geniş bir yer alanına sahiptir.",
           "gloss": "geniş açık alan",
-          "shared_zone": "Her iki dal da geniş bir kara alanını ve bu alana çıkmayı kapsayabilir.",
-          "distinction": "Odak dalda açıklık ve örtüsüzlük belirleyicidir; komşu dalın genişlik temelli kapsamı bu koşulu taşımayan alanlara da uzanır."
+          "shared_zone": "Her iki dal da geniş, açık bir yeri ve açık yere çıkma düşüncesini paylaşır.",
+          "distinction": "Odak dal açık arazinin örtüsüzlüğünü sözlüksel sınır yaparken komşu dal genişlik ve düzlük üzerinden daha çeşitli yerleri içine alır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; en yakın yer-anlamlı aday, açıklık koşulunu görünür kıldığı için yayımlandı."
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; açık arazi sınırını en iyi belirleyen yakın anlamlı komşu yayımlandı."
     },
     {
       "branch_ref": "root_000105/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi sıradan çatışmayı değil, iki rakibin kendi topluluklarından ayrılıp birbirinin karşısına çıkarak teke tek savaşmasını kurucu anlam olarak verir. Dal çerçevesi bu katılımcı değişimini ve karşılıklılığı doğru korur.",
+        "boundary_note": "Yalnızca görünmek veya genel savaşa katılmak yetmez; rakiplerin saftan ayrılıp karşılaşması gerekir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, savaş adını ve rakiplerin karşılıklı olarak saftan çıkmasını anlatan söz öbeklerini birbirine karıştırmadan kapsar."
+      },
       "concept_map": {
-        "definition": "Savaşta iki karşıt savaşçının kendi topluluklarından ayrılıp birbirlerinin karşısına çıkarak teke tek dövüşmesidir.",
+        "definition": "İki rakibin savaşmak üzere kendi saflarından veya topluluklarından ayrılıp birbirinin karşısına çıkması ve teke tek çarpışmasıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Savaş bağlamındaki karşılaşma iki rakip arasında teke tek dövüş olarak gerçekleşir.",
+            "statement": "Karşılaşma iki rakip arasında, teke tek savaşma amacıyla gerçekleşir.",
             "claim_ids": [
-              "lu_008"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Bir savaşçı savaşta kendi denginin karşısına dövüşmek üzere çıkar.",
-            "claim_ids": [
-              "lu_009"
-            ]
-          },
-          {
-            "facet_id": "F003",
             "role": "core",
-            "statement": "İki rakibin her biri kendi topluluğundan ayrılarak doğrudan ötekinin karşısına gelir.",
+            "statement": "Her rakip kendi topluluğundan veya safından ayrılarak ötekinin karşısına çıkar.",
             "claim_ids": [
-              "lu_010"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar anlamı savaş içindeki teke tek karşılaşma olarak birleştirir. Karşılaşanların saftan veya topluluklarından ayrılarak doğrudan rakibe yönelmesi bu özel dövüş biçimini genel çatışmadan ayırır.",
+        "common_summary": "Kaynaklar, iki rakibin karşılıklı biçimde saflarından ayrılıp savaşmak için yüz yüze gelmesi çekirdeğinde birleşir. Genel savaş değil, bire bir karşılaşma vurgulanır.",
         "common_claim_ids": [
-          "lu_008",
-          "lu_009",
-          "lu_010"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "teke tek dövüş",
-        "applicability": "Savaşta iki rakibin topluluklarından ayrılarak karşılaşmasını eksiksiz ve doğal biçimde anlatır.",
+        "text": "saflardan çıkıp teke tek dövüşme",
+        "applicability": "Hem gruptan ayrılma aşamasını hem de iki rakibin karşılıklı savaşmasını birlikte karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "İki rakipli karşılaşmayı, savaş bağlamını ve doğrudan dövüşü korur.",
+          "preserves": "Ayrılma, karşı karşıya gelme ve teke tek savaşma işlemlerini korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
           "F001",
-          "F002",
-          "F003"
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
           "text": "rakibinin karşısına çıkmak",
           "usage_role": "contextual",
-          "applicability": "Tek bir savaşçının kendi topluluğundan ayrılıp karşı savaşçıya yönelmesi anlatıldığında kullanılır.",
+          "applicability": "Tek bir savaşçının safından ayrılarak belirli rakibine yöneldiği cümlelerde kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Bir savaşçının doğrudan rakibine yönelmesini korur.",
-            "loses": "Karşılıklı ayrılma ve gerçekleşen dövüşü açıkça bildirmez.",
+            "fit": "none",
+            "preserves": "Savaşçının gruptan ayrılıp rakibine yönelmesini korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F002"
+          ]
+        },
+        {
+          "text": "teke tek çarpışmak",
+          "usage_role": "contextual",
+          "applicability": "İki rakibin karşılıklı ve bire bir savaşması öne çıktığında kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "İki rakipli karşılıklı savaşma yapısını korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
           ]
         }
       ],
@@ -320,72 +354,91 @@
         {
           "lexical_unit_id": "lu_008",
           "rendering_kind": "ordinary",
-          "target_gloss": "savaşta teke tek dövüş"
+          "target_gloss": "savaşta teke tek çarpışma"
         },
         {
           "lexical_unit_id": "lu_009",
           "rendering_kind": "ordinary",
-          "target_gloss": "savaşta rakibinin karşısına çıkmak"
+          "target_gloss": "rakibinin karşısına savaşmak için çıkmak"
         },
         {
           "lexical_unit_id": "lu_010",
           "rendering_kind": "ordinary",
-          "target_gloss": "iki savaşçının topluluklarından ayrılıp teke tek dövüşmesi"
+          "target_gloss": "karşılıklı olarak saftan çıkıp teke tek dövüşmek"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000092/B003",
-          "relation_type": "synonym",
-          "boundary_match": "exact",
-          "focus_only": null,
-          "neighbor_only": null,
-          "gloss": "teke tek savaş karşılaşması",
-          "shared_zone": "İki dal da savaşta her savaşçının kendi rakibiyle teke tek karşılaşmasını anlatır.",
-          "distinction": "Katılımcı sayısı, savaş bağlamı ve doğrudan rakiple karşılaşma bakımından çekirdek sınırlar aynıdır."
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal, her savaşçının kendi safından veya topluluğundan ayrılmasını kurucu aşama sayar.",
+          "neighbor_only": "Komşu dal, her savaşçının kendine denk bir rakibi üstlenmesi veya onunla buluşması biçiminde eşleşmeyi öne çıkarır.",
+          "gloss": "teke tek savaşma",
+          "shared_zone": "İki dal da savaşta iki rakibin bire bir karşı karşıya gelmesini anlatır.",
+          "distinction": "Bire bir savaş ortak olsa da odak dalın saftan ayrılma aşaması ile komşunun rakipleri eşleştirme vurgusu tam olarak aynı sınırı kurmaz."
+        },
+        {
+          "neighbor_ref": "root_001200/B011",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Odak dal iki rakibin saftan ayrılarak teke tek karşılaşmasını gerektirir.",
+          "neighbor_only": "Komşu dal, iki veya daha çok taraf arasındaki genel savaşma ve öldürmeye yönelme alanını kapsar.",
+          "gloss": "savaş ve çarpışma",
+          "shared_zone": "Her iki dalda tarafların savaş amacıyla birbirine karşı güç kullanması vardır.",
+          "distinction": "Komşu genel savaş alanını adlandırır; odak dal ise bunun içinde iki kişinin saflardan ayrıldığı özel bire bir karşılaşmayı belirtir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel savaş, kovalamaca ve savaş şiddeti adayları yerine tam sınır eşleşmesi yayımlandı."
+      "neighbor_coverage_note": "Adayların tamamı incelendi; bire bir karşılaşmayı genel savaştan ayıran iki komşu seçildi."
     },
     {
       "branch_ref": "root_000105/B004",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi hem yarışta öne geçmeyi hem de övgüye değer bir iş veya üstün nitelik sayesinde akranlarını aşmayı verir. Ortak nokta yalnızca görünmek değil, karşılaştırılanlar içinde öne çıkmaktır.",
+        "boundary_note": "Dal, her tür görünürlüğü değil, yarış veya değer karşılaştırmasında başkalarını geçmeyi anlatır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "non_bare",
+        "note": "Anlam, kişinin ya da atın başkalarına göre öne geçtiğini belirten kısıtlı yapılara bağlı tutulur."
+      },
       "concept_map": {
-        "definition": "Bir kişinin veya yarış hayvanının başkalarını geçmesi; kişinin ayrıca övgüye değer bir işte üstünlüğünü göstererek akranlarından öne çıkmasıdır.",
+        "definition": "Bir kişinin, atın veya başka bir yarışanın hızda öne geçmesi ya da bir kişinin övgüye değer bir iş ve üstün nitelik sayesinde akranlarını aşmasıdır.",
         "facets": [
           {
             "facet_id": "F001",
-            "role": "core",
-            "statement": "Kişi ya da yarış hayvanı karşılaştırıldığı diğerlerini geçerek öne çıkar.",
+            "role": "specialization",
+            "statement": "Bir yarışçı, özellikle bir at, yarışta diğerlerinin önüne geçer.",
             "claim_ids": [
-              "lu_011"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Kişinin öne çıkışı övgüye değer bir işte üstünlük ve erdem göstermesiyle gerçekleşebilir.",
+            "role": "core",
+            "statement": "Bir kişi övgüye değer işi veya niteliğiyle arkadaşlarından üstün duruma gelir.",
             "claim_ids": [
-              "lu_011"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Bütün kaynaklarda başkalarını geçip öne çıkma çekirdeği ortaktır. Kullanım hem yarışta öne geçen kişi veya hayvanı hem de övgüye değer bir işte akranlarından üstün olan kişiyi kapsar.",
+        "common_summary": "Kaynaklar, yarışta öne geçme ile değerli bir iş veya nitelik bakımından akranlardan üstün olmayı aynı karşılaştırmalı çekirdekte toplar.",
         "common_claim_ids": [
-          "lu_011"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "geçerek veya üstünlükle öne çıkmak",
-        "applicability": "Hem yarıştaki geçişi hem de övgüye değer işte gösterilen üstünlüğü birlikte kapsar.",
+        "text": "yarışta veya erdemde öne geçme",
+        "applicability": "Hem somut yarış üstünlüğünü hem de övgüye değer nitelikle akranları aşmayı karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Başkalarını geçme sonucunu ve üstünlüğün görünür olmasını birlikte korur.",
+          "preserves": "Karşılaştırmayı, öne geçmeyi ve iki temel uygulama alanını korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -399,11 +452,11 @@
         {
           "text": "yarışta öne geçmek",
           "usage_role": "contextual",
-          "applicability": "Bir kişi veya yarış hayvanı diğer yarışmacıları geçtiğinde kullanılır.",
+          "applicability": "Bir insanın veya atın yarışta diğer yarışçıları geride bıraktığı bağlamlara uygundur.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Karşılaştırılanları fiziksel yarışta geçme sonucunu korur.",
-            "loses": "Övgüye değer davranıştaki üstünlük kapsamını kaybeder.",
+            "fit": "none",
+            "preserves": "Yarış içindeki karşılaştırmalı üstünlüğü korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -414,11 +467,11 @@
         {
           "text": "akranlarından üstün olmak",
           "usage_role": "contextual",
-          "applicability": "Bir kişinin övgüye değer bir işte çevresindekilerden daha iyi olduğu bağlamda kullanılır.",
+          "applicability": "Bir kişinin övgüye değer işi veya niteliğiyle çevresindekileri aştığı bağlamlara uygundur.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Kişinin üstünlüğüyle başkalarından öne çıkmasını korur.",
-            "loses": "Yarışta kişi veya hayvanın öne geçmesi kapsamını kaybeder.",
+            "fit": "none",
+            "preserves": "Değer ve nitelik bakımından başkalarını aşmayı korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -431,7 +484,7 @@
         {
           "lexical_unit_id": "lu_011",
           "rendering_kind": "ordinary",
-          "target_gloss": "başkalarını geçmek veya üstünlüğüyle öne çıkmak"
+          "target_gloss": "arkadaşlarını geride bırakmak veya onlardan üstün olmak"
         }
       ],
       "excluded_glosses": [],
@@ -440,63 +493,70 @@
           "neighbor_ref": "root_001188/B002",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal yarışta öne geçmeyi ve yarış hayvanının başarısını da kapsar.",
-          "neighbor_only": "Komşu dal güzellik, onur, derece ve yüksek konum gibi kalıcı üstünlükleri de kapsar.",
-          "gloss": "başkalarından üstün olmak",
-          "shared_zone": "İki dal da kişinin nitelik veya başarı bakımından çevresindekilerden üstün olmasını anlatabilir.",
-          "distinction": "Odak dalda geçerek görünür biçimde öne çıkma vardır; komşu dalın üstünlük alanı yarış ve belirli bir geçiş olayıyla sınırlı değildir."
+          "focus_only": "Odak dal, yarışta hızla öne geçmeyi ve övgüye değer bir eylemde akranları aşmayı birlikte içerir.",
+          "neighbor_only": "Komşu dal güzellik, şeref, derece ve genel toplumsal konum üstünlüğüne daha geniş biçimde uzanır.",
+          "gloss": "başkalarından üstün olma",
+          "shared_zone": "Her iki dal da bir kişinin karşılaştırılanlardan daha yüksek veya üstün durumda olmasını anlatır.",
+          "distinction": "Odak dal yarış ya da övgüye değer başarıyla gerçekleşen öne geçişi anlatırken komşu, elde edilmiş yüksek konum ve üstünlüğü daha geniş alanlarda adlandırır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; üstünlükle en çok örtüşen komşu, yarış kapsamındaki asimetriyi göstermek için yayımlandı."
+      "neighbor_coverage_note": "Bütün adaylar karşılaştırıldı; yarış ile değer üstünlüğü sınırını en iyi gösteren komşu seçildi."
     },
     {
       "branch_ref": "root_000105/B005",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi görünür ve açık tavırlı olmayı tek başına bırakmaz; saygınlık, sağlam akıl, güvenilir görüş, temiz karakter ve iffeti birlikte verir. Kadının insanların önüne çıkıp onlarla oturabilmesi bu toplumsal görünürlüğün özel gerçekleşmesidir.",
+        "boundary_note": "Dal sıradan görünürlüğü değil, saygınlık, güvenilir görüş ve iffetle birleşen toplumsal açıklığı niteler."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım, yalın niteleme biçimlerinin saygınlık, akıl, görünürlük ve iffet bileşimini korur."
+      },
       "concept_map": {
-        "definition": "Bir erkek veya kadının toplum önünde açıkça yer alırken ağırbaşlı, akıllı, temiz yaradılışlı ve iffetli olması; özellikle bir kadının saygınlığı ve güvenilir görüşüyle insanları kabul etmesidir.",
+        "definition": "İnsanlar önünde açıkça yer alan, saygın, aklına ve görüşüne güvenilen, temiz karakterli ve iffetli kimsedir. Kadın için özellikle insanların karşısına çıkabilen ve onların yanına oturabilen yüksek konumlu kişi anlatılır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kişinin durumu toplum önünde açık, yaradılışı temiz ve davranışı iffetlidir.",
+            "statement": "Kişi açık tavırlı, saygın ve aklına ya da görüşüne güvenilir biridir.",
             "claim_ids": [
-              "lu_012"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Saygın kadın insanlara görünür, onları kabul eder ve görüşü, erdemi ile iffetine güvenilir.",
+            "role": "core",
+            "statement": "Kişi temiz karakterli ve iffetli olarak nitelenir.",
             "claim_ids": [
-              "lu_013"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "extension",
-            "statement": "Açıkça toplum içinde bulunma, utanmazlık değil ağırbaşlılık, akıl ve güvenilirlikle birleşir.",
+            "role": "specialization",
+            "statement": "Kadın için saygın biçimde insanların önüne çıkma ve onların yanına oturma özelliği belirtilir.",
             "claim_ids": [
-              "lu_012",
-              "lu_013"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar kamusal görünürlüğü iffet, temiz yaradılış, akıl ve saygınlıkla birlikte verir. Kadına özgü kullanımda insanları kabul etme ve görüşüne güvenilme özellikleri bu nitelikler kümesini somutlaştırır.",
+        "common_summary": "Kaynaklar saygınlık, açıklık, sağlam akıl ve iffeti birlikte aktarır. Kadına ilişkin kullanımda güvenilir görüş ve insanların önünde saygın biçimde bulunma ayrıca belirginleşir.",
         "common_claim_ids": [
-          "lu_012",
-          "lu_013"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "toplum önünde saygın ve iffetli kişi",
-        "applicability": "Kamusal görünürlük ile ağırbaşlılık, güvenilirlik ve iffeti birlikte taşıyan kişiyi karşılar.",
+        "text": "insanlar önünde saygın, güvenilir ve iffetli kimse",
+        "applicability": "Toplumsal görünürlüğü, saygınlığı, güvenilir aklı ve iffeti birlikte gerektiren nitelemeyi karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Görünürlüğü, saygınlığı, temiz yaradılışı ve iffeti birlikte korur.",
+          "preserves": "Görünürlük, saygınlık, güvenilir görüş ve iffet bileşimini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -509,18 +569,34 @@
       },
       "contextual_glosses": [
         {
-          "text": "görüşüne güvenilen saygın kadın",
+          "text": "açık sözlü, aklı başında ve iffetli",
           "usage_role": "contextual",
-          "applicability": "İnsanlarla açıkça görüşen ve aklına, erdemine, iffetine güvenilen kadın için kullanılır.",
+          "applicability": "Erkek veya kadın için açıklık, sağlam akıl ve temiz karakterin birlikte vurgulandığı bağlamlara uygundur.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Kadının saygınlığını, kamusal görünürlüğünü ve görüşüne duyulan güveni korur.",
-            "loses": "Erkeği de kapsayan genel niteleme alanını kaybeder.",
+            "fit": "none",
+            "preserves": "Açık tavrı, sağlam aklı ve iffetli karakteri birlikte korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F002",
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "saygın ve görüşüne güvenilen kadın",
+          "usage_role": "explanatory",
+          "applicability": "İnsanların önünde bulunabilen ve görüşüne başvurulan yüksek konumlu kadın için kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Kadına özgü toplumsal görünürlük ve güvenilir görüş niteliğini korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
             "F003"
           ]
         }
@@ -529,12 +605,12 @@
         {
           "lexical_unit_id": "lu_012",
           "rendering_kind": "ordinary",
-          "target_gloss": "durumu açıkça bilinen, temiz yaradılışlı ve iffetli kişi"
+          "target_gloss": "açık tavırlı, temiz karakterli ve iffetli"
         },
         {
           "lexical_unit_id": "lu_013",
           "rendering_kind": "ordinary",
-          "target_gloss": "insanları kabul eden, görüşüne ve iffetine güvenilen saygın kadın"
+          "target_gloss": "insanlar önünde saygın, görüşüne güvenilen ve iffetli kadın"
         }
       ],
       "excluded_glosses": [],
@@ -543,95 +619,97 @@
           "neighbor_ref": "root_000331/B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak dal kamusal görünürlüğü, ağırbaşlılığı, aklı ve görüşe duyulan güveni içerir.",
-          "neighbor_only": "Komşu dal cinsel iffeti ve kuşkudan uzak durmayı doğrudan merkezine alır.",
+          "focus_only": "Odak dal toplumsal görünürlük, saygınlık, sağlam akıl ve güvenilir görüş özelliklerini de gerektirir.",
+          "neighbor_only": "Komşu dal özellikle cinsel davranışta korunmuşluk ve iffetsizlikten uzak durma üzerinde yoğunlaşır.",
           "gloss": "iffetli ve saygın olma",
-          "shared_zone": "Her iki dal da kişinin iffetiyle ve kuşkudan uzak temiz davranışıyla ilgilidir.",
-          "distinction": "İffet ortak olsa da odak dal toplum önünde görünür ve güvenilir bir kişi tipini kurar; komşu dal ise iffetin kendisini tanımlar."
+          "shared_zone": "İki dal da kişinin iffetli ve kuşkudan uzak bir karakter taşımasını içerir.",
+          "distinction": "İffet ortak olsa da odak dal bunu açık toplumsal varlık, akıl ve görüş güvenilirliğiyle birleştirir; komşu ise korunmuş iffeti kendi başına merkez alır."
+        },
+        {
+          "neighbor_ref": "root_001042/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal saygın konuma ek olarak açık tavır, güvenilir akıl ve iffet şartlarını taşır.",
+          "neighbor_only": "Komşu dal genel olarak yüksek dereceyi, şerefi ve toplumsal yüceliği anlatır.",
+          "gloss": "yüksek konum ve saygınlık",
+          "shared_zone": "Her iki dalda kişinin toplum içinde yüksek ve saygın bir yerde bulunması vardır.",
+          "distinction": "Komşu genel konum yüksekliğini anlatırken odak dal bu yüksekliği görünürlük, görüşüne güvenilme ve iffetle sınırlayan kişi niteliğidir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; iffet ortaklığının kişilik ve kamusal görünürlükten farkını en açık gösteren komşu yayımlandı."
+      "neighbor_coverage_note": "Bütün komşular incelendi; iffet ve yüksek konum bileşenlerini ayrı ayrı sınayan iki aday seçildi."
     },
     {
       "branch_ref": "root_000105/B006",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi açık araziye çıkmaktan doğan örtmeceli dışkılama eylemini, bu eylemin sonucunu ve yapıldığı yeri ayrı sözlüksel birimler olarak verir. Dal çerçevesi örtmece merkezini doğru kurar.",
+        "boundary_note": "Açık arazi anlamı burada doğrudan yer adı değil, dışkılama için kullanılan örtmecenin tarihsel dayanağıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım, yalın biçimlerdeki örtmeceli eylem, eylem sonucu ve yer anlamlarını birbirinden ayırır."
+      },
       "concept_map": {
-        "definition": "Açık yere çıkma düşüncesinden doğan örtülü bir anlatımla dışkılama eylemi, bu eylemin çıkardığı dışkı veya gereksinimin giderildiği yerdir.",
+        "definition": "Açık araziye çıkma düşüncesi üzerinden büyük abdestini yapmayı örtmeceli biçimde anlatır. Aynı sözlüksel ailede dışkı ve bu ihtiyacın giderildiği yer de adlandırılır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kişinin dışkılaması, açık yere çıkma üzerinden örtülü biçimde anlatılır.",
+            "statement": "Bir kişinin büyük abdestini yapması, açık alana çıkma üzerinden örtmeceli biçimde anlatılır.",
             "claim_ids": [
-              "lu_014"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "extension",
-            "statement": "Örtülü adlandırma eylemden çıkan dışkının kendisine aktarılır.",
+            "statement": "Eylemin sonucu olan dışkı aynı örtmeceli sözlüksel aileyle adlandırılır.",
             "claim_ids": [
-              "lu_015"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "extension",
-            "statement": "Aynı anlam alanı gereksinimin giderildiği yeri veya tuvaleti de adlandırır.",
+            "statement": "Büyük abdest ihtiyacının giderildiği yer aynı aileden bir biçimle adlandırılır.",
             "claim_ids": [
-              "lu_016"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak kullanım, dışkılama eylemini açık yere çıkma üzerinden dolaylı biçimde anlatır. Tek kaynakta aynı örtülü adlandırma dışkının kendisine ve gereksinimin giderildiği yere de aktarılır.",
+        "common_summary": "Kaynaklar, açık araziye çıkma ifadesinin büyük abdestini yapmak için örtmeceye dönüşmesinde birleşir. Bir kaynak aynı ailede dışkı ve ihtiyaç giderme yeri anlamlarını da verir.",
         "common_claim_ids": [
-          "lu_014"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_015"
-            ],
-            "kind": "extension",
-            "summary": "Tek kaynak, örtülü yer adını sindirim artığı olan dışkının kendisine aktarır."
-          },
-          {
-            "claim_ids": [
-              "lu_016"
-            ],
-            "kind": "extension",
-            "summary": "Tek kaynak, aynı anlam alanındaki bir biçimi gereksinim giderme yeri veya tuvalet diye açıklar."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "dışkılama, dışkı ve gereksinim giderme yeri",
-        "applicability": "Örtülü adlandırmanın eylem, sonuç ve yer uzantılarını birlikte gösteren açıklayıcı karşılıktır.",
+        "text": "büyük abdestini yapma örtmecesi",
+        "applicability": "Açık alana çıkma düşüncesinden doğan örtmeceli dışkılama çekirdeğini karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Eylemi, çıkan maddeyi ve bu iş için kullanılan yeri birlikte korur.",
+          "preserves": "Eylemi ve onun doğrudan söylenmeyen örtmeceli niteliğini korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001",
-          "F002",
-          "F003"
+          "F001"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "dışkılamak",
+          "text": "büyük abdestini yapmak",
           "usage_role": "contextual",
-          "applicability": "Kişinin gereksinimini gidermesi eylem olarak anlatıldığında kullanılır.",
+          "applicability": "Bir kişinin dışkılama eyleminin nazik veya dolaylı biçimde anlatıldığı cümlelere uygundur.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Dışkılama eylemini doğrudan korur.",
-            "loses": "Örtülü anlatımı, dışkı sonucunu ve yer adını kaybeder.",
+            "fit": "none",
+            "preserves": "Dışkılama eylemini doğal bir Türkçe örtmeceyle karşılar.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -640,13 +718,28 @@
           ]
         },
         {
-          "text": "tuvalet",
+          "text": "dışkı",
           "usage_role": "contextual",
-          "applicability": "Söz konusu biçim gereksinimin giderildiği yeri gösterdiğinde kullanılır.",
+          "applicability": "Eylemin sonucunda çıkan maddeyi adlandıran sözlüksel uzantıda kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Gereksinim giderme yeri anlamını korur.",
-            "loses": "Dışkılama eylemini ve dışkının kendisini kaybeder.",
+            "fit": "none",
+            "preserves": "Eylem sonucundaki maddeyi doğrudan ve açık biçimde adlandırır.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "ayakyolu",
+          "usage_role": "contextual",
+          "applicability": "Büyük abdest ihtiyacının giderildiği yeri adlandıran sözlüksel uzantıda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "İhtiyaç giderme yerini doğal bir yer adıyla karşılar.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -659,64 +752,79 @@
         {
           "lexical_unit_id": "lu_014",
           "rendering_kind": "ordinary",
-          "target_gloss": "örtülü anlatımla dışkılamak"
+          "target_gloss": "büyük abdestini yapmak"
         },
         {
           "lexical_unit_id": "lu_015",
           "rendering_kind": "ordinary",
-          "target_gloss": "dışkı, sindirim artığı"
+          "target_gloss": "dışkı"
         },
         {
           "lexical_unit_id": "lu_016",
           "rendering_kind": "ordinary",
-          "target_gloss": "gereksinim giderme yeri, tuvalet"
+          "target_gloss": "ayakyolu, ihtiyaç giderme yeri"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_000097/B005",
+          "neighbor_ref": "root_001114/B003",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal eylemin yanı sıra dışkıyı ve gereksinim giderme yerini de kapsar.",
-          "neighbor_only": "Komşu dal özellikle evlerden dışarı çıkma hareketini ve dışarı çıkan kişiyi niteler.",
-          "gloss": "dışarı çıkıp gereksinimini gidermek",
-          "shared_zone": "İki dal da dışarı çıkma üzerinden dışkılamayı dolaylı biçimde anlatır.",
-          "distinction": "Eylem alanında güçlü örtüşme vardır; odak dal sonuç ve yer adlarına uzanırken komşu dal dışarı çıkış olayına daha sıkı bağlıdır."
+          "focus_only": "Odak dal açık araziye çıkma kökenli örtmeceyi, dışkı adını ve ihtiyaç giderme yerini birlikte kapsar.",
+          "neighbor_only": "Komşu dal başka bir yer adından gelişen dışkılama örtmecelerini ve onların eylem yapılarını kapsar.",
+          "gloss": "dışkılama örtmecesi",
+          "shared_zone": "Her iki dal da dışkılama eylemini bir yere gitme düşüncesi üzerinden dolaylı biçimde anlatır.",
+          "distinction": "Örtmeceli işlev ortak olmakla birlikte kullanılan yer imgesi ve odak dalda sonuç ile yer adlarının aynı sözlüksel aileye katılması sınırları ayırır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; aynı örtülü çıkış tasarımını paylaşan komşu, sonuç ve yer uzantılarını ayırmak için yayımlandı."
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; örtmece yapısını en yararlı biçimde karşılaştıran komşu seçildi."
     },
     {
       "branch_ref": "root_000105/B007",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Tek kaynaklı ifade, belirli kişi yapısında seyahate kesin karar vermeyi doğrudan bildirir. Bu anlam genel görünür kılma dalına taşınmadan, bağımsız ve kısıtlı sözlüksel kullanım olarak korunmalıdır.",
+        "boundary_note": "Anlam genel niyet veya genel gösterme değildir; belirli yapıda seyahate karar verme ile sınırlıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "non_bare",
+        "note": "Tanım yalnızca kişi öznesiyle seyahate karar vermeyi anlatan kayıtlı söz öbeğine uygulanır."
+      },
       "concept_map": {
-        "definition": "Bir kişinin yolculuğa çıkmaya kesin olarak karar vermesi ve buna niyet etmesidir.",
+        "definition": "Bir kişinin seyahate çıkmaya kesin karar vermesi ve bu yönde niyetini belirlemesidir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kişi henüz yolculuğun kendisini değil, yolculuğa çıkma yönündeki kesin kararını bildirir.",
+            "statement": "Kişi, seyahate çıkma konusunda kesin bir karara varır.",
             "claim_ids": [
-              "lu_017"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Tek tanıklık, kullanımı yolculuk eyleminden önceki kesin karar ve niyet aşamasıyla sınırlar.",
-        "common_claim_ids": [
-          "lu_017"
+        "common_summary": "Dal, tek kaynakta yer alan ve belirli bir söz öbeğiyle sınırlı sözlüksel açıklamaya dayanır.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Belirli kişi yapısının seyahate kesin karar verme anlamı taşıdığı aktarılır."
+          }
         ],
-        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "yolculuğa çıkmaya karar vermek",
-        "applicability": "Yola çıkmanın gerçekleştiğini değil, kişinin bu yönde kesin niyet oluşturduğunu anlatır.",
+        "text": "seyahate çıkmaya kesin karar verme",
+        "applicability": "Kişinin seyahat yönündeki niyetini karara bağladığı kayıtlı söz öbeğini tam olarak karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Yolculuk hedefini ve karar aşamasını birlikte korur.",
+          "preserves": "Seyahat hedefini ve kesin karar verme aşamasını korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -727,12 +835,12 @@
       },
       "contextual_glosses": [
         {
-          "text": "yola çıkmaya niyetlenmek",
+          "text": "yola çıkmaya karar vermek",
           "usage_role": "contextual",
-          "applicability": "Kararın henüz hareket başlamadan kurulduğu anlatı bağlamlarında doğal bir karşılıktır.",
+          "applicability": "Seyahat hazırlığından önce veya onunla birlikte kesin niyetin belirtildiği cümlelere uygundur.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Yolculuk öncesindeki yönelimi ve bilinçli niyeti korur.",
+            "preserves": "Yola çıkma hedefini ve karara varmayı doğal biçimde korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -746,7 +854,7 @@
         {
           "lexical_unit_id": "lu_017",
           "rendering_kind": "ordinary",
-          "target_gloss": "yolculuğa çıkmaya karar vermek"
+          "target_gloss": "seyahate çıkmaya kesin karar vermek"
         }
       ],
       "excluded_glosses": [],
@@ -755,71 +863,85 @@
           "neighbor_ref": "root_000003/B002",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dalın kararı özellikle yolculuğa çıkmaya yöneliktir.",
-          "neighbor_only": "Komşu dal başka amaçlara yönelmeyi ve yolculuk için hazırlanmayı da kapsar.",
-          "gloss": "yolculuğa niyet etmek",
-          "shared_zone": "İki dal da yolculuk başlamadan önceki karar veya niyet aşamasını kapsar.",
-          "distinction": "Odak dal yolculuğa ilişkin kesin kararla sınırlıdır; komşu dal genel niyet ve hazırlanma süreçlerine daha geniş biçimde uzanır."
+          "focus_only": "Odak dal yalnızca seyahate karar vermeyi belirli bir kişi yapısında sözlükselleştirir.",
+          "neighbor_only": "Komşu dal genel olarak bir şeyi amaçlamayı, ona hazırlanmayı ve yolculuk için hem karar hem hazırlığı kapsar.",
+          "gloss": "yolculuğa niyetlenme",
+          "shared_zone": "Her iki dal da kişinin bir yolculuğa çıkma yönünde karar veya niyet oluşturmasını anlatır.",
+          "distinction": "Odak dal belirli yapıda seyahat kararını bildirir; komşu ise niyet, yönelme ve hazırlanma aşamalarını daha geniş bir çekirdekte birleştirir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; yolculuk öncesi niyet çekirdeğini paylaşan komşu, hazırlık ve genel amaç kapsamını ayırmak için yayımlandı."
+      "neighbor_coverage_note": "Adayların tamamı incelendi; seyahat kararı sınırını en doğrudan sınayan komşu seçildi."
     },
     {
       "branch_ref": "root_000105/B008",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi belirli bir sözcüğü iki şey arasındaki engel olarak tanımlar; ardından son sesin eklenmiş olduğu ve anlamın aradaki geniş açık alandan geldiği yönünde bir köken çözümlemesi sunar. Engel anlamı kabul edilir, ancak bu çözümleme kökün genel ve üretken anlamı gibi sunulamaz.",
+        "boundary_note": "Dal belirli bir sözcük ve tek kaynaklı köken çözümlemesiyle sınırlıdır; her açık alan engel sayılmaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "non_bare",
+        "note": "Tanım, iki şey arasındaki engel anlamını yalnızca kayıtlı sözcüğe ve verilen köken çözümlemesine bağlı tutar."
+      },
       "concept_map": {
-        "definition": "İki şeyi birbirinden ayıran engel veya aradaki açık uzaklıktır; bu anlam, sözcüğün son sesinin sonradan eklendiğini varsayan özel bir köken çözümlemesine dayanır.",
+        "definition": "Belirli bir sözcükte iki şeyin arasında bulunup onları ayıran engeldir. Kaynak, sözcüğün son sesini ek unsur sayarak bu anlamı iki şey arasındaki geniş açık alan düşüncesiyle açıklar.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir engel iki şeyin arasında bulunarak onları birbirinden ayırır.",
+            "statement": "Bir unsur iki şeyin arasında bulunur ve onların birbirinden ayrılmasını sağlar.",
             "claim_ids": [
-              "lu_018"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "source_variant",
-            "statement": "Kaynak çözümlemesi, ayrılığı aradaki geniş açık alanla ilişkilendirir ve son sesi ek sayar.",
+            "statement": "Köken çözümlemesi, son sesi ek unsur sayar ve engeli aradaki geniş açık alanla ilişkilendirir.",
             "claim_ids": [
-              "lu_018"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Tek tanıklık, iki şey arasındaki engeli arada bulunan geniş açık alan düşüncesiyle açıklar ve sözcüğün son sesini köke sonradan eklenmiş kabul eder.",
-        "common_claim_ids": [
-          "lu_018"
+        "common_summary": "Dal, tek kaynakta birlikte verilen sözlüksel anlam ve köken çözümlemesine dayanır.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "İki şey arasındaki engel anlamı, son sesin eklenmesi ve aradaki geniş açık alan varsayımıyla açıklanır."
+          }
         ],
-        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "iki şey arasındaki engel",
-        "applicability": "İki varlığı ayıran aracı engeli doğal Türkçe ile karşılar; köken çözümlemesi açıklamada ayrıca korunur.",
+        "text": "iki şeyi ayıran engel",
+        "applicability": "Kayıtlı sözcüğün iki şey arasında duran ayırıcı engel anlamını karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "İki katılımcıyı ve aralarında ayırıcı engel bulunmasını korur.",
+          "preserves": "İki katılımcıyı, arada bulunmayı ve ayırıcı işlevi korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001",
-          "F002"
+          "F001"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "ayırıcı engel",
-          "usage_role": "general",
-          "applicability": "İki şeyin temasını veya birleşmesini önleyen aracı unsur anlatıldığında kullanılır.",
+          "text": "araya giren ayırıcı",
+          "usage_role": "explanatory",
+          "applicability": "Engelin iki taraf arasında bulunma ve onları birbirinden ayırma işlevi öne çıktığında kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Aradaki unsurun iki şeyi ayırma işlevini korur.",
-            "loses": "Geniş açık araziye dayanan özel köken açıklamasını bildirmez.",
+            "fit": "none",
+            "preserves": "Arada bulunmayı ve ayırma işlevini birlikte korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -832,7 +954,7 @@
         {
           "lexical_unit_id": "lu_018",
           "rendering_kind": "ordinary",
-          "target_gloss": "iki şeyi ayıran engel"
+          "target_gloss": "iki şeyin arasındaki ayırıcı engel"
         }
       ],
       "excluded_glosses": [],
@@ -841,53 +963,68 @@
           "neighbor_ref": "root_000106/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal engeli aradaki geniş açık alanla ilişkilendiren özel bir köken çözümlemesi taşır.",
-          "neighbor_only": "Komşu dal sınır, uzaklık ve soyut engel gibi daha genel ayırıcı türlerini açıkça kapsar.",
+          "focus_only": "Odak dal belirli bir sözcüğe ve açık alan üzerinden kurulan özel köken çözümlemesine bağlıdır.",
+          "neighbor_only": "Komşu dal fiziksel veya soyut engel, sınır, uzaklık ve önleyici unsur türlerini genel biçimde kapsar.",
           "gloss": "iki şey arasındaki engel",
-          "shared_zone": "İki dal da iki şeyin arasında bulunan ve onları ayıran bir engeli anlatır.",
-          "distinction": "Temel engel anlamı örtüşür; odak dal belirli bir köken açıklamasına bağlıyken komşu dal çeşitli somut ve soyut ayırıcıları kapsar."
+          "shared_zone": "Her iki dal da iki şey arasında bulunarak onları ayıran bir unsuru anlatır.",
+          "distinction": "Engel çekirdeği örtüşür; odak dalın belirli sözcüğe bağlı ve kökenbilimsel sınırı, komşunun genel fiziksel ve soyut ayırıcı alanından daha dardır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel engel anlamıyla en güçlü örtüşen dal, özel köken çözümlemesinin sınırını göstermek için yayımlandı."
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel engel anlamıyla özel sözlüksel çözümlemeyi ayıran komşu seçildi."
     },
     {
       "branch_ref": "root_000105/B009",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi belirli bir aslan adını verir ve baştaki sesin eklenmiş olduğu, adın rakibin karşısına çıkan savaşçı düşüncesinden türediği yönünde bir çözümleme yapar. Bu, kökün genel aslan anlamı değil, tek bir sözcüğe ilişkin köken iddiasıdır.",
+        "boundary_note": "Dal, belirli aslan adı ve onun tek kaynaklı köken çözümlemesiyle sınırlıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "non_bare",
+        "note": "Tanım aslan anlamını yalnızca kayıtlı sözcüğe bağlar ve bunu kökün yalın anlamı olarak genelleştirmez."
+      },
       "concept_map": {
-        "definition": "Aslan için kullanılan bir ad ve bu adın, baştaki sesin sonradan eklendiği varsayımıyla, rakibinin karşısına çıkan savaşçı düşüncesinden türetildiğine ilişkin çözümlemedir.",
+        "definition": "Belirli bir aslan adıdır. Kaynak, sözcüğün başındaki sesi ek unsur sayar ve adı aslanın rakibinin karşısına çıkan bir savaşçı gibi düşünülmesine bağlar.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Sözcük belirli bir hayvan türü olan aslanı adlandırır.",
+            "statement": "Kayıtlı sözcük aslanı adlandırır.",
             "claim_ids": [
-              "lu_019"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "source_variant",
-            "statement": "Kaynak, baştaki sesi ek sayarak adı rakibinin karşısına çıkan savaşçı düşüncesine bağlar.",
+            "statement": "Köken çözümlemesi, baştaki sesi ek sayar ve adı rakibin karşısına çıkma özelliğiyle ilişkilendirir.",
             "claim_ids": [
-              "lu_019"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Tek tanıklık sözcüğü aslan adı olarak verir; ayrıca baştaki sesi köke sonradan eklenmiş sayıp adlandırmayı karşısına rakip almaktan çekinmeyen savaşçı niteliğiyle açıklar.",
-        "common_claim_ids": [
-          "lu_019"
+        "common_summary": "Dal, tek kaynakta verilen bir hayvan adı ve buna eşlik eden köken çözümlemesine dayanır.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Aslan adı, baştaki sesin eklenmesi ve hayvanın rakibinin karşısına çıkan savaşçıya benzetilmesiyle açıklanır."
+          }
         ],
-        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "aslan",
-        "applicability": "Adlandırılan hayvan türünü doğrudan karşılar; özel türetme açıklaması kavram haritasında ayrıca korunur.",
+        "text": "rakibinin karşısına çıkan aslan",
+        "applicability": "Belirli aslan adını, kaynakta verilen savaşçı benzetmesiyle birlikte açıklar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Sözcüğün gönderimde bulunduğu hayvan türünü eksiksiz korur.",
+          "preserves": "Aslan göndergesini ve rakibin karşısına çıkma gerekçesini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -899,19 +1036,18 @@
       },
       "contextual_glosses": [
         {
-          "text": "rakibinin karşısına çıkan aslan",
-          "usage_role": "explanatory",
-          "applicability": "Kaynağın hayvan adını savaşçı niteliğiyle ilişkilendiren köken açıklaması belirtilirken kullanılır.",
+          "text": "aslan",
+          "usage_role": "contextual",
+          "applicability": "Kayıtlı sözcüğün cümle içinde doğrudan hayvanı adlandırdığı bağlamlarda kullanılır.",
           "error_profile": {
-            "fit": "broadening",
-            "preserves": "Aslan gönderimini ve savaşçıyla kurulan açıklayıcı bağı korur.",
+            "fit": "none",
+            "preserves": "Sözcüğün doğrudan hayvan göndergesini korur.",
             "loses": null,
-            "adds": "Sıradan hayvan adında zorunlu olmayan, rakibin karşısına çıkma niteliğini açıkça ekler.",
+            "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001",
-            "F002"
+            "F001"
           ]
         }
       ],
@@ -919,28 +1055,28 @@
         {
           "lexical_unit_id": "lu_019",
           "rendering_kind": "ordinary",
-          "target_gloss": "aslan"
+          "target_gloss": "aslan; köken açıklamasında rakibinin karşısına çıkan aslan"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000449/B003",
-          "relation_type": "synonym",
-          "boundary_match": "exact",
-          "focus_only": null,
-          "neighbor_only": null,
-          "gloss": "aslan adı",
-          "shared_zone": "İki dal da aynı hayvan türünü adlandıran ayrı bir sözlük birimini verir.",
-          "distinction": "Gönderim ve temel sınır aynıdır; odak daldaki ses ve türetme açıklaması eşanlamlılığı değiştiren yeni bir hayvan anlamı kurmaz."
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Odak dalın aslan adı, rakibin karşısına çıkan savaşçı benzetmesiyle açıklanır.",
+          "neighbor_only": "Komşu dal aslanı başka bir özel adla belirtir ve verilen kartta bu savaşçı çözümlemesini taşımaz.",
+          "gloss": "aslan için özel ad",
+          "shared_zone": "Her iki dal da aslanı adlandıran özel bir sözlüksel birim sunar.",
+          "distinction": "Ortak hayvan göndergesi eş anlamlı kökler kurmaz; odak dal kendi ses ve savaşçı çözümlemesiyle, komşu ise ayrı bir adlandırmayla sınırlıdır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; başka aslan adları içinden sınırı tam eşleşen aday yayımlandı, daha geniş yırtıcı hayvan alanları elendi."
+      "neighbor_coverage_note": "Bütün adaylar incelendi; özel aslan adları arasındaki alan ortaklığını en açık gösteren komşu seçildi."
     }
   ],
   "root_profile": {
-    "summary": "Kökün dalları gizlilikten görünürlüğe geçme çekirdeğinden açık alan, teke tek karşılaşma, üstünlük, kamusal saygınlık ve dışkılama için örtülü anlatı gibi ilişkilere yayılır; yolculuk kararı, ayırıcı engel ve aslan adı ise tek kaynaklı özel çözümlemeler oluşturur.",
+    "summary": "Kökün görünür olma veya görünür kılma çekirdeği; açık araziye, saftan çıkıp teke tek savaşmaya, yarışta ya da değerde öne geçmeye ve saygın toplumsal görünürlüğe uzanır. Ayrıca dışkılama örtmecesi, seyahat kararı ve belirli engel ile aslan adlarına ilişkin sınırlı köken çözümlemeleri ayrı sözlüksel dallar oluşturur.",
     "polysemy": "polysemic",
-    "organization": "radial"
+    "organization": "mixed"
   }
 }

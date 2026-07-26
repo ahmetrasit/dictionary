@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "B004 dalındaki örtünün kare biçimi ve iki şeridi, kanıtta kaynaklara göre değişen ayrıntılardır. Yazar yanıtı bunları tanım, kısa karşılık ve komşu sınırlarında bütün dal için zorunlu hale getirdiğinden bu alanlarda dar ve yüksek güvenli bir düzeltme gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_000440/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt ortak nesneyi siyah ve işaretli bir örtü olarak verirken kare biçimi ve iki şeridi yalnız bazı kaynak betimlemelerinde gösterir. Mevcut tanım kare biçimini bütün dalın zorunlu niteliği gibi öne çıkararak kaynak varyantını çekirdeğe yükseltiyor.",
+      "smallest_correction": "Tanımda siyah ve işaretli örtü niteliğini ana açıklama olarak koru; kare biçim ile iki şeridi bazı kaynak tanımlarına ait ayrıntılar olarak nitele. Mevcut kaynak varyantı fasetini ve diğer etkilenmeyen fasetleri koru."
+    },
+    {
+      "target_ref": "root_000440/B004",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kısa karşılık örtüyü zorunlu olarak kare gösteriyor; oysa kanıtın bütün kaynak anlatımlarında karelik ortak bir sınır değildir. Bu nedenle karşılık dalın kapsamını gereksiz biçimde daraltıyor.",
+      "smallest_correction": "Kısa karşılıktan zorunlu karelik niteliğini çıkar ve karşılığı genellikle siyah, işaretli bir örtü olarak ver. Uygulanabilirlik ve hata profilini bu dar düzeltmeyle uyumlu hale getir."
+    },
+    {
+      "target_ref": "root_000440/B004",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_011"
+      ],
+      "evidence_conflict": "lu_011 kanıtı siyah ve işaretli örtü ile kare biçimli, iki şeritli örtü anlatımlarını seçenekli verir. Mevcut Türkçe karşılık kareliği bütün nitelemelere yayabilecek biçimde kurulduğu için bu seçenekli yapıyı açıkça korumuyor.",
+      "smallest_correction": "lu_011 karşılığını iki kanıt seçeneğini açıkça ayıracak biçimde 'siyah ve işaretli ya da kare biçimli ve iki şeritli örtü' olarak düzelt."
+    },
+    {
+      "target_ref": "root_000440/B004",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Üç komşu satırındaki odak sınırları kare biçimi ve iki işareti dalın değişmez koşulları olarak sunuyor. Kanıt bunları kaynak varyantları olarak verdiğinden karşılaştırmalar odak dalı olduğundan daha dar gösteriyor.",
+      "smallest_correction": "İlişki türlerini ve komşu taraflarını değiştirmeden yalnız odak dalı anlatan cümlelerde siyah ve işaretli örtü çekirdeğini koru; kare biçim ile iki şeridi bazı tanımlarda görülen ayrıntılar olarak nitele."
+    }
+  ]
+}

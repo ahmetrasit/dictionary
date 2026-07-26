@@ -1,29 +1,6 @@
 {
-  "inputs_sha256": "576796c8c05d833cdabd1cfddc9342f26af7006a67a5bf48dd9c9e67c6595d29",
-  "verdict": "repair",
-  "summary": "B001 ve B003 yayınlanabilir durumdadır. B002'de çekirdek anlatım eşyaların bir kısmını eşyanın parçaları gibi sunuyor; ayrıca bir komşu dalın genel dağıtma kapsamı yalnızca tohum serpme kullanımına indirgeniyor.",
-  "issues": [
-    {
-      "target_ref": "root_000130/B002",
-      "field": "concept_map",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_003"
-      ],
-      "evidence_conflict": "lu_003, eşyanın dağıtılmasının ardından bir kısmının başka bir kısmı üzerine çevrilmesini bildirir. Tanım ve F002 ise bunu eşyaların parçalarının birbirinin üzerine devrilmesi diye kurarak eşyaların bileşenlerine ayrıldığı izlenimini ekliyor.",
-      "smallest_correction": "Tanım ve F002'de parçalar yerine eşyaların bir kısmı veya bazı eşyalar ifadesini kullan; dağıtılan bazı eşyaların diğerlerinin üzerine çevrilmesi çekirdeğini koru."
-    },
-    {
-      "target_ref": "root_000130/B002",
-      "field": "neighbor_distinctions",
-      "severity": "major",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_003"
-      ],
-      "evidence_conflict": "root_000098/B001 sınır kartı yalnızca ekim amacıyla tohum serpmeyi değil, bir şeyi farklı yönlere dağıtmayı da kapsar. Komşu ayrımı neighbor_only, gloss ve distinction alanlarında bu genel kapsamı atlayıp dalı tohum kullanımına indirgediği için lu_003 ile paylaşılan genel dağıtma bölgesini eksik gösteriyor.",
-      "smallest_correction": "Komşunun genel olarak bir şeyi farklı yönlere saçma kapsamını neighbor_only, gloss, shared_zone ve distinction alanlarına ekle; tohum ekmeyi bu genel kapsamın özel kullanımı olarak bırak ve bu daha geniş örtüşmeye göre ilişki türünü yeniden belirle."
-    }
-  ]
+  "inputs_sha256": "631cd08c386df8511acd621091e48e52a2dbdc9a57235293a2ba9239f4ca22f3",
+  "verdict": "pass",
+  "summary": "Üç dalın kimlik yargıları, sözcükselleşme kapsamları, kavram haritaları, kaynak sentezleri, Türkçe karşılıkları ve komşu ayrımları sağlanan kanıtlarla uyumludur; yayın açısından anlam düzeyinde bir düzeltme gerekmemektedir.",
+  "issues": []
 }

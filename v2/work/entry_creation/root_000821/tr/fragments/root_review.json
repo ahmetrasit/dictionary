@@ -1,0 +1,62 @@
+{
+  "inputs_sha256": "ed308e11fb39fbc0190cbdde7c0b6039a8bfe198ab71e9003920da38ddc921d7",
+  "verdict": "editorial_review",
+  "summary": "B007, tekil kurak veya verimsiz yıl kullanımıyla yalnız ikil biçimde tanıklanan beyaz ve yeşilliksiz iki yıl bilgisini birkaç yayın alanında birbirine geçiriyor. B004'te ise gerekçe geçici beyazlatma çerçevesini açıkça daralttığı halde kimlik durumu bunu yansıtmıyor. Bu düzeltmeler yazar çıktısında birden çok sahipli alana dokunacağından editoryal inceleme gerekiyor.",
+  "issues": [
+    {
+      "target_ref": "root_000821/B004",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, gün ve geceyi soğuk rüzgar veya donla niteler ve soğuğun ağaçlarla insanların rengini değiştirdiğini söyler; değişimin özellikle beyazlaşma olduğunu belirtmez. Gerekçe bu sınırlamayı kabul ettiği halde durumun accepted bırakılması kendi kimlik değerlendirmesiyle uyuşmuyor.",
+      "smallest_correction": "Kimlik durumunu qualified olarak değiştirin; mevcut gerekçe ve sınır notundaki, beyazlatma yerine soğuk ve renk değişimini esas alan açıklamayı koruyun."
+    },
+    {
+      "target_ref": "root_000821/B007",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 tekil yıl nitelemesini kuraklık veya verimsizlikle, bir varyantta da çok karla tanıklar; beyazlık ve bitki yeşilliğinin bulunmaması ise ikil biçimle iki yıla bağlanır. Gerekçe ve sınır notu beyaz ve bitkisiz görünümü bütün dalın, dolayısıyla tekil yılın ortak odağı yaparak bu yapısal ayrımı kaldırıyor.",
+      "smallest_correction": "Qualified durumunu koruyun; gerekçe ve sınır notunda tekil yılın çekirdeğini kurak veya verimsiz yıl olarak verin, çok karı tekil bir kaynak varyantı, beyaz ve yeşilliksiz iki yıl bilgisini ise yalnız ikil biçimin sınırı olarak ayırın."
+    },
+    {
+      "target_ref": "root_000821/B007",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanımın ilk cümlesi tekil yılı kuraklık yüzünden yeşilliğini yitirmiş ve beyaz görünür hale gelmiş sayıyor. bc_001 bu beyazlık ve yeşillik yokluğunu ikil biçimdeki iki yıla özgüler; tekil kullanım için kuraklık veya verimsizlik, bir tanıklıkta da çok kar verir. F001 de ikil biçimin yeşillik yokluğunu tekil yıl çekirdeğine taşıyor.",
+      "smallest_correction": "Tanımın ilk cümlesini kurak veya verimsiz yıl ve bazı tanıklardaki çok karla sınırlayın. Beyaz ve yeşilliksiz iki yıl bilgisini ikinci cümlede ve ikil biçime ait ayrı bir facet içinde tutun; F001'den genel yeşillik yokluğu koşulunu çıkarın."
+    },
+    {
+      "target_ref": "root_000821/B007",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kaynakların verimsiz ve bitkisiz yılda birleştiğini söylüyor. bc_001'de kaynakların ortak tekil çekirdeği kurak veya verimsiz yıldır; çok kar tekil bir varyanttır, beyazlık ile yeşillik yokluğu ise ikil biçimdeki iki yıl tanıklığıdır. Mevcut özet bağımlı ayrıntıları ortak çekirdek olarak yükseltiyor.",
+      "smallest_correction": "Ortak özeti tekil kurak veya verimsiz yıl çekirdeğiyle başlayacak biçimde düzeltin; çok karlı tekil yılı kaynak varyantı, beyaz ve yeşilliksiz iki yılı da ikil biçime bağlı ayrı tanıklık olarak açıkça ayırın."
+    },
+    {
+      "target_ref": "root_000821/B007",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yeşilliksiz verimsiz yıl kavram parlatması, yalnız ikil biçimde iki yıl için verilen yeşillik yokluğunu tekil dal çekirdeğine taşır. bc_001 tekil kullanımın zorunlu sınırını kurak veya verimsiz yıl olarak verir ve yeşillik yokluğunu tekil kullanıma şart koşmaz.",
+      "smallest_correction": "Kavram parlatmasını kurak veya verimsiz yıl çekirdeğiyle sınırlayın; yeşillik yokluğunu yalnız ikil biçime ait bağlamsal veya sözcüksel karşılıkta koruyun ve hata profilini buna göre güncelleyin."
+    }
+  ]
+}

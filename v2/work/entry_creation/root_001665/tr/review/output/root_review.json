@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Girdi genel olarak kaynak kanıtını ve sözlükselleşme sınırlarını doğru koruyor. Ancak B005 dalının kavram karşılığı, ayrı bir kalıp içinde bildirilen yaşlılıkta çökme sonucunu temel ad anlamına katıyor.",
+  "issues": [
+    {
+      "target_ref": "root_001665/B005",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak, iki yanak kemiğinin çiğneme sırasında belirginleşmesini ad biçiminin anlamı olarak verir; yaşlılıkta içeri çökme ise ayrı bir kalıpla anlatılır. Kavram karşılığı bu ikinci, bağımlı kullanımı temel ad anlamının zorunlu parçası yapıyor.",
+      "smallest_correction": "Kavram karşılığını \"çiğnerken belirginleşen iki yanak kemiği\" olarak daraltın; uygulanabilirlik ve hata profili metinlerinden yaşlılıkta çökme unsurunu çıkarın ve facet_ids alanında yalnızca F001'i bırakın."
+    }
+  ]
+}

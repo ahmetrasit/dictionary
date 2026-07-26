@@ -1,0 +1,45 @@
+{
+  "format": 4,
+  "generated_by": "v2/scripts/create_entry.py",
+  "role": "root_writer",
+  "root_envelope_id": "root_000033",
+  "language": "tr",
+  "prompt": {
+    "path": "prompt.md",
+    "sha256": "4192eb746bf8b5a9d0290ed81edd7ce95322ca34efe3d6c55e083e5ce30c68e8"
+  },
+  "response_schema": {
+    "path": "response.schema.json",
+    "sha256": "a508c75b65160fe04ca2b6fb64924dcea03caf6eee112ab4e63b922e58064cbf"
+  },
+  "branch_roster": [
+    "root_000033/B001",
+    "root_000033/B002",
+    "root_000033/B003",
+    "root_000033/B004",
+    "root_000033/B005",
+    "root_000033/B006",
+    "root_000033/B007",
+    "root_000033/B008"
+  ],
+  "evidence": {
+    "path": "evidence.json",
+    "sha256": "815420b136e4a62da96006d249eb8ed44a5f541f50dbb39699777bedeed65352"
+  },
+  "canonical_task_sha256": "6104ac1e6f836fc5e5d0bab8014fdec3d6295d5bffbc9effd21e4a06aebf213e",
+  "output": {
+    "path": "../output/root_000033_entry.json"
+  },
+  "validation": {
+    "command": [
+      "python3",
+      "v2/scripts/validate_agent_output.py",
+      "v2/work/entry_creation/root_000033/tr/input/task.json"
+    ]
+  },
+  "repair": {
+    "previous_response": "previous_response.json",
+    "error": "repair_error.txt",
+    "scope": "repair_scope.json"
+  }
+}

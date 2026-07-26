@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar çıktısı iki dalın temel sınırlarını doğru ayırıyor. Ancak B001 dalında kavram karşılığı, kanıttaki soluk veya ses çekirdeğini yalnızca soluk olarak daraltıyor; bu alan cerrahi olarak düzeltilebilir.",
+  "issues": [
+    {
+      "target_ref": "root_002342/B001",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 dalı soluğun gidip gelmesini ve eşeğin boğazında döndürdüğü sesi birlikte verir. Mevcut kavram karşılığı yalnızca hırıltılı soluk der ve ses unsurunu gloss düzeyinde dışarıda bırakır.",
+      "smallest_correction": "B001 concept_gloss.text alanını soluk veya ses çekirdeğini açıkça koruyacak biçimde dar bir ifadeye çevir."
+    }
+  ]
+}

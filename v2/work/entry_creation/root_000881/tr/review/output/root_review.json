@@ -1,0 +1,94 @@
+{
+  "verdict": "repair",
+  "summary": "Girdi genel olarak dal sınırlarını ve sözlükselleşme kapsamlarını doğru koruyor; ancak bazı tekil kaynak ayrıntıları ortak kanıt gibi sunulmuş ve iki kavram karşılığı kanıtın desteklediğinden daha geniş kurulmuş. Aşağıdaki sınırlı düzeltmeler yayımdan önce gereklidir.",
+  "issues": [
+    {
+      "target_ref": "root_000881/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Dal kanıtı yumuşak zırh ve koyu süt için ses duyulmamasını açıkça bildirirken kılıç için yalnız bu adın kullanıldığını söyler. Tanım ve F003, kılıcı kanıtsız biçimde ses vermeyen nesneler arasına katıyor.",
+      "smallest_correction": "Kılıcı ses vermeme gerçekleşmesi olarak tanımdan ve F003'ten çıkarın; ses vermeme çekirdeğini zırh, koyu süt ve halhal için koruyun."
+    },
+    {
+      "target_ref": "root_000881/B003",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "lu_012 kaynak ifadesi zırhı ses duyulmamasıyla, kılıcı ise darbede derine işlemesiyle açıklar. Hedef karşılık kılıcı da doğrudan ses vermeyen nesne sayarak bu ayrımı kaybediyor.",
+      "smallest_correction": "lu_012 karşılığını, ses vermeyen yumuşak zırh ile darbede derine işleyen kılıcı ayrı ayrı belirtecek biçimde düzeltin."
+    },
+    {
+      "target_ref": "root_000881/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kılıç ve halhal örnekleri yalnız tahdhib aktarımında bulunmasına rağmen ortak özet bunları kaynak dağılımını göstermeden toplu kanıtın genel örnekleri gibi sunuyor.",
+      "smallest_correction": "tahdhib için bc_001'e bağlı tek bir kaynak ayrıntısı ekleyerek kılıç ve halhal örneklerinin bu kaynağa özgü olduğunu belirtin."
+    },
+    {
+      "target_ref": "root_000881/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Birinin nerede olduğunun bilinmemesi ayrıntısı yalnız jamhara aktarımında yer alır; ortak özet bunu kaynaklara ortak bir uzantı gibi veriyor.",
+      "smallest_correction": "Bu ayrıntıyı ortak özetten ayırıp jamhara için bc_001'e bağlı tek bir kaynak ayrıntısı olarak kaydedin."
+    },
+    {
+      "target_ref": "root_000881/B006",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bir topluluğa görüş ve işitme mesafesinde yakınlık yalnız sihah aktarımında bulunur; ortak özet bu tekil kullanımı kaynak dağılımını göstermeden toplu kanıta mal ediyor.",
+      "smallest_correction": "Fiziksel yakınlığı ortak özetten ayırıp sihah için bc_001'e bağlı tek bir kaynak ayrıntısı olarak gösterin."
+    },
+    {
+      "target_ref": "root_000881/B006",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı ve uygulanabilirlik açıklaması yalnız amaç, karar ve sonuca yaklaşmayı kapsadığı halde F004'teki fiziksel yakınlığı da kapsadığını bildiriyor ve hiçbir kayıp tanımıyor.",
+      "smallest_correction": "F004'ü bu karşılığın facet_ids listesinden çıkarın; uyumu narrowing yapıp görüş ve işitme mesafesindeki fiziksel yakınlığın kaybedildiğini error_profile.loses alanında belirtin."
+    },
+    {
+      "target_ref": "root_000881/B007",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Şikayeti giderme yalnız jamhara aktarımında, yenilen veya içilen şeyle sınırlı olumsuz yeterlilik ise yalnız tahdhib aktarımında bulunur. Ortak özet iki tekil kullanımı da kaynaklara ortakmış gibi toplulaştırıyor ve olumsuz yapı kısıtını belirtmiyor.",
+      "smallest_correction": "Şikayeti giderme için jamhara, yalnız olumsuz yapıda ve yiyecek veya içecek hakkında kullanılan yeterlilik için tahdhib kaynak ayrıntıları ekleyin; ortak özeti gerçekten paylaşılan susturma ve ihtiyacı giderme alanıyla sınırlayın."
+    },
+    {
+      "target_ref": "root_000881/B007",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Karşılıktaki genel ve olumlu yeterli gelme ifadesi, kanıtın yalnız olumsuz yapıda ve yenilen ya da içilen şeyler hakkında verdiği kullanımı genişletiyor.",
+      "smallest_correction": "Karşılığı, susturma ve ihtiyacı gidermenin yanında yiyecek veya içeceğin yetmemesini söyleyecek biçimde daraltın; uygulanabilirlik ve hata profilinde olumsuz yapı ile tüketim sınırını koruyun."
+    }
+  ]
+}

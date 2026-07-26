@@ -1,0 +1,15 @@
+{
+  "verdict": "repair",
+  "summary": "Dal kayıtları kanıtla uyumludur; ancak kök özeti, azalma ve gecikme örneklerini de gerçekleşmeme olarak sunarak anlam alanını gereğinden fazla daraltır.",
+  "issues": [
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Özet, süt, ter ve kaynama gibi beklenen çıktıların gerçekleşmediğini söylüyor. Oysa kanıt süt için azlık veya yokluk, ter için yokluk, kaynama içinse gerçekleşmeme değil yavaşlık ve gecikme bildiriyor.",
+      "smallest_correction": "Kök özeti içindeki \"beklenen bir çıktının gerçekleşmemesine\" ifadesini \"beklenen bir çıktının gerçekleşmemesine, azalmasına veya gecikmesine\" olarak değiştirin."
+    }
+  ]
+}

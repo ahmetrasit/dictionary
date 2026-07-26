@@ -1,0 +1,37 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar çıktısı genel olarak kanıtları izliyor, ancak üç yayın düzeyi düzeltme gerekiyor: B004 tanımı, kanıttaki hiç tatmama/yememe kullanımını yalnızca yoksun bırakma gibi gösteriyor; B005 kavram parlatması ve kök özeti ise Türkçede ev inşası yemeği yerine evde yapılmış yemek gibi okunuyor.",
+  "issues": [
+    {
+      "target_ref": "root_002283/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, topluluğu yemekten yoksun bırakmayı da, kişinin hiçbir şey tatmaması veya yememesini de ayrı örnekler olarak verir. Mevcut tanım son kısmı yalnızca yiyecek ve tatmadan yoksun bırakmak diye kurarak hiç tatmama/yememe kullanımını edilgen yoksun bırakma yönüne kaydırıyor.",
+      "smallest_correction": "B004 concept_map.definition sonunu, yiyecekten yoksun bırakmak yanında hiç tatmamak veya yememek kullanımını da açıkça koruyacak biçimde düzelt."
+    },
+    {
+      "target_ref": "root_002283/B005",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt dalı ev yapılırken hazırlanan özel yemeğe bağlar. Mevcut kavram parlatması olan ev yapımı yemeği Türkçede doğal olarak evde yapılmış yemek anlamına kayıyor ve inşa vesilesini parlatma düzeyinde kaybettiriyor.",
+      "smallest_correction": "B005 concept_gloss.text değerini ev inşası yemeği gibi inşa vesilesini açıkça taşıyan kısa bir Türkçe parlatmayla değiştir."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök özetindeki ev yapımı yemeği ifadesi, ilgili dalın ev yapılırken hazırlanan özel yemek sınırını Türkçede evde yapılmış yemek yönüne kaydırıyor.",
+      "smallest_correction": "root_profile.summary içindeki ev yapımı yemeği ifadesini ev inşası yemeği olarak değiştir."
+    }
+  ]
+}

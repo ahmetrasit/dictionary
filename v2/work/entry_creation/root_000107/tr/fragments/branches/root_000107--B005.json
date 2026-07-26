@@ -1,30 +1,53 @@
 {
-  "root_inputs_sha256": "0a4e8120bcba36db0e0c25266fa7f31753d5bd7db01a39668e707b2748549194",
+  "root_inputs_sha256": "24794028d5292941af6d6a423cedd2cfb3632201efbe6f9e1ff6f4228e695bed",
   "root_id": "root_000107",
   "branch_id": "B005",
   "language": "tr",
   "image_transliteration": "Buras er-reml bika'un la tenbut",
-  "summary": "Kumluk içinde bitki yetişmeyen ayrı alanlar veya parçalar için kullanılan addır.",
+  "summary": "Kumluk içinde bulunan ve üzerinde bitki yetişmeyen arazi parçalarıdır.",
   "concept_map": {
-    "definition": "Kumluk içinde bitki yetişmeyen ayrı alanlar veya parçalar için kullanılan addır.",
+    "definition": "Kumluk içinde bulunan ve üzerinde bitki yetişmeyen arazi parçalarıdır.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Kumlu arazide bulunan ve üzerinde bitki yetişmeyen alanları bildirir.",
+        "statement": "Gönderge, kumluk içinde ayırt edilen arazi parçalarından oluşur.",
         "claim_ids": [
-          "lu_013"
+          "bc_001"
+        ]
+      },
+      {
+        "facet_id": "F002",
+        "role": "core",
+        "statement": "Bu arazi parçalarının belirleyici koşulu üzerlerinde bitki yetişmemesidir.",
+        "claim_ids": [
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Tek aktarım, bu biçimi kumlukta bitki yetişmeyen alanların adı olarak tanımlar.",
+  "identity_judgment": {
+    "status": "accepted",
+    "rationale": "Kaynak ifadesi, anlamı kumluk içinde bitki yetişmeyen arazi parçaları olarak açıkça sınırlar. Dal çerçevesi hem kumlu çevreyi hem de bitkisizlik koşulunu koruduğu için kaynakla tam uyumludur.",
+    "boundary_note": "Dal genel olarak her çorak araziyi değil, kumlukta bulunan ve bitki yetiştirmeyen parçaları gösterir."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "bare",
+    "note": "Tanım yalın arazi anlamını verir ve kumlu çevre ile bitkisizlik koşullarından hiçbirini düşürmez."
+  },
+  "source_summary": "Bu dal, tek bir kaydın tanımladığı sınırlı bir kumluk arazi adıdır.",
   "source_synthesis": {
-    "common_summary": "Tek aktarım, bu biçimi kumlukta bitki yetişmeyen alanların adı olarak tanımlar.",
-    "common_claim_ids": [
-      "lu_013"
+    "common_summary": "Bu dal, tek bir kaydın tanımladığı sınırlı bir kumluk arazi adıdır.",
+    "common_claim_ids": [],
+    "source_details": [
+      {
+        "claim_ids": [
+          "bc_001"
+        ],
+        "kind": "sole_attestation",
+        "summary": "Kumluk içindeki bitki yetişmeyen arazi parçaları olarak tek başına aktarılır."
+      }
     ],
-    "source_details": [],
     "supporting_claim_ids": [],
     "duplicate_claims": []
   },
@@ -34,24 +57,25 @@
     {
       "lexical_unit_id": "lu_013",
       "rendering_kind": "ordinary",
-      "target_gloss": "kumlukta bitki yetişmeyen alanlar"
+      "target_gloss": "kumluk içinde bitki yetişmeyen arazi parçaları"
     }
   ],
   "glosses": {
-    "semantic_definition": "Kumluk içinde bitki yetişmeyen ayrı alanlar veya parçalar için kullanılan addır.",
+    "semantic_definition": "Kumluk içinde bulunan ve üzerinde bitki yetişmeyen arazi parçalarıdır.",
     "concept": {
       "rank": 1,
-      "text": "kumlukta bitki yetişmeyen alanlar",
+      "text": "bitki yetişmeyen kumluk parçaları",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Hem kumlu çevreyi hem de bu çevre içindeki bitkisizlik koşulunu koruyan genel karşılıktır.",
+      "applicability": "Kumlu çevre ile bitkisizlik koşulunun ikisini de kısa biçimde belirtmek gereken genel bağlamlarda kullanılır.",
       "facet_ids": [
-        "F001"
+        "F001",
+        "F002"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Kumlu zemini, ayrı alanları ve bitki yetişmemesini birlikte korur.",
+        "preserves": "Arazi parçalarının kumlukta bulunmasını ve bitki yetiştirmemesini birlikte korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -60,18 +84,19 @@
     "contextual": [
       {
         "rank": 2,
-        "text": "bitkisiz kumluk parçaları",
+        "text": "verimsiz kumluk alanlar",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Bir kumluk içindeki ayrı verimsiz bölümlerden söz edilirken doğal bir çoğul karşılıktır.",
+        "applicability": "Bitki yetişmemesi bağlam içinde açıkken arazi parçalarını doğal bir ad öbeğiyle karşılamak için kullanılabilir.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
-          "fit": "none",
-          "preserves": "Kumluk içindeki parça oluşunu ve bitki yetişmemesini korur.",
-          "loses": null,
+          "fit": "narrowing",
+          "preserves": "Kumlu araziyi ve bitki üretmeyen verimsiz görünümü korur.",
+          "loses": "Bunların daha geniş bir kumluk içindeki ayrı parçalar olduğunu açıkça belirtmez.",
           "adds": null,
           "collision": null
         }
@@ -80,17 +105,18 @@
     "selected": [
       {
         "rank": 1,
-        "text": "kumlukta bitki yetişmeyen alanlar",
+        "text": "bitki yetişmeyen kumluk parçaları",
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Hem kumlu çevreyi hem de bu çevre içindeki bitkisizlik koşulunu koruyan genel karşılıktır.",
+        "applicability": "Kumlu çevre ile bitkisizlik koşulunun ikisini de kısa biçimde belirtmek gereken genel bağlamlarda kullanılır.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Kumlu zemini, ayrı alanları ve bitki yetişmemesini birlikte korur.",
+          "preserves": "Arazi parçalarının kumlukta bulunmasını ve bitki yetiştirmemesini birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -98,18 +124,19 @@
       },
       {
         "rank": 2,
-        "text": "bitkisiz kumluk parçaları",
+        "text": "verimsiz kumluk alanlar",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Bir kumluk içindeki ayrı verimsiz bölümlerden söz edilirken doğal bir çoğul karşılıktır.",
+        "applicability": "Bitki yetişmemesi bağlam içinde açıkken arazi parçalarını doğal bir ad öbeğiyle karşılamak için kullanılabilir.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
-          "fit": "none",
-          "preserves": "Kumluk içindeki parça oluşunu ve bitki yetişmemesini korur.",
-          "loses": null,
+          "fit": "narrowing",
+          "preserves": "Kumlu araziyi ve bitki üretmeyen verimsiz görünümü korur.",
+          "loses": "Bunların daha geniş bir kumluk içindeki ayrı parçalar olduğunu açıkça belirtmez.",
           "adds": null,
           "collision": null
         }
@@ -123,40 +150,40 @@
       "neighbor_branch_id": "B017",
       "relation_type": "near_synonym",
       "boundary_match": "partial",
-      "focus_only": "Daha geniş bir kumluk içinde bitkisiz kalan ayrı alanları çoğul olarak belirtir.",
-      "neighbor_only": "Baştan sona hiçbir şey yetiştirmeyen bir kumluğu veya büyük kum kütlesini belirtir.",
+      "focus_only": "Odak dal, daha geniş bir kumluk içinde ayırt edilen bitkisiz arazi parçalarını çoğul bir topluluk olarak gösterir.",
+      "neighbor_only": "Komşu dal, bütünüyle bitki yetiştirmeyen bir kumluğu veya büyük bir kum kütlesini gösterebilir.",
       "expression_transliteration": "el-akir reml la yunbit",
-      "gloss": "bitki yetiştirmeyen kumluk",
-      "shared_zone": "İki dal da kumlu zemin ile bitki yetişmemesini birlikte içerir.",
-      "distinction": "Odak dal kum içinde seçilen alanlara yönelirken komşu dal bütün bir kumluğu veya büyük kum kütlesini verimsiz olarak niteler."
+      "gloss": "bitkisiz kumluk parçaları ile çorak kumluk",
+      "shared_zone": "Her iki dalın çekirdeğinde kumlu arazi ve üzerinde hiçbir bitkinin yetişmemesi bulunur.",
+      "distinction": "Odak, kumluk içindeki ayrı parçaları öne çıkarır; komşu ise bitkisiz kumlu alanın bütününü veya büyüklüğünü adlandırabilir."
     },
     {
       "neighbor_root_id": "root_000168",
       "neighbor_branch_id": "B013",
-      "relation_type": "near_synonym",
+      "relation_type": "near_neighbor",
       "boundary_match": "partial",
-      "focus_only": "Kumlukta bitki yetişmeyen alan olma koşuluyla sınırlıdır.",
-      "neighbor_only": "Beyazlık, pürüzsüzlük ve belirli yer adları gibi ek kullanımları da kapsar.",
+      "focus_only": "Odak dal için kumluk içinde bulunma ve bitki yetişmemesi zorunludur.",
+      "neighbor_only": "Komşu dal beyazlık ve düzgünlüğü öne çıkarır; yer adı kullanımları ve bitkisizlik koşulunun belirtilmediği örnekler de taşıyabilir.",
       "expression_transliteration": "el-ard el-beyda ve'l-beyda",
-      "gloss": "beyaz ve bitkisiz arazi",
-      "shared_zone": "Her iki dal kumlu veya açık arazide bitki bulunmamasını anlatabilir.",
-      "distinction": "Komşu dalın beyazlık, pürüzsüzlük ve yer adı kapsamları odak dalda yoktur; odak yalnızca kum içindeki bitkisiz bölgelere bağlıdır."
+      "gloss": "bitkisiz kumluk ile beyaz düz arazi",
+      "shared_zone": "İki dal, açık renkli veya çıplak görünebilen bitkisiz arazi tasvirlerinde kesişebilir.",
+      "distinction": "Odak dalın ayırıcı ölçütleri kum ve bitkisizliktir; komşu dalda beyazlık ile düzgünlük öne çıkar ve bitkisizlik bütün kapsama yayılmaz."
     },
     {
       "neighbor_root_id": "root_000965",
       "neighbor_branch_id": "B008",
       "relation_type": "polarity_pair",
       "boundary_match": "opposed",
-      "focus_only": "Kumlu zeminde bitkinin yetişmediği alanı bildirir.",
-      "neighbor_only": "Alçalmış bir arazi bölümünde bitkinin yetiştiğini bildirir.",
+      "focus_only": "Odak dal kumluk içinde bitki yetişmeyen arazi parçalarını gösterir.",
+      "neighbor_only": "Komşu dal alçalmış ve bitki yetiştiren araziyi gösterir.",
       "expression_transliteration": "ez-zafer mine'l-ard",
-      "gloss": "bitki yetiştiren alçak arazi",
-      "shared_zone": "İki dal da bir arazi parçasını bitki yetiştirme durumu üzerinden sınırlar.",
-      "distinction": "Ortak eksen bitki yetişmesidir: odak dal bunu açıkça dışlarken komşu dal bitki yetişmesini belirleyici özellik yapar; zemin türleri de kumluk ve alçak arazi olarak ayrılır."
+      "gloss": "bitkisiz kumluk ile bitkili alçak arazi",
+      "shared_zone": "Her iki dal araziyi bitki yetiştirme durumu üzerinden sınıflandırır.",
+      "distinction": "Odak dal bitkisizliği zorunlu kılarken komşu dal bitki yetiştirmeyi zorunlu kılar; ayrıca komşuda arazinin alçak olması belirleyicidir."
     }
   ],
   "neighbor_coverage": {
     "assessment": "complete",
-    "note": "Bütün adaylar değerlendirildi; bitkisiz kumluk, beyaz bitkisiz arazi ve bitki yetiştiren alçak arazi en keskin karşılaştırmaları sağlar. Diğer adaylar düz, sert, boş veya bitkili araziyi anlatır ancak bu üç ayrımdan daha fazla sınır bilgisi vermez."
+    "note": "Tüm arazi adayları incelendi; en yakın bitkisiz kumluk, beyaz çıplak arazi ve bitki yetiştiren karşı kutup, dalın kum ve bitkisizlik sınırlarını birlikte gösterdi."
   }
 }

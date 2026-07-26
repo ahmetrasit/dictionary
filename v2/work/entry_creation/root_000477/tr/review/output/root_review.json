@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "B004 dalında yetkili kaynak ifadesinin desteklemediği bir esenlik dileği yorumu üç alanda kurucu içerik gibi sunulmuştur. Bu sınırlı ekleme kaldırılmalı; tökezleyene ayağa kalkıp toparlanmasını söyleme anlamı ve diğer bütün içerik korunmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_000477/B004",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yetkili kaynak ifadesi tökezleyene söylenen kalıbı ve bunun 'kalk, toparlan' açıklamasını verir; esenlik dileme işlevini vermez. Gerekçe bu desteklenmeyen işlevi kaynakların açıkça aktardığı bir dal bileşeni saymaktadır.",
+      "smallest_correction": "Gerekçeden esenlik dileme işlevini kaldırıp kimlik yargısını tökezleyene ayağa kalkma ve toparlanma çağrısıyla sınırla; durum, kalıp ve genel anlamlara genişlememe sınırını koru."
+    },
+    {
+      "target_ref": "root_000477/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F002, kalıbın esenlik dileği taşıyabildiğini ileri sürmektedir; ancak bc_001 yalnızca tökezleyene yöneltilen 'kalk, toparlan' açıklamasını destekler. Böylece geçici çerçevedeki ek anlam yetkili kaynak iddiasına taşınmıştır.",
+      "smallest_correction": "Tanımdaki esenlik dileği bölümünü kaldır; F002'yi yalnızca ayağa kalkma buyruğuna eşlik eden toparlanma teşviki olarak düzelt ve öteki facetleri değiştirme."
+    },
+    {
+      "target_ref": "root_000477/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, aktarımların esenlik dileğini de gösterdiğini söyler; bc_001 içindeki kaynak ifadeleri ise tökezleyene seslenme ile ayağa kalkıp toparlanma açıklamasında birleşir ve esenlik dileğini içermez.",
+      "smallest_correction": "Ortak özeti yalnızca sözün tökezleyene yönelmesi ve ayağa kalkıp toparlanma teşvikinde birleşmesiyle sınırla; iddiaları ve yapıdaki diğer alanları koru."
+    }
+  ]
+}

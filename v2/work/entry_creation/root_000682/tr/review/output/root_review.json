@@ -1,0 +1,41 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıt genel olarak kanıtla uyumludur; ancak B003'te besinin kendisini belirten ad anlamı kavram haritası ile ana karşılıktan düşmüş, B002'de ise üç sözlüksel karşılık kaynak sınırını aşan genellemeler eklemiştir. Bu alanlar küçük ve doğrudan düzeltmelerle onarılabilir.",
+  "issues": [
+    {
+      "target_ref": "root_000682/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak, dalı yalnızca birini yiyecek ve içecekle besleme eylemi olarak değil, açıkça besinin veya gıdanın kendisi olarak da verir. Tanım ile F001 ise çekirdeği verme ve besleme eylemine indirgediği için bu ad anlamını dışarıda bırakır.",
+      "smallest_correction": "Tanım ile F001'e besinin veya gıdanın kendisini ekleyin; besleme, geçici olarak güç verme ve besine gereksinen canlı kullanımlarını mevcut ayrı yüzleriyle koruyun."
+    },
+    {
+      "target_ref": "root_000682/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ana karşılık yalnızca 'yiyecek ve içecekle besleme' eylemini gösteriyor; oysa kaynak dalın çıplak biçimi için besin veya gıda ad anlamını da açıkça bildiriyor.",
+      "smallest_correction": "Ana karşılığı, hem besinin kendisini hem de yiyecek ve içecekle beslemeyi kapsayacak biçimde 'besin ve yiyecek-içecekle besleme' olarak düzeltin; uygulama ve hata profili metinlerini de bu eklenen çekirdekle uyumlu kılın."
+    },
+    {
+      "target_ref": "root_000682/B002",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_006",
+        "lu_010",
+        "lu_011"
+      ],
+      "evidence_conflict": "lu_006 kaynağı özellikle şeytandan yardım alma veya ona yaklaşmayı belirtirken karşılık bunu daha geniş 'gizli güçler' alanına çeviriyor. lu_010'a kaynakta bulunmayan 'etkili', lu_011'e de sıklık veya aşırılık yerine kaynakta bulunmayan 'ustalıkla' nitelemesi eklenmiştir.",
+      "smallest_correction": "lu_006'yı 'şeytandan yardım alarak veya ona yaklaşarak yapılan büyü', lu_010'u 'büyü yapan kimse; kimi eski kullanımlarda bilgili kişi', lu_011'i de 'çokça büyü yapan kimse' olarak daraltın."
+    }
+  ]
+}

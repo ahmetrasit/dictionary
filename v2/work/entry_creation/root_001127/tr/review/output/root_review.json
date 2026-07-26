@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "B005 dalındaki namazdan dönüp ayrılma kullanımı, birkaç alanda herhangi bir ibadetten veya uğraştan ayrılmaya genişletilmiştir. Kanıt yalnız belirli namaz yapısını desteklediğinden bu alanlar en küçük kapsam düzeltmeleriyle daraltılmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001127/B005",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe kişinin herhangi bir uğraştan, sınır notu ise herhangi bir ibadetten ayrılabildiğini söylüyor. Kanıt yalnız kişinin namazdan dönüp ayrılmasını bildiriyor.",
+      "smallest_correction": "Gerekçedeki uğraş ve sınır notundaki ibadet genellemelerini namazla sınırlandır."
+    },
+    {
+      "target_ref": "root_001127/B005",
+      "field": "lexicalization_scope",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Dal doğru biçimde non_bare olarak işaretlenmiş olsa da kapsam notu kişinin herhangi bir ibadetten ayrılmasını kapsıyor. Kanıttaki sözlüksel birim yalnız namazdan dönüp ayrılma yapısıdır.",
+      "smallest_correction": "Kapsam notunda ibadetten ifadesini namazdan olarak değiştir ve verilen özel yapıya bağlılığı koru."
+    },
+    {
+      "target_ref": "root_001127/B005",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım kişinin bir ibadetten dönüp ayrılmasını genel dal anlamı olarak veriyor. Kanıt bu non-bare kullanımı yalnız namazdan dönüp ayrılma yapısıyla sınırlar.",
+      "smallest_correction": "Tanımdaki bir ibadetten sözünü namazdan olarak değiştir; öteki kavram haritası öğelerini koru."
+    },
+    {
+      "target_ref": "root_001127/B005",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Namaz bağlamındaki uygulanabilirlik açıklaması ayrılmanın namazdan sonra gerçekleştiğini ekliyor. Kanıt yalnız namazdan dönüp ayrılmayı bildirir ve namazın tamamlandığını belirtmez.",
+      "smallest_correction": "Uygulanabilirlik açıklamasından sonra zamanlamasını çıkar; kişinin namazdan dönüp ayrılmasıyla sınırlı bir açıklama kullan."
+    }
+  ]
+}
