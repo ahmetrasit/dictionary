@@ -1,30 +1,29 @@
 {
-  "inputs_sha256": "ceb1b6111a994972940b32a9147b726c28133a81f08e4d9a24a1d0217f1ba9f9",
+  "inputs_sha256": "3a2d78d8411f23c5f4602aee6195dcf5abcf2db1b4761ceb7a6d1a9eed8ddd45",
   "verdict": "repair",
-  "summary": "İki sınırlı anlamsal düzeltme gerekiyor: B003 komşu sınırında uzantı çekirdeğe taşınmış, B006 çekirdek yüzeyinde ise alternatif anlamlar birlikte zorunlu kılınmış.",
+  "summary": "B006 dalının temel akıl ve tedbir zayıflığı çerçevesi yerindedir; ancak yetkili kaynak ifadesindeki, yanlış sözü kabul eden kişiye ilişkin kaynak-özel kullanım hem kavram haritasında hem kaynak sentezinde eksik bırakılmıştır. Bu iki alan en küçük eklemelerle onarılmıştır.",
   "issues": [
-    {
-      "target_ref": "root_000041/B003",
-      "field": "neighbor_distinctions",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_009",
-        "lu_010"
-      ],
-      "evidence_conflict": "lu_010 yalnızca yerleşimin veya toprağın halkıyla birlikte ters dönmesini bildirir; yıkımı zorunlu sonuç yapmaz. Yıkılmış yerleşim ve topluluklar lu_009 ile ayrı bir uzantı olarak desteklenirken B001 karşılaştırmasının odak sınırı yıkım sonucunu zorunlu sayıyor.",
-      "smallest_correction": "B001 ile komşu ayrımında zorunlu sınırı yerleşimin veya toprağın halkıyla birlikte ters dönmesiyle kurun; yıkılmış yerleşim ve toplulukları yalnızca lu_009 ile desteklenen uzantı olarak belirtin."
-    },
     {
       "target_ref": "root_000041/B006",
       "field": "concept_map",
       "severity": "minor",
       "confidence": "high",
       "claim_ids": [
-        "lu_015"
+        "bc_001"
       ],
-      "evidence_conflict": "lu_015 akıl veya görüş zayıflığı ile aklın yönünden çevrilmesini alternatif anlatımlar olarak verir. F001 ise sağlıklı işleyişten uzaklaşmayı ve zayıflamayı birlikte zorunlu kılarak bu kaynak varyantlarını tek koşulda birleştiriyor.",
-      "smallest_correction": "F001 ifadesini aklın veya yargının sağlıklı işleyişinden uzaklaşmış ya da zayıflamış olması biçiminde değiştirin; iki durumu birlikte zorunlu kılmayın."
+      "evidence_conflict": "Yetkili dal iddiası, akıl ve görüş zayıflığı ile tedbir ve çare yoksunluğunun yanında bir kaynakta yanlış sözü kabul eden kişi kullanımını da bildirir. Kavram tanımı ve yönleri bu kaynak-özel kullanımı hiç kaydetmemektedir.",
+      "smallest_correction": "Mevcut tanımı ve yönleri koruyarak, yanlış sözü kabul eden kişi kullanımını yalnız bir kaynağa özgü bir görünüm olarak F002 ifadesine ve tanıma eklemek."
+    },
+    {
+      "target_ref": "root_000041/B006",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak sentezi akıl ve görüş zayıflığı ile tedbir ve çare yoksunluğunu kapsar, fakat dal iddiasında tek bir kaynağın bildirdiği yanlış sözü kabul eden kişi kullanımını aktarmadığı için ayırt edici kaynak ayrıntısı eksik kalır.",
+      "smallest_correction": "Ortak çekirdek anlatımını değiştirmeden, yanlış sözü kabul eden kişi kullanımının bir kaynakta ayrıca kaydedildiğini ortak özete eklemek."
     }
   ]
 }
