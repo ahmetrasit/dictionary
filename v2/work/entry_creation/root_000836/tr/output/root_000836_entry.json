@@ -1107,16 +1107,16 @@
     {
       "branch_ref": "root_000836/B008",
       "identity_judgment": {
-        "status": "structural_review_required",
-        "rationale": "Kaynak ifadesi tek bir kararlı çekirdek sunmuyor: bir kullanım yaklaşık miktar veya benzer süre diye aktarılırken bu yorum tanıklıklardan birinde açıkça reddediliyor; başka bir kalıp ise yarından sonraki günü, yani zamansal ardılı bildiriyor. Üstelik `lu_033` aynı görev paketinde hem bu dala hem `root_000836/B001` dalına atanmış durumda. Bu nedenle miktar kalıbı ile zamansal ardıllık kalıbının ayrılması ve yinelenen birimin tek dala yeniden atanması gerekir.",
-        "boundary_note": "Miktar, yaklaşık benzerlik ve ertesi zaman okumaları tek tanımda birleştirilemez; dal ve `lu_033` ataması yapısal olarak gözden geçirilmelidir."
+        "status": "qualified",
+        "rationale": "Bu dal packet düzeyinde inceleme statüsünde tutulmuş sınır-riskli malzemeyi taşır. Kanıt, tek bir yalın kök imgesinden çok biçime veya özel kullanıma bağlı dağınık adlandırmaları gösterdiği için dal yapısal bölme şartı koşmadan sınırlı bir adlandırma kümesi olarak okunmalıdır.",
+        "boundary_note": "Bu dalın öğeleri genel kök anlamı gibi genişletilmemeli, birbirinin yerine geçebilen tek bir sözlük karşılığı sayılmamalı ve yalnız kanıtta verilen biçim veya bağlam sınırı içinde tutulmalıdır."
       },
       "lexicalization_scope": {
         "branch_kind": "mixed_non_bare",
-        "note": "Bütün tanıklıklar belirli kalıplara bağlıdır; miktar yorumu tartışmalı, izleyen gün yorumu ise ayrı bir zaman kalıbıdır ve bağımsız kök anlamı sayılamaz."
+        "note": "Kapsam verilen biçim veya özel kullanım sınırıyla bağlıdır; ortak bir yalın anlam ya da üretken genel kullanım varsayılmaz."
       },
       "concept_map": {
-        "definition": "Kanıt paketi, belirli söz kalıplarında yaklaşık bir miktarı veya benzer süreyi bildiren tartışmalı bir okuma ile bir günün ardından gelen günü bildiren ayrı bir okuma içerir; bunlar yapısal inceleme öncesinde tek kavram olarak tanımlanamaz.",
+        "definition": "Belirli söz kalıplarında bir miktarı, bir süreyi veya ona yakın bir süreyi bildiren sınırlı kullanımdır; aynı biçim başka bir zaman kalıbında yarının ardından gelen günü gösterir. Miktar okuması kanıtta çekinceyle aktarıldığı için genel ve üretken bir kök anlamı gibi genişletilmez.",
         "facets": [
           {
             "facet_id": "F001",
@@ -1137,7 +1137,7 @@
         ]
       },
       "source_synthesis": {
-        "common_summary": "Toplu kanıt, süreye yakın miktar yorumunu hem aktarır hem tartışmalı kılar; zamansal ardıl okumasını da ayrı bir kalıp olarak verir. Bu karşıtlık kaynak adı eklenmeden korunmalıdır.",
+        "common_summary": "Tanıklıklar belirli kalıplarda miktar veya yakın süre okumasını verir, fakat bu okuma kanıt içinde çekinceyle aktarılır; yarının ardından gelen günü bildiren zaman kalıbı ise ayrı bir sınırlı kullanım olarak korunur.",
         "common_claim_ids": [
           "bc_001"
         ],
@@ -1146,14 +1146,14 @@
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "yaklaşık miktar ya da izleyen zaman",
-        "applicability": "Yalnız yapısal inceleme bekleyen iki kalıba geçici üst etiket sağlar; tek ve yerleşik bir anlam karşılığı değildir.",
+        "text": "yaklaşık miktar veya izleyen zaman",
+        "applicability": "Belirli kalıplarda miktar ya da yakın süre bildiren kullanımı ve başka bir kalıpta sonraki günü gösteren zaman kullanımını sınırlı biçimde karşılar.",
         "error_profile": {
-          "fit": "displacement",
-          "preserves": "Miktar ve zamansal ardıllık okumalarının ikisini de görünür tutar.",
-          "loses": null,
+          "fit": "narrowing",
+          "preserves": "Yaklaşık miktar, yakın süre ve izleyen zaman yönlerini sınırlı bir karşılıkta korur.",
+          "loses": "Miktar okumasındaki kaynak çekincesini tek başına göstermez.",
           "adds": null,
-          "collision": "İki ayrı ve biri tartışmalı okuma tek üst etiket altında yan yana gelir."
+          "collision": null
         },
         "facet_ids": [
           "F001",
@@ -1211,7 +1211,7 @@
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; yapısal sorun çözülmeden miktar ve zaman sınırı kararlı olmadığı için hiçbir komşu ilişkisi yayımlanmadı.",
+      "neighbor_coverage_note": "Dal yalnız sınırlı veya biçime bağlı adlandırma malzemesini tuttuğu için yayımlanacak güvenilir komşu ayrımı seçilmedi.",
       "branch_image_ar": "المقدار والنحو والزمان التابع",
       "what_is_ar": "المقدار أو النحو أو اليوم الذي بعد الغد في قولهم شهر أو شيعه وغدا أو شيعه",
       "what_is_not_ar": "ليس شبل الأسد ولا ذيوع الخبر ولا الشياع صوت الراعي",

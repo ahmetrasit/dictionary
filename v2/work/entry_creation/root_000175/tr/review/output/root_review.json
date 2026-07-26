@@ -1,0 +1,15 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yaniti genel olarak kanitla uyumlu, ancak root_profile ozeti B008 icin yapisal ayrisma gerektigini soyleyerek hem kanitin verilen dal duzenine hem de yazar entry'sindeki kontrollu adlandirma cercevesine aykiri bir yayin iddiasi kuruyor. Bu tek alan cercevesinde kucuk ve guvenli bir onarim gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kanit B008'i verilen kok altinda yayinlanacak bir dal olarak sunuyor ve yazar B008'de bunu tek uretken anlam degil, kanitta verilen sinirli adlandirma kumesi olarak tutuyor. Buna karsin root_profile ozeti ayni dal icin tek dal yerine yapisal ayrisma gerektigini soyluyor; bu, yayina girecek kok profilinde gereksiz bolme ihtiyaci iddiasi olusturuyor.",
+      "smallest_correction": "root_profile.summary icindeki B008 cumlesini bolme gerektirdigini soylemeyecek bicimde daralt; golge, beden bolumu, yildiz, kus ve bocek adlarinin tek uretken anlam gibi genellenmeden sinirli adlandirmalar olarak tutuldugunu belirt."
+    }
+  ]
+}

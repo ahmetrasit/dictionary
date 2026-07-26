@@ -1,0 +1,70 @@
+{
+  "verdict": "repair",
+  "summary": "B001, B002, B003 ve B005 kanitla uyumlu. B004 icin tanim ve yuzeylerin cogu dogru olsa da kimlik, kapsam notu, kaynak sentezi ve kavram karsiligi dali kanitin destekledigi iyi durum, mal, bolluk, gecim ve durum duzeltme anlamindan uzaklastirip yalisik adlandirma gibi sunuyor. Canli cikista yalniz bu alanlar cercevesinde cerrahi onarim gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_000617/B004",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit B004 dalini iyi hal, edinilen hayir, mal, bolluk, gecim, birini guclendirip gecimine yardim etme ve kisinin halinin iyilesmesi etrafinda kuruyor. Yazar ise kimligi yalisik veya bicime bagli adlandirma kumesi diye niteliyor ve dali tek uretken cekirdege indirgenmeyen malzeme gibi gosteriyor.",
+      "smallest_correction": "B004 identity_judgment durumunu accepted yap; gerekce ve sinir notunu iyi durum, mal, bolluk, gecim, destekleme ve iyilesme cekirdegini kabul edecek sekilde yaz."
+    },
+    {
+      "target_ref": "root_000617/B004",
+      "field": "lexicalization_scope",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Mekanik profil mixed_non_bare olarak dogru aktarilmis, fakat not dalin ortak anlamini reddedip onu sinirli adlandirma gibi sunuyor. Kanit, yalniz ciplak genelleme degil, verilen ad ve eylem birimlerinde ortak iyi hal ve gecim alani oldugunu destekliyor.",
+      "smallest_correction": "branch_kind degerini koru; notu, yalniz verilen ad ve eylem birimlerine bagli mixed_non_bare kapsam icinde iyi hal, gecim ve durum duzeltme anlaminin gecerliligini belirtecek sekilde daralt."
+    },
+    {
+      "target_ref": "root_000617/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit kaynaklarin iyi hal, hayir, mal, bolluk, gecim, destekleme ve halin iyilesmesi alaninda birlestigini gosteriyor. Yazar sentezi ise kanitin tek birlesik anlamdan cok sinirli veya bicime bagli adlandirmalari gosterdigini soyluyor ve asil kaynak icerigini ozetlemiyor.",
+      "smallest_correction": "common_summary alanini kaynaklarin iyi hal, mal, bolluk, gecim, birini destekleme ve durumun iyilesmesi eksenindeki ortak katkisini ozetleyecek sekilde degistir."
+    },
+    {
+      "target_ref": "root_000617/B004",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit dalin kavram karsiligini iyi durum, gecim ve bolluk alaninda destekler. Yazar kavram karsiligini yalisik adlandirmalar olarak vermis; bu, kanittaki cekirdek anlami aciklamiyor ve dali metaveri etiketine ceviriyor.",
+      "smallest_correction": "concept_gloss text ve aciklama alanlarini iyi durum ve gecim bollugu cekirdegini temsil edecek sekilde degistir; F001 ve F002 ile baglantiyi koru."
+    },
+    {
+      "target_ref": "root_000617/B004",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B004 icin komsu kayitlari saglanmisken yazar, dali sinirli adlandirma diye yorumladigi icin hicbir yayimlanabilir komsu ayrimi secmemis. Kanit en az giyim dali, kus tuyu dali ve zayiflik daliyla anlam sinirlarini guvenle ayirt etmeye yeterlidir.",
+      "smallest_correction": "Bos neighbor_distinctions alanini B004 cekirdeginin giyim, gercek tuy ve zayiflik dallarindan ayrimini gosteren sinirli komsu ayrimlariyla doldur; coverage notunu buna uygun hale getir."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Root ozeti genel anlam orgusunu dogru baslatsa da B004 icindeki bir sozluk biriminin orguyle uyusmadigini ve yapisal yeniden atama gerektigini soyluyor. Bu yayin profili kanitindan cikan bir kok ozeti degil, uygulanmamis bir editorluk notudur.",
+      "smallest_correction": "root_profile summary alanindaki yapisal yeniden atama cumlesini kaldir; kok orgusunu kus tuyu, giyim, ok donatimi, iyi durum ve zayiflik acilimlariyla sinirla."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "verdict": "repair",
+  "summary": "B003 genel olarak dogru ayrilmis, ancak kaynak sentezi ve kavram karsiligi kanittaki somut iki ogenin yerine fazla genel bir etiket veriyor. Kok profilindeki kisi adi icin yapisal islem gerektigi ifadesi de kanit tarafindan desteklenmiyor.",
+  "issues": [
+    {
+      "target_ref": "root_001613/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanitta bu dal icin somut olarak Ayin dairesi anlamindaki halka ve ayni yazilisin kisi adi olarak taniklanmasi veriliyor. Mevcut ortak ozet ise yalnizca bicime bagli adlandirmalar diyerek bu iki ayirt edici icerigi kaynak sentezinde gorunur kilmiyor.",
+      "smallest_correction": "B003 source_synthesis.common_summary alanini, iki kaynagin Ay cevresindeki daire anlamini ve ayni yazilisin kisi adi olarak taniklanmasini birlikte verdigini belirtecek sekilde daralt."
+    },
+    {
+      "target_ref": "root_001613/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanittaki kavram haritasi Ay cevresindeki isik halkasini cekirdek, kisi adini ise baglantili kullanim olarak tasiyor. Mevcut kavram karsiligi bicime bagli adlandirmalar diyerek bu cekirdegi temsil etmiyor.",
+      "smallest_correction": "B003 concept_gloss alanini, Ay cevresindeki isik halkasini ve tanikli kisi adini acikca temsil eden bir karsilik ve buna uygun uygulama aciklamasi ile degistir."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kanitta kisi adinin taniklandigi goruluyor, fakat bunun ayri bir yapisal islem gerektirdigine dair kok profili duzeyinde destek yok.",
+      "smallest_correction": "root_profile.summary alanindaki yapisal islem gerektirir ifadesini, kisi adi tanikliginin kavramsal cekirdekten ayri baglantili kullanim olarak tutuldugunu soyleyen destekli bir ifadeyle degistir."
+    }
+  ]
+}

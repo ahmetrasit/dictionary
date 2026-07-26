@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B001 ve B002 kanıta uygun. B003'te kavram karşılığı, kanıtın verdiği iki somut göndergeyi açıklamak yerine meta bir etiket veriyor; bu nedenle canlı yazar çıktısında yalnız bu alan cerrahi olarak düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001299/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt bu dalda iki somut gönderge verir: pamuk atma yayından çıkarılmış kiriş ve pamuk atma aracının baş kısmı. Kavram karşılığı ise bunları açıklamak yerine yalnız 'özel adlandırma kümesi' diye meta etiket veriyor; bu çekirdek haritayı temsil etmiyor.",
+      "smallest_correction": "B003 concept_gloss nesnesini iki somut göndergeyi açıkça veren bir karşılıkla değiştir: text 'pamuk atma yayından çıkarılmış kiriş ve aracın baş kısmı' olsun; uygulanabilirlik ve hata profili de bu iki göndergeyi koruyup ekleme veya kayıp belirtmeyecek şekilde güncellensin."
+    }
+  ]
+}

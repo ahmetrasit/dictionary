@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "B001, B002 ve B003 kanitla uyumlu gorunuyor. B004'te sorun yalniz concept_gloss alaninda: yazar, kanitin verdigi gozde parildama ve avuclari gogse dogru cevirme icerigini gosteren bir karsilik yerine meta bir etiket kullanmis. Bu alan, dali yeniden yazmadan kanitli iki kullanim adayini gosterecek sekilde darca duzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001337/B004",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit, B004 icin kadinin gozunu parildatmasi ile avuclari gogse dogru cevirme hareketini verir. Yazar bunun concept_gloss metnini 'yalitik adlandirmalar' diye meta bir etiketle karsilamis; bu ifade kanitli anlam icerigini temsil etmiyor.",
+      "smallest_correction": "B004 concept_gloss metnini goz parildatma ve avuc cevirme icerigini birlikte gosteren bir karsilikla degistir; applicability ve error_profile alanlarini da yalniz bu yeni karsiligin fit/preserves/loses degerleriyle uyumlu olacak kadar guncelle."
+    }
+  ]
+}

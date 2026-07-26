@@ -1,0 +1,520 @@
+{
+  "inputs_sha256": "41002abf7760c79ab4fd93e012cf29baa2ced25ca5518b8c892fbec1cbd05f75",
+  "artifact_format": "dictionary-v2-root-entry-draft-v1",
+  "generated_by": "v2/scripts/accept_root_writer.py",
+  "root_envelope_id": "root_003276",
+  "language": "tr",
+  "branches": [
+    {
+      "branch_ref": "root_003276/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bu dalı, kişiye yöneltilen kötü ve incitici söz olarak kurar; hakaret etme, karşılıklı sövüşme ve çok sövme gibi kullanımlar aynı konuşma alanında toplanır. Verilen çerçeve, bunu yüz çirkinliği ya da özel ad kullanımıyla karıştırmadan sözlü incitme alanı olarak doğru temsil eder.",
+        "boundary_note": "Bu dal söz eylemiyle sınırlıdır; açıkça isnat içeren suçlama ya da yüz görünüşü anlamı buraya taşınmaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "unresolved",
+        "note": "Mekanik kapsam belirsizdir; tanım yalnızca verilen kaynak ifadesindeki sözlü hakaret alanını izler ve başka yapıdan çıplak kök anlamı üretmez."
+      },
+      "concept_map": {
+        "definition": "Bir kimseye yönelik kötü, incitici ve aşağılayıcı söz söyleme ya da bu tür sözlerin karşılıklı söylenmesi. Anlamın çekirdeği sözlü saldırıdır; yalnızca yüzün çirkinliği veya bir ad olarak kullanılış değildir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Çekirdek anlam, bir kişiye kötü ve incitici söz yöneltme eylemidir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "extension",
+            "statement": "Karşılıklı sövüşme ve aynı sözlü saldırının iki taraflı hale gelmesi de bu alana girer.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "specialization",
+            "statement": "Çok söven kişi niteliği, aynı sözlü saldırı eyleminin alışkanlık veya yoğunluk kazanmış biçimidir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "source_variant",
+            "statement": "Kaynaklar bu alanı kötü söz ve sövme olarak verirken, açık isnat içeren suçlama olmadığını ayrıca sınırlar.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar dalın ortak merkezini kötü ve incitici söz söyleme olarak verir. Aynı malzeme, tek taraflı hakaret etmeyi, karşılıklı sövüşmeyi ve çok söven kişi niteliğini bu sözlü saldırı alanının içinde toplar; ayrıca anlamın isnat içeren suçlama olmadığını belirtir.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "incitici hakaret sözü",
+        "applicability": "Sözlü saldırı ve kötü söz çekirdeğini verir; karşılıklı kullanım ve çok sövme gibi alt durumlar bağlamdan anlaşılır.",
+        "error_profile": {
+          "fit": "narrowing",
+          "preserves": "Kötü, incitici ve aşağılayıcı söz alanını korur.",
+          "loses": "Karşılıklı sövüşme ve çok sövme ayrıntılarını tek başına açıkça söylemez.",
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003",
+          "F004"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "hakaret etmek",
+          "usage_role": "general",
+          "applicability": "Bir kişinin başka bir kişiye kötü ve incitici söz yönelttiği bağlamlarda doğal fiil karşılığıdır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Sözlü saldırı eylemini korur.",
+            "loses": "Kötü sözün isimleşmiş hali, karşılıklı kullanım ve çok sövme niteliği açıkça görünmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "karşılıklı sövüşmek",
+          "usage_role": "contextual",
+          "applicability": "İki tarafın birbirine kötü söz yönelttiği karşılıklı kullanım için uygundur.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "İki taraflı sözlü saldırı durumunu korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "ağzı bozuk kimse",
+          "usage_role": "explanatory",
+          "applicability": "Çok söven kişi niteliği açıklanırken kullanılabilir; dalın temel eylem anlamının yerine geçmez.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Sık ve kötü söz söyleyen kişi niteliğini korur.",
+            "loses": "Tekil hakaret eylemini ve karşılıklı sövüşme bağlamını kapsamaz.",
+            "adds": "Gündelik Türkçede genel kaba konuşma alışkanlığını da çağrıştırabilir.",
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        }
+      ],
+      "lexical_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "iftira",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Sözle zarar verme yönünü kısmen korur.",
+            "loses": "Kötü söz ve sövme çekirdeğini değiştirir.",
+            "adds": "Asılsız suç isnadı anlamı ekler; kaynak sınırı bunu dışarıda bırakır.",
+            "collision": "İsnat içeren suçlama ile genel kötü söz arasında yanlış eşleme doğurur."
+          }
+        },
+        {
+          "text": "çirkin yüz",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Kötülük veya çirkinlik değerlemesini korur.",
+            "loses": "Sözlü saldırı eylemini tamamen kaybeder.",
+            "adds": "Görünüş ve yüz alanını ekler.",
+            "collision": "Aynı kökteki görünüş dalıyla karışır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_003276/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bu dalda kötülük, bir kişiye yönelen incitici söz eylemidir.",
+          "neighbor_only": "Komşu dalda kötülük, yüz veya görünüş niteliğidir.",
+          "gloss": "sözlü kötülük ile görünüş kötülüğü",
+          "shared_zone": "İki dal da hoş olmayan, kötü görülen bir niteliği taşır.",
+          "distinction": "B001 konuşma ve hakaret alanındadır; B002 ise insan, aslan veya eşek için yüzün ya da görünüşün çirkin oluşunu anlatır. Bu yüzden biri eylem ve söz ilişkisi, diğeri nitelik ve görünüş ilişkisidir."
+        },
+        {
+          "neighbor_ref": "root_003276/B003",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Bu dalda biçim anlamlı bir söz eylemini bildirir.",
+          "neighbor_only": "Komşu dalda biçim bir kişi veya topluluk adı olarak kullanılır.",
+          "gloss": "anlamlı hakaret ile ad kullanımı",
+          "shared_zone": "İki dal aynı kök çevresindeki biçimleri paylaşır.",
+          "distinction": "B001 kötü söz anlamını taşır; B003 ise anlamı açıklamaktan çok adlandırma kaydıdır. Bir ad olarak geçtiğinde hakaret eylemi veya söz içeriği otomatik olarak devreye girmez."
+        }
+      ],
+      "neighbor_coverage_note": "Her iki komşu değerlendirilmiştir; biri görünüş alanıyla sınır karışmasını, diğeri ad kullanımıyla anlam karışmasını netleştirdiği için yayımlanmıştır.",
+      "branch_image_ar": "الكلام الكريه المؤذي",
+      "what_is_ar": "يدخل فيه الشتم والسب والتشاتم والمشاتمة والشتيمة والمشتمة وكثرة الشتم وقبيح الكلام",
+      "what_is_not_ar": "ليس قذفا عند تصريح تهذيب اللغة، وليس وصفا لقبح الوجه إلا من جهة كونه كلاما كريها",
+      "source_phrase_ar": "اشتقاق الشتم منه لأنه كلام كريه (maqayis)؛ شتم فلان فلانا شتما (ayn;tahdhib)؛ وشتمت الرجل أشتمه شتما والاسم الشتيمة والمشتمة (jamhara)؛ رجل شتامة كثير الشتم (jamhara)؛ الشتم السب والتشاتم التساب والمشاتمة المسابة (sihah)؛ الشتم قبيح الكلام وليس فيه قذف (tahdhib)",
+      "sources": [
+        "MQ",
+        "AY",
+        "JA",
+        "SI",
+        "TA"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_003276/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bu dalı, insan, aslan ve eşek gibi varlıklar için yüzün veya görünüşün kötü, çirkin ya da itici oluşu olarak verir. Verilen çerçeve, bunu sövme eyleminden ayırdığı ve ad kullanımıyla karıştırmadığı için kaynak cümleyle uyumludur.",
+        "boundary_note": "Bu dal görünüş niteliğidir; sözlü hakaret veya özel ad olarak kullanım ancak ayrı bağlamda değerlendirilir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "unresolved",
+        "note": "Mekanik kapsam belirsizdir; tanım yalnızca verilen görünüş nitelemesini korur ve sözlü hakaret alanından anlam genişletmez."
+      },
+      "concept_map": {
+        "definition": "Bir insanın ya da hayvanın yüzünün veya genel görünüşünün çirkin, itici ve hoş olmayan nitelikte olması. Bu dal bir söz eylemini değil, görünüşe yüklenen olumsuz niteliği bildirir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Çekirdek anlam, yüzün ya da görünüşün çirkin ve itici oluşudur.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "example",
+            "statement": "İnsan, aslan ve eşek için verilen örnekler aynı görünüş niteliğini gösterir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "source_variant",
+            "statement": "Bazı anlatımlar yüzü özellikle öne çıkarırken bazıları genel görünüş veya yüz ifadesi alanını da kapsar.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar bu dalda, yüzü veya görünüşü çirkin ve itici olan insan ya da hayvan nitelemesini ortak biçimde verir. Örnekler özellikle aslan ve eşek üzerinden aktarılır; bazı ifadeler yüzü daraltır, bazıları görünüş veya yüz ifadesi alanını da belirtir.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "çirkin yüzlü",
+        "applicability": "Yüzü veya yüz görünümü kötü ve itici olan insan ya da hayvan için kısa niteleme olarak uygundur.",
+        "error_profile": {
+          "fit": "narrowing",
+          "preserves": "Yüzün çirkin ve itici oluşunu korur.",
+          "loses": "Genel görünüş ve yüz ifadesi kapsamını her bağlamda açıkça taşımaz.",
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "itici yüzlü",
+          "usage_role": "contextual",
+          "applicability": "Yüzün yalnızca biçimsel çirkinliğinden çok hoş olmayan etki verdiği bağlamlarda doğaldır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Yüzün hoş olmayan ve uzaklaştırıcı niteliğini korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F003"
+          ]
+        },
+        {
+          "text": "çirkin görünüşlü",
+          "usage_role": "general",
+          "applicability": "Kaynak ifadesinin yüz dışına taşan genel görünüş vurgusunda kullanılabilir.",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Görünüşteki çirkinlik değerlemesini korur.",
+            "loses": null,
+            "adds": "Yüz dışındaki beden görünüşünü de çağrıştırabilir.",
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F003"
+          ]
+        }
+      ],
+      "lexical_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "hakaret eden",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Olumsuz değerleme yönünü kısmen korur.",
+            "loses": "Yüz veya görünüş niteliğini kaybeder.",
+            "adds": "Sözlü saldırı eylemi ekler.",
+            "collision": "Aynı kökün sözlü hakaret dalıyla karışır."
+          }
+        },
+        {
+          "text": "ad olarak kullanılan",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Aynı biçimin başka kullanımını işaret eder.",
+            "loses": "Çirkin yüz veya görünüş anlamını kaybeder.",
+            "adds": "Özel ad ya da topluluk adı işlevi ekler.",
+            "collision": "Adlandırma dalıyla anlam dalını birbirine geçirir."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_003276/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bu dalda olumsuzluk yüz veya görünüş niteliğidir.",
+          "neighbor_only": "Komşu dalda olumsuzluk kötü ve incitici söz eylemidir.",
+          "gloss": "görünüş kötülüğü ile söz kötülüğü",
+          "shared_zone": "İki dal da kötü ve hoş olmayan bir değeri paylaşır.",
+          "distinction": "B002 görünüşe bağlanan çirkinliktir; B001 ise konuşan ile muhatap arasında gerçekleşen hakaret veya sövme eylemidir. Bu nedenle B002 bir niteleme, B001 bir sözlü davranış alanıdır."
+        },
+        {
+          "neighbor_ref": "root_003276/B003",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Bu dal bir varlığın görünüşünü niteler.",
+          "neighbor_only": "Komşu dal biçimin kişi veya topluluk adı olmasını bildirir.",
+          "gloss": "görünüş niteliği ile ad",
+          "shared_zone": "İki dal aynı biçim çevresinde yer alır.",
+          "distinction": "B002 anlamlı bir niteleme olarak çirkin yüzü bildirir; B003 ise aynı çevredeki biçimlerin ad olarak kullanıldığını kaydeder. Ad kullanımı, görünüş niteliğini otomatik biçimde taşımaz."
+        }
+      ],
+      "neighbor_coverage_note": "Her iki komşu incelendi; sözlü hakaret dalı ve adlandırma dalı bu görünüş anlamının sınırlarını açıklayan yeterli karşıtlıkları sağlar.",
+      "branch_image_ar": "الوجه الكريه القبيح",
+      "what_is_ar": "يدخل فيه وصف الرجل والأسد والحمار بشتيم إذا كان كريه الوجه أو قبيح المنظر أو قبيح المحيا",
+      "what_is_not_ar": "ليس سبا ولا مشاتمة إلا إذا انتقل إلى الكلام الكريه",
+      "source_phrase_ar": "الأسد الشتيم وهو الكريه الوجه وكذلك الحمار الشتيم (maqayis)؛ أسد شتيم وحمار شتيم أي كريه الوجه (ayn)؛ رجل شتيم وشتام كريه المنظر وبه سمي الأسد شتيما (jamhara)؛ الشتيم الرجل الكريه الوجه وكذلك الأسد ورجل شتيم المحيا (sihah)؛ أسد شتيم وحمار شتيم وهو الكريه الوجه القبيح (tahdhib)",
+      "sources": [
+        "MQ",
+        "AY",
+        "JA",
+        "SI",
+        "TA"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_003276/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bu dalı, belirli biçimlerin Araplar tarafından kişi ya da topluluk adı olarak kullanılması şeklinde verir. Bu, ne hakaret eylemi ne de çirkin görünüş niteliği olarak okunmalıdır; verilen çerçeve adlandırma işlevini doğru biçimde ayrı tutar.",
+        "boundary_note": "Bu dal ad kullanımıdır; adın geçtiği yerde sözlü hakaret veya çirkin görünüş anlamı otomatik olarak yüklenmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "unresolved",
+        "note": "Mekanik kapsam belirsizdir; tanım yalnızca kaynakta bildirilen adlandırma kullanımını verir ve anlam dalı gibi genişletilmez."
+      },
+      "concept_map": {
+        "definition": "Köke bağlı bazı biçimlerin bir kişi, soy kolu ya da topluluk adı olarak kullanılması. Bu dal, biçimin ad işlevini kaydeder; hakaret veya görünüş niteliği anlamını kurmaz.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Çekirdek anlam, biçimlerin ad olarak kullanılmasıdır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Kaynak, bu adlandırmanın bir soy kolu veya kişi adı düzeyinde bulunduğunu bildirir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Bu dalda ortaklaştırılacak çok kaynaklı ek malzeme yoktur; verilen bilgi, biçimlerin ad olarak kullanıldığını bildiren tekil bir kayıt niteliğindedir.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Biçimlerin kişi veya soy kolu adı olarak kullanıldığını tek başına bildirir."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "ad olarak kullanım",
+        "applicability": "Biçimin anlamlı bir niteleme ya da eylem değil, kişi veya topluluk adı işlevinde geçtiği yerler için uygundur.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Adlandırma işlevini ve anlam dallarından ayrılığını korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "özel ad",
+          "usage_role": "contextual",
+          "applicability": "Biçim bir kişi adı gibi kullanıldığında doğal açıklamadır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Ad işlevini korur.",
+            "loses": "Soy kolu veya topluluk adı olma ihtimalini açıkça taşımaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "soy kolu adı",
+          "usage_role": "contextual",
+          "applicability": "Kaynakta bildirilen topluluk veya soy kolu adlandırması için uygundur.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Topluluk adı işlevini korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "hakaret",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Aynı kökün başka bir anlam alanını işaret eder.",
+            "loses": "Ad işlevini kaybeder.",
+            "adds": "Sözlü saldırı anlamı ekler.",
+            "collision": "Ad olarak kullanım ile hakaret anlamını karıştırır."
+          }
+        },
+        {
+          "text": "çirkin yüzlü",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Aynı kökün başka bir niteleme alanını işaret eder.",
+            "loses": "Adlandırma işlevini kaybeder.",
+            "adds": "Görünüş niteliği ekler.",
+            "collision": "Ad kullanımı ile görünüş dalını karıştırır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_003276/B001",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Bu dalda biçim ad işlevindedir.",
+          "neighbor_only": "Komşu dalda biçim kötü söz ve hakaret anlamındadır.",
+          "gloss": "ad ile hakaret anlamı",
+          "shared_zone": "İki dal aynı kök çevresindeki biçimleri paylaşır.",
+          "distinction": "B003 bir adlandırma kaydıdır; B001 ise sözlü saldırı anlamını taşır. Ad olarak geçen biçim, tek başına kötü söz eylemini bildirmez."
+        },
+        {
+          "neighbor_ref": "root_003276/B002",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Bu dal kişi veya topluluk adı kullanımını bildirir.",
+          "neighbor_only": "Komşu dal yüzün veya görünüşün çirkin oluşunu bildirir.",
+          "gloss": "ad ile görünüş niteliği",
+          "shared_zone": "İki dal aynı kök çevresinde yer alan biçimlerle ilgilidir.",
+          "distinction": "B003 biçimin ad işlevini kaydeder; B002 ise anlamlı bir sıfat gibi çirkin yüz veya görünüş niteliğini verir. Bir ad kaydı, o kişinin veya topluluğun görünüş niteliğini anlatmaz."
+        }
+      ],
+      "neighbor_coverage_note": "Her iki komşu yayımlandı; çünkü adlandırma dalının iki anlam dalından ayrı okunması gerekir.",
+      "branch_image_ar": "التسمية بشتيم ومشتم",
+      "what_is_ar": "يدخل فيه استعمال شتيم ومشتم علما أو اسما لقبيلة أو شخص كما صرحت الجمهرة",
+      "what_is_not_ar": "ليس حكما بمعنى الشتم ولا وصفا لقبح المنظر إذا ورد علما",
+      "source_phrase_ar": "قد سمت العرب شتيما وهو أبو بطن منهم ومشتما (jamhara)",
+      "sources": [
+        "JA"
+      ],
+      "source_note": {
+        "JA": "Biçimlerin kişi veya soy kolu adı olarak kullanıldığını tek başına bildirir."
+      }
+    }
+  ],
+  "root_profile": {
+    "summary": "Bu kök çevresinde üç ayrı kullanım alanı görünür: kötü ve incitici söz, çirkin ya da itici yüz-görünüş niteliği ve bazı biçimlerin ad olarak kullanılması. Alanlar olumsuz değerleme çevresinde temas etse de söz eylemi, görünüş niteliği ve ad işlevi ayrı tutulmalıdır.",
+    "polysemy": "polysemic",
+    "organization": "multi_branch"
+  },
+  "occurrence_evidence": {
+    "summary": {
+      "morpheme_count": 0,
+      "word_count": 0,
+      "ayah_count": 0,
+      "surah_count": 0
+    },
+    "forms": [],
+    "ayahs": [],
+    "occurrences": []
+  }
+}

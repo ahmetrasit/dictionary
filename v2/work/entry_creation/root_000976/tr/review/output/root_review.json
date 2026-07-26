@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar cevabı genel olarak kanıtla uyumlu; ancak B004'te kimlik kararı dalın yapısal bölme şartı olmadan tutulacağını söylerken tanım iki kullanımın yapısal olarak ayrılması gerektiğini söylüyor. Bu, aynı dal içinde güvenli biçimde nitelendirilebilecek bir iç çelişkidir.",
+  "issues": [
+    {
+      "target_ref": "root_000976/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt aynı dalda kadını betimleyen biçimi ve kadın adı kullanımını verir; yazarın identity_judgment alanı da bunu yapısal bölme şartı koşmadan kontrollü adlandırma kümesi olarak tutar. Buna karşılık concept_map.definition iki kullanımın yapısal olarak ayrılması gerektiğini söyleyerek dalın kendi kabul/kalifikasyon kararıyla çatışır.",
+      "smallest_correction": "B004 concept_map.definition alanındaki son cümleyi yapısal ayrım zorunluluğu bildirmeyecek şekilde değiştir: ortak çekirdeğin kanıtlanmadığını, bu yüzden iki kullanımın yalnız verilen biçim ve bağlam sınırı içinde birlikte kaydedildiğini söyle."
+    }
+  ]
+}

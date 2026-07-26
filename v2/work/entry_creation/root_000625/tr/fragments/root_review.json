@@ -1,18 +1,6 @@
 {
-  "inputs_sha256": "6b1b5e42307248cb5d88b8a41cb8466adcf5dcb2377fb2a37e09e285631f25e1",
-  "verdict": "repair",
-  "summary": "B005 dalının tanımı, kaynakta karşılaştırmalı özel kullanım olarak verilen öğeyi çekirdek anlamın zorunlu parçası haline getiriyor. Tanım yalnızca işte etkili olma çekirdeğiyle sınırlandırılmalıdır.",
-  "issues": [
-    {
-      "target_ref": "root_000625/B005",
-      "field": "concept_map",
-      "severity": "major",
-      "confidence": "high",
-      "claim_ids": [
-        "bc_001"
-      ],
-      "evidence_conflict": "Kaynak önce işte etkili olma anlamını verir, ardından bir kişinin aynı işte başkasından daha etkili oluşunu karşılaştırmalı bir kuruluşla örnekler. Yazar da bu karşılaştırmayı F002 içinde specialization olarak sınıflandırdığı halde tanımda başkasına göre daha güçlü sonuç almayı çekirdeğin zorunlu koşulu yapmıştır; ayrıca engelleri aşma öğesi kaynakta açıkça bulunmaz.",
-      "smallest_correction": "B005 concept_map.definition alanını \"Belirli bir işte etkili olabilmektir.\" biçiminde daraltın. Karşılaştırmalı üstünlük yalnızca mevcut F002 specialization yüzünde kalsın."
-    }
-  ]
+  "inputs_sha256": "3501ca6a702cc983cb263a347eadc88f1304ed7388d11af5bb20d04e3d5a00a3",
+  "verdict": "pass",
+  "summary": "Yazar yanıtı, altı dalın kaynak ifadelerini, sözlükselleşme kapsamlarını, kavram çekirdeklerini, sözlük karşılıklarını ve komşu sınırlarını verilen kanıtla uyumlu biçimde koruyor. Yayın açısından düzeltme gerektiren bir anlam sorunu bulunmadı.",
+  "issues": []
 }

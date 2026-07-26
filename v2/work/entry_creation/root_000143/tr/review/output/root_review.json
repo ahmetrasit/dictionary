@@ -1,5 +1,17 @@
 {
-  "verdict": "pass",
-  "summary": "Yazar yaniti, saglanan kanitla uyumlu gorunuyor. Dallar, zaman anlamini, ilk olma alanini, hayvan yas evresini, cinsel deneyimsizlik durumunu, ilk cocuk/ilk dogum iliskisini, su cekme makarasini ve kaliplasmis toplu gelis ifadesini birbirine karistirmadan ayiriyor. Gecici cercevedeki fazla genis ogeler gerekli yerlerde daraltilmis; lexicalization_scope degerleri mekanik profille uyumlu ve komsu ayrimlari kanit kartlarindaki sinirlari yeterince koruyor.",
-  "issues": []
+  "verdict": "repair",
+  "summary": "B004 icin bir lexical_gloss duzeltmesi gerekiyor. Diger dallarda kanitla yuksek guvenli yayin onemi tasiyan bir semantik catismaya rastlamadim.",
+  "issues": [
+    {
+      "target_ref": "root_000143/B004",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_026"
+      ],
+      "evidence_conflict": "lu_026, erkegin kadinin onceki cinsel deneyimsizlik durumunu sona erdirmesini bildirir. Yazar glossu ise Turkcede erkegin kendi deneyimsizligini sona erdirmesi gibi okunuyor.",
+      "smallest_correction": "lu_026 target_gloss degerini kadinin durumunun sona erdirildigini acikca soyleyecek bicimde duzelt."
+    }
+  ]
 }

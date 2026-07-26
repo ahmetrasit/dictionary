@@ -1,0 +1,115 @@
+{
+  "inputs_sha256": "f979d40a27fadcaadb6ac2fc2df7274050dac3b90f69788311ca942a29619aee",
+  "verdict": "repair",
+  "summary": "B001, B002 ve B003 kanıtla uyumlu. B004'te kaynak çekirdeği fiziksel eğme ya da eğim verme olarak verirken mızrak ifadesini örnek olarak sunuyor; yazar çıktısı bazı alanlarda bu örneği dal sınırı gibi gösteriyor. Onarım yalnızca B004 çekirdeğini ve ona bağlı komşu/profil ifadelerini mızrak örneğini koruyarak genelleştirir.",
+  "issues": [
+    {
+      "target_ref": "root_003411/B004",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt üçüncü dalın çekirdeğini fiziksel eğme veya eğim verme olarak verir ve mızrak ifadesini bu anlamın örneği yapar. Kimlik gerekçesi ve sınır notu ise dalı mızrakla ilgili kullanım gibi daraltıyor.",
+      "smallest_correction": "Kimlik gerekçesi ve sınır notunu fiziksel eğme/eğim verme çekirdeğini esas alacak, mızrak ifadesini kaynak örneği olarak belirtecek şekilde düzelt."
+    },
+    {
+      "target_ref": "root_003411/B004",
+      "field": "lexicalization_scope",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Mekanik kapsam unresolved olsa da not, tanımın mızrak eğme kullanımını aşmaması gerektiğini söylüyor. Kanıttaki çekirdek mızrakla sınırlı değil; mızrak yalnızca örneklenen nesne.",
+      "smallest_correction": "branch_kind değerini koru; notu, tanımın fiziksel eğme çekirdeğinde kalıp mızrak örneğini dal sınırına çevirmediğini söyleyecek şekilde değiştir."
+    },
+    {
+      "target_ref": "root_003411/B004",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım mızrağı doğrudan tanım nesnesi yapıyor. Kanıtta asıl çekirdek eğme/eğim verme, mızrak ifadesi ise bu çekirdeğin örneği olduğundan bağımlı malzeme çekirdeğe yükseltilmiş oluyor.",
+      "smallest_correction": "Tanımı fiziksel olarak eğme veya eğim verme şeklinde kur; F001'i bu çekirdek olarak bırak; F002'yi mızrak ifadesinin kaynak örneği olduğunu gösterecek role ve cümleye çevir."
+    },
+    {
+      "target_ref": "root_003411/B004",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram glossu çekirdek haritayı temsil etmelidir, fakat mevcut gloss mızrağı zorunlu nesne yaparak kanıttaki daha temel fiziksel eğme çekirdeğini daraltıyor.",
+      "smallest_correction": "Kavram glossunu fiziksel eğme/eğim verme çekirdeğine taşı; uygulama ve hata profilini mızrak nesnesi eklemeyecek şekilde düzelt."
+    },
+    {
+      "target_ref": "root_003411/B004",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Mevcut bağlamsal gloss mızrağa eğim vermeyi tam eşdeğer gibi işaretliyor. Çekirdek fiziksel eğme/eğim verme olduğundan mızraklı ifade yalnızca kanıttaki örneğe uygun dar bir bağlamsal karşılıktır.",
+      "smallest_correction": "B004 bağlamsal glossunun hata profilini narrowing yap; mızrak örneğini korurken mızrak dışı fiziksel eğme kapsamını kaybettiğini belirt."
+    },
+    {
+      "target_ref": "root_003411/B004",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B004'ün kendi komşu ayrımları focus_only satırlarında dalı mızrak nesnesine bağlı fiziksel eğme diye daraltıyor. Kanıt çekirdeği fiziksel eğme/eğim verme, mızrak ise örnektir.",
+      "smallest_correction": "B004 komşu ayrımlarında focus_only ve distinction cümlelerini fiziksel eğme/eğim verme çekirdeğini anlatacak, mızrağı yalnızca kaynak örneği olarak bırakacak şekilde düzelt."
+    },
+    {
+      "target_ref": "root_003411/B001",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B001'in B004'e bakan komşu ayrımı B004'ü mızrakla sınırlı bir dal gibi tanıtıyor. Kanıtta B004'ün çekirdeği fiziksel eğme/eğim verme, mızrak ifadesi ise örnektir.",
+      "smallest_correction": "Yalnız B004'e bakan komşu ayrımında neighbor_only ve distinction ifadelerini fiziksel eğme/eğim verme çekirdeğine göre düzelt."
+    },
+    {
+      "target_ref": "root_003411/B002",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B002'nin B004'e bakan komşu ayrımı B004'ü mızrak eğme hareketiyle sınırlıyor. Kanıt bu nesneyi örnekler, dal çekirdeği fiziksel eğme/eğim vermedir.",
+      "smallest_correction": "Yalnız B004'e bakan komşu ayrımında B004 tarafını fiziksel eğme/eğim verme olarak ifade et; rüzgar yönü ayrımını koru."
+    },
+    {
+      "target_ref": "root_003411/B003",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B003'ün B004'e bakan komşu ayrımı B004'ü mızrak üzerinde fiziksel eğme hareketiyle sınırlandırıyor. Kanıtın çekirdeği fiziksel eğme/eğim verme, mızrak ise örneklenen nesnedir.",
+      "smallest_correction": "Yalnız B004'e bakan komşu ayrımında B004 tarafını genel fiziksel eğme/eğim verme çekirdeğiyle anlat."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Profil özeti B004'ü mızrağı eğme diye daraltıyor; bu, B004 onarımından sonra dal çekirdeğini eksik yansıtır.",
+      "smallest_correction": "Profil özetinde dördüncü dalı mızrağı eğme yerine fiziksel eğme/eğim verme olarak an."
+    }
+  ]
+}

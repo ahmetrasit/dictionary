@@ -1,0 +1,40 @@
+{
+  "inputs_sha256": "9fe963f19e29fbb4cfb158d6c6a84789681b8cb2ba9effa72bba85e8a82cb00e",
+  "verdict": "repair",
+  "summary": "Yanit genel olarak kanit paketine sadik, ancak B003 dalinda cadir anlami gereksiz bicimde buyukluk ve kullanim amaci eklenerek genisletilmis. Bu ekler kanitta verilmedigi icin yayindan once sade bir cadir adlandirmasina cekilmeli.",
+  "issues": [
+    {
+      "target_ref": "root_001947/B003",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit B003 icin sozcugun cadir veya fustat adlandirmasi oldugunu verir; barinma ya da toplanma amaci ve buyukluk kosulu belirtmez. Yanitin tanimi ve F001 yuzeyi bunu buyuk, kurulmus ve belli amaclarla kullanilan bir cadir turu gibi sunarak kanitta olmayan ozellikleri cekirdege ekliyor.",
+      "smallest_correction": "B003 concept_map tanimini ve ilgili yuzeyi yalnizca cadir veya cadir yapisi adlandirmasi olarak sadeleştirin; buyukluk, barinma/toplanma amaci ve siradan ortu karsitligini cekirdek kosulu olmaktan cikarin."
+    },
+    {
+      "target_ref": "root_001947/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit ortak tanikligi cadir/fustat adlandirmasiyla sinirlar. Source_synthesis common_summary ise ortak tanikliklarin buyuk cadir anlaminda birlestigini soyluyor; buyukluk kanitlanmis ortak unsur degildir.",
+      "smallest_correction": "B003 source_synthesis common_summary ifadesindeki buyukluk vurgusunu kaldirin ve ortak sentezi cadir/fustat adlandirmasi ile siirsel ornegin bu adlandirmayi gostermesiyle sinirlayin."
+    },
+    {
+      "target_ref": "root_001947/B003",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit dalin karsiligini cadir/fustat olarak verir; concept_gloss metni ise buyuk cadir diyerek kanitta belirtilmeyen bir boyut kosulu ekliyor.",
+      "smallest_correction": "B003 concept_gloss metnini cadir veya cadir yapisi gibi boyut kosulu tasimayan bir Turkce karsiliga cevirin; uygulanabilirlik ve hata profilindeki buyukluk savlarini da kaldirin."
+    }
+  ]
+}

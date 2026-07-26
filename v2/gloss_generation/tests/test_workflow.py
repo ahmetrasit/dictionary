@@ -1,5 +1,6 @@
 import copy
 import json
+import shutil
 import tempfile
 import unittest
 from pathlib import Path
@@ -15,6 +16,7 @@ from v2.gloss_generation.workflow import (
     load_json,
     parse_languages,
     prepare_entry,
+    prepare_live_entry,
     resolve_path,
     stage_editorial_repair,
     stage_repair,
@@ -30,6 +32,7 @@ from v2.scripts.validate_entry import validate_entry
 
 PROJECT = Path(__file__).resolve().parents[3]
 FIXTURE = PROJECT / "v2/examples/root_000858.tr.entry.json"
+LIVE_FIXTURE_WORK = PROJECT / "v2/work/entry_creation/root_000857/tr"
 
 
 def chosen(text, facet_ids):
@@ -142,6 +145,66 @@ class GlossGenerationWorkflowTest(unittest.TestCase):
             self.assertNotIn(
                 "review_gate", json.dumps(package, ensure_ascii=False)
             )
+
+    def test_live_root_writer_source_stages_gloss_package(self):
+        self.assertTrue(LIVE_FIXTURE_WORK.is_dir())
+        with tempfile.TemporaryDirectory() as temporary:
+            task_path = prepare_live_entry(
+                LIVE_FIXTURE_WORK, ["en"], Path(temporary) / "work"
+            )[0]
+            task = load_json(task_path)
+            package = load_json(
+                resolve_path(task["inputs"]["package"]["path"])
+            )
+            self.assertEqual(task["source_entry_status"], "reviewed")
+            self.assertEqual(
+                package["source_entry"]["path"],
+                "v2/work/entry_creation/root_000857/tr/output/root_000857_entry.json",
+            )
+            self.assertEqual(package["source_entry"]["status"], "reviewed")
+            self.assertEqual(package["source_entry"]["review_verdict"], "pass")
+            self.assertEqual(package["source_entry"]["validation_status"], "clean")
+            self.assertEqual(package["source_entry"]["validation_warnings"], [])
+            self.assertEqual(
+                package["source_packet"]["path"],
+                "data/output/root_packets/root_000857.json",
+            )
+            self.assertEqual(package["branches"][0]["branch_ref"], "root_000857/B001")
+            self.assertEqual(
+                package["branches"][0]["lexical_units"][0]["expression_ar"],
+                "الصرصر",
+            )
+            self.assertTrue(package["branches"][0]["neighbor_distinctions"])
+            verify_task(task_path)
+
+    def test_live_editorial_review_source_is_admitted_with_metadata(self):
+        self.assertTrue(LIVE_FIXTURE_WORK.is_dir())
+        with tempfile.TemporaryDirectory() as temporary:
+            temporary_path = Path(temporary)
+            copied = temporary_path / "entry_creation/root_000857/tr"
+            shutil.copytree(LIVE_FIXTURE_WORK, copied)
+            review_path = copied / "review/output/root_review.json"
+            review = load_json(review_path)
+            review["verdict"] = "editorial_review"
+            review_path.write_text(
+                json.dumps(review, ensure_ascii=False, indent=2) + "\n",
+                encoding="utf-8",
+            )
+
+            task_path = prepare_live_entry(
+                copied, ["en"], temporary_path / "work"
+            )[0]
+            task = load_json(task_path)
+            package = load_json(
+                resolve_path(task["inputs"]["package"]["path"])
+            )
+            source = package["source_entry"]
+            self.assertEqual(source["review_verdict"], "editorial_review")
+            self.assertEqual(
+                source["validation_status"], "admitted_with_warnings"
+            )
+            self.assertTrue(source["validation_warnings"])
+            verify_task(task_path)
 
     def test_all_three_locales_stage_validate_and_store(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -304,6 +367,7 @@ class GlossGenerationWorkflowTest(unittest.TestCase):
                     ContractError, "input digest mismatch"
                 ):
                     verify_task(task_path)
+                verify_task(task_path, ignore_input_hashes=True)
 
     def test_lexical_gloss_facets_are_unit_scoped_and_complete(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -688,6 +752,7 @@ class GlossGenerationWorkflowTest(unittest.TestCase):
             )
             with self.assertRaisesRegex(ContractError, "stale task inputs"):
                 validate_response(task_path)
+            validate_response(task_path, ignore_input_hashes=True)
 
             first_lexical = response["branches"][0]["lexical_glosses"]
             first_lexical["lu_999"] = chosen(
@@ -701,7 +766,7 @@ class GlossGenerationWorkflowTest(unittest.TestCase):
             with self.assertRaisesRegex(
                 ContractError, "exact lexical-unit roster"
             ):
-                validate_response(task_path)
+                validate_response(task_path, ignore_input_hashes=True)
 
 
 if __name__ == "__main__":

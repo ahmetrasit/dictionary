@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": "aa3a8f67ff7bf230498eee776f84d991fba8a80aa341acd8cbc1072cd6e68bf1",
+  "verdict": "repair",
+  "summary": "B002 kaynak sentezi, ayni dal iddiasindaki hayvan nitelemesi ornegini eksik birakiyor. Sorun tek alanla sinirli; duzeltme yalniz B002 source_synthesis metninde uygulandi.",
+  "issues": [
+    {
+      "target_ref": "root_002805/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B002 bc_001 yavruya ya da yavru yerine konan seye yonelen hayvan bagini verirken ayrica sevgi-yakinlik gosteren bir koyunun yoldan gecenin elbisesini yalamasiyla hayvanin nitelenmesini de icerir. Mevcut source_synthesis dali sadece yavru bagi ve yavru yerine kabul ettirilen sey etrafinda topluyor.",
+      "smallest_correction": "B002 source_synthesis.common_summary metnine, ayni claimin sevgi-yakinlik gosteren hayvan nitelemesini de kapsadigini ekle; claim listelerini ve source_details yapisini degistirme."
+    }
+  ]
+}

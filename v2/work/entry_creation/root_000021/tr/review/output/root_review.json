@@ -1,6 +1,6 @@
 {
   "verdict": "repair",
-  "summary": "Yanıtın dal kimlikleri, söz öbeği kapsamları ve komşu ayrımları genel olarak kanıtla uyumludur. Ancak iki hedef karşılık, kanıttaki kapsamı gereksiz yere genişletmektedir; bunlar yalnızca ilgili karşılık metinleri daraltılarak düzeltilebilir.",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur, ancak üç yayın anlamı düzeltmesi gerekir. B004'te namaz kullanımı ibadet geneline genişletilmiş, B008'de koyun veya deve sınırı hayvan geneline açılmış, B007'de ise daha genel dinleme komşusu tam eş anlamlı gösterilmiştir.",
   "issues": [
     {
       "target_ref": "root_000021/B004",
@@ -10,8 +10,8 @@
       "claim_ids": [
         "lu_020"
       ],
-      "evidence_conflict": "lu_020, hazırlığı genel bir iş veya özellikle namaz için tanıklar; hedef karşılıktaki \"ibadet\" ise namazdan daha geniş bir alan bildirir.",
-      "smallest_correction": "lu_020 target_gloss metnini \"bir iş veya namaz için hazırlık\" olarak değiştir."
+      "evidence_conflict": "lu_020, hazırlığı genel bir iş veya özellikle namaz için tanıklar; hedef karşılıktaki ibadet ise namazdan daha geniş bir alan bildirir.",
+      "smallest_correction": "lu_020 target_gloss metnini bir iş veya namaz için hazırlık olarak değiştir."
     },
     {
       "target_ref": "root_000021/B008",
@@ -21,8 +21,19 @@
       "claim_ids": [
         "bc_001"
       ],
-      "evidence_conflict": "bc_001 sayısal azlığı yalnızca koyun ve deve kullanımlarında tanıklar; \"az sayıda hayvan topluluğu\" karşılığı bu sınırı bütün hayvan topluluklarına genişletir.",
-      "smallest_correction": "concept_gloss.text değerini \"az sayıda koyun veya deve topluluğu\" olarak değiştir."
+      "evidence_conflict": "bc_001 sayısal azlığı yalnızca koyun ve deve kullanımlarında tanıklar; az sayıda hayvan topluluğu karşılığı bu sınırı bütün hayvan topluluklarına genişletir.",
+      "smallest_correction": "concept_gloss.text değerini az sayıda koyun veya deve topluluğu olarak değiştir."
+    },
+    {
+      "target_ref": "root_000021/B007",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Odak dal kanıtı, işitmenin muhataba yöneltilmesini ve belirli yönelmeli söz öbeğinde dinlemeyi bildirir. Seçilen komşu kart ise genel dinleme alanıdır. Bu sınır farkı varken synonym ve exact değerleri tam ikame edilebilirlik iddiasını gereğinden fazla genişletir.",
+      "smallest_correction": "B007 içindeki root_000832/B005 komşu satırında relation_type değerini near_synonym, boundary_match değerini partial yap; focus_only alanında odak dalın muhataba yöneltilmiş işitme söz öbeğiyle sınırlı olduğunu, neighbor_only alanında komşunun genel dinleme alanı olduğunu belirt; distinction ve neighbor_coverage_note metinlerini bu kısmi örtüşmeye göre güncelle."
     }
   ]
 }

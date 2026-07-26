@@ -25,6 +25,22 @@ from v2.scripts.validate_entry import (
     structural_errors,
     validate_entry,
 )
+from v2.scripts.accept_root_review import (
+    response_body as root_review_response_body,
+    validate_review as validate_root_review,
+)
+from v2.scripts.accept_root_writer import (
+    response_body as root_writer_response_body,
+    validate_identity as validate_root_writer_identity,
+    validate_semantic_contract as validate_root_writer_semantic_contract,
+)
+from v2.scripts.assemble_entry import (
+    root_entry_filename,
+    validate_fragment as validate_entry_fragment,
+)
+from v2.scripts.create_entry import (
+    verify_task_bindings as verify_entry_task_bindings,
+)
 
 
 BASE = Path(__file__).resolve().parent
@@ -44,6 +60,7 @@ LOCALES = BASE / "locales"
 LOCALE_PROMPTS = BASE / "locale_prompts"
 DEFAULT_WORK = BASE / "work"
 DEFAULT_RESULTS = BASE / "results"
+DEFAULT_ENTRY_WORK = PROJECT / "v2/work/entry_creation"
 _BRANCH_SOURCE_PHRASES: dict[tuple[str, str], str] | None = None
 # Unicode blocks containing modern Arabic-script letters, additions, presentation
 # forms, and supplementary Arabic-script symbols. Python's stdlib `re` has no
@@ -256,6 +273,8 @@ def verify_canonical_dependencies(
     manifest: dict,
     language: str,
     role: str,
+    *,
+    ignore_input_hashes: bool = False,
 ) -> None:
     actual = manifest.get("canonical")
     expected_paths = canonical_dependency_paths(language, role)
@@ -281,7 +300,10 @@ def verify_canonical_dependencies(
         staged = manifest.get(staged_key)
         if (
             not isinstance(staged, dict)
-            or staged.get("sha256") != actual[canonical_key].get("sha256")
+            or (
+                not ignore_input_hashes
+                and staged.get("sha256") != actual[canonical_key].get("sha256")
+            )
         ):
             raise ContractError(
                 f"Staged {staged_key} differs from canonical {canonical_key}"
@@ -325,6 +347,176 @@ def validate_source_entry(entry_path: Path) -> tuple[dict, dict]:
         )
         _validated, packet = validate_entry(temporary_path)
     return original, packet
+
+
+def live_work_dir(selector: str, work_root: Path = DEFAULT_ENTRY_WORK) -> Path:
+    if "/" in selector:
+        path = Path(selector).resolve()
+        if path.name == "tr" and path.parent.name.startswith("root_"):
+            return path
+        if path.name.endswith("_entry.json"):
+            return path.parent.parent.resolve()
+        return path
+    return (work_root / selector / "tr").resolve()
+
+
+def split_branch_ref(value: str) -> tuple[str, str]:
+    if not isinstance(value, str) or "/" not in value:
+        raise ContractError(f"Invalid branch_ref: {value!r}")
+    root_id, branch_id = value.split("/", 1)
+    if not re.fullmatch(r"root_[0-9]{6}", root_id) or not re.fullmatch(
+        r"B[0-9]{3}", branch_id
+    ):
+        raise ContractError(f"Invalid branch_ref: {value!r}")
+    return root_id, branch_id
+
+
+def validate_live_source_entry(work_dir: Path) -> tuple[dict, dict]:
+    """Load a completed live root-writer/reviewer pair for gloss staging."""
+
+    def warning(label: str, error: Exception | str) -> str:
+        text = f"{label}: {error}"
+        if len(text) > 3900:
+            return text[:3897] + "..."
+        return text
+
+    work_dir = work_dir.resolve()
+    envelope = work_dir.parent.name
+    writer_task_path = work_dir / "tasks/root_writer.json"
+    review_task_path = work_dir / "tasks/root_reviewer.json"
+    writer_output_path = work_dir / "output" / root_entry_filename(envelope)
+    review_output_path = work_dir / "review/output/root_review.json"
+
+    for path in (
+        writer_task_path,
+        review_task_path,
+        writer_output_path,
+        review_output_path,
+    ):
+        if not path.is_file():
+            raise ContractError(f"Missing live source artifact: {path}")
+
+    validation_warnings: list[str] = []
+    writer_task = load_json(writer_task_path)
+    try:
+        verify_entry_task_bindings(writer_task)
+    except ContractError as error:
+        validation_warnings.append(
+            warning("root_writer task binding validation", error)
+        )
+    if (
+        writer_task.get("role") != "root_writer"
+        or writer_task.get("language") != "tr"
+        or writer_task.get("root_envelope_id") != envelope
+    ):
+        raise ContractError(f"Invalid live root-writer task: {writer_task_path}")
+    authored_writer = root_writer_response_body(writer_output_path)
+    for label, check in (
+        (
+            "root_writer fragment validation",
+            lambda: validate_entry_fragment(
+                authored_writer, "root_writer", writer_output_path
+            ),
+        ),
+        (
+            "root_writer identity validation",
+            lambda: validate_root_writer_identity(authored_writer, writer_task),
+        ),
+        (
+            "root_writer semantic contract validation",
+            lambda: validate_root_writer_semantic_contract(
+                authored_writer, writer_task
+            ),
+        ),
+    ):
+        try:
+            check()
+        except ContractError as error:
+            validation_warnings.append(warning(label, error))
+    writer = load_json(writer_output_path)
+
+    if any(
+        branch.get("identity_judgment", {}).get("status")
+        == "structural_review_required"
+        for branch in writer.get("branches", [])
+    ):
+        raise ContractError(
+            f"{envelope}: structural_review_required is not a completed gloss source"
+        )
+
+    review_task = load_json(review_task_path)
+    try:
+        verify_entry_task_bindings(review_task)
+    except ContractError as error:
+        validation_warnings.append(
+            warning("root_reviewer task binding validation", error)
+        )
+    if (
+        review_task.get("role") != "root_reviewer"
+        or review_task.get("language") != "tr"
+        or review_task.get("root_envelope_id") != envelope
+    ):
+        raise ContractError(f"Invalid live root-reviewer task: {review_task_path}")
+    if review_task.get("writer_task_sha256") != canonical_sha256(writer_task):
+        validation_warnings.append(
+            warning(
+                "root_reviewer writer_task_sha256",
+                "stale or mismatched",
+            )
+        )
+    review = root_review_response_body(review_output_path)
+    for label, check in (
+        (
+            "root_reviewer fragment validation",
+            lambda: validate_entry_fragment(
+                review, "root_reviewer", review_output_path
+            ),
+        ),
+        (
+            "root_reviewer semantic validation",
+            lambda: validate_root_review(review, review_task),
+        ),
+    ):
+        try:
+            check()
+        except ContractError as error:
+            validation_warnings.append(warning(label, error))
+
+    index_binding = writer_task.get("coordinator", {}).get("evidence_index", {})
+    index_path_value = index_binding.get("path")
+    if not isinstance(index_path_value, str):
+        raise ContractError(f"{envelope}: root-writer task lacks evidence index")
+    index_path = resolve_path(index_path_value)
+    if not index_path.is_file():
+        raise ContractError(f"{envelope}: missing evidence index")
+    if sha256_file(index_path) != index_binding.get("sha256"):
+        validation_warnings.append(warning(envelope, "stale evidence index hash"))
+    index = load_json(index_path)
+    packet_path = resolve_path(index["packet_path"])
+    if not packet_path.is_file():
+        raise ContractError(f"{envelope}: missing source packet")
+    if sha256_file(packet_path) != index.get("packet_sha256"):
+        validation_warnings.append(warning(envelope, "stale source packet hash"))
+
+    evidence_path = resolve_path(writer_task["evidence"]["path"])
+    evidence = load_json(evidence_path)
+    if evidence.get("format") != "dictionary-v2-agent-root-evidence-v5":
+        raise ContractError(f"{envelope}: invalid root evidence package")
+
+    metadata = {
+        "source_kind": "live_root_writer",
+        "entry_path": writer_output_path,
+        "entry_id": f"{envelope}/tr",
+        "status": "reviewed",
+        "packet_path": packet_path,
+        "evidence": evidence,
+        "review_verdict": review["verdict"],
+        "validation_status": (
+            "admitted_with_warnings" if validation_warnings else "clean"
+        ),
+        "validation_warnings": validation_warnings,
+    }
+    return writer, metadata
 
 
 def branch_ref(branch: dict) -> str:
@@ -386,6 +578,31 @@ def branch_source_phrase_index() -> dict[tuple[str, str], str]:
                 and source_phrase.strip()
             ):
                 index[(root_id, branch_id)] = source_phrase
+    for output_path in sorted(
+        DEFAULT_ENTRY_WORK.glob("root_*/tr/output/root_*_entry.json")
+    ):
+        try:
+            value = load_json(output_path)
+        except Exception:
+            continue
+        if not isinstance(value, dict):
+            continue
+        for branch in value.get("branches", []):
+            if not isinstance(branch, dict):
+                continue
+            branch_ref_value = branch.get("branch_ref")
+            source_phrase = branch.get("source_phrase_ar")
+            if not (
+                isinstance(branch_ref_value, str)
+                and isinstance(source_phrase, str)
+                and source_phrase.strip()
+            ):
+                continue
+            try:
+                root_id, branch_id = split_branch_ref(branch_ref_value)
+            except ContractError:
+                continue
+            index[(root_id, branch_id)] = source_phrase
     _BRANCH_SOURCE_PHRASES = index
     return index
 
@@ -420,6 +637,51 @@ def compact_neighbor_distinctions(entry: dict, branch: dict) -> list[dict]:
             "neighbor_only_tr": row.get("neighbor_only"),
             "distinction_tr": row.get("distinction"),
             "basis": row.get("basis"),
+        }
+        optional = {
+            "relation_type": row.get("relation_type"),
+            "shared_tr": row.get("shared_zone") or row.get("shared"),
+            "neighbor_source_phrase_ar": source_phrases.get(
+                (neighbor_root, neighbor_branch)
+            ),
+        }
+        distinction.update(
+            {
+                key: value
+                for key, value in optional.items()
+                if isinstance(value, str) and value.strip()
+            }
+        )
+        if all(
+            isinstance(distinction.get(key), str) and distinction[key].strip()
+            for key in (
+                "focus_only_tr",
+                "neighbor_only_tr",
+                "distinction_tr",
+                "basis",
+            )
+        ):
+            distinctions.append(distinction)
+    return distinctions
+
+
+def compact_live_neighbor_distinctions(branch: dict) -> list[dict]:
+    source_phrases = branch_source_phrase_index()
+    distinctions = []
+    for row in branch.get("neighbor_distinctions", []):
+        neighbor_ref = row.get("neighbor_ref")
+        if not isinstance(neighbor_ref, str):
+            continue
+        try:
+            neighbor_root, neighbor_branch = split_branch_ref(neighbor_ref)
+        except ContractError:
+            continue
+        distinction = {
+            "neighbor_ref": neighbor_ref,
+            "focus_only_tr": row.get("focus_only"),
+            "neighbor_only_tr": row.get("neighbor_only"),
+            "distinction_tr": row.get("distinction"),
+            "basis": row.get("boundary_match") or "root_writer_neighbor",
         }
         optional = {
             "relation_type": row.get("relation_type"),
@@ -529,6 +791,135 @@ def build_package(entry: dict, entry_path: Path, target_language: str) -> dict:
     return package
 
 
+def build_live_package(entry: dict, metadata: dict, target_language: str) -> dict:
+    locale_path(target_language)
+    source_language = entry.get("language")
+    if source_language is None and str(metadata.get("entry_id", "")).endswith("/tr"):
+        source_language = "tr"
+    if source_language != "tr":
+        raise ContractError(
+            f"Gloss workflow requires a Turkish live source, got "
+            f"{entry.get('language')!r}"
+        )
+    envelope = entry.get("root_envelope_id")
+    if not isinstance(envelope, str):
+        entry_id = metadata.get("entry_id")
+        if isinstance(entry_id, str) and entry_id.endswith("/tr"):
+            envelope = entry_id[:-3]
+    if not isinstance(envelope, str) or not envelope:
+        raise ContractError("Live source lacks a root envelope identity")
+    evidence_by_ref = {
+        row["branch_ref"]: row
+        for row in metadata["evidence"]["branches"]
+        if isinstance(row, dict) and isinstance(row.get("branch_ref"), str)
+    }
+    branches = []
+    for branch in entry["branches"]:
+        ref = branch["branch_ref"]
+        concept_map = branch.get("concept_map")
+        if not isinstance(concept_map, dict) or not concept_map.get("facets"):
+            raise ContractError(
+                f"{ref} lacks the Turkish concept map required for compact "
+                "gloss generation"
+            )
+        evidence_branch = evidence_by_ref.get(ref)
+        if evidence_branch is None:
+            raise ContractError(f"{ref} lacks bound live evidence")
+        source_phrase_ar = branch.get("source_phrase_ar")
+        if not isinstance(source_phrase_ar, str) or not source_phrase_ar.strip():
+            source_phrase_parts = [
+                claim.get("source_phrase_ar")
+                for claim in evidence_branch.get("branch_claims", [])
+                if isinstance(claim, dict)
+                and isinstance(claim.get("source_phrase_ar"), str)
+                and claim["source_phrase_ar"].strip()
+            ]
+            source_phrase_ar = "؛ ".join(source_phrase_parts)
+        what_is_ar = branch.get("what_is_ar") or evidence_branch.get("what_is_ar")
+        what_is_not_ar = branch.get("what_is_not_ar") or evidence_branch.get(
+            "what_is_not_ar"
+        )
+        if not (
+            isinstance(source_phrase_ar, str)
+            and source_phrase_ar.strip()
+            and isinstance(what_is_ar, str)
+            and what_is_ar.strip()
+            and isinstance(what_is_not_ar, str)
+            and what_is_not_ar.strip()
+        ):
+            raise ContractError(f"{ref} lacks compact Arabic boundary fields")
+        facets = [
+            {
+                "facet_id": row["facet_id"],
+                "role": row["role"],
+                "statement_tr": row["statement"],
+            }
+            for row in concept_map["facets"]
+        ]
+        lexical_by_id = {
+            row["lexical_unit_id"]: row
+            for row in branch.get("lexical_glosses", [])
+            if isinstance(row, dict)
+        }
+        lexical_units = []
+        for unit in evidence_branch["lexical_units"]:
+            unit_id = unit["lexical_unit_id"]
+            authored = lexical_by_id.get(unit_id, {})
+            lexical_units.append(
+                {
+                    "lexical_unit_id": unit_id,
+                    "expression_ar": unit["expression_ar"],
+                    "unit_kind": unit["unit_kind"],
+                    "sense_ar": unit["sense_ar"],
+                    "gloss_tr": authored.get("target_gloss"),
+                    "rendering_kind": authored.get(
+                        "rendering_kind", unit["rendering_policy"]
+                    ),
+                    "facet_ids": lexical_facet_ids(
+                        unit_id, concept_map["facets"]
+                    ),
+                }
+            )
+        branches.append(
+            {
+                "branch_ref": ref,
+                "definition_tr": concept_map["definition"],
+                "facets": facets,
+                "source_phrase_ar": source_phrase_ar,
+                "what_is_ar": what_is_ar,
+                "what_is_not_ar": what_is_not_ar,
+                "branch_kind": branch["lexicalization_scope"]["branch_kind"],
+                "scope_note_tr": branch["lexicalization_scope"].get("note"),
+                "lexical_units": lexical_units,
+                "constraints": [],
+                "neighbor_distinctions": compact_live_neighbor_distinctions(
+                    branch
+                ),
+            }
+        )
+
+    entry_path = metadata["entry_path"]
+    package = {
+        "format": PACKAGE_FORMAT,
+        "generated_by": GENERATOR,
+        "root_envelope_id": envelope,
+        "source_language": "tr",
+        "target_language": target_language,
+        "source_entry": {
+            **binding(entry_path),
+            "entry_id": metadata["entry_id"],
+            "status": metadata["status"],
+            "review_verdict": metadata["review_verdict"],
+            "validation_status": metadata["validation_status"],
+            "validation_warnings": metadata["validation_warnings"],
+        },
+        "source_packet": binding(metadata["packet_path"]),
+        "branches": branches,
+    }
+    validate_schema(package, PACKAGE_SCHEMA, "gloss package")
+    return package
+
+
 def generated_instructions(
     locale: dict,
     task_path: Path,
@@ -566,10 +957,20 @@ def stage_language(
     entry_path: Path,
     target_language: str,
     work_root: Path,
+    source_metadata: dict | None = None,
 ) -> Path:
     static_locale = locale_path(target_language)
     locale = load_json(static_locale)
-    envelope = entry["root_envelope_id"]
+    envelope = entry.get("root_envelope_id")
+    if (
+        not isinstance(envelope, str)
+        and source_metadata is not None
+        and isinstance(source_metadata.get("entry_id"), str)
+        and source_metadata["entry_id"].endswith("/tr")
+    ):
+        envelope = source_metadata["entry_id"][:-3]
+    if not isinstance(envelope, str) or not envelope:
+        raise ContractError("Gloss source lacks a root envelope identity")
     work_dir = work_root.resolve() / envelope / target_language
     input_dir = work_dir / "input"
     output_path = work_dir / "output/glosses.json"
@@ -587,7 +988,12 @@ def stage_language(
         if current.get("generated_by") != GENERATOR:
             raise ContractError(f"Refusing to replace unmarked task: {task_path}")
 
-    package = build_package(entry, entry_path, target_language)
+    if source_metadata is None:
+        package = build_package(entry, entry_path, target_language)
+        source_status = entry["status"]
+    else:
+        package = build_live_package(entry, source_metadata, target_language)
+        source_status = source_metadata["status"]
     atomic_write(package_path, json_content(package))
     atomic_write(
         locale_copy,
@@ -628,7 +1034,7 @@ def stage_language(
         "root_envelope_id": envelope,
         "target_language": target_language,
         "mode": "initial",
-        "source_entry_status": entry["status"],
+        "source_entry_status": source_status,
         "output_path": path_ref(output_path),
         "validation_command": validation_command,
     }
@@ -655,7 +1061,7 @@ def stage_language(
         "source_language": "tr",
         "target_language": target_language,
         "mode": "initial",
-        "source_entry_status": entry["status"],
+        "source_entry_status": source_status,
         "inputs": manifest,
         "inputs_sha256": canonical_sha256(manifest),
         "output": {"path": path_ref(output_path)},
@@ -679,6 +1085,56 @@ def prepare_entry(
     ]
 
 
+def prepare_live_entry(
+    work_dir: Path,
+    languages: list[str] | tuple[str, ...],
+    work_root: Path = DEFAULT_WORK,
+) -> list[Path]:
+    entry, metadata = validate_live_source_entry(work_dir.resolve())
+    if len(languages) != len(set(languages)):
+        raise ContractError("Target language list contains duplicates")
+    return [
+        stage_language(
+            entry,
+            metadata["entry_path"].resolve(),
+            language,
+            work_root,
+            source_metadata=metadata,
+        )
+        for language in languages
+    ]
+
+
+def source_mode_paths(
+    selector: str,
+    mode: str,
+    explicit_entry: Path | None,
+    entry_work_root: Path,
+) -> tuple[str, Path]:
+    if explicit_entry is not None:
+        if mode == "live":
+            raise ContractError("--source-entry cannot be used with --entry-source live")
+        return "entries", source_entry_path(selector, explicit_entry)
+    if mode == "entries":
+        return "entries", source_entry_path(selector)
+    if mode == "live":
+        return "live", live_work_dir(selector, entry_work_root)
+    if mode == "auto":
+        live_dir = live_work_dir(selector, entry_work_root)
+        if live_dir.is_dir():
+            return "live", live_dir
+        return "entries", source_entry_path(selector)
+    raise ContractError(f"Unsupported entry source mode: {mode!r}")
+
+
+def live_work_dirs(entry_work_root: Path) -> list[Path]:
+    return sorted(
+        path.resolve()
+        for path in entry_work_root.resolve().glob("root_*/tr")
+        if path.is_dir()
+    )
+
+
 def task_bindings(value: Any) -> list[dict]:
     result: list[dict] = []
     if isinstance(value, dict):
@@ -697,7 +1153,11 @@ def task_bindings(value: Any) -> list[dict]:
     return result
 
 
-def verify_task(task_path: Path) -> dict:
+def verify_task(
+    task_path: Path,
+    *,
+    ignore_input_hashes: bool = False,
+) -> dict:
     task_path = task_path.resolve()
     verify_controller_seal(task_path, "writer")
     task = load_json(task_path)
@@ -772,7 +1232,10 @@ def verify_task(task_path: Path) -> dict:
     validation = task.get("validation")
     if not isinstance(output, dict) or not isinstance(validation, dict):
         raise ContractError("Gloss task output or validation contract is invalid")
-    if task.get("inputs_sha256") != canonical_sha256(manifest):
+    if (
+        not ignore_input_hashes
+        and task.get("inputs_sha256") != canonical_sha256(manifest)
+    ):
         raise ContractError("Gloss task input-manifest hash is stale")
     expected_contract = {
         "root_envelope_id": task.get("root_envelope_id"),
@@ -790,10 +1253,15 @@ def verify_task(task_path: Path) -> dict:
         path = resolve_path(item["path"])
         if not path.is_file():
             raise ContractError(f"Gloss task input is missing: {path}")
-        if sha256_file(path) != item["sha256"]:
+        if not ignore_input_hashes and sha256_file(path) != item["sha256"]:
             raise ContractError(f"Gloss task input digest mismatch: {path}")
     language = task.get("target_language")
-    verify_canonical_dependencies(manifest, language, "writer")
+    verify_canonical_dependencies(
+        manifest,
+        language,
+        "writer",
+        ignore_input_hashes=ignore_input_hashes,
+    )
     input_dir = task_path.parent
     expected_staged = {
         "package": input_dir / "package.json",
@@ -835,9 +1303,15 @@ def verify_task(task_path: Path) -> dict:
     )
     if mode == "repair":
         base_path = resolve_path(manifest["base_writer_task"]["path"])
-        base_task = verify_task(base_path)
+        base_task = verify_task(
+            base_path,
+            ignore_input_hashes=ignore_input_hashes,
+        )
         review_path = resolve_path(manifest["review_task"]["path"])
-        review_task = verify_review_task(review_path)
+        review_task = verify_review_task(
+            review_path,
+            ignore_input_hashes=ignore_input_hashes,
+        )
         if (
             base_task.get("mode") != "initial"
             or review_task.get("writer_mode") != "initial"
@@ -950,8 +1424,13 @@ def validate_chosen_gloss(
 def validate_response(
     task_path: Path,
     response_path: Path | None = None,
+    *,
+    ignore_input_hashes: bool = False,
 ) -> tuple[dict, dict, dict]:
-    task = verify_task(task_path.resolve())
+    task = verify_task(
+        task_path.resolve(),
+        ignore_input_hashes=ignore_input_hashes,
+    )
     manifest = task["inputs"]
     package = load_json(resolve_path(manifest["package"]["path"]))
     locale = load_json(resolve_path(manifest["locale"]["path"]))
@@ -969,7 +1448,10 @@ def validate_response(
         raise ContractError(
             f"Invalid gloss response in {response}:\n- " + "\n- ".join(errors)
         )
-    if value["inputs_sha256"] != task["inputs_sha256"]:
+    if (
+        not ignore_input_hashes
+        and value["inputs_sha256"] != task["inputs_sha256"]
+    ):
         raise ContractError("Gloss response is bound to stale task inputs")
 
     supplied_branches = package["branches"]
@@ -1090,9 +1572,16 @@ def review_instructions(
     )
 
 
-def stage_review(writer_task_path: Path) -> Path:
+def stage_review(
+    writer_task_path: Path,
+    *,
+    ignore_input_hashes: bool = False,
+) -> Path:
     writer_task_path = writer_task_path.resolve()
-    writer_task, writer_response, _package = validate_response(writer_task_path)
+    writer_task, writer_response, _package = validate_response(
+        writer_task_path,
+        ignore_input_hashes=ignore_input_hashes,
+    )
     writer_manifest = writer_task["inputs"]
     locale = load_json(resolve_path(writer_manifest["locale"]["path"]))
     review_root = writer_task_path.parent.parent / "review"
@@ -1216,7 +1705,11 @@ def stage_review(writer_task_path: Path) -> Path:
     return task_path
 
 
-def verify_review_task(task_path: Path) -> dict:
+def verify_review_task(
+    task_path: Path,
+    *,
+    ignore_input_hashes: bool = False,
+) -> dict:
     task_path = task_path.resolve()
     verify_controller_seal(task_path, "review")
     task = load_json(task_path)
@@ -1249,7 +1742,10 @@ def verify_review_task(task_path: Path) -> dict:
         raise ContractError(
             "Gloss review output or validation contract is invalid"
         )
-    if task.get("inputs_sha256") != canonical_sha256(manifest):
+    if (
+        not ignore_input_hashes
+        and task.get("inputs_sha256") != canonical_sha256(manifest)
+    ):
         raise ContractError("Gloss review task input-manifest hash is stale")
     expected_contract = {
         "root_envelope_id": task.get("root_envelope_id"),
@@ -1267,10 +1763,15 @@ def verify_review_task(task_path: Path) -> dict:
         path = resolve_path(item["path"])
         if not path.is_file():
             raise ContractError(f"Gloss review input is missing: {path}")
-        if sha256_file(path) != item["sha256"]:
+        if not ignore_input_hashes and sha256_file(path) != item["sha256"]:
             raise ContractError(f"Gloss review input digest mismatch: {path}")
     language = task.get("target_language")
-    verify_canonical_dependencies(manifest, language, "review")
+    verify_canonical_dependencies(
+        manifest,
+        language,
+        "review",
+        ignore_input_hashes=ignore_input_hashes,
+    )
     input_dir = task_path.parent
     expected_staged = {
         "writer_response": input_dir / "writer_response.json",
@@ -1305,7 +1806,10 @@ def verify_review_task(task_path: Path) -> dict:
             "Gloss review identity does not match its package or locale"
         )
     writer_task_path = resolve_path(manifest["writer_task"]["path"])
-    writer_task = verify_task(writer_task_path)
+    writer_task = verify_task(
+        writer_task_path,
+        ignore_input_hashes=ignore_input_hashes,
+    )
     if (
         writer_task["inputs_sha256"] != task.get("writer_inputs_sha256")
         or writer_task["mode"] != task.get("writer_mode")
@@ -1329,8 +1833,13 @@ def target_prose(
 def validate_review_response(
     task_path: Path,
     response_path: Path | None = None,
+    *,
+    ignore_input_hashes: bool = False,
 ) -> tuple[dict, dict, dict]:
-    task = verify_review_task(task_path.resolve())
+    task = verify_review_task(
+        task_path.resolve(),
+        ignore_input_hashes=ignore_input_hashes,
+    )
     manifest = task["inputs"]
     package = load_json(resolve_path(manifest["package"]["path"]))
     locale = load_json(resolve_path(manifest["locale"]["path"]))
@@ -1343,7 +1852,10 @@ def validate_review_response(
     value = load_json(response)
     schema_path = resolve_path(manifest["response_schema"]["path"])
     validate_schema(value, schema_path, f"gloss review response in {response}")
-    if value["inputs_sha256"] != task["inputs_sha256"]:
+    if (
+        not ignore_input_hashes
+        and value["inputs_sha256"] != task["inputs_sha256"]
+    ):
         raise ContractError("Gloss review response is bound to stale task inputs")
 
     verdict = value["verdict"]
@@ -1454,10 +1966,12 @@ def stage_repair_from_review(
     repair_folder: str,
     required_writer_mode: str,
     allowed_verdicts: set[str],
+    ignore_input_hashes: bool = False,
 ) -> Path:
     review_task_path = review_task_path.resolve()
     review_task, review, _review_package = validate_review_response(
-        review_task_path
+        review_task_path,
+        ignore_input_hashes=ignore_input_hashes,
     )
     if review["verdict"] not in allowed_verdicts:
         raise ContractError(
@@ -1466,7 +1980,10 @@ def stage_repair_from_review(
     writer_task_path = resolve_path(
         review_task["inputs"]["writer_task"]["path"]
     )
-    writer_task, writer_response, _package = validate_response(writer_task_path)
+    writer_task, writer_response, _package = validate_response(
+        writer_task_path,
+        ignore_input_hashes=ignore_input_hashes,
+    )
     if writer_task["mode"] != required_writer_mode:
         raise ContractError("Gloss workflow permits only one semantic repair")
     reviewed_copy = resolve_path(
@@ -1592,16 +2109,25 @@ def stage_repair_from_review(
     return task_path
 
 
-def stage_repair(review_task_path: Path) -> Path:
+def stage_repair(
+    review_task_path: Path,
+    *,
+    ignore_input_hashes: bool = False,
+) -> Path:
     return stage_repair_from_review(
         review_task_path,
         repair_folder="repair",
         required_writer_mode="initial",
         allowed_verdicts={"repair"},
+        ignore_input_hashes=ignore_input_hashes,
     )
 
 
-def stage_editorial_repair(review_task_path: Path) -> Path:
+def stage_editorial_repair(
+    review_task_path: Path,
+    *,
+    ignore_input_hashes: bool = False,
+) -> Path:
     review_task_path = review_task_path.resolve()
     review_task = load_json(review_task_path)
     if (
@@ -1629,7 +2155,10 @@ def stage_editorial_repair(review_task_path: Path) -> Path:
         REVIEW_RESPONSE_SCHEMA,
         f"gloss review response in {review_response_path}",
     )
-    if review["inputs_sha256"] != review_task.get("inputs_sha256"):
+    if (
+        not ignore_input_hashes
+        and review["inputs_sha256"] != review_task.get("inputs_sha256")
+    ):
         raise ContractError("Gloss review response is bound to stale task inputs")
     if review["verdict"] not in {"repair", "editorial_review"}:
         raise ContractError(
@@ -1861,12 +2390,17 @@ def accept_reviewed_result(
     output_path: Path | None = None,
     *,
     force: bool = False,
+    ignore_input_hashes: bool = False,
 ) -> Path:
     writer_task_path = writer_task_path.resolve()
     review_task_path = review_task_path.resolve()
-    writer_task, response, package = validate_response(writer_task_path)
+    writer_task, response, package = validate_response(
+        writer_task_path,
+        ignore_input_hashes=ignore_input_hashes,
+    )
     review_task, review, _review_package = validate_review_response(
-        review_task_path
+        review_task_path,
+        ignore_input_hashes=ignore_input_hashes,
     )
     if review["verdict"] != "pass":
         raise ContractError(
@@ -1936,8 +2470,13 @@ def store_result(
     output_path: Path | None = None,
     *,
     force: bool = False,
+    ignore_input_hashes: bool = False,
 ) -> Path:
-    task, response, package = validate_response(task_path, response_path)
+    task, response, package = validate_response(
+        task_path,
+        response_path,
+        ignore_input_hashes=ignore_input_hashes,
+    )
     output = (
         output_path.resolve()
         if output_path is not None
@@ -2000,6 +2539,18 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     prepare = subparsers.add_parser("prepare", help="Stage one entry")
     prepare.add_argument("selector")
     prepare.add_argument("--source-entry", type=Path)
+    prepare.add_argument(
+        "--entry-source",
+        choices=("auto", "entries", "live"),
+        default="auto",
+        help=(
+            "source shape to consume: assembled v2/entries, completed live "
+            "v2/work/entry_creation output, or auto"
+        ),
+    )
+    prepare.add_argument(
+        "--entry-work-root", type=Path, default=DEFAULT_ENTRY_WORK
+    )
     prepare_languages = prepare.add_mutually_exclusive_group()
     prepare_languages.add_argument("--languages", nargs="+")
     prepare_languages.add_argument("--language-set")
@@ -2011,6 +2562,15 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     campaign.add_argument(
         "--entries-dir", type=Path, default=PROJECT / "v2/entries/tr"
     )
+    campaign.add_argument(
+        "--entry-source",
+        choices=("entries", "live"),
+        default="entries",
+        help="source shape to enumerate for campaign preparation",
+    )
+    campaign.add_argument(
+        "--entry-work-root", type=Path, default=DEFAULT_ENTRY_WORK
+    )
     campaign_languages = campaign.add_mutually_exclusive_group()
     campaign_languages.add_argument("--languages", nargs="+")
     campaign_languages.add_argument("--language-set")
@@ -2019,6 +2579,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     validate = subparsers.add_parser("validate", help="Validate one response")
     validate.add_argument("task", type=Path)
     validate.add_argument("--response", type=Path)
+    validate.add_argument(
+        "--ignore-input-hashes",
+        action="store_true",
+        help="waive stale task/input SHA checks while keeping structural gates",
+    )
 
     store = subparsers.add_parser(
         "store", help="Validate and store one bound candidate result"
@@ -2027,24 +2592,44 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     store.add_argument("--response", type=Path)
     store.add_argument("--output", type=Path)
     store.add_argument("--force", action="store_true")
+    store.add_argument(
+        "--ignore-input-hashes",
+        action="store_true",
+        help="waive stale task/input SHA checks while keeping structural gates",
+    )
 
     prepare_review = subparsers.add_parser(
         "prepare-review",
         help="Stage an independent review bound to one valid writer response",
     )
     prepare_review.add_argument("writer_task", type=Path)
+    prepare_review.add_argument(
+        "--ignore-input-hashes",
+        action="store_true",
+        help="waive stale writer task/input SHA checks while staging review",
+    )
 
     review_validate = subparsers.add_parser(
         "review-validate", help="Validate one independent review response"
     )
     review_validate.add_argument("review_task", type=Path)
     review_validate.add_argument("--response", type=Path)
+    review_validate.add_argument(
+        "--ignore-input-hashes",
+        action="store_true",
+        help="waive stale review task/input SHA checks while keeping structural gates",
+    )
 
     prepare_repair = subparsers.add_parser(
         "prepare-repair",
         help="Stage one bounded repair from a validated repair verdict",
     )
     prepare_repair.add_argument("review_task", type=Path)
+    prepare_repair.add_argument(
+        "--ignore-input-hashes",
+        action="store_true",
+        help="waive stale task/input SHA checks while staging repair",
+    )
 
     prepare_editorial_repair = subparsers.add_parser(
         "prepare-editorial-repair",
@@ -2054,6 +2639,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         ),
     )
     prepare_editorial_repair.add_argument("review_task", type=Path)
+    prepare_editorial_repair.add_argument(
+        "--ignore-input-hashes",
+        action="store_true",
+        help="waive stale task/input SHA checks while staging editorial repair",
+    )
 
     accept = subparsers.add_parser(
         "accept",
@@ -2063,6 +2653,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     accept.add_argument("review_task", type=Path)
     accept.add_argument("--output", type=Path)
     accept.add_argument("--force", action="store_true")
+    accept.add_argument(
+        "--ignore-input-hashes",
+        action="store_true",
+        help="waive stale task/input SHA checks while keeping review binding gates",
+    )
     return parser.parse_args(argv)
 
 
@@ -2070,30 +2665,60 @@ def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
     try:
         if args.command == "prepare":
-            entry_path = source_entry_path(args.selector, args.source_entry)
-            tasks = prepare_entry(
-                entry_path,
-                parse_languages(args.languages, args.language_set),
-                args.work_root,
+            source_kind, source_path = source_mode_paths(
+                args.selector,
+                args.entry_source,
+                args.source_entry,
+                args.entry_work_root,
             )
+            languages = parse_languages(args.languages, args.language_set)
+            if source_kind == "live":
+                tasks = prepare_live_entry(source_path, languages, args.work_root)
+            else:
+                tasks = prepare_entry(source_path, languages, args.work_root)
             for task in tasks:
                 print(f"Staged {task}")
         elif args.command == "prepare-all":
             languages = parse_languages(args.languages, args.language_set)
-            paths = sorted(args.entries_dir.resolve().glob("root_*.json"))
+            if args.entry_source == "live":
+                paths = live_work_dirs(args.entry_work_root)
+            else:
+                paths = sorted(args.entries_dir.resolve().glob("root_*.json"))
             if not paths:
                 raise ContractError(
-                    f"No Turkish entries found in {args.entries_dir.resolve()}"
+                    f"No Turkish {args.entry_source} sources found"
                 )
             count = 0
-            for entry_path in paths:
-                count += len(
-                    prepare_entry(entry_path, languages, args.work_root)
-                )
-            print(f"Staged {count} gloss tasks from {len(paths)} entries")
+            staged_sources = 0
+            parked: list[str] = []
+            for source_path in paths:
+                try:
+                    if args.entry_source == "live":
+                        count += len(
+                            prepare_live_entry(source_path, languages, args.work_root)
+                        )
+                    else:
+                        count += len(
+                            prepare_entry(source_path, languages, args.work_root)
+                        )
+                    staged_sources += 1
+                except ContractError as error:
+                    if args.entry_source == "live":
+                        parked.append(f"{source_path.parent.name}: {error}")
+                    else:
+                        raise
+            if parked:
+                for row in parked:
+                    print(f"Skipped {row}", file=sys.stderr)
+            print(
+                f"Staged {count} gloss tasks from {staged_sources} "
+                f"{args.entry_source} sources"
+            )
         elif args.command == "validate":
             task, response, _package = validate_response(
-                args.task, args.response
+                args.task,
+                args.response,
+                ignore_input_hashes=args.ignore_input_hashes,
             )
             print(
                 f"Valid {task['target_language']} gloss response "
@@ -2105,24 +2730,36 @@ def main(argv: list[str] | None = None) -> int:
                 args.response,
                 args.output,
                 force=args.force,
+                ignore_input_hashes=args.ignore_input_hashes,
             )
             print(f"Stored candidate gloss result at {output}")
         elif args.command == "prepare-review":
-            task = stage_review(args.writer_task)
+            task = stage_review(
+                args.writer_task,
+                ignore_input_hashes=args.ignore_input_hashes,
+            )
             print(f"Staged independent gloss review at {task}")
         elif args.command == "review-validate":
             task, review, _package = validate_review_response(
-                args.review_task, args.response
+                args.review_task,
+                args.response,
+                ignore_input_hashes=args.ignore_input_hashes,
             )
             print(
                 f"Valid {task['target_language']} gloss review "
                 f"({review['verdict']}, {len(review['issues'])} issues)"
             )
         elif args.command == "prepare-repair":
-            task = stage_repair(args.review_task)
+            task = stage_repair(
+                args.review_task,
+                ignore_input_hashes=args.ignore_input_hashes,
+            )
             print(f"Staged bounded gloss repair at {task}")
         elif args.command == "prepare-editorial-repair":
-            task = stage_editorial_repair(args.review_task)
+            task = stage_editorial_repair(
+                args.review_task,
+                ignore_input_hashes=args.ignore_input_hashes,
+            )
             print(f"Staged editorial gloss repair at {task}")
         elif args.command == "accept":
             output = accept_reviewed_result(
@@ -2130,6 +2767,7 @@ def main(argv: list[str] | None = None) -> int:
                 args.review_task,
                 args.output,
                 force=args.force,
+                ignore_input_hashes=args.ignore_input_hashes,
             )
             print(f"Accepted reviewed gloss result at {output}")
         else:

@@ -18,7 +18,7 @@ note.
 Before launching workers, establish:
 
 - root scope: one existing Turkish entry, an explicit list, or all current
-  Turkish entries;
+  Turkish sources;
 - either an explicit locale list or the
   `western-muslim-priority` language set;
 - writer and reviewer model/reasoning configuration;
@@ -85,10 +85,14 @@ transition; the corresponding deterministic validator must succeed.
 
 ## 1. Prepare
 
-From the repository root, stage one root:
+From the repository root, stage one root. Use the live source-shape bridge when
+the upstream entry-creation workflow has completed writer and reviewer outputs
+but the downstream assembled `v2/entries/tr/` artifact is not the source of
+truth for the run:
 
 ```text
 python3 v2/gloss_generation/workflow.py prepare <root-envelope> \
+  --entry-source live \
   --language-set western-muslim-priority
 ```
 
@@ -96,8 +100,21 @@ Or stage the corpus:
 
 ```text
 python3 v2/gloss_generation/workflow.py prepare-all \
+  --entry-source live \
   --language-set western-muslim-priority
 ```
+
+The live source-shape bridge consumes only completed upstream directories:
+`tasks/root_writer.json`, `output/<root>_entry.json`,
+`tasks/root_reviewer.json`, and `review/output/root_review.json`. Completed
+upstream review verdicts, including `pass`, `repair`, and `editorial_review`,
+are admissible as dictionary-entry sources for gloss generation. The bridge
+preserves the upstream review verdict and whether current source validation was
+clean or admitted with warnings in the staged package metadata. Hash mismatches
+and current validator incompatibilities that do not prevent compact package
+construction are warnings, not upstream completion failures. The bridge stages
+gloss input packages directly from the root-writer response and does not
+assemble, publish, or mutate `v2/entries/tr/`.
 
 For a production orchestration wave, generate the complete available input
 bundle set before launching workers. During active writer orchestration, do not

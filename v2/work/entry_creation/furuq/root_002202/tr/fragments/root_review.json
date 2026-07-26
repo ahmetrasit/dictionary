@@ -1,0 +1,40 @@
+{
+  "inputs_sha256": "290333f485836317351b6d3434e1a2f0d251a9e634c2c1a8831d1870e5a7081e",
+  "verdict": "repair",
+  "summary": "Yazar yanıtı dalların ana sınırlarını genel olarak kanıta uygun kuruyor. Ancak root_002202/B003 dalında kanıtta yalnızca bitki, ot veya ağaç olarak verilen varlık birkaç alanda 'küçük ağaç' diye daraltılıyor; bu niteleyici desteklenmediği için cerrahi düzeltme gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_002202/B003",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt B003 dalında varlığı bitki, ot veya ağaç adı olarak verir; ağaç için küçüklük niteliği sağlamaz. Draft tanım ve F001 çekirdek ifadesi 'küçük ağaç' diyerek dalı gereksiz biçimde daraltıyor.",
+      "smallest_correction": "B003 concept_map içinde tanımdaki ve F001 ifadesindeki 'küçük ağaç' sözünü 'ağaç' olarak değiştir; başka alanları yeniden yazma."
+    },
+    {
+      "target_ref": "root_002202/B003",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt B003 dalında bitki, ot veya ağaç adını destekler; 'küçük ağaç' ayrımı sağlamaz. İkinci contextual_glosses satırının kayıp açıklaması bu desteklenmeyen küçüklük niteliğini taşıyor.",
+      "smallest_correction": "B003 contextual_glosses içinde ikinci glossun error_profile.loses metnindeki 'Küçük ağaç olabilme' sözünü 'Ağaç olabilme' olarak değiştir."
+    },
+    {
+      "target_ref": "root_002202/B003",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt B003 dalında varlığın bitki, ot veya ağaç adı olduğunu verir; ağaç için küçüklük sınırı koymaz. İlk neighbor_distinctions satırının focus_only metni 'küçük ağaç' diyerek sınırı daraltıyor.",
+      "smallest_correction": "B003 neighbor_distinctions içinde root_002202/B001 komşu satırının focus_only metnindeki 'küçük ağaç' sözünü 'ağaç' olarak değiştir."
+    }
+  ]
+}

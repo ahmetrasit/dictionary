@@ -1,0 +1,26 @@
+{
+  "verdict": "repair",
+  "summary": "B003 icin yazar cevabi iki ayri gondergeyi ayirt etmekte hakli, fakat bunu yapisal ayrim gerektigi seklinde fazla ileri tasiyor. Kanit, mevcut dal icinde iki adlandirmayi ayri tutmayi destekler; dal bolme veya yeniden atama iddiasi desteklenmiyor.",
+  "issues": [
+    {
+      "target_ref": "root_001301/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit, al-kishat icin soyulmus deve derisini, al-kashata icin de soyulmus devenin sahiplerini ayni dal altinda verir. Yazar tanimi bu iki gondergeyi ayirmakta dogru olsa da 'Yapisal ayrim yapilincaya kadar' diyerek kanitta bulunmayan bir dal bolme ihtiyacini yayin metnine tasiyor.",
+      "smallest_correction": "B003 concept_map.definition icindeki yapisal ayrim imasini kaldir; iki gondergenin mevcut dal icinde, birbirinin yerine gecmeyen ayri adlandirmalar olarak tutuldugunu soyle."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Root profile, 'yapisal olarak ayrilmasi gereken iki yalin ad' diyerek kanitin otesinde bir yapisal islem gerekliligi bildiriyor. Gorev kaniti yalniz iki ayri yalın ad ve iki ayri gondergeyi destekler.",
+      "smallest_correction": "Root profile summary icindeki 'yapisal olarak ayrilmasi gereken' ifadesini kaldir; bunun yerine iki ayri gondergeli yalin ad bulundugunu belirt."
+    }
+  ]
+}

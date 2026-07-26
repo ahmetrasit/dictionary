@@ -1,0 +1,40 @@
+{
+  "inputs_sha256": "84e45d8bc161550217643fcd242aa8e9395509a2aa11e9693108d2902ccaa5d5",
+  "verdict": "repair",
+  "summary": "Tek kaynakla desteklenen B002, B004 ve B005 dallarında kaynak sentezi, sole attestation niteliğini source_details altında göstermeyip iddiayı ortak/common alana koymuştu. Bu bulgu yüksek güvenle bounded repair kapsamındadır ve yalnızca ilgili source_synthesis alanları düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_002508/B002",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B002 iddiası yalnızca tek sözlük kaynağına bağlı bir bitki adı kaydıdır; yazar çıktısı bunu source_details altında sole_attestation olarak disposition etmek yerine common_claim_ids içinde ortak kanıt gibi göstermiştir.",
+      "smallest_correction": "B002 source_synthesis alanında bc_001 iddiasını common_claim_ids listesinden çıkarıp source_details içinde kind değeri sole_attestation olan tek bir satıra taşı."
+    },
+    {
+      "target_ref": "root_002508/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B004 iddiası yalnızca tek sözlük kaynağına bağlı batmayan yıldızlar adlandırmasıdır; yazar çıktısı bunu source_details altında sole_attestation olarak disposition etmek yerine common_claim_ids içinde ortak kanıt gibi göstermiştir.",
+      "smallest_correction": "B004 source_synthesis alanında bc_001 iddiasını common_claim_ids listesinden çıkarıp source_details içinde kind değeri sole_attestation olan tek bir satıra taşı."
+    },
+    {
+      "target_ref": "root_002508/B005",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B005 iddiası yalnızca tek sözlük kaynağına bağlı deve dişi ve yaş evresi kaydıdır; yazar çıktısı bunu source_details altında sole_attestation olarak disposition etmek yerine common_claim_ids içinde ortak kanıt gibi göstermiştir.",
+      "smallest_correction": "B005 source_synthesis alanında bc_001 iddiasını common_claim_ids listesinden çıkarıp source_details içinde kind değeri sole_attestation olan tek bir satıra taşı."
+    }
+  ]
+}

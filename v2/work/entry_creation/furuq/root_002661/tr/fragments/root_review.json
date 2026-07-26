@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": "460f8313be2a85c0ecee0db588bc35e5a45ad99428ae8d2110780a713e204893",
+  "verdict": "repair",
+  "summary": "B007 dışında yazar çıktısı verilen kanıtla uyumlu. B007'de concept_gloss, dalı yalnızca soy adı gibi daraltıyor; oysa kanıt kişi adı, türemiş ad ve topluluk/soy bağlantısını birlikte veriyor. Bu nedenle yalnızca B007 concept_gloss alanı düzeltilecektir.",
+  "issues": [
+    {
+      "target_ref": "root_002661/B007",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B007 kanıtı, biçimin türemiş ad, kişi adı ve topluluk/soy bağlantılı ad olarak kullanıldığını gösterir. Mevcut concept_gloss 'soy adı' bu çekirdeği soy alanına daraltıyor ve tekil kişi adı yönünü kendi hata profilinde de kaybettiğini söylüyor.",
+      "smallest_correction": "B007 concept_gloss metnini ve hata profilini, dalı 'kişi ve topluluk adı' gibi kişi adı ile topluluk/soy bağlantısını birlikte kapsayan bir çekirdek karşılığa çevir."
+    }
+  ]
+}

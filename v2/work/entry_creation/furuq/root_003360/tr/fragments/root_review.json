@@ -1,0 +1,51 @@
+{
+  "inputs_sha256": "5a2bd076a7c2da0f729857714ea8f56e96d6e36f6243d056225b23335c41ac25",
+  "verdict": "editorial_review",
+  "summary": "B003 dali, kanitta hem genis uclu okun kendisi hem de okun ozel ucu olarak aktarilirken yazar bu iki referanti yalniz ok ucuna indirgemistir. Bu yorum kimlik cercevesini, cekirdek tanimi, kaynak sentezini ve kavram karsiligini birlikte etkiledigi icin editoryal karar gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_003360/B003",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kimlik gerekcesi dali yalniz okta bulunan ozel bir uca bagliyor. Oysa bc_001, maqayis ve tahdhib aktariminda genis uclu okun kendisini; sihah ve diger tahdhib aktariminda ise okun ucunu adlandiran iki referantli bir kayit sunuyor.",
+      "smallest_correction": "qualified durumunu koruyup gerekce ile sinir notunda, adlandirmanin hem genis uclu ok hem de okun uzun ya da genis ucu icin aktarildigini ve referant farkinin kesinlestirilmemesi gerektigini belirtin."
+    },
+    {
+      "target_ref": "root_003360/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanim ve cekirdek facet, dali sadece ok ucu veya sivri parca olarak verir. bc_001 icindeki bir kaynak varyanti ise kelimeyi genis uclu okun kendisi olarak tanimladigi icin bu cekirdek, kanitlanan referantlardan birini disarida birakiyor.",
+      "smallest_correction": "Tanimi genis ya da uzun bir ucu bulunan ok veya okun bu nitelikteki ozel ucu seklinde iki referanti kapsayacak bicimde dar kapsamli olarak duzeltin; referant ve bicim farklarini source_variant facetinde birlikte kaydedin."
+    },
+    {
+      "target_ref": "root_003360/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Sentez, kaynaklarin anlamin ok ucuna ait oldugunda birlestigini soyluyor. bc_001 ise yalniz genislik konusunda degil, adlandirilan seyin genis uclu ok mu yoksa okun ucu mu oldugu konusunda da kaynak varyanti tasiyor.",
+      "smallest_correction": "Ortak uzlasma iddiasini kaldirip kaynaklarin kelimeyi genis uclu ok ve uzun ya da genis ok ucu olarak aktardigini, hem referant hem de genislik ayrintisinin kesinlestirilemedigini kaynaklardan bagimsiz bir sentezle belirtin."
+    },
+    {
+      "target_ref": "root_003360/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "ozel ok ucu karsiligi, bc_001 icinde kelimenin genis uclu okun kendisini adlandirdigi aktarimi temsil etmiyor. Bu nedenle karsilik, mevcut hata profilinde belirtilmeyen bir referant daralmasi yapiyor.",
+      "smallest_correction": "Kavram karsiligini hem ozel uclu oku hem de ok ucunu gosterecek bicimde duzeltin ve hata profilinde iki aktarim arasindaki referant belirsizligini acikca kaydedin."
+    }
+  ]
+}

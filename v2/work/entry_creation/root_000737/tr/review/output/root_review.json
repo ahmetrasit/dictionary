@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yaniti genel olarak kanitla uyumlu, ancak uc dalda kavram karsiligi yayinlanabilir cekirdegi temsil etmiyor. B002 ve B007 meta etiket kullaniyor; B011 ise tek kulplu kova cekirdeginde uzun bicimi fazla one cikariyor.",
+  "issues": [
+    {
+      "target_ref": "root_000737/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit, dali ilahi ad, selamlama duası ve esenlik yurdu kullanimlariyla sinirlar. concept_gloss.text ise 'ozel adlandirma kumesi' diyerek bu cekirdegi temsil etmeyen meta bir etiket verir.",
+      "smallest_correction": "concept_gloss.text degerini 'ilahi ad, esenlik selami ve esenlik yurdu' yap; applicability ve error_profile metinlerini bu cekirdegi koruyacak sekilde darca guncelle."
+    },
+    {
+      "target_ref": "root_000737/B007",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit, dalin sert taslar toplulugu ve bu topluluktan tek tas oldugunu bildirir. concept_gloss.text ise 'bicime bagli adlandirmalar' diyerek tas cekirdegini yayinlanabilir karsilikta kaybettirir.",
+      "smallest_correction": "concept_gloss.text degerini 'sert taslar ve tekil sert tas' yap; applicability ve error_profile metinlerini sert tas cekirdegini koruyacak sekilde guncelle."
+    },
+    {
+      "target_ref": "root_000737/B011",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanitin ortak cekirdegi tek kulplu kova turudur; uzun bicim yalniz kaynaklarda gecen bir nitelik olarak tanitilir. concept_gloss.text 'tek kulplu uzun kova' diyerek uzunlugu cekirdek kosul gibi yayinlar.",
+      "smallest_correction": "concept_gloss.text degerini 'tek kulplu kova' yap; applicability ve error_profile metinlerinde tek kulp cekirdegini koru, uzun bicimi taniklanan ek nitelik olarak birak."
+    }
+  ]
+}

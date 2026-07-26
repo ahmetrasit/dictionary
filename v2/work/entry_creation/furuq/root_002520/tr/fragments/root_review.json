@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "6294f4b3ae48ea73847f1937947032438cd0ef0601655687796c6ab4c90dc7d4",
+  "verdict": "repair",
+  "summary": "Iki sinirli anlam sorunu bulundu: B002 kum icin verilen yol unsurunu kavram haritasinda acikca kapsamiyor, B010 ise kaynakta acik verilen Sam bolgesi bilgisini kavram haritasinda belirsizlestiriyor. Duzeltmeler yalniz bu iki concept_map alaniyla sinirlidir.",
+  "issues": [
+    {
+      "target_ref": "root_002520/B002",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak iddiasi kum icin orta yerin yaninda yol unsurunu da verir. Yazar kavram haritasi bunu yalniz orta, yan veya oyuklasmis kisim olarak anlattigi icin kumdaki yol ornegi kavram kapsaminda acikca korunmuyor.",
+      "smallest_correction": "B002 concept_map icinde tanima ve beden disi kullanim facetine kumdaki yol unsurunu ekle; baska alanlari degistirme."
+    },
+    {
+      "target_ref": "root_002520/B010",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak iddiasi yerin Sam bolgesinde oldugunu acikca soyler. Yazar kavram haritasi bunu 'kaynakta belirtilen bolge' diye dolayli birakiyor ve yayin metninde bolge bilgisini acik korumuyor.",
+      "smallest_correction": "B010 concept_map taniminda ve bolge facetinde Sam bolgesini acikca belirt; ozel ad degeri ve adin normalleştirilmeme sinirini koru."
+    }
+  ]
+}

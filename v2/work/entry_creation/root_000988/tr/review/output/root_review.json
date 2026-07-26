@@ -1,0 +1,26 @@
+{
+  "verdict": "editorial_review",
+  "summary": "Yazar yanıtı dalların çoğunda kanıt sınırlarını koruyor; ancak B006 için hem dal tanımı hem root_profile kum ve vadi kayası kayıtlarının yapısal ayrılma gerektirdiğini söylüyor. Bu, yalnızca bir söz düzeltmesinden çok dal sınırı kararı gerektirdiği için canlı yazar çıktısı değiştirilmedi.",
+  "issues": [
+    {
+      "target_ref": "root_000988/B006",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B006 kanıtı kum okuması ile vadide yükselen kaya okumasını aynı dal altında verirken yazarın concept_map.definition alanı kaya okumasının kum okumalarından ayrılması gerektiğini söylüyor. Bu ifade dalı sınırlı adlandırma kümesi olarak tutan kimlik yargısıyla da gerilimlidir.",
+      "smallest_correction": "B006 için kum ve kaya kayıtlarının aynı dalda kontrollü biçimde tutulup tutulmayacağı veya yapısal olarak ayrılıp ayrılmayacağı editoral sınır kararı gerektirir; bu nedenle yazar çıktısında cerrahi metin düzeltmesi yapılmadı."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "root_profile özeti, kum ve vadi kayası kanıtının yapısal olarak ayrılmayı gerektirdiğini söylüyor. Bu, B006 dalının mevcut görev rostrosunda tutulmasıyla ve aynı yazar yanıtındaki sınırlı adlandırma kümesi okumasıyla yayımlama düzeyinde uyumsuzdur.",
+      "smallest_correction": "Root düzeyi özetin B006 için yapısal ayrılma gereği mi yoksa aynı dal içinde kontrollü ayrı tutma mı söyleyeceği editoral karara bağlanmalıdır; canlı çıktı değiştirilmedi."
+    }
+  ]
+}

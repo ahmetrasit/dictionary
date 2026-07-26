@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar cevabı genel olarak kanıtı izliyor; ancak B007 dalında kanıt, biçime bağlı dağınık adlandırmalar değil ayırma ve birbirinden seçme çekirdeği verir. Bu nedenle bu daldaki sınırlı alanlar düzeltildi.",
+  "issues": [
+    {
+      "target_ref": "root_000655/B007",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt B007 icin bir şeyi başka bir şeyden ayırma, topluluğu bölme ve öğeleri seçilir kılma çekirdeğini verir. Yazar ise gerekçede bunu dağınık ve biçime bağlı adlandırma kümesi gibi tanımlıyor.",
+      "smallest_correction": "B007 kimlik gerekçesini ayırma ve birbirinden seçme çekirdeğini kabul eden, fakat kök kimliği uyarısını kaynak varyantı olarak sınırlayan bir ifadeyle değiştir."
+    },
+    {
+      "target_ref": "root_000655/B007",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B007 kaynak sentezi biçime veya özel bağlama bağlı sınırlı adlandırmalardan söz ediyor; oysa kanıtın ortak içeriği ayırma, bölme ve birbirinden seçilir kılmadır.",
+      "smallest_correction": "B007 source_synthesis.common_summary alanını ayırma, bölme, seçilir kılma ve kaynakların kök kimliği uyarısını birlikte veren kısa bir sentezle değiştir."
+    },
+    {
+      "target_ref": "root_000655/B007",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Concept gloss kanıtlanan anlamı biçime bağlı adlandırmalar diye etiketliyor. Kanıt ise kavram glossunun ayırma ve birbirinden seçme çekirdeğini temsil etmesini gerektiriyor.",
+      "smallest_correction": "B007 concept_gloss metnini ve açıklama profilini ayırma ve birbirinden seçilir kılma çekirdeğini temsil edecek şekilde düzelt."
+    },
+    {
+      "target_ref": "root_000655/B007",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B007 komşu kapsam notu güvenilir komşu seçilmediğini söylüyor; ancak verilen komşu kartlarında ayırma ve temyiz çekirdeğini doğrudan paylaşan root_000659/B001 bulunuyor.",
+      "smallest_correction": "B007 neighbor_distinctions alanına root_000659/B001 ile kısmi yakın eş anlamlılık ayrımını ekle ve kapsam notunu buna göre güncelle."
+    }
+  ]
+}

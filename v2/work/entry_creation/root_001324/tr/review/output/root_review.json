@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "B007 icin kisi kullaniminda kanit yalniz agir kimse anlamini verirken yazar metni buna 'sikici' niteligini ekliyor. Bu ek kavram, baglami genislettigi icin ilgili alanlarda cerrahi olarak kaldirilmalidir.",
+  "issues": [
+    {
+      "target_ref": "root_001324/B007",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 kisi kullanimini agir kimse veya agir erkek olarak verir; sikici ya da can sikan niteligi kanitta yer almaz.",
+      "smallest_correction": "B007 concept_map icinde F003 ifadesindeki 'agir veya sikici bulunan bir erkege' anlatimini 'agir bulunan bir erkege' olacak sekilde daralt."
+    },
+    {
+      "target_ref": "root_001324/B007",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 kisi kullanimini agir kimse veya agir erkek olarak verir; baglamsal karsilikta sikicilik eklemek kanitin verdigi siniri asar.",
+      "smallest_correction": "B007 contextual_glosses icinde F003 karsiligini ve aciklamasini sikicilik ekini cikartarak agir adam veya agir kimse anlamiyla sinirla."
+    },
+    {
+      "target_ref": "root_001324/B007",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_020"
+      ],
+      "evidence_conflict": "lu_020 kisi kullanimini agir erkek olarak verir; target_gloss icindeki sikici adam eklemesi bu lexical unit icin kanitlanmiyor.",
+      "smallest_correction": "lu_020 target_gloss degerini 'agir adam' olarak degistir."
+    }
+  ]
+}

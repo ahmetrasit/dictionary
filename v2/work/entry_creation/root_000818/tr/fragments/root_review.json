@@ -1,29 +1,6 @@
 {
-  "inputs_sha256": "297a0939f3a7bb8c789959b787ce2d0abb2daebf7631d37c11cefca6754143b8",
-  "verdict": "repair",
-  "summary": "Yazar yanıtı genel olarak kanıtı ve dal sınırlarını doğru koruyor. Ancak B007 içindeki iki bahçenin konumu, kanıtta verilen Firdevs özel adı yerine belirsiz bir başka bahçe olarak aktarılmış; kavram haritası ile ilgili sözlüksel karşılık bu noktada düzeltilmelidir.",
-  "issues": [
-    {
-      "target_ref": "root_000818/B007",
-      "field": "concept_map",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "bc_001"
-      ],
-      "evidence_conflict": "Kanıt iki bahçeyi Firdevs'in karşısında konumlandırırken F004 bunları belirsiz bir başka bahçenin karşısında gösteriyor ve özel yer adını kaybediyor.",
-      "smallest_correction": "F004 içindeki \"başka bir bahçenin karşısındaki\" ifadesini \"Firdevs'in karşısındaki\" olarak değiştirin; facet rolünü ve diğer içeriği koruyun."
-    },
-    {
-      "target_ref": "root_000818/B007",
-      "field": "lexical_glosses",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_022"
-      ],
-      "evidence_conflict": "lu_022 kanıtı iki bahçenin Firdevs'in karşısında bulunduğunu belirtirken hedef karşılık bu özel adı belirsiz bir başka bahçeye dönüştürüyor.",
-      "smallest_correction": "lu_022 hedef karşılığını \"Firdevs'in karşısında bulunan iki bahçenin ortak adı\" olarak değiştirin."
-    }
-  ]
+  "inputs_sha256": "abd245d842e221bb399c84b6bcd984a86e6a46b9e2463e9418e3a967b33eede5",
+  "verdict": "pass",
+  "summary": "Yazar yanıtı sağlanan kanıtla uyumludur; yayıma engel semantik bir sorun bulunmadı.",
+  "issues": []
 }

@@ -1,0 +1,72 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yaniti genel olarak kaniti izliyor, ancak B002 ve B006 icin bazi alanlar tutarli dal kanitini yanlis bicimde yalitilmis adlandirma kumesi gibi sunuyor. Bu, kimlik yargisi, kaynak sentezi ve kavram karsiligi alanlarinda sinirli ve dogrudan onarilabilir bir anlam hatasi olusturuyor.",
+  "issues": [
+    {
+      "target_ref": "root_001188/B002",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanittaki B002 kaydi kisinin, niteligun, guzelligin, seref ve erdem derecesinin yuksekligini ayni deger ustunlugu cercevesinde verir. Yazar kimlik yargisi ise dali tek cekirdege indirgenmeyen yalitilmis adlandirmalar gibi niteleyerek dal cercevesini gereksiz bicimde kuskulu hale getiriyor.",
+      "smallest_correction": "B002 identity_judgment alanini kabul edilmis deger ve mertebe ustunlugu olarak yeniden ifade et; sinir notunda bunun uzamsal konum, nicelik ve egemenlik degil karsilastirmali deger ustunlugu oldugunu belirt."
+    },
+    {
+      "target_ref": "root_001188/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B002 kaynak ozetinde kanitin teklesik anlamdan cok sinirli bicime bagli adlandirmalar gosterdigi soyleniyor. Oysa bc_001, topluluga, arkadaslara, guzellige, serefe, yuksek nitelige ve dunya ya da ahiret erdemlerine yayilan ortak deger ustunlugu alanini destekliyor.",
+      "smallest_correction": "B002 source_synthesis.common_summary metnini kaynaklarin deger, guzellik, seref, nitelik ve derece bakimindan baskalarinin ustune cikma alaninda birlestigini soyleyecek bicimde degistir."
+    },
+    {
+      "target_ref": "root_001188/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B002 concept_gloss metni 'yalitik adlandirmalar' diyerek kavram haritasindaki deger, sayginlik, guzellik ve derece ustunlugu cekirdegini temsil etmiyor.",
+      "smallest_correction": "B002 concept_gloss alanini deger ve mertebe ustunlugunu temsil eden bir karsiliga cevir; preserves ve applicability metinlerini de bu cekirdege bagla."
+    },
+    {
+      "target_ref": "root_001188/B006",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B006 kaniti devenin memesinde sütün sagimdan sonra geri birikmesi, iki sagim arasi sure ve bu aralikta biriken sut payini ayni sagim dongusu icinde verir. Yazar kimlik yargisi ise dali tek cekirdege indirgenmeyen yalitilmis adlandirmalar gibi niteliyor.",
+      "smallest_correction": "B006 identity_judgment alanini sagim dongusundeki sutun geri birikmesi ve iki sagim arasi sure cekirdegini kabul edecek bicimde duzelt; varsa belirsiz review birimini yalniz sinir notunda ayri tut."
+    },
+    {
+      "target_ref": "root_001188/B006",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B006 source_synthesis.common_summary kanitin sinirli veya bicime bagli yalitilmis adlandirmalar sundugunu soyluyor. Oysa bc_001 kaynaklari sutun memeye donmesi, iki sagim arasi zaman, biriken sut ve sagimi erteleme etrafinda ortak bir sagim dongusu alaninda birlestiriyor.",
+      "smallest_correction": "B006 source_synthesis.common_summary metnini kaynaklarin sutun yeniden birikmesi, iki sagim arasi sure ve bu surede biriken sut payinda birlestigini soyleyecek bicimde degistir."
+    },
+    {
+      "target_ref": "root_001188/B006",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B006 concept_gloss metni 'yalitik adlandirmalar' diyerek kavram haritasindaki sutun yeniden birikmesi, sagim arasi sure ve biriken sut payi cekirdegini temsil etmiyor.",
+      "smallest_correction": "B006 concept_gloss alanini sagim arasi sut donusu ve birikimini temsil eden bir karsiliga cevir; applicability ve error_profile metinlerini de bu cekirdege bagla."
+    }
+  ]
+}

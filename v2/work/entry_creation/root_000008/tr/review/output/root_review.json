@@ -1,28 +1,39 @@
 {
   "verdict": "repair",
-  "summary": "Ikinci dalda koruluk kullanimi, kanitin acikca vermedigi bir benzetme iliskisiyle kamis uclarindan turetilmis gibi sunuluyor; kanit benzetmeyi yalnizca cok sayidaki mizrak yorumunda kuruyor. Ayrica ilk dalin kaynak ozeti, butun kaynaklarin siddet ayrimini ortaklasa yaptigini gerektiginden guclu ifade ediyor. Asagidaki sinirli alan duzeltmeleri bu iddialari kanita uygun hale getirir.",
+  "summary": "Onarim gerekliydi. B001'de kaynak sentezi gucluluk ayrimini butun kaynaklara ortakmis gibi yukluyordu. B002'de ise koruluk kullanimi, kanitin acikca yalniz mizrak yorumu icin verdigi kamisa benzetme gerekcesiyle fazla genellestirilmisti. Canli cikti bu alanlarda dar ve kanita uygun bicimde duzeltildi.",
   "issues": [
     {
       "target_ref": "root_000008/B001",
       "field": "source_synthesis",
-      "severity": "minor",
+      "severity": "major",
       "confidence": "high",
       "claim_ids": [
         "bc_001"
       ],
-      "evidence_conflict": "Kaynak ozeti, kaynaklarin hem kabul etmeme cekirdeginde birlestigini hem de bunu siradan kacinmadan ayirdigini soyluyor. Kanitta kabul etmeme ortak cizgidir, fakat her kacinmanin ayni siddette olmadigi ayrimini acikca yapan kaynak tektir; hayvan, su ve hastalik ayrintilari da butun kaynaklarda ortak degildir.",
-      "smallest_correction": "Ortak ozeti, kaynaklarin kabul etmeme ve istememe cekirdeginde birlestigini; siddet ayriminin bir kaynakta acikca belirtildigini ve ozel kullanimlarin kaynaklarca birlikte saglandigini soyleyecek bicimde daralt."
+      "evidence_conflict": "Yazar common_summary metni, guclu kabul etmeme ile siradan kacinma ayrimini kaynaklarin ortak sentezi gibi veriyor. bc_001 ortak cekirdekte kabul etmeme ve istememeyi verir; gucluluk ayrimi ozellikle bir kaynak ifadesinde aciklasir.",
+      "smallest_correction": "common_summary metnini kaynaklarin kabul etmeme ve istememe cekirdeginde birlestigini, gucluluk ayriminin ise bir kaynakta acikca belirtildigini soyleyecek bicimde daralt."
     },
     {
       "target_ref": "root_000008/B002",
       "field": "identity_judgment",
-      "severity": "minor",
+      "severity": "major",
       "confidence": "high",
       "claim_ids": [
         "bc_001"
       ],
-      "evidence_conflict": "Gerekce, koruluk kullanimini kamis uclarinin sik gorunumuyle kurulmus bir benzetme olarak niteliyor. Kanit korulugun ayni adla anildigini bildiriyor, fakat benzetmeyi acikca yalniz cok sayidaki mizrak yorumu icin veriyor.",
-      "smallest_correction": "Kabul durumunu koru; gerekce ve sinir notundan koruluk icin benzetme nedenini kaldir, korulugu kaydedilmis bir kullanim ve mizraklari kamislara cokluk bakimindan benzetilen olasi yorum olarak ayir."
+      "evidence_conflict": "Yazar rationale ve boundary_note metinleri, koruluk kullanimini da kamislarin sik gorunumunden dogan bir benzetme gibi sunuyor. bc_001 koruluk icin yalniz ayni adin kullanildigini, benzetme gerekcesini ise olasi mizrak yorumu icin verir.",
+      "smallest_correction": "identity_judgment metinlerinde cekirdegi kamis uclari olarak koru; korulugu kaydedilmis kullanim, cok sayidaki mizragi ise kamislara benzetilen olasi yorum olarak ayir."
+    },
+    {
+      "target_ref": "root_000008/B002",
+      "field": "lexicalization_scope",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "lexicalization_scope.note, koruluk ve mizrak toplulugunu birlikte temel anlamdan dogan benzetmeli uzantilar diye acikliyor. bc_001 yalniz mizrak yorumunda kamisa benzetme gerekcesi verir.",
+      "smallest_correction": "Notu, yalin dalin kamis uclari temelinde kuruldugunu; korulugun kaydedilmis kullanim, cok sayidaki mizragin ise kamislara benzetilen olasi yorum oldugunu soyleyecek bicimde duzelt."
     },
     {
       "target_ref": "root_000008/B002",
@@ -32,52 +43,41 @@
       "claim_ids": [
         "bc_001"
       ],
-      "evidence_conflict": "Tanim ile F002, koruluk anlaminin kamis uclarinin sik topluluk gorunumune benzetilerek dogdugunu ileri suruyor. Bu nedensel aciklama kanitta yoktur. F003 de mizrak benzetmesinin nesnesini belirsiz bir topluluk kullanimina kaydiriyor; kanit cok sayidaki mizraklarin kamislara benzetildigini soyler.",
-      "smallest_correction": "Tanimda ve F002'de korulugu neden ileri surmeden ayni adin kaydedilmis kullanimi olarak ver; F003'u cok sayidaki mizraklarin cokluk bakimindan kamislara benzetildigi olasi yorum olarak aciklastir."
-    },
-    {
-      "target_ref": "root_000008/B002",
-      "field": "lexicalization_scope",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "bc_001"
-      ],
-      "evidence_conflict": "Kapsam notu, hem koruluk hem mizrak kullanimlarini kamis uclari temelinden dogan benzetmeli uzantilar sayiyor. Kanit korulugun ayni adla kullanildigini bildirir; benzetmeyi acikca yalniz cok sayidaki mizrak yorumu icin kurar.",
-      "smallest_correction": "Dal turunu koru; kapsam notunda korulugu kaydedilmis kullanim, cok sayidaki mizraklari ise kamislara benzetilen olasi yorum olarak ayir."
+      "evidence_conflict": "definition ve F002, korulugu kamislarin sik gorunumune dayanan anlam aktarimi diye temellendiriyor. bc_001 koruluk icin boyle bir gerekce vermez; benzetme gerekcesi F003 kapsamindaki mizrak yorumuna aittir.",
+      "smallest_correction": "definition ve F002'yi korulugun ayni adla kaydedilmis kullanim oldugunu soyleyecek bicimde daralt; F003'te cok sayidaki mizragin cokluk bakimindan kamislara benzetildigini belirt."
     },
     {
       "target_ref": "root_000008/B002",
       "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "source_synthesis, koruluk kullanimini ve mizrak yorumunu birlikte kamislarin coklu gorunumune dayanan benzetmeler olarak topluyor. bc_001'de koruluk sadece kaydedilmis kullanimdir; benzetme aciklamasi mizrak yorumuna ozeldir.",
+      "smallest_correction": "common_summary ve sole_attestation summary metinlerini, korulugun ayni adla kaydedildigini ve mizrak yorumunun cok sayidaki mizragin kamislara benzetilmesiyle aciklandigini soyleyecek bicimde ayir."
+    },
+    {
+      "target_ref": "root_000008/B002",
+      "field": "concept_gloss",
       "severity": "minor",
       "confidence": "high",
       "claim_ids": [
         "bc_001"
       ],
-      "evidence_conflict": "Ortak ozet ve tek taniklik ayrintisi, hem korulugu hem de mizrak yorumunu kamislarin coklu gorunumune dayanan benzetmeler sayiyor. Kanit bu benzetme bagini koruluk icin kurmaz.",
-      "smallest_correction": "Ozeti ve tek taniklik ayrintisini, kamis uclari ile tekil bicimi, ayrica koruluk kullanimini ve yalnizca mizraklar icin verilen kamislara cokluk bakimindan benzetme yorumunu ayri aktaracak bicimde duzelt."
-    },
-    {
-      "target_ref": "root_000008/B002",
-      "field": "concept_gloss",
-      "severity": "major",
-      "confidence": "high",
-      "claim_ids": [
-        "bc_001"
-      ],
-      "evidence_conflict": "Kavram karsiligi, koruluk ile mizrak yorumunu kamis uclarina benzetilen tek bir sik topluluk kategorisinde birlestiriyor. Kanit korulugu dogrudan kaydedilen kullanim olarak verir ve olasi mizrak yorumunda benzetme nesnesini kamislar olarak belirtir.",
-      "smallest_correction": "Kisa karsiligi ve hata profilini, kamis uclari cekirdegini, koruluk kullanimini ve kamislara benzetilen cok sayidaki mizrak yorumunu birbirine karistirmadan gosterecek bicimde duzelt."
+      "evidence_conflict": "concept_gloss, koruluk ve mizrak kapsamini tek bir benzetilen sik topluluk gibi sikistiriyor. bc_001 koruluk kullanimi ile kamislara benzetilen cok sayidaki mizrak yorumunu ayri verir.",
+      "smallest_correction": "concept_gloss text ve aciklamalarini kamis uclari, koruluk ve kamislara benzetilen cok sayidaki mizrak seklinde ayri ogeleri gosterecek bicimde duzelt."
     },
     {
       "target_ref": "root_000008/B002",
       "field": "contextual_glosses",
-      "severity": "major",
+      "severity": "minor",
       "confidence": "high",
       "claim_ids": [
         "bc_001"
       ],
-      "evidence_conflict": "Ikinci baglamsal karsilik, kanitta bulunmayan kamislik anlamini ekliyor ve korulugu kamis uclarinin sik gorunumunden turetiyor. Ucuncu karsiligin uygunluk aciklamasi ise benzetmeyi dogru olarak yalniz mizrak yorumuna sinirliyor.",
-      "smallest_correction": "Ikinci karsiligin metnini korulukla sinirla; uygunluk ve hata profili aciklamalarindan desteklenmeyen kamis uclari kaynakli tureme iddiasini kaldir. Diger baglamsal karsiliklari koru."
+      "evidence_conflict": "Koruluk baglami icin verilen contextual_gloss, kamislik veya koruluk diyerek kanittaki koruluk kullanimina kamislik ekliyor ve applicability metni bunu kamis uclarinin sik gorunumunden hareketle acikliyor. bc_001 korulugu bu gerekceyle temellendirmez.",
+      "smallest_correction": "Ilgili contextual_gloss'u sik bitki toplulugu olarak daralt; applicability ve error_profile metinlerini sozun koruluk icin kaydedilmis kullanimina bagla."
     },
     {
       "target_ref": "root_000008/B002",
@@ -87,8 +87,8 @@
       "claim_ids": [
         "bc_001"
       ],
-      "evidence_conflict": "Koruluk komsulariyla iki karsilastirma, odak dalin koruluk kullanimini kamis uclarinin gorunumunden dogan veya kamis uclarindan ad alan bir uzanti diye acikliyor. Kanit koruluk icin bu tureme mekanizmasini belirtmez.",
-      "smallest_correction": "Ilk iki komsu karsilastirmasinda iliski turlerini ve gercek sinirlari koru; yalniz korulugun kamis uclarindan benzetmeyle dogdugunu ileri suren odak, kisa karsilik ve ayrim ifadelerini kaydedilmis koruluk kullanimi diye daralt."
+      "evidence_conflict": "Koruluk komsulariyla ayrimlar, odak daldaki korulugu kamis uclarinin coklu gorunumunden dogan uzanti olarak anlatiyor. bc_001 koruluk icin bunu soylemez; bu benzetme yalniz mizrak yorumunun gerekcesidir.",
+      "smallest_correction": "Koruluk komsularina ait gloss, focus_only ve distinction metinlerini korulugun kaydedilmis kullanim oldugunu belirtecek bicimde duzelt; mizrak kismi icin kamislara benzetilen cok sayidaki mizrak ifadesini koru."
     },
     {
       "target_ref": "root_profile",
@@ -96,8 +96,8 @@
       "severity": "minor",
       "confidence": "high",
       "claim_ids": [],
-      "evidence_conflict": "Kok ozeti, koruluk ile mizrak kullanimlarini birlikte kamis uclarina benzetilen sik topluluklar olarak topluyor. Kanit benzetmeyi yalniz cok sayidaki mizraklarin kamislara benzetilmesi icin verir.",
-      "smallest_correction": "Ozeti, ikinci dali kamis uclari, kaydedilmis koruluk kullanimi ve kamislara benzetilen cok sayidaki mizrak yorumu olarak ayiracak bicimde duzelt; diger kok profili degerlerini koru."
+      "evidence_conflict": "root_profile summary, ikinci dali kamis uclariyla bunlara benzetilen sik topluluklar diye genellestiriyor. Kanit, koruluk kullanimini ve kamislara benzetilen cok sayidaki mizrak yorumunu ayri tutar.",
+      "smallest_correction": "root_profile summary metnini ikinci dal icin kamis uclari, koruluk kullanimi ve kamislara benzetilen cok sayidaki mizrak yorumu seklinde ayir."
     }
   ]
 }

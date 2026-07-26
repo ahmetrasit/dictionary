@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "57edc01f357084434b774c31dd1df2ed06fa0bfda4643837142c7a3550912412",
+  "verdict": "repair",
+  "summary": "B001 icin cekirdek anlam fazla daraltilmis: kanit ekmegi kirma/ufalama cekirdegini ve bunun siviyle islatilan tharid kullanimini birlikte verirken, yanit tanim ve kavram glossunda islatmayi zorunlu hale getiriyor. Diger dallarda yayin oncesi onarim gerektiren belirgin bir semantik sorun gormedim.",
+  "issues": [
+    {
+      "target_ref": "root_002079/B001",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, Sihah'ta ekmegi kirmayi, Tahdhib'de de kok cekirdegi olarak ezme/ufalamayi verir; siviyle islatilan ekmek ve tharid kullanimi bu cekirdege bagli ozel sonuc olarak gelir. Yanitin definition cumlesi ise ekmek veya benzeri yiyecegi kirmayi mutlaka sut, et suyu ya da tencere suyuyla islatip yemek haline getirme kosuluna bagliyor.",
+      "smallest_correction": "B001 concept_map tanimini ekmek veya benzeri yiyecegi kirmak/ufalamak cekirdegini tek basina koruyacak sekilde gevset; siviyle islatma ve yumusak yemek sonucu facetlerde ozel kullanim veya sonuc olarak kalsin, zorunlu tanim kosulu olmasin."
+    },
+    {
+      "target_ref": "root_002079/B001",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 icindeki bare ekmek kirma ve asli ezme/ufalama tanikligi, kavram glossunun cekirdek haritayi temsil ederken islatmayi zorunlu kilmamasini gerektirir. Mevcut 'kirilip islatilmis yiyecek yapmak' glossu, cekirdegi islatilmis yemek yapmaya daraltiyor.",
+      "smallest_correction": "Concept glossu yiyecegi veya ekmegi kirmak/ufalamak cekirdegini verecek bicimde degistir; islatma unsurunu applicability ya da contextual gloss icinde tharid baglamina bagli olarak tut."
+    }
+  ]
+}

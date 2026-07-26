@@ -1,0 +1,41 @@
+{
+  "format": 4,
+  "generated_by": "v2/scripts/create_entry.py",
+  "role": "root_reviewer",
+  "root_envelope_id": "root_001301",
+  "language": "tr",
+  "prompt": {
+    "path": "prompt.md",
+    "sha256": "df712e4489eda14fda48923ddf9950f4e1ebf11c42ea74617d8a1bef486578d8"
+  },
+  "response_schema": {
+    "path": "response.schema.json",
+    "sha256": "5745081882329dad4e52d88914bf8869db43d6d4258d8b1e4ba716bdc5b7cbf3"
+  },
+  "branch_roster": [
+    "root_001301/B001",
+    "root_001301/B002",
+    "root_001301/B003",
+    "root_001301/B004"
+  ],
+  "evidence": {
+    "path": "evidence.json",
+    "sha256": "2c63d7c75230cbe2f04d2d9b6c44c2d4d591bff49c96f1abc1d1b2793254ac1d"
+  },
+  "writer_response": {
+    "path": "writer_response.json",
+    "sha256": "f72512cedf86b080544265e717f15aa99e0c984605abac8abc21e258a9fb1a9c"
+  },
+  "writer_task_sha256": "6b6e806247a0a14f727bd25c3945432ce512fa1b755717f6d4131575d6699866",
+  "canonical_task_sha256": "9dfd3d24837ae533dd236d84e2d75186be4c36999804980b01423a4d9a88163b",
+  "output": {
+    "path": "../output/root_review.json"
+  },
+  "validation": {
+    "command": [
+      "python3",
+      "v2/scripts/validate_agent_output.py",
+      "v2/work/entry_creation/root_001301/tr/review/input/task.json"
+    ]
+  }
+}

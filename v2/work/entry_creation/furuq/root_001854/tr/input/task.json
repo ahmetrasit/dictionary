@@ -1,0 +1,39 @@
+{
+  "format": 4,
+  "generated_by": "v2/scripts/create_entry.py",
+  "role": "root_writer",
+  "root_envelope_id": "root_001854",
+  "language": "tr",
+  "prompt": {
+    "path": "prompt.md",
+    "sha256": "f05a325f948c9ed92d2bd5d6539058e3f94944b4a0ef21754959d7417454a2c0"
+  },
+  "response_schema": {
+    "path": "response.schema.json",
+    "sha256": "3f39124253b10f598f196bdd44d3c9d6071d9be1ee1f6428052288f812e044b1"
+  },
+  "branch_roster": [
+    "root_001854/B001",
+    "root_001854/B002"
+  ],
+  "evidence": {
+    "path": "evidence.json",
+    "sha256": "4ab9644fa08407b06026a160edb89179fbd7bded808695f9bb7899a61d07c034"
+  },
+  "canonical_task_sha256": "f5e598308bfe94f347c4834e9e645f8ebd25a61d0f28bbbcafbedbdb0bbdd34d",
+  "output": {
+    "path": "../output/root_001854_entry.json"
+  },
+  "validation": {
+    "command": [
+      "python3",
+      "v2/scripts/validate_agent_output.py",
+      "v2/work/entry_creation/furuq/root_001854/tr/input/task.json"
+    ]
+  },
+  "repair": {
+    "previous_response": "previous_response.json",
+    "error": "repair_error.txt",
+    "scope": "repair_scope.json"
+  }
+}

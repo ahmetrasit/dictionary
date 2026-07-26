@@ -1,63 +1,6 @@
 {
-  "inputs_sha256": "be852d964bde8c0ca2fa57758ea10c31d97120d171c3f8860c53a1d29aae694a",
-  "verdict": "repair",
-  "summary": "B001 dalındaki iki karşılık kanıtta bulunmayan bir ses niteliği ekliyor ve sözlüksel birimlerden birinin yankı kapsamını eksiltiyor. B004 dalı ise yalnız bir kaynakta açıkça bulunan hafiflik kaydını ortak çekirdeğe ve kaynakların ortak anlatımına yayıyor. Bu sınırlı alanlar en küçük düzeltmelerle onarılmalıdır.",
-  "issues": [
-    {
-      "target_ref": "root_000901/B001",
-      "field": "concept_gloss",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "bc_001"
-      ],
-      "evidence_conflict": "Kavram karşılığındaki \"boğuk\" niteliği yetkili dal ifadesinde yer almıyor; kanıt sesin sahiplerini ve yankı ile koşan at kullanımını belirtiyor, sesin tınısını belirlemiyor.",
-      "smallest_correction": "Kavram karşılığını \"tilki sesi ve ona benzetilen sesler\" olarak değiştirip kanıtsız \"boğuk\" niteliğini kaldırın."
-    },
-    {
-      "target_ref": "root_000901/B001",
-      "field": "lexical_glosses",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_001",
-        "lu_002"
-      ],
-      "evidence_conflict": "lu_001 karşılığı kanıtlanmayan \"boğuk\" niteliğini ve belirsiz bir \"benzer varlık\" kapsamını ekliyor. lu_002 karşılığı ise birimin açıkça kapsadığı yankıyı dışarıda bırakıp kapsamı yalnız hayvan sesleriyle sınırlıyor.",
-      "smallest_correction": "lu_001 karşılığını \"tilki, gece kuşu ya da koşan atın özel sesini çıkarmak\", lu_002 karşılığını \"tilki, gece kuşları ve kurt sesi ile yankı\" olarak değiştirin."
-    },
-    {
-      "target_ref": "root_000901/B004",
-      "field": "concept_map",
-      "severity": "major",
-      "confidence": "high",
-      "claim_ids": [
-        "bc_001"
-      ],
-      "evidence_conflict": "Yetkili ifade siyaha doğru değişmeyi ortak çekirdek olarak verirken değişimin hafif olduğunu yalnız sihah kaydı açıkça belirtir. Tanımın \"çoğu kez hafifçe\" demesi ve çekirdek yüzün hafifliği zorunlu göstermesi bu kaynağa özgü dereceyi dal geneline yayıyor.",
-      "smallest_correction": "Tanımı \"Bir rengin siyaha doğru değişip kararmasıdır; bu değişim kimi anlatımlarda hafiftir ve güneşin veya ateşin etkisiyle gerçekleşebilir.\" yapın; F001 ifadesinden hafiflik zorunluluğunu kaldırın."
-    },
-    {
-      "target_ref": "root_000901/B004",
-      "field": "source_synthesis",
-      "severity": "major",
-      "confidence": "high",
-      "claim_ids": [
-        "bc_001"
-      ],
-      "evidence_conflict": "Ortak özet hafiflik derecesini ve güneş ile ateş nedenlerini bütün kaynakların ortak anlatımı gibi sunuyor. Oysa hafiflik yalnız sihah alt kaydında, güneş ve ateş nedenleri yalnız tahdhib alt kaydında açıkça bulunuyor.",
-      "smallest_correction": "Ortak özeti, renk değişmesini ortak zemin olarak verip siyaha yönelme, hafiflik ve güneş ile ateş nedenlerini kaynaklar arasındaki kapsam farkları olarak belirtecek biçimde düzeltin."
-    },
-    {
-      "target_ref": "root_000901/B004",
-      "field": "concept_gloss",
-      "severity": "major",
-      "confidence": "high",
-      "claim_ids": [
-        "bc_001"
-      ],
-      "evidence_conflict": "\"Hafifçe kararma\" karşılığı, yalnız bir kaynakta açıkça bulunan dereceyi dalın bütün çekirdeği için zorunlu kılıyor; ortak çekirdek rengin siyaha doğru değişmesidir.",
-      "smallest_correction": "Kavram karşılığını \"siyaha doğru kararma\" yapın ve uygulanabilirlik ile hata profilini hafifliği zorunlu değil, kimi kullanımda bulunan bir derece kaydı olarak gösterecek biçimde uyarlayın."
-    }
-  ]
+  "inputs_sha256": "27192eb326ef601ef2728cf0703cc7b28ecf128cdf45c84cdde40d1d7151e19b",
+  "verdict": "pass",
+  "summary": "Beş dalın kimliği, sözlükselleşme kapsamı, kavram haritaları, karşılıkları ve komşu ayrımları verilen kanıtlarla uyumludur. Yayını engelleyen veya düzeltme gerektiren yüksek güvenli bir anlam sorunu bulunmamıştır.",
+  "issues": []
 }

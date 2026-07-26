@@ -1,0 +1,785 @@
+{
+  "inputs_sha256": "a1f012dbbea54c9be54e62988244575cb8c86a04317077fc86119a8d0539a7db",
+  "artifact_format": "dictionary-v2-root-entry-draft-v1",
+  "generated_by": "v2/scripts/accept_root_writer.py",
+  "root_envelope_id": "root_002412",
+  "language": "tr",
+  "branches": [
+    {
+      "branch_ref": "root_002412/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, yara veya urdaki şişliğin yatışmasını, ilacın bu yatışmayı sağlamasını ve salıncağın taşkın hareketinin durulmasını birlikte verir. Bu yüzden dal, tek bir nesne türüne değil, kabarmış veya taşmış bir halin sakinleşmesine bağlı tutulmalıdır.",
+        "boundary_note": "Dal şişlik veya hareket taşkınlığının yatışmasıyla sınırlıdır; bitki, yer adı, yenilen tane veya salınma eylemi değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "unresolved",
+        "note": "Mekanik kapsam çözümlenmemiştir; tanım çıplak kök için genel bir genişletme yapmadan yalnızca verilen kanıttaki yatışma bağlamlarını kapsar."
+      },
+      "concept_map": {
+        "definition": "Bu dal, yara veya ur şişliğinin ya da salıncak hareketindeki taşkınlığın yatışmasını ifade eder; ilaç bağlamında bu yatışmayı sağlama sonucu da aynı çekirdeğe bağlıdır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Şişmiş veya kabarmış bir bedensel halin sakinleşmesi çekirdek anlamdır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "extension",
+            "statement": "İlaç, şişliği indirerek aynı yatışma sonucunu meydana getiren neden olarak geçer.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "extension",
+            "statement": "Salıncağın coşkun hareketinin durulması, bedensel şişlikten hareket alanına uzanan bağlı bir kullanımdır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kanıt, yara veya ur şişliğinin yatışmasını temel alır; ilacın bu yatışmayı sağlaması ve salıncağın hareket taşkınlığının durulması aynı sakinleşme çekirdeğine bağlı örneklerdir.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "şişlik ya da taşkın hareketin yatışması",
+        "applicability": "Şişlik, ilacın etkisi ve salıncak hareketinin durulması birlikte anlatılmak istendiğinde uygundur.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Yatışma çekirdeğini ve iki kanıt alanını birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "şişlik indi",
+          "usage_role": "contextual",
+          "applicability": "Yara veya ur bağlamındaki bedensel yatışmayı doğal Türkçe cümle içinde karşılar.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Bedensel şişliğin yatışması sonucunu korur.",
+            "loses": "Salıncak hareketi ve ilacın neden olması bu bağlamda görünmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "ilaç şişliği indirdi",
+          "usage_role": "contextual",
+          "applicability": "İlacın yatıştırıcı etken olduğu kullanımlarda uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "İlacın şişlik üzerinde yatıştırıcı sonuç doğurmasını korur.",
+            "loses": "Salıncak ve kendiliğinden yatışma bağlamları dışarıda kalır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "salıncağın hızı kesildi",
+          "usage_role": "contextual",
+          "applicability": "Salıncak hareketinin taşkınlığının durulmasını anlatan bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Hareket taşkınlığının yatışmasını korur.",
+            "loses": "Bedensel şişlik ve ilaç bağlamları dışarıda kalır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        }
+      ],
+      "lexical_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "sallanma",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Salıncak alanıyla sınırlı zayıf bir bağlantı kurar.",
+            "loses": "Yatışma ve şişliğin inmesi çekirdeğini kaybeder.",
+            "adds": "Devam eden hareket anlamını ekler.",
+            "collision": "root_002412/B006 salınma eylemini taşır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_002412/B006",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Şişlik veya hareket taşkınlığının yatışması bu dala özgüdür.",
+          "neighbor_only": "Çocuğun salıncakta başkası sallamadan salınması komşu dala özgüdür.",
+          "gloss": "yatışma ile salınma ayrımı",
+          "shared_zone": "İki dal salıncak bağlamında aynı hareket alanına yaklaşır.",
+          "distinction": "B001 hareketin veya şişliğin durulmasını anlatır; B006 ise salıncak üzerinde gerçekleşen hareketin kendisini anlatır. Bu yüzden salıncak ortaklığı, iki dalı eş anlamlı yapmaz."
+        }
+      ],
+      "neighbor_coverage_note": "B006 salıncak bağlamı nedeniyle yayımlanan tek güçlü karşılaştırmadır. B002 gözden parçacık çıkarma, B003 ot, B004 yer adı ve B005 yenilen tane olarak yalnızca aynı kök zarfında yan yana duran ayrı dallardır.",
+      "branch_image_ar": "سكون الفورة",
+      "what_is_ar": "سكون ورم الجرح أو الورم؛ سكون فورة الأرجوحة؛ إسكان الدواء للورم",
+      "what_is_not_ar": "ليس اسم النبات ولا اسم البلد ولا الحِمّص المأكول ولا تَرَجُّح الغلام على الأرجوحة",
+      "source_phrase_ar": "انحمص الورم إذا سكن (maqayis;ayn)؛ حمص الجرح إذا سكن ورمه (jamhara;sihah)؛ حمصه الدواء (ayn)؛ حمصت الأرجوحة سكنت فورتها (sihah)",
+      "sources": [
+        "MQ",
+        "AY",
+        "JA",
+        "SI"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_002412/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, gözdeki küçük parçacığı elle, hafif davranarak ve silme silme çıkarma eylemini açıkça belirtir. Dalın kimliği genel tedaviye veya yatışmaya değil, bu dar çıkarma işlemine bağlanmalıdır.",
+        "boundary_note": "Dal gözdeki parçacığın nazikçe çıkarılmasıyla sınırlıdır; şişlik yatışması, bitki, yer adı veya yenilen tane değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "unresolved",
+        "note": "Mekanik kapsam çözümlenmemiştir; tanım yalnızca verilen göz ve silme bağlamını işler, çıplak köke genel nezaket anlamı yüklemez."
+      },
+      "concept_map": {
+        "definition": "Bu dal, gözdeki küçük yabancı parçacığı elle nazikçe ve yinelenen silme hareketleriyle çıkarma eylemini ifade eder.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Odak, gözdeki yabancı parçacığın çıkarılmasıdır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Çıkarma biçimi sert çekme değil, elle yapılan hafif ve tekrarlı silmedir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Bu dalda çok kaynaklı ortak bir özet yoktur; anlam tek tanıklıkta verilen dar göz temizleme işlemine dayanır.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek tanıklık, eldeki hafif ve yinelenen silme hareketiyle gözdeki parçacığı çıkarma bağlamını verir."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "gözdeki parçacığı nazikçe çıkarma",
+        "applicability": "Parçacığın gözden elle ve hafif silme hareketleriyle çıkarıldığı bağlamı tam karşılar.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Göz, parçacık, çıkarma ve nazik silme unsurlarını korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "gözdeki çöpü hafifçe aldı",
+          "usage_role": "contextual",
+          "applicability": "Günlük Türkçede gözdeki küçük parçacığın nazikçe çıkarılması için uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Gözdeki parçacığın hafifçe çıkarılmasını korur.",
+            "loses": "Yinelenen silme ayrıntısı açıkça görünmeyebilir.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "yatıştırma",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Hafif davranma izlenimini kısmen koruyabilir.",
+            "loses": "Gözden parçacık çıkarma işlemini kaybeder.",
+            "adds": "Şişlik veya huzursuzluk sakinleştirme anlamı ekler.",
+            "collision": "root_002412/B001 yatışma çekirdeğini taşır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_002412/B001",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Gözdeki parçacığın elle ve nazikçe çıkarılması bu dala özgüdür.",
+          "neighbor_only": "Şişlik veya hareket taşkınlığının yatışması komşu dala özgüdür.",
+          "gloss": "çıkarma ile yatışma ayrımı",
+          "shared_zone": "İki dal bedensel rahatsızlık veya hassas müdahale alanında yakınlaşabilir.",
+          "distinction": "B002 bir parçacığın gözden çıkarılmasını anlatan işlem dalıdır; B001 ise şişlik ya da hareket taşkınlığının yatışması sonucuna yönelir. Aynı tedavi alanına yaklaşsalar da çekirdek işlemleri farklıdır."
+        }
+      ],
+      "neighbor_coverage_note": "B001 bedensel bağlam nedeniyle yararlı tek karşılaştırmadır. B003, B004, B005 ve B006 bitki, yer, yenilen tane ve salınma dalları olarak bu dar göz işleminden ayrıdır.",
+      "branch_image_ar": "الرفق بالقذاة",
+      "what_is_ar": "الرفق في إخراج القذاة من العين بالمسح المتكرر",
+      "what_is_not_ar": "ليس سكون الورم ولا اسم النبات ولا اسم البلد ولا اسم الحب",
+      "source_phrase_ar": "حمصت القذاة بيدي إذا رفقت بإخراجها من العين مسحا مسحا",
+      "sources": [
+        "AY"
+      ],
+      "source_note": {
+        "AY": "Tek tanıklık, eldeki hafif ve yinelenen silme hareketiyle gözdeki parçacığı çıkarma bağlamını verir."
+      }
+    },
+    {
+      "branch_ref": "root_002412/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi dalı bir ot adı olarak verir ve onu daha ekşi benzer bir ottan daha hafif ekşi, lezzetli bir bitki diye sınırlar. Bu dal yenilen bakliyat, yer adı veya yatışma eylemiyle karıştırılmamalıdır.",
+        "boundary_note": "Dal az ekşi ve lezzetli bir ot adıdır; yenilen nohut, Suriye'de yer adı veya yatışma eylemi değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "unresolved",
+        "note": "Mekanik kapsam çözümlenmemiştir; tanım yalnızca kanıttaki bitki adını ve niteliklerini verir, başka dallardan anlam taşımaz."
+      },
+      "concept_map": {
+        "definition": "Bu dal, lezzetli sayılan ve benzer daha ekşi bir ottan daha hafif ekşi olan bir ot adını ifade eder.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Dalın çekirdeği belirli bir ot adı olmasıdır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Bitki, benzer ekşi otlara göre daha hafif ekşi ve lezzetli olarak nitelenir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kanıt dalı bir ot adı olarak ortaklaştırır; aynı toplu iddia içinde bir kaynak yalnızca bitki adını verirken diğer ayrıntı bitkinin hafif ekşiliğini ve lezzetli oluşunu belirtir.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "az ekşi lezzetli ot",
+        "applicability": "Bitki adı ve ayırt edici tat niteliği birlikte aktarılmak istendiğinde uygundur.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Ot kimliğini, hafif ekşiliği ve lezzetli niteliğini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "hafif ekşi bir ot",
+          "usage_role": "contextual",
+          "applicability": "Tat niteliğinin öne çıktığı açıklayıcı bağlamlarda doğal bir karşılıktır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Ot kimliğini ve hafif ekşiliği korur.",
+            "loses": "Lezzetli oluş ve benzer daha ekşi ottan düşük ekşilik ayrıntısı azalır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "nohut",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Bitkisel yiyecek alanına zayıf bir yakınlık kurar.",
+            "loses": "Ot adı ve hafif ekşi lezzet niteliğini kaybeder.",
+            "adds": "Yenilen bakliyat anlamını ekler.",
+            "collision": "root_002412/B005 yenilen bakliyat dalıdır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_002412/B005",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Az ekşi ve lezzetli bir ot adı bu dala özgüdür.",
+          "neighbor_only": "Yenilen nohut türü bakliyat komşu dala özgüdür.",
+          "gloss": "ot ile bakliyat ayrımı",
+          "shared_zone": "İki dal bitki veya yiyecek alanında okuyucuya yakın görünebilir.",
+          "distinction": "B003 belirli bir otun tat niteliğine odaklanır; B005 ise yenilen bakliyat tanesini ve toplu adını verir. Bitkisel alan ortak olsa da referent türü farklıdır."
+        }
+      ],
+      "neighbor_coverage_note": "B005 bitki ve yiyecek alanı nedeniyle yayımlanan ana karşılaştırmadır. B001, B002, B004 ve B006 yatışma, göz işlemi, yer adı ve salınma olarak bu ot adından semantik olarak ayrıdır.",
+      "branch_image_ar": "الحُمَّصيص بقلة",
+      "what_is_ar": "الحُمَّصيص بقلة دون الحُمّاض في الحموضة طيبة الطعم من أحرار البقل",
+      "what_is_not_ar": "ليس الحِمّص الحب ولا حمص البلد ولا سكون الورم",
+      "source_phrase_ar": "الحمصيص بقلة (maqayis)؛ الحمصيص بقلة دون الحماض في الحموضة طيبة الطعم من أحرار البقل (ayn)",
+      "sources": [
+        "MQ",
+        "AY"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_002412/B004",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi dalı Suriye'de bir yer veya idari bölge adı olarak verir; ayrıca adın köken bakımından salt Arapça sayılmayabileceği ve dilbilgisel kullanımının değişebildiği belirtilir. Bu, eylem veya yenilen nesne değil özel yer adı dalıdır.",
+        "boundary_note": "Dal Suriye'de bir yer adıdır; şişlik yatışması, ot adı, yenilen nohut veya salınma eylemi değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "unresolved",
+        "note": "Mekanik kapsam çözümlenmemiştir; tanım yalnızca kanıttaki yer adı işlevini verir ve köke genel bir mekan anlamı yüklemez."
+      },
+      "concept_map": {
+        "definition": "Bu dal, Suriye'deki bir yer veya idari bölge adını ifade eder; kanıt adın kökeninin salt Arapça olmayabileceğini ve dilbilgisel kullanımının değişebildiğini de kaydeder.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Dalın çekirdeği Suriye'de bir yer veya bölge adı olmasıdır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "source_variant",
+            "statement": "Kanıt, adın salt Arapça kökenli olmayabileceği yönünde bir kayıt içerir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "source_variant",
+            "statement": "Adın dilbilgisel kullanımı eril veya dişil biçimde değerlendirilebilir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kanıt dalı Suriye'de bir yer veya bölge adı olarak ortaklaştırır; aynı toplu iddia içinde kökenin salt Arapça olmayabileceği ve adın dilbilgisel kullanımında değişkenlik bulunduğu da aktarılır.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "Suriye'de yer adı",
+        "applicability": "Dalın özel yer adı niteliğini, normalleştirilmiş bir ad yüzeyi üretmeden belirtmek için uygundur.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Yer adı ve Suriye bağlamını korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "Suriye'deki bölge adı",
+          "usage_role": "explanatory",
+          "applicability": "Yer adının bölge veya idari alan olarak açıklandığı bağlamlarda uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Suriye'deki yer veya bölge adı niteliğini korur.",
+            "loses": "Köken kuşkusu ve dilbilgisel kullanım değişkenliği görünmez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
+      "lexical_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "nohut",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Aynı kök zarfındaki adlaşmış bir komşuya zayıf biçimde yaklaşır.",
+            "loses": "Suriye'deki yer adı kimliğini kaybeder.",
+            "adds": "Yenilen bakliyat anlamını ekler.",
+            "collision": "root_002412/B005 yenilen bakliyat dalıdır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_002412/B005",
+          "relation_type": "other",
+          "boundary_match": "thematic_only",
+          "focus_only": "Suriye'deki yer adı bu dala özgüdür.",
+          "neighbor_only": "Yenilen bakliyat ve onun tek tanesine bağlı toplu adı komşu dala özgüdür.",
+          "gloss": "yer adı ile yiyecek adı ayrımı",
+          "shared_zone": "İki dal yalnızca aynı kök zarfında ad olarak yan yana durur.",
+          "distinction": "B004 özel yer adı dalıdır; B005 ise yenilen bakliyat dalıdır. Ortak bir anlam alanı bulunmadığından okuyucu karışıklığı yazım veya kök komşuluğundan kaynaklanır."
+        }
+      ],
+      "neighbor_coverage_note": "B005, adlaşmış komşu olarak karışıklık riski taşıdığı için yayımlandı. B001, B002, B003 ve B006 yatışma, göz işlemi, ot adı ve salınma eylemiyle ayrı anlam alanlarındadır.",
+      "branch_image_ar": "حمص الموضع",
+      "what_is_ar": "حمص بلد أو كورة بالشام يذكر ويؤنث",
+      "what_is_not_ar": "ليس فعلا من سكون الورم ولا اسم الحِمّص المأكول",
+      "source_phrase_ar": "حمص كورة بالشام (ayn)؛ حمص موضع ولا أحسبه عربيا محضا (jamhara)؛ حمص بلد يذكر ويؤنث (sihah)",
+      "sources": [
+        "AY",
+        "JA",
+        "SI"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_002412/B005",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi dalı yenilen nohut türü bakliyat ve onun tek tanesiyle ilişkili toplu ad olarak verir. Aynı toplu iddia, bazı kaynak notlarında köken veya söyleyiş farkı bulunduğunu da taşır; bunlar çekirdek referenti değiştirmez.",
+        "boundary_note": "Dal yenilen nohut türü bakliyattır; Suriye'de yer adı, az ekşi ot, yatışma veya salınma değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "unresolved",
+        "note": "Mekanik kapsam çözümlenmemiştir; tanım yalnızca kanıttaki yenilen bakliyat ve tek tane ilişkisini kapsar."
+      },
+      "concept_map": {
+        "definition": "Bu dal, yenilen nohut türü bakliyatı ve onun tek tanesine bağlı toplu ad kullanımını ifade eder; kanıt ayrıca köken ve söyleyiş hakkında değişik kayıtlar içerir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Çekirdek referent, yenilen nohut türü bakliyattır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Toplu ad, tek bir taneyi bildiren biçimle ilişkilendirilir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "source_variant",
+            "statement": "Kanıt, adın sonradan oluşmuş sayılabileceği ve söyleyişte farklı seçenekler bulunduğu notlarını içerir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kanıt yenilen nohut türü bakliyatı ortaklaştırır; aynı toplu iddia tek tane ile toplu ad ilişkisini, sonradan oluşmuş sayılma ihtimalini ve söyleyiş farkı kaydını da içerir.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "nohut",
+        "applicability": "Yenilen bakliyat dalı için doğal Türkçe karşılıktır ve yer adı ya da ot adıyla karıştırılmamalıdır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Yenilebilir bakliyat anlamını doğal Türkçeyle korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "nohut tanesi",
+          "usage_role": "contextual",
+          "applicability": "Tek tane ilişkisi öne çıktığında uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Yenilen bakliyatın tek tane yönünü korur.",
+            "loses": "Toplu ad ve kaynaklardaki köken-söyleyiş notları dışarıda kalır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "yenilen bakliyat",
+          "usage_role": "explanatory",
+          "applicability": "Nohut sözcüğünün karışıklık yaratabileceği açıklayıcı bağlamlarda kullanılabilir.",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Yenilebilir tane gıda alanını korur.",
+            "loses": null,
+            "adds": "Nohut dışındaki bakliyatları da kapsayabilecek daha geniş bir sınıf ekler.",
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        }
+      ],
+      "lexical_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "Suriye'de yer adı",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Aynı kök zarfındaki adlaşmış komşuya zayıf biçimde yaklaşır.",
+            "loses": "Yenilen bakliyat referentini kaybeder.",
+            "adds": "Özel yer adı anlamı ekler.",
+            "collision": "root_002412/B004 Suriye'deki yer adı dalıdır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_002412/B003",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Yenilen nohut türü bakliyat ve tek tane ilişkisi bu dala özgüdür.",
+          "neighbor_only": "Az ekşi, lezzetli bir ot adı komşu dala özgüdür.",
+          "gloss": "bakliyat ile ot ayrımı",
+          "shared_zone": "İki dal bitki veya yiyecek alanında yakınlaşabilir.",
+          "distinction": "B005 yenilen bakliyat referentine dayanır; B003 ise tat niteliğiyle tanımlanan belirli bir ottur. Bu nedenle ikisi bitkisel alanda komşu olsa da aynı nesneyi göstermez."
+        },
+        {
+          "neighbor_ref": "root_002412/B004",
+          "relation_type": "other",
+          "boundary_match": "thematic_only",
+          "focus_only": "Yenilen bakliyat anlamı bu dala özgüdür.",
+          "neighbor_only": "Suriye'deki yer adı komşu dala özgüdür.",
+          "gloss": "yiyecek adı ile yer adı ayrımı",
+          "shared_zone": "İki dal yalnızca aynı kök zarfında ad olarak yan yana durur.",
+          "distinction": "B005 yenilen nesne adıdır; B004 özel yer adıdır. Ortak semantik alan bulunmadığı için karışıklık yalnızca ad biçimi ve kök komşuluğundan doğar."
+        }
+      ],
+      "neighbor_coverage_note": "B003 bitki-yiyecek alanı, B004 ise adlaşmış komşu karışıklığı nedeniyle yayımlandı. B001, B002 ve B006 yatışma, göz işlemi ve salınma eylemiyle bu bakliyat dalından uzaktır.",
+      "branch_image_ar": "الحِمّص الحب",
+      "what_is_ar": "الحِمّص الحب الذي يؤكل؛ الحُمص جمع الحِمّصة",
+      "what_is_not_ar": "ليس حمص البلد ولا الحُمَّصيص البقلة ولا سكون الورم",
+      "source_phrase_ar": "الحمص جمع الحمصة وهو حبة القدر (ayn)؛ الحمص هذا الحب الذي يؤكل فأحسبه مولدا (jamhara)؛ الحمص حب والاختيار فتح الميم وقيل بكسرها (sihah)",
+      "sources": [
+        "AY",
+        "JA",
+        "SI"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_002412/B006",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, bir çocuğun salıncakta başkası tarafından sallandırılmadan salınmasını belirtir. Dal hareketin gerçekleşmesine aittir; salıncağın hareket taşkınlığının yatışması olan komşu kullanım buraya taşınmamalıdır.",
+        "boundary_note": "Dal çocuğun salıncakta kendi başına salınmasıdır; salıncağın durulması, şişlik yatışması, bitki, yer adı veya yenilen tane değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "unresolved",
+        "note": "Mekanik kapsam çözümlenmemiştir; tanım yalnızca verilen salıncak eylemine ve başkasının sallandırmaması koşuluna bağlıdır."
+      },
+      "concept_map": {
+        "definition": "Bu dal, bir çocuğun salıncakta başkası tarafından sallandırılmadan kendi başına salınmasını ifade eder.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Çekirdek anlam salıncakta gerçekleşen salınma hareketidir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Hareket, başkasının sallandırmasıyla değil çocuğun kendi salınmasıyla gerçekleşir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Bu dalda çok kaynaklı ortak bir özet yoktur; anlam tek tanıklıkta verilen salıncak hareketi ve başkasının sallandırmaması koşuluna dayanır.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tek tanıklık, çocuğun salıncakta dışarıdan sallandırılmadan kendi başına salınmasını verir."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "kendi başına salınma",
+        "applicability": "Salıncaktaki hareketin dışarıdan sallandırılmadan gerçekleştiği bağlamlarda uygundur.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Salınma hareketini ve dışarıdan sallandırılmama koşulunu korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "çocuk salıncakta kendi sallandı",
+          "usage_role": "contextual",
+          "applicability": "Özne çocuk olduğunda ve dışarıdan itme yokken doğal koşulu belirtir.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Çocuk, salıncak ve dışarıdan sallandırılmama koşulunu korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "yatışma",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Salıncak bağlamındaki hareket alanına uzaktan yaklaşabilir.",
+            "loses": "Çocuğun kendi başına salınma eylemini kaybeder.",
+            "adds": "Hareketin durulması veya şişliğin inmesi anlamını ekler.",
+            "collision": "root_002412/B001 yatışma dalıdır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_002412/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Çocuğun salıncakta başkası sallamadan salınması bu dala özgüdür.",
+          "neighbor_only": "Şişlik veya salıncak hareketindeki taşkınlığın yatışması komşu dala özgüdür.",
+          "gloss": "salınma ile yatışma ayrımı",
+          "shared_zone": "İki dal salıncak hareketi alanında temas eder.",
+          "distinction": "B006 hareketin gerçekleşmesini anlatır; B001 ise hareket taşkınlığının veya bedensel şişliğin yatışmasını anlatır. Salıncak ortaklığına rağmen yönleri ters değildir, çünkü B001'in bedensel yatışma alanı da vardır."
+        }
+      ],
+      "neighbor_coverage_note": "B001 salıncak alanı nedeniyle yayımlanan tek güçlü karşılaştırmadır. B002 göz işlemi, B003 ot, B004 yer adı ve B005 yenilen bakliyat olarak bu hareket dalından ayrıdır.",
+      "branch_image_ar": "تَرَجُّح الأرجوحة",
+      "what_is_ar": "تَرَجُّح الغلام على أرجوحة من غير أن يُرَجَّح",
+      "what_is_not_ar": "ليس سكون فورة الأرجوحة ولا سكون الورم ولا اسم الحب",
+      "source_phrase_ar": "الحمص ترجح الغلام على أرجوحة من غير أن يرجح يقال حمص",
+      "sources": [
+        "AY"
+      ],
+      "source_note": {
+        "AY": "Tek tanıklık, çocuğun salıncakta dışarıdan sallandırılmadan kendi başına salınmasını verir."
+      }
+    }
+  ],
+  "root_profile": {
+    "summary": "Bu kök zarfındaki dallar tek bir ortak çekirdekten çok, yatışma, gözden parçacık çıkarma, ot adı, Suriye'de yer adı, yenilen bakliyat ve salıncak hareketi gibi ayrı alanlara dağılır. En yakın temaslar salıncak bağlamında B001 ile B006 arasında ve bitki-yiyecek alanında B003 ile B005 arasındadır.",
+    "polysemy": "polysemic",
+    "organization": "multi_branch"
+  },
+  "occurrence_evidence": {
+    "summary": {
+      "morpheme_count": 0,
+      "word_count": 0,
+      "ayah_count": 0,
+      "surah_count": 0
+    },
+    "forms": [],
+    "ayahs": [],
+    "occurrences": []
+  }
+}

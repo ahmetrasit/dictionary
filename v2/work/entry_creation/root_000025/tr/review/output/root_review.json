@@ -1,6 +1,6 @@
 {
   "verdict": "repair",
-  "summary": "Yanıtın dal düzeni ve temel ayrımları büyük ölçüde kanıtla uyumludur; ancak bazı tanımlar yapı bağımlılığını gevşetmekte, kaynaklara özgü ayrıntıları çekirdeğe taşımakta veya kanıtta bulunmayan açıklamalar eklemektedir. Aşağıdaki yüksek güvenli, alanla sınırlı düzeltmeler uygulanmalıdır.",
+  "summary": "Yanıtın dal düzeni ve temel ayrımları büyük ölçüde kanıtla uyumludur; ancak bazı tanımlar yapı bağımlılığını gevşetmekte, kaynaklara özgü ayrıntıları çekirdeğe taşımakta veya kanıtta bulunmayan açıklamalar eklemektedir. Aşağıdaki yüksek güvenli ve alanla sınırlı düzeltmeler uygulanmalıdır.",
   "issues": [
     {
       "target_ref": "root_000025/B002",
@@ -79,6 +79,28 @@
       ],
       "evidence_conflict": "lu_022 ve lu_023 karşılıkları kanıtta verilmeyen termit kimliğini kullanıyor. Birim kanıtları yalnız odun yiyen küçük canlıyı ve bu canlının odunu yemesi sonucunu destekler.",
       "smallest_correction": "lu_022 karşılığını odun yiyen küçük canlı, lu_023 karşılığını da odunu bu canlı yedi ve zarar verdi biçiminde düzelt."
+    },
+    {
+      "target_ref": "root_000025/B010",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Bağlamsal karşılık odunun termit tarafından yenmesini söylüyor; kanıt kesin termit kimliği değil, odun yiyen küçük canlı veya kurt ifadesi sağlar.",
+      "smallest_correction": "Bağlamsal karşılığı odun yiyen küçük canlı tarafından yenmiş biçiminde düzelt."
+    },
+    {
+      "target_ref": "root_000025/B010",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu ayrımı odak dalı termit benzeri canlı diye adlandırıyor ve beyaz, karıncaya benzer oluşu dal sınırı gibi öne çıkarıyor. Kanıtta bu görünüm yalnız bir kaynak ayrıntısıdır; ortak çekirdek odun yiyen küçük canlıdır.",
+      "smallest_correction": "Komşu ayrımında odak dalı odun yiyen küçük canlı ve oduna etkisiyle anlat; beyaz ve karıncaya benzer görünümü sınır belirleyen çekirdek olarak kullanma."
     }
   ]
 }

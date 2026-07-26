@@ -1,0 +1,832 @@
+{
+  "inputs_sha256": "2145aa06bf14ff978ea3a104ac6b9ea6e7644a9bebf185dc08e25e46fd6ab596",
+  "artifact_format": "dictionary-v2-root-entry-draft-v1",
+  "generated_by": "v2/scripts/accept_root_writer.py",
+  "root_envelope_id": "root_002469",
+  "language": "tr",
+  "branches": [
+    {
+      "branch_ref": "root_002469/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, hayvan ya da kadının yavrusunu doğum zamanı tamamlanmadan atmasını merkeze alır; yavru tam biçimli olsa bile erken atılma dalın kimliğini korur. Aynı aktarımda kan halinde atılma ve bazı hayvan türleriyle ilgili sınır da verildiği için geçici çerçeve kaynak ifadesiyle uyumludur.",
+        "boundary_note": "Dal, biçim eksikliğini değil, doğum vaktinden önce atılma olayını tanımlar."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "unresolved",
+        "note": "Mekanik profil dalı yalın ya da kısıtlı kullanım olarak kesinleştirmediği için tanım yalnız kaynak olayının sınırını izler."
+      },
+      "concept_map": {
+        "definition": "Canlı bir varlığın yavrusunu olağan doğum zamanı tamamlanmadan dışarı atmasıdır; yavrunun biçimi tam olabilir, hatta aktarım kan halinde atılmayı da kapsar.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Temel olay, yavrunun normal doğum zamanı gelmeden önce atılmasıdır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "extension",
+            "statement": "Biçimin tam olması dalı değiştirmez; belirleyici ölçüt erken atılmadır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "associated_use",
+            "statement": "Aktarım, kan halinde atılmayı ve bazı hayvan türlerindeki sık tekrarı da bu alanla ilişkilendirir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar bu dalı doğum süresi tamamlanmadan yavrunun atılması etrafında toplar. Biçimin tam olabilmesi ve kan halinde atılma örneği, dalın eksik biçimden çok erken gerçekleşen doğum olayına bağlı olduğunu gösterir.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "erken yavru atma",
+        "applicability": "Yavrunun vaktinden önce dışarı atıldığı doğum olayını en kısa biçimde verir.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Erkenlik, yavru ve atılma olayını birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "vaktinden önce yavru atmak",
+          "usage_role": "general",
+          "applicability": "Eylem olarak hayvan veya kadın için erken doğum atma olayını anlatır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Eylemi, zamanı ve yavru unsurunu açıkça korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "kan halinde düşük yapmak",
+          "usage_role": "contextual",
+          "applicability": "Yalnız kaynakta verilen kan halinde atılma bağlamında kullanılabilir.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Erken atılmanın özel bir görünümünü korur.",
+            "loses": "Tam biçimli yavrunun erken atılması gibi daha geniş durumları dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        }
+      ],
+      "lexical_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "eksik doğum",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Doğumla ilgili bir aksaklık fikrini kısmen korur.",
+            "loses": "Vaktinden önce atılma ölçütünü belirsizleştirir.",
+            "adds": "Yavrunun biçim bakımından eksik olduğu izlenimini ekler.",
+            "collision": "Biçim eksikliği dalıyla karışır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_002469/B002",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bu dalda yavru zamanından önce atılır; biçim tam olabilir.",
+          "neighbor_only": "Komşu dalda belirleyici olan yavru ya da organın biçim eksikliğidir.",
+          "gloss": "erken atılma ile eksik biçim",
+          "shared_zone": "İki dal da doğum ve eksiklik alanına yakın durur.",
+          "distinction": "Bu dalın çekirdeği zamanından önce gerçekleşen atılmadır; komşu dalın çekirdeği ise gebelik süresi tamamlanmış olsa bile biçimin eksik kalmasıdır."
+        },
+        {
+          "neighbor_ref": "root_002469/B003",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Bu dal bedensel doğum olayına bağlıdır.",
+          "neighbor_only": "Komşu dal namaz, okuma veya işin tamamlanmamasıyla ilgilidir.",
+          "gloss": "doğum eksikliği ile iş eksikliği",
+          "shared_zone": "Her ikisinde de beklenen tamamlanma noktasına ulaşmama fikri bulunur.",
+          "distinction": "Bu dal gerçek bir doğum süreci içindeki erken atılmayı anlatır; komşu dal ise bir ibadet veya işin gerekli tamamlığa erişmemesini anlatır."
+        },
+        {
+          "neighbor_ref": "root_002469/B005",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Bu dal canlı yavrusunun erken atılmasıdır.",
+          "neighbor_only": "Komşu dal ateş çıkarma aracının beklenen ateşi vermemesidir.",
+          "gloss": "erken doğum ile sonuçsuz ateş çıkarma",
+          "shared_zone": "İki dalda da beklenen sonucun gerçekleşmemesi teması vardır.",
+          "distinction": "Bağlantı yalnız başarısız tamamlanma temasındadır; biri doğum zamanıyla, diğeri ateş üretme sonucuyla sınırlıdır."
+        }
+      ],
+      "neighbor_coverage_note": "Komşuların tümü gözden geçirildi; en yararlı ayrımlar erken doğum, biçim eksikliği, iş eksikliği ve sonuçsuz ateş üretme sınırlarını ayıranlardır.",
+      "branch_image_ar": "طرح الولد قبل تمامه",
+      "what_is_ar": "يدخل فيه طرح الناقة أو الشاة أو المرأة ولدها قبل تمام الوقت أو قبل النتاج ولو كان تام الخلق أو إلقاؤه دما، وما يتصل بذلك من الخداج وكثرة الخداج والتسمية بخديج وخديجة",
+      "what_is_not_ar": "ليس هو نقص الخلق مع تمام الحمل ولا نقص الصلاة والعمل ولا قولهم في ذات الحافر تزلق",
+      "source_phrase_ar": "خدجت الناقة إذا ألقت ولدها قبل النتاج (maqayis)؛ خدجت الشاة والناقة إذا ألقت ولدها قبل تمامه (jamhara)؛ والاسم الخداج (jamhara)؛ خدجت الناقة إذا ألقت ولدها قبل تمام الأيام وإن كان تام الخلق (sihah)؛ خدجت الناقة إذا ألقت ولدها قبل أوان النتاج وإن كان تام الخلق (tahdhib)؛ إذا ألقته دما قد خدجت (tahdhib)؛ ذات خداج تخدج كثيرا (tahdhib)؛ خدجت المرأة ولدها وأخدجته بمعنى واحد (tahdhib)؛ كل ذات منسم أو ظلف تخدج وذات الحافر تزلق (ayn)",
+      "sources": [
+        "MQ",
+        "AY",
+        "JA",
+        "SI",
+        "TA"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_002469/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, gebelik süresi tamamlanmış olsa bile yavrunun eksik biçimli gelmesini ve eksik organ örneğini aynı dalda toplar. Bu nedenle geçici çerçeve, erken atılmadan ayrı olarak biçim eksikliğini dalın belirleyici ölçütü yapar.",
+        "boundary_note": "Dal, zamanından önce atılmayı değil, canlıda veya organda biçim eksikliğini anlatır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "unresolved",
+        "note": "Mekanik profil dalın yalınlık durumunu kesinleştirmediği için tanım yalnız verilen biçim eksikliği sınırında tutulur."
+      },
+      "concept_map": {
+        "definition": "Yavrunun, gebelik süresi tamamlanmış olsa bile eksik biçimli gelmesi veya bir organın eksik yapıda olmasıdır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Temel ölçüt yavruda biçim eksikliğinin bulunmasıdır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "extension",
+            "statement": "Gebelik süresinin tamamlanmış olması bu biçim eksikliği anlamını ortadan kaldırmaz.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "example",
+            "statement": "Eksik el gibi organ örneği de aynı eksik biçim alanında verilir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar dalı yavrunun veya organın eksik biçimli olmasıyla açıklar. Süre tamamlanmış olsa bile biçim eksikliği korunur; bu da dalı erken doğum olayından ayırır.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "eksik biçimli olma",
+        "applicability": "Yavru ya da organ için biçimsel noksanlığı kısa ve genel biçimde verir.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Biçim eksikliği çekirdeğini ve canlı-organ kapsamını korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F003"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "eksik biçimli doğmak",
+          "usage_role": "contextual",
+          "applicability": "Yavru için kullanılan bağlamlarda doğal bir çeviridir.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Yavrudaki biçim eksikliğini korur.",
+            "loses": "Organ örneğini ve doğum dışı kullanımı dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "eksik uzuvlu",
+          "usage_role": "contextual",
+          "applicability": "Organ eksikliği örneği için uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Organ eksikliği yönünü korur.",
+            "loses": "Yavrunun genel biçim eksikliğini kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        }
+      ],
+      "lexical_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "erken doğum",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Doğum alanıyla ilişkili bir durumu korur.",
+            "loses": "Biçim eksikliğini dalın çekirdeği olmaktan çıkarır.",
+            "adds": "Zamanından önce gerçekleşme koşulunu ekler.",
+            "collision": "Erken yavru atma dalıyla karışır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_002469/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Bu dalda biçim eksikliği belirleyicidir ve süre tamamlanmış olabilir.",
+          "neighbor_only": "Komşu dalda belirleyici olan zamanından önce atılmadır.",
+          "gloss": "eksik biçim ile erken atılma",
+          "shared_zone": "İkisi de doğumla ilgili eksiklik alanında buluşur.",
+          "distinction": "Bu dal yavru veya organın yapısındaki eksikliktir; komşu dal ise yavrunun olağan zamandan önce atılmasıdır ve biçim tam olabilir."
+        },
+        {
+          "neighbor_ref": "root_002469/B003",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Bu dal bedensel biçim eksikliğini anlatır.",
+          "neighbor_only": "Komşu dal tamamlanmamış ibadet veya iş alanındadır.",
+          "gloss": "bedensel eksiklik ile iş eksikliği",
+          "shared_zone": "Her ikisi de noksanlık fikrini taşır.",
+          "distinction": "Bu dal fiziksel biçimdeki eksikliği belirtir; komşu dal ise bir eylem veya düzenli uygulamanın gerekli tamamlığa erişmemesini belirtir."
+        }
+      ],
+      "neighbor_coverage_note": "Tüm komşular değerlendirildi; okur için asıl karışma erken doğum ve genel tamamlanmamış iş dallarıyladır.",
+      "branch_image_ar": "نقص الخلق في الولد أو العضو",
+      "what_is_ar": "يدخل فيه الولد الناقص الخلق ولو تم الحمل والعضو الناقص كاليد المخدجة وأسماء الولد المخدج",
+      "what_is_not_ar": "ليس هو طرح الولد قبل أوانه إذا كان تام الخلق ولا نقص العمل والعبادة",
+      "source_phrase_ar": "ألقته ناقص الخلق ولتمام الحمل فقد أخدجت (maqayis)؛ الولد خديج ومخدج ومخدوج (ayn)؛ أخدجت الناقة وغيرها إذا ألقت ولدها ناقص الخلق وإن كانت أيامه تامة (jamhara)؛ مخدج اليد أي ناقصها (jamhara)؛ أخدجت الناقة إذا جاءت بولدها ناقص الخلق وإن كانت أيامه تامة (sihah)؛ مخدج اليد أي ناقص اليد (sihah)؛ أخدجت الناقة إذا ألقت ولدها ناقص الخلق وإن كان لتمام الحمل (tahdhib)؛ مخدج اليد أي ناقصها (tahdhib)",
+      "sources": [
+        "MQ",
+        "AY",
+        "JA",
+        "SI",
+        "TA"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_002469/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, okuma şartı bulunmayan namazın tamamlığa ulaşmamış sayılmasını ve kişinin namazını ya da işini sağlam tamamlamamasını birlikte verir. Bu çerçeve bedensel doğumdan aktarılmış genel eksiklik değil, ibadet ve işin usulüne uygun tamamlanmaması olarak desteklenir.",
+        "boundary_note": "Dal, doğum veya organ eksikliği değil, eylemin gerekli tamamlığa erişmemesidir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "unresolved",
+        "note": "Mekanik profil yalın ya da kısıtlı kullanım kararı vermediği için tanım namaz ve iş bağlamlarının ortak tamamlanmama sınırını izler."
+      },
+      "concept_map": {
+        "definition": "Namazın gerekli okuma unsurundan yoksun kalması veya bir işin sağlam ve tam biçimde sonuçlandırılmamasıdır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Temel anlam, beklenen tamamlık ve sağlamlık düzeyine ulaşmamaktır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Namaz bağlamında gerekli okumanın bulunmaması tamamlanmamışlık göstergesidir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "extension",
+            "statement": "İşin gereğince sağlam yapılmaması da aynı tamamlanmama alanına genişler.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar namazdaki gerekli okuma eksikliğini ve bir işin iyi tamamlanmamasını aynı tamamlanmamışlık alanında toplar. Bu kullanım doğumla ilgili dallardan ayrılarak eylem, ibadet ve iş kalitesine yönelir.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "tamamlanmamışlık",
+        "applicability": "Namaz veya işin gerekli unsur ve sağlamlıktan yoksun kalmasını genel olarak verir.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Gerekli tamamlığa ulaşmama çekirdeğini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "eksik kalmış namaz",
+          "usage_role": "contextual",
+          "applicability": "Gerekli okuma unsuru bulunmayan namaz bağlamında uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Namazdaki tamamlanmamışlık yönünü korur.",
+            "loses": "İşin sağlam yapılmaması uzantısını dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "işini eksik bırakmak",
+          "usage_role": "contextual",
+          "applicability": "Bir işin gereğince sağlam tamamlanmadığı bağlamlarda doğal karşılıktır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "İşin tamamlanmaması anlamını korur.",
+            "loses": "Namazdaki özel okuma eksikliğini kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        }
+      ],
+      "lexical_glosses": [],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_002469/B002",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Bu dal eylem, namaz veya işin tamamlanmamasıdır.",
+          "neighbor_only": "Komşu dal yavru ya da organdaki biçim eksikliğidir.",
+          "gloss": "iş eksikliği ile biçim eksikliği",
+          "shared_zone": "İki dal da eksiklik kavramını paylaşır.",
+          "distinction": "Bu dal tamamlanması beklenen bir uygulama veya işin kusurlu kalmasını anlatır; komşu dal fiziksel yapının eksik olmasını anlatır."
+        },
+        {
+          "neighbor_ref": "root_002469/B004",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Bu dal insan eylemi veya ibadet düzenindeki eksikliktir.",
+          "neighbor_only": "Komşu dal mevsim yağışının azlığıdır.",
+          "gloss": "işte eksiklik ile yağış azlığı",
+          "shared_zone": "Her ikisi de beklenen miktar ya da tamamlık düzeyinin altında kalmayı anlatır.",
+          "distinction": "Bu dal eylemin veya ibadetin tamamlanma niteliğiyle ilgilidir; komşu dal ise doğal bir mevsimde beklenen yağmur miktarının azlığıyla ilgilidir."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün komşular denetlendi; yayınlanan ayrımlar dalın eylem-temelli tamamlanmamışlığını fiziksel eksiklik ve miktar azlığından ayırır.",
+      "branch_image_ar": "نقص العبادة والعمل",
+      "what_is_ar": "يدخل فيه وصف الصلاة بالخداج إذا نقصت قراءتها وإخداج الصلاة والعمل إذا لم يتم إحكامهما",
+      "what_is_not_ar": "ليس هو نقص الخلق في الولد ولا قلة المطر إلا من جهة أصل النقص العام",
+      "source_phrase_ar": "كل صلاة لم يقرأ فيها بفاتحة الكتاب فهي خداج (maqayis)؛ كل صلاة لا يقرأ فيها بأم الكتاب فهي خداج أي مقصرة عن بلوغ تمامها (jamhara)؛ كل صلاة لا يقرأ فيها بأم الكتاب فهي خداج أي نقصان (sihah)؛ كل صلاة ليست فيها قراءة فهي خداج (tahdhib)؛ أخدج الرجل صلاته فهو مخدج وهي مخدجة (tahdhib)؛ أخدج فلان أمره إذا لم يحكمه (tahdhib)",
+      "sources": [
+        "MQ",
+        "JA",
+        "SI",
+        "TA"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_002469/B004",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, yaz ya da kış mevsiminin yağmurunun az olmasını doğrudan dalın anlamı olarak verir. Geçici çerçeve bunu doğum veya ibadet eksikliğine bağlamadan mevsimsel yağış azlığı olarak sınırladığı için kaynakla uyumludur.",
+        "boundary_note": "Dal, genel eksiklikten çok mevsime ait yağmur miktarının azlığıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "unresolved",
+        "note": "Mekanik profil kullanım türünü çözmediği için tanım yalnız kaynakta verilen mevsim ve yağış azlığı bağlamına bağlıdır."
+      },
+      "concept_map": {
+        "definition": "Bir yaz veya kış döneminde beklenen yağmurun az düşmesi, yani mevsimin yağış bakımından eksik kalmasıdır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Temel ölçüt, mevsimlik yağmur miktarının beklenenden az olmasıdır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Aktarım yaz ve kış dönemi gibi mevsimsel bağlamlara bağlıdır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar dalı mevsim yağmurunun azlığıyla açıklar. Ortak nokta, beklenen yağışın gerçekleşmemesi değil tamamen yokluğu da değil, miktarın düşük kalmasıdır.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "yağış azlığı",
+        "applicability": "Mevsim için beklenen yağmur miktarının düşük kalmasını kısa biçimde verir.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Yağmur miktarının az kalması çekirdeğini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "az yağmurlu geçmek",
+          "usage_role": "contextual",
+          "applicability": "Yaz veya kış gibi bir dönem için doğal anlatımdır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Mevsim ve düşük yağış anlamını birlikte korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "kuraklık",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Yağış eksikliği fikrini korur.",
+            "loses": null,
+            "adds": "Uzun süreli ve ağır su kıtlığı çağrışımı ekler.",
+            "collision": null
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_002469/B003",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Bu dal mevsim yağmurunun azlığıdır.",
+          "neighbor_only": "Komşu dal ibadet veya işin tamamlanmamasıdır.",
+          "gloss": "yağış azlığı ile iş eksikliği",
+          "shared_zone": "İki dal da beklenen düzeyin altında kalma fikrini taşır.",
+          "distinction": "Bu dal doğal bir mevsim ölçüsünde miktar azlığını anlatır; komşu dal insan eyleminin ya da ibadetin gerekli tamamlığa ulaşmamasını anlatır."
+        },
+        {
+          "neighbor_ref": "root_002469/B005",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Bu dal yağmur miktarının az olmasıdır.",
+          "neighbor_only": "Komşu dal ateş çıkarma aracının ateş vermemesidir.",
+          "gloss": "az yağış ile ateş vermeme",
+          "shared_zone": "İki dal da beklenen çıktının zayıf kalması veya oluşmaması temasına yaklaşır.",
+          "distinction": "Bu dal miktar eksikliğini anlatır; komşu dal belirli bir araçtan beklenen ateş sonucunun hiç gerçekleşmemesini anlatır."
+        }
+      ],
+      "neighbor_coverage_note": "Tüm komşular kontrol edildi; en açıklayıcı karşılaştırmalar mevsimsel miktar eksikliğini eylem eksikliği ve sonuç vermeme alanlarından ayırır.",
+      "branch_image_ar": "قلة مطر الموسم",
+      "what_is_ar": "يدخل فيه قولهم أخدجت الصيفة أو الشتوة إذا قل مطرها",
+      "what_is_not_ar": "ليس هو خداج الولد ولا خداج الصلاة إلا من جهة النقص العام",
+      "source_phrase_ar": "أخدجت الصيفة قل مطرها (maqayis)؛ أخدجت الشتوة أي قل مطرها (sihah)",
+      "sources": [
+        "MQ",
+        "SI"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_002469/B005",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, ateş çıkarması beklenen aracın ateş vermemesini doğrudan aktarır. Bu, doğum veya organ alanına taşınmadan, beklenen sonucu üretmeyen belirli bir araç kullanımı olarak tutulmalıdır.",
+        "boundary_note": "Dal, ateş çıkarma aracının beklenen ateşi vermemesiyle sınırlıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "unresolved",
+        "note": "Mekanik profil kısıtlılık durumunu çözmediği için tanım yalnız ateş çıkarma aracına bağlı sonuçsuzluk bağlamını kapsar."
+      },
+      "concept_map": {
+        "definition": "Ateş çıkarması beklenen aracın kullanıldığında ateş vermemesi, yani beklenen tutuşturma sonucunu üretmemesidir.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Temel olay, ateş çıkarması beklenen aracın ateş üretmemesidir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Anlam, genel başarısızlıktan çok tutuşturma sonucuna bağlıdır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar dalı ateş çıkarma aracının ateş vermemesiyle açıklar. Ortak vurgu, aracın beklenen üretici sonucunun gerçekleşmemesidir.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "ateş vermeme",
+        "applicability": "Ateş çıkarma aracının beklenen sonucu üretmediği bağlam için uygundur.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Ateş sonucunun oluşmaması çekirdeğini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "ateş çıkarmamak",
+          "usage_role": "general",
+          "applicability": "Ateş çıkarma aracı kullanıldığı halde sonucun oluşmadığı anlatımda doğal karşılıktır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Araçtan beklenen ateş sonucunun oluşmamasını korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "başarısız olmak",
+          "category": "alternative",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Beklenen sonucun oluşmaması fikrini korur.",
+            "loses": null,
+            "adds": "Her tür başarısızlığı kapsayan fazla genel bir alan ekler.",
+            "collision": null
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_002469/B004",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Bu dal ateş çıkarma sonucunun oluşmamasıdır.",
+          "neighbor_only": "Komşu dal yağmur miktarının azlığıdır.",
+          "gloss": "ateş vermeme ile az yağış",
+          "shared_zone": "İki dal da beklenen çıktının yetersiz kalması temasını paylaşır.",
+          "distinction": "Bu dal belirli bir tutuşturma aracının sonuç vermemesidir; komşu dal mevsimsel yağmur miktarının düşük kalmasıdır."
+        },
+        {
+          "neighbor_ref": "root_002469/B001",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Bu dal cansız bir araçtan beklenen ateş sonucuyla ilgilidir.",
+          "neighbor_only": "Komşu dal canlı yavrusunun vaktinden önce atılmasıdır.",
+          "gloss": "sonuçsuz araç ile erken doğum",
+          "shared_zone": "İki dal yalnız beklenen tamamlanmanın bozulması temasında buluşur.",
+          "distinction": "Bu dal tutuşturma sonucunun yokluğudur; komşu dal doğum zamanından önce gerçekleşen bedensel bir olaydır."
+        }
+      ],
+      "neighbor_coverage_note": "Komşuların tamamı incelendi; ateş vermeme dalı semantik olarak en çok yağış azlığı ve erken tamamlanma bozulması temalarıyla karşılaştırılabilir.",
+      "branch_image_ar": "خيبة الزندة عن الإيراء",
+      "what_is_ar": "يدخل فيه إخداج الزندة إذا لم تور النار",
+      "what_is_not_ar": "ليس هو طرح الولد ولا نقص العضو ولا نقص الصلاة",
+      "source_phrase_ar": "أخدجت الزندة إذا لم تور (ayn)؛ أخدجت الزندة إذا لم تور نارا (tahdhib)",
+      "sources": [
+        "AY",
+        "TA"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_002469/B006",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bu dalı koyunları sürmek veya yönlendirmek için kullanılan bir seslenme sözü olarak verir. Anlam, diğer dallardaki eksiklik çekirdeğinden türemiş gibi açıklanmamalı; aktarılmış bağımsız bir çağrı kullanımı olarak tutulmalıdır.",
+        "boundary_note": "Dal, eksiklik anlamı değil, koyunlara yöneltilen bir sürme seslenmesidir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "unresolved",
+        "note": "Mekanik profil kullanım türünü çözmediği için tanım yalnız kaynakta verilen koyunlara seslenme işlevine bağlı kalır."
+      },
+      "concept_map": {
+        "definition": "Koyunları sürmek veya yönlendirmek için çıkarılan, sözlükte belirli bir seslenme kalıbı olarak aktarılan çağrıdır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Temel işlev, koyunlara yöneltilen sürme veya yönlendirme çağrısı olmaktır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "source_variant",
+            "statement": "Aktarım, aynı çağrı sözünün farklı sesleniş biçiminden de söz eder.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Bu dal, koyunlara yöneltilen bir sürme çağrısı olarak tekil biçimde aktarılır. Diğer dallardaki eksiklik anlamlarıyla doğrudan aynı çekirdeğe bağlanmaz.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tekil aktarım, sözü koyunları sürme veya yönlendirme çağrısı olarak verir."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "koyun sürme çağrısı",
+        "applicability": "Koyunlara yöneltilen pratik seslenme işlevini açıkça verir.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Hayvan türünü ve çağrı işlevini birlikte korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "koyunlara sürme sesi",
+          "usage_role": "explanatory",
+          "applicability": "Okura sözün anlamdan çok hayvana yöneltilen bir çağrı olduğunu açıklamak için uygundur.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Koyunlara yöneltilen seslenme işlevini korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "eksiklik",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Kökteki başka dalların genel eksiklik alanını korur.",
+            "loses": "Koyunlara yöneltilen çağrı işlevini tamamen kaybeder.",
+            "adds": "Diğer dallara ait soyut noksanlık anlamını ekler.",
+            "collision": "Doğum, iş ve yağış eksikliği dallarıyla karışır."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_002469/B001",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Bu dal koyunlara yöneltilen çağrı sözüdür.",
+          "neighbor_only": "Komşu dal yavrunun doğum vaktinden önce atılmasıdır.",
+          "gloss": "çağrı sözü ile erken doğum",
+          "shared_zone": "İki dal aynı kök dosyasında yer alır, ancak açık bir çekirdek anlamı paylaşmaz.",
+          "distinction": "Bu dal işlevsel bir hayvan yönlendirme sesidir; komşu dal canlı yavrusunun erken atılması olayını anlatır."
+        },
+        {
+          "neighbor_ref": "root_002469/B005",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Bu dal hayvana yöneltilen seslenme kalıbıdır.",
+          "neighbor_only": "Komşu dal ateş çıkarma aracının ateş vermemesidir.",
+          "gloss": "seslenme ile ateş vermeme",
+          "shared_zone": "Aralarında yalnız uzak sözlük komşuluğu vardır.",
+          "distinction": "Bu dal bir çağrı kullanımını adlandırır; komşu dal araçtan beklenen fiziksel sonucun gerçekleşmemesidir."
+        }
+      ],
+      "neighbor_coverage_note": "Tüm komşular değerlendirildi; bu dal eksiklik dallarıyla gerçek yakın anlamlılık kurmadığı için yalnız uzak tematik ayrımlar verildi.",
+      "branch_image_ar": "زجر الغنم بلفظ خَدَج",
+      "what_is_ar": "يدخل فيه لفظ الزجر للغنم المروي بلفظ خَدَج وربما بني على الكسر",
+      "what_is_not_ar": "ليس هو من معاني النقص الظاهرة ولا من خداج الولد",
+      "source_phrase_ar": "يقال في زجر الغنم خَدَج وربما قيل خَدَجِ مبني على الكسر",
+      "sources": [
+        "JA"
+      ],
+      "source_note": {
+        "JA": "Tekil aktarım, sözü koyunları sürme veya yönlendirme çağrısı olarak verir."
+      }
+    }
+  ],
+  "root_profile": {
+    "summary": "Kökün dalları, erken doğum atılması, biçim eksikliği, ibadet veya işte tamamlanmamışlık, yağış azlığı, ateş vermeme ve koyunlara yöneltilen çağrı kullanımı arasında dağılır. Çoğu dal beklenen tamamlanma veya sonuçtan sapma çevresinde durur, ancak çağrı dalı ayrı bir sözlü işlev olarak korunmalıdır.",
+    "polysemy": "polysemic",
+    "organization": "mixed"
+  },
+  "occurrence_evidence": {
+    "summary": {
+      "morpheme_count": 0,
+      "word_count": 0,
+      "ayah_count": 0,
+      "surah_count": 0
+    },
+    "forms": [],
+    "ayahs": [],
+    "occurrences": []
+  }
+}

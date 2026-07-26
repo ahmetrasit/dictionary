@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "B009 icin kanit tek bir kolokasyonu, cagrildiginda cagirana karsilik veren serceyi verir. Yazar yaniti bu dali kaynakta olmayan cogul ve genel bicime bagli adlandirmalar olarak genellestirdigi icin sinirli onarim gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_000891/B009",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 yalniz belirli serce kolokasyonunu ve onun cagrildiginda yanit veren serce anlamini, Maqayis'in Arapcalik teredduduyle birlikte verir. Yazar ortak ozetinde bunu cogul 'daginik veya bicime bagli adlandirmalar' diye genellestiriyor.",
+      "smallest_correction": "B009 source_synthesis.common_summary metnini tek kolokasyon, cagrildiginda yanit veren serce ve Maqayis'in tereddudu ile sinirli olacak sekilde degistir."
+    },
+    {
+      "target_ref": "root_000891/B009",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 dalin cekirdegini belirli kus nitelemesi olarak verir; 'bicime bagli adlandirmalar' metni serceyi ve cagrildiginda karsilik verme kosulunu kaybediyor.",
+      "smallest_correction": "B009 concept_gloss.text degerini 'cagrilinca karsilik veren serce' yap ve applicability/error_profile metnini ayni tek kolokasyon sinirina gore duzelt."
+    },
+    {
+      "target_ref": "root_000891/B009",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 tek bir sabit kus nitelemesini destekler. Yazar identity_judgment metni 'ogeleri' ve 'daginik adlandirmalari' diyerek kaynakta bulunmayan cogul bir kume ima ediyor.",
+      "smallest_correction": "B009 identity_judgment rationale ve boundary_note metinlerini tek kolokasyonun kuşkulu statusu ve cagirana yonelme baglantisi ile sinirla."
+    }
+  ]
+}

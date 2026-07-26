@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "c4f2ff29de350bb77ddbbbe6e06155371b7793711b7325f3a3c30be57ae196f9",
+  "verdict": "repair",
+  "summary": "B003 disinda yazar cikisi yayin acisindan kanitla uyumlu. B003'te kilicin vurus niteligini anlatan ifade, kanitta bulunmayan gecicilik veya gecip gitme fikrini ekliyor; bu nedenle yalniz ilgili kimlik gerekcesi ve kavram haritasi cercevesinde dar bir onarim gerekiyor.",
+  "issues": [
+    {
+      "target_ref": "root_002514/B003",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 kilici vurusunda isleyen ve kapalilik tasiyan bir nitelikle anlatir; temporal olarak gecip giden bir keskinlik bildirmez. Mevcut gerekce bu ek zamani anlam alanina sokuyor.",
+      "smallest_correction": "Rationale icindeki 'etkili ve gecip giden bir keskinlik' ifadesini, temporal anlam eklemeyen 'vurusunda etkili bir keskinlik' olarak duzelt; sinir notunu ve status degerini koru."
+    },
+    {
+      "target_ref": "root_002514/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 kilicin vurusundaki etkili niteligi ve kapalilik unsurunu destekler, fakat 'gecici etki' anlamini desteklemez. Bu ek, dalin cekirdegini kanit disina genisletiyor.",
+      "smallest_correction": "Definition icindeki 'keskin ve gecici etkidir' kismini 'keskin etkidir' yap; F001 facet statement'ini da temporal veya belirsiz 'gecirici' sozcugune dayanmadan 'vurusundaki isleyen keskin etki' seklinde daralt."
+    }
+  ]
+}

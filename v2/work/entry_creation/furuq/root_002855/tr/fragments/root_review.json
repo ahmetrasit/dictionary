@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": "d06279923ab2ce9e118bbbb94945723d9c6f1b6ebc7f378c183316471d10d277",
+  "verdict": "repair",
+  "summary": "B005 source_synthesis alaninda tek bir onarim gerektiren hata bulundu: ucu dusmus ok varyanti ortak kanit gibi sunulmus. Onarim, ortak ozetin hedefe carpinca govdenin yarilmasi veya dagilmasiyla sinirlanmasi ve ucu dusmus ok bilgisinin ayri bir kaynak varyanti olarak nitelenmesidir.",
+  "issues": [
+    {
+      "target_ref": "root_002855/B005",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B005 bc_001 icinde hedefe carpinca okun govdesinin yarilmasi veya dagilmasi Maqayis, Sihah ve Tahdhib tarafindan desteklenir; ucu dusmus ok varyanti ise yalniz Sihah ibaresiyle verilir. Mevcut source_synthesis.common_summary bu varyanti ortak kanitin parcasi gibi sunuyor.",
+      "smallest_correction": "B005 source_synthesis.common_summary alanini ortak govde hasariyla sinirla ve ucu dusmus ok bilgisini ortak kanit gibi degil ayri bir kaynak varyanti olarak nitele."
+    }
+  ]
+}

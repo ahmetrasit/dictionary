@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "B010 disindaki dallar kanitla uyumlu gorunuyor. B010'da kaynaklar belirli bir ifadenin adet gormek diye yorumlanmasini ve buna yoneltilen guvenilirlik reddini verirken, yazar sentezi ve kavram glossu bunu fazla genel bir adlandirma etiketi gibi sunuyor. Bu alanlarda kucuk ve yerel duzeltme gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_000903/B010",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit, eylemin adet gormek diye yorumlanmasini ve bazi kaynaklarin bu yorumu guvenilmez veya gecersiz saymasini verir. Yazar common_summary alani bunu tekil tartismali yorum yerine genel ve daginik bicime bagli adlandirmalar gibi anlatiyor.",
+      "smallest_correction": "B010 source_synthesis.common_summary metnini, belirli ifadenin adet gormek diye yorumlandigini ve bazi kaynaklarin bunu guvenilmez ya da gecersiz saydigini belirten dar bir sentezle degistir."
+    },
+    {
+      "target_ref": "root_000903/B010",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit ve concept_map cekirdegi tartismali adet gorme yorumudur. Concept_gloss.text ise 'bicime bagli adlandirmalar' diyerek asil semantik icerigi gizliyor ve cekirdek haritayi temsil etmiyor.",
+      "smallest_correction": "B010 concept_gloss metnini ve ona bagli applicability ile error_profile aciklamalarini tartismali adet gorme yorumu seklinde daralt; facet_ids ve yapiyi koru."
+    }
+  ]
+}

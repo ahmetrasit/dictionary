@@ -1,0 +1,26 @@
+{
+  "verdict": "editorial_review",
+  "summary": "B001-B006 kanıtla uyumlu görünüyor. B007 ve kök profili ise kanıtta birlikte verilen iki özel adlandırmayı yayımlanabilir metinde dal bölme kararına dönüştürüyor. Bu karar reviewer onarım sınırını aştığı için canlı giriş düzenlenmedi.",
+  "issues": [
+    {
+      "target_ref": "root_001646/B007",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıttaki B007 dalı, aynı biçim altında kıl çadırı ve sütüyle kabı dolduran deve için iki özel adlandırmayı birlikte verir. Yazar tanımı ise bunların ayrı dallar olarak düzenlenmesi gerektiğini söyleyerek anlam tanımına yapısal bölme kararı ekliyor.",
+      "smallest_correction": "B007 malzemesinin tek sınırlı adlandırma kümesi olarak mı kalacağı yoksa iki dala mı ayrılacağı editorial düzeyde kararlaştırılmalıdır; reviewer canlı çıktıyı düzenlememelidir."
+    },
+    {
+      "target_ref": "root_profile",
+      "field": "root_profile",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [],
+      "evidence_conflict": "Kök profili, çadır ve deve adlarının yapısal olarak ayrılması gereken ayrı sözlük anlamları olduğunu söylüyor. Sağlanan kanıt kök profilinde böyle bir yeniden düzenleme yetkisi vermez; dal bölme kararı reviewer onarım sınırını aşar.",
+      "smallest_correction": "Kök profilindeki bu yapısal ayırma iddiası editorial incelemede ele alınmalı; mevcut reviewer aşamasında canlı girişe cerrahi edit uygulanmamalıdır."
+    }
+  ]
+}

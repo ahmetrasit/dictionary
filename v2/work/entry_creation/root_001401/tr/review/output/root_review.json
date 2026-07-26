@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Genel yanit kanitla uyumlu; ancak B003 kavram karsiligi dali gereksiz bicimde yaz sicagina daraltiyor. Kanit sicak gun kullanimini da verdigi icin bu alan cerrahi olarak duzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001401/B003",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit, cok siddetli yaz sicagi yaninda cok sicak gun kullanimini da verir. Yanitin kavram karsiligi ise dali sadece yaz sicagi gibi gosteriyor ve kayip olmadigini soyluyor.",
+      "smallest_correction": "B003 concept_gloss.text degerini 'kurutup yakan cok siddetli sicak' yap; applicability ve error_profile.preserves metinlerinde de 'yaz sicagi' daraltmasini genel 'cok siddetli sicak' anlatimina cevir."
+    }
+  ]
+}

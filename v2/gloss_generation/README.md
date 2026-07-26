@@ -1,8 +1,8 @@
 # Multilingual Gloss Generation
 
 This workflow generates compact, independently reviewed target-language gloss
-sets from a validated Turkish v2 entry. It does not generate another
-encyclopedia entry.
+sets from a validated Turkish source. It does not generate another encyclopedia
+entry.
 
 Cold-start read order:
 
@@ -25,7 +25,7 @@ The encyclopedia workflow repeats full target-language semantic authoring and
 review. That is appropriate for complete entries but wasteful when a consumer
 needs only translation glosses. This folder introduces a separate projection:
 
-- semantic boundaries come from one validated Turkish entry plus exact Arabic
+- semantic boundaries come from one completed Turkish source plus exact Arabic
   safeguards;
 - occurrences and dictionary apparatus are omitted mechanically;
 - each locale authors only its concept, contextual, and lexical wording;
@@ -75,6 +75,17 @@ The safe default stages the smoke set (`en`, `de`, `tr`):
 python3 v2/gloss_generation/workflow.py prepare root_000858
 ```
 
+By default, `prepare` uses `--entry-source auto`: if a completed live upstream
+root-writer/reviewer pair exists under `v2/work/entry_creation/<root>/tr/`, it
+uses that source shape; otherwise it falls back to the assembled entry under
+`v2/entries/tr/`. To require the live source-shape bridge:
+
+```sh
+python3 v2/gloss_generation/workflow.py prepare root_000858 \
+  --entry-source live \
+  --languages en tr
+```
+
 Stage the approved 33-locale set:
 
 ```sh
@@ -95,6 +106,26 @@ Use an explicit validated Turkish entry:
 python3 v2/gloss_generation/workflow.py prepare root_000858 \
   --source-entry v2/examples/root_000858.tr.entry.json
 ```
+
+The live source-shape bridge consumes:
+
+```text
+v2/work/entry_creation/<root-envelope>/tr/
+  tasks/root_writer.json
+  output/<root-envelope>_entry.json
+  tasks/root_reviewer.json
+  review/output/root_review.json
+```
+
+It checks the root-writer task bindings, writer response schema and semantic
+contract, root-reviewer task bindings, and review schema. Completed upstream
+review verdicts (`pass`, `repair`, and `editorial_review`) are admissible as
+dictionary-entry sources for gloss generation; the staged package preserves the
+upstream `review_verdict`. Hash mismatches and current validator
+incompatibilities that do not prevent compact package construction are preserved
+as source validation warnings instead of redefining upstream completion.
+`structural_review_required` remains parked. The bridge does not assemble,
+render, publish, or write `v2/entries/tr/`.
 
 Writer tasks are staged under:
 
@@ -189,6 +220,14 @@ Stage the current Turkish corpus for the smoke locales:
 
 ```sh
 python3 v2/gloss_generation/workflow.py prepare-all
+```
+
+Stage completed live upstream source-shape outputs:
+
+```sh
+python3 v2/gloss_generation/workflow.py prepare-all \
+  --entry-source live \
+  --languages tr
 ```
 
 Stage the approved priority set:

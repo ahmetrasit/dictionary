@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "B008 disinda yazar yaniti kanitla uyumlu gorunuyor. B008'de ise kanitin verdigi sinirli miktar, yakin sure ve izleyen gun degerleri yayina donuk tanim ve kavram karsiliginda fazla metinsel bir etiketle yer degistirmis; ayrica kaynak sentezi miktar okumasindaki cekinceyi acik tutmuyor.",
+  "issues": [
+    {
+      "target_ref": "root_000836/B008",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit, belirli kaliplarda miktar veya ona yakin sure ile baska bir kalipta yarindan sonraki gun anlamini verir; yazar tanimi bunlari 'kanit paketi' ve 'tek kavram olarak tanimlanamaz' diye yayina donuk olmayan bir cerceveye tasiyor.",
+      "smallest_correction": "B008 concept_map.definition degerini, sinirli kaliplarda miktar veya yakin sureyi ve 'yarin ya da onun izleyeni' kalibinda sonraki gunu anlattigini soyleyecek sekilde degistir; miktar okumasindaki kaynak cekincesini koru."
+    },
+    {
+      "target_ref": "root_000836/B008",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit ayni id icinde miktar okumasinin bir kaynakta cekinceyle aktarildigini, diger tanikliklarda ise miktar veya yakin sure olarak verildigini gosterir; source_synthesis.common_summary bu cekinceyi belirtmeden yalniz 'sinirli adlandirmalar' der.",
+      "smallest_correction": "B008 source_synthesis.common_summary degerine, miktar veya yakin sure okumasinin cekinceli aktarildigini ve izleyen gun kalibinin ayri bir zaman kullanimi oldugunu ekle."
+    },
+    {
+      "target_ref": "root_000836/B008",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanitin cekirdegi miktar, yakin sure ve sonraki gun kullanimlariyla ilgilidir; 'yalitik adlandirmalar' karsiligi bu anlamlari temsil etmeyen bir sinif etiketi olarak kaliyor.",
+      "smallest_correction": "B008 concept_gloss alanini 'yaklasik miktar veya izleyen zaman' eksenine cek; applicability, error_profile ve facet_ids degerlerini bu iki yuzu temsil edecek sekilde dar ve dogal tut."
+    }
+  ]
+}

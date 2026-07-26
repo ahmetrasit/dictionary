@@ -1,29 +1,6 @@
 {
-  "inputs_sha256": "3abccbbdac65eb7783e12449a381e8cea1d4558b9934e76e90cd636106afad66",
-  "verdict": "repair",
-  "summary": "Dal çerçeveleri ve temel kavram çözümlemesi kanıtla uyumludur. Ancak ikinci dalda bir sözlüksel karşılık, alev dinmişken közün yanmayı sürdürebildiği ara durumu dışarıda bırakıyor; ayrıca kaynak sentezi bu iki evreli ayrımı iki sözlüğün ortak açıklaması gibi sunuyor. Bu iki sınırlı alan düzeltilmelidir.",
-  "issues": [
-    {
-      "target_ref": "root_000939/B001",
-      "field": "lexical_glosses",
-      "severity": "major",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_001"
-      ],
-      "evidence_conflict": "lu_001 için verilen kaynak ifadesi, alevi dinmişken közü hâlâ yanabilen ara durumu ve közün soğumasıyla oluşan tam sönmeyi birlikte içerir. Mevcut karşılık yalnızca közün soğuyarak bütünüyle sönmesini verip ilk durumu atlıyor.",
-      "smallest_correction": "lu_001 target_gloss değerini, hem alevin dinip közün yanmayı sürdürebildiği ara durumu hem de közün soğumasıyla tam sönmeyi kapsayan kısa bir Türkçe açıklamayla değiştir."
-    },
-    {
-      "target_ref": "root_000939/B001",
-      "field": "source_synthesis",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "bc_001"
-      ],
-      "evidence_conflict": "Maqayis yalnızca ateşin sönmesi ile ettirgen söndürmeyi bildirirken, közün yanmayı sürdürdüğü ara durum ile közün soğuduğu tam sonuç arasındaki ayrıntılı ayrım Tahdhib ifadesinden gelir. Mevcut common_summary bunu kaynakların ortak kurduğu bir ayrım olarak niteliyor.",
-      "smallest_correction": "common_summary içindeki ortaklık iddiasını kaldır; iki evreli ayrımı sunulan kanıtların toplam sentezi olarak anlat ve ettirgen kullanımın ateşi soğuyup sönünceye kadar götürdüğünü koru."
-    }
-  ]
+  "inputs_sha256": "cbe592df9db75e28643ee40b58cc835ad50eaf95c7dca0ac54ff70941fa56992",
+  "verdict": "pass",
+  "summary": "Yazar yanıtı, iki dalın kanıtla desteklenen çekirdeklerini, bağlı kullanımlarını ve aralarındaki sınırı doğru biçimde koruyor. Kavram haritaları, sözlükselleşme kapsamları, Türkçe karşılıklar, kaynak sentezleri ve komşu ayrımları yayıma engel olacak bir anlam kusuru içermiyor.",
+  "issues": []
 }

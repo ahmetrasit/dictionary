@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yaniti genel olarak kanita bagli ve dal sinirlarini koruyor; ancak iki yayina etkili sorun var. B011 tanimi, kanittaki sinirli adlandirma kumesini tanimlamak yerine dallara bolme gerektigini soyluyor. B013'te lu_028 icin verilen sozluk karsiligi ise kanittaki semirme disi ciftlesme/gebelik alternatifini dusuruyor.",
+  "issues": [
+    {
+      "target_ref": "root_000347/B011",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 eklem yeri, kap, orta nokta, kapi yuvasi ve orumcek agi gibi sinirli adlandirmalari birlikte verir; fakat tanim bu malzemeyi yayinlanabilir sinirla tanimlamak yerine kullanimsal bolme gerektigini belirtir.",
+      "smallest_correction": "concept_map.definition icindeki dallara bolme gerektigini soyleyen son cumleyi kaldirip, ayni kanit kapsaminda her kullanimin kendi bicim ve baglam siniri icinde tutuldugunu soyleyen yayinlanabilir bir tanimla degistir."
+    },
+    {
+      "target_ref": "root_000347/B013",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_028"
+      ],
+      "evidence_conflict": "lu_028, disi devenin semirmesini ve laqah baglaminda duruma ulasmasini birlikte verir; mevcut hedef karsilik yalniz semirme ve semiz duruma ulasmayi koruyor.",
+      "smallest_correction": "lu_028 target_gloss metnine semirme yaninda ciftlesme veya gebelik durumuna ulasma alternatifini ekle."
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "verdict": "repair",
-  "summary": "B002, B005 ve B008 dallarında kanıtın izin verdiğinden daha geniş ya da daha dar anlam sınırları kurulmuştur. Bulgular, yalnızca bu sınırları etkileyen alanlarda küçük ve doğrudan düzeltmeler gerektirir.",
+  "summary": "B002, B005 ve B008 dallarında kanıtın izin verdiğinden daha geniş ya da daha dar anlam sınırları kurulmuştur. B005 komşu ayrımları da aynı zorunlu soy hedefini tekrar eder. Bulgular, yalnızca bu sınırları etkileyen alanlarda küçük ve doğrudan düzeltmeler gerektirir.",
   "issues": [
     {
       "target_ref": "root_000012/B002",
@@ -78,6 +78,17 @@
       ],
       "evidence_conflict": "Aile kökenini kötüleme karşılığı kaynakta desteklenen dar bir bağlamdır, fakat hata profili onu bütün çekirdeği kayıpsız koruyan bir karşılık olarak işaretliyor.",
       "smallest_correction": "Bu bağlamsal karşılığı koru, ancak fit değerini narrowing yap; genel yerme, sövme ve gıyabında kötüleme kapsamını kaybettiğini belirt ve yalnızca ilgili uzmanlaşma facetiyle ilişkilendir."
+    },
+    {
+      "target_ref": "root_000012/B005",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Komşu ayrımları odak dalı soy ve aile kökenine saldırıyla zorunlu olarak sınırlandırıyor. Kanıt ise genel yerme, sövme ve gıyabında kötüleme çekirdeğini verir; soy hedefi yalnızca bazı aktarımların özel açıklamasıdır.",
+      "smallest_correction": "B005 komşu ayrımlarında odak dalı yapıya bağlı kötüleme olarak anlat; soy hedefini zorunlu sınır değil özel görünüm olarak göster."
     },
     {
       "target_ref": "root_000012/B008",

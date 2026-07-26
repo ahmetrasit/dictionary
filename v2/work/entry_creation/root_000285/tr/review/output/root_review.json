@@ -1,0 +1,39 @@
+{
+  "verdict": "repair",
+  "summary": "B003 genel olarak kanitin sinirini koruyor, fakat sade yag yerken gorulen ozel bogaz rahatsizligini daha genis bicimde yagili yiyecek diye anlatiyor. Bu, kaynak ifadesindeki baglami genislettigi icin yalniz ilgili B003 tanim ve gloss dizgelerinde cerrahi duzeltme gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_000285/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit, bogazi tutan rahatsizligi sade yag yenmesi baglamina baglar. Tanim bunu yagili bir yiyecek yenirken diye genisletiyor ve kaynakta olmayan genel bir yiyecek sinifi ekliyor.",
+      "smallest_correction": "B003 concept_map icindeki tanim ve F001 ifadesinde yagili bir yiyecek yenirken sozunu sade yag yerken olarak daralt."
+    },
+    {
+      "target_ref": "root_000285/B003",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanit, bogaz rahatsizligini sade yag yenmesine baglar. Ilk contextual gloss uygulama notu bunu yagili bir yiyecek yenirken diye genisletiyor.",
+      "smallest_correction": "B003 ilk contextual gloss applicability alaninda yagili bir yiyecek yenirken sozunu sade yag yerken olarak degistir."
+    },
+    {
+      "target_ref": "root_000285/B003",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_003"
+      ],
+      "evidence_conflict": "lu_003 kaniti bogaz rahatsizligini sade yag yenmesiyle sinirlar. Lexical gloss ise yagili bir yiyecek yenirken diyerek bu siniri genel bir yiyecek turune genisletir.",
+      "smallest_correction": "lu_003 target_gloss alaninda yagili bir yiyecek yenirken sozunu sade yag yerken olarak degistir."
+    }
+  ]
+}
