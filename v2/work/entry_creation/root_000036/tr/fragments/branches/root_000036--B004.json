@@ -1,36 +1,45 @@
 {
-  "root_inputs_sha256": "ddc32d46864a46a6539f6345921e0868325e16275596bbc8c6bdebc65d227d19",
+  "root_inputs_sha256": "c2aa522f41277cec8c33850d7bfa48784484f6ac97009146e8adade49e467e28",
   "root_id": "root_000036",
   "branch_id": "B004",
   "language": "tr",
   "image_transliteration": "el-Finâ' ve'l-vasîd",
-  "summary": "Bir evin ya da yapının önünde veya ona bağlı bulunan açık avlu alanıdır; burada aynı anlamdaki başka bir biçimin sözlüksel karşılığı olarak geçer.",
+  "summary": "Bir evin ya da yapının çevresinde veya önünde bulunan açık alan, yani avludur.",
   "concept_map": {
-    "definition": "Bir evin ya da yapının önünde veya ona bağlı bulunan açık avlu alanıdır; burada aynı anlamdaki başka bir biçimin sözlüksel karşılığı olarak geçer.",
+    "definition": "Bir evin ya da yapının çevresinde veya önünde bulunan açık alan, yani avludur.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Bir yapıya bağlı, onun önünde veya yakınında bulunan açık avlu alanı.",
+        "statement": "Bir yapıyla bağlantılı açık alanı, başka bir deyişle avluyu belirtir.",
         "claim_ids": [
-          "lu_011"
+          "bc_001"
         ]
       },
       {
         "facet_id": "F002",
         "role": "source_variant",
-        "statement": "Aynı avlu anlamını taşıyan başka bir söz biçiminin karşılığı olarak kaydedilen varyant.",
+        "statement": "Bu anlam, aynı avlu adının dilsel bir biçim değişkesi olarak aktarılır.",
         "claim_ids": [
-          "lu_011"
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Sözcük, bir yapıya bağlı açık avluyu belirtir ve bu anlamdaki başka bir biçimin karşılığı olarak kaydedilir.",
+  "identity_judgment": {
+    "status": "accepted",
+    "rationale": "Kaynak ifadesi sözcüğü doğrudan avlu anlamındaki başka bir biçimin dilsel çeşidi olarak tanımlar. Hazırlanan dalın avlu odağı bu tek kaynaklı ve açık tanımla tam olarak örtüşür.",
+    "boundary_note": "Dal yalnızca avlu anlamıdır; kapı, giriş veya kapatma anlamları bu dala taşınmaz."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "bare",
+    "note": "Tanım yalın biçimin avlu anlamıyla sınırlıdır ve komşu biçimin kapı gibi ek anlamlarını ya da başka söz öbeklerini içeri almaz."
+  },
+  "source_summary": "Tek kaynak, biçimi avlu anlamındaki eşdeğer bir söyleyiş çeşidi olarak verir.",
   "source_synthesis": {
-    "common_summary": "Sözcük, bir yapıya bağlı açık avluyu belirtir ve bu anlamdaki başka bir biçimin karşılığı olarak kaydedilir.",
+    "common_summary": "Tek kaynak, biçimi avlu anlamındaki eşdeğer bir söyleyiş çeşidi olarak verir.",
     "common_claim_ids": [
-      "lu_011"
+      "bc_001"
     ],
     "source_details": [],
     "supporting_claim_ids": [],
@@ -42,24 +51,24 @@
     {
       "lexical_unit_id": "lu_011",
       "rendering_kind": "ordinary",
-      "target_gloss": "avlu; yapının önündeki açık alan"
+      "target_gloss": "avlu"
     }
   ],
   "glosses": {
-    "semantic_definition": "Bir evin ya da yapının önünde veya ona bağlı bulunan açık avlu alanıdır; burada aynı anlamdaki başka bir biçimin sözlüksel karşılığı olarak geçer.",
+    "semantic_definition": "Bir evin ya da yapının çevresinde veya önünde bulunan açık alan, yani avludur.",
     "concept": {
       "rank": 1,
-      "text": "yapıya bağlı açık avlu",
+      "text": "avlu",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Bir evin veya başka bir yapının önündeki ya da ona bağlı açık alanı doğrudan karşılar.",
+      "applicability": "Yapıyla bağlantılı açık alan anlamını tam ve doğal biçimde karşılar.",
       "facet_ids": [
         "F001"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Açık avlu oluşunu ve avlunun bir yapıyla mekânsal bağını korur.",
+        "preserves": "Yapıya bağlı açık alan anlamını eksiksiz korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -68,19 +77,19 @@
     "contextual": [
       {
         "rank": 2,
-        "text": "avlu",
+        "text": "evin avlusu",
         "loanword_status": "none",
-        "usage_role": "general",
+        "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Söz konusu açık alanın hangi yapıya bağlı olduğunun cümlede açıkça belirtildiği durumlarda kullanılır.",
+        "applicability": "Açık alanın bir eve bağlı olduğunun bağlamda belirtilmesi gerektiğinde kullanılır.",
         "facet_ids": [
           "F001"
         ],
         "error_profile": {
-          "fit": "broadening",
-          "preserves": "Bir yapıyla ilişkili açık alan ve avlu çekirdeğini korur.",
-          "loses": null,
-          "adds": "Yapı önüne veya yapıya bağlı alana özgü olmayan daha genel avlu kullanımlarını da çağrıştırabilir.",
+          "fit": "narrowing",
+          "preserves": "Avlunun bir yapıyla bağlantılı açık alan olmasını korur.",
+          "loses": "Ev dışındaki yapılara bağlı avlu olasılığını sınırlar.",
+          "adds": null,
           "collision": null
         }
       }
@@ -88,17 +97,17 @@
     "selected": [
       {
         "rank": 1,
-        "text": "yapıya bağlı açık avlu",
+        "text": "avlu",
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Bir evin veya başka bir yapının önündeki ya da ona bağlı açık alanı doğrudan karşılar.",
+        "applicability": "Yapıyla bağlantılı açık alan anlamını tam ve doğal biçimde karşılar.",
         "facet_ids": [
           "F001"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Açık avlu oluşunu ve avlunun bir yapıyla mekânsal bağını korur.",
+          "preserves": "Yapıya bağlı açık alan anlamını eksiksiz korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -106,19 +115,19 @@
       },
       {
         "rank": 2,
-        "text": "avlu",
+        "text": "evin avlusu",
         "loanword_status": "none",
-        "usage_role": "general",
+        "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Söz konusu açık alanın hangi yapıya bağlı olduğunun cümlede açıkça belirtildiği durumlarda kullanılır.",
+        "applicability": "Açık alanın bir eve bağlı olduğunun bağlamda belirtilmesi gerektiğinde kullanılır.",
         "facet_ids": [
           "F001"
         ],
         "error_profile": {
-          "fit": "broadening",
-          "preserves": "Bir yapıyla ilişkili açık alan ve avlu çekirdeğini korur.",
-          "loses": null,
-          "adds": "Yapı önüne veya yapıya bağlı alana özgü olmayan daha genel avlu kullanımlarını da çağrıştırabilir.",
+          "fit": "narrowing",
+          "preserves": "Avlunun bir yapıyla bağlantılı açık alan olmasını korur.",
+          "loses": "Ev dışındaki yapılara bağlı avlu olasılığını sınırlar.",
+          "adds": null,
           "collision": null
         }
       }
@@ -127,44 +136,44 @@
   },
   "arabic_neighbor_distinctions": [
     {
-      "neighbor_root_id": "root_000756",
-      "neighbor_branch_id": "B001",
-      "relation_type": "synonym",
-      "boundary_match": "exact",
-      "focus_only": null,
-      "neighbor_only": null,
-      "expression_transliteration": "Sâhatü'd-dâr",
-      "gloss": "ev avlusu",
-      "shared_zone": "Her iki dal da evin açık avlusunu veya bahçe niteliğindeki açık alanını gösterir.",
-      "distinction": "Çekirdek sınırlar aynı açık avlu alanını gösterdiğinden anlam bakımından yer değiştirebilirler; ayrım yalnızca kullanılan söz biçimindedir."
-    },
-    {
       "neighbor_root_id": "root_001653",
       "neighbor_branch_id": "B002",
       "relation_type": "near_synonym",
       "boundary_match": "partial",
-      "focus_only": "Anlam yalnızca yapıya bağlı açık avlu alanında tutulur.",
-      "neighbor_only": "Evin kapısı ve avlunun eve bitişikliği de bağımsız anlam öğeleri olarak kapsanır.",
+      "focus_only": null,
+      "neighbor_only": "Komşu dal avlunun yanı sıra evin kapısını da gösterebilir ve alanı eve bitişik oluşuyla açıklar.",
       "expression_transliteration": "Finâü'l-beyt ev bâbühü'l-muttasıl bi'r-rab'",
       "gloss": "ev avlusu veya kapısı",
-      "shared_zone": "İki dal da eve bağlı avlu alanını adlandırabilir.",
-      "distinction": "Odak dalı açık avluyla sınırlıdır; komşu dal avlunun yanı sıra kapıyı ve eve bitişiklik ilişkisini de kapsadığı için bütünüyle eş anlamlı değildir."
+      "shared_zone": "Her iki dal da evle bağlantılı avlu anlamında kullanılabilir.",
+      "distinction": "Avlu bağlamında anlamlar örtüşür, ancak komşu dalın kapı kapsamı odak dalda bulunmaz; bu nedenle tam eş anlamlılık yalnızca avlu kullanımında geçerlidir."
     },
     {
-      "neighbor_root_id": "root_000687",
-      "neighbor_branch_id": "B004",
+      "neighbor_root_id": "root_001181",
+      "neighbor_branch_id": "B002",
       "relation_type": "near_synonym",
       "boundary_match": "partial",
-      "focus_only": "Yapıya bağlı açık avlu, kapı yapısından ayrı olarak adlandırılır.",
-      "neighbor_only": "Kapı, kapı önü, gölgelik ve kapı yakınındaki oturma bölümü gibi yapısal alanlar da kapsanır.",
-      "expression_transliteration": "es-Südde inde'l-bâb ve'l-finâ'",
-      "gloss": "kapı önü ve avlu",
-      "shared_zone": "Her iki dal da yapının girişine yakın açık avlu veya kapı önü alanında kesişir.",
-      "distinction": "Odak dalı avlu anlamını korur; komşu dal kapının kendisine ve giriş çevresindeki örtülü ya da yapılı bölümlere genişler."
+      "focus_only": "Odak dal yalın biçimde avlu alanını adlandırır.",
+      "neighbor_only": "Komşu dal evin çevresine uzanan alanı ve özellikle evin önündeki genişliği de vurgular.",
+      "expression_transliteration": "fna' aldar ws'tha",
+      "gloss": "evin avlusu ve önü",
+      "shared_zone": "İki dal evle bağlantılı avlu veya açık alan anlamında buluşur.",
+      "distinction": "Odak dal genel avlu adıdır; komşu dal alanın evin yanlarına uzanması ve önündeki genişlik gibi mekânsal ayrıntıları ayrıca taşır."
+    },
+    {
+      "neighbor_root_id": "root_000756",
+      "neighbor_branch_id": "B001",
+      "relation_type": "near_synonym",
+      "boundary_match": "partial",
+      "focus_only": "Odak dal kaynakta başka bir avlu adının söyleyiş çeşidi olarak belirlenmiştir.",
+      "neighbor_only": "Komşu dal evin saha ve açık alanını daha genel bir yer adıyla ifade eder.",
+      "expression_transliteration": "Sâhatü'd-dâr",
+      "gloss": "evin açık alanı",
+      "shared_zone": "Her iki dal bir evin avlusunu veya açık sahasını gösterebilir.",
+      "distinction": "Gösterilen yer büyük ölçüde örtüşse de odak dal belirli bir avlu adının biçim çeşididir; komşu dalın sözlüksel kapsamı evin sahası olarak bağımsızdır."
     }
   ],
   "neighbor_coverage": {
     "assessment": "complete",
-    "note": "Bütün adaylar değerlendirildi; yayımlanan ilişkiler avluyla tam örtüşen dalı ve kapı ya da giriş çevresine genişleyen iki yakın dalı gösterir."
+    "note": "Bütün komşular gözden geçirildi; ev avlusu, evin önü ve genel açık alanla ilgili üç yakın karşılaştırma avlu çekirdeğini ve kapı anlamının dışarıda kalışını açıklar."
   }
 }

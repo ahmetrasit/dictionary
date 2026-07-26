@@ -1,46 +1,53 @@
 {
-  "root_inputs_sha256": "7f58e50f11ef6e4013402236b31c0e8e676b97005799eb3c421f8d87b49e8f7e",
+  "root_inputs_sha256": "713084d06c7e40a39a9d25a97765a53a2b0a928e11e8edb23421832de7d3a748",
   "root_id": "root_000037",
   "branch_id": "B003",
   "language": "tr",
   "image_transliteration": "habl ve ma'sar yahbisu'l-marr",
-  "summary": "Yol veya su geçidini kapatıp gemileri ya da geçenleri durduran ip veya engeldir. Ayrıca çadırın alt bölümünü kazığa bağlayan kısa ipi de adlandırır.",
+  "summary": "Bir şeyi sabitlemek için kullanılan kısa bağ ipi veya yol ile su yolu üzerine gerilerek insanların ya da taşıtların geçişini durduran ip ve engeldir.",
   "concept_map": {
-    "definition": "Yol veya su geçidini kapatıp gemileri ya da geçenleri durduran ip veya engeldir. Ayrıca çadırın alt bölümünü kazığa bağlayan kısa ipi de adlandırır.",
+    "definition": "Bir şeyi sabitlemek için kullanılan kısa bağ ipi veya yol ile su yolu üzerine gerilerek insanların ya da taşıtların geçişini durduran ip ve engeldir.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Yol ya da su üzerine gerilen ip veya kurulan engel, gemilerin veya geçen kişilerin ilerlemesini durdurur.",
+        "statement": "Somut bir ip veya engel, sabitleme ya da geçişi durdurma işlevi görür.",
         "claim_ids": [
-          "lu_007"
+          "bc_001"
         ]
       },
       {
         "facet_id": "F002",
-        "role": "core",
-        "statement": "Çadır kullanımında kısa ip, alt kenarı bir kazığa bağlayarak çadırı sabitler.",
+        "role": "specialization",
+        "statement": "Kısa ip, çadırın alt bölümünü bir kazığa bağlayarak sabitler.",
         "claim_ids": [
-          "lu_008"
+          "bc_001"
         ]
       },
       {
         "facet_id": "F003",
-        "role": "source_variant",
-        "statement": "Aynı çadır bağı, kısa ve ince bir ip olarak farklı biçimlerle de adlandırılır.",
+        "role": "specialization",
+        "statement": "Yola veya su yoluna gerilen ip ya da engel, geçenleri veya taşıtları durdurur.",
         "claim_ids": [
-          "lu_009"
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Kaynaklar iki somut kullanım verir: yol veya su geçidinde gemileri ve yolcuları durduran ipli engel ile çadırın altını kazığa bağlayan kısa ip.",
+  "identity_judgment": {
+    "status": "accepted",
+    "rationale": "Kaynak ifadesi hem çadırın altını kazığa bağlayan kısa ipi hem de yol veya su yolu üzerinde gemileri ve geçenleri durduran ip ya da engeli açıkça sayar. Dal çerçevesi bu somut araçları doğru biçimde bir arada tutar.",
+    "boundary_note": "Dal, genel bağlama eylemini değil, çadırı sabitleyen veya geçişi durduran somut bağ ve engel araçlarını adlandırır."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "bare",
+    "note": "Tanım dalın somut araç adlarını doğrudan kapsar ve başka dallardaki soyut ilişki ya da genel alıkoyma anlamlarını içeri almaz."
+  },
+  "source_summary": "Ortak tanıklık somut bağ aracını iki işlevle sunar: çadırı kazığa sabitleyen kısa ip ve geçişi denetlemek için yola ya da su yoluna gerilen engel.",
   "source_synthesis": {
-    "common_summary": "Kaynaklar iki somut kullanım verir: yol veya su geçidinde gemileri ve yolcuları durduran ipli engel ile çadırın altını kazığa bağlayan kısa ip.",
+    "common_summary": "Ortak tanıklık somut bağ aracını iki işlevle sunar: çadırı kazığa sabitleyen kısa ip ve geçişi denetlemek için yola ya da su yoluna gerilen engel.",
     "common_claim_ids": [
-      "lu_007",
-      "lu_008",
-      "lu_009"
+      "bc_001"
     ],
     "source_details": [],
     "supporting_claim_ids": [],
@@ -52,7 +59,7 @@
     {
       "lexical_unit_id": "lu_007",
       "rendering_kind": "ordinary",
-      "target_gloss": "gemi veya yolcuları durduran gerili ip ya da engel"
+      "target_gloss": "yol veya su yolu üzerine gerilen geçiş engeli"
     },
     {
       "lexical_unit_id": "lu_008",
@@ -62,18 +69,18 @@
     {
       "lexical_unit_id": "lu_009",
       "rendering_kind": "ordinary",
-      "target_gloss": "çadırı kazığa bağlayan kısa ince ip"
+      "target_gloss": "çadır için kısa bağlama ipi"
     }
   ],
   "glosses": {
-    "semantic_definition": "Yol veya su geçidini kapatıp gemileri ya da geçenleri durduran ip veya engeldir. Ayrıca çadırın alt bölümünü kazığa bağlayan kısa ipi de adlandırır.",
+    "semantic_definition": "Bir şeyi sabitlemek için kullanılan kısa bağ ipi veya yol ile su yolu üzerine gerilerek insanların ya da taşıtların geçişini durduran ip ve engeldir.",
     "concept": {
       "rank": 1,
-      "text": "geçiş engeli veya çadırı kazığa bağlayan kısa ip",
+      "text": "sabitleme ipi veya geçiş engeli",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Hem gemi ve yolcuları durduran gerili engeli hem çadırın alt kenarını kazığa tutturan kısa ipi kapsar.",
+      "applicability": "Çadırı kazığa bağlayan kısa ip ile yol veya su yolu üzerinde geçişi durduran somut engeli birlikte karşılar.",
       "facet_ids": [
         "F001",
         "F002",
@@ -81,7 +88,7 @@
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Geçişi durdurma ve çadırı kazığa bağlama işlevleriyle iki somut araç türünü de korur.",
+        "preserves": "Somut araç niteliğini, sabitleme işlevini ve geçişi durdurma işlevini korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -90,37 +97,38 @@
     "contextual": [
       {
         "rank": 2,
-        "text": "geçişi durduran gerili ip",
+        "text": "çadır bağlama ipi",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Yol veya su üzerinde gemileri ya da geçen kişileri durduran araç söz konusu olduğunda kullanılır.",
+        "applicability": "Çadırın alt bölümünü kazığa sabitleyen kısa ipten söz edilen bağlamlarda kullanılır.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
           "fit": "narrowing",
-          "preserves": "Gerili ipin geçişi durduran engel işlevini tam olarak korur.",
-          "loses": "Çadırın altını kazığa bağlayan kısa ip kullanımını kapsamaz.",
+          "preserves": "Kısa ipin bağlama ve sabitleme işlevini korur.",
+          "loses": "Yol veya su yolu üzerindeki geçiş engeli kullanımını dışarıda bırakır.",
           "adds": null,
           "collision": null
         }
       },
       {
         "rank": 3,
-        "text": "çadır kazık ipi",
+        "text": "gerili geçiş engeli",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Çadırın alt kenarını kazığa bağlayıp sabitleyen kısa ip için kullanılır.",
+        "applicability": "Yol veya su yolu üzerine gerilerek geçenleri ya da taşıtları durduran araç için kullanılır.",
         "facet_ids": [
-          "F002",
+          "F001",
           "F003"
         ],
         "error_profile": {
           "fit": "narrowing",
-          "preserves": "Kısa ipin çadır ile kazık arasındaki bağlama işlevini korur.",
-          "loses": "Yol veya su geçidini kapatan engel kullanımını kapsamaz.",
+          "preserves": "Gerilmiş aracın geçişi durdurma işlevini korur.",
+          "loses": "Çadırı kazığa sabitleyen kısa ip kullanımını dışarıda bırakır.",
           "adds": null,
           "collision": null
         }
@@ -129,11 +137,11 @@
     "selected": [
       {
         "rank": 1,
-        "text": "geçiş engeli veya çadırı kazığa bağlayan kısa ip",
+        "text": "sabitleme ipi veya geçiş engeli",
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Hem gemi ve yolcuları durduran gerili engeli hem çadırın alt kenarını kazığa tutturan kısa ipi kapsar.",
+        "applicability": "Çadırı kazığa bağlayan kısa ip ile yol veya su yolu üzerinde geçişi durduran somut engeli birlikte karşılar.",
         "facet_ids": [
           "F001",
           "F002",
@@ -141,7 +149,7 @@
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Geçişi durdurma ve çadırı kazığa bağlama işlevleriyle iki somut araç türünü de korur.",
+          "preserves": "Somut araç niteliğini, sabitleme işlevini ve geçişi durdurma işlevini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -149,97 +157,73 @@
       },
       {
         "rank": 2,
-        "text": "geçişi durduran gerili ip",
+        "text": "çadır bağlama ipi",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Yol veya su üzerinde gemileri ya da geçen kişileri durduran araç söz konusu olduğunda kullanılır.",
+        "applicability": "Çadırın alt bölümünü kazığa sabitleyen kısa ipten söz edilen bağlamlarda kullanılır.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
           "fit": "narrowing",
-          "preserves": "Gerili ipin geçişi durduran engel işlevini tam olarak korur.",
-          "loses": "Çadırın altını kazığa bağlayan kısa ip kullanımını kapsamaz.",
+          "preserves": "Kısa ipin bağlama ve sabitleme işlevini korur.",
+          "loses": "Yol veya su yolu üzerindeki geçiş engeli kullanımını dışarıda bırakır.",
           "adds": null,
           "collision": null
         }
       },
       {
         "rank": 3,
-        "text": "çadır kazık ipi",
+        "text": "gerili geçiş engeli",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Çadırın alt kenarını kazığa bağlayıp sabitleyen kısa ip için kullanılır.",
+        "applicability": "Yol veya su yolu üzerine gerilerek geçenleri ya da taşıtları durduran araç için kullanılır.",
         "facet_ids": [
-          "F002",
+          "F001",
           "F003"
         ],
         "error_profile": {
           "fit": "narrowing",
-          "preserves": "Kısa ipin çadır ile kazık arasındaki bağlama işlevini korur.",
-          "loses": "Yol veya su geçidini kapatan engel kullanımını kapsamaz.",
+          "preserves": "Gerilmiş aracın geçişi durdurma işlevini korur.",
+          "loses": "Çadırı kazığa sabitleyen kısa ip kullanımını dışarıda bırakır.",
           "adds": null,
           "collision": null
         }
       }
     ],
-    "excluded": [
-      {
-        "text": "ip",
-        "category": "confusable",
-        "exclusion_reason": "Geçişi durdurma, gemi veya yolcuları alıkoyma ve çadırı kazığa bağlama işlevlerini belirtmez. Her türlü ipi kapsayarak kanıttaki özel işlevli araçların dışına çıkar.",
-        "error_profile": {
-          "fit": "broadening",
-          "preserves": "Somut ip aracını yalnızca genel düzeyde korur.",
-          "loses": "Geçişi durdurma, gemi veya yolcuları alıkoyma ve çadırı kazığa bağlama işlevlerini belirtmez.",
-          "adds": "Her türlü ipi kapsayarak kanıttaki özel işlevli araçların dışına çıkar.",
-          "collision": null
-        }
-      }
-    ]
+    "excluded": []
   },
   "arabic_neighbor_distinctions": [
     {
-      "neighbor_root_id": "root_000796",
-      "neighbor_branch_id": "B002",
-      "relation_type": "near_neighbor",
-      "boundary_match": "partial",
-      "focus_only": "Odak dal kısa çadır ipini ve geçişi durdurmak üzere yol veya su üzerine gerilen engeli içerir.",
-      "neighbor_only": "Komşu dal uzun, sıkı bükülmüş ipi ve kuyu kovası ya da hayvan bağlamadaki kullanımını içerir.",
-      "expression_transliteration": "el-habl et-tavil ve'ş-şedd",
-      "gloss": "işleve göre kullanılan bağlama ipi",
-      "shared_zone": "İki dalda da bağlama veya tutma amacıyla kullanılan somut ip vardır.",
-      "distinction": "Odak ipi kısa çadır bağı ya da geçiş engeli işleviyle sınırlar; komşu dal uzun ve sıkı bükülmüş ipi, farklı bağlama işlerinde kullanılan araç olarak tanımlar."
-    },
-    {
       "neighbor_root_id": "root_000788",
       "neighbor_branch_id": "B004",
-      "relation_type": "near_neighbor",
-      "boundary_match": "partial",
-      "focus_only": "Odak dal çadır kazığına bağlanan kısa ipi ve geçiş durduran gerili engeli kapsar.",
-      "neighbor_only": "Komşu dal hurma yaprağından şerit veya bükülmüş ip ile küçük hayvan bağlama kullanımını kapsar.",
+      "relation_type": "same_field",
+      "boundary_match": "field_only",
+      "focus_only": "İp çadırı kazığa sabitler veya yol ile su yolu üzerinde geçişi durdurur.",
+      "neighbor_only": "Şerit veya bükülmüş ip küçük hayvanları bağlama işleviyle öne çıkar.",
       "expression_transliteration": "eş-şerit ve'l-habl el-meftul",
-      "gloss": "bağlama ipi veya şeridi",
-      "shared_zone": "Her iki dal somut bir ip ya da şeridin bağlama aracı olarak kullanılmasını içerir.",
-      "distinction": "Odak anlam aracı çadır sabitleme ve geçiş kapatma işlevleriyle belirler; komşu anlam malzeme ve hayvan bağlama kullanımını öne çıkarır."
+      "gloss": "işlevsel bağ ipi",
+      "shared_zone": "Her iki dal somut şerit veya ipin bağlama ve sınırlama amacıyla kullanımını kapsar.",
+      "distinction": "Odak dalın araçları çadır sabitleme ve geçiş denetimine özgüdür; komşu dalın çekirdeği ise şerit ya da bükülmüş iple hayvan bağlamadır."
     },
     {
-      "neighbor_root_id": "root_000009",
-      "neighbor_branch_id": "B010",
-      "relation_type": "thematic",
-      "boundary_match": "thematic_only",
-      "focus_only": "Odak dal yol veya su üstünde ilerlemeyi durduran somut bir engeldir.",
-      "neighbor_only": "Komşu dal işlek yolu, yol birleşimini, varış sınırını ve evlerin hizasını adlandırır.",
-      "expression_transliteration": "el-meyta tarik ve muhazat",
-      "gloss": "yol üzerindeki engel",
-      "shared_zone": "İki dal yalnızca yol ve geçiş sahnesinde aynı mekânsal çevreyi paylaşır.",
-      "distinction": "Odak anlam yoldan geçişi durduran aracı bildirir; komşu anlam yolun veya hizalanmış konumun kendisini bildirir ve engelleme içermez."
+      "neighbor_root_id": "root_000583",
+      "neighbor_branch_id": "B005",
+      "relation_type": "same_field",
+      "boundary_match": "field_only",
+      "focus_only": "Araç çadırı sabitler veya yol ve su yolu geçişini keser.",
+      "neighbor_only": "Bağ, devenin kolunu alt bacağına ya da bileğine bağlayarak hareketini yavaşlatır.",
+      "expression_transliteration": "alrfaq wshd alb'yr",
+      "gloss": "hareket sınırlayan bağ",
+      "shared_zone": "İki dalda da somut bir ip veya bağ hareketi sınırlayan işlev görür.",
+      "distinction": "Odak dal çadır ve geçiş düzeneklerini adlandırır; komşu dal ise belirli biçimde devenin uzuvlarına bağlanan ve yürüyüşünü yavaşlatan bağı adlandırır."
     }
   ],
   "neighbor_coverage": {
     "assessment": "complete",
-    "note": "Bütün adaylar incelendi; ipin uzunluk ve kullanım ayrımları ile yolun kendisi ile yol engeli arasındaki tematik sınır en açıklayıcı karşılaştırmalar olarak seçildi."
+    "note": "Bütün adaylar değerlendirildi; somut ipin işlev ve bağlandığı nesne bakımından sınırını en iyi gösteren iki aynı alan komşusu seçildi."
   }
 }
