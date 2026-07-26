@@ -1,28 +1,45 @@
 {
-  "root_inputs_sha256": "4e6d62cea5e6b6f2ee9fe66f78d77a04fb8fa72e57d3748128eba06e5545545c",
+  "root_inputs_sha256": "4e3c8c5c92d1931ae1b35cc696dde9cb98dadf78a7e7e9ac9653f4d5751c84bd",
   "root_id": "root_000018",
   "branch_id": "B006",
   "language": "tr",
   "image_transliteration": "Mevdiun yümsikü'l-mâ'",
-  "summary": "Suyu bir araya getirip günlerce tutan, gölcüğe benzeyen doğal ya da kazılmış çukur, havuz veya su toplama yeridir.",
+  "summary": "Suyun toplandığı ve bir süre tutulduğu, doğal gölcüğe benzeyebilen ya da havuz biçiminde kazılmış yer veya yapıdır.",
   "concept_map": {
-    "definition": "Suyu bir araya getirip günlerce tutan, gölcüğe benzeyen doğal ya da kazılmış çukur, havuz veya su toplama yeridir.",
+    "definition": "Suyun toplandığı ve bir süre tutulduğu, doğal gölcüğe benzeyebilen ya da havuz biçiminde kazılmış yer veya yapıdır.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Çukur veya havuz biçimindeki yer suyu toplar ve bir süre içinde tutar.",
+        "statement": "Suyu bir yerde toplayıp bir süre tutan çukur, havuz veya benzeri yeri anlatır.",
         "claim_ids": [
-          "lu_014"
+          "bc_001"
+        ]
+      },
+      {
+        "facet_id": "F002",
+        "role": "source_variant",
+        "statement": "Kaynak anlatımlarında yer kimi zaman gölcüğe benzeyen bir birikinti, kimi zaman kişinin kendisi için kazdığı havuz biçimli bir yapı olarak belirir.",
+        "claim_ids": [
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Kaynaklar bu biçimleri, gölcüğe benzeyen bir su toplama yeri veya kişinin kazdığı, havuz görünümünde olup suyu günlerce tutan çukur olarak açıklar.",
+  "identity_judgment": {
+    "status": "accepted",
+    "rationale": "Kaynak ifadesi suyun toplandığı, gölcüğe benzeyen ve kazılarak suyu günlerce tutabilen yeri ortak çekirdek olarak verir. Dalın havuz, çukur ve su birikme yeri bileşenleri bu yapıyı eksiksiz yansıtır.",
+    "boundary_note": "Dal, suyu toplayıp bir süre tutan yer veya yapıdır; sahiplenilmiş arazi anlamı buna karıştırılmaz."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "bare",
+    "note": "Tanım, tanıklanan yalın yer adının su toplama ve tutma işleviyle sınırlıdır; başka söz kalıplarından kapsam alınmaz."
+  },
+  "source_summary": "Kaynaklar suyun toplandığı ve günlerce tutulabildiği yeri ortaklaştırır; anlatım doğal gölcük benzeri yer ile kazılmış havuz biçimi arasında değişir.",
   "source_synthesis": {
-    "common_summary": "Kaynaklar bu biçimleri, gölcüğe benzeyen bir su toplama yeri veya kişinin kazdığı, havuz görünümünde olup suyu günlerce tutan çukur olarak açıklar.",
+    "common_summary": "Kaynaklar suyun toplandığı ve günlerce tutulabildiği yeri ortaklaştırır; anlatım doğal gölcük benzeri yer ile kazılmış havuz biçimi arasında değişir.",
     "common_claim_ids": [
-      "lu_014"
+      "bc_001"
     ],
     "source_details": [],
     "supporting_claim_ids": [],
@@ -34,24 +51,25 @@
     {
       "lexical_unit_id": "lu_014",
       "rendering_kind": "ordinary",
-      "target_gloss": "suyu günlerce tutan çukur, havuz veya küçük su birikintisi"
+      "target_gloss": "suyu günlerce tutan birikme yeri, havuz veya çukur"
     }
   ],
   "glosses": {
-    "semantic_definition": "Suyu bir araya getirip günlerce tutan, gölcüğe benzeyen doğal ya da kazılmış çukur, havuz veya su toplama yeridir.",
+    "semantic_definition": "Suyun toplandığı ve bir süre tutulduğu, doğal gölcüğe benzeyebilen ya da havuz biçiminde kazılmış yer veya yapıdır.",
     "concept": {
       "rank": 1,
-      "text": "suyu tutan çukur veya havuz",
+      "text": "su tutan çukur veya havuz",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Suyun toplandığı ve bir süre kaldığı doğal ya da kazılmış küçük su yeri için kullanılır.",
+      "applicability": "Suyu toplayan ve bir süre bırakmadan tutan doğal ya da kazılmış yer için kullanılır.",
       "facet_ids": [
-        "F001"
+        "F001",
+        "F002"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Çukur veya havuz biçimini, suyu toplama işlevini ve suyu bir süre tutmayı korur.",
+        "preserves": "Su toplama, suyu tutma ve çukur ya da havuz biçimini korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -60,36 +78,18 @@
     "contextual": [
       {
         "rank": 2,
-        "text": "küçük su birikintisi",
+        "text": "su biriktirme çukuru",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Yerin doğal ve gölcüğe benzer bir su toplama alanı olarak düşünüldüğü bağlamda kullanılır.",
+        "applicability": "Yerin kazılarak yapıldığı ve suyu günlerce tuttuğu bağlamlarda doğal bir karşılıktır.",
         "facet_ids": [
           "F001"
         ],
         "error_profile": {
           "fit": "narrowing",
-          "preserves": "Küçük bir yerde suyun toplanıp kalması yönünü korur.",
-          "loses": "İnsan eliyle kazılmış havuz biçimini ve günlerce tutma işlevini açıkça göstermez.",
-          "adds": null,
-          "collision": null
-        }
-      },
-      {
-        "rank": 3,
-        "text": "kazılmış su tutma çukuru",
-        "loanword_status": "none",
-        "usage_role": "explanatory",
-        "selection_role": "contextual_gloss",
-        "applicability": "Bir kişinin kendi kullanımı için havuz biçiminde kazdığı su çukurunu anlatırken kullanılır.",
-        "facet_ids": [
-          "F001"
-        ],
-        "error_profile": {
-          "fit": "narrowing",
-          "preserves": "Kazılmış çukur biçimini ve suyu içinde tutma işlevini korur.",
-          "loses": "Doğal gölcük benzeri su toplama yerlerini kapsamaz.",
+          "preserves": "Kazılmış yerde suyu toplama ve tutma işlevini korur.",
+          "loses": "Doğal gölcüğe benzeyen su birikme yeri seçeneğini dışarıda bırakır.",
           "adds": null,
           "collision": null
         }
@@ -98,17 +98,18 @@
     "selected": [
       {
         "rank": 1,
-        "text": "suyu tutan çukur veya havuz",
+        "text": "su tutan çukur veya havuz",
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Suyun toplandığı ve bir süre kaldığı doğal ya da kazılmış küçük su yeri için kullanılır.",
+        "applicability": "Suyu toplayan ve bir süre bırakmadan tutan doğal ya da kazılmış yer için kullanılır.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Çukur veya havuz biçimini, suyu toplama işlevini ve suyu bir süre tutmayı korur.",
+          "preserves": "Su toplama, suyu tutma ve çukur ya da havuz biçimini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -116,36 +117,18 @@
       },
       {
         "rank": 2,
-        "text": "küçük su birikintisi",
+        "text": "su biriktirme çukuru",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Yerin doğal ve gölcüğe benzer bir su toplama alanı olarak düşünüldüğü bağlamda kullanılır.",
+        "applicability": "Yerin kazılarak yapıldığı ve suyu günlerce tuttuğu bağlamlarda doğal bir karşılıktır.",
         "facet_ids": [
           "F001"
         ],
         "error_profile": {
           "fit": "narrowing",
-          "preserves": "Küçük bir yerde suyun toplanıp kalması yönünü korur.",
-          "loses": "İnsan eliyle kazılmış havuz biçimini ve günlerce tutma işlevini açıkça göstermez.",
-          "adds": null,
-          "collision": null
-        }
-      },
-      {
-        "rank": 3,
-        "text": "kazılmış su tutma çukuru",
-        "loanword_status": "none",
-        "usage_role": "explanatory",
-        "selection_role": "contextual_gloss",
-        "applicability": "Bir kişinin kendi kullanımı için havuz biçiminde kazdığı su çukurunu anlatırken kullanılır.",
-        "facet_ids": [
-          "F001"
-        ],
-        "error_profile": {
-          "fit": "narrowing",
-          "preserves": "Kazılmış çukur biçimini ve suyu içinde tutma işlevini korur.",
-          "loses": "Doğal gölcük benzeri su toplama yerlerini kapsamaz.",
+          "preserves": "Kazılmış yerde suyu toplama ve tutma işlevini korur.",
+          "loses": "Doğal gölcüğe benzeyen su birikme yeri seçeneğini dışarıda bırakır.",
           "adds": null,
           "collision": null
         }
@@ -159,28 +142,28 @@
       "neighbor_branch_id": "B003",
       "relation_type": "near_synonym",
       "boundary_match": "partial",
-      "focus_only": "Doğal veya kişinin kendisi için kazdığı çukurda suyu günlerce tutma kapsamı vardır.",
-      "neighbor_only": "Düzenlenmiş havuzlar ve büyük su depoları gibi daha çeşitli yapıları kapsar.",
+      "focus_only": "Doğal gölcük benzeri birikme yerini ve kişinin kendisi için kazdığı su çukurunu da kapsar.",
+      "neighbor_only": "Düzeltilmiş havuzlar ve büyük su depoları gibi yapılı örneklere daha geniş yer verir.",
       "expression_transliteration": "Mâün sâbit fî havdin ev berke",
       "gloss": "havuzda duran su",
-      "shared_zone": "Her iki dal da suyun bir havuz veya çukurda toplanıp durmasını bildirir.",
-      "distinction": "Odak dalı küçük gölcük ya da kazılmış çukur biçimindeki su tutma yerine odaklanır; komşu dal düzenlenmiş havuz ve su deposu türlerini daha geniş biçimde kapsar."
+      "shared_zone": "Her ikisi de suyun havuz veya benzeri bir yerde toplanıp sabit kalmasını anlatır.",
+      "distinction": "Odak dal suyu tutan çukur ya da yer adıdır ve doğal görünümlü birikintiyi de kapsar; komşu dal havuz ve su deposu türlerine daha çok bağlıdır."
     },
     {
       "neighbor_root_id": "root_000016",
       "neighbor_branch_id": "B007",
       "relation_type": "near_synonym",
       "boundary_match": "partial",
-      "focus_only": "Küçük gölcük benzeri doğal yer veya günlerce su tutan kişisel çukur olabilir.",
-      "neighbor_only": "Kuyu, kanal veya yağmur suyunu toplayıp ekine salmaya yarayan geniş havuzdur.",
-      "expression_transliteration": "el-Me'cel: havdun yectemi'u fîhi'l-mâ'",
+      "focus_only": "Küçük doğal birikme yeri veya günlerce su tutan basit kazı olabilir.",
+      "neighbor_only": "Kuyu, kanal veya yağmur suyunu toplayıp daha sonra ekine salan geniş havuz işlevini taşır.",
+      "expression_transliteration": "el-Me'cel: havdun yectemi'u fihi'l-ma'",
       "gloss": "sulama suyu havuzu",
-      "shared_zone": "İki dal da suyun sonradan kullanılmak üzere bir havuzda toplanmasını içerir.",
-      "distinction": "Odak dalında sulama amacı ya da genişlik zorunlu değildir; komşu dal özellikle farklı kaynaklardan su toplayan ve suyu ekine veren geniş bir yapıdır."
+      "shared_zone": "Her ikisi de suyun kullanılmak üzere bir havuzda toplanmasını anlatır.",
+      "distinction": "Komşu dalın sulamaya su aktarma ve geniş havuz olma özellikleri belirgindir; odak dal için bu kullanım amacı ve büyüklük zorunlu değildir."
     }
   ],
   "neighbor_coverage": {
     "assessment": "complete",
-    "note": "Bütün su yeri adayları değerlendirildi; biçim, ölçek ve kullanım amacı bakımından en açıklayıcı iki yakın komşu yayımlandı."
+    "note": "Sabit su havuzu ile sulama havuzu en yakın iki sınırı gösterir; diğer adaylar akarsu, doluluk, küçük çukur veya belirli bir su yapısı alt türüdür."
   }
 }

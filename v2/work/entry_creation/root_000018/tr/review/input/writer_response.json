@@ -2,127 +2,74 @@
   "branches": [
     {
       "branch_ref": "root_000018/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, bir şeyi edinme alanına almayı, ona erişip onu toplamayı ve ele geçirmeyi ortak çekirdek olarak verir. Dalın genel çerçevesi bu çekirdeği doğru yansıtır; bu çekirdekten türeyen emir ve kalıplaşmış kullanımlar ise ayrı sözlüksel birimler olarak tutulmalıdır.",
+        "boundary_note": "Dalın çekirdeği genel edinme ve ele alma eylemidir; tutsak etme, suçtan sorumlu tutma ve öteki özel kullanımlar buna katılmaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım genel eylem çekirdeğini verir; emir biçimi ile söz, yular ve nesne çevresindeki kalıplı kullanımların kapsamı ayrıca korunur."
+      },
       "concept_map": {
-        "definition": "Bir nesneyi uzanıp alarak elde tutma, denetim altına alma ya da bir araya toplama eylemidir. Emir biçimi nesneye, dizgine veya söylenen söze yöneltilebilir.",
+        "definition": "Bir şeyi erişim ve denetim alanına getirerek ele geçirmek, edinmek ya da bir araya toplamaktır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Nesne alınır, ele geçirilir, elde tutulur veya bir araya toplanır.",
+            "statement": "Bir nesneye erişme, onu ele geçirme ve kendi denetim alanına alma eylemini anlatır.",
             "claim_ids": [
-              "lu_001"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "associated_use",
-            "statement": "Eylemin emir biçimi, karşıdakinden bir şeyi almasını veya tutmasını ister.",
+            "role": "extension",
+            "statement": "Ele geçirilen şeylerin toplanıp bir araya getirilmesi de aynı genel eylem çekirdeğinin kapsamındadır.",
             "claim_ids": [
-              "lu_002"
-            ]
-          },
-          {
-            "facet_id": "F003",
-            "role": "associated_use",
-            "statement": "Söze yöneldiğinde, söyleneni kabul edip kuşku ve çekişmeyi bırakma çağrısıdır.",
-            "claim_ids": [
-              "lu_003"
-            ]
-          },
-          {
-            "facet_id": "F004",
-            "role": "example",
-            "statement": "Dizgini almak veya dizginden tutmak, fiziksel kavrama kullanımının bir örneğidir.",
-            "claim_ids": [
-              "lu_004"
-            ]
-          },
-          {
-            "facet_id": "F005",
-            "role": "source_variant",
-            "statement": "Alma eylemini adlandıran özel bir türemiş biçim de kaydedilmiştir.",
-            "claim_ids": [
-              "lu_005"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Temel anlam, bir şeyi alıp elde tutmayı, denetim altına almayı veya toplamayı kapsar; bunun doğrudan emir biçimi de aynı alma ve tutma çekirdeğini taşır.",
+        "common_summary": "Kaynaklar, erişip alma ile denetim altına alma ve toplama yönlerini aynı temel eylemin bileşenleri olarak birleştirir.",
         "common_claim_ids": [
-          "lu_001",
-          "lu_002"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_003"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Söyleneni kabul etme ve kuşku ile çekişmeyi bırakma çağrısı olarak kullanılan bir kalıp ayrıca kaydedilir."
-          },
-          {
-            "claim_ids": [
-              "lu_004"
-            ],
-            "kind": "example",
-            "summary": "Dizgini doğrudan almak ile dizginden tutmak eşdeğer bir kullanım olarak verilir."
-          },
-          {
-            "claim_ids": [
-              "lu_005"
-            ],
-            "kind": "derivation",
-            "summary": "Alma eylemini adlandıran özel bir türemiş ad biçimi gösterilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "alma, tutma ve elde toplama",
-        "applicability": "Bir nesnenin ele geçirilmesi, elde tutulması veya bir araya getirilmesi anlamlarının ortak karşılığıdır.",
+        "text": "ele geçirip edinme",
+        "applicability": "Bir şeyin erişim ve denetim alanına alınmasını, gerektiğinde toplanmasını birlikte anlatan genel karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Alma, fiziksel tutma, denetim altına alma ve toplama çekirdeğini birlikte korur.",
+          "preserves": "Erişme, ele geçirme, edinme ve toplama çekirdeğini birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "al ve tut",
-          "usage_role": "contextual",
-          "applicability": "Bir nesneye ya da dizgine yöneltilen doğrudan emir bağlamında kullanılır.",
+          "text": "almak",
+          "usage_role": "general",
+          "applicability": "Bağlam nesnenin ele geçirilmesini açıkça gösterdiğinde doğal ve kısa bir karşılıktır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Emir kipindeki fiziksel alma ve elde tutma yönünü korur.",
-            "loses": "Toplama ve söylenen sözü kabul etme kullanımlarını kapsamaz.",
+            "preserves": "Bir nesneye erişip onu edinme eylemini korur.",
+            "loses": "Denetim altına alma ve bir araya toplama yönlerini açıkça söylemez.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F002",
-            "F004"
-          ]
-        },
-        {
-          "text": "söyleneni kabul et",
-          "usage_role": "explanatory",
-          "applicability": "Kuşkuyu ve çekişmeyi bırakıp aktarılan sözü benimseme çağrısında kullanılır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Sözün zihinsel olarak alınması ve benimsenmesi yönünü korur.",
-            "loses": "Nesneyi fiziksel olarak alma, tutma ve toplama yönlerini kapsamaz.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F003"
+            "F001"
           ]
         }
       ],
@@ -130,27 +77,27 @@
         {
           "lexical_unit_id": "lu_001",
           "rendering_kind": "ordinary",
-          "target_gloss": "nesneyi almak, ele geçirmek ve toplamak"
+          "target_gloss": "nesneyi ele geçirip almak"
         },
         {
           "lexical_unit_id": "lu_002",
           "rendering_kind": "ordinary",
-          "target_gloss": "al; tut"
+          "target_gloss": "al"
         },
         {
           "lexical_unit_id": "lu_003",
           "rendering_kind": "ordinary",
-          "target_gloss": "söylediğimi kabul et, kuşkuyu ve çekişmeyi bırak"
+          "target_gloss": "söylediğimi dinle, kuşkuyu ve çekişmeyi bırak"
         },
         {
           "lexical_unit_id": "lu_004",
           "rendering_kind": "ordinary",
-          "target_gloss": "dizgini tut"
+          "target_gloss": "yuları tut"
         },
         {
           "lexical_unit_id": "lu_005",
           "rendering_kind": "ordinary",
-          "target_gloss": "alma eylemini bildiren türemiş ad"
+          "target_gloss": "alma eylemini yoğunluk bildiren kalıpla anlatan biçim"
         }
       ],
       "excluded_glosses": [],
@@ -159,55 +106,70 @@
           "neighbor_ref": "root_001028/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Elde tutma, denetim altına alma, toplama ve sözü kabul etme kapsamları da vardır.",
-          "neighbor_only": "El hareketiyle uzanıp alma özellikle öne çıkar.",
+          "focus_only": "Elde tutmanın yanı sıra edinme, denetim altına alma ve toplama kapsamını taşır.",
+          "neighbor_only": "Almayı özellikle elle uzanıp kaldırma biçiminde sınırlar.",
           "gloss": "elle alma",
-          "shared_zone": "Her iki dal da bir nesneyi fiziksel olarak alıp ele geçirme eylemini kapsar.",
-          "distinction": "Odak dalı alma çekirdeğini tutma, toplama ve sözün kabulü gibi kullanımlara açar; komşu dal ise özellikle elle uzanıp nesneyi kaldırma hareketiyle sınırlıdır."
+          "shared_zone": "Her ikisi de bir nesneye erişip onu alma eyleminde kesişir.",
+          "distinction": "Komşu dal fiziksel el hareketini öne çıkarır; odak dal ise aracı belirtmeden ele geçirme, edinme ve toplama sonucunu da kapsar."
         },
         {
           "neighbor_ref": "root_001197/B003",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Her tür nesneyi alma, tutma ve söz alma kullanımlarını kapsar.",
-          "neighbor_only": "Malı mülkiyette veya bir toplama yerinde biriktirme ve teslim etme kapsamı vardır.",
+          "focus_only": "Mal dışındaki nesneleri de ele alma ve edinme kapsamına sahiptir.",
+          "neighbor_only": "Malı ya da eşyayı mülkiyette toplama ve teslim etme alanına özgü ayrıntılar taşır.",
           "gloss": "malı edinip toplama",
-          "shared_zone": "İki dalda da bir şeyi ele geçirip bir araya getirme anlamı bulunur.",
-          "distinction": "Odak dalı genel alma ve tutma eylemidir; komşu dal mal veya eşyanın mülkiyet içinde toplanmasına ve gerektiğinde teslim edilmesine özgüdür."
+          "shared_zone": "Her ikisi de bir şeyi denetim alanına getirip toplamayı anlatabilir.",
+          "distinction": "Komşu dal mal ve mülkiyet alanına bağlıdır; odak dalın genel nesne kapsamı ve yalın erişip alma yönü daha geniştir."
         }
       ],
-      "neighbor_coverage_note": "Verilen bütün komşu kartları incelendi; sınırı en iyi açıklayan iki yakın karşılaştırma yayımlandı."
+      "neighbor_coverage_note": "En yakın iki aday, fiziksel elle alma ile malı edinip toplama sınırlarını görünür kıldığı için seçildi; öteki adaylar yalnızca özel sonuçları veya uzak senaryoları paylaşır."
     },
     {
       "branch_ref": "root_000018/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bir kişiyi işlediği suç nedeniyle hesaba çekme ya da cezalandırma kalıbını açıkça bildirir. Dal, genel bir alma eylemi değil, kusur ile ona yöneltilen yaptırım arasındaki bağı doğru biçimde ayırır.",
+        "boundary_note": "Anlam yalnızca bir kimseyi işlediği suç nedeniyle sorumlu tutma kalıbına bağlıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım belirli suç nedeniyle hesaba çekme kalıbıyla sınırlıdır ve kökün yalın anlamına genellenmez."
+      },
       "concept_map": {
-        "definition": "Bir kişiyi işlediği kusur veya suç nedeniyle sorumlu tutup hesaba çekme ya da cezalandırma eylemidir.",
+        "definition": "Bir kimseyi işlediği suç veya kusur nedeniyle hesaba çekmek ve ona yaptırım uygulamaktır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kişiye kendi kusuru veya suçu nedeniyle hesap sorulur ya da ceza verilir.",
+            "statement": "Kişi ile işlediği suç arasında bağ kurarak onu bundan sorumlu tutmayı anlatır.",
             "claim_ids": [
-              "lu_006"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Dal, bir insanın kendi kusuru veya suçu yüzünden sorumlu tutulmasını, hesaba çekilmesini ya da cezalandırılmasını bildirir.",
-        "common_claim_ids": [
-          "lu_006"
+        "common_summary": "Tek kaynaklı tanıklık, bir kimseyi belirli bir suç nedeniyle sorumlu tutup cezalandıran kalıplı kullanımı bildirir.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Kullanım, kişiyi kendi suçu nedeniyle hesaba çekme ve cezalandırma anlamıyla tek başına tanıklanmıştır."
+          }
         ],
-        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "suçundan dolayı hesaba çekme",
-        "applicability": "Bir kişiyi yaptığı yanlışın sorumluluğuyla karşı karşıya bırakma bağlamında kullanılır.",
+        "text": "suçundan sorumlu tutma",
+        "applicability": "Kişinin kendi suçu nedeniyle hesaba çekilmesi ve yaptırımla karşılaşması söz konusu olduğunda kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Yanlış yapan kişi, işlenen kusur ve buna bağlı hesap sorma ilişkisini korur.",
+          "preserves": "Suç, sorumluluk ve buna bağlı yaptırım ilişkisini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -220,11 +182,11 @@
         {
           "text": "suçundan ötürü cezalandırmak",
           "usage_role": "contextual",
-          "applicability": "Sorumlu tutmanın fiilen ceza verme sonucuna ulaştığı bağlamlarda kullanılır.",
+          "applicability": "Hesaba çekmenin somut sonucu ceza olduğunda doğal bir cümle içi karşılıktır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Kusur ile kişiye yönelen olumsuz karşılık arasındaki bağı korur.",
-            "loses": "Ceza verilmeksizin yalnızca hesap sorma olasılığını kapsamaz.",
+            "fit": "none",
+            "preserves": "Kişiye kendi suçu nedeniyle yaptırım uygulanmasını açıkça korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -237,7 +199,7 @@
         {
           "lexical_unit_id": "lu_006",
           "rendering_kind": "ordinary",
-          "target_gloss": "birini suçundan dolayı hesaba çekmek veya cezalandırmak"
+          "target_gloss": "onu suçundan ötürü hesaba çekip cezalandırdı"
         }
       ],
       "excluded_glosses": [],
@@ -246,89 +208,80 @@
           "neighbor_ref": "root_000244/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Kusur işleyen kişiyi doğrudan sorumlu tutup hesaba çekme eylemidir.",
-          "neighbor_only": "Bir fiile iyi ya da kötü karşılık verme ve ödüllendirme kapsamını da içerir.",
-          "gloss": "fiilin karşılığını verme",
-          "shared_zone": "Her iki dal da yapılmış bir fiile sonuç veya karşılık bağlar.",
-          "distinction": "Odak dalı yalnızca kusur ya da suç nedeniyle kişiye yönelen hesap sorma ve cezalandırmadır; komşu dal olumlu karşılıkları da içeren daha genel bir karşılık verme alanıdır."
-        },
-        {
-          "neighbor_ref": "root_000013/B003",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Faili hesaba çekme veya sorumlu tutma sürecini öne çıkarır.",
-          "neighbor_only": "İşlenen günahın cezasını veya ceza sonucunu adlandırır.",
-          "gloss": "günahın cezası",
-          "shared_zone": "İki dal da işlenmiş bir yanlış ile olumsuz karşılık arasındaki bağı kurar.",
-          "distinction": "Odak dalında işlem kişiye yönelip onu sorumlu tutar; komşu dal ise bu işlemin öznesinden çok günaha bağlanan ceza veya karşılığı adlandırır."
+          "focus_only": "Kişiyi kendi suçu nedeniyle doğrudan hesaba çekme ilişkisini kurar.",
+          "neighbor_only": "Bir eylemi iyi ya da kötü bir karşılıkla ödüllendirme veya cezalandırma alanının tümünü kapsar.",
+          "gloss": "eyleme karşılık verme",
+          "shared_zone": "Her ikisi de bir eylem ile onun ardından gelen karşılık arasında bağ kurar.",
+          "distinction": "Odak dal suç işleyen kişiye yönelen sorumluluk işlemini anlatır; komşu dal ise iyi eyleme ödül verilmesini de içeren daha genel bir karşılık alanıdır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; failin hesaba çekilmesi ile fiilin karşılığı arasındaki sınırı gösteren iki komşu seçildi."
+      "neighbor_coverage_note": "Karşılık verme dalı en olası karışıklığı gösterir; suç, yük ve günah adayları ise eylemin kendisini ya da sonucunu anlatıp hesaba çekme işlemini karşılamaz."
     },
     {
       "branch_ref": "root_000018/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, bir kişiyi yakalayıp özgürlüğünden yoksun bırakarak tutsak etme eylemini ve bu eylemin sonucundaki kişiyi birlikte tanıklar. Dalın savaş veya zor kullanma bağlamındaki tutma çerçevesi bu ayrımı doğru korur.",
+        "boundary_note": "Dal, sıradan bir nesneyi almaktan farklı olarak bir kişiyi yakalayıp tutsak duruma getirmeyi anlatır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tutsak kişi adı ile yakalama buyruğu ve kişi üzerinde kurulan kalıplı eylem birbirinden ayrılarak tanımlanır."
+      },
       "concept_map": {
-        "definition": "Bir kişiyi yakalayıp özgürlüğünden yoksun bırakarak tutsak etme eylemi ve bu eylem sonucunda tutsak edilmiş kişidir.",
+        "definition": "Bir kişiyi yakalayıp hareket özgürlüğünü elinden alarak tutsak duruma getirmek veya bu durumda bulunan kişiyi belirtmektir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kişi yakalanır, denetim altına alınır ve tutsak durumuna getirilir.",
+            "statement": "Bir kişiyi yakalama ve özgürlüğünü kısıtlayarak tutsak etme eylemini anlatır.",
             "claim_ids": [
-              "lu_007",
-              "lu_008",
-              "lu_009"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "extension",
+            "statement": "Yakalanıp tutsak edilmiş kişi de aynı söz ailesinin bir biçimiyle adlandırılır.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Temel sonuç, yakalanmış ve özgürlüğü elinden alınmış tutsak kişidir.",
+        "common_summary": "Kaynaklar, yakalayıp tutsak etme eylemiyle bu eylemin sonucundaki tutsak kişi adını aynı anlam alanında birleştirir.",
         "common_claim_ids": [
-          "lu_007"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_008"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Bir kişiyi yakalamanın doğrudan tutsak etme anlamına geldiği kullanım ayrıca verilir."
-          },
-          {
-            "claim_ids": [
-              "lu_009"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Çoğul emir biçiminin insanları yakalayıp tutsak etme buyruğu olduğu belirtilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
         "text": "yakalayıp tutsak etme",
-        "applicability": "Bir kişiyi ele geçirerek özgürlüğünden yoksun bırakma eylemi için kullanılır.",
+        "applicability": "Bir kişinin yakalanması ve özgürlüğü alınarak tutsak duruma getirilmesi için kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Yakalama işlemini, kişinin denetim altına alınmasını ve tutsaklık sonucunu korur.",
+          "preserves": "Yakalama işlemini, özgürlük kaybını ve ortaya çıkan tutsaklık durumunu korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "tutsak",
-          "usage_role": "contextual",
-          "applicability": "Eylemden çok yakalanıp özgürlüğü elinden alınmış kişiyi adlandırırken kullanılır.",
+          "text": "tutsak etmek",
+          "usage_role": "general",
+          "applicability": "Eylemin sonucu açık olduğunda yakalama ve özgürlüğü kaldırma sürecini doğal biçimde karşılar.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Yakalama sonucunda oluşan tutsaklık durumunu korur.",
-            "loses": "Yakalama ve tutsak etme eyleminin kendisini açıkça bildirmez.",
+            "fit": "none",
+            "preserves": "Kişinin yakalanıp özgürlüğünden yoksun bırakılmasını korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
@@ -341,126 +294,109 @@
         {
           "lexical_unit_id": "lu_007",
           "rendering_kind": "ordinary",
-          "target_gloss": "tutsak; yakalanmış kişi"
+          "target_gloss": "tutsak edilmiş kişi"
         },
         {
           "lexical_unit_id": "lu_008",
           "rendering_kind": "ordinary",
-          "target_gloss": "birini yakalayıp tutsak etmek"
+          "target_gloss": "falanca yakalanıp tutsak edildi"
         },
         {
           "lexical_unit_id": "lu_009",
           "rendering_kind": "ordinary",
-          "target_gloss": "onları yakalayıp tutsak edin"
+          "target_gloss": "onları tutsak edin"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000737/B013",
-          "relation_type": "synonym",
-          "boundary_match": "exact",
-          "focus_only": null,
-          "neighbor_only": null,
-          "gloss": "tutsak etme",
-          "shared_zone": "Her iki dalın çekirdeği de bir kişiyi yakalayıp tutsak durumuna getirmektir.",
-          "distinction": "Çekirdek sınırları aynıdır; odak daldaki ad ve emir biçimleri yalnızca aynı tutsak etme anlamının farklı dilsel gerçekleşmeleridir."
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Eylemin yanı sıra tutsak edilmiş kişi adını ve doğrudan buyruğu da kapsar.",
+          "neighbor_only": "Tutsak etme anlamını yalnızca belirli bir söz kalıbında tanıklar.",
+          "gloss": "belirli kalıpta tutsak etme",
+          "shared_zone": "Her iki dalın eylem çekirdeği bir kişiyi yakalayıp tutsak etmektir.",
+          "distinction": "Komşu dal tek bir kalıba bağlıdır; odak dal ise tutsak etme eylemini, buyruğunu ve ortaya çıkan kişi adını daha geniş bir sözlüksel kümede taşır."
         },
         {
-          "neighbor_ref": "root_000037/B001",
+          "neighbor_ref": "root_000030/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Kişiyi ele geçirme ve tutsak durumuna getirme olayını bildirir.",
-          "neighbor_only": "Bağlama, baskı kurma ve kişiyi tutulmuş durumda sürdürme işlemlerini kapsar.",
-          "gloss": "zorla bağlayıp hapsetme",
-          "shared_zone": "Her iki dal da kişinin özgürlüğünü zorla kısıtlar.",
-          "distinction": "Odak dalının çekirdeği yakalama ve tutsak etme geçişidir; komşu dal ise bağ veya baskı yoluyla hapsetme ve tutulmuş durumu sürdürmeye odaklanır."
+          "focus_only": "Yakalama ve tutsak duruma getirme olayını öne çıkarır.",
+          "neighbor_only": "Bağla sıkıca tutturma ve bağın kendisi gibi fiziksel bağlama ayrıntılarını içerir.",
+          "gloss": "bağlayıp hapsetme",
+          "shared_zone": "Her ikisi de bir kişinin özgürlüğünün zorla kısıtlanması alanında buluşur.",
+          "distinction": "Odak dal için fiziksel bağ kullanılması zorunlu değildir; komşu dalın çekirdeğinde bağlama ve bağlı tutma işlemi bulunur."
         }
       ],
-      "neighbor_coverage_note": "Bütün komşu kartları gözden geçirildi; tam eşleşen tutsak etme dalı ile en yakın hapsetme dalı yayımlandı."
+      "neighbor_coverage_note": "Doğrudan tutsak etme ve bağlayarak hapsetme adayları sınırı en iyi gösterir; öteki adaylar yalnızca baskı, üstünlük veya hapsetme ortamını paylaşır."
     },
     {
       "branch_ref": "root_000018/B004",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi göz ve benzeri durumlar için yapılan sözlü bir iyileştirme uygulamasını, büyüye benzetilen nesneyi ve eşin başka kadınlarla birleşmesini engelleme girişimini birlikte verir. Bunların ortak yanı doğaüstü sayılan bir işlemle kişiyi etkilemek veya engellemektir.",
+        "boundary_note": "Dal doğal hastalığı değil, söz, nesne veya büyüsel düzenekle etkileme ve özellikle cinsel birleşmeyi engelleme inancını anlatır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Genel doğaüstü etkileme alanı, göz için sözlü uygulama ve eşe yönelik engelleme kalıplarına göre ayrı alt yönlerle verilir."
+      },
       "concept_map": {
-        "definition": "Okuma, büyü veya büyülü bir nesne aracılığıyla göz gibi bir hedefi etkileme ya da bir kişiyi isteğinden, görüşünden veya cinsel ilişkiden alıkoyup bağlama uygulamasıdır.",
+        "definition": "Söz, nesne ya da büyüsel sayılan bir düzenekle göz ve benzeri bir durumu etkilemek veya bir kişiyi, özellikle eşini başka kadınlarla birleşmekten alıkoymaktır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Büyülü bir okuma veya nesne hedefi etkisi altına alıp bağlar.",
+            "statement": "Doğaüstü etkili sayılan sözlü uygulama veya nesne aracılığıyla bir kişi ya da bedensel durum üzerinde etki kurmayı anlatır.",
             "claim_ids": [
-              "lu_010"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Bir kadının büyü yoluyla eşini başka kadınlarla cinsel ilişkiden alıkoyması özel bir uygulamadır.",
+            "statement": "Özel bir kullanımda kadın, büyüsel sayılan yollarla eşini başka kadınlarla cinsel birleşmeden alıkoymaya çalışır.",
             "claim_ids": [
-              "lu_011"
-            ]
-          },
-          {
-            "facet_id": "F003",
-            "role": "extension",
-            "statement": "Etkilenen erkek kadınlardan, cinsel ilişkiden veya kendi görüşünü uygulamaktan alıkonmuş sayılır.",
-            "claim_ids": [
-              "lu_012"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar, göz gibi bir hedefi etkileyen büyülü okuma veya nesneyi; ayrıca bir erkeği başka kadınlarla ilişkiden ya da kendi yöneliminden alıkoyan bağlama uygulamasını aynı anlam alanında toplar.",
+        "common_summary": "Kaynaklar göz ve benzeri durumlara yönelen sözlü uygulamayı, büyüsel nesneyi ve eşin cinsel davranışını engellemeyi ortak bir doğaüstü etkileme alanında toplar.",
         "common_claim_ids": [
-          "lu_010",
-          "lu_011",
-          "lu_012"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "büyüyle bağlama ve engelleme",
-        "applicability": "Bir kişiyi ya da gözü büyülü okuma veya nesneyle etkileyip belirli bir davranıştan alıkoyma bağlamında kullanılır.",
+        "text": "büyüsel yolla etkileyip engelleme",
+        "applicability": "Sözlü uygulama, nesne veya büyüsel sayılan yöntemle kişi üzerinde etki kurma ve onu belirli bir davranıştan alıkoyma alanını kapsar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Büyülü araç, hedef üzerinde denetim kurma ve onu bir eylemden alıkoyma unsurlarını korur.",
+          "preserves": "Doğaüstü sayılan aracı, etki kurmayı ve engelleme sonucunu korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
           "F001",
-          "F002",
-          "F003"
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "gözü etkileyen büyülü okuma",
+          "text": "büyüyle bağlamak",
           "usage_role": "contextual",
-          "applicability": "Gözün veya benzeri bir hedefin büyülü bir okumayla etkilenmesi söz konusu olduğunda kullanılır.",
+          "applicability": "Bir kişinin cinsel davranışının büyüsel sayılan yöntemle engellenmesi bağlamında kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Büyülü okuma ile hedefin etkilenmesi ilişkisini korur.",
-            "loses": "Kişiyi cinsel ilişkiden veya kendi görüşünden alıkoyma kapsamını içermez.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        },
-        {
-          "text": "eşini başka ilişkilerden alıkoyma büyüsü",
-          "usage_role": "explanatory",
-          "applicability": "Bir kadının eşini başka kadınlarla cinsel ilişkiden alıkoymayı amaçladığı özel kullanımda geçerlidir.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Büyü, eşler ve başka kadınlarla ilişkiyi engelleme unsurlarını korur.",
-            "loses": "Göz üzerinde etkili okuma ve daha genel görüşten alıkoyma kullanımlarını kapsamaz.",
+            "preserves": "Büyüsel sayılan etkiyi ve kişiyi davranıştan alıkoyma sonucunu korur.",
+            "loses": "Göz ve benzeri durumlar için yapılan daha genel sözlü uygulama kapsamını dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
@@ -473,91 +409,109 @@
         {
           "lexical_unit_id": "lu_010",
           "rendering_kind": "ordinary",
-          "target_gloss": "gözü etkileyen büyülü okuma veya büyülü nesne"
+          "target_gloss": "gözü ve benzeri durumları etkilediğine inanılan sözlü uygulama veya büyüsel nesne"
         },
         {
           "lexical_unit_id": "lu_011",
           "rendering_kind": "ordinary",
-          "target_gloss": "eşini başka kadınlarla ilişkiden alıkoyma büyüsü"
+          "target_gloss": "eşi başka kadınlarla birleşmekten büyüsel yollarla alıkoyma"
         },
         {
           "lexical_unit_id": "lu_012",
           "rendering_kind": "ordinary",
-          "target_gloss": "kadınlardan veya cinsel ilişkiden büyüyle alıkonmuş"
+          "target_gloss": "kadınlarla birleşmekten büyüsel yolla alıkonmuş"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_000860/B009",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Gözün etkilenmesi ile kişinin görüşten veya cinsel ilişkiden alıkonması kapsamları vardır.",
-          "neighbor_only": "Büyülü boncuğun kişinin gönlünü istediği şeyden çevirdiği düşüncesine özgüdür.",
-          "gloss": "gönlü çeviren büyülü boncuk",
-          "shared_zone": "Her iki dal da büyülü bir nesne veya uygulamayla kişinin yönelimini değiştirmeyi amaçlar.",
-          "distinction": "Odak dalı bağlayıp engelleme sonucunu ve birden çok hedefi kapsar; komşu dal özellikle bir boncukla kişinin gönlünü istediğinden çevirme inancına dayanır."
-        },
-        {
           "neighbor_ref": "root_001036/B014",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Bir hedefi etkileyip davranıştan veya ilişkiden alıkoyan büyü uygulamasıdır.",
-          "neighbor_only": "Büyülü düğümün kendisini ve onu çözmek için yapılan karşı uygulamayı kapsar.",
-          "gloss": "büyülü düğüm",
-          "shared_zone": "İki dalda da bağlama düşüncesiyle ilişkilendirilen büyü uygulaması vardır.",
-          "distinction": "Odak dalı büyünün kişi üzerindeki engelleyici sonucunu öne çıkarır; komşu dal ise büyülü düğümü ve bu düğüme karşı yapılan çözme işlemini adlandırır."
+          "focus_only": "Sözlü uygulama, etkileyici nesne ve kişiyi cinsel birleşmeden alıkoyma sonucunu birlikte kapsar.",
+          "neighbor_only": "Büyüsel bağ ve onu çözmek için yapılan karşı uygulama çevresinde yoğunlaşır.",
+          "gloss": "büyüsel bağ",
+          "shared_zone": "Her ikisi de büyüsel sayılan bir yolla kişiyi bağlama veya engelleme düşüncesini taşır.",
+          "distinction": "Odak dalın göz için sözlü uygulama ve eşin davranışını engelleme gibi kendine özgü kullanımları vardır; komşu dal bağın kendisi ve çözülmesi çevresindedir."
+        },
+        {
+          "neighbor_ref": "root_001010/B003",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Kişiyi etkileyip engelleyen ve kimi kullanımlarda büyüsel sayılan işlemi anlatır.",
+          "neighbor_only": "Okuma ve sözlü yakarış yoluyla iyileşme veya korunma umudunu öne çıkarır.",
+          "gloss": "iyileştirme amaçlı okuma",
+          "shared_zone": "Her ikisi de sözlü uygulamanın görünmeyen bir etki doğurduğu inanç alanında yer alır.",
+          "distinction": "Odak dalın çekirdeğinde etki altına alma ve engelleme bulunur; komşu dal korunma ya da iyileşme amacıyla yapılan okumayı anlatır."
         }
       ],
-      "neighbor_coverage_note": "Bütün büyü ve korunma komşuları karşılaştırıldı; engelleyici sonuç bakımından en yakın iki sınır yayımlandı."
+      "neighbor_coverage_note": "Büyüsel bağ ile iyileştirme amaçlı okuma en yakın karışıklıkları gösterir; diğer adaylar yalnızca takılan nesne veya korunma amacı gibi tek bir alanı paylaşır."
     },
     {
       "branch_ref": "root_000018/B005",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bir kişinin ya da yöneticinin araziyi kendisi için alıp denetimine geçirmesini, mülk edinmesini ve işler duruma getirmesini açıkça bildirir. Dalın arazi ve mülk odağı kaynak sınırına uygundur.",
+        "boundary_note": "Anlam, kişinin kendisi için sahiplenip denetimine aldığı ve işlediği araziyle sınırlıdır; su biriktiren yer bu dala girmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım tanıklanan yalın arazi adı ve onun edinilip işletilme özellikleriyle sınırlıdır; kalıplaşmış başka okumalardan anlam aktarılmaz."
+      },
       "concept_map": {
-        "definition": "Bir kişinin veya yöneticinin kendisi için ayırıp sahiplenerek denetimine aldığı arazi ya da çiftliktir.",
+        "definition": "Bir kişinin ya da yöneticinin kendisi için sahiplenip denetimine aldığı, mülk edindiği ve işler duruma getirdiği arazidir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Arazi kişi veya yönetici tarafından kendisi için ayrılır, sahiplenilir ve denetim altına alınır.",
+            "statement": "Kişinin kendisi için sahiplenip denetimine geçirdiği araziyi anlatır.",
             "claim_ids": [
-              "lu_013"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "extension",
+            "statement": "Arazinin mülk edinilmesi ve işlenerek canlandırılması bu adlandırmanın belirgin sonucudur.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Dalın ortak çekirdeği, bir kişinin ya da yöneticinin araziyi kendisi için ayırıp sahiplenmesidir; bazı açıklamalarda bu araziyi işleyip canlandırma ayrıntısı da eklenir.",
+        "common_summary": "Kaynaklar, kendisi için alınan araziyi sahiplenme, denetim altına alma, mülk edinme ve işler duruma getirme yönleriyle tanımlar.",
         "common_claim_ids": [
-          "lu_013"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "kendine ayırıp sahiplenilen arazi",
-        "applicability": "Bir arazi parçasının kişi veya yönetici tarafından kendisi için ayrılıp denetim altına alınması bağlamında kullanılır.",
+        "text": "sahiplenilip işletilen arazi",
+        "applicability": "Bir kişinin kendisi için denetimine aldığı, mülk edindiği ve işler duruma getirdiği araziyi adlandırır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Araziyi kendine ayırma, sahiplenme ve denetim altına alma ilişkisini korur.",
+          "preserves": "Araziyi, kendisi için sahiplenmeyi, denetimi ve işletmeye açmayı korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "edinilip işlenen çiftlik",
+          "text": "edinilmiş toprak",
           "usage_role": "contextual",
-          "applicability": "Sahiplenilen arazinin işlenip canlandırılarak bir çiftlik niteliği kazandığı bağlamda kullanılır.",
+          "applicability": "Bağlam arazinin bir kişi için sahiplenildiğini açıkça gösterdiğinde kullanılabilir.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Arazi edinme ve onu işler duruma getirme yönlerini korur.",
-            "loses": "İşlenmiş bir çiftlik niteliği kazanmamış arazi ayırma durumunu kapsamaz.",
+            "preserves": "Arazinin edinilip bir kişinin denetimine geçmesini korur.",
+            "loses": "Toprağın işlenerek canlandırılması yönünü açıkça belirtmez.",
             "adds": null,
             "collision": null
           },
@@ -570,7 +524,7 @@
         {
           "lexical_unit_id": "lu_013",
           "rendering_kind": "ordinary",
-          "target_gloss": "kişinin kendisi için sahiplendiği arazi veya çiftlik"
+          "target_gloss": "kişinin kendisi için sahiplenip denetimine aldığı arazi"
         }
       ],
       "excluded_glosses": [],
@@ -579,87 +533,80 @@
           "neighbor_ref": "root_001034/B004",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Kendine ayrılan belirli araziyi sahiplenme ve canlandırma koşulu vardır.",
-          "neighbor_only": "Para, taşınmaz ve çiftlik edinimini daha geniş biçimde kapsar.",
-          "gloss": "mal ve çiftlik edinme",
-          "shared_zone": "Her iki dal da arazi veya çiftliğin kişinin mülkiyet ve denetimine girmesini kapsar.",
-          "distinction": "Odak dalı kişinin ya da yöneticinin kendine ayırıp canlandırdığı araziye özgüdür; komşu dal arazi dışındaki malları da içeren daha genel bir edinme alanıdır."
-        },
-        {
-          "neighbor_ref": "root_001454/B003",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Araziyi kendine ayırma, sahiplenme ve işleyip canlandırma eylemi bulunur.",
-          "neighbor_only": "Henüz canlandırılmamış, sahipsiz veya yararlanılmayan toprağın durumu anlatılır.",
-          "gloss": "işlenmemiş sahipsiz arazi",
-          "shared_zone": "İki dalın ortak konusu henüz işlenebilir nitelikteki arazi alanıdır.",
-          "distinction": "Odak dalı toprağın sahiplenilip canlandırılması sonucunu bildirir; komşu dal ise bu işlemden önceki işlenmemiş veya sahipsiz arazi durumunu adlandırır."
+          "focus_only": "Özellikle araziyi sahiplenme, denetim altına alma ve işler duruma getirme yönlerini taşır.",
+          "neighbor_only": "Arazi dışındaki mal ve taşınmazları edinme ve elde tutma alanını da kapsar.",
+          "gloss": "mal ve taşınmaz edinme",
+          "shared_zone": "Her ikisi de toprağı veya taşınmazı kişinin malı ve denetimi haline getirmeyi anlatır.",
+          "distinction": "Odak dal arazi adına ve arazinin işler duruma getirilmesine bağlıdır; komşu dal daha genel mal ve taşınmaz sahipliğini kapsar."
         }
       ],
-      "neighbor_coverage_note": "Arazi ve mülk alanındaki bütün adaylar incelendi; edinme ile işlenmemiş toprak sınırlarını gösteren iki komşu seçildi."
+      "neighbor_coverage_note": "Mal ve taşınmaz edinme dalı temel sınırı en iyi açıklar; diğer adaylar arazi türünü, çokluğunu veya idari tahsisini anlatıp odak kavramla yer değiştiremez."
     },
     {
       "branch_ref": "root_000018/B006",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi suyun toplandığı, gölcüğe benzeyen ve kazılarak suyu günlerce tutabilen yeri ortak çekirdek olarak verir. Dalın havuz, çukur ve su birikme yeri bileşenleri bu yapıyı eksiksiz yansıtır.",
+        "boundary_note": "Dal, suyu toplayıp bir süre tutan yer veya yapıdır; sahiplenilmiş arazi anlamı buna karıştırılmaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım, tanıklanan yalın yer adının su toplama ve tutma işleviyle sınırlıdır; başka söz kalıplarından kapsam alınmaz."
+      },
       "concept_map": {
-        "definition": "Suyu bir araya getirip günlerce tutan, gölcüğe benzeyen doğal ya da kazılmış çukur, havuz veya su toplama yeridir.",
+        "definition": "Suyun toplandığı ve bir süre tutulduğu, doğal gölcüğe benzeyebilen ya da havuz biçiminde kazılmış yer veya yapıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Çukur veya havuz biçimindeki yer suyu toplar ve bir süre içinde tutar.",
+            "statement": "Suyu bir yerde toplayıp bir süre tutan çukur, havuz veya benzeri yeri anlatır.",
             "claim_ids": [
-              "lu_014"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "source_variant",
+            "statement": "Kaynak anlatımlarında yer kimi zaman gölcüğe benzeyen bir birikinti, kimi zaman kişinin kendisi için kazdığı havuz biçimli bir yapı olarak belirir.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar bu biçimleri, gölcüğe benzeyen bir su toplama yeri veya kişinin kazdığı, havuz görünümünde olup suyu günlerce tutan çukur olarak açıklar.",
+        "common_summary": "Kaynaklar suyun toplandığı ve günlerce tutulabildiği yeri ortaklaştırır; anlatım doğal gölcük benzeri yer ile kazılmış havuz biçimi arasında değişir.",
         "common_claim_ids": [
-          "lu_014"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "suyu tutan çukur veya havuz",
-        "applicability": "Suyun toplandığı ve bir süre kaldığı doğal ya da kazılmış küçük su yeri için kullanılır.",
+        "text": "su tutan çukur veya havuz",
+        "applicability": "Suyu toplayan ve bir süre bırakmadan tutan doğal ya da kazılmış yer için kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Çukur veya havuz biçimini, suyu toplama işlevini ve suyu bir süre tutmayı korur.",
+          "preserves": "Su toplama, suyu tutma ve çukur ya da havuz biçimini korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "küçük su birikintisi",
+          "text": "su biriktirme çukuru",
           "usage_role": "contextual",
-          "applicability": "Yerin doğal ve gölcüğe benzer bir su toplama alanı olarak düşünüldüğü bağlamda kullanılır.",
+          "applicability": "Yerin kazılarak yapıldığı ve suyu günlerce tuttuğu bağlamlarda doğal bir karşılıktır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Küçük bir yerde suyun toplanıp kalması yönünü korur.",
-            "loses": "İnsan eliyle kazılmış havuz biçimini ve günlerce tutma işlevini açıkça göstermez.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        },
-        {
-          "text": "kazılmış su tutma çukuru",
-          "usage_role": "explanatory",
-          "applicability": "Bir kişinin kendi kullanımı için havuz biçiminde kazdığı su çukurunu anlatırken kullanılır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Kazılmış çukur biçimini ve suyu içinde tutma işlevini korur.",
-            "loses": "Doğal gölcük benzeri su toplama yerlerini kapsamaz.",
+            "preserves": "Kazılmış yerde suyu toplama ve tutma işlevini korur.",
+            "loses": "Doğal gölcüğe benzeyen su birikme yeri seçeneğini dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
@@ -672,7 +619,7 @@
         {
           "lexical_unit_id": "lu_014",
           "rendering_kind": "ordinary",
-          "target_gloss": "suyu günlerce tutan çukur, havuz veya küçük su birikintisi"
+          "target_gloss": "suyu günlerce tutan birikme yeri, havuz veya çukur"
         }
       ],
       "excluded_glosses": [],
@@ -681,104 +628,88 @@
           "neighbor_ref": "root_000109/B003",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Doğal veya kişinin kendisi için kazdığı çukurda suyu günlerce tutma kapsamı vardır.",
-          "neighbor_only": "Düzenlenmiş havuzlar ve büyük su depoları gibi daha çeşitli yapıları kapsar.",
+          "focus_only": "Doğal gölcük benzeri birikme yerini ve kişinin kendisi için kazdığı su çukurunu da kapsar.",
+          "neighbor_only": "Düzeltilmiş havuzlar ve büyük su depoları gibi yapılı örneklere daha geniş yer verir.",
           "gloss": "havuzda duran su",
-          "shared_zone": "Her iki dal da suyun bir havuz veya çukurda toplanıp durmasını bildirir.",
-          "distinction": "Odak dalı küçük gölcük ya da kazılmış çukur biçimindeki su tutma yerine odaklanır; komşu dal düzenlenmiş havuz ve su deposu türlerini daha geniş biçimde kapsar."
+          "shared_zone": "Her ikisi de suyun havuz veya benzeri bir yerde toplanıp sabit kalmasını anlatır.",
+          "distinction": "Odak dal suyu tutan çukur ya da yer adıdır ve doğal görünümlü birikintiyi de kapsar; komşu dal havuz ve su deposu türlerine daha çok bağlıdır."
         },
         {
           "neighbor_ref": "root_000016/B007",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Küçük gölcük benzeri doğal yer veya günlerce su tutan kişisel çukur olabilir.",
-          "neighbor_only": "Kuyu, kanal veya yağmur suyunu toplayıp ekine salmaya yarayan geniş havuzdur.",
+          "focus_only": "Küçük doğal birikme yeri veya günlerce su tutan basit kazı olabilir.",
+          "neighbor_only": "Kuyu, kanal veya yağmur suyunu toplayıp daha sonra ekine salan geniş havuz işlevini taşır.",
           "gloss": "sulama suyu havuzu",
-          "shared_zone": "İki dal da suyun sonradan kullanılmak üzere bir havuzda toplanmasını içerir.",
-          "distinction": "Odak dalında sulama amacı ya da genişlik zorunlu değildir; komşu dal özellikle farklı kaynaklardan su toplayan ve suyu ekine veren geniş bir yapıdır."
+          "shared_zone": "Her ikisi de suyun kullanılmak üzere bir havuzda toplanmasını anlatır.",
+          "distinction": "Komşu dalın sulamaya su aktarma ve geniş havuz olma özellikleri belirgindir; odak dal için bu kullanım amacı ve büyüklük zorunlu değildir."
         }
       ],
-      "neighbor_coverage_note": "Bütün su yeri adayları değerlendirildi; biçim, ölçek ve kullanım amacı bakımından en açıklayıcı iki yakın komşu yayımlandı."
+      "neighbor_coverage_note": "Sabit su havuzu ile sulama havuzu en yakın iki sınırı gösterir; diğer adaylar akarsu, doluluk, küçük çukur veya belirli bir su yapısı alt türüdür."
     },
     {
       "branch_ref": "root_000018/B007",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi hastalığın kişiyi tutması düşüncesini verirken göz yangısı, hastalıktan boyun bükme, yavrunun sütten rahatsızlanması, deve veya koyunda delilik benzeri durum ve devede yağlanmaya başlama gibi farklı bedensel halleri de aynı dalda toplar. Bu nedenle dal yalnızca hastalık diye daraltılmamalı, bedende başlayan veya bedeni etkisi altına alan tanıklanmış durumlar kümesi olarak sınırlandırılmalıdır.",
+        "boundary_note": "Dal tek bir hastalık adı değildir; insan ve hayvanda tanıklanan rahatsızlıklarla devede yağlanmaya başlama durumunu ayrı alt yönler halinde kapsar."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Farklı beden durumları yalnızca kendi biçim ve kalıpları içinde korunur; bir alt kullanım bütün dalın genel anlamı yapılmaz."
+      },
       "concept_map": {
-        "definition": "Bir hastalık, rahatsızlık veya yağlanma durumunun insan ya da hayvan bedeninde başlayıp etkisini göstermesidir. Bu kapsam, deve yavrusunun sütten şişkinliğini, deve veya koyundaki deliliğe benzer durumu, göz iltihabını, hastalıktan sinmeyi ve devede yağ bağlamaya başlamayı ayrı gerçekleşmeler olarak içerir.",
+        "definition": "İnsan veya hayvan bedeninde belirli bir durumun başlayıp etkisini göstermesini anlatan kullanımlar kümesidir; göz yangısı ve hastalıktan boyun bükme yanında sütten rahatsızlanma, delilik benzeri hayvan hali ve devede yağlanmaya başlama da tanıklanır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bedensel bir durum canlıda başlar, yerleşir ve görünür belirti verir.",
+            "statement": "Bir hastalık ya da beden durumunun insanı veya hayvanı etkisi altına almaya başlamasını anlatan genel bağı kurar.",
             "claim_ids": [
-              "lu_016",
-              "lu_017",
-              "lu_018",
-              "lu_019",
-              "lu_020"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Süt emen deve yavrusunun fazla sütten şişkinlik ve hazımsızlık yaşaması özel bir durumdur.",
+            "statement": "İnsanda göz yangısını ve hastalık ya da ağrı yüzünden başı eğip boyun bükmüş durumu belirtir.",
             "claim_ids": [
-              "lu_016"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "specialization",
-            "statement": "Deve veya koyunda deliliğe benzer bir durumun ortaya çıkması ayrı bir hayvan hastalığıdır.",
+            "statement": "Deve ve koyunda deliliğe benzeyen bir hali, süt emen yavruda ise fazla sütten doğan rahatsızlığı belirtir.",
             "claim_ids": [
-              "lu_017"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F004",
-            "role": "specialization",
-            "statement": "Gözün iltihaplanması veya iltihabın şiddetlenmesi insan bedenindeki özel gerçekleşmedir.",
-            "claim_ids": [
-              "lu_018",
-              "lu_019"
-            ]
-          },
-          {
-            "facet_id": "F005",
-            "role": "associated_use",
-            "statement": "Hastalık veya göz iltihabı kişiyi sindirip başını eğmiş bir duruma getirebilir.",
-            "claim_ids": [
-              "lu_019"
-            ]
-          },
-          {
-            "facet_id": "F006",
             "role": "extension",
-            "statement": "Devenin bedeninde yağın belirmeye başlaması aynı başlangıç kalıbının olumlu uzantısıdır.",
+            "statement": "Develerde yağın oluşmaya başlaması, hastalık dışındaki olumlu bir beden değişimi olarak aynı söz ailesinde yer alır.",
             "claim_ids": [
-              "lu_020"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Dal, canlı bedeninde bir durumun baş göstermesini çeşitli sonuçlarla örnekler: süt yavruda şişkinlik yapar, deve veya koyun deliliğe benzer bir duruma tutulur, göz iltihaplanır, hasta sinip başını eğer ve deve yağ bağlamaya başlar.",
+        "common_summary": "Kaynaklar bedeni etkisi altına alan durum fikrini çeşitli insan ve hayvan örnekleriyle genişletir; göz yangısı, hastalıktan çökkünlük, fazla sütten rahatsızlanma, delilik benzeri hal ve yağlanmaya başlama birlikte tanıklanır.",
         "common_claim_ids": [
-          "lu_016",
-          "lu_017",
-          "lu_018",
-          "lu_019",
-          "lu_020"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "hastalık veya yağlanmanın bedende baş göstermesi",
-        "applicability": "Bir rahatsızlığın ya da devedeki yağlanmanın bedende yeni başlayıp belirti vermesi bağlamında kullanılır.",
+        "text": "bedende bir durumun baş gösterip etkisini göstermesi",
+        "applicability": "Tanıklanan insan ve hayvan beden durumlarının ortak başlangıç ve etkilenme bağını verir; tek tek alt kullanımlar bağlamdan belirlenir.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Bedensel durumun başlangıcını, canlı katılımcıyı ve hastalık ile yağlanma yönlerini korur.",
+          "preserves": "Durumun bedende başlamasını, bedeni etkilemesini ve hastalık dışındaki yağlanma uzantısını korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -787,20 +718,18 @@
           "F001",
           "F002",
           "F003",
-          "F004",
-          "F005",
-          "F006"
+          "F004"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "sütten şişip hazımsız olmak",
+          "text": "gözü yangılanmak",
           "usage_role": "contextual",
-          "applicability": "Süt emen deve yavrusunun fazla süt nedeniyle şişkinlik yaşadığı kullanımda geçerlidir.",
+          "applicability": "İnsan gözündeki rahatsızlığı bildiren kalıpta kullanılabilecek doğal karşılıktır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Süt, deve yavrusu ve buna bağlı şişkinlik ilişkisini korur.",
-            "loses": "Diğer hastalıkları, sinmiş duruşu ve yağlanmaya başlama kullanımını kapsamaz.",
+            "preserves": "Gözde başlayan ve kişiyi etkileyen rahatsızlığı korur.",
+            "loses": "Diğer hastalıkları, hayvanlardaki özel durumları ve yağlanmaya başlama kullanımını dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
@@ -809,49 +738,18 @@
           ]
         },
         {
-          "text": "deliliğe benzer nöbete tutulmak",
-          "usage_role": "explanatory",
-          "applicability": "Deve veya koyunda deliliğe benzetilen bedensel durum ortaya çıktığında kullanılır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Hayvanı etkisi altına alan deliliğe benzer durumu korur.",
-            "loses": "Göz iltihabı, sütten şişkinlik ve yağlanma kullanımlarını kapsamaz.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F003"
-          ]
-        },
-        {
-          "text": "gözü iltihaplanıp sinmek",
+          "text": "yağ tutmaya başlamak",
           "usage_role": "contextual",
-          "applicability": "Göz iltihabının şiddetlenip kişiyi başı eğik ve sinmiş duruma getirdiği bağlamda kullanılır.",
+          "applicability": "Develerde yağlanmanın başladığını bildiren özel kullanım için geçerlidir.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Göz rahatsızlığını ve bunun kişide oluşturduğu sinmiş duruşu korur.",
-            "loses": "Hayvan hastalıkları ile devede yağlanmaya başlama kullanımını kapsamaz.",
+            "preserves": "Devenin bedeninde yağ oluşmaya başlaması yönünü korur.",
+            "loses": "İnsan ve hayvanlardaki bütün hastalık ve rahatsızlık kullanımlarını dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F004",
-            "F005"
-          ]
-        },
-        {
-          "text": "yağ bağlamaya başlamak",
-          "usage_role": "contextual",
-          "applicability": "Devenin bedeninde yağlanmanın ilk kez belirginleştiği kullanımda geçerlidir.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Devenin bedeninde yağlanmanın başlangıcını korur.",
-            "loses": "Hastalık, göz iltihabı, şişkinlik ve sinmişlik yönlerini kapsamaz.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F006"
+            "F004"
           ]
         }
       ],
@@ -859,106 +757,104 @@
         {
           "lexical_unit_id": "lu_016",
           "rendering_kind": "ordinary",
-          "target_gloss": "deve yavrusunun sütten şişip hazımsız olması"
+          "target_gloss": "süt emen yavru fazla sütten rahatsızlandı"
         },
         {
           "lexical_unit_id": "lu_017",
           "rendering_kind": "ordinary",
-          "target_gloss": "deve veya koyunun deliliğe benzer bir duruma tutulması"
+          "target_gloss": "deve veya koyunda deliliğe benzer bir hal başladı"
         },
         {
           "lexical_unit_id": "lu_018",
           "rendering_kind": "ordinary",
-          "target_gloss": "gözün iltihaplanması"
+          "target_gloss": "gözü yangılandı"
         },
         {
           "lexical_unit_id": "lu_019",
           "rendering_kind": "ordinary",
-          "target_gloss": "hastalıktan sinmiş veya başını eğmiş kişi"
+          "target_gloss": "hastalık veya göz ağrısı yüzünden başını eğip çökmüş kişi"
         },
         {
           "lexical_unit_id": "lu_020",
           "rendering_kind": "ordinary",
-          "target_gloss": "yağ bağlamaya başlayan deve"
+          "target_gloss": "yağ tutmaya başlamış deve"
         }
       ],
       "excluded_glosses": [],
-      "neighbor_distinctions": [
-        {
-          "neighbor_ref": "root_000151/B008",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Belirli rahatsızlıkların başlangıcını ve yağlanmanın belirmesini de kapsar.",
-          "neighbor_only": "Var olan bir hastalık veya kıtlığın şiddetlenmesini bildirir.",
-          "gloss": "hastalığın şiddetlenmesi",
-          "shared_zone": "Her iki dal da bedensel bir rahatsızlığın kişide belirginleşmesini anlatabilir.",
-          "distinction": "Odak dalında temel zaman kesiti durumun bedende başlaması veya kişiyi etkisi altına almasıdır; komşu dalda ise önceden var olan hastalığın daha ağır hale gelmesi öne çıkar."
-        },
-        {
-          "neighbor_ref": "root_000744/B001",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Yağın devede yeni belirmeye başladığı evreyi adlandırır ve başka hastalık kullanımları da taşır.",
-          "neighbor_only": "Şişmanlık durumunu, şişman kişiyi veya hayvanı ve şişmanlatma eylemini genel olarak kapsar.",
-          "gloss": "şişmanlık ve şişmanlama",
-          "shared_zone": "İki dal da hayvan bedeninde yağın artmasıyla ilgilidir.",
-          "distinction": "Odak dalının yağlanma kullanımı yalnızca devede yağın belirmeye başladığı evredir; komşu dal şişmanlığın durumunu ve buna götüren eylemi daha geniş biçimde adlandırır."
-        }
-      ],
-      "neighbor_coverage_note": "Bütün hastalık ve beden durumu adayları incelendi; başlangıç ile şiddetlenme ve genel şişmanlık sınırları yayımlandı."
+      "neighbor_distinctions": [],
+      "neighbor_coverage_note": "Adayların her biri yalnızca göz yangısı, ateş, zayıflık veya yağlanma gibi tek bir alt yönle kesişir; dalın çoklu beden durumları kümesi için yararlı ve dengeli bir karşılaştırma yoktur."
     },
     {
       "branch_ref": "root_000018/B008",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bu yıldızları ayın konakları olarak tanımlar ve adlandırmayı ayın her gece bunlardan birinde yer almasına bağlar. Dalın gökbilimsel kalıp ve gerekçesi kaynaklarla tam uyumludur.",
+        "boundary_note": "Anlam, ayın gecelik konaklarını belirten yıldızlar kalıbına bağlıdır; kayan yıldızlar veya genel yıldız adları bu dala girmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım yalnızca ayın konaklarını topluca adlandıran yıldızlar kalıbına uygulanır ve yalın kök anlamına genellenmez."
+      },
       "concept_map": {
-        "definition": "Ay'ın her gece birine geçtiği kabul edilen gök duraklarını oluşturan yıldızlar veya yıldız bölgeleridir.",
+        "definition": "Ayın her gece birinde bulunduğu kabul edilen ay konaklarını belirten yıldızların toplu adıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Ay geceden geceye belirli bir yıldız durağına geçer; duraklar bu hareket ilişkisiyle adlandırılır.",
+            "statement": "Ayın gökteki gecelik konaklarını gösteren yıldızlar kümesini adlandırır.",
             "claim_ids": [
-              "lu_021"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "associated_use",
+            "statement": "Adlandırma, ayın her gece bu konaklardan birinde yer aldığı düşüncesiyle açıklanır.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar, bu yıldızları Ay'ın her gece birine geçtiği gök durakları olarak açıklar ve adlandırmayı Ay'ın bu duraklardaki ilerleyişine bağlar.",
+        "common_summary": "Kaynaklar kalıbı ay konaklarının yıldızları olarak ortak biçimde tanımlar ve adı ayın geceden geceye bir konağa yerleşmesiyle açıklar.",
         "common_claim_ids": [
-          "lu_021"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "Ay'ın gecelik gök durakları",
-        "applicability": "Ay'ın her gece başka birine geçtiği kabul edilen yıldız veya gök bölgesi dizisini anlatırken kullanılır.",
+        "text": "ay konaklarının yıldızları",
+        "applicability": "Ayın her gece birine yerleştiği kabul edilen konakları gösteren yıldızlar kümesinin adı olarak kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Ay'ı, gecelik geçişi ve geçilen gök durakları dizisini birlikte korur.",
+          "preserves": "Yıldızlar kümesini, ay konakları ilişkisini ve gecelik yerleşme gerekçesini korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "Ay'ın konak yıldızları",
-          "usage_role": "contextual",
-          "applicability": "Durakların gökteki yıldızlar olarak adlandırıldığı astronomi bağlamında kullanılır.",
+          "text": "ayın gecelik konak yıldızları",
+          "usage_role": "explanatory",
+          "applicability": "Terimin neden bu adı aldığını cümle içinde açıklamak gerektiğinde kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Ay ile yıldız durakları arasındaki ilişkiyi korur.",
-            "loses": "Ay'ın her gece başka bir durağa geçmesi açıklamasını açıkça bildirmez.",
+            "fit": "none",
+            "preserves": "Ayın her gece bir konakta bulunması ile yıldızlar arasındaki bağı korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002"
           ]
         }
       ],
@@ -966,96 +862,89 @@
         {
           "lexical_unit_id": "lu_021",
           "rendering_kind": "ordinary",
-          "target_gloss": "Ay'ın her gece geçtiği gök duraklarının yıldızları"
+          "target_gloss": "ayın her gece birinde bulunduğu ay konaklarının yıldızları"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000148/B004",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Ay'ın her gece ilerlediği duraklar dizisini topluca ve hareket ilişkisiyle adlandırır.",
-          "neighbor_only": "Belirli bir Ay durağının yanında gökteki boş bir bölge ve bir aslan tasvirinin göğsü anlamlarını da taşır.",
-          "gloss": "belirli bir Ay durağı",
-          "shared_zone": "Her iki dal da Ay'ın gökteki duraklarından birini veya bu duraklar alanını içerir.",
-          "distinction": "Odak dalı Ay'ın gecelik ilerleyişindeki durakları topluca adlandırır; komşu dal belirli bir durağı başka gök tasviri anlamlarıyla birlikte adlandırır."
-        },
-        {
-          "neighbor_ref": "root_000128/B008",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "Ay'ın geceden geceye geçtiği bütün durak yıldızları sınıfını bildirir.",
-          "neighbor_only": "Koç tasvirinin karın bölgesiyle ilişkilendirilen belirli bir yıldız ve Ay durağıdır.",
-          "gloss": "Koç'un karın bölgesindeki Ay durağı",
-          "shared_zone": "İki dal da Ay durakları düzenine ait yıldızları konu edinir.",
-          "distinction": "Odak dalı genel sınıfı ve Ay'ın hareket düzenini verir; komşu dal bu sınıf içindeki tek bir yıldız durağının özel adlandırmasıdır."
+          "focus_only": "Ayın gecelik konaklarını gösteren yıldızların tümünü topluca adlandırır.",
+          "neighbor_only": "Belirli bir ay konağını ve onun gökteki boş yerini adlandırır.",
+          "gloss": "belirli bir ay konağı",
+          "shared_zone": "Her ikisi de ayın gökteki konakları ve bunlarla ilişkili yıldızlar alanındadır.",
+          "distinction": "Odak dal ay konaklarının yıldızlarını topluca adlandırır; komşu dal ise bu dizideki belirli bir konağın özel adıdır."
         }
       ],
-      "neighbor_coverage_note": "Bütün gök ve Ay durağı adayları incelendi; genel duraklar dizisiyle tekil duraklar arasındaki iki yararlı karşılaştırma seçildi."
+      "neighbor_coverage_note": "Belirli bir ay konağı, topluluk adı ile tekil konak arasındaki sınırı en iyi gösterir; öteki gök adları aynı dizinin başka özel üyeleridir ve ek karşılaştırma gereksizdir."
     },
     {
       "branch_ref": "root_000018/B009",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bir topluluğun görünüşünü, yaradılış özelliklerini, yolunu ve tutumunu benimseyerek onlar gibi davranmayı bildirir. Dalın izleme ve benzeşme çerçevesi bu kalıplı anlamı doğru korur.",
+        "boundary_note": "Anlam belirli bir topluluğun yolunu, tutumunu ve özelliklerini izleme kalıbına bağlıdır; genel bir nesne alma eylemi değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım topluluğun yolunu ve özelliklerini izleme kalıbıyla sınırlıdır ve yalın köke bağımsız bir izleme anlamı yüklemez."
+      },
       "concept_map": {
-        "definition": "Bir topluluğun izlediği yolu sürdürmek ve onun görünüşünü, davranışlarını, huylarını ve yönelimini örnek alıp benimsemektir.",
+        "definition": "Bir topluluğun yolunu, davranışını ve belirgin özelliklerini benimseyerek onlar gibi yaşamak veya hareket etmektir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kişi bir topluluğun yaşayış biçimini, görünüşünü, huylarını ve yönelimini izler.",
+            "statement": "Bir topluluğun izlediği yolu ve davranış biçimini benimseyip onlar gibi hareket etmeyi anlatır.",
             "claim_ids": [
-              "lu_022"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "extension",
+            "statement": "Topluluğun görünüşü, yaradılış özellikleri ve tutumu da benimsenen örüntünün parçalarıdır.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Dal, bir topluluğa ait görünüşü, huyları, yönelimi ve yaşayış yolunu benimseyip o topluluğun izinden gitmeyi anlatır.",
+        "common_summary": "Kaynaklar kalıbı bir topluluğun yolunu izlemek, görünüşünü ve özelliklerini benimsemek, onun gibi davranmak biçiminde ortaklaştırır.",
         "common_claim_ids": [
-          "lu_022"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "bir topluluğun yolunu ve huylarını izleme",
-        "applicability": "Kişinin bir topluluğun yaşayışını, davranışını, görünüşünü ve yönelimini benimsemesi bağlamında kullanılır.",
+        "text": "bir topluluğun yolunu ve özelliklerini benimseme",
+        "applicability": "Bir kimse bir topluluğun davranışını, tutumunu ve belirgin özelliklerini örnek alıp sürdürdüğünde kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Topluluğu örnek alma, onun yolunu izleme ve görünüş ile huyları benimseme yönlerini korur.",
+          "preserves": "Yolu izleme, özellikleri benimseme ve benzer davranma yönlerini korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "onların izinden gitmek",
+          "text": "onların yolundan gitmek",
           "usage_role": "contextual",
-          "applicability": "Bir topluluğun yaşayış biçimini ve yönelimini sürdürme vurgusunun ağır bastığı bağlamda kullanılır.",
+          "applicability": "Bağlam söz konusu topluluğu açıkça belirtiyorsa doğal bir cümle içi karşılıktır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Topluluğun yolunu örnek alıp izleme ilişkisini korur.",
-            "loses": "Görünüş ve huyların benimsenmesini açıkça belirtmez.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        },
-        {
-          "text": "onlara benzemek",
-          "usage_role": "contextual",
-          "applicability": "Topluluğun görünüş ve davranış özelliklerini edinme yönü öne çıktığında kullanılır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Topluluğun görünüşünü ve davranış kalıbını benimseme yönünü korur.",
-            "loses": "Onların yolunda bilinçli olarak ilerleme ve yönelimlerini izleme unsurunu zayıflatır.",
+            "preserves": "Topluluğun davranış çizgisini izleme yönünü korur.",
+            "loses": "Görünüş ve yaradılış özelliklerini benimseme yönünü açıkça belirtmez.",
             "adds": null,
             "collision": null
           },
@@ -1068,82 +957,89 @@
         {
           "lexical_unit_id": "lu_022",
           "rendering_kind": "ordinary",
-          "target_gloss": "bizim yolumuzu, görünüşümüzü ve huylarımızı izlemek"
+          "target_gloss": "bizim yolumuzu, tutumumuzu ve özelliklerimizi benimseyip izledi"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_000034/B003",
+          "neighbor_ref": "root_000769/B002",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Bir topluluğun görünüşünü, huylarını ve yaşayış yolunu birlikte benimsemeye yöneliktir.",
-          "neighbor_only": "Herhangi bir kişiyi içinde bulunduğu durumda örnek alma ve ona uyma daha genel kapsamdır.",
-          "gloss": "örnek alıp uyma",
-          "shared_zone": "Her iki dal da başka birini örnek alarak onun davranışına veya durumuna uyma eylemini içerir.",
-          "distinction": "Odak dalında örnek alınan bir topluluktur ve onun görünüşü ile huyları da kapsama girer; komşu dal kişi veya durum bakımından daha genel bir örnek alma ilişkisidir."
+          "focus_only": "Başka bir topluluğun yolunu ve belirgin özelliklerini benimseyip izleme ilişkisini gerektirir.",
+          "neighbor_only": "Bir varlığın kendi alışılmış durumunu veya genel yaşam ve davranış yolunu da adlandırabilir.",
+          "gloss": "yaşam ve davranış yolu",
+          "shared_zone": "Her ikisi de bir kişinin ya da topluluğun izlediği davranış yolunu anlatır.",
+          "distinction": "Odak dal başkasının yolunu ve özelliklerini örnek alıp izleme kalıbıdır; komşu dal ise izleyen bulunmadan da bir kimsenin kendi yolunu adlandırabilir."
         },
         {
-          "neighbor_ref": "root_000033/B006",
+          "neighbor_ref": "root_000034/B003",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Topluluğun yolunu bilinçli biçimde izleyip onun davranışlarını benimseme vardır.",
-          "neighbor_only": "Babanın görünüşüne, yaradılışına ve özelliklerine çekme ilişkisi vardır.",
-          "gloss": "babaya çekmek",
-          "shared_zone": "İki dal da başka kişilerde görülen görünüş ve huy özelliklerinin bir kişide bulunmasını anlatır.",
-          "distinction": "Odak dalında topluluğun yolunu izlemeye dayalı benimseme öne çıkar; komşu dalda aile içi benzerlik ve babanın özelliklerine çekme ilişkisi belirleyicidir."
+          "focus_only": "Yolun yanında görünüş ve yaradılış özelliklerini de benimsemeyi kapsar.",
+          "neighbor_only": "Örnek alınan kişi veya durum ile ona uymayı daha genel biçimde anlatır.",
+          "gloss": "örnek alıp uyma",
+          "shared_zone": "Her ikisi de başka birinin davranışını örnek alarak ona uygun hareket etmeyi içerir.",
+          "distinction": "Komşu dal genel bir örneğe uyma ilişkisini kurar; odak dal belirli bir topluluğun yolu, tutumu ve özellikleri çevresindeki kalıba bağlıdır."
         }
       ],
-      "neighbor_coverage_note": "Bütün yol, huy ve benzerlik adayları incelendi; örnek alma ile ailevi benzerlik sınırlarını en iyi gösteren iki komşu yayımlandı."
+      "neighbor_coverage_note": "Davranış yolu ve örnek alıp uyma adayları kalıbın iki ana sınırını gösterir; öteki adaylar yalnızca alışkanlık, benzerlik veya tek bir davranış türünü paylaşır."
     },
     {
       "branch_ref": "root_000018/B010",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bir şeyi kendisi için edinme veya meydana getirme ile mal kazanma anlamlarını aynı türemiş biçimlerde tanıklar; ücret edinme örneği de bu kapsamdadır. Dalın edinme ve kazanma çerçevesi bu çoklu ancak bağlantılı yapıyı korur.",
+        "boundary_note": "Dal türemiş biçimlere ve onların kalıplarına bağlıdır; genel alma buyruğu veya yer adı anlamları buna girmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Kendisi için edinme genel türemiş biçimde, mal ve ücret kazanma ise kendi kalıplarında ayrı kapsamlarla korunur."
+      },
       "concept_map": {
-        "definition": "Bir şeyi kendisi için edinmek, kazanmak veya kendi kullanımına ayırarak sahip olmaktır. Mal kazanma ve yapılan bir iş karşılığında ücret alma bunun özel gerçekleşmeleridir.",
+        "definition": "Bir şeyi kendisi için edinmek veya kendine ait hale getirmek; mal ya da yapılan iş karşılığında ücret kazanmak anlamlarını taşıyan türemiş kullanımlar kümesidir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kişi bir şeyi kendisi için edinir, kazanır veya kendi kullanımına ayırır.",
+            "statement": "Bir şeyi kendisi için edinip kendine ait hale getirmeyi anlatır.",
             "claim_ids": [
-              "lu_023"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Mal kazanıp kendine edinmek, genel edinme eyleminin özel bir gerçekleşmesidir.",
+            "statement": "Mal kazanma, edinmenin belirli bir nesne alanındaki kalıplaşmış gerçekleşmesidir.",
             "claim_ids": [
-              "lu_024"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "extension",
-            "statement": "Bir iş veya hizmet karşılığında ücret almayı istemek de edinme eyleminin kapsamına girer.",
+            "role": "example",
+            "statement": "Yapılan bir iş karşılığında ücret edinme, kaynakta verilen belirli bir kullanım örneğidir.",
             "claim_ids": [
-              "lu_025"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar bir şeyi kendisi için edinme ve kazanma çekirdeğini paylaşır; mal kazanma ve bir iş karşılığında ücret alma bu çekirdeğin belirli kullanımlarıdır.",
+        "common_summary": "Kaynaklar türemiş biçimi kendisi için edinme ve mal kazanma yönleriyle açıklar; yapılan iş karşılığında ücret edinme de ortak tanıklıkta örneklenir.",
         "common_claim_ids": [
-          "lu_023",
-          "lu_024",
-          "lu_025"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "kendine edinme ve kazanma",
-        "applicability": "Bir şeyi kişinin kendi kullanımına veya mülkiyetine geçirmesi, mal ya da ücret kazanması bağlamında kullanılır.",
+        "text": "kendisi için edinip kazanma",
+        "applicability": "Bir şeyi kendine ait hale getirme ile mal veya ücret kazanma yönlerinin ortak çekirdeğini karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Kendisi için edinme, kazanma, mal sahibi olma ve ücret alma yönlerini korur.",
+          "preserves": "Kendisi için edinmeyi, ait hale getirmeyi ve kazanç sonucunu korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -1156,33 +1052,18 @@
       },
       "contextual_glosses": [
         {
-          "text": "mal edinmek",
+          "text": "kazanmak",
           "usage_role": "contextual",
-          "applicability": "Kişinin para, servet veya başka bir malı kazanıp kendine ayırdığı bağlamda kullanılır.",
+          "applicability": "Nesne mal veya ücret olduğunda doğal ve kısa bir cümle içi karşılıktır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Malı kazanıp kişinin kendi mülkiyetine geçirmesi yönünü korur.",
-            "loses": "Mal dışındaki şeyleri edinme ve iş karşılığında ücret alma kapsamlarını daraltır.",
+            "preserves": "Mal veya ücretin kişinin kazancı haline gelmesini korur.",
+            "loses": "Bir şeyi kazanç ilişkisi olmadan kendisi için edinme kapsamını dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001",
-            "F002"
-          ]
-        },
-        {
-          "text": "karşılığında ücret almak",
-          "usage_role": "contextual",
-          "applicability": "Yapılan bir iş veya hizmet için ödeme isteme ya da alma bağlamında kullanılır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Bir iş karşılığında ücretin kişinin eline geçmesi yönünü korur.",
-            "loses": "Genel olarak bir şeyi kendine edinme ve mal kazanma kapsamlarını içermez.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
+            "F002",
             "F003"
           ]
         }
@@ -1191,17 +1072,17 @@
         {
           "lexical_unit_id": "lu_023",
           "rendering_kind": "ordinary",
-          "target_gloss": "bir şeyi kendine edinmek veya kazanmak"
+          "target_gloss": "bir şeyi kendisi için edinmek veya kazanmak"
         },
         {
           "lexical_unit_id": "lu_024",
           "rendering_kind": "ordinary",
-          "target_gloss": "mal kazanıp kendine edinmek"
+          "target_gloss": "mal edindim veya kazandım"
         },
         {
           "lexical_unit_id": "lu_025",
           "rendering_kind": "ordinary",
-          "target_gloss": "bunun karşılığında ücret alırdın"
+          "target_gloss": "bunun karşılığında ücret alırdım"
         }
       ],
       "excluded_glosses": [],
@@ -1210,71 +1091,72 @@
           "neighbor_ref": "root_001109/B002",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Bir şeyi kendisi için ayırma ile iş karşılığında ücret alma kapsamlarını içerir.",
-          "neighbor_only": "Daha önce sahip olunmayan şeye erişme, ganimet ve düşmandan alınan mal gibi kazanç türlerini kapsar.",
-          "gloss": "yeni bir şey kazanma",
-          "shared_zone": "Her iki dal da daha önce kişinin elinde olmayan bir şeyi edinip sahip olmasını bildirir.",
-          "distinction": "Odak dalı kendine ayırma, mal kazanma ve ücret alma kullanımlarını birleştirir; komşu dal yeni bir şeye erişme ve çeşitli kazanç türlerini daha geniş biçimde kapsar."
+          "focus_only": "Bir şeyi kendisi için seçip kendine ait hale getirme yönünü de taşır.",
+          "neighbor_only": "Düşmandan veya başka bir kaynaktan elde edilen ganimet ve benzeri kazanç türlerini kapsar.",
+          "gloss": "bir şeyi elde edip kazanma",
+          "shared_zone": "Her ikisi de daha önce sahip olunmayan bir şeyi edinme ve kazanç haline getirme alanında kesişir.",
+          "distinction": "Odak dalın kendisi için edinme yapısı ve mal ya da ücret kalıpları belirgindir; komşu dal kaynağı ve kazanç türü bakımından daha geniştir."
         },
         {
           "neighbor_ref": "root_000303/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Bir şeyi kendine ayırma ve hizmet karşılığında ücret edinme anlamlarını da taşır.",
-          "neighbor_only": "Çalışma, çabalama ve geçim için mal toplama süreçlerini özellikle kapsar.",
+          "focus_only": "Kazanç dışında bir şeyi kendisi için edinip kendine ait hale getirmeyi de kapsar.",
+          "neighbor_only": "Çalışma, geçim için çabalama ve dünya ya da öte dünya için kazanç sağlama sürecini içerir.",
           "gloss": "çalışıp kazanma",
-          "shared_zone": "İki dal da malın emek veya başka bir yolla kişinin eline geçmesini anlatır.",
-          "distinction": "Odak dalında edinmenin yolu zorunlu olarak çalışma değildir; komşu dal kazanmayı çalışma, çaba ve geçim sağlama süreciyle birlikte ele alır."
+          "shared_zone": "Her ikisi de malın kişinin kazancı haline gelmesini anlatabilir.",
+          "distinction": "Komşu dal emeği ve çalışma sürecini öne çıkarır; odak dalda çalışma koşulu yoktur ve genel edinme yönü de bulunur."
         }
       ],
-      "neighbor_coverage_note": "Bütün edinme, kazanç ve ücret adayları incelendi; genel kazanma ile çalışarak kazanma sınırlarını gösteren iki yakın komşu seçildi."
+      "neighbor_coverage_note": "Genel elde etme ile çalışıp kazanma adayları edinme ve kazanç sınırlarını açıklar; ücret, iş karşılığı ve söz edinme adayları daha dar örneklerdir."
     },
     {
       "branch_ref": "root_000018/B011",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi kavga veya güreşte tarafların karşılıklı olarak birbirini tutmasını ve her güreşçinin rakibini etkisizleştirecek bir tutuş uygulamasını bildirir. Dal, sonuçtaki tutsaklık yerine mücadele içindeki karşılıklı kavrama eylemini doğru biçimde ayırır.",
+        "boundary_note": "Anlam kavga veya güreş sırasında rakibi kavrayıp hareketini kısıtlayan tutuşla sınırlıdır; yenilgi sonrasındaki tutsak etme değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım karşılıklı kavga veya güreş kalıbı ile güreşçinin uyguladığı özel tutuşa bağlıdır ve genel alma eylemine taşınmaz."
+      },
       "concept_map": {
-        "definition": "Dövüşte veya güreşte karşılıklı olarak birbirini kavrayıp tutuşa girmek ve rakibi belirli bir kavrama ya da kilitleme hareketiyle denetim altında tutmaktır.",
+        "definition": "Kavga veya güreşte tarafların birbirini kavraması ve her birinin rakibini hareket edemez hale getirecek bir tutuş uygulamasıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "İki taraf güreşir veya dövüşürken birbirini kavrayıp tutuşa girer.",
+            "statement": "Mücadele eden tarafların karşılıklı olarak birbirini kavrayıp güreşmesini anlatır.",
             "claim_ids": [
-              "lu_026"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Güreşçi rakibini belirli bir kavrama hareketiyle yakalayıp hareketini kısıtlar.",
+            "statement": "Güreşçinin rakibini hareket edemez hale getirmek için uyguladığı belirli kavrama ve kilitleme tutuşunu belirtir.",
             "claim_ids": [
-              "lu_027"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Dal, dövüşen veya güreşen tarafların birbirini kavrayarak tutuşmasını ve karşılıklı olarak rakibi denetim altına almaya çalışmasını bildirir.",
+        "common_summary": "Kaynaklar kavga veya güreşte karşılıklı kavramayı ortaklaştırır; ayrıca her güreşçinin rakibine uyguladığı etkisizleştirici tutuş ayrıntısını verir.",
         "common_claim_ids": [
-          "lu_026"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_027"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Güreşçinin rakibini belirli bir kavrama hareketiyle yakalayıp kısıtlaması ayrıca adlandırılır."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "güreşte rakibi kavrayıp kilitleme",
-        "applicability": "Dövüşen veya güreşen kişilerin tutuşa girmesi ve birinin rakibini kavramayla kısıtlaması bağlamında kullanılır.",
+        "text": "güreşte kavrayıp kilitleme",
+        "applicability": "Tarafların birbirini tuttuğu ve rakibin hareketini bir kavrama tekniğiyle kısıtladığı mücadele bağlamında kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Karşılıklı güreşi, rakibi kavramayı ve hareketini kısıtlayan tutuşu korur.",
+          "preserves": "Karşılıklı mücadeleyi, kavramayı ve rakibi hareket edemez hale getiren tutuşu korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -1288,31 +1170,16 @@
         {
           "text": "birbirine girip güreşmek",
           "usage_role": "contextual",
-          "applicability": "İki tarafın karşılıklı biçimde birbirini kavrayarak güreşe veya yakın dövüşe girdiği bağlamda kullanılır.",
+          "applicability": "Bir topluluğun karşılıklı kavrayarak dövüşmesi veya güreşmesi söz konusu olduğunda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Karşılıklı güreşme ve birbirini kavrama yönlerini korur.",
-            "loses": "Tek bir güreşçinin uyguladığı belirli kısıtlayıcı tutuşu açıkça belirtmez.",
+            "preserves": "Tarafların karşılıklı kavrama içinde mücadele etmesini korur.",
+            "loses": "Her güreşçinin rakibine uyguladığı özel kilitleme tutuşunu açıkça belirtmez.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F001"
-          ]
-        },
-        {
-          "text": "rakibi tutuşla hareketsiz bırakmak",
-          "usage_role": "explanatory",
-          "applicability": "Bir güreşçinin rakibini belirli bir kavrama hareketiyle kısıtladığı bağlamda kullanılır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Rakibi kavrama ve hareketini kısıtlama sonucunu korur.",
-            "loses": "İki tarafın karşılıklı olarak birbirine girip güreşmesi sürecini kapsamaz.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F002"
           ]
         }
       ],
@@ -1320,12 +1187,12 @@
         {
           "lexical_unit_id": "lu_026",
           "rendering_kind": "ordinary",
-          "target_gloss": "birbirini kavrayarak güreşmek veya dövüşmek"
+          "target_gloss": "topluluk karşılıklı kavrayarak dövüştü veya güreşti"
         },
         {
           "lexical_unit_id": "lu_027",
           "rendering_kind": "ordinary",
-          "target_gloss": "güreşçinin rakibini kısıtladığı kavrama hareketi"
+          "target_gloss": "güreşçinin rakibini kilitlediği kavrama tutuşu"
         }
       ],
       "excluded_glosses": [],
@@ -1334,73 +1201,97 @@
           "neighbor_ref": "root_001036/B010",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Rakibi herhangi bir kavrama veya kilitleme hareketiyle tutmayı kapsar.",
-          "neighbor_only": "Rakibi özellikle bacakların arasına alıp bacaklarla kilitlemeye özgüdür.",
+          "focus_only": "Karşılıklı kavramayı ve rakibi herhangi bir etkisizleştirici tutuşla kilitlemeyi kapsar.",
+          "neighbor_only": "Rakibi özellikle bacaklarla veya bacak çevresinde sıkıştıran belirli tekniği anlatır.",
           "gloss": "bacakla kilitleme",
-          "shared_zone": "Her iki dal da güreşte rakibin hareketini bir tutuşla kısıtlamayı anlatır.",
-          "distinction": "Odak dalındaki kavrama genel bir güreş tutuşudur; komşu dal tutuşun aracını ve biçimini bacaklarla yapılan özel bir kilitleme olarak sınırlar."
+          "shared_zone": "Her ikisi de güreşte rakibin hareketini bir beden tutuşuyla kısıtlamayı anlatır.",
+          "distinction": "Komşu dal bacaklarla yapılan özel bir kilittir; odak dalın kavrama türü belirtilmez ve karşılıklı güreşme olayını da kapsar."
         },
         {
           "neighbor_ref": "root_000613/B004",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Karşılıklı kavrama ve rakibi tutuşla denetim altına alma çekirdektir.",
-          "neighbor_only": "Aldatma hareketlerini ve güreşilen yeri de kapsayan daha geniş bir güreş alanıdır.",
-          "gloss": "aldatmalı güreşme",
-          "shared_zone": "İki dal da kişilerin karşı karşıya gelip güreşmesini içerir.",
-          "distinction": "Odak dalı kavrama ve kilitleme hareketine dayanır; komşu dal rakibi yanıltma hareketlerini ve güreşin gerçekleştiği yeri de kapsar."
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Rakibi kavrayıp hareketini kısıtlayan tutuşu kurucu öğe olarak içerir.",
+          "neighbor_only": "Kaçamak hareketlerle birbirini yanıltma ve genel güreşme alanını kapsar.",
+          "gloss": "kaçamaklı güreşme",
+          "shared_zone": "Her ikisi de iki kişinin karşı karşıya geldiği güreş veya boğuşma alanındadır.",
+          "distinction": "Odak dal belirli bir kavrama ve kilitleme işlemi gerektirir; komşu dalın çekirdeği kaçamak hareket ve genel güreşmedir."
         }
       ],
-      "neighbor_coverage_note": "Bütün güreş ve yakın dövüş adayları incelendi; genel kavrama ile özel bacak kilidi ve aldatmalı güreş sınırları yayımlandı."
+      "neighbor_coverage_note": "Bacak kilidi ile kaçamaklı güreşme, özel tutuş ve genel mücadele sınırlarını gösterir; diğer adaylar ayrı güreş teknikleri veya yalnızca fiziksel temas türleridir."
     },
     {
       "branch_ref": "root_000018/B012",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi kancalı aracın elle tutulan bölümünü ve kavrayıp doğrultmaya yarayan parçasını açıkça belirtir. Dalın sap veya tutamak çerçevesi tek tanıklığın sınırına uygundur.",
+        "boundary_note": "Anlam yalnızca belirtilen kancalı aracın elde tutulan ve yönlendirmeye yarayan parçasına bağlıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım yalnızca kancalı aracın tutamağını adlandıran kalıba uygulanır; aynı biçimin arazi, su yeri veya büyüsel uygulama anlamlarına yayılmaz."
+      },
       "concept_map": {
-        "definition": "Kancalı bir çubuğun veya benzeri aracın elle kavranan, aracı tutup yöneltmeye yarayan sap bölümüdür.",
+        "definition": "Kancalı bir aracın elle kavranan, aracı tutup yönlendirmeye yarayan sapı veya tutamağıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Aracın sap bölümü elle kavranır ve kancalı kısmı tutup yöneltmeyi sağlar.",
+            "statement": "Kancalı aracın elle kavranan sap veya tutamak bölümünü anlatır.",
             "claim_ids": [
-              "lu_015"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "associated_use",
+            "statement": "Bu bölüm aracı tutma, denetleme ve doğrultma işlevi görür.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Dal, kancalı bir çubuğun elle tutulan ve aracı kavrayıp yöneltmeye yarayan sap bölümünü adlandırır.",
-        "common_claim_ids": [
-          "lu_015"
+        "common_summary": "Tek kaynaklı tanıklık, kancalı aracın elle tutulan ve onu denetleyip doğrultmaya yarayan bölümünü bildirir.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Kullanım, kancalı aracın sapı ve onu kavrayıp yönlendirmeye yarayan parçası anlamıyla tek başına tanıklanmıştır."
+          }
         ],
-        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "kancalı çubuğun tutma sapı",
-        "applicability": "Kancalı bir aracın elle kavranan ve aracı yöneltmeye yarayan bölümünü anlatırken kullanılır.",
+        "text": "kancalı aracın tutamağı",
+        "applicability": "Kancalı bir aracın elle kavranıp yönlendirilmesini sağlayan sap veya tutamak bölümü için kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Kancalı aracı, elle kavranan sapı ve aracı yöneltme işlevini korur.",
+          "preserves": "Araç türünü, elle kavranan bölümü ve yönlendirme işlevini korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "kavrama yeri",
+          "text": "sap",
           "usage_role": "contextual",
-          "applicability": "Aracın biçiminden çok elle tutulduğu bölümün işlevi öne çıktığında kullanılır.",
+          "applicability": "Söz konusu kancalı araç bağlamda açıkça belliyse kısa bir cümle içi karşılık olarak kullanılabilir.",
           "error_profile": {
             "fit": "broadening",
-            "preserves": "Bir aracın elle kavranan bölümünü korur.",
+            "preserves": "Aracın elle kavranan bölümünü belirtme yönünü korur.",
             "loses": null,
-            "adds": "Kancalı çubuk dışındaki araçların tutma yerlerini de kapsayabilir.",
+            "adds": "Başka araçların saplarını da adlandırabilen daha geniş bir kapsam ekler.",
             "collision": null
           },
           "facet_ids": [
@@ -1412,7 +1303,7 @@
         {
           "lexical_unit_id": "lu_015",
           "rendering_kind": "ordinary",
-          "target_gloss": "kancalı çubuğun elle tutulan sapı"
+          "target_gloss": "kancalı aracın sapı ve tutamağı"
         }
       ],
       "excluded_glosses": [],
@@ -1421,28 +1312,28 @@
           "neighbor_ref": "root_001197/B002",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Kancalı bir çubuğun veya benzeri aracın sapına özgüdür.",
-          "neighbor_only": "Kılıç, yay, bıçak ve mızrak gibi çeşitli araçların elle tutulan bölümünü kapsar.",
-          "gloss": "aletin elle tutulan bölümü",
-          "shared_zone": "Her iki dal da bir aracın elle kavranan ve onu kullanmayı sağlayan bölümünü adlandırır.",
-          "distinction": "Odak dalı kancalı çubuğun sapıyla sınırlıdır; komşu dal farklı silah ve araçların elle tutulan bölümü için daha genel bir sınıftır."
+          "focus_only": "Kancalı araca özgü olup onu yönlendirme işlevini taşır.",
+          "neighbor_only": "Kılıç, yay, bıçak ve benzeri birçok aracın elde kavranan bölümünü kapsar.",
+          "gloss": "aracın el tutamağı",
+          "shared_zone": "Her ikisi de bir aracın elle kavranan ve kullanılmasını sağlayan bölümünü adlandırır.",
+          "distinction": "Odak dal belirli kancalı aracın tutamağına bağlıdır; komşu dal çeşitli araçlardaki kavrama bölümünü genel olarak kapsar."
         },
         {
           "neighbor_ref": "root_000529/B005",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Kancalı çubuğun tutma sapını bildirir.",
-          "neighbor_only": "Yalnızca kılıcın elle tutulan sap bölümünü bildirir.",
-          "gloss": "kılıç sapı",
-          "shared_zone": "İki dalın çekirdeği de bir aracın elle kavranan sap bölümüdür.",
-          "distinction": "İşlev aynı olmakla birlikte odak dalının nesnesi kancalı çubuk, komşu dalın nesnesi kılıçtır; bu nesne kapsamı tam ikameyi engeller."
+          "focus_only": "Kancalı aracın sapını ve yönlendirme parçasını belirtir.",
+          "neighbor_only": "Yalnızca kılıcın elde tutulan bölümünü adlandırır.",
+          "gloss": "kılıç tutamağı",
+          "shared_zone": "Her ikisi de belirli bir aracın elle kavranan tutamak bölümüdür.",
+          "distinction": "İşlevsel çekirdek aynıdır ancak araç kapsamları ayrıdır: odak dal kancalı araca, komşu dal kılıca özgüdür."
         }
       ],
-      "neighbor_coverage_note": "Bütün sap ve araç parçası adayları incelendi; genel kavrama bölümü ile kılıca özgü sap en yararlı sınırlar olarak seçildi."
+      "neighbor_coverage_note": "Genel araç tutamağı ve kılıç tutamağı, ortak işlev ile araç türü sınırını açıkça gösterir; diğer adaylar farklı araç parçaları veya bağlama gereçleridir."
     }
   ],
   "root_profile": {
-    "summary": "Kökün merkezinde bir şeyi alma, kavrama ve denetim altına alma vardır; bu çekirdek sorumlu tutma, tutsak etme, büyüyle bağlama, arazi edinme, su tutma, bedensel durumun başlaması, gök durağı, örnek alma, kazanma, güreş tutuşu ve araç sapı anlamlarına yayılır.",
+    "summary": "Kökün dalları, bir şeyi erişim ve denetim alanına alma çekirdeğinden tutsak etme, sorumlu tutma, edinme, izleme ve güreşte kavrama gibi eylemlere; arazi, su tutan yer, beden halleri, ay konaklarının yıldızları, büyüsel uygulama ve araç tutamağı gibi adlaşmış özel alanlara yayılır.",
     "polysemy": "polysemic",
     "organization": "radial"
   }

@@ -1,30 +1,53 @@
 {
-  "root_inputs_sha256": "4e6d62cea5e6b6f2ee9fe66f78d77a04fb8fa72e57d3748128eba06e5545545c",
+  "root_inputs_sha256": "4e3c8c5c92d1931ae1b35cc696dde9cb98dadf78a7e7e9ac9653f4d5751c84bd",
   "root_id": "root_000018",
   "branch_id": "B012",
   "language": "tr",
   "image_transliteration": "Makbidü'ş-şey'i'l-me'hûzi bih",
-  "summary": "Kancalı bir çubuğun veya benzeri aracın elle kavranan, aracı tutup yöneltmeye yarayan sap bölümüdür.",
+  "summary": "Kancalı bir aracın elle kavranan, aracı tutup yönlendirmeye yarayan sapı veya tutamağıdır.",
   "concept_map": {
-    "definition": "Kancalı bir çubuğun veya benzeri aracın elle kavranan, aracı tutup yöneltmeye yarayan sap bölümüdür.",
+    "definition": "Kancalı bir aracın elle kavranan, aracı tutup yönlendirmeye yarayan sapı veya tutamağıdır.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Aracın sap bölümü elle kavranır ve kancalı kısmı tutup yöneltmeyi sağlar.",
+        "statement": "Kancalı aracın elle kavranan sap veya tutamak bölümünü anlatır.",
         "claim_ids": [
-          "lu_015"
+          "bc_001"
+        ]
+      },
+      {
+        "facet_id": "F002",
+        "role": "associated_use",
+        "statement": "Bu bölüm aracı tutma, denetleme ve doğrultma işlevi görür.",
+        "claim_ids": [
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Dal, kancalı bir çubuğun elle tutulan ve aracı kavrayıp yöneltmeye yarayan sap bölümünü adlandırır.",
+  "identity_judgment": {
+    "status": "accepted",
+    "rationale": "Kaynak ifadesi kancalı aracın elle tutulan bölümünü ve kavrayıp doğrultmaya yarayan parçasını açıkça belirtir. Dalın sap veya tutamak çerçevesi tek tanıklığın sınırına uygundur.",
+    "boundary_note": "Anlam yalnızca belirtilen kancalı aracın elde tutulan ve yönlendirmeye yarayan parçasına bağlıdır."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "collocation",
+    "note": "Tanım yalnızca kancalı aracın tutamağını adlandıran kalıba uygulanır; aynı biçimin arazi, su yeri veya büyüsel uygulama anlamlarına yayılmaz."
+  },
+  "source_summary": "Tek kaynaklı tanıklık, kancalı aracın elle tutulan ve onu denetleyip doğrultmaya yarayan bölümünü bildirir.",
   "source_synthesis": {
-    "common_summary": "Dal, kancalı bir çubuğun elle tutulan ve aracı kavrayıp yöneltmeye yarayan sap bölümünü adlandırır.",
-    "common_claim_ids": [
-      "lu_015"
+    "common_summary": "Tek kaynaklı tanıklık, kancalı aracın elle tutulan ve onu denetleyip doğrultmaya yarayan bölümünü bildirir.",
+    "common_claim_ids": [],
+    "source_details": [
+      {
+        "claim_ids": [
+          "bc_001"
+        ],
+        "kind": "sole_attestation",
+        "summary": "Kullanım, kancalı aracın sapı ve onu kavrayıp yönlendirmeye yarayan parçası anlamıyla tek başına tanıklanmıştır."
+      }
     ],
-    "source_details": [],
     "supporting_claim_ids": [],
     "duplicate_claims": []
   },
@@ -34,24 +57,25 @@
     {
       "lexical_unit_id": "lu_015",
       "rendering_kind": "ordinary",
-      "target_gloss": "kancalı çubuğun elle tutulan sapı"
+      "target_gloss": "kancalı aracın sapı ve tutamağı"
     }
   ],
   "glosses": {
-    "semantic_definition": "Kancalı bir çubuğun veya benzeri aracın elle kavranan, aracı tutup yöneltmeye yarayan sap bölümüdür.",
+    "semantic_definition": "Kancalı bir aracın elle kavranan, aracı tutup yönlendirmeye yarayan sapı veya tutamağıdır.",
     "concept": {
       "rank": 1,
-      "text": "kancalı çubuğun tutma sapı",
+      "text": "kancalı aracın tutamağı",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Kancalı bir aracın elle kavranan ve aracı yöneltmeye yarayan bölümünü anlatırken kullanılır.",
+      "applicability": "Kancalı bir aracın elle kavranıp yönlendirilmesini sağlayan sap veya tutamak bölümü için kullanılır.",
       "facet_ids": [
-        "F001"
+        "F001",
+        "F002"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Kancalı aracı, elle kavranan sapı ve aracı yöneltme işlevini korur.",
+        "preserves": "Araç türünü, elle kavranan bölümü ve yönlendirme işlevini korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -60,19 +84,19 @@
     "contextual": [
       {
         "rank": 2,
-        "text": "kavrama yeri",
+        "text": "sap",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Aracın biçiminden çok elle tutulduğu bölümün işlevi öne çıktığında kullanılır.",
+        "applicability": "Söz konusu kancalı araç bağlamda açıkça belliyse kısa bir cümle içi karşılık olarak kullanılabilir.",
         "facet_ids": [
           "F001"
         ],
         "error_profile": {
           "fit": "broadening",
-          "preserves": "Bir aracın elle kavranan bölümünü korur.",
+          "preserves": "Aracın elle kavranan bölümünü belirtme yönünü korur.",
           "loses": null,
-          "adds": "Kancalı çubuk dışındaki araçların tutma yerlerini de kapsayabilir.",
+          "adds": "Başka araçların saplarını da adlandırabilen daha geniş bir kapsam ekler.",
           "collision": null
         }
       }
@@ -80,17 +104,18 @@
     "selected": [
       {
         "rank": 1,
-        "text": "kancalı çubuğun tutma sapı",
+        "text": "kancalı aracın tutamağı",
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Kancalı bir aracın elle kavranan ve aracı yöneltmeye yarayan bölümünü anlatırken kullanılır.",
+        "applicability": "Kancalı bir aracın elle kavranıp yönlendirilmesini sağlayan sap veya tutamak bölümü için kullanılır.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Kancalı aracı, elle kavranan sapı ve aracı yöneltme işlevini korur.",
+          "preserves": "Araç türünü, elle kavranan bölümü ve yönlendirme işlevini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -98,19 +123,19 @@
       },
       {
         "rank": 2,
-        "text": "kavrama yeri",
+        "text": "sap",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Aracın biçiminden çok elle tutulduğu bölümün işlevi öne çıktığında kullanılır.",
+        "applicability": "Söz konusu kancalı araç bağlamda açıkça belliyse kısa bir cümle içi karşılık olarak kullanılabilir.",
         "facet_ids": [
           "F001"
         ],
         "error_profile": {
           "fit": "broadening",
-          "preserves": "Bir aracın elle kavranan bölümünü korur.",
+          "preserves": "Aracın elle kavranan bölümünü belirtme yönünü korur.",
           "loses": null,
-          "adds": "Kancalı çubuk dışındaki araçların tutma yerlerini de kapsayabilir.",
+          "adds": "Başka araçların saplarını da adlandırabilen daha geniş bir kapsam ekler.",
           "collision": null
         }
       }
@@ -123,28 +148,28 @@
       "neighbor_branch_id": "B002",
       "relation_type": "near_synonym",
       "boundary_match": "partial",
-      "focus_only": "Kancalı bir çubuğun veya benzeri aracın sapına özgüdür.",
-      "neighbor_only": "Kılıç, yay, bıçak ve mızrak gibi çeşitli araçların elle tutulan bölümünü kapsar.",
-      "expression_transliteration": "Mevdiu'l-kabd bi'l-yed",
-      "gloss": "aletin elle tutulan bölümü",
-      "shared_zone": "Her iki dal da bir aracın elle kavranan ve onu kullanmayı sağlayan bölümünü adlandırır.",
-      "distinction": "Odak dalı kancalı çubuğun sapıyla sınırlıdır; komşu dal farklı silah ve araçların elle tutulan bölümü için daha genel bir sınıftır."
+      "focus_only": "Kancalı araca özgü olup onu yönlendirme işlevini taşır.",
+      "neighbor_only": "Kılıç, yay, bıçak ve benzeri birçok aracın elde kavranan bölümünü kapsar.",
+      "expression_transliteration": "mwd' alqbd balyd",
+      "gloss": "aracın el tutamağı",
+      "shared_zone": "Her ikisi de bir aracın elle kavranan ve kullanılmasını sağlayan bölümünü adlandırır.",
+      "distinction": "Odak dal belirli kancalı aracın tutamağına bağlıdır; komşu dal çeşitli araçlardaki kavrama bölümünü genel olarak kapsar."
     },
     {
       "neighbor_root_id": "root_000529",
       "neighbor_branch_id": "B005",
       "relation_type": "near_synonym",
       "boundary_match": "partial",
-      "focus_only": "Kancalı çubuğun tutma sapını bildirir.",
-      "neighbor_only": "Yalnızca kılıcın elle tutulan sap bölümünü bildirir.",
-      "expression_transliteration": "Ri'âsü's-seyf",
-      "gloss": "kılıç sapı",
-      "shared_zone": "İki dalın çekirdeği de bir aracın elle kavranan sap bölümüdür.",
-      "distinction": "İşlev aynı olmakla birlikte odak dalının nesnesi kancalı çubuk, komşu dalın nesnesi kılıçtır; bu nesne kapsamı tam ikameyi engeller."
+      "focus_only": "Kancalı aracın sapını ve yönlendirme parçasını belirtir.",
+      "neighbor_only": "Yalnızca kılıcın elde tutulan bölümünü adlandırır.",
+      "expression_transliteration": "ryas alsyf",
+      "gloss": "kılıç tutamağı",
+      "shared_zone": "Her ikisi de belirli bir aracın elle kavranan tutamak bölümüdür.",
+      "distinction": "İşlevsel çekirdek aynıdır ancak araç kapsamları ayrıdır: odak dal kancalı araca, komşu dal kılıca özgüdür."
     }
   ],
   "neighbor_coverage": {
     "assessment": "complete",
-    "note": "Bütün sap ve araç parçası adayları incelendi; genel kavrama bölümü ile kılıca özgü sap en yararlı sınırlar olarak seçildi."
+    "note": "Genel araç tutamağı ve kılıç tutamağı, ortak işlev ile araç türü sınırını açıkça gösterir; diğer adaylar farklı araç parçaları veya bağlama gereçleridir."
   }
 }

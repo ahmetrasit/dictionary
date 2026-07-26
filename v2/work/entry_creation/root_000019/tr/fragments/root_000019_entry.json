@@ -1,5 +1,5 @@
 {
-  "inputs_sha256": "9dfd08cd5563f8a01a0d293643961720dfb3c8bbd0aff64e72fe17b10c1416ca",
+  "inputs_sha256": "7ca0038c23b5555e3f1906a1f2ac7a137361e982ce8251880dc698210d6557d2",
   "artifact_format": "dictionary-v2-root-entry-draft-v1",
   "generated_by": "v2/scripts/accept_root_writer.py",
   "root_envelope_id": "root_000019",
@@ -7,71 +7,59 @@
   "branches": [
     {
       "branch_ref": "root_000019/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, ilk olandan sonra gelme ile ilk ya da tek olmayıp başka olma anlamlarını açıkça bir arada verir. Grup sonlarında bulunma, uzakta veya bulunmuyor olma ve ardından hiçbir şey gelmeme kullanımları bu çekirdeğin bağlama bağlı özelleşmeleridir.",
+        "boundary_note": "Dal, erteleme eylemini, bir nesnenin arka bölümünü ve ölümden sonraki dünyaya özgü yerleşik kullanımı kendi başına kapsamaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım ortak sonraki ya da öteki olma çekirdeğini korur; grup sonu ve zamanın sonu gibi söz öbeklerine bağlı kullanımları bütün dalın zorunlu anlamı saymaz."
+      },
       "concept_map": {
-        "definition": "Bir şeyin ilk olmayıp ondan sonra gelmesini ya da karşılaştırılan iki şeyden öteki olmasını bildirir. Bağlama göre bir dizinin sonundaki kişi veya şey ile kendisinden sonra hiçbir şey bulunmayan son varlığı da gösterebilir.",
+        "definition": "Bir dizide ilk olandan sonra gelen veya iki ya da daha çok öğe içinde ilk ya da tek olmayıp başka olandır. Bağlama göre bir topluluğun son kesimini, uzakta ya da bulunmayanı ve ardından hiçbir şey gelmeyen son varlığı da gösterebilir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir sıra veya karşılaştırmada ilk olanın ardından geleni yahut ilk olmayan öteki öğeyi belirtir.",
+            "statement": "Bir öğe, ilk olandan sonra gelmesi veya ilk ya da tek olmayıp başka olması bakımından nitelenir.",
             "claim_ids": [
-              "lu_001",
-              "lu_002",
-              "lu_003"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Bir topluluğun en son kesiminde bulunanları veya bir zaman süresinin sonunu gösterebilir.",
+            "role": "extension",
+            "statement": "Aynı karşıtlık, uzakta bulunan ya da ortada bulunmayan bir öğeyi göstermeye genişleyebilir.",
             "claim_ids": [
-              "lu_004",
-              "lu_005"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "specialization",
-            "statement": "Mutlak sonluk kullanımında kendisinden sonra hiçbir şey bulunmayanı belirtir.",
+            "statement": "Belirli bağlamlarda bir topluluğun son kesimi veya ardından hiçbir şey gelmeyen nihai varlık anlatılır.",
             "claim_ids": [
-              "lu_006"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak anlatım, ilk olanın ardından gelen veya ilk olmayıp onun karşısında öteki sayılan öğeyi temel alır. Biçimler tekil bir sonraki ya da öteki öğeyi, bunun karşılıklarını ve çoğul bir başka grubu anlatabilir; topluluk kullanımında ise en sonda bulunan kesime yönelir.",
+        "common_summary": "Kanıtlar, ilk ile karşıtlık kuran sonraki öğeyi ve birden çok öğe arasında ilk olmayan öteki öğeyi ortak çekirdek olarak gösterir; son kesim, uzaklık ve nihailik kullanımları bu çekirdeğe bağlanır.",
         "common_claim_ids": [
-          "lu_001",
-          "lu_002",
-          "lu_003",
-          "lu_004"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_005"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Tekil bir kalıp, uzun zamanın en son bölümünü anlatan özel bir kullanım olarak kaydedilir."
-          },
-          {
-            "claim_ids": [
-              "lu_006"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Mutlak sonluk anlatımında, kendisinden sonra hiçbir şey bulunmayan varlık kastedilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "ilk olmayıp sonra gelen veya öteki olan",
-        "applicability": "Sıralamada ilk öğeden sonra gelme ile iki öğeden ilk olmayanı belirtme çekirdeğinin tamamında kullanılır.",
+        "text": "sonraki ya da öteki olan",
+        "applicability": "İlkten sonra gelme ile ilk veya tek olmayıp başka olma çekirdeğini birlikte anlatan genel karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Hem sonradan gelme ilişkisini hem de ilk olmayan öteki öğe olma seçeneğini korur.",
+          "preserves": "Hem sıralamadaki sonralığı hem de bir seçenek karşısındaki başkalığı korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -82,28 +70,28 @@
       },
       "contextual_glosses": [
         {
-          "text": "sonraki",
+          "text": "sonuncu",
           "usage_role": "contextual",
-          "applicability": "Öğenin açık bir sıra içinde ilk öğenin ardından geldiği bağlamlarda doğal karşılıktır.",
+          "applicability": "Bir dizinin veya topluluğun en sonundaki öğe özellikle kastedildiğinde uygundur.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Bir öğenin başka bir öğeden sonra gelmesi ilişkisini korur.",
-            "loses": "Sıra bildirmeden yalnızca ilk olmayan öteki öğeyi gösteren kullanımı kapsamaz.",
+            "preserves": "Sıralama içindeki sonralık ve nihai konum anlamını korur.",
+            "loses": "Yalnızca başka veya ilk olmayan öğe anlamını ve uzaklık kullanımını dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F003"
           ]
         },
         {
           "text": "öteki",
           "usage_role": "contextual",
-          "applicability": "Karşılaştırılan iki öğeden ilk olmayanın seçildiği bağlamlarda doğal karşılıktır.",
+          "applicability": "İki ya da daha çok öğeden ilk veya anılan olmayan başka öğe kastedildiğinde doğal karşılıktır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "İlk öğeden farklı olan karşıt öğeyi seçme işlevini korur.",
-            "loses": "Bir dizide zamansal veya sırasal olarak ardından gelme anlamını tek başına belirtmez.",
+            "preserves": "İlk ya da tek olmayıp başka olma ayrımını korur.",
+            "loses": "Zorunlu bir zaman veya sıra sonralığı bildirmez.",
             "adds": null,
             "collision": null
           },
@@ -112,13 +100,13 @@
           ]
         },
         {
-          "text": "en sondakiler",
-          "usage_role": "contextual",
-          "applicability": "Bir topluluğun veya dizinin son kesiminde bulunan kişiler ya da öğeler için kullanılır.",
+          "text": "uzaktaki ya da bulunmayan",
+          "usage_role": "explanatory",
+          "applicability": "Sözün özellikle mesafedeki veya ortamda bulunmayan kişiye yöneldiği bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Bir dizinin son kesiminde bulunma özelliğini korur.",
-            "loses": "Genel olarak ilkten sonra gelen veya iki öğeden öteki olan kullanımları kapsamaz.",
+            "preserves": "Merkezden ayrılmış veya mevcut olmayan öğe uzantısını açıklar.",
+            "loses": "Genel sonraki ve öteki olma anlamlarını tek başına karşılamaz.",
             "adds": null,
             "collision": null
           },
@@ -131,22 +119,22 @@
         {
           "lexical_unit_id": "lu_001",
           "rendering_kind": "ordinary",
-          "target_gloss": "sonraki; ilk olmayan öteki"
+          "target_gloss": "sonraki; öteki"
         },
         {
           "lexical_unit_id": "lu_002",
           "rendering_kind": "ordinary",
-          "target_gloss": "bir sonraki; bir başkası"
+          "target_gloss": "sonraki veya öteki olan dişil öğe"
         },
         {
           "lexical_unit_id": "lu_003",
           "rendering_kind": "ordinary",
-          "target_gloss": "başkaları; diğerleri"
+          "target_gloss": "başkaları; ötekiler"
         },
         {
           "lexical_unit_id": "lu_004",
           "rendering_kind": "ordinary",
-          "target_gloss": "insanların en son gelenleri"
+          "target_gloss": "insanların son kesimleri"
         },
         {
           "lexical_unit_id": "lu_005",
@@ -156,57 +144,46 @@
         {
           "lexical_unit_id": "lu_006",
           "rendering_kind": "ordinary",
-          "target_gloss": "kendisinden sonra hiçbir şey bulunmayan son"
+          "target_gloss": "ardından hiçbir şey gelmeyen son"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "gecikmiş",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "displacement",
-            "preserves": "Başka bir şeyden sonra bulunma yönünü sınırlı biçimde korur.",
-            "loses": "Nötr sırasal sonralığı ve iki öğeden ilk olmayan öteki olma anlamını kaybeder.",
-            "adds": "Beklenen vakti aşmış olma veya geç kalma anlamını gereksiz yere ekler.",
-            "collision": "Sonraya bırakma ve geç duruma gelme dalıyla karışır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000131/B002",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "İki şeyden ilk olmayan öteki öğeyi ve mutlak sonluğu da kapsar.",
-          "neighbor_only": "Bir şeyin ardından bulunmayı, önce kavramıyla karşıtlık içinde daha genel biçimde kurar.",
-          "gloss": "sonraki ile ardından bulunan",
-          "shared_zone": "Her iki dal da bir öğenin başka bir öğeden sonra gelmesi ilişkisini içerir.",
-          "distinction": "Odak dal, sıra ilişkisinin yanında iki öğeden öteki olanı ve özel sonluk kullanımlarını taşır. Komşu dalın sınırı ise bir şeyin ardından bulunma ve önce kavramının karşıtı olma üzerinde daha doğrudan kuruludur."
+          "focus_only": "İlk olmayan öteki öğeyi, grup sonunu ve bazı bağlamlarda uzakta ya da bulunmayanı da gösterebilir.",
+          "neighbor_only": "Bir olayın veya öğenin öncekinden sonra gerçekleştiğini doğrudan kuran ilişkisel kullanımları kapsar.",
+          "gloss": "sonra gelen",
+          "shared_zone": "Her iki dal da bir öğeyi önce gelen bir öğeye göre daha sonraki konumda gösterebilir.",
+          "distinction": "Odak dalı, sıralama ilişkisinin yanında ilk ya da tek olmayıp başka olmayı da sözlükleştirir; komşu dal ise önce-sonra ilişkisini daha doğrudan kurar."
         },
         {
           "neighbor_ref": "root_000019/B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Bir öğenin sıradaki konumunu veya ilk olmayan öteki oluşunu bildirir.",
-          "neighbor_only": "Bir şeyi daha sonraki bir vakte bırakma ya da onun gecikmiş duruma gelmesi sürecini bildirir.",
-          "gloss": "sonraki olma ile geciktirme",
-          "shared_zone": "İki dal da bir öğenin başka bir şeyden veya vakitten sonra bulunması düşüncesine dayanır.",
-          "distinction": "Odak dal konum veya kimlik bildirir; komşu dal ise bir yer değiştirme sürecini, gecikmeyi ya da sonraki vakte bırakmayı anlatır. Bu nedenle aynı bağlamda olağan biçimde birbirlerinin yerine geçmezler."
+          "focus_only": "Bir öğenin sıralamadaki sonraki veya ilk olmayıp başka olan kimliğini bildirir.",
+          "neighbor_only": "Bir şeyi daha sonraki zamana bırakma veya bir öznenin geç kalması sürecini bildirir.",
+          "gloss": "sonralık ile gecikme",
+          "shared_zone": "İki dal da daha sonra olma fikrini taşır ve zaman sıralamasında kesişebilir.",
+          "distinction": "Odak dalı öğenin konumunu ya da kimliğini niteler; komşu dal ise zamanlamayı değiştiren eylemi veya bunun sonucundaki gecikme durumunu anlatır."
         },
         {
           "neighbor_ref": "root_000019/B003",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Sıra içinde sonra geleni veya ilk olmayan öteki öğeyi belirtir.",
-          "neighbor_only": "Bir nesnenin uzamsal arka bölümünü ve belirli arka parçalarını belirtir.",
-          "gloss": "sonraki ile arka bölüm",
-          "shared_zone": "Her iki dalda da ön veya ilk kabul edilen bir noktaya göre geride bulunma ilişkisi vardır.",
-          "distinction": "Odak dal sırasal ve karşılaştırmalı sonralığı anlatırken komşu dal somut bir nesnenin arka tarafını adlandırır. Ortak yönelim, bunları eş anlamlı yapacak ölçüde bir sınır birliği oluşturmaz."
+          "focus_only": "Sıra içinde ilkten sonra gelen veya ilk olmayan başka öğeyi gösterir.",
+          "neighbor_only": "Bir nesnenin önüyle karşıtlanan somut arka bölümünü gösterir.",
+          "gloss": "sonraki ile arka",
+          "shared_zone": "Sıralamadaki son konum, uzamsal bir nesnenin arka konumuyla örtüşebilir.",
+          "distinction": "Odak dalında temel eksen sıra ve başkalıktır; komşu dalda temel eksen nesnenin ön ve arka bölümleri arasındaki uzamsal karşıtlıktır."
         }
       ],
-      "neighbor_coverage_note": "Verilen bütün komşu adayları değerlendirildi; sırasal sonralık, geciktirme ve uzamsal arkalıkla kurulan üç ayrım sınırı en açık biçimde gösterdi. Benzerlik, uzaklık ve eşlik alanındaki öteki adaylar yalnızca zayıf çağrışım taşıdığı için yayımlanmadı.",
+      "neighbor_coverage_note": "Adayların tamamı değerlendirildi; sıra sonralığı, gecikme ve somut arka bölümle en açıklayıcı sınırları kuran üç komşu yayımlandı.",
       "branch_image_ar": "الآخرية بعد الأول أو غيره",
       "what_is_ar": "يدخل فيه الآخر والأخرى وأخر وأواخر وأخريات الناس، وما كان بعد الأول أو غير الأول، ويدخل فيه الأبعد أو الغائب عند التصريح به.",
+      "what_is_not_ar": "لا يدخل فيه فعل التأخير والإمهال نفسه، ولا مؤخر الأجسام، ولا اصطلاح الدار الآخرة إلا بقرينة خاصة.",
       "source_phrase_ar": "الآخر نقيض المتقدم؛ الآخر تال للأول؛ أخر جماعة أخرى (maqayis); هذا آخر وهذه أخرى؛ الآخر والآخرة نقيض المتقدم والمتقدمة؛ الآخر الغائب؛ أخر جماعة أخرى (ayn); الآخر بعد الأول؛ الآخر أحد الشيئين؛ الجمع أواخر؛ أخريات الناس أي أواخرهم؛ أخرى القوم أي من كان في آخرهم؛ أبعد الله الاخر (sihah); معنى آخر شيء غير الأول الذي قبله؛ أخر جماعة أخرى؛ أخرى القوم أي في أواخرهم (tahdhib); آخر يقابل به الأول، وآخر يقابل به الواحد؛ أخر معدول (mufradat)",
       "sources": [
         "MQ",
@@ -215,79 +192,71 @@
         "TA",
         "MU"
       ],
-      "source_note": {
-        "SI": "Tekil bir kalıp, uzun zamanın en son bölümünü anlatan özel bir kullanım olarak kaydedilir.",
-        "TA": "Mutlak sonluk anlatımında, kendisinden sonra hiçbir şey bulunmayan varlık kastedilir."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000019/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bir şeyi daha sonraya bırakma, bir öznenin geride kalması, vadeli satış ve ürününü hasadın sonuna dek taşıyan hurma örneklerini aynı zaman sonralığı çevresinde toplar. Geçişlilik ve bağlama bağlı örnekler korunarak dal kimliği tutarlıdır.",
+        "boundary_note": "Dal, yalnızca sonraki veya öteki olanı adlandırmaz ve somut bir nesnenin arka tarafını zaman gecikmesi bulunmadıkça kapsamaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım geciktirme ve gecikme çekirdeğini verir; vadeli satış ile ürünü geç zamana kalan hurma anlamlarını kendi söz öbekleri ve biçimleriyle sınırlı tutar."
+      },
       "concept_map": {
-        "definition": "Bir şeyi olağan vaktinden veya başka bir şeyden sonraya bırakma, böylece onun daha geç gerçekleşmesini sağlama ya da kendisinin geç duruma gelmesi sürecidir. Bu çekirdek, vadeli satışa ve ürünü toplama döneminin sonuna kadar üzerinde kalan hurma ağacına uygulanır.",
+        "definition": "Bir şeyi olağan, belirlenmiş veya başka bir şeye göre daha sonraki bir zamana bırakmak ya da bir öznenin bu biçimde geride kalmasıdır. Vadeyi ileri alma ve bir ürünün hasadın sonuna kadar kalması bunun bağlama bağlı gerçekleşmeleridir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir şeyi kendi vaktinden veya başka bir şeyden sonraya bırakmayı ve bu nedenle geç duruma gelmeyi anlatır.",
+            "statement": "Bir olay veya öğe daha sonraki zamana bırakılır ya da bir özne zaman veya sıra bakımından geride kalır.",
             "claim_ids": [
-              "lu_007",
-              "lu_008",
-              "lu_009"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "associated_use",
-            "statement": "Bir olayın geç bir vakitte gerçekleştiğini veya ancak sonradan bilindiğini belirten zaman kullanımıdır.",
+            "role": "specialization",
+            "statement": "Satış bağlamında ödeme vadesinin ileri bir tarihe bırakılması anlatılır.",
             "claim_ids": [
-              "lu_010"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "specialization",
-            "statement": "Satışta ödeme süresini sonraya bırakarak vadeli işlem yapmayı belirtir.",
+            "role": "associated_use",
+            "statement": "Zaman belirten kullanımda birini ancak geç bir dönemde tanıma veya birinin geç gelmesi anlatılır.",
             "claim_ids": [
-              "lu_011"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F004",
-            "role": "extension",
-            "statement": "Ürünü toplama döneminin sonuna kadar üzerinde kalan hurma ağacını adlandıran özel kullanımdır.",
+            "role": "example",
+            "statement": "Ürünü hasat döneminin sonuna kadar üzerinde kalan bir hurma ağacı, gecikmiş kalışın somut örneğidir.",
             "claim_ids": [
-              "lu_012"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Anlatımın çekirdeği, bir şeyi başka bir şeyden veya beklenen vaktinden sonraya koymak ve onun geç duruma gelmesidir. Aynı zaman ilişkisi geç vakit bildiren bir kullanıma, ödeme vadesi ertelenmiş satışa ve ürünü toplama döneminin sonuna dek üzerinde kalan hurma ağacına uzanır.",
+        "common_summary": "Kanıtlar, öne almanın karşıtı olarak daha sonraya bırakmayı ve geride kalmayı ortaklaştırır; vadeli satış, geç zamanda gerçekleşme ve ürünü hasadın sonuna kalan ağaç bu yapının özel kullanımlarıdır.",
         "common_claim_ids": [
-          "lu_008",
-          "lu_009",
-          "lu_010",
-          "lu_011",
-          "lu_012"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_007"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Geciktirme, bir şeyi öne almanın karşıtı olarak tanımlanır."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "sonraya bırakma veya geç duruma gelme",
-        "applicability": "Hem bir şeyi daha sonraki vakte bırakma eylemini hem de öznenin geç duruma gelmesini kapsayan çekirdek karşılıktır.",
+        "text": "geciktirme veya gecikme",
+        "applicability": "Hem bir şeyi daha sonraya bırakmayı hem de öznenin daha sonraya kalmasını kapsayan genel karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Ettirgen geciktirme ile kendiliğinden veya edilgen biçimde geç duruma gelme ayrımını korur.",
+          "preserves": "Ettirgen geciktirme ile kendiliğinden veya edilgen gecikme ayrımını birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -300,26 +269,11 @@
         {
           "text": "ertelemek",
           "usage_role": "contextual",
-          "applicability": "Bir kişi veya olayın başka bir şeyi daha sonraki bir vakte bıraktığı bağlamlarda kullanılır.",
+          "applicability": "Bir işi, olayı veya vadeyi bilinçli biçimde daha sonraki zamana bırakma bağlamında uygundur.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Bir şeyi daha sonraki vakte bırakma eylemini korur.",
-            "loses": "Öznenin kendisinin geç duruma gelmesini ve özel sonuç kullanımlarını kapsamaz.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        },
-        {
-          "text": "gecikmek",
-          "usage_role": "contextual",
-          "applicability": "Bir kişinin veya olayın başkasına ya da beklenen vakte göre geç kaldığı bağlamlarda kullanılır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Öznenin beklenen sıraya veya vakte göre geç duruma gelmesini korur.",
-            "loses": "Başka bir şeyi bilerek sonraya bırakma eylemini tek başına anlatmaz.",
+            "preserves": "Bir şeyi sonraki zamana bırakma işlemini korur.",
+            "loses": "Öznenin kendisinin gecikmesi ve ürünün geç zamana kalması kullanımlarını karşılamaz.",
             "adds": null,
             "collision": null
           },
@@ -330,11 +284,26 @@
         {
           "text": "vadeli satmak",
           "usage_role": "contextual",
-          "applicability": "Satılan şeyin bedelinin ödenmesini ileri bir tarihe bırakan alışveriş bağlamında kullanılır.",
+          "applicability": "Bedelin veya ödeme tarihinin ileri bırakıldığı satış söz öbeğine özgü karşılıktır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Satışta ödeme zamanını sonraya bırakma özelliğini korur.",
-            "loses": "Satış dışındaki genel geciktirme ve geç kalma kullanımlarını kapsamaz.",
+            "preserves": "Satışta vadenin ileri alınması anlamını eksiksiz korur.",
+            "loses": "Satış dışındaki genel geciktirme ve gecikme alanını dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "geç vakitte",
+          "usage_role": "contextual",
+          "applicability": "Bir tanıma veya gelme olayının geç bir zamanda gerçekleştiğini belirten kullanımda uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Olayın beklenen veya önceki zamandan daha geç gerçekleşmesini korur.",
+            "loses": "Geciktirme eylemini ve vadeli satış anlamını karşılamaz.",
             "adds": null,
             "collision": null
           },
@@ -347,102 +316,71 @@
         {
           "lexical_unit_id": "lu_007",
           "rendering_kind": "ordinary",
-          "target_gloss": "sonraya bırakma; geciktirme"
+          "target_gloss": "geciktirme"
         },
         {
           "lexical_unit_id": "lu_008",
           "rendering_kind": "ordinary",
-          "target_gloss": "geciktirdi; sonraki bir vakte bıraktı"
+          "target_gloss": "geciktirmek; sonraya bırakmak"
         },
         {
           "lexical_unit_id": "lu_009",
           "rendering_kind": "ordinary",
-          "target_gloss": "gecikti; geride kaldı"
+          "target_gloss": "gecikmek; geride kalmak"
         },
         {
           "lexical_unit_id": "lu_010",
           "rendering_kind": "ordinary",
-          "target_gloss": "geç bir vakitte; sonradan"
+          "target_gloss": "geç vakitte; sonradan"
         },
         {
           "lexical_unit_id": "lu_011",
           "rendering_kind": "ordinary",
-          "target_gloss": "vadeli sattı"
+          "target_gloss": "vadeli satmak"
         },
         {
           "lexical_unit_id": "lu_012",
           "rendering_kind": "ordinary",
-          "target_gloss": "ürünü toplama döneminin sonuna kadar üzerinde kalan hurma ağacı"
+          "target_gloss": "ürünü hasadın sonuna kadar kalan hurma ağacı"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "yavaşlamak",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "displacement",
-            "preserves": "Bir olayın beklenenden geç sonuçlanabilmesi ihtimalini dolaylı olarak korur.",
-            "loses": "Bir şeyi sonraya bırakma eylemini ve sıra bakımından geç duruma gelmeyi kaybeder.",
-            "adds": "Zaman veya sıra yerine düşük hızla ilerleme özelliğini ekler.",
-            "collision": "Yavaşlık ve düşük hız alanındaki komşu dalla karışır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000548/B004",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Geç duruma gelmeyi, geç vakit kullanımını, vadeli satışı ve geç toplanan ürünü de kapsar.",
-          "neighbor_only": "Bir işi sonraya bırakma anlamından türeyen belirli bir topluluk adını da içerir.",
-          "gloss": "geciktirme ile erteleme",
-          "shared_zone": "Her iki dalın çekirdeğinde bir işi veya şeyi daha sonraki bir vakte bırakma vardır.",
-          "distinction": "Genel erteleme eyleminde iki dal büyük ölçüde örtüşür. Odak dalın sınırı ayrıca geç duruma gelme ve zaman ilişkisinden doğan somut kullanımları içerirken komşu dal kendine özgü bir topluluk adına uzanır."
+          "focus_only": "Gecikmek, geç vakitte olmak, vadeli satış ve ürünü geç hasada kalan ağaç kullanımlarını da kapsar.",
+          "neighbor_only": "Belirli bir şeyi sonraki zamana bırakmanın yanında bu işlemle bağlantılı yerleşik topluluk adlandırmasını da içerir.",
+          "gloss": "ertelemek",
+          "shared_zone": "Her iki dalın çekirdeğinde bir şeyi daha sonraki bir zamana bırakma işlemi bulunur.",
+          "distinction": "Komşu, erteleme eylemine daha sıkı bağlıdır; odak dalı ise eylemin yanı sıra gecikmiş durumu, geç zaman belirtecini ve özel adlandırmaları da kapsayan daha geniş bir türeme alanına sahiptir."
         },
         {
           "neighbor_ref": "root_001520/B002",
-          "relation_type": "near_synonym",
+          "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Geç duruma gelme ile vadeli satış ve geç toplanan ürün gibi uzantıları kapsar.",
-          "neighbor_only": "Bir talepte bulunanı bekletme, ona süre tanıma ve bir iyilik bekleme yönlerini içerir.",
-          "gloss": "sonraya bırakma ile süre tanıma",
-          "shared_zone": "Her iki dal da bir işin hemen yapılmayıp ileri bir vakte bırakılmasını anlatabilir.",
-          "distinction": "Odak dal genel zaman sırasını ve gecikmiş durumu öne çıkarır. Komşu dal ise bir talep karşısında bekleme veya süre tanıma ilişkisini ve beklenti durumunu ayrıca kurar."
-        },
-        {
-          "neighbor_ref": "root_001085/B006",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Her tür şeyi sonraya bırakmayı ve öznenin geç duruma gelmesini kapsayan genel bir alana sahiptir.",
-          "neighbor_only": "Özellikle borcun veya borçtan doğan paranın ödenmesi için süre tanımaya bağlıdır.",
-          "gloss": "genel geciktirme ile borcu erteleme",
-          "shared_zone": "İki dal, bir ödemenin hemen alınmayıp ileri bir vakte bırakılması bağlamında örtüşür.",
-          "distinction": "Komşu dal borç ilişkisine ve borçluya süre tanımaya özgüdür. Odak dal ise bu mali bağlamı aşarak genel geciktirme, gecikme ve başka zaman temelli uzantıları kapsar."
+          "focus_only": "Bir olayın ya da öznenin daha sonraya kalmasını, bekleyen bir kişi bulunmaksızın da anlatabilir.",
+          "neighbor_only": "Bir talep sahibine süre tanımayı, beklemeyi ve beklenen bir iyiliği ummayı da içerir.",
+          "gloss": "geciktirme ile süre tanıma",
+          "shared_zone": "Bir borcun veya işin hemen sonuçlandırılmayıp ileri zamana bırakılmasında iki dal kesişir.",
+          "distinction": "Odak dalı zaman sırasındaki gecikmeye dayanır; komşu dal ise bekleyen katılımcı ve ona tanınan süre ilişkisini ayrıca kurar."
         },
         {
           "neighbor_ref": "root_000124/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Bir şeyi sonraya bırakma eylemini ve bundan doğan geç konumu anlatır.",
-          "neighbor_only": "Bir hareketin, yürüyüşün veya gelişin düşük hızla sürmesini anlatır.",
+          "focus_only": "Bir şeyi bilinçli olarak sonraya bırakmayı ve vadeyi ileri almayı kapsar.",
+          "neighbor_only": "Hareketin veya iş görmenin düşük hızını, sonuçta geç kalma olmasa bile anlatabilir.",
           "gloss": "gecikme ile yavaşlık",
-          "shared_zone": "Yavaş ilerleme, beklenen zamana göre geç kalmaya yol açtığında iki alan aynı durumda buluşabilir.",
-          "distinction": "Odak dalın belirleyici ölçütü zaman veya sıra bakımından sonra kalmaktır; bunun nedeni yavaşlık olmak zorunda değildir. Komşu dalın çekirdeği düşük hızdır ve mutlaka bir erteleme ya da geç kalma sonucu doğurmaz."
-        },
-        {
-          "neighbor_ref": "root_000019/B001",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Sonraya bırakma sürecini veya bir öznenin gecikmesini bildirir.",
-          "neighbor_only": "Bir öğenin zaten sıra bakımından sonraki veya ilk olmayan öteki öğe olduğunu bildirir.",
-          "gloss": "geciktirme ile sonraki olma",
-          "shared_zone": "Her iki dal da bir şeyin başka bir şeyden sonra bulunması ilişkisini kullanır.",
-          "distinction": "Odak dal bir değişme veya ettirme sürecini taşır; komşu dal ise öğenin sıra içindeki konumunu ya da karşılaştırmadaki kimliğini belirtir. Sonraki olan her şey geciktirilmiş değildir."
+          "shared_zone": "Yavaş ilerleyen bir kişi veya süreç, beklenen zamana göre gecikmiş de olabilir.",
+          "distinction": "Odak dalında belirleyici ölçüt daha sonraki zaman veya sıra konumudur; komşu dalda belirleyici ölçüt hareket ya da yürütme hızının düşüklüğüdür."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; erteleme, süre tanıma, borcu erteleme, yavaşlık ve sırasal sonralık en yararlı beş sınırı verdi. Süre, yıl ve genel zaman bildiren adaylar aynı olayı çevrelese de geciktirme çekirdeğiyle yeterli anlamsal örtüşme göstermedi.",
+      "neighbor_coverage_note": "Adayların tamamı değerlendirildi; erteleme, süre tanıma ve yavaşlıkla en yararlı sınırları kuran üç komşu seçildi.",
       "branch_image_ar": "التأخير إلى وقت لاحق",
       "what_is_ar": "يدخل فيه أخرته وتأخر واستأخر والمستأخر، وبيع بأخرة أو بنظرة، وما يبقى إلى آخر الشيء كالمئخار.",
+      "what_is_not_ar": "لا يدخل فيه مجرد معنى الآخر بمعنى غير الأول، ولا الجهة الخلفية من الجسم إلا إذا دل السياق على التأخير الزمني.",
       "source_phrase_ar": "تأخر أخرا؛ بعتك بيعا بأخرة أي نظرة؛ ما عرفته إلا بأخرة (maqayis); بعته الشيء بأخرة أي بتأخير؛ تأخر أخرا؛ جاء فلان أخيرا أي بأخرة (ayn); أخرته فتأخر؛ واستأخر مثل تأخر؛ بعته بأخرة وبنظرة أي بنسيئة؛ المئخار النخلة التي يبقى حملها إلى آخر الصرام (sihah); المستأخر نقيض المستقدم؛ بعته سلعة بأخرة أي بتأخير؛ بأخرة وبنظرة؛ المئخار النخلة التي يبقى حملها إلى آخر الصرام (tahdhib); التأخير مقابل للتقديم؛ إنما يؤخرهم؛ أخرنا إلى أجل قريب؛ بعته بأخرة أي بتأخير أجل (mufradat)",
       "sources": [
         "MQ",
@@ -451,85 +389,71 @@
         "TA",
         "MU"
       ],
-      "source_note": {
-        "MU": "Geciktirme, bir şeyi öne almanın karşıtı olarak tanımlanır."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000019/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi nesnenin önüyle karşıtlanan arka bölümünü ortak çekirdek yapar ve bunu göz, semer, kumaş ve dişi devenin arka kısımlarıyla örnekler. Zamansal gecikme veya yalnızca ilkten sonra gelme bu somut bölüm anlamının yerine geçmez.",
+        "boundary_note": "Dalın ekseni uzamsal ön-arka karşıtlığıdır; zaman bakımından gecikme, genel ötekilik ve ölümden sonraki dünya anlamları dışarıda kalır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım ortak arka bölüm çekirdeğini verir; gözün köşesi, semerin dayanağı, kumaşı arkadan yarma ve devenin arka yanları gibi kullanımları kendi yapılarıyla sınırlı tutar."
+      },
       "concept_map": {
-        "definition": "Bir nesnenin ön tarafının karşısında bulunan arka bölümünü belirtir. Bu uzamsal çekirdek gözün şakak yanındaki bölümüne, binit eyerinin arka dayanağına, bir şeyi arkasından yarmaya ve dişi devenin arka çiftine uygulanır.",
+        "definition": "Bir nesnenin ön bölümüyle karşıtlanan arka bölümü veya arka tarafıdır. Gözün şakağa yakın köşesi, semerin arka dayanağı ve hayvanın arka yanları gibi belirli yapılarda özelleşir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir nesnenin ön bölümünün karşıtı olan arka tarafını veya arka kesimini belirtir.",
+            "statement": "Bir nesnenin önüyle karşıtlanan arka bölümü ya da arka tarafı gösterilir.",
             "claim_ids": [
-              "lu_013",
-              "lu_017"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Gözün şakağa bitişik olan arka bölümünü belirtir.",
+            "statement": "Gözde şakağa yakın arka köşe ve binek semerinde binicinin yaslandığı arka dayanak adlandırılır.",
             "claim_ids": [
-              "lu_014"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "specialization",
-            "statement": "Binicinin yaslandığı eyerin arka dayanağını belirtir.",
+            "role": "associated_use",
+            "statement": "Bir nesneyi arka tarafından yarmak, arka bölüm adının ilgeçli bir yapıda kullanılmasına dayanır.",
             "claim_ids": [
-              "lu_015"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F004",
             "role": "specialization",
-            "statement": "Dişi devenin öndeki çiftinin karşısında bulunan iki arka yanını belirtir.",
+            "statement": "Dişi devenin öndeki iki yanıyla karşıtlanan iki arka yanı özel bir çoğul biçimle gösterilir.",
             "claim_ids": [
-              "lu_018"
-            ]
-          },
-          {
-            "facet_id": "F005",
-            "role": "source_variant",
-            "statement": "Eyerin arka dayanağı için az kullanılan ve kullanılmaması yönünde bir itiraz da aktarılmış olan adlandırma varyantıdır.",
-            "claim_ids": [
-              "lu_016"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak çekirdek, bir şeyin önünün karşısındaki arka bölümüdür. Bu ilişki gözün şakak yanındaki kesiminde, binicinin yaslandığı eyer parçasında ve bir şeyi arka tarafından yarma anlatımında somutlaşır. Eyer parçasının ikinci adlandırması az kullanılan bir biçim olarak verilir ve bu biçimin kullanılmaması gerektiğini aktaran görüşle birlikte kaydedilir.",
+        "common_summary": "Kanıtlar, ön bölümün karşıtı olan arka bölümü ortaklaştırır; gözün arka köşesi, semerin arka dayanağı, arkadan yarma ve devenin arka yanları bu uzamsal çekirdeği farklı yapılarda gerçekleştirir. Semerin arka dayanağını adlandıran seyrek biçim konusunda bir aktarım biçimi reddederken diğeri kullanımı Esmaî'ye bağlar.",
         "common_claim_ids": [
-          "lu_013",
-          "lu_014",
-          "lu_015",
-          "lu_016",
-          "lu_017"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_018"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Dişi devenin öndeki çiftine karşılık gelen iki arka yanı için özel bir çoğul adlandırma kaydedilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "önün karşısındaki arka bölüm",
-        "applicability": "Bir nesnenin yön bakımından ön tarafına karşıt olan arka kesimini anlatan bütün çekirdek kullanımlara uygundur.",
+        "text": "arka bölüm",
+        "applicability": "Bir nesnenin önüyle karşıtlanan somut arka kısmını gösteren en kısa genel karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Arka bölümün bir nesnenin kendi önüyle kurulan karşıt yön ilişkisini korur.",
+          "preserves": "Ön bölümle karşıtlık içindeki somut arka kısım çekirdeğini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -542,10 +466,10 @@
         {
           "text": "arka taraf",
           "usage_role": "general",
-          "applicability": "Nesnenin önünün karşısındaki bölüm genel ve gündelik biçimde anlatıldığında kullanılır.",
+          "applicability": "Belirli bir organ veya araç parçası adı gerekmeyen genel uzamsal bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Nesnenin ön tarafına karşıt olan uzamsal bölümü doğal biçimde korur.",
+            "preserves": "Önle karşıtlanan arka yönü veya bölümü doğal biçimde karşılar.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -557,11 +481,26 @@
         {
           "text": "arka dayanak",
           "usage_role": "contextual",
-          "applicability": "Binicinin geriye yaslandığı eyer parçasının işlevi öne çıkarıldığında kullanılır.",
+          "applicability": "Binek semerinde binicinin yaslandığı arka parça özellikle kastedildiğinde uygundur.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Eyerin arkasında bulunma ve biniciye dayanak olma özelliklerini korur.",
-            "loses": "Genel arka bölüm ile göz ve hayvan gövdesine ilişkin öteki kullanımları kapsamaz.",
+            "preserves": "Semerin arka konumunu ve yaslanma işlevini korur.",
+            "loses": "Genel arka bölüm ile göz ve hayvan anatomisine ilişkin kullanımları dışarıda bırakır.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "arkasından",
+          "usage_role": "contextual",
+          "applicability": "Bir nesnenin arka tarafından kesilmesi veya yarılması anlatılırken doğal akış karşılığıdır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "İşlemin nesnenin arka bölümünden başlamasını korur.",
+            "loses": "Arka bölümün bağımsız ad olarak kullanılmasını ve özel parça adlarını karşılamaz.",
             "adds": null,
             "collision": null
           },
@@ -574,27 +513,27 @@
         {
           "lexical_unit_id": "lu_013",
           "rendering_kind": "ordinary",
-          "target_gloss": "şeyin arka tarafı"
+          "target_gloss": "nesnenin arka bölümü"
         },
         {
           "lexical_unit_id": "lu_014",
           "rendering_kind": "ordinary",
-          "target_gloss": "gözün şakağa bitişik arka bölümü"
+          "target_gloss": "gözün şakağa yakın arka köşesi"
         },
         {
           "lexical_unit_id": "lu_015",
           "rendering_kind": "ordinary",
-          "target_gloss": "binit eyerinin arka dayanağı"
+          "target_gloss": "binek semerinin arka dayanağı"
         },
         {
           "lexical_unit_id": "lu_016",
           "rendering_kind": "ordinary",
-          "target_gloss": "eyer arka dayanağının az kullanılan bir adı"
+          "target_gloss": "semerin arka dayanağı için seyrek ve tartışmalı söyleyiş"
         },
         {
           "lexical_unit_id": "lu_017",
           "rendering_kind": "ordinary",
-          "target_gloss": "arka tarafından"
+          "target_gloss": "arka tarafından; arkasından"
         },
         {
           "lexical_unit_id": "lu_018",
@@ -602,64 +541,43 @@
           "target_gloss": "dişi devenin iki arka yanı"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "kuyruk",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "displacement",
-            "preserves": "Bir hayvanın arka ucunda bulunma özelliğini korur.",
-            "loses": "Her tür nesnenin önüne karşıt arka bölümünü anlatan genel sınırı kaybeder.",
-            "adds": "Belirli bir uzantı veya uzuv olma koşulunu gereksiz yere ekler.",
-            "collision": "Kuyruk ve kuyruk biçimli son parça alanındaki komşu dalla karışır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000433/B002",
-          "relation_type": "near_synonym",
+          "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Belirli nesnelerin kendi önlerine karşıt arka parçalarını ve bu parçaların adlarını kapsar.",
-          "neighbor_only": "Bir insanın arkasındaki yeri ve uzamsal konumun yanında sıra bakımından geride olmayı da kapsar.",
-          "gloss": "arka bölüm ile arkada bulunan yer",
-          "shared_zone": "Her iki dal bir şeyin ön tarafının karşısında veya gerisinde bulunan uzamsal alanı anlatır.",
-          "distinction": "Odak dal çoğunlukla nesnenin kendi yapısındaki arka bölümü ve belirli arka parçaları adlandırır. Komşu dal ise bir şeyin arkasında bulunan ayrı konumu ve sıra bakımından geride olmayı da içine alan daha geniş bir yer ilişkisi kurar."
+          "focus_only": "Göz köşesi, semer dayanağı ve devenin arka yanları gibi nesnenin yapısal parçalarını adlandırır.",
+          "neighbor_only": "Bir şeyin arkasında bulunma yön ve konum ilişkisini, ayrı bir yapısal parça olmadan da anlatır.",
+          "gloss": "arka bölüm ile arkada",
+          "shared_zone": "Her iki dal da önün karşısındaki uzamsal alanı ve nesnenin arka tarafını gösterebilir.",
+          "distinction": "Odak dalı çoğunlukla nesnenin kendi arka bölümünü adlandırır; komşu dal ise başka bir şeye göre arkada veya geride bulunma ilişkisini de kurar."
         },
         {
           "neighbor_ref": "root_000521/B002",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Ön tarafın karşıtı olan bütün arka bölümü veya belirli arka parçaları anlatır.",
-          "neighbor_only": "Hayvanın kuyruğunu ve kuyruk gibi uzayan ya da sarkan son parçayı özellikle anlatır.",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Önle karşıtlanan herhangi bir arka bölümü, kuyruk biçimi veya işlevi olmadan da kapsar.",
+          "neighbor_only": "Hayvan kuyruğunu ve kuyruk gibi uzayan, sarkan ya da bir şeyin sonuna eklenen bölümü kapsar.",
           "gloss": "arka bölüm ile kuyruk",
-          "shared_zone": "Kuyruk çoğu hayvanda gövdenin arka ucunda bulunduğu için iki alan uzamsal olarak kesişir.",
-          "distinction": "Odak dal için kuyruk biçimi veya uzantı olma şart değildir; belirleyici özellik önün karşısında bulunmaktır. Komşu dal ise belirli bir uzvu ve ona benzeyen uzamış son parçaları merkez alır."
-        },
-        {
-          "neighbor_ref": "root_001247/B002",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Göz ve eyer gibi farklı nesnelerin arka kesimlerini de kapsayan genel bir parça ilişkisi kurar.",
-          "neighbor_only": "Başın ve boynun arkasındaki belirli bölgeyi, oraya vurmayı ve arkadan gelmeyi kapsar.",
-          "gloss": "arka bölüm ile ense tarafı",
-          "shared_zone": "Her iki dal, canlı bedeninde önün karşısında kalan arka bölgeyi gösterebilir.",
-          "distinction": "Komşu dal baş ve boynun arka bölgesine bağlı belirli bir beden alanıdır. Odak dal ise tek bir beden bölgesiyle sınırlı olmayıp çeşitli nesnelerin yapısal arka parçalarını anlatır."
+          "shared_zone": "Bir hayvanın kuyruğu arka bölgede bulunduğundan iki dal aynı beden ve nesne bölümleri alanında buluşur.",
+          "distinction": "Odak dalı konumsal ön-arka karşıtlığıyla belirlenir; komşu dal ise kuyruk anatomisi, biçimi veya bir şeyin sonuna eklenme benzerliğiyle belirlenir."
         },
         {
           "neighbor_ref": "root_000019/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Bir nesnenin uzamsal arka tarafını veya yapısındaki arka parçayı belirtir.",
-          "neighbor_only": "Bir sıra içinde ilkten sonra geleni ya da ilk olmayan öteki öğeyi belirtir.",
-          "gloss": "arka taraf ile sonraki öğe",
-          "shared_zone": "Ön ile arka ve ilk ile sonraki ilişkileri aynı yönlü bir karşıtlık taslağını paylaşır.",
-          "distinction": "Odak dal uzamsal ve parçalı bir yapıya bağlıdır; komşu dal sırasal veya karşılaştırmalı bir konum bildirir. Bir nesnenin arka bölümü, sırada daha sonra gelen ayrı bir öğe olmak zorunda değildir."
+          "focus_only": "Bir nesnenin somut arka kısmını ön kısmıyla karşıtlık içinde adlandırır.",
+          "neighbor_only": "Bir sıra içinde sonraki veya ilk olmayıp başka olan öğeyi somut bölüm gerektirmeden gösterir.",
+          "gloss": "arka ile sonraki",
+          "shared_zone": "Bir dizinin sonundaki öğe, uzamsal olarak arka tarafta da bulunabilir.",
+          "distinction": "Odak dalının ekseni uzamsal nesne bölümüdür; komşu dalın ekseni sıra sonralığı veya başkalıktır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel arka konum, kuyruk, ense tarafı ve sırasal sonralık en açıklayıcı dört karşılaştırmayı sağladı. Öteki beden parçaları ve çıkıntılar yalnızca aynı fiziksel alanda yer alan özel nesnelerdi ve ek bir sınır kazandırmadı.",
+      "neighbor_coverage_note": "Adayların tamamı değerlendirildi; genel arkada bulunma, kuyruk ve sıra sonralığıyla temel karışma noktalarını açıklayan üç komşu seçildi.",
       "branch_image_ar": "المؤخر والخلف",
       "what_is_ar": "يدخل فيه مؤخر الشيء ومقدمه، ومؤخر العين ومقدمها، وآخرة الرحل أو مؤخرته، وشق الشيء من أخره، وآخرا الناقة عند التصريح.",
+      "what_is_not_ar": "لا يدخل فيه التأخير الزمني، ولا الآخر بمعنى غير الأول، ولا الآخرة الدينية.",
       "source_phrase_ar": "آخرة الرحل وقادمته ومؤخر الرحل ومقدمه؛ مؤخر العين ومقدم العين (maqayis); مقدم الشيء ومؤخره؛ آخرة الرجل وقادمته؛ مقدم العين ومؤخرها؛ مؤخر الشيء ومقدمه (ayn); شق ثوبه أخرا ومن أخر أي من مؤخره؛ مؤخر العين؛ مؤخرة الرحل؛ مؤخر الشئ بالتشديد نقيض مقدمه (sihah); آخرة الرحل وقادمته ومؤخر العين ومقدمها؛ مؤخر الشيء ومقدمه؛ نظر إلي بمؤخر عينه؛ شق ثوبه أخرا ومن أخر؛ للناقة آخران وقادمان؛ مؤخرة الرحل وآخرة الرحل (tahdhib)",
       "sources": [
         "MQ",
@@ -667,58 +585,69 @@
         "SI",
         "TA"
       ],
-      "source_note": {
-        "TA": "Dişi devenin öndeki çiftine karşılık gelen iki arka yanı için özel bir çoğul adlandırma kaydedilir."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000019/B004",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, dünya yaşamının karşısındaki ikinci varoluşu ve onun yurdunu açıkça tek bir yerleşik kavram olarak sunar. Bu kullanım, herhangi bir dişil sonraki biçimine veya sıradan zaman gecikmesine genellenemez.",
+        "boundary_note": "Dal yalnızca ölümden sonraki ikinci yaşam düzenini ve onun dünyasını kapsar; genel sonralık ve geciktirme anlamları ayrı tutulur."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, tek başına kullanılan biçim ile öteki dünyayı belirten söz öbeğini ayırırken ikisini aynı ikinci varoluş kavramına bağlar."
+      },
       "concept_map": {
-        "definition": "İçinde bulunulan yaşam düzeninin karşısında yer alan ikinci yaşamı veya onun yurdunu belirtir. Yurt sözcüğü açıkça söylenmeden de aynı ikinci yaşam alanı kastedilebilir.",
+        "definition": "İçinde yaşanılan dünya düzeninden sonra başlayacağı kabul edilen ikinci varoluş ve bu varoluşun yurdudur. Tek başına kullanılan biçim, bağlamda bu yurt ifadesinin düşürülmüş biçimi olarak işleyebilir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "İçinde bulunulan yaşamın karşıtı sayılan ikinci yaşam düzenini belirtir.",
+            "statement": "Dünya yaşamından sonra gelen ikinci varoluş düzeni anlatılır.",
             "claim_ids": [
-              "lu_019",
-              "lu_020"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "source_variant",
-            "statement": "İkinci yaşamın yurdu, yurt bildiren sözcük açıkça kullanılarak veya kullanılmadan anlatılabilir.",
+            "role": "specialization",
+            "statement": "Bu ikinci varoluş, içinde bulunulan dünyaya karşıt bir yurt olarak adlandırılır.",
             "claim_ids": [
-              "lu_019",
-              "lu_020"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "source_variant",
+            "statement": "Yurt adı söylenmeden kullanılan biçim, bağlam içinde ikinci yaşam yurdunu tek başına temsil eder.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Bu dal için birden çok kaynak arasında ortaklaşan ayrı bir tanıklık bulunmaz. Tek kaynaklı çekirdek birim, içinde bulunulan yaşamın karşısındaki ikinci yaşamı anlatır ve yurt unsuru söylenmeden de aynı alanı gösterebilir.",
-        "common_claim_ids": [
-          "lu_019"
-        ],
+        "common_summary": "Tek kaynaklı kanıt, ikinci varoluş ile onun yurdunu aynı yerleşik kavramın iki anlatımı olarak verir ve yurt adının bağlamda söylenmeden bırakılabildiğini belirtir.",
+        "common_claim_ids": [],
         "source_details": [
           {
             "claim_ids": [
-              "lu_020"
+              "bc_001"
             ],
             "kind": "sole_attestation",
-            "summary": "İçinde bulunulan yaşamın karşısındaki ikinci yaşamın yurdu, tam bir söz öbeği olarak kaydedilir."
+            "summary": "İkinci varoluşun yurdu tam söz öbeğiyle veya yurt adı düşürülerek tek başına anılabilir."
           }
         ],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "bu yaşamın karşısındaki ikinci yaşam yurdu",
-        "applicability": "İkinci yaşam düzenini ve onun içinde bulunulan yaşama karşıt yurdunu birlikte belirten çekirdek karşılıktır.",
+        "text": "ölümden sonraki yaşam ve öteki dünya",
+        "applicability": "İkinci varoluş düzenini ve onun yurdunu birlikte karşılayan açıklayıcı genel ifadedir.",
         "error_profile": {
           "fit": "none",
-          "preserves": "İkinci yaşam olma, ayrı bir yurt oluşturma ve şimdiki yaşamla karşıtlık özelliklerini korur.",
+          "preserves": "Hem ikinci yaşam evresini hem de bu evrenin dünyaya karşıt yurdunu korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -730,13 +659,13 @@
       },
       "contextual_glosses": [
         {
-          "text": "öteki yaşam",
+          "text": "ölümden sonraki yaşam",
           "usage_role": "contextual",
-          "applicability": "Yurt imgesinden çok ikinci yaşam düzeninin kendisinin öne çıktığı bağlamlarda kullanılır.",
+          "applicability": "Kavramın bir varoluş evresi veya yaşam düzeni olarak öne çıktığı bağlamlarda uygundur.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "İçinde bulunulan yaşamdan ayrı ve onun karşısındaki ikinci yaşamı korur.",
-            "loses": "İkinci yaşamın ayrı bir yurt olarak kavranması yönünü açıkça belirtmez.",
+            "preserves": "Dünya yaşamından sonra gelen ikinci varoluş evresini korur.",
+            "loses": "Bu varoluşun ayrı bir yurt olarak kavranmasını açıkça belirtmez.",
             "adds": null,
             "collision": null
           },
@@ -745,19 +674,19 @@
           ]
         },
         {
-          "text": "öteki yaşam yurdu",
-          "usage_role": "explanatory",
-          "applicability": "İkinci yaşamın bir varoluş alanı veya yurt olarak anlatıldığı bağlamlarda kullanılır.",
+          "text": "öteki dünya",
+          "usage_role": "contextual",
+          "applicability": "İçinde yaşanılan dünyaya karşıt ikinci yaşam yurdu kastedildiğinde doğal karşılıktır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "İkinci yaşamı, onun yurt niteliğini ve şimdiki yaşama karşıtlığını birlikte korur.",
+            "preserves": "Dünya yaşamına karşıt ikinci varoluş yurdunu doğal ve yerleşik biçimde karşılar.",
             "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001",
-            "F002"
+            "F002",
+            "F003"
           ]
         }
       ],
@@ -765,53 +694,52 @@
         {
           "lexical_unit_id": "lu_019",
           "rendering_kind": "ordinary",
-          "target_gloss": "öteki yaşam; ikinci yaşam düzeni"
+          "target_gloss": "ölümden sonraki yaşam; öteki dünya"
         },
         {
           "lexical_unit_id": "lu_020",
           "rendering_kind": "ordinary",
-          "target_gloss": "öteki yaşam yurdu"
+          "target_gloss": "öteki dünya"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "sonraki",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "displacement",
-            "preserves": "İçinde bulunulan yaşamdan sonra veya onun karşısında başka bir düzen bulunması yönünü korur.",
-            "loses": "Belirli ikinci yaşam düzenini ve onun ayrı bir yurt olarak kavranmasını kaybeder.",
-            "adds": "Herhangi bir sıradaki her türlü sonraki öğeyi kapsayan genel bir alan ekler.",
-            "collision": "Genel sırasal sonralık ve ötekilik dalıyla karışır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000019/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "İçinde bulunulan yaşamın karşısındaki belirli ikinci yaşam düzenini ve onun yurdunu anlatır.",
-          "neighbor_only": "Herhangi bir sırada ilkten sonra geleni veya karşılaştırılan iki öğeden ötekini genel olarak anlatır.",
-          "gloss": "ikinci yaşam ile genel sonralık",
-          "shared_zone": "İkinci yaşam düşüncesi, içinde bulunulan yaşamdan sonra veya onun karşısında başka bir düzen bulunmasına dayanır.",
-          "distinction": "Odak dal belirli bir yaşam düzenini ve onun yurdunu adlandıran özelleşmiş bir kavramdır. Komşu dal ise yaşam alanıyla sınırlı olmayan genel bir sıra ve ötekilik ilişkisi kurar; bu yüzden iki ifade olağan kullanımda birbirinin yerine geçmez."
+          "focus_only": "Dünya yaşamından sonraki ikinci varoluşu ve onun yurdunu yerleşik bir inanç kavramı olarak gösterir.",
+          "neighbor_only": "Herhangi bir dizide sonraki veya ilk olmayıp başka olan öğeyi gösterebilir.",
+          "gloss": "öteki dünya ile öteki öğe",
+          "shared_zone": "İkinci varoluşun bu dünyadan sonra ve ona karşıt düşünülmesi genel sonralık ve başkalıkla bağ kurar.",
+          "distinction": "Odak dalı belirli bir ikinci yaşam düzenine özgü yerleşik kavramdır; komşu dal ise nesne, kişi veya sıra ayrımı gözetmeden genel sonralık ve ötekilik bildirir."
+        },
+        {
+          "neighbor_ref": "root_000019/B002",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Dünya yaşamından sonraki ikinci varoluş düzenini adlandırır.",
+          "neighbor_only": "Bir olayın zamanını ileri bırakma veya bir öznenin gecikmesi sürecini anlatır.",
+          "gloss": "sonraki yaşam ile geciktirme",
+          "shared_zone": "Her iki dal zaman bakımından daha sonra olma düşüncesiyle aynı geniş senaryoya katılır.",
+          "distinction": "Odak dalında sonraki yaşam yerleşik bir varoluş alanıdır; komşu dalda ise olayın zamanlamasını değiştiren süreç veya geride kalma durumu vardır."
         }
       ],
-      "neighbor_coverage_note": "Verilen bütün adaylar değerlendirildi; yalnızca aynı kökün genel sonralık dalı ikinci yaşam fikrinin kavramsal temelini açıklayan yararlı bir karşılaştırma sundu. Öteki adaylar farklı nesne ve durum alanlarına ait olduğundan sınırı keskinleştirmedi.",
+      "neighbor_coverage_note": "Adayların tamamı değerlendirildi; yerleşik ikinci yaşam kavramını genel sonralık ve geciktirmeden ayıran iki iç komşu yeterli bulundu.",
       "branch_image_ar": "الدار الآخرة",
       "what_is_ar": "يدخل فيه الآخرة والدار الآخرة بوصفها النشأة الثانية أو دار الحياة الآخرة المقابلة للدنيا.",
+      "what_is_not_ar": "لا يدخل فيه كل مؤنث لآخر ولا كل تأخير زمني إلا إذا صار اصطلاحا للدار أو النشأة الآخرة.",
       "source_phrase_ar": "يعبر بالدار الآخرة عن النشأة الثانية؛ الدار الآخرة؛ الآخرة؛ تقدير الإضافة دار الحياة الآخرة (mufradat)",
       "sources": [
         "MU"
       ],
       "source_note": {
-        "MU": "İçinde bulunulan yaşamın karşısındaki ikinci yaşamın yurdu, tam bir söz öbeği olarak kaydedilir."
+        "MU": "İkinci varoluşun yurdu tam söz öbeğiyle veya yurt adı düşürülerek tek başına anılabilir."
       }
     }
   ],
   "root_profile": {
-    "summary": "Kökün dalları, bir başlangıç veya ön noktaya göre sonra ya da arkada bulunma ortak taslağı çevresinde örgütlenir: sırasal olarak sonraki veya öteki öğe, sonraya bırakma ve gecikme, nesnenin arka bölümü ve şimdiki yaşamın karşısındaki ikinci yaşam yurdu. Bu kullanımlar aynı yön ilişkisini paylaşsa da sıra, süreç, uzam ve yaşam düzeni olarak ayrı anlam dalları oluşturur.",
+    "summary": "Kök, ilkten sonra gelen veya öteki olan öğe çevresinden zaman bakımından geciktirme ve uzam bakımından arka bölüm anlamlarına açılır; ayrıca ölümden sonraki ikinci yaşam için yerleşik bir dal oluşturur.",
     "polysemy": "polysemic",
     "organization": "radial"
   },
