@@ -2,85 +2,67 @@
   "branches": [
     {
       "branch_ref": "root_000047/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi tapınma eylemini, kişinin kendini tapınmaya vermesini, bir varlığı tapınılır kılmayı ve tapınılan varlığı aynı anlam örgüsü içinde açıkça birleştirir. Geçici dal çerçevesi bu çekirdeği ve ondan türeyen varlık adlarını doğru biçimde temsil eder.",
+        "boundary_note": "Dal, tapınma eylemi ile bundan türeyen tapınılan veya tapınılır kılınan varlık anlamlarını kapsar; şaşkınlık, yoğun üzüntü ve salt özel ad kullanımları bu sınırın dışındadır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, yalın eylem çekirdeğini türemiş eylem ve varlık adlarından ayırır; türemiş biçimlerin kapsamı yalın eylemin tamamına aktarılmaz."
+      },
       "concept_map": {
-        "definition": "Bir varlığı veya nesneyi tapınılmaya layık sayıp ona kulluk yöneltmek; aynı zamanda böyle tapınılan varlık ya da nesne için kullanılan ad alanıdır.",
+        "definition": "Bir varlığa tapınma eylemini ve kişinin kendini tapınmaya vermesini anlatır. Türemiş kullanımlarda bir varlığı tapınılır kılmayı, tapınılan varlığı ve tapınma konusu sayılan varlıkları da adlandırır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Temel eylem, bir varlığa kulluk edip tapınmak ve bu yönelişi dini bağlılık olarak yaşamaktır.",
+            "statement": "Temel eylem, bir varlığa tapınmak ve kişinin kendini bu tapınmaya vermesidir.",
             "claim_ids": [
-              "lu_001",
-              "lu_002",
-              "lu_007"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "core",
-            "statement": "Temel ad alanı, tapınılmaya layık sayılan veya fiilen tapınılan varlık ya da nesnedir.",
+            "role": "extension",
+            "statement": "Eylemden türeyen varlık anlamı, kendisine tapınılan varlığı veya tapınma konusu sayılan nesneyi gösterir.",
             "claim_ids": [
-              "lu_004",
-              "lu_005",
-              "lu_006"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "extension",
-            "statement": "Birini veya bir şeyi tapınma konusu haline getirme, bu çekirdeğin ettirici yönüdür.",
+            "role": "specialization",
+            "statement": "Ettirgen kullanım, bir varlığı başkalarınca tapınılır duruma getirme veya öyle sunma işlemini bildirir.",
             "claim_ids": [
-              "lu_003"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F004",
             "role": "example",
-            "statement": "Güneş için kullanılan özel adlandırma, bazı toplulukların onu tapınılan şey edinmesine bağlanır.",
+            "statement": "Güneşe kimi topluluklarca tapınılması nedeniyle ona tapınılan varlık anlamındaki bir ad verilmesi, varlık anlamının tarihsel bir örneğidir.",
             "claim_ids": [
-              "lu_008"
-            ]
-          },
-          {
-            "facet_id": "F005",
-            "role": "example",
-            "statement": "Bir söz içindeki tamlama, muhatabın tapınması veya kulluğu anlamında açıklanır.",
-            "claim_ids": [
-              "lu_009"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynakların ortak alanı tapınma eylemi ile tapınılan varlık ya da nesne arasındaki bağı kurar. Kişinin kulluk yöneltmesi, tapınılan şeyin bu konumu ve putlar ya da güneş gibi tapınma konusu edilmiş örnekler aynı çekirdeğe bağlanır; bir söz içindeki kullanım da tapınma anlamıyla açıklanır.",
+        "common_summary": "Kaynakların ortak çizgisi, tapınmayı anlamın temeli sayar; kişinin tapınmaya yönelmesini, tapınılan varlığı ve tapınılır kılma işlemini bu temelden türetir. Tapınma konusu sayılan yontular ve güneş örneği, varlık anlamının belirli uygulamalarıdır.",
         "common_claim_ids": [
-          "lu_001",
-          "lu_002",
-          "lu_004",
-          "lu_006",
-          "lu_008",
-          "lu_009"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_003",
-              "lu_005",
-              "lu_007"
-            ],
-            "kind": "derivation",
-            "summary": "Tek kaynakta, tapındırma eylem adı, tapınılan kimse ya da nesne sıfatı ve tapınma adı ayrı biçimler olarak verilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
         "text": "tapınma ve tapınılan varlık",
-        "applicability": "Hem kulluk yöneltme eylemini hem de bu eylemin konusu edilen varlık ya da nesneyi birlikte anlatır.",
+        "applicability": "Eylem çekirdeğiyle ondan türeyen tapınılan varlık anlamının birlikte temsil edilmesi gereken genel açıklamalarda kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Tapınma eylemini, tapınılacak sayılma durumunu ve tapınılan şey adını birlikte korur.",
+          "preserves": "Tapınma eylemini ve bu eylemin yöneldiği varlığı birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -93,11 +75,11 @@
       "contextual_glosses": [
         {
           "text": "tapınmak",
-          "usage_role": "contextual",
-          "applicability": "Kişinin bir varlığa kulluk yönelttiği eylem bağlamlarında kullanılır.",
+          "usage_role": "general",
+          "applicability": "Bir kişinin tapınma eylemini veya kendini tapınmaya vermesini bildiren eylem bağlamlarında kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Kişinin tapınma eylemini ve dini bağlılık yönelişini korur.",
+            "preserves": "Eylem olarak tapınma çekirdeğini eksiksiz korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -109,10 +91,10 @@
         {
           "text": "tapınılan varlık",
           "usage_role": "contextual",
-          "applicability": "Bir varlığın ya da nesnenin tapınma konusu sayıldığı ad bağlamlarında kullanılır.",
+          "applicability": "Bir topluluğun kendisine tapındığı varlık veya nesneden söz edilen ad bağlamlarında kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Tapınma konusu edilen varlık ya da nesne konumunu korur.",
+            "preserves": "Tapınmanın yöneldiği varlık veya nesne anlamını korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -122,12 +104,12 @@
           ]
         },
         {
-          "text": "tapınma konusu yapmak",
+          "text": "tapınılır kılmak",
           "usage_role": "explanatory",
-          "applicability": "Birini veya bir şeyi tapınılan konuma getirme anlamının açıkça belirtilmesi gereken bağlamlarda kullanılır.",
+          "applicability": "Bir varlığın başkalarına tapınma konusu olarak benimsetilmesini anlatan ettirgen bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Tapınma konumu oluşturma ve ettirici yönü korur.",
+            "preserves": "Bir varlığı tapınma konusu durumuna getirme işlemini korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -135,224 +117,173 @@
           "facet_ids": [
             "F003"
           ]
-        },
-        {
-          "text": "tapınıldığı için güneşe verilen ad",
-          "usage_role": "explanatory",
-          "applicability": "Güneşle ilgili özel adlandırmanın tapınma gerekçesine bağlandığı örnek için kullanılır.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Adlandırmanın güneşe tapınılması sebebiyle yapıldığı açıklamasını korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F004"
-          ]
         }
       ],
       "lexical_glosses": [
         {
           "lexical_unit_id": "lu_001",
           "rendering_kind": "ordinary",
-          "target_gloss": "tapındı, kulluk etti"
+          "target_gloss": "tapınmak"
         },
         {
           "lexical_unit_id": "lu_002",
           "rendering_kind": "ordinary",
-          "target_gloss": "kendini tapınmaya verdi, kulluk etti"
+          "target_gloss": "kendini tapınmaya vermek"
         },
         {
           "lexical_unit_id": "lu_003",
           "rendering_kind": "ordinary",
-          "target_gloss": "tapındırma, tapınma konusu yapma"
+          "target_gloss": "tapınılır kılmak"
         },
         {
           "lexical_unit_id": "lu_004",
           "rendering_kind": "ordinary",
-          "target_gloss": "tapınılmaya layık sayılan veya tapınılan varlık"
+          "target_gloss": "tapınılan varlık, tanrı"
         },
         {
           "lexical_unit_id": "lu_005",
           "rendering_kind": "ordinary",
-          "target_gloss": "tapınılan kimse ya da nesne"
+          "target_gloss": "tapınılan varlık"
         },
         {
           "lexical_unit_id": "lu_006",
           "rendering_kind": "ordinary",
-          "target_gloss": "tapınılmaya layık sayılan putlar veya tapınılan nesneler"
+          "target_gloss": "tanrılar, tapınılan nesneler"
         },
         {
           "lexical_unit_id": "lu_007",
           "rendering_kind": "ordinary",
-          "target_gloss": "tapınma, kulluk"
+          "target_gloss": "tapınma"
         },
         {
           "lexical_unit_id": "lu_008",
           "rendering_kind": "ordinary",
-          "target_gloss": "tapınıldığı için güneşe verilen ad"
+          "target_gloss": "kimi toplulukların tapındığı için bu adla anılan güneş"
         },
         {
           "lexical_unit_id": "lu_009",
           "rendering_kind": "ordinary",
-          "target_gloss": "senin tapınman, senin kulluğun"
+          "target_gloss": "senin tapınman"
         }
       ],
       "excluded_glosses": [
         {
-          "text": "din",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Dini bağlılık ve kulluk alanıyla temasını korur.",
-            "loses": null,
-            "adds": "İnanç sistemi, hukuk, gelenek ve topluluk düzeni gibi daha geniş alanları ekler.",
-            "collision": "Bu dalın çekirdeği tapınma eylemi ve tapınılan varlık konumudur, genel din sistemi değildir."
-          }
-        },
-        {
-          "text": "yalnız put",
+          "text": "tanrı",
           "category": "alternative",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Tapınılan nesne örneklerinden birini korur.",
-            "loses": "Tapınma eylemini, tapınılan varlığın genel adını ve put olmayan tapınma konularını dışarıda bırakır.",
+            "preserves": "Tapınılan varlık anlamını kısa ve doğal biçimde korur.",
+            "loses": "Tapınma eylemini, kişinin tapınmaya yönelmesini ve tapınılır kılma işlemini karşılamaz.",
             "adds": null,
-            "collision": null
+            "collision": "Yalnızca belirli bir varlık türünü adlandırdığı için bütün dalın karşılığı sanılabilir."
           }
         }
       ],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_001498/B001",
-          "relation_type": "near_neighbor",
+          "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Tapınılan varlık ya da nesne adını, ayrıca tapınma konusu yapılmış put ve güneş örneklerini kapsar.",
-          "neighbor_only": "Tanrı'ya yaklaşma ve kulluk eden kişinin adanmışlığı öteki dalda belirgindir.",
-          "gloss": "tapınma ve adanmış kulluk",
-          "shared_zone": "İki dal da kulluk yöneltme ve dini bağlılık alanında kesişir.",
-          "distinction": "Bu dal tapınma eylemini tapınılan varlık ya da nesne adıyla birlikte kurar; komşu dal ise kulluk ve yaklaşma eylemini, özellikle kulluk eden kişinin tutumu olarak sınırlar."
-        },
-        {
-          "neighbor_ref": "root_000504/B001",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Tapınma konusu edilen varlık veya nesne bu dalın ayrılmaz parçasıdır.",
-          "neighbor_only": "İtaat, boyun eğme, bağlı olunan yol ve dini düzen öteki dalda daha geniştir.",
-          "gloss": "tapınma ile itaat",
-          "shared_zone": "İki dal da dini bağlılık ve kulluk davranışı alanında buluşur.",
-          "distinction": "Bu dalın sınırı tapınma ve tapınılan şey çevresinde döner; komşu dal ise ibadet nesnesini şart koşmadan itaat, boyun eğme ve izlenen düzen anlamlarını taşır."
+          "focus_only": "Tapınılan varlığı ve bir varlığı tapınılır kılma işlemini de adlandırır.",
+          "neighbor_only": "Tapınmayla birlikte yaklaşma ve kendini bu işe verme yönünü öne çıkarır.",
+          "gloss": "tapınma ve yaklaşarak yönelme",
+          "shared_zone": "İki dal da tapınma eylemini ve kişinin bu eyleme yönelmesini kapsar.",
+          "distinction": "Komşu dal eylem ve yaklaşma yönünde yoğunlaşırken bu dal aynı çekirdekten tapınılan varlık ile ettirgen kılma anlamlarını da türetir; bu yüzden yalnızca eylem bağlamında yakınlaşırlar."
         },
         {
           "neighbor_ref": "root_000604/B003",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Genel tapınma eylemini ve tapınılan varlık ya da nesne adını kapsar.",
-          "neighbor_only": "Korku duygusundan doğan, inziva veya ağır dini çaba ile belirlenen özel kulluk öteki dala özgüdür.",
-          "gloss": "tapınma ile korkulu kulluk",
-          "shared_zone": "İki dal da dini yöneliş ve kulluk davranışını anlatabilir.",
-          "distinction": "Bu dal tapınma ilişkisinin genel yapısını verir; komşu dal ise bu ilişkiyi korku, çekilme veya ağır dini uygulama şartıyla daraltır."
-        },
-        {
-          "neighbor_ref": "root_000134/B002",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Tapınılmaya layık sayılma ve tapınılan varlık ya da nesne olma çekirdektir.",
-          "neighbor_only": "Sahip, efendi, eş veya üstün konumdaki varlık anlamları öteki dalın daha geniş çekirdeğindedir.",
-          "gloss": "tapınılan varlık ile sahip",
-          "shared_zone": "İki dal bazı bağlamlarda tapınılan varlık adlandırmasıyla temas eder.",
-          "distinction": "Komşu dal sahiplik ve efendilik alanından tapınılan varlığa uzanır; bu dalda ise tapınılma ilişkisinin kendisi ve bu ilişkinin nesnesi esastır."
+          "focus_only": "Tapınmayı korku, inziva veya aşırı uygulama koşuluna bağlamaz ve tapınılan varlığı da adlandırabilir.",
+          "neighbor_only": "Korkudan doğan, inziva veya ek yüklenme biçimindeki özel bir tapınma yaşayışını bildirir.",
+          "gloss": "korkuyla yoğunlaşan özel tapınma yaşayışı",
+          "shared_zone": "Her iki dalda da kişinin kendini tapınmaya vermesi bulunur.",
+          "distinction": "Bu dal genel tapınma çekirdeğini ve ondan türeyen varlık anlamlarını kapsar; komşu dal ise korku, inziva ve olağanın üstündeki uygulamalarla sınırlı özel bir yaşayışı anlatır."
         },
         {
           "neighbor_ref": "root_000047/B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Tapınma eylemi, tapındırma ve tapınılan varlık ya da nesne adları bu dalda yer alır.",
-          "neighbor_only": "Tanrı'nın özel adı ve bu adla kurulan ant, yakarma ve seslenme kalıpları öteki dalda yer alır.",
-          "gloss": "tapınılan varlık ile özel ad",
-          "shared_zone": "İki dal aynı kökün dini adlandırma alanında birleşir.",
-          "distinction": "Bu dal tapınma ilişkisini ve tapınılan varlığı anlam olarak kurar; öteki dal ise bu alanla bağlantılı özel adı ve o ad etrafındaki söz kalıplarını işler."
+          "focus_only": "Genel tapınma eylemini, tapınılan varlığı ve tapınılır kılmayı kapsar.",
+          "neighbor_only": "Yaratıcıya özgü adı ve bu adla kurulan seslenme, dilek ve ant kalıplarını kapsar.",
+          "gloss": "Yaratıcıya özgü ad ve kullanım kalıpları",
+          "shared_zone": "Özel ad, tapınılan yüce varlık düşüncesi üzerinden bu dalın varlık anlamıyla bağlantılıdır.",
+          "distinction": "Bu dal genel anlam örgüsünü verir; komşu dal ise o örgüden türemiş özel adı ve adın belirli söz kalıplarındaki kullanımını ayrı bir biçim alanı olarak sınırlar."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; tapınma, itaat, korkulu kulluk, sahiplikten gelen tapınılan ad ve aynı kökün özel ad dalı en yararlı sınırları verdi. Peygamberlik, kahinlik, put adı ve kutsal hizmet gören topluluk adayları aynı senaryoda bulunabilse de bu dalın çekirdeğini açıklayan yakın anlam karşıtlığı sağlamaz."
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi. Tapınma eylemi, korkuya bağlı özel tapınma yaşayışı ve aynı kökün özel ad dalı sınırı keskinleştirdi; peygamberlik, büyücülük, belirli tapınma nesneleri, sahiplik ve tarihsel hizmet grubu adayları ise yalnızca aynı dinsel alana veya tekil örneklere temas ettiği için yayımlanmadı."
     },
     {
       "branch_ref": "root_000047/B002",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi Yaratıcıya özgü adın kendisini, genel tapınılan-varlık adından türetiliş açıklamasını ve bu özel adla kurulan seslenme ile ant biçimlerini birlikte verir. Geçici çerçeve kullanılabilir, ancak dal yalnızca seslenme ve ant kalıpları değildir; özel adın yalın kullanımı da çekirdekte tutulmalıdır.",
+        "boundary_note": "Dal, özel ad ile bu ada bağlı seslenme, dilek, şaşma ve ant biçimleriyle sınırlıdır; herhangi bir tapınılan varlığı gösteren genel ad anlamına genişletilmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Yalın özel ad, doğrudan seslenme biçimleri ve ant ya da şaşma kalıpları ayrı tutulur; kalıplara özgü işlevler özel adın her kullanımına genellenmez."
+      },
       "concept_map": {
-        "definition": "Tanrı için kullanılan özel ad ve bu adın çevresinde kurulan ant, yakarma, seslenme, şaşma ve kısaltılmış yemin sözleridir.",
+        "definition": "Yaratıcıya özgü adın kendisini ve bu adla kurulan seslenme, dilek, şaşma ve ant biçimlerini kapsar. Bu biçimler doğrudan seslenme, adın ant değeriyle kullanılması veya ses ve parçaların düşürülmesiyle kısaltılma yollarını gösterir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Çekirdek, Tanrı'ya özgü özel adın kendisidir.",
+            "statement": "Dalın merkezinde, Yaratıcıyı başkalarından ayırarak gösteren ve yalnız ona özgü sayılan özel ad bulunur.",
             "claim_ids": [
-              "lu_010"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "source_variant",
-            "statement": "Bazı açıklamalar bu özel adı, tapınılan varlık anlamındaki addan türemiş sayar.",
+            "statement": "Özel adın, tapınılan varlığı bildiren genel addan ses düşmesi ve belirleyici unsur eklenmesiyle oluştuğu açıklanır.",
             "claim_ids": [
-              "lu_010"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "associated_use",
-            "statement": "Bu özel ad, bir şeyi yapmadığını söyleyen ant kalıbında kullanılır.",
+            "statement": "Özel ad, sözün başında ant değeri taşıyarak ardından gelen yapmama bildirimini güçlendirebilir.",
             "claim_ids": [
-              "lu_011"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F004",
             "role": "associated_use",
-            "statement": "Yakarma ve doğrudan seslenme kalıplarında aynı özel ada yönelen çağrı bulunur.",
+            "statement": "Özel adın doğrudan ya da seslenme öğesi yerine geçen bir sonla kullanılması, yakarma ve dilek bildiren seslenme biçimleri kurar.",
             "claim_ids": [
-              "lu_012",
-              "lu_013"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F005",
-            "role": "associated_use",
-            "statement": "Kısaltılmış sözler, Tanrı adına şaşma veya yemin bildiren kalıplar olarak açıklanır.",
+            "role": "source_variant",
+            "statement": "Ses veya parçaların düşürüldüğü kısalmış biçimler, şaşma ve ant anlatan kalıplarda kullanılır.",
             "claim_ids": [
-              "lu_014",
-              "lu_015"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar, Tanrı'ya özgü özel adı ve bu adın tapınılan varlık anlamıyla açıklanan kökenini birlikte verir. Bu özel ad ayrıca ant içme, yakarma, doğrudan seslenme ve kısaltılmış şaşma ya da yemin sözlerinde kullanılır.",
+        "common_summary": "Kaynaklar özel adı Yaratıcıya özgü bir ad olarak tanımlar ve onu tapınılan varlığı gösteren genel adla köken bakımından ilişkilendirir. Aynı adın doğrudan seslenmede, yakarmada, ant bildiriminde ve parçaları düşürülmüş kalıplarda kullanıldığı birlikte gösterilir.",
         "common_claim_ids": [
-          "lu_010",
-          "lu_011",
-          "lu_012",
-          "lu_013",
-          "lu_014"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_015"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Yalnız burada, yemin sözlerinde Tanrı adına bağlı kısaltılmış başka biçimler de açıklanır."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "Tanrı'nın özel adı ve söz kalıpları",
-        "applicability": "Özel adı, bu adla kurulan ant ve yakarma sözlerini birlikte kapsaması gereken açıklamalarda kullanılır.",
+        "text": "Yaratıcıya özgü ad ile seslenme ve ant biçimleri",
+        "applicability": "Özel adın kendisiyle ona bağlı seslenme, dilek ve ant kullanımlarının birlikte açıklanması gereken dal düzeyinde kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Tanrı'ya özgü özel adı ve bu ad çevresindeki ant, yakarma, seslenme ve kısaltılmış yemin kalıplarını korur.",
+          "preserves": "Özel ad çekirdeğini ve bu ada bağlı başlıca söz biçimlerini birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -366,27 +297,27 @@
       },
       "contextual_glosses": [
         {
-          "text": "Tanrı adıyla ant içmek",
-          "usage_role": "contextual",
-          "applicability": "Özel adın bir şeyi yapmadığını söyleyen yemin kalıbında kullanıldığı bağlamlara uygundur.",
+          "text": "Yaratıcı'nın özel adı",
+          "usage_role": "general",
+          "applicability": "Söz konusu adın yalnız Yaratıcıyı gösteren yalın ad olarak ele alındığı bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Tanrı adının ant sözü içinde kullanılmasını korur.",
+            "preserves": "Adın Yaratıcıya özgü olmasını ve ayırt edici ad işlevini korur.",
             "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F003"
+            "F001"
           ]
         },
         {
-          "text": "Tanrı'ya yakarmak",
+          "text": "ey Tanrı",
           "usage_role": "contextual",
-          "applicability": "Özel adın yakarma veya bağışlanma isteğiyle doğrudan seslenmede kullanıldığı bağlamlarda kullanılır.",
+          "applicability": "Yakarış veya dilek sırasında Yaratıcıya doğrudan seslenilen bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Seslenmenin Tanrı'ya yönelen yakarma oluşunu korur.",
+            "preserves": "Yaratıcıya yöneltilen doğrudan seslenme işlevini doğal biçimde korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -396,12 +327,27 @@
           ]
         },
         {
-          "text": "kısaltılmış yemin sözü",
-          "usage_role": "explanatory",
-          "applicability": "Tanrı adına bağlı olduğu açıklanan eksiltilmiş şaşma veya yemin kalıplarını belirtmek için kullanılır.",
+          "text": "Tanrı adına ant olsun",
+          "usage_role": "contextual",
+          "applicability": "Özel adın bir bildirimin doğruluğunu pekiştiren ant değeri taşıdığı bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Eksiltilmiş sözün Tanrı adına bağlı yemin veya şaşma işlevini korur.",
+            "preserves": "Yaratıcıya dayanarak ant verme işlevini açık biçimde korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        },
+        {
+          "text": "kısaltılmış şaşma veya ant sözü",
+          "usage_role": "explanatory",
+          "applicability": "Özel adın ses veya parçaları düşürülmüş tarihsel kalıplarının işlevini açıklarken kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Kısaltılma biçimini ve şaşma ya da ant işlevini birlikte korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -415,55 +361,44 @@
         {
           "lexical_unit_id": "lu_010",
           "rendering_kind": "ordinary",
-          "target_gloss": "Tanrı'ya özgü özel ad"
+          "target_gloss": "Yaratıcıya özgü ad"
         },
         {
           "lexical_unit_id": "lu_011",
           "rendering_kind": "ordinary",
-          "target_gloss": "Tanrı adıyla, bunu yapmadım anlamında ant sözü"
+          "target_gloss": "Tanrı adına ant olsun, bunu yapmadım"
         },
         {
           "lexical_unit_id": "lu_012",
           "rendering_kind": "ordinary",
-          "target_gloss": "yakarmada Tanrı'ya seslenme sözü"
+          "target_gloss": "ey Tanrı; yakarma seslenişi"
         },
         {
           "lexical_unit_id": "lu_013",
           "rendering_kind": "ordinary",
-          "target_gloss": "Tanrı'ya doğrudan seslenme sözü"
+          "target_gloss": "ey Tanrı; doğrudan seslenme"
         },
         {
           "lexical_unit_id": "lu_014",
           "rendering_kind": "ordinary",
-          "target_gloss": "Tanrı adına şaşma veya yemin bildiren kısaltılmış söz"
+          "target_gloss": "Tanrı adına sen veya baban; şaşma ya da ant kalıbı"
         },
         {
           "lexical_unit_id": "lu_015",
           "rendering_kind": "ordinary",
-          "target_gloss": "Tanrı adına yemin bildiren kısaltılmış sözler"
+          "target_gloss": "Tanrı adına, gerçekten sen veya biz; kısaltılmış ant kalıpları"
         }
       ],
       "excluded_glosses": [
         {
-          "text": "tapınma",
+          "text": "tanrı",
           "category": "confusable",
           "error_profile": {
-            "fit": "displacement",
-            "preserves": "Özel adın köken açıklamasındaki tapınılan varlık alanıyla bağını kısmen korur.",
-            "loses": "Tanrı'ya özgü özel adı ve bu adla kurulan ant, yakarma ve seslenme kalıplarını kaybeder.",
-            "adds": "Eylem anlamını öne çıkararak bu dalı tapınma dalına kaydırır.",
-            "collision": "Bu dal doğrudan tapınma eylemini değil, özel adı ve söz kalıplarını konu alır."
-          }
-        },
-        {
-          "text": "yalnız yemin",
-          "category": "alternative",
-          "error_profile": {
             "fit": "narrowing",
-            "preserves": "Ant içme ve yemin kalıplarını korur.",
-            "loses": "Tanrı'ya özgü özel adı, yakarma ve doğrudan seslenme kullanımlarını dışarıda bırakır.",
+            "preserves": "Yüce bir tapınılan varlığa gönderimde bulunma yönünü korur.",
+            "loses": "Adın tek bir varlığa özgü özel ad oluşunu ve seslenme ile ant biçimlerini karşılamaz.",
             "adds": null,
-            "collision": null
+            "collision": "Genel tür adı olarak başka tapınılan varlıklar için de kullanılabildiğinden özel adla karışır."
           }
         }
       ],
@@ -472,58 +407,58 @@
           "neighbor_ref": "root_000047/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Tanrı'nın özel adı ve bu adla kurulan ant, yakarma ve seslenme kalıpları bu dala özgüdür.",
-          "neighbor_only": "Tapınma eylemi, tapındırma ve tapınılan varlık ya da nesne adları öteki dalda yer alır.",
-          "gloss": "özel ad ile tapınma",
-          "shared_zone": "İki dal aynı dini adlandırma alanını paylaşır ve özel adın kökeni tapınılan varlık anlamıyla ilişkilendirilir.",
-          "distinction": "Bu dal özel adı ve onun söz kalıplarını anlatır; öteki dal ise tapınma ilişkisinin kendisini ve tapınılan şey konumunu anlatır."
+          "focus_only": "Yaratıcıya özgü adı ve bu adla kurulan seslenme, dilek, şaşma ve ant biçimlerini kapsar.",
+          "neighbor_only": "Genel tapınma eylemini, tapınılan varlığı ve bir varlığı tapınılır kılma işlemini kapsar.",
+          "gloss": "tapınma ve tapınılan varlık",
+          "shared_zone": "Özel ad, tapınılan yüce varlığı göstermesi bakımından genel varlık anlamına dayanır.",
+          "distinction": "Bu dal belirli bir özel adın biçim ve kullanım alanıdır; komşu dal ise özel adla sınırlanmayan genel tapınma eylemini ve tapınılan varlık anlamını verir."
         },
         {
           "neighbor_ref": "root_001044/B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Ant ve yakarma Tanrı'nın özel adı çevresinde kurulur.",
-          "neighbor_only": "Ömür ya da yaşam üzerine yapılan yemin ve rica kalıpları öteki dalın merkezindedir.",
-          "gloss": "Tanrı adıyla ant ve ömür üzerine ant",
-          "shared_zone": "İki dal da kalıplaşmış yemin veya rica sözlerinde kullanılır.",
-          "distinction": "Bu dalda sözün dayanağı Tanrı'ya özgü addır; komşu dalda ise yemin veya rica yaşam ve ömür kavramı üzerinden kurulur."
-        },
-        {
-          "neighbor_ref": "root_000054/B003",
-          "relation_type": "thematic",
-          "boundary_match": "thematic_only",
-          "focus_only": "Tanrı'ya seslenmenin özel adla kurulması bu dala özgüdür.",
-          "neighbor_only": "Yakarmanın kabul edilmesini isteyen cevap sözü öteki dalın merkezidir.",
-          "gloss": "yakarma ve kabul dileği",
-          "shared_zone": "İki dal da yakarma ortamında kullanılan sözlerle ilgilidir.",
-          "distinction": "Bu dal çağrının kime yöneldiğini özel adla belirtir; komşu dal ise çağrıdan sonra isteğin kabul edilmesini dileten ayrı bir söz değerindedir."
+          "focus_only": "Ant işlevini Yaratıcıya özgü adın yalın veya kısalmış biçimleriyle kurar.",
+          "neighbor_only": "Ant veya ısrarlı isteme işlevini yaşam süresini bildiren sözlerle kurar.",
+          "gloss": "ömür üzerine ant ve ısrarlı isteme",
+          "shared_zone": "İki dal da bir sözü güçlendiren ant işlevli kalıplar içerir.",
+          "distinction": "Ortak işlev ant vermedir, fakat bu dalın dayanağı Yaratıcıya özgü addır; komşu dal yaşam süresini bildiren sözleri kullanır ve ayrıca ısrarlı istemeye uzanabilir."
         },
         {
           "neighbor_ref": "root_000074/B008",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "Tanrı'nın özel adı ve o adla kurulan yakarma kalıpları bu dala özgüdür.",
-          "neighbor_only": "Yakın veya uzak kişiye seslenme edatları öteki dalın çekirdeğidir.",
-          "gloss": "özel adla seslenme ve seslenme edatı",
-          "shared_zone": "İki dal da seslenme sözlerinin dil alanında buluşur.",
-          "distinction": "Bu dal belirli bir kutsal adın kullanıldığı seslenme ve yemin kalıplarını işler; komşu dal ise seslenmenin genel edatlarını ve uzaklık ayrımını anlatır."
+          "focus_only": "Belirli bir özel adı ve o adın yakarma ile ant kullanımlarını içerir.",
+          "neighbor_only": "Yakın veya uzaktaki muhataba yöneltilen genel seslenme öğelerini bildirir.",
+          "gloss": "genel seslenme öğeleri",
+          "shared_zone": "Her iki dal da doğrudan seslenme sırasında kullanılan biçimlerle ilgilidir.",
+          "distinction": "Bu dal belirli bir muhatabın özel adı çevresinde oluşur; komşu dal ise muhatabın kimliğinden bağımsız genel seslenme araçlarını ve uzaklık ayrımını konu edinir."
         },
         {
           "neighbor_ref": "root_001178/B003",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "Tanrı adına bağlı kısaltılmış yemin ve şaşma sözleri bulunur.",
-          "neighbor_only": "Herhangi bir kişiye yönelik kısaltılmış seslenme biçimi öteki dala özgüdür.",
-          "gloss": "kısaltılmış kutsal söz ve kısaltılmış hitap",
-          "shared_zone": "İki dal da eksiltilmiş veya kısaltılmış seslenme biçimleriyle ilgilidir.",
-          "distinction": "Bu dalın kısaltmaları Tanrı adına ve yemin ya da şaşma işlevine bağlıdır; komşu dal ise genel kişiye hitapta adın kısaltılmasına dayanır."
+          "focus_only": "Yaratıcıya özgü adı ve ona bağlı seslenme ile ant biçimlerini kapsar.",
+          "neighbor_only": "Belirsiz bir kişiye yönelen kısaltılmış seslenme biçimlerini kapsar.",
+          "gloss": "kişiye yönelik kısaltılmış seslenme",
+          "shared_zone": "Her iki dalda da seslenme sırasında biçimsel kısalma görülebilir.",
+          "distinction": "Bu dalın kısalmaları belirli özel adın dinsel seslenme ve ant işlevlerine bağlıdır; komşu dalın kısalmaları ise belirsiz bir kişiye seslenmenin dilbilgisel biçimleridir."
+        },
+        {
+          "neighbor_ref": "root_000054/B003",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Yakarışın yöneltildiği Yaratıcıyı özel adıyla çağırır.",
+          "neighbor_only": "Yakarışın kabul edilmesini isteyen veya söyleneni onaylayan karşılık sözünü bildirir.",
+          "gloss": "yakarışın kabulünü isteyen karşılık",
+          "shared_zone": "İki dal da yakarış ortamında kullanılan kısa söz biçimlerine katılır.",
+          "distinction": "Bu dal bir muhataba seslenir; komşu dal ise söylenmiş yakarışa kabul dileği veya onayla karşılık verir. Aynı sahnede bulunsalar da anlam çekirdekleri örtüşmez."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; aynı kökün tapınma dalı, ömür üzerine yemin, yakarma cevabı, genel seslenme edatı ve kısaltılmış hitap bu dalın sınırlarını en açık biçimde gösterdi. Diğer adaylar genel yemin, istisna ya da ses benzerliği alanında kalıp özel ad ve yakarma çekirdeğini ayrıca netleştirmedi."
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi. Genel tapınma dalı, yaşam üzerine ant, genel seslenme, kısaltılmış kişi seslenmesi ve yakarışa karşılık sözü gerçek sınır karşılaştırmaları sağladı; baba hitapları, genel dışlama yapıları, başka ant sözleri ve sesçe eşlik eden kalıplar daha zayıf ya da yalnızca biçimsel temas gösterdiği için yayımlanmadı."
     }
   ],
   "root_profile": {
-    "summary": "Bu kök, tapınma ve tapınılan varlık çekirdeğinden Tanrı'ya özgü özel ad ve bu ad çevresindeki ant, yakarma ve seslenme kalıplarına açılır.",
+    "summary": "Kökün anlam örgüsü, tapınma eylemi ile tapınılan varlığı adlandıran türevlerden Yaratıcıya özgü adın ve bu adla kurulan seslenme ile ant biçimlerinin özel alanına uzanır. İkinci dal ilk dalın varlık anlamıyla kökensel bağını korurken biçim ve kullanım bakımından ayrılaşır.",
     "polysemy": "polysemic",
     "organization": "radial"
   }
