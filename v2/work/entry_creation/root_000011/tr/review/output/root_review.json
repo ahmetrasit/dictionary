@@ -1,30 +1,105 @@
 {
   "verdict": "repair",
-  "summary": "İki komşu ayrımındaki sınır anlatımı kanıtla uyuşmuyor; kalan yayın semantiği uygundur.",
+  "summary": "Yanıt genel olarak kanıtla uyumludur; ancak B004 tanımı adlaşmış yol kullanımını bağımsız bir kullanım olarak korumuyor, B008 kavram karşılığı kapsadığını söylediği aracı adlandırmıyor ve B009 ayrıştırılmış süt ile yağ özünü birbirine karıştırıyor. Bu alanlarda küçük ve kanıta bağlı düzeltmeler gerekiyor.",
   "issues": [
     {
-      "target_ref": "root_000011/B003",
-      "field": "neighbor_distinctions",
+      "target_ref": "root_000011/B004",
+      "field": "concept_map",
       "severity": "major",
       "confidence": "high",
       "claim_ids": [
-        "lu_007",
-        "lu_008",
-        "lu_009"
+        "bc_001"
       ],
-      "evidence_conflict": "root_000287/B001 ayrımında yara izi komşuya özgü gösteriliyor; oysa lu_008 bu kullanımın odak dalda açıkça bulunduğunu gösterir. lu_007 de genel şey izini odağa özgü saymayı desteklemez, çünkü komşu kartı genel şey izini de içerir.",
-      "smallest_correction": "Yara izini ortak alana taşıyıp komşuya özgü alandan çıkarın; odağa özgü alanı lu_009 ile desteklenen bilgi kalıntısı veya belirtisiyle sınırlandırın."
+      "evidence_conflict": "Kanıt, hem önce gidenin ardından ilerleme eylemini hem de önce giden kişiyi bulmaya yarayan yolun ad olarak kullanımını verir. Mevcut tanım yalnız takip eylemini tanımlıyor ve yolu bu eylemin içinde kullanılan bir kılavuza indiriyor.",
+      "smallest_correction": "Tanımı, takip eyleminin yanında önce gidenin geçtiğini gösteren yolun bağımsız ad kullanımını da alternatif olarak açıkça içerecek biçimde düzelt."
     },
     {
-      "target_ref": "root_000011/B010",
-      "field": "neighbor_distinctions",
+      "target_ref": "root_000011/B009",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, hayvandaki eski yağ kalıntısının yanında yağ özünü ve tereyağından ayrılarak arınmış sütü verir. Mevcut tanım ve ikinci facet bunları tek bir yağlı öz kısım gibi sunarak arınmış süt kullanımını kaybediyor.",
+      "smallest_correction": "Tanım ile ikinci faceti, eski yağ kalıntısından ayrı olarak yağ özünü ve tereyağından ayrılarak arınmış sütü açıkça adlandıracak biçimde düzelt."
+    },
+    {
+      "target_ref": "root_000011/B009",
+      "field": "identity_judgment",
       "severity": "minor",
       "confidence": "high",
       "claim_ids": [
-        "lu_024"
+        "bc_001"
       ],
-      "evidence_conflict": "root_000011/B003 ve root_000609/B001 ayrımlarındaki yaşamı izleyen süre ifadesi, lu_024 ile verilen ömrün belirlenmiş sonunu ölümden sonraki bir süre gibi gösteriyor.",
-      "smallest_correction": "Her iki ayrımda da yaşamı izleyen süre sözünü ömrün belirlenmiş sonu olarak düzeltin ve ilgili ayrım cümlelerini aynı sınırla uyumlu hale getirin."
+      "evidence_conflict": "Kimlik gerekçesi ikinci kullanımı yalnız yağlı üründen ayrıştırılan öz kısım olarak anlatıyor; kanıt ayrıca tereyağından ayrılarak arınmış sütü açıkça verir.",
+      "smallest_correction": "Kimlik gerekçesinde ikinci kullanımın yağ özünü veya tereyağından ayrılarak arınmış sütü kapsadığını belirt."
+    },
+    {
+      "target_ref": "root_000011/B009",
+      "field": "lexicalization_scope",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kapsam notu iki kullanımı da maddi yağ kullanımı diye sınırlıyor; oysa ikinci kullanımın kanıtı tereyağından ayrılarak arınmış sütü de kapsar.",
+      "smallest_correction": "Kapsam notundaki iki maddi yağ kullanımı ifadesini, tanıklanan maddi yağ ve süt kullanımları olarak düzelt."
+    },
+    {
+      "target_ref": "root_000011/B009",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak özeti ayrıştırılmış süt veya yağ ürününün öz kısmı diyerek tereyağından ayrılıp arınan sütün kendisi ile yağ özünü tek bir öz kısım halinde sunuyor.",
+      "smallest_correction": "Kaynak özetinde yağ özünü ve tereyağından ayrılarak arınmış sütü birbirinden açıkça ayır."
+    },
+    {
+      "target_ref": "root_000011/B008",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığının uygulanabilirlik ve hata profili işaretleme aracını da koruduğunu söylüyor ve F003 facetini bağlıyor; buna karşılık karşılık metni yalnız işaretleme eylemini adlandırıyor.",
+      "smallest_correction": "Kavram karşılığı metnine, işaretleme eyleminin yanında bu işte kullanılan demir aracı da kısa ve doğal biçimde ekle."
+    },
+    {
+      "target_ref": "root_000011/B009",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı yalnız eski yağ kalıntısı ile ayrıştırılmış yağ özünü adlandırıyor; kanıttaki tereyağından ayrılarak arınmış süt kullanımını kapsamıyor.",
+      "smallest_correction": "Kavram karşılığını eski yağ kalıntısı, yağ özü ve tereyağından ayrılarak arınmış süt kullanımlarını birlikte koruyacak biçimde düzelt."
+    },
+    {
+      "target_ref": "root_000011/B009",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "F002 için verilen ayrıştırılmış yağ özü karşılığı ve açıklaması yalnız yağ özünü koruyor; aynı facetteki tereyağından ayrılarak arınmış süt kullanımını kaybettiğini hata profilinde de belirtmiyor.",
+      "smallest_correction": "F002 bağlamsal karşılığını ve açıklamasını yağ özü ile tereyağından ayrılarak arınmış sütü kapsayacak biçimde düzelt; hata profilini buna uyumlu hale getir."
+    },
+    {
+      "target_ref": "root_000011/B009",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_023"
+      ],
+      "evidence_conflict": "lu_023 kanıtı yağ özünü veya tereyağından ayrıldıktan sonra arınmış sütü bildiriyor. Mevcut karşılık, öz kısmın sütten ya da yağdan ayrıştırıldığını söyleyerek arınmış süt kullanımının yönünü belirsizleştiriyor.",
+      "smallest_correction": "lu_023 hedef karşılığını yağ özü veya tereyağından ayrılarak arınmış süt olarak düzelt."
     }
   ]
 }
