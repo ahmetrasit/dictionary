@@ -1,38 +1,53 @@
 {
-  "root_inputs_sha256": "403d597b986e36ffd7f457840c2e580c7e4f13585dfd45c49cd304ffb706dab9",
+  "root_inputs_sha256": "b0b2d950e8d896982d769e9d649418d8c58f41c96908ec45480289d6d12a0a69",
   "root_id": "root_000028",
   "branch_id": "B006",
   "language": "tr",
   "image_transliteration": "fazl beyne'ş-şuhûr ve's-sinîn fî hisâbi'l-kamer",
-  "summary": "Ayın gökteki hareket yollarına dayalı bir zaman hesabı ve aylarla yıllar arasına giren artık sürelerdir.",
+  "summary": "Ayın hareket yollarına göre yapılan, aylar ile yıllar arasındaki zaman farkını ve bu dönemlerin arasına eklenen artık miktarları belirleyen takvim hesabıdır.",
   "concept_map": {
-    "definition": "Ayın gökteki hareket yollarına dayalı bir zaman hesabı ve aylarla yıllar arasına giren artık sürelerdir.",
+    "definition": "Ayın hareket yollarına göre yapılan, aylar ile yıllar arasındaki zaman farkını ve bu dönemlerin arasına eklenen artık miktarları belirleyen takvim hesabıdır.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Zaman, ayın gökte izlediği hareket yolları esas alınarak hesaplanır.",
+        "statement": "Hesabın gözlemsel veya düzenleyici temeli ayın izlediği hareket yollarıdır.",
         "claim_ids": [
-          "lu_018"
+          "bc_001"
         ]
       },
       {
         "facet_id": "F002",
-        "role": "specialization",
-        "statement": "Aylar ile yıllar arasındaki farkı karşılamak üzere araya eklenen artık süreleri kapsar.",
+        "role": "core",
+        "statement": "Hesap, aylar ile yılların sürelerini bağdaştırırken araya giren artık zaman miktarlarını belirler.",
         "claim_ids": [
-          "lu_018"
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Anlam, ayın hareketlerine göre kurulan zaman hesabını bu hesabın aylarla yıllar arasında bıraktığı artık sürelerle birlikte anlatır. Bu süreler iki zaman birimi arasına eklenen fazlalıklardır.",
+  "identity_judgment": {
+    "status": "accepted",
+    "rationale": "Kaynak ifadesi ayın hareket yollarına dayanan bir hesap ile aylar ve yıllar arasına giren artık miktarları birlikte tanımlar. Hazırlanmış dal kimliği, hesabı yalnız artık zamana indirgemeden hem yöntemi hem de hesaplanan ek farkı korur.",
+    "boundary_note": "Dal genel ay, yıl veya tamlık kavramı değildir; ay hareketlerine dayalı takvim hesabını ve dönemler arasına eklenen artık miktarları bildirir."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "bare",
+    "note": "Tanım yalın dalı ayın hareketlerine dayalı takvimsel hesap ve aylarla yıllar arasındaki artık miktarlar olarak sınırlar."
+  },
+  "source_summary": "Tek kaynak, ayın hareket yollarına dayalı bir hesap ile aylar ve yıllar arasında ortaya çıkıp araya eklenen artık zaman miktarını aynı tanımda birleştirir. Bu nedenle hem hesap yöntemi hem de düzenlenen fark korunmalıdır.",
   "source_synthesis": {
-    "common_summary": "Anlam, ayın hareketlerine göre kurulan zaman hesabını bu hesabın aylarla yıllar arasında bıraktığı artık sürelerle birlikte anlatır. Bu süreler iki zaman birimi arasına eklenen fazlalıklardır.",
-    "common_claim_ids": [
-      "lu_018"
+    "common_summary": "Tek kaynak, ayın hareket yollarına dayalı bir hesap ile aylar ve yıllar arasında ortaya çıkıp araya eklenen artık zaman miktarını aynı tanımda birleştirir. Bu nedenle hem hesap yöntemi hem de düzenlenen fark korunmalıdır.",
+    "common_claim_ids": [],
+    "source_details": [
+      {
+        "claim_ids": [
+          "bc_001"
+        ],
+        "kind": "sole_attestation",
+        "summary": "Ay hareketlerine dayalı hesap ve aylarla yıllar arasına eklenen artık zaman miktarı birlikte kaydedilir."
+      }
     ],
-    "source_details": [],
     "supporting_claim_ids": [],
     "duplicate_claims": []
   },
@@ -42,25 +57,25 @@
     {
       "lexical_unit_id": "lu_018",
       "rendering_kind": "ordinary",
-      "target_gloss": "ayın hareketlerine dayalı hesap ve aylarla yıllar arasına eklenen artık süreler"
+      "target_gloss": "ay hareketlerine göre artık zaman hesabı"
     }
   ],
   "glosses": {
-    "semantic_definition": "Ayın gökteki hareket yollarına dayalı bir zaman hesabı ve aylarla yıllar arasına giren artık sürelerdir.",
+    "semantic_definition": "Ayın hareket yollarına göre yapılan, aylar ile yıllar arasındaki zaman farkını ve bu dönemlerin arasına eklenen artık miktarları belirleyen takvim hesabıdır.",
     "concept": {
       "rank": 1,
-      "text": "ay döngüsü hesabındaki artık süreler",
+      "text": "ay takvimindeki artık zaman hesabı",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Ay hareketlerine dayalı hesabı ve aylarla yıllar arasına eklenen süreleri birlikte temsil eden açıklayıcı karşılıktır.",
+      "applicability": "Ayın hareketlerine dayalı hesap yöntemini ve aylarla yılları bağdaştıran ek zaman miktarını birlikte temsil eder.",
       "facet_ids": [
         "F001",
         "F002"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Ay hareketlerine dayalı hesap ile ay ve yıl arasındaki artık süre ilişkisini korur.",
+        "preserves": "Ay temelli hesabı ve dönemler arasındaki artık zamanın belirlenmesini birlikte korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -69,18 +84,18 @@
     "contextual": [
       {
         "rank": 2,
-        "text": "ay takvimindeki artık zaman",
+        "text": "ay ve yıl farkını denkleştirme hesabı",
         "loanword_status": "none",
-        "usage_role": "contextual",
+        "usage_role": "explanatory",
         "selection_role": "contextual_gloss",
-        "applicability": "Ay hesabında aylar ile yıllar arasında beliren artık zamanın anlatıldığı bağlamlara uygundur.",
+        "applicability": "Ayların toplamıyla yıl arasındaki farkın ek zamanla bağdaştırılmasını açıklayan takvim bağlamlarında uygundur.",
         "facet_ids": [
           "F001",
           "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Ay esaslı zaman düzenini ve araya eklenen fazlalığı korur.",
+          "preserves": "Ay temelli hesaplamayı ve aradaki artık sürenin düzenlenmesini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -90,18 +105,18 @@
     "selected": [
       {
         "rank": 1,
-        "text": "ay döngüsü hesabındaki artık süreler",
+        "text": "ay takvimindeki artık zaman hesabı",
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Ay hareketlerine dayalı hesabı ve aylarla yıllar arasına eklenen süreleri birlikte temsil eden açıklayıcı karşılıktır.",
+        "applicability": "Ayın hareketlerine dayalı hesap yöntemini ve aylarla yılları bağdaştıran ek zaman miktarını birlikte temsil eder.",
         "facet_ids": [
           "F001",
           "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Ay hareketlerine dayalı hesap ile ay ve yıl arasındaki artık süre ilişkisini korur.",
+          "preserves": "Ay temelli hesabı ve dönemler arasındaki artık zamanın belirlenmesini birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -109,38 +124,25 @@
       },
       {
         "rank": 2,
-        "text": "ay takvimindeki artık zaman",
+        "text": "ay ve yıl farkını denkleştirme hesabı",
         "loanword_status": "none",
-        "usage_role": "contextual",
+        "usage_role": "explanatory",
         "selection_role": "contextual_gloss",
-        "applicability": "Ay hesabında aylar ile yıllar arasında beliren artık zamanın anlatıldığı bağlamlara uygundur.",
+        "applicability": "Ayların toplamıyla yıl arasındaki farkın ek zamanla bağdaştırılmasını açıklayan takvim bağlamlarında uygundur.",
         "facet_ids": [
           "F001",
           "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Ay esaslı zaman düzenini ve araya eklenen fazlalığı korur.",
+          "preserves": "Ay temelli hesaplamayı ve aradaki artık sürenin düzenlenmesini korur.",
           "loses": null,
           "adds": null,
           "collision": null
         }
       }
     ],
-    "excluded": [
-      {
-        "text": "artık zaman",
-        "category": "alternative",
-        "exclusion_reason": "Ayın hareket yollarına dayalı hesabı ve aylarla yıllar arasındaki ilişkiyi kaybeder. Ay hesabıyla ilgisi olmayan her türlü fazladan zamanı da kapsar.",
-        "error_profile": {
-          "fit": "broadening",
-          "preserves": "Hesapta araya giren fazladan süre öğesini korur.",
-          "loses": "Ayın hareket yollarına dayalı hesabı ve aylarla yıllar arasındaki ilişkiyi kaybeder.",
-          "adds": "Ay hesabıyla ilgisi olmayan her türlü fazladan zamanı da kapsar.",
-          "collision": null
-        }
-      }
-    ]
+    "excluded": []
   },
   "arabic_neighbor_distinctions": [
     {
@@ -148,28 +150,52 @@
       "neighbor_branch_id": "B005",
       "relation_type": "near_neighbor",
       "boundary_match": "partial",
-      "focus_only": "Odak, ayın hareketlerine dayalı genel hesabı ve aylarla yıllar arasına giren artık süreleri kapsar.",
-      "neighbor_only": "Komşu, ayın belirli bir bölümünde ilk gecelerden sonra gelen sabit üç geceyi adlandırır.",
+      "focus_only": "Odak, aylar ile yıllar arasındaki artık süreyi hesaplayan genel takvimsel düzenlemeyi bildirir.",
+      "neighbor_only": "Komşu, ayın belirli bir bölümünde önceki gecelerden sonra gelen üç ek geceyi özel olarak adlandırır.",
       "expression_transliteration": "leyâl zâide ba'de'l-gurer",
-      "gloss": "takvimdeki artık süre ile ay içindeki üç ek gece",
-      "shared_zone": "İki anlam da ay esaslı zaman düzeninde fazladan sayılan geceler veya sürelerle ilgilidir.",
-      "distinction": "Odak, ayın hareket yollarına dayalı hesap ile aylar ve yıllar arasına giren artık süreleri anlatır; komşu ise tek bir ay içindeki belirli ve sabit üç geceyle sınırlıdır."
+      "gloss": "artık zaman hesabı ile belirli ek geceler",
+      "shared_zone": "Her iki dal ay takviminde ek veya artık sayılan zaman parçalarıyla ilgilidir.",
+      "distinction": "Odak bir hesap ve dönemleri bağdaştırma yöntemidir; komşu ay içindeki belirli üç gecenin adıdır."
     },
     {
       "neighbor_root_id": "root_000823",
       "neighbor_branch_id": "B001",
       "relation_type": "same_field",
       "boundary_match": "field_only",
-      "focus_only": "Odak, ay hareketlerini hesaplama ve aylarla yıllar arasına artık süre ekleme yöntemidir.",
-      "neighbor_only": "Komşu, hilalle bilinen zaman birimi olarak ayı, ayların sayısını ve bir ay sürme durumunu adlandırır.",
+      "focus_only": "Odak ayın hareketlerine göre dönem farkını ve araya eklenecek artık zamanı hesaplar.",
+      "neighbor_only": "Komşu hilalle bilinen ayı, ay süresini ve ayların sayılmasını genel olarak adlandırır.",
       "expression_transliteration": "eş-şehrü'l-ma'lûm bi'l-hilâl",
-      "gloss": "ay hesabındaki ek süre ile ay zaman birimi",
-      "shared_zone": "Her iki dal da ayın görünümüne ve hareketine göre düzenlenen aylık zaman hesabı alanındadır.",
-      "distinction": "Odak hesabın ay ve yıl arasında doğurduğu farkı ve eklemeyi anlatır; komşu ise hesabın temel zaman birimi olan ayın kendisini anlatır."
+      "gloss": "artık zaman hesabı ile ay birimi",
+      "shared_zone": "İki dal ayın görünümü ve takvim aylarının düzenlenmesi alanını paylaşır.",
+      "distinction": "Odak dönemler arasındaki farkı gideren hesaplamadır; komşu hesaplanan takvim biriminin kendisidir."
+    },
+    {
+      "neighbor_root_id": "root_000295",
+      "neighbor_branch_id": "B005",
+      "relation_type": "same_field",
+      "boundary_match": "field_only",
+      "focus_only": "Odak aylar ile yılları ay hareketlerine göre bağdaştıran artık süre hesabıdır.",
+      "neighbor_only": "Komşu yılı, belirli bir mevsimi veya belirli bir takvim ayını adlandırır.",
+      "expression_transliteration": "alhjh snh wmwsm",
+      "gloss": "takvimsel denkleştirme ile yıl ve ay adı",
+      "shared_zone": "Her iki dal yıl ve ayların oluşturduğu takvim düzeni içinde yer alır.",
+      "distinction": "Odak bir hesaplama ve ayarlama işlemidir; komşu zaman dönemlerinin veya belirli bir ayın adıdır."
+    },
+    {
+      "neighbor_root_id": "root_001032",
+      "neighbor_branch_id": "B003",
+      "relation_type": "near_neighbor",
+      "boundary_match": "partial",
+      "focus_only": "Odaktaki fazlalık, yalnız aylarla yılları bağdaştırırken araya giren takvimsel zamandır.",
+      "neighbor_only": "Komşu maldaki zahmetsiz artığı, seçkin kısmı, bağışı veya bir haktan vazgeçmeyi kapsayan genel fazlalıktır.",
+      "expression_transliteration": "alfdl alshl walsfwh almtrwkh",
+      "gloss": "takvimsel artık ile genel fazlalık",
+      "shared_zone": "Her iki dal temel miktarın üstünde kalan veya eklenen bir fazlalık düşüncesi taşır.",
+      "distinction": "Odak fazlalığı zaman ölçümü ve ay hesabıyla sınırlar; komşu mal, pay ve bağış alanlarında daha genel bir artıklık kavramıdır."
     }
   ],
   "neighbor_coverage": {
     "assessment": "complete",
-    "note": "Adayların tümü değerlendirildi; ay içindeki ek geceler ile ay zaman birimi, artık süre hesabının sınırını doğrudan açıklayan iki yararlı karşılaştırmadır."
+    "note": "Bütün adaylar değerlendirildi. Ek geceler, ay birimi, yıl dönemi ve genel fazlalıkla kurulan dört ayrım yayımlandı; tamlık ve ayın belirli geceleri hesaplama çekirdeğini paylaşmaz."
   }
 }

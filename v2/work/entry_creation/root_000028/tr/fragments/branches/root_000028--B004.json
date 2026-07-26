@@ -1,38 +1,53 @@
 {
-  "root_inputs_sha256": "403d597b986e36ffd7f457840c2e580c7e4f13585dfd45c49cd304ffb706dab9",
+  "root_inputs_sha256": "b0b2d950e8d896982d769e9d649418d8c58f41c96908ec45480289d6d12a0a69",
   "root_id": "root_000028",
   "branch_id": "B004",
   "language": "tr",
   "image_transliteration": "karr şedîd fi'l-leyl",
-  "summary": "Yalnız gece için söylenen çok şiddetli ve keskin soğuktur; aynı niteleme gündüz için kullanılmaz.",
+  "summary": "Gece yaşanan çok şiddetli soğuktur; kaynakta bu kullanımın gece için söylendiği, gündüz için söylenmediği özellikle belirtilir.",
   "concept_map": {
-    "definition": "Yalnız gece için söylenen çok şiddetli ve keskin soğuktur; aynı niteleme gündüz için kullanılmaz.",
+    "definition": "Gece yaşanan çok şiddetli soğuktur; kaynakta bu kullanımın gece için söylendiği, gündüz için söylenmediği özellikle belirtilir.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Soğuk, olağan düzeyi aşan çok sert ve keskin bir dereceye ulaşır.",
+        "statement": "Düşük sıcaklığın olağan soğuğu aşarak çok şiddetli hale gelmesi anlamın nitelik çekirdeğidir.",
         "claim_ids": [
-          "lu_016"
+          "bc_001"
         ]
       },
       {
         "facet_id": "F002",
         "role": "specialization",
-        "statement": "Kullanım geceyle sınırlıdır ve aynı niteleme gündüz için söylenmez.",
+        "statement": "Kullanım geceye bağlanır ve kaynak ifadesi aynı sözün gündüz için kullanılmasını açıkça dışlar.",
         "claim_ids": [
-          "lu_016"
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Anlam çok şiddetli soğuğu bildirir ve kullanım sınırı açıkça gecedir. Gece için kurulan niteleme gündüze aktarılmaz.",
+  "identity_judgment": {
+    "status": "accepted",
+    "rationale": "Kaynak ifadesi anlamı şiddetli soğuk olarak verir ve kullanımını özellikle geceyle sınırlar; gece için söylenebildiğini, gündüz için söylenmediğini açıkça belirtir. Hazırlanmış dal kimliği bu iki kurucu özelliği de korur.",
+    "boundary_note": "Bu dal genel soğukluk adı değildir; şiddetli soğuğu bildirir ve kanıtlanan kullanım geceyle sınırlıdır."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "bare",
+    "note": "Tanım yalın dalı şiddetli gece soğuğu olarak verir; başka dallardaki ses, kaynama veya sıkışıklık anlamlarını içeri almaz."
+  },
+  "source_summary": "Tek kaynak, anlamı şiddetli soğuk olarak tanımlar ve kullanımı geceyle sınırlar. Gündüz için kullanılmama kaydı, yalnızca örnek değil dalın kullanım sınırıdır.",
   "source_synthesis": {
-    "common_summary": "Anlam çok şiddetli soğuğu bildirir ve kullanım sınırı açıkça gecedir. Gece için kurulan niteleme gündüze aktarılmaz.",
-    "common_claim_ids": [
-      "lu_016"
+    "common_summary": "Tek kaynak, anlamı şiddetli soğuk olarak tanımlar ve kullanımı geceyle sınırlar. Gündüz için kullanılmama kaydı, yalnızca örnek değil dalın kullanım sınırıdır.",
+    "common_claim_ids": [],
+    "source_details": [
+      {
+        "claim_ids": [
+          "bc_001"
+        ],
+        "kind": "sole_attestation",
+        "summary": "Şiddetli soğuk anlamı yalnızca gece için kaydedilir; gündüz kullanımının bulunmadığı ayrıca belirtilir."
+      }
     ],
-    "source_details": [],
     "supporting_claim_ids": [],
     "duplicate_claims": []
   },
@@ -42,25 +57,25 @@
     {
       "lexical_unit_id": "lu_016",
       "rendering_kind": "ordinary",
-      "target_gloss": "geceye özgü çok şiddetli soğuk"
+      "target_gloss": "geceye özgü şiddetli soğuk"
     }
   ],
   "glosses": {
-    "semantic_definition": "Yalnız gece için söylenen çok şiddetli ve keskin soğuktur; aynı niteleme gündüz için kullanılmaz.",
+    "semantic_definition": "Gece yaşanan çok şiddetli soğuktur; kaynakta bu kullanımın gece için söylendiği, gündüz için söylenmediği özellikle belirtilir.",
     "concept": {
       "rank": 1,
-      "text": "geceye özgü keskin soğuk",
+      "text": "şiddetli gece soğuğu",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Soğuğun şiddetini ve kullanımın yalnız geceyle sınırlı oluşunu birlikte koruyan tam karşılıktır.",
+      "applicability": "Hem aşırı soğukluk derecesini hem de kanıtlanan geceye özgü kullanım sınırını eksiksiz taşır.",
       "facet_ids": [
         "F001",
         "F002"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Hem aşırı soğuk derecesini hem de yalnız gece için kullanılma koşulunu korur.",
+        "preserves": "Şiddetli soğuk niteliğini ve geceyle sınırlı kullanımı birlikte korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -73,14 +88,14 @@
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Bir gecenin olağanüstü soğuk olduğunu doğal akış içinde anlatan cümlelere uygundur.",
+        "applicability": "Bir gecenin olağanüstü sert ve dondurucu soğuğunu doğal Türkçeyle betimleyen bağlamlarda uygundur.",
         "facet_ids": [
           "F001",
           "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Şiddetli soğuk niteliğini ve olayın geceye ait oluşunu korur.",
+          "preserves": "Soğuğun çok şiddetli oluşunu ve olayın geceye bağlılığını korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -90,18 +105,18 @@
     "selected": [
       {
         "rank": 1,
-        "text": "geceye özgü keskin soğuk",
+        "text": "şiddetli gece soğuğu",
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Soğuğun şiddetini ve kullanımın yalnız geceyle sınırlı oluşunu birlikte koruyan tam karşılıktır.",
+        "applicability": "Hem aşırı soğukluk derecesini hem de kanıtlanan geceye özgü kullanım sınırını eksiksiz taşır.",
         "facet_ids": [
           "F001",
           "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Hem aşırı soğuk derecesini hem de yalnız gece için kullanılma koşulunu korur.",
+          "preserves": "Şiddetli soğuk niteliğini ve geceyle sınırlı kullanımı birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -113,34 +128,21 @@
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Bir gecenin olağanüstü soğuk olduğunu doğal akış içinde anlatan cümlelere uygundur.",
+        "applicability": "Bir gecenin olağanüstü sert ve dondurucu soğuğunu doğal Türkçeyle betimleyen bağlamlarda uygundur.",
         "facet_ids": [
           "F001",
           "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Şiddetli soğuk niteliğini ve olayın geceye ait oluşunu korur.",
+          "preserves": "Soğuğun çok şiddetli oluşunu ve olayın geceye bağlılığını korur.",
           "loses": null,
           "adds": null,
           "collision": null
         }
       }
     ],
-    "excluded": [
-      {
-        "text": "şiddetli soğuk",
-        "category": "alternative",
-        "exclusion_reason": "Gece dışındaki zamanlarda da kullanılabileceği yönünde daha geniş bir kapsam ekler.",
-        "error_profile": {
-          "fit": "broadening",
-          "preserves": "Soğuğun olağanüstü şiddetli oluşunu doğru biçimde korur.",
-          "loses": null,
-          "adds": "Gece dışındaki zamanlarda da kullanılabileceği yönünde daha geniş bir kapsam ekler.",
-          "collision": null
-        }
-      }
-    ]
+    "excluded": []
   },
   "arabic_neighbor_distinctions": [
     {
@@ -148,40 +150,40 @@
       "neighbor_branch_id": "B001",
       "relation_type": "near_synonym",
       "boundary_match": "partial",
-      "focus_only": "Odaktaki şiddetli soğuk yalnız gece için kullanılan özel bir nitelemedir.",
-      "neighbor_only": "Komşu, belirli bir zaman koşulu olmadan genel olarak aşırı soğuğu bildirir.",
+      "focus_only": "Odak dalında şiddetli soğuk belirli olarak geceye bağlanır ve gündüz kullanımı dışlanır.",
+      "neighbor_only": "Komşu dal genel olarak aşırı soğuğu bildirir ve geceyle sınırlı değildir.",
       "expression_transliteration": "ez-zemherîr şiddetü'l-berd",
-      "gloss": "gece soğuğu ile genel aşırı soğuk",
-      "shared_zone": "Her iki anlamın çekirdeğinde olağan sınırı aşan çok şiddetli soğuk vardır.",
-      "distinction": "Soğuğun derecesinde örtüşürler; fakat odak gece koşulunu kurucu sınır yaparken komşu bu zaman kısıtını taşımaz."
+      "gloss": "geceye özgü şiddetli soğuk ile genel ayaz",
+      "shared_zone": "Her iki dalın çekirdeği olağan düzeyi aşan çok şiddetli soğuktur.",
+      "distinction": "Soğukluk derecesinde büyük ölçüde örtüşürler; odak dalının geceye özgü kullanım koşulu komşuda bulunmaz."
     },
     {
       "neighbor_root_id": "root_000840",
       "neighbor_branch_id": "B007",
       "relation_type": "near_synonym",
       "boundary_match": "partial",
-      "focus_only": "Odak, mevsimden bağımsız olarak gecenin keskin soğuğuna özgüdür.",
-      "neighbor_only": "Komşu, günün vaktinden bağımsız olarak kış mevsiminin şiddetli soğuğunu anlatır.",
+      "focus_only": "Odak şiddetli soğuğu geceye bağlar, mevsim şartı koymaz.",
+      "neighbor_only": "Komşu şiddetli soğuğu kış mevsimine bağlar, gece şartı koymaz.",
       "expression_transliteration": "şiddetü berdi'ş-şitâ'",
-      "gloss": "gecenin keskin soğuğu ile kışın sert soğuğu",
-      "shared_zone": "İki anlam da belirli bir zaman çerçevesine bağlanan şiddetli soğuğu bildirir.",
-      "distinction": "Odakta sınırlayıcı çerçeve gece, komşuda ise kış mevsimidir; bu iki koşul birbirinin yerine geçmez."
+      "gloss": "şiddetli gece soğuğu ile sert kış soğuğu",
+      "shared_zone": "Her iki dal da çok şiddetli soğuk hava durumunu anlatır.",
+      "distinction": "Odak için belirleyici zaman dilimi gecedir; komşu için belirleyici dönem kıştır. Bu yüzden her bağlamda birbirinin yerine geçmezler."
     },
     {
       "neighbor_root_id": "root_001003",
       "neighbor_branch_id": "B007",
       "relation_type": "near_synonym",
       "boundary_match": "partial",
-      "focus_only": "Odak yalnız gecenin çok şiddetli soğuğu için kullanılır.",
-      "neighbor_only": "Komşu hem günün hem gecenin soğukta en uç dereceye ulaşmasını kapsar.",
+      "focus_only": "Odak, çok şiddetli soğuğun yalnız gece için kullanılan adıdır.",
+      "neighbor_only": "Komşu, soğukta son sınıra varmayı hem gün hem gece için anlatabilir.",
       "expression_transliteration": "berd bâlig",
-      "gloss": "yalnız geceye özgü soğuk ile gün ve gecedeki uç soğuk",
-      "shared_zone": "Her ikisi de soğuğun son derece güçlü ve dayanılması zor oluşunu anlatır.",
-      "distinction": "Odak gündüz kullanımını dışlar; komşu ise gündüzü de geceyi de kapsayan daha geniş bir zaman sınırına sahiptir."
+      "gloss": "gece soğuğu ile en yüksek dereceye varan soğuk",
+      "shared_zone": "İki dal da aşırı derecede soğuk bir zaman dilimini niteler.",
+      "distinction": "Odak kullanım zamanı bakımından daha dardır; komşu gün ve geceyi kapsar ve özellikle soğuğun son sınırına ulaşmasını vurgular."
     }
   ],
   "neighbor_coverage": {
     "assessment": "complete",
-    "note": "Bütün adaylar değerlendirildi; genel aşırı soğuk, kış soğuğu ve hem gündüzü hem geceyi kapsayan uç soğuk, gece kısıtını açıklayan en yararlı üç karşılaştırmadır."
+    "note": "Bütün adaylar değerlendirildi. Gece, kış ve genel aşırı soğuk sınırlarını gösteren üç yakın anlamlı komşu yayımlandı; sıcaklık, donun bitkilere zararı ve aynı kökün diğer dalları çekirdeğe eşdeğer değildir."
   }
 }
