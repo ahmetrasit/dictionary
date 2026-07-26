@@ -1,5 +1,17 @@
 {
-  "verdict": "pass",
-  "summary": "Yazar yanıtı, sağlanan kanıtlar bakımından yayıma hazırdır. Sekiz dalın kavram çekirdekleri ve bağlı kullanımları doğru ayrılmış, kaynaklara özgü ayrıntılar uygun iddialara bağlanmış, Türkçe karşılıklar doğal tutulmuş ve komşu sınırları ek kapsamları zorla eş anlamlılaştırmadan açıklanmıştır. Eklenen dışlanmış karşılıklar da her dal için somut anlam kaybını veya karışma riskini doğru gösterir.",
-  "issues": []
+  "verdict": "repair",
+  "summary": "Dal kimlikleri, kavram haritaları, sözlük karşılıkları ve komşu ayrımları kanıtla uyumludur. Yalnızca B006 kaynak sentezi, tedavi kullanımını bütün kaynakların ortak tanıklığı gibi sunduğu için dar kapsamlı bir düzeltme gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_000016/B006",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kaynakların hem boyun ağrısında birleştiğini hem de bu ağrının tedavisini anlattığını söylüyor; ancak bc_001 içindeki ayn tanıklığı yalnızca boyundaki ağrıyı verir, tedavi kullanımı öteki kaynaklarda yer alır.",
+      "smallest_correction": "B006 source_synthesis.common_summary alanında yalnızca boyun ağrısını bütün kaynakların ortak çekirdeği olarak belirtin; tedavi kullanımını bazı kaynaklara, boyun üzerine yatma sonucu ağrıyı ise tek kaynaklı özel oluş biçimine bağlayın."
+    }
+  ]
 }

@@ -1,28 +1,45 @@
 {
-  "root_inputs_sha256": "4e6d62cea5e6b6f2ee9fe66f78d77a04fb8fa72e57d3748128eba06e5545545c",
+  "root_inputs_sha256": "4e3c8c5c92d1931ae1b35cc696dde9cb98dadf78a7e7e9ac9653f4d5751c84bd",
   "root_id": "root_000018",
   "branch_id": "B005",
   "language": "tr",
   "image_transliteration": "Ardun me'hûzetün li'n-nefs",
-  "summary": "Bir kişinin veya yöneticinin kendisi için ayırıp sahiplenerek denetimine aldığı arazi ya da çiftliktir.",
+  "summary": "Bir kişinin ya da yöneticinin kendisi için sahiplenip denetimine aldığı, mülk edindiği ve işler duruma getirdiği arazidir.",
   "concept_map": {
-    "definition": "Bir kişinin veya yöneticinin kendisi için ayırıp sahiplenerek denetimine aldığı arazi ya da çiftliktir.",
+    "definition": "Bir kişinin ya da yöneticinin kendisi için sahiplenip denetimine aldığı, mülk edindiği ve işler duruma getirdiği arazidir.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Arazi kişi veya yönetici tarafından kendisi için ayrılır, sahiplenilir ve denetim altına alınır.",
+        "statement": "Kişinin kendisi için sahiplenip denetimine geçirdiği araziyi anlatır.",
         "claim_ids": [
-          "lu_013"
+          "bc_001"
+        ]
+      },
+      {
+        "facet_id": "F002",
+        "role": "extension",
+        "statement": "Arazinin mülk edinilmesi ve işlenerek canlandırılması bu adlandırmanın belirgin sonucudur.",
+        "claim_ids": [
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Dalın ortak çekirdeği, bir kişinin ya da yöneticinin araziyi kendisi için ayırıp sahiplenmesidir; bazı açıklamalarda bu araziyi işleyip canlandırma ayrıntısı da eklenir.",
+  "identity_judgment": {
+    "status": "accepted",
+    "rationale": "Kaynak ifadesi bir kişinin ya da yöneticinin araziyi kendisi için alıp denetimine geçirmesini, mülk edinmesini ve işler duruma getirmesini açıkça bildirir. Dalın arazi ve mülk odağı kaynak sınırına uygundur.",
+    "boundary_note": "Anlam, kişinin kendisi için sahiplenip denetimine aldığı ve işlediği araziyle sınırlıdır; su biriktiren yer bu dala girmez."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "bare",
+    "note": "Tanım tanıklanan yalın arazi adı ve onun edinilip işletilme özellikleriyle sınırlıdır; kalıplaşmış başka okumalardan anlam aktarılmaz."
+  },
+  "source_summary": "Kaynaklar, kendisi için alınan araziyi sahiplenme, denetim altına alma, mülk edinme ve işler duruma getirme yönleriyle tanımlar.",
   "source_synthesis": {
-    "common_summary": "Dalın ortak çekirdeği, bir kişinin ya da yöneticinin araziyi kendisi için ayırıp sahiplenmesidir; bazı açıklamalarda bu araziyi işleyip canlandırma ayrıntısı da eklenir.",
+    "common_summary": "Kaynaklar, kendisi için alınan araziyi sahiplenme, denetim altına alma, mülk edinme ve işler duruma getirme yönleriyle tanımlar.",
     "common_claim_ids": [
-      "lu_013"
+      "bc_001"
     ],
     "source_details": [],
     "supporting_claim_ids": [],
@@ -34,24 +51,25 @@
     {
       "lexical_unit_id": "lu_013",
       "rendering_kind": "ordinary",
-      "target_gloss": "kişinin kendisi için sahiplendiği arazi veya çiftlik"
+      "target_gloss": "kişinin kendisi için sahiplenip denetimine aldığı arazi"
     }
   ],
   "glosses": {
-    "semantic_definition": "Bir kişinin veya yöneticinin kendisi için ayırıp sahiplenerek denetimine aldığı arazi ya da çiftliktir.",
+    "semantic_definition": "Bir kişinin ya da yöneticinin kendisi için sahiplenip denetimine aldığı, mülk edindiği ve işler duruma getirdiği arazidir.",
     "concept": {
       "rank": 1,
-      "text": "kendine ayırıp sahiplenilen arazi",
+      "text": "sahiplenilip işletilen arazi",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Bir arazi parçasının kişi veya yönetici tarafından kendisi için ayrılıp denetim altına alınması bağlamında kullanılır.",
+      "applicability": "Bir kişinin kendisi için denetimine aldığı, mülk edindiği ve işler duruma getirdiği araziyi adlandırır.",
       "facet_ids": [
-        "F001"
+        "F001",
+        "F002"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Araziyi kendine ayırma, sahiplenme ve denetim altına alma ilişkisini korur.",
+        "preserves": "Araziyi, kendisi için sahiplenmeyi, denetimi ve işletmeye açmayı korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -60,18 +78,18 @@
     "contextual": [
       {
         "rank": 2,
-        "text": "edinilip işlenen çiftlik",
+        "text": "edinilmiş toprak",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Sahiplenilen arazinin işlenip canlandırılarak bir çiftlik niteliği kazandığı bağlamda kullanılır.",
+        "applicability": "Bağlam arazinin bir kişi için sahiplenildiğini açıkça gösterdiğinde kullanılabilir.",
         "facet_ids": [
           "F001"
         ],
         "error_profile": {
           "fit": "narrowing",
-          "preserves": "Arazi edinme ve onu işler duruma getirme yönlerini korur.",
-          "loses": "İşlenmiş bir çiftlik niteliği kazanmamış arazi ayırma durumunu kapsamaz.",
+          "preserves": "Arazinin edinilip bir kişinin denetimine geçmesini korur.",
+          "loses": "Toprağın işlenerek canlandırılması yönünü açıkça belirtmez.",
           "adds": null,
           "collision": null
         }
@@ -80,17 +98,18 @@
     "selected": [
       {
         "rank": 1,
-        "text": "kendine ayırıp sahiplenilen arazi",
+        "text": "sahiplenilip işletilen arazi",
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Bir arazi parçasının kişi veya yönetici tarafından kendisi için ayrılıp denetim altına alınması bağlamında kullanılır.",
+        "applicability": "Bir kişinin kendisi için denetimine aldığı, mülk edindiği ve işler duruma getirdiği araziyi adlandırır.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Araziyi kendine ayırma, sahiplenme ve denetim altına alma ilişkisini korur.",
+          "preserves": "Araziyi, kendisi için sahiplenmeyi, denetimi ve işletmeye açmayı korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -98,18 +117,18 @@
       },
       {
         "rank": 2,
-        "text": "edinilip işlenen çiftlik",
+        "text": "edinilmiş toprak",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Sahiplenilen arazinin işlenip canlandırılarak bir çiftlik niteliği kazandığı bağlamda kullanılır.",
+        "applicability": "Bağlam arazinin bir kişi için sahiplenildiğini açıkça gösterdiğinde kullanılabilir.",
         "facet_ids": [
           "F001"
         ],
         "error_profile": {
           "fit": "narrowing",
-          "preserves": "Arazi edinme ve onu işler duruma getirme yönlerini korur.",
-          "loses": "İşlenmiş bir çiftlik niteliği kazanmamış arazi ayırma durumunu kapsamaz.",
+          "preserves": "Arazinin edinilip bir kişinin denetimine geçmesini korur.",
+          "loses": "Toprağın işlenerek canlandırılması yönünü açıkça belirtmez.",
           "adds": null,
           "collision": null
         }
@@ -123,28 +142,16 @@
       "neighbor_branch_id": "B004",
       "relation_type": "near_synonym",
       "boundary_match": "partial",
-      "focus_only": "Kendine ayrılan belirli araziyi sahiplenme ve canlandırma koşulu vardır.",
-      "neighbor_only": "Para, taşınmaz ve çiftlik edinimini daha geniş biçimde kapsar.",
+      "focus_only": "Özellikle araziyi sahiplenme, denetim altına alma ve işler duruma getirme yönlerini taşır.",
+      "neighbor_only": "Arazi dışındaki mal ve taşınmazları edinme ve elde tutma alanını da kapsar.",
       "expression_transliteration": "İktinâü'l-mâl ve'd-day'a",
-      "gloss": "mal ve çiftlik edinme",
-      "shared_zone": "Her iki dal da arazi veya çiftliğin kişinin mülkiyet ve denetimine girmesini kapsar.",
-      "distinction": "Odak dalı kişinin ya da yöneticinin kendine ayırıp canlandırdığı araziye özgüdür; komşu dal arazi dışındaki malları da içeren daha genel bir edinme alanıdır."
-    },
-    {
-      "neighbor_root_id": "root_001454",
-      "neighbor_branch_id": "B003",
-      "relation_type": "near_neighbor",
-      "boundary_match": "partial",
-      "focus_only": "Araziyi kendine ayırma, sahiplenme ve işleyip canlandırma eylemi bulunur.",
-      "neighbor_only": "Henüz canlandırılmamış, sahipsiz veya yararlanılmayan toprağın durumu anlatılır.",
-      "expression_transliteration": "Ardun mevât ve metâun lâ rûha fîh",
-      "gloss": "işlenmemiş sahipsiz arazi",
-      "shared_zone": "İki dalın ortak konusu henüz işlenebilir nitelikteki arazi alanıdır.",
-      "distinction": "Odak dalı toprağın sahiplenilip canlandırılması sonucunu bildirir; komşu dal ise bu işlemden önceki işlenmemiş veya sahipsiz arazi durumunu adlandırır."
+      "gloss": "mal ve taşınmaz edinme",
+      "shared_zone": "Her ikisi de toprağı veya taşınmazı kişinin malı ve denetimi haline getirmeyi anlatır.",
+      "distinction": "Odak dal arazi adına ve arazinin işler duruma getirilmesine bağlıdır; komşu dal daha genel mal ve taşınmaz sahipliğini kapsar."
     }
   ],
   "neighbor_coverage": {
-    "assessment": "complete",
-    "note": "Arazi ve mülk alanındaki bütün adaylar incelendi; edinme ile işlenmemiş toprak sınırlarını gösteren iki komşu seçildi."
+    "assessment": "single_sufficient",
+    "note": "Mal ve taşınmaz edinme dalı temel sınırı en iyi açıklar; diğer adaylar arazi türünü, çokluğunu veya idari tahsisini anlatıp odak kavramla yer değiştiremez."
   }
 }

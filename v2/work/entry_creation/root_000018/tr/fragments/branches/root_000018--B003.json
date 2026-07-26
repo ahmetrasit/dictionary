@@ -1,47 +1,47 @@
 {
-  "root_inputs_sha256": "4e6d62cea5e6b6f2ee9fe66f78d77a04fb8fa72e57d3748128eba06e5545545c",
+  "root_inputs_sha256": "4e3c8c5c92d1931ae1b35cc696dde9cb98dadf78a7e7e9ac9653f4d5751c84bd",
   "root_id": "root_000018",
   "branch_id": "B003",
   "language": "tr",
   "image_transliteration": "el-Kabd ve'l-esr",
-  "summary": "Bir kişiyi yakalayıp özgürlüğünden yoksun bırakarak tutsak etme eylemi ve bu eylem sonucunda tutsak edilmiş kişidir.",
+  "summary": "Bir kişiyi yakalayıp hareket özgürlüğünü elinden alarak tutsak duruma getirmek veya bu durumda bulunan kişiyi belirtmektir.",
   "concept_map": {
-    "definition": "Bir kişiyi yakalayıp özgürlüğünden yoksun bırakarak tutsak etme eylemi ve bu eylem sonucunda tutsak edilmiş kişidir.",
+    "definition": "Bir kişiyi yakalayıp hareket özgürlüğünü elinden alarak tutsak duruma getirmek veya bu durumda bulunan kişiyi belirtmektir.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Kişi yakalanır, denetim altına alınır ve tutsak durumuna getirilir.",
+        "statement": "Bir kişiyi yakalama ve özgürlüğünü kısıtlayarak tutsak etme eylemini anlatır.",
         "claim_ids": [
-          "lu_007",
-          "lu_008",
-          "lu_009"
+          "bc_001"
+        ]
+      },
+      {
+        "facet_id": "F002",
+        "role": "extension",
+        "statement": "Yakalanıp tutsak edilmiş kişi de aynı söz ailesinin bir biçimiyle adlandırılır.",
+        "claim_ids": [
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Temel sonuç, yakalanmış ve özgürlüğü elinden alınmış tutsak kişidir.",
+  "identity_judgment": {
+    "status": "accepted",
+    "rationale": "Kaynak ifadesi, bir kişiyi yakalayıp özgürlüğünden yoksun bırakarak tutsak etme eylemini ve bu eylemin sonucundaki kişiyi birlikte tanıklar. Dalın savaş veya zor kullanma bağlamındaki tutma çerçevesi bu ayrımı doğru korur.",
+    "boundary_note": "Dal, sıradan bir nesneyi almaktan farklı olarak bir kişiyi yakalayıp tutsak duruma getirmeyi anlatır."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "mixed_non_bare",
+    "note": "Tutsak kişi adı ile yakalama buyruğu ve kişi üzerinde kurulan kalıplı eylem birbirinden ayrılarak tanımlanır."
+  },
+  "source_summary": "Kaynaklar, yakalayıp tutsak etme eylemiyle bu eylemin sonucundaki tutsak kişi adını aynı anlam alanında birleştirir.",
   "source_synthesis": {
-    "common_summary": "Temel sonuç, yakalanmış ve özgürlüğü elinden alınmış tutsak kişidir.",
+    "common_summary": "Kaynaklar, yakalayıp tutsak etme eylemiyle bu eylemin sonucundaki tutsak kişi adını aynı anlam alanında birleştirir.",
     "common_claim_ids": [
-      "lu_007"
+      "bc_001"
     ],
-    "source_details": [
-      {
-        "claim_ids": [
-          "lu_008"
-        ],
-        "kind": "sole_attestation",
-        "summary": "Bir kişiyi yakalamanın doğrudan tutsak etme anlamına geldiği kullanım ayrıca verilir."
-      },
-      {
-        "claim_ids": [
-          "lu_009"
-        ],
-        "kind": "sole_attestation",
-        "summary": "Çoğul emir biçiminin insanları yakalayıp tutsak etme buyruğu olduğu belirtilir."
-      }
-    ],
+    "source_details": [],
     "supporting_claim_ids": [],
     "duplicate_claims": []
   },
@@ -51,34 +51,35 @@
     {
       "lexical_unit_id": "lu_007",
       "rendering_kind": "ordinary",
-      "target_gloss": "tutsak; yakalanmış kişi"
+      "target_gloss": "tutsak edilmiş kişi"
     },
     {
       "lexical_unit_id": "lu_008",
       "rendering_kind": "ordinary",
-      "target_gloss": "birini yakalayıp tutsak etmek"
+      "target_gloss": "falanca yakalanıp tutsak edildi"
     },
     {
       "lexical_unit_id": "lu_009",
       "rendering_kind": "ordinary",
-      "target_gloss": "onları yakalayıp tutsak edin"
+      "target_gloss": "onları tutsak edin"
     }
   ],
   "glosses": {
-    "semantic_definition": "Bir kişiyi yakalayıp özgürlüğünden yoksun bırakarak tutsak etme eylemi ve bu eylem sonucunda tutsak edilmiş kişidir.",
+    "semantic_definition": "Bir kişiyi yakalayıp hareket özgürlüğünü elinden alarak tutsak duruma getirmek veya bu durumda bulunan kişiyi belirtmektir.",
     "concept": {
       "rank": 1,
       "text": "yakalayıp tutsak etme",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Bir kişiyi ele geçirerek özgürlüğünden yoksun bırakma eylemi için kullanılır.",
+      "applicability": "Bir kişinin yakalanması ve özgürlüğü alınarak tutsak duruma getirilmesi için kullanılır.",
       "facet_ids": [
-        "F001"
+        "F001",
+        "F002"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Yakalama işlemini, kişinin denetim altına alınmasını ve tutsaklık sonucunu korur.",
+        "preserves": "Yakalama işlemini, özgürlük kaybını ve ortaya çıkan tutsaklık durumunu korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -87,18 +88,18 @@
     "contextual": [
       {
         "rank": 2,
-        "text": "tutsak",
+        "text": "tutsak etmek",
         "loanword_status": "none",
-        "usage_role": "contextual",
+        "usage_role": "general",
         "selection_role": "contextual_gloss",
-        "applicability": "Eylemden çok yakalanıp özgürlüğü elinden alınmış kişiyi adlandırırken kullanılır.",
+        "applicability": "Eylemin sonucu açık olduğunda yakalama ve özgürlüğü kaldırma sürecini doğal biçimde karşılar.",
         "facet_ids": [
           "F001"
         ],
         "error_profile": {
-          "fit": "narrowing",
-          "preserves": "Yakalama sonucunda oluşan tutsaklık durumunu korur.",
-          "loses": "Yakalama ve tutsak etme eyleminin kendisini açıkça bildirmez.",
+          "fit": "none",
+          "preserves": "Kişinin yakalanıp özgürlüğünden yoksun bırakılmasını korur.",
+          "loses": null,
           "adds": null,
           "collision": null
         }
@@ -111,13 +112,14 @@
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Bir kişiyi ele geçirerek özgürlüğünden yoksun bırakma eylemi için kullanılır.",
+        "applicability": "Bir kişinin yakalanması ve özgürlüğü alınarak tutsak duruma getirilmesi için kullanılır.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Yakalama işlemini, kişinin denetim altına alınmasını ve tutsaklık sonucunu korur.",
+          "preserves": "Yakalama işlemini, özgürlük kaybını ve ortaya çıkan tutsaklık durumunu korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -125,18 +127,18 @@
       },
       {
         "rank": 2,
-        "text": "tutsak",
+        "text": "tutsak etmek",
         "loanword_status": "none",
-        "usage_role": "contextual",
+        "usage_role": "general",
         "selection_role": "contextual_gloss",
-        "applicability": "Eylemden çok yakalanıp özgürlüğü elinden alınmış kişiyi adlandırırken kullanılır.",
+        "applicability": "Eylemin sonucu açık olduğunda yakalama ve özgürlüğü kaldırma sürecini doğal biçimde karşılar.",
         "facet_ids": [
           "F001"
         ],
         "error_profile": {
-          "fit": "narrowing",
-          "preserves": "Yakalama sonucunda oluşan tutsaklık durumunu korur.",
-          "loses": "Yakalama ve tutsak etme eyleminin kendisini açıkça bildirmez.",
+          "fit": "none",
+          "preserves": "Kişinin yakalanıp özgürlüğünden yoksun bırakılmasını korur.",
+          "loses": null,
           "adds": null,
           "collision": null
         }
@@ -148,30 +150,30 @@
     {
       "neighbor_root_id": "root_000737",
       "neighbor_branch_id": "B013",
-      "relation_type": "synonym",
-      "boundary_match": "exact",
-      "focus_only": null,
-      "neighbor_only": null,
+      "relation_type": "near_synonym",
+      "boundary_match": "partial",
+      "focus_only": "Eylemin yanı sıra tutsak edilmiş kişi adını ve doğrudan buyruğu da kapsar.",
+      "neighbor_only": "Tutsak etme anlamını yalnızca belirli bir söz kalıbında tanıklar.",
       "expression_transliteration": "Ahazehû selemen, ey eserahû",
-      "gloss": "tutsak etme",
-      "shared_zone": "Her iki dalın çekirdeği de bir kişiyi yakalayıp tutsak durumuna getirmektir.",
-      "distinction": "Çekirdek sınırları aynıdır; odak daldaki ad ve emir biçimleri yalnızca aynı tutsak etme anlamının farklı dilsel gerçekleşmeleridir."
+      "gloss": "belirli kalıpta tutsak etme",
+      "shared_zone": "Her iki dalın eylem çekirdeği bir kişiyi yakalayıp tutsak etmektir.",
+      "distinction": "Komşu dal tek bir kalıba bağlıdır; odak dal ise tutsak etme eylemini, buyruğunu ve ortaya çıkan kişi adını daha geniş bir sözlüksel kümede taşır."
     },
     {
-      "neighbor_root_id": "root_000037",
+      "neighbor_root_id": "root_000030",
       "neighbor_branch_id": "B001",
       "relation_type": "near_neighbor",
       "boundary_match": "partial",
-      "focus_only": "Kişiyi ele geçirme ve tutsak durumuna getirme olayını bildirir.",
-      "neighbor_only": "Bağlama, baskı kurma ve kişiyi tutulmuş durumda sürdürme işlemlerini kapsar.",
-      "expression_transliteration": "el-Habs bi-akdin kâhir",
-      "gloss": "zorla bağlayıp hapsetme",
-      "shared_zone": "Her iki dal da kişinin özgürlüğünü zorla kısıtlar.",
-      "distinction": "Odak dalının çekirdeği yakalama ve tutsak etme geçişidir; komşu dal ise bağ veya baskı yoluyla hapsetme ve tutulmuş durumu sürdürmeye odaklanır."
+      "focus_only": "Yakalama ve tutsak duruma getirme olayını öne çıkarır.",
+      "neighbor_only": "Bağla sıkıca tutturma ve bağın kendisi gibi fiziksel bağlama ayrıntılarını içerir.",
+      "expression_transliteration": "eş-şeddü bi'l-isar ve'l-habs",
+      "gloss": "bağlayıp hapsetme",
+      "shared_zone": "Her ikisi de bir kişinin özgürlüğünün zorla kısıtlanması alanında buluşur.",
+      "distinction": "Odak dal için fiziksel bağ kullanılması zorunlu değildir; komşu dalın çekirdeğinde bağlama ve bağlı tutma işlemi bulunur."
     }
   ],
   "neighbor_coverage": {
     "assessment": "complete",
-    "note": "Bütün komşu kartları gözden geçirildi; tam eşleşen tutsak etme dalı ile en yakın hapsetme dalı yayımlandı."
+    "note": "Doğrudan tutsak etme ve bağlayarak hapsetme adayları sınırı en iyi gösterir; öteki adaylar yalnızca baskı, üstünlük veya hapsetme ortamını paylaşır."
   }
 }

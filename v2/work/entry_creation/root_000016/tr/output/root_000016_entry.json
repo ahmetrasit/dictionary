@@ -1,5 +1,5 @@
 {
-  "inputs_sha256": "64726535ccab409ddf912bc48ce5191ea902e77cc392667abcc0578a5822a29b",
+  "inputs_sha256": "1c340900bdbd67698ff833b075a1c6226560e5506f6ad68b478ab389062838a2",
   "artifact_format": "dictionary-v2-root-entry-draft-v1",
   "generated_by": "v2/scripts/accept_root_writer.py",
   "root_envelope_id": "root_000016",
@@ -7,89 +7,59 @@
   "branches": [
     {
       "branch_ref": "root_000016/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, bir şey için belirlenmiş süreyi ve bu sürenin ölüm, borç veya benzeri bir konuda vardığı son zamanı birlikte bildirir. Belirli bir zamana erteleme ve sonraya bırakılmış olanın hemen gerçekleşene karşıtlığı da aynı zaman sınırı çevresinde yer alır.",
+        "boundary_note": "Bu dal neden bildiren kalıpları veya onay cevabını değil, süreyi, son zamanı ve zamana bağlı ertelemeyi kapsar."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, yalın süre ve son zaman anlamını korurken ölüm, borç, belirli süre ve süre isteme gibi kalıba bağlı kullanımları ayrı yüzler olarak gösterir."
+      },
       "concept_map": {
-        "definition": "Bir şey için önceden belirlenen sürenin sonunu veya o sona kadar uzanan süreyi anlatır; ölüm ve borcun ödenmesi buna dahildir. Aynı çekirdekten, bir şeyi hemen yapmak yerine sonraya bırakma, belirli bir zamana erteleme ve ek süre isteyip verme anlamları doğar.",
+        "definition": "Bir şey için belirlenmiş sürenin kendisi veya bu sürenin vardığı son zamandır; ölüm, borç ve benzeri konularda zaman sınırını gösterir. Belirli bir zamana erteleme ile sonraya bırakılmış olanın hemen gerçekleşene karşıtlığı da bu çekirdeğe bağlıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir yaşam, borç veya başka bir iş için belirlenmiş sürenin sonu ve bu sona kadar süren zaman.",
+            "statement": "Bir şey için belirlenmiş süreyi ve bu sürenin vardığı son zamanı bildirir.",
             "claim_ids": [
-              "lu_001",
-              "lu_002",
-              "lu_003"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "extension",
-            "statement": "Bir şeyi hemen gerçekleştirmeyip belirli bir zamana bırakma; süre tanıma, ek süre isteme ve bu isteği karşılama.",
+            "role": "specialization",
+            "statement": "Ölüm zamanı, borcun ödeme zamanı ve benzeri belirli zaman sınırlarında kullanılır.",
             "claim_ids": [
-              "lu_004",
-              "lu_005",
-              "lu_006",
-              "lu_008",
-              "lu_009"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "specialization",
-            "statement": "Şimdiki yaşama karşıt olarak daha sonra gelecek yaşamı belirtme.",
+            "role": "extension",
+            "statement": "Bir şeyi belirli bir zamana erteleme ve ertelenmiş olanı hemen gerçekleşenden ayırma anlamlarını kapsar.",
             "claim_ids": [
-              "lu_007"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynakların ortak çekirdeği, bir şey için belirlenmiş sürenin sonu ile hemen gerçekleşmeyip sonraya bırakılmış olma karşıtlığıdır. Bu çerçeve yaşamın sonunu, borcun ödeme zamanını, ertelenmiş şeyi ve şimdiki yaşama karşıt sonraki yaşamı kapsar.",
+        "common_summary": "Kaynakların ortak çizgisi, belirlenmiş bir sürenin hem uzanımını hem de son sınırını içerir; ölüm ve borç bu çekirdeğin başlıca gerçekleşmeleridir. Erteleme ve gecikmiş olanın hemen olana karşıtlığı da belirlenen zamana dayanır.",
         "common_claim_ids": [
-          "lu_001",
-          "lu_004",
-          "lu_005",
-          "lu_006",
-          "lu_007"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_002"
-            ],
-            "kind": "example",
-            "summary": "Belirli ve adı konmuş bir süreyi anlatan kalıplaşmış kullanım ayrıca örneklenir."
-          },
-          {
-            "claim_ids": [
-              "lu_003"
-            ],
-            "kind": "example",
-            "summary": "İnsanın yaşamı için belirlenen sonun yaklaşması, ölüm zamanının yaklaşması biçiminde örneklenir."
-          },
-          {
-            "claim_ids": [
-              "lu_008"
-            ],
-            "kind": "derivation",
-            "summary": "Bir borç veya iş için süre belirleme ve onu o zamana bırakma eylemi ayrıca kaydedilir."
-          },
-          {
-            "claim_ids": [
-              "lu_009"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Birinden ek süre isteme ve karşı tarafın bu süreyi vermesi karşılıklı bir kullanım olarak tek başına kaydedilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "belirlenmiş sürenin sonu ve sonraya bırakılma",
-        "applicability": "Süre sonunu, o sona kadar tanınan zamanı ve bundan türeyen erteleme karşıtlığını birlikte anlatan en geniş karşılıktır.",
+        "text": "belirlenmiş süre, son zaman ve o zamana erteleme",
+        "applicability": "Süreyi, sürenin son sınırını ve belirli bir zamana bırakma ilişkisini birlikte anlatan üst düzey karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Belirlenmiş süreyi, onun sonunu ve hemenlik karşısındaki ertelemeyi birlikte korur.",
+          "preserves": "Belirlenmiş süreyi, son zamanı ve erteleme bağını birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -102,34 +72,35 @@
       },
       "contextual_glosses": [
         {
-          "text": "belirlenmiş süre veya son gün",
+          "text": "belirlenmiş süre",
           "usage_role": "contextual",
-          "applicability": "Yaşam, borç ve başka işler için belirlenen zaman aralığı ya da onun bitiş noktası söz konusu olduğunda kullanılır.",
+          "applicability": "Bir iş, yaşam veya yükümlülük için ayrılmış zaman aralığının öne çıktığı bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Belirlenmiş zaman aralığı ile onun bitiş noktasını korur.",
-            "loses": "Erteleme, ek süre verme ve sonraki yaşam karşıtlığını dışarıda bırakır.",
+            "preserves": "Belirli zaman aralığı anlamını korur.",
+            "loses": "Son zaman ile erteleme ve gecikmişlik yönlerini tek başına açıkça göstermez.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002"
           ]
         },
         {
-          "text": "ertelenmiş veya sonraki",
+          "text": "son ödeme zamanı",
           "usage_role": "contextual",
-          "applicability": "Hemen yapılmayıp ileri bir zamana bırakılan şeylerde ve şimdiki yaşama karşıt sonraki yaşam bağlamında kullanılır.",
+          "applicability": "Borcun veya başka bir yükümlülüğün yerine getirilmesi için belirlenen son zaman söz konusu olduğunda uygundur.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Hemenlik karşısında daha sonraki zamana bırakılma özelliğini korur.",
-            "loses": "Belirlenmiş sürenin kendisini ve bitiş noktasını açıkça göstermez.",
+            "preserves": "Belirlenmiş son zaman ve borç bağlamını korur.",
+            "loses": "Ölüm ve genel süre kullanımlarını, ayrıca ertelemenin bütün kapsamını dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F002",
-            "F003"
+            "F001",
+            "F002"
           ]
         }
       ],
@@ -137,12 +108,12 @@
         {
           "lexical_unit_id": "lu_001",
           "rendering_kind": "ordinary",
-          "target_gloss": "belirlenmiş sürenin sonu"
+          "target_gloss": "belirlenmiş süre veya son zaman"
         },
         {
           "lexical_unit_id": "lu_002",
           "rendering_kind": "ordinary",
-          "target_gloss": "belirlenmiş süre"
+          "target_gloss": "adı konmuş belirli süre"
         },
         {
           "lexical_unit_id": "lu_003",
@@ -152,7 +123,7 @@
         {
           "lexical_unit_id": "lu_004",
           "rendering_kind": "ordinary",
-          "target_gloss": "sonraya kaldı, hemen olmadı"
+          "target_gloss": "hemen olmayıp sonraya kaldı"
         },
         {
           "lexical_unit_id": "lu_005",
@@ -167,57 +138,46 @@
         {
           "lexical_unit_id": "lu_007",
           "rendering_kind": "ordinary",
-          "target_gloss": "sonraki yaşam"
+          "target_gloss": "öteki dünya"
         },
         {
           "lexical_unit_id": "lu_008",
           "rendering_kind": "ordinary",
-          "target_gloss": "ona belirli bir süre tanıdı"
+          "target_gloss": "ona belirli bir süre koydu"
         },
         {
           "lexical_unit_id": "lu_009",
           "rendering_kind": "ordinary",
-          "target_gloss": "ek süre istedi, o da süre verdi"
+          "target_gloss": "süre istedi, o da süre verdi"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "herhangi bir zaman",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Zamanla ilgili genel bir alanı korur.",
-            "loses": "Belirlenmiş sürenin sonu, borç veya yaşam için tayin edilmiş sınır ve erteleme karşıtlığı kaybolur.",
-            "adds": "Önceden belirlenmemiş sıradan zaman noktalarını da kapsar.",
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000050/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Önceden belirlenmiş süreyi, ölüm veya borç için son zamanı ve bundan türeyen ertelemeyi kapsar.",
-          "neighbor_only": "Bir şeyin genel son noktasını, yarışın bitişini ve sınırlı uzaklığı da kapsar.",
-          "gloss": "belirlenmiş sürenin sonu ile genel son nokta",
-          "shared_zone": "Her ikisi de bir şeyin ulaştığı zaman veya sınır sonunu anlatabilir.",
-          "distinction": "Odak dalında son, önceden belirlenmiş bir süre düzenine bağlıdır ve erteleme ile hemenlik karşıtlığına uzanır. Komşu dalın çekirdeği ise şeyin genel sonu ve vardığı sınırdır; böyle bir ön belirleme veya erteleme şart değildir."
+          "focus_only": "Belirlenmiş süre, erteleme ve hemen olana karşıtlık da bu dalın kapsamındadır.",
+          "neighbor_only": "Komşu dal bir şeyin genel son noktasını, yaşamın sonunu ve yarışın bitişini de kapsar.",
+          "gloss": "son sınır ve belirlenmiş zaman",
+          "shared_zone": "Her iki dal da bir sürecin veya sürenin vardığı son sınırı anlatabilir.",
+          "distinction": "Odak dal, zamanın önceden belirlenmiş süresi ve bu zamana erteleme üzerinde durur; komşu dal ise zamansal olmak zorunda olmayan genel bitiş ve son noktayı da içerir."
         },
         {
           "neighbor_ref": "root_001671/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Bir yaşamın veya borcun belirlenmiş sonunu ve ileri zamana bırakılmayı içerir.",
-          "neighbor_only": "Bilinen bir zamanı, saati veya bir iş için ayrılmış zaman noktasını süre sonu olmadan da anlatır.",
-          "gloss": "belirlenmiş son ile bilinen zaman",
-          "shared_zone": "İki dal da bir iş için önceden belirlenmiş bir zamanı gösterebilir.",
-          "distinction": "Odak dalı sürenin son sınırını ve ertelemeyi öne çıkarır. Komşu dal herhangi bir bilinen zaman noktasını gösterebilir; o noktanın bir sürenin sonu olması gerekmez."
+          "focus_only": "Bir şey için belirlenmiş sürenin tamamı, son sınırı ve erteleme ilişkisi yer alır.",
+          "neighbor_only": "Saat, an ve genel zaman parçası gibi belirli zaman bildirimleri de yer alır.",
+          "gloss": "belirli zaman",
+          "shared_zone": "İki dal da bir iş için saptanmış zamanı gösterebilir.",
+          "distinction": "Odak dal süre ile onun son sınırını ve ertelenmişliği bir arada taşır; komşu dalın çekirdeği ise sürenin yapısını gerektirmeyen bilinen bir zamandır."
         }
       ],
-      "neighbor_coverage_note": "Bütün komşu kartları değerlendirildi; yayımlanan iki karşılaştırma, süre sonunun genel son nokta ve bilinen zamanla karışmasını en doğrudan biçimde giderir.",
+      "neighbor_coverage_note": "Bütün adaylar sınır bakımından değerlendirildi; en yararlı karşılaştırmalar genel son sınır ve belirli zaman dallarıyla kuruldu, öteki adaylar ya daha uzak alanlarda kaldı ya da aynı kökün açıkça ayrı dallarıydı.",
       "branch_image_ar": "غاية الوقت والمدة المضروبة",
       "what_is_ar": "يدخل فيه الأجل للموت والدين والشيء، والتأجيل والمؤجل والأجيل، والآجل والآجلة خلاف العاجل والعاجلة",
+      "what_is_not_ar": "ليس سبب الفعل في قولهم من أجل كذا، ولا جواب التصديق أجل",
       "source_phrase_ar": "الأجل غاية الوقت في الموت ومحل الدين ونحوه (ayn;tahdhib)؛ الأجل مدة الشيء (sihah)؛ الأجل المدة المضروبة للشيء (mufradat)؛ الأجيل المرجأ أي المؤخر إلى وقت والآجل نقيض العاجل (maqayis)",
       "sources": [
         "AY",
@@ -226,92 +186,103 @@
         "MU",
         "MQ"
       ],
-      "source_note": {
-        "MU": "Belirli ve adı konmuş bir süreyi anlatan kalıplaşmış kullanım ayrıca örneklenir. İnsanın yaşamı için belirlenen sonun yaklaşması, ölüm zamanının yaklaşması biçiminde örneklenir. Bir borç veya iş için süre belirleme ve onu o zamana bırakma eylemi ayrıca kaydedilir.",
-        "SI": "Birinden ek süre isteme ve karşı tarafın bu süreyi vermesi karşılıklı bir kullanım olarak tek başına kaydedilir."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000016/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, bir eylemin hangi nedenle veya kimin yüzünden yapıldığını bildiren kalıpları açıkça bir araya getirir. Bazı kaynakların bunu kötülük işleme anlamına bağlayan köken açıklaması, güncel dal kimliğinin nedeni bildiren kalıp olmasını değiştirmez.",
+        "boundary_note": "Dal yalnızca neden bildiren kalıpları kapsar; belirlenmiş süreyi ve bizzat kötülük işleme eylemini kapsamaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Anlam, neden bildiren belirli edatlı veya eksiltili kalıplara bağlı tutulur; buradan yalın biçim için genel bir neden anlamı çıkarılmaz."
+      },
       "concept_map": {
-        "definition": "Bir eylemin hangi şey, olay veya kişi yüzünden yapıldığını bildirir. Temel neden bağlantısı, ilgeçli biçimde, ilgeç düşürülerek ya da kısalmış bir söyleyişle kurulabilir.",
+        "definition": "Bir eylemin yapılma nedenini veya eyleme yol açan kişi ya da durumu bildiren kalıp anlamıdır. Edatlı biçimlerin yanında edatın düşürüldüğü ve sesçe kısalmış kalıplar da aynı işlevi taşır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir eylemi doğuran nedeni bir şey veya kişiye bağlama.",
+            "statement": "Bir eylemin hangi nedenle ya da kimin yüzünden yapıldığını bildirir.",
             "claim_ids": [
-              "lu_010",
-              "lu_011"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "source_variant",
-            "statement": "Neden bildiren yapının başındaki ilgeci söylemeden aynı bağlantıyı kurma.",
+            "statement": "Neden ilişkisi edatlı, edatsız veya sesçe kısalmış birkaç kalıp biçiminde gerçekleşir.",
             "claim_ids": [
-              "lu_012"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "source_variant",
-            "statement": "Bir önermenin neden olduğunu bildiren yapıyı sesçe kısalmış bir kalıpla söyleme.",
+            "role": "associated_use",
+            "statement": "Bir köken açıklaması, neden bildiren kullanımı bir şeyi işleme veya ortaya çıkarma düşüncesiyle ilişkilendirir.",
             "claim_ids": [
-              "lu_013"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar, eylemin yapılma nedenini bir şeye veya kişiye bağlayan kullanımı ortaklaşa verir. Neden bildiren temel yapı kişi ekleriyle kullanılabilir ve başındaki ilgeç düşürülerek de söylenebilir. Bir açıklama, bu neden kalıbını bir şeyi işleyip ortaya getirme anlamındaki eylemle ilişkilendirir.",
+        "common_summary": "Kaynaklar, bu kalıpların yapılan işin nedenini veya o işe yol açan kişiyi bildirdiğinde birleşir. Biçim çeşitleri edatın korunması, düşmesi ya da sözün sesçe kısalmasıyla oluşur; köken açıklaması ise kullanımı bir şeyi işleme düşüncesine bağlar.",
         "common_claim_ids": [
-          "lu_010",
-          "lu_011",
-          "lu_012"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_013"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Bir önermeyi eylemin nedeni yapan yapının sesçe kısalmış özel söyleyişi tek başına kaydedilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "bir şey yüzünden",
-        "applicability": "Bir eylemin nedenini bir olay, şey veya kişiye bağlayan bütün biçimler için doğal çekirdek karşılıktır.",
+        "text": "nedeniyle veya yüzünden",
+        "applicability": "Bir eylemin sebebini ya da eyleme yol açan kişiyi bildiren bütün tanıklanmış kalıpların ortak karşılığıdır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Eylem ile onu doğuran şey veya kişi arasındaki neden bağını korur.",
+          "preserves": "Neden ile neden olan kişi veya durum ilişkisini korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
           "F001",
-          "F002",
-          "F003"
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
           "text": "bundan dolayı",
           "usage_role": "contextual",
-          "applicability": "Daha önce anılan bir olayın sonraki eylemin nedeni olarak gösterildiği akıcı metinlerde kullanılır.",
+          "applicability": "Önceden anılmış bir olayın sonraki eyleme neden olduğu cümlelerde doğal bir karşılıktır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Önceki olay ile sonraki eylem arasındaki neden bağını korur.",
-            "loses": "Kişiye yönelik biçimleri ve yapısal söyleyiş çeşitlerini göstermez.",
+            "preserves": "Önceki durum ile sonuç eylemi arasındaki neden bağını korur.",
+            "loses": "Bir kişi için kullanılan yüzünden veya senin için yönünü açıkça göstermez.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "senin yüzünden",
+          "usage_role": "contextual",
+          "applicability": "Eylemin nedeni olarak karşıdaki kişinin gösterildiği bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Kişiyi eylemin nedeni olarak gösterme işlevini korur.",
+            "loses": "Kişi dışındaki nedenleri ve öteki biçim çeşitlerini kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
           ]
         }
       ],
@@ -319,52 +290,51 @@
         {
           "lexical_unit_id": "lu_010",
           "rendering_kind": "ordinary",
-          "target_gloss": "şundan dolayı, şunun yüzünden"
+          "target_gloss": "bundan dolayı, bunun yüzünden"
         },
         {
           "lexical_unit_id": "lu_011",
           "rendering_kind": "ordinary",
-          "target_gloss": "senin yüzünden"
+          "target_gloss": "senin yüzünden veya senin için"
         },
         {
           "lexical_unit_id": "lu_012",
           "rendering_kind": "ordinary",
-          "target_gloss": "şu yüzden"
+          "target_gloss": "bundan dolayı"
         },
         {
           "lexical_unit_id": "lu_013",
           "rendering_kind": "ordinary",
-          "target_gloss": "şöyle olduğun için"
+          "target_gloss": "sen böyle olduğun için"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "sonuç olarak",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "displacement",
-            "preserves": "Cümleler arasında bağlantı kurma işlevinden bir iz taşır.",
-            "loses": "Eylemin nedenini kişi veya şeye bağlama anlamını kaybeder.",
-            "adds": "Neden yerine sonuç bildiren bir ilişki ekler.",
-            "collision": "Türkçede sonuç çıkarma bağlacıyla karışır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000255/B004",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Kişi veya şeyi yalnızca eylemin nedeni olarak gösterir.",
-          "neighbor_only": "Kişinin konumu, değeri veya gözdeki büyüklüğü nedeniyle yapılanı da anlatabilir.",
-          "gloss": "senin yüzünden ile senin konumundan ötürü",
-          "shared_zone": "İki dal da bir eylemin bir kişi dolayısıyla yapıldığını bildirebilir.",
-          "distinction": "Odak dalındaki bağlantı yalın bir neden bağlantısıdır. Komşu dalda kişinin değeri veya konumu da bağlantının parçası olabilir; bu ek değerlendirme odak dalının çekirdeğinde yoktur."
+          "focus_only": "Bir eylemin nedeni kişi dışındaki bir olay veya durum da olabilir.",
+          "neighbor_only": "Kişinin değeri ve gönüldeki yeri anlamı da bulunur.",
+          "gloss": "birinin yüzünden veya hatırı için",
+          "shared_zone": "Her iki dal da bir kişinin bir eyleme neden veya dayanak oluşunu bildirebilir.",
+          "distinction": "Odak dal genel neden kalıbıdır; komşu dal ise kişiyle ilgili neden kullanımını onun değer ve saygınlık anlamıyla birlikte taşır."
+        },
+        {
+          "neighbor_ref": "root_000016/B005",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Gerçekleşmiş bir eylemin nedenini dil bilgisel bir kalıpla bildirir.",
+          "neighbor_only": "Birine kötülük işleme, kötülüğü sürükleme veya körükleme eylemini bildirir.",
+          "gloss": "neden ilişkisi ve kötülük işleme",
+          "shared_zone": "Bir köken açıklaması neden kalıbını bir şey işleme düşüncesine bağlar.",
+          "distinction": "Odak dal artık neden bildiren kalıpsal bir işlev taşır; komşu dal ise doğrudan kötülük yapma veya ortaya çıkarma eylemidir."
         }
       ],
-      "neighbor_coverage_note": "Bütün komşu kartları değerlendirildi; neden bildiren kullanıma en yakın sınır karışıklığını kişinin konumunu da içerebilen bu komşu oluşturur.",
+      "neighbor_coverage_note": "Adayların tümü değerlendirildi; kişi kaynaklı neden dalı ile köken bakımından ilişkilendirilen kötülük işleme dalı sınırı en çok aydınlatan iki karşılaştırmadır.",
       "branch_image_ar": "سبب الفعل من أجل الشيء",
       "what_is_ar": "يدخل فيه من أجلك ومن إجلك ومن أجلاك وأجلك بلا من، وأجنك بمعنى أجل أنك، ومن أجل ذلك",
+      "what_is_not_ar": "ليس غاية الوقت، وليس نفس جناية الشر إلا من جهة الأصل الذي تذكره بعض المصادر",
       "source_phrase_ar": "فعلت ذاك من أجل كذا ومن جراء كذا أي من أجله (ayn)؛ فعلت ذاك من أجلك ومن إجلك ومن أجلاك أي من جراك (sihah)؛ من أجلاك وإجلاك ومن جلالك بمعنى واحد (tahdhib)؛ من أجل ذلك فعلت كذا محمول على أجلت الشيء أي جنيته (maqayis)",
       "sources": [
         "AY",
@@ -372,40 +342,55 @@
         "TA",
         "MQ"
       ],
-      "source_note": {
-        "AY": "Bir önermeyi eylemin nedeni yapan yapının sesçe kısalmış özel söyleyişi tek başına kaydedilir."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000016/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, söz konusu birimin evet benzeri bir cevap olarak önceki bildirimi doğruladığını açıkça gösterir. Bir kaynak bunu bitme ve son sınıra ulaşma düşüncesiyle açıklasa da dalın kullanım kimliği onay cevabıdır.",
+        "boundary_note": "Bu dal yalnızca cevap ve doğrulama işlevindedir; süre anlamını veya olumsuz bir sözü tersine çeviren özel cevabı kapsamaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "non_bare",
+        "note": "Tanım, birimin bağımsız kök anlamına değil, cevap sözü olarak tanıklanmış doğrulama işlevine bağlıdır."
+      },
       "concept_map": {
-        "definition": "Söylenmiş bir haberin doğru olduğunu onaylayan olumlu cevaptır; genel bir olumlu cevaba benzer, fakat özellikle haberi doğrulamada elverişlidir.",
+        "definition": "Önceden söylenen olumlu bir bildirimi doğru kabul edip onaylayan cevap sözüdür. Kaynaklardan biri bu onay işlevini sözün tamamlanıp sonuca ulaşması düşüncesiyle açıklar.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Karşıdakinin bildirdiği şeyin doğru olduğunu olumlu bir cevapla doğrulama.",
+            "statement": "Önceden söylenen bir bildirimi olumlu cevapla doğrular.",
             "claim_ids": [
-              "lu_014"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "associated_use",
+            "statement": "Onay işlevi, bir açıklamada sözün tamamlanması ve sonuca ulaşması düşüncesiyle ilişkilendirilir.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar bu sözü, olumlu cevap verip söylenen haberi doğrulayan bir karşılık olarak açıklar. Açıklamalar, genel olumlu cevapla eşdeğerliğini ve bildirilen şeyi onaylamaya uygunluğunu birlikte destekler. Bir açıklama, bu cevabı sözün sona erip sınırına ulaşması düşüncesine bağlar.",
+        "common_summary": "Ortak kullanım, önceki sözü doğrulayan olumlu bir cevaptır. Bu cevap bir yandan evet benzeri işlevle anlatılırken bir yandan sözün tamamlanıp sonuca vardığı düşüncesiyle açıklanır.",
         "common_claim_ids": [
-          "lu_014"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "evet, öyledir",
-        "applicability": "Bir haber veya iddianın doğru olduğunu açıkça onaylayan cevaplarda kullanılır.",
+        "text": "evet, doğrudur",
+        "applicability": "Olumlu bir bildirimi cevap yoluyla doğrulayan kullanımın doğal ve kısa karşılığıdır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Olumlu cevap verme ile bildirilen şeyi doğru saymayı birlikte korur.",
+          "preserves": "Olumlu cevap ve önceki bildirimi doğrulama işlevlerini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -418,10 +403,10 @@
         {
           "text": "evet",
           "usage_role": "general",
-          "applicability": "Bağlam, cevabın önceki haberi doğruladığını zaten açıkça gösterdiğinde doğal ve kısa karşılıktır.",
+          "applicability": "Önceki olumlu sözün doğru olduğunu kabul eden kısa cevaplarda kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Bağlam içinde olumlu cevap ve doğrulama işlevini eksiksiz korur.",
+            "preserves": "Kısa olumlu cevap ve onay işlevini korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -435,37 +420,36 @@
         {
           "lexical_unit_id": "lu_014",
           "rendering_kind": "ordinary",
-          "target_gloss": "evet, öyledir"
+          "target_gloss": "evet, doğrudur"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "belki",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "displacement",
-            "preserves": "Kısa cevap veya tepki sözünü andırır.",
-            "loses": "Haberi doğru sayan olumlu onaylama işlevini kaybeder.",
-            "adds": "Onay yerine ihtimal ve tereddüt bildirir.",
-            "collision": "Olumlu doğrulama ile kararsız ihtimal ifadesi karışır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_001525/B004",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Özellikle söylenmiş bir haberi doğru sayan cevap olarak belirginleşir.",
-          "neighbor_only": "Olumlu cevap yanında kabul ve geleceğe yönelik söz verme işlevlerini de kapsar.",
-          "gloss": "haberi doğrulayan evet ile genel evet",
-          "shared_zone": "İki dal da olumlu cevap vererek söyleneni doğrulayabilir.",
-          "distinction": "Odak dalı haberin doğru olduğunu onaylayan cevaba yoğunlaşır. Komşu dal daha geniştir; olumlu karşılık vermeyi ve geleceğe yönelik söz vermeyi de kapsadığından her bağlamda aynı sınırı taşımaz."
+          "focus_only": "Özellikle önceki bildirimi doğrulayan cevap işlevi öne çıkar.",
+          "neighbor_only": "Soruya olumlu cevap, söz verme ve daha geniş olumlu karşılık işlevleri de bulunur.",
+          "gloss": "olumlu cevap",
+          "shared_zone": "Her iki dal da evet anlamında olumlu cevap ve doğrulama bildirebilir.",
+          "distinction": "Odak dal bildirilmiş bir sözün doğrulanmasına sıkı biçimde bağlıdır; komşu dalın cevap alanı daha geniştir ve söz verme işlevine de uzanır."
+        },
+        {
+          "neighbor_ref": "root_000153/B006",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Olumlu biçimde kurulmuş önceki bildirimi doğrudan onaylar.",
+          "neighbor_only": "Olumsuz kurulmuş önceki sözü tersine çevirip olumlu içeriği kabul ettirir.",
+          "gloss": "doğrulama ve olumsuzu bozma cevapları",
+          "shared_zone": "İki dal da konuşmada kısa bir cevapla olumlu kabul bildirir.",
+          "distinction": "Odak dal normal bir doğrulamadır; komşu dal ise önceki olumsuzluğu reddederek karşıt olumlu yargıyı kurar."
         }
       ],
-      "neighbor_coverage_note": "Bütün komşu kartları değerlendirildi; genel olumlu cevap dalı, doğrulama işleviyle en güçlü örtüşmeyi ve en olası karışıklığı taşır.",
+      "neighbor_coverage_note": "Bütün aday cevap dalları değerlendirildi; genel olumlu cevap ile olumsuz sözü bozan cevap, bu dalın doğrulama sınırını en açık gösteren karşılaştırmalardır.",
       "branch_image_ar": "جواب التصديق أجل",
       "what_is_ar": "يدخل فيه أجل في الجواب والتصديق إذا قيل أنت سوف تذهب ونحوه",
+      "what_is_not_ar": "ليس نعم في موضع الاستفهام عند تفضيل الصحاح، وليس الأجل مدة الشيء هنا",
       "source_phrase_ar": "قولهم أجل إنما هو جواب مثل نعم (sihah)؛ قولهم أجل في الجواب هو من هذا الباب كأنه يريد انتهى وبلغ الغاية (maqayis)",
       "sources": [
         "SI",
@@ -475,41 +459,40 @@
     },
     {
       "branch_ref": "root_000016/B004",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, ad biçimini yaban sığırlarından oluşan sürü olarak ve ilgili eylemi hayvanların sürü ya da sürüler haline gelmesi olarak tutarlı biçimde tanımlar. Boyun ağrısı anlamı aynı ses yapısına rağmen ayrı bir daldır.",
+        "boundary_note": "Çekirdek yaban sığırı sürüsüdür; genel hayvan topluluğu ancak sürüleşme eyleminin kapsamı içinde yer alır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, adın yaban sığırı sürüsü anlamıyla hayvanların sürüleşmesini bildiren kalıba bağlı eylemi ayrı yüzler olarak korur."
+      },
       "concept_map": {
-        "definition": "Yaban sığırlarından oluşan bir sürüyü ve bunun çoğulunu adlandırır. Hayvanların bir veya birden çok sürü durumuna gelmesi de bu adlandırmadan türeyen eylemdir.",
+        "definition": "Yaban sığırlarından oluşan bir sürüdür. İlgili eylem, yaban sığırlarının veya küçükbaş hayvanların bir sürü ya da ayrı sürüler haline gelmesini bildirir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Yaban sığırlarından oluşan bir hayvan sürüsü.",
+            "statement": "Yaban sığırlarından oluşan bir sürüyü adlandırır.",
             "claim_ids": [
-              "lu_015"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "extension",
-            "statement": "Birden çok yaban sığırı sürüsünü çoğul bir adla gösterme.",
+            "statement": "Hayvanların bir sürü veya ayrı sürüler haline gelmesini bildiren eylem kullanımını içerir.",
             "claim_ids": [
-              "lu_016"
-            ]
-          },
-          {
-            "facet_id": "F003",
-            "role": "extension",
-            "statement": "Yaban sığırlarının veya küçükbaş hayvanların sürü ya da sürüler durumuna gelmesi.",
-            "claim_ids": [
-              "lu_017"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar temel adı yaban sığırı sürüsü olarak ortaklaşa açıklar ve çoğul biçimini aynı sürü adıyla ilişkilendirir. Hayvanların sürü durumuna gelmesini bildiren eylem de bu adlandırmaya bağlı olarak verilir.",
+        "common_summary": "Kaynaklar ad biçimini yaban sığırı sürüsü, çoğulunu bu tür sürüler olarak verir. Eylem kullanımı da hayvanların topluca sürüleşmesini veya ayrı sürüler oluşturmasını anlatır.",
         "common_claim_ids": [
-          "lu_015",
-          "lu_016",
-          "lu_017"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
@@ -517,29 +500,28 @@
       },
       "concept_gloss": {
         "text": "yaban sığırı sürüsü ve sürüleşme",
-        "applicability": "Hem sürü adını hem de hayvanların sürü durumuna gelişini birlikte temsil eden tam karşılıktır.",
+        "applicability": "Hem sürü adını hem de hayvanların sürü haline gelmesini kapsayan üst düzey karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Yaban sığırı sürüsünü, çoğulluğunu ve sürü durumuna gelme eylemini korur.",
+          "preserves": "Yaban sığırı sürüsünü ve sürü haline gelme eylemini birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
           "F001",
-          "F002",
-          "F003"
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
           "text": "yaban sığırı sürüsü",
           "usage_role": "contextual",
-          "applicability": "Tek bir hayvan topluluğunun adı olarak kullanıldığı bağlamlarda en doğal karşılıktır.",
+          "applicability": "Tek bir hayvan topluluğunu adlandıran ad biçimi için kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Yaban sığırlarından oluşan sürü çekirdeğini tam olarak korur.",
-            "loses": "Çoğul adı ve hayvanların sürü durumuna gelmesi eylemini dışarıda bırakır.",
+            "preserves": "Sürünün hayvan türünü ve topluluk niteliğini korur.",
+            "loses": "Hayvanların sürü haline gelmesi eylemini dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
@@ -548,18 +530,18 @@
           ]
         },
         {
-          "text": "sürü durumuna gelmek",
+          "text": "sürü haline geldi",
           "usage_role": "contextual",
-          "applicability": "Hayvanların ayrı bireylerden bir veya birden çok sürü oluşturmasına odaklanan eylem bağlamında kullanılır.",
+          "applicability": "Hayvanların topluca bir sürü oluşturduğu eylem bağlamlarında kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Hayvanların sürü oluşturması yönündeki değişimi korur.",
-            "loses": "Yaban sığırı sürüsünün sözlük birimi olarak adlandırılmasını göstermez.",
+            "preserves": "Sürüleşme değişimini korur.",
+            "loses": "Ad biçiminin özellikle yaban sığırı sürüsünü göstermesini taşımaz.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F003"
+            "F002"
           ]
         }
       ],
@@ -577,37 +559,36 @@
         {
           "lexical_unit_id": "lu_017",
           "rendering_kind": "ordinary",
-          "target_gloss": "sürü veya sürüler durumuna geldi"
+          "target_gloss": "sürü veya sürüler haline geldi"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "hayvan sürüsü",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Hayvanlardan oluşan topluluk çekirdeğini korur.",
-            "loses": "Yaban sığırına özgü sürü adı ve ona bağlı sürüleşme kullanımı silikleşir.",
-            "adds": "Her tür hayvan sürüsünü kapsayacak kadar genişler.",
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000891/B006",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Yaban sığırına özgü ad ile hayvanların sürüleşmesini bildiren eylem birlikte bulunur.",
+          "neighbor_only": "Sığır sürüsünün kendine özgü başka bir adı ve onun çoğul biçimleri bulunur.",
+          "gloss": "sığır sürüsü",
+          "shared_zone": "Her iki dal da birden çok sığırdan oluşan sürüyü adlandırır.",
+          "distinction": "Odak dal yaban sığırı sınırını ve sürü haline gelme eylemini taşır; komşu dal ise sığır sürüsünün ayrı bir adıdır."
+        },
         {
           "neighbor_ref": "root_000532/B014",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Yaban sığırlarından oluşan sürü adını merkezde tutar.",
-          "neighbor_only": "Kaynak yorumuna göre sığır veya deve topluluğuna da genişleyebilir.",
-          "gloss": "yaban sığırı sürüsü",
-          "shared_zone": "Her iki dalın merkezinde yaban sığırlarından oluşan sürü bulunur.",
-          "distinction": "Sürü adı düzeyinde güçlü bir örtüşme vardır. Gerçek sınır farkı, odak dalının yaban sığırı sürüsünde kalması, komşu dalın ise bazı açıklamalarda sığır veya deve topluluğuna da genişleyebilmesidir."
+          "focus_only": "Yaban sığırı sürüsü ve sürüleşme eylemiyle sınırlıdır.",
+          "neighbor_only": "Sığır yanında deve topluluğunu da kapsayabilen daha geniş bir hayvan sürüsü adıdır.",
+          "gloss": "hayvan sürüsü",
+          "shared_zone": "İki dal da yaban sığırı topluluğunu gösterebilir.",
+          "distinction": "Odak dalın tür sınırı daha dardır ve eylem uzantısı vardır; komşu dal tür bakımından genişleyebilir ancak aynı sürüleşme eylemini gerektirmez."
         }
       ],
-      "neighbor_coverage_note": "Bütün komşu kartları değerlendirildi; yayımlanan karşılaştırma yaban sığırı sürüsü çekirdeğini doğrudan paylaşan ve sınırı en çok zorlayan komşudur.",
+      "neighbor_coverage_note": "Bütün sürü adayları değerlendirildi; sığır sürüsünün özel adı ile türce daha geniş hayvan sürüsü, odak dalın tür ve eylem sınırını en iyi açıklar.",
       "branch_image_ar": "الإِجْل قطيع الوحش",
       "what_is_ar": "يدخل فيه الإِجْل للقطيع من بقر الوحش وجمعه الآجال، وتأجل الصوار أو البهام إذا صار قطيعا",
+      "what_is_not_ar": "ليس الإِجْل وجع العنق، ولا الإيل الذي أبدلت ياؤه جيما",
       "source_phrase_ar": "الإجل القطيع من بقر الوحش والجميع الآجال وتأجل الصوار صار قطيعا قطيعا (ayn)؛ الإجل القطيع من بقر الوحش والجمع الآجال وتأجلت البهام أي صارت آجالا (sihah)؛ الأجل القطيع من بقر الوحش وجمعه الآجال (tahdhib)؛ الإجل القطيع من بقر الوحش والجمع آجال (maqayis)",
       "sources": [
         "AY",
@@ -619,43 +600,51 @@
     },
     {
       "branch_ref": "root_000016/B005",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, birilerine kötülük işleme, kötülüğü onların üzerine çekme ve onu harekete geçirme eylemlerini aynı yapıda toplar. Neden bildiren kalıpla önerilen köken ilişkisi, bu dalın doğrudan zararlı eylem kimliğini ortadan kaldırmaz.",
+        "boundary_note": "Dal bir neden belirtmekten çok kötülüğü yapma, sürükleme veya körükleme eylemini anlatır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Anlam, kötülük nesnesi ve zarar gören katılımcıyla kurulan tanıklanmış yapıya bağlıdır; yalın biçime sınırsız bir yapma anlamı verilmez."
+      },
       "concept_map": {
-        "definition": "Başkalarına yönelik bir kötülüğü işleme, onların başına getirme veya kötülüğü kışkırtıp harekete geçirme eylemidir. Aynı anlam eylemin adı olarak da kullanılır.",
+        "definition": "Birilerine yönelik kötülüğü işlemek, onların üzerine çekmek veya harekete geçirip körüklemektir. Eylemin sonucu, zarar verici bir olayın hedef kişilere yöneltilmesidir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Başkalarına kötülük işleme, kötülüğü onların üzerine çekme veya onu kışkırtma.",
+            "statement": "Birilerine yönelik kötülüğü işleyip onların üzerine yöneltir.",
             "claim_ids": [
-              "lu_018"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "extension",
-            "statement": "Kötülük işleme ve başkasının üzerine çekme eylemini bir olay adı olarak belirtme.",
+            "statement": "Kötülüğü çekip getirme, harekete geçirme ve körükleme biçimlerini kapsar.",
             "claim_ids": [
-              "lu_019"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar, başkalarına kötülük işleme veya kötülüğü onların üzerine çekip harekete geçirme anlamında birleşir. Eylemin kendisi ile bu eylemi adlandıran ad biçimi aynı anlam çekirdeğine bağlıdır.",
+        "common_summary": "Kaynakların ortak çekirdeği, kötülüğü hedef kişilere yönelik olarak işlemek veya onların üzerine çekmektir. Bazı anlatımlar bu eylemin kötülüğü harekete geçirme ve körükleme yönünü de görünür kılar.",
         "common_claim_ids": [
-          "lu_018",
-          "lu_019"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "başkasına kötülük getirip kışkırtma",
-        "applicability": "Kötülüğü hem işleme veya getirme hem de harekete geçirme yönlerini birlikte taşıyan geniş karşılıktır.",
+        "text": "kötülük işleyip hedefe yöneltme",
+        "applicability": "Kötülüğün yapılması, hedef kişilere çekilmesi ve harekete geçirilmesi aşamalarını birlikte kapsar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Kötülüğü başkasına yöneltme, getirme ve kışkırtma işlemlerini birlikte korur.",
+          "preserves": "Kötülüğü işleme, yöneltme ve ortaya çıkarma bileşenlerini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -667,18 +656,34 @@
       },
       "contextual_glosses": [
         {
-          "text": "başına kötülük getirmek",
+          "text": "başlarına kötülük getirdi",
           "usage_role": "contextual",
-          "applicability": "Eylemin bir başkasına zarar verici sonuç doğurmasına odaklanan anlatımlarda kullanılır.",
+          "applicability": "Bir eyleyenin başkalarını zararlı bir olayla karşı karşıya bıraktığı anlatımlarda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Kötülüğün başkasına yöneltilmesini ve onun başına getirilmesini korur.",
-            "loses": "Kötülüğü araştırıp ortaya çıkarma veya kışkırtma aşamasını açıkça göstermez.",
+            "preserves": "Kötülüğün hedef kişilere yöneltilmesini ve ortaya çıkmasını korur.",
+            "loses": "Kötülüğü özellikle körükleme biçimini açıkça göstermez.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002"
+          ]
+        },
+        {
+          "text": "kötülüğü körükledi",
+          "usage_role": "contextual",
+          "applicability": "Var olan veya beliren bir kötülüğün etkin biçimde harekete geçirildiği bağlamlarda uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Kötülüğü harekete geçirme ve büyütme yönünü korur.",
+            "loses": "Kötülüğü doğrudan işleme ve hedefe çekme biçimlerini tek başına kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
           ]
         }
       ],
@@ -686,52 +691,41 @@
         {
           "lexical_unit_id": "lu_018",
           "rendering_kind": "ordinary",
-          "target_gloss": "onlara kötülük işledi, kötülüğü kışkırttı"
+          "target_gloss": "başlarına kötülük getirip körükledi"
         },
         {
           "lexical_unit_id": "lu_019",
           "rendering_kind": "ordinary",
-          "target_gloss": "başkasına kötülük getirme"
+          "target_gloss": "kötülük işleyip yöneltme"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "günah",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "displacement",
-            "preserves": "Kötü veya kınanabilir davranış alanından bir iz taşır.",
-            "loses": "Kötülüğü başkasının üzerine çekme, işleme ve kışkırtma eylemini kaybeder.",
-            "adds": "Ahlaki veya dini suç adı gibi bağımsız bir değerlendirme ekler.",
-            "collision": "Zarar verici eylem ile genel günah kavramı karışır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000252/B011",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Kötülüğü çekip getirme yanında onu araştırıp ortaya çıkarma ve kışkırtma yönlerini de taşır.",
-          "neighbor_only": "Bir kişiye karşı suç veya haksızlık işleme çekirdeğinde kalabilir.",
-          "gloss": "kötülük getirme ile suç işleme",
-          "shared_zone": "İki dal da bir başkasına yönelik kötülük veya haksızlık işlemeyi anlatır.",
-          "distinction": "Odak dalında kötülüğün başkasının üzerine çekilmesi ve harekete geçirilmesi belirgindir. Komşu dal doğrudan kişiye karşı suç işleme üzerinde durur; kötülüğü kışkırtma aşaması gerekli değildir."
+          "focus_only": "Kötülüğü harekete geçirme, çekip getirme ve körükleme yönleri de bulunur.",
+          "neighbor_only": "Bir insana karşı genel olarak suç veya haksızlık işleme çekirdeğiyle sınırlıdır.",
+          "gloss": "birine kötülük etme",
+          "shared_zone": "Her iki dal da bir insana yönelik zararlı veya suç niteliğinde eylemi anlatır.",
+          "distinction": "Odak dal kötülüğün hedefe çekilmesi ve körüklenmesi sürecini de içerir; komşu dal genel zarar verici suç eylemini bildirir."
         },
         {
           "neighbor_ref": "root_000708/B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Kötülüğü belirli kişilerin üzerine getirme veya onlara karşı işleme ilişkisini kurar.",
-          "neighbor_only": "Savaşın ya da kötülüğün alevlenip yayılmasını, belirli bir mağdur ilişkisi olmadan da anlatır.",
-          "gloss": "kötülüğü kışkırtma ile savaşı alevlendirme",
-          "shared_zone": "Her iki dal kötülüğün harekete geçirilmesi ve büyütülmesi alanında buluşur.",
-          "distinction": "Odak dalı kötülüğün başkalarına yöneltilmesini içerir. Komşu dal savaşın veya kötülüğün tutuşup yükselmesine odaklanır ve belirli kişilere karşı işlenmiş bir kötülük şartı taşımaz."
+          "focus_only": "Kötülük belirli kişilerin üzerine yöneltilir veya onlara karşı işlenir.",
+          "neighbor_only": "Savaşın, çatışmanın veya ateş benzeri bir olayın alevlendirilmesi öne çıkar.",
+          "gloss": "kötülüğü ve çatışmayı körükleme",
+          "shared_zone": "İki dal da zararlı bir durumu harekete geçirip büyütme anlamında kesişir.",
+          "distinction": "Odak dal hedef kişilere kötülük işlenmesini de çekirdeğe alır; komşu dalın çekirdeği savaş veya çatışmanın alevlendirilmesidir."
         }
       ],
-      "neighbor_coverage_note": "Bütün komşu kartları değerlendirildi; seçilen iki karşılaştırma, kişiye karşı işleme ile kötülüğü harekete geçirme yönlerini ayrı ayrı sınırlar.",
+      "neighbor_coverage_note": "Tüm zarar ve kışkırtma adayları değerlendirildi; genel zarar verici eylem ile çatışmayı alevlendirme, bu dalın hedef ve süreç sınırını en iyi gösterir.",
       "branch_image_ar": "جناية الشر وجره",
       "what_is_ar": "يدخل فيه أجل عليهم شرا وأجلت عليه إذا جنى أو جر جريرة أو هيج الشر عليه",
+      "what_is_not_ar": "ليس صيغة من أجل كذا إلا من جهة الأصل المذكور في بعض المصادر",
       "source_phrase_ar": "أجل عليهم شرا أجلا أي جناه وبحثه (ayn)؛ أجل عليهم شرا يأجل ويأجل أجلا أي جناه وهيجه (sihah)؛ أجلت عليهم آجل أجلا أي جررت جريرة (tahdhib)؛ الأجل مصدر أجل عليهم شرا أي جناه وبحثه (maqayis)",
       "sources": [
         "AY",
@@ -743,67 +737,59 @@
     },
     {
       "branch_ref": "root_000016/B006",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, ad biçiminde boyun ağrısını; ilgili eylemlerde boyun üzerine yatma sonucu bu ağrıyı çekmeyi ve ağrıyı tedavi etmeyi açıkça ayırır. Sürü bildiren eş sesli biçim bu dalın dışında kalır.",
+        "boundary_note": "Dal genel hastalığı değil, boyunda yerleşen ağrıyı ve ona bağlı yatış ile tedavi kullanımlarını kapsar."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, boyun ağrısı adını çekirdek tutar; boyun üzerine yatma ve bu ağrıyı tedavi etme anlamlarını yalnız tanıklanmış yapılara bağlı yüzler olarak ekler."
+      },
       "concept_map": {
-        "definition": "Boyunda duyulan ağrıyı anlatır. Boynun üzerine yatınca bu ağrının oluşması ve ağrının giderilmesi için uygulanan bakım, bu çekirdeğe bağlı özel kullanımlardır.",
+        "definition": "Boyunda duyulan ağrıdır. Boyun üzerine yatıp ardından ağrı çekme ve bu özel ağrıyı tedavi etme eylemleri de bu ad çevresinde kurulur.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Boyunda ortaya çıkan ağrı.",
+            "statement": "Boyunda yerleşen bir ağrıyı adlandırır.",
             "claim_ids": [
-              "lu_020"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "example",
-            "statement": "Boynunun üzerine yatan kişinin boynunda ağrı oluşması.",
+            "statement": "Boyun üzerine yatmanın ardından boynun ağrıması bu dalın tanıklanmış oluş biçimidir.",
             "claim_ids": [
-              "lu_021"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "associated_use",
-            "statement": "Boyun ağrısı çeken kişiye bu ağrıyı giderecek bakım veya sağaltma uygulama.",
+            "statement": "Aynı yapı bu özel boyun ağrısını tedavi etme eylemini de bildirir.",
             "claim_ids": [
-              "lu_022",
-              "lu_023"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynakların ortak çekirdeği boyunda ortaya çıkan ağrıdır. Ağrıyı bildiren söyleyiş ile bu ağrının giderilmesini isteme ve ona bakım uygulama kullanımları aynı anlam çevresinde yer alır.",
+        "common_summary": "Kaynaklar boyunda yerleşen ağrı konusunda birleşir. Bazı kaynaklar bu ağrının tedavisini aynı söz ailesiyle anlatır; tek kaynakta tanıklanan özel oluş biçimi ise kişinin boynu üzerine yatıp ardından ağrı çekmesidir.",
         "common_claim_ids": [
-          "lu_020",
-          "lu_023"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_021"
-            ],
-            "kind": "example",
-            "summary": "Boynunun üzerine uyuyan kişinin boynunun ağrıması, ağrının oluşmasına ilişkin özel bir örnek olarak verilir."
-          },
-          {
-            "claim_ids": [
-              "lu_022"
-            ],
-            "kind": "derivation",
-            "summary": "Boyun ağrısını gidermek için uygulanan bakımın adı ayrıca türemiş bir kullanım olarak kaydedilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "boyun ağrısı ve bunun giderilmesi",
-        "applicability": "Ağrının kendisiyle ona bağlı ağrıma ve bakım uygulama kullanımlarını birlikte temsil eder.",
+        "text": "boyun ağrısı, buna yol açan yatış ve tedavisi",
+        "applicability": "Ağrının kendisini, tanıklanmış oluş biçimini ve bu ağrıya yönelik tedaviyi birlikte gösterir.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Boyundaki ağrıyı, ağrının oluşmasını ve onu giderme işlemini birlikte korur.",
+          "preserves": "Boyundaki ağrıyı, boyun üzerine yatma sonucunu ve tedavi eylemini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -817,12 +803,12 @@
       "contextual_glosses": [
         {
           "text": "boyun ağrısı",
-          "usage_role": "general",
-          "applicability": "Rahatsızlığın kendisinin adlandırıldığı bağlamlarda açık ve doğal karşılıktır.",
+          "usage_role": "contextual",
+          "applicability": "Ad biçiminin doğrudan rahatsızlığı gösterdiği bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Ağrının boyunda bulunması biçimindeki temel çekirdeği korur.",
-            "loses": "Boynun üzerine yatma örneğini ve ağrıyı giderme işlemini dışarıda bırakır.",
+            "preserves": "Ağrının boyunda yerleşmesini korur.",
+            "loses": "Boyun üzerine yatma ile tedavi eylemlerini dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
@@ -831,13 +817,13 @@
           ]
         },
         {
-          "text": "boyun ağrısını gidermek",
+          "text": "boynunu tedavi etti",
           "usage_role": "contextual",
-          "applicability": "Ağrı çeken kişiye bakım uygulanması veya ağrının giderilmesinin istenmesi bağlamında kullanılır.",
+          "applicability": "Söz konusu özel boyun ağrısının giderilmeye çalışıldığı eylem bağlamlarında kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Boyundaki ağrıya yönelik giderme ve bakım işlemini korur.",
-            "loses": "Rahatsızlığın yalın adı ile boynun üzerine yatınca oluşma örneğini kapsamaz.",
+            "preserves": "Boyun ağrısına yönelik tedavi eylemini korur.",
+            "loses": "Ağrı adını ve ağrıya yol açan yatış biçimini tek başına kapsamaz.",
             "adds": null,
             "collision": null
           },
@@ -855,47 +841,46 @@
         {
           "lexical_unit_id": "lu_021",
           "rendering_kind": "ordinary",
-          "target_gloss": "boynunun üzerine yatıp boynunu ağrıttı"
+          "target_gloss": "boynu üzerine yatıp ağrı çekti"
         },
         {
           "lexical_unit_id": "lu_022",
           "rendering_kind": "ordinary",
-          "target_gloss": "boyun ağrısını giderici bakım"
+          "target_gloss": "boyun ağrısını tedavi etme"
         },
         {
           "lexical_unit_id": "lu_023",
           "rendering_kind": "ordinary",
-          "target_gloss": "boynum ağrıyor, ağrımı giderin"
+          "target_gloss": "boynum ağrıyor, beni tedavi edin"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "hastalık",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Bedensel rahatsızlık alanını korur.",
-            "loses": "Ağrının özellikle boyunda olması ve bu ağrıya yönelik bakım kullanımı kaybolur.",
-            "adds": "Her türlü hastalık ve rahatsızlığı kapsar.",
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_000814/B003",
+          "neighbor_ref": "root_000046/B001",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Ağrı boyunla sınırlıdır ve özel yatış ile tedavi türevleri vardır.",
+          "neighbor_only": "Ağrı ve acı duyma bedenin herhangi bir bölümünde gerçekleşebilir.",
+          "gloss": "ağrı ve boyun ağrısı",
+          "shared_zone": "Boyunda ağrı duyulduğunda iki dal aynı rahatsızlığı gösterebilir.",
+          "distinction": "Odak dal yer bakımından boyunla ve ona bağlı kalıplarla sınırlıdır; komşu dal genel ağrı ve acı çekme alanıdır."
+        },
+        {
+          "neighbor_ref": "root_001687/B004",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Ağrıyı özellikle boyunla sınırlar ve boynun üzerine yatma ile ona uygulanan bakımı içerir.",
-          "neighbor_only": "Hastalığı, genel ağrı yakınmasını ve herhangi bir beden bölümünün ağrımasını kapsayabilir.",
-          "gloss": "boyun ağrısı ile genel ağrı yakınması",
-          "shared_zone": "İki dal da kişinin bir beden bölümünde ağrı duymasını ve bundan yakınmasını anlatabilir.",
-          "distinction": "Odak dalı yer bakımından boyuna özgüdür ve bu ağrının giderilmesine uzanır. Komşu dal daha genel bir hastalık ve ağrı yakınması alanına sahiptir; boyun veya belirli bir bakım şart değildir."
+          "focus_only": "Boynun genel bölgesindeki ağrı ve onun tedavisi söz konusudur.",
+          "neighbor_only": "Boyun yanı, üst kol veya omuz başı çevresinde adlandırılmış özel bir hastalık bölgesi söz konusudur.",
+          "gloss": "boyun ve omuz çevresi ağrıları",
+          "shared_zone": "Her iki dal da boyun ile omuz çevresinde hissedilen ağrıyı anlatabilir.",
+          "distinction": "Odak dal doğrudan boyun ağrısıdır; komşu dal belirli anatomik noktalara yayılan ayrı bir rahatsızlık adıdır."
         }
       ],
-      "neighbor_coverage_note": "Bütün komşu kartları değerlendirildi; genel ağrı ve hastalık dalı, boyuna özgü rahatsızlığın sınırını en açık biçimde gösteren komşudur.",
+      "neighbor_coverage_note": "Bütün hastalık ve bölgesel ağrı adayları değerlendirildi; genel ağrı dalı ile yakın anatomik bölgedeki özel rahatsızlık sınırı en açıklayıcı iki karşılaştırmadır.",
       "branch_image_ar": "الإِجْل وجع العنق",
       "what_is_ar": "يدخل فيه الإِجْل وجع العنق، وأجل الرجل إذا اشتكى عنقه، والتأجيل المداواة منه",
+      "what_is_not_ar": "ليس الإِجْل القطيع، ولا الإِجْل لغة في الإيل",
       "source_phrase_ar": "الأجل وجع في العنق (ayn)؛ الإجل وجع في العنق وقد أجل الرجل أي نام على عنقه فاشتكاها والتأجيل المداواة منه (sihah)؛ الإجل وجع في العنق وبي إجل فأجلوني أي داووني (tahdhib)؛ الإجل وجع في العنق وبي إجل فأجلوني أي داووني منه (maqayis)",
       "sources": [
         "AY",
@@ -903,83 +888,63 @@
         "TA",
         "MQ"
       ],
-      "source_note": {
-        "SI": "Boynunun üzerine uyuyan kişinin boynunun ağrıması, ağrının oluşmasına ilişkin özel bir örnek olarak verilir. Boyun ağrısını gidermek için uygulanan bakımın adı ayrıca türemiş bir kullanım olarak kaydedilir."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000016/B007",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, kuyu, kanal veya yağmur suyunun toplandığı geniş havuz ya da su birikintisini tutarlı biçimde tanımlar. Suyun toplanması, toplanmış su ve bir bitki için benzer bir havuz yapma kullanımları bu nesne çevresinde yer alır.",
+        "boundary_note": "Dal suyu biriktiren yer ile suyun toplanmasına bağlıdır; eldeki kabarcık veya hayvanları otlakta tutma anlamlarını kapsamaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, su biriktiren havuz adını; suyun toplanması, toplanmış su ve benzer havuz yapma kalıplarından ayırarak birlikte sunar."
+      },
       "concept_map": {
-        "definition": "Kuyu, kanal veya yağmur suyunun biriktirildiği geniş havuz ya da su birikintisidir; biriken su daha sonra ekine gönderilebilir. Suyun birikmesi, birikmiş su ve bir ağaç için böyle bir havuz yapma eylemleri bu çekirdeğe bağlıdır.",
+        "definition": "Kuyu, kanal veya yağmur suyunun toplandığı geniş bir havuz ya da su birikme yeridir. Suyun burada toplanması, toplanmış durumda bulunması ve bir bitki için buna benzer havuz yapılması aynı dalın bağlı kullanımlarıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kuyu, kanal veya yağmur suyunu toplayan geniş havuz ya da su birikintisi.",
+            "statement": "Kuyu, kanal veya yağmur suyunu biriktiren geniş havuz ya da su birikme yerini adlandırır.",
             "claim_ids": [
-              "lu_024",
-              "lu_026"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "extension",
-            "statement": "Bu havuzların çoğul adı ile suyun birikmesi ve birikmiş durumda bulunması.",
+            "statement": "Suyun toplanması ve suyun toplanmış durumda olması anlamlarını kapsar.",
             "claim_ids": [
-              "lu_025",
-              "lu_027",
-              "lu_028"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "associated_use",
-            "statement": "Bir hurma ağacı için su tutacak küçük bir havuz yapma.",
+            "statement": "Bir bitkinin çevresine su tutacak benzer bir havuz yapma eylemi de bu nesneye dayanır.",
             "claim_ids": [
-              "lu_029"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar, suyun toplandığı geniş havuz veya su birikintisi çekirdeğinde birleşir. Havuz kuyu, kanal ya da yağmur suyunu tutabilir; kimi açıklamalarda bu suyun daha sonra ekinlere verilmesi de belirtilir. Sesçe değişmiş bir biçim aynı su birikintisi anlamını taşır.",
+        "common_summary": "Kaynaklar, suyun toplandığı geniş havuz veya birikme yerini ortak çekirdek olarak verir. Su kuyu, kanal ya da yağmurdan gelebilir; suyun toplanması ve toplanmış suyu anlatan biçimler de aynı çekirdeğe bağlıdır.",
         "common_claim_ids": [
-          "lu_024",
-          "lu_026"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_025"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Su toplama havuzlarının çoğul adı tek başına kaydedilir."
-          },
-          {
-            "claim_ids": [
-              "lu_027",
-              "lu_028"
-            ],
-            "kind": "derivation",
-            "summary": "Suyun bir araya toplanması ve birikmiş suyu niteleyen iki bağlı kullanım ayrıca kaydedilir."
-          },
-          {
-            "claim_ids": [
-              "lu_029"
-            ],
-            "kind": "example",
-            "summary": "Bir hurma ağacı için suyu çevresinde tutacak havuz yapma buyruğu özel bir kullanım olarak verilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "suyu biriktiren geniş havuz ve suyun birikmesi",
-        "applicability": "Hem su tutan yapıyı hem suyun orada toplanmasını ve buna bağlı havuz yapma eylemini temsil eder.",
+        "text": "su biriktiren havuz ve suyun toplanması",
+        "applicability": "Hem suyu tutan yeri hem suyun orada birikme durumunu kapsayan genel karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Su toplama yerini, suyun birikmesini ve böyle bir yer yapma işlemini birlikte korur.",
+          "preserves": "Suyu biriktiren yeri, suyun toplanmasını ve havuz yapma bağını korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -993,12 +958,12 @@
       "contextual_glosses": [
         {
           "text": "su toplama havuzu",
-          "usage_role": "general",
-          "applicability": "Kuyu, kanal veya yağmur suyunun biriktirildiği yapının adlandırıldığı bağlamlarda kullanılır.",
+          "usage_role": "contextual",
+          "applicability": "Kuyu, kanal veya yağmur suyunun tutulduğu yapılmış ya da doğal havuzdan söz edilirken kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Suyu toplayıp tutan geniş havuz biçimindeki temel nesneyi korur.",
-            "loses": "Suyun kendiliğinden birikmesini, birikmiş suyu ve havuz yapma eylemini dışarıda bırakır.",
+            "preserves": "Suyu toplama amacı ile havuz biçimindeki yeri korur.",
+            "loses": "Suyun toplanma eylemini ve toplanmış su sıfatını tek başına kapsamaz.",
             "adds": null,
             "collision": null
           },
@@ -1009,11 +974,11 @@
         {
           "text": "su birikti",
           "usage_role": "contextual",
-          "applicability": "Suyun bir yerde toplanıp birikmiş duruma gelmesini anlatan eylem bağlamında kullanılır.",
+          "applicability": "Suyun bir yerde toplanma sürecinin öne çıktığı eylem bağlamlarında kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Suyun dağınık durumdan bir yerde toplanmış duruma geçmesini korur.",
-            "loses": "Suyu tutan geniş havuzun adını ve böyle bir havuz yapma eylemini göstermez.",
+            "preserves": "Suyun toplanma değişimini korur.",
+            "loses": "Havuz adını ve bir bitki için havuz yapma kullanımını dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
@@ -1026,72 +991,61 @@
         {
           "lexical_unit_id": "lu_024",
           "rendering_kind": "ordinary",
-          "target_gloss": "suyun biriktiği geniş havuz"
+          "target_gloss": "su biriktiren havuz veya su birikintisi"
         },
         {
           "lexical_unit_id": "lu_025",
           "rendering_kind": "ordinary",
-          "target_gloss": "su toplama havuzları"
+          "target_gloss": "su biriktiren havuzlar"
         },
         {
           "lexical_unit_id": "lu_026",
           "rendering_kind": "ordinary",
-          "target_gloss": "su birikintisi veya havuzu"
+          "target_gloss": "su birikintisi"
         },
         {
           "lexical_unit_id": "lu_027",
           "rendering_kind": "ordinary",
-          "target_gloss": "su birikti"
+          "target_gloss": "su toplandı"
         },
         {
           "lexical_unit_id": "lu_028",
           "rendering_kind": "ordinary",
-          "target_gloss": "birikmiş su"
+          "target_gloss": "toplanmış su"
         },
         {
           "lexical_unit_id": "lu_029",
           "rendering_kind": "ordinary",
-          "target_gloss": "hurma ağacın için küçük bir havuz yap"
+          "target_gloss": "hurma ağacın için havuz yap"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "göl",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "displacement",
-            "preserves": "Suyun bir yerde toplanmış olması düşüncesini korur.",
-            "loses": "Kuyu, kanal veya yağmur suyunu toplayan havuz düzeni ve suyun birikmesi eylemi kaybolur.",
-            "adds": "Doğal ve geniş su kütlesi anlamı ekler.",
-            "collision": "Su biriktiren havuz ile doğal göl karışır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000109/B003",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Kuyu, kanal veya yağmur suyunun toplanıp daha sonra ekine gönderilebildiği geniş havuzu ve suyun birikmesini kapsar.",
-          "neighbor_only": "Suyun durduğu havuz, gölcük ve düzenlenmiş su depolarını daha genel biçimde kapsar.",
-          "gloss": "su toplama havuzu ile durgun su havuzu",
-          "shared_zone": "Her iki dal da suyu bir yerde tutan havuz veya benzeri yapıyı anlatır.",
-          "distinction": "Odak dalında farklı kaynaklardan gelen suyu toplama ve gerektiğinde ekine gönderme düzeni belirgindir; ayrıca suyun birikmesi eylemine uzanır. Komşu dalın çekirdeği suyun bir havuzda sabit durmasıdır ve bu kullanım düzeni şart değildir."
+          "focus_only": "Kuyu ve kanal suyunu toplama, suyun birikmesi ve bitki için havuz yapma kullanımları bulunur.",
+          "neighbor_only": "Düzeltilmiş genel su havuzları ve suyun sabit durması daha geniş biçimde kapsanır.",
+          "gloss": "su tutan havuz",
+          "shared_zone": "Her iki dal da suyun bir havuz veya benzeri yerde toplanıp tutulmasını anlatır.",
+          "distinction": "Odak dal belirli su kaynaklarıyla beslenen geniş toplama yerini ve ona bağlı eylemleri taşır; komşu dal genel su tutma yerleri alanında daha geniştir."
         },
         {
           "neighbor_ref": "root_000018/B006",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Geniş, insan yapımı olabilen su toplama havuzunu ve suyun birikme eylemini içerir.",
-          "neighbor_only": "Suyu günlerce tutan doğal veya kazılmış çukur ile küçük gölcük benzeri yeri de kapsar.",
-          "gloss": "su toplama havuzu ile su tutan çukur",
-          "shared_zone": "İki dal da suyun toplandığı ve bir süre tutulduğu yeri gösterebilir.",
-          "distinction": "Odak dalı kuyu, kanal veya yağmur suyunu biriktiren geniş havuz düzenine yönelir. Komşu dal, yapısal bir havuz olma şartı taşımadan su tutan çukur veya gölcük benzeri yeri de anlatır."
+          "focus_only": "Geniş havuz, suyun toplanması ve bir bitki için benzer havuz yapma yönleri vardır.",
+          "neighbor_only": "Suyu günlerce tutabilen çukur ve küçük gölcük benzeri doğal yerler de kapsanır.",
+          "gloss": "suyu tutan yer",
+          "shared_zone": "İki dal da suyun biriktiği havuz veya çukur türü bir yeri gösterebilir.",
+          "distinction": "Odak dal kuyu, kanal veya yağmur suyunu toplama işleviyle ve türemiş eylemlerle belirginleşir; komşu dal su tutan doğal yerlerin süresini ve biçimini öne çıkarır."
         }
       ],
-      "neighbor_coverage_note": "Bütün komşu kartları değerlendirildi; seçilen iki yakın komşu, geniş su toplama havuzunu genel durgun su yerinden ve su tutan çukurdan ayırır.",
+      "neighbor_coverage_note": "Bütün su yapısı ve birikinti adayları değerlendirildi; genel su havuzu ile su tutan doğal yer, odak dalın kaynak, yapı ve eylem sınırlarını en iyi açıklar.",
       "branch_image_ar": "المَأْجَل حوض يجتمع فيه الماء",
       "what_is_ar": "يدخل فيه المَأْجَل والماجِل لمستنقع الماء أو الحوض الواسع الذي يجمع فيه ماء البئر أو القناة أو المطر ثم يرسل إلى الزرع",
+      "what_is_not_ar": "ليس المجل لتنقط اليد، ولا حبس الإبل إلا مع احتمال الاشتقاق الذي ذكره مقاييس",
       "source_phrase_ar": "المأجل شبه حوض واسع يؤجل فيه ماء البئر وماء القناة (ayn)؛ المأجل مستنقع الماء وقد تأجل الماء وماء أجيل أي مجتمع (sihah)؛ المأجل شبه حوض واسع يؤجل فيه ماء القناة والمأجل الجبأة التي يجتمع فيها مياه الأمطار (tahdhib)؛ المأجل شبه حوض واسع يؤجل فيه ماء البئر أو القناة (maqayis)؛ الماجل مستنقع الماء وهذا من باب أجل (maqayis)",
       "sources": [
         "AY",
@@ -1099,40 +1053,44 @@
         "TA",
         "MQ"
       ],
-      "source_note": {
-        "AY": "Su toplama havuzlarının çoğul adı tek başına kaydedilir.",
-        "SI": "Suyun bir araya toplanması ve birikmiş suyu niteleyen iki bağlı kullanım ayrıca kaydedilir.",
-        "MQ": "Bir hurma ağacı için suyu çevresinde tutacak havuz yapma buyruğu özel bir kullanım olarak verilir."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000016/B008",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, develeri veya başka hayvan varlığını otlakta tutma eylemini ve bu eylemin adını açıkça bildirir. Bir kaynak biçimi ses değişmesiyle başka bir köke bağlasa da tanıklanmış kullanımın sınırı değişmez.",
+        "boundary_note": "Dal hayvanları otlakta tutmaya özgüdür; genel alıkoyma, su toplama veya yalnızca otlatma anlamına genişletilmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, hayvan nesnesi ve otlak yeriyle kurulan kalıba bağlı eylemi ve onun ad biçimini korur; buradan yalın bir tutma anlamı çıkarılmaz."
+      },
       "concept_map": {
-        "definition": "Deve veya başka sürü hayvanlarını otlak sınırları içinde tutma eylemidir. Aynı anlam, bu tutma eyleminin adı olarak da kullanılır.",
+        "definition": "Develeri veya başka sürü hayvanlarını otlakta tutup oradan ayırmamaktır. Ad biçimi, hayvanların otlakta bu şekilde tutulması eylemini bildirir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Develeri veya başka sürü hayvanlarını otlakta tutup oradan ayrılmalarını önleme.",
+            "statement": "Develeri veya başka sürü hayvanlarını otlakta tutmayı bildirir.",
             "claim_ids": [
-              "lu_030"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "extension",
-            "statement": "Hayvanları otlakta tutma eylemini bir olay adı olarak belirtme.",
+            "role": "source_variant",
+            "statement": "Bir açıklama, kullanılan biçimi ses değişmesi yoluyla başka bir tutma fiiline bağlar.",
             "claim_ids": [
-              "lu_031"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar, deve veya başka sürü hayvanlarını otlak içinde tutma anlamında birleşir. Eylem biçimi ile bu eylemi adlandıran ad biçimi aynı çekirdeği taşır. Bir açıklama, bu biçimi başka bir ünsüzlü varyanta dayandıran bir köken notu verir.",
+        "common_summary": "Kaynakların ortak anlamı, develeri veya başka sürü hayvanlarını otlakta tutmaktır; ad biçimi de bu eylemi gösterir. Biçimin kökenine ilişkin açıklama, onu ses değişmesiyle başka bir tutma fiiline bağlar.",
         "common_claim_ids": [
-          "lu_030",
-          "lu_031"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
@@ -1140,28 +1098,27 @@
       },
       "concept_gloss": {
         "text": "sürü hayvanlarını otlakta tutma",
-        "applicability": "Deve ve başka sürü hayvanlarının otlak içinde tutulmasını anlatan eylem ve eylem adı için kullanılır.",
+        "applicability": "Hayvan katılımcısını, otlak yerini ve orada tutulma eylemini birlikte veren tam karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Hayvanları otlak içinde tutma işlemini ve bunun eylem adı oluşunu korur.",
+          "preserves": "Sürü hayvanlarını belirli yer olan otlakta tutma ilişkisini korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001",
-          "F002"
+          "F001"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "hayvanları otlakta tuttular",
+          "text": "develeri otlakta tuttular",
           "usage_role": "contextual",
-          "applicability": "Sürü sahiplerinin hayvanları otlak içinde bıraktığı fakat dışarı çıkmalarını engellediği eylem bağlamında kullanılır.",
+          "applicability": "Eylemin nesnesi özellikle develer olduğunda doğal bir cümle karşılığıdır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Hayvanları otlak sınırları içinde tutma eylemini eksiksiz korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Develerin otlakta tutulmasını korur.",
+            "loses": "Başka sürü hayvanlarını ve eylemin ad biçimini kapsamaz.",
             "adds": null,
             "collision": null
           },
@@ -1174,7 +1131,7 @@
         {
           "lexical_unit_id": "lu_030",
           "rendering_kind": "ordinary",
-          "target_gloss": "develerini ve sürülerini otlakta tuttular"
+          "target_gloss": "develerini veya sürülerini otlakta tuttular"
         },
         {
           "lexical_unit_id": "lu_031",
@@ -1182,44 +1139,33 @@
           "target_gloss": "sürü hayvanlarını otlakta tutma"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "otlatmak",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "displacement",
-            "preserves": "Sürü hayvanları ve otlak alanı ilişkisini korur.",
-            "loses": "Hayvanları otlak sınırları içinde tutup alıkoyma eylemini kaybeder.",
-            "adds": "Hayvanların ot yemesini sağlama veya yayma anlamı ekler.",
-            "collision": "Otlakta tutma ile otlamaya salma eylemi karışır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_001000/B010",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Hayvanları otlak alanının içinde tutar; onların orada otlamasını zorunlu olarak engellemez.",
-          "neighbor_only": "Koyunların ot yemesine ve otlakta yayılmasına doğrudan engel olur.",
-          "gloss": "otlakta tutmak ile otlamayı engellemek",
-          "shared_zone": "İki dal da sürü hayvanlarının otlakla ilişkisini insan denetimiyle sınırlar.",
-          "distinction": "Odak dalında sınır, hayvanların bulunduğu yerdir: hayvanlar otlakta tutulur. Komşu dalda sınır, otlama eyleminin kendisidir; hayvanların ot yemesi önlenir. Bu nedenle biri diğerinin yerine geçmez."
+          "focus_only": "Hayvanlar otlağın içinde tutulur; otlamalarının engellendiği söylenmez.",
+          "neighbor_only": "Koyunların yayılıp otlaması doğrudan engellenir.",
+          "gloss": "otlakta tutma ve otlamayı engelleme",
+          "shared_zone": "Her iki dal da sürü hayvanlarının otlaktaki hareketini insan denetimiyle sınırlar.",
+          "distinction": "Odak dal hayvanların otlakta kalmasını bildirir; komşu dal ise hayvanların otlamasını engelleyen ayrı bir müdahaledir."
         },
         {
-          "neighbor_ref": "root_000576/B002",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Sürüyü otlak içinde sınırlayıp orada tutar.",
-          "neighbor_only": "Sürüyü serbest bırakarak otlakta yayılmasına izin verir.",
-          "gloss": "otlakta tutmak ile otlağa salmak",
-          "shared_zone": "İki dal da sürünün otlakta nasıl yönetildiğini anlatır.",
-          "distinction": "Odak dalının çekirdeği hayvanları belirli otlak sınırları içinde tutmaktır. Komşu dalın çekirdeği ise hayvanları serbestçe otlamaya salmaktır; ortak katılımcılar bulunsa da işlemler farklıdır."
+          "neighbor_ref": "root_001197/B005",
+          "relation_type": "thematic",
+          "boundary_match": "thematic_only",
+          "focus_only": "Hayvanları otlakta sürekli tutma eylemi çekirdektir.",
+          "neighbor_only": "Çobanın hayvanları önce toplayıp tutması, ardından otlağa salması sıralı bir örnek oluşturur.",
+          "gloss": "sürüyü tutma ve sonra salma",
+          "shared_zone": "İki dal da sürünün çoban tarafından tutulmasını ve otlakla ilişkisini içerir.",
+          "distinction": "Odak dal otlakta tutulma durumunu adlandırır; komşu dal ise tutma ile salmayı art arda getiren daha geniş bir çobanlık senaryosudur."
         }
       ],
-      "neighbor_coverage_note": "Bütün komşu kartları değerlendirildi; seçilen ilişkiler otlakta tutmayı hem otlamayı engellemekten hem de sürüyü serbestçe otlağa salmaktan ayırır.",
+      "neighbor_coverage_note": "Bütün otlatma ve sürü denetimi adayları değerlendirildi; otlamayı engelleme ile tutup sonra salma senaryoları, odak dalın yer ve sonuç sınırını en açık biçimde gösterir.",
       "branch_image_ar": "حبس المال في المرعى",
       "what_is_ar": "يدخل فيه أجلوا مالهم أو إبلهم إذا حبسوها في المرعى",
+      "what_is_not_ar": "ليس أصل الزاي إلا بطريق الإبدال، وليس حوض الماء إلا مع احتمال الاشتقاق الذي ذكره مقاييس",
       "source_phrase_ar": "الأجل مصدر قولك أجلوا إبلهم أي حبسوها في المرعى (ayn)؛ أجلوا مالهم يأجلونه أجلا أي حبسوه والأصل في ذلك الزاء أزلوه (maqayis)",
       "sources": [
         "AY",
@@ -1229,9 +1175,9 @@
     }
   ],
   "root_profile": {
-    "summary": "Kök, belirlenmiş süre sonu ve erteleme çevresindeki zaman anlamının yanında neden bildirme, haberi onaylama, yaban sığırı sürüsü, kötülük getirme, boyun ağrısı, su toplama havuzu ve hayvanları otlakta tutma gibi birbirinden ayrılmış dallar taşır. Dalların içindeki türemiş eylem ve adlar kendi çekirdeklerine bağlıdır, ancak sekiz dal tek bir ortak güncel kavrama indirgenemez.",
+    "summary": "Kök, belirlenmiş süre ve erteleme çevresindeki zaman dalının yanında neden bildiren kalıp, onay cevabı, yaban sığırı sürüsü, kötülük işleme, boyun ağrısı, su toplama havuzu ve hayvanları otlakta tutma gibi ayrı dallar taşır. Bazı dallar köken açıklamalarıyla birbirine bağlansa da eş zamanlı kullanım düzeni belirgin biçimde çok anlamlıdır.",
     "polysemy": "polysemic",
-    "organization": "multi_branch"
+    "organization": "mixed"
   },
   "occurrence_evidence": {
     "summary": {

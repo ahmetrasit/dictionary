@@ -1,5 +1,50 @@
 {
-  "verdict": "pass",
-  "summary": "Onarılmış yanıt, sağlanan kanıtlarla uyumludur ve yayın açısından anlam bilimsel bir sorun içermemektedir.",
-  "issues": []
+  "verdict": "repair",
+  "summary": "Yanıtın dal ayrımları, kapsam türleri ve sözlüksel karşılıkları genel olarak kanıtla uyumludur. Ancak B006'da kaynakta açıkça verilen Medine konumu birkaç yayın alanında belirsiz bir kent ifadesine indirgenmiştir; bu alanlar en küçük düzeltmeyle kesinleştirilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000017/B006",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi dağın Medine'de bulunduğunu açıkça söylerken tanım ve yer uzmanlaşması yalnızca belirsiz bir kentten söz ederek kanıttaki ayırt edici konumu kaybediyor.",
+      "smallest_correction": "Tanımda ve F002 ifadesinde belirsiz kent sözünü Medine olarak değiştir; diğer kavram haritası içeriğini koru."
+    },
+    {
+      "target_ref": "root_000017/B006",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tek kaynak tanıklığı belirli dağın Medine'de olduğunu bildirir, fakat ortak özet ile tek tanıklık özeti bu kesin bilgiyi belirsiz bir kent olarak aktarıyor.",
+      "smallest_correction": "Ortak özette ve tek tanıklık özetinde yer bilgisini açıkça Medine olarak yaz; claim kimliğini ve sentezin yapısını değiştirme."
+    },
+    {
+      "target_ref": "root_000017/B006",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı yalnızca belirsiz bir dağın özel adı derken kaynak, gösterilen dağın Medine'de bulunduğunu açıkça sınırlar.",
+      "smallest_correction": "Kavram karşılığını ve ilgili açıklamalarını Medine'deki belirli dağın özel adı olacak biçimde kesinleştir; özel ad işlevini koru."
+    },
+    {
+      "target_ref": "root_000017/B006",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_012"
+      ],
+      "evidence_conflict": "lu_012'nin kaynak anlamı Medine'deki dağın adı olmasına rağmen sözlüksel karşılık konumu atlayarak yalnızca belirsiz bir dağın özel adı diyor.",
+      "smallest_correction": "lu_012 hedef karşılığını Medine'deki dağın özel adı olarak değiştir; kimlik ve rendering_kind değerlerini koru."
+    }
+  ]
 }
