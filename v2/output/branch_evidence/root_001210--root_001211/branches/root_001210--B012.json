@@ -1,5 +1,5 @@
 {
-  "format": 1,
+  "format": 2,
   "generated_by": "v2/scripts/build_branch_evidence.py",
   "root_envelope_id": "root_001210--root_001211",
   "packet_path": "data/output/root_packets/root_001210--root_001211.json",
@@ -8,6 +8,10 @@
   "furuq_sha256": "1099db0d56515d2eb3e8d72f104f2e338c2c9a8c1fa6abbb046406d3b327e722",
   "qnet_path": "data/upstream/qnet/incidence_full/raw_keyword_incidence.sqlite",
   "qnet_sha256": "a5262b568203bff7ec04e6ca905781125beec83f90d62a5cf0cd6ff61049eee8",
+  "qnet_theme_path": "data/upstream/qnet/bridge_theme_full/bridge_theme_staging.sqlite",
+  "qnet_theme_sha256": "e4f590a111376e372eefef6d03b8694837ec9989017ce721d56db9828b2a734e",
+  "qnet_fix_manifest_path": "data/upstream/qnet/bridge_theme_full/latent_v11_qac_qnet_fix_manifest.json",
+  "qnet_fix_manifest_sha256": "b0ae3c19450a8019825321f6dc1e9f4c336249950f50267ed84eb3258756502c",
   "branch": {
     "root_id": "root_001210",
     "branch_id": "B012",
@@ -81,7 +85,314 @@
   ],
   "qnet_candidates": [],
   "qnet_core_overlap_candidates": [],
+  "qnet_bridge_overlap_candidates": [],
+  "qnet_theme_overlap_candidates": [
+    {
+      "root_id": "root_001366",
+      "branch_id": "B002",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 3,
+      "votes2_keyword_count": 1,
+      "shared_themes": [
+        "containment_access",
+        "knowledge_learning",
+        "sequence_cycle"
+      ]
+    },
+    {
+      "root_id": "root_001150",
+      "branch_id": "B005",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 3,
+      "votes2_keyword_count": 0,
+      "shared_themes": [
+        "containment_access",
+        "earth_geology",
+        "sequence_cycle"
+      ]
+    },
+    {
+      "root_id": "root_000464",
+      "branch_id": "B003",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 2,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "containment_access",
+        "knowledge_learning"
+      ]
+    },
+    {
+      "root_id": "root_000085",
+      "branch_id": "B001",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 2,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "earth_geology",
+        "knowledge_learning"
+      ]
+    },
+    {
+      "root_id": "root_000421",
+      "branch_id": "B003",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 2,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "knowledge_learning",
+        "sequence_cycle"
+      ]
+    },
+    {
+      "root_id": "root_000691",
+      "branch_id": "B002",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 2,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "containment_access",
+        "earth_geology"
+      ]
+    },
+    {
+      "root_id": "root_000716",
+      "branch_id": "B001",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 2,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "containment_access",
+        "earth_geology"
+      ]
+    },
+    {
+      "root_id": "root_000851",
+      "branch_id": "B005",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 2,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "containment_access",
+        "sequence_cycle"
+      ]
+    }
+  ],
+  "qnet_focus_coverage": {
+    "raw_keyword_exact_port": false,
+    "snapshot_exact_port": false,
+    "postfix_exact_port": true,
+    "theme_scope": "branch",
+    "focus_themes": [
+      "containment_access",
+      "earth_geology",
+      "knowledge_learning",
+      "sequence_cycle"
+    ]
+  },
   "furuq_candidates": [
+    {
+      "root_id": "root_001366",
+      "branch_id": "B002",
+      "root_norm": "ل ف ي",
+      "branch_image_ar": "الوجدان والمصادفة",
+      "what_is_ar": "يدخل فيه ألفيت الشيء بمعنى وجدته أو لقيته",
+      "what_is_not_ar": "ليس الانضمام ولا التدارك ولا الكشف",
+      "source_phrase_ar": "ألفيته لقيته ووجدته إلفاء (maqayis)؛ وألفيت الشيء وجدته (sihah)؛ ألفيت وجدت (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3244;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5540:headword=%D9%84%D9%81%D8%A7:root=%D9%84%20%D9%81%20%D8%A7:sha=319c3c253342eb0c;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1356:headword=%D9%84%D9%81%D9%89:root=%D9%84%20%D9%81%20%D9%8A:sha=3be5dfa8c23bb6c0",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "containment_access",
+        "knowledge_learning",
+        "sequence_cycle"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_001150",
+      "branch_id": "B005",
+      "root_norm": "ف ر ي",
+      "branch_image_ar": "انبجاس الأرض بالعيون",
+      "what_is_ar": "تفري الأرض بالعيون وانبجاسها وانفتاح الغمار",
+      "what_is_not_ar": "الخرز والإفساد والكذب",
+      "source_phrase_ar": "تفرت الأرض بالعيون انبجست (maqayis)؛ تبجست الأرض بالعيون وتفرت (ayn)؛ غمارا تفرى بالسلاح وبالدم (ayn)؛ تفرت الأرض بالعيون انبجست (sihah)",
+      "source_refs": "maqayis:root=%D9%81%20%D8%B1%20%D9%8A:headword=%D9%81%D8%B1%D9%89:sha=7036117c3a20d909;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A5391:headword=%D9%81%D8%B1%D9%8A:root=%D9%81%20%D8%B1%20%D9%8A:sha=ae8927bac4989e45;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A5484:headword=%D9%81%D8%B1%D8%A7:root=%D9%81%20%D8%B1%20%D8%A7:sha=3b7a99fec443fc38",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "containment_access",
+        "earth_geology",
+        "sequence_cycle"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000464",
+      "branch_id": "B003",
+      "root_norm": "د خ ل",
+      "branch_image_ar": "الباطن والسريرة",
+      "what_is_ar": "يدخل فيه باطن الأمر والسريرة والدخلة والداخلة، وطرف الإزار الذي يلي الجسد، وما يطلع عليه من مكتوم الأمر.",
+      "what_is_not_ar": "لا يدخل فيه الفساد أو المكر من حيث هو عيب، إلا إذا دل السياق على الباطن فقط.",
+      "source_phrase_ar": "الدخلة باطن أمر الرجل وأنا عالم بدخلته (maqayis)؛ الدخلة بطانة من الأمر وعالم بدخلة أمرهم (ayn)؛ دخلل أمري إذا بثثته مكتومك (jamhara)؛ داخلة الإزار طرفه الذي يلي الجسد وداخلة الرجل باطن أمره (sihah)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1187;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A2708:headword=%D8%AF%D8%AE%D9%84:root=%D8%AF%20%D8%AE%20%D9%84:sha=646510882e2948d4;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1510%3Asubentry%3A1%3A%D8%AF%D8%AE%D9%84:headword=%D8%AF%D8%AE%D9%84:root=%D8%AF%20%D8%AE%20%D9%84:sha=f172794dd88e1015;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3997:headword=%D8%AF%D8%AE%D9%84:root=%D8%AF%20%D8%AE%20%D9%84:sha=33f1a1fc9f97ead0",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "containment_access",
+        "knowledge_learning"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000085",
+      "branch_id": "B001",
+      "root_norm": "ب ح ث",
+      "branch_image_ar": "إثارة التراب طلبا وكشفا",
+      "what_is_ar": "يدخل فيه طلب الشيء في التراب، وبحث الأرض باليد، وبحث الإبل أو الناقة التراب في السير، وما سمي من تراب اليربوع أو البحاثة أو المعدن أو لعب التراب من جهة هذا البحث الحسي",
+      "what_is_not_ar": "لا يدخل فيه السؤال والاستخبار المجرد، ولا الأمثال التي صارت تعبيرا مستقلا إلا من جهة أصلها الحسي",
+      "source_phrase_ar": "البحث طلبك شيئا في التراب (ayn;tahdhib;maqayis)؛ يبحث في الأرض (mufradat)؛ البحوث من الإبل التي إذا سارت بحثت التراب بأيديها أخرا (ayn;tahdhib;maqayis)؛ بحثت الناقة الأرض برجلها في السير (mufradat)؛ الباحثاء تراب يجمعه اليربوع (maqayis)؛ الباحثاء من جحرة اليرابيع تراب يخيل إليك أنه القاصعاء وليس بها (tahdhib)؛ البحث المعدن يبحث فيه عن الذهب والفضة والبحاثة التراب الذي يبحث عما يطلب فيه (tahdhib)؛ البحيثى لعبة يلعبون بها بالتراب والبحثة لعب بالتراب (tahdhib)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1688:headword=%D8%A8%D8%AD%D8%AB:root=%D8%A8%20%D8%AD%20%D8%AB:sha=24dd2423b4265f72;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D237%3Bsegment_index%3D83:headword=%D8%A8%D8%AD%D8%AB:root=%D8%A8%20%D8%AD%20%D8%AB:sha=c1f7c4f43ef93c62;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A82:headword=%D8%A8%D8%AD%D8%AB:root=%D8%A8%20%D8%AD%20%D8%AB:sha=d7f47a65eed48dc4;0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:211",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "earth_geology",
+        "knowledge_learning"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000421",
+      "branch_id": "B003",
+      "root_norm": "خ ط ب",
+      "branch_image_ar": "الخطب: الأمر الواقع العظيم",
+      "what_is_ar": "يدخل فيه الخطب بمعنى الأمر وسبب الأمر والأمر العظيم الذي يكثر فيه التخاطب، مثل سؤال ما خطبك.",
+      "what_is_not_ar": "ليس الخطاب نفسه ولا خطبة النساء ولا اللون الأخطب.",
+      "source_phrase_ar": "الخطب الأمر يقع وإنما سمي بذلك لما يقع فيه من التخاطب والمراجعة (maqayis)؛ الخطب سبب الأمر (ayn)؛ الخطب الأمر العظيم (jamhara)؛ الخطب سبب الامر تقول ما خطبك (sihah)؛ الخطب الأمر العظيم الذي يكثر فيه التخاطب (mufradat)",
+      "source_refs": "maqayis:root=%D8%AE%20%D8%B7%20%D8%A8:headword=%D8%AE%D8%B7%D8%A8:sha=123d3e644485ee19;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A2694:headword=%D8%AE%D8%B7%D8%A8:root=%D8%AE%20%D8%B7%20%D8%A8:sha=2c982fff2b709258;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A677%3Asubentry%3A1%3A%D8%AE%D8%B7%D8%A8:headword=%D8%AE%D8%B7%D8%A8:root=%D8%AE%20%D8%B7%20%D8%A8:sha=24885a2d5b35e939;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A257:headword=%D8%AE%D8%B7%D8%A8:root=%D8%AE%20%D8%B7%20%D8%A8:sha=e1150fc3fec2714f;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A425:headword=%D8%AE%D8%B7%D8%A8:root=%D8%AE%20%D8%B7%20%D8%A8:sha=6519e41527819ba1",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "knowledge_learning",
+        "sequence_cycle"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000691",
+      "branch_id": "B002",
+      "root_norm": "س ر ب",
+      "branch_image_ar": "السرب المنحدر والجحر والدخول فيه",
+      "what_is_ar": "يدخل فيه السرب بيتا أو جحرا أو مكانا منحدرا أو محفورا سفلا والدخول فيه وانسراب الوحش والحية والحافر في الحفر",
+      "what_is_not_ar": "ليس مطلق الذهاب في الطريق ولا جريان الماء ولا السراب",
+      "source_phrase_ar": "انسرب الوحشي في سربه (maqayis;sihah); سرب الثعلب وسرب الضبع الجحر (jamhara); السرب بيت في الأرض (sihah); المكان المنحدر (mufradat); انسربت الحية إلى جحرها (mufradat); المحفور سفلا لا نفاذ له (ayn); أخذ في الحفر يمنة ويسرة (sihah;tahdhib)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1779;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4892:headword=%D8%B3%D8%B1%D8%A8:root=%D8%B3%20%D8%B1%20%D8%A8:sha=5f63ee4b684b087a;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A720%3Asubentry%3A3%3A%D8%B3%D8%B1%D8%A8:headword=%D8%B3%D8%B1%D8%A8:root=%D8%B3%20%D8%B1%20%D8%A8:sha=9aae276e6ae1c858;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A308:headword=%D8%B3%D8%B1%D8%A8:root=%D8%B3%20%D8%B1%20%D8%A8:sha=902fd175296fa742;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D648%3Bsegment_index%3D86:headword=%D8%B3%D8%B1%D8%A8:root=%D8%B3%20%D8%B1%20%D8%A8:sha=5ce724d0da7cb152;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A684:headword=%D8%B3%D8%B1%D8%A8:root=%D8%B3%20%D8%B1%20%D8%A8:sha=55dd501e7dc29e31",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "containment_access",
+        "earth_geology"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000716",
+      "branch_id": "B001",
+      "root_norm": "س ف ن",
+      "branch_image_ar": "قشر السطح وكشفه",
+      "what_is_ar": "يدخل فيه سفن الشيء بمعنى قشره أو نحت ظاهره، وسفن العود والجلد، وسفن الأرض بالبطن، وسفن الريح التراب أو وجه الأرض حتى تجعله دقاقا، والسوافن من الرياح.",
+      "what_is_not_ar": "ليس خصوص السفينة ولا آلة السفن إلا من جهة الصلة بصورة القشر والحك.",
+      "source_phrase_ar": "تنحية الشيء عن وجه الشيء كالقشر (maqayis)؛ سفنت العود أي قشرته (maqayis)؛ سفنت الشيء سفنا قشرته (sihah;tahdhib)؛ السفن نحت ظاهر الشيء كسفن العود والجلد (mufradat)؛ الريح تسفن التراب عن وجه الأرض تجعله دقاقا (maqayis;ayn;sihah;tahdhib;mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1632;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A4923:headword=%D8%B3%D9%81%D9%86:root=%D8%B3%20%D9%81%20%D9%86:sha=645fc223586d2ce2;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A4936:headword=%D8%B3%D9%81%D9%86:root=%D8%B3%20%D9%81%20%D9%86:sha=97e82554bbbca6ba;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D649%3Bsegment_index%3D4:headword=%D8%B3%D9%81%D9%86:root=%D8%B3%20%D9%81%20%D9%86:sha=7406836241372e6f;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A708:headword=%D8%B3%D9%81%D9%86:root=%D8%B3%20%D9%81%20%D9%86:sha=a4f992333d8a9e83",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "containment_access",
+        "earth_geology"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000851",
+      "branch_id": "B005",
+      "root_norm": "ص د ف",
+      "branch_image_ar": "الإبل الصوادف عند الحوض",
+      "what_is_ar": "يدخل فيه الصوادف من الإبل التي تقف خلف الشاربة عند الحوض تنتظر انصرافها لتدخل",
+      "what_is_not_ar": "لا يدخل فيه مطلق الإعراض ولا كل ميل حسي ولا غشاء المحارة ولا جانب الجبل",
+      "source_phrase_ar": "الصوادف الإبل التي تقف عند أعجاز الإبل على الحوض تنتظر انصراف الشاربة (maqayis)؛ الصوادف الإبل التي تجد الإبل على الحوض فتقف عند أعجازها تنتظر انصراف الشاربة (sihah)",
+      "source_refs": "maqayis:root=%D8%B5%20%D8%AF%20%D9%81:headword=%D8%B5%D8%AF%D9%81:sha=8b74a34dd72e5660;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3361:headword=%D8%B5%D8%AF%D9%81:root=%D8%B5%20%D8%AF%20%D9%81:sha=5a319703e9353040",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "containment_access",
+        "sequence_cycle"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
     {
       "root_id": "root_001210",
       "branch_id": "B001",
@@ -96,7 +407,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_001210",
@@ -112,7 +426,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_001210",
@@ -128,7 +445,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_001210",
@@ -144,7 +464,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_001210",
@@ -160,7 +483,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_001210",
@@ -176,7 +502,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_001210",
@@ -192,7 +521,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_001210",
@@ -208,7 +540,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_001210",
@@ -224,7 +559,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_001210",
@@ -240,7 +578,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_001210",
@@ -256,7 +597,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_001211",
@@ -272,7 +616,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_001211",
@@ -288,7 +635,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_001211",
@@ -304,7 +654,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_001211",
@@ -320,7 +673,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     },
     {
       "root_id": "root_001211",
@@ -336,7 +692,10 @@
       "discovery_basis": [
         "sibling"
       ],
-      "shared_consensus_core": []
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
     }
   ]
 }
