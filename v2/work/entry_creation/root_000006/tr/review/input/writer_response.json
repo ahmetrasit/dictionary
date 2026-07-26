@@ -2,377 +2,59 @@
   "branches": [
     {
       "branch_ref": "root_000006/B001",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi yalnızca develeri ve deve topluluğunu değil, bunları edinmeyi, çokluğunu, sahibini ve bakımlarında usta olmayı da kapsar. Bu nedenle dal, hayvan adından ibaret olmayan bir deve sahipliği ve bakımı alanı olarak sınırlandırılmıştır.",
+        "boundary_note": "Deve topluluğu çekirdektir; edinme, sahiplik ve bakım ustalığı buna bağlı kullanımlardır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, yalın topluluk adını ayrı tutar; edinme, sahiplik, ustalık ve bakımda sebat anlamlarını yalnızca ilgili biçim ve kuruluşlara bağlar."
+      },
       "concept_map": {
-        "definition": "Develeri tek tek değil topluluk ve sürü olarak adlandırmayı; çok sayıda deveyi edinip bir arada tutmayı; deve sahibi olmayı, bakımlarını ustalıkla yürütmeyi ve bu işi sürdürmeyi kapsar.",
+        "definition": "Develeri topluca adlandıran çekirdeğin çevresinde, çok sayıda deve edinip elde tutma, onların sahibi olma, bakımlarını iyi bilme ve bu bakımı sürdürme anlamları yer alır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Develer, aynı sözden yapılmış bir tekili bulunmayan topluluk adıyla ve sürüler halinde düşünülür.",
+            "statement": "Tekili aynı sözcükten yapılmayan, toplu develeri bildiren ad.",
             "claim_ids": [
-              "lu_001"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Çok sayıdaki, edinilmiş veya sürü sürü bir araya getirilmiş develer bu alanın özel bir görünümüdür.",
-            "claim_ids": [
-              "lu_002"
-            ]
-          },
-          {
-            "facet_id": "F003",
-            "role": "core",
-            "statement": "Deve sahibi olmak ile develerin bakımını iyi bilip gereği gibi yürütmek aynı kişi niteliğinde birleşebilir.",
-            "claim_ids": [
-              "lu_003",
-              "lu_004"
-            ]
-          },
-          {
-            "facet_id": "F004",
             "role": "extension",
-            "statement": "Bakımın başında kalamamak veya develer üzerinde duramamak, bu sürekli ilgilenmenin olumsuz karşılığıdır.",
+            "statement": "Develerin çok olması, edinilmesi veya elde tutulan topluluklar halinde bulunması.",
             "claim_ids": [
-              "lu_005"
-            ]
-          }
-        ]
-      },
-      "source_synthesis": {
-        "common_summary": "Kaynaklar develeri bir topluluk adı olarak verir; çokluk, edinme ve sürüler halinde toplama anlamlarını aynı alana bağlar. Ayrıca deve sahibi ya da bakımında usta kişiyi, deve ve koyun bakımındaki beceriyi ve bu bakımın başında kalma durumunu birlikte gösterir.",
-        "common_claim_ids": [
-          "lu_001",
-          "lu_002",
-          "lu_003",
-          "lu_004",
-          "lu_005"
-        ],
-        "source_details": [],
-        "supporting_claim_ids": [],
-        "duplicate_claims": []
-      },
-      "concept_gloss": {
-        "text": "develer, sürü sahipliği ve sürekli bakım ustalığı",
-        "applicability": "Deve topluluğunu, edinilmiş sürüyü, sahibini ve bakım işindeki kalıcı beceriyi birlikte anlatan üst karşılıktır.",
-        "error_profile": {
-          "fit": "none",
-          "preserves": "Topluluk, sürü sahipliği, bakım becerisi ve bakımda süreklilik çekirdeğini korur.",
-          "loses": null,
-          "adds": null,
-          "collision": null
-        },
-        "facet_ids": [
-          "F001",
-          "F002",
-          "F003",
-          "F004"
-        ]
-      },
-      "contextual_glosses": [
-        {
-          "text": "deve sürüsü",
-          "usage_role": "contextual",
-          "applicability": "Develerin topluluk, çokluk veya bir araya getirilmiş sürü olarak geçtiği bağlamlarda kullanılır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Develerin topluluk ve sürü halinde bulunmasını doğal biçimde korur.",
-            "loses": "Sahiplik, bakım ustalığı ve bakımın başında kalma anlamlarını dışarıda bırakır.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001",
-            "F002"
-          ]
-        },
-        {
-          "text": "deve bakımında usta",
-          "usage_role": "contextual",
-          "applicability": "Bir kişinin develere sahip olması veya onların bakımını iyi bilmesi öne çıktığında kullanılır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Kişinin deve bakımındaki becerisini ve ilgisini açıkça korur.",
-            "loses": "Develerin topluluk adı olmasını ve edinilmiş sürü anlamını içermez.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F003"
-          ]
-        }
-      ],
-      "lexical_glosses": [
-        {
-          "lexical_unit_id": "lu_001",
-          "rendering_kind": "ordinary",
-          "target_gloss": "develer; aynı sözden yapılmış tekili bulunmayan topluluk adı"
-        },
-        {
-          "lexical_unit_id": "lu_002",
-          "rendering_kind": "ordinary",
-          "target_gloss": "çok sayıda, edinilmiş veya sürüler halinde toplanmış develer"
-        },
-        {
-          "lexical_unit_id": "lu_003",
-          "rendering_kind": "ordinary",
-          "target_gloss": "deve sahibi veya deve bakımında usta kişi"
-        },
-        {
-          "lexical_unit_id": "lu_004",
-          "rendering_kind": "ordinary",
-          "target_gloss": "deve ve koyun bakımını iyi bilmek"
-        },
-        {
-          "lexical_unit_id": "lu_005",
-          "rendering_kind": "ordinary",
-          "target_gloss": "develer üzerinde ya da onların bakımında durup kalmamak"
-        }
-      ],
-      "excluded_glosses": [
-        {
-          "text": "çobanlık",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Hayvan bakımını yürütme ve sürüyle ilgilenme yönünü kısmen korur.",
-            "loses": null,
-            "adds": "Deveyle sınırlı olmayan genel bir hayvan gütme mesleği anlamı ekler.",
-            "collision": "Dalın deve topluluğu, sahiplik ve edinilmiş sürü kapsamıyla karışır."
-          }
-        }
-      ],
-      "neighbor_distinctions": [
-        {
-          "neighbor_ref": "root_001223/B004",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Develerin topluluk adı, çokluğu, edinilmesi ve sahibinin niteliği de kapsanır.",
-          "neighbor_only": "Deveyi tek başına gütme ve hayvanı sürme eylemleri ayrıca kapsanır.",
-          "gloss": "deve bakımı ve gütme",
-          "shared_zone": "İki dal da deve sahibinin hayvanlara sürekli ve becerili biçimde bakmasını içerir.",
-          "distinction": "Odak dal, develerin adı ve sürü olarak edinilmesinden bakıcının ustalığına uzanan bir adlandırma alanıdır; komşu dal ise bakım ve sürme eylemini doğrudan merkezine alır."
-        },
-        {
-          "neighbor_ref": "root_000260/B001",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Bakım ustalığı, sürü edinme ve bakımın başında kalma anlamları bulunur.",
-          "neighbor_only": "Ergin erkek deve, dişi devenin eşi ve sürünün bakıcılarıyla birlikte bütünü bulunur.",
-          "gloss": "deve ve deve topluluğu",
-          "shared_zone": "Her iki dal develeri hem tek hayvan hem de topluluk çevresinde ele alır.",
-          "distinction": "Odak dal genel deve topluluğu ile sahiplik ve bakım becerisini birleştirir; komşu dal erkek deveyi ve bakıcılarıyla birlikte belirli sürü türünü adlandırır."
-        }
-      ],
-      "neighbor_coverage_note": "Verilen bütün komşular değerlendirildi; sınırı en iyi açıklayan bakım-gütme ve deve topluluğu karşılaştırmaları yayımlandı."
-    },
-    {
-      "branch_ref": "root_000006/B002",
-      "concept_map": {
-        "definition": "Deve veya yaban hayvanının taze ve sulu bitkiyle yetinerek su içmeye gerek duymaması ve bulunduğu yerden ayrılmamasıdır; erkeğin eşiyle cinsel yakınlıktan kaçınması da buna benzetilir.",
-        "facets": [
-          {
-            "facet_id": "F001",
-            "role": "core",
-            "statement": "Deve ya da yaban hayvanı taze ve sulu bitki yiyerek ayrıca su içmeden yetinir.",
-            "claim_ids": [
-              "lu_006"
-            ]
-          },
-          {
-            "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Susuz yetinen tek hayvan, su aramak için bulunduğu yerden ayrılmayan bir birey olarak nitelenir.",
-            "claim_ids": [
-              "lu_007"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "source_variant",
-            "statement": "Çoğul kullanım çoğu anlatımda taze otla susuz yetinen hayvanları, bir anlatımda ise yalnızca çok sayıdaki develeri bildirir.",
+            "role": "associated_use",
+            "statement": "Deve sahibi olma, deve bakımında usta olma ve onların yanında kalıp bakımı sürdürme.",
             "claim_ids": [
-              "lu_008"
-            ]
-          },
-          {
-            "facet_id": "F004",
-            "role": "extension",
-            "statement": "Bir erkeğin eşiyle cinsel yakınlıktan uzak durması, hayvanın sudan uzak durmasına benzetilen insani kullanımdır.",
-            "claim_ids": [
-              "lu_009"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar temel durumu, deve ya da yaban hayvanının taze ve sulu bitkiyle yetinip suya gitmemesi olarak birleştirir. Tekil niteleme yerinden ayrılmayan hayvanı gösterir; çoğul biçim çoğunlukla aynı susuz yetinmeyi, bir anlatımda yalnız deve çokluğunu bildirir. Eşle cinsel yakınlıktan kaçınma da bu duruma benzetilir.",
+        "common_summary": "Kaynaklar, toplu deve adında birleşir ve bu çekirdeğe develerin çokluğu veya edinilmesi ile sahibin bakım bilgisi ve bakımda sürekliliğini bağlar.",
         "common_claim_ids": [
-          "lu_006",
-          "lu_007",
-          "lu_008",
-          "lu_009"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "taze otla susuz yetinme ve buna benzetilen cinsel uzak durma",
-        "applicability": "Hayvanın su yerine taze bitkiyle yetinmesini ve bundan türeyen insani benzetmeyi birlikte kapsar.",
+        "text": "deve topluluğu, sahipliği ve bakım ustalığı",
+        "applicability": "Dalın topluluk çekirdeğini ve ona bağlı sahiplik ile bakım kullanımlarını birlikte gösteren üst karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Susuz yetinme koşulunu, yerinde kalmayı ve cinsel uzak durma benzetmesini korur.",
-          "loses": null,
-          "adds": null,
-          "collision": null
-        },
-        "facet_ids": [
-          "F001",
-          "F002",
-          "F003",
-          "F004"
-        ]
-      },
-      "contextual_glosses": [
-        {
-          "text": "taze otla susuz yetinmek",
-          "usage_role": "general",
-          "applicability": "Deve veya yaban hayvanının taze bitki sayesinde su içmeden durduğu bağlamlarda kullanılır.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Hayvanı, taze bitki koşulunu ve suya gereksinim duymama sonucunu korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001",
-            "F002"
-          ]
-        },
-        {
-          "text": "eşiyle cinsel yakınlıktan kaçınmak",
-          "usage_role": "contextual",
-          "applicability": "Hayvandaki susuz yetinmeye benzetilen insan davranışının söz konusu olduğu bağlamda kullanılır.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Eşle cinsel yakınlığı bilinçli biçimde bırakma anlamını eksiksiz korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F004"
-          ]
-        }
-      ],
-      "lexical_glosses": [
-        {
-          "lexical_unit_id": "lu_006",
-          "rendering_kind": "ordinary",
-          "target_gloss": "taze ve sulu bitkiyle yetinip su içmemek"
-        },
-        {
-          "lexical_unit_id": "lu_007",
-          "rendering_kind": "ordinary",
-          "target_gloss": "su içmeden yetinen ve bulunduğu yerden ayrılmayan hayvan"
-        },
-        {
-          "lexical_unit_id": "lu_008",
-          "rendering_kind": "ordinary",
-          "target_gloss": "taze otla susuz yetinen deve veya yaban hayvanları; bir anlatımda çok sayıdaki develer"
-        },
-        {
-          "lexical_unit_id": "lu_009",
-          "rendering_kind": "ordinary",
-          "target_gloss": "eşiyle cinsel yakınlıktan kaçınmak"
-        }
-      ],
-      "excluded_glosses": [
-        {
-          "text": "susamak",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "displacement",
-            "preserves": "Su gereksinimi çevresindeki genel anlam alanını yalnızca uzaktan korur.",
-            "loses": "Taze bitkiyle suya gerek duymadan yetinme durumunu bütünüyle kaybeder.",
-            "adds": "Su isteme durumunu ekleyerek odak anlamın tersine yönelir.",
-            "collision": "Komşu dallardaki doğrudan susuzluk ve hızlı susama anlamlarıyla karışır."
-          }
-        }
-      ],
-      "neighbor_distinctions": [
-        {
-          "neighbor_ref": "root_000994/B002",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Taze bitki suyun yerini tutar ve cinsel uzak durma benzetmesi de kapsanır.",
-          "neighbor_only": "Yemeyi de içmeyi de bırakma, özellikle şiddetli susuzluk yüzünden olabilir.",
-          "gloss": "yemeden içmeden durma",
-          "shared_zone": "İki dal da canlı bir varlığın su içmemesi durumunu anlatır.",
-          "distinction": "Odak dalda hayvan taze bitkiden yeterli sıvıyı aldığı için suya gerek duymaz; komşu dalda beden hem yemekten hem içmekten kesilir ve bu durum yoksunlukla bağlantılıdır."
-        },
-        {
-          "neighbor_ref": "root_000968/B001",
-          "relation_type": "polarity_pair",
-          "boundary_match": "opposed",
-          "focus_only": "Taze bitki sayesinde suya gereksinim duymadan yetinme vardır.",
-          "neighbor_only": "Su gereksiniminin duyulması ve susuz kalmış olma niteliği vardır.",
-          "gloss": "susuz yetinme karşısında susama",
-          "shared_zone": "Her iki dal canlının suyla olan gereksinim ilişkisini konu edinir.",
-          "distinction": "Odak dal su istemeden yeterli olma durumunu, komşu dal ise su gereksiniminin ortaya çıkmasını anlatır; aynı eksende karşıt yönlere bakarlar."
-        }
-      ],
-      "neighbor_coverage_note": "Bütün adaylar karşılaştırıldı; su içmeme ile susama arasındaki en açıklayıcı iki sınır ilişkisi seçildi."
-    },
-    {
-      "branch_ref": "root_000006/B003",
-      "concept_map": {
-        "definition": "Özellikle kuşların, ayrıca başka toplulukların, birbirinden ayrı kümeler veya birbiri ardınca gelen bölükler halinde bulunmasıdır.",
-        "facets": [
-          {
-            "facet_id": "F001",
-            "role": "core",
-            "statement": "Topluluk tek bir bütün oluşturmaz; ayrı kümelere bölünmüş veya bölük bölük sıralanmış durumdadır.",
-            "claim_ids": [
-              "lu_010"
-            ]
-          },
-          {
-            "facet_id": "F002",
-            "role": "source_variant",
-            "statement": "Anlatımların bir kısmı kümelerin dağınıklığını, bir kısmı ise birbirini izlemesini öne çıkarır.",
-            "claim_ids": [
-              "lu_010"
-            ]
-          },
-          {
-            "facet_id": "F003",
-            "role": "example",
-            "statement": "Kuş toplulukları temel örnektir; deve toplulukları da ayrı bölükler halinde gelme örneği olarak verilir.",
-            "claim_ids": [
-              "lu_010"
-            ]
-          }
-        ]
-      },
-      "source_synthesis": {
-        "common_summary": "Kaynaklar söz konusu toplulukları tek parça değil, kümelere ayrılmış halde gösterir. Bazı anlatımlar bölüklerin birbirini izlemesini, bazıları da dağınık ve ayrı parçalar halinde bulunmasını öne çıkarır; kuşlar ortak örnektir.",
-        "common_claim_ids": [
-          "lu_010"
-        ],
-        "source_details": [],
-        "supporting_claim_ids": [],
-        "duplicate_claims": []
-      },
-      "concept_gloss": {
-        "text": "dağınık veya peş peşe gelen topluluklar",
-        "applicability": "Kuşların ya da başka varlıkların ayrı kümeler veya art arda gelen bölükler oluşturduğu bütün bağlamları kapsar.",
-        "error_profile": {
-          "fit": "none",
-          "preserves": "Toplulukların ayrı kümelere bölünmesini ve birbirini izleyebilmesini birlikte korur.",
+          "preserves": "Deve topluluğunu, sahipliği, edinmeyi ve bakım ustalığını birlikte korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -385,13 +67,13 @@
       },
       "contextual_glosses": [
         {
-          "text": "bölük bölük",
+          "text": "develer",
           "usage_role": "general",
-          "applicability": "Bir topluluğun ayrı kümeler halinde bulunduğu veya geldiği akıcı anlatımlarda kullanılır.",
+          "applicability": "Yalnızca toplu hayvan adının geçtiği bağlamlarda kullanılır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Tek bütün yerine ayrı topluluk parçaları bulunması anlamını korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Toplu deve adı çekirdeğini doğal biçimde korur.",
+            "loses": "Edinme, sahiplik, bakım ustalığı ve bakımda süreklilik kullanımlarını göstermez.",
             "adds": null,
             "collision": null
           },
@@ -400,19 +82,262 @@
           ]
         },
         {
-          "text": "birbiri ardınca gelen kümeler",
-          "usage_role": "explanatory",
-          "applicability": "Ayrı toplulukların özellikle art arda gelişinin belirtilmesi gereken bağlamlarda kullanılır.",
+          "text": "deve bakımında usta olmak",
+          "usage_role": "contextual",
+          "applicability": "Bir kişinin hayvanların bakımını iyi bilmesini anlatan kuruluşlarda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Kümelerin ayrı oluşunu ve birbirini izlemesini açıkça korur.",
-            "loses": "Yalnızca dağınık bulunup art arda gelmeyen yorumu dışarıda bırakır.",
+            "preserves": "Bakım bilgisini ve ustalığını açıkça korur.",
+            "loses": "Topluluk adı, çokluk, edinme ve sahiplik yönlerini kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_001",
+          "rendering_kind": "ordinary",
+          "target_gloss": "develer; tekili aynı kökten olmayan topluluk adı"
+        },
+        {
+          "lexical_unit_id": "lu_002",
+          "rendering_kind": "ordinary",
+          "target_gloss": "çok sayıda ya da elde tutulan toplu develer"
+        },
+        {
+          "lexical_unit_id": "lu_003",
+          "rendering_kind": "ordinary",
+          "target_gloss": "deve sahibi veya deve bakımında usta kimse"
+        },
+        {
+          "lexical_unit_id": "lu_004",
+          "rendering_kind": "ordinary",
+          "target_gloss": "deve ve koyun bakımını iyi bilmek"
+        },
+        {
+          "lexical_unit_id": "lu_005",
+          "rendering_kind": "ordinary",
+          "target_gloss": "develerin yanında durmamak ya da bakımlarını sürdürmemek"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000853/B005",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Develerin toplu adı, edinilmesi, çokluğu ve sahibi olma anlamları da bu daldadır.",
+          "neighbor_only": "Komşu dal, kişinin genel malını iyi yönetmesini de kapsar.",
+          "gloss": "deve ve mal bakımını iyi bilen kimse",
+          "shared_zone": "Her iki dal da develerin bakımını ve bu bakım konusundaki bilgiyi içerir.",
+          "distinction": "Odak dal deve topluluğundan türeyen sahiplik ve bakım kullanımlarını bir araya getirir; komşu ise iyi yöneticiyi, deve dışındaki malı da içine alan kişi niteliği olarak tanımlar."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; en yararlı sınır karşılaştırması bakım ustalığı alanındaki yakın komşuyla verildi."
+    },
+    {
+      "branch_ref": "root_000006/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, deve veya yaban hayvanının yaş otla yetinerek suya ihtiyaç duymamasını çekirdek anlam yapar ve erkeğin kadına yaklaşmamasını buna benzetilen ayrı bir kullanım olarak verir.",
+        "boundary_note": "Susuz kalma çekirdeği hayvana özgüdür; cinsel uzak durma yalnızca benzetmeli kuruluşa bağlıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Hayvanın yaş otla sudan bağımsız kalması ile erkeğin kadından uzak durduğu kuruluş birbirine karıştırılmadan ayrı tutulur."
+      },
+      "concept_map": {
+        "definition": "Deve veya yaban hayvanının yaş otla yetinip su içmeden bulunduğu yerde kalmasıdır. Buna benzetilerek, bir erkeğin kadına yaklaşmaktan kaçınması da belirli bir kuruluşta anlatılır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Deve veya yaban hayvanının yaş otla yetinip su içmeye gerek duymaması.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Sudan bağımsız kalan hayvanın bulunduğu yerden ayrılmaması.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "extension",
+            "statement": "Erkeğin kadına yaklaşmaktan kaçınmasının hayvanın sudan uzak durmasına benzetilmesi.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar, hayvanın yaş ot sayesinde su içmeden yetinmesinde birleşir; ayrıca kadına yaklaşmaktan uzak durmayı bu duruma benzetilen kullanım olarak aktarır.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "yaş otla yetinip sudan uzak durma",
+        "applicability": "Hayvana ilişkin çekirdeği doğrudan karşılar; insana ilişkin benzetmeli kullanım açıklama gerektirir.",
+        "error_profile": {
+          "fit": "narrowing",
+          "preserves": "Yaş otla yetinme ve su içmeden kalma işlemlerini korur.",
+          "loses": "Kadına yaklaşmaktan kaçınan erkeğe ilişkin benzetmeli kullanımı doğrudan kapsamaz.",
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "kadına yaklaşmaktan uzak durmak",
+          "usage_role": "contextual",
+          "applicability": "Yalnızca erkeğin kadınla cinsel yakınlıktan kaçınmasını anlatan kuruluşa uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "İnsana aktarılan uzak durma sonucunu açıkça korur.",
+            "loses": "Hayvanın yaş otla yetinip su içmemesi olan temel görüntüyü vermez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_006",
+          "rendering_kind": "ordinary",
+          "target_gloss": "develerin veya yaban hayvanlarının yaş otla yetinip su içmemesi"
+        },
+        {
+          "lexical_unit_id": "lu_007",
+          "rendering_kind": "ordinary",
+          "target_gloss": "suya gerek duymadan bulunduğu yerde kalan hayvan"
+        },
+        {
+          "lexical_unit_id": "lu_008",
+          "rendering_kind": "ordinary",
+          "target_gloss": "yaş otla yetinip su içmeyen develer veya yaban hayvanları"
+        },
+        {
+          "lexical_unit_id": "lu_009",
+          "rendering_kind": "ordinary",
+          "target_gloss": "erkeğin kadına yaklaşmaktan kaçınması"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_001493/B004",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Hayvan yaş ottan yeterli nemi aldığı için suya ihtiyaç duymaz.",
+          "neighbor_only": "Hayvanın suya götürülmesi, susuzluk süresi uzatılarak bilerek geciktirilir.",
+          "gloss": "hayvanı sudan bir süre daha alıkoyma",
+          "shared_zone": "Her iki dal da develerin su içmeden geçirdiği süreyle ilgilidir.",
+          "distinction": "Odak dal doğal bir yeterlilik ve ihtiyaç duymama durumudur; komşu dal ise suya erişimin bir veya daha çok gün geciktirilmesi işlemidir."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; su içmeme ile suya götürmeyi geciktirme arasındaki ayrım en açıklayıcı karşılaştırmadır."
+    },
+    {
+      "branch_ref": "root_000006/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, özellikle kuşlar için kullanılan fakat deve topluluklarına da uygulanabilen, birbirinden ayrı kümeler veya art arda gelen topluluklar anlamını açıkça destekler.",
+        "boundary_note": "Belirleyici özellik tek bir topluluk olmak değil, ayrı kümeler halinde dağılmak veya art arda gelmektir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın biçimin dağınık ya da birbirini izleyen topluluklar anlamıyla sınırlıdır ve başka dalların kuruluş anlamlarını almaz."
+      },
+      "concept_map": {
+        "definition": "Birbirinden ayrı kümeler halinde bulunan veya bir küme ötekini izleyecek biçimde art arda gelen topluluklardır; kullanım özellikle kuşlar, ayrıca develer için görülür.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Birbirinden ayrı ve dağınık kümeler halinde bulunan topluluklar.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "source_variant",
+            "statement": "Bir kümenin ardından başka bir kümenin geldiği art arda topluluklar.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "example",
+            "statement": "Kuşların veya develerin ayrı kümeler halinde tasvir edilmesi.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar sözü çoğul topluluklar için verir; açıklamalar bu toplulukların ayrı ve dağınık olması ile birbiri ardınca gelmesi arasında değişir.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "ayrı ayrı veya art arda gelen topluluklar",
+        "applicability": "Dağınıklık ve ardışıklık açıklamalarını birlikte taşıyan en geniş doğal karşılıktır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Çokluğu, kümelerin ayrılığını ve birbirini izleme olasılığını korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "sürü sürü",
+          "usage_role": "contextual",
+          "applicability": "Hayvanların ayrı kümeler veya peş peşe topluluklar halinde geldiği anlatımlarda doğaldır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Ayrı kümeler halindeki çokluğu ve art arda gelişi bağlam içinde korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F001",
-            "F002"
+            "F002",
+            "F003"
           ]
         }
       ],
@@ -420,7 +345,7 @@
         {
           "lexical_unit_id": "lu_010",
           "rendering_kind": "ordinary",
-          "target_gloss": "dağınık veya birbiri ardınca gelen topluluklar"
+          "target_gloss": "ayrı kümeler halinde veya birbiri ardınca gelen topluluklar"
         }
       ],
       "excluded_glosses": [],
@@ -429,161 +354,93 @@
           "neighbor_ref": "root_000563/B005",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Topluluklar yalnızca dağınık kümeler halinde de bulunabilir ve kuşlar temel örnektir.",
-          "neighbor_only": "Geliş hareketi, gönderilme ve otlağa ya da suya yönelme ayrıca kapsanır.",
-          "gloss": "art arda gelen bölükler",
-          "shared_zone": "Her iki dal ayrı toplulukların birbiri ardınca gelmesini anlatabilir.",
-          "distinction": "Odak dal kümelerin dağınık veya sıralı düzenini niteler; komşu dal ise bölüklerin gelişini ve bir yere gönderilmesini hareket olarak merkezine alır."
-        },
-        {
-          "neighbor_ref": "root_001239/B010",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Kuşlar ve genel topluluklar hem dağınık hem de art arda kümeler oluşturabilir.",
-          "neighbor_only": "Özellikle atların bölük bölük ve dağınık biçimde gelişi anlatılır.",
-          "gloss": "dağınık bölükler",
-          "shared_zone": "Her iki dal toplulukların tek kütle yerine ayrı ve dağınık bölükler oluşturmasını içerir.",
-          "distinction": "Odak dal varlık türünü geniş bırakıp sıralı gelişi de kapsar; komşu dal atların dağınık bölükler halinde gelişine özgü daha dar bir kullanımdır."
-        },
-        {
-          "neighbor_ref": "root_001191/B005",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Birden çok kümenin dağınık veya peş peşe düzenlenmesi anlamı vardır.",
-          "neighbor_only": "Yalnızca tek bir kuş topluluğu parçası adlandırılır.",
-          "gloss": "kuş topluluğu parçası",
-          "shared_zone": "Her iki dal kuşların bir topluluk veya topluluk parçası halinde bulunmasına değinir.",
-          "distinction": "Odak dal kümeler arasındaki ayrılık ya da sıra ilişkisini bildirir; komşu dal ise böyle bir düzen şartı olmadan kuşlardan oluşan tek parçayı adlandırır."
+          "focus_only": "Topluluklar ayrı ve dağınık kümeler olarak da bulunabilir; ardışıklık zorunlu değildir.",
+          "neighbor_only": "Komşu dal, insanların veya hayvanların bir küme ardından öteki gelecek biçimde gönderilmesini ya da gelişini vurgular.",
+          "gloss": "küme küme, birbiri ardınca gelme",
+          "shared_zone": "Her iki dal da tek bir yığın yerine birden çok ayrı topluluğu anlatabilir.",
+          "distinction": "Odak dal ayrılığı hem dağınıklık hem ardışıklık olarak kapsar; komşu dalda art arda geliş veya gönderiliş temel sınırdır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar incelendi; dağınıklık, ardışıklık ve kuş topluluğu sınırlarını ayıran üç karşılaştırma seçildi."
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; ayrı kümeler ile zorunlu art arda geliş arasındaki sınır en yararlı karşılaştırmadır."
     },
     {
       "branch_ref": "root_000006/B004",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi ağırlık ve yiyeceğin ağır gelmesi çekirdeğine yükümlülük, kınanma, ayıp, giderilecek ihtiyaç veya öç ile üstün gelip direnme kullanımlarını ekler. Bunlar tek bir yalın eşdeğere indirgenemeyecek bağlı yönlerdir.",
+        "boundary_note": "Ağırlık ortak görüntüdür; hukuki-ahlaki yük, ayıp, ihtiyaç ve üstün gelme ayrı kullanımlar olarak korunur."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Yalın biçimlerin ağırlık ve yük anlamları, yalnızca belirli kuruluşlarda görülen ayıpsızlık, ihtiyaç, öç ve üstün gelme anlamlarından ayrılır."
+      },
       "concept_map": {
-        "definition": "Bir şeyin ağırlığını, yiyeceğin mideye ağır gelmesini, kişinin üzerinde kalan sorumluluk veya kınanmayı ve bir işteki ayıbı anlatır. Bu yük düşüncesine bağlı olarak baskın ve boyun eğmez olmayı, kötü sonuç taşıyan bir gereksinimi ya da öç alacağını da kapsar.",
+        "definition": "Bir şeyin ağır veya sindirimi güç olması ve kişinin üzerinde yükümlülük, kınanma ya da ayıp bırakmasıdır. Belirli biçim ve kuruluşlarda giderilecek bir ihtiyaç veya öç ile üstün gelip direnme de anlatılır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Somut ya da duyumsanan ağırlık, özellikle yiyeceğin bedene ağır gelmesi, temel anlam alanını oluşturur.",
+            "statement": "Ağırlık veya yiyeceğin bedene ağır gelmesi.",
             "claim_ids": [
-              "lu_011"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "extension",
-            "statement": "Bir işten doğan sorumluluk, kınanma veya kötü iz, taşınan bir yük gibi düşünülür.",
+            "statement": "Kişinin üzerinden çıkabileceği bir yükümlülük, kınanma veya ayıp.",
             "claim_ids": [
-              "lu_011"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "source_variant",
-            "statement": "Baskın çıkma ve boyun eğmeme, işin ağırlığına bağlanan tek kaynaklı bir eylem anlamıdır.",
+            "role": "associated_use",
+            "statement": "Giderilecek ihtiyaç veya öç ile üstün gelip direnme anlamları.",
             "claim_ids": [
-              "lu_012"
-            ]
-          },
-          {
-            "facet_id": "F004",
-            "role": "specialization",
-            "statement": "Bir işte kişinin üzerinde ayıp bulunmaması, yük ve kınanma alanının olumsuz kuruluşudur.",
-            "claim_ids": [
-              "lu_013"
-            ]
-          },
-          {
-            "facet_id": "F005",
-            "role": "source_variant",
-            "statement": "Kötü sonuç taşıyan bir gereksinim veya öç alacağı da kişiyi bağlayan bir yük olarak anlatılır.",
-            "claim_ids": [
-              "lu_014"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak çekirdek ağırlık ve ağır gelmedir; buradan bir işin kişide bıraktığı sorumluluk, kınanma ve kusur anlamlarına geçilir. Ayrı tanıklıklar baskın çıkıp boyun eğmemeyi, ayıptan uzak olmayı ve kötü sonuçlu bir gereksinim ya da öç alacağını bu yük alanına bağlar.",
+        "common_summary": "Kaynaklar ağırlık ekseninde birleşir; toplu kanıt yiyeceğin ağır gelmesini, yükümlülük ve kınanmayı, ayıbı, ihtiyaç veya öcü ve üstün gelip direnmeyi farklı kullanımlar halinde gösterir.",
         "common_claim_ids": [
-          "lu_011"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_012"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Tek kaynaklı eylem kullanımı, kişinin baskın çıkmasını ve boyun eğmez duruma gelmesini bildirir."
-          },
-          {
-            "claim_ids": [
-              "lu_013"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Tek kaynaklı olumsuz kuruluş, söz konusu işte kişinin üzerinde ayıp bulunmadığını belirtir."
-          },
-          {
-            "claim_ids": [
-              "lu_014"
-            ],
-            "kind": "extension",
-            "summary": "Tek kaynak, sözü kötü sonuç taşıyan bir gereksinim ve öç alacağı için de kullanır."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "ağırlık, ağır gelme, sorumluluk, ayıp ve bunlara bağlı direnç",
-        "applicability": "Fiziksel ağırlıktan toplumsal yük ve kusura, oradan baskınlık ile boyun eğmemeye uzanan dalın genel karşılığıdır.",
+        "text": "ağırlık, yükümlülük veya ayıp",
+        "applicability": "Dalın temel ad kullanımlarını kapsar; ihtiyaç, öç ve üstün gelme kuruluşları ayrıca belirtilmelidir.",
         "error_profile": {
-          "fit": "none",
-          "preserves": "Ağırlığı, bedensel ağır gelmeyi, sorumluluğu, kınanmayı, kusuru ve direnç uzantısını korur.",
-          "loses": null,
+          "fit": "narrowing",
+          "preserves": "Ağırlık, kişinin üzerindeki yük ve ayıp yönlerini korur.",
+          "loses": "Giderilecek ihtiyaç veya öç ile üstün gelip direnme kullanımlarını doğrudan göstermez.",
           "adds": null,
           "collision": null
         },
         "facet_ids": [
           "F001",
-          "F002",
-          "F003",
-          "F004",
-          "F005"
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "ağırlık ve sorumluluk",
-          "usage_role": "general",
-          "applicability": "Bir şeyin ağır gelmesi ya da bir işin kişi üzerinde yük bırakması öne çıktığında kullanılır.",
+          "text": "üstün gelip direnmek",
+          "usage_role": "contextual",
+          "applicability": "Yalnızca bir kişinin üstün gelmesi ve boyun eğmemesi anlatılan fiil kuruluşunda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Fiziksel ağırlık ile kişiyi bağlayan sorumluluk çekirdeğini korur.",
-            "loses": "Ayıp, baskınlık, boyun eğmeme ve öç alacağına ilişkin özel kullanımları dışarıda bırakır.",
+            "preserves": "Üstünlük kazanma ve direnme sonucunu korur.",
+            "loses": "Ağırlık, yükümlülük, kınanma, ayıp, ihtiyaç ve öç anlamlarını dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001",
-            "F002"
-          ]
-        },
-        {
-          "text": "üzerinde ayıp bulunmamak",
-          "usage_role": "contextual",
-          "applicability": "Belirli bir iş yüzünden kişinin kınanacak veya kusurlu sayılmadığı olumsuz kuruluşta kullanılır.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Kişinin söz konusu işte ayıp ve kınanmadan uzak olmasını korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F004"
+            "F003"
           ]
         }
       ],
@@ -591,99 +448,75 @@
         {
           "lexical_unit_id": "lu_011",
           "rendering_kind": "ordinary",
-          "target_gloss": "ağırlık, yiyeceğin ağır gelmesi, sorumluluk veya kınanma"
+          "target_gloss": "ağırlık, ağır gelme, yükümlülük veya kınanma"
         },
         {
           "lexical_unit_id": "lu_012",
           "rendering_kind": "ordinary",
-          "target_gloss": "baskın çıkıp boyun eğmemek"
+          "target_gloss": "üstün gelip direnmek"
         },
         {
           "lexical_unit_id": "lu_013",
           "rendering_kind": "ordinary",
-          "target_gloss": "bu işte üzerinde ayıp bulunmamak"
+          "target_gloss": "bunda senin için bir ayıp yok"
         },
         {
           "lexical_unit_id": "lu_014",
           "rendering_kind": "ordinary",
-          "target_gloss": "kötü sonuç taşıyan gereksinim veya öç alacağı"
+          "target_gloss": "giderilecek ihtiyaç veya öç"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "yük",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Ağırlık ile kişiyi bağlayan sorumluluk düşüncesini kısaca korur.",
-            "loses": "Yiyeceğin ağır gelmesini, ayıbı, kınanmayı ve boyun eğmeme uzantısını belirtmez.",
-            "adds": null,
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000037/B004",
-          "relation_type": "near_neighbor",
+          "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Yiyeceğin ağır gelmesi, ayıp, kınanma, baskınlık ve boyun eğmeme de kapsanır.",
-          "neighbor_only": "Ağır sözleşme ve taşınan günah özellikle kapsanır.",
-          "gloss": "taşınan ağır yük",
-          "shared_zone": "Her iki dal ağırlığı, sorumluluğu ve kişiyi bağlayan manevi yükü ilişkilendirir.",
-          "distinction": "Odak dal bedensel ağır gelmeden ayıp ve dirence uzanan çok yönlü bir alandır; komşu dal taşınan yük, günah ve ağır sözleşme çevresinde daha belirgin biçimde toplanır."
-        },
-        {
-          "neighbor_ref": "root_000520/B001",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Fiziksel ağırlık, yiyeceğin ağır gelmesi ve sorumluluk yükü bulunur.",
-          "neighbor_only": "Birini doğrudan kötüleme, suçlama ve kusurlu bulma eylemleri bulunur.",
-          "gloss": "kınama ve kusur",
-          "shared_zone": "İki dal bir kişi ya da iş üzerindeki kınanma ve kusur değerlendirmesinde kesişir.",
-          "distinction": "Odak dalda kınanma, ağırlık ve sorumluluk düşüncesinin bir uzantısıdır; komşu dal kötüleme ve kusurlu bulmayı başlı başına eylem ve nitelik olarak anlatır."
-        },
-        {
-          "neighbor_ref": "root_000971/B001",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Mideye ağır gelme, ayıp, kınanma ve boyun eğmeme uzantıları vardır.",
-          "neighbor_only": "Taşınan somut yük ve üstlenilen ödeme yükü özellikle vardır.",
-          "gloss": "ağır yük",
-          "shared_zone": "Her iki dal fiziksel ağırlık ile insanın üstlendiği sorumluluğu bir arada düşünebilir.",
-          "distinction": "Odak dal ağırlığın bedensel ve toplumsal sonuçlarını genişletir; komşu dal taşınan yükün kendisini ve üstlenilmiş ödeme sorumluluğunu merkez alır."
+          "focus_only": "Yiyeceğin ağır gelmesi, ayıp, kınanma, ihtiyaç, öç ve üstün gelip direnme kullanımları vardır.",
+          "neighbor_only": "Komşu dal özellikle taşınan yükü, günahı veya bağlayıcı ağır sözü anlatır.",
+          "gloss": "taşınan ağır yük veya bağlayıcı sorumluluk",
+          "shared_zone": "Her iki dal da kişinin üzerinde bulunan ağır yük veya sorumluluk görüntüsünü paylaşır.",
+          "distinction": "Odak dal fiziksel ağırlıktan ayıp ve kınanmaya uzanan daha dağınık kullanımlara sahiptir; komşu dal taşınan yük ve bağlayıcı sorumlulukta yoğunlaşır."
         }
       ],
-      "neighbor_coverage_note": "Tüm adaylar değerlendirildi; ağırlık, sorumluluk, kınanma ve ayıp sınırlarını açıklayan üç komşu seçildi."
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; ağır yük ile daha geniş ağırlık ve ayıp alanı arasındaki karşılaştırma sınırı en iyi açıklar."
     },
     {
       "branch_ref": "root_000006/B005",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi bir demet yakacak odunu açık çekirdek olarak verir ve bunun üzerine bir küçük demet eklenmesi görüntüsünden, bir sıkıntının üstüne başka sıkıntı gelmesi sözünü kurar.",
+        "boundary_note": "Yakacak odun demeti nesne anlamıdır; sıkıntı üstüne sıkıntı yalnızca kalıplaşmış söze bağlıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Yalın biçimin yakacak odun demeti anlamı ile kalıplaşmış sözün üst üste gelen sıkıntı anlamı ayrı tutulur."
+      },
       "concept_map": {
-        "definition": "Yakılacak odunların bağlanarak oluşturduğu demettir; bunun üzerine küçük bir tutam daha konması, bir sıkıntının üstüne yenisinin eklenmesini anlatan kalıplaşmış örnektir.",
+        "definition": "Bir araya bağlanmış yakacak odun demetidir. Bu demetin üstüne başka bir küçük demet koyma görüntüsü, kalıplaşmış bir sözde sıkıntı üstüne sıkıntı gelmesini anlatır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir araya getirilip bağlanmış yakacak odunlar tek bir demet oluşturur.",
+            "statement": "Bir araya bağlanmış yakacak odun demeti.",
             "claim_ids": [
-              "lu_015"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "associated_use",
-            "statement": "Odun demetinin üzerine küçük bir tutam koyma görüntüsü, bir sıkıntıya başka bir sıkıntı eklenmesi için kullanılır.",
+            "statement": "Bir sıkıntının üstüne başka bir sıkıntı gelmesini anlatan kalıplaşmış söz.",
             "claim_ids": [
-              "lu_016"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar temel adı yakacak odun demeti olarak açıklar. Bu demetin üzerine küçük bir tutam koymayı anlatan kalıplaşmış söz ise bir sıkıntının üstüne başka bir sıkıntının gelmesini bildirir.",
+        "common_summary": "Kaynaklar yakacak odun demeti anlamında birleşir ve demetin üzerine küçük bir demet ekleme görüntüsünü üst üste gelen sıkıntılar için kullanılan sözle ilişkilendirir.",
         "common_claim_ids": [
-          "lu_015",
-          "lu_016"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
@@ -691,11 +524,11 @@
       },
       "concept_gloss": {
         "text": "yakacak odun demeti",
-        "applicability": "Bağlanmış odunların oluşturduğu demetin kendisini adlandıran çekirdek karşılıktır.",
+        "applicability": "Nesne anlamını tam karşılar; kalıplaşmış sıkıntı anlatımı bağlam içinde ayrıca çevrilir.",
         "error_profile": {
-          "fit": "none",
-          "preserves": "Malzemenin odun olmasını, yakacak işlevini ve demet halinde bağlanmasını korur.",
-          "loses": null,
+          "fit": "narrowing",
+          "preserves": "Bir araya bağlanmış yakacak odunlardan oluşan demeti korur.",
+          "loses": "Sıkıntı üstüne sıkıntı gelmesini anlatan kalıplaşmış kullanımı kapsamaz.",
           "adds": null,
           "collision": null
         },
@@ -705,13 +538,13 @@
       },
       "contextual_glosses": [
         {
-          "text": "dert üstüne dert",
+          "text": "sıkıntı üstüne sıkıntı",
           "usage_role": "contextual",
-          "applicability": "Kalıplaşmış sözün bir sıkıntıya yenisinin eklenmesi anlamında kullanıldığı bağlamlara uygundur.",
+          "applicability": "Yalnızca küçük demetin odun demeti üzerine konmasına dayanan kalıplaşmış söz için kullanılır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "İkinci sıkıntının var olan sıkıntının üstüne eklenmesi anlamını korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Bir olumsuzluğa yenisinin eklenmesi sonucunu korur.",
+            "loses": "Somut yakacak odun demeti anlamını göstermez.",
             "adds": null,
             "collision": null
           },
@@ -729,7 +562,7 @@
         {
           "lexical_unit_id": "lu_016",
           "rendering_kind": "ordinary",
-          "target_gloss": "dert üstüne dert"
+          "target_gloss": "sıkıntı üstüne sıkıntı"
         }
       ],
       "excluded_glosses": [],
@@ -738,110 +571,84 @@
           "neighbor_ref": "root_000236/B008",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Demetin özellikle yakacak odundan oluşması ve sıkıntı üstüne sıkıntı sözüne girmesi vardır.",
-          "neighbor_only": "Demet biçilen yem bitkisi ve benzeri malzemelerden oluşabilir.",
-          "gloss": "bitki demeti",
-          "shared_zone": "Her iki dal bitkisel malzemenin toplanıp bir demet oluşturmasını adlandırır.",
-          "distinction": "Odak dal yakacak odunla sınırlıdır ve kalıplaşmış bir sıkıntı anlatımına temel olur; komşu dal yem bitkisi gibi başka malzemelerden oluşan demeti adlandırır."
-        },
-        {
-          "neighbor_ref": "root_001619/B004",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odun demeti çekirdek anlamdır ve üzerine tutam eklenen kalıplaşmış kullanım bulunur.",
-          "neighbor_only": "Kalın sopa ve kumaşa vurulan tokmak da aynı dalda yer alır.",
-          "gloss": "kalın odun demeti",
-          "shared_zone": "İki dal da bir araya getirilmiş yakacak odun demetini kapsar.",
-          "distinction": "Odak dal yalnız odun demetini ve ondan doğan kalıplaşmış sözü işler; komşu dal demetin yanında vurmak veya taşımak için kullanılan kalın nesneleri de kapsar."
-        },
-        {
-          "neighbor_ref": "root_000910/B001",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Bağlanmış yakacak odun demeti ve bunun kalıplaşmış mecazı vardır.",
-          "neighbor_only": "Elin kavradığı karışık dal, ot, çiçek veya bitki tutamı vardır.",
-          "gloss": "karışık bitki tutamı",
-          "shared_zone": "Her iki dal dal veya bitki parçalarının bir araya getirilmiş küçük topluluğunu anlatır.",
-          "distinction": "Odak dal bağlanmış ve yakacak olarak kullanılan bir demettir; komşu dal elde kavranan, türleri karışık olabilen tutamı anlatır."
+          "focus_only": "Demet özellikle yakacak odundan oluşur ve kalıplaşmış sıkıntı sözüne temel olur.",
+          "neighbor_only": "Komşu dal yemlik bitkiler ve benzeri otların demetini de bildirir.",
+          "gloss": "ot veya yem bitkisi demeti",
+          "shared_zone": "Her iki dal da uzun bitkisel parçaların bir araya getirilmiş demetini anlatır.",
+          "distinction": "Odak dal malzemeyi yakacak odunla sınırlar ve deyimleşmiş bir uzantı taşır; komşu dal başka bitkisel malzemelerden yapılan demeti adlandırır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; malzeme, bağlanma ve demet-tutam ayrımını gösteren üç karşılaştırma seçildi."
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; malzeme bakımından en yakın demet adıyla yapılan karşılaştırma yayımlanmaya değer bulundu."
     },
     {
       "branch_ref": "root_000006/B006",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynaklar Hristiyan din görevlisi üzerinde birleşmekle birlikte onun manastır yaşamındaki görevli, üst düzey görevli veya çan çalan kişi oluşunu farklı biçimlerde açıklar. Tanım bu görev çeşitlerini tek bir zorunlu makam saymaz.",
+        "boundary_note": "Hristiyan din görevlisi ortak çekirdektir; yöneticilik ve çan çalma kaynaklarda görülen görev ayrıntılarıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın görev adını kapsar ve komşu din görevlisi adlarının özel makam sınırlarını bu dala taşımaz."
+      },
       "concept_map": {
-        "definition": "Hristiyan topluluğuyla ilişkili bir görevliyi veya yöneticiyi adlandırır; kaynaklara göre kişi manastır görevlisi, topluluğun başı ya da çan çalan görevli olabilir.",
+        "definition": "Hristiyanlar arasında manastır yaşamı süren veya din hizmeti gören kişi; bazı açıklamalarda üst düzey görevli, bazılarında çanı çalan görevli olarak belirginleşir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kişi Hristiyan topluluğuyla ilişkili bir görevli veya yöneticidir.",
+            "statement": "Hristiyanlar arasında manastır yaşamı süren veya din hizmeti gören kişi.",
             "claim_ids": [
-              "lu_017"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "source_variant",
-            "statement": "Kaynak anlatımları kişinin manastır görevlisi, dinî yönetici veya çan çalan görevli olmasını ayrı ayrı öne çıkarır.",
+            "statement": "Üst düzey bir din görevlisi veya çanı çalmakla görevli kişi olarak açıklanması.",
             "claim_ids": [
-              "lu_017"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar sözü Hristiyan topluluğundaki bir din görevlisi için kullanır. Anlatımların biri manastır yaşamını, biri yöneticilik konumunu, biri de çan çalma görevini öne çıkarır; bunlar aynı görev alanının kaynaklara göre değişen sınırlarıdır.",
+        "common_summary": "Kaynaklar Hristiyan din görevlisi çekirdeğini paylaşır; görev derecesini manastır görevlisi, yönetici veya çan çalan kişi olarak farklı biçimlerde ayrıntılandırır.",
         "common_claim_ids": [
-          "lu_017"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "Hristiyan manastır görevlisi, dinî yönetici veya çan görevlisi",
-        "applicability": "Kaynakların manastır yaşamı, yöneticilik ve çan çalma arasında değişen görev tanımlarının tamamını kapsar.",
+        "text": "Hristiyan manastır din görevlisi",
+        "applicability": "Ortak görev alanını karşılar; yöneticilik veya çan çalma ayrıntısı gerektiğinde bağlamla belirtilir.",
         "error_profile": {
-          "fit": "none",
-          "preserves": "Hristiyan bağlamını ve üç ayrı görev yorumunu eksiksiz biçimde korur.",
-          "loses": null,
+          "fit": "narrowing",
+          "preserves": "Hristiyanlık içindeki manastır yaşamı ve din hizmeti çekirdeğini korur.",
+          "loses": "Üst düzey görevli veya özellikle çan çalan kişi olma seçeneklerini açıkça belirtmez.",
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001",
-          "F002"
+          "F001"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "Hristiyan manastır görevlisi",
-          "usage_role": "general",
-          "applicability": "Kişinin manastırda yaşayan ve din hizmeti gören yönü öne çıktığında kullanılır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Hristiyan din hizmeti ile manastır yaşamı yönünü korur.",
-            "loses": "Üst düzey yöneticilik ve yalnızca çan çalma görevi yorumlarını dışarıda bırakır.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        },
-        {
-          "text": "Hristiyan dinî yöneticisi",
+          "text": "üst düzey Hristiyan din görevlisi",
           "usage_role": "contextual",
-          "applicability": "Kişinin topluluk içindeki baş veya yönetici konumu açıkça kastedildiğinde kullanılır.",
+          "applicability": "Kaynağın kişiyi din topluluğunun yöneticilerinden biri olarak sunduğu bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Hristiyan topluluğundaki üst düzey dinî görev konumunu korur.",
-            "loses": "Manastır yaşamı ve çan çalma görevi yorumlarını dışarıda bırakır.",
+            "preserves": "Din görevliliğini ve yönetici konumunu korur.",
+            "loses": "Sıradan manastır görevlisi ve çan çalan görevli açıklamalarını kapsamaz.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
+            "F001",
             "F002"
           ]
         }
@@ -850,86 +657,63 @@
         {
           "lexical_unit_id": "lu_017",
           "rendering_kind": "ordinary",
-          "target_gloss": "Hristiyan manastır görevlisi, dinî yönetici veya çan çalan görevli"
+          "target_gloss": "Hristiyan manastır görevlisi, üst düzey din görevlisi veya çan çalan görevli"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "papaz",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "displacement",
-            "preserves": "Hristiyan din görevlisi olma yönünü genel olarak korur.",
-            "loses": "Manastır yaşamı, üst düzey yöneticilik ve çan çalma seçeneklerini ayırt etmez.",
-            "adds": "Belirli bir din görevlisi rütbesi çağrışımını gereksiz yere ekler.",
-            "collision": "Komşu dallardaki başka Hristiyan din görevlisi türleriyle kolayca karışır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_001223/B003",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Çan çalma görevi ve manastır yaşamı seçenekleri bulunur.",
-          "neighbor_only": "Bilgili ve ibadet eden din adamı niteliği ile ayrı görev adı bulunur.",
-          "gloss": "Hristiyan din görevlisi",
-          "shared_zone": "Her iki dal Hristiyan topluluğundaki din görevlisini veya yöneticiyi adlandırır.",
-          "distinction": "Odak dalın kaynaklara göre görevi manastır yaşamı, yöneticilik veya çan çalma olabilir; komşu dal ayrı bir din görevlisi sınıfını ve onun bilgili, ibadet eden niteliğini öne çıkarır."
-        },
-        {
-          "neighbor_ref": "root_000720/B005",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Manastır görevlisi veya çan çalan kişi anlamı da bulunur.",
-          "neighbor_only": "Üst düzey Hristiyan yöneticiliği dalın değişmez çekirdeğidir.",
-          "gloss": "üst düzey Hristiyan yöneticisi",
-          "shared_zone": "İki dal da Hristiyan topluluğunun başındaki dinî yöneticiyi gösterebilir.",
-          "distinction": "Odak dal yalnız bir kaynak yorumunda yöneticiyi bildirir ve başka görevleri de kapsar; komşu dal doğrudan üst düzey yönetici rütbesine odaklanır."
-        },
-        {
-          "neighbor_ref": "root_000818/B005",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Manastır yaşamı, baş yöneticilik ve çan çalma arasında değişen kapsam vardır.",
-          "neighbor_only": "Kilise hizmetine sürekli bağlı ayrı bir görev sınıfı vardır.",
-          "gloss": "kilise görevlisi",
-          "shared_zone": "Her iki dal Hristiyan topluluğundaki kilise ve din hizmeti görevlerini konu edinir.",
-          "distinction": "Odak dal farklı kaynaklarda birden çok görev sınırı taşır; komşu dal kilise hizmetindeki belirli ve ayrı görev sınıfını adlandırır."
+          "focus_only": "Manastır görevliliği ve çan çalma açıklamaları bu dala özgü olabilir.",
+          "neighbor_only": "Komşu dal bilgili ve ibadet eden Hristiyan din adamını, kendi görev adlarıyla belirtir.",
+          "gloss": "bilgili ve ibadet eden Hristiyan din adamı",
+          "shared_zone": "Her iki dal da Hristiyan topluluğundaki din görevlilerini ve kimi yöneticileri adlandırır.",
+          "distinction": "Odak dal manastır, yöneticilik veya çan görevi çevresinde tanımlanır; komşu dal öğrenim ve ibadet niteliğini öne çıkaran başka bir görev adıdır."
         }
       ],
-      "neighbor_coverage_note": "Tüm adaylar incelendi; en yakın din görevlisi ve yönetici türleriyle üç ayırt edici karşılaştırma yayımlandı."
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; en yakın görev adıyla makam ve işlev farkını gösteren karşılaştırma seçildi."
     },
     {
       "branch_ref": "root_000006/B007",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, hurmadan ayrılmış sıkı veya iri bir parçayı tek ve açık anlam olarak verir; ağırlık, yer adı ve odun demeti dallarıyla karıştırılmamalıdır.",
+        "boundary_note": "Anlam yalnızca hurmadan oluşan ayrılmış bir parçadır; başka maddelerin parçaları bu dalın kapsamında değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın biçimin hurma parçası anlamıyla sınırlıdır ve benzer sesli öteki dalların anlamlarını içermez."
+      },
       "concept_map": {
-        "definition": "Hurmadan oluşan bir parçayı veya kütleyi adlandırır.",
+        "definition": "Hurmadan ayrılmış, sıkı veya iri bir parça.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Adlandırılan şey, hurmadan oluşan belirgin ve iri bir meyve parçasıdır.",
+            "statement": "Hurmadan oluşan ayrılmış, sıkı veya iri parça.",
             "claim_ids": [
-              "lu_018"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar aynı biçimde bunun hurmadan oluşan iri ve belirgin bir parça olduğunu bildirir; kapsamı başka meyvelere veya genel parça anlamına genişletmez.",
+        "common_summary": "Kaynaklar, sözü herhangi bir yiyecek parçası olarak değil, özellikle hurmadan ayrılmış bir parça olarak tanımlar.",
         "common_claim_ids": [
-          "lu_018"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "iri hurma parçası",
-        "applicability": "Hurma meyvesinden oluşan belirgin bir parçanın doğrudan adlandırıldığı bağlamlarda kullanılır.",
+        "text": "iri bir hurma parçası",
+        "applicability": "Hurmadan ayrılmış sıkı veya iri parçayı doğal Türkçeyle tam olarak karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Parçanın hurmadan oluşmasını ve iri, belirgin bir kütle olmasını korur.",
+          "preserves": "Malzemenin hurma oluşunu ve ayrılmış parça niteliğini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -938,28 +722,12 @@
           "F001"
         ]
       },
-      "contextual_glosses": [
-        {
-          "text": "bir parça hurma",
-          "usage_role": "contextual",
-          "applicability": "Cümlede doğal bir miktar sözü gereken, parçanın özel adı önem taşımayan bağlamlarda kullanılır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Malzemenin hurma ve nesnenin bir parça olması yönünü korur.",
-            "loses": "Parçanın iri ve belirgin bir kütle oluşunu açıkça belirtmez.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        }
-      ],
+      "contextual_glosses": [],
       "lexical_glosses": [
         {
           "lexical_unit_id": "lu_018",
           "rendering_kind": "ordinary",
-          "target_gloss": "iri hurma parçası"
+          "target_gloss": "iri bir hurma parçası"
         }
       ],
       "excluded_glosses": [],
@@ -968,81 +736,62 @@
           "neighbor_ref": "root_001304/B006",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Parça özellikle hurma meyvesinden oluşur.",
-          "neighbor_only": "Parça katılaşmış yağdan oluşur ve kapta kalan az miktarı da anlatabilir.",
-          "gloss": "katı yiyecek parçası",
-          "shared_zone": "Her iki dal yenebilir bir maddeden oluşan belirgin ve katı parçayı adlandırır.",
-          "distinction": "Odak dalın malzemesi hurmadır; komşu dalın malzemesi katılaşmış yağdır ve kapta kalan miktar gibi ek kapsamları vardır."
-        },
-        {
-          "neighbor_ref": "root_000826/B006",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Parça doğrudan hurma meyvesinden oluşur.",
-          "neighbor_only": "Hamur parçası veya büyük ekmek biçimi bulunur.",
-          "gloss": "yiyecek kütlesi",
-          "shared_zone": "İki dal yiyecekten oluşan, tek parça halinde algılanan bir kütleyi anlatır.",
-          "distinction": "Odak dal hurma parçasıdır; komşu dal işlenmiş hamur ya da büyük ekmek parçası olduğundan malzeme ve oluşum bakımından ayrılır."
-        },
-        {
-          "neighbor_ref": "root_000024/B003",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Parçanın hurmadan oluşması zorunludur.",
-          "neighbor_only": "Herhangi bir nesnenin bölümü, organı veya kişiye düşen payı olabilir.",
-          "gloss": "nesnenin parçası",
-          "shared_zone": "Her iki dal bir bütünden ayrılan veya bütün içinde bulunan parçayı anlatabilir.",
-          "distinction": "Odak dal belirli bir meyvenin iri parçasına özgüdür; komşu dal nesne bölümü, beden organı ve pay gibi çok daha genel bir parça alanıdır."
+          "focus_only": "Parçanın maddesi hurmadır.",
+          "neighbor_only": "Komşu dal katılaşmış, az kalmış veya topak biçimindeki yağı anlatır.",
+          "gloss": "katı yağ parçası",
+          "shared_zone": "Her iki dal da yenebilir bir maddenin ayrılmış, sıkı parçasını anlatır.",
+          "distinction": "Biçimsel benzerliğe rağmen odak dal hurmayla, komşu dal ise katı yağla sınırlıdır; bağlamlar arasında doğrudan yer değiştiremezler."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; hurma parçasını başka yiyecek kütlelerinden ve genel parça kavramından ayıran üç ilişki seçildi."
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; parça biçimini paylaşan fakat maddesi farklı olan komşu, sınırı en açık gösteren adaydır."
     },
     {
       "branch_ref": "root_000006/B008",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi iki yer adını aynı dalda toplar: biri Basra yakınındaki kent, diğeri yalnızca bir yer olarak belirtilen ayrı addır. Dal ortak bir kavram değil, kökle ilişkili yer adı kayıtlarının sınırlı kümesidir.",
+        "boundary_note": "Bu dal yalnızca kanıtlanan iki yer adıyla sınırlıdır; benzer biçimli hurma parçası veya ağırlık anlamlarını içermez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "non_bare",
+        "note": "Tanım iki sözlüksel yer adıyla sınırlıdır; bunlardan hareketle yalın kök için genel bir yer veya kent anlamı kurulmaz."
+      },
       "concept_map": {
-        "definition": "Basra'nın yanında bulunan bir şehir adı ile yalnızca bir yer olduğu bildirilen başka bir ad kaydını kapsar; bu kayıtların aynı veya farklı yeri gösterdiği belirtilmez.",
+        "definition": "Kökle ilişkili iki ayrı yer adı: Basra yakınında bir kent ve kaynakta yalnızca bir yer olduğu belirtilen başka bir ad.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "İlk ad, kaynaklarda Basra'nın yanında bulunduğu belirtilen bir şehri gösterir.",
+            "statement": "Basra yakınında bulunan kentin sözlüksel yer adı.",
             "claim_ids": [
-              "lu_019"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "source_variant",
-            "statement": "İkinci ad yalnızca bir yer adı olarak tek kaynakta kaydedilir; ilk kayıttaki şehirle aynı ya da farklı yeri gösterdiği belirtilmez.",
+            "statement": "Kaynakta yalnızca bir yer adı olduğu belirtilen ikinci sözlüksel biçim.",
             "claim_ids": [
-              "lu_020"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Dal iki yer adı kaydını bir araya getirir. Bunlardan ilki kaynaklarda Basra'nın yanındaki şehir olarak tanımlanır; ikincisi içinse tek kaynak yalnızca bir yer olduğunu bildirir ve iki kaydın aynı veya farklı yere işaret ettiği açıklanmaz.",
+        "common_summary": "Toplu kanıt, kökle ilişkili iki ayrı yer adı kaydeder; bunlardan biri Basra yakınındaki kent olarak belirlenirken öteki yalnızca bir yer olarak tanıtılır.",
         "common_claim_ids": [
-          "lu_019"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_020"
-            ],
-            "kind": "sole_attestation",
-            "summary": "İkinci ad tek bir kaynakta yalnızca bir yer olarak kaydedilir; konumu ayrıca açıklanmaz."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "iki ayrı yer adı",
-        "applicability": "Biri komşu bir kentin yanında bulunan şehir, diğeri konumu açıklanmayan yer için kullanılan iki adı sınıflandırır.",
+        "text": "Basra yakınındaki kent ve ayrı bir yer adı",
+        "applicability": "Dalın iki ad kaydını, doğrulanmamış bir ortak ad biçimi üretmeden birlikte özetler.",
         "error_profile": {
           "fit": "none",
-          "preserves": "İki birimin de yer adı olmasını ve ayrı yerler olarak sunulmasını korur.",
+          "preserves": "Bir kaydın Basra yakınındaki kent, ötekinin ayrı bir yer adı oluşunu korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -1052,105 +801,79 @@
           "F002"
         ]
       },
-      "contextual_glosses": [
-        {
-          "text": "başka bir kentin yanındaki şehir",
-          "usage_role": "explanatory",
-          "applicability": "İlk yer adının kaynaklarda verilen konumsal açıklamasının aktarılması gerektiğinde kullanılır.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Yerleşimin şehir olmasını ve başka bir kentin yanında bulunmasını korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        },
-        {
-          "text": "bu adla anılan yer",
-          "usage_role": "explanatory",
-          "applicability": "İkinci yer için kaynağın konum veya yerleşim türü vermediği bağlamda kullanılır.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Bir adın belirli fakat ayrıntısı açıklanmayan yere bağlı olmasını korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F002"
-          ]
-        }
-      ],
+      "contextual_glosses": [],
       "lexical_glosses": [
         {
           "lexical_unit_id": "lu_019",
           "rendering_kind": "ordinary",
-          "target_gloss": "Basra'nın yanındaki şehir"
+          "target_gloss": "Basra yakınındaki kent"
         },
         {
           "lexical_unit_id": "lu_020",
           "rendering_kind": "ordinary",
-          "target_gloss": "bu adla anılan yer"
+          "target_gloss": "bir yer adı"
         }
       ],
       "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000227/B014",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Tam olarak iki ayrı yer adı ve birinin komşu şehirle ilişkisi bulunur.",
-          "neighbor_only": "Başka bir yer adı kümesi genel örnekler halinde kapsanır.",
-          "gloss": "yer adları",
-          "shared_zone": "Her iki dal sözlükte yer veya şehir adlarının ad olarak kullanılmasını kaydeder.",
-          "distinction": "Odak dal iki belirli adı ve bir şehir için konum bilgisini içerir; komşu dal başka yer adlarını aynı adlandırma türü altında toplar."
-        },
-        {
-          "neighbor_ref": "root_000178/B008",
           "relation_type": "same_field",
           "boundary_match": "field_only",
-          "focus_only": "İki ayrı ad ve ilk adın başka bir kentin yanındaki şehir olması vardır.",
-          "neighbor_only": "Birbirine biçimce bağlı başka yer adları dizisi vardır.",
-          "gloss": "başka yer adları",
-          "shared_zone": "İki dal da ortak sözlük alanında birden fazla yer adını kaydeder.",
-          "distinction": "Anlamsal çekirdekleri yalnız yer adı olma bakımından ortaktır; kaydettikleri adlar ve verilen konum bilgileri birbirinden ayrıdır."
+          "focus_only": "Odak dal, biri Basra yakınındaki kent olan iki belirli yer adı kaydını içerir.",
+          "neighbor_only": "Komşu dal başka belirli yer adlarını kendi sözlüksel biçimleriyle kaydeder.",
+          "gloss": "başka sözlüksel yer adları",
+          "shared_zone": "Her iki dalın birimleri de ortak bir genel nesne türünden çok yer adı olarak işlev görür.",
+          "distinction": "Dalların ortaklığı yalnızca ad türündedir; gösterdikleri yerler ve sözlüksel biçimler ayrıdır, dolayısıyla birbirlerinin yerine kullanılamaz."
         }
       ],
-      "neighbor_coverage_note": "Bütün yer adı adayları değerlendirildi; yalnız adlandırma türü ve kapsam sınırını açıklayan iki karşılaştırma yayımlandı."
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; yer adı türündeki ortaklığı ve gönderim ayrılığını gösteren aday yeterli görüldü."
     },
     {
       "branch_ref": "root_000006/B009",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Tek kaynak ifadesi, bir kişinin kendi boyu veya soy topluluğu içinde gelmesini anlatan kuruluşu açıkça verir. Bu kanıt, yalın biçime genel bir boy anlamı yüklemek için yeterli değildir.",
+        "boundary_note": "Anlam yalnızca kişinin kendi boyu içinde gelmesini bildiren kuruluşta geçerlidir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım tam olarak verilen kuruluşla sınırlıdır; yalın köke boy, soy veya topluluk anlamı genellenmez."
+      },
       "concept_map": {
-        "definition": "Bir kişinin kendi soy bağıyla birleşen boy topluluğunun içinde veya onunla birlikte gelmesini anlatan kalıplaşmış kullanımdır.",
+        "definition": "Bir kişinin kendi boyunun veya soy topluluğunun içinde, onlarla birlikte gelmesini anlatan kuruluş.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Kişi tek başına değil, kendisini soy bağıyla içine alan boy topluluğu içinde ya da onunla birlikte gelir.",
+            "statement": "Kişinin kendi boyu veya soy topluluğu içinde, onlarla birlikte gelmesi.",
             "claim_ids": [
-              "lu_021"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Tek tanıklık, bir kişinin kendi boy topluluğunun içinde veya onunla birlikte gelmesini anlatan kalıplaşmış sözü kaydeder; aile halkı ya da yalnız yakın akrabalarla sınırlamaz.",
-        "common_claim_ids": [
-          "lu_021"
+        "common_summary": "Kanıt, kuruluşu kişinin kendi boyunun veya soy topluluğunun içinde gelmesi anlamıyla sınırlar.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Bu kuruluş yalnızca tek sözlükte, kişinin kendi boyu içinde gelmesi anlamıyla tanıklanmıştır."
+          }
         ],
-        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "kendi boy topluluğu içinde",
-        "applicability": "Bir kişinin mensup olduğu geniş soy topluluğuyla birlikte veya onun içinde gelişini belirtir.",
+        "text": "kendi boyuyla birlikte gelmek",
+        "applicability": "Yalnızca kanıtlanan kuruluşun kişi ve soy topluluğu ilişkisini karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Kişinin kendi boyuna mensubiyetini ve topluluğun içinde bulunmasını korur.",
+          "preserves": "Kişinin kendi boyu içinde ve onunla birlikte gelmesini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -1159,123 +882,76 @@
           "F001"
         ]
       },
-      "contextual_glosses": [
-        {
-          "text": "boyuyla birlikte",
-          "usage_role": "contextual",
-          "applicability": "Kişinin tek başına değil, mensup olduğu boy topluluğuyla beraber geldiği cümlelerde kullanılır.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Kişi ile bağlı olduğu boy topluluğunun birlikte hareket etmesini korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        }
-      ],
+      "contextual_glosses": [],
       "lexical_glosses": [
         {
           "lexical_unit_id": "lu_021",
           "rendering_kind": "ordinary",
-          "target_gloss": "kendi boy topluluğu içinde veya boyuyla birlikte"
+          "target_gloss": "kendi boyunun içinde, onlarla birlikte"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "ailesiyle birlikte",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Kişinin bağlı olduğu insan topluluğuyla birlikte bulunmasını kısmen korur.",
-            "loses": "Geniş soy ve boy topluluğu kapsamını yalnız ev halkına veya yakınlara indirger.",
-            "adds": null,
-            "collision": "Ev halkı ve kişinin bakmakla yükümlü olduğu yakınları anlatan komşu alanla karışır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000383/B010",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Bir kişinin boy topluluğu içinde veya onunla birlikte gelmesini kuran özel söz vardır.",
-          "neighbor_only": "Soy topluluğunun kendisi, küçük veya büyük oluşundan bağımsız biçimde doğrudan adlandırılır.",
-          "gloss": "soy bağıyla birleşen boy",
-          "shared_zone": "Her iki dal insanları ortak soy çevresinde birleştiren boy topluluğunu anlatır.",
-          "distinction": "Odak dal bu topluluğu bir kişinin birlikte gelişi içindeki ilişki olarak verir; komşu dal topluluğun kendisini doğrudan adlandırır."
-        },
-        {
-          "neighbor_ref": "root_001159/B009",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Kişinin mensup olduğu geniş boy topluluğuyla birlikte bulunması vardır.",
-          "neighbor_only": "Kişinin en yakın kolu, alt soyu veya yakın akraba bölümü vardır.",
-          "gloss": "yakın soy kolu",
-          "shared_zone": "İki dal kişiyi soy bağı bulunan bir akraba topluluğu içinde konumlandırır.",
-          "distinction": "Odak dal geniş boy topluluğunu gösterir; komşu dal bu topluluk içindeki daha yakın ve dar soy bölümünü ayırır."
-        },
-        {
-          "neighbor_ref": "root_000166/B002",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Soy bağıyla birleşen geniş boy ve onunla birlikte gelme ilişkisi vardır.",
-          "neighbor_only": "Ev halkı, bakmakla yükümlü olunan kişiler ve eve bağlı topluluk vardır.",
-          "gloss": "ev halkı",
-          "shared_zone": "Her iki dal bir kişiye bağlı insan topluluğunu gösterebilir.",
-          "distinction": "Odak dalın bağı geniş soy ve boy mensubiyetidir; komşu dalın bağı aynı ev, geçim ve aile halkı çevresinde kurulur."
+          "focus_only": "Odak anlam, kişinin kendi boyuyla birlikte gelmesini bildiren tam bir kuruluşa bağlıdır.",
+          "neighbor_only": "Komşu dal bir soy topluluğunun veya boyun kendisini adlandırır.",
+          "gloss": "soy topluluğu veya boy",
+          "shared_zone": "Her iki dal da kişiyi ait olduğu soy topluluğuyla ilişkilendirir.",
+          "distinction": "Odak dal topluluğun adı değildir, kişinin o topluluk içinde gelme durumudur; komşu dal ise topluluğun kendisini adlandırır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; boy, yakın soy kolu ve ev halkı arasındaki kapsam farkını gösteren üç ilişki seçildi."
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; kuruluş anlamı ile topluluk adını ayıran karşılaştırma en gerekli sınırı gösterir."
     },
     {
       "branch_ref": "root_000006/B010",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi ölüm sonrasında iki ilişkili fakat özdeş olmayan eylemi kapsar: öleni övgüyle anmak ve onun ardından üzülmek. Tanım bunları tek bir yas eyleminde eritmeden birlikte tutar.",
+        "boundary_note": "Ölüm sonrası övgü ve ölüm sonrası üzüntü ayrı kuruluşlardır; yalnızca ağlama veya gömme anlamı yoktur."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "collocation",
+        "note": "Tanım yalnızca ölen kişiyle kurulan iki söz öbeğine bağlıdır; yalın köke genel övgü veya genel üzüntü anlamı verilmez."
+      },
       "concept_map": {
-        "definition": "Ölen bir kişiyi ölümünden sonra iyi yönleriyle anıp övmeyi veya onun ardından duyulan üzüntüyü sürdürmeyi anlatır.",
+        "definition": "Ölen kişiyi ölümünden sonra övgüyle anmak veya onun ardından üzülmek; iki eylem ayrı kuruluşlarla ifade edilir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Ölen kişi ölümünden sonra iyi nitelikleri söylenerek övülür.",
+            "statement": "Ölen kişiyi ölümünden sonra övgüyle anmak.",
             "claim_ids": [
-              "lu_022"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "associated_use",
-            "statement": "Ölen kişinin ardından üzülmek, ölüm sonrası anma alanındaki ayrı bir duygusal eylemdir.",
+            "statement": "Ölen kişinin ardından üzüntü duymak.",
             "claim_ids": [
-              "lu_023"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar ölen kişiyi ölümünden sonra övme eylemini açıkça kaydeder. Ayrı bir tek kaynaklı kullanım ise övgü söylemekten farklı olarak, kişinin ölümünün ardından duyulan üzüntüyü anlatır.",
+        "common_summary": "Kaynak kanıtı, ölen kişiyi ölümünden sonra övgüyle anma ile onun ardından üzülmeyi, ayrı kuruluşlarda görülen iki ilişkili eylem olarak bir araya getirir.",
         "common_claim_ids": [
-          "lu_022"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_023"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Tek kaynaklı kullanım, ölen kişinin ardından duyulan üzüntüyü ve yas tutmayı bildirir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "ölüyü ölümünden sonra övme veya ardından yas tutma",
-        "applicability": "Ölüm sonrasında kişiyi iyi sözlerle anma ile onun ardından üzülme eylemlerini birlikte kapsar.",
+        "text": "öleni övgüyle anmak veya ardından üzülmek",
+        "applicability": "Dalın ölüm sonrasındaki iki kuruluşunu, aralarındaki eylem farkını koruyarak birlikte karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Ölüm sonrası övgüyü, anmayı ve ayrı bir eylem olarak duyulan üzüntüyü korur.",
+          "preserves": "Övgüyle anma ve ardından üzüntü duyma eylemlerinin ikisini de korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -1287,13 +963,13 @@
       },
       "contextual_glosses": [
         {
-          "text": "ölünün ardından övgüyle söz etmek",
-          "usage_role": "general",
-          "applicability": "Ölen kişinin iyi niteliklerinin ölümünden sonra dile getirildiği bağlamlarda kullanılır.",
+          "text": "ölümünden sonra övgüyle anmak",
+          "usage_role": "contextual",
+          "applicability": "Ölen kişinin iyi yönlerini ölümünden sonra dile getiren kuruluş için kullanılır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Kişinin ölmüş olmasını ve sonradan iyi yönleriyle övülmesini korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Ölen kişiye yönelik ölüm sonrası övgüyü korur.",
+            "loses": "Ölen kişinin ardından duyulan üzüntü kullanımını kapsamaz.",
             "adds": null,
             "collision": null
           },
@@ -1302,13 +978,13 @@
           ]
         },
         {
-          "text": "ölünün ardından üzülmek",
+          "text": "ölenin ardından üzülmek",
           "usage_role": "contextual",
-          "applicability": "Övgüden çok, ölümden sonra duyulan keder ve yas öne çıktığında kullanılır.",
+          "applicability": "Ölen kişi için duyulan üzüntüyü bildiren ayrı kuruluşta kullanılır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Üzüntünün belirli bir kişinin ölümünden sonra duyulmasını korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Ölümün ardından duyulan üzüntüyü korur.",
+            "loses": "Öleni ölümünden sonra övgüyle anma eylemini kapsamaz.",
             "adds": null,
             "collision": null
           },
@@ -1321,7 +997,7 @@
         {
           "lexical_unit_id": "lu_022",
           "rendering_kind": "ordinary",
-          "target_gloss": "ölen kişiyi ölümünden sonra övmek"
+          "target_gloss": "öleni ölümünden sonra övgüyle anmak"
         },
         {
           "lexical_unit_id": "lu_023",
@@ -1329,57 +1005,25 @@
           "target_gloss": "ölen kişinin ardından üzülmek"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "ağlamak",
-          "category": "confusable",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Ölüm ardından duyulan üzüntünün dışa vurulması yönünü kısmen korur.",
-            "loses": null,
-            "adds": "Ölümle ilgisi olmayan bütün ağlama durumlarını kapsama ekler.",
-            "collision": "Genel ağlama, sesli yas ve toplu ağıt alanlarıyla karışır."
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000146/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Ölen kişiyi iyi yönleriyle övme eylemi de temel kapsam içindedir.",
-          "neighbor_only": "Gözyaşı dökme, ağlama sesi ve ölüm dışındaki üzüntü durumları da kapsanır.",
-          "gloss": "ölüm ardından üzüntü",
-          "shared_zone": "Her iki dal ölen kişinin ardından duyulan üzüntüyü içerebilir.",
-          "distinction": "Odak dal ölüm sonrası övgü ile üzüntüyü bir araya getirir; komşu dal ağlamayı, gözyaşını ve daha genel kederi merkez alır."
-        },
-        {
-          "neighbor_ref": "root_001633/B009",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Ölen kişiyi ölümünden sonra övme ve sessizce üzülme de kapsanabilir.",
-          "neighbor_only": "Ölü için sesli yakınma ve ağıt söyleme özellikle kapsanır.",
-          "gloss": "ölü için ağıt ve ağlama",
-          "shared_zone": "İki dal ölümün ardından üzüntünün söz veya davranışla dışa vurulmasında kesişir.",
-          "distinction": "Odak dal iyi sözlerle övmeyi veya genel üzüntüyü anlatır; komşu dal sesli yakınma ve ağıt eylemine özgüdür."
-        },
-        {
-          "neighbor_ref": "root_000034/B004",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Belirli bir ölünün ardından övgü söyleme eylemi vardır.",
-          "neighbor_only": "Her türlü kayıp için üzüntü, başsağlığı verme ve sabır gösterme vardır.",
-          "gloss": "kayıp için üzüntü ve teselli",
-          "shared_zone": "Her iki dal kaybedilen birinin ardından duyulan kederi konu edinebilir.",
-          "distinction": "Odak dal ölümü ve ölen kişiyi sonradan övmeyi şart koşan özel alanı kapsar; komşu dal kaybı genelleştirir ve teselli ile sabrı da içerir."
+          "focus_only": "Öleni ölümünden sonra övgüyle anma eylemi de dala dahildir.",
+          "neighbor_only": "Komşu dal genel ağlama, gözyaşı dökme ve ağlama sesini de kapsar.",
+          "gloss": "ağlama ve üzüntü",
+          "shared_zone": "Her iki dal da ölen kişi ardından duyulan üzüntü bağlamında kullanılabilir.",
+          "distinction": "Odak dal ölüm sonrası övgü ile üzüntüyü iki kuruluşta toplar; komşu dalın çekirdeği ağlama, gözyaşı ve ağlama sesidir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; ölüm sonrası övgüyü genel ağlama, ağıt ve kayıp üzüntüsünden ayıran üç karşılaştırma seçildi."
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; ölüm sonrası üzüntü ile genel ağlama alanını ayıran komşu en yararlı karşılaştırmadır."
     }
   ],
   "root_profile": {
-    "summary": "Kök, deve topluluğu ve bakımı çevresindeki geniş bir merkezden susuz yetinme ve bölükler halinde bulunma uzantılarına açılır; ayrıca ağırlık ve sorumluluk, odun demeti, din görevlisi, hurma parçası, yer adları, boy topluluğu ve ölüm sonrası anma gibi birbirinden ayrılmış dallar taşır.",
+    "summary": "Kök, deve topluluğu ve bakımından suya gereksinmeden yaşama, ayrı kümeler, ağırlık ve yük, odun demeti, Hristiyan din görevlisi, hurma parçası, yer adları, boyla birlikte gelme ve ölüm sonrası anmaya uzanan çok kollu bir anlam yapısı gösterir.",
     "polysemy": "polysemic",
-    "organization": "mixed"
+    "organization": "multi_branch"
   }
 }

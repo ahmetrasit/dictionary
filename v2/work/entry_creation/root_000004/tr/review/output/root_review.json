@@ -1,72 +1,28 @@
 {
   "verdict": "repair",
-  "summary": "B004 dalında yalnızca dişi eşeğe ait bir kaynak ayrıntısı olan her yıl doğurma koşulu, dalın bütün dişi hayvan ve kadın kullanımlarına yayılmıştır. B003 komşu ayrımlarında da bazı kaynakların eklediği yaban hayvanlarının gelişi zorunlu dal sınırı gibi sunulmuştur. Bu kapsam taşmaları düzeltilince inceleme alanındaki diğer içerik yayıma hazırdır.",
+  "summary": "B008 dalı genel olarak kanıtla uyumludur; ancak kaynak iddiasındaki alışılmadık sözcük ve başıboş uyak kapsamı, kavram haritasında ve bir komşu ayrımında kanıtsız biçimde dizeye genişletilmiştir. Bu iki sınırlı kullanım kaldırılmalıdır.",
   "issues": [
     {
-      "target_ref": "root_000004/B004",
+      "target_ref": "root_000004/B008",
       "field": "concept_map",
-      "severity": "major",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_013"
-      ],
-      "evidence_conflict": "Tanım ve F001, her yıl doğurmayı bütün dişi hayvanlar ile köleleştirilmiş kadın için çekirdek koşul yapıyor. Oysa kaynak dökümü ortak alanı doğurgan dişi olarak verir; yıllık doğum yalnızca dişi eşek açıklamasında açıkça bulunur ve kaynak sentezi de bunu doğru biçimde belirtir.",
-      "smallest_correction": "Çekirdeği doğuran veya doğurgan dişi olarak kurun; her yıl doğurmayı yalnızca dişi eşeğe bağlı bir kaynak varyantı ya da özel örnek fasetine taşıyın."
-    },
-    {
-      "target_ref": "root_000004/B004",
-      "field": "concept_gloss",
-      "severity": "major",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_013"
-      ],
-      "evidence_conflict": "Her yıl doğuran dişi karşılığı, tek bir kaynakta dişi eşeğe bağlı olan yıllık doğum ayrıntısını bütün kavram alanının karşılığına dönüştürüyor.",
-      "smallest_correction": "Kavram karşılığını doğurgan veya doğuran dişi çekirdeğine indirin; yıllık doğumu yalnızca dişi eşek kullanımına ilişkin daraltıcı açıklamada koruyun."
-    },
-    {
-      "target_ref": "root_000004/B004",
-      "field": "contextual_glosses",
       "severity": "minor",
       "confidence": "high",
       "claim_ids": [
-        "lu_013"
+        "bc_001"
       ],
-      "evidence_conflict": "Yılda bir yavrulayan karşılığının uygulanabilirliği dişi eşek yanında kısrak ve başka dişi hayvanlara da yayılıyor; kanıtta yıllık doğum yalnızca dişi eşek için açıkça kaydedilmiştir.",
-      "smallest_correction": "Bu bağlamsal karşılığın uygulanabilirliğini dişi eşeğin yıllık doğumu ile sınırlayın ve diğer doğurgan dişileri dışarıda bıraktığını hata profilinde belirtin."
+      "evidence_conflict": "bc_001 yalnız alışılmadık sözcüğü ve şiirdeki başıboş uyakları bildirir; tanımdaki \"uyak veya dize\" ve F002 içindeki \"uyak ve dizeler\" ifadeleri dizeyi bağımsız bir anlam birimi olarak ekler.",
+      "smallest_correction": "Tanımda \"uyak veya dize\" ifadesini \"uyak\" olarak, F002 içinde \"uyak ve dizeler\" ifadesini \"uyaklar\" olarak değiştir; alanın diğer bütün içeriğini koru."
     },
     {
-      "target_ref": "root_000004/B004",
-      "field": "lexical_glosses",
-      "severity": "major",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_013"
-      ],
-      "evidence_conflict": "lu_013 için verilen karşılık, her yıl doğurma koşulunu dişi hayvan veya köleleştirilmiş kadın seçeneklerinin tamamına bağlıyor; ortak kanıt yalnızca doğurganlığı, yıllık doğum ayrıntısı ise dişi eşeği destekliyor.",
-      "smallest_correction": "Karşılığı doğurgan dişi hayvan veya köleleştirilmiş kadın olarak verin; dişi eşeğin her yıl doğurmasını aynı açıklamada açıkça sınırlanmış bir ayrıntı olarak ekleyin."
-    },
-    {
-      "target_ref": "root_000004/B004",
+      "target_ref": "root_000004/B008",
       "field": "neighbor_distinctions",
       "severity": "minor",
       "confidence": "high",
       "claim_ids": [
-        "lu_013"
+        "bc_001"
       ],
-      "evidence_conflict": "Üç komşu ayrımında da yıllık doğum dalın zorunlu ve genel sınırı gibi kullanılıyor. Kaynak sentezine göre dalın ortak sınırı doğurgan dişidir; her yıl doğurma yalnızca dişi eşek açıklamasına bağlıdır.",
-      "smallest_correction": "Komşu sınırlarını genel doğurganlık üzerinden yeniden ifade edin; yıllık doğumu zorunlu ayırıcı koşul olmaktan çıkarıp yalnızca dişi eşeğe ait kaynak ayrıntısı olarak anın."
-    },
-    {
-      "target_ref": "root_000004/B003",
-      "field": "neighbor_distinctions",
-      "severity": "minor",
-      "confidence": "high",
-      "claim_ids": [
-        "lu_012"
-      ],
-      "evidence_conflict": "Komşu ayrımları yaban hayvanlarının boşalan yere gelmesini dalın zorunlu sınırı ve odak alanına özgü koşulu sayıyor. Aynı dalın kavram haritası bu öğeyi doğru biçimde bazı kaynak açıklamalarına bağlı bir sonuç olarak sınıflandırıyor; ortak çekirdek sakinlerin ayrılmasıyla yerin boşalıp ıssızlaşmasıdır.",
-      "smallest_correction": "Ayrımları sakinlerin çekilmesinin ardından boşalma ve ıssızlaşma çekirdeğine dayandırın; yaban hayvanlarının gelişini zorunlu sınır veya odak alanına özgü koşul değil, kaynaklara bağlı bir sonuç olarak belirtin."
+      "evidence_conflict": "root_000166/B003 ayrımındaki focus_only, odak dalın \"aykırı uyak veya dizeyi\" gösterdiğini söyler; bc_001 odak dal için dizeyi değil, alışılmadık sözcük ile başıboş uyakları destekler.",
+      "smallest_correction": "root_000166/B003 satırının focus_only değerindeki \"uyak veya dizeyi\" ifadesini \"uyağı\" olarak değiştir; komşu ayrımının kalanını koru."
     }
   ]
 }
