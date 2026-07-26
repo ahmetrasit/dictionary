@@ -1,36 +1,53 @@
 {
-  "root_inputs_sha256": "aac7e5b7f4c40097714eac150a8a5c02096e36484440feff46b7fcb4f57e70f9",
+  "root_inputs_sha256": "15ef93db1be3acdd4d7bb6cc443ba46ae2c23bd105f7c76beb30ba5923708efa",
   "root_id": "root_000032",
   "branch_id": "B003",
   "language": "tr",
   "image_transliteration": "el-kahr ve't-teshir",
-  "summary": "Boyunduruk altında tutulduğu için ezilen ve kederlenen köleyi belirtir; benzetmeli kullanımda başkasının buyruğunda zorla çalıştırılan kişiye de uzanır.",
+  "summary": "Köleleştirilmiş, baskı altında tutulduğu için üzgün ve boyun eğmiş kişidir. Mecazen, başkasının buyruğunda zorla çalıştırılan kişi için de kullanılabilir.",
   "concept_map": {
-    "definition": "Boyunduruk altında tutulduğu için ezilen ve kederlenen köleyi belirtir; benzetmeli kullanımda başkasının buyruğunda zorla çalıştırılan kişiye de uzanır.",
+    "definition": "Köleleştirilmiş, baskı altında tutulduğu için üzgün ve boyun eğmiş kişidir. Mecazen, başkasının buyruğunda zorla çalıştırılan kişi için de kullanılabilir.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Temel gönderge, kölelik nedeniyle baskı altında ve kederli olan kişidir.",
+        "statement": "Temel gönderge, köleleştirilmiş ve baskı altında tutulan kişidir.",
         "claim_ids": [
-          "lu_009"
+          "bc_001"
         ]
       },
       {
         "facet_id": "F002",
         "role": "extension",
-        "statement": "Anlam, köle olmasa da başkasının buyruğunda zorla çalıştırılan kişiye benzetme yoluyla genişler.",
+        "statement": "Kullanım, köle olmayan fakat köle gibi boyunduruk altında çalıştırılan kişiye mecazen genişleyebilir.",
         "claim_ids": [
-          "lu_009"
+          "bc_001"
+        ]
+      },
+      {
+        "facet_id": "F003",
+        "role": "associated_use",
+        "statement": "Baskı altında olmanın doğurduğu üzüntü ve boyun eğme, kişi adlandırmasının açıklayıcı niteliğidir.",
+        "claim_ids": [
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Kaynakların ortak çekirdeği köle anlamıdır. Bir aktarım bu adlandırmayı kişinin baskı altında ve kederli oluşuyla gerekçelendirirken başka bir aktarım anlamı benzetme yoluyla zorla çalıştırılan kişiye genişletir.",
+  "identity_judgment": {
+    "status": "accepted",
+    "rationale": "Kaynak ifadesi, baskı altında ve üzgün olduğu gerekçesiyle köleyi adlandırır ve aynı sözü boyunduruk altında çalıştırılan kişi için mecaz yoluyla genişletir. Dalın baskı ve zorla hizmet ekseni bu iki kullanımı doğru biçimde birleştirir.",
+    "boundary_note": "Anlam herhangi bir ücretli çalışanı değil, köleleştirilmiş veya köle gibi baskı altında çalıştırılan kişiyi belirtir."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "bare",
+    "note": "Tanım yalın dalın kişi adlandırmasını esas alır; ayrı bir kalıba bağlı anlam eklemez."
+  },
+  "source_summary": "Kaynaklar köleleştirilmiş kişiyi ortak gönderge olarak verir; ayrıca sözün köle gibi zorla çalıştırılan kişiye mecazi biçimde uygulanabildiğini belirtir.",
   "source_synthesis": {
-    "common_summary": "Kaynakların ortak çekirdeği köle anlamıdır. Bir aktarım bu adlandırmayı kişinin baskı altında ve kederli oluşuyla gerekçelendirirken başka bir aktarım anlamı benzetme yoluyla zorla çalıştırılan kişiye genişletir.",
+    "common_summary": "Kaynaklar köleleştirilmiş kişiyi ortak gönderge olarak verir; ayrıca sözün köle gibi zorla çalıştırılan kişiye mecazi biçimde uygulanabildiğini belirtir.",
     "common_claim_ids": [
-      "lu_009"
+      "bc_001"
     ],
     "source_details": [],
     "supporting_claim_ids": [],
@@ -42,25 +59,26 @@
     {
       "lexical_unit_id": "lu_009",
       "rendering_kind": "ordinary",
-      "target_gloss": "ezilmiş köle veya zorla çalıştırılan kişi"
+      "target_gloss": "köleleştirilmiş veya boyunduruk altında çalıştırılan kişi"
     }
   ],
   "glosses": {
-    "semantic_definition": "Boyunduruk altında tutulduğu için ezilen ve kederlenen köleyi belirtir; benzetmeli kullanımda başkasının buyruğunda zorla çalıştırılan kişiye de uzanır.",
+    "semantic_definition": "Köleleştirilmiş, baskı altında tutulduğu için üzgün ve boyun eğmiş kişidir. Mecazen, başkasının buyruğunda zorla çalıştırılan kişi için de kullanılabilir.",
     "concept": {
       "rank": 1,
-      "text": "ezilmiş köle veya zorla çalıştırılan kişi",
+      "text": "köleleştirilmiş veya boyunduruk altında çalıştırılan kişi",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Hem kölelik statüsündeki ezilmiş kişiyi hem benzetmeli olarak zorla çalıştırılan kişiyi kapsar.",
+      "applicability": "Gerçek köle göndergesini ve ona dayanan mecazi zorla çalıştırılma genişlemesini birlikte kapsar.",
       "facet_ids": [
         "F001",
-        "F002"
+        "F002",
+        "F003"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Kölelik, baskı ve zorla çalıştırılma seçeneklerini birlikte korur.",
+        "preserves": "Kişi göndergesini, baskıyı, köleleştirmeyi ve mecazi zorla çalıştırılmayı korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -69,18 +87,38 @@
     "contextual": [
       {
         "rank": 2,
-        "text": "boyunduruk altındaki köle",
+        "text": "köleleştirilmiş kişi",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Göndergenin doğrudan köle olduğu ve baskı altında bulunuşunun vurgulandığı bağlamlarda kullanılır.",
+        "applicability": "Kişinin gerçekten köle statüsünde bulunduğu doğrudan kullanım için uygundur.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F003"
         ],
         "error_profile": {
           "fit": "narrowing",
-          "preserves": "Kölelik statüsünü ve baskı altında ezilmiş olmayı korur.",
-          "loses": "Köle olmayan fakat zorla çalıştırılan kişiye yönelik benzetmeli genişlemeyi kapsamaz.",
+          "preserves": "Kölelik durumunu ve kişinin baskı altında oluşunu korur.",
+          "loses": "Köle olmayan zorla çalıştırılmış kişiye yönelik mecazi genişlemeyi kapsamaz.",
+          "adds": null,
+          "collision": null
+        }
+      },
+      {
+        "rank": 3,
+        "text": "boyunduruk altında çalıştırılan kişi",
+        "loanword_status": "none",
+        "usage_role": "explanatory",
+        "selection_role": "contextual_gloss",
+        "applicability": "Köle statüsü kesin olmayan, fakat başkasının buyruğunda zorla çalıştırılan kişi için kullanılır.",
+        "facet_ids": [
+          "F002",
+          "F003"
+        ],
+        "error_profile": {
+          "fit": "narrowing",
+          "preserves": "Baskı altında çalıştırılma ve boyun eğdirilme ilişkisini korur.",
+          "loses": "Doğrudan köle statüsündeki temel göndergeyi zorunlu olarak belirtmez.",
           "adds": null,
           "collision": null
         }
@@ -89,18 +127,19 @@
     "selected": [
       {
         "rank": 1,
-        "text": "ezilmiş köle veya zorla çalıştırılan kişi",
+        "text": "köleleştirilmiş veya boyunduruk altında çalıştırılan kişi",
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Hem kölelik statüsündeki ezilmiş kişiyi hem benzetmeli olarak zorla çalıştırılan kişiyi kapsar.",
+        "applicability": "Gerçek köle göndergesini ve ona dayanan mecazi zorla çalıştırılma genişlemesini birlikte kapsar.",
         "facet_ids": [
           "F001",
-          "F002"
+          "F002",
+          "F003"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Kölelik, baskı ve zorla çalıştırılma seçeneklerini birlikte korur.",
+          "preserves": "Kişi göndergesini, baskıyı, köleleştirmeyi ve mecazi zorla çalıştırılmayı korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -108,24 +147,57 @@
       },
       {
         "rank": 2,
-        "text": "boyunduruk altındaki köle",
+        "text": "köleleştirilmiş kişi",
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Göndergenin doğrudan köle olduğu ve baskı altında bulunuşunun vurgulandığı bağlamlarda kullanılır.",
+        "applicability": "Kişinin gerçekten köle statüsünde bulunduğu doğrudan kullanım için uygundur.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F003"
         ],
         "error_profile": {
           "fit": "narrowing",
-          "preserves": "Kölelik statüsünü ve baskı altında ezilmiş olmayı korur.",
-          "loses": "Köle olmayan fakat zorla çalıştırılan kişiye yönelik benzetmeli genişlemeyi kapsamaz.",
+          "preserves": "Kölelik durumunu ve kişinin baskı altında oluşunu korur.",
+          "loses": "Köle olmayan zorla çalıştırılmış kişiye yönelik mecazi genişlemeyi kapsamaz.",
+          "adds": null,
+          "collision": null
+        }
+      },
+      {
+        "rank": 3,
+        "text": "boyunduruk altında çalıştırılan kişi",
+        "loanword_status": "none",
+        "usage_role": "explanatory",
+        "selection_role": "contextual_gloss",
+        "applicability": "Köle statüsü kesin olmayan, fakat başkasının buyruğunda zorla çalıştırılan kişi için kullanılır.",
+        "facet_ids": [
+          "F002",
+          "F003"
+        ],
+        "error_profile": {
+          "fit": "narrowing",
+          "preserves": "Baskı altında çalıştırılma ve boyun eğdirilme ilişkisini korur.",
+          "loses": "Doğrudan köle statüsündeki temel göndergeyi zorunlu olarak belirtmez.",
           "adds": null,
           "collision": null
         }
       }
     ],
-    "excluded": []
+    "excluded": [
+      {
+        "text": "işçi",
+        "category": "confusable",
+        "exclusion_reason": "Özgür ve gönüllü ücretli çalışanları da anlam alanına ekler. Genel ücretli çalışma ilişkisiyle karışır.",
+        "error_profile": {
+          "fit": "broadening",
+          "preserves": "Bir başkası için çalışan kişi göndergesini korur.",
+          "loses": null,
+          "adds": "Özgür ve gönüllü ücretli çalışanları da anlam alanına ekler.",
+          "collision": "Genel ücretli çalışma ilişkisiyle karışır."
+        }
+      }
+    ]
   },
   "arabic_neighbor_distinctions": [
     {
@@ -133,28 +205,52 @@
       "neighbor_branch_id": "B003",
       "relation_type": "near_synonym",
       "boundary_match": "partial",
-      "focus_only": "Odak dal, köleyi ezilmiş ve kederli kişi olarak niteler ve zorla çalıştırılan kişiye benzetmeli olarak uzanır.",
-      "neighbor_only": "Komşu dal, kölelik kurumunu, mülkiyet durumunu ve insanı köleleştirme sürecini genel olarak kapsar.",
+      "focus_only": "Odak dal köleleştirilmiş kişiyi ve köle gibi zorla çalıştırılan kişiyi belirten bir kişi adıdır.",
+      "neighbor_only": "Komşu dal kölelik kurumunu, mülkiyet durumunu ve insanı köleleştirme işlemini daha genişçe kapsar.",
       "expression_transliteration": "er-rikku ve'l-ubudiyye",
-      "gloss": "ezilmiş köle",
-      "shared_zone": "Her iki dal da özgürlüğü elinden alınmış köle kişiyi kapsar.",
-      "distinction": "Odak dal belirli bir kişi niteliğini ve onun kederini öne çıkarırken komşu dal kölelik durumunun ve köleleştirmenin daha geniş söz varlığını kapsar."
+      "gloss": "köle kişi ve kölelik durumu",
+      "shared_zone": "Her iki dalın ortak alanı köleleştirilmiş insan ve onun özgürlükten yoksun bırakılmasıdır.",
+      "distinction": "Odak dal baskı altındaki kişiyi adlandırır; komşu dal kişi yanında hukuki-toplumsal durumu ve köleleştirme işlemini de kapsar."
     },
     {
       "neighbor_root_id": "root_000973",
       "neighbor_branch_id": "B004",
       "relation_type": "near_neighbor",
       "boundary_match": "partial",
-      "focus_only": "Odak dal baskı altındaki köle ya da zorla çalıştırılan kişinin kendisini belirtir.",
-      "neighbor_only": "Komşu dal birini köleleştirme, köle durumuna getirme ya da köle gibi çalıştırma eylemini belirtir.",
+      "focus_only": "Odak dal köleleştirilmiş ya da köle gibi çalıştırılan kişinin kendisini belirtir.",
+      "neighbor_only": "Komşu dal birini köle edinme, köleleştirme veya köle gibi çalışır hâle getirme eylemini belirtir.",
       "expression_transliteration": "et-ta'bid ve'l-isti'bad",
-      "gloss": "zorlanan kişi ve köleleştirme",
-      "shared_zone": "Her iki dalda da bir insanı boyunduruk altına alma ve ona köle işi yaptırma durumu vardır.",
-      "distinction": "Odak dal eylemin sonucundaki kişiyi ve onun ezilmişliğini adlandırır; komşu dal ise bu durumu meydana getiren köleleştirme eylemini merkez alır."
+      "gloss": "köleleştirilen kişi ve köleleştirme",
+      "shared_zone": "İki dal aynı baskı ve zorla hizmet ilişkisinin farklı katılımcılarını gösterir.",
+      "distinction": "Odak dal işlemin sonucu olan kişiyi, komşu dal ise bu sonucu doğuran eylemi ve yapan katılımcıyı öne çıkarır."
+    },
+    {
+      "neighbor_root_id": "root_000463",
+      "neighbor_branch_id": "B001",
+      "relation_type": "near_neighbor",
+      "boundary_match": "partial",
+      "focus_only": "Odak dal baskı altındaki kişiyi kölelik veya zorla hizmet ilişkisi içinde adlandırır.",
+      "neighbor_only": "Komşu dal kölelik statüsü gerektirmeden aşağılanma, küçülme ve istemeden boyun eğme durumunu anlatır.",
+      "expression_transliteration": "aldhl walsghar",
+      "gloss": "baskı altındaki kişi ve aşağılanma",
+      "shared_zone": "Baskı, boyun eğme ve kişinin gücünün kırılması iki dalda da bulunabilir.",
+      "distinction": "Odak dal belirli bir kişi türünü adlandırırken komşu dal herhangi bir kişinin uğradığı aşağılanma ve boyun eğme hâlini anlatır."
+    },
+    {
+      "neighbor_root_id": "root_000056",
+      "neighbor_branch_id": "B001",
+      "relation_type": "same_field",
+      "boundary_match": "field_only",
+      "focus_only": "Odak dal cinsiyetten bağımsız bir köle veya baskı altında çalıştırılan kişi göndergesine sahiptir.",
+      "neighbor_only": "Komşu dal özellikle köle statüsündeki kadını adlandırır.",
+      "expression_transliteration": "el-emetü zâtü'l-ʿubûdiyye",
+      "gloss": "köle kişi ve kadın köle",
+      "shared_zone": "İki dal da köle statüsündeki insanları adlandırma alanındadır.",
+      "distinction": "Komşu dalın göndergesi kadınla sınırlıdır; odak dal böyle bir cinsiyet sınırı koymaz ve mecazi zorla çalıştırılma kullanımına da açılır."
     }
   ],
   "neighbor_coverage": {
     "assessment": "complete",
-    "note": "Tüm komşu kartları değerlendirildi; kişi ile kölelik durumu ve köleleştirme eylemi arasındaki iki temel karışma noktası yayımlandı, diğerleri yalnızca daha genel baskı alanını paylaşıyordu."
+    "note": "Bütün adaylar değerlendirildi; kişi adı ile kölelik kurumu, köleleştirme eylemi, aşağılanma hâli ve kadın köle adı arasındaki temel sınırlar seçildi."
   }
 }

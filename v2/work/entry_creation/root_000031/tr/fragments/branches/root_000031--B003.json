@@ -1,36 +1,37 @@
 {
-  "root_inputs_sha256": "4f15fcfc0c38f8612fc2fe02a2d614c943fff6502c717acf4fb54515276af43b",
+  "root_inputs_sha256": "2f57c8234b9648e308e75d0f1fab283091da54197e21f9db6fa90d6ff6f06454",
   "root_id": "root_000031",
   "branch_id": "B003",
   "language": "tr",
   "image_transliteration": "Çok eski zaman",
-  "summary": "Kalıplaşmış bir söz, bir olayın zamanın çok eski bir döneminde veya zamanın yüzünde gerçekleştiğini bildirir.",
+  "summary": "Belirli bir zaman söz öbeği içinde, bir olayın çok eski bir zamanda ya da zamanın en eski başlangıcında gerçekleştiğini bildirir.",
   "concept_map": {
-    "definition": "Kalıplaşmış bir söz, bir olayın zamanın çok eski bir döneminde veya zamanın yüzünde gerçekleştiğini bildirir.",
+    "definition": "Belirli bir zaman söz öbeği içinde, bir olayın çok eski bir zamanda ya da zamanın en eski başlangıcında gerçekleştiğini bildirir.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Bir olayın çok eski bir zamanda gerçekleştiğini bildiren zaman belirtecidir.",
+        "statement": "Bir olayı çok eski zamana veya zamanın başlangıç dönemine yerleştirir.",
         "claim_ids": [
-          "lu_009"
-        ]
-      },
-      {
-        "facet_id": "F002",
-        "role": "source_variant",
-        "statement": "Aynı söz, zamanın yüzünde bulunma biçiminde de açıklanmıştır.",
-        "claim_ids": [
-          "lu_009"
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Aktarımlar aynı kalıplaşmış sözü iki yakın açıklamayla verir: çok eski zamanda bulunmak veya zamanın yüzünde bulunmak. Bu iki açıklama tek sözün yorumlarıdır.",
+  "identity_judgment": {
+    "status": "accepted",
+    "rationale": "Kaynak anlatımı, belirli bir söz öbeğinin bir olayın çok eski zamanda ya da zamanın başlangıç yüzünde gerçekleştiğini bildirdiğini gösterir. Geçici dal çerçevesi bu zaman değerini doğru sınırlar.",
+    "boundary_note": "Anlam yalnızca verilen zaman söz öbeğine bağlıdır; genel olarak zaman, sonsuzluk veya yapısal temel anlamı değildir."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "collocation",
+    "note": "Tanım yalnızca kanıtlanan zaman söz öbeğine bağlanır; bu değer tek başına kullanılan biçime ya da kökün bütün kullanımlarına genellenmez."
+  },
+  "source_summary": "Kaynaklar söz öbeğini ortak biçimde çok eski zamana bağlar; anlatımdaki ikinci açıklama bunu zamanın başlangıç yüzü olarak betimler.",
   "source_synthesis": {
-    "common_summary": "Aktarımlar aynı kalıplaşmış sözü iki yakın açıklamayla verir: çok eski zamanda bulunmak veya zamanın yüzünde bulunmak. Bu iki açıklama tek sözün yorumlarıdır.",
+    "common_summary": "Kaynaklar söz öbeğini ortak biçimde çok eski zamana bağlar; anlatımdaki ikinci açıklama bunu zamanın başlangıç yüzü olarak betimler.",
     "common_claim_ids": [
-      "lu_009"
+      "bc_001"
     ],
     "source_details": [],
     "supporting_claim_ids": [],
@@ -42,25 +43,24 @@
     {
       "lexical_unit_id": "lu_009",
       "rendering_kind": "ordinary",
-      "target_gloss": "çok eski zamanda veya zamanın yüzünde"
+      "target_gloss": "çok eski zamanda; zamanın başlangıcında"
     }
   ],
   "glosses": {
-    "semantic_definition": "Kalıplaşmış bir söz, bir olayın zamanın çok eski bir döneminde veya zamanın yüzünde gerçekleştiğini bildirir.",
+    "semantic_definition": "Belirli bir zaman söz öbeği içinde, bir olayın çok eski bir zamanda ya da zamanın en eski başlangıcında gerçekleştiğini bildirir.",
     "concept": {
       "rank": 1,
-      "text": "çok eski zamanda veya zamanın yüzünde",
+      "text": "çok eski zamanda",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Kalıplaşmış sözün hem eski zaman açıklaması hem de zamanın yüzü biçimindeki açıklaması birlikte korunacağı zaman kullanılır.",
+      "applicability": "Kanıtlanan söz öbeği bir olayın uzak geçmişte gerçekleştiğini bildirdiğinde kullanılır.",
       "facet_ids": [
-        "F001",
-        "F002"
+        "F001"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Eski zaman ile zamanın yüzü biçimindeki iki açıklamayı birlikte korur.",
+        "preserves": "Olayı zamanın çok eski bir dönemine yerleştirme değerini korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -69,35 +69,17 @@
     "contextual": [
       {
         "rank": 2,
-        "text": "çok eski zamanlarda",
+        "text": "zamanın başlangıcında",
         "loanword_status": "none",
-        "usage_role": "general",
+        "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Söz, bir olayın uzak geçmişte gerçekleştiğini bildiren doğal bir zaman belirteci olarak çevrildiğinde kullanılır.",
+        "applicability": "Söz öbeğindeki en eski dönem ve zamanın başlangıç yüzü vurgulandığında kullanılır.",
         "facet_ids": [
           "F001"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Olayı çok eski bir zamana yerleştiren temel açıklamayı korur.",
-          "loses": null,
-          "adds": null,
-          "collision": null
-        }
-      },
-      {
-        "rank": 3,
-        "text": "zamanın yüzünde",
-        "loanword_status": "none",
-        "usage_role": "explanatory",
-        "selection_role": "contextual_gloss",
-        "applicability": "Kaynaklardaki ikinci açıklamanın yüz benzetmesi özellikle gösterileceği zaman kullanılır.",
-        "facet_ids": [
-          "F002"
-        ],
-        "error_profile": {
-          "fit": "none",
-          "preserves": "Zamanın yüzünde bulunma biçimindeki açıklamayı korur.",
+          "preserves": "Zamanın en eski başlangıç dönemi vurgusunu korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -107,18 +89,17 @@
     "selected": [
       {
         "rank": 1,
-        "text": "çok eski zamanda veya zamanın yüzünde",
+        "text": "çok eski zamanda",
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Kalıplaşmış sözün hem eski zaman açıklaması hem de zamanın yüzü biçimindeki açıklaması birlikte korunacağı zaman kullanılır.",
+        "applicability": "Kanıtlanan söz öbeği bir olayın uzak geçmişte gerçekleştiğini bildirdiğinde kullanılır.",
         "facet_ids": [
-          "F001",
-          "F002"
+          "F001"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Eski zaman ile zamanın yüzü biçimindeki iki açıklamayı birlikte korur.",
+          "preserves": "Olayı zamanın çok eski bir dönemine yerleştirme değerini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -126,55 +107,24 @@
       },
       {
         "rank": 2,
-        "text": "çok eski zamanlarda",
+        "text": "zamanın başlangıcında",
         "loanword_status": "none",
-        "usage_role": "general",
+        "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Söz, bir olayın uzak geçmişte gerçekleştiğini bildiren doğal bir zaman belirteci olarak çevrildiğinde kullanılır.",
+        "applicability": "Söz öbeğindeki en eski dönem ve zamanın başlangıç yüzü vurgulandığında kullanılır.",
         "facet_ids": [
           "F001"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Olayı çok eski bir zamana yerleştiren temel açıklamayı korur.",
-          "loses": null,
-          "adds": null,
-          "collision": null
-        }
-      },
-      {
-        "rank": 3,
-        "text": "zamanın yüzünde",
-        "loanword_status": "none",
-        "usage_role": "explanatory",
-        "selection_role": "contextual_gloss",
-        "applicability": "Kaynaklardaki ikinci açıklamanın yüz benzetmesi özellikle gösterileceği zaman kullanılır.",
-        "facet_ids": [
-          "F002"
-        ],
-        "error_profile": {
-          "fit": "none",
-          "preserves": "Zamanın yüzünde bulunma biçimindeki açıklamayı korur.",
+          "preserves": "Zamanın en eski başlangıç dönemi vurgusunu korur.",
           "loses": null,
           "adds": null,
           "collision": null
         }
       }
     ],
-    "excluded": [
-      {
-        "text": "sonsuza dek",
-        "category": "confusable",
-        "exclusion_reason": "Bir olayın eski zamandaki konumunu ve zamanın yüzü açıklamasını kaybeder. Geleceğe uzanan sınırsız süre anlamı ekler. Eski zamanda bulunmayı sonsuz sürmeyle karıştırır.",
-        "error_profile": {
-          "fit": "displacement",
-          "preserves": "Zamanla ilgili bir anlatım olmasını korur.",
-          "loses": "Bir olayın eski zamandaki konumunu ve zamanın yüzü açıklamasını kaybeder.",
-          "adds": "Geleceğe uzanan sınırsız süre anlamı ekler.",
-          "collision": "Eski zamanda bulunmayı sonsuz sürmeyle karıştırır."
-        }
-      }
-    ]
+    "excluded": []
   },
   "arabic_neighbor_distinctions": [
     {
@@ -186,36 +136,36 @@
       "neighbor_only": null,
       "expression_transliteration": "Çok eski zaman",
       "gloss": "çok eski zamanda",
-      "shared_zone": "Her iki kalıplaşmış söz de bir olayı zamanın çok eski bir dönemine yerleştirir.",
-      "distinction": "Sunulan kanıtta iki kalıplaşmış söz arasında kapsam, koşul veya katılımcı farkı bulunmaz; eski zaman anlamında birbirlerinin yerine kullanılabilirler."
+      "shared_zone": "İki dal da bir olayı zamanın çok eski dönemine yerleştiren söz öbeklerini anlatır.",
+      "distinction": "Anlamsal sınır bakımından belirgin bir ayrım yoktur; farklı söz öbekleri aynı eski zaman değerini taşır."
     },
     {
       "neighbor_root_id": "root_001207",
       "neighbor_branch_id": "B003",
-      "relation_type": "near_neighbor",
+      "relation_type": "near_synonym",
       "boundary_match": "partial",
-      "focus_only": "Odak dal, olayın gerçekleştiği eski zamanı gösteren kalıplaşmış bir belirteçtir.",
-      "neighbor_only": "Komşu dal, eskiliği yenilik ve sonradan ortaya çıkmanın karşıtı olan bir nitelik olarak da anlatır.",
+      "focus_only": "Odak dal, belirli bir söz öbeğiyle olayın zamanını uzak geçmişe yerleştirir.",
+      "neighbor_only": "Komşu dal eskilik niteliğini, geçmişte var olmayı ve yeniliğin karşıtını daha genel olarak kapsar.",
       "expression_transliteration": "Zamanın eskiliği ve sonradan oluşun karşıtı",
-      "gloss": "eski zaman",
-      "shared_zone": "İki dal da geçmişteki uzaklık ve eskilik düşüncesinde buluşur.",
-      "distinction": "Odak dal bir olayı uzak geçmişe yerleştirir; komşu dal ise şeylerin veya zamanın eski olma niteliğini ve yeniliğe karşıtlığını kapsar."
+      "gloss": "eski zaman ve eskilik",
+      "shared_zone": "İki dal da geçmişin uzak ve eski bölümünü belirtir.",
+      "distinction": "Odak dal bağlama bağlı bir zaman belirtecidir; komşu dal ise eskilik niteliği ile geçmişte var olma durumunu daha geniş biçimde anlatır."
     },
     {
       "neighbor_root_id": "root_000494",
       "neighbor_branch_id": "B002",
-      "relation_type": "near_neighbor",
-      "boundary_match": "partial",
-      "focus_only": "Odak dal, belirli bir olayı zamanın çok eski bir noktasına yerleştirir.",
-      "neighbor_only": "Komşu dal, zamanın kendisini uzun süre, yaşam süresi veya dünyanın süresi olarak adlandırır.",
-      "expression_transliteration": "Uzun bir zaman dilimi",
-      "gloss": "zaman ve eski dönem",
-      "shared_zone": "Her iki dal zaman alanına ve uzun geçmiş düşüncesine ilişkindir.",
-      "distinction": "Odak söz eski bir zamandaki konumu bildirir; komşu dal ise zamanın veya uzun sürenin kendisini adlandırır."
+      "relation_type": "same_field",
+      "boundary_match": "field_only",
+      "focus_only": "Odak, olayın uzak geçmişteki konumunu belirtir.",
+      "neighbor_only": "Komşu, zamanın kendisini, uzun süresini ve yaşam ya da dünya süresini anlatabilir.",
+      "expression_transliteration": "aldhr zmna mmtda",
+      "gloss": "uzak geçmiş ve uzun zaman",
+      "shared_zone": "İki dal zaman alanında yer alır ve uzun geçmiş düşüncesiyle ilişkilidir.",
+      "distinction": "Odak bir olayın ne zaman gerçekleştiğini eski döneme yerleştirir; komşu ise zaman veya uzun süre kavramının kendisini adlandırır."
     }
   ],
   "neighbor_coverage": {
     "assessment": "complete",
-    "note": "Bütün zaman adayları değerlendirildi; aynı eski zaman anlatımına en yakın kalıp ile eskilik ve süre kavramlarını ayıran iki komşu yayımlandı."
+    "note": "Bütün adaylar değerlendirildi; eşdeğer eski zaman söyleyişi, genel eskilik ve uzun zaman kavramıyla sınırı gösteren üç karşılaştırma seçildi."
   }
 }
