@@ -1,5 +1,39 @@
 {
-  "verdict": "pass",
-  "summary": "Yanıt, üç anlam dalının çekirdeklerini ve sınırlarını kanıtlarla uyumlu biçimde koruyor; kaynak sentezi, Türkçe karşılıklar ve komşu ayrımları yayıma hazırdır.",
-  "issues": []
+  "verdict": "repair",
+  "summary": "Dal kimlikleri, kapsamları, kavram haritaları, karşılıkları ve komşu sınırları kanıtla uyumludur. Ancak üç dalın kaynak özeti de yalnızca bazı kaynaklarda bulunan ayrıntıları bütün kaynakların ortak açıklaması gibi sunmaktadır; bu ortaklık iddiaları kaynak dağılımını gösterecek biçimde daraltılmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_000023/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kişinin veya hayvanın kendisi, bedeni ve bağlı varlıkları üzerindeki kapsamı ve işitilen kötü sözü kaynakların ortak çekirdeğine katıyor. Oysa ilk ayrıntı yalnızca bir kaynak açıklamasında, işitilen kötü söz de başka bir kaynak açıklamasında yer alıyor; bütün kaynaklarda ortak olan daha genel incitici veya katlanılmayan etkidir.",
+      "smallest_correction": "Yalnızca common_summary metnini değiştirerek genel incitici etkiyi ortak çekirdek olarak belirt; beden ve bağlı varlık kapsamı ile işitilen kötü sözü, kaynakların farklı açıklamalarında görülen ayrıntılar olarak kaynak adı vermeden ayır."
+    },
+    {
+      "target_ref": "root_000023/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, yerinde durmamanın yaratılıştan geldiğini bütün kaynaklara yüklüyor. Kanıtın kaynak dağılımında bütün kaynaklar devenin ağrı olmadan bir yerde durmamasını verirken yaratılıştan gelme açıklaması yalnızca iki kaynakta bulunuyor.",
+      "smallest_correction": "Yalnızca common_summary metnini değiştir; ortak çekirdeği devenin ağrı olmadan bir yerde durmamasıyla sınırla ve yaratılıştan gelme açıklamasını bazı kaynakların eklediği ayrıntı olarak belirt."
+    },
+    {
+      "target_ref": "root_000023/B003",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, belirli su söz öbeğindeki rüzgarın kaldırdığı dalga dışı tabakaları kaynakların genel açıklamasına ekliyor. Kanıtta deniz dalgası anlamı dört kaynakta yer alırken bu söz öbeği ve dalgadan ayrım yalnızca tek kaynakta bulunuyor.",
+      "smallest_correction": "Yalnızca common_summary metnini değiştir; deniz dalgasını kaynakların ortak açıklaması olarak koru ve özel su söz öbeğini tek bir kaynakta bulunan ek kullanım olarak kaynak adı vermeden belirt."
+    }
+  ]
 }

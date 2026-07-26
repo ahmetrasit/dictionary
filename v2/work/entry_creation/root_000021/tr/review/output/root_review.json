@@ -1,5 +1,28 @@
 {
-  "verdict": "pass",
-  "summary": "Yanit, sunulan kanitlarla yayinlanabilir duzeyde uyumludur; kavram sinirlari, kaynak sentezi, Turkce karsiliklar ve komsu ayrimlari anlam bakimindan yerindedir.",
-  "issues": []
+  "verdict": "repair",
+  "summary": "Yanıtın dal kimlikleri, söz öbeği kapsamları ve komşu ayrımları genel olarak kanıtla uyumludur. Ancak iki hedef karşılık, kanıttaki kapsamı gereksiz yere genişletmektedir; bunlar yalnızca ilgili karşılık metinleri daraltılarak düzeltilebilir.",
+  "issues": [
+    {
+      "target_ref": "root_000021/B004",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_020"
+      ],
+      "evidence_conflict": "lu_020, hazırlığı genel bir iş veya özellikle namaz için tanıklar; hedef karşılıktaki \"ibadet\" ise namazdan daha geniş bir alan bildirir.",
+      "smallest_correction": "lu_020 target_gloss metnini \"bir iş veya namaz için hazırlık\" olarak değiştir."
+    },
+    {
+      "target_ref": "root_000021/B008",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 sayısal azlığı yalnızca koyun ve deve kullanımlarında tanıklar; \"az sayıda hayvan topluluğu\" karşılığı bu sınırı bütün hayvan topluluklarına genişletir.",
+      "smallest_correction": "concept_gloss.text değerini \"az sayıda koyun veya deve topluluğu\" olarak değiştir."
+    }
+  ]
 }
