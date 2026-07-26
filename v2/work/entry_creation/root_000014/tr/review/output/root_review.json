@@ -1,19 +1,50 @@
 {
   "verdict": "repair",
-  "summary": "Girdi genel olarak kanıtla uyumludur; ancak B002'de iki komşuluk karşılaştırmasının yalnız odak dala özgü saydığı kapsam, ilgili komşu sınır kartlarında da açıkça yer almaktadır.",
+  "summary": "Üçüncü dalın tuzlu ve acı su anlamı genel olarak doğru kurulmuştur; ancak kanıt, suyun içiminin güç veya imkansız olduğunu bildirmediği halde bu sonuç çeşitli alanlarda anlamın parçası yapılmıştır. Bu ekleme ilgili dört alandan çıkarılmalıdır.",
   "issues": [
     {
-      "target_ref": "root_000014/B002",
+      "target_ref": "root_000014/B003",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt suyu çok tuzlu ve acı olarak niteler; içiminin güç olduğunu ayrıca söylemez. Gerekçedeki içimi güç nitelemesi, tat bilgisinden çıkarılan sonucu dal kimliğine ekler.",
+      "smallest_correction": "Gerekçeden içimi güç ifadesini çıkarıp suyun tuzlu ve acı olduğu yönündeki kanıtlı sınırı koru."
+    },
+    {
+      "target_ref": "root_000014/B003",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F002, yoğun tuzluluk ile acılığın suyun içimini güçleştirdiğini anlamın bir parçası olarak ileri sürer. bc_001 yalnız tuzlu, çok tuzlu ve acı suyu ve suyun bu hale gelmesini bildirir.",
+      "smallest_correction": "Tanımdan ve F002'den içimin güçleşmesi sonucunu çıkar; yoğun tuzluluk, acı tat ve suyun bu hale gelmesiyle ilgili kalan metni değiştirme."
+    },
+    {
+      "target_ref": "root_000014/B003",
+      "field": "contextual_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İçilemeyecek kadar tuzlu ve acı glossu, kanıttaki tat derecesini içilemezlik hükmüne yükseltir. İlgili uygulanabilirlik ve korunan anlam açıklamaları da kanıtlanmayan içim etkisini tekrarlar.",
+      "smallest_correction": "İlk glossu çok tuzlu ve acı olarak değiştir; uygulanabilirlik ve korunan anlam metinlerinden içim güçlüğü ile içim üzerindeki etkiyi çıkar."
+    },
+    {
+      "target_ref": "root_000014/B003",
       "field": "neighbor_distinctions",
       "severity": "minor",
       "confidence": "high",
       "claim_ids": [
-        "lu_005",
-        "lu_007",
-        "lu_008"
+        "bc_001"
       ],
-      "evidence_conflict": "root_000708/B001 ateşi yakma ve tutuşturmayı zaten kapsadığı halde bu satır lu_005'teki ettirgen harlamayı odağa özgü gösteriyor. Ayrıca root_001686/B001 günün şiddetli sıcağını açıkça kapsadığı halde ilgili satır lu_007 ve lu_008'deki gün sıcaklığını odağa özgü sayıyor.",
-      "smallest_correction": "root_000708/B001 karşılaştırmasında ettirgen harlamayı focus_only alanından çıkarın. root_001686/B001 karşılaştırmasında gün sıcağını focus_only alanından çıkarıp odak dala özgü kısmı ettirgen harlama ve yaz sıcağına özgü adlandırmayla sınırlayın; ayrım cümlelerini de aynı sınırlarla uyumlu hale getirin."
+      "evidence_conflict": "Komşu ayrımlarında odak dal için içimi hoş olmayan veya içimi güç su denir. bc_001 bu dalı tat niteliğiyle sınırlar; içilebilirlik ise özellikle root_000783/B005 komşusunun kullanım yönüdür.",
+      "smallest_correction": "Odak dala yüklenen içim güçlüğü ifadelerini kaldır; kesişme ve karşıtlık açıklamalarını tuzluluk, acılık ve tat ekseninde bırak."
     }
   ]
 }

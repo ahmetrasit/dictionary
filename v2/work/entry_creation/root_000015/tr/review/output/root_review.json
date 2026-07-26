@@ -1,5 +1,17 @@
 {
-  "verdict": "pass",
-  "summary": "Onarılmış yanıt, üç dalın çekirdek anlamlarını ve bağımlı kullanımlarını kanıtla uyumlu biçimde ayırıyor; kaynak sentezi, Türkçe karşılıklar ve komşu sınırları yayıma hazırdır.",
-  "issues": []
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtı ve branch sınırlarını doğru koruyor. Ancak kırık kemiğin birleşmesi branchi ile aynı fiziksel çekirdeği taşıyan bir komşu, bağımlı teknik uzantı ve çekirdeği değiştirmeyen sağlamlaşma anlatımı nedeniyle kısmi yakın anlamlı sayılmış; bu ilişki tam eşdeğerlik olarak düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000015/B002",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Odak branchin yetkili kaynak ifadesi kırık kemiğin birleştirilmesini çekirdek olarak verir ve eğri kaynamayı kapsar; komşu kartı da kırık sonrası kemiğin birleştirilmesini, eğri birleşme dahil, aynı sınırla tanımlar. Uyak uyuşmazlığı bağımlı bir teknik uzantıdır; komşudaki sağlamlaşma anlatımı da ayrı bir katılımcı, koşul veya alan eklemez. Bu nedenle near_synonym ve partial sınıflaması kanıtta bir sınır farkına dayanmıyor.",
+      "smallest_correction": "root_001664/B003 komşu satırında relation_type değerini synonym, boundary_match değerini exact yap; focus_only ve neighbor_only alanlarını null olarak ayarla ve gloss, shared_zone ile distinction metinlerini iki fiziksel çekirdeğin aynı sınırı taşıdığını, uyak kullanımının yalnızca bağımlı teknik uzantı olduğunu belirtecek kadar dar biçimde düzelt."
+    }
+  ]
 }

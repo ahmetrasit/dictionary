@@ -1,5 +1,5 @@
 {
-  "inputs_sha256": "26ec1c6bbf78fd40b2ef9d6f1d3b91c6c0ab543af163d8bc13cc2a074a2f0f3c",
+  "inputs_sha256": "9b33d716e7a31fc1083a4a0ee97f35c8e3b56aee76db6a0457c27d94f4bc652b",
   "artifact_format": "dictionary-v2-root-entry-draft-v1",
   "generated_by": "v2/scripts/accept_root_writer.py",
   "root_envelope_id": "root_000015",
@@ -7,88 +7,324 @@
   "branches": [
     {
       "branch_ref": "root_000015/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, yapılan işten doğan yararlı karşılığı ana anlam olarak verir ve bunun dünyalık ödeme, manevi ödül, kiralama bedeli, evlilikte kadına verilen bedel ve ücret karşılığı çalıştırma gibi gerçekleşmelerini açıkça kapsar. Hazırlık çerçevesi bu katmanları aynı yararlı karşılık çekirdeğine bağlı tuttuğu için branch kimliği kaynakla uyumludur.",
+        "boundary_note": "Anlam yalnızca yararlı bir dönüşü kapsar; zararlı karşılık ve ceza bu branchin sınırları dışındadır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım ortak yararlı karşılık çekirdeğini verir; kiralama, işçi tutma, evlilik bedeli ve çocuk ölümüyle ilgili kullanımları yalnızca kendi biçim veya kuruluşlarına bağlı tutar."
+      },
       "concept_map": {
-        "definition": "Bir işin, davranışın veya sözleşmenin ardından işi yapana dönen yararlı karşılıktır; bu karşılık ödül, ödeme, kiralama bedeli ya da hizmet karşılığı olabilir. Kadına evlilik nedeniyle verilen bedel ve ölen çocukların manevi karşılık sayılması bu çekirdeğe bağlı özel kullanımlardır.",
+        "definition": "Bir işin yapılması veya bir anlaşmanın kurulması nedeniyle kişiye dönen yararlı karşılıktır; bu karşılık dünyalık bir ödeme ya da manevi ve öte dünyaya ilişkin bir ödül olabilir. Kiralama bedeli, ücretle çalıştırma ve evlilikte kadına verilen bedel bu çekirdeğin belirli ilişkilere bağlı gerçekleşmeleridir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Yapılan iş veya davranış, onu yapana dünyada ya da ölüm sonrasına ilişkin yararlı bir karşılık doğurur.",
+            "statement": "Yapılan bir iş nedeniyle işi yapan kişiye yarar olarak dönen karşılıktır.",
             "claim_ids": [
-              "lu_001",
-              "lu_004",
-              "lu_005"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Karşılık, birini ücretle çalıştırma, bir hizmet görme veya bir şeyi kiraya verme ilişkisi içindeki ödeme ve sözleşme biçimini alır.",
+            "statement": "Karşılık, dünyalık bir ödeme, kiralama bedeli veya hizmet sözleşmesinde verilen bedel olabilir.",
             "claim_ids": [
-              "lu_002",
-              "lu_003",
-              "lu_006",
-              "lu_007",
-              "lu_008",
-              "lu_010"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "extension",
-            "statement": "Evlilik nedeniyle kadına verilmesi gereken bedel de bu karşılık kavramıyla anlatılır.",
+            "role": "specialization",
+            "statement": "Karşılık, iyi bir iş için bu dünyada veya öte dünyada beklenen manevi ödül olabilir.",
             "claim_ids": [
-              "lu_009"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F004",
             "role": "associated_use",
-            "statement": "Bir kimsenin ölen çocuklarının, onun için ölüm sonrasında yararlı bir karşılığa dönüşmesi kalıplaşmış bir kullanım oluşturur.",
+            "statement": "Evlilik ilişkisinde kadına verilmesi gereken bedel de yararlı karşılık olarak adlandırılır.",
             "claim_ids": [
-              "lu_011"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F005",
+            "role": "extension",
+            "statement": "Bir kişiyi bedel karşılığında çalıştırmak üzere tutma ve o kişiyi çalışan kılma ilişkisini de kapsar.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F006",
+            "role": "associated_use",
+            "statement": "Ölen çocukların, anne veya baba için öte dünyaya ilişkin bir ödüle dönüşmesi özel bir kuruluşta anlatılır.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynakların ortak çerçevesinde kavram, bir iş veya davranıştan doğan yararlı karşılığı kapsar; ödüllendirme ile ücretli çalışma ve kiralama ilişkileri bu çerçevede birleşir. İşçiyi ücretle tutma, hizmet karşılığı ödeme ve evlilik nedeniyle kadına verilen bedel, çekirdeğin belirgin uygulamalarıdır.",
+        "common_summary": "Kaynakların ortak tablosunda ana unsur, iş veya anlaşma sonucunda kişiye yarar sağlayan bir karşılığın dönmesidir. Bu karşılık ödül, çalışma ya da kiralama bedeli ve evlilikte kadına verilen bedel biçiminde gerçekleşebilir; ayrıca birini bedel karşılığı çalışan olarak tutma ilişkisine ve ölen çocukların manevi ödül sayıldığı özel kuruluşa uzanır.",
         "common_claim_ids": [
-          "lu_001",
-          "lu_002",
-          "lu_003",
-          "lu_004",
-          "lu_005",
-          "lu_006",
-          "lu_007",
-          "lu_009",
-          "lu_010"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_008"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Tek başına aktarılan bir kalıp, yapılan şey karşılığında belirli bir ödeme almayı anlatır."
-          },
-          {
-            "claim_ids": [
-              "lu_011"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Tek başına aktarılan bir kullanımda, ölen çocuklar anne veya baba için manevi karşılık sayılır."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "işin, davranışın veya sözleşmenin yararlı karşılığı",
-        "applicability": "Ödül, çalışma bedeli, hizmet karşılığı ve kiralama bedelini birlikte kapsayan çekirdek anlatım olarak kullanılabilir.",
+        "text": "iş veya anlaşma karşılığında sağlanan yarar",
+        "applicability": "Ödeme ile manevi ödülü aynı yararlı karşılık çekirdeğinde birlikte anlatan branch düzeyindeki en kapsamlı kısa karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Bir işten, davranıştan veya sözleşmeden doğup ilgili kişiye yarar sağlayan karşılık çekirdeğini korur.",
+          "preserves": "İş ya da anlaşma ilişkisini, karşılığın alıcıya dönmesini ve yararlı olma koşulunu korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "emek karşılığı",
+          "usage_role": "general",
+          "applicability": "Yapılan iş ile işi yapan kişiye dönen yarar arasındaki temel ilişki öne çıktığında kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Yapılan iş ile yararlı karşılık arasındaki temel bağı doğal bir ifadeyle korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "ücret veya kira bedeli",
+          "usage_role": "contextual",
+          "applicability": "Karşılığın bir çalışma, hizmet veya kullanım anlaşması kapsamında maddi olarak verildiği bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Maddi ödeme ile çalışma veya kiralama ilişkisini birlikte korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "manevi ödül",
+          "usage_role": "contextual",
+          "applicability": "İyi işin bu dünyada veya öte dünyada sağlayacağı yararlı dönüş anlatıldığında kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "İyi işten doğan maddi olmayan yararlı karşılığı ve ödül yönünü korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
+          ]
+        },
+        {
+          "text": "evlilikte kadına verilen bedel",
+          "usage_role": "explanatory",
+          "applicability": "Kadına evlilik ilişkisi nedeniyle verilmesi gereken özel karşılığın açıklandığı bağlamlarda kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Bedelin alıcısını, evlilik bağını ve verilmesi gereken karşılık niteliğini korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F004"
+          ]
+        }
+      ],
+      "lexical_glosses": [
+        {
+          "lexical_unit_id": "lu_001",
+          "rendering_kind": "ordinary",
+          "target_gloss": "emeğin karşılığı; dünyalık veya öte dünyaya ilişkin ödül"
+        },
+        {
+          "lexical_unit_id": "lu_002",
+          "rendering_kind": "ordinary",
+          "target_gloss": "iş ya da kullanım karşılığında ödenen bedel"
+        },
+        {
+          "lexical_unit_id": "lu_003",
+          "rendering_kind": "ordinary",
+          "target_gloss": "iş veya kullanım için bedel karşılığında yapılan kiralama sözleşmesi"
+        },
+        {
+          "lexical_unit_id": "lu_004",
+          "rendering_kind": "ordinary",
+          "target_gloss": "bir işin karşılığını vermek"
+        },
+        {
+          "lexical_unit_id": "lu_005",
+          "rendering_kind": "ordinary",
+          "target_gloss": "ödüllendirmek, ücret ödemek veya kiraya vermek"
+        },
+        {
+          "lexical_unit_id": "lu_006",
+          "rendering_kind": "ordinary",
+          "target_gloss": "ücret karşılığı çalıştırılan kişi"
+        },
+        {
+          "lexical_unit_id": "lu_007",
+          "rendering_kind": "ordinary",
+          "target_gloss": "ücret karşılığı çalıştırmak üzere tutmak"
+        },
+        {
+          "lexical_unit_id": "lu_008",
+          "rendering_kind": "ordinary",
+          "target_gloss": "onun karşılığında ücret almak"
+        },
+        {
+          "lexical_unit_id": "lu_009",
+          "rendering_kind": "ordinary",
+          "target_gloss": "kadınlara evlilik nedeniyle verilen bedeller"
+        },
+        {
+          "lexical_unit_id": "lu_010",
+          "rendering_kind": "ordinary",
+          "target_gloss": "belli bir süre onun için çalışmak"
+        },
+        {
+          "lexical_unit_id": "lu_011",
+          "rendering_kind": "ordinary",
+          "target_gloss": "çocukları ölüp kendisi için manevi ödüle dönüşmek"
+        }
+      ],
+      "excluded_glosses": [],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000209/B002",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Yalnızca yararlı dönüşleri kapsar ve çalışma, kiralama, evlilik bedeli ile çalışan tutma ilişkilerine uzanır.",
+          "neighbor_only": "Bir işin kişiye dönen sonucunu yararlı ya da zararlı olmasına bakmadan kapsar.",
+          "gloss": "işten doğan karşılık",
+          "shared_zone": "Her iki branch de kişinin yaptığı bir işin sonucunda kendisine dönen karşılığı anlatır.",
+          "distinction": "Odak branch yararlılık koşulunu korur ve maddi ödeme ile sözleşme ilişkilerini içerir. Komşu branch ise dönüşün değerini sınırlamaz; sevilen ödül kadar sevilmeyen sonuç veya cezayı da kapsayabilir."
+        },
+        {
+          "neighbor_ref": "root_000248/B005",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Kendiliğinden doğan manevi ödülü, kiralama bedelini ve evlilikte kadına verilen bedeli de kapsar.",
+          "neighbor_only": "Bir iş veya konu için önceden belirlenen ödül ya da bağış niteliğindeki karşılığa odaklanır.",
+          "gloss": "iş için konmuş ödül",
+          "shared_zone": "İki branch de bir işin yapılması karşılığında kişiye yararlı bir şey verilmesini kapsar.",
+          "distinction": "Odak branch yararlı karşılığın geniş türlerini ve sözleşme ilişkilerini bir araya getirir. Komşu branchin çekirdeği ise belirli bir iş veya konu için konmuş ödül ya da armağandır."
+        },
+        {
+          "neighbor_ref": "root_000244/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Yararlı ödülü, çalışma veya kullanım bedelini ve ücret karşılığı çalışan tutmayı anlatır.",
+          "neighbor_only": "Bir eyleme iyilikle ya da kötülükle karşılık vermeyi, cezalandırmayı ve öç almayı da kapsar.",
+          "gloss": "eyleme karşılık verme",
+          "shared_zone": "Her iki branchte de bir eylem ile ona karşılık olarak ortaya çıkan sonuç arasında bağ vardır.",
+          "distinction": "Odak branch eylemi yapan kişiye dönen yararlı karşılığın kendisine yönelir. Komşu branch ise bir eylemi başka bir eylemle karşılama işlemini anlatır ve kötü karşılıkları da içerir."
+        },
+        {
+          "neighbor_ref": "root_001240/B024",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "İş veya anlaşma sonucunda verilen yararlı karşılığın kendisini ve bunun türlerini bildirir.",
+          "neighbor_only": "Belirli bir ücret veya iş üzerinde şartları kararlaştırma ve anlaşmaya bağlama eylemini bildirir.",
+          "gloss": "ücret üzerinde anlaşma",
+          "shared_zone": "İki branch çalışma, ücret ve karşılıklı anlaşma alanında aynı katılımcıları buluşturabilir.",
+          "distinction": "Odak branch anlaşmadan doğan yararlı karşılığı adlandırır. Komşu branch ise karşılığın kendisini değil, belirli şartlar üzerinde anlaşma kurma eylemini çekirdek yapar."
+        }
+      ],
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; burada yalnızca yararlı karşılık, genel sonuç, iş için konmuş ödül, karşılık verme ve ücret üzerinde anlaşma sınırlarını belirginleştiren komşular yayımlandı.",
+      "branch_image_ar": "جزاء العمل والكراء",
+      "what_is_ar": "يدخل فيه الأجر والثواب والأجرة والكراء والإجارة والاستئجار وأجر المرأة بمعنى مهرها وما يعود من نفع على عمل أو عقد.",
+      "what_is_not_ar": "لا يدخل فيه جبر العظم ولا سطح الإجار ولا الآجر المعرب ولا أسماء الأعلام.",
+      "source_phrase_ar": "الأجر جزاء العمل (maqayis;ayn)؛ الأجرة الكراء (sihah)؛ الإجارة ما أعطيت من أجر في عمل (maqayis;ayn)؛ مهر المرأة ... فآتوهن أجورهن (maqayis;mufradat)؛ الأجر والأجرة ما يعود من ثواب العمل دنيويا كان أو أخرويا (mufradat)؛ استئجره أي اتخذه أجيرا (tahdhib)",
+      "sources": [
+        "MQ",
+        "AY",
+        "SI",
+        "TA",
+        "MU"
+      ],
+      "source_note": {}
+    },
+    {
+      "branch_ref": "root_000015/B002",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesi kırık kemiğin birleştirilmesini genel çekirdek olarak verirken diğer aktarımlar eğri, çıkıntılı veya düzgün olmayan biçimde kaynamayı özellikle belirtir. Uyak harflerinin farklılığı da bağımsız bir çekirdek değil, düzensiz birleşmeye dayandırılan teknik bir uzantıdır. Bu nedenle hazırlık çerçevesi kullanılabilir, fakat bütün örnekleri yalnızca eğri kaynamaya indirgememek gerekir.",
+        "boundary_note": "Genel kırık onarımı çekirdektir; eğri kaynama güçlü bir uzmanlaşma, uyak uyuşmazlığı ise buna bağlı teknik uzantıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım kırığın birleştirilmesi çekirdeğini korur; eğri kaynama belirli biçim ve kuruluşlarda öne çıkar, uyak anlamıysa yalnızca şiir tekniğine bağlıdır."
+      },
+      "concept_map": {
+        "definition": "Kırılmış kemik ya da elin birleştirilip kaynamasıdır; birçok kullanımda eğri, çıkıntılı veya düzgün olmayan bir biçimde iyileşme özellikle belirtilir. Şiirde karşılık gelen uyak harflerinin farklı olması, bu düzensiz birleşmeye benzetilen teknik bir uzantıdır.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Kırılmış kemiği veya eli birleştirme ve yeniden kaynatma sürecini anlatır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Birleşen kemiğin eğri, çıkıntılı ya da düzgün olmayan biçimde kaynaması birçok kullanımın belirleyici koşuludur.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "extension",
+            "statement": "Şiirde karşılık gelen uyakların farklı harflerle bitmesi, düzensiz kaynamaya benzetilen teknik bir kullanımdır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Kaynaklar kırık kemiğin veya elin birleştirilmesini ortak zemin olarak sunar; bazı aktarımlar sonucu özellikle eğri, çıkıntılı ya da düzgün olmayan kaynama olarak sınırlar. Uyaklarda denk konumlardaki harflerin farklı olması da bu fiziksel düzensizlikten türetilmiş teknik bir kullanım olarak açıklanır.",
+        "common_claim_ids": [
+          "bc_001"
+        ],
+        "source_details": [],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "kırığın birleştirilip, çoğu kullanımda eğri kaynaması",
+        "applicability": "Branchin fiziksel çekirdeğini ve kaynaklar arasındaki kapsam farkını birlikte korur; şiir tekniğindeki kullanım bu çekirdeğin bağlama bağlı uzantısıdır.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Kırığı birleştirme sürecini, kaynama sonucunu ve eğriliğin her kullanım için zorunlu olmadığını korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -100,247 +336,12 @@
       },
       "contextual_glosses": [
         {
-          "text": "emek karşılığı",
-          "usage_role": "contextual",
-          "applicability": "Bir kişinin yaptığı iş için ödeme veya başka bir yarar elde ettiği çalışma bağlamlarında doğaldır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Yapılan iş ile işi yapana dönen yararlı karşılık arasındaki bağı korur.",
-            "loses": "Ölüm sonrasına ilişkin ödülü, kiralama sözleşmesini ve evlilik bedeli kullanımını dışarıda bırakır.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001",
-            "F002"
-          ]
-        },
-        {
-          "text": "iyiliğin ödülü",
-          "usage_role": "contextual",
-          "applicability": "İyi bir davranışın dünyada veya ölüm sonrasında olumlu karşılık bulduğu bağlamlarda kullanılabilir.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Davranışın sahibine yararlı bir sonuç olarak dönmesi düşüncesini korur.",
-            "loses": "Ücretli çalışma, hizmet sözleşmesi, kiralama ve evlilik bedeli alanlarını kapsamaz.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
-          ]
-        },
-        {
-          "text": "çalıştırma veya kiralama bedeli",
-          "usage_role": "contextual",
-          "applicability": "Bir işçinin tutulması, bir hizmetin görülmesi veya bir şeyin kiralanması için verilen bedeli anlatır.",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Sözleşmeye bağlı çalışma veya kullanım karşılığında bedel verilmesini korur.",
-            "loses": "İyi davranışın ödülü ile evlilik ve ölüm sonrasına ilişkin özel kullanımları dışarıda bırakır.",
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F002"
-          ]
-        }
-      ],
-      "lexical_glosses": [
-        {
-          "lexical_unit_id": "lu_001",
-          "rendering_kind": "ordinary",
-          "target_gloss": "işin karşılığı; iyi davranışın ödülü"
-        },
-        {
-          "lexical_unit_id": "lu_002",
-          "rendering_kind": "ordinary",
-          "target_gloss": "çalışma veya kiralama karşılığında verilen bedel"
-        },
-        {
-          "lexical_unit_id": "lu_003",
-          "rendering_kind": "ordinary",
-          "target_gloss": "ücretli çalışma, hizmet veya kiralama sözleşmesi"
-        },
-        {
-          "lexical_unit_id": "lu_004",
-          "rendering_kind": "ordinary",
-          "target_gloss": "karşılığını vermek; ödüllendirmek"
-        },
-        {
-          "lexical_unit_id": "lu_005",
-          "rendering_kind": "ordinary",
-          "target_gloss": "ödüllendirmek, ödeme yapmak veya kiraya vermek"
-        },
-        {
-          "lexical_unit_id": "lu_006",
-          "rendering_kind": "ordinary",
-          "target_gloss": "ücretle tutulan işçi"
-        },
-        {
-          "lexical_unit_id": "lu_007",
-          "rendering_kind": "ordinary",
-          "target_gloss": "birini ücretle işe almak"
-        },
-        {
-          "lexical_unit_id": "lu_008",
-          "rendering_kind": "ordinary",
-          "target_gloss": "bunun için ödeme almak"
-        },
-        {
-          "lexical_unit_id": "lu_009",
-          "rendering_kind": "ordinary",
-          "target_gloss": "kadınlara verilmesi gereken evlilik bedelleri"
-        },
-        {
-          "lexical_unit_id": "lu_010",
-          "rendering_kind": "ordinary",
-          "target_gloss": "belirli bir süre benim için çalışmak"
-        },
-        {
-          "lexical_unit_id": "lu_011",
-          "rendering_kind": "ordinary",
-          "target_gloss": "ölen çocuklarını kendisi için manevi karşılık saymak"
-        }
-      ],
-      "excluded_glosses": [
-        {
-          "text": "maaş",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Yapılan iş karşılığında ödeme alınması yönünü korur.",
-            "loses": "Tek seferlik ödeme, kiralama, davranış ödülü, evlilik bedeli ve manevi karşılık kullanımlarını dışarıda bırakır.",
-            "adds": null,
-            "collision": null
-          }
-        }
-      ],
-      "neighbor_distinctions": [
-        {
-          "neighbor_ref": "root_000209/B002",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı, özellikle yararlı karşılığı, ücretli işi, kiralamayı ve sözleşme bedelini kapsar.",
-          "neighbor_only": "Komşu dal, işin geri dönen sonucunu hem iyi hem kötü ve hem ödül hem ceza yönleriyle kapsar.",
-          "gloss": "yararlı karşılık ile her türlü sonuç",
-          "shared_zone": "İki dal da kişinin yaptığı şeyin ardından ona dönen karşılığı anlatır.",
-          "distinction": "Odak dalında karşılık yararlıdır ve çalışma ile kiralama bedeline kadar uzanır; komşu dal ise olumlu veya olumsuz her türlü geri dönüşü kapsadığı için daha geniş bir değer kutbuna sahiptir."
-        },
-        {
-          "neighbor_ref": "root_000248/B005",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı, işin sonucunda doğan ödülü ve yerleşik ücret, hizmet ya da kiralama ilişkisini anlatır.",
-          "neighbor_only": "Komşu dal, bir iş yapılırsa verilmek üzere önceden ortaya konan ödül veya bağışı öne çıkarır.",
-          "gloss": "kazanılan karşılık ile önceden konan ödül",
-          "shared_zone": "Her iki dalda da bir iş ile o iş için verilen yararlı bir karşılık arasında bağ vardır.",
-          "distinction": "Odak dalı gerçekleşmiş işin karşılığını ve sözleşmeli çalışma alanını merkez alır; komşu dalın çekirdeği ise iş için önceden belirlenip ortaya konan ödüldür."
-        },
-        {
-          "neighbor_ref": "root_000244/B001",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı yalnız yararlı karşılığı ve ayrıca çalışma, hizmet ile kiralama bedelini içerir.",
-          "neighbor_only": "Komşu dal, bir eyleme iyi veya kötü karşılık verme işlemini ve öç alma gibi olumsuz sonuçları da içerir.",
-          "gloss": "yararlı karşılık ile eyleme denk karşılık",
-          "shared_zone": "Her iki dal, bir eylemin karşılıksız kalmayıp ona uygun bir sonuçla karşılanmasını anlatabilir.",
-          "distinction": "Odak dalı yarar sağlayan sonuçla sınırlı olup ücret alanına açılır; komşu dal karşılık verme işlemini olumlu ve olumsuz sonuçlarıyla birlikte kapsar."
-        },
-        {
-          "neighbor_ref": "root_001240/B024",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı, işten doğan karşılığın kendisini ve bu karşılığı alan ya da veren tarafları kapsar.",
-          "neighbor_only": "Komşu dal, belirli bir bedel veya iş üzerinde şartlaşma ve anlaşma eylemini merkez alır.",
-          "gloss": "karşılık ile karşılık üzerinde anlaşma",
-          "shared_zone": "İki dal da belirli bir işin bedelinin taraflar arasında belirlenebildiği sözleşme alanında buluşur.",
-          "distinction": "Odak dalının çekirdeği yararlı karşılıktır; komşu dalın çekirdeği ise bu karşılığın veya işin miktarı üzerinde anlaşmaya varmaktır."
-        }
-      ],
-      "neighbor_coverage_note": "Bütün adaylar incelendi; yayımlanan dört karşılaştırma ödül, karşılık, önceden belirlenen bedel ve sözleşme sınırlarını açıklar. Tarım, şifacıya verilen pay, edinme ve aynı kökün öteki dalları yalnız uzak bağ kurduğu için eklenmedi.",
-      "branch_image_ar": "جزاء العمل والكراء",
-      "what_is_ar": "يدخل فيه الأجر والثواب والأجرة والكراء والإجارة والاستئجار وأجر المرأة بمعنى مهرها وما يعود من نفع على عمل أو عقد.",
-      "source_phrase_ar": "الأجر جزاء العمل (maqayis;ayn)؛ الأجرة الكراء (sihah)؛ الإجارة ما أعطيت من أجر في عمل (maqayis;ayn)؛ مهر المرأة ... فآتوهن أجورهن (maqayis;mufradat)؛ الأجر والأجرة ما يعود من ثواب العمل دنيويا كان أو أخرويا (mufradat)؛ استئجره أي اتخذه أجيرا (tahdhib)",
-      "sources": [
-        "MQ",
-        "AY",
-        "SI",
-        "TA",
-        "MU"
-      ],
-      "source_note": {
-        "SI": "Tek başına aktarılan bir kalıp, yapılan şey karşılığında belirli bir ödeme almayı anlatır. Tek başına aktarılan bir kullanımda, ölen çocuklar anne veya baba için manevi karşılık sayılır."
-      }
-    },
-    {
-      "branch_ref": "root_000015/B002",
-      "concept_map": {
-        "definition": "Kırılmış bir kemik veya elin yerine getirilip iyileşmesine karşın eğri ya da düzensiz kalmasıdır. Birbiriyle uyuşmayan seslerle kurulan uyak için kullanılan teknik terim, bu eğri kaynama görüntüsünden türetilmiş bir uzantıdır.",
-        "facets": [
-          {
-            "facet_id": "F001",
-            "role": "core",
-            "statement": "Kırık kemik veya el iyileşir ya da yerine getirilir, fakat sonuçta eğrilik veya düzensizlik kalır.",
-            "claim_ids": [
-              "lu_012",
-              "lu_013",
-              "lu_014",
-              "lu_015"
-            ]
-          },
-          {
-            "facet_id": "F002",
-            "role": "extension",
-            "statement": "Uyakların birbirinden farklı seslerle bitmesi, kırığın düzgün olmayan biçimde kaynamasına benzetilen teknik bir kullanımdır.",
-            "claim_ids": [
-              "lu_016"
-            ]
-          }
-        ]
-      },
-      "source_synthesis": {
-        "common_summary": "Ortak anlatım, kırık kemik veya elin kaynaması ya da yerine getirilmesi sırasında düzgünlüğün sağlanamamasını ve eğrilik kalmasını vurgular. Eylem yalnız iyileşmeyi değil, iyileşmenin bozuk biçimli sonucunu da içerir.",
-        "common_claim_ids": [
-          "lu_012",
-          "lu_013",
-          "lu_014",
-          "lu_015"
-        ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_016"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Tek başına aktarılan teknik kullanım, iki uyağın farklı seslerle bitmesini eğri kaynamaya bağlar."
-          }
-        ],
-        "supporting_claim_ids": [],
-        "duplicate_claims": []
-      },
-      "concept_gloss": {
-        "text": "kırığın eğri kaynaması",
-        "applicability": "Kırılmış kemik veya elin iyileşmesine rağmen düzgün biçimine dönmeyip eğri kalmasını eksiksiz anlatır.",
-        "error_profile": {
-          "fit": "none",
-          "preserves": "Kırığın iyileşmesi ile bu iyileşmenin eğri ve düzensiz sonucu birlikte korunur.",
-          "loses": null,
-          "adds": null,
-          "collision": null
-        },
-        "facet_ids": [
-          "F001"
-        ]
-      },
-      "contextual_glosses": [
-        {
-          "text": "eğri kaynamak",
-          "usage_role": "contextual",
-          "applicability": "Öznesi kırılmış kemik, el veya başka bir uzuv olduğunda doğal bir eylem karşılığıdır.",
+          "text": "kırığı kaynatmak",
+          "usage_role": "general",
+          "applicability": "Kırık kemiğin birleştirilip iyileşmesi anlatılırken, sonucun eğriliği ayrıca belirtilmediğinde kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Kırığın iyileşirken düzgün olmayan, eğri bir biçim alması sonucunu korur.",
+            "preserves": "Kırılmış parçaların yeniden birleşmesi ve iyileşmesi yönündeki temel süreci korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -350,18 +351,33 @@
           ]
         },
         {
-          "text": "uyak uyuşmazlığı",
-          "usage_role": "explanatory",
-          "applicability": "Şiirde art arda gelen uyakların farklı seslerle kurulmasını açıklayan teknik bağlamda kullanılabilir.",
+          "text": "eğri kaynamak",
+          "usage_role": "contextual",
+          "applicability": "Kırık kemik iyileştikten sonra eğrilik, çıkıntı veya başka bir düzgün olmama durumu kaldığında kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Birbirine uymayan uyak sesleriyle ilgili teknik uzantıyı korur.",
-            "loses": "Kırık kemiğin eğri kaynamasına ilişkin temel bedensel anlamı dışarıda bırakır.",
+            "fit": "none",
+            "preserves": "Kırığın iyileşmesini ve sonuçta düzgün olmayan biçimin kalmasını birlikte korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F002"
+          ]
+        },
+        {
+          "text": "uyak harflerinin uyuşmaması",
+          "usage_role": "explanatory",
+          "applicability": "Şiirde karşılıklı uyak konumlarında aynı harf yerine farklı harflerin kullanıldığı teknik bağlamda geçerlidir.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Teknik kullanımın şiir alanını ve karşılık gelen harfler arasındaki farklılığı korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
           ]
         }
       ],
@@ -369,12 +385,12 @@
         {
           "lexical_unit_id": "lu_012",
           "rendering_kind": "ordinary",
-          "target_gloss": "kemiğin veya kırığın eğri kaynaması"
+          "target_gloss": "kırığın eğri ya da çıkıntılı biçimde kaynaması"
         },
         {
           "lexical_unit_id": "lu_013",
           "rendering_kind": "ordinary",
-          "target_gloss": "eli kaynadı, fakat eğri kaldı"
+          "target_gloss": "eli kaynadı, fakat eğrilik veya çıkıntı kaldı"
         },
         {
           "lexical_unit_id": "lu_014",
@@ -384,72 +400,61 @@
         {
           "lexical_unit_id": "lu_015",
           "rendering_kind": "ordinary",
-          "target_gloss": "kırığı veya eli eğri kalacak biçimde yerine getirmek"
+          "target_gloss": "kırığı ya da eli eğri veya çıkıntılı kalacak biçimde birleştirmek"
         },
         {
           "lexical_unit_id": "lu_016",
           "rendering_kind": "ordinary",
-          "target_gloss": "uyakları farklı seslerle kurma"
+          "target_gloss": "uyaklarda denk harfler yerine farklı harfler kullanılması"
         }
       ],
-      "excluded_glosses": [
-        {
-          "text": "kırığı iyileştirmek",
-          "category": "alternative",
-          "error_profile": {
-            "fit": "broadening",
-            "preserves": "Kırığın onarılması ve iyileşmesi sürecini korur.",
-            "loses": null,
-            "adds": "Düzgün kaynamış kırıkları da kapsayarak eğri kalma koşulunu kaldırır.",
-            "collision": null
-          }
-        }
-      ],
+      "excluded_glosses": [],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_001664/B003",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dalı, iyileşen kırıkta eğrilik veya düzensizlik kalmasını zorunlu kılar.",
-          "neighbor_only": "Komşu dal, kemiğin kırık sonrasında birleşip güçlenmesini, düzgün veya eğri olmasına bakmadan kapsar.",
-          "gloss": "eğri kaynama ile genel kaynama",
-          "shared_zone": "İki dal da kırılmış kemiğin yeniden birleşmesi ve iyileşmesi olayını anlatır.",
-          "distinction": "Odak dalında bozuk biçimli sonuç anlamın kurucu koşuludur; komşu dalda asıl olan kemiğin birleşmesi ve güçlenmesidir, eğrilik yalnız mümkün bir sonuçtur."
+          "relation_type": "synonym",
+          "boundary_match": "exact",
+          "focus_only": null,
+          "neighbor_only": null,
+          "gloss": "kırık kemiğin yeniden birleşmesi",
+          "shared_zone": "İki branch de kırılmış kemiğin yeniden birleştirilip kaynamasını kapsar; eğri kaynama her ikisinin sınırı içindedir.",
+          "distinction": "Fiziksel çekirdek ve sınırlar eşdeğerdir. Odak branchteki uyak uyuşmazlığı, fiziksel anlamdan türetilen bağımlı teknik bir uzantıdır ve eşdeğerliği bozmaz."
         },
         {
           "neighbor_ref": "root_000216/B001",
-          "relation_type": "near_neighbor",
+          "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dalı, onarılan kırığın eğri veya düzensiz kalmasına özgüdür.",
-          "neighbor_only": "Komşu dal, kırığın yanı sıra eksiklik, yoksulluk, borç ve bozulmuş durumların giderilmesini de kapsar.",
-          "gloss": "eğri kaynama ile eksikliği giderme",
-          "shared_zone": "Her iki dal, kırılmış bir kemiğin onarılıp yeniden bir araya getirilmesi alanında buluşur.",
-          "distinction": "Odak dalı yalnız kırığın bozuk biçimde kaynamasını anlatır; komşu dalın çekirdeği ise bedensel veya soyut bir eksikliği düzeltip bütünlemektir."
+          "focus_only": "Kırığın eğri kaynamasını öne çıkarır ve düzensiz uyak harflerine uzanan teknik bir kullanım içerir.",
+          "neighbor_only": "Onarmayı yoksulluk, borç, bozulmuş durum ve yeniden çıkan bitki gibi fiziksel olmayan eksikliklere de yayar.",
+          "gloss": "kırığı ve eksiği onarmak",
+          "shared_zone": "İki branch kırılmış kemiği birleştirme ve oluşan fiziksel eksikliği giderme alanında örtüşür.",
+          "distinction": "Odak branch kırık kemiğin kaynama biçimine, özellikle düzgün olmayan sonuca bağlıdır. Komşu branchte çekirdek daha genel onarımdır ve kemik dışındaki eksikliklere genişler."
+        },
+        {
+          "neighbor_ref": "root_001233/B001",
+          "relation_type": "polarity_pair",
+          "boundary_match": "opposed",
+          "focus_only": "Kırılmış parçaların yeniden birleştirilmesi ve kaynaması sürecini anlatır.",
+          "neighbor_only": "Bütün bir nesnenin kırılması, çatlayıp parçalanması veya hızla kopması sürecini anlatır.",
+          "gloss": "kırılma ve yeniden birleşme",
+          "shared_zone": "Her iki branch katı bir nesnenin parçaları arasındaki bütünlük durumunu ve kırık aşamasını konu alır.",
+          "distinction": "Odak branch kırılmadan sonra parçaları yeniden bir araya getirir; komşu branch ise bütünlüğü bozup parçaları ayırır. Eğri kaynama nedeniyle sonuç tam bir eski duruma dönüş olmak zorunda değildir."
         },
         {
           "neighbor_ref": "root_001224/B005",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak dalındaki eğrilik, bir kırığın iyileşmesinden sonra kalan sonuçtur.",
-          "neighbor_only": "Komşu dal, bacakların, boynun veya kemiklerin doğrudan eğriliğini ya da katılığını anlatır.",
-          "gloss": "kırık sonrası eğrilik ile yapısal eğrilik",
-          "shared_zone": "İki dal da uzuv veya kemikte görülen düzgünlük kaybını ve eğri biçimi paylaşır.",
-          "distinction": "Odak dalı kırılma ve iyileşme aşamalarını gerektirir; komşu dalda eğrilik veya katılık böyle bir kırık geçmişine bağlı değildir."
-        },
-        {
-          "neighbor_ref": "root_001233/B001",
-          "relation_type": "thematic",
-          "boundary_match": "thematic_only",
-          "focus_only": "Odak dalı, kırılmadan sonraki onarımın eğri sonuçlanmasını anlatır.",
-          "neighbor_only": "Komşu dal, bir nesnenin kırılması, parçalanması veya kolayca kopmasını anlatır.",
-          "gloss": "kırılma sonrası sonuç ile kırılma olayı",
-          "shared_zone": "İki dal aynı kırık senaryosunun farklı aşamalarına, oluşuma ve sonraki iyileşmeye, katılır.",
-          "distinction": "Komşu dal kırığı meydana getiren olayı veya kırılabilirliği anlatırken odak dalı ancak kırık onarıldıktan sonra ortaya çıkan eğri kaynama sonucunu anlatır."
+          "focus_only": "Eğriliği, kırığın birleştirilip düzgün olmayan biçimde kaynamasının sonucu olarak içerir.",
+          "neighbor_only": "Bacak, boyun veya başka uzuvlardaki doğuştan ya da kalıcı eğrilik ve katılığı kırık koşulu olmadan anlatır.",
+          "gloss": "uzuvdaki eğrilik",
+          "shared_zone": "Her iki branch insan bedeninde görülen eğrilik veya düzgün olmama durumuyla ilişkilidir.",
+          "distinction": "Odak branchte önce bir kırık ve ardından kaynama süreci gerekir. Komşu branchin çekirdeği doğrudan uzvun eğriliği veya katılığıdır; iyileşme süreci kurucu değildir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar incelendi; yayımlanan karşılaştırmalar genel kemik kaynaması, onarım, yapısal eğrilik ve kırılma olayıyla sınırı gösterir. Şişme, göbek büyüklüğü, dişlerin içe kıvrılması ve aynı kökün öteki dalları anlamı keskinleştirmediği için dışarıda bırakıldı.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; kırığın kaynaması, genel onarım, kırılma karşıtlığı ve bedensel eğrilik sınırlarını en açık gösteren dört komşu seçildi.",
       "branch_image_ar": "جبر الكسر على عوج",
       "what_is_ar": "يدخل فيه جبر العظم أو اليد بعد كسر، وخاصة إذا برأ على عثم أو اعوجاج، ويدخل فيه الاستعمال الفني للقافية المختلفة لأنه مصرح برده إلى أجور الكسر.",
+      "what_is_not_ar": "لا يدخل فيه جزاء العمل ولا الكراء ولا سطح الإجار ولا الآجر المعرب.",
       "source_phrase_ar": "جبر العظم الكسير (maqayis)؛ الأجور جبر الكسر على عوج العظم (ayn)؛ أجر العظم ... برأ على عثم (sihah)؛ أجر الكسر ... إذا برأ على اعوجاج (tahdhib)؛ الإجارة ... القافية طاء والأخرى دالا ... من أجور الكسر (tahdhib)",
       "sources": [
         "MQ",
@@ -457,51 +462,63 @@
         "SI",
         "TA"
       ],
-      "source_note": {
-        "TA": "Tek başına aktarılan teknik kullanım, iki uyağın farklı seslerle bitmesini eğri kaynamaya bağlar."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000015/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi referenti açıkça çevresinde koruyucu duvar bulunmayan dam yüzeyi olarak tanımlar. Bölgesel kullanım kaydı ile zayıf veya düzeltilmesi gereken bir söyleyiş biçimi referentin kimliğini değiştirmez, yalnızca sözcüğün kullanım ve biçim sınırlarını gösterir. Hazırlık çerçevesi bu ayrımı doğru korur.",
+        "boundary_note": "Branch yalnızca çevresi duvar veya korkulukla kapatılmamış damı kapsar; genel çatı ve yapı taşı anlamları kapsam dışındadır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım korkuluksuz dam referentini korur; bölgesel biçimler, çoğullar ve düzeltilen söyleyişler ayrı lexical birimlere bağlıdır ve genel bir kök anlamına yayılmaz."
+      },
       "concept_map": {
-        "definition": "Çevresinde duvar veya korkuluk bulunmayan dam yüzeyidir. Çoğul biçimleri aynı nesneleri gösterir; ayrıca aktarılmış bir söyleyiş bazı kaynaklarda yadırganır veya doğru biçime düzeltilir.",
+        "definition": "Bir yapının üstünde bulunan ve çevresinde koruyucu duvar ya da korkuluk olmayan açık dam yüzeyidir. Sözcük bazı bölgelere özgü sayılır; aktarılan başka bir söyleyiş biçimi ise zayıf veya düzeltilmesi gereken biçim olarak değerlendirilir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir yapının üstündeki dam yüzeyinin çevresinde düşmeyi önleyen duvar, set veya korkuluk yoktur.",
+            "statement": "Yapının üstünde yer alan ve çevresinde koruyucu duvar veya korkuluk bulunmayan dam yüzeyidir.",
             "claim_ids": [
-              "lu_017",
-              "lu_018"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "source_variant",
-            "statement": "Aynı dam anlamı için aktarılmış başka bir söyleyiş, kaynaklarda zayıf veya kaba sayılır ve doğru biçime düzeltilir.",
+            "statement": "Kullanımın belirli bölgelere ait olduğu ve kırsal konuşmanın genel bir parçası olmadığı aktarılır.",
             "claim_ids": [
-              "lu_019"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F003",
+            "role": "source_variant",
+            "statement": "Başında ek bir ünsüz bulunan söyleyiş, zayıf bir bölgesel biçim veya düzeltilmesi gereken kullanım sayılır.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar temel nesneyi çevresinde koruyucu duvar veya korkuluk bulunmayan dam olarak tanımlar ve bu adın birden fazla çoğul biçimini aktarır. Adlandırma Şam ve Hicaz kullanımına bağlanır ve bedevi söyleyişinden sayılmaz. Başka bir söyleyişin varlığı da kaydedilir; ancak bu söyleyiş zayıf ya da kaba bulunur ve doğru kabul edilen biçime düzeltilir.",
+        "common_summary": "Kaynakların ortak tanımı çevresinde koruyucu duvar bulunmayan bir dam yüzeyidir. Kullanım belirli bölgelere bağlanır ve genel kırsal söz varlığına ait olmadığı belirtilir; farklı bir söyleyiş biçimi de kimi aktarımda zayıf, kiminde düzeltilmesi gereken biçim olarak değerlendirilir.",
         "common_claim_ids": [
-          "lu_017",
-          "lu_018",
-          "lu_019"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "korkuluksuz dam",
-        "applicability": "Bir yapının üst yüzeyinde çevre duvarı, set veya korkuluk bulunmadığını kısa ve doğal biçimde anlatır.",
+        "text": "çevresi korkuluksuz açık dam",
+        "applicability": "Yapı üzerindeki yüzeyi ve onu genel çatıdan ayıran çevresel koruma yokluğunu birlikte veren branch düzeyindeki kısa karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Dam yüzeyi ile çevresinde koruyucu bir engel bulunmaması koşulunu birlikte korur.",
+          "preserves": "Dam yüzeyini, açık kullanım alanını ve çevresinde koruyucu sınır bulunmaması koşulunu korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -512,12 +529,12 @@
       },
       "contextual_glosses": [
         {
-          "text": "çevresi açık dam",
-          "usage_role": "contextual",
-          "applicability": "Damın kenarlarında duvar veya korkuluk bulunmadığının bağlamdan anlaşılabildiği betimlemelerde kullanılabilir.",
+          "text": "çevresinde duvar olmayan dam",
+          "usage_role": "explanatory",
+          "applicability": "Referentin yapı üzerindeki konumunu ve çevresindeki koruyucu duvarın yokluğunu açıkça belirtmek gerektiğinde kullanılır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Dam yüzeyinin çevresinde koruyucu bir engel bulunmaması özelliğini korur.",
+            "preserves": "Yapı üzerindeki damı ve çevresinin duvarla kapatılmamış olmasını açıkça korur.",
             "loses": null,
             "adds": null,
             "collision": null
@@ -525,35 +542,51 @@
           "facet_ids": [
             "F001"
           ]
+        },
+        {
+          "text": "bölgesel bir dam adı",
+          "usage_role": "explanatory",
+          "applicability": "Sözcüğün belirli bölgelerde kullanıldığı ve genel kırsal söz varlığına ait sayılmadığı vurgulandığında kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Adlandırmanın dam referentini ve bölgesel kullanım sınırlamasını birlikte korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
         }
       ],
       "lexical_glosses": [
         {
           "lexical_unit_id": "lu_017",
           "rendering_kind": "ordinary",
-          "target_gloss": "çevresinde korkuluk bulunmayan dam"
+          "target_gloss": "çevresi korkulukla çevrilmemiş dam"
         },
         {
           "lexical_unit_id": "lu_018",
           "rendering_kind": "ordinary",
-          "target_gloss": "çevresinde korkuluk bulunmayan damlar"
+          "target_gloss": "çevresi korkulukla çevrilmemiş damlar"
         },
         {
           "lexical_unit_id": "lu_019",
           "rendering_kind": "ordinary",
-          "target_gloss": "korkuluksuz dam için aktarılmış, fakat düzeltilmesi gerektiği belirtilen bir söyleyiş"
+          "target_gloss": "korkuluksuz dam anlamındaki zayıf sayılan söyleyiş biçimi"
         }
       ],
       "excluded_glosses": [
         {
           "text": "çatı",
-          "category": "confusable",
+          "category": "alternative",
           "error_profile": {
-            "fit": "broadening",
-            "preserves": "Yapının üstünü örten bölüm olma yönünü korur.",
-            "loses": null,
-            "adds": "Eğimli örtüleri ve çevresinde korkuluk bulunan üst yüzeyleri de kapsar.",
-            "collision": "Genel yapı örtüsü anlamı, üzerinde durulabilen korkuluksuz dam yüzeyi sınırını belirsizleştirir."
+            "fit": "narrowing",
+            "preserves": "Yapının üst bölümünde bulunan mimari yüzey olma özelliğini korur.",
+            "loses": "Üzerinde bulunulabilen açık dam yüzeyini ve çevrede korkuluk olmaması koşulunu belirtmez.",
+            "adds": null,
+            "collision": "Eğimli veya kapalı üst örtüyü de akla getirerek referentin yapısal sınırını belirsizleştirir."
           }
         }
       ],
@@ -562,46 +595,47 @@
           "neighbor_ref": "root_000720/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak dalı, yapının üstündeki yüzeyin çevresinde korkuluk bulunmamasını zorunlu kılar.",
-          "neighbor_only": "Komşu dal, bir şeyin üzerini örten yüksek tavan veya örtüyü, kenar düzenine bakmadan kapsar.",
-          "gloss": "korkuluksuz dam ile üst örtü",
-          "shared_zone": "Her iki dal bir yapının üst bölümüne ve aşağıdaki alanın üzerinde bulunan yüzeye ilişkindir.",
-          "distinction": "Odak dalı üzerinde bulunulabilen dam yüzeyini ve açık kenarlarını anlatır; komşu dalın çekirdeği ise aşağıdaki alanı örten üst yapıdır."
-        },
-        {
-          "neighbor_ref": "root_000372/B001",
-          "relation_type": "near_neighbor",
-          "boundary_match": "opposed",
-          "focus_only": "Odak dalında dam yüzeyinin çevresinde koruyucu bir engel bulunmaz.",
-          "neighbor_only": "Komşu dal, bir yerin duvar, çit veya başka bir sınırla çevrilmesi eylemini anlatır.",
-          "gloss": "çevresi açık yüzey ile çevreleme",
-          "shared_zone": "İki dal bir mekanın kenarlarının engelle çevrili olup olmaması bakımından aynı uzamsal eksene dokunur.",
-          "distinction": "Odak dalı çevrelenmeme durumuyla tanımlanan somut bir damdır; komşu dal ise nesne veya mekanın çevresine sınır çekme eylemini anlatır."
-        },
-        {
-          "neighbor_ref": "root_000758/B002",
-          "relation_type": "thematic",
-          "boundary_match": "thematic_only",
-          "focus_only": "Odak dalı, kenarında duvar bulunmayan dam yüzeyini adlandırır.",
-          "neighbor_only": "Komşu dal, şehir veya yapı çevresindeki yüksek duvarı ve bu duvarı aşma ya da yapma eylemini anlatır.",
-          "gloss": "duvarsız dam ile çevre duvarı",
-          "shared_zone": "Komşu dalın adlandırdığı yüksek çevre duvarı, odak dalındaki damda özellikle bulunmayan yapı unsurudur.",
-          "distinction": "Biri belirli bir engelin yokluğuyla tanımlanan yüzeydir; öteki o engelin kendisini ve onunla yapılan eylemleri anlatır."
+          "focus_only": "Yapının üzerinde açık bir yüzey oluşturur ve çevresinde duvar ya da korkuluk bulunmaması gerekir.",
+          "neighbor_only": "Bir yapıyı veya nesneyi yukarıdan örten yüksek tavanı ya da üst örtüyü genel biçimde kapsar.",
+          "gloss": "dam yüzeyi ve üst örtü",
+          "shared_zone": "Her iki branch bir yapının üst bölümünde bulunan mimari unsuru anlatabilir.",
+          "distinction": "Odak branch üzerinde bulunulabilen açık dam yüzeyidir ve çevresel koruma yokluğuyla sınırlıdır. Komşu branchin çekirdeği yukarıdan örten tavan veya üst örtüdür; açık yüzey ve korkuluksuzluk zorunlu değildir."
         },
         {
           "neighbor_ref": "root_000120/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak dalı, yapının üstündeki belirli bir dam yüzeyini ve korkuluksuz kenar koşulunu içerir.",
-          "neighbor_only": "Komşu dal, insan derisinin veya yer yüzeyinin görünen dış bölümünü genel olarak kapsar.",
-          "gloss": "korkuluksuz dam ile görünen yüzey",
-          "shared_zone": "Her iki dal dışarıya açık ve görülebilen bir yüzey düşüncesinde örtüşür.",
-          "distinction": "Odak dalı yapı üzerindeki somut ve korkuluksuz bir damla sınırlıdır; komşu dal ise beden ve toprak dahil çeşitli şeylerin görünen yüzeyini anlatır."
+          "focus_only": "Belirli bir mimari referenti, çevresinde korkuluk olmayan dam yüzeyini anlatır.",
+          "neighbor_only": "İnsan derisinin görünen kısmı ile toprağın veya bitkinin açığa çıkan yüzeyini genel olarak anlatır.",
+          "gloss": "açıkta kalan yüzey",
+          "shared_zone": "İki branchte de üstte veya dışta kalan, görünür ve açık bir yüzey düşüncesi bulunur.",
+          "distinction": "Odak branch yalnızca yapı üzerindeki korkuluksuz dama bağlıdır. Komşu branch görünürlük ve yüzey olma niteliğini beden, toprak ve bitki gibi farklı alanlara yayar."
+        },
+        {
+          "neighbor_ref": "root_000758/B002",
+          "relation_type": "polarity_pair",
+          "boundary_match": "opposed",
+          "focus_only": "Dam yüzeyinin çevresinde koruyucu duvar veya korkuluk bulunmamasını kurucu koşul yapar.",
+          "neighbor_only": "Yerleşimi veya yapıyı çevreleyen yüksek duvarın kendisini ve bu duvarı aşma eylemini anlatır.",
+          "gloss": "çevre duvarının yokluğu ve varlığı",
+          "shared_zone": "Her iki branch mimari bir alanın çevresinde yükselen koruyucu sınırın varlığıyla ilişkilidir.",
+          "distinction": "Odak branch, çevre duvarının yokluğuyla tanımlanan dam yüzeyidir. Komşu branch ise tam tersine çevreleyen yüksek duvarı merkezine alır; referentleri farklı olsa da çevresel sınır ekseninde karşıt kutuplardadır."
+        },
+        {
+          "neighbor_ref": "root_000296/B004",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Yapı üstündeki yüzeyin çevresel duvar veya korkuluktan yoksun olmasını bildirir.",
+          "neighbor_only": "Duvar, çit veya doğal sınırla çevrilmiş yerin kendisini ve farklı türde kapalı alanları bildirir.",
+          "gloss": "açık dam ve çevrili yer",
+          "shared_zone": "İki branch bir mekânın çevresel sınırla açık veya kapalı duruma gelmesi alanında karşılaştırılabilir.",
+          "distinction": "Odak branch mimari konumu ve koruyucu sınırın yokluğunu birlikte gerektirir. Komşu branchte çekirdek, farklı türde yerlerin bir sınırla çevrilmiş olmasıdır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar incelendi; yayımlanan karşılaştırmalar dam, üst örtü, çevreleme, çevre duvarı ve görünen yüzey ayrımlarını açıklar. Sert açık arazi, avlu, örtüyü kaldırma ve aynı kökün öteki dalları ek bir sınır sağlamadığı için yayımlanmadı.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel üst örtü, görünür yüzey, çevre duvarı ve çevrili yerle kurulan dört karşılaştırma referentin mimari ve çevresel sınırlarını yeterince gösterir.",
       "branch_image_ar": "سطح بلا سترة",
       "what_is_ar": "يدخل فيه الإجار بمعنى سطح ليس حواليه سترة، مع لغات الجمع أجاجير وأجاجرة، والإنجار بوصفه لغة أو وجها مصححا إلى الإجار.",
+      "what_is_not_ar": "لا يدخل فيه الأجر والثواب ولا جبر الكسر ولا الآجر الذي يبنى به.",
       "source_phrase_ar": "الإجار سطح ليس حواليه سترة (ayn;tahdhib)؛ الاجار السطح بلغة أهل الشام والحجاز (sihah)؛ ليست من كلام البادية (maqayis)؛ الإنجار لغة والصواب الإجار (tahdhib)",
       "sources": [
         "MQ",
@@ -613,9 +647,9 @@
     }
   ],
   "root_profile": {
-    "summary": "Kök üç ayrı anlam dalında örgütlenir: iş veya sözleşmeden doğan yararlı karşılık, kırığın eğri kaynaması ve çevresinde korkuluk bulunmayan dam. Uyak terimi ikinci dala benzetmeyle bağlıyken ödül ve dam dalları birbirinden bağımsızdır.",
+    "summary": "Kök üç ayrı branchte düzenlenir: iş veya anlaşmadan doğan yararlı karşılık, kırığın birleştirilmesi ve çoğu kullanımda eğri kaynaması, ayrıca çevresi koruyucu duvarsız açık dam. Uyak uyuşmazlığı kırık branchine bağlı teknik bir uzantıdır; bölgesel söyleyişler ise dam branchinin biçim çeşitleridir.",
     "polysemy": "polysemic",
-    "organization": "mixed"
+    "organization": "multi_branch"
   },
   "occurrence_evidence": {
     "summary": {
