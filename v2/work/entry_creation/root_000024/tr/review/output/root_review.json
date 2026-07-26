@@ -1,5 +1,72 @@
 {
-  "verdict": "pass",
-  "summary": "Yanıt, kavram çekirdeklerini ve uzantıları doğru ayırıyor; kaynak ayrıntılarını, Türkçe karşılıkları ve komşu sınırlarını verilen kanıtlarla tutarlı biçimde sunuyor.",
-  "issues": []
+  "verdict": "repair",
+  "summary": "Dalların kimliği, kapsam türleri ve genel ayrımları korunabilir durumdadır. Ancak üç dalda yinelenen bir sözlüksel karşılık kanıtta bulunmayan mal ilişkisi ekliyor; B002'nin kavram, bağlamsal karşılık ve komşu ayrımı da kaynak iddiasında bulunmayan hız, isabet, ileri görüş ve zekayla üstün gelme ayrıntıları taşıyor. Bu sınırlı alanlar kanıta döndürülmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_000024/B001",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_022"
+      ],
+      "evidence_conflict": "lu_022'nin verilen anlamı ilk açıklamayı ihtiyaç duyup istemek veya talepte bulunmak olarak aktarır; mevcut karşılıktaki \"malı için\" sözü bu açıklamaya kanıtsız bir mal ilişkisi ekler ve tecrübe unsurunu da yalnızca bilgili olmaya indirger.",
+      "smallest_correction": "B001 içindeki lu_022 target_gloss değerini mal ilişkisini kaldıracak ve üç açıklamayı koruyacak biçimde \"ihtiyaç duyup talepte bulunmak; ayrıca tecrübeli ve bilgili olmak ya da organları düşmek veya zarar görmek diye açıklanır\" olarak değiştir."
+    },
+    {
+      "target_ref": "root_000024/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 akıl, deha, hile, maharet, karşılıklı aldatma ve üstün gelmeyi verir; mevcut tanım ve yüzler bunlara \"çabuk\", \"isabetli\", \"ileri görüş\", deneyim kazanma ve \"kanıt gücüyle\" üstün gelme ayrıntılarını ekliyor. Ayrıca bağımlı üstün gelme yapısını aklın zorunlu sonucu gibi sunuyor.",
+      "smallest_correction": "B002 concept_map içinde definition değerini kanıttaki akıl, kavrayış, kurnazlık ve bağımlı kullanımlarla sınırla; F001'den hız, isabet ve ileri görüşü, F002'den kanıtsız deneyim kazanmayı, F004'ten zekâ, beceri ve kanıt gücü nedenselliğini kaldırarak üstün gelmeyi belirli yapının sonucu olarak belirt."
+    },
+    {
+      "target_ref": "root_000024/B002",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001 belirli yapıda bir topluluğa üstün gelmeyi bildirir, fakat bunun zekâ yoluyla gerçekleştiğini söylemez. \"zekâsıyla üstün gelmek\" karşılığı ve açıklaması kaynakta bulunmayan bir araç ve neden ekliyor.",
+      "smallest_correction": "İlgili bağlamsal karşılığı \"bir topluluğa üstün gelmek\" yap; applicability ve preserves metinlerinden akıl, zekâ ve becerinin üstünlüğün aracı olduğu iddiasını kaldır."
+    },
+    {
+      "target_ref": "root_000024/B002",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_022"
+      ],
+      "evidence_conflict": "lu_022'nin verilen anlamı ilk açıklamayı ihtiyaç duyup istemek veya talepte bulunmak olarak aktarır; mevcut karşılıktaki \"malı için\" sözü bu açıklamaya kanıtsız bir mal ilişkisi ekler ve tecrübe unsurunu da yalnızca bilgili olmaya indirger.",
+      "smallest_correction": "B002 içindeki lu_022 target_gloss değerini \"ihtiyaç duyup talepte bulunmak; ayrıca tecrübeli ve bilgili olmak ya da organları düşmek veya zarar görmek diye açıklanır\" olarak değiştir."
+    },
+    {
+      "target_ref": "root_000024/B002",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_000201/B002 komşu kartı hızlı öğrenme ve kavramayı komşuya özgü sınır olarak verir. Mevcut shared_zone ise \"hızlı kavrama\"yı B002 ile ortaklaştırarak bu asimetriyi siliyor; B002'nin bc_001 iddiasında hız yoktur.",
+      "smallest_correction": "root_000201/B002 satırındaki shared_zone değerinden \"hızlı\" nitelemesini kaldır; ortak alanı kavrama ve yetkin eyleme dönüşen zihinsel beceriyle sınırla."
+    },
+    {
+      "target_ref": "root_000024/B003",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_022"
+      ],
+      "evidence_conflict": "lu_022'nin verilen anlamı ilk açıklamayı ihtiyaç duyup istemek veya talepte bulunmak olarak aktarır; mevcut karşılıktaki \"malı için\" sözü bu açıklamaya kanıtsız bir mal ilişkisi ekler ve tecrübe unsurunu da yalnızca bilgili olmaya indirger.",
+      "smallest_correction": "B003 içindeki lu_022 target_gloss değerini \"ihtiyaç duyup talepte bulunmak; ayrıca tecrübeli ve bilgili olmak ya da organları düşmek veya zarar görmek diye açıklanır\" olarak değiştir."
+    }
+  ]
 }
