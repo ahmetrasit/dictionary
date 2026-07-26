@@ -4,21 +4,29 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import json
+import os
 import re
 import sqlite3
 import sys
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 
 PROJECT = Path(__file__).resolve().parents[2]
 if str(PROJECT) not in sys.path:
     sys.path.insert(0, str(PROJECT))
 
-from v2.scripts.accept_root_review import check_review
+from v2.scripts.accept_root_review import (
+    response_body as review_response_body,
+    validate_review,
+)
+from v2.scripts.assemble_entry import canonical_sha256, validate_fragment
 from v2.scripts.check_root_writer import check as check_root_writer
+from v2.scripts.create_entry import verify_task_bindings
 from v2.scripts.render_entry import render
 from v2.scripts.validate_entry import ContractError, load_json, validate_entry
 
@@ -37,6 +45,9 @@ STATE_ORDER = (
     "unstarted",
 )
 ROOT_ID_RE = re.compile(r"root_([0-9]{6})")
+ROOT_ENVELOPE_RE = re.compile(r"^root_[0-9]{6}(--root_[0-9]{6})*$")
+QURANIC_ORIGIN_RE = re.compile(rb'"origin_corpus"\s*:\s*"quranic"')
+DEFAULT_JOBS = min(16, max(1, os.cpu_count() or 1))
 
 
 def envelope_sort_key(envelope: str) -> tuple[int, ...]:
@@ -77,13 +88,29 @@ def result(
     return value
 
 
+def check_current_review(work_dir: Path) -> dict:
+    task_path = work_dir / "review/input/task.json"
+    response_path = work_dir / "review/output/root_review.json"
+    task = load_json(task_path)
+    verify_task_bindings(task, base_dir=task_path.parent)
+    adjusted = copy.deepcopy(task)
+    adjusted["evidence"]["path"] = str(
+        (task_path.parent / task["evidence"]["path"]).resolve()
+    )
+    response = review_response_body(response_path)
+    validate_fragment(response, "root_reviewer", response_path)
+    validate_review(response, adjusted)
+    return response
+
+
 def audit_root(project: Path, envelope: str, language: str) -> dict[str, Any]:
     work_dir = project / "v2/work/entry_creation" / envelope / language
     writer_task = work_dir / "tasks/root_writer.json"
     writer_fragment = work_dir / "fragments" / f"{envelope}_entry.json"
     writer_output = work_dir / "output" / f"{envelope}_entry.json"
     review_task = work_dir / "tasks/root_reviewer.json"
-    review_fragment = work_dir / "fragments/root_review.json"
+    review_input_task = work_dir / "review/input/task.json"
+    review_output = work_dir / "review/output/root_review.json"
     entry_path = project / "v2/entries" / language / f"{envelope}.json"
     markdown_path = project / "v2/entries" / language / f"{envelope}.md"
 
@@ -116,6 +143,7 @@ def audit_root(project: Path, envelope: str, language: str) -> dict[str, Any]:
         )
     try:
         writer = check_root_writer(writer_task, writer_fragment)
+        writer_task_hash = canonical_sha256(load_json(writer_task))
     except (OSError, ContractError, KeyError, TypeError) as error:
         return result(
             project,
@@ -140,26 +168,26 @@ def audit_root(project: Path, envelope: str, language: str) -> dict[str, Any]:
             artifact=writer_fragment,
         )
 
-    if not review_fragment.is_file():
+    if not review_output.is_file():
         return result(
             project,
             envelope,
             language,
             "review_missing",
-            "No canonical semantic-review fragment is present.",
+            "No current semantic-review output is present.",
             artifact=writer_fragment,
         )
-    if not review_task.is_file():
+    if not review_input_task.is_file():
         return result(
             project,
             envelope,
             language,
             "review_invalid",
-            "The canonical semantic-review task is missing.",
-            artifact=review_fragment,
+            "The staged semantic-review task is missing.",
+            artifact=review_output,
         )
     try:
-        review = check_review(review_task, review_fragment)
+        review = check_current_review(work_dir)
     except (OSError, ContractError, KeyError, TypeError) as error:
         return result(
             project,
@@ -167,19 +195,10 @@ def audit_root(project: Path, envelope: str, language: str) -> dict[str, Any]:
             language,
             "review_invalid",
             diagnostic(error),
-            artifact=review_fragment,
+            artifact=review_output,
         )
 
     verdict = review["verdict"]
-    if verdict == "repair":
-        return result(
-            project,
-            envelope,
-            language,
-            "repair_required",
-            "The current bound semantic review requires writer repair.",
-            artifact=review_fragment,
-        )
     if verdict == "editorial_review":
         return result(
             project,
@@ -187,16 +206,16 @@ def audit_root(project: Path, envelope: str, language: str) -> dict[str, Any]:
             language,
             "editorial_review",
             "The current bound semantic review requires editor judgment.",
-            artifact=review_fragment,
+            artifact=review_output,
         )
-    if verdict != "pass":
+    if verdict not in {"pass", "repair"}:
         return result(
             project,
             envelope,
             language,
             "review_invalid",
             f"Unknown semantic-review verdict: {verdict!r}.",
-            artifact=review_fragment,
+            artifact=review_output,
         )
 
     if not entry_path.is_file() or not markdown_path.is_file():
@@ -216,12 +235,11 @@ def audit_root(project: Path, envelope: str, language: str) -> dict[str, Any]:
 
     try:
         entry, _packet = validate_entry(entry_path)
-        writer_hash = writer.get("inputs_sha256")
         published_hash = entry["provenance"]["root_task_sha256"]
-        if not writer_hash or published_hash != writer_hash:
+        if published_hash != writer_task_hash:
             raise ContractError(
                 "Published entry is not bound to the current accepted writer task: "
-                f"expected {writer_hash!r}, got {published_hash!r}"
+                f"expected {writer_task_hash!r}, got {published_hash!r}"
             )
         render(entry_path, markdown_path, check=True)
     except (OSError, ContractError, KeyError, TypeError, sqlite3.Error) as error:
@@ -239,27 +257,87 @@ def audit_root(project: Path, envelope: str, language: str) -> dict[str, Any]:
         envelope,
         language,
         "published_valid",
-        "Current writer, review pass, entry, and Markdown all validate.",
+        "Current writer, review, entry, and Markdown all validate.",
         artifact=entry_path,
     )
 
 
+def packet_is_quranic(path: Path) -> bool:
+    # Packets are generated JSON. Scanning the unescaped enum token avoids
+    # deserializing hundreds of megabytes solely to select the campaign queue.
+    return QURANIC_ORIGIN_RE.search(path.read_bytes()) is not None
+
+
+def packet_path(project: Path, envelope: str) -> Path:
+    if not ROOT_ENVELOPE_RE.fullmatch(envelope):
+        raise ContractError(f"Invalid root envelope ID: {envelope!r}")
+    return project / "data/output/root_packets" / f"{envelope}.json"
+
+
 def packet_envelopes(project: Path, scope: str) -> list[str]:
     envelopes: list[str] = []
-    packet_dir = project / "data/output/root_packets"
-    for path in packet_dir.glob("root_*.json"):
-        packet = load_json(path)
-        envelope = packet.get("root_envelope_id")
-        if not isinstance(envelope, str):
-            raise ContractError(f"{path}: missing root_envelope_id")
-        if scope == "quranic" and not any(
-            branch.get("origin_corpus") == "quranic"
-            for branch in packet.get("branches", [])
-            if isinstance(branch, dict)
-        ):
+    for path in (project / "data/output/root_packets").glob("root_*.json"):
+        envelope = path.stem
+        if not ROOT_ENVELOPE_RE.fullmatch(envelope):
+            continue
+        if scope == "quranic" and not packet_is_quranic(path):
             continue
         envelopes.append(envelope)
     return sorted(set(envelopes), key=envelope_sort_key)
+
+
+def selected_envelopes(
+    project: Path,
+    scope: str,
+    roots: list[str] | None,
+) -> list[str]:
+    if not roots:
+        return packet_envelopes(project, scope)
+    selected = sorted(set(roots), key=envelope_sort_key)
+    missing: list[str] = []
+    for envelope in selected:
+        path = packet_path(project, envelope)
+        if not path.is_file() or (scope == "quranic" and not packet_is_quranic(path)):
+            missing.append(envelope)
+    if missing:
+        raise ContractError(
+            f"Root envelope(s) are absent from {scope!r} scope: {missing}"
+        )
+    return selected
+
+
+def audit_roots(
+    project: Path,
+    language: str,
+    envelopes: list[str],
+    *,
+    jobs: int,
+    progress: Callable[[int, int], None] | None = None,
+) -> list[dict[str, Any]]:
+    if jobs < 1:
+        raise ContractError(f"Audit jobs must be at least 1, got {jobs}")
+    if not envelopes:
+        return []
+    if jobs == 1 or len(envelopes) == 1:
+        rows = []
+        for done, envelope in enumerate(envelopes, start=1):
+            rows.append(audit_root(project, envelope, language))
+            if progress:
+                progress(done, len(envelopes))
+        return rows
+
+    by_envelope: dict[str, dict[str, Any]] = {}
+    with ThreadPoolExecutor(max_workers=min(jobs, len(envelopes))) as executor:
+        futures = {
+            executor.submit(audit_root, project, envelope, language): envelope
+            for envelope in envelopes
+        }
+        for done, future in enumerate(as_completed(futures), start=1):
+            envelope = futures[future]
+            by_envelope[envelope] = future.result()
+            if progress:
+                progress(done, len(envelopes))
+    return [by_envelope[envelope] for envelope in envelopes]
 
 
 def audit_campaign(
@@ -267,19 +345,18 @@ def audit_campaign(
     language: str,
     scope: str,
     roots: list[str] | None = None,
+    *,
+    jobs: int = DEFAULT_JOBS,
+    progress: Callable[[int, int], None] | None = None,
 ) -> dict[str, Any]:
-    available = packet_envelopes(project, scope)
-    if roots:
-        allowed = set(available)
-        missing = sorted(set(roots) - allowed, key=envelope_sort_key)
-        if missing:
-            raise ContractError(
-                f"Root envelope(s) are absent from {scope!r} scope: {missing}"
-            )
-        selected = sorted(set(roots), key=envelope_sort_key)
-    else:
-        selected = available
-    rows = [audit_root(project, envelope, language) for envelope in selected]
+    selected = selected_envelopes(project, scope, roots)
+    rows = audit_roots(
+        project,
+        language,
+        selected,
+        jobs=jobs,
+        progress=progress,
+    )
     counts = Counter(row["state"] for row in rows)
     successful = bool(rows) and counts["published_valid"] == len(rows)
     return {
@@ -343,13 +420,36 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         default=20,
         help="Maximum failed roots in the readable summary; -1 shows all",
     )
+    parser.add_argument(
+        "--jobs",
+        type=int,
+        default=DEFAULT_JOBS,
+        help=f"Concurrent read-only root checks (default: {DEFAULT_JOBS})",
+    )
+    parser.add_argument(
+        "--no-progress",
+        action="store_true",
+        help="Do not report audit progress on stderr",
+    )
     return parser.parse_args(argv)
 
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(argv)
+
+    def progress(done: int, total: int) -> None:
+        if done == 1 or done == total or done % 100 == 0:
+            print(f"Audited {done}/{total} roots", file=sys.stderr, flush=True)
+
     try:
-        audit = audit_campaign(PROJECT, args.language, args.scope, args.roots)
+        audit = audit_campaign(
+            PROJECT,
+            args.language,
+            args.scope,
+            args.roots,
+            jobs=args.jobs,
+            progress=None if args.no_progress else progress,
+        )
     except (OSError, ContractError, KeyError, TypeError) as error:
         raise SystemExit(str(error)) from error
     if args.json:

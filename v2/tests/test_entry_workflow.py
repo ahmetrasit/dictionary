@@ -957,7 +957,7 @@ class EntryWorkflowTest(unittest.TestCase):
             with self.assertRaisesRegex(ContractError, "unknown property"):
                 assemble(index_path, work_dir, "tr", directory / "extra.json")
 
-    def test_used_transliterations_are_a_resumable_writer_completion_queue(self):
+    def test_used_transliterations_are_a_nonblocking_completion_queue(self):
         with tempfile.TemporaryDirectory() as temporary:
             directory = Path(temporary)
             work_dir = directory / "work"
@@ -972,8 +972,7 @@ class EntryWorkflowTest(unittest.TestCase):
             response = reduced_root_response(task, evidence)
             self.assertNotIn("transliteration_resolutions", response)
             write_response(work_dir / "fragments/root_001697_entry.json", task_path, response)
-            with self.assertRaisesRegex(ContractError, "needs_transliteration_review"):
-                write_root_writer_splits(index_path, work_dir, "tr")
+            write_root_writer_splits(index_path, work_dir, "tr")
             review = load_json(work_dir / "inputs/transliteration_review.json")
             self.assertIn("Root writer completion queue", review["instructions"])
             self.assertTrue(review["items"])

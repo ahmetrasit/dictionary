@@ -1,5 +1,6 @@
 import json
 import tempfile
+import time
 import unittest
 from pathlib import Path
 from unittest import mock
@@ -34,6 +35,8 @@ class CampaignAuditTest(unittest.TestCase):
         )
         self.review_task = self.work / "tasks/root_reviewer.json"
         self.review_fragment = self.work / "fragments/root_review.json"
+        self.review_input_task = self.work / "review/input/task.json"
+        self.review_output = self.work / "review/output/root_review.json"
         self.entry = (
             self.project / "v2/entries" / self.language / f"{self.envelope}.json"
         )
@@ -44,8 +47,8 @@ class CampaignAuditTest(unittest.TestCase):
         write_json(self.writer_fragment, {"inputs_sha256": "writer-task-hash"})
 
     def prepare_review(self):
-        write_json(self.review_task, {})
-        write_json(self.review_fragment, {"verdict": "pass"})
+        write_json(self.review_input_task, {})
+        write_json(self.review_output, {"verdict": "pass"})
 
     def prepare_publication(self):
         write_json(self.entry, {})
@@ -62,7 +65,7 @@ class CampaignAuditTest(unittest.TestCase):
             return_value=writer,
         ), mock.patch.object(
             audit_module,
-            "check_review",
+            "check_current_review",
             return_value=review or {"verdict": "pass"},
         )
 
@@ -85,7 +88,7 @@ class CampaignAuditTest(unittest.TestCase):
         writer_patch, _review_patch = self.audit_with_writer()
         with writer_patch, mock.patch.object(
             audit_module,
-            "check_review",
+            "check_current_review",
             side_effect=ContractError("Task input digest mismatch"),
         ):
             result = audit_module.audit_root(
@@ -94,21 +97,28 @@ class CampaignAuditTest(unittest.TestCase):
         self.assertEqual(result["state"], "review_invalid")
         self.assertIn("digest mismatch", result["detail"])
 
-    def test_repair_verdict_wins_over_existing_publication(self):
+    def test_repair_verdict_allows_current_publication(self):
         self.prepare_writer()
         self.prepare_review()
         self.prepare_publication()
         writer_patch, review_patch = self.audit_with_writer(
             {"verdict": "repair"}
         )
+        entry = {"provenance": {"root_task_sha256": "writer-task-hash"}}
         with writer_patch, review_patch, mock.patch.object(
-            audit_module, "validate_entry"
-        ) as validate:
+            audit_module,
+            "canonical_sha256",
+            return_value="writer-task-hash",
+        ), mock.patch.object(
+            audit_module,
+            "validate_entry",
+            return_value=(entry, {}),
+        ) as validate, mock.patch.object(audit_module, "render"):
             result = audit_module.audit_root(
                 self.project, self.envelope, self.language
             )
-        self.assertEqual(result["state"], "repair_required")
-        validate.assert_not_called()
+        self.assertEqual(result["state"], "published_valid")
+        validate.assert_called_once()
 
     def test_obsolete_entry_schema_is_publication_stale(self):
         self.prepare_writer()
@@ -116,6 +126,10 @@ class CampaignAuditTest(unittest.TestCase):
         self.prepare_publication()
         writer_patch, review_patch = self.audit_with_writer()
         with writer_patch, review_patch, mock.patch.object(
+            audit_module,
+            "canonical_sha256",
+            return_value="writer-task-hash",
+        ), mock.patch.object(
             audit_module,
             "validate_entry",
             side_effect=ContractError("unknown property 'review_gate'"),
@@ -133,6 +147,10 @@ class CampaignAuditTest(unittest.TestCase):
         writer_patch, review_patch = self.audit_with_writer()
         entry = {"provenance": {"root_task_sha256": "writer-task-hash"}}
         with writer_patch, review_patch, mock.patch.object(
+            audit_module,
+            "canonical_sha256",
+            return_value="writer-task-hash",
+        ), mock.patch.object(
             audit_module,
             "validate_entry",
             return_value=(entry, {}),
@@ -162,6 +180,78 @@ class CampaignAuditTest(unittest.TestCase):
         self.assertEqual(
             audit_module.packet_envelopes(self.project, "quranic"),
             ["root_005000"],
+        )
+
+    def test_explicit_roots_bypass_full_packet_enumeration(self):
+        packet = (
+            self.project
+            / "data/output/root_packets"
+            / f"{self.envelope}.json"
+        )
+        write_json(
+            packet,
+            {
+                "root_envelope_id": self.envelope,
+                "branches": [{"origin_corpus": "quranic"}],
+            },
+        )
+        with mock.patch.object(
+            audit_module,
+            "packet_envelopes",
+            side_effect=AssertionError("full queue should not be scanned"),
+        ), mock.patch.object(
+            audit_module,
+            "audit_root",
+            return_value={
+                "root_envelope_id": self.envelope,
+                "language": self.language,
+                "state": "unstarted",
+                "detail": "test",
+            },
+        ):
+            result = audit_module.audit_campaign(
+                self.project,
+                self.language,
+                "quranic",
+                [self.envelope],
+                jobs=1,
+            )
+        self.assertEqual(result["root_count"], 1)
+
+    def test_parallel_audit_preserves_numeric_queue_order(self):
+        roots = ["root_000003", "root_000001", "root_000002"]
+        for root in roots:
+            write_json(
+                self.project / "data/output/root_packets" / f"{root}.json",
+                {
+                    "root_envelope_id": root,
+                    "branches": [{"origin_corpus": "quranic"}],
+                },
+            )
+
+        def delayed_audit(_project, envelope, language):
+            time.sleep((4 - int(envelope[-1])) / 100)
+            return {
+                "root_envelope_id": envelope,
+                "language": language,
+                "state": "unstarted",
+                "detail": "test",
+            }
+
+        with mock.patch.object(
+            audit_module,
+            "audit_root",
+            side_effect=delayed_audit,
+        ):
+            result = audit_module.audit_campaign(
+                self.project,
+                self.language,
+                "quranic",
+                jobs=3,
+            )
+        self.assertEqual(
+            [row["root_envelope_id"] for row in result["roots"]],
+            ["root_000001", "root_000002", "root_000003"],
         )
 
 

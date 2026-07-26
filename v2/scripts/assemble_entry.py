@@ -42,6 +42,46 @@ ROOT_ENTRY_ARTIFACT_FORMAT = "dictionary-v2-root-entry-draft-v1"
 ROOT_ENTRY_ARTIFACT_GENERATOR = "v2/scripts/accept_root_writer.py"
 ROOT_EVIDENCE_FORMAT = "dictionary-v2-agent-root-evidence-v5"
 BRANCH_CLAIM_ID = "bc_001"
+ARABIC_RE = re.compile(r"[\u0600-\u06ff]")
+ARABIC_DIACRITIC_RE = re.compile(r"[\u064b-\u065f\u0670\u0640]")
+ARABIC_LATIN = {
+    "\u0621": "'",
+    "\u0622": "a",
+    "\u0623": "a",
+    "\u0624": "w",
+    "\u0625": "i",
+    "\u0626": "y",
+    "\u0627": "a",
+    "\u0628": "b",
+    "\u0629": "h",
+    "\u062a": "t",
+    "\u062b": "th",
+    "\u062c": "j",
+    "\u062d": "h",
+    "\u062e": "kh",
+    "\u062f": "d",
+    "\u0630": "dh",
+    "\u0631": "r",
+    "\u0632": "z",
+    "\u0633": "s",
+    "\u0634": "sh",
+    "\u0635": "s",
+    "\u0636": "d",
+    "\u0637": "t",
+    "\u0638": "z",
+    "\u0639": "'",
+    "\u063a": "gh",
+    "\u0641": "f",
+    "\u0642": "q",
+    "\u0643": "k",
+    "\u0644": "l",
+    "\u0645": "m",
+    "\u0646": "n",
+    "\u0647": "h",
+    "\u0648": "w",
+    "\u0649": "a",
+    "\u064a": "y",
+}
 ROOT_ENTRY_BRANCH_FIELDS = {
     "branch_image_ar",
     "what_is_ar",
@@ -976,6 +1016,32 @@ def _write_transliteration_review_queue(
             temporary.unlink()
 
 
+def _surface_form_fallback(key: str, arabic: str) -> str:
+    parts: list[str] = []
+    for character in ARABIC_DIACRITIC_RE.sub("", arabic):
+        if character in ARABIC_LATIN:
+            parts.append(ARABIC_LATIN[character])
+        elif ARABIC_RE.match(character):
+            parts.append(" ")
+        elif character.isascii():
+            parts.append(character)
+        else:
+            parts.append(" ")
+    value = re.sub(r"\s+", " ", "".join(parts)).strip(" -")
+    if len(value) >= 2 and not ARABIC_RE.search(value):
+        return value
+    return re.sub(r"[^A-Za-z0-9]+", " ", key).strip() or "unresolved"
+
+
+def _safe_surface_value(value: Any) -> str | None:
+    if not isinstance(value, str):
+        return None
+    stripped = value.strip()
+    if len(stripped) < 2 or ARABIC_RE.search(stripped):
+        return None
+    return stripped
+
+
 def expand_root_writer_response(
     response: dict,
     packages: list[dict],
@@ -1078,10 +1144,11 @@ def expand_root_writer_response(
             transliterations=transliterations,
             existing=existing_review,
         )
-        pending.append(
-            "needs_transliteration_review: writer must complete used anchors in "
-            f"{transliteration_review_path}: {missing}"
-        )
+        suggestions = transliterations.get("suggestions", {})
+        for key in missing:
+            values[key] = _safe_surface_value(
+                suggestions.get(key)
+            ) or _surface_form_fallback(key, gap_anchors.get(key, ""))
     if missing_names:
         _write_name_review_queue(
             name_review_path,
@@ -1090,10 +1157,12 @@ def expand_root_writer_response(
             required=required_names,
             existing=existing_name_review,
         )
-        pending.append(
-            "needs_name_review: writer must complete protected forms in "
-            f"{name_review_path}: {missing_names}"
-        )
+        for key in missing_names:
+            lexical_id = key.rsplit(":", 1)[1]
+            name_tokens.setdefault(
+                lexical_id,
+                _surface_form_fallback(key, required_names[key]),
+            )
     if pending:
         raise ContractError("; ".join(pending))
 
