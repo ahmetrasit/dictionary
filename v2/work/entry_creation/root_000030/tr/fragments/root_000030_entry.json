@@ -1,5 +1,5 @@
 {
-  "inputs_sha256": "05760fcac12d8bdd07935f2d24ae3a9eac97a9d0e39e538117dd3e0da4d54fa6",
+  "inputs_sha256": "f0442bc687f38680247e849daafb23283ae22d9286a7311d14024c777e33c51c",
   "artifact_format": "dictionary-v2-root-entry-draft-v1",
   "generated_by": "v2/scripts/accept_root_writer.py",
   "root_envelope_id": "root_000030",
@@ -7,161 +7,122 @@
   "branches": [
     {
       "branch_ref": "root_000030/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, bir şeyi bağla sıkıca tutmayı ve bir kişiyi tutsak etmeyi aynı çekirdekte birleştirir. Tutsak adının bağ gerçekten kullanılmasa da yakalanan kişiye yayılması ve iyiliğe bağlı olma anlatımı bu çekirdeğe bağlı uzantılardır.",
+        "boundary_note": "Bu dal, beden yapısının sağlamlığını, hısım topluluğunu, idrar tutulmasını ve bir şeyin bütünü anlamını kapsamaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Dal hem yalın biçimleri hem de belirli bağlama kalıplarını içerir; eyer bağlama ve iyiliğe bağlı olma kullanımları bütün dala genellenmez."
+      },
       "concept_map": {
-        "definition": "Bir şeyi bağ ya da kayışla sıkıca bağlayıp hareketini engellemek veya bir kimseyi yakalayıp tutsak tutmaktır. Bu çekirdek anlam, bağlanmamış olsa bile ele geçirilmiş kişiyi ve iyilik karşısında kendini bağlı sayma benzetmesini de kapsayacak biçimde genişler.",
+        "definition": "Bir şeyi bağ ya da kayışla sıkıca tutmak veya bir kişiyi ele geçirip tutsak etmektir. Bağlanmamış olsa bile ele geçirilen kişi ile bir iyiliğin etkisinden kurtulamayan kişi de bu çekirdeğe bağlı olarak anlatılabilir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Çekirdek işlem, bir şeyi bağla sıkmak ve hareket edemeyecek biçimde tutmaktır.",
+            "statement": "Bağ, kayış ya da benzeri bir araçla sıkıca tutma ve hareket özgürlüğünü kısıtlama eylemidir.",
             "claim_ids": [
-              "lu_001",
-              "lu_002"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
-            "role": "specialization",
-            "statement": "Semer, eyer ve yük takımı gibi parçalar kayışlarla birbirine sıkıca bağlanabilir.",
+            "role": "extension",
+            "statement": "Ele geçirilen kişi, gerçekten bağlanmış olmasa bile tutsak sayılır.",
             "claim_ids": [
-              "lu_003"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "associated_use",
-            "statement": "Bağlama işinde kullanılan deri bağ ya da kayışlar, işlemin araç adları olarak geçer.",
+            "role": "specialization",
+            "statement": "Eyer ve yük takımlarının parçalarını kayışlarla birbirine sıkıca bağlama kullanımını içerir.",
             "claim_ids": [
-              "lu_004",
-              "lu_009"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F004",
-            "role": "extension",
-            "statement": "Ele geçirilmiş kişi gerçekten bir bağla sıkılmamış olsa da tutsak sayılır; bunun çoğul anlatımları da vardır.",
-            "claim_ids": [
-              "lu_005",
-              "lu_006"
-            ]
-          },
-          {
-            "facet_id": "F005",
             "role": "associated_use",
-            "statement": "Kişinin tutsak olmayı istemesi ya da kendini karşı tarafa tutsak olarak bırakması ayrıca anlatılır.",
+            "statement": "Bir iyiliğin etkisi altında kalıp ondan kendini bağımsızlaştıramama, tutsaklık üzerinden değişmeceli biçimde anlatılır.",
             "claim_ids": [
-              "lu_007"
-            ]
-          },
-          {
-            "facet_id": "F006",
-            "role": "extension",
-            "statement": "Bir iyiliğin kişiyi gönül borcuyla bağlaması, gerçek bağlama olmadan kurulan benzetmeli bir kullanımdır.",
-            "claim_ids": [
-              "lu_008"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynakların ortak çekirdeği bağla sıkma, tutma ve bir kimseyi tutsak etmedir. Aynı anlam alanı bağın kendisini, eyer takımını kayışlarla birleştirmeyi ve ele geçirilmiş kişiyi de içerir; kişi artık fiziksel olarak bağlı olmasa da tutsak adı sürebilir.",
+        "common_summary": "Kaynaklar bağlama, sıkıca tutma ve tutsak etme çekirdeğinde birleşir; adlandırma bağsız olarak ele geçirilene de uzanır. Eyer takımlarını kayışla toplama ve iyiliğin etkisine bağlı kalma, bu çekirdeğin özel kullanımlarıdır.",
         "common_claim_ids": [
-          "lu_001",
-          "lu_002",
-          "lu_003",
-          "lu_004",
-          "lu_005",
-          "lu_006"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_007"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Tek bir kaynak, kişinin tutsak olmayı istemesini ya da tutsaklığa girmesini ayrıca kaydeder."
-          },
-          {
-            "claim_ids": [
-              "lu_008"
-            ],
-            "kind": "extension",
-            "summary": "Tek bir kaynakta, bir iyiliğin doğurduğu gönül borcu gerçek tutsaklığa benzetilir."
-          },
-          {
-            "claim_ids": [
-              "lu_009"
-            ],
-            "kind": "derivation",
-            "summary": "Tek bir kaynak, eyer ve yük takımının parçalarını birleştiren kayışlar için ayrı bir çoğul ad verir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "bağlayıp tutsak tutma",
-        "applicability": "Bir nesneyi kayışla sıkma ile bir kimseyi ele geçirip özgürlüğünden yoksun bırakma çekirdeğini birlikte anlatır.",
+        "text": "bağlayıp tutsak etme",
+        "applicability": "Dalın sıkıca bağlama ile kişiyi ele geçirip özgürlüğünü kısıtlama çekirdeğini birlikte karşılar.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Bağlama işlemini, kısıtlamayı ve bunun sonucundaki tutsaklığı birlikte korur.",
+          "preserves": "Bağlama işlemini, sıkı tutmayı ve bunun tutsaklık sonucunu korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
           "F001",
-          "F003",
-          "F004"
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
           "text": "sıkıca bağlamak",
           "usage_role": "contextual",
-          "applicability": "Kayışla semer, eyer veya yük takımını birleştirme gibi somut bağlama bağlamlarında kullanılır.",
+          "applicability": "Bir kişiyi, eyeri ya da yük takımını bağ veya kayışla tutturma bağlamlarında kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Somut sıkma ve bağla bir arada tutma işlemini açık biçimde korur.",
-            "loses": "Bir kimseyi ele geçirme, tutsak tutma ve benzetmeli bağlılık uzantılarını dışarıda bırakır.",
+            "preserves": "Somut bağlama ve parçaları sıkıca bir arada tutma işlemini korur.",
+            "loses": "Bağ kullanılmadan ele geçirilen kişinin tutsak sayılması uzantısını dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F001",
-            "F002",
             "F003"
           ]
         },
         {
-          "text": "tutsak almak",
+          "text": "tutsak etmek",
           "usage_role": "contextual",
-          "applicability": "Bir kimsenin ele geçirilip özgürlüğünden yoksun bırakıldığı insan odaklı bağlamlarda doğal karşılıktır.",
+          "applicability": "Bir kişinin ele geçirilip özgürlüğünün elinden alınmasını anlatan bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Ele geçirme ve kişiyi tutsak duruma getirme sonucunu korur.",
-            "loses": "Nesneleri kayışla bağlama işlemini ve kullanılan bağın kendisini kapsamaz.",
+            "preserves": "Kişinin ele geçirilmesi ve özgürlüğünün kısıtlanması sonucunu korur.",
+            "loses": "Nesneleri kayışla bağlama kullanımını ve iyiliğe bağlılık uzantısını dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
             "F001",
-            "F004"
+            "F002"
           ]
         },
         {
           "text": "iyiliğine bağlı kalmak",
           "usage_role": "explanatory",
-          "applicability": "Bir iyilik karşısında gönül borcu duyan kişinin benzetmeli bağlılığını açıklayan bağlamlarda kullanılır.",
+          "applicability": "Bir iyiliğin etkisi altında kalmayı tutsaklığa benzeten değişmeceli kullanım için uygundur.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "İyiliğin kişiyi benzetmeli olarak bağlaması düşüncesini korur.",
-            "loses": "Fiziksel bağlama, ele geçirme ve gerçek tutsaklık çekirdeğini aktarmaz.",
+            "preserves": "Bir etkinin kişiyi kendine bağlaması düşüncesini korur.",
+            "loses": "Somut bağlama ve gerçek tutsak etme çekirdeğini doğrudan anlatmaz.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F006"
+            "F004"
           ]
         }
       ],
@@ -169,27 +130,27 @@
         {
           "lexical_unit_id": "lu_001",
           "rendering_kind": "ordinary",
-          "target_gloss": "bağlayıp tutma"
+          "target_gloss": "bağlama, sıkıca tutma ve tutsak etme"
         },
         {
           "lexical_unit_id": "lu_002",
           "rendering_kind": "ordinary",
-          "target_gloss": "birini bağlayıp tutsak alma"
+          "target_gloss": "birini bağlamak ya da tutsak etmek"
         },
         {
           "lexical_unit_id": "lu_003",
           "rendering_kind": "ordinary",
-          "target_gloss": "semer, eyer veya yük takımını kayışlarla sıkıca bağlama"
+          "target_gloss": "eyer veya yük takımını kayışla bağlamak"
         },
         {
           "lexical_unit_id": "lu_004",
           "rendering_kind": "ordinary",
-          "target_gloss": "bağlama kayışı"
+          "target_gloss": "bağlamakta kullanılan kayış ya da bağ"
         },
         {
           "lexical_unit_id": "lu_005",
           "rendering_kind": "ordinary",
-          "target_gloss": "tutsak veya ele geçirilmiş kimse"
+          "target_gloss": "ele geçirilmiş ya da bağlanmış tutsak"
         },
         {
           "lexical_unit_id": "lu_006",
@@ -199,12 +160,12 @@
         {
           "lexical_unit_id": "lu_007",
           "rendering_kind": "ordinary",
-          "target_gloss": "tutsak olmayı isteme veya tutsaklığa girme"
+          "target_gloss": "tutsak olmayı istemek ya da tutsaklığa girmek"
         },
         {
           "lexical_unit_id": "lu_008",
           "rendering_kind": "ordinary",
-          "target_gloss": "bir iyiliğin gönül borcuyla bağladığı kimse"
+          "target_gloss": "iyiliğinin tutsağı"
         },
         {
           "lexical_unit_id": "lu_009",
@@ -218,8 +179,8 @@
           "category": "alternative",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Bir kimsenin özgür hareketini engelleyip tutulması sonucunu korur.",
-            "loses": "Bağ ya da kayışla sıkma işlemini ve bağlama aracını görünmez kılar.",
+            "preserves": "Bir kişinin özgürlüğünü kısıtlama sonucunu korur.",
+            "loses": "Kayışla bağlama işlemini ve ele geçirme aşamasını anlatmaz.",
             "adds": null,
             "collision": null
           }
@@ -230,36 +191,27 @@
           "neighbor_ref": "root_000037/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal, bağlama aracını, eyer takımının bağlanmasını ve iyiliğe benzetmeli bağlılığı da kapsar.",
-          "neighbor_only": "Komşu dal, baskıyla tutma ve düğümleyerek etkisiz bırakma yönünü özellikle öne çıkarır.",
-          "gloss": "baskıyla bağlayıp tutma",
-          "shared_zone": "Her iki dalda da bağlama yoluyla hareketi engelleme ve tutma çekirdeği bulunur.",
-          "distinction": "Odak dal somut bağ ve kayıştan tutsak adına uzanan daha örgülü bir anlam alanıdır; komşu dalın sınırı ise baskıcı tutma ve düğümleme çevresinde yoğunlaşır."
+          "focus_only": "Eyer takımlarını kayışla birleştirme ve iyiliğin etkisine bağlı kalma kullanımları da vardır.",
+          "neighbor_only": "Zorlayıcı bir düğümle tutma ve baskı altında hapsetme yönü daha belirgindir.",
+          "gloss": "zorlayarak bağlayıp hapsetme",
+          "shared_zone": "Her iki dal da bağlayarak hareketi engelleme ve birini elde tutma alanında örtüşür.",
+          "distinction": "Odak dal bağlama eyleminden tutsak adına ve özel kayış kullanımlarına uzanır; komşu dalın çekirdeğinde zorlayıcı düğümle hapsetme bulunur."
         },
         {
           "neighbor_ref": "root_000018/B003",
-          "relation_type": "near_neighbor",
+          "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal bağla sıkmayı, bağlı tutmayı ve bağlama aracını kurucu öğe yapar.",
-          "neighbor_only": "Komşu dalın çekirdeği bir kimseyi yakalayıp ele geçirme eylemidir.",
-          "gloss": "yakalayıp ele geçirme",
-          "shared_zone": "Bir kimsenin tutsak duruma getirilmesi iki dalın kesiştiği bölgedir.",
-          "distinction": "Ele geçirme tutsaklığın başlangıcı olabilir, ancak bağlama ve bağlı tutma odak dalın ayırt edici işlemidir; bu nedenle sıradan bağlamlarda tam karşılıklı kullanılamazlar."
-        },
-        {
-          "neighbor_ref": "root_000838/B009",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Odak dal kayışla bağlama, tutsak alma ve bağlılık benzetmesi gibi daha geniş kullanımlara sahiptir.",
-          "neighbor_only": "Komşu dal özellikle bir kişiye ayak bağı takma işlemini bildirir.",
-          "gloss": "ayağına bağ takma",
-          "shared_zone": "Her iki dal bir kimsenin hareketini fiziksel bir bağla kısıtlayabilir.",
-          "distinction": "Komşu dal belirli bir bağlama aracının kişiye takılmasını anlatır; odak dal ise kullanılan aracın türünden bağımsız olarak bağlama ve tutsak tutma alanını kapsar."
+          "focus_only": "Somut bağla sıkıca tutma, bağ aracı ve eyer parçalarını kayışla toplama kapsam içindedir.",
+          "neighbor_only": "Ele geçirme eylemi, bağlama aracından bağımsız olarak daha doğrudan öne çıkar.",
+          "gloss": "ele geçirip tutsak alma",
+          "shared_zone": "Her iki dal da bir kişiyi ele geçirerek tutsak durumuna getirmeyi anlatabilir.",
+          "distinction": "Odak dalın merkezi bağlama ve sıkı tutma işlemini de içerirken komşu dal özellikle yakalama ve tutsak alma eylemine yönelir."
         }
       ],
-      "neighbor_coverage_note": "Verilen bütün komşu kartları değerlendirildi; yayımlanan üç karşılaştırma bağlama, ele geçirme ve belirli bir bağ takma arasındaki en güçlü karışma noktalarını gösterir. Öteki kartlar ya yalnızca aynı tutsaklık sahnesine katılır ya da diğer kök içi dalların ayrı anlamlarını yineler.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; en yararlı iki karşılaştırma bağlayarak hapsetme ve ele geçirerek tutsak alma sınırlarını gösterir, diğerleri yalnızca daha geniş bir kısıtlama alanını paylaşır.",
       "branch_image_ar": "الشدّ بالإسار والحبس",
       "what_is_ar": "يدخل فيه شدّ الشيء بالقد أو الرباط؛ الأسير والمأسور؛ الأخيذ وإن لم يشدّ؛ المجاز في أسير النعمة",
+      "what_is_not_ar": "لا يدخل فيه شدّة الخلقة؛ الرهط؛ احتباس البول؛ معنى الشيء كله بقدّه",
       "source_phrase_ar": "الحبس وهو الإمساك (maqayis)؛ الأسير وكانوا يشدونه بالقد وهو الإسار (maqayis)؛ أسر فلان فلانا شده وثاقا (ayn)؛ أسرت الرجل أسرا وإسارا فهو أسير ومأسور (sihah)؛ الأسر الشد بالقيد (mufradat)؛ أنا أسير نعمتك (mufradat)",
       "sources": [
         "MQ",
@@ -267,122 +219,116 @@
         "SI",
         "MU"
       ],
-      "source_note": {
-        "SI": "Tek bir kaynak, kişinin tutsak olmayı istemesini ya da tutsaklığa girmesini ayrıca kaydeder.",
-        "MU": "Tek bir kaynakta, bir iyiliğin doğurduğu gönül borcu gerçek tutsaklığa benzetilir.",
-        "AY": "Tek bir kaynak, eyer ve yük takımının parçalarını birleştiren kayışlar için ayrı bir çoğul ad verir."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000030/B002",
+      "identity_judgment": {
+        "status": "qualified",
+        "rationale": "Kaynak ifadesinin baskın açıklaması bedenin yaratılışındaki sağlamlık, eklemlerin sıkılığı ve parçaların düzenli kuruluşudur. Bununla birlikte aynı ifade için boşaltım yolunu kasteden ayrı bir yorum da aktarılır; bu yorum beden sağlamlığı çekirdeğine katılmadan kaynak ayrımı olarak korunmalıdır.",
+        "boundary_note": "Dal beden yapısının sağlamlığını temel alır; boşaltım yolu yorumu ayrı bir kaynak değişkesi olarak tutulur ve idrar tutulmasıyla karıştırılmaz."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Yalın biçimdeki beden sağlamlığı ile yaratma ve yapıyı güçlendirme kalıpları ayrı tutulur; kalıpların anlamı yalın biçimin tamamına taşınmaz."
+      },
       "concept_map": {
-        "definition": "Canlının eklem ve uzuvlarının güçlü, sıkı ve birbirine sağlam bağlanmış bir yaratılış göstermesidir. Bu bütünlük, yaratma eylemi veya yaratılışın güçlendirilmesi olarak da anlatılır.",
+        "definition": "Bedenin parçalarının, özellikle eklem ve bağlantılarının sıkı, güçlü ve düzenli bir yaratılış içinde kurulmasıdır. Aynı kaynak ifadesinin boşaltım yoluna işaret ettiği yönünde ayrı bir yorum da vardır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Çekirdek anlam, eklemlerin ve uzuv bağlantılarının güçlü ve sıkı bir bütün oluşturmasıdır.",
+            "statement": "Bedenin eklem ve bağlantılarının güçlü, sıkı ve birbirine sağlam biçimde tutunmuş olmasıdır.",
             "claim_ids": [
-              "lu_010"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Bir hayvanın eklemlerinin sağlamlığı, bu sıkı gövde yapısının özel bir görünümüdür.",
+            "statement": "Beden parçalarının bilgece ve düzenli biçimde yaratılması ile yapının güçlendirilmesini anlatan kalıplarda gerçekleşir.",
             "claim_ids": [
-              "lu_011"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "associated_use",
-            "statement": "Yaratıcının bir canlıyı meydana getirmesi, gövde parçalarının kurulması yönüyle bu alanda anlatılır.",
+            "role": "source_variant",
+            "statement": "Aynı ifadenin beden sağlamlığı yerine boşaltım yolunu gösterdiğini söyleyen ayrı bir kaynak yorumu bulunur.",
             "claim_ids": [
-              "lu_012"
-            ]
-          },
-          {
-            "facet_id": "F004",
-            "role": "specialization",
-            "statement": "Yaratılışı sıkılaştırmak, gövdenin parçalarını güçlü ve düzgün bir bütün durumuna getirmektir.",
-            "claim_ids": [
-              "lu_013"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar, eklemlerin ve uzuvların güçlü bağlantısını insan yaratılışının sıkı kuruluşuyla birleştirir. Yaratılışı güçlendirme sözü, gövde parçalarının sağlam ve uyumlu bir bütün hâline getirilmesini anlatır.",
+        "common_summary": "Toplu kanıt beden yapısı, eklem gücü ve parçaların düzenli kuruluşunu öne çıkarır. Bunun yanında aynı ifadenin boşaltım yolunu belirttiği yönünde, ana beden sağlamlığı anlamına katılmaması gereken başka bir yorum aktarılır.",
         "common_claim_ids": [
-          "lu_010",
-          "lu_013"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_011"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Tek bir kaynak, eklemleri sağlam bir hayvanı bu gövde bütünlüğünün somut örneği olarak verir."
-          },
-          {
-            "claim_ids": [
-              "lu_012"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Tek bir kaynak, Tanrı'nın bir kimseyi yaratmasını bu söz ailesiyle ayrıca anlatır."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "yaratılışın sıkı ve sağlam bütünlüğü",
-        "applicability": "Eklemlerin, uzuvların ve gövde parçalarının güçlü bağlantılarla kurulmuş olmasını topluca anlatır.",
+        "text": "beden yapısının sağlamlığı",
+        "applicability": "Eklemlerin sıkılığı, beden parçalarının güçlü bağlantısı ve yaratılıştaki düzen için temel karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Güçlü eklemleri, parçaların sıkı bağlantısını ve yaratılmış gövdenin bütünlüğünü korur.",
+          "preserves": "Bedenin güçlü, sıkı bağlantılı ve düzenli kuruluşunu korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
           "F001",
-          "F004"
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "eklemleri sağlam olmak",
+          "text": "eklemleri sapasağlam",
           "usage_role": "contextual",
-          "applicability": "Bir insanın ya da hayvanın eklem bağlantılarındaki gücün doğrudan anlatıldığı bağlamlara uygundur.",
+          "applicability": "Bir canlının eklem ve bağlantılarının sıkılığını niteleyen kullanımda doğaldır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Eklemlerin güçlü ve sıkı bağlı olması niteliğini açıkça korur.",
-            "loses": "Bütün gövde kuruluşunu ve yaratma eylemiyle kurulan ilişkiyi kapsamaz.",
+            "preserves": "Eklem ve bağlantıların güçlü ve sıkı oluşunu korur.",
+            "loses": "Bütün bedenin düzenli yaratılışı ve kuruluşu yönünü daraltır.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001",
+            "F001"
+          ]
+        },
+        {
+          "text": "yapısını sağlamlaştırmak",
+          "usage_role": "contextual",
+          "applicability": "Bir kişinin beden yapısını güçlü ve düzenli kılmayı anlatan kalıplarda kullanılır.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Beden yapısının güçlendirilmesi işlemini korur.",
+            "loses": "Yalın biçimdeki kalıcı yapı niteliğini ve ayrı kaynak yorumunu kapsamaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
             "F002"
           ]
         },
         {
-          "text": "gövde yapısını sağlamlaştırmak",
+          "text": "boşaltım yolu",
           "usage_role": "explanatory",
-          "applicability": "Bir canlının yaratılışının güçlendirilip parçalarının sıkı bir bütüne dönüştürülmesini anlatır.",
+          "applicability": "Yalnızca aynı ifadenin başka bir çözümlemesini veren kaynak değişkesini açıklamak için kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Parçaları güçlü ve sıkı bir gövde bütünlüğüne getirme işlemini korur.",
-            "loses": "Ortaya çıkmış eklem gücünü bağımsız bir nitelik olarak adlandırmaz.",
+            "fit": "displacement",
+            "preserves": "Ayrı kaynak yorumunun işaret ettiği beden bölümünü korur.",
+            "loses": "Beden yapısının sağlamlığına ilişkin ana çekirdeği bütünüyle dışarıda bırakır.",
             "adds": null,
-            "collision": null
+            "collision": "Ana dal karşılığı sanılırsa idrar tutulması ve beden sağlamlığı anlamlarıyla yanlış eşleşir."
           },
           "facet_ids": [
-            "F003",
-            "F004"
+            "F003"
           ]
         }
       ],
@@ -390,22 +336,22 @@
         {
           "lexical_unit_id": "lu_010",
           "rendering_kind": "ordinary",
-          "target_gloss": "eklemlerin gücü ve yaratılışın sıkı bütünlüğü"
+          "target_gloss": "eklemlerin gücü ve beden yapısının sağlamlığı"
         },
         {
           "lexical_unit_id": "lu_011",
           "rendering_kind": "ordinary",
-          "target_gloss": "eklemleri sağlam"
+          "target_gloss": "eklemleri sıkı ve güçlü"
         },
         {
           "lexical_unit_id": "lu_012",
           "rendering_kind": "ordinary",
-          "target_gloss": "Tanrı'nın onu yaratması"
+          "target_gloss": "Tanrı onu yarattı"
         },
         {
           "lexical_unit_id": "lu_013",
           "rendering_kind": "ordinary",
-          "target_gloss": "yaratılışını güçlendirip sağlamlaştırmak"
+          "target_gloss": "beden yapısını güçlendirip sağlam kurmak"
         }
       ],
       "excluded_glosses": [
@@ -413,49 +359,40 @@
           "text": "kaslılık",
           "category": "confusable",
           "error_profile": {
-            "fit": "displacement",
-            "preserves": "Gövdenin güçlü görünmesi yönünü sınırlı biçimde korur.",
-            "loses": "Eklemlerin ve uzuv bağlantılarının sıkı kuruluşunu ortadan kaldırır.",
-            "adds": "Kas kütlesinin belirgin ya da iri olması düşüncesini gereksiz yere ekler.",
-            "collision": "Kas dokusunun gelişmişliğiyle karışır; burada belirleyici olan eklem ve gövde bağlantılarıdır."
+            "fit": "narrowing",
+            "preserves": "Bedensel güç izlenimini kısmen korur.",
+            "loses": "Eklemlerin sıkılığı ile beden parçalarının düzenli kuruluşunu kaybeder.",
+            "adds": "Kas hacmi ve belirgin kas dokusu anlamını gereksiz yere ekler.",
+            "collision": "Kas dokusunu merkeze alan komşu anlam alanıyla karışır."
           }
         }
       ],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_000229/B006",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dal eklem gücünü ve yaratılışın bütün olarak sağlamlaştırılmasını kapsar.",
-          "neighbor_only": "Komşu dal uzuv kemiklerinin sıkı ve ince kurulmuş olmasını özellikle taşır.",
-          "gloss": "uzuvları sıkı kurulmuş gövde",
-          "shared_zone": "Her iki dal gövde parçalarının sıkı ve sağlam biçimde kurulmasını anlatır.",
-          "distinction": "Odak dal eklem bağlantıları ile yaratılış bütünlüğünü öne çıkarır; komşu dalın ince ve sıkı uzuv yapısı ise daha özel bir gövde biçimidir."
-        },
-        {
           "neighbor_ref": "root_001018/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak dal yaratılışın bütün kuruluşunu ve eklemlerin birbirine sağlam bağlanmasını anlatır.",
-          "neighbor_only": "Komşu dal eklemleri bağlayan sinir ve kirişlerle etin sert, dolgun oluşuna odaklanır.",
-          "gloss": "kirişli ve sıkı et yapısı",
-          "shared_zone": "Sağlam gövde ve eklem çevresindeki sıkılık iki dalın ortak alanıdır.",
-          "distinction": "Komşu dal belirli dokuların yapısını ve etin dolgunluğunu anlatırken odak dal, dokudan bağımsız olarak eklem ve uzuvların kurduğu bütünlüğü adlandırır."
+          "focus_only": "Bütün bedenin yaratılış düzeni ve eklemlerin birbirine sağlam bağlanması kapsam içindedir.",
+          "neighbor_only": "Eklemleri bağlayan sinirsi yapılar ile etin sert ve sıkı dokusu özellikle öne çıkar.",
+          "gloss": "eklem bağları ve sıkı et dokusu",
+          "shared_zone": "Her iki dal da eklemlerin dayanıklılığı ve beden dokusunun sıkılığı alanında buluşur.",
+          "distinction": "Odak dal bedenin kuruluş niteliğini anlatır; komşu dal ise bu sağlamlığın belirli dokusal taşıyıcılarını ve etin yoğunluğunu adlandırır."
         },
         {
           "neighbor_ref": "root_000432/B008",
-          "relation_type": "polarity_pair",
+          "relation_type": "antonym",
           "boundary_match": "opposed",
-          "focus_only": "Odak dal eklem ve uzuvların güçlü, sıkı ve sağlam bağlı oluşunu bildirir.",
-          "neighbor_only": "Komşu dal eklemlerin çözülmesini, yerinden çıkmasını ve gövdenin gevşek ya da güçsüz oluşunu bildirir.",
+          "focus_only": "Eklemlerin sıkı, güçlü ve düzenli biçimde bağlı olması vardır.",
+          "neighbor_only": "Eklemlerin yerinden çıkması, organların gevşemesi ve güçsüzlük vardır.",
           "gloss": "eklemlerin gevşeyip çözülmesi",
-          "shared_zone": "İki dal da eklem bağlantılarının ve gövde bütünlüğünün durumunu aynı eksende değerlendirir.",
-          "distinction": "Odak dal bu eksenin sağlamlık ve sıkılık ucundadır; komşu dal ise çözülme, gevşeklik ve yerinden çıkma ucunda bulunur."
+          "shared_zone": "İki dal da eklem bağlantılarının durumu ve bedenin yapısal bütünlüğü eksenindedir.",
+          "distinction": "Odak dal sıkılık ve sağlamlığı, komşu dal ise aynı yapısal eksende gevşeme ve çözülmeyi anlatır."
         }
       ],
-      "neighbor_coverage_note": "Bütün komşu kartları değerlendirildi; yayımlanan üç ilişki sıkı gövde kuruluşunu, bağ dokusu sıkılığını ve karşıt eklem çözülmesini ayırır. Diğer kartlar yalnızca uzuv, gövde büyüklüğü veya kas gücü alanını paylaşır; kök içi dallar ise ayrı anlamlardır.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; dokusal sağlamlıkla yakın komşuluk ve eklem çözülmesiyle karşıtlık dalın sınırını en açık biçimde gösterir.",
       "branch_image_ar": "شدّة الخلقة وتماسك المفاصل",
       "what_is_ar": "يدخل فيه قوة المفاصل والأوصال؛ شدّ الأسر في الخلق؛ تراكيب الإنسان؛ مجرى ما يخرج من السبيلين في قول",
+      "what_is_not_ar": "لا يدخل فيه الأسر بمعنى الوثاق؛ الأسرة بمعنى الرهط؛ احتباس البول نفسه؛ معنى بأسره",
       "source_phrase_ar": "وشددنا أسرهم يقال أراد الخلق ويقال بل أراد مجرى ما يخرج من السبيلين (maqayis)؛ دابة مأسور المفاصل أي شديد لامها والأسر قوة المفاصل والأوصال (ayn)؛ وأسره الله أي خلقه (sihah)؛ وشددنا أسرهم إشارة إلى حكمته تعالى في تراكيب الإنسان (mufradat)",
       "sources": [
         "MQ",
@@ -463,78 +400,94 @@
         "SI",
         "MU"
       ],
-      "source_note": {
-        "AY": "Tek bir kaynak, eklemleri sağlam bir hayvanı bu gövde bütünlüğünün somut örneği olarak verir.",
-        "SI": "Tek bir kaynak, Tanrı'nın bir kimseyi yaratmasını bu söz ailesiyle ayrıca anlatır."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000030/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi dalı açıkça kişinin güç ve destek aldığı hısım topluluğu olarak tanımlar. Buradaki ayırt edici unsur yalnız akrabalık değil, kişinin bu yakın çevreye dayanarak güç kazanmasıdır.",
+        "boundary_note": "Dal tutsaklık, bağlama, beden sağlamlığı ve idrar tutulması anlamlarından ayrıdır; odağı destek alınan yakın hısım topluluğudur."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Dal yalın bir akrabalık adını tanımlar; başka dallardaki bağlama ya da belirli kalıp anlamları bu çekirdeğe taşınmaz."
+      },
       "concept_map": {
-        "definition": "Kişinin dayanışma ve güç aldığı yakın soy çevresidir; topluluğun belirleyici yönü yalnız akrabalık değil, kişiye dayanak olmasıdır.",
+        "definition": "Kişinin yakın hısımlarından oluşan ve dayanışmaları sayesinde kendisine güç ve destek sağlayan topluluktur.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Çekirdek anlam, kişiye bağlı yakın soy çevresinin ona toplumsal güç ve dayanak sağlamasıdır.",
+            "statement": "Kişinin yakın hısımlarından ve kendi çevresindeki akraba topluluğundan oluşur.",
             "claim_ids": [
-              "lu_014"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "core",
+            "statement": "Bu topluluk, kişinin kendilerinden güç ve destek almasıyla işlevsel olarak belirlenir.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar, kişinin yakın soy çevresini onun güç ve dayanak bulduğu topluluk olarak ortak biçimde tanımlar. Böylece anlam yalnız soy bağını değil, bu çevreden destek görmeyi de içerir.",
+        "common_summary": "Kaynaklar, kişinin yakın hısım topluluğunu yalnız soy bağıyla değil, ona güç ve destek sağlayan çevre oluşuyla birlikte tanımlar.",
         "common_claim_ids": [
-          "lu_014"
+          "bc_001"
         ],
         "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "güç alınan yakın soy çevresi",
-        "applicability": "Kişinin kendisine dayanak olan yakın akrabalarını tek bir toplumsal çevre olarak anlatır.",
+        "text": "güç alınan yakın hısım topluluğu",
+        "applicability": "Hem yakın akraba topluluğunu hem de kişinin bu topluluktan destek alması ilişkisini koruyan tam karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Yakın soy bağını, topluluk niteliğini ve kişiye güç verme işlevini birlikte korur.",
+          "preserves": "Yakın hısımlığı, topluluk niteliğini ve kişiye güç sağlama ilişkisini korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "yakınları",
+          "text": "yakın hısımları",
           "usage_role": "contextual",
-          "applicability": "Dayanışma işlevinin bağlamdan açıkça anlaşıldığı gündelik anlatımlarda doğal bir karşılıktır.",
+          "applicability": "Kişinin çevresindeki akraba topluluğunun kimlerden oluştuğunu anlatan doğal bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Kişiye yakın olan akraba çevresini doğal ve kısa biçimde korur.",
-            "loses": "Bu çevrenin kişiye güç ve toplumsal dayanak sağladığını açıkça söylemez.",
+            "preserves": "Yakın akraba topluluğu unsurunu korur.",
+            "loses": "Kişinin onlardan güç ve destek alması ilişkisini açıkça söylemez.",
             "adds": null,
-            "collision": "Soy bağı bulunmayan dostlar da gündelik kullanımda yakınlar sözüne girebilir."
+            "collision": null
           },
           "facet_ids": [
             "F001"
           ]
         },
         {
-          "text": "soy dayanağı",
+          "text": "dayandığı aile çevresi",
           "usage_role": "explanatory",
-          "applicability": "Akraba topluluğunun kişiye güç ve koruyucu destek sağlaması özellikle vurgulandığında kullanılır.",
+          "applicability": "Kişinin güç ve destek aldığı yakın aile topluluğunu açıklayan bağlamlarda uygundur.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Soy çevresini ve bu çevrenin kişiye dayanak olmasını birlikte korur.",
+            "preserves": "Yakın topluluğu ve kişinin ona dayanarak destek bulmasını birlikte korur.",
             "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002"
           ]
         }
       ],
@@ -542,57 +495,48 @@
         {
           "lexical_unit_id": "lu_014",
           "rendering_kind": "ordinary",
-          "target_gloss": "kişinin güç aldığı yakın soy çevresi"
+          "target_gloss": "kişinin güç aldığı yakın hısımları"
         }
       ],
       "excluded_glosses": [
         {
-          "text": "ev halkı",
-          "category": "confusable",
+          "text": "aile",
+          "category": "alternative",
           "error_profile": {
-            "fit": "displacement",
-            "preserves": "Kişiye bağlı bir yakın insan topluluğu düşüncesini kısmen korur.",
-            "loses": "Soy çevresinin kişiye güç ve dayanak sağlama niteliğini siler.",
-            "adds": "Aynı evde yaşama koşulunu ekler; bu koşul çekirdek anlamda yoktur.",
-            "collision": "Akraba olmayan ev üyeleriyle ve yalnız aynı konutta yaşayanlarla karışabilir."
+            "fit": "broadening",
+            "preserves": "Yakınlık ve akrabalık topluluğu düşüncesini korur.",
+            "loses": null,
+            "adds": "Modern kullanımda aynı evde yaşayanları ve yalnız çekirdek aileyi de kapsayabilen daha geniş bir alan ekler.",
+            "collision": "Destek alınan hısım topluluğu yerine hane halkı anlamıyla anlaşılabilir."
           }
         }
       ],
       "neighbor_distinctions": [
         {
-          "neighbor_ref": "root_001010/B008",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dal yakın soy çevresinin kişiye güç ve dayanak olmasını kurucu özellik yapar.",
-          "neighbor_only": "Komşu dal yakın soy çevresinin yanı sıra daha geniş boy topluluğunu da kapsar.",
-          "gloss": "yakın soy çevresi ve boy",
-          "shared_zone": "Kişinin bağlı olduğu ve destek bulduğu soy topluluğu iki dalın ortak alanıdır.",
-          "distinction": "Yakın soy çevresi söz konusu olduğunda anlamlar büyük ölçüde örtüşür; komşu dalın boy ölçeğine genişlemesi ve odak dalın güç alma vurgusu tam eş anlamlılığı engeller."
-        },
-        {
           "neighbor_ref": "root_001159/B009",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal topluluğun kişiye güç ve dayanak verme işlevini açıkça içerir.",
-          "neighbor_only": "Komşu dal kişinin soy topluluğu içindeki en yakın ayrılmış kolunu özellikle bildirir.",
-          "gloss": "soyun en yakın kolu",
-          "shared_zone": "Her iki dal kişinin yakın akraba topluluğunu anlatabilir.",
-          "distinction": "Komşu dal soy içindeki yapısal yakınlığı ve alt kolu belirler; odak dal ise sınırı böyle bir bölümlemeyle değil, kişinin güç aldığı yakın çevre oluşuyla çizer."
+          "focus_only": "Yakınların kişiye güç ve destek sağlaması tanımın kurucu parçasıdır.",
+          "neighbor_only": "Kişinin kavmi içindeki en yakın alt soy kolu ya da ondan ayrılan bölüm olma sınırı vardır.",
+          "gloss": "kavim içindeki en yakın soy kolu",
+          "shared_zone": "Her iki dal da kişinin yakın akraba çevresini ve hısım topluluğunu anlatır.",
+          "distinction": "Odak dal topluluğun kişiye sağladığı desteği öne çıkarır; komşu dal ise soy topluluğu içindeki yakın alt bölüm olmayı daha kesin biçimde sınırlar."
         },
         {
-          "neighbor_ref": "root_000297/B006",
-          "relation_type": "near_neighbor",
+          "neighbor_ref": "root_001010/B008",
+          "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal kişiye destek veren yaşayan yakın soy topluluğunu öne çıkarır.",
-          "neighbor_only": "Komşu dal kişinin kökenini, yetiştiği yeri ve kendini koruduğu soy çevresini birlikte kapsar.",
-          "gloss": "köken ve koruyucu soy çevresi",
-          "shared_zone": "Soy çevresinin kişiye koruma ve dayanışma sağlaması iki dalda da bulunur.",
-          "distinction": "Komşu dal köken ve yetişme yeri gibi topluluk dışı yönlere de uzanır; odak dalın çekirdeği ise doğrudan destek alınan yakın akraba çevresidir."
+          "focus_only": "Kişinin topluluktan güç alması ilişkisi açıkça kurucudur.",
+          "neighbor_only": "Aile yanında daha geniş kabile topluluğunu da doğrudan kapsar.",
+          "gloss": "aile ve kabile",
+          "shared_zone": "Her iki dal kişinin bağlı bulunduğu aile ve hısım çevresini gösterebilir.",
+          "distinction": "Odak dal destek alınan yakın hısımlarla sınırlıyken komşu dal kabileye kadar uzanan daha geniş bir topluluk adı olabilir."
         }
       ],
-      "neighbor_coverage_note": "Bütün komşu kartları değerlendirildi; yayımlanan ilişkiler yakın soy çevresi, soyun en yakın kolu ve köken çevresi arasındaki sınırları gösterir. Öteki kartlar daha geniş boyları, yalnız aidiyeti veya tarihsel topluluk adlarını anlattığından daha zayıf karşılaştırmalardır.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; yakın soy kolu ve kabileye uzanan toplulukla karşılaştırmalar, desteğe dayalı hısım çekirdeğini en iyi sınırlar.",
       "branch_image_ar": "العشيرة التي يتقوّى بها المرء",
       "what_is_ar": "يدخل فيه أسرة الرجل بمعنى رهطه ومن يتقوّى به",
+      "what_is_not_ar": "لا يدخل فيه الأسير؛ شدّ القتب؛ قوة المفاصل؛ احتباس البول",
       "source_phrase_ar": "أسرة الرجل رهطه لأنه يتقوى بهم (maqayis)؛ وأسرة الرجل رهطه لانه يتقوى بهم (sihah)؛ وأسرة الرجل من يتقوى به (mufradat)",
       "sources": [
         "MQ",
@@ -603,59 +547,59 @@
     },
     {
       "branch_ref": "root_000030/B004",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi çekirdeği doğrudan idrarın çıkamayıp tutulması olarak verir. Bu duruma uğrayan kişinin nitelenmesi ve karnına konan çubuğun adı, hastalık durumuna bağlı kalıp ayrı bir temel anlam oluşturmaz.",
+        "boundary_note": "Dal yalnız idrar tutulmasına ve ona bağlı kişi ile araç adlandırmalarına ilişkindir; genel hapsetme ya da dışkı tutulması anlamına genişletilmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Yalın hastalık adı ile bu duruma uğrayan kişi ve kullanılan çubuğa özgü kalıplar ayrılır; araç adı bütün dala genellenmez."
+      },
       "concept_map": {
-        "definition": "Sidiğin çıkamayıp tutulması yüzünden kişinin işeyememesi durumudur. Anlam, bu durumdaki kişiyi ve karnına konan sağaltım çubuğunu da adlandıran kullanımlara uzanır.",
+        "definition": "İdrarın doğal biçimde dışarı çıkamayıp mesanede tutulması durumudur. Bu duruma uğrayan kişi ile onun karnına konan özel çubuk da belirli kalıplarla adlandırılır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Çekirdek durum, sidiğin tutulması ve kişinin işeyememesidir.",
+            "statement": "İdrarın doğal akışının engellenmesi ve dışarı çıkarılamayıp tutulması durumudur.",
             "claim_ids": [
-              "lu_015"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Bu tutulmadan etkilenen erkek, durumun taşıyıcısı olarak ayrıca adlandırılır.",
+            "statement": "Bu rahatsızlığa uğrayan kişi, idrarı tutulmuş kişi olarak nitelenir.",
             "claim_ids": [
-              "lu_016"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "associated_use",
-            "statement": "İşeyemeyen kişinin karnına konan çubuk, hastalıkla ilişkili bir sağaltım aracı olarak adlandırılır.",
+            "statement": "İdrarı tutulmuş kişinin karnına konan çubuk için bu duruma bağlı özel bir ad kullanılır.",
             "claim_ids": [
-              "lu_017"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Kaynaklar çekirdek anlamı sidiğin tutulup çıkamaması olarak verir ve bu durumdaki erkeği aynı söz ailesiyle niteler. Durum ile onu yaşayan kişi arasındaki bağ açıktır.",
+        "common_summary": "Kaynaklar idrar tutulması çekirdeğinde birleşir; aynı kanıt bu duruma uğrayan kişinin nitelenmesini ve karnına konan çubuğa verilen özel adı da içerir.",
         "common_claim_ids": [
-          "lu_015",
-          "lu_016"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_017"
-            ],
-            "kind": "sole_attestation",
-            "summary": "Tek bir kaynak, işeyemeyen kişinin karnına konan çubuk için duruma bağlı özel bir ad kaydeder."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "sidiğin tutulması yüzünden işeyememe",
-        "applicability": "Sidiğin çıkışının engellenmesiyle ortaya çıkan işeyememe durumunu neden ve sonuç birlikte olacak biçimde anlatır.",
+        "text": "idrar tutulması",
+        "applicability": "İdrarın doğal yoldan çıkarılamaması durumunu doğrudan ve eksiksiz karşılayan genel terimdir.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Tutulan şeyin sidik olduğunu ve bunun işeyememe sonucunu doğurduğunu birlikte korur.",
+          "preserves": "İdrarın çıkışının engellenmesi ve mesanede tutulması durumunu korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -666,34 +610,33 @@
       },
       "contextual_glosses": [
         {
-          "text": "işeyememek",
+          "text": "idrarı tutulmuş",
           "usage_role": "contextual",
-          "applicability": "Kişinin yaşadığı güçlüğün öne çıktığı gündelik bağlamlarda doğal bir karşılıktır.",
+          "applicability": "Rahatsızlığın kendisini değil, bu duruma uğrayan kişiyi niteleyen bağlamlarda kullanılır.",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Kişinin sidik çıkaramaması sonucunu açık ve doğal biçimde korur.",
-            "loses": "Sorunun sidiğin içeride tutulmasından kaynaklandığını açıkça belirtmez.",
-            "adds": null,
-            "collision": "İstemli olarak işememekle ya da ortam yüzünden işeyememekle karışabilir."
-          },
-          "facet_ids": [
-            "F001",
-            "F002"
-          ]
-        },
-        {
-          "text": "sidik tutulması",
-          "usage_role": "explanatory",
-          "applicability": "Bedensel durumun kendisinin adlandırıldığı açıklayıcı veya sağlıkla ilgili bağlamlarda kullanılır.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Sidiğin çıkmayıp içeride kalması biçimindeki çekirdek durumu korur.",
-            "loses": null,
+            "preserves": "İdrarını çıkaramayan kişinin içinde bulunduğu durumu korur.",
+            "loses": "Durumun bağımsız adı ile ona bağlı araç kullanımını kapsamaz.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F002"
+          ]
+        },
+        {
+          "text": "karna konan çubuk",
+          "usage_role": "explanatory",
+          "applicability": "Yalnızca idrarı tutulmuş kişinin karnına yerleştirilen özel aracı açıklamak için uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Aracın biçimini, yerleştirildiği bölgeyi ve rahatsızlıkla ilişkisini korur.",
+            "loses": "İdrar tutulmasının kendisini bağımsız bir durum olarak anlatmaz.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F003"
           ]
         }
       ],
@@ -701,29 +644,29 @@
         {
           "lexical_unit_id": "lu_015",
           "rendering_kind": "ordinary",
-          "target_gloss": "sidik tutulması"
+          "target_gloss": "idrar tutulması"
         },
         {
           "lexical_unit_id": "lu_016",
           "rendering_kind": "ordinary",
-          "target_gloss": "sidik tutulması yüzünden işeyemeyen erkek"
+          "target_gloss": "idrarı tutulmuş kişi"
         },
         {
           "lexical_unit_id": "lu_017",
           "rendering_kind": "ordinary",
-          "target_gloss": "işeyemeyen kişinin karnına konan sağaltım çubuğu"
+          "target_gloss": "idrarı tutulan kişinin karnına konan çubuk"
         }
       ],
       "excluded_glosses": [
         {
-          "text": "kabızlık",
-          "category": "confusable",
+          "text": "tutulma",
+          "category": "alternative",
           "error_profile": {
-            "fit": "displacement",
-            "preserves": "Bedensel bir boşaltımın tutulması düşüncesini genel olarak korur.",
-            "loses": "Sidiğin ve işeme yolunun söz konusu olduğunu bütünüyle siler.",
-            "adds": "Dışkının bağırsakta tutulması anlamını ekler.",
-            "collision": "Bağırsak boşaltımıyla ilgili ayrı bir sağlık durumuyla doğrudan karışır."
+            "fit": "broadening",
+            "preserves": "Bir akışın engellenmesi ve birikme düşüncesini korur.",
+            "loses": null,
+            "adds": "Yağmur, dışkı ve başka akışların durmasını da kapsayan belirsiz bir alan ekler.",
+            "collision": "Genel tutulma anlamındaki komşu dalla karışır."
           }
         }
       ],
@@ -732,113 +675,128 @@
           "neighbor_ref": "root_000345/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal işeyemeyen kişiyi ve onun karnına konan sağaltım çubuğunu da kapsar.",
-          "neighbor_only": "Komşu dal yağmurun tutulmasına ve rüzgârın dinmesine kadar uzanan daha genel bir tutulma alanına sahiptir.",
-          "gloss": "yağmurun, sidiğin veya rüzgârın tutulması",
-          "shared_zone": "Sidiğin çıkmayıp tutulması iki dalın doğrudan örtüşen bölümüdür.",
-          "distinction": "Sidik tutulması bağlamında yakın karşılık olsalar da komşu dalın doğa olaylarına genişlemesi, odak dalın ise hasta ve sağaltım aracını türetmesi sınırlarını ayırır."
+          "focus_only": "Özellikle idrarın çıkamaması ile buna uğrayan kişi ve ilişkili araç adlandırılır.",
+          "neighbor_only": "Yağmurun tutulması ve rüzgarın dinmesi gibi idrar dışındaki durmalar da kapsanır.",
+          "gloss": "akışın ya da hareketin tutulması",
+          "shared_zone": "Her iki dal da idrarın doğal akışının durmasını anlatabilir.",
+          "distinction": "Odak dal idrar tutulmasına özgüdür; komşu dal aynı durma düşüncesini yağmur ve rüzgar gibi başka olaylara da yayar."
         },
         {
           "neighbor_ref": "root_000648/B004",
-          "relation_type": "near_synonym",
+          "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Odak dal bedensel durumu, bu durumdaki kişiyi ve ilişkili sağaltım aracını birlikte kapsar.",
-          "neighbor_only": "Komşu dal doğrudan sidiğini içinde tutan kişiyi adlandırır.",
-          "gloss": "sidiğini tutan kişi",
-          "shared_zone": "İşemenin gerçekleşmemesi ve sidiğin içeride kalması iki dalın ortak alanıdır.",
-          "distinction": "Komşu dal kişiyi öne çıkarır ve istemli tutmayı da düşündürebilir; odak dalın merkezi ise kişiden önce sidiğin çıkamaması durumudur."
-        },
-        {
-          "neighbor_ref": "root_001678/B007",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Odak dal yalnız sidiğin tutulmasına ve bunun yol açtığı işeyememeye yönelir.",
-          "neighbor_only": "Komşu dal bağırsak boşaltımının tutulmasını, karnın dolmasını ve kabın doluluğunu da kapsar.",
-          "gloss": "dolma ve boşaltımın tutulması",
-          "shared_zone": "Her iki dal bedende bir maddenin içeride kalması ve boşaltımın engellenmesi alanına girer.",
-          "distinction": "Ortak sahneye rağmen tutulan madde ve bedensel yol farklıdır; komşu dal ayrıca dolu kap ve yağlanmış hayvan gibi bedensel olmayan ya da farklı sonuçlara uzanır."
+          "focus_only": "Rahatsızlığın kendisi ve ona bağlı özel araç adı da kapsam içindedir.",
+          "neighbor_only": "Yalnız idrarını tutan ya da idrarı çıkmayan kişiyi adlandıran kişi niteliğidir.",
+          "gloss": "idrarı tutulmuş kişi",
+          "shared_zone": "Her iki dal da idrarını doğal biçimde çıkaramayan kişiye ilişkindir.",
+          "distinction": "Odak dal önce sağlık durumunu adlandırır ve kişiye uzanır; komşu dal doğrudan bu durumdaki kişinin adıyla sınırlıdır."
         }
       ],
-      "neighbor_coverage_note": "Bütün komşu kartları değerlendirildi; yayımlanan üç karşılaştırma özel sidik tutulmasını, bunu yaşayan kişiyi ve daha genel boşaltım tutulmasını ayırır. Diğer kartlar mesane taşı, kusma, öksürük veya başka bedensel çıkışlarla yalnız konu alanını paylaşır.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; genel tutulma anlamı ve yalnız kişiyi adlandıran kullanım, idrara özgü durum çekirdeğinin kapsamını en açık biçimde gösterir.",
       "branch_image_ar": "انحباس البول",
       "what_is_ar": "يدخل فيه الأسر بمعنى احتباس البول؛ الرجل المأسور؛ عود أسر الموضوع على بطن المأسور",
+      "what_is_not_ar": "لا يدخل فيه الحصر في الغائط إلا للمقابلة؛ الأسر بمعنى القيد؛ أسرة الرجل",
       "source_phrase_ar": "والأسر احتباس البول (maqayis)؛ الاسر بالضم احتباس البول (sihah)؛ هذا عود أسر للذى يوضع على بطن المأسور الذى احتبس بوله (sihah)؛ والأسر احتباس البول ورجل مأسور أصابه أسر (mufradat)",
       "sources": [
         "MQ",
         "SI",
         "MU"
       ],
-      "source_note": {
-        "SI": "Tek bir kaynak, işeyemeyen kişinin karnına konan çubuk için duruma bağlı özel bir ad kaydeder."
-      }
+      "source_note": {}
     },
     {
       "branch_ref": "root_000030/B005",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Tek kaynak ifadesi, belirli bir kalıbın bir şeyin hiçbir parçası dışarıda kalmadan tamamını ve bütün ölçüsünü anlattığını açıkça belirtir. Bu anlam yalın bir kök anlamı değil, kalıba bağlı bir bütünlük bildirimidir.",
+        "boundary_note": "Dal yalnız belirli kalıptaki bütünüyle anlamına aittir; bağlama, tutsaklık, beden sağlamlığı, hısımlık veya idrar tutulması kapsam dışıdır."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "non_bare",
+        "note": "Anlam yalnız verilen sözlüksel birime bağlıdır; bir şeyin tamamını bildiren bu kullanım yalın biçime ya da öteki dallara genellenmez."
+      },
       "concept_map": {
-        "definition": "Bir şeyin hiçbir parçası dışarıda kalmadan, kendi tam ölçüsü ve bütünüyle söz konusu olmasıdır.",
+        "definition": "Bir şeyin hiçbir bölümü dışarıda bırakılmadan, bütün ölçüsü ve tamamıyla söz konusu edilmesidir.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Çekirdek anlam, bir şeyin kendi ölçüsünce tamamının ve bütün parçalarının birlikte bulunmasıdır.",
+            "statement": "Söz konusu şeyin hiçbir parçası dışarıda kalmadan tamamını kapsar.",
             "claim_ids": [
-              "lu_018"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Bütünlük anlamı yalnız verilen kalıp içinde, bir şeyin tüm ölçüsüyle alınmasını bildirir.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Bu dalda tek tanıklı kayıt, bir şeyin kendi tam ölçüsüyle ve hiçbir bölümü eksik kalmadan bütünüyle verilmesini ya da söz konusu edilmesini bildirir.",
-        "common_claim_ids": [
-          "lu_018"
+        "common_summary": "Kanıt, belirli bir kalıbın bir şeyin bütününü, hiçbir parçasını ayırmadan ve tüm ölçüsüyle anlattığını gösterir.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Bu kalıp, bir şeyin bütününü ve tüm ölçüsünü tek parça halinde belirtir."
+          }
         ],
-        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "kendi tam ölçüsüyle bütünü",
-        "applicability": "Bir şeyin bütün parçaları ve tam kapsamıyla birlikte söz konusu edildiği her bağlamda kullanılabilir.",
+        "text": "bütünüyle",
+        "applicability": "Belirli kalıp içinde bir şeyin hiçbir parçası dışarıda bırakılmadan tamamının kastedildiği yerlerde kullanılır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Bütünlüğü, hiçbir parçanın dışarıda kalmamasını ve şeyin kendi tam ölçüsünü korur.",
+          "preserves": "Şeyin tamamını, bütün ölçüsüyle ve eksiksiz biçimde kapsama anlamını korur.",
           "loses": null,
           "adds": null,
           "collision": null
         },
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "bütünüyle",
-          "usage_role": "general",
-          "applicability": "Bir nesne, söz veya işin hiçbir bölümü dışarıda kalmadan tamamının kastedildiği akıcı metinlerde kullanılır.",
+          "text": "tamamı",
+          "usage_role": "contextual",
+          "applicability": "Bir şeyin bütün parçalarını tek bir toplam olarak adlandıran cümlelerde doğal karşılıktır.",
           "error_profile": {
             "fit": "none",
-            "preserves": "Şeyin tüm parçaları ve kapsamıyla birlikte ele alınmasını doğal biçimde korur.",
+            "preserves": "Hiçbir parçanın dışarıda bırakılmaması ve bütünün kastedilmesi anlamını korur.",
             "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002"
           ]
         },
         {
           "text": "eksiksiz olarak",
           "usage_role": "contextual",
-          "applicability": "Bir şeyin hiçbir parçasının bırakılmadığı özellikle vurgulanmak istendiğinde kullanılır.",
+          "applicability": "Bir şeyin tümüyle verilmesi, alınması ya da söz konusu edilmesi bağlamlarında kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Hiçbir bölümün eksik bırakılmaması yönünü güçlü biçimde korur.",
-            "loses": "Şeyin kendi ölçüsü ve bütün parçalarıyla tek bir bütün oluşu arka planda kalır.",
+            "fit": "none",
+            "preserves": "Bütün ölçünün kapsanmasını ve hiçbir bölümün eksik kalmamasını korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
+            "F001",
+            "F002"
           ]
         }
       ],
@@ -846,19 +804,19 @@
         {
           "lexical_unit_id": "lu_018",
           "rendering_kind": "ordinary",
-          "target_gloss": "bütünüyle, kendi tam ölçüsüyle"
+          "target_gloss": "bütünüyle, tamamıyla"
         }
       ],
       "excluded_glosses": [
         {
-          "text": "tamamlanmış",
+          "text": "mükemmel biçimde",
           "category": "confusable",
           "error_profile": {
             "fit": "displacement",
-            "preserves": "Eksiksizlik ve bütünlük sonucunu sınırlı biçimde korur.",
-            "loses": "Bir şeyin mevcut bütününün hep birlikte söz konusu edilmesini anlatmaz.",
-            "adds": "Daha önce süren bir işin sona erdirilmiş olduğu düşüncesini ekler.",
-            "collision": "Bir sürecin bitirilmesiyle karışır; odak anlam bir şeyin tamamını kapsama üzerinedir."
+            "preserves": "Eksiksizlik çağrışımını kısmen korur.",
+            "loses": "Bir şeyin bütün parçalarının kapsanması anlamını kaybeder.",
+            "adds": "Nitelik bakımından kusursuzluk ve üstünlük değerlendirmesi ekler.",
+            "collision": "Bütünlük yerine niteliksel yetkinlik bildiren komşu anlamla karışır."
           }
         }
       ],
@@ -867,45 +825,38 @@
           "neighbor_ref": "root_000644/B007",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal, bir şeyin bütünüyle söz konusu olmasını ya da bütün olarak birine ait bulunmasını daha genel biçimde anlatır.",
-          "neighbor_only": "Komşu dal, şeyi bütünüyle alma ve eksiksiz edinme eylemiyle sınırlıdır.",
-          "gloss": "şeyin bütünüyle alınması",
-          "shared_zone": "Her iki dal bir şeyin hiçbir parçası dışarıda kalmadan bütünüyle ele alınmasını bildirir.",
-          "distinction": "Odak dalda bütünlük genel aidiyet veya söz konusu olma biçiminde kurulabilir; komşu dalda ise bütünü alma ve eksiksiz edinme eylemi kurucu sınırdır."
+          "focus_only": "Bir şeyin bütün ölçüsüyle söz konusu edilmesini bildiren belirli bir kalıba bağlıdır.",
+          "neighbor_only": "Bir şeyi bütünüyle alma ve tamamını elde etme eylemini özellikle içerir.",
+          "gloss": "bir şeyi tümüyle almak",
+          "shared_zone": "Her iki dal da bir şeyin hiçbir parçası dışarıda kalmadan bütününü kapsar.",
+          "distinction": "Odak dal genel bir bütünlük bildirimidir; komşu dal bu bütünlüğü alma ve elde etme eylemi içinde kurar."
         },
         {
-          "neighbor_ref": "root_000621/B006",
+          "neighbor_ref": "root_001318/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Odak dal bir şeyin bütünüyle verilmesini ya da genel olarak söz konusu olmasını anlatabilir.",
-          "neighbor_only": "Komşu dal bütünü alma eylemini ve bir sözü eksiksiz biçimde söyleyene bağlamayı özellikle kapsar.",
-          "gloss": "bir şeyi bütün olarak almak",
-          "shared_zone": "Bir şeyin hiçbir parçasını dışarıda bırakmadan tamamını kapsama iki dalda ortaktır.",
-          "distinction": "Komşu dal alma ve sözü bütünüyle aktarma gibi belirli işlemlere bağlıdır; odak dal ise şeyin kendi tam ölçüsüyle bütünü oluşunu daha genel biçimde bildirir."
-        },
-        {
-          "neighbor_ref": "root_001308/B006",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Odak dal tek bir şeyin kendi ölçüsü ve bütün parçalarıyla tamamını öne çıkarır.",
-          "neighbor_only": "Komşu dal insanların tümüne veya bir işin tamamına uzanan toplu kapsama ve çevreleme anlamı taşır.",
-          "gloss": "tümünü kapsama",
-          "shared_zone": "Bütün parçaları ya da üyeleri dışarıda bırakmadan kapsama iki dalın ortak çekirdeğidir.",
-          "distinction": "Odak dal bir şeyin kendi bütünlüğünü ifade eder; komşu dal ise topluluğun bütün üyelerini veya bir işin tamamını kuşatan daha geniş kapsam kurabilir."
+          "focus_only": "Bütün parçaların birlikte kapsanmasına odaklanan kalıba bağlı bir anlamdır.",
+          "neighbor_only": "Bir şeyin tamamlanması, olgunluğa erişmesi ve yetkin duruma gelmesi anlamlarını da taşır.",
+          "gloss": "tamamlanma ve bütünlük",
+          "shared_zone": "Her iki dal bir şeyin eksik kalmadan tamamını kapsamasını anlatabilir.",
+          "distinction": "Odak dal parça bırakmayan niceliksel bütünlüğü bildirir; komşu dal buna süreç sonunda tamamlanma ve niteliksel yetkinleşme anlamlarını ekler."
         }
       ],
-      "neighbor_coverage_note": "Bütün komşu kartları değerlendirildi; üç güçlü yakın anlamlı ilişki yayımlandı. Öteki kartlar tamamlanma, miktar, üçte bir bölme veya yalnız bütünü alma eylemi gibi ek sınırlar getirdiğinden bu üç karşılaştırmadan daha az yararlıdır.",
+      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; tümünü alma ve tamamlanmışlıkla karşılaştırmalar, kalıba bağlı niceliksel bütünlük anlamını en iyi ayırır.",
       "branch_image_ar": "الشيء كله بقدّه",
       "what_is_ar": "يدخل فيه قولهم هذا الشيء لك بأسره أي بجميعه وبقدّه",
+      "what_is_not_ar": "لا يدخل فيه الأسير؛ الرباط؛ قوة الخلق؛ الرهط؛ احتباس البول",
       "source_phrase_ar": "هذا الشئ لك بأسره أي بقده تعني بجميعه كما يقال برمته (sihah)",
       "sources": [
         "SI"
       ],
-      "source_note": {}
+      "source_note": {
+        "SI": "Bu kalıp, bir şeyin bütününü ve tüm ölçüsünü tek parça halinde belirtir."
+      }
     }
   ],
   "root_profile": {
-    "summary": "Kök beş ayrı dalda bağlayıp tutsak tutmayı, gövdenin sıkı kuruluşunu, güç alınan yakın soy çevresini, sidik tutulmasını ve bir şeyin kendi tam ölçüsüyle bütününü anlatır. Dallar arasında sıkılık ve bir arada tutma çağrışımı sezilse de her dalın kullanım sınırı ayrıdır.",
+    "summary": "Kök, bağlayıp tutsak etme çekirdeğinin yanı sıra beden yapısının sağlamlığı, destek alınan yakın hısım topluluğu, idrar tutulması ve belirli bir kalıpta bir şeyin bütünü anlamlarını taşıyan çok dallı bir yapı gösterir.",
     "polysemy": "polysemic",
     "organization": "multi_branch"
   },

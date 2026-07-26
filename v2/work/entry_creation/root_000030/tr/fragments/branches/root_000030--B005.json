@@ -1,30 +1,53 @@
 {
-  "root_inputs_sha256": "05760fcac12d8bdd07935f2d24ae3a9eac97a9d0e39e538117dd3e0da4d54fa6",
+  "root_inputs_sha256": "f0442bc687f38680247e849daafb23283ae22d9286a7311d14024c777e33c51c",
   "root_id": "root_000030",
   "branch_id": "B005",
   "language": "tr",
   "image_transliteration": "eş-şey'u küllühü bi-kaddih",
-  "summary": "Bir şeyin hiçbir parçası dışarıda kalmadan, kendi tam ölçüsü ve bütünüyle söz konusu olmasıdır.",
+  "summary": "Bir şeyin hiçbir bölümü dışarıda bırakılmadan, bütün ölçüsü ve tamamıyla söz konusu edilmesidir.",
   "concept_map": {
-    "definition": "Bir şeyin hiçbir parçası dışarıda kalmadan, kendi tam ölçüsü ve bütünüyle söz konusu olmasıdır.",
+    "definition": "Bir şeyin hiçbir bölümü dışarıda bırakılmadan, bütün ölçüsü ve tamamıyla söz konusu edilmesidir.",
     "facets": [
       {
         "facet_id": "F001",
         "role": "core",
-        "statement": "Çekirdek anlam, bir şeyin kendi ölçüsünce tamamının ve bütün parçalarının birlikte bulunmasıdır.",
+        "statement": "Söz konusu şeyin hiçbir parçası dışarıda kalmadan tamamını kapsar.",
         "claim_ids": [
-          "lu_018"
+          "bc_001"
+        ]
+      },
+      {
+        "facet_id": "F002",
+        "role": "specialization",
+        "statement": "Bütünlük anlamı yalnız verilen kalıp içinde, bir şeyin tüm ölçüsüyle alınmasını bildirir.",
+        "claim_ids": [
+          "bc_001"
         ]
       }
     ]
   },
-  "source_summary": "Bu dalda tek tanıklı kayıt, bir şeyin kendi tam ölçüsüyle ve hiçbir bölümü eksik kalmadan bütünüyle verilmesini ya da söz konusu edilmesini bildirir.",
+  "identity_judgment": {
+    "status": "accepted",
+    "rationale": "Tek kaynak ifadesi, belirli bir kalıbın bir şeyin hiçbir parçası dışarıda kalmadan tamamını ve bütün ölçüsünü anlattığını açıkça belirtir. Bu anlam yalın bir kök anlamı değil, kalıba bağlı bir bütünlük bildirimidir.",
+    "boundary_note": "Dal yalnız belirli kalıptaki bütünüyle anlamına aittir; bağlama, tutsaklık, beden sağlamlığı, hısımlık veya idrar tutulması kapsam dışıdır."
+  },
+  "lexicalization_scope": {
+    "branch_kind": "non_bare",
+    "note": "Anlam yalnız verilen sözlüksel birime bağlıdır; bir şeyin tamamını bildiren bu kullanım yalın biçime ya da öteki dallara genellenmez."
+  },
+  "source_summary": "Kanıt, belirli bir kalıbın bir şeyin bütününü, hiçbir parçasını ayırmadan ve tüm ölçüsüyle anlattığını gösterir.",
   "source_synthesis": {
-    "common_summary": "Bu dalda tek tanıklı kayıt, bir şeyin kendi tam ölçüsüyle ve hiçbir bölümü eksik kalmadan bütünüyle verilmesini ya da söz konusu edilmesini bildirir.",
-    "common_claim_ids": [
-      "lu_018"
+    "common_summary": "Kanıt, belirli bir kalıbın bir şeyin bütününü, hiçbir parçasını ayırmadan ve tüm ölçüsüyle anlattığını gösterir.",
+    "common_claim_ids": [],
+    "source_details": [
+      {
+        "claim_ids": [
+          "bc_001"
+        ],
+        "kind": "sole_attestation",
+        "summary": "Bu kalıp, bir şeyin bütününü ve tüm ölçüsünü tek parça halinde belirtir."
+      }
     ],
-    "source_details": [],
     "supporting_claim_ids": [],
     "duplicate_claims": []
   },
@@ -34,24 +57,25 @@
     {
       "lexical_unit_id": "lu_018",
       "rendering_kind": "ordinary",
-      "target_gloss": "bütünüyle, kendi tam ölçüsüyle"
+      "target_gloss": "bütünüyle, tamamıyla"
     }
   ],
   "glosses": {
-    "semantic_definition": "Bir şeyin hiçbir parçası dışarıda kalmadan, kendi tam ölçüsü ve bütünüyle söz konusu olmasıdır.",
+    "semantic_definition": "Bir şeyin hiçbir bölümü dışarıda bırakılmadan, bütün ölçüsü ve tamamıyla söz konusu edilmesidir.",
     "concept": {
       "rank": 1,
-      "text": "kendi tam ölçüsüyle bütünü",
+      "text": "bütünüyle",
       "loanword_status": "none",
       "usage_role": "explanatory",
       "selection_role": "primary_concept_gloss",
-      "applicability": "Bir şeyin bütün parçaları ve tam kapsamıyla birlikte söz konusu edildiği her bağlamda kullanılabilir.",
+      "applicability": "Belirli kalıp içinde bir şeyin hiçbir parçası dışarıda bırakılmadan tamamının kastedildiği yerlerde kullanılır.",
       "facet_ids": [
-        "F001"
+        "F001",
+        "F002"
       ],
       "error_profile": {
         "fit": "none",
-        "preserves": "Bütünlüğü, hiçbir parçanın dışarıda kalmamasını ve şeyin kendi tam ölçüsünü korur.",
+        "preserves": "Şeyin tamamını, bütün ölçüsüyle ve eksiksiz biçimde kapsama anlamını korur.",
         "loses": null,
         "adds": null,
         "collision": null
@@ -60,17 +84,18 @@
     "contextual": [
       {
         "rank": 2,
-        "text": "bütünüyle",
+        "text": "tamamı",
         "loanword_status": "none",
-        "usage_role": "general",
+        "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Bir nesne, söz veya işin hiçbir bölümü dışarıda kalmadan tamamının kastedildiği akıcı metinlerde kullanılır.",
+        "applicability": "Bir şeyin bütün parçalarını tek bir toplam olarak adlandıran cümlelerde doğal karşılıktır.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Şeyin tüm parçaları ve kapsamıyla birlikte ele alınmasını doğal biçimde korur.",
+          "preserves": "Hiçbir parçanın dışarıda bırakılmaması ve bütünün kastedilmesi anlamını korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -82,14 +107,15 @@
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Bir şeyin hiçbir parçasının bırakılmadığı özellikle vurgulanmak istendiğinde kullanılır.",
+        "applicability": "Bir şeyin tümüyle verilmesi, alınması ya da söz konusu edilmesi bağlamlarında kullanılır.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
-          "fit": "narrowing",
-          "preserves": "Hiçbir bölümün eksik bırakılmaması yönünü güçlü biçimde korur.",
-          "loses": "Şeyin kendi ölçüsü ve bütün parçalarıyla tek bir bütün oluşu arka planda kalır.",
+          "fit": "none",
+          "preserves": "Bütün ölçünün kapsanmasını ve hiçbir bölümün eksik kalmamasını korur.",
+          "loses": null,
           "adds": null,
           "collision": null
         }
@@ -98,17 +124,18 @@
     "selected": [
       {
         "rank": 1,
-        "text": "kendi tam ölçüsüyle bütünü",
+        "text": "bütünüyle",
         "loanword_status": "none",
         "usage_role": "explanatory",
         "selection_role": "primary_concept_gloss",
-        "applicability": "Bir şeyin bütün parçaları ve tam kapsamıyla birlikte söz konusu edildiği her bağlamda kullanılabilir.",
+        "applicability": "Belirli kalıp içinde bir şeyin hiçbir parçası dışarıda bırakılmadan tamamının kastedildiği yerlerde kullanılır.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Bütünlüğü, hiçbir parçanın dışarıda kalmamasını ve şeyin kendi tam ölçüsünü korur.",
+          "preserves": "Şeyin tamamını, bütün ölçüsüyle ve eksiksiz biçimde kapsama anlamını korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -116,17 +143,18 @@
       },
       {
         "rank": 2,
-        "text": "bütünüyle",
+        "text": "tamamı",
         "loanword_status": "none",
-        "usage_role": "general",
+        "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Bir nesne, söz veya işin hiçbir bölümü dışarıda kalmadan tamamının kastedildiği akıcı metinlerde kullanılır.",
+        "applicability": "Bir şeyin bütün parçalarını tek bir toplam olarak adlandıran cümlelerde doğal karşılıktır.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
           "fit": "none",
-          "preserves": "Şeyin tüm parçaları ve kapsamıyla birlikte ele alınmasını doğal biçimde korur.",
+          "preserves": "Hiçbir parçanın dışarıda bırakılmaması ve bütünün kastedilmesi anlamını korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -138,14 +166,15 @@
         "loanword_status": "none",
         "usage_role": "contextual",
         "selection_role": "contextual_gloss",
-        "applicability": "Bir şeyin hiçbir parçasının bırakılmadığı özellikle vurgulanmak istendiğinde kullanılır.",
+        "applicability": "Bir şeyin tümüyle verilmesi, alınması ya da söz konusu edilmesi bağlamlarında kullanılır.",
         "facet_ids": [
-          "F001"
+          "F001",
+          "F002"
         ],
         "error_profile": {
-          "fit": "narrowing",
-          "preserves": "Hiçbir bölümün eksik bırakılmaması yönünü güçlü biçimde korur.",
-          "loses": "Şeyin kendi ölçüsü ve bütün parçalarıyla tek bir bütün oluşu arka planda kalır.",
+          "fit": "none",
+          "preserves": "Bütün ölçünün kapsanmasını ve hiçbir bölümün eksik kalmamasını korur.",
+          "loses": null,
           "adds": null,
           "collision": null
         }
@@ -153,15 +182,15 @@
     ],
     "excluded": [
       {
-        "text": "tamamlanmış",
+        "text": "mükemmel biçimde",
         "category": "confusable",
-        "exclusion_reason": "Bir şeyin mevcut bütününün hep birlikte söz konusu edilmesini anlatmaz. Daha önce süren bir işin sona erdirilmiş olduğu düşüncesini ekler. Bir sürecin bitirilmesiyle karışır; odak anlam bir şeyin tamamını kapsama üzerinedir.",
+        "exclusion_reason": "Bir şeyin bütün parçalarının kapsanması anlamını kaybeder. Nitelik bakımından kusursuzluk ve üstünlük değerlendirmesi ekler. Bütünlük yerine niteliksel yetkinlik bildiren komşu anlamla karışır.",
         "error_profile": {
           "fit": "displacement",
-          "preserves": "Eksiksizlik ve bütünlük sonucunu sınırlı biçimde korur.",
-          "loses": "Bir şeyin mevcut bütününün hep birlikte söz konusu edilmesini anlatmaz.",
-          "adds": "Daha önce süren bir işin sona erdirilmiş olduğu düşüncesini ekler.",
-          "collision": "Bir sürecin bitirilmesiyle karışır; odak anlam bir şeyin tamamını kapsama üzerinedir."
+          "preserves": "Eksiksizlik çağrışımını kısmen korur.",
+          "loses": "Bir şeyin bütün parçalarının kapsanması anlamını kaybeder.",
+          "adds": "Nitelik bakımından kusursuzluk ve üstünlük değerlendirmesi ekler.",
+          "collision": "Bütünlük yerine niteliksel yetkinlik bildiren komşu anlamla karışır."
         }
       }
     ]
@@ -172,40 +201,28 @@
       "neighbor_branch_id": "B007",
       "relation_type": "near_synonym",
       "boundary_match": "partial",
-      "focus_only": "Odak dal, bir şeyin bütünüyle söz konusu olmasını ya da bütün olarak birine ait bulunmasını daha genel biçimde anlatır.",
-      "neighbor_only": "Komşu dal, şeyi bütünüyle alma ve eksiksiz edinme eylemiyle sınırlıdır.",
+      "focus_only": "Bir şeyin bütün ölçüsüyle söz konusu edilmesini bildiren belirli bir kalıba bağlıdır.",
+      "neighbor_only": "Bir şeyi bütünüyle alma ve tamamını elde etme eylemini özellikle içerir.",
       "expression_transliteration": "eş-şey'u bi-ezmelih",
-      "gloss": "şeyin bütünüyle alınması",
-      "shared_zone": "Her iki dal bir şeyin hiçbir parçası dışarıda kalmadan bütünüyle ele alınmasını bildirir.",
-      "distinction": "Odak dalda bütünlük genel aidiyet veya söz konusu olma biçiminde kurulabilir; komşu dalda ise bütünü alma ve eksiksiz edinme eylemi kurucu sınırdır."
+      "gloss": "bir şeyi tümüyle almak",
+      "shared_zone": "Her iki dal da bir şeyin hiçbir parçası dışarıda kalmadan bütününü kapsar.",
+      "distinction": "Odak dal genel bir bütünlük bildirimidir; komşu dal bu bütünlüğü alma ve elde etme eylemi içinde kurar."
     },
     {
-      "neighbor_root_id": "root_000621",
-      "neighbor_branch_id": "B006",
+      "neighbor_root_id": "root_001318",
+      "neighbor_branch_id": "B001",
       "relation_type": "near_synonym",
       "boundary_match": "partial",
-      "focus_only": "Odak dal bir şeyin bütünüyle verilmesini ya da genel olarak söz konusu olmasını anlatabilir.",
-      "neighbor_only": "Komşu dal bütünü alma eylemini ve bir sözü eksiksiz biçimde söyleyene bağlamayı özellikle kapsar.",
-      "expression_transliteration": "ahzü'ş-şey'i bi-zevberih küllih",
-      "gloss": "bir şeyi bütün olarak almak",
-      "shared_zone": "Bir şeyin hiçbir parçasını dışarıda bırakmadan tamamını kapsama iki dalda ortaktır.",
-      "distinction": "Komşu dal alma ve sözü bütünüyle aktarma gibi belirli işlemlere bağlıdır; odak dal ise şeyin kendi tam ölçüsüyle bütünü oluşunu daha genel biçimde bildirir."
-    },
-    {
-      "neighbor_root_id": "root_001308",
-      "neighbor_branch_id": "B006",
-      "relation_type": "near_synonym",
-      "boundary_match": "partial",
-      "focus_only": "Odak dal tek bir şeyin kendi ölçüsü ve bütün parçalarıyla tamamını öne çıkarır.",
-      "neighbor_only": "Komşu dal insanların tümüne veya bir işin tamamına uzanan toplu kapsama ve çevreleme anlamı taşır.",
-      "expression_transliteration": "el-ihata bi'l-cemi'",
-      "gloss": "tümünü kapsama",
-      "shared_zone": "Bütün parçaları ya da üyeleri dışarıda bırakmadan kapsama iki dalın ortak çekirdeğidir.",
-      "distinction": "Odak dal bir şeyin kendi bütünlüğünü ifade eder; komşu dal ise topluluğun bütün üyelerini veya bir işin tamamını kuşatan daha geniş kapsam kurabilir."
+      "focus_only": "Bütün parçaların birlikte kapsanmasına odaklanan kalıba bağlı bir anlamdır.",
+      "neighbor_only": "Bir şeyin tamamlanması, olgunluğa erişmesi ve yetkin duruma gelmesi anlamlarını da taşır.",
+      "expression_transliteration": "temâmü'ş-şey'i ve kemâlühû",
+      "gloss": "tamamlanma ve bütünlük",
+      "shared_zone": "Her iki dal bir şeyin eksik kalmadan tamamını kapsamasını anlatabilir.",
+      "distinction": "Odak dal parça bırakmayan niceliksel bütünlüğü bildirir; komşu dal buna süreç sonunda tamamlanma ve niteliksel yetkinleşme anlamlarını ekler."
     }
   ],
   "neighbor_coverage": {
     "assessment": "complete",
-    "note": "Bütün komşu kartları değerlendirildi; üç güçlü yakın anlamlı ilişki yayımlandı. Öteki kartlar tamamlanma, miktar, üçte bir bölme veya yalnız bütünü alma eylemi gibi ek sınırlar getirdiğinden bu üç karşılaştırmadan daha az yararlıdır."
+    "note": "Bütün adaylar değerlendirildi; tümünü alma ve tamamlanmışlıkla karşılaştırmalar, kalıba bağlı niceliksel bütünlük anlamını en iyi ayırır."
   }
 }

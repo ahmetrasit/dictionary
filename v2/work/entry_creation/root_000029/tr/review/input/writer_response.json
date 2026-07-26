@@ -2,59 +2,59 @@
   "branches": [
     {
       "branch_ref": "root_000029/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, bir şeyin ya da vaktinin yaklaşmasını temel anlam olarak verir; son gün adı ve yaklaşma yüzünden oluşan zaman darlığı da bu çekirdeğe bağlı kullanımlardır. Hazırlanan dal çerçevesi bu bağı korur ve mekansal sıkışıklık ile acele anlamlarını dışarıda bırakır.",
+        "boundary_note": "Dal, yaklaşmayı ve yakınlık kaynaklı zaman darlığını kapsar; dar mekan, kısa ve sık yapı ya da salt acele etme bu dalın parçası değildir."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "bare",
+        "note": "Tanım yalın dalın yaklaşma anlamını temel alır; diğer dallardaki kalıba veya türemiş biçime bağlı mekan ve acele anlamlarını bu dala taşımaz."
+      },
       "concept_map": {
-        "definition": "Bir şeyin ya da onun gerçekleşme zamanının yaklaşmasıdır. Son Gün'ün yakın oluşuyla anılması ve yaklaşma yüzünden zamanın daralması bu çekirdeğin özel sonuçlarıdır.",
+        "definition": "Bir şeyin ya da gerçekleşme vaktinin yaklaşmasıdır. Bu yaklaşmadan, gerçekleşmesi yakın son günün adlandırılması ve yakınlık yüzünden zamanın daralması kullanımları doğar.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir şey ya da onun gerçekleşeceği zaman yaklaşır ve yakın hale gelir.",
+            "statement": "Bir şey veya onun gerçekleşme vakti yaklaşır ve yakın hale gelir.",
             "claim_ids": [
-              "lu_001"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "specialization",
-            "statement": "Son Gün, gerçekleşmesinin yakın sayılması nedeniyle yaklaşan olay olarak adlandırılır.",
+            "statement": "Son gün, gerçekleşmesinin yakınlığı öne çıkarılarak yaklaşan olay diye adlandırılır.",
             "claim_ids": [
-              "lu_002"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
             "role": "extension",
-            "statement": "Bir şeyin gerçekleşmesinin yaklaşması, elde kalan zamanın daralması sonucunu doğurur.",
+            "statement": "Bir şeyin gerçekleşmesi çok yakın olduğunda kalan sürenin darlığı anlatılır.",
             "claim_ids": [
-              "lu_003"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak çekirdek, bir şeyin kendisinin veya gerçekleşme zamanının yaklaşmasıdır. Son Gün'ün bu adla anılması da onun yakın sayılmasına dayanır.",
+        "common_summary": "Kaynaklar dalın merkezinde yaklaşma ve vaktin yakınlaşması bulunduğunu ortaklaşa gösterir. Son günün bu yakınlıkla adlandırılması ve yaklaşan olay nedeniyle zamanın daralması, bu çekirdeğin özel ve uzantısal kullanımlarıdır.",
         "common_claim_ids": [
-          "lu_001",
-          "lu_002"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_003"
-            ],
-            "kind": "implication",
-            "summary": "Yaklaşan şeyin gerçekleşmesine az zaman kalması, zaman darlığı anlamını doğurur."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "yaklaşma ve bundan doğan zaman darlığı",
-        "applicability": "Bir şeyin veya zamanının yaklaşmasını ve bu yakınlığın oluşturduğu zaman baskısını birlikte anlatan üst karşılıktır.",
+        "text": "yaklaşma ve vaktin daralması",
+        "applicability": "Dalın yaklaşma çekirdeğini ve yakın gerçekleşme nedeniyle kalan zamanın daralması uzantısını birlikte anlatan açıklayıcı karşılıktır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Yakınlaşma çekirdeğini, zamansal kapsamı ve zamanın daralması sonucunu korur.",
+          "preserves": "Hem yaklaşmayı hem de yaklaşmanın doğurduğu zaman darlığını korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -69,11 +69,11 @@
         {
           "text": "yaklaşmak",
           "usage_role": "general",
-          "applicability": "Bir şeyin ya da gerçekleşme zamanının yakına gelmesini anlatan genel bağlamlarda kullanılır.",
+          "applicability": "Bir şeyin veya vaktinin yakın hale geldiği genel bağlamlarda doğal karşılıktır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Yakına gelme ve gerçekleşme zamanının yakınlaşması anlamını tam olarak korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Dalın temel yaklaşma hareketini doğal biçimde korur.",
+            "loses": "Son gün adlandırmasını ve yakınlık kaynaklı zaman darlığı uzantısını tek başına göstermez.",
             "adds": null,
             "collision": null
           },
@@ -82,28 +82,13 @@
           ]
         },
         {
-          "text": "yaklaşan Son Gün",
+          "text": "vakit daralmak",
           "usage_role": "contextual",
-          "applicability": "Son Gün'ü gerçekleşmesi yakın kabul edilen olay olarak belirten dinsel bağlamlarda kullanılır.",
+          "applicability": "Yaklaşan olay yüzünden kalan sürenin azaldığı bağlamlarda kullanılır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Olayın kimliğini ve bu adlandırmanın yakınlık gerekçesini birlikte korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F002"
-          ]
-        },
-        {
-          "text": "zamanın daralması",
-          "usage_role": "explanatory",
-          "applicability": "Bir olayın yaklaşması nedeniyle elde kalan sürenin azaldığı bağlamlarda kullanılır.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Yakın gerçekleşmenin yol açtığı süre darlığı sonucunu açıkça korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Yakın gerçekleşmenin oluşturduğu zaman darlığını korur.",
+            "loses": "Genel yaklaşma çekirdeğini ve son gün adlandırmasını kapsam dışında bırakır.",
             "adds": null,
             "collision": null
           },
@@ -116,29 +101,29 @@
         {
           "lexical_unit_id": "lu_001",
           "rendering_kind": "ordinary",
-          "target_gloss": "yaklaşmak; zamanı yaklaşmak"
+          "target_gloss": "yaklaşmak; vakti yaklaşmak"
         },
         {
           "lexical_unit_id": "lu_002",
           "rendering_kind": "ordinary",
-          "target_gloss": "yaklaşan Son Gün"
+          "target_gloss": "yaklaşan son gün"
         },
         {
           "lexical_unit_id": "lu_003",
           "rendering_kind": "ordinary",
-          "target_gloss": "yaklaşma yüzünden zamanın daralması"
+          "target_gloss": "yakınlık yüzünden zaman darlığı"
         }
       ],
       "excluded_glosses": [
         {
-          "text": "dar zaman",
-          "category": "alternative",
+          "text": "acele etmek",
+          "category": "confusable",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Elde kalan sürenin azlığı ve zaman baskısı anlamını korur.",
-            "loses": "Bir şeyin kendisinin ya da gerçekleşme zamanının yaklaşması çekirdeğini vermez.",
-            "adds": null,
-            "collision": null
+            "fit": "displacement",
+            "preserves": "Yakın bir olayın insanda doğurabileceği hızlanma çağrışımını korur.",
+            "loses": "Bir şeyin veya vaktinin yaklaşması anlamını ortadan kaldırır.",
+            "adds": "Kişinin hızlı davranması anlamını dalın çekirdeğine ekler.",
+            "collision": "Kökün acele bildiren ayrı dalıyla karışır."
           }
         }
       ],
@@ -147,122 +132,116 @@
           "neighbor_ref": "root_001291/B003",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Yakınlığı özellikle gerçekleşme zamanı, Son Gün ve bundan doğan zaman darlığıyla ilişkilendirir.",
-          "neighbor_only": "Bir eylemi yapmaya yaklaşma ile güneşin batması, yetişme ve dolma gibi daha geniş eşik bağlamlarını kapsar.",
-          "gloss": "yaklaşma ve eşiğe gelme",
-          "shared_zone": "Her iki dal da bir şeyin ya da olayın yakına gelmesini temel alır.",
-          "distinction": "Komşu dal genel yaklaşmayı çeşitli gerçekleşme eşiklerine yayar; odak dal ise zamanın yaklaşmasını, Son Gün adlandırmasını ve kalan zamanın daralmasını belirginleştirir."
+          "focus_only": "Yaklaşan son günün adlandırılması ve yakınlık yüzünden zamanın daralması bu dalda belirgindir.",
+          "neighbor_only": "Bir eylemi neredeyse yapma, güneşin batmaya veya kabın dolmaya yaklaşması gibi daha çeşitli gerçekleşme eşikleri kapsanır.",
+          "gloss": "yaklaşma ve eşik yakınlığı",
+          "shared_zone": "Her iki dal da bir şeyin veya olayın yakın hale gelmesini temel alır.",
+          "distinction": "Komşu dal genel yaklaşmayı çeşitli somut ve eylemsel eşiklere yayar; odak dal ise yaklaşmayı, vaktin yakınlığını, yaklaşan son gün adını ve bundan doğan zaman darlığını birlikte düzenler."
         },
         {
           "neighbor_ref": "root_001212/B002",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Yaklaşma nedeniyle zamanın daralmasını ayrı bir sonuç olarak içerir.",
-          "neighbor_only": "Olgunlaşma, batış, yenilik ve geçip gitme gibi farklı zaman evrelerini de kapsar.",
-          "gloss": "zamanın yaklaşması ve evre değişimi",
-          "shared_zone": "Her iki dal da beklenen bir zamanın veya olayın yaklaşmasını anlatır.",
-          "distinction": "Odak dal yakınlaşma ve onun zaman baskısı sonucunda kalır; komşu dal yaklaşmanın yanında tamamlanma, yenilik ve geride kalma gibi başka evreleri de içerir."
-        },
-        {
-          "neighbor_ref": "root_000001/B006",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Yakınlığın oluşturduğu zaman darlığını ve Son Gün'e özgü adlandırmayı içerir.",
-          "neighbor_only": "Bir işin hazır bulunması, vaktinin gelmesi ve bağlayıcı hale gelmesi anlamlarını içerir.",
-          "gloss": "yaklaşan ve vakti gelen iş",
-          "shared_zone": "Her iki dal da bir işin ya da zamanının yakına gelip gerçekleşme eşiğine dayanmasını anlatır.",
-          "distinction": "Odak dal yaklaşma durumuna odaklanır; komşu dal ise işin hazır bulunması, zamanının gelmesi veya artık bağlayıcı olması sınırına geçer."
+          "focus_only": "Yakınlık kaynaklı zaman darlığı ile yaklaşan son günün özel adı odak dala özgüdür.",
+          "neighbor_only": "Bir şeyin sona ermesi, yeniliği veya geride kalıp gitmesi gibi zamansal yönler de kapsanır.",
+          "gloss": "zaman bakımından yaklaşma",
+          "shared_zone": "İki dal da bir olayın, hesabın veya belirli bir vaktin yaklaşmasını anlatabilir.",
+          "distinction": "Odak dal yaklaşmayı ve bunun zaman baskısını öne çıkarır; komşu dal zamansal yakınlığı sona eriş, olgunlaşma ve geride kalma gibi daha geniş bir süreç alanına bağlar."
         },
         {
           "neighbor_ref": "root_000029/B002",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Bir şeyin veya gerçekleşme zamanının yaklaşmasını ve zamanın daralmasını anlatır.",
-          "neighbor_only": "Mekandaki darlığı, yakın aralıklı adımları, sıkı yapıyı ve insanların birbirine yaklaşmasını anlatır.",
-          "gloss": "yakınlık ile mekansal sıkılık",
-          "shared_zone": "İki dalda da uzaklığın azalması ve yakın hale gelme düşüncesi bulunur.",
-          "distinction": "Bu dal olay veya zamanın yaklaşmasına yöneliktir; komşu dal ise yer, hareket, beden ve topluluk içindeki mekansal yakınlık ya da darlığı adlandırır."
+          "focus_only": "Bir olayın veya vaktin yaklaşması ve bu nedenle zamanın daralması bulunur.",
+          "neighbor_only": "Dar mekan, yakın adımlar, kısa ve sık yapı, topluluğun birbirine sokulması ve dar geçitteki kirli yerler bulunur.",
+          "gloss": "zamansal yakınlık ile mekansal sıkılık",
+          "shared_zone": "Her iki dalda da yakınlık düşüncesi vardır.",
+          "distinction": "Odak dal bir şeyin gerçekleşmeye yaklaşmasını anlatır; komşu dal ise belirli türemiş biçimlerde nesnelerin, adımların, beden yapısının veya kişilerin mekansal yakınlığını ve sıkışıklığını anlatır."
         },
         {
           "neighbor_ref": "root_000029/B003",
           "relation_type": "thematic",
           "boundary_match": "thematic_only",
-          "focus_only": "Yakınlaşan şeyin durumunu ve kalan zamanın daralmasını bildirir.",
-          "neighbor_only": "Birini acele ettirme ya da kişinin kendisinin acele etmesi eylemini bildirir.",
-          "gloss": "yakın zaman ve acele",
-          "shared_zone": "Yaklaşan bir zaman, acele etmeyi gerektiren aynı durum içinde yer alabilir.",
-          "distinction": "Zamanın yaklaşması aceleye ortam hazırlayabilir, ancak odak dalda acele etme eylemi kurucu değildir; komşu dalın çekirdeği doğrudan acele etme veya ettirmedir."
+          "focus_only": "Bir şeyin veya zamanının yakın hale gelmesi söz konusudur.",
+          "neighbor_only": "Birini acele ettirmek veya kişinin kendisinin acele etmesi söz konusudur.",
+          "gloss": "yaklaşma ile acele",
+          "shared_zone": "Yaklaşan bir olay aceleye yol açabildiği için iki dal aynı durumda birlikte görülebilir.",
+          "distinction": "Yaklaşma bir olayın zamansal konumunu bildirir; acele ise kişinin davranış hızını veya başka birinin onu hızlandırmasını bildirir. Biri diğerini gerektirmez."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar sınır bakımından değerlendirildi; en güçlü genel ve zamansal yaklaşma komşuları ile kök içindeki iki olası karışma yayımlandı. Yalnızca aynı sahneyi paylaşan veya sınırı daha az açıklayan adaylar dışarıda bırakıldı."
+      "neighbor_coverage_note": "Verilen on komşunun tamamı değerlendirildi; dal sınırını en açık biçimde gösteren iki yakın anlamlı dal ile iki iç karşıtlaştırma seçildi, kalanlar ya daha uzak ya da bu ayrımları tekrarlayıcı bulundu."
     },
     {
       "branch_ref": "root_000029/B002",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, belirli türemiş biçimlerde dar mekan, birbirine yakın adımlar, kısa ve sık beden yapısı, insanların birbirine yaklaşması ve dar geçitlerdeki kirli yerler gibi kullanımları birlikte verir. Dal çerçevesi bunları mekansal yakınlık ve sıkışıklık çevresinde doğru biçimde toplar.",
+        "boundary_note": "Bu dal zamansal yaklaşmayı değil, belirli biçim ve kalıplarda görülen mekansal yakınlık, darlık ve sık yapıyı kapsar."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım, yalın bir kök anlamı ileri sürmez; türemiş biçimlerdeki darlık ve sık yapı ile topluluğun birbirine yaklaşmasını bildiren kalıba bağlı kullanımı ayrı tutar."
+      },
       "concept_map": {
-        "definition": "Bir yerin dar olması veya adım, beden ve insan topluluğunda öğelerin birbirine yakın ve sıkı durmasıdır. Dar geçitlerdeki kirli yerler bu mekansal sıkılıkla bağlantılı özel bir kullanımdır.",
+        "definition": "Belirli türemiş biçim ve kalıplarda mekanın dar olması, adım veya beden yapısının kısa ve sık görünmesi ya da kişilerin birbirine yaklaşması anlatılır. Dar geçitlerde bulunan kirli yerlerin adı da bu alana bağlıdır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Mekanın dar, adımların yakın aralıklı veya bir erkeğin kısa ve sıkı yapılı olması aynı yakınlık ve sıkılık görüntüsünü taşır.",
+            "statement": "Belirli bir türemiş biçim, dar ve sıkışık bir mekanı niteler.",
             "claim_ids": [
-              "lu_004",
-              "lu_005",
-              "lu_006"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "extension",
-            "statement": "Bir topluluktaki kişiler birbirlerine yaklaşarak aralarındaki uzaklığı azaltır.",
+            "statement": "Aynı biçim, adımların birbirine yakın atılmasını anlatır.",
             "claim_ids": [
-              "lu_007"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F003",
-            "role": "associated_use",
-            "statement": "Dar geçitlerde bulunan kirli yerler, hem çoğul hem tekil biçimde özel olarak adlandırılır.",
+            "role": "extension",
+            "statement": "Kısa bir erkeğin beden bölümlerinin birbirine yakın ve sık yapılı olması anlatılır.",
             "claim_ids": [
-              "lu_008",
-              "lu_009"
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F004",
+            "role": "associated_use",
+            "statement": "Topluluğu bildiren kalıpta insanların birbirine yaklaşması ve aralarındaki mesafenin azalması anlatılır.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F005",
+            "role": "specialization",
+            "statement": "Dar geçitlerde bulunan kirli yerler, çoğul ve tekil adlarla bu anlam alanına bağlanır.",
+            "claim_ids": [
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Ortak anlam görüntüsü mekansal darlık ile parçaların birbirine yakın durmasıdır. Bu görüntü dar yerde, yakın aralıklı adımda ve kısa, sıkı yapılı erkekte gerçekleşir.",
+        "common_summary": "Kaynaklar dar mekan, yakın aralıklı adım ve kısa, sık beden yapısı kullanımlarını ortak bir türemiş biçimde birleştirir. İnsanların birbirine yaklaşmasını bildiren kalıp ile çoğunlukla dar geçitlerde bulunan kirli yer adları, aynı mekansal yakınlık ve darlık alanının ayrıca tanıklanan kullanımlarıdır.",
         "common_claim_ids": [
-          "lu_004",
-          "lu_005",
-          "lu_006"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_007"
-            ],
-            "kind": "extension",
-            "summary": "Anlam, bir topluluğun üyelerinin birbirine yaklaşmasına da genişletilir."
-          },
-          {
-            "claim_ids": [
-              "lu_008",
-              "lu_009"
-            ],
-            "kind": "derivation",
-            "summary": "Dar geçitlerdeki kirli yerler için çoğul ve tekil adlar ayrıca verilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
-        "text": "dar ve birbirine yakın olma",
-        "applicability": "Yer, adım, beden yapısı veya toplulukta darlık ve yakın aralılık ortak görüntüsünü anlatan üst karşılıktır.",
+        "text": "mekansal yakınlık ve sıkışıklık",
+        "applicability": "Türemiş biçimlerdeki dar mekan, yakın aralık, sık beden yapısı ve birbirine yaklaşma kullanımlarını ortak çekirdek altında anlatır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Mekansal darlığı, öğeler arası yakınlığı ve sıkı düzenlenişi birlikte korur.",
+          "preserves": "Mekansal yakınlık, daralma ve sık yapı ortaklığını korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -270,53 +249,41 @@
         "facet_ids": [
           "F001",
           "F002",
-          "F003"
+          "F003",
+          "F004",
+          "F005"
         ]
       },
       "contextual_glosses": [
         {
-          "text": "dar",
+          "text": "dar ve sıkışık",
           "usage_role": "contextual",
-          "applicability": "Geçiş alanı az olan bir yeri niteleyen mekansal bağlamlarda kullanılır.",
+          "applicability": "Mekanın dar olduğu veya yapının parçalarının birbirine yakın bulunduğu bağlamlarda kullanılır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Yerin sınırlı genişliğini ve geçiş alanının sıkılığını korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Darlık ve parçaların birbirine yakınlığı özelliklerini korur.",
+            "loses": "Topluluğun birbirine yaklaşması ile dar geçitteki kirli yer adlarını kapsamaz.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F001"
-          ]
-        },
-        {
-          "text": "yakın aralıklı",
-          "usage_role": "contextual",
-          "applicability": "Adımların veya beden öğelerinin birbirine yakın durduğu bağlamlarda kullanılır.",
-          "error_profile": {
-            "fit": "none",
-            "preserves": "Öğeler arasındaki kısa uzaklığı ve sıkı dizilişi korur.",
-            "loses": null,
-            "adds": null,
-            "collision": null
-          },
-          "facet_ids": [
-            "F001"
+            "F001",
+            "F003"
           ]
         },
         {
           "text": "birbirine yaklaşmak",
           "usage_role": "contextual",
-          "applicability": "Bir topluluğun üyeleri arasındaki uzaklığın azalmasını anlatan bağlamlarda kullanılır.",
+          "applicability": "Bir topluluğun üyeleri arasındaki mesafenin azaldığı kalıba bağlı bağlamda kullanılır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Topluluk üyelerinin karşılıklı olarak yakın hale gelmesini korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Kişilerin karşılıklı olarak birbirine yakınlaşmasını korur.",
+            "loses": "Dar mekan, yakın adım, kısa beden yapısı ve kirli yer adı kullanımlarını dışarıda bırakır.",
             "adds": null,
             "collision": null
           },
           "facet_ids": [
-            "F002"
+            "F004"
           ]
         }
       ],
@@ -324,22 +291,22 @@
         {
           "lexical_unit_id": "lu_004",
           "rendering_kind": "ordinary",
-          "target_gloss": "dar yer"
+          "target_gloss": "dar mekan"
         },
         {
           "lexical_unit_id": "lu_005",
           "rendering_kind": "ordinary",
-          "target_gloss": "adımları yakın aralıklı"
+          "target_gloss": "birbirine yakın adımlar"
         },
         {
           "lexical_unit_id": "lu_006",
           "rendering_kind": "ordinary",
-          "target_gloss": "kısa ve sıkı yapılı erkek"
+          "target_gloss": "kısa ve sık yapılı erkek"
         },
         {
           "lexical_unit_id": "lu_007",
           "rendering_kind": "ordinary",
-          "target_gloss": "topluluk üyelerinin birbirine yaklaşması"
+          "target_gloss": "topluluk birbirine yaklaştı"
         },
         {
           "lexical_unit_id": "lu_008",
@@ -354,127 +321,108 @@
       ],
       "excluded_glosses": [
         {
-          "text": "sıkışıklık",
-          "category": "alternative",
+          "text": "yaklaşmak",
+          "category": "confusable",
           "error_profile": {
             "fit": "broadening",
-            "preserves": "Dar alan ve öğelerin birbirine yakın bulunması görüntüsünü korur.",
+            "preserves": "Kişilerin birbirine doğru hareket ettiği kalıba bağlı kullanımı korur.",
             "loses": null,
-            "adds": "Baskı, hareket güçlüğü veya kalabalık yüzünden zorlanma anlamı ekleyebilir.",
-            "collision": null
+            "adds": "Yalın ve zamansal yaklaşmayı bütün dal için geçerliymiş gibi ekler.",
+            "collision": "Kökün zamansal yaklaşma bildiren ayrı dalıyla karışır."
           }
         }
       ],
       "neighbor_distinctions": [
         {
           "neighbor_ref": "root_000304/B002",
-          "relation_type": "near_synonym",
+          "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Yakın aralıklı adımı, kısa ve sıkı beden yapısını ve kişilerin birbirine yaklaşmasını da kapsar.",
-          "neighbor_only": "Şiddetli darlık, iç sıkıntısı, çok ağaçlı dar yer ve birini dar geçide zorlama anlamlarını kapsar.",
-          "gloss": "darlık ve sıkışma",
-          "shared_zone": "Her iki dal da hareket alanı sınırlı olan dar bir yeri anlatabilir.",
-          "distinction": "Odak dal darlığı yakın aralılık ve sıkı yapıyla birleştirir; komşu dal ise darlığın şiddetini, içsel sıkıntıyı ve dar yere zorlama eylemini öne çıkarır."
+          "focus_only": "Yakın adımlar, kısa ve sık beden yapısı, topluluğun birbirine yaklaşması ve dar geçitteki kirli yer adları bulunur.",
+          "neighbor_only": "Göğüs darlığı, yoğun ağaçlı dar yer ve birini dar geçide zorlama gibi kullanımlar bulunur.",
+          "gloss": "darlık ve mekansal sıkılık",
+          "shared_zone": "Her iki dal da dar ve hareket alanı sınırlı bir mekanı anlatabilir.",
+          "distinction": "Komşu dal darlık ve sıkıntıyı daha genel ve güçlü biçimde işler; odak dal ise belirli türemiş biçimlerde yakın aralık, kısa sık yapı ve karşılıklı yaklaşma özelliklerini bir arada taşır."
         },
         {
           "neighbor_ref": "root_000907/B005",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Yakınlığı adım, beden yapısı, topluluk ve dar geçitteki kirli yer üzerinden kurar.",
-          "neighbor_only": "Yakınlığı kalabalıklaşma derecesine, yol veya bulut yakınlığına ve vadi kıyılarına kadar genişletir.",
-          "gloss": "yakınlık ve kalabalıklaşma",
-          "shared_zone": "İki dal da yoğun yakınlığın darlık veya kalabalıklaşma doğurabildiği mekansal alanı paylaşır.",
-          "distinction": "Odak dal yakın aralılık ve dar yapı durumunu adlandırır; komşu dal ise yakınlığın kalabalıklaşmaya varan derecesini ve vadi kıyısı gibi başka yer şekillerini içerir."
-        },
-        {
-          "neighbor_ref": "root_000028/B003",
-          "relation_type": "near_neighbor",
-          "boundary_match": "partial",
-          "focus_only": "Dar veya yakın aralıklı olma durumunu, bunu oluşturan bir birleştirme eylemi olmadan anlatabilir.",
-          "neighbor_only": "Öğeleri bir araya toplama ve bir mekanı insanlarla dolup taşacak ölçüde doldurma eylemini içerir.",
-          "gloss": "sıkı yakınlık ve doldurma",
-          "shared_zone": "Her iki dalda da öğelerin birbirine yakın bulunması ve alanın daralması görüntüsü vardır.",
-          "distinction": "Odak dal bir durum veya nitelik bildirir; komşu dal bu durumu öğeleri birleştirip alanı doldurarak meydana getiren eylemi kurucu unsur yapar."
-        },
-        {
-          "neighbor_ref": "root_000495/B002",
-          "relation_type": "same_field",
-          "boundary_match": "field_only",
-          "focus_only": "Yer, adım, beden ve toplulukta darlık ya da yakın aralılık durumunu bildirir.",
-          "neighbor_only": "Bacağı iki tahta arasında sıkıştırma ve taşların birbirine kuvvetle girip kenetlenmesini bildirir.",
-          "gloss": "darlık ve kuvvetli sıkıştırma",
-          "shared_zone": "İki dal mekansal sıkılık ve öğelerin birbirine çok yakın olması alanında buluşur.",
-          "distinction": "Odak dal yakın ve dar olma niteliğindedir; komşu dal ise dıştan basınç uygulama veya parçaların kuvvetle iç içe geçmesi mekaniğine dayanır."
+          "focus_only": "Dar mekanın yanı sıra yakın adım, kısa sık beden yapısı ve dar geçitteki kirli yer adları vardır.",
+          "neighbor_only": "Şiddetli yaklaşmanın kalabalığa dönüşmesi, yol veya bulut yakınlığı ve vadinin iki yanı bulunur.",
+          "gloss": "yakınlık ve sıkışma",
+          "shared_zone": "İki dal da güçlü mekansal yakınlığın darlık veya kalabalık oluşturduğu alanı paylaşır.",
+          "distinction": "Komşu dal yaklaşmanın şiddeti ve coğrafi kenar adları çevresinde gelişir; odak dal belirli biçimlerde mekan, adım, beden yapısı ve topluluk arasındaki sık yakınlığı anlatır."
         },
         {
           "neighbor_ref": "root_000029/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Mekandaki darlığı ve öğelerin birbirine yakın dizilmesini anlatır.",
-          "neighbor_only": "Bir şeyin ya da gerçekleşme zamanının yaklaşmasını ve zamanın daralmasını anlatır.",
-          "gloss": "mekansal yakınlık ile yaklaşma",
-          "shared_zone": "İki dal da uzaklığın azalması ve yakın hale gelme düşüncesini paylaşır.",
-          "distinction": "Bu dal yer, adım, beden veya topluluk içindeki mekansal düzeni anlatır; komşu dal ise bir şeyin veya zamanın gerçekleşme eşiğine doğru yaklaşmasını anlatır."
+          "focus_only": "Mekansal darlık, yakın aralık, sık beden yapısı ve topluluğun birbirine yaklaşması bulunur.",
+          "neighbor_only": "Bir olayın veya vaktin yaklaşması ile yakınlık yüzünden zamanın daralması bulunur.",
+          "gloss": "mekansal ve zamansal yakınlık",
+          "shared_zone": "Her iki dal yakınlığın azalması veya bir sınırın yaklaşması düşüncesine dayanır.",
+          "distinction": "Odak dal belirli türemiş biçimlerde somut aralık ve sıkışıklığı anlatır; komşu dal yalın biçimde olayın ya da vaktin gerçekleşmeye yaklaşmasını anlatır."
+        },
+        {
+          "neighbor_ref": "root_000028/B003",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Yakın adım, kısa sık beden yapısı ve topluluğun birbirine yaklaşması gibi aralık özellikleri bulunur.",
+          "neighbor_only": "Nesneleri birbirine katma, birlikleri birleştirme ve bir yeri insanlarla doldurma işlemi bulunur.",
+          "gloss": "sıkılık ile doldurup daraltma",
+          "shared_zone": "Her iki dalda nesnelerin veya kişilerin birbirine yakın bulunması ve mekanın daralması görülebilir.",
+          "distinction": "Odak dal yakın ve sık olma durumunu belirli biçimlerle niteler; komşu dal parçaları bir araya getirip mekanı dolduran etkin bir birleştirme işlemini anlatır."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; doğrudan darlık, yoğun yakınlık, doldurma, basınç ve kök içi yaklaşma ayrımlarını en iyi gösteren adaylar yayımlandı. Yalnızca ortak sahne veya uzak biçim benzerliği sunanlar elendi."
+      "neighbor_coverage_note": "Verilen on komşunun tamamı değerlendirildi; darlık, güçlü yakınlık, zamansal yakınlık ve doldurarak daraltma sınırlarını gösteren dört ilişki seçildi, diğer adaylar daha uzak veya tekrarlayıcı kaldı."
     },
     {
       "branch_ref": "root_000029/B003",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi iki ayrı katılımcı düzenini açıkça tanıklar: bir kişinin başka birini acele ettirmesi ve kişinin kendi davranışında acele etmesi. Dal çerçevesi bu ayrımı korur; zamansal yaklaşmayı veya mekansal darlığı anlamın parçası yapmaz.",
+        "boundary_note": "Dal yalnızca tanıklanan türemiş biçim ve kalıplardaki acele ettirme ile acele etme anlamlarını kapsar."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "mixed_non_bare",
+        "note": "Tanım yalın köke genellenmez; başka birini hızlandıran kalıp ile kişinin kendi aceleciliğini bildiren biçim birbirinden ayrılarak korunur."
+      },
       "concept_map": {
-        "definition": "Birini acele etmeye yöneltmek ya da kişinin kendi eyleminde acele etmesidir. İlkinde acele başka bir kişide oluşturulur; ikincisinde kişi doğrudan kendisi acele eder.",
+        "definition": "Belirli biçim ve kalıplarda, bir kişinin başkasını acele etmeye sevk etmesi ya da kişinin kendisinin acele etmesi anlatılır.",
         "facets": [
           {
             "facet_id": "F001",
             "role": "core",
-            "statement": "Bir kişi başka birini acele ettirir ve onu hızlı davranmaya yöneltir.",
+            "statement": "Bir kişi başka birini hızlandırır ve acele etmeye sevk eder.",
             "claim_ids": [
-              "lu_010",
-              "lu_011"
+              "bc_001"
             ]
           },
           {
             "facet_id": "F002",
             "role": "core",
-            "statement": "Kişi kendi eyleminde acele eder ve acele eden kimse niteliğini taşır.",
+            "statement": "Kişi kendi davranışında acele eder ve aceleci bir durumda bulunur.",
             "claim_ids": [
-              "lu_012",
-              "lu_013"
+              "bc_001"
             ]
           }
         ]
       },
       "source_synthesis": {
-        "common_summary": "Anlam iki katılımcı düzeni gösterir: bir kişi başkasını acele ettirebilir veya kişi kendi davranışında acele edebilir. Bu iki düzen birbirine indirgenmeden korunmalıdır.",
+        "common_summary": "Toplu kanıt, acele anlamını iki katılımcı düzeniyle verir: başkasını acele ettiren nedenli kullanım ve kişinin kendisinin acele ettiği geçişsiz kullanım. Bu iki kullanım aynı dalda tutulsa da biri başkasına etki ederken diğeri öznenin kendi hızını niteler.",
         "common_claim_ids": [
-          "lu_010",
-          "lu_012"
+          "bc_001"
         ],
-        "source_details": [
-          {
-            "claim_ids": [
-              "lu_011"
-            ],
-            "kind": "derivation",
-            "summary": "Başkasında acele meydana getirme eyleminin ad biçimi ayrıca verilir."
-          },
-          {
-            "claim_ids": [
-              "lu_013"
-            ],
-            "kind": "derivation",
-            "summary": "Kendi eyleminde acele eden kişi için niteleme biçimi ayrıca verilir."
-          }
-        ],
+        "source_details": [],
         "supporting_claim_ids": [],
         "duplicate_claims": []
       },
       "concept_gloss": {
         "text": "acele ettirme veya acele etme",
-        "applicability": "Başkasını hızlı davranmaya yöneltme ile kişinin kendisinin acele etmesini katılımcı ayrımını koruyarak birlikte anlatır.",
+        "applicability": "Dalın başkasını hızlandıran nedenli kullanımıyla kişinin kendi aceleciliğini birlikte ve katılımcı ayrımını koruyarak anlatır.",
         "error_profile": {
           "fit": "none",
-          "preserves": "Hem başkasında acele oluşturmayı hem kişinin kendi acele davranışını korur.",
+          "preserves": "Hem başkasını acele ettirmeyi hem de kişinin kendi acele etmesini korur.",
           "loses": null,
           "adds": null,
           "collision": null
@@ -488,11 +436,11 @@
         {
           "text": "acele ettirmek",
           "usage_role": "contextual",
-          "applicability": "Bir kişinin başka birini hızlı davranmaya yönelttiği geçişli bağlamlarda kullanılır.",
+          "applicability": "Bir kişinin başka birini hızlandırdığı nedenli kalıba bağlı bağlamlarda kullanılır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Acelenin başka bir katılımcıda oluşturulması ilişkisini açıkça korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Başka bir katılımcıyı aceleye sevk etme ilişkisini korur.",
+            "loses": "Kişinin kendi davranışında acele ettiği geçişsiz kullanımı kapsamaz.",
             "adds": null,
             "collision": null
           },
@@ -503,11 +451,11 @@
         {
           "text": "acele etmek",
           "usage_role": "contextual",
-          "applicability": "Kişinin kendi eylemini hızlı ve telaşlı biçimde yaptığı geçişsiz bağlamlarda kullanılır.",
+          "applicability": "Kişinin kendi davranışını hızlı ve telaşlı yürüttüğü kalıba bağlı bağlamda kullanılır.",
           "error_profile": {
-            "fit": "none",
-            "preserves": "Acele davranışının doğrudan eylemi yapan kişiye ait olmasını korur.",
-            "loses": null,
+            "fit": "narrowing",
+            "preserves": "Öznenin kendi davranışındaki aceleyi korur.",
+            "loses": "Bir başkasını acele ettirme ve hızlandırma ilişkisini kapsamaz.",
             "adds": null,
             "collision": null
           },
@@ -535,19 +483,19 @@
         {
           "lexical_unit_id": "lu_013",
           "rendering_kind": "ordinary",
-          "target_gloss": "acele eden kimse"
+          "target_gloss": "aceleci kimse"
         }
       ],
       "excluded_glosses": [
         {
           "text": "hızlanmak",
-          "category": "confusable",
+          "category": "alternative",
           "error_profile": {
             "fit": "narrowing",
-            "preserves": "Davranışın daha hızlı hale gelmesi düşüncesini korur.",
-            "loses": "Başkasını acele ettirme ilişkisini ve acelecilik niteliğini vermez.",
+            "preserves": "Davranış hızının artması unsurunu korur.",
+            "loses": "Başkasını aceleye sevk etme ilişkisini ve acelecilik niteliğini tam olarak göstermez.",
             "adds": null,
-            "collision": "Yalnızca hareket hızının artması olarak anlaşılabilir."
+            "collision": null
           }
         }
       ],
@@ -556,59 +504,49 @@
           "neighbor_ref": "root_000293/B001",
           "relation_type": "near_synonym",
           "boundary_match": "partial",
-          "focus_only": "Kişinin herhangi bir dış yöneltme olmadan kendisinin acele etmesini de kapsar.",
-          "neighbor_only": "Birini belirli bir işe özendirme, dürtme ve o işi yapmaya yöneltme kapsamını taşır.",
-          "gloss": "acele ettirme ve dürtme",
-          "shared_zone": "Her iki dal da bir başkasını gecikmeden davranmaya yöneltme anlamını paylaşır.",
-          "distinction": "Odak dal başkasını acele ettirmenin yanında kişinin kendi acele etmesini de kapsar; komşu dalın çekirdeği birini belirli bir eyleme dürtmek ve özendirmektir."
+          "focus_only": "Kişinin kendi davranışında acele etmesi ve aceleci olması da kapsanır.",
+          "neighbor_only": "Birini bir işe yöneltme, dürtme ve teşvik etme yönü acele dışındaki amaçlara da uzanır.",
+          "gloss": "acele ettirme ve teşvik",
+          "shared_zone": "Her iki dal bir kişinin başka birini daha çabuk davranmaya sevk etmesini anlatabilir.",
+          "distinction": "Odak dal başkasını acele ettirmenin yanında kişinin kendi aceleciliğini de kapsar; komşu dal ise hızlandırmayı daha genel bir dürtme ve teşvik etme eylemi içinde ele alır."
+        },
+        {
+          "neighbor_ref": "root_001556/B014",
+          "relation_type": "near_synonym",
+          "boundary_match": "partial",
+          "focus_only": "Kişinin kendi kendine acele etmesi ayrı bir kullanım olarak bulunur.",
+          "neighbor_only": "Huzursuz etme ve bunaltıcı baskı altında bırakma anlamı bulunur.",
+          "gloss": "acele ettirme ve huzursuz etme",
+          "shared_zone": "İki dal da bir başkasını acele ettirme anlamında örtüşür.",
+          "distinction": "Odak dal nedenli acele ettirmeyi ve öznenin kendi aceleciliğini kapsar; komşu dal acele ettirmeyi huzursuz etme ve baskılama yönüyle genişletir."
         },
         {
           "neighbor_ref": "root_001633/B006",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Başkasında acele oluşturma ile kişinin aceleci niteliğini katılımcı yapıları olarak ayırır.",
-          "neighbor_only": "Hızlı nesneyi ve hızla gerçekleşen kesme gibi eylemleri genel hız niteliği altında kapsar.",
-          "gloss": "acele ve hızlı oluş",
-          "shared_zone": "Her iki dal da eylemin gecikmeden ve hızlı gerçekleşmesini anlatabilir.",
-          "distinction": "Odak dal acele eden veya ettiren kişiye odaklanır; komşu dal ise hız niteliğini nesnelere ve hızla yapılan çeşitli eylemlere daha geniş biçimde yayar."
-        },
-        {
-          "neighbor_ref": "root_001667/B001",
-          "relation_type": "near_synonym",
-          "boundary_match": "partial",
-          "focus_only": "Bir başkasını acele ettirme ilişkisini açıkça içerir.",
-          "neighbor_only": "Hızlı ilerleme ve kişinin hızlanmaya koyulması anlamlarını daha belirgin taşır.",
-          "gloss": "aceleyle hızlanma",
-          "shared_zone": "Her iki dal da kişinin acele ederek hızlı davranmasını anlatır.",
-          "distinction": "Odak dal hem kendi acele etmesini hem başkasını acele ettirmeyi kapsar; komşu dal daha çok aceleyle hızlanıp ilerleme davranışına yönelir."
-        },
-        {
-          "neighbor_ref": "root_000987/B001",
           "relation_type": "near_neighbor",
           "boundary_match": "partial",
-          "focus_only": "Acele davranışını veya bunu başka kişide oluşturmayı, zaman sıralaması şartı olmadan anlatır.",
-          "neighbor_only": "Bir şeyi zamanından önce isteme ve geciktirmeye karşı öne alma anlamlarını içerir.",
-          "gloss": "acele ve öne alma",
-          "shared_zone": "Her iki dal hızlı davranma ve birini hızlandırma alanında buluşur.",
-          "distinction": "Odak dal acele etme durumuna ve katılımcısına odaklanır; komşu dal hızın yanında bir işi normal zamanından önce isteme veya öne alma karşıtlığını kurar."
+          "focus_only": "Başka birini aceleye sevk eden katılımcı ilişkisi açıkça bulunur.",
+          "neighbor_only": "Hızlı nesne, hızlı gerçekleşen eylem ve genel sürat alanı daha geniş biçimde kapsanır.",
+          "gloss": "acele ile hız",
+          "shared_zone": "Her iki dal davranışın kısa sürede ve çabuk gerçekleşmesini anlatabilir.",
+          "distinction": "Odak dal acele eden kişi ile onu acele ettiren kişi arasındaki ayrımı öne çıkarır; komşu dal ise hız ve çabuk gerçekleşme niteliğini daha genel olarak kapsar."
         },
         {
           "neighbor_ref": "root_000029/B001",
           "relation_type": "thematic",
           "boundary_match": "thematic_only",
-          "focus_only": "Kişinin acele etmesini veya başka birini acele ettirmesini bildirir.",
-          "neighbor_only": "Bir şeyin ya da gerçekleşme zamanının yaklaşmasını ve bundan doğan zaman darlığını bildirir.",
-          "gloss": "acele ile yaklaşan zaman",
-          "shared_zone": "Yaklaşan bir zaman, kişinin acele etmesine veya ettirilmesine yol açan durum olabilir.",
-          "distinction": "Odak dal davranış ve katılımcı ilişkisini kurar; komşu dal ise bu davranışa yol açabilse de doğrudan acele anlamı taşımayan zamansal yakınlığı anlatır."
+          "focus_only": "Kişinin acele etmesi veya bir başkasını acele ettirmesi bulunur.",
+          "neighbor_only": "Bir olayın ya da vaktin yaklaşması ve bundan doğan zaman darlığı bulunur.",
+          "gloss": "acele ile yaklaşan vakit",
+          "shared_zone": "Yaklaşan bir vakit insanı aceleye yöneltebildiği için iki dal aynı durumda birlikte görülebilir.",
+          "distinction": "Odak dal davranışın hızını ve hızlandıran katılımcıyı anlatır; komşu dal olayın zamansal yakınlığını anlatır. Acele, yaklaşmanın zorunlu anlam bileşeni değildir."
         }
       ],
-      "neighbor_coverage_note": "Bütün adaylar değerlendirildi; acele ettirme, genel hız, aceleyle ilerleme, öne alma ve kök içi zamansal yakınlık arasındaki en açıklayıcı ayrımlar yayımlandı. Sınırı tekrarlayan daha uzak hız adayları dışarıda bırakıldı."
+      "neighbor_coverage_note": "Verilen on komşunun tamamı değerlendirildi; acele ettirme, huzursuz ederek hızlandırma, genel sürat ve yaklaşan vakit ayrımlarını gösteren dört ilişki seçildi, kalan adaylar bu sınırları daha az belirgin biçimde yineler."
     }
   ],
   "root_profile": {
-    "summary": "Anlam örgüsü yaklaşma ve zamanın daralması, mekansal darlık ve yakın aralılık, ayrıca acele etme ve ettirme çevresinde çok anlamlı bir yapı kurar. Yakınlık ilk iki alanı gevşekçe bağlarken acele anlamı, yaklaşan zamanın oluşturabileceği davranışla ilişkili fakat ayrı bir daldır.",
+    "summary": "Kök üç kollu bir anlam örgüsü kurar: bir şeyin veya vaktinin yaklaşması, belirli türemiş biçimlerde mekansal yakınlık ve sıkışıklık, ayrıca belirli kalıplarda başkasını acele ettirme ya da kişinin acele etmesi. Dallar yakınlık düşüncesi çevresinde ilişkilense de zaman, mekan ve davranış katılımcıları bakımından ayrı tutulur.",
     "polysemy": "polysemic",
-    "organization": "mixed"
+    "organization": "radial"
   }
 }
