@@ -194,6 +194,12 @@ validated review output, previous writer response, package, and machine-scoped
 operational constraints, but it must not restate reviewer reasoning in a way
 that creates a second, unofficial repair prompt.
 
+One mechanical companion change is permitted: if a scoped `concept_gloss` repair
+changes a branch concept gloss to `null`, the repair may add
+`contextual_glosses` for that same branch when the previous response had none.
+The validator requires contextual glosses for a null concept gloss, so this is
+not a new semantic repair scope.
+
 Validate the repair, then stage a fresh review:
 
 ```text

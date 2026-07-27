@@ -1,0 +1,17 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak dal kimliklerini, mekanik sözlükselleşme kapsamlarını ve kaynak sınırlarını doğru koruyor. Ancak B015 içindeki lu_032 sözlüksel karşılığı, iki ayrı kaynak varyantını birleştirerek başın üstüne uygulanan yakmanın da zorunlu olarak dairesel olduğunu öne sürüyor. Bu tek ve sınırlı karşılık düzeltilmelidir.",
+  "issues": [
+    {
+      "target_ref": "root_001675/B015",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_032"
+      ],
+      "evidence_conflict": "lu_032 kanıtı dairesel yakma damgasını bir varyant, başın üstüne uygulanan özel yakmayı ise başka bir varyant olarak verir. Mevcut hedef karşılık, başa uygulanan yakmayı da dairesel diye niteleyerek bu ayrımı ortadan kaldırıyor.",
+      "smallest_correction": "Yalnızca lu_032 target_gloss metnini \"deveye vurulan dairesel yakma damgası veya başın üstüne uygulanan özel yakma\" olarak değiştir; dalın başka hiçbir alanına dokunma."
+    }
+  ]
+}

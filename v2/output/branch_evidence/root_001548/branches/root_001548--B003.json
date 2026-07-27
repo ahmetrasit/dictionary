@@ -1,0 +1,780 @@
+{
+  "format": 2,
+  "generated_by": "v2/scripts/build_branch_evidence.py",
+  "root_envelope_id": "root_001548",
+  "packet_path": "data/output/root_packets/root_001548.json",
+  "packet_sha256": "1821172169b1bf11871f697493c7d16e3991219bfbdddb31bf65df6453ad55e2",
+  "furuq_path": "data/working/furuq_v4.sqlite",
+  "furuq_sha256": "1099db0d56515d2eb3e8d72f104f2e338c2c9a8c1fa6abbb046406d3b327e722",
+  "qnet_path": "data/upstream/qnet/incidence_full/raw_keyword_incidence.sqlite",
+  "qnet_sha256": "a5262b568203bff7ec04e6ca905781125beec83f90d62a5cf0cd6ff61049eee8",
+  "qnet_theme_path": "data/upstream/qnet/bridge_theme_full/bridge_theme_staging.sqlite",
+  "qnet_theme_sha256": "e4f590a111376e372eefef6d03b8694837ec9989017ce721d56db9828b2a734e",
+  "qnet_fix_manifest_path": "data/upstream/qnet/bridge_theme_full/latent_v11_qac_qnet_fix_manifest.json",
+  "qnet_fix_manifest_sha256": "b0ae3c19450a8019825321f6dc1e9f4c336249950f50267ed84eb3258756502c",
+  "branch": {
+    "root_id": "root_001548",
+    "branch_id": "B003",
+    "branch_image_ar": "إيقاع التزويج للغير",
+    "what_is_ar": "يدخل فيه أنكح غيره، وأنكح فلانا فلانا، وزوجها أو زوجوه؛ أي جعل غيره داخلا في النكاح.",
+    "what_is_not_ar": "ليس نكاح المرء لنفسه ولا مجرد حال كونه ذا زوج.",
+    "source_phrase_ar": "وأنكحت غيري (maqayis)؛ وأنكح فلان فلانا إنكاحا إذا زوجه (jamhara)؛ وأنكحها أي زوجها (sihah)؛ نكح أي قد أنكحناك (tahdhib)",
+    "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3696;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1481%3Asubentry%3A1%3A%D9%86%D9%83%D8%AD:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=54178f14eddf22f3;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1090:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=ef9c1f6a9ac73331;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D235%3Bsegment_index%3D41:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=e8132d3666195f06",
+    "status": "accepted",
+    "contaminated": "no"
+  },
+  "dictionary_basis": {
+    "dictionary_count": 4,
+    "passage_count": 4,
+    "sources": [
+      {
+        "source_id": "maqayis",
+        "dictionary_name": "Maqāyīs al-Lugha",
+        "source_refs": [
+          "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3696"
+        ],
+        "passages": [
+          {
+            "source_ref": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3696",
+            "headword": "نكح",
+            "route_status": "exact",
+            "entry_text_clean": "# | ( نكح ) # | النون والكاف والحاء أصل واحد وهو البضاع | ونكح ينكح | وامرأة ناكح في ~~بني فلان أي ذات زوج منهم | والنكاح يكون العقد دون الوطء | يقال نكحت ~~تزوجت | وأنكحت غيري",
+            "origin_corpus": "quranic",
+            "section_path": "-",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      },
+      {
+        "source_id": "jamhara",
+        "dictionary_name": "Jamharat al-Lugha",
+        "source_refs": [
+          "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1481%3Asubentry%3A1%3A%D9%86%D9%83%D8%AD:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=54178f14eddf22f3"
+        ],
+        "passages": [
+          {
+            "source_ref": "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1481%3Asubentry%3A1%3A%D9%86%D9%83%D8%AD:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=54178f14eddf22f3",
+            "headword": "نكح",
+            "route_status": "exact",
+            "entry_text_clean": "# [ نكح ] والنكاح : كناية عن الجماع نكحها وأنكحها غيره . يقال : نكح ينكح ~~نكحا ونكاحا وأنكح فلان فلانا إنكاحا إذا زوجه . # وأنكح فلانا في بني فلان ماله إذا زوجوه من أجله . # وأنكح موت فلان بناته في بني فلان إذا زوجن بغير أكفاء . قالت القرشية + ~~( رجز ) + : # # % إن القبور تنكح الأيامى % % # # % والصبية الأصاغر اليتامى % % # # % والمرء لا تنقى له سلامى % % PageV01P564 # أي لا يبقى فيها نقي والنقي : المخ وآخر ما يبقى النقي في العين والسلامى ~~من الإنسان والدابة ولذلك قالوا + ( رجز ) + : # # % لا يشتكين عملا ما أنقين % % # # % ما دام مخ في سلامى أو عين % % # ويقال : رجل نكحة : كثير النكاح . وكانت امرأة من العرب في الجاهلية قد ~~ولدت في بطون كثيرة من العرب وهي أم خارجة البجلية يجيئها الرجل فيقول : ~~خطب فتقول : نكح وقال قوم : خطب فتقول : نكح فصار مثلا على ألسنتهم : أسرع ~~من نكاح أم خارجة . # والنكح : مثل الخطب . # ويقال : استكرم فلان المناكح إذا نكح العقائل وهن الكرائم . # واستنكحت في بني فلان إذا تزوجت إليهم . |",
+            "origin_corpus": "quranic",
+            "section_path": "heading:1481:subentry:1:نكح",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      },
+      {
+        "source_id": "sihah",
+        "dictionary_name": "al-Ṣiḥāḥ",
+        "source_refs": [
+          "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1090:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=ef9c1f6a9ac73331"
+        ],
+        "passages": [
+          {
+            "source_ref": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1090:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=ef9c1f6a9ac73331",
+            "headword": "نكح",
+            "route_status": "exact",
+            "entry_text_clean": "### | [نكح] # النكاح: الوطئ، وقد يكون العقد. تقول: نكحتها ونكحت هي، أي تزوجت، وهي ~~ناكح في بني فلان، أي هي ذات زوج منهم. وقال: لصلصلة اللجام برأس طرف * أحب ~~إلي من أن تنكحيني واستنكحها بمعنى نكحها، وأنكحها، أي زوجها. ورجل نكحة: ~~كثير النكاح. والنكح والنكح لغتان، وهي كلمة كانت العرب تتزوج بها. وكان ~~يقال لأم خارجة عند الخطبة: خطب، فتقول: نكح. حتى قالوا: \" أسرع من نكاح أم ~~خارجة \".",
+            "origin_corpus": "quranic",
+            "section_path": "heading:1090",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      },
+      {
+        "source_id": "tahdhib",
+        "dictionary_name": "Tahdhīb al-Lugha",
+        "source_refs": [
+          "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D235%3Bsegment_index%3D41:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=e8132d3666195f06"
+        ],
+        "passages": [
+          {
+            "source_ref": "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D235%3Bsegment_index%3D41:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=e8132d3666195f06",
+            "headword": "نكح",
+            "route_status": "exact",
+            "entry_text_clean": "# نكح : قال الليث : تقول : نكح فلان امرأة ينكحها نكاحا إذا تزوجها ، ~~ونكحها إذا باضعها ينكحها أيضا ، وكذلك دحمها وخجأها وقال الأعشى في نكح ~~بمعنى تزوج : # ولا تقربن جارة إن سرها # عليك حرام فانكحن أو تأبدا # قال : وامرأة ناكح بغير هاء : ذات زوج . وأنشد : # أحاطت بخطاب الأيامى فطلقت # غداتئذ منهن من كان ناكحا # ويجوز في الشعر ناكحة . # وقال الطرماح : # ومثلك ناحت عليه النسا # ء من بين بكر إلى ناكحه # قال : وكان الرجل يأتى الحي خاطبا فيقوم في ناديهم فيقول : خطب أي جئت ~~خاطبا ، فيقال له : نكح ms0999 أي قد أنكحناك . # وقال الله جل وعز : { الزانى لا ينكح إلا زانية أو مشركة والزانية لا ~~ينكحهآ إلا زان } ( النور : 3 ) تأويله لا يتزوج الزاني إلا زانية وكذلك ~~الزانية لا يتزوجها إلا زان . # وقد قال قوم : معنى النكاح هاهنا الوطء ، فالمعنى عندهم الزاني لا يطأ ~~إلا زانية ، والزانية لا يطؤها إلا زان ، قال : وهذا القول يبعد ، لأنه لا ~~يعرف شيء من ذكر النكاح في كتاب الله إلا على معنى التزويج . قال الله ~~تعالى : { وأنكحوا الأيامى منكم } ( النور : 32 ) . فهذا تزويج لا شك فيه . # وقال الله جل وعز : { بالله وكيلا * ياأيها الذين ءامنو صلى الله عليه ~~وسلم # 1764 ا إذا نكحتم المؤمنات ثم طلقتموهن من قبل أن } ( الأحزاب : 49 ) ~~فأعلم أن عقد التزويج يسمى النكاح ، وأكثر التفسير أن هذه الآية نزلت في ~~قوم من المسلمين فقراء بالمدينة وكان بها بغايا يزنين ويأخذن الأجرة ~~فأرادوا التزوج بهن وعولهن فأنزل الله تحريم ذلك . # ويقال : رجل نكحة إذا كان كثير النكاح . قلت : أصل النكاح في كلام العرب ~~الوطء ، وقيل للتزوج نكاح لأنه سبب الوطء المباح . # وقال أبو زيد : يقال إنه لنكحة من قوم نكحات إذا كان شديد النكاح . # ويقال : نكح المطر الأرض إذا اعتمد عليها . ونكح النعاس عينه وناك المطر ~~الأرض . وناك النعاس عينه إذا غلب عليها .",
+            "origin_corpus": "quranic",
+            "section_path": "parent_entry_id=235;segment_index=41",
+            "page_or_volume_ref": "-"
+          }
+        ]
+      }
+    ]
+  },
+  "lexical_units": [
+    {
+      "lexical_unit_id": "lu_005",
+      "expression_ar": "أنكح",
+      "unit_kind": "form",
+      "sense_ar": "زوج غيره أو جعله داخلا في النكاح",
+      "source_phrase_ar": "أنكحت غيري (maqayis)؛ أنكح فلان فلانا إنكاحا إذا زوجه (jamhara)؛ أنكحها أي زوجها (sihah)؛ نكح أي قد أنكحناك (tahdhib)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3696;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1481%3Asubentry%3A1%3A%D9%86%D9%83%D8%AD:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=54178f14eddf22f3;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1090:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=ef9c1f6a9ac73331;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D235%3Bsegment_index%3D41:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=e8132d3666195f06",
+      "branch_source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3696;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1481%3Asubentry%3A1%3A%D9%86%D9%83%D8%AD:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=54178f14eddf22f3;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1090:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=ef9c1f6a9ac73331;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D235%3Bsegment_index%3D41:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=e8132d3666195f06",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "accepted"
+    },
+    {
+      "lexical_unit_id": "lu_008",
+      "expression_ar": "استنكحها",
+      "unit_kind": "review",
+      "sense_ar": "يقال بمعنى نكحها وأنكحها، أي زوجها",
+      "source_phrase_ar": "استنكحها بمعنى نكحها وأنكحها أي زوجها (sihah)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1090:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=ef9c1f6a9ac73331",
+      "branch_source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3696;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1420:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=518bc86f1b68c75a;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1481%3Asubentry%3A1%3A%D9%86%D9%83%D8%AD:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=54178f14eddf22f3;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1090:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=ef9c1f6a9ac73331;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D235%3Bsegment_index%3D41:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=e8132d3666195f06;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1539:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=103d3d4156861e95",
+      "resolved_quran_stem_ar": null,
+      "resolved_quran_tag": null,
+      "status": "review"
+    }
+  ],
+  "qnet_candidates": [],
+  "qnet_core_overlap_candidates": [
+    {
+      "root_id": "root_001444",
+      "branch_id": "B004",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "espousal",
+        "marriage",
+        "wedlock"
+      ]
+    },
+    {
+      "root_id": "root_000045",
+      "branch_id": "B002",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "arrangement",
+        "joining"
+      ]
+    },
+    {
+      "root_id": "root_000064",
+      "branch_id": "B002",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "marriage",
+        "wedlock"
+      ]
+    },
+    {
+      "root_id": "root_000134",
+      "branch_id": "B001",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "marriage",
+        "wedlock"
+      ]
+    },
+    {
+      "root_id": "root_000161",
+      "branch_id": "B005",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "marriage",
+        "wedlock"
+      ]
+    },
+    {
+      "root_id": "root_000331",
+      "branch_id": "B003",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "marriage",
+        "wedlock"
+      ]
+    },
+    {
+      "root_id": "root_000370",
+      "branch_id": "B005",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "marriage",
+        "wedlock"
+      ]
+    },
+    {
+      "root_id": "root_000652",
+      "branch_id": "B002",
+      "route": "raw_core_overlap",
+      "shared_keyword_count": 2,
+      "consensus_keyword_count": 1,
+      "shared_core_keywords": [
+        "marriage",
+        "wedlock"
+      ]
+    }
+  ],
+  "qnet_bridge_overlap_candidates": [
+    {
+      "root_id": "root_000888",
+      "branch_id": "B001",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 4,
+      "consensus_keyword_count": 3,
+      "shared_bridge_keywords": [
+        "alliance",
+        "family",
+        "kinship",
+        "law"
+      ]
+    },
+    {
+      "root_id": "root_000354",
+      "branch_id": "B003",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 4,
+      "consensus_keyword_count": 2,
+      "shared_bridge_keywords": [
+        "alliance",
+        "family",
+        "kinship",
+        "law"
+      ]
+    },
+    {
+      "root_id": "root_000544",
+      "branch_id": "B004",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 4,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "family",
+        "guardianship",
+        "kinship",
+        "law"
+      ]
+    },
+    {
+      "root_id": "root_000568",
+      "branch_id": "B002",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 4,
+      "consensus_keyword_count": 1,
+      "shared_bridge_keywords": [
+        "alliance",
+        "family",
+        "kinship",
+        "law"
+      ]
+    },
+    {
+      "root_id": "root_000358",
+      "branch_id": "B004",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 3,
+      "shared_bridge_keywords": [
+        "alliance",
+        "family",
+        "kinship"
+      ]
+    },
+    {
+      "root_id": "root_000394",
+      "branch_id": "B002",
+      "route": "raw_bridge_overlap",
+      "shared_keyword_count": 3,
+      "consensus_keyword_count": 3,
+      "shared_bridge_keywords": [
+        "alliance",
+        "family",
+        "kinship"
+      ]
+    }
+  ],
+  "qnet_theme_overlap_candidates": [
+    {
+      "root_id": "root_000080",
+      "branch_id": "B004",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "family",
+        "kinship",
+        "law",
+        "social_relations",
+        "trust_loyalty"
+      ]
+    },
+    {
+      "root_id": "root_000354",
+      "branch_id": "B003",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "family",
+        "kinship",
+        "law",
+        "social_relations",
+        "trust_loyalty"
+      ]
+    },
+    {
+      "root_id": "root_000544",
+      "branch_id": "B004",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 5,
+      "votes2_keyword_count": 2,
+      "shared_themes": [
+        "authority_governance",
+        "family",
+        "kinship",
+        "law",
+        "social_relations"
+      ]
+    },
+    {
+      "root_id": "root_000261",
+      "branch_id": "B003",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "authority_governance",
+        "kinship",
+        "law",
+        "social_relations"
+      ]
+    },
+    {
+      "root_id": "root_000394",
+      "branch_id": "B002",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "family",
+        "kinship",
+        "social_relations",
+        "trust_loyalty"
+      ]
+    },
+    {
+      "root_id": "root_000733",
+      "branch_id": "B006",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "family",
+        "kinship",
+        "social_relations",
+        "trust_loyalty"
+      ]
+    },
+    {
+      "root_id": "root_000888",
+      "branch_id": "B001",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 4,
+      "shared_themes": [
+        "family",
+        "kinship",
+        "law",
+        "trust_loyalty"
+      ]
+    },
+    {
+      "root_id": "root_000370",
+      "branch_id": "B005",
+      "route": "theme_overlap",
+      "focus_scope": "branch",
+      "shared_theme_count": 4,
+      "votes2_keyword_count": 3,
+      "shared_themes": [
+        "family",
+        "kinship",
+        "law",
+        "social_relations"
+      ]
+    }
+  ],
+  "qnet_focus_coverage": {
+    "raw_keyword_exact_port": true,
+    "snapshot_exact_port": true,
+    "postfix_exact_port": false,
+    "theme_scope": "branch",
+    "focus_themes": [
+      "authority_governance",
+      "family",
+      "kinship",
+      "law",
+      "social_relations",
+      "trust_loyalty"
+    ]
+  },
+  "furuq_candidates": [
+    {
+      "root_id": "root_001444",
+      "branch_id": "B004",
+      "root_norm": "م ل ك",
+      "branch_image_ar": "الإملاك والتزويج",
+      "what_is_ar": "عقد التزويج والإملاك؛ شهدنا إملاك فلان؛ ملك الرجل المرأة بمعنى تزوجها",
+      "what_is_not_ar": "ليس ملك المال ولا استرقاق المملوك",
+      "source_phrase_ar": "كنا في إملاك فلان أي أملكناه امرأته (maqayis)؛ الإملاك التزويج قد أملكوه وملكوه أي زوجوه (ayn)؛ ملكت المرأة تزوجتها (sihah)؛ أملكنا فلانا فلانة إذا زوجناه إياها (sihah)؛ شهدنا إملاك فلان وملاكه وملاكه (tahdhib)؛ الملاك التزويج وأملكوه زوجوه (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3443;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A3806:headword=%D9%85%D9%84%D9%83:root=%D9%85%20%D9%84%20%D9%83:sha=561ca3e39f2555db;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3854:headword=%D9%85%D9%84%D9%83:root=%D9%85%20%D9%84%20%D9%83:sha=c3adbfa2e98f2ed5;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D516%3Bsegment_index%3D263:headword=%D9%85%D9%84%D9%83:root=%D9%85%20%D9%84%20%D9%83:sha=4243f2305df5385e;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1436:headword=%D9%85%D9%84%D9%83:root=%D9%85%20%D9%84%20%D9%83:sha=c81901bdab591b2f",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_core_overlap"
+      ],
+      "shared_consensus_core": [
+        "espousal",
+        "marriage",
+        "wedlock"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000888",
+      "branch_id": "B001",
+      "root_norm": "ص ه ر",
+      "branch_image_ar": "حُرمة الختونة والمصاهرة",
+      "what_is_ar": "يدخل فيه الصهر والختن وأهل بيت المرأة والأصهار والتحرم بجوار أو نسب أو تزوج",
+      "what_is_not_ar": "ليس إذابة الشيء ولا الصهريج ولا الصيهور",
+      "source_phrase_ar": "الصهر حرمة الختونة (ayn;tahdhib)؛ الأصهار أهل بيت المرأة (sihah;mufradat)؛ المتزوج فيهم أصهار (ayn;tahdhib)؛ الإصهار التحرم بجوار أو نسب أو تزوج (sihah;mufradat;maqayis)؛ أصل يدل على قربى (maqayis)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A2112:headword=%D8%B5%D9%87%D8%B1:root=%D8%B5%20%D9%87%20%D8%B1:sha=8c08a6232d496af5;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1774:headword=%D8%B5%D9%87%D8%B1:root=%D8%B5%20%D9%87%20%D8%B1:sha=f9bced3e978530dd;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D295%3Bsegment_index%3D64:headword=%D8%B5%D9%87%D8%B1:root=%D8%B5%20%D9%87%20%D8%B1:sha=2e813f6bc4707f61;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A875:headword=%D8%B5%D9%87%D8%B1:root=%D8%B5%20%D9%87%20%D8%B1:sha=395467025617c1f9;0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:2021",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_bridge_overlap",
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [
+        "alliance",
+        "family",
+        "kinship",
+        "law"
+      ],
+      "shared_themes": [
+        "family",
+        "kinship",
+        "law",
+        "trust_loyalty"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000080",
+      "branch_id": "B004",
+      "root_norm": "ب ت ر",
+      "branch_image_ar": "قطع الرحم",
+      "what_is_ar": "يدخل فيه الرجل الأباتر الذي يقطع رحمه ويبترها",
+      "what_is_not_ar": "لا يدخل فيه انقطاع العقب الذي يقع للإنسان، ولا قطع الذنب والشيء، ولا نقص افتتاح الخطبة",
+      "source_phrase_ar": "رجل أباتر للذي يقطع رحمه (sihah); رجل أباتر يقطع رحمه (mufradat); رجل أباتر يقطع رحمه يبترها (maqayis)",
+      "source_refs": "sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1539:headword=%D8%A8%D8%AA%D8%B1:root=%D8%A8%20%D8%AA%20%D8%B1:sha=8d2317ca764cb69b;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A78:headword=%D8%A8%D8%AA%D8%B1:root=%D8%A8%20%D8%AA%20%D8%B1:sha=b145be920e35e779;maqayis:root=%D8%A8%20%D8%AA%20%D8%B1:headword=%D8%A8%D8%AA%D8%B1:sha=264ff931d05c107c",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [
+        "family",
+        "kinship",
+        "law",
+        "social_relations",
+        "trust_loyalty"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000045",
+      "branch_id": "B002",
+      "root_norm": "ء ل ف",
+      "branch_image_ar": "ضم الشيء إلى الشيء والتأليف",
+      "what_is_ar": "ضم بعض الأشياء إلى بعض؛ الجمع بعد تفرق؛ وصل الشيء؛ تأليف الكتب؛ ترتيب الأجزاء المختلفة",
+      "what_is_not_ar": "ليس العدد ألفا ولا الإيلاف الخاص بقريش ولا تألف القلوب بالمال",
+      "source_phrase_ar": "انضمام الشيء إلى الشيء (maqayis)؛ كل شيء ضممت بعضه إلى بعض فقد ألفته تأليفا (maqayis)؛ ألفت بين الشيئين تأليفا (sihah)؛ ألفت بينهم تأليفا إذا جمعت بينهم بعد تفرق (tahdhib)؛ ألفت الشيء وصلت بعضه ببعض ومنه تأليف الكتب (tahdhib)؛ اجتماع مع التئام (mufradat)؛ المؤلف ما جمع من أجزاء مختلفة ورتب ترتيبا (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:127;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3243:headword=%D8%A3%D9%84%D9%81:root=%D8%A1%20%D9%84%20%D9%81:sha=7f638a97f9aa053d;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D795%3Bsegment_index%3D4:headword=%D8%A3%D9%84%D9%81:root=%D8%A3%20%D9%84%20%D9%81:sha=1bb96cb5bb83f031;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A50:headword=%D8%A3%D9%84%D9%81:root=%D8%A1%20%D9%84%20%D9%81:sha=5a7bc532812348b4",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_core_overlap"
+      ],
+      "shared_consensus_core": [
+        "arrangement",
+        "joining"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000354",
+      "branch_id": "B003",
+      "root_norm": "ح م ء",
+      "branch_image_ar": "الحَمْء من قرابة الزوج",
+      "what_is_ar": "الحَمْء وأحماء المرأة، من كان من قبل الزوج كالأخ والأب",
+      "what_is_not_ar": "ليس الطين الأسود ولا الغضب",
+      "source_phrase_ar": "الحمو أبو الزوج وأخو الزوج وكل من ولي الزوج من ذي قرابته فهم أحماء المرأة (ayn)؛ بالهمز فتقول هذا حمؤك (ayn)؛ الحمء كل من كان من قبح الزوج مثل الأخ والأب (sihah)؛ أحماء المرأة كل من كان من قبل زوجها وقد همز في بعض اللغات فقيل حمء (mufradat)",
+      "source_refs": "ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1863:headword=%D8%AD%D9%85%D9%89:root=%D8%AD%20%D9%85%20%D9%8A:sha=9283a75f6d7f3a06;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A41:headword=%D8%AD%D9%85%D8%A3:root=%D8%AD%20%D9%85%20%D8%A1:sha=a32c41709791b06c;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A363:headword=%D8%AD%D9%85%D9%89:root=%D8%AD%20%D9%85%20%D9%8A:sha=2df5f9e72e438838",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_bridge_overlap",
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [
+        "alliance",
+        "family",
+        "kinship",
+        "law"
+      ],
+      "shared_themes": [
+        "family",
+        "kinship",
+        "law",
+        "social_relations",
+        "trust_loyalty"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000064",
+      "branch_id": "B002",
+      "root_norm": "ء ه ل",
+      "branch_image_ar": "اتخاذ الأهل بالزواج",
+      "what_is_ar": "يدخل فيه التأهل والتزوج، وأهل الرجل أو أهل امرأة، والدعاء بآهلك الله في الجنة أي زوجك فيها وجعل لك أهلا.",
+      "what_is_not_ar": "لا يدخل فيه مطلق القرابة أو السكن إلا إذا تعلق بالتزوج أو جعل الأهل.",
+      "source_phrase_ar": "التأهل التزوج (maqayis;ayn)؛ أهل فلان يأهل أهولا أي تزوج وكذلك تأهل (sihah)؛ أهل الرجل يأهل أهولا إذا تزوج للأنس الذي بين الزوجين (tahdhib)؛ تأهل إذا تزوج ومنه آهلك الله في الجنة أي زوجك فيها وجعل لك فيها أهلا (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:149;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A2301:headword=%D8%A3%D9%87%D9%84:root=%D8%A1%20%D9%87%20%D9%84:sha=68cbf1967e487c9b;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3886:headword=%D8%A3%D9%87%D9%84:root=%D8%A1%20%D9%87%20%D9%84:sha=208597b36f1786bc;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D311%3Bsegment_index%3D4:headword=%D8%A3%D9%87%D9%84:root=%D8%A3%20%D9%87%20%D9%84:sha=c92bb393e154d392;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A67:headword=%D8%A3%D9%87%D9%84:root=%D8%A1%20%D9%87%20%D9%84:sha=f4ac940d590f3c12",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_core_overlap"
+      ],
+      "shared_consensus_core": [
+        "marriage",
+        "wedlock"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_000544",
+      "branch_id": "B004",
+      "root_norm": "ر ج ع",
+      "branch_image_ar": "رجعة المرأة في النكاح والأهل",
+      "what_is_ar": "يدخل فيه مراجعة الزوج امرأته ورجعة الطلاق ورجوع المرأة إلى أهلها بعد موت زوجها أو طلاقها.",
+      "what_is_not_ar": "لا يدخل فيه رجوع الشيء عامة ولا ارتجاع الإبل بالبيع.",
+      "source_phrase_ar": "راجع الرجل امرأته وهي الرجعة (maqayis)؛ طلاقا يملك الرجعة والرجعة والرجعى (jamhara)؛ له على امرأته رجعة (sihah)؛ المراجع من النساء التي يموت زوجها أو يطلقها فترجع إلى أهلها (tahdhib)؛ الرجعة والرجعة في الطلاق (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:1452;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1242%3Asubentry%3A1%3A%D8%B1%D8%AC%D8%B9:headword=%D8%B1%D8%AC%D8%B9:root=%D8%B1%20%D8%AC%20%D8%B9:sha=58a36b511f10ab0d;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A2981:headword=%D8%B1%D8%AC%D8%B9:root=%D8%B1%20%D8%AC%20%D8%B9:sha=50e9d5e5a8e0c6be;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D85%3Bsegment_index%3D7:headword=%D8%B1%D8%AC%D8%B9:root=%D8%B1%20%D8%AC%20%D8%B9:sha=f6488457c1c860e5;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A543:headword=%D8%B1%D8%AC%D8%B9:root=%D8%B1%20%D8%AC%20%D8%B9:sha=2dbed29ae7053fd0",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_bridge_overlap",
+        "qnet_theme_overlap"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [
+        "family",
+        "guardianship",
+        "kinship",
+        "law"
+      ],
+      "shared_themes": [
+        "authority_governance",
+        "family",
+        "kinship",
+        "law",
+        "social_relations"
+      ],
+      "theme_focus_scopes": [
+        "branch"
+      ]
+    },
+    {
+      "root_id": "root_000134",
+      "branch_id": "B001",
+      "root_norm": "ب ع ل",
+      "branch_image_ar": "البَعْل زوجا وبعولة",
+      "what_is_ar": "يدخل فيه الزوج، والبَعْلَة بمعنى الزوجة، وصيرورة الرجل بعلا، وجمع البعولة.",
+      "what_is_not_ar": "ليس المعبود المسمى بعلا، ولا الأرض أو النخل البعل، ولا دهش الرجل.",
+      "source_phrase_ar": "البعل الزوج (maqayis;ayn;sihah;tahdhib); البعل هو الذكر من الزوجين وجمعه بعولة (mufradat); بعل الرجل أي صار بعلا (sihah;tahdhib); بعولتهن (tahdhib;mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:285;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A844:headword=%D8%A8%D8%B9%D9%84:root=%D8%A8%20%D8%B9%20%D9%84:sha=d0e8fc9034a22e9a;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A3905:headword=%D8%A8%D8%B9%D9%84:root=%D8%A8%20%D8%B9%20%D9%84:sha=3841454c2270003d;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D177%3Bsegment_index%3D7:headword=%D8%A8%D8%B9%D9%84:root=%D8%A8%20%D8%B9%20%D9%84:sha=b119231aa5ede0de;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A128:headword=%D8%A8%D8%B9%D9%84:root=%D8%A8%20%D8%B9%20%D9%84:sha=ef37b80a9c67c699",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "qnet_core_overlap"
+      ],
+      "shared_consensus_core": [
+        "marriage",
+        "wedlock"
+      ],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001548",
+      "branch_id": "B001",
+      "root_norm": "ن ك ح",
+      "branch_image_ar": "البضاع والوطء",
+      "what_is_ar": "يدخل فيه البضع والوطء والجماع المكنى عنه بلفظ النكاح، وما صرح المصدر بأنه استعارة للجماع.",
+      "what_is_not_ar": "ليس عقد التزويج المجرد ولا إنكاح الغير ولا حال ذات الزوج.",
+      "source_phrase_ar": "أصل واحد وهو البضاع (maqayis)؛ وهو البضع (ayn)؛ النكاح كناية عن الجماع (jamhara)؛ النكاح الوطئ (sihah)؛ نكحها إذا باضعها وأصل النكاح في كلام العرب الوطء (tahdhib)؛ ثم استعير للجماع (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3696;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1420:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=518bc86f1b68c75a;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1481%3Asubentry%3A1%3A%D9%86%D9%83%D8%AD:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=54178f14eddf22f3;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1090:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=ef9c1f6a9ac73331;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D235%3Bsegment_index%3D41:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=e8132d3666195f06;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1539:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=103d3d4156861e95",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001548",
+      "branch_id": "B002",
+      "root_norm": "ن ك ح",
+      "branch_image_ar": "عقد الزوجية والتزوج",
+      "what_is_ar": "يدخل فيه العقد، والتزوج، وتسمية عقد التزويج نكاحا، سواء ورد نكح بمعنى تزوج أو النكاح بمعنى العقد.",
+      "what_is_not_ar": "ليس الوطء نفسه، ولا فعل تزويج الغير، ولا الصيغة الاصطلاحية في جواب الخطبة وحدها.",
+      "source_phrase_ar": "النكاح يكون العقد دون الوطء؛ نكحت تزوجت (maqayis)؛ يجري نكح أيضا مجرى التزويج (ayn)؛ إذا زوجه (jamhara)؛ قد يكون العقد؛ نكحت هي أي تزوجت (sihah)؛ إذا تزوجها؛ عقد التزويج يسمى النكاح (tahdhib)؛ أصل النكاح للعقد (mufradat)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3696;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1420:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=518bc86f1b68c75a;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1481%3Asubentry%3A1%3A%D9%86%D9%83%D8%AD:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=54178f14eddf22f3;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1090:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=ef9c1f6a9ac73331;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D235%3Bsegment_index%3D41:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=e8132d3666195f06;mufradat:file=0502RaghibIsbahani.Mufradat.Shamela0023636-ara1:section=heading%3A1539:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=103d3d4156861e95",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001548",
+      "branch_id": "B004",
+      "root_norm": "ن ك ح",
+      "branch_image_ar": "الانتساب بالزوجية والكون ذا زوج",
+      "what_is_ar": "يدخل فيه وصف المرأة بأنها ناكح أي ذات زوج، والتزوج إلى قوم أو فيهم، والمناكح بوصفها مواضع المصاهرة.",
+      "what_is_not_ar": "ليس نفس العقد لحظة إنشائه، ولا الوطء، ولا الصيغة التي تقال عند الخطبة.",
+      "source_phrase_ar": "امرأة ناكح في بني فلان أي ذات زوج منهم (maqayis)؛ امرأة ناكح أي ذات زوج (ayn;sihah;tahdhib)؛ استنكحت في بني فلان إذا تزوجت إليهم؛ استكرم المناكح إذا نكح العقائل (jamhara)",
+      "source_refs": "0395IbnFarisQazwini.MucjamMaqayis.JK008008-ara1:heading:3696;ayn:file=0170KhalilFarahidi.Cayn.JK000930-ara1:section=heading%3A1420:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=518bc86f1b68c75a;jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1481%3Asubentry%3A1%3A%D9%86%D9%83%D8%AD:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=54178f14eddf22f3;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1090:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=ef9c1f6a9ac73331;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D235%3Bsegment_index%3D41:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=e8132d3666195f06",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001548",
+      "branch_id": "B005",
+      "root_norm": "ن ك ح",
+      "branch_image_ar": "صيغة الخطبة والقبول بقول نكح",
+      "what_is_ar": "يدخل فيه استعمال نكح/النكح جوابا للخطبة أو كلمة تتزوج بها العرب، وما صار مثلا من سرعة نكاح أم خارجة.",
+      "what_is_not_ar": "ليس المعنى العام للعقد إلا من حيث الصيغة اللفظية، ولا الوطء.",
+      "source_phrase_ar": "خطب فتقول نكح فصار مثلا أسرع من نكاح أم خارجة؛ النكح مثل الخطب (jamhara)؛ النكح والنكح لغتان وهي كلمة كانت العرب تتزوج بها؛ أسرع من نكاح أم خارجة (sihah)؛ فيقول خطب ... فيقال له نكح أي قد أنكحناك (tahdhib)",
+      "source_refs": "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1481%3Asubentry%3A1%3A%D9%86%D9%83%D8%AD:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=54178f14eddf22f3;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1090:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=ef9c1f6a9ac73331;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D235%3Bsegment_index%3D41:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=e8132d3666195f06",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001548",
+      "branch_id": "B006",
+      "root_norm": "ن ك ح",
+      "branch_image_ar": "كثرة النكاح وشدته",
+      "what_is_ar": "يدخل فيه رجل نكحة، والنكحة من قوم نكحات، إذا كان كثير النكاح أو شديد النكاح.",
+      "what_is_not_ar": "ليس أصل العقد ولا صيغة الخطبة ولا الإنكاح للغير.",
+      "source_phrase_ar": "رجل نكحة كثير النكاح (jamhara;sihah)؛ إنه لنكحة من قوم نكحات إذا كان شديد النكاح (tahdhib)",
+      "source_refs": "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1481%3Asubentry%3A1%3A%D9%86%D9%83%D8%AD:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=54178f14eddf22f3;sihah:file=0393IbnHammadJawhari.SihahTajLugha.Shamela0023235-ara1:section=heading%3A1090:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=ef9c1f6a9ac73331;tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D235%3Bsegment_index%3D41:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=e8132d3666195f06",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001548",
+      "branch_id": "B007",
+      "root_norm": "ن ك ح",
+      "branch_image_ar": "تزويج تدفع إليه علة أو ظرف",
+      "what_is_ar": "يدخل فيه أن يكون المال أو الموت أو القبور سببا في تزويج شخص أو تزويج الأيامى والصغار بغير كفاءة.",
+      "what_is_not_ar": "ليس الإنكاح العادي الصادر من ولي أو خاطب، ولا مجرد التزوج.",
+      "source_phrase_ar": "أنكح فلانا في بني فلان ماله إذا زوجوه من أجله؛ أنكح موت فلان بناته في بني فلان إذا زوجن بغير أكفاء؛ إن القبور تنكح الأيامى والصبية الأصاغر اليتامى (jamhara)",
+      "source_refs": "jamhara:file=0321IbnDuraydAzdi.JamharatLugha.JK007100-ara1:section=heading%3A1481%3Asubentry%3A1%3A%D9%86%D9%83%D8%AD:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=54178f14eddf22f3",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    },
+    {
+      "root_id": "root_001548",
+      "branch_id": "B008",
+      "root_norm": "ن ك ح",
+      "branch_image_ar": "اعتماد الشيء وغلبته على موضع",
+      "what_is_ar": "يدخل فيه نكح المطر الأرض إذا اعتمد عليها، ونكح النعاس العين إذا غلب عليها.",
+      "what_is_not_ar": "ليس النكاح بمعنى الزوجية أو الوطء، ولا صيغ ناك المطر أو ناك النعاس المجاورة في اللفظ.",
+      "source_phrase_ar": "نكح المطر الأرض إذا اعتمد عليها؛ ونكح النعاس عينه إذا غلب عليها (tahdhib)",
+      "source_refs": "tahdhib:file=tahdhib.sqlite_original:section=parent_entry_id%3D235%3Bsegment_index%3D41:headword=%D9%86%D9%83%D8%AD:root=%D9%86%20%D9%83%20%D8%AD:sha=e8132d3666195f06",
+      "status": "accepted",
+      "contaminated": "no",
+      "discovery_basis": [
+        "sibling"
+      ],
+      "shared_consensus_core": [],
+      "shared_bridge_keywords": [],
+      "shared_themes": [],
+      "theme_focus_scopes": []
+    }
+  ]
+}

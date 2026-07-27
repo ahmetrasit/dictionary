@@ -274,6 +274,11 @@ state only the role, input path, output restriction, and validation rule.
 The response must remain complete, use the new repair-task hash, change every
 requested scope, and change nothing outside it. Validate:
 
+Exception: when the scoped repair changes a branch `concept_gloss` to `null`,
+the same repair may add `contextual_glosses` for that branch if the previous
+response had none. This is a validator-required companion to the null concept
+gloss, not an expanded semantic scope.
+
 ```sh
 python3 v2/gloss_generation/workflow.py validate \
   v2/gloss_generation/work/root_000858/en/repair/input/task.json

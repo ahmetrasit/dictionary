@@ -1,0 +1,28 @@
+{
+  "verdict": "repair",
+  "summary": "B006 ve B021 dallarındaki kavram karşılıkları, kanıtlanan çekirdeğin bir bölümünü yanlış veya eksik aktarıyor; iki alan da sınırlı düzeltme gerektiriyor.",
+  "issues": [
+    {
+      "target_ref": "root_001240/B006",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, kişinin umudunun tükenmesini veya azık, binek, para ya da başka bir engel yüzünden yolculuğu sürdüremeyip yolda kalmasını anlatır. Mevcut karşılıktaki \"yolu kesilmek\" ise dışarıdan yolun engellenmesi anlamına kayarak B023 sınırıyla çarpışır.",
+      "smallest_correction": "Kavram karşılığının metnini \"umudu kesilmek veya yolda kalmak\" olarak değiştir; alanın diğer alt öğelerini koru."
+    },
+    {
+      "target_ref": "root_001240/B021",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt yalnız kesici karın sancısını değil, soluk daralmasını ve beden içinde damar ya da yağ kopmasını da kapsar. Mevcut \"keser gibi sancılanmak\" karşılığı bu iki ayrı durumu dışarıda bırakmasına rağmen tam uyum bildiriyor.",
+      "smallest_correction": "Kavram karşılığını \"iç sancı, nefes sıkışması veya iç kopma\" biçiminde ver; uygulanabilirlik, hata profili ve facet_ids değerlerini bu üç kanıtlı durumu kapsayacak şekilde aynı alan içinde güncelle."
+    }
+  ]
+}

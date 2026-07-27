@@ -1,0 +1,73 @@
+{
+  "inputs_sha256": "2af05832bc4852d5276b1f3f5a731010efef04c680bdbdca2af54fe2ed6c401e",
+  "verdict": "repair",
+  "summary": "Yedi dalın kimliği, sırası ve sözlükselleşme kapsamı korunabilir durumdadır. Ancak bir kavram karşılığı dalın yarışma çekirdeğini yalnız galibiyete indirgemekte; ayrıca kaynak sentezlerinde kaynakça ayırt edici birkaç koşul, varyant ve türetim ayrıntısı genelleştirilerek kaybedilmektedir. Düzeltmeler yalnız belirtilen alanlarda yapılmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_001286/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı yalnız çokluk yarışında üstün gelmeyi gösteriyor. Kanıt ise üstün gelme sonucundan bağımsız olarak karşılıklı çokluk yarışı, övünme ve böbürlenmeyi de dalın çekirdeğine dahil ediyor; bu nedenle mevcut karşılık çekirdeği daraltıyor.",
+      "smallest_correction": "Kavram karşılığını çokluk yarışını ve bunun üstün gelme sonucunu birlikte kapsayacak biçimde, örneğin \"çokluk yarışı ve çoklukla üstün gelme\" olarak düzelt; uygulanabilirlik ve hata profili metinlerini de bu iki yönü kayıpsız yansıtacak kadar güncelle."
+    },
+    {
+      "target_ref": "root_001286/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak sentezi, kişinin üzerindeki hakların çoğalması kullanımını aktarıyor fakat bir kaynakta bunun elindekinin tükenmesi koşuluyla birlikte verildiğini kaybediyor. Bu, kanıtta açıkça bulunan ayırt edici bir kaynak ayrıntısıdır.",
+      "smallest_correction": "Ortak özete kaynak tarafsız bir ifadeyle, bir açıklamada hakların çoğalmasına kişinin elindekinin tükenmesinin eşlik ettiğini ekle; diğer sentez içeriğini değiştirme."
+    },
+    {
+      "target_ref": "root_001286/B004",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Sentez üç temel kullanımı koruyor, ancak özel ırmaktan cennet ırmaklarının çoğunun ayrılması ve bol iyiliğin Peygamber'e verilmiş olması biçimindeki ayırt edici kaynak ayrıntılarını aktarmıyor.",
+      "smallest_correction": "Ortak özete kaynak tarafsız biçimde, bir açıklamada cennet ırmaklarının çoğunun bu ırmaktan ayrıldığını ve bir açıklamada bol iyiliğin Peygamber'e verilen iyilik olarak belirtildiğini ekle."
+    },
+    {
+      "target_ref": "root_001286/B006",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıt, hurma göbeği adının birden fazla harekeleme biçimini ve kaynaklar arasındaki okunuş varyantını açıkça kaydediyor. Kaynak sentezi anlam varyantlarını veriyor fakat bu kaynak varyantını tamamen atlıyor.",
+      "smallest_correction": "Ortak özete, kaynakların ad için birden fazla harekeleme veya okunuş biçimi aktardığını belirten kısa ve kaynak tarafsız bir cümlecik ekle."
+    },
+    {
+      "target_ref": "root_001286/B007",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tek kaynak yalnız belirsiz bir ek sesten söz etmiyor; yapıya eklenen sesin özellikle m sesi olduğunu ve biçimin çokluk ailesinden geldiğini belirtiyor. Mevcut sentez bu ayırt edici türetim ayrıntısını genelleştirerek kaybediyor.",
+      "smallest_correction": "Kaynak sentezindeki \"ek ses\" ifadesini \"eklenen m sesi\" olarak somutlaştır; birimin çokluk ailesiyle bağını belirten kalan metni koru."
+    },
+    {
+      "target_ref": "root_001286/B007",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_023"
+      ],
+      "evidence_conflict": "Sözlüksel birim kanıtı, yapıda eklenen sesin m sesi olduğunu açıkça bildiriyor. Hedef karşılıktaki \"ek bir ses\" ifadesi bu doğrulanmış biçimbilgisel ayrıntıyı gereksiz yere belirsizleştiriyor.",
+      "smallest_correction": "lu_023 hedef karşılığındaki \"yapısında ek bir ses bulunur\" bölümünü \"yapısına m sesi eklenmiştir\" olarak değiştir; toplanma karşılığını aynen koru."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "verdict": "repair",
+  "summary": "Dal çekirdekleri ve sözlüksel karşılıklar genel olarak kanıtla uyumludur. Ancak üç dalın kaynak sentezi yalnız belirli sözlüklere ait ayrıntıları ortak destek gibi sunuyor; ayrıca iki komşuluk ilişkisi, çekirdek sınırı değiştirmeyen bağımlı kaynak çeşitleri nedeniyle gereksiz yere yakın eş anlamlılığa indirilmiş.",
+  "issues": [
+    {
+      "target_ref": "root_000633/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, bütün kaynakların semizliği belirsiz hayvan uzantısında birleştiğini düşündürüyor. Bu hayvan kullanımı yalnız Maqayis, Sihah ve Tahdhib'de bulunur; doğrulanmamış aktarımda kullanılan özel söz de yalnız Tahdhib tarafından kaydedilir. Ayn ve Mufradat bu ayrıntıları desteklemez.",
+      "smallest_correction": "Ortak özeti kaynakların paylaştığı doğrulanmamış veya kuşkulu söz çekirdeğiyle sınırla; hayvan kullanımını ilgili üç kaynağa, doğrulanmamış aktarım sözünü ise yalnız Tahdhib'e bağlayan kaynak ayrıntıları ekle."
+    },
+    {
+      "target_ref": "root_000633/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, topluluğun bir iş üzerinde karşılıklı destekle birleşmesini genel kaynak uzlaşmasının parçası gibi veriyor. Bu topluluk kalıbı ve onun üyelerin birbirine güvence oluşuyla açıklanması yalnız Tahdhib'de yer alır.",
+      "smallest_correction": "Ortak özeti güvence verme ve sorumluluk üstlenme çekirdeğiyle sınırla; topluluğun karşılıklı destek kalıbını yalnız Tahdhib'e ait bir kaynak ayrıntısı olarak ayır."
+    },
+    {
+      "target_ref": "root_000633/B004",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, bütün kaynakları önderin işleri üstlenmesi, topluluk adına konuşması ve pay açıklamalarında birleştiriyor. İşleri üstlenme gerekçesi ile ganimet payı veya malın en iyi bölümü açıklaması Maqayis'e, topluluk adına konuşma ayrıntısı ise Ayn'a özgüdür; kaynakların ortak çekirdeği önderlik ve başta bulunmadır.",
+      "smallest_correction": "Ortak özeti önderlik, başta bulunma ve saygın konum çekirdeğiyle sınırla; işleri üstlenme ve pay açıklamalarını Maqayis'e, topluluk adına konuşmayı Ayn'a bağlayan ayrı kaynak ayrıntıları ekle."
+    },
+    {
+      "target_ref": "root_000633/B005",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_000728/B001 komşusunun çekirdeği genel olarak silah ve savaş aracıdır; bu dalın kabul edilen çekirdeği de savaş aracı, zırh ise yalnız daha dar bir kaynak çeşididir. Tek bir sözlüksel biçime bağlılık ve zırh çeşidi çekirdek sınırını değiştirmediği için partial ve near_synonym sınıflaması kanıtlanan çekirdekler arasındaki tam ikameyi gereksiz yere düşürüyor.",
+      "smallest_correction": "root_000728/B001 ilişkisini synonym ve exact yap; focus_only ile neighbor_only alanlarını boşalt ve açıklamayı ortak genel savaş aracı çekirdeğini, zırhın ise bağımlı kaynak çeşidi olduğunu belirtecek biçimde düzelt."
+    },
+    {
+      "target_ref": "root_000633/B006",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "root_000266/B012 komşu kartının çekirdeği de genel yılan adıdır; beyaz yılan veya belirli bir yılan çeşidi açıklamaları kaynaklara bağlı dar ayrıntılardır. Yazarın kendi ayrımı bu ayrıntıları yalnız bazı açıklamalara bağladığı halde ilişkiyi partial ve near_synonym olarak sınıflaması, çekirdeklerin tam örtüşmesini gözden kaçırıyor.",
+      "smallest_correction": "root_000266/B012 ilişkisini synonym ve exact yap; focus_only ile neighbor_only alanlarını boşalt ve ayrım metninde iki dalın genel yılan çekirdeğinin aynı, beyazlık veya özel tür açıklamalarının bağımlı kaynak ayrıntıları olduğunu belirt."
+    }
+  ]
+}

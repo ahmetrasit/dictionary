@@ -1,0 +1,105 @@
+{
+  "verdict": "repair",
+  "summary": "Uc dalda kaynak ifadesinin desteklemedigi sinir genislemeleri var. B008'de sayginlar duzeyine ulasamama, o duzeyden dusme olarak da sunulmus; B010'da kar ve buza ciy benzeri bir madde eklenmis; B012'de pismanlik cekirdegine saskinlik ve beklenmeyen sonuc eklenerek birden cok alana yayilmis. Duzeltmeler yalniz bu sinirli alanlarda yapilmalidir.",
+  "issues": [
+    {
+      "target_ref": "root_000719/B008",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi kisinin sayginlar duzeyine ulasamadigini soyler; F002 buna o duzeyden dusmus olma secenegini de ekliyor.",
+      "smallest_correction": "F002'deki 'veya oradan dusmus' secenegini kaldirip ifadeyi yalniz sayginlar duzeyine ulasamama ile sinirla."
+    },
+    {
+      "target_ref": "root_000719/B008",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_024"
+      ],
+      "evidence_conflict": "lu_024 icin verilen karsilik, kaynakta bulunan sayginlar duzeyine ulasamamaya ek olarak o duzeyden dusmus olmayi da ileri suruyor.",
+      "smallest_correction": "lu_024 target_gloss degerini yalniz 'sayginlar seviyesine ulasamamis kimse' olarak daralt."
+    },
+    {
+      "target_ref": "root_000719/B010",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yetkili kaynak ifadesi dali kar ve buzla sinirlar; tanimdaki 'soguk ciy benzeri' madde bu ifadede bulunmaz ve dali baska bir soguk birikim turune genisletir.",
+      "smallest_correction": "Tanimin ilk cumlesinden 'veya soguk ciy benzeri' ifadesini cikar ve tanimi kar ile buzla sinirli tut."
+    },
+    {
+      "target_ref": "root_000719/B012",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kaynak ifadesi el kalibinin anlamini pismanlik olarak aciklar; gerekce bunu pismanlik ve saskinlik diye iki parcali bir cekirdek olarak sunuyor.",
+      "smallest_correction": "Gerekceden saskinlik iddiasini kaldir ve kaynak ifadesinin belirli el kalibinda pismanlik bildirdigini soyle."
+    },
+    {
+      "target_ref": "root_000719/B012",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yetkili kaynak ifadesi yalniz pismanligi verir; tanim beklenmeyen sonucu, F001 ise saskinligi desteklenmis cekirdek unsurlar gibi ekler.",
+      "smallest_correction": "Tanimdan 'beklenmeyen' ve 'saskin kalma' unsurlarini, F001'den de saskinligi cikar; el kalibina bagli pismanlik sinirini koru."
+    },
+    {
+      "target_ref": "root_000719/B012",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak ozet saskinligi kaynaklarin ortak verdigi bir anlam gibi gosteriyor, ancak kaynak ifadesinin acikladigi ortak anlam pismanliktir.",
+      "smallest_correction": "common_summary icinden saskinlik iddiasini cikar ve ortak anlami el kalibina bagli pismanlik olarak birak."
+    },
+    {
+      "target_ref": "root_000719/B012",
+      "field": "concept_gloss",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karsiliginin applicability ve preserves aciklamalari saskinligi korunmus bir dal anlami sayiyor; kaynak ifadesi yalniz pismanligi destekliyor.",
+      "smallest_correction": "applicability ve error_profile.preserves metinlerinden saskinligi kaldir; el kalibina bagli pismanlik aciklamasini koru."
+    },
+    {
+      "target_ref": "root_000719/B012",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ikinci baglamsal karsilik saskinligi dal cekirdeginin parcasi olarak sunuyor; branch claim yalniz pismanligi kuruyor.",
+      "smallest_correction": "Saskinlik ekleyen ikinci contextual_gloss satirini kaldir ve pismanlik karsiligini birak."
+    },
+    {
+      "target_ref": "root_000719/B012",
+      "field": "neighbor_distinctions",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B015 ile karsilastirmadaki focus_only, B012'yi pismanlik ve saskinlik olarak tanimliyor; kaynak ifadesi saskinligi dal sinirina katmiyor.",
+      "smallest_correction": "B015 komsuluk satirinin focus_only metninden 've saskinlik' ifadesini cikar."
+    }
+  ]
+}

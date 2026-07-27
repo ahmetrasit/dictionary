@@ -2361,6 +2361,16 @@ def validate_repair_scope(task: dict, response: dict) -> None:
         for field in ("concept_gloss", "contextual_glosses"):
             if branch[field] != old[field]:
                 if (branch_ref_value, field, None) not in allowed:
+                    concept_scope = (branch_ref_value, "concept_gloss", None)
+                    contextual_null_companion = (
+                        field == "contextual_glosses"
+                        and concept_scope in allowed
+                        and old["concept_gloss"] != branch["concept_gloss"]
+                        and branch["concept_gloss"] is None
+                        and not old["contextual_glosses"]
+                    )
+                    if contextual_null_companion:
+                        continue
                     raise ContractError(
                         f"Repair changed out-of-scope field "
                         f"{branch_ref_value}.{field}"

@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "Editoryal karar uygulanarak B001 özel adlandırma kümesi qualified olarak sınırlandı; kaynak özeti nispet-renk alternatifini ve özel söz varlığı birimini koruyacak biçimde düzeltildi. B004'te hedefe çökme zorunluluğu kaldırıldı ve lu_021 karşılığı kaynak sınırına çekildi.",
+  "issues": [
+    {
+      "target_ref": "root_001288/B001",
+      "field": "identity_judgment",
+      "severity": "major",
+      "confidence": "medium",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kabul gerekçesi hayvan, süt-hurma karışımı ve yeni yağmur suyu adlandırmalarının tümünü ortak bulanıklık görünüşüne bağlıyor. Oysa kaynak ifadesi süt-hurma adını yalnızca tanımlar; yaban eşekleri adında da erkek ataya nispet ile renk açıklamasını alternatif olarak verir. Bu özel birimlerin tek bir eşzamanlı anlam çekirdeğine bağlanması kanıttan kesinleşmiyor.",
+      "smallest_correction": "Kimlik durumunu qualified yapıp gerekçe ve sınır notunda doğrudan duruluk karşıtı kullanımları, anlam bağı kanıtlanmamış özel addan ve erkek ataya nispet ile renk arasındaki kaynak alternatifinden ayırın."
+    },
+    {
+      "target_ref": "root_001288/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet hayvan rengi, hurmalı süt ve yeni yağmur suyu örneklerinin hepsini aynı görünüş çekirdeğine bağlıyor. Kanıt ise yaban eşekleri adını erkek ataya nispet veya renk ile açıklar ve hurmalı süt adının bulanıklık görünüşünden doğduğunu söylemez.",
+      "smallest_correction": "Ortak özeti, kesin olarak tanıklanan duruluk karşıtı çekirdekle sınırlayın; yaban eşekleri adındaki nispet-renk alternatifini açıkça koruyun ve hurmalı süt adını görünüş çekirdeğine bağlamadan özel bir söz varlığı birimi olarak sunun."
+    },
+    {
+      "target_ref": "root_001288/B004",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı olan \"hızla atılıp üzerine çökme\", her kullanımda bir hedefin üzerine çökme koşulu varmış gibi davranıyor. Kanıt yalın biçim için hızlanmayı, biraz hızlı koşmayı veya atılmayı da bağımsız olarak tanıklıyor; hedef üzerine yüklenme yalnızca topluluk kalıbına bağlıdır.",
+      "smallest_correction": "Kavram karşılığını \"hızlanma, atılma veya çökme\" gibi alternatif hareket yüzlerini koruyan bir ifadeyle değiştirin; applicability ve error_profile metinlerinden hedef üzerine çöküşün genel çekirdekte zorunlu olduğu izlenimini kaldırın."
+    },
+    {
+      "target_ref": "root_001288/B004",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_021"
+      ],
+      "evidence_conflict": "lu_021 için \"saçılmadan doğan değişme ve çöküş\" karşılığı, kaynak anlamındaki saçılmadan doğan değişmeye ayrıca çöküş ekliyor. Bu sözlüksel birimin kanıtında çöküş belirtilmiyor.",
+      "smallest_correction": "lu_021 target_gloss değerini \"saçılmadan doğan değişme\" olarak düzeltin."
+    }
+  ]
+}

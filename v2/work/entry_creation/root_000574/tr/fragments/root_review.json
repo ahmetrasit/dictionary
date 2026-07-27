@@ -1,0 +1,18 @@
+{
+  "inputs_sha256": "6f3f72903fa1d59d74b72f382ab40b6ffd10e0d8e4bc9343346ae9c688a2a12c",
+  "verdict": "repair",
+  "summary": "Yazar yanıtı genel olarak kanıtla uyumludur. Ancak B007 tanımı, yerleşim çevresinde otlamayı işte kullanılma çekirdeğiyle birlikte zorunlu bir koşula dönüştürmektedir; bu bağlı özellik tanımda ayrı tutulmalıdır.",
+  "issues": [
+    {
+      "target_ref": "root_000574/B007",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kanıtın ortak çekirdeği develerin iş gördürmek için kullanılmasıdır. Yerleşim çevresinde otlama yalnızca bir kaynağın bu develere eşlik eden açıklamasıdır; tanımdaki 've' bağlacı iki niteliği birlikte zorunlu kılarak dalı gereksiz biçimde daraltır.",
+      "smallest_correction": "Tanımı 'İş gördürmek için kullanılan develere verilen topluluk adıdır; bu develerin insanların ve yerleşimlerin çevresinde otladığı da belirtilir.' biçiminde değiştirerek çekirdeği ve bağlı özelliği ayır."
+    }
+  ]
+}

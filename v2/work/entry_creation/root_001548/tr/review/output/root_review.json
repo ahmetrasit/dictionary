@@ -1,0 +1,50 @@
+{
+  "verdict": "repair",
+  "summary": "Yazar yaniti dal yapisini ve ana anlam sinirlarini genel olarak koruyor. Ancak B001'de kaynaklar arasindaki aslilik-mecaz ayriligi atlanmis, B001 ve B002'de iki komsu yalniz farkli kok ailesine ait olduklari icin yakin es anlamli sayilmis ve B006'daki bir sozcuk birimi karsiligi topluluk bilgisini yanlis aktarmistir.",
+  "issues": [
+    {
+      "target_ref": "root_001548/B001",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "bc_001, maqayis ve tahdhib'in cinsel birlesmeyi kokun asli anlami saydigini, mufradat'in ise bu anlamin sonradan mecazen aktarildigini bildirdigini gosteriyor. common_summary cinsel birlesme cekirdegini ve kinayeli kullanimi veriyor, fakat bu aslilik-mecaz ayriligini kapsamiyor.",
+      "smallest_correction": "source_synthesis.common_summary icine, kaynaklarin cinsel birlesmenin kokte asli mi yoksa aktarilmis mi oldugu konusunda ayrildigini belirten kisa ve kaynak-notr bir cumle ekleyin."
+    },
+    {
+      "target_ref": "root_001548/B001",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B001'in bc_001 cekirdegi bedensel cinsel birlesmedir; root_000259/B006 karti da cinsel birlesme ve karsilikli cinsel iliskiyi verir. Mevcut satir tek fark olarak baska bir soz ailesini gosteriyor; bu, anlamsal sinir farki degildir ve exact es anlamliligi partial yakin es anlamliliga indirmeyi desteklemez.",
+      "smallest_correction": "root_000259/B006 satirinda relation_type degerini synonym, boundary_match degerini exact yapin; focus_only ve neighbor_only alanlarini null yapin, distinction metnini de farkli kok ailesinin anlamsal sinir olusturmadigini ve iki cekirdegin olagan kullanimda birbirinin yerine gectigini yansitacak kadar duzeltin."
+    },
+    {
+      "target_ref": "root_001548/B002",
+      "field": "neighbor_distinctions",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "B002'nin bc_001 cekirdegi evlilik sozlesmesi ve kisinin evlenmesidir; root_001444/B004 karti da evlilik sozlesmesini ve erkegin kadinla evlenmesini verir. Komsudaki taniklik ifadesi bagimli bir ornektir, farkli soz ailesi de sinir farki degildir; bu nedenle near_synonym/partial siniflandirmasi kanitlanan ortak cekirdegi gereksiz yere daraltiyor.",
+      "smallest_correction": "root_001444/B004 satirinda relation_type degerini synonym, boundary_match degerini exact yapin; focus_only ve neighbor_only alanlarini null yapin, distinction metnini de iki dalin sozlesme ve evlenme cekirdeklerinin olagan kullanimda esdeger oldugunu gosterecek kadar duzeltin."
+    },
+    {
+      "target_ref": "root_001548/B006",
+      "field": "lexical_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_015"
+      ],
+      "evidence_conflict": "lu_015'in anlami, cinsel birlesmede siddetli olan kisinin kendisi gibi kisilerden olusan bir topluluktan biri olmasidir. Mevcut karsilik ise onu yalniz kendi cevresinde bu ozellikle bilinen kisiye cevirerek toplulugun ayni niteligi paylasmasini kaybediyor ve kaynakta olmayan bilinme unsurunu ekliyor.",
+      "smallest_correction": "lu_015 target_gloss degerini, kisinin cinsel birlesmede siddetli oldugunu ve kendisi gibi kisilerden biri oldugunu aciklayan dogal bir Turkce karsilikla degistirin."
+    }
+  ]
+}

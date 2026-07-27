@@ -1,0 +1,83 @@
+{
+  "verdict": "repair",
+  "summary": "Yanıtın genel dal ayrımları sağlamdır; ancak B002'de kalıba bağlı uzunluk anlamı dalın bütününe yayılmış, B003'te ise tek sayılı gece namazı yanlış biçimde gece namazının son tek bölümü olarak çözümlenmiştir. Bu iki hata ilgili yayın alanlarında dar ve yüksek güvenli düzeltmeler gerektirir.",
+  "issues": [
+    {
+      "target_ref": "root_001260/B002",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım uzun süre ayakta kalmayı dalın bütün kullanımlarına kurucu özellik olarak yayıyor. Oysa kanıtta uzunluk iki kalıba bağlı kullanımda bulunurken yalın kişi biçimi yalnız namazda ayakta duran ve ibadet eden kişiyi bildiriyor; bu biçim için uzunluk şartı verilmemiştir.",
+      "smallest_correction": "Dal tanımını namazda ayakta ibadet etme ortak paydasına çekin; uzun süreyi yalnız ilgili kalıpların uzmanlaşmış yönü olarak ayırın ve kişi niteliğinde süre şartı eklemeyin."
+    },
+    {
+      "target_ref": "root_001260/B002",
+      "field": "concept_gloss",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Kavram karşılığı, yalnız kulluğa yönelerek uzun süre ayakta kalmayı bütün dalın çekirdeği sayıyor. Kanıttaki yalın kişi biçimi uzunluk bildirmediğinden bu karşılık kalıba bağlı süre anlamını gereksiz biçimde genelleştiriyor.",
+      "smallest_correction": "Kavram karşılığını namazda ayakta ibadet etme çekirdeğiyle sınırlayın; uzun süre ve başka uğraşları bırakma ayrıntılarını yalnız onları bildiren bağlamsal karşılıklarda koruyun."
+    },
+    {
+      "target_ref": "root_001260/B003",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Gerekçe, kanıttaki tek sayılı gece namazının sonunda ayakta yapılan yakarışı gece namazının son tek bölümü diye yeniden kuruyor. Kanıt tekliği namazın niteliği olarak verir; son bölümün tek olduğu yönünde bir çözümleme vermez.",
+      "smallest_correction": "Gerekçedeki gece namazının son tek bölümü anlatımını tek sayılı gece namazının sonunda ayakta yapılan yakarış olarak düzeltin."
+    },
+    {
+      "target_ref": "root_001260/B003",
+      "field": "concept_map",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Tanım ve F002, özel uygulamayı gece namazının son tek bölümündeki yakarış olarak gösteriyor. Kanıt ise tek sayılı gece namazının sonunda ayakta yapılan yakarışı bildirir; namazın son bölümünü ayrı bir tek bölüm olarak tanımlamaz.",
+      "smallest_correction": "Tanımda ve F002'de özel uygulamayı tek sayılı gece namazının sonunda ayakta yapılan yakarış olarak ifade edin; çekirdek ayakta yakarma tanımını değiştirmeyin."
+    },
+    {
+      "target_ref": "root_001260/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Ortak özet, kaynak ayrıntısını gece namazının son tek bölümündeki ayakta yakarış biçiminde aktarıyor. Bu söz dizimi tekliği namazdan alıp onun son bölümüne yükleyerek kaynak iddiasını değiştiriyor.",
+      "smallest_correction": "Ortak özetteki bu ayrıntıyı tek sayılı gece namazının sonunda ayakta yapılan yakarış biçiminde düzeltin."
+    },
+    {
+      "target_ref": "root_001260/B003",
+      "field": "contextual_glosses",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "İlk bağlamsal karşılığın uygulanabilirlik açıklaması özel kullanımı gece namazının son tek bölümüyle sınırlandırıyor. Kanıt böyle bir bölümleme değil, tek sayılı gece namazının sonunda ayakta yakarma bildiriyor.",
+      "smallest_correction": "İlk bağlamsal karşılığı ve uygulanabilirlik açıklamasını tek sayılı gece namazının sonunda ayakta yakarma olarak düzeltin."
+    },
+    {
+      "target_ref": "root_001260/B003",
+      "field": "lexical_glosses",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "lu_009"
+      ],
+      "evidence_conflict": "lu_009 için verilen karşılık, tek sayılı gece namazında ayakta yapılan yakarışı gece namazının son tek bölümüne bağlıyor. Birimin kanıtı namazın kendisini niteler ve son tek bölüm diye ayrı bir birim bildirmez.",
+      "smallest_correction": "lu_009 karşılığını tek sayılı gece namazında, sonunda ayakta yapılan yakarış olarak düzeltin."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "inputs_sha256": "88fd49bd6c1004fb96b7c552e7142ebcfb666378f78992dc8b7826f4addbd372",
+  "verdict": "repair",
+  "summary": "Dal kimlikleri, kapsamlar, kavram haritalari, Turkce karsiliklar ve komsu ayrimlari genel olarak kanitla uyumludur. Ancak B002 ile B005 kaynak sentezleri, sozluklere ozgu ayriliklari ortak bilgi gibi sunarak yayin acisindan gerekli kaynak sinirlarini kaybetmektedir.",
+  "issues": [
+    {
+      "target_ref": "root_001666/B002",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Maqayis wafrayi cummanin altinda, Sihah wafrayi cummadan once ve kulak memesine dek verirken Tahdhib kulaga ulasan wafrayi cumma diye niteler. Yazar bu kaynak ayriligini ortak bir daha uzun sac basamaklarindan ayrilma sonucu icinde eritmis ve kaynak sentezinde acikca gostermemistir.",
+      "smallest_correction": "Ortak ozeti kulak veya kulak memesi hizasina ulasan sac cekirdegiyle sinirla. Maqayis ve Sihah'taki cummadan ayrilma ile Tahdhib'in wafrayi cumma diye nitelemesini, her biri yalniz ilgili sozluge baglanan kaynak ayrintilarinda ayri olarak belirt."
+    },
+    {
+      "target_ref": "root_001666/B005",
+      "field": "source_synthesis",
+      "severity": "major",
+      "confidence": "high",
+      "claim_ids": [
+        "bc_001"
+      ],
+      "evidence_conflict": "Yiyecek sunusunu geri cevirme baglami ile malin eksilmemesi ve kisinin ovulen biri olarak kalmasi aciklamalari Tahdhib'e ozgudur; sesce yakin yanlis soyleyisten kacininma uyarisi ise Sihah'a ozgudur. Common_summary bunlarin tamamini kaynaklarin ortak bildirimi gibi sunmaktadir.",
+      "smallest_correction": "Common_summary alanini iki kaynagin sabit sozu belgeledigi ortak cekirdekle sinirla. Tahdhib'e ozgu geri cevirme baglamini ve iki dilegin aciklamasini bir Tahdhib kaynak ayrintisina, yanlis soyleyis uyarisi ile turetme bilgisini ise ayri bir Sihah kaynak ayrintisina tasi."
+    }
+  ]
+}

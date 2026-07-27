@@ -4,6 +4,7 @@
 import argparse
 import csv
 import json
+import re
 import sqlite3
 import sys
 import unicodedata
@@ -41,6 +42,58 @@ def open_db(path):
 
 def fetch(db, query, values=()):
     return [dict(row) for row in db.execute(query, values)]
+
+
+SHA_RE = re.compile(r"sha=([0-9a-f]+)")
+
+
+def source_refs(value):
+    return [ref.strip() for ref in str(value or "").split(";") if ref.strip()]
+
+
+def source_ref_sha(ref):
+    match = SHA_RE.search(ref or "")
+    return match.group(1) if match else ""
+
+
+def canonical_source_ref(root_id, ref, exact_refs, refs_by_sha):
+    if (root_id, ref) in exact_refs:
+        return ref
+    sha = source_ref_sha(ref)
+    if not sha:
+        return ref
+    candidates = [
+        canonical
+        for canonical_sha, canonical in refs_by_sha.get(root_id, [])
+        if canonical_sha.startswith(sha) or sha.startswith(canonical_sha)
+    ]
+    unique = list(dict.fromkeys(candidates))
+    return unique[0] if len(unique) == 1 else ref
+
+
+def canonicalize_source_ref_fields(rows, sources, fields):
+    exact_refs = {
+        (source.get("root_id", ""), source.get("source_ref", ""))
+        for source in sources
+        if source.get("source_ref") and source.get("source_ref") != "-"
+    }
+    refs_by_sha = defaultdict(list)
+    for source in sources:
+        root_id = source.get("root_id", "")
+        ref = source.get("source_ref", "")
+        sha = source_ref_sha(ref)
+        if root_id and ref and sha:
+            refs_by_sha[root_id].append((sha, ref))
+
+    for row in rows:
+        root_id = row.get("root_id", "")
+        for field in fields:
+            refs = source_refs(row.get(field, ""))
+            if refs:
+                row[field] = ";".join(
+                    canonical_source_ref(root_id, ref, exact_refs, refs_by_sha)
+                    for ref in refs
+                )
 
 
 def tsv_matches(path, target, fields, *, unit_ids=()):
@@ -309,6 +362,12 @@ def main():
         resolved_quran_stem_ar, resolved_quran_tag, origin_corpus
         FROM lexical_unit_senses WHERE root_id IN ({marks})
         ORDER BY root_id, lexical_unit_id""", root_ids)
+    canonicalize_source_ref_fields(branches, sources, ("source_refs",))
+    canonicalize_source_ref_fields(
+        senses,
+        sources,
+        ("source_refs", "branch_source_refs"),
+    )
     links = fetch(furuq, f"""SELECT root_id, branch_id, lexical_unit_id, link_source
         FROM branch_lexical_unit_links WHERE root_id IN ({marks})
         ORDER BY root_id, branch_id, lexical_unit_id""", root_ids)
