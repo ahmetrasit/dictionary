@@ -347,7 +347,9 @@ python3 v2/gloss_generation/workflow.py prepare-all \
 For a production orchestration wave, run input generation once before launching
 workers. After workers are running, slot top-up must select from already staged
 and sealed `input/task.json` files; do not run `prepare` or `prepare-all` in the
-top-up path.
+top-up path. If a root is completed upstream but lacks a staged sealed gloss
+task, record it for the next preparation wave instead of preparing it while
+worker slots are being refilled.
 
 Track state per `<root-envelope>/<locale>`, not merely per root. Different
 pairs may run concurrently within the configured cap. The same pair must never

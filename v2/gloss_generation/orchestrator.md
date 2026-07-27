@@ -120,7 +120,9 @@ For a production orchestration wave, generate the complete available input
 bundle set before launching workers. During active writer orchestration, do not
 run `prepare` or `prepare-all` as part of slot top-up. Top-up only from
 already staged tasks whose `input/task.json` and `controller/writer_task.sha256`
-exist and whose output is not already present.
+exist and whose output is not already present. If a current upstream root is not
+already staged and sealed, record it for the next preparation wave; do not spend
+an active worker slot cycle preparing it inline.
 
 Never infer a missing Turkish entry. A preparation error is deterministic:
 correct a clearly owned prerequisite or park the affected pair with the exact
