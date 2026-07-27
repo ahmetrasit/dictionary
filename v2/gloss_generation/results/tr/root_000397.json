@@ -1,0 +1,399 @@
+{
+  "format": "dictionary-v2-gloss-result-v2",
+  "generated_by": "v2/gloss_generation/workflow.py",
+  "status": "reviewed",
+  "root_envelope_id": "root_000397",
+  "source_language": "tr",
+  "target_language": "tr",
+  "source_entry_status": "reviewed",
+  "writer_mode": "repair",
+  "inputs_sha256": "3379fb0ea3761b1198258372ea0b420463c10c0c99fbbd2aca7b1d619eafd753",
+  "review_inputs_sha256": "4096c408e9a763f25b6352c12c3e627085c6a26dfd35211474761816bc49d6a4",
+  "source_entry": {
+    "path": "v2/work/entry_creation/root_000397/tr/output/root_000397_entry.json",
+    "sha256": "31494680ab4d7e3ffdc62d4c53f6c25d552d44b8af4cdcde2321d497dad52399",
+    "entry_id": "root_000397/tr",
+    "status": "reviewed",
+    "review_verdict": "repair",
+    "validation_status": "admitted_with_warnings",
+    "validation_warnings": [
+      "root_writer fragment validation: Invalid root_writer response in /Users/ahmetrasit/projects/dictionary/v2/work/entry_creation/root_000397/tr/output/root_000397_entry.json:\n- $.branches[0].source_synthesis.source_details[0]: missing required property 'kind'\n- $.branches[0].source_synthesis.source_details[0]: unknown property 'source_id'\n- $.branches[0].source_synthesis.source_details[1]: missing required property 'kind'\n- $.branches[0].source_synthesis.source_details[1]: unknown property 'source_id'\n- $.branches[1].source_synthesis.source_details[0]: missing required property 'kind'\n- $.branches[1].source_synthesis.source_details[0]: unknown property 'source_id'",
+      "root_writer semantic contract validation: $.branches[0].source_synthesis: a claim is dispositioned twice",
+      "root_reviewer task binding validation: Task input digest mismatch for /Users/ahmetrasit/projects/dictionary/v2/work/entry_creation/root_000397/tr/output/root_000397_entry.json: expected 02eae5295708972c7da4a33eee2b94c7487a33aa48234f11c8b2b1746ca94ea6, got 31494680ab4d7e3ffdc62d4c53f6c25d552d44b8af4cdcde2321d497dad52399; prepare tasks again"
+    ]
+  },
+  "source_packet": {
+    "path": "data/output/root_packets/root_000397.json",
+    "sha256": "904dccda941d1d1996538dfcdd185f6e0c2434194a89eb72e42f1427958bbb13"
+  },
+  "writer_task": {
+    "path": "v2/gloss_generation/work/root_000397/tr/repair/input/task.json",
+    "sha256": "62d528e5e02ade224a89ed6e13782d62e4f93790139a0f1f155f23ac251dbd95"
+  },
+  "review_task": {
+    "path": "v2/gloss_generation/work/root_000397/tr/repair/review/input/task.json",
+    "sha256": "4c455c409f5a5d92bfc7788b2614e1952d6a2c24412286f81b6dc017f44e30e7"
+  },
+  "review_response": {
+    "path": "v2/gloss_generation/work/root_000397/tr/repair/review/output/review.json",
+    "sha256": "49c65cd86bd4b84bb3c5ae7ac847b2186f46cd14757b54bb516056cec521dbb6"
+  },
+  "branches": [
+    {
+      "branch_ref": "root_000397/B001",
+      "concept_gloss": {
+        "text": "yakın dostluk ve yoldaşlık",
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003",
+          "F004"
+        ],
+        "error": {
+          "fit": "none",
+          "loses_facet_ids": [],
+          "adds": null,
+          "collision": null,
+          "reason": null
+        }
+      },
+      "contextual_glosses": [
+        {
+          "text": "açık ve özel hâllerde yanında olan dost",
+          "facet_ids": [
+            "F001",
+            "F002"
+          ],
+          "lexical_unit_ids": [
+            "lu_003"
+          ],
+          "error": {
+            "fit": "narrowing",
+            "loses_facet_ids": [
+              "F003",
+              "F004"
+            ],
+            "adds": null,
+            "collision": null,
+            "reason": "Bu gloss yakın dostluk çekirdeğini verir; çok dostlu kişi ve yüce amaçlara benzetmeli bağlılık kullanımlarını söylemez."
+          }
+        },
+        {
+          "text": "çok dostu olan, sık arkadaşlık kuran kimse",
+          "facet_ids": [
+            "F001",
+            "F003"
+          ],
+          "lexical_unit_ids": [
+            "lu_006"
+          ],
+          "error": {
+            "fit": "narrowing",
+            "loses_facet_ids": [
+              "F002",
+              "F004"
+            ],
+            "adds": null,
+            "collision": null,
+            "reason": "Bu gloss çok dostlu kişi kullanımını verir; açık ve özel hâllerde yoldaşlık ile amaç yoldaşlığı kullanımlarını ayrıca söylemez."
+          }
+        },
+        {
+          "text": "yüce amaçlara yoldaş sayılan kimse",
+          "facet_ids": [
+            "F001",
+            "F004"
+          ],
+          "lexical_unit_ids": [
+            "lu_008"
+          ],
+          "error": {
+            "fit": "narrowing",
+            "loses_facet_ids": [
+              "F002",
+              "F003"
+            ],
+            "adds": null,
+            "collision": null,
+            "reason": "Bu gloss benzetmeli amaç yoldaşlığını verir; özel hâllerde yakın dostluk ve çok dostlu kişi kullanımları kalır."
+          }
+        }
+      ],
+      "lexical_glosses": {
+        "lu_001": {
+          "text": "yakın dost, yoldaş",
+          "facet_ids": [
+            "F001",
+            "F002"
+          ],
+          "error": {
+            "fit": "narrowing",
+            "loses_facet_ids": [
+              "F003",
+              "F004"
+            ],
+            "adds": null,
+            "collision": null,
+            "reason": "Bu gloss açık ve özel hâllerdeki yakın dostu verir; çok dostlu kişi ve amaç yoldaşlığı kullanımlarını belirtmez."
+          }
+        },
+        "lu_002": {
+          "text": "sıkı dost, yakın arkadaş",
+          "facet_ids": [
+            "F001",
+            "F002"
+          ],
+          "error": {
+            "fit": "narrowing",
+            "loses_facet_ids": [
+              "F003",
+              "F004"
+            ],
+            "adds": null,
+            "collision": null,
+            "reason": "Bu gloss sıkı dost veya yakın arkadaş kişi adını verir; çok dostlu kişi ve yüce amaçlara benzetmeli bağlılık kullanımları kalır."
+          }
+        },
+        "lu_003": {
+          "text": "içli dışlı yakın dost",
+          "facet_ids": [
+            "F001",
+            "F002"
+          ],
+          "error": {
+            "fit": "narrowing",
+            "loses_facet_ids": [
+              "F003",
+              "F004"
+            ],
+            "adds": null,
+            "collision": null,
+            "reason": "Bu gloss içli dışlı yakın dost kişi adını verir; çok dostlu kişi ve amaç yoldaşlığı kullanımlarını ayrıca taşımaz."
+          }
+        },
+        "lu_004": {
+          "text": "onunla dostluk kurmak",
+          "facet_ids": [
+            "F001",
+            "F002"
+          ],
+          "error": {
+            "fit": "narrowing",
+            "loses_facet_ids": [
+              "F003",
+              "F004"
+            ],
+            "adds": null,
+            "collision": null,
+            "reason": "Bu gloss dostluk kurma eylemini verir; çok dostlu kişi ve yüce amaçlara benzetmeli bağlılık kullanımları kalır."
+          }
+        },
+        "lu_005": {
+          "text": "yakın dostluk kurma",
+          "facet_ids": [
+            "F001",
+            "F002"
+          ],
+          "error": {
+            "fit": "narrowing",
+            "loses_facet_ids": [
+              "F003",
+              "F004"
+            ],
+            "adds": null,
+            "collision": null,
+            "reason": "Bu gloss dostluk kurma adını verir; çok dostlu kişi ve amaç yoldaşlığı kullanımlarını ayrıca taşımaz."
+          }
+        },
+        "lu_006": {
+          "text": "çok dostu olan, sık arkadaşlık kuran kimse",
+          "facet_ids": [
+            "F001",
+            "F003"
+          ],
+          "error": {
+            "fit": "narrowing",
+            "loses_facet_ids": [
+              "F002",
+              "F004"
+            ],
+            "adds": null,
+            "collision": null,
+            "reason": "Bu gloss çok dostlu kişi kullanımını verir; açık ve özel hâllerde yoldaşlık ile amaç yoldaşlığı kullanımları söylenmez."
+          }
+        },
+        "lu_007": {
+          "text": "dostlar, yoldaşlar",
+          "facet_ids": [
+            "F001"
+          ],
+          "error": {
+            "fit": "narrowing",
+            "loses_facet_ids": [
+              "F002",
+              "F003",
+              "F004"
+            ],
+            "adds": null,
+            "collision": null,
+            "reason": "Bu çoğul gloss yalnız dostlar anlamını verir; özel hâllerde yoldaşlık, çok dostlu kişi ve amaç yoldaşlığı ayrıntılarını taşımaz."
+          }
+        },
+        "lu_008": {
+          "text": "yüce amaçlara yoldaş kimse",
+          "facet_ids": [
+            "F001",
+            "F004"
+          ],
+          "error": {
+            "fit": "narrowing",
+            "loses_facet_ids": [
+              "F002",
+              "F003"
+            ],
+            "adds": null,
+            "collision": null,
+            "reason": "Bu gloss benzetmeli amaç yoldaşlığını verir; özel hâllerde yakın dostluk ve çok dostlu kişi kullanımları kalır."
+          }
+        }
+      }
+    },
+    {
+      "branch_ref": "root_000397/B002",
+      "concept_gloss": {
+        "text": "cinsel istekli kadın-erkek arkadaşlığı",
+        "facet_ids": [
+          "F001",
+          "F002",
+          "F003"
+        ],
+        "error": {
+          "fit": "none",
+          "loses_facet_ids": [],
+          "adds": null,
+          "collision": null,
+          "reason": null
+        }
+      },
+      "contextual_glosses": [
+        {
+          "text": "kadınla cinsel istekle görüşen erkek arkadaş",
+          "facet_ids": [
+            "F001",
+            "F002"
+          ],
+          "lexical_unit_ids": [
+            "lu_010",
+            "lu_011"
+          ],
+          "error": {
+            "fit": "narrowing",
+            "loses_facet_ids": [
+              "F003"
+            ],
+            "adds": null,
+            "collision": null,
+            "reason": "Bu gloss erkek arkadaş rolünü verir; kadının bu tür arkadaş edinmesi kullanımını ayrıca söylemez."
+          }
+        },
+        {
+          "text": "cinsel istekle erkek arkadaş edinme",
+          "facet_ids": [
+            "F001",
+            "F002",
+            "F003"
+          ],
+          "lexical_unit_ids": [
+            "lu_012",
+            "lu_013"
+          ],
+          "error": {
+            "fit": "none",
+            "loses_facet_ids": [],
+            "adds": null,
+            "collision": null,
+            "reason": null
+          }
+        }
+      ],
+      "lexical_glosses": {
+        "lu_009": {
+          "text": "kadın köleyle cinsel istekle görüşen erkek arkadaş",
+          "facet_ids": [
+            "F001",
+            "F002"
+          ],
+          "error": {
+            "fit": "narrowing",
+            "loses_facet_ids": [
+              "F003"
+            ],
+            "adds": null,
+            "collision": null,
+            "reason": "Bu gloss cinsel istekli erkek arkadaş rolünü verir; kadının böyle arkadaş edinmesi kullanımını ayrıca belirtmez."
+          }
+        },
+        "lu_010": {
+          "text": "kadınla cinsel istekli beraberlik kuran erkek arkadaş",
+          "facet_ids": [
+            "F001",
+            "F002",
+            "F003"
+          ],
+          "error": {
+            "fit": "none",
+            "loses_facet_ids": [],
+            "adds": null,
+            "collision": null,
+            "reason": null
+          }
+        },
+        "lu_011": {
+          "text": "kadının cinsel istekli erkek arkadaşı",
+          "facet_ids": [
+            "F001",
+            "F002",
+            "F003"
+          ],
+          "error": {
+            "fit": "none",
+            "loses_facet_ids": [],
+            "adds": null,
+            "collision": null,
+            "reason": null
+          }
+        },
+        "lu_012": {
+          "text": "cinsel istekle edinilen erkek arkadaşlar",
+          "facet_ids": [
+            "F001",
+            "F002",
+            "F003"
+          ],
+          "error": {
+            "fit": "none",
+            "loses_facet_ids": [],
+            "adds": null,
+            "collision": null,
+            "reason": null
+          }
+        },
+        "lu_013": {
+          "text": "cinsel istekle erkek arkadaş edinen kadınlar",
+          "facet_ids": [
+            "F001",
+            "F002",
+            "F003"
+          ],
+          "error": {
+            "fit": "none",
+            "loses_facet_ids": [],
+            "adds": null,
+            "collision": null,
+            "reason": null
+          }
+        }
+      }
+    }
+  ]
+}

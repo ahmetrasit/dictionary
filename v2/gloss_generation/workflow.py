@@ -1811,7 +1811,7 @@ def verify_review_task(
         ignore_input_hashes=ignore_input_hashes,
     )
     if (
-        writer_task["inputs_sha256"] != task.get("writer_inputs_sha256")
+        (not ignore_input_hashes and writer_task["inputs_sha256"] != task.get("writer_inputs_sha256"))
         or writer_task["mode"] != task.get("writer_mode")
         or writer_task["root_envelope_id"] != task.get("root_envelope_id")
         or writer_task["target_language"] != task.get("target_language")
@@ -1990,7 +1990,10 @@ def stage_repair_from_review(
         review_task["inputs"]["writer_response"]["path"]
     )
     actual_response_path = resolve_path(writer_task["output"]["path"])
-    if sha256_file(reviewed_copy) != sha256_file(actual_response_path):
+    if (
+        not ignore_input_hashes
+        and sha256_file(reviewed_copy) != sha256_file(actual_response_path)
+    ):
         raise ContractError("Review is not bound to the current writer response")
 
     writer_manifest = writer_task["inputs"]
@@ -2180,6 +2183,7 @@ def stage_editorial_repair(
     actual_response_path = resolve_path(writer_task["output"]["path"])
     if (
         actual_response_path.is_file()
+        and not ignore_input_hashes
         and sha256_file(previous_response_path) != sha256_file(actual_response_path)
     ):
         raise ContractError("Review is not bound to the current writer response")
