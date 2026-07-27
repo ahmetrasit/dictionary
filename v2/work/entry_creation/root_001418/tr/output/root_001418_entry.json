@@ -320,13 +320,29 @@
       },
       "contextual_glosses": [
         {
-          "text": "hızlı",
+          "text": "çok hızlı deve",
           "usage_role": "contextual",
-          "applicability": "Cümlede deve veya at zaten açıkça belirtilmişse doğal bir niteleme olarak kullanılabilir.",
+          "applicability": "Deve bağlamında, aşırı hız ve derisi yırtılacakmış imgesi öne çıktığında kullanılır.",
           "error_profile": {
-            "fit": "narrowing",
-            "preserves": "Deve ve at için ortak olan hız niteliğini korur.",
-            "loses": "Deveye ait aşırı derece ve deri imgesiyle ata ait hafifliği açıkça vermez.",
+            "fit": "none",
+            "preserves": "Deve sınırını, aşırı hız derecesini ve derinin yırtılacakmış imgesini korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F003"
+          ]
+        },
+        {
+          "text": "hızlı ve hafif at",
+          "usage_role": "contextual",
+          "applicability": "At bağlamında hız niteliği hareketin hafifliğiyle birlikte verildiğinde kullanılır.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "At sınırını, hız niteliğini ve hafif hareket unsurunu korur.",
+            "loses": null,
             "adds": null,
             "collision": null
           },
