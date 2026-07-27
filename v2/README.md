@@ -66,26 +66,46 @@ writer output is missing, and Agent B, which reviews the output and applies only
 its own recorded surgical corrections. Do not create script-runner agents,
 per-root controllers, or nested workers.
 
-## Current corpus checkpoint
+## Current Quran-corpus Turkish checkpoint
 
-As of 2026-07-21, the repository contains 140 Turkish schema-v4 entries, all in
-`draft` status. They validate as master records, but most authored fragments were
-created under the earlier input-heavy workflow and then migrated mechanically.
-Schema validity must not be read as proof that an entry was freshly authored by
-the current minimal-input workflow.
+As of 2026-07-27, the Quran-corpus Turkish Agent A/B entry build is complete for
+all 1,679 available Quranic packet envelopes.
+
+The finalized Turkish entry path is `v2/entries/tr/`. It currently contains 850
+promoted Quranic JSON/Markdown pairs, so 829 Quranic packet envelopes still need
+deterministic promotion before the finalized entry directory is complete.
+It also currently contains 357 non-Quranic `furuq` Markdown files; those are
+outside the Quran-corpus count.
+
+The complete reviewed staging outputs live under
+`v2/work/entry_creation/<root>/tr/output/<root>_entry.json`. They are the source
+for promotion, not the finalized production location. For the Quran-corpus scope,
+`v2/work/entry_creation/` currently has:
+
+| Artifact | Count |
+| --- | ---: |
+| Prepared Turkish work roots | 1,679 |
+| Live writer outputs | 1,679 |
+| Agent B review outputs | 1,679 |
+
+The Agent B verdict distribution is 865 `pass`, 560 `repair`, and 254
+`editorial_review`. `editorial_review` is a completed review artifact but remains
+flagged for human judgment under the orchestration contract.
 
 `v2/work/` is resumable local execution state, not master data or production
 provenance. Current root-writer tasks use task format 4 and minimal evidence
-format `dictionary-v2-agent-root-evidence-v5`. V5 carries authoritative
-branch claims separately from optional lexical attestations and includes a
-mechanical bare/collocation profile. Older manifests are historical
-and are ignored; rerunning `create_entry.py` in prepare mode writes the current
-task before any model call.
+format `dictionary-v2-agent-root-evidence-v5`. V5 carries authoritative branch
+claims separately from optional lexical attestations and includes a mechanical
+bare/collocation profile. Older manifests are historical and are ignored;
+rerunning `create_entry.py` in prepare mode writes the current task before any
+model call.
 
 Current production campaigns queue Quran-corpus roots from
 `data/output/root_packets/root_*.json`, not from guessed numeric IDs. The queue
 is sorted by root envelope, packet gaps are skipped, and combined envelopes such
-as `root_000099--root_000100` are processed as one root workflow. Campaign
+as `root_000099--root_000100` are processed as one root workflow. Non-Quranic
+`furuq` packets live separately under `data/output/furuq/root_packets/` and do
+not count toward the Quran-corpus Turkish completion number. Campaign
 orchestration uses only the worker capacity allowed by both the explicit run
 configuration and the runtime. Workers have `SUBAGENTS: forbidden`; they do not
 launch agents or operate root workflows. Agent A writes only when the writer

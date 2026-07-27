@@ -18,6 +18,36 @@ the controller to:
 Do not start from a historical work manifest or invoke the retired branch-writer
 or root-profile-writer prompts.
 
+## Current Quran-corpus Turkish status
+
+As of 2026-07-27, the Quran-corpus Turkish entry build is complete at the
+Agent A/B working-output stage for every available Quranic packet envelope.
+
+| Item | Count |
+| --- | ---: |
+| Quranic packet envelopes in `data/output/root_packets/` | 1,679 |
+| Prepared Turkish work roots in `v2/work/entry_creation/<root>/tr/` | 1,679 |
+| Live writer outputs in `v2/work/entry_creation/<root>/tr/output/` | 1,679 |
+| Agent B review outputs in `v2/work/entry_creation/<root>/tr/review/output/` | 1,679 |
+| Promoted Quranic JSON/Markdown pairs in `v2/entries/tr/` | 850 |
+
+`v2/entries/tr/` is the finalized Turkish entry location for downstream use.
+`v2/work/entry_creation/<root>/tr/output/<root>_entry.json` is the reviewed
+Agent A/B staging output and source of promotion; it is not the finalized
+production path. The current staging set is complete for the 1,679 Quranic
+packet envelopes, while `v2/entries/tr/` still has 829 Quranic packet envelopes
+awaiting promotion to finalized JSON/Markdown pairs.
+`v2/entries/tr/` also currently contains 357 non-Quranic `furuq` Markdown files;
+those are outside the Quran-corpus count.
+
+The completed staging set's Agent B verdicts are 865 `pass`, 560 `repair`, and
+254 `editorial_review`. An `editorial_review` file is a completed reviewer
+artifact, not a missing output, but it remains explicitly flagged for human
+judgment under the orchestration contract.
+
+`v2/gloss_generation/results/tr/` is downstream gloss output. It is not a
+dictionary-entry completion authority.
+
 ## Root packet preparation
 
 Root packet generation is deterministic coordinator work, not agent work. The
@@ -27,9 +57,24 @@ current v4 packet preparation script is:
 python3 scripts/prepare_missing_root_packets.py
 ```
 
-The script enumerates v4 root envelopes from `data/working/furuq_v4.sqlite` as
-1,679 Quranic branch-backed envelopes plus 1,770 non-Quranic `furuq`
-dictionary-backed envelopes. It calls:
+The packet inventory is split by corpus:
+
+- Quranic branch-backed packet envelopes live in `data/output/root_packets/`.
+- Non-Quranic `furuq` packet envelopes live in
+  `data/output/furuq/root_packets/`.
+
+`data/working/furuq_v4.sqlite` has 1,700 distinct Quranic
+`dictionary_entries.root_id` values, but 10 of those do not currently have
+Quranic branch-image evidence and therefore are not packet envelopes:
+`root_000062`, `root_000077`, `root_000207`, `root_000518`, `root_000525`,
+`root_000646`, `root_000667`, `root_000765`, `root_001374`, and
+`root_001584`. The branch-backed Quranic packet scope has 1,690 V4 root IDs,
+represented as 1,679 workflow envelopes because 11 normalized alias pairs are
+composite packages. See
+[`COMPOSITE_ROOT_PACKAGES.md`](COMPOSITE_ROOT_PACKAGES.md) for that lookup
+table.
+
+`scripts/prepare_missing_root_packets.py` calls:
 
 ```sh
 python3 scripts/root_packet.py <root_id>
@@ -37,11 +82,6 @@ python3 scripts/root_packet.py <root_id>
 
 for each missing representative root. `scripts/root_packet.py` skips an
 envelope when its JSON packet already exists, unless `--force` is passed.
-
-The all-v4 completion run using this deterministic script completed with 3,449
-total v4 envelopes, 3,449 existing packet JSON files, 0 failed subprocesses,
-and 0 remaining missing packet JSON files. Re-running the same command is safe
-because existing packet JSONs are skipped.
 
 ## Start an orchestration
 
