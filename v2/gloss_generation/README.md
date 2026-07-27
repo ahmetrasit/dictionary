@@ -1,8 +1,8 @@
 # Multilingual Gloss Generation
 
 This workflow generates compact, independently reviewed target-language gloss
-sets from a validated Turkish source. It does not generate another encyclopedia
-entry.
+sets from a completed Turkish dictionary source. It does not generate another
+encyclopedia entry.
 
 Cold-start read order:
 
@@ -18,6 +18,37 @@ Cold-start read order:
 No model calls have been run by installing this folder. `prepare` and
 `prepare-all` only stage deterministic tasks; the controller uses native
 delegation for linguistic workers.
+
+## Current Turkish status
+
+As of 2026-07-27, Turkish gloss generation is complete for the current
+Quranic-scoped completed dictionary roots:
+
+| Item | Count |
+| --- | ---: |
+| Turkish gloss targets | 1,679 |
+| Reviewed results in `v2/gloss_generation/results/tr/` | 1,679 |
+| Pending Turkish gloss targets | 0 |
+| Extra reviewed Turkish results outside the target set | 0 |
+
+Each reviewed result is stored as:
+
+```text
+v2/gloss_generation/results/tr/<root-envelope>.json
+```
+
+The verified accepted-result schema has `format:
+dictionary-v2-gloss-result-v2`, `status: reviewed`,
+`root_envelope_id: <root-envelope>`, `target_language: tr`, and a non-empty
+`branches` list.
+
+Turkish target membership is counted from completed live upstream work roots,
+where all four artifacts exist: `tasks/root_writer.json`,
+`output/<root-envelope>_entry.json`, `tasks/root_reviewer.json`, and
+`review/output/root_review.json`. Upstream review verdicts are retained as
+metadata and do not gate Turkish gloss admission; `structural_review_required`
+remains excluded. Do not use `entries/tr/` or `v2/entries/tr/` file counts as
+the Turkish gloss target count.
 
 ## Why this workflow was added
 
@@ -126,6 +157,13 @@ incompatibilities that do not prevent compact package construction are preserved
 as source validation warnings instead of redefining upstream completion.
 `structural_review_required` remains parked. The bridge does not assemble,
 render, publish, or write `v2/entries/tr/`.
+
+For the completed Turkish gloss corpus, hash-based validation is not a
+completion authority. If a previously staged task fails only because canonical
+input SHAs changed, use `--ignore-input-hashes` on the controller command being
+run. This waives stale task/input SHA checks only; it does not waive schema,
+branch roster, lexical roster, script policy, repair scope, review verdict, or
+final writer-response binding requirements.
 
 Writer tasks are staged under:
 
@@ -237,8 +275,10 @@ python3 v2/gloss_generation/workflow.py prepare-all \
   --language-set western-muslim-priority
 ```
 
-Preparation validates every source entry and stops on stale or invalid input.
-Generated `work/` and `results/` directories are git-ignored.
+Preparation validates every source entry and stops on invalid input. Generated
+`work/` tasks are resumable orchestration artifacts. Reviewed files under
+`results/<locale>/` are the durable gloss outputs; candidate checkpoints under
+`results/candidates/<locale>/` are not completion artifacts.
 
 ## Deterministic safeguards
 
@@ -247,11 +287,13 @@ Generated `work/` and `results/` directories are git-ignored.
 - A concept gloss must disposition every source facet as represented or lost.
 - Fit enums have mechanically enforced loss/addition/collision requirements.
 - A repair may change only review-named branch fields or lexical units.
-- Every writer, reviewer, repair, and locale input is hash-bound.
+- Every writer, reviewer, repair, and locale input is hash-sealed by default.
 - Controller-owned task seals detect accidental or ordinary worker-side task
   and path rewriting.
-- Canonical prompts, schemas, locale files, rollout configuration, and workflow
-  code are freshness-bound; changing any of them makes staged tasks stale.
+- In strict mode, canonical prompts, schemas, locale files, rollout
+  configuration, and workflow code are freshness-bound; changing any of them
+  makes staged tasks stale. Turkish resume/acceptance may explicitly waive only
+  those stale SHA checks with `--ignore-input-hashes`.
 - Arabic script is permitted only when the locale declares ISO 15924 `Arab`;
   there is no unbound `--ignore-arabic` bypass.
 - A passing independent review must bind the final writer task and byte-exact

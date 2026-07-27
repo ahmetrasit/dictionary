@@ -46,10 +46,13 @@ must not infer worker model, reasoning, service tier, or concurrency settings.
 ## Compact multilingual gloss workflow
 
 Target-language gloss generation is a separate, thinner workflow under
-[`gloss_generation/`](gloss_generation/). It consumes an already validated
-Turkish v2 entry and generates only independently reviewed concept, contextual,
-and lexical translation glosses with per-gloss semantic error profiles. It
-does not recreate the encyclopedia entry or occurrence section.
+[`gloss_generation/`](gloss_generation/). It consumes a completed Turkish
+dictionary source and generates only independently reviewed concept,
+contextual, and lexical translation glosses with per-gloss semantic error
+profiles. For the current Quranic Turkish corpus, that source is the completed
+live upstream root-writer/reviewer output under `v2/work/entry_creation/`, not
+the assembled `v2/entries/tr/` or finalized `entries/tr/` count. It does not
+recreate the encyclopedia entry or occurrence section.
 
 A cold controller must begin with
 [`gloss_generation/RUNBOOK.md`](gloss_generation/RUNBOOK.md), then follow
@@ -93,10 +96,17 @@ Quran-corpus scope, `v2/work/entry_creation/` currently has:
 | Prepared Turkish work roots | 1,679 |
 | Live writer outputs | 1,679 |
 | Agent B review outputs | 1,679 |
+| Reviewed Turkish gloss results in `gloss_generation/results/tr/` | 1,679 |
 
 The Agent B verdict distribution is 865 `pass`, 560 `repair`, and 254
 `editorial_review`. `editorial_review` is a completed review artifact but remains
-flagged for human judgment under the orchestration contract.
+flagged for human judgment under the orchestration contract. That verdict
+distribution is upstream entry-workflow metadata; it does not reduce the
+Turkish gloss target count.
+
+The Turkish gloss output surface is `v2/gloss_generation/results/tr/`. As of
+2026-07-27 it contains 1,679 reviewed result JSON files for the current
+Quranic-scoped completed dictionary roots, with 0 pending Turkish gloss targets.
 
 `v2/work/` is resumable local execution state, not master data or production
 provenance. Current root-writer tasks use task format 4 and minimal evidence

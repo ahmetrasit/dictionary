@@ -13,6 +13,13 @@ also boundary safeguards: they help workers avoid collapsing nearby Arabic
 branches into one target-language gloss without an explicit collision or reason
 note.
 
+Current Turkish status as of 2026-07-27: the Quranic-scoped Turkish gloss target
+set is 1,679 completed live upstream dictionary sources, and
+`v2/gloss_generation/results/tr/` contains 1,679 reviewed results. Pending
+Turkish gloss targets: 0. Count Turkish gloss scope from completed live
+root-writer/reviewer work roots, not from `entries/tr/` or assembled
+`v2/entries/tr/`.
+
 ## Required run configuration
 
 Before launching workers, establish:
@@ -34,7 +41,9 @@ The controller alone:
 - enumerates roots/locales and records state;
 - runs `workflow.py` preparation, validation, review staging, repair staging,
   acceptance, and storage commands;
-- checks hashes, paths, exit codes, and existing artifacts;
+- checks paths, exit codes, existing artifacts, schemas, and rosters; applies
+  strict hash checks unless the current Turkish run explicitly uses
+  `--ignore-input-hashes` for SHA-only drift;
 - enforces one repair and one rebound-review limit unless an explicit
   human/controller editorial repair override is granted;
 - reports every root/locale pair as reviewed or parked.
@@ -126,7 +135,10 @@ an active worker slot cycle preparing it inline.
 
 Never infer a missing Turkish entry. A preparation error is deterministic:
 correct a clearly owned prerequisite or park the affected pair with the exact
-diagnostic. Do not send malformed or stale evidence to a writer.
+diagnostic. Do not send malformed evidence to a writer. In a hash-waived
+Turkish run, stale SHA-only task drift is handled by the controller with
+`--ignore-input-hashes`; do not treat it as a missing entry or ask a worker to
+rewrite task seals.
 
 ## 2. Run or resume the writer
 
@@ -134,11 +146,13 @@ For each staged writer task, delegate only its `input/instructions.md`. The
 worker reads only the files named there and writes only the declared
 `output/glosses.json`.
 
-If that output already exists, run its task's exact validation command before
-launching a worker. Reuse it only on exit zero. If invalid and the retained
-writer exists, return the exact error to that writer. After process resumption,
-start at most one continuation bound to the current staged task and existing
-output. Never run competing writers for one root/locale.
+If that output already exists, run its task's validation command before
+launching a worker. In a hash-waived Turkish run, the controller appends
+`--ignore-input-hashes` for SHA-only drift. Reuse the output only on exit zero.
+If invalid and the retained writer exists, return the exact error to that
+writer. After process resumption, start at most one continuation bound to the
+current staged task and existing output. Never run competing writers for one
+root/locale.
 
 After the writer returns, the controller runs:
 
@@ -228,6 +242,10 @@ reviewed result:
 python3 v2/gloss_generation/workflow.py accept \
   <final-writer-task> <passing-review-task>
 ```
+
+If the Turkish run is explicitly hash-waived, append
+`--ignore-input-hashes`. Acceptance still requires a `pass` review bound to the
+same writer task and byte-exact writer response.
 
 The result is written to:
 

@@ -26,9 +26,18 @@ v2/gloss_generation/results/<locale>/<root-envelope>.json
 ```
 
 It contains concept, contextual, and lexical glosses with per-gloss semantic
-fit/error profiles. It remains hash-bound to the Turkish source entry, source
+fit/error profiles. Default commands hash-seal the Turkish source entry, source
 packet, semantic package, prompts, locale policy, schemas, and independent
-review.
+review. For the completed Turkish corpus, stale input SHAs are not a completion
+authority: use the explicit `--ignore-input-hashes` flag only for SHA-only
+mismatches while keeping schema, roster, script, repair-scope, verdict, and
+final writer-response binding gates intact.
+
+Current Turkish corpus status: as of 2026-07-27,
+`v2/gloss_generation/results/tr/` contains 1,679 reviewed Turkish gloss result
+JSON files for the current Quranic-scoped completed dictionary roots. The
+verified Turkish target count is 1,679, with 0 pending targets and 0 extra
+accepted Turkish results outside that target set.
 
 ## 2. Read in this order
 
@@ -61,7 +70,7 @@ The workflow has five layers:
 | Gloss writing | one target-language writer | Authors concept, contextual, and lexical gloss candidates with error profiles |
 | Independent review and one repair | fresh reviewer, then retained writer if needed | Produces `pass`, bounded `repair`, or `editorial_review`; prevents self-approval |
 | Editorial repair override | controller, only after explicit authorization | Unparks a rebound non-pass by making bounded surgical edits and sending the result to a fresh review |
-| Deterministic acceptance | `workflow.py` | Verifies hashes, freshness, rosters, facets, repair scope, review binding, and stores the reviewed result |
+| Deterministic acceptance | `workflow.py` | Verifies rosters, facets, repair scope, review binding, and stores the reviewed result; strict mode also verifies hashes and freshness |
 
 This design reuses Arabic semantic analysis and the Turkish semantic entry while
 keeping target-language lexical judgment independent. It avoids the cost and
@@ -121,16 +130,28 @@ python3 -m unittest \
   v2.gloss_generation.tests.test_workflow
 ```
 
-Confirm the requested Turkish source exists:
+Confirm the requested Turkish source exists. For the current Quranic-scoped
+Turkish gloss corpus, the source of truth is the completed live upstream
+entry-creation directory:
+
+```sh
+test -f v2/work/entry_creation/<root-envelope>/tr/tasks/root_writer.json
+test -f v2/work/entry_creation/<root-envelope>/tr/output/<root-envelope>_entry.json
+test -f v2/work/entry_creation/<root-envelope>/tr/tasks/root_reviewer.json
+test -f v2/work/entry_creation/<root-envelope>/tr/review/output/root_review.json
+```
+
+For an assembled-entry fallback run, confirm the assembled Turkish entry
+instead:
 
 ```sh
 test -f v2/entries/tr/<root-envelope>.json
 ```
 
-List available Turkish entries without manufacturing root IDs:
+List available live Turkish sources without manufacturing root IDs:
 
 ```sh
-find v2/entries/tr -maxdepth 1 -name 'root_*.json' -print | sort
+find v2/work/entry_creation -path '*/tr/output/root_*_entry.json' -print | sort
 ```
 
 Confirm a requested locale is in the rollout and has both required files:
@@ -143,6 +164,21 @@ test -f v2/gloss_generation/locale_prompts/<locale>.md
 ```
 
 Do not start a writer if source validation or preparation fails.
+
+### Turkish hash-waiver policy
+
+For the current Turkish corpus, hash-based validation is not the completion
+authority. A stale task/input SHA caused by later workflow, prompt, schema, or
+locale-policy changes does not make an already reviewed Turkish gloss missing.
+When resuming, reviewing, repairing, or accepting previously staged Turkish
+gloss work, append `--ignore-input-hashes` if the stale SHA is the only failing
+gate.
+
+The waiver is narrow. It must not be used to bypass missing files, malformed
+JSON, schema errors, branch or lexical-unit roster mismatches, script-policy
+errors, out-of-scope repairs, non-pass gloss review verdicts, or acceptance
+bindings to a different writer task or writer response. Never edit hashes by
+hand.
 
 ## 6. Run one root and locale
 
@@ -366,10 +402,13 @@ native or expert sampling.
 
 ## 9. Resume safely
 
-Generated `work/` and `results/` are git-ignored but intentionally resumable.
+Generated `work/` tasks are intentionally resumable. Reviewed outputs under
+`results/<locale>/` are durable gloss results; candidate checkpoints under
+`results/candidates/<locale>/` are resumable but are not completion artifacts.
 On resume:
 
-1. rerun the same `prepare` command to refresh canonical task inputs;
+1. run `prepare` or `prepare-all` once only when starting a new preparation
+   wave or intentionally refreshing the compact package;
 2. validate any existing writer output before launching a writer;
 3. prepare the review only after writer validation;
 4. validate any existing review before launching a reviewer;
@@ -377,10 +416,11 @@ On resume:
 6. rerun `accept` for a passing, matching pair—acceptance is idempotent when
    the existing result is byte-identical.
 
-Canonical changes to `workflow.py`, rollout policy, locale packs, locale
-prompts, shared prompts, or schemas intentionally make older tasks stale.
-Restaging creates the new task hash. An old output must be corrected or
-regenerated against that new task; never edit hashes manually.
+In strict mode, canonical changes to `workflow.py`, rollout policy, locale
+packs, locale prompts, shared prompts, or schemas make older tasks stale.
+For the current Turkish corpus, stale SHA-only mismatches may instead be
+waived with `--ignore-input-hashes`. Restage only when the compact package
+must change or a structural gate fails; never edit hashes manually.
 
 Do not infer completion from a filename, worker message, or prior run note.
 Only deterministic validation plus `status: reviewed` in the accepted result
@@ -392,9 +432,9 @@ is terminal success.
 |---|---|
 | Missing or invalid Turkish entry/packet | Controller parks or repairs the upstream deterministic prerequisite; do not launch a gloss writer |
 | Missing locale JSON or locale prompt | Controller fixes rollout/configuration; do not bypass locale validation |
-| Canonical digest or task-seal mismatch | Controller restages; worker must not rewrite task files or seals |
-| Writer response schema, roster, facet, script, or hash error | Return exact error to the same writer for in-place output correction |
-| Review response schema or hash error | Return exact error to that reviewer; do not reinterpret verdict |
+| Canonical digest or task-seal mismatch | Strict mode restages; Turkish hash-waived resume may use `--ignore-input-hashes` for SHA-only drift; worker must not rewrite task files or seals |
+| Writer response schema, roster, facet, or script error | Return exact error to the same writer for in-place output correction |
+| Review response schema error | Return exact error to that reviewer; do not reinterpret verdict |
 | Initial semantic `repair` | Retained writer gets one generated bounded repair task |
 | Rebound non-pass | Park; do not create a second repair |
 | `editorial_review` | Human decision required; never auto-accept |
@@ -406,7 +446,9 @@ The controller never manually patches worker-authored JSON to make a gate pass.
 
 A `<root-envelope>/<locale>` pair is complete only when:
 
-- the current writer task and canonical dependencies validate;
+- the current writer task validates structurally; strict runs also require
+  canonical dependency hashes to validate, while Turkish hash-waived runs waive
+  only stale SHA checks;
 - the writer response matches the exact branch and lexical-unit rosters;
 - every concept and lexical gloss accounts for its applicable facets;
 - script policy and every fit/error profile pass;

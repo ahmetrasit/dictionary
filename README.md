@@ -29,6 +29,7 @@ Agent A/B working-output stage for every available Quranic packet envelope.
 | Prepared Turkish work roots in `v2/work/entry_creation/<root>/tr/` | 1,679 |
 | Live writer outputs in `v2/work/entry_creation/<root>/tr/output/` | 1,679 |
 | Agent B review outputs in `v2/work/entry_creation/<root>/tr/review/output/` | 1,679 |
+| Reviewed Turkish gloss results in `v2/gloss_generation/results/tr/` | 1,679 |
 | Final Quranic JSON entries in `entries/tr/` | 850 |
 
 `entries/tr/` is the finalized Turkish JSON location for downstream use. It
@@ -58,8 +59,11 @@ The completed staging set's Agent B verdicts are 865 `pass`, 560 `repair`, and
 artifact, not a missing output, but it remains explicitly flagged for human
 judgment under the orchestration contract.
 
-`v2/gloss_generation/results/tr/` is downstream gloss output. It is not a
-dictionary-entry completion authority.
+`v2/gloss_generation/results/tr/` is the reviewed Turkish gloss output surface.
+As of 2026-07-27 it is complete for the current Quranic-scoped Turkish gloss
+target set: 1,679 accepted result JSON files, 0 pending target roots, and 0
+extra accepted files outside that target set. These files are downstream gloss
+results, not dictionary-entry completion authority.
 
 ## Root packet preparation
 
