@@ -68,19 +68,25 @@ per-root controllers, or nested workers.
 
 ## Current Quran-corpus Turkish checkpoint
 
-As of 2026-07-27, the Quran-corpus Turkish Agent A/B entry build is complete for
-all 1,679 available Quranic packet envelopes.
+As of 2026-07-27, the Quran-corpus Turkish Agent A/B entry build is complete
+for all 1,679 available Quranic packet envelopes.
 
-The finalized Turkish entry path is `v2/entries/tr/`. It currently contains 850
-promoted Quranic JSON/Markdown pairs, so 829 Quranic packet envelopes still need
-deterministic promotion before the finalized entry directory is complete.
-It also currently contains 357 non-Quranic `furuq` Markdown files; those are
-outside the Quran-corpus count.
+The finalized Turkish entry path is `entries/tr/`. It contains only final
+Quran-corpus JSON files plus `manifest.json`; no Markdown, work artifacts,
+gloss-generation outputs, or non-Quranic `furuq` roots belong there. It
+currently contains 850 final Quranic JSON entries, so 829 Quranic packet
+envelopes still need deterministic finalization and promotion before the root
+final surface is complete.
+
+`v2/entries/tr/` is the v2 assembly/rendering area. It currently contains the
+850 Quranic JSON/Markdown pairs that feed `entries/tr/`, plus 357 non-Quranic
+`furuq` Markdown files that are outside the Quran-corpus count and are not
+promoted into the root-level final surface.
 
 The complete reviewed staging outputs live under
 `v2/work/entry_creation/<root>/tr/output/<root>_entry.json`. They are the source
-for promotion, not the finalized production location. For the Quran-corpus scope,
-`v2/work/entry_creation/` currently has:
+for deterministic assembly, not the finalized production location. For the
+Quran-corpus scope, `v2/work/entry_creation/` currently has:
 
 | Artifact | Count |
 | --- | ---: |
@@ -203,12 +209,26 @@ writer output unchanged for `pass` or applies only its recorded surgical
 corrections for `repair`. Agent A is never called for repair, and the corrected
 output receives no second review. Structural/schema validation follows each
 authored output. Assembly into `v2/entries/<language>/` is separate downstream
-work.
+work. Promotion from `v2/entries/<language>/` into root-level
+`entries/<language>/` is the final JSON-only publication step for downstream
+consumers.
+
+Promote finalized Quran-corpus JSON entries with:
+
+```sh
+python3 v2/scripts/promote_final_entries.py --language tr
+python3 v2/scripts/promote_final_entries.py --language tr --check
+```
+
+Use `--require-complete` only when the language is expected to have every
+Quranic packet envelope finalized. The promoter writes
+`entries/<language>/manifest.json`, refuses non-Quranic or non-packet roots, and
+prunes stale root JSON files from the destination by default.
 
 Export all validated entries as deterministic, one-entry-per-line JSONL:
 
 ```sh
-python3 v2/scripts/export_jsonl.py --language tr
+python3 v2/scripts/export_jsonl.py --language tr --entries-dir entries/tr
 ```
 
 Every line is one complete schema-v4 entry. The exporter validates all source
@@ -217,16 +237,19 @@ bindings and rejects duplicate entry IDs or mixed languages before writing.
 Project one validated entry without exposing unrelated master fields:
 
 ```sh
-python3 v2/scripts/project_entry.py v2/entries/tr/root_000154.json \
+python3 v2/scripts/project_entry.py entries/tr/root_000154.json \
   --projection user_dictionary
 ```
 
 Export a bounded projection for the whole language corpus:
 
 ```sh
-python3 v2/scripts/export_jsonl.py --language tr --projection translation_agent
-python3 v2/scripts/export_jsonl.py --language tr --projection user_dictionary
-python3 v2/scripts/export_jsonl.py --language tr --projection scholar_view
+python3 v2/scripts/export_jsonl.py --language tr --entries-dir entries/tr \
+  --projection translation_agent
+python3 v2/scripts/export_jsonl.py --language tr --entries-dir entries/tr \
+  --projection user_dictionary
+python3 v2/scripts/export_jsonl.py --language tr --entries-dir entries/tr \
+  --projection scholar_view
 ```
 
 Shared Arabic evidence is reused across target languages. A new target language

@@ -9,6 +9,7 @@ import json
 import re
 import sqlite3
 import sys
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -176,6 +177,11 @@ def sha256_file(path: Path) -> str:
         for chunk in iter(lambda: handle.read(1024 * 1024), b""):
             digest.update(chunk)
     return digest.hexdigest()
+
+
+@lru_cache(maxsize=4)
+def sha256_readonly_database(path: str) -> str:
+    return sha256_file(Path(path))
 
 
 def project_path(relative: str) -> Path:
@@ -975,7 +981,7 @@ def validate_entry(
         )
     if not furuq_path.is_file():
         raise ContractError(f"Missing Furuq database: {furuq_path}")
-    furuq_digest = sha256_file(furuq_path)
+    furuq_digest = sha256_readonly_database(str(furuq_path))
     if entry["provenance"]["furuq_sha256"] != furuq_digest:
         raise ContractError(
             "Furuq digest mismatch: "

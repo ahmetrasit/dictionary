@@ -227,6 +227,31 @@ publication may consume the completed writer output later. They are
 deterministic downstream operations and must not be mixed into the definition
 of whether Agent A and Agent B completed their work.
 
+The finalized dictionary-entry surface for downstream consumers is root-level
+and JSON-only:
+
+```text
+entries/<language>/<root_envelope_id>.json
+entries/<language>/manifest.json
+```
+
+`v2/entries/<language>/` remains the v2 assembly/rendering area and may contain
+JSON plus Markdown. It is not the final consumer-facing directory. After a
+language's v2 entries are assembled and validated, promote only Quran-corpus
+final JSON files with:
+
+```sh
+python3 v2/scripts/promote_final_entries.py --language <language>
+python3 v2/scripts/promote_final_entries.py --language <language> --check
+```
+
+Use `--require-complete` only when the language is expected to have every
+Quranic packet envelope finalized. The promoter writes the manifest, refuses
+non-Quranic or non-packet roots, and prunes stale `root_*.json` files from the
+destination by default. Future languages must use the same
+`entries/<language>/` final JSON surface after their language-specific agent
+pass and deterministic assembly are complete.
+
 A separate publication-readiness report may use the legacy audit when that
 downstream question is explicitly requested. Label such a report
 `publication readiness`, never `Agent A/B workflow completion`.

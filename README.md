@@ -29,16 +29,29 @@ Agent A/B working-output stage for every available Quranic packet envelope.
 | Prepared Turkish work roots in `v2/work/entry_creation/<root>/tr/` | 1,679 |
 | Live writer outputs in `v2/work/entry_creation/<root>/tr/output/` | 1,679 |
 | Agent B review outputs in `v2/work/entry_creation/<root>/tr/review/output/` | 1,679 |
-| Promoted Quranic JSON/Markdown pairs in `v2/entries/tr/` | 850 |
+| Final Quranic JSON entries in `entries/tr/` | 850 |
 
-`v2/entries/tr/` is the finalized Turkish entry location for downstream use.
+`entries/tr/` is the finalized Turkish JSON location for downstream use. It
+contains only final Quran-corpus JSON files plus `manifest.json`; it must not
+contain Markdown, work artifacts, gloss-generation outputs, or non-Quranic
+`furuq` roots.
+
 `v2/work/entry_creation/<root>/tr/output/<root>_entry.json` is the reviewed
-Agent A/B staging output and source of promotion; it is not the finalized
-production path. The current staging set is complete for the 1,679 Quranic
-packet envelopes, while `v2/entries/tr/` still has 829 Quranic packet envelopes
-awaiting promotion to finalized JSON/Markdown pairs.
-`v2/entries/tr/` also currently contains 357 non-Quranic `furuq` Markdown files;
-those are outside the Quran-corpus count.
+Agent A/B staging output and source of deterministic assembly. It is not the
+finalized production path. `v2/entries/tr/` is the v2 assembly/rendering area
+and may contain JSON plus Markdown. The root-level final surface is generated
+from its validated Quranic JSON files with:
+
+```sh
+python3 v2/scripts/promote_final_entries.py --language tr
+python3 v2/scripts/promote_final_entries.py --language tr --check
+```
+
+The current staging set is complete for the 1,679 Quranic packet envelopes,
+while `entries/tr/` still has 829 Quranic packet envelopes awaiting
+finalization into root-level JSON. `v2/entries/tr/` also currently contains 357
+non-Quranic `furuq` Markdown files; those are outside the Quran-corpus count and
+are not promoted into `entries/tr/`.
 
 The completed staging set's Agent B verdicts are 865 `pass`, 560 `repair`, and
 254 `editorial_review`. An `editorial_review` file is a completed reviewer
