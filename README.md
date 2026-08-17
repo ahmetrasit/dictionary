@@ -1,5 +1,37 @@
 # Dictionary
 
+## Agent root lookup quickstart
+
+If you are a chat or coding agent asked to "check my dictionary repo" for an
+Arabic root, do not start by searching the full `data/output/root_packets/`
+directory. The root packets are large and will waste context.
+
+Use the static agent access layer instead:
+
+1. Open `public/agent/START_HERE.md` in a local checkout, or after GitHub Pages
+   is enabled open `https://ahmetrasit.github.io/dictionary/agent/START_HERE.md`.
+2. Resolve exact Arabic forms or root IDs through `public/agent/aliases.min.json`.
+3. Open the compact card at `public/agent/root/<root_id>/card.md`.
+4. Open `public/agent/root/<root_id>/branches.json` only when branch evidence is
+   needed.
+5. Open `public/agent/root/<root_id>/occurrences.compact.json` when Quranic usage
+   is needed.
+6. Open the full packet only after the compact card, selected branches, and
+   compact occurrences are insufficient.
+
+Arabic-script root identity and opaque `root_...` IDs are authoritative. ASCII
+or Latin aliases are lookup candidates only; if an alias returns multiple
+candidates, inspect every candidate card before analysis.
+
+Build the static access layer with:
+
+```sh
+python3 scripts/build_agent_pages.py
+```
+
+See [docs/agent_static_pages.md](docs/agent_static_pages.md) and
+[AGENTS.md](AGENTS.md) for the full access contract.
+
 ## Current production workflow
 
 Current encyclopedia entry development and production use `v2/`. Legacy
