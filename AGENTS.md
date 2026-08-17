@@ -17,22 +17,22 @@ first.
 1. Open `https://ahmetrasit.github.io/dictionary/agent/START_HERE.md`.
    In a local-only environment, build with `python3 scripts/build_agent_pages.py`
    and then open `public/agent/START_HERE.md`.
-2. Resolve root IDs through `public/agent/aliases.index.min.json` shards, or
-   `public/agent/aliases.min.json` when whole-file search is available.
-   For Arabic surfaces/stems/lemmas or lexical forms, use
-   `public/agent/lookup.index.min.json` shards as candidate recall.
+2. Resolve root IDs through `aliases.index.min.json` shards, or
+   `aliases.min.json` when whole-file search is available. For Arabic
+   surfaces/stems/lemmas or lexical forms, use `lookup.index.min.json` shards as
+   candidate recall. In a local checkout, these paths are under `public/agent/`.
    Examples: `ح م` -> `aliases/by-initial/u062d-u0645.min.json`;
    `أ ت` -> also try folded `aliases/by-initial/u0627-u062a.min.json`;
    `ٱتَّقُ` form lookup -> also try folded
    `lookup/by-initial/u0627-u062a-u0642.min.json`.
-3. Open `public/agent/root/<root_id>/card.md`.
+3. Open `root/<root_id>/card.md`.
 4. If variant strength, source-root provenance, or composite-root membership
-   matters, open `public/agent/root/<root_id>/routes.min.json`.
-5. For branch audit, open `public/agent/root/<root_id>/branches.select.min.json`,
+   matters, open `root/<root_id>/routes.min.json`.
+5. For branch audit, open `root/<root_id>/branches.select.min.json`,
    choose the branch by `branch_image_ar`, `what_is_ar`, and `what_is_not_ar`,
    then open only the selected row's `source` path.
-6. Open `public/agent/root/<root_id>/branches.json` only when QNet branch evidence is needed.
-7. Open `public/agent/root/<root_id>/occurrences.compact.json` when Qur'anic usage is needed.
+6. Open `root/<root_id>/branches.json` only when QNet branch evidence is needed.
+7. Open `root/<root_id>/occurrences.compact.json` when Qur'anic usage is needed.
 8. Open the full packet only after the compact card, selected branches, and compact occurrences are insufficient.
 
 Arabic-script root identity and opaque `root_...` IDs are authoritative. ASCII
@@ -52,4 +52,11 @@ Copy full packets into the Pages artifact only for an intentional heavy build:
 
 ```sh
 python3 scripts/build_agent_pages.py --include-full
+```
+
+Copy global branch/occurrence/concept bulk indexes only for an intentional
+heavy build:
+
+```sh
+python3 scripts/build_agent_pages.py --include-bulk
 ```

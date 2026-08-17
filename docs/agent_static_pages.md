@@ -13,24 +13,28 @@ python3 scripts/build_agent_pages.py
 Default output:
 
 ```text
-public/agent/
-  START_HERE.md
+public/
   index.html
-  manifest.min.json
-  roots.min.json
-  aliases.min.json
-  aliases.index.md
-  aliases.index.min.json
-  aliases/by-initial/<bucket>.min.json
-  lookup.index.min.json
-  lookup/by-initial/<bucket>.min.json
-  root/<root_id>/card.md
-  root/<root_id>/routes.min.json
-  root/<root_id>/branches.select.min.json
-  root/<root_id>/branches.json
-  root/<root_id>/branch/<source_root_id>--<branch_id>.source.json
-  root/<root_id>/occurrences.compact.json
-  root/<root_id>/full.json
+  agent-access.json
+  llms.txt
+  agent/
+    START_HERE.md
+    index.html
+    manifest.min.json
+    roots.min.json
+    aliases.min.json
+    aliases.index.md
+    aliases.index.min.json
+    aliases/by-initial/<bucket>.min.json
+    lookup.index.min.json
+    lookup/by-initial/<bucket>.min.json
+    root/<root_id>/card.md
+    root/<root_id>/routes.min.json
+    root/<root_id>/branches.select.min.json
+    root/<root_id>/branches.json
+    root/<root_id>/branch/<source_root_id>--<branch_id>.source.json
+    root/<root_id>/occurrences.compact.json
+    root/<root_id>/full.json
 ```
 
 The repository root also includes:
@@ -154,9 +158,9 @@ checked against root cards and `routes.min.json`.
 
 ## GitHub Pages
 
-The included Pages workflow builds the compact `public/agent/` surface from
-`main` and uploads it as the Pages artifact. After the branch is merged and
-Pages is configured to use GitHub Actions, the mobile-agent entry point will be:
+The included Pages workflow builds the compact `public/` surface from `main`,
+smoke-tests key files, and uploads it as the Pages artifact. The live
+mobile-agent entry point is:
 
 ```text
 https://ahmetrasit.github.io/dictionary/agent/START_HERE.md
