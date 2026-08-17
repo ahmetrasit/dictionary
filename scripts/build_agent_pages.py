@@ -186,10 +186,10 @@ def root_card(packet: dict[str, Any], rel_root: str, source_path: str, raw_url: 
         f"- Arabic join key: `{join_key}`",
         f"- Source root variants: {', '.join(f'`{item}`' for item in source_roots) or '-'}",
         f"- Full packet source path: `{source_path}`",
-        f"- Full packet raw URL: `{raw_url}`",
-        f"- Static full metadata: `{rel_root}/full.json`",
-        f"- Branch details: `{rel_root}/branches.json`",
-        f"- Compact occurrences: `{rel_root}/occurrences.compact.json`",
+        f"- Full packet raw URL: [{packet_path_name(source_path)}]({raw_url})",
+        "- Static full metadata: [full.json](full.json)",
+        "- Branch details: [branches.json](branches.json)",
+        "- Compact occurrences: [occurrences.compact.json](occurrences.compact.json)",
         "",
         "## Lookup Safety",
         "",
@@ -224,11 +224,16 @@ def root_card(packet: dict[str, Any], rel_root: str, source_path: str, raw_url: 
             "## Retrieval Rule",
             "",
             "If the user query is Latin/ASCII or otherwise ambiguous, inspect `aliases.min.json` candidates",
-            "and compare this card with every candidate card before analysis.",
+            "and compare this card with every candidate card before analysis. If your fetch tool blocks",
+            "constructed URLs, enter cards through linked index pages instead of typing paths.",
             "",
         ]
     )
     return "\n".join(lines)
+
+
+def packet_path_name(source_path: str) -> str:
+    return source_path.rsplit("/", 1)[-1]
 
 
 def add_alias(
@@ -425,6 +430,8 @@ def build(input_dir: Path, output_dir: Path, include_full: bool, raw_base_url: s
         json.dumps(concepts, ensure_ascii=False, separators=(",", ":")) + "\n",
         encoding="utf-8",
     )
+    write_alias_indexes(output_dir, aliases_out)
+    write_root_indexes(output_dir, roots)
     (output_dir / "START_HERE.md").write_text(start_here_text(manifest), encoding="utf-8")
     (output_dir / "index.html").write_text(index_html(manifest), encoding="utf-8")
     (output_dir.parent / "index.html").write_text(
@@ -442,11 +449,14 @@ that need token-efficient root lookup.
 ## Retrieval Ladder
 
 1. Open `manifest.min.json`.
-2. Resolve exact Arabic/root IDs through `aliases.min.json`.
-3. Open the compact card at `root/<root_id>/card.md`.
-4. Open `root/<root_id>/branches.json` only when branch evidence is needed.
-5. Open `root/<root_id>/occurrences.compact.json` when Qur'anic usage is needed.
-6. Open `root/<root_id>/full.json` for full-packet metadata and exact raw URL.
+2. Resolve exact Arabic/root IDs through `aliases.min.json` when your fetch tool can read it.
+3. If `aliases.min.json` truncates, open [alias-index/index.html](alias-index/index.html),
+   choose the matching alias bucket, and follow the visible candidate-card links.
+4. If your fetch tool can construct URLs, open the compact card at `root/<root_id>/card.md`.
+5. If constructed Pages URLs are blocked, open [root-index/index.html](root-index/index.html)
+   and follow the visible links to the correct card.
+6. From the card, follow visible links to `branches.json`, `occurrences.compact.json`,
+   `full.json`, or the raw source packet.
 
 ## Identity Rule
 
@@ -471,6 +481,8 @@ def index_html(manifest: dict[str, Any]) -> str:
   <p>Static, token-efficient access files for agents.</p>
   <ul>
     <li><a href="START_HERE.md">START_HERE.md</a></li>
+    <li><a href="alias-index/index.html">linked alias candidate index</a></li>
+    <li><a href="root-index/index.html">linked root card index</a></li>
     <li><a href="manifest.min.json">manifest.min.json</a></li>
     <li><a href="roots.min.json">roots.min.json</a></li>
     <li><a href="aliases.min.json">aliases.min.json</a></li>
@@ -483,6 +495,153 @@ def index_html(manifest: dict[str, Any]) -> str:
 </body>
 </html>
 """
+
+
+def alias_bucket(alias: str) -> tuple[str, str]:
+    if alias.startswith("root_") and len(alias) >= 8:
+        return ("root_id", alias[:8])
+    first = alias[:1].lower()
+    if not first:
+        return ("other", "empty")
+    if "\u0600" <= first <= "\u06ff":
+        return ("arabic", first)
+    if first.isascii() and first.isalnum():
+        return ("latin", first)
+    return ("symbol", f"U+{ord(first):04X}")
+
+
+def write_alias_indexes(
+    output_dir: Path,
+    aliases: dict[str, list[dict[str, Any]]],
+    shard_size: int = 100,
+) -> None:
+    index_dir = output_dir / "alias-index"
+    index_dir.mkdir(parents=True, exist_ok=True)
+    buckets: dict[tuple[str, str], list[tuple[str, list[dict[str, Any]]]]] = defaultdict(list)
+    for alias, candidates in aliases.items():
+        buckets[alias_bucket(alias)].append((alias, candidates))
+
+    index_links: list[tuple[str, str, int]] = []
+    for bucket_number, (bucket_key, rows) in enumerate(sorted(buckets.items()), start=1):
+        rows = sorted(rows, key=lambda item: item[0])
+        category, key = bucket_key
+        for chunk_number, start in enumerate(range(0, len(rows), shard_size), start=1):
+            chunk = rows[start : start + shard_size]
+            filename = f"bucket-{bucket_number:03d}-{chunk_number:02d}.html"
+            first_alias = chunk[0][0]
+            last_alias = chunk[-1][0]
+            label = f"{category} {key}: {first_alias} to {last_alias}"
+            index_links.append((filename, label, len(chunk)))
+            lines = [
+                "<!doctype html>",
+                '<html lang="en">',
+                '<meta charset="utf-8">',
+                f"<title>Alias Bucket {escape_html(category)} {escape_html(key)}</title>",
+                "<body>",
+                "<main>",
+                f"<h1>Alias Bucket: {escape_html(category)} {escape_html(key)}</h1>",
+                '<p><a href="index.html">Back to alias index</a></p>',
+                "<p>ASCII/Latin aliases are candidates only. Arabic/root IDs remain authoritative.</p>",
+                "<ol>",
+            ]
+            for alias, candidates in chunk:
+                candidate_links = []
+                for candidate in candidates:
+                    root_id = candidate.get("root_id", "")
+                    root_norm = candidate.get("root_norm", "")
+                    scheme = candidate.get("scheme", "")
+                    status = candidate.get("status", "")
+                    candidate_links.append(
+                        f'<a href="../root/{escape_attr(root_id)}/card.md">'
+                        f'<code>{escape_html(root_id)}</code> {escape_html(root_norm)}</a> '
+                        f'[{escape_html(status)}; {escape_html(scheme)}]'
+                    )
+                lines.append(
+                    f"  <li><code>{escape_html(alias)}</code> -> "
+                    + "; ".join(candidate_links)
+                    + "</li>"
+                )
+            lines.extend(["</ol>", "</main>", "</body>", "</html>", ""])
+            (index_dir / filename).write_text("\n".join(lines), encoding="utf-8")
+
+    lines = [
+        "<!doctype html>",
+        '<html lang="en">',
+        '<meta charset="utf-8">',
+        "<title>Dictionary Alias Candidate Index</title>",
+        "<body>",
+        "<main>",
+        "<h1>Dictionary Alias Candidate Index</h1>",
+        "<p>Use this when aliases.min.json is too large or truncated by the fetch tool.</p>",
+        "<p>Pick the bucket matching the first character or root-id prefix, then follow candidate-card links.</p>",
+        "<ol>",
+    ]
+    for filename, label, count in index_links:
+        lines.append(f'  <li><a href="{filename}">{escape_html(label)}</a> ({count})</li>')
+    lines.extend(["</ol>", "</main>", "</body>", "</html>", ""])
+    (index_dir / "index.html").write_text("\n".join(lines), encoding="utf-8")
+
+
+def write_root_indexes(output_dir: Path, roots: list[dict[str, Any]], shard_size: int = 100) -> None:
+    index_dir = output_dir / "root-index"
+    index_dir.mkdir(parents=True, exist_ok=True)
+    roots_sorted = sorted(roots, key=lambda row: row["root_id"])
+    shard_links: list[tuple[str, str]] = []
+    for shard_number, start in enumerate(range(0, len(roots_sorted), shard_size), start=1):
+        shard = roots_sorted[start : start + shard_size]
+        first_id = shard[0]["root_id"]
+        last_id = shard[-1]["root_id"]
+        filename = f"{first_id}-{last_id}.html"
+        shard_links.append((filename, f"{first_id} to {last_id}"))
+        lines = [
+            "<!doctype html>",
+            '<html lang="en">',
+            '<meta charset="utf-8">',
+            f"<title>Root Cards {first_id} to {last_id}</title>",
+            "<body>",
+            "<main>",
+            f"<h1>Root Cards {first_id} to {last_id}</h1>",
+            '<p><a href="index.html">Back to root index</a></p>',
+            "<ol>",
+        ]
+        for root in shard:
+            lines.append(
+                f'  <li><a href="../{root["card"]}"><code>{root["root_id"]}</code> - '
+                f'{root["root_norm"]}</a> '
+                f'({root["branch_count"]} branches, {root["lexical_count"]} lexical units)</li>'
+            )
+        lines.extend(["</ol>", "</main>", "</body>", "</html>", ""])
+        (index_dir / filename).write_text("\n".join(lines), encoding="utf-8")
+
+    lines = [
+        "<!doctype html>",
+        '<html lang="en">',
+        '<meta charset="utf-8">',
+        "<title>Dictionary Root Card Index</title>",
+        "<body>",
+        "<main>",
+        "<h1>Dictionary Root Card Index</h1>",
+        "<p>Use this when a fetch tool can follow links but cannot open constructed Pages URLs.</p>",
+        "<ol>",
+    ]
+    for filename, label in shard_links:
+        lines.append(f'  <li><a href="{filename}">{label}</a></li>')
+    lines.extend(["</ol>", "</main>", "</body>", "</html>", ""])
+    (index_dir / "index.html").write_text("\n".join(lines), encoding="utf-8")
+
+
+def escape_html(value: Any) -> str:
+    return (
+        str(value)
+        .replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
+    )
+
+
+def escape_attr(value: Any) -> str:
+    return escape_html(value).replace("'", "&#39;")
 
 
 def root_index_html(agent_dir_name: str, manifest: dict[str, Any]) -> str:
