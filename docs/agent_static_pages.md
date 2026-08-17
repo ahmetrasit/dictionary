@@ -33,6 +33,16 @@ public/agent/
   root/<root_id>/full.json
 ```
 
+The repository root also includes:
+
+```text
+AGENT_START.md
+agent-access.json
+```
+
+These small committed files point generic agents to the public static access
+layer before they choose a heavier repository traversal path.
+
 In the default compact build, `full.json` is a small metadata file containing
 the exact repository source path and raw GitHub URL for the full packet. Use
 `--include-full` only if you intentionally want the Pages artifact to duplicate
@@ -149,5 +159,5 @@ The included Pages workflow builds the compact `public/agent/` surface from
 Pages is configured to use GitHub Actions, the mobile-agent entry point will be:
 
 ```text
-https://<owner>.github.io/<repo>/agent/START_HERE.md
+https://ahmetrasit.github.io/dictionary/agent/START_HERE.md
 ```

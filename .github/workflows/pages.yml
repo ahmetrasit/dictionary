@@ -27,7 +27,29 @@ jobs:
           python-version: "3.x"
 
       - name: Build agent access files
-        run: python3 scripts/build_agent_pages.py
+        run: python3 scripts/build_agent_pages.py --source-commit "$GITHUB_SHA"
+
+      - name: Smoke test agent access files
+        run: |
+          test -f public/index.html
+          test -f public/agent-access.json
+          test -f public/llms.txt
+          test -f public/agent/START_HERE.md
+          test -f public/agent/manifest.min.json
+          test -f public/agent/aliases.index.min.json
+          test -f public/agent/lookup.index.min.json
+          test -f public/agent/root/root_000001/card.md
+          test -f public/agent/root/root_000001/routes.min.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          manifest = json.loads(Path("public/agent/manifest.min.json").read_text())
+          access = json.loads(Path("public/agent-access.json").read_text())
+          assert manifest["source_commit"]
+          assert access["start_here"].endswith("/agent/START_HERE.md")
+          assert manifest["root_count"] > 1000
+          assert manifest["entrypoints"]["start_here"] == "START_HERE.md"
+          PY
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

@@ -3,6 +3,10 @@
 This repository contains large root packets. Do not begin by searching or
 opening every file in `data/output/root_packets/`.
 
+Canonical public agent entry point:
+
+https://ahmetrasit.github.io/dictionary/agent/START_HERE.md
+
 For root lookup, use the static agent access layer:
 
 If the user says "check my dictionary repo for roots x, y, z", resolve each
@@ -10,7 +14,9 @@ requested root separately through this access layer, open each candidate card,
 and report every candidate root ID inspected. Do not search full root packets
 first.
 
-1. Build or open `public/agent/START_HERE.md`.
+1. Open `https://ahmetrasit.github.io/dictionary/agent/START_HERE.md`.
+   In a local-only environment, build with `python3 scripts/build_agent_pages.py`
+   and then open `public/agent/START_HERE.md`.
 2. Resolve root IDs through `public/agent/aliases.index.min.json` shards, or
    `public/agent/aliases.min.json` when whole-file search is available.
    For Arabic surfaces/stems/lemmas or lexical forms, use

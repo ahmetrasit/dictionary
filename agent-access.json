@@ -1,0 +1,10 @@
+{
+  "name": "dictionary-agent-access",
+  "canonical_base_url": "https://ahmetrasit.github.io/dictionary/",
+  "start_here": "https://ahmetrasit.github.io/dictionary/agent/START_HERE.md",
+  "manifest": "https://ahmetrasit.github.io/dictionary/agent/manifest.min.json",
+  "lookup_help": "https://ahmetrasit.github.io/dictionary/agent/aliases.index.md",
+  "default_task": "For requests like 'check roots x, y, z in my dictionary repo', use start_here, resolve each root through static shards, open candidate root cards, and report every candidate root ID inspected.",
+  "identity_policy": "Arabic-script root identity and opaque root IDs are authoritative. ASCII, Latin, hamza/alif-folded, and weak-letter aliases are candidate recall aids only.",
+  "bulk_policy": "Do not use full root packets as the first lookup surface. Open them only after compact cards, routes, branch selection, and compact occurrences are insufficient."
+}

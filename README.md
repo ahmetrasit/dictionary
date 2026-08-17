@@ -1,5 +1,10 @@
 # Dictionary
 
+Agent root checks start here:
+[https://ahmetrasit.github.io/dictionary/agent/START_HERE.md](https://ahmetrasit.github.io/dictionary/agent/START_HERE.md)
+
+Machine-readable access descriptor: [agent-access.json](agent-access.json)
+
 ## Agent root lookup quickstart
 
 If you are a chat or coding agent asked to "check my dictionary repo" for an
@@ -11,10 +16,13 @@ Use the static agent access layer instead:
 If the request is "check my dictionary repo for roots x, y, z", resolve each
 requested root separately through this access layer, open each candidate card,
 and report every candidate root ID inspected. Do not search full root packets
-first.
+first. Default to the public static access layer:
 
-1. Open `public/agent/START_HERE.md` in a local checkout, or after GitHub Pages
-   is enabled open `https://ahmetrasit.github.io/dictionary/agent/START_HERE.md`.
+[https://ahmetrasit.github.io/dictionary/agent/START_HERE.md](https://ahmetrasit.github.io/dictionary/agent/START_HERE.md)
+
+1. Open the public static entry point above. In a local-only environment, build
+   with `python3 scripts/build_agent_pages.py` and then open
+   `public/agent/START_HERE.md`.
 2. Resolve root IDs through `public/agent/aliases.index.min.json` shards, or
    `public/agent/aliases.min.json` when whole-file search is available. For
    Arabic surfaces/stems/lemmas or lexical forms, use

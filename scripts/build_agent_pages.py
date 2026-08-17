@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import shutil
 from collections import defaultdict
@@ -562,6 +563,7 @@ def build(
     include_full: bool,
     include_bulk: bool,
     raw_base_url: str,
+    source_commit: str,
 ) -> None:
     packets = sorted(input_dir.glob("root_*.json"))
     if not packets:
@@ -825,6 +827,7 @@ def build(
         "occurrence_count": len(occurrences_jsonl),
         "root_alias_count": len(aliases_out),
         "lookup_alias_count": len(lookup_aliases_out),
+        "source_commit": source_commit,
         "identity_policy": "root_id and Arabic root fields are authoritative; ASCII/Latin aliases are candidate lookup aids only.",
         "entrypoints": {
             "start_here": "START_HERE.md",
@@ -883,10 +886,46 @@ def build(
         )
     (output_dir / "START_HERE.md").write_text(start_here_text(manifest), encoding="utf-8")
     (output_dir / "index.html").write_text(index_html(manifest), encoding="utf-8")
+    (output_dir.parent / "agent-access.json").write_text(
+        json.dumps(agent_access_json(manifest), ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    (output_dir.parent / "llms.txt").write_text(llms_text(manifest), encoding="utf-8")
     (output_dir.parent / "index.html").write_text(
         root_index_html(output_dir.name, manifest),
         encoding="utf-8",
     )
+
+
+def agent_access_json(manifest: dict[str, Any]) -> dict[str, Any]:
+    base = "https://ahmetrasit.github.io/dictionary/"
+    return {
+        "name": "dictionary-agent-access",
+        "canonical_base_url": base,
+        "start_here": f"{base}agent/START_HERE.md",
+        "manifest": f"{base}agent/manifest.min.json",
+        "lookup_help": f"{base}agent/aliases.index.md",
+        "source_commit": manifest.get("source_commit", "unknown"),
+        "default_task": "For requests like 'check roots x, y, z in my dictionary repo', use start_here, resolve each root through static shards, open candidate root cards, and report every candidate root ID inspected.",
+        "identity_policy": "Arabic-script root identity and opaque root IDs are authoritative. ASCII, Latin, hamza/alif-folded, and weak-letter aliases are candidate recall aids only.",
+        "bulk_policy": "Do not use full root packets as the first lookup surface. Open them only after compact cards, routes, branch selection, and compact occurrences are insufficient.",
+    }
+
+
+def llms_text(manifest: dict[str, Any]) -> str:
+    return f"""# Dictionary Agent Access
+
+Canonical start URL: https://ahmetrasit.github.io/dictionary/agent/START_HERE.md
+Machine descriptor: https://ahmetrasit.github.io/dictionary/agent-access.json
+
+For requests like "check roots x, y, z in my dictionary repo", use the static
+agent access layer first. Resolve each root through shards, open candidate root
+cards, then use routes, branch selection, occurrences, or full packets only as
+needed.
+
+Root count: {manifest["root_count"]}
+Source commit: {manifest.get("source_commit", "unknown")}
+"""
 
 
 def alias_index_text(alias_index: dict[str, Any], lookup_index: dict[str, Any]) -> str:
@@ -989,6 +1028,7 @@ Branch count: {manifest["branch_count"]}
 Occurrence count: {manifest["occurrence_count"]}
 Root alias count: {manifest["root_alias_count"]}
 Form lookup alias count: {manifest["lookup_alias_count"]}
+Source commit: {manifest["source_commit"]}
 """
 
 
@@ -1055,12 +1095,24 @@ def parse_args() -> argparse.Namespace:
         default="https://raw.githubusercontent.com/ahmetrasit/dictionary/main/data/output/root_packets",
         help="Base URL used in compact builds to point agents to exact full-packet raw files.",
     )
+    parser.add_argument(
+        "--source-commit",
+        default=os.environ.get("SOURCE_COMMIT") or os.environ.get("GITHUB_SHA") or "unknown",
+        help="Source commit SHA recorded in manifest.min.json.",
+    )
     return parser.parse_args()
 
 
 def main() -> None:
     args = parse_args()
-    build(args.input_dir, args.output_dir, args.include_full, args.include_bulk, args.raw_base_url)
+    build(
+        args.input_dir,
+        args.output_dir,
+        args.include_full,
+        args.include_bulk,
+        args.raw_base_url,
+        args.source_commit,
+    )
 
 
 if __name__ == "__main__":
