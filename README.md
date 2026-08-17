@@ -8,25 +8,24 @@ directory. The root packets are large and will waste context.
 
 Use the static agent access layer instead:
 
-1. Open `public/agent/START_HERE.md` in a local checkout, or after GitHub Pages
-   is enabled open `https://ahmetrasit.github.io/dictionary/agent/START_HERE.md`.
-2. Resolve exact Arabic forms or root IDs through `public/agent/aliases.min.json`.
-3. Open the compact card at `public/agent/root/<root_id>/card.md`.
-4. Open `public/agent/root/<root_id>/branches.json` only when branch evidence is
-   needed.
-5. Open `public/agent/root/<root_id>/occurrences.compact.json` when Quranic usage
-   is needed.
-6. Open the full packet only after the compact card, selected branches, and
-   compact occurrences are insufficient.
+1. Open `docs/agent/LOOKUP.md` from raw GitHub or a local checkout. On Pages,
+   open `https://ahmetrasit.github.io/dictionary/agent/LOOKUP.md`.
+2. Follow only visible lookup-bucket links if your fetch tool blocks constructed
+   URLs.
+3. Use the bucket entry to get root identity plus branch gist.
+4. Follow the visible `card.md` or `branches.md` link for grounded detail.
+5. Open the raw source packet only after the compact linked layer is
+   insufficient.
 
 Arabic-script root identity and opaque `root_...` IDs are authoritative. ASCII
-or Latin aliases are lookup candidates only; if an alias returns multiple
-candidates, inspect every candidate card before analysis.
+or Latin aliases are lookup candidates only. If an alias is marked
+`ambiguous`, there is no primary root; compare Arabic evidence before analysis.
 
 Build the static access layer with:
 
 ```sh
-python3 scripts/build_agent_pages.py
+python3 scripts/build_agent_access.py
+python3 scripts/smoke_agent_access.py
 ```
 
 See [docs/agent_static_pages.md](docs/agent_static_pages.md) and

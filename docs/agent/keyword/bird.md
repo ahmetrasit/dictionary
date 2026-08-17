@@ -1,0 +1,28 @@
+# Keyword: bird
+
+Top-ranked branch keyword index only.
+
+- `root_000287` ح ب ر: [card](../root/root_000287/card.md), [branches](../root/root_000287/branches.md)
+- `root_000306` ح ر ر: [card](../root/root_000306/card.md), [branches](../root/root_000306/branches.md)
+- `root_000368` ح و ذ: [card](../root/root_000368/card.md), [branches](../root/root_000368/branches.md)
+- `root_000399` خ ر ب: [card](../root/root_000399/card.md), [branches](../root/root_000399/branches.md)
+- `root_000453` خ ي ط: [card](../root/root_000453/card.md), [branches](../root/root_000453/branches.md)
+- `root_000464` د خ ل: [card](../root/root_000464/card.md), [branches](../root/root_000464/branches.md)
+- `root_000608` ر ه و: [card](../root/root_000608/card.md), [branches](../root/root_000608/branches.md)
+- `root_000631` ز ر ق: [card](../root/root_000631/card.md), [branches](../root/root_000631/branches.md)
+- `root_000728` س ل ح: [card](../root/root_000728/card.md), [branches](../root/root_000728/branches.md)
+- `root_000738` س ل و: [card](../root/root_000738/card.md), [branches](../root/root_000738/branches.md)
+- `root_000762` س و ق: [card](../root/root_000762/card.md), [branches](../root/root_000762/branches.md)
+- `root_000854` ص ر ح: [card](../root/root_000854/card.md), [branches](../root/root_000854/branches.md)
+- `root_000855` ص ر خ: [card](../root/root_000855/card.md), [branches](../root/root_000855/branches.md)
+- `root_000878` ص ل ص ل: [card](../root/root_000878/card.md), [branches](../root/root_000878/branches.md)
+- `root_000962` ط ي ر: [card](../root/root_000962/card.md), [branches](../root/root_000962/branches.md)
+- `root_000967` ظ ل م: [card](../root/root_000967/card.md), [branches](../root/root_000967/branches.md)
+- `root_001060` ع و ر: [card](../root/root_001060/card.md), [branches](../root/root_001060/branches.md)
+- `root_001077` غ ر ب: [card](../root/root_001077/card.md), [branches](../root/root_001077/branches.md)
+- `root_001195` ق ب ر: [card](../root/root_001195/card.md), [branches](../root/root_001195/branches.md)
+- `root_001525` ن ع م: [card](../root/root_001525/card.md), [branches](../root/root_001525/branches.md)
+- `root_001580` ه د د: [card](../root/root_001580/card.md), [branches](../root/root_001580/branches.md)
+- `root_001582` ه د ه د: [card](../root/root_001582/card.md), [branches](../root/root_001582/branches.md)
+- `root_001606` ه و ذ: [card](../root/root_001606/card.md), [branches](../root/root_001606/branches.md)
+- `root_001677` و ق ي: [card](../root/root_001677/card.md), [branches](../root/root_001677/branches.md)
