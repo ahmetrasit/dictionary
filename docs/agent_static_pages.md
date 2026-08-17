@@ -98,7 +98,7 @@ expressions and QAC surface/stem/lemma forms. Form lookup aliases are
 candidate-level recall aids; confirm identity against root cards.
 
 For root aliases, open `by-initial/uXXXX-uYYYY.min.json`, where `XXXX` and
-`YYYY` are the lowercase four-digit Unicode code points of the first two
+`YYYY` are the four-digit Unicode code points of the first two lowercased,
 non-space, non-diacritic query characters. One-character aliases use
 `uXXXX.min.json`.
 
@@ -111,7 +111,6 @@ Examples:
 
 - Root `ح م م`: `aliases/by-initial/u062d-u0645.min.json`
 - Root `أ ت ي`: exact `aliases/by-initial/u0623-u062a.min.json`; folded `aliases/by-initial/u0627-u062a.min.json`
-- Root `ٱ ت ق`: exact `aliases/by-initial/u0671-u062a.min.json`; folded `aliases/by-initial/u0627-u062a.min.json`
 - Weak final query `د ع ي`: inspect weak-letter candidates such as `د ع و` by card comparison.
 - Form `ٱتَّقُ`: exact `lookup/by-initial/u0671-u062a-u0642.min.json`; folded `lookup/by-initial/u0627-u062a-u0642.min.json`
 

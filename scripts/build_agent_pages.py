@@ -248,7 +248,8 @@ def branch_source_record(packet: dict[str, Any], branch: dict[str, Any]) -> dict
 
 def route_note_fields(route_note: str) -> dict[str, str]:
     fields: dict[str, str] = {}
-    for part in route_note.split(";"):
+    normalized = route_note.replace(":", ";")
+    for part in normalized.split(";"):
         part = part.strip()
         if "=" not in part:
             continue
@@ -444,6 +445,41 @@ def add_alias_many(
         add_alias(store, raw_alias, root_id, root_norm, scheme, status, note)
 
 
+def add_root_alias(
+    aliases: dict[str, list[dict[str, Any]]],
+    lookup_aliases: dict[str, list[dict[str, Any]]],
+    raw_alias: str,
+    root_id: str,
+    root_norm: str,
+    scheme: str,
+    status: str,
+    note: str = "",
+) -> None:
+    add_alias(aliases, raw_alias, root_id, root_norm, scheme, status, note)
+    if ARABIC_CHAR_RE.search(text_or_empty(raw_alias)):
+        add_alias(lookup_aliases, raw_alias, root_id, root_norm, scheme, "candidate", note)
+
+
+def add_root_alias_many(
+    aliases: dict[str, list[dict[str, Any]]],
+    lookup_aliases: dict[str, list[dict[str, Any]]],
+    root_aliases: list[tuple[Any, str, str, str]],
+    root_id: str,
+    root_norm: str,
+) -> None:
+    for raw_alias, scheme, status, note in root_aliases:
+        add_root_alias(
+            aliases,
+            lookup_aliases,
+            str(raw_alias),
+            root_id,
+            root_norm,
+            scheme,
+            status,
+            note,
+        )
+
+
 def add_arabic_recall_aliases(
     aliases: dict[str, list[dict[str, Any]]],
     value: str,
@@ -508,9 +544,10 @@ def write_alias_shards(
 
     index = {
         "label": label,
+        "shard_dir": rel_dir.rstrip("/"),
         "alias_count": len(aliases),
         "prefix_len": prefix_len,
-        "bucket_rule": f"Open <rel_dir>/uXXXX...min.json using the first {prefix_len} non-space, non-diacritic query characters. Shorter aliases use the available characters.",
+        "bucket_rule": f"Open {rel_dir.rstrip('/')}/uXXXX...min.json using the first {prefix_len} lowercased, non-space, non-diacritic query characters. Shorter aliases use the available characters.",
         "hamza_alif_rule": "For ء أ إ ؤ ئ آ ا ٱ variants, also try the same bucket after candidate-only folding those letters to ا.",
         "bucket_count": len(bucket_meta),
     }
@@ -605,19 +642,33 @@ def build(
                     [
                         (weak_variant, "source_root_weak_variant", "candidate", "Weak-letter source-root recall alias."),
                         (weak_variant.replace(" ", ""), "source_root_weak_variant_compact", "candidate", "Compact weak-letter source-root recall alias."),
+                        (normalize_arabic(weak_variant), "source_root_weak_variant_normalized", "candidate", "Normalized weak-letter source-root recall alias."),
+                        (compact_arabic(weak_variant), "source_root_weak_variant_normalized_compact", "candidate", "Compact normalized weak-letter source-root recall alias."),
+                        (fold_hamza_alif(weak_variant), "source_root_weak_variant_hamza_alif_folded", "candidate", "Hamza/alif-folded weak-letter source-root recall alias."),
+                        (compact_fold_hamza_alif(weak_variant), "source_root_weak_variant_hamza_alif_folded_compact", "candidate", "Compact hamza/alif-folded weak-letter source-root recall alias."),
                     ]
                 )
-        for raw_alias, scheme, status, note in root_aliases:
-            add_alias_many([aliases, lookup_aliases], str(raw_alias), root_id, root_norm, scheme, status, note)
+        add_root_alias_many(aliases, lookup_aliases, root_aliases, root_id, root_norm)
 
         for weak_variant in weak_root_variants(root_norm):
-            for raw_alias in (weak_variant, weak_variant.replace(" ", "")):
-                add_alias_many(
-                    [aliases, lookup_aliases],
+            for raw_alias, scheme in (
+                (weak_variant, "arabic_weak_variant"),
+                (weak_variant.replace(" ", ""), "arabic_weak_variant_compact"),
+                (normalize_arabic(weak_variant), "arabic_weak_variant_normalized"),
+                (compact_arabic(weak_variant), "arabic_weak_variant_normalized_compact"),
+                (fold_hamza_alif(weak_variant), "arabic_weak_variant_hamza_alif_folded"),
+                (
+                    compact_fold_hamza_alif(weak_variant),
+                    "arabic_weak_variant_hamza_alif_folded_compact",
+                ),
+            ):
+                add_root_alias(
+                    aliases,
+                    lookup_aliases,
                     raw_alias,
                     root_id,
                     root_norm,
-                    "arabic_weak_variant",
+                    scheme,
                     "candidate",
                     "Weak-letter variant for recall only.",
                 )
@@ -848,8 +899,8 @@ context.
 
 1. If the query is already a `root_...` ID, open `root/<root_id>/card.md`.
 2. Otherwise open `aliases.index.min.json`.
-3. For the first two non-space, non-diacritic query characters, compute lowercase
-   Unicode code points in four hex digits. Example: `ح م` -> `u062d-u0645`.
+3. For the first two lowercased, non-space, non-diacritic query characters,
+   compute Unicode code points in four hex digits. Example: `ح م` -> `u062d-u0645`.
 4. Open `aliases/by-initial/uXXXX-uYYYY.min.json`.
 5. For hamza/alif variants (`ء أ إ ؤ ئ آ ا ٱ`), also try the same bucket after
    candidate-only folding those letters to `ا`, then compare plausible cards.
@@ -871,7 +922,6 @@ Examples:
 
 - Root `ح م م` -> `aliases/by-initial/u062d-u0645.min.json`
 - Root `أ ت ي` -> exact `aliases/by-initial/u0623-u062a.min.json`, folded `aliases/by-initial/u0627-u062a.min.json`
-- Root `ٱ ت ق` -> exact `aliases/by-initial/u0671-u062a.min.json`, folded `aliases/by-initial/u0627-u062a.min.json`
 - Root `د ع ي` may be a weak-letter candidate for `د ع و`; compare every candidate card.
 - Form `ٱتَّقُ` -> exact `lookup/by-initial/u0671-u062a-u0642.min.json`, folded `lookup/by-initial/u0627-u062a-u0642.min.json`
 
@@ -922,7 +972,6 @@ recall aids; confirm identity with candidate root cards.
 
 - Root `ح م م`: `aliases/by-initial/u062d-u0645.min.json`
 - Root `أ ت ي`: exact `aliases/by-initial/u0623-u062a.min.json`; folded `aliases/by-initial/u0627-u062a.min.json`
-- Root `ٱ ت ق`: exact `aliases/by-initial/u0671-u062a.min.json`; folded `aliases/by-initial/u0627-u062a.min.json`
 - Weak final query `د ع ي`: inspect weak-letter candidates such as `د ع و` by card comparison.
 - Form `ٱتَّقُ`: exact `lookup/by-initial/u0671-u062a-u0642.min.json`; folded `lookup/by-initial/u0627-u062a-u0642.min.json`
 
