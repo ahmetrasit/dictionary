@@ -1,78 +1,67 @@
 # Static Agent Access Layer
 
-The root packets are the source of truth, but they are too large for mobile
-chat agents to search directly. The static agent access layer publishes small,
-deterministic files that can be served by GitHub Pages or any static host.
+The root packets are the source of truth, but they are too large for mobile chat
+agents to search directly. The static access layer is a committed, raw-GitHub
+friendly mirror under `docs/agent/` and is also deployed to GitHub Pages.
 
 ## Build
 
 ```sh
-python3 scripts/build_agent_pages.py
+python3 scripts/build_agent_access.py
+python3 scripts/smoke_agent_access.py
 ```
 
 Default output:
 
 ```text
-public/agent/
-  START_HERE.md
+docs/
   index.html
-  manifest.min.json
-  roots.min.json
-  aliases.min.json
-  branches.min.jsonl
-  occurrences.min.jsonl
-  concepts.min.json
-  root/<root_id>/card.md
-  root/<root_id>/branches.json
-  root/<root_id>/occurrences.compact.json
-  root/<root_id>/full.json
+  agent/
+    LOOKUP.md
+    START_HERE.md
+    manifest.min.json
+    b/<bucket>.md
+    root/<root_id>/card.md
+    root/<root_id>/branches.md
+    roots/<shard>.md
+    keyword/<shard>.md
+    reports/
 ```
 
-In the default compact build, `full.json` is a small metadata file containing
-the exact repository source path and raw GitHub URL for the full packet. Use
-`--include-full` only if you intentionally want the Pages artifact to duplicate
-all full packet JSON files.
+The Pages workflow uploads `docs/`, so the raw GitHub copy and Pages copy have
+the same path shape.
 
-## Retrieval Ladder
+## Retrieval Contract
 
-Agents should climb this ladder only as needed:
+Use `docs/agent/LOOKUP.md` as the first fetch. It contains literal links to all
+terminal lookup buckets so link-gated agents do not need to construct URLs.
 
-1. `START_HERE.md`
-2. `aliases.min.json`
-3. `root/<root_id>/card.md`
-4. `root/<root_id>/branches.json`
-5. `root/<root_id>/occurrences.compact.json`
-6. `root/<root_id>/full.json`, then the exact raw packet URL if necessary
+Targets:
+
+- <=2 fetches to root identity plus branch gist.
+- <=3 fetches to grounded branch detail.
+- No constructed URL required.
+- Terminal lookup buckets are capped at 15KB.
+- `LOOKUP.md` has a separate 20KB entrypoint budget because it must enumerate
+  all terminal buckets.
 
 ## Identity Policy
 
-The canonical identity is the opaque root envelope ID plus the Arabic root fields
-from the packet:
+Arabic-script roots and opaque `root_...` IDs are authoritative. Latin,
+Turkish-informed, and Buckwalter aliases are candidate-only recall aids.
 
-```json
-{
-  "root_id": "root_000001",
-  "root_norm": "ح م م",
-  "root_join_key": "حمم"
-}
-```
+If an alias collides, the bucket marks it as `ambiguous` and sets no primary
+root. For example, `kalb` and `kalp` must not silently resolve to `ق ل ب`
+because `ك ل ب` is also a real corpus root.
 
-Aliases are not identity. They are lookup aids with status labels:
+## Validation
 
-- `exact`: exact root ID or exact Arabic packet field.
-- `strong`: reversible machine alias, such as Buckwalter root letters.
-- `candidate`: normalized Arabic recall alias; compare all returned cards.
+`scripts/smoke_agent_access.py` reproduces the failure mode that motivated this
+layer:
 
-Loose ASCII aliases should be added only when they are intentionally reviewed.
-They must remain candidate-level because they can erase hamza, weak-letter, and
-doubling distinctions.
+- Pages is not required.
+- Fetching is limited to files linked by the previously fetched Markdown.
+- Constructed paths are rejected.
 
-## GitHub Pages
-
-The included Pages workflow builds the compact `public/agent/` surface from
-`main` and uploads it as the Pages artifact. After the branch is merged and
-Pages is configured to use GitHub Actions, the mobile-agent entry point will be:
-
-```text
-https://<owner>.github.io/<repo>/agent/START_HERE.md
-```
+The smoke cases include `قلب`, `ق ل ب`, `qalb`, `qlb`, `q-l-b`, `ḳ-l-b`,
+`kalb`, `kalp`, and `root_001248`.

@@ -27,7 +27,10 @@ jobs:
           python-version: "3.x"
 
       - name: Build agent access files
-        run: python3 scripts/build_agent_pages.py
+        run: python3 scripts/build_agent_access.py
+
+      - name: Smoke-test agent access files
+        run: python3 scripts/smoke_agent_access.py
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -35,7 +38,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          path: docs
 
   deploy:
     environment:
