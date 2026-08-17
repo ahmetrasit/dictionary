@@ -427,6 +427,10 @@ def build(input_dir: Path, output_dir: Path, include_full: bool, raw_base_url: s
     )
     (output_dir / "START_HERE.md").write_text(start_here_text(manifest), encoding="utf-8")
     (output_dir / "index.html").write_text(index_html(manifest), encoding="utf-8")
+    (output_dir.parent / "index.html").write_text(
+        root_index_html(output_dir.name, manifest),
+        encoding="utf-8",
+    )
 
 
 def start_here_text(manifest: dict[str, Any]) -> str:
@@ -474,6 +478,26 @@ def index_html(manifest: dict[str, Any]) -> str:
     <li><a href="occurrences.min.jsonl">occurrences.min.jsonl</a></li>
     <li><a href="concepts.min.json">concepts.min.json</a></li>
   </ul>
+  <p>Roots: {manifest["root_count"]}; branches: {manifest["branch_count"]}; occurrences: {manifest["occurrence_count"]}.</p>
+</main>
+</body>
+</html>
+"""
+
+
+def root_index_html(agent_dir_name: str, manifest: dict[str, Any]) -> str:
+    agent_dir = agent_dir_name.rstrip("/") or "agent"
+    return f"""<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="0; url={agent_dir}/">
+<title>Dictionary</title>
+<body>
+<main>
+  <h1>Dictionary</h1>
+  <p>This GitHub Pages site is optimized for agent root lookup.</p>
+  <p><a href="{agent_dir}/">Open the agent gateway</a></p>
+  <p><a href="{agent_dir}/START_HERE.md">Open START_HERE.md</a></p>
   <p>Roots: {manifest["root_count"]}; branches: {manifest["branch_count"]}; occurrences: {manifest["occurrence_count"]}.</p>
 </main>
 </body>
