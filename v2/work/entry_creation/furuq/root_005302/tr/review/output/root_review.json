@@ -1,0 +1,24 @@
+{
+  "verdict": "repair",
+  "summary": "Üç dalın anlam sınırları ve komşu ayrımları kanıtla uyumlu. İki dalın kaynak özetinde tanıklığın ayırt edici ayrıntısını ve tek kaynak dayanağını görünür kılmak için sınırlı düzeltme gerekir.",
+  "issues": [
+    {
+      "target_ref": "root_005302/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": ["bc_001"],
+      "evidence_conflict": "Kaynak ifadesi güçsüz deve yanında kadının özellikle ayağa kalkarken gevşek davranmasını örnekler; mevcut ortak özet bu ayırt edici koşulu yalnızca genel bir insan betimlemesi olarak aktarır.",
+      "smallest_correction": "Ortak özetin sonundaki genel insan ve deve betimlemesi sözünü, devenin güçsüzlüğü ile kadının ayağa kalkarkenki gevşekliğini açıkça belirten sözle değiştir; diğer alanları koru."
+    },
+    {
+      "target_ref": "root_005302/B003",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": ["bc_001"],
+      "evidence_conflict": "Gemi barınağı anlamı yalnızca bir sözlük tanıklığına dayanır; ortak özet bunu tek tanıklık olarak belirtmez, bc_001 ile bağlı kaynak ayrıntısı ise yalnızca türetmeyi anlatıp aynı tanıklıktaki yer anlamını açıkça belirtmez.",
+      "smallest_correction": "Ortak özette tek sözlük tanıklığı olduğunu belirt; bc_001 değerini yalnızca kaynak ayrıntısı satırında tutarak o satırın özetine gemi barınağı anlamını türetmeyle birlikte ekle."
+    }
+  ]
+}

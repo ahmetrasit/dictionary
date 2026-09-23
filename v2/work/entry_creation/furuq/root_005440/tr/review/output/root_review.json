@@ -1,0 +1,33 @@
+{
+  "verdict": "repair",
+  "summary": "On dokuz kolun anlam sınırları genel olarak kaynakla uyumludur. İlahi özel ad ve Arafat bölgesindeki yer adı, söz ve yakınlık bağı kolundan ayrı tutulmuştur. B006 ve B007 kollarında kaynakta açıkça belirtilen dil ve dönem bilgisi üç sınırlı alanda belirsizleştiği için dar düzeltmeler kaydedilmiştir.",
+  "issues": [
+    {
+      "target_ref": "root_005440/B006",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": ["bc_001"],
+      "evidence_conflict": "bc_001, ilahi adın bir biçimini açıkça İbranice olarak tanımlar. common_summary bunu yalnız ayrı bir dil geleneği diye anarak özgül dil bilgisini kaybediyor.",
+      "smallest_correction": "common_summary içindeki son bölümü, bir tanıklığın ad biçimini İbranice olarak belirttiğini söyleyecek kadar dar biçimde değiştir."
+    },
+    {
+      "target_ref": "root_005440/B007",
+      "field": "concept_map",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": ["bc_001"],
+      "evidence_conflict": "bc_001, bilicilere bildirim geldiği inancını İslam öncesi toplumla sınırlar. definition alanındaki eski dönem ifadesi bu tarihsel sınırı belirsiz bırakıyor.",
+      "smallest_correction": "Yalnız definition alanındaki Eski dönemde sözünü İslam öncesi dönemde olarak değiştir."
+    },
+    {
+      "target_ref": "root_005440/B007",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": ["bc_001"],
+      "evidence_conflict": "bc_001, bildirimin bilicilere geldiğine ilişkin inancı İslam öncesi topluma bağlar. common_summary içindeki eski inanç sözü bu kaynak sınırlamasını belirtmiyor.",
+      "smallest_correction": "common_summary içindeki eski inanca sözünü İslam öncesi döneme ait inanca olarak değiştir; diğer özet bilgisini koru."
+    }
+  ]
+}

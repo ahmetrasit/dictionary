@@ -1,0 +1,265 @@
+{
+  "inputs_sha256": "cd98ff133f86b7cdcaf73e4c77e056a04d69fd49fc6bda9418414e86dd0330b0",
+  "artifact_format": "dictionary-v2-root-entry-draft-v1",
+  "generated_by": "v2/scripts/enrich_furuq_writer.py",
+  "root_envelope_id": "root_005406",
+  "language": "tr",
+  "branches": [
+    {
+      "branch_ref": "root_005406/B001",
+      "identity_judgment": {
+        "status": "accepted",
+        "rationale": "Kaynak ifadesi, esir olan kişiyi ve bir kimsenin esarette yakalanip orada takili kalmasini birlikte verir. Verilen dal cercevesi bu cekirdegi dogru tasir; anlam yalnizca genel sikisma veya genel tutukluluk degil, esirlik baglaminda yakalanmis ve o halde kalmis olma durumudur.",
+        "boundary_note": "Dal, esaret ve ona takili kalma ile sinirlidir; her turlu kapanma, engellenme veya sahiplenme anlamina genisletilmez."
+      },
+      "lexicalization_scope": {
+        "branch_kind": "unresolved",
+        "note": "Mekanik profil dal turunu unresolved verir; bu nedenle tanim, kanitlanan esirlik cercevesini korur ve yalniz bir yalın kok genellemesi varsaymaz."
+      },
+      "concept_map": {
+        "definition": "Bir kisinin esir konumunda bulunmasi veya esarete dusup o bagin icinde takili kalmasidir. Cekirdek, hem esir kisinin halini hem de esaretin icine girip orada saplanip kalma surecini kapsar.",
+        "facets": [
+          {
+            "facet_id": "F001",
+            "role": "core",
+            "statement": "Esir olan kisi veya esir edilmis halde bulunma dalin temelidir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          },
+          {
+            "facet_id": "F002",
+            "role": "specialization",
+            "statement": "Anlam, esarete dusme ve bu esaretin icinde takili kalma surecini de tasir.",
+            "claim_ids": [
+              "bc_001"
+            ]
+          }
+        ]
+      },
+      "source_synthesis": {
+        "common_summary": "Dal, esir kisi ve esirlik halini birlikte kavrar; kanit, esaretin yalniz sonucunu degil, ona dusup icinde kalma durumunu da gosterir.",
+        "common_claim_ids": [],
+        "source_details": [
+          {
+            "claim_ids": [
+              "bc_001"
+            ],
+            "kind": "sole_attestation",
+            "summary": "Tekil kanit, esir kisi ve esir edilmis kisi icin adlandirmalari, bu anlam alanindaki iki mastari ve esaret icinde takili kalmayi anlatan iki fiil bicimini birlikte verir."
+          }
+        ],
+        "supporting_claim_ids": [],
+        "duplicate_claims": []
+      },
+      "concept_gloss": {
+        "text": "esirlikte takili kalma",
+        "applicability": "Cekirdegi kisa bicimde verir: kisi esir halindedir ve bu hal esaret icinde saplanip kalma yonu tasir.",
+        "error_profile": {
+          "fit": "none",
+          "preserves": "Esirlik baglamini, durum boyutunu ve takili kalma surecini korur.",
+          "loses": null,
+          "adds": null,
+          "collision": null
+        },
+        "facet_ids": [
+          "F001",
+          "F002"
+        ]
+      },
+      "contextual_glosses": [
+        {
+          "text": "esir olmak",
+          "usage_role": "contextual",
+          "applicability": "Kisinin esir konumunda bulundugu baglamlarda dogal bir Turkce karsiliktir.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Esir edilmis halde bulunmayi korur.",
+            "loses": "Esaretin icinde takili kalma surecini acikca soylemez.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001"
+          ]
+        },
+        {
+          "text": "esarete dusmek",
+          "usage_role": "contextual",
+          "applicability": "Esirlik haline girme yonunun one ciktigi anlatimlarda uygundur.",
+          "error_profile": {
+            "fit": "narrowing",
+            "preserves": "Esaret haline girme surecini korur.",
+            "loses": "Esir kisinin suren hali ve orada takili kalma boyutu geri planda kalir.",
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F002"
+          ]
+        },
+        {
+          "text": "esaret icinde kalmak",
+          "usage_role": "explanatory",
+          "applicability": "Esirlik baginin surdugu ve kisinin o durumdan cikamadigi yerlerde aciklayici karsiliktir.",
+          "error_profile": {
+            "fit": "none",
+            "preserves": "Esaret baglamini ve bu bagin icinde kalma yonunu korur.",
+            "loses": null,
+            "adds": null,
+            "collision": null
+          },
+          "facet_ids": [
+            "F001",
+            "F002"
+          ]
+        }
+      ],
+      "lexical_glosses": [],
+      "excluded_glosses": [
+        {
+          "text": "hapis",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "broadening",
+            "preserves": "Kisitlanmis olma fikrini kismen korur.",
+            "loses": null,
+            "adds": "Esirlik disindaki kurumlu veya genel kapatma hallerini de kapsar.",
+            "collision": "Okuru genel tutukluluk veya cezaevi anlamina kaydirabilir."
+          }
+        },
+        {
+          "text": "engel olmak",
+          "category": "confusable",
+          "error_profile": {
+            "fit": "displacement",
+            "preserves": "Bir kisitlama fikrini cok genel bicimde korur.",
+            "loses": "Esir kisi, esaret hali ve esaret icinde takili kalma cekirdegi kaybolur.",
+            "adds": "Baskasinin bir eylemi durdurmasi gibi dissal bir fiil alanini ekler.",
+            "collision": "Dali esirlikten genel engelleme alanina tasir."
+          }
+        }
+      ],
+      "neighbor_distinctions": [
+        {
+          "neighbor_ref": "root_000037/B001",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dal, esir kisinin hali ve esaret icinde takili kalmasi uzerindedir.",
+          "neighbor_only": "Komşu dal, zorlayici bagla tutma ve bir seyi baglanmis hale getirme eylemini one cikarir.",
+          "gloss": "zorlayici tutma ile esirlik hali",
+          "shared_zone": "Ikisi de zorlayici kisitlama ve baglanmis durumda kalma alanina dokunur.",
+          "distinction": "Bu dal, kisinin esir olarak kalisini ve esarette saplanmasini adlandirir. Komşu dal ise tutma, sikica baglama veya baglanmis hale getirme cekirdegine sahiptir; bu nedenle her esirlik hali icin ayni siniri vermez."
+        },
+        {
+          "neighbor_ref": "root_000193/B003",
+          "relation_type": "near_neighbor",
+          "boundary_match": "partial",
+          "focus_only": "Odak dalda esaret ve esir kisinin durumu kurucudur.",
+          "neighbor_only": "Komşu dalda engelleme, geri cevirme, hapsetme ve hayirdan mahrum birakilma alani vardir.",
+          "gloss": "esaret ile engelleyip mahrum birakma",
+          "shared_zone": "Ikisi de kisinin serbest hareketinin kisitlanmasi ve bir halden alikonmasi alaninda bulusur.",
+          "distinction": "Odak dal, ozellikle esirlik durumuna ve onun icinde kalmaya baglidir. Komşu dal daha genis bir alikoyma, engelleme ve yoksun birakma semantigine sahiptir; esirlik onun zorunlu siniri degildir."
+        },
+        {
+          "neighbor_ref": "root_000036/B001",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Odak dal, insanin esir konumunda bulunmasini anlatir.",
+          "neighbor_only": "Komşu dal, bir seyin ustune kapanma veya kapinin kapanip kapatmasi gibi kapatma bicimlerine baglidir.",
+          "gloss": "esirlik ile kapatma",
+          "shared_zone": "Ikisi de disari cikamama veya kapalilik senaryosuna temas eder.",
+          "distinction": "Odak dalin cekirdegi kisi merkezli esarettir. Komşu dalin cekirdegi ise kapama ve ortme eylemidir; esirlikteki toplumsal veya hukuki kisi durumu onda kurucu degildir."
+        },
+        {
+          "neighbor_ref": "root_000076/B009",
+          "relation_type": "same_field",
+          "boundary_match": "field_only",
+          "focus_only": "Odak dal, esir olarak kalma sonucunu ve halini tasir.",
+          "neighbor_only": "Komşu dal, genel olarak bir seyi engelleme veya men etme alanindadir.",
+          "gloss": "esirlik ile genel engelleme",
+          "shared_zone": "Ikisi de kisitlama alanina yakin durur.",
+          "distinction": "Odak dalda kisitlama, esaret kimligi ve esaret icinde kalma biciminde ozellesir. Komşu dalda ise engelleme genel bir eylem alanidir ve esirlik sonucu gerektirmez."
+        }
+      ],
+      "neighbor_coverage_note": "Aday komşularin en yararlilari esirlik, tutma, kapatma ve engelleme alanlarinda siniri netlestirir; sahiplenme, iceri karisma veya kacak kisinin saklanmasi gibi diger adaylar daha uzak senaryolar oldugu icin yayinlanmadi.",
+      "branch_image_ar": "الأسر والعُنُوّ",
+      "what_is_ar": "يدخل فيه العاني الأسير وعان بمعنى مأسور، والعُنُوّ والعناء مصدرين للوقوع في الإسار والنشوب فيه",
+      "what_is_not_ar": "لا يدخل فيه إلا ما دل على الإسار أو لزومه في هذا الشاهد",
+      "source_phrase_ar": "العاني الأسير؛ عان أي مأسور؛ أقر بالعُنُوّ والعناء وهما مصدران؛ للأسير عنا يَعنو وعَنِيَ إذا نشب في الإسار",
+      "sources": [
+        "AY"
+      ],
+      "source_note": {
+        "AY": "Tekil kanit, esir kisi ve esir edilmis kisi icin adlandirmalari, bu anlam alanindaki iki mastari ve esaret icinde takili kalmayi anlatan iki fiil bicimini birlikte verir."
+      }
+    }
+  ],
+  "root_profile": {
+    "summary": "Bu kok icin verilen dal, esir kisi ve esaret icinde takili kalma etrafinda toplanir. Kanit tek bir anlam alanini destekler; genel kapatma veya engelleme anlamlariyla karistirilmamalidir.",
+    "polysemy": "monosemic",
+    "organization": "monosemic"
+  },
+  "occurrence_evidence": {
+    "summary": {
+      "morpheme_count": 1,
+      "word_count": 1,
+      "ayah_count": 1,
+      "surah_count": 1
+    },
+    "forms": [
+      {
+        "form_id": "F001",
+        "lemma_ar": "عَنَتِ",
+        "stem_ar": "عَنَتِ",
+        "pos": "V",
+        "measure": "",
+        "morph_features": "STEM|POS:V|PERF|LEM:Eanati|ROOT:Enw|3FS",
+        "occurrence_count": 1
+      }
+    ],
+    "ayahs": [
+      {
+        "ayah_ref": "20:111",
+        "surface_ar": "وَعَنَتِ ٱلْوُجُوهُ لِلْحَىِّ ٱلْقَيُّومِ وَقَدْ خَابَ مَنْ حَمَلَ ظُلْمًا"
+      }
+    ],
+    "occurrences": [
+      {
+        "qac_ref": "20:111:1:2",
+        "qac_word_ref": "20:111:1",
+        "surah": 20,
+        "ayah": 111,
+        "word_index": 1,
+        "morpheme_index": 2,
+        "surface_ar": "عَنَتِ",
+        "stem_ar": "عَنَتِ",
+        "lemma_ar": "عَنَتِ",
+        "source_pos": "V",
+        "pos": "V",
+        "morpheme_role": "STEM",
+        "measure": "",
+        "aspect": "PERF",
+        "mood": "",
+        "voice": "",
+        "morph_features": "STEM|POS:V|PERF|LEM:Eanati|ROOT:Enw|3FS",
+        "ayah_ref": "20:111",
+        "form_id": "F001",
+        "alignment": {
+          "status": "unmatched",
+          "method": "no_compatible_form",
+          "confidence": "high",
+          "attachment_unit_id": "",
+          "attachment_word_unit_id": "",
+          "qac_char_span": [
+            0,
+            4
+          ],
+          "attachment_char_spans": [],
+          "source_grammar": "",
+          "attachments": []
+        }
+      }
+    ]
+  }
+}

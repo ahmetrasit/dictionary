@@ -1,0 +1,42 @@
+{
+  "kind": "controller_editorial_curation",
+  "decidedOn": "2026-09-23",
+  "authorization": "User delegated editorial decisions with recorded reasoning",
+  "decisionPath": "v2/work/entry_creation/furuq/root_005229/tr/editorial/decision.json",
+  "inputPath": "v2/work/entry_creation/furuq/root_005229/tr/editorial/input/writer_response.json",
+  "inputSha256": "1c4411bf3b1c640157caeac326fe0c87ec48f7c2f1e9dd97e4ea4c5479ae1a0f",
+  "outputPath": "v2/work/entry_creation/furuq/root_005229/tr/output/root_005229_entry.json",
+  "outputSha256": "c7a07b77a6427c70ea1c2cd0a4c8415d7ef3909b7b046ab80e4ce671a25de21f",
+  "changedFields": {
+    "root_005229/B010": [
+      "identity_judgment.status",
+      "identity_judgment.rationale"
+    ],
+    "root_005229/B011": [
+      "identity_judgment.status",
+      "identity_judgment.rationale"
+    ]
+  },
+  "sourcePacketPath": "data/output/furuq/root_packets/root_005229.json",
+  "sourcePacketSha256": "3f3c931edd57e5533426879ed7a6e62c67545c84455b122be8786798820567c2",
+  "evidence": {
+    "root_005229/B010": {
+      "sourcePhraseAr": "الوشوشة كلام في اختلاط وكذلك التشويش (ayn)؛ هذا خطأ أما الوشوشة فهي الخفة وأما التشويش فلا أصل له في العربية (tahdhib)",
+      "packetStatus": "review",
+      "rationale": "The branch records Ayn's mixed-speech report and Tahdhib's explicit rejection of that report in favor of lightness. Qualified retention is documentary; it neither accepts mixed speech as an ordinary meaning nor merges the branch with B008."
+    },
+    "root_005229/B011": {
+      "sourcePhraseAr": "الوشي في الصوت (tahdhib)",
+      "packetStatus": "review",
+      "rationale": "The source attests a relation to sound but gives no sound quality, action, or result. Qualified retention records an unspecified attestation and supplies no positive translation."
+    }
+  },
+  "scope": "This is a user-authorized controller editorial decision on the existing branch roster, separate from the original Writer A response and from Agent B surgical repair. All other writer fields, branch IDs, root profile, evidence, lexical units, and source packet are unchanged.",
+  "validationCommand": [
+    "python3",
+    "v2/scripts/validate_agent_output.py",
+    "v2/work/entry_creation/furuq/root_005229/tr/input/task.json"
+  ],
+  "validationResult": "Valid root_writer output (11 branches)",
+  "nextReview": "Stage a fresh immutable snapshot of this curated writer output for the first independent Agent B review. Do not reuse any prior snapshot."
+}

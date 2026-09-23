@@ -1,0 +1,15 @@
+{
+  "verdict": "repair",
+  "summary": "Dalın esirlik çekirdeği ve sınırları kanıtla uyumlu. Tek kaynak ayrıntısı, tanıklıkta açıkça verilen iki mastarı ve iki fiil biçimini belirtmediği için dar kapsamlı bir düzeltme gerekiyor.",
+  "issues": [
+    {
+      "target_ref": "root_005406/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": ["bc_001"],
+      "evidence_conflict": "bc_001, esir kişiyle ilgili adlandırmaların yanında iki mastarı ve esaret içinde takılı kalmayı anlatan iki fiil biçimini açıkça kaydeder. source_details[0].summary yalnız genel esirlik anlamını yineliyor; bu ayırt edici biçim bilgisini aktarmıyor.",
+      "smallest_correction": "Yalnız source_synthesis.source_details[0].summary alanını, tek kaynak tanıklığında esir kişi için kullanılan adlandırmaları, iki mastarı ve esarette takılı kalmayı anlatan iki fiil biçimini belirtecek şekilde değiştir."
+    }
+  ]
+}

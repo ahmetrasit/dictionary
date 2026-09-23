@@ -1,0 +1,15 @@
+{
+  "verdict": "repair",
+  "summary": "B006 kolunun tek kaynak özetinde korkudan ölme örneği eksiktir. Bu örnek yalnız kaynak özetine kısa bir eklemeyle korunabilir; diğer kolların anlam sınırları verilen kanıtla uyumludur.",
+  "issues": [
+    {
+      "target_ref": "root_005348/B006",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": ["bc_001"],
+      "evidence_conflict": "bc_001, saldırırken korkup geri durmama örneğine ek olarak bir kişinin korkudan ölmesini bildiren ayrı bir ifade içerir. Mevcut tek kaynak özeti ilk örneği ve genel korku değerini aktarır, ikinci örneği anmaz.",
+      "smallest_correction": "source_details içindeki tek kaynak özetine korkudan ölme örneğini ekle; diğer alanları ve kaynak bağlarını değiştirme."
+    }
+  ]
+}

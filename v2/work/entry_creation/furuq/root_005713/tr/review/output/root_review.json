@@ -1,0 +1,24 @@
+{
+  "verdict": "repair",
+  "summary": "İki dar anlatım hatası belirlendi: değneğin ikili biçimi çoğul biçim olarak sunuluyor ve kanat kemiği dalındaki sınır notu kanaması durmayan damarı ters anlamla anıyor. Kaynaklara göre yalnızca bu ifadeler düzeltilebilir.",
+  "issues": [
+    {
+      "target_ref": "root_005713/B001",
+      "field": "source_synthesis",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": ["bc_001"],
+      "evidence_conflict": "Kaynak ifadesi bir ikili biçim ve ayrı bir çoğul biçim verir; ortak özet bunların tümünü yalnızca çoğul biçimler olarak anlatır.",
+      "smallest_correction": "Ortak özet içindeki 'çoğul biçimlerini' sözünü 'ikili ve çoğul biçimlerini' olarak değiştir."
+    },
+    {
+      "target_ref": "root_005713/B010",
+      "field": "identity_judgment",
+      "severity": "minor",
+      "confidence": "high",
+      "claim_ids": ["bc_001"],
+      "evidence_conflict": "Bu dalın kaynak ifadesi kanattaki kemikleri adlandırır; karşılaştırılan damar dalının kaynak ifadesi ise kanaması durmayan damarı bildirir. Gerekçedeki 'kanamayan damar' sözü karşılaştırılan anlamı tersine çevirir.",
+      "smallest_correction": "Yalnızca gerekçedeki 'kanamayan damar' sözünü 'kanaması durmayan damar' olarak değiştir."
+    }
+  ]
+}

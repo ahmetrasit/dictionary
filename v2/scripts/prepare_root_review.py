@@ -20,11 +20,34 @@ from v2.scripts.assemble_entry import (
 from v2.scripts.accept_root_writer import validate_identity, validate_semantic_contract
 from v2.scripts.create_entry import binding, common_task, write_task
 from v2.scripts.validate_entry import ContractError, load_json
+from v2.scripts.validate_agent_output import validate as validate_staged_output
+
+
+def load_writer_for_review(
+    writer_task_path: Path, writer_response_path: Path
+) -> tuple[dict, dict]:
+    stored = load_json(writer_response_path)
+    if isinstance(stored, dict) and "inputs_sha256" not in stored:
+        work_dir = writer_task_path.parent.parent
+        canonical_path = work_dir / "tasks/root_writer.json"
+        if writer_task_path.resolve() != canonical_path.resolve():
+            raise ContractError(
+                "Raw root-writer review requires the canonical root-writer task"
+            )
+        role, output_path, response = validate_staged_output(
+            work_dir / "input/task.json"
+        )
+        if role != "root_writer" or output_path != writer_response_path.resolve():
+            raise ContractError(
+                "Raw root-writer review requires the validated staged output"
+            )
+        return load_json(writer_task_path), response
+    return load_task_fragment(writer_task_path, writer_response_path, "root_writer")
 
 
 def prepare(writer_task_path: Path, writer_response_path: Path, output_path: Path) -> dict:
-    writer_task, response = load_task_fragment(
-        writer_task_path, writer_response_path, "root_writer"
+    writer_task, response = load_writer_for_review(
+        writer_task_path, writer_response_path
     )
     validate_identity(response, writer_task)
     validate_semantic_contract(response, writer_task)
