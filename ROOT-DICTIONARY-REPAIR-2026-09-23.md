@@ -104,11 +104,42 @@ source evidence and repeatable audits. quran-apps' `docs/root-data-updates.md`
 documents the simplified update/publication commands; `docs/root-data-gap-plan.md`
 tracks the remaining six identity decisions. At this checkpoint, Tafsir
 evidence generation 5 and Reader generation 8 are live and verified. Reader
-generation 9 is uploading. quran-apps publication fixes are committed at
+generation 9 was prepared and partially uploaded. Its later activation attempt
+is blocked by the Free Worker's per-request CPU quota; it is not live.
+quran-apps publication fixes are committed at
 `54702f9b`; Worker tests (110), tooling tests (12), and typechecking passed.
 
 
 ## Identity adjudication decision (2026-09-23)
+
+**Later policy clarification, 2026-09-23:** The user requested that legitimate
+competing derivations be visible in KK and TM. Preserve the global root identity
+decisions below, and add separately sourced analyses scoped to an exact lemma or
+morpheme. For اسم, show سمو first and وسم as an attributed disputed analysis,
+explaining the Basra–Kufa disagreement. Exclude unrelated سمم. The alternative
+must not appear on سماء or سمّوهم just because those words share سمو.
+
+Order denotes the selected primary analysis, not a numerical claim about
+scholarly consensus. Describe another analysis as disputed and explain the
+source's reasoning; call it a minority view only if the evidence establishes
+that standing. A missing primary dictionary entry remains visibly missing even
+when an alternative has an available entry. This preserves useful scholarship
+without hiding transfer or lexical gaps.
+
+The follow-up source review also identified direct classical discussion of
+18:77 ينقضّ under قضض: a نقض derivation is attributed to Abū ʿAlī al-Fārisī.
+The earlier audit below rejected a root-wide alias based on the candidate
+branch evidence then inspected; it did not exhaust all accounts of the word.
+The scoped dataset in quran-data records the new evidence and attribution.
+This correction is retained chronologically so the reason for the policy and
+data changes remains visible.
+
+The 14 reviewed Turkish entries have been transferred in quran-data commit
+`86f66b302`, bringing the source transfer to 1,696 entries / 11,741 branches,
+with zero missing resolved entries. Their live deployment is a separate step.
+The user selected retaining Cloudflare Workers Free and redesigning publication
+into bounded resumable requests after repeat CPU-limit failures. No paid plan
+or recurring billing was authorized.
 
 The controller adopted the independent review: do not add single-target aliases
 for ثبي or سنه. The original audit found plausible associations, but independent
