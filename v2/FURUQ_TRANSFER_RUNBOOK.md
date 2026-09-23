@@ -1,7 +1,7 @@
 # Reviewed furuq writer transfer
 
 Run from the dictionary repository root after Agent B has completed its
-`pass` or bounded `repair` for a non-Quranic furuq root. Keep the reviewed
+`pass` or bounded `repair` for a root in the Furuq namespace. Keep the reviewed
 writer response at `v2/work/entry_creation/furuq/<root>/tr/output/`.
 
 ```sh
