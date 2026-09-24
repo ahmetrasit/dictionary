@@ -263,3 +263,79 @@ The target is `38:3:8:2` (`وَلَاتَ حِينَ مَنَاصٍ`), **not** t
 ## Source integrity note
 
 The frozen source entry text in `the frozen Furuq database` was read only after compact navigation. `root_000209` contains Mufradat's `ثبات` interpretation, though B001's compact source phrase does not quote the verse; its boundary and `lu_007` cover groups. `root_000751` contains the Ṣiḥāḥ and Mufradat explanations of `يتسنه`, though its branch selection omits that verb. The earlier proposed branch hashes identify stable evidence anchors, not proof of root equivalence. **No reviewed-alias JSON should be added for these six under the current root-level schema; the resolution map should continue to show six `unresolved_identity` records.**
+
+
+## Live publication and final integration — 2026-09-24
+
+This checkpoint supersedes earlier publication-pending notes. The source
+production and transfer are complete: 14 independently reviewed Turkish
+entries, 93 added branches, 1,696 total entries and 11,741 branch records.
+There are no missing entries among resolved root identities. Proper-name
+handling and the documentary وشـي decisions above remain part of the record.
+
+### Source revisions and editorial policy
+
+- Dictionary production: `ee70049ad`; transfer source pin: `7daa18787`;
+  policy/session checkpoint: `ac1dd765e`.
+- quran-data transfer: `86f66b302`; scoped analyses and source contract:
+  `e523a206c2d08718fd4b35c836ac83e272632ead`.
+- The scoped source has 7 selectors, 127 QAC morphemes, 13 ordered analyses,
+  37 evidence items, and 16 verified local SHA-256 evidence anchors.
+- اسم presents primary سمو and attributed disputed وسم with the Basra–Kufa
+  reason; سمم is excluded. وسم does not spread to سماء or سمّوهم.
+- The six global identities ءدد, ثبي, سنه, قضض, كيف and لوت remain unresolved
+  (88 canonical QAC morphemes). The review is complete; this is an explicit
+  evidence decision. Word-scoped alternatives preserve competing accounts
+  without asserting global root equivalence. Exact missing entries remain
+  visible even when a linked alternative has an entry.
+- Next editorial work: dedicated evidence-backed root entries for ءدد, ثبي,
+  سنه and قضض, and grammatical headwords for كيف and لات. Prioritize كيف's
+  83 occurrences. Do not route لات at 38:3 to the deity اللّات at 53:19.
+- **Correction to the earlier embedded audit:** كيف has 80 QAC INTG and 3 N
+  morphemes, not 83 INTG. All 83 share the selected lemma and root key.
+
+### Live artifacts and application changes
+
+- Reader generation 9 was activated first; generation **10** is now active.
+  Final catalog:
+  `/content/v2/catalogs/10.3950bd2ef28d4d6c658b45bd0fe1d51754572dc5b1870dfa210bab7b39b6995f.json`.
+  All 229 packs and the source lock passed publication verification. The exact
+  Worker-signed activation was adopted into the local mirror and plan.
+- Tafsir evidence generation **6** is active. Catalog:
+  `/evidence/generations/catalog.6a10b78b390ee04442e714404d816e98505811bc61b5d4abf2a699138f9c7745.json`.
+  All 847 immutable objects (429,331,900 bytes) passed full-body verification;
+  activation and both pinned legacy pointers were checked.
+- Data publication commit in quran-apps: `e41b8f36`; scoped UI/compiler:
+  `e58c618b`; final TM branch-title fix: `b02b3d4f`. That fix uses each
+  branch's root identity because entry IDs include a language suffix (`/tr`).
+- KK **0.1.62**, module `/assets/index-Dl3QKRZa.js`, and TM **0.2.14**, build
+  `12cf3ddb7b350186902a8fb1`, are deployed. Primary and disputed root cards
+  include the reason, attribution, source links, and relevant branch title.
+
+### Free-plan publication and repeatability
+
+The user chose to keep Cloudflare Free. Commit `c1f0edb3` routes the existing
+publication handler through an internal SQLite Durable Object; deployed Worker
+version `4b28e9b7-c37f-48e8-b079-bfd3eae96a4c`. Live generation 9 and 10
+publication succeeded through this path. No paid-plan upgrade was made.
+Authentication, checksums, signatures, receipts and activation compare-and-swap
+remain enforced; CONTROL R2 is authoritative. Verified immutable objects are
+reused on retry. The single publisher command is unchanged.
+
+`npm run data:update -- --quran-data-ref e523a206c` was rerun after activation.
+It reported Reader local/live generation 10 and current evidence, with no new
+release. SHA-256 values of all eight source-lock/publication/activation files
+were unchanged. Local source builds use committed Git snapshots. Unrelated
+inter-ayah edits in the original quran-data checkout were preserved; that
+checkout was not reset, stashed or merged over those edits. This documentation
+checkpoint does not change the source revision used by the published data.
+
+Regression results: Reader 282/282, contracts 97/97, publication Worker
+113/113, deployment/tools 56/56, and final TM branch-display suite 5/5; focused
+source, transfer and dictionary checks also passed. The Worker typecheck,
+dry-run deployment, both application builds and live CDN verification passed.
+
+Separate limitation: the existing iOS activation-transition check requires an
+exact predecessor hash and may reject a client jumping from generation 8 to
+10. This session deployed and verified KK and TM; it did not change or verify
+iOS update behavior.
