@@ -564,3 +564,105 @@ release manifests pin the complete current registry. This avoids forcing new
 editorial work for unchanged entries when an unrelated registry row is added.
 Regression checks accept that unrelated append and reject a changed selected
 intake. The six original source seals and reviewed responses are unchanged.
+
+## Six-entry live publication — 2026-09-24
+
+The reviewed source batch in dictionary
+`e553f0afe23f32c422561bcd3ee7e65f0b503b2b` was transferred in quran-data
+`aa2aef1966eceb4169660b2a874f3de2c081c748` and published through quran-apps.
+Reader **generation 12** activated at `2026-09-24T18:46:31.744Z` with catalog
+SHA-256 `4c022f0b22ec89a417cf134d51daf087db4902ecaf75d583afab53f9ab47cd58`.
+Tafsir evidence **generation 8** has catalog SHA-256
+`52d6ea7a57d7d665bf89028c915dff4850f3c0587349e9842af383990d01770b`.
+
+KK **0.1.64** (`/assets/index-C-wcA-_W.js`) and TM **0.2.16**
+(build `dd16911b8815ff75dafb0962`) are deployed. Their common dictionary has
+1,700 root entries, 1,711 component roots and 11,756 branches, plus two
+separate grammatical headwords covering 84 morphemes. The four lexical
+additions cover four further morphemes. The lexical root-resolution keys
+`كيف` and `لوت` intentionally remain unresolved as roots; their exact words
+are served by grammatical entries. They are not outstanding entry-production
+gaps. The raw QAC noun/verb tags and documented alternative analyses remain
+available, and the deity at 53:19 is excluded from the grammatical لَاتَ entry.
+
+The publication barrier and final remote evidence check verified all 847
+immutable objects (451,007,837 bytes), the active pointer and the two pinned
+legacy pointers. Reader uploaded 230 objects (229 packs plus its source lock),
+validated the release, adopted the exact Worker-signed activation and passed
+its separate live verification. Both channels were published on the existing
+Cloudflare Free configuration. No commentary channel changed in this batch.
+
+The quran-apps root `CDN-UPDATE-RUNBOOK.md` documents the committed-source
+transfer, single `data:update` build, separate evidence/Reader publishers,
+retry rules and live checks. Later documentation-only commits do not supersede
+the source pins above or require another data release.
+
+### Verification scope and remaining audit recommendation
+
+The source/transfer checks, contract/runtime suites, application builds, live
+CDN verification, and 31 sampled live static agent files passed. These establish
+release integrity and the tested entry behavior; they do not certify the semantic
+accuracy of every existing dictionary definition.
+
+The complete legacy compiler suite still has two unrelated fixture setup
+failures: the committed QAC crosswalk manifest expects a different quran-data
+`RELEASE.json` hash, and the committed demo lock expects a different
+`packages/content-compiler/target-mappings/s001.tr.json` hash. Both actual inputs
+match their repository HEAD versions. The focused six-entry projector tests and
+actual publication builds pass. Those old locks were not silently regenerated
+as part of this dictionary release.
+
+The controller recommends a whole-corpus mechanical audit of entry coverage,
+root and exact-word mappings, transfer parity, citation/source ownership,
+review provenance, branch type, and gloss-assessment consistency. Independent
+editorial review should prioritize proper names, grammatical headwords, weak
+and doubled roots, disputed derivations, and older review records. A stratified
+sample of the remaining entries should determine whether a complete semantic
+re-review is warranted. The six deliberately difficult gaps are not a random
+sample, so their findings must not be extrapolated into a corpus-wide error
+rate. This recommendation is documented; no new whole-corpus editorial
+production campaign has been started.
+
+### TM startup correction found by the live browser audit
+
+The post-publication browser audit found that TM could still show the legacy
+third `سمم` candidate for `اسم` while its bundled demonstration corpus was
+visible. The generation-8 catalog and KK contained only the accepted `سمو`
+and `وسم` analyses. TM treated a seeded ayah as already loaded, and its startup
+loader chose a surah only after awaiting another catalog request. Navigation
+during startup could therefore leave seeded research data in use.
+
+The TM 0.2.17 correction tracks ayahs merged from live loader results, fetches
+seeded ayahs when needed, captures the initial surah before awaiting the
+catalog, and shares in-flight loads between startup and navigation. Production
+research panels show loading or unavailable status until live data is ready;
+the local demonstration mode is retained. The source dictionary and CDN
+catalogs did not need another data release. This case is further evidence that
+an audit must cover source-to-screen behavior in both clients, including slow
+loads and navigation, as well as source content and transfer hashes.
+
+TM 0.2.17 was subsequently deployed with build ID
+`d6a0d86a16179f9b46b32bf0`. Its served HTML, application script and translations
+match the reviewed build byte for byte. Independent review, all 25 TM tests
+(including two new asynchronous startup/retry regressions), and the production
+build passed. The application release is committed in quran-apps `79810f9e`;
+the TM startup correction is committed in `0fbcd8ba`.
+
+The final deployed browser audit passed **34/34 cases** on September 24
+(8 existing-profile cases and 26 fresh desktop/mobile cases), with zero page
+errors and zero failed application/CDN responses. It covered all four new
+roots, both headwords, the three QAC noun-tagged كَيْفَ occurrences, the deity
+exclusion, and اسم's two accepted roots without سمم. Source circles, usage
+badges, typed citations, authored citation notes and gloss-assessment bindings
+were checked against the live payloads. The existing TM profile visibly
+upgraded from 0.2.16 to 0.2.17; the earlier KK 0.1.63/Reader-11 to
+0.1.64/Reader-12 upgrade evidence was retained. The local quran-apps audit report
+is `.scratch/six-live/2026-09-24T21-17-18-337Z-14b7ea1b-report.json`.
+
+An additional live TM slow-load/navigation check also passed: delaying the
+public evidence activation GET for three seconds showed loading status and
+zero bundled root cards. Releasing the response displayed only `سمو`/`وسم`;
+navigation `1:1 → 2:28 → 1:1` displayed the كَيْفَ headword and then restored
+only those two اسم roots, including after settling. There were no page errors
+or failed responses. The local report is
+`.scratch/six-live/2026-09-24T21-22-14-436Z-e1a23ed4-delayed-tm-report.json`.
