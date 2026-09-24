@@ -339,3 +339,83 @@ Separate limitation: the existing iOS activation-transition check requires an
 exact predecessor hash and may reject a client jumping from generation 8 to
 10. This session deployed and verified KK and TM; it did not change or verify
 iOS update behavior.
+
+## Dictionary badge and gloss-assessment phase — 2026-09-24
+
+This entry follows the Reader 10 / evidence 6 checkpoint above. The pinned
+quran-data source is still `e523a206c2d08718fd4b35c836ac83e272632ead`;
+later session documentation did not change the released lexical corpus. No new
+root alias, branch meaning, gloss fit, or other source lexical judgment was
+made for these badges. The six global identities ءدد, ثبي, سنه, قضض, كيف and
+لوت remain unresolved and retain their explicit missing states.
+
+### Editorial and projection boundary
+
+Commit `b125d307` exposes source-authored usage, provenance, and Turkish gloss
+assessments through the projector and Reader UI. The projection preserves all
+**37,846** existing `error_profile` assessments: 11,741 concept glosses,
+21,430 contextual renderings, and 4,675 excluded renderings. Each optional
+`glossAssessments` record is tied to exactly one gloss by `kind`, zero-based
+`index`, and exact `text`; absent profiles do not become an invented `none`
+assessment. Excluded renderings remain excluded. A fit badge describes the
+comparison with a branch's Arabic concept, not the correctness of a verse
+translation or of the whole dictionary entry.
+
+The governed `root_001123/B001` source exception is retained as authored:
+“hâlâ yapmak” is `broadening` because it loses a mandatory negative
+construction; “yapmayı bırakmamak” is `narrowing` because it adds an
+intentional-choice implication. The apps do not infer fit from which
+explanation field is populated. This preserves the existing editorial
+assessment without weakening structural validation.
+
+The only two linguistic usage types shown are **Yalın kullanım** (`bare`) and
+**Kalıba bağlı kullanım** (`collocation`). Legacy `mixed_non_bare`, `non_bare`,
+and `unresolved` classifier states are neutral usage metadata, not additional
+branch types or claims about a selected word's affixes, case, or figurative
+status. Branch provenance comes from `sources`, displayed as six consistent
+colored circles: AY, JA, MQ, MU, SI, and TA. A source circle indicates a
+source roster, not unanimous agreement; `sourceNotes` is not a substitute for
+the roster, and no numeric count badge was added. Full names are available by
+touch and keyboard. The shared wording and source names are recorded in
+`docs/dictionary-badges.md` in quran-apps.
+
+### Live data and application checkpoint
+
+Reader generation **11** is live at
+`/content/v2/catalogs/11.3f0ff12704e99f1143dcf42ccbdc8997a5d3c7b26f3d3b7f1dcf20411248c277.json`.
+Tafsir evidence generation **7** is live at
+`/evidence/generations/catalog.5a399a1edc5bf5a029daf3d664a8ebe8d68bf59791fb3b64762c67a50d6c21da.json`.
+Each release passed independent full CDN verification; the evidence check
+covered 847 objects totaling 450,750,732 bytes. These new generations reflect
+the projector/schema and application work while retaining the same source pin.
+The quran-apps data publication commit is `32125972`.
+
+The Reader first-click fix `9c38fe01` keeps a clicked word panel open during
+commentary hydration. The badge/projector change is `b125d307`; subsequent
+badge wording and mobile source display were refined in `e0205cf2`. Reader
+reported 287 passes in the full run; one build timed out there and passed on
+an isolated rerun. The latest focused checks passed 11/11, contracts 97/97,
+tools 56/56, TM badge/mobile 9/9, and the earlier ranked-analysis checks 5/5.
+
+KK **0.1.63** is deployed with module `/assets/index-DL4mLdNW.js`; TM
+**0.2.15** is deployed with build `95f417a4a49d9602af7a9f55`. Fresh live
+root probes passed 11 KK and 8 TM cases; warm probes passed 3 KK and 2 TM
+cases, all without failures. A cached KK generation 10 session updated to
+generation 11 and module `/assets/index-DL4mLdNW.js`; a cached TM 0.2.14
+session updated to build `95f417a4a49d9602af7a9f55` through the
+service-worker prompt and reload. A repeat
+`data:update -- --quran-data-ref e523a206c` found Reader 11 and evidence 7
+already current and left all eight publication, lock, and activation SHA-256
+values unchanged. The badge-specific desktop/mobile and first-click probes
+passed **10/10** across KK and TM: ism, adhāb, and thawāb on desktop; ism
+and thawāb on mobile. They verified branch source rosters (including SI alone
+and MQ+TA together), circle color/geometry, usage labels, names on focus,
+click and tap without changing the branch, exact concept `none` and contextual
+`narrowing` kind/index/text bindings, and TM visible-source to editor roundtrip.
+The settled panel opacity was 1; page errors, failed responses, and failures
+were all zero. Report and ten screenshots are under
+`.scratch/live-dictionary-badges/2026-09-24T16-34-06-324Z-29590b2e-`.
+A read-only compatibility audit found that the older TM
+0.2.14 loader ignores the new optional gloss profiles without invoking the
+strict shard validator. The warm probe confirmed its service-worker prompt
+and reload path. No iOS behavior was changed in this phase.
