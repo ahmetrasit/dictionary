@@ -2,6 +2,12 @@
 
 This directory defines the current authored-entry workflow.
 
+Reviewed supplemental roots and grammatical headwords use the same Agent A/B
+semantic process with a sealed intake adapter. See
+[`../SUPPLEMENTAL_RUNBOOK.md`](../SUPPLEMENTAL_RUNBOOK.md) when an identity is
+absent from the frozen packet index. Do not infer a root alias for a
+grammatical headword.
+
 Read these files in order:
 
 1. [`entry-creation.spec.md`](entry-creation.spec.md), the normative contract;

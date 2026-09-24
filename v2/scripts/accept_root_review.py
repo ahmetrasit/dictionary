@@ -22,6 +22,10 @@ from v2.scripts.validate_entry import ContractError, load_json
 
 
 def validate_review(response: dict, task: dict) -> None:
+    headword = task.get("entryKind") == "grammatical_headword"
+    collection = "senses" if headword else "branches"
+    ref_key = "sense_ref" if headword else "branch_ref"
+    profile_key = "headword_profile" if headword else "root_profile"
     verdict = response["verdict"]
     issues = response["issues"]
     if verdict == "pass" and issues:
@@ -32,28 +36,29 @@ def validate_review(response: dict, task: dict) -> None:
         raise ContractError(
             "root_reviewer: low-confidence judgments require editorial_review"
         )
-    roster = task["branch_roster"]
+    roster = task["sense_roster" if headword else "branch_roster"]
     evidence = load_json(binding_path(task["evidence"]["path"]))
-    if evidence.get("format") != ROOT_EVIDENCE_FORMAT:
+    expected_format = "dictionary-v2-agent-headword-evidence-v1" if headword else ROOT_EVIDENCE_FORMAT
+    if evidence.get("format") != expected_format:
         raise ContractError(
-            f"root_reviewer: expected evidence format {ROOT_EVIDENCE_FORMAT!r}"
+            f"{task.get('role', 'root_reviewer')}: expected evidence format {expected_format!r}"
         )
     branch_claims_by_ref = {
-        branch["branch_ref"]: {
+        branch[ref_key]: {
             claim["claim_id"] for claim in branch["branch_claims"]
         }
-        for branch in evidence["branches"]
+        for branch in evidence[collection]
     }
     lexical_ids_by_ref = {
-        branch["branch_ref"]: {
+        branch[ref_key]: {
             unit["lexical_unit_id"] for unit in branch["lexical_units"]
         }
-        for branch in evidence["branches"]
+        for branch in evidence[collection]
     }
     for index, issue in enumerate(issues):
         target = issue["target_ref"]
-        if target == "root_profile":
-            if issue["field"] != "root_profile" or issue["claim_ids"]:
+        if target == profile_key:
+            if issue["field"] != profile_key or issue["claim_ids"]:
                 raise ContractError(
                     f"root_reviewer.issues[{index}]: root profile issue has invalid scope"
                 )
@@ -96,19 +101,22 @@ def accept(task_path: Path, response_path: Path, output_path: Path) -> dict:
 
 
 def repair_scope(review: dict, task: dict) -> dict:
+    headword = task.get("entryKind") == "grammatical_headword"
+    roster = task["sense_roster" if headword else "branch_roster"]
+    profile_key = "headword_profile" if headword else "root_profile"
     indexes = {
-        task["branch_roster"].index(issue["target_ref"])
+        roster.index(issue["target_ref"])
         for issue in review["issues"]
-        if issue["target_ref"] != "root_profile"
+        if issue["target_ref"] != profile_key
     }
     fields: dict[str, set[str]] = {}
     for issue in review["issues"]:
-        if issue["target_ref"] == "root_profile":
+        if issue["target_ref"] == profile_key:
             continue
-        index = task["branch_roster"].index(issue["target_ref"])
+        index = roster.index(issue["target_ref"])
         fields.setdefault(str(index), set()).add(issue["field"])
     return {
-        "repairable_by": "root_writer",
+        "repairable_by": "headword_writer" if headword else "root_writer",
         "review_inputs_sha256": review["inputs_sha256"],
         "review_sha256": canonical_sha256(review),
         "writer_task_sha256": task["writer_task_sha256"],
@@ -117,9 +125,7 @@ def repair_scope(review: dict, task: dict) -> dict:
         "editable_branch_fields": {
             index: sorted(values) for index, values in sorted(fields.items())
         },
-        "root_editable": any(
-            issue["target_ref"] == "root_profile" for issue in review["issues"]
-        ),
+        "root_editable": any(issue["target_ref"] == profile_key for issue in review["issues"]),
     }
 
 

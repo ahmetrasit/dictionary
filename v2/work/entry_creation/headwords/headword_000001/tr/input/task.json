@@ -1,0 +1,41 @@
+{
+  "format": 4,
+  "generated_by": "v2/scripts/prepare_supplemental_entry.py",
+  "role": "headword_writer",
+  "language": "tr",
+  "prompt": {
+    "path": "prompt.md",
+    "sha256": "8a3166aab39e1df4f25f3d86c9e6b404bffb17eff17ec793c976ebd82866a957"
+  },
+  "response_schema": {
+    "path": "response.schema.json",
+    "sha256": "5d615051a0162f79fa501d9c7e159d106c80128fadfd09cf6537ad2b655d0454"
+  },
+  "entryKind": "grammatical_headword",
+  "headwordId": "headword_000001",
+  "evidence": {
+    "path": "evidence.json",
+    "sha256": "8d331ee73a3b85a89633882e885ff5512a4ae450a49aa0696e9724e762cab7bb"
+  },
+  "supplementalIntake": {
+    "registryPath": "data/supplemental/registry.v1.json",
+    "registrySha256": "f1dd33df0ed475eb05d44cfb47f55d2f8c372622106196525342dad4d4086fd5",
+    "intakePath": "data/supplemental/entries/headword_000001.json",
+    "intakeSha256": "75172f8386f22c44b0cd275719ee2cdcef83644edd4e99972451e9054ee53906"
+  },
+  "sense_roster": [
+    "headword_000001/S001",
+    "headword_000001/S002"
+  ],
+  "canonical_task_sha256": "76ee0fdd10c255b0567a823a9517ab7d6b1f3c212f3d70344ffacba2111be5f4",
+  "output": {
+    "path": "../output/headword_000001_entry.json"
+  },
+  "validation": {
+    "command": [
+      "python3",
+      "v2/scripts/validate_agent_output.py",
+      "v2/work/entry_creation/headwords/headword_000001/tr/input/task.json"
+    ]
+  }
+}

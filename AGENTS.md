@@ -9,6 +9,17 @@ https://ahmetrasit.github.io/dictionary/agent/START_HERE.md
 
 For root lookup, use the static agent access layer:
 
+Before concluding that a Quranic word has no dictionary entry because the
+frozen packet index has no match, also check
+`data/supplemental/registry.v1.json`. Each reviewed registry row owns one
+`data/supplemental/entries/<id>.json` intake. Its `binding.selector` is an
+exact QAC root-key plus lemma or morpheme-ref selector, with a ref-set digest;
+it is not a root-wide alias. `lexical_root` entries use supplemental `root_`
+IDs, while `grammatical_headword` entries use `headword_` IDs and do not claim
+a consonantal root. If a registry row exists, use its hash-closed intake and
+reviewed export through [the supplemental runbook](v2/SUPPLEMENTAL_RUNBOOK.md).
+The static Furuq packet/card index is not expected to list these entries.
+
 If the user says "check my dictionary repo for roots x, y, z", resolve each
 requested root separately through this access layer, open each candidate card,
 and report every candidate root ID inspected. Do not search full root packets

@@ -419,3 +419,148 @@ A read-only compatibility audit found that the older TM
 0.2.14 loader ignores the new optional gloss profiles without invoking the
 strict shard validator. The warm probe confirmed its service-worker prompt
 and reload path. No iOS behavior was changed in this phase.
+
+## Six-entry production opened — 2026-09-24
+
+The original mapping history was retraced at the user's request. quran-data
+commit `dfca1fdd051e9c765653218bebbe997b9e360111` (July 28) imported the split
+bridge containing the unrelated سمم candidate in the سمو row. quran-data
+`c159182b3` corrected the occurrence and separated candidates from identities;
+quran-apps `eea70a42` consumed that policy. quran-data `e523a206c` subsequently
+preserved valid word-specific alternatives. This is distinct from dictionary
+entry restoration: the bad candidate did not mean that a legitimate سمم
+dictionary entry itself should be removed.
+
+After the preceding deployment, the user requested production for the six
+remaining identities. Source curation completed for ءدد, ثبي, سنه, قضض, كيف,
+and لوت. This section records decisions made before entry acceptance; it does
+not claim that the new entries have been written, accepted, or published.
+
+### Source and identity decisions
+
+Four identities require dedicated lexical roots: ء د د, ث ب ي, س ن ه, and
+ق ض ض. The proposed stable IDs are `root_900001`–`root_900004`, in that
+order. Existing frozen registries and committed export paths contain none of
+those IDs; the supplemental registry will enforce collision checks.
+
+The other two records are grammatical headwords: `headword_000001` for
+كَيْفَ and `headword_000002` for لَاتَ. Their exact selectors cover 83 and
+one QAC morphemes respectively. The three nominal QAC tags for كَيْفَ are
+retained. لَاتَ is bound to 38:3:8:2 and excludes the deity name at 53:19.
+Neither headword creates a root identity or overwrites source morphology.
+
+The source dossiers distinguish exact subsections of oversized frozen rows
+from their misleading outer headings. External classical witnesses carry
+their actual source titles, editions/locators, quotation hashes and URLs;
+they do not acquire fabricated frozen entry IDs. Source claims and competing
+analyses remain attributed. In particular, two sections in al-Mufradāt give
+different accounts of ثبة; their coexistence must not be erased by selecting
+one dictionary-wide derivation. The basin noun remains explicitly disputed.
+For لَاتَ, the reported past-verb analysis is retained alongside the negative
+time construction, without claiming to know QAC's rationale for its tag.
+
+### Correction to the previous قضض review
+
+The prior word-level explanation incorrectly named Abū ʿAlī's alternative
+pattern from ن ق ض as Form IV, `أَفْعَلَ`. The vocalized text in
+[Ibn Sīdah, al-Muḥkam 6:98](https://najafdesertlibrary.com/book/المحكم-والمحيط-الأعظم/v/6/p/98)
+gives `افْعَلَّ`, Form IX. A source curator and the subsequent Astra review
+independently confirmed that witness. The correction preserves the QAC-primary
+Form VII analysis from ق ض ض and the attributed alternative; it corrects the
+pattern and its explanation for 18:77:17:1. Agreement in the earlier agent
+reviews cannot outweigh the vocalized source.
+
+### Workflow decision and review history
+
+The user selected GPT-6 Sol, maximum reasoning, with at most eight concurrent
+workers, and authorized Astra agents after checking unsatisfactory output.
+The controller reviewed two Sol infrastructure proposals and commissioned
+GPT-6 Astra to review their unnecessary complexity and provenance coupling.
+The accepted design uses one supplemental registry, sealed Arabic intake,
+one preparation adapter, and one reviewed exporter. It does not require a
+second Furuq database or QNet/packet reconstruction. Historical snapshot hashes
+remain historical, with current validity checked against the affected
+selectors and branch evidence.
+
+Agent A writes a missing output; independent Agent B reviews its immutable
+snapshot and records any bounded correction before editing. Structural or
+ambiguous findings remain editorial decisions. The four lexical exports use
+the established root format; grammatical exports have an explicit headword
+format. App catalogs will carry the two headwords inline with bounded size.
+Lexicon circles may add LI (Lisān), MH (al-Muḥkam), and TJ (Tāj al-ʿarūs);
+grammar and tafsir sources remain typed citations, not dictionary circles.
+
+### Source seal and authored review results
+
+The six Arabic intakes were sealed in `data/supplemental/registry.v1.json` on
+September 24 with registry SHA-256
+`f1dd33df0ed475eb05d44cfb47f55d2f8c372622106196525342dad4d4086fd5`.
+Independent source review accepted 15 lexical branches and three grammatical
+senses. Before sealing, Astra inspected Tāj al-ʿarūs volume 4, internal page
+1172 (PDF page 213), replacing an insufficient short excerpt with an exact
+bounded transcription. It confirms the reported Abū Dharr opinion that لات
+developed from a diminution verb into negation, without establishing that
+opinion as consensus or as QAC's rationale. The intake records the digital
+witness, transcription method and hashes.
+
+Six separate GPT-6 Sol Max writers finished, followed by six independent
+GPT-6 Sol Max reviewers. Outcomes:
+
+| Entry | Authored units | Independent review |
+| --- | ---: | --- |
+| `root_900001` ءدد | 5 branches | pass |
+| `root_900002` ثبي | 3 branches | pass |
+| `root_900003` سنه | 2 branches | pass |
+| `root_900004` قضض | 5 branches | pass |
+| `headword_000001` كَيْفَ | 2 senses | repair completed |
+| `headword_000002` لَاتَ | 1 sense | pass |
+
+The كَيْفَ reviewer recorded its finding and validated the review before
+changing only S001's identity rationale. The correction preserves the
+different grammatical classifications reported by Ṣiḥāḥ and by ʿAyn/Tahdhīb.
+Its immutable pre-fix snapshot remains in the review input. Both corrected
+writer output and review validated. There are five unchanged passes, one
+completed surgical repair, zero editorial-review holds, zero missing writers,
+and zero writers awaiting review. These are authoring results; transfer and
+publication are separate checkpoints.
+
+The لَاتَ sense uses only its attested temporal construction as a lexical
+unit. The separate bare headword unit was removed before sealing because it
+duplicated the title and obscured the construction restriction. The كَيْفَ
+core is bare, and its second sense is the `كيف يشاء` construction. Indirect
+نوص/مناص citations remain intake context for لَاتَ, outside its sense source
+roster and dictionary circles.
+
+### Reviewed export and consumer contract
+
+All six reviewed exports were produced and independently checked by Astra
+against the dictionary export gate, quran-data intake and export validators,
+and the app projector and JSON schemas. The exported total is 15 root branches
+and three headword senses. The headword collection is approximately 35 KiB,
+within the 128 KiB limit.
+
+This integration review caught and corrected shared prompt-path expectations,
+headword field projection, and citation-note attribution. Translated summaries
+are separate `citationNotes` records keyed to each claim's exact source keys;
+the original citation objects remain byte-faithful to intake. The headword
+usage note preserves the reviewed identity rationale, including the كَيْفَ
+classification correction. Intake-only context does not acquire a sense
+citation or dictionary badge. Transfer validation accepts unique claim IDs
+without imposing a per-sense numeric restart, and permits zero-occurrence
+branches within a complete disjoint QAC partition. Neither fix renumbers or
+alters the sealed source evidence.
+
+The shared staged reviewer validator was corrected to validate the immutable
+pre-fix snapshot and the recorded bounded repair. Rerunning it after a valid
+correction no longer fails merely because the live writer bytes changed.
+Future staged instructions now state the review-before-repair sequence
+without contradictory command/edit restrictions. Existing sealed bundles
+were not regenerated. All six actual staged reviewer validations pass.
+
+A further workflow correction treats the registry digest sealed in each
+production task/export as historical provenance. Current validation still
+requires the exact selected ID, kind, intake path, and intake content hash;
+release manifests pin the complete current registry. This avoids forcing new
+editorial work for unchanged entries when an unrelated registry row is added.
+Regression checks accept that unrelated append and reject a changed selected
+intake. The six original source seals and reviewed responses are unchanged.

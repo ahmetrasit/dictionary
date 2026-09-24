@@ -1,0 +1,56 @@
+{
+  "format": 4,
+  "generated_by": "v2/scripts/prepare_supplemental_entry.py",
+  "role": "headword_reviewer",
+  "language": "tr",
+  "prompt": {
+    "path": "prompt.md",
+    "sha256": "59110e356f7f09ec936899570ae5af7de9a5b24581bc0c33cd5845503d83bd77"
+  },
+  "response_schema": {
+    "path": "response.schema.json",
+    "sha256": "cb1eb1139e2856009d4add2a8963a7ddfec56489c519ad1f33fbcbb5cadd3b2c"
+  },
+  "entryKind": "grammatical_headword",
+  "headwordId": "headword_000001",
+  "evidence": {
+    "path": "evidence.json",
+    "sha256": "8d331ee73a3b85a89633882e885ff5512a4ae450a49aa0696e9724e762cab7bb"
+  },
+  "supplementalIntake": {
+    "registryPath": "data/supplemental/registry.v1.json",
+    "registrySha256": "f1dd33df0ed475eb05d44cfb47f55d2f8c372622106196525342dad4d4086fd5",
+    "intakePath": "data/supplemental/entries/headword_000001.json",
+    "intakeSha256": "75172f8386f22c44b0cd275719ee2cdcef83644edd4e99972451e9054ee53906"
+  },
+  "sense_roster": [
+    "headword_000001/S001",
+    "headword_000001/S002"
+  ],
+  "writer_response": {
+    "path": "writer_response.json",
+    "sha256": "c815dc1b75e71a81521793cb3d331df7bef12f0efeb6f7f7f5cc10ca8ebf485f"
+  },
+  "writer_task_sha256": "76ee0fdd10c255b0567a823a9517ab7d6b1f3c212f3d70344ffacba2111be5f4",
+  "canonical_task_sha256": "8ceb6e139298b5ac17b0479513222ea6f2c3f5dc8233b0e2440477022794e6c1",
+  "output": {
+    "path": "../output/headword_review.json"
+  },
+  "validation": {
+    "command": [
+      "python3",
+      "v2/scripts/validate_agent_output.py",
+      "v2/work/entry_creation/headwords/headword_000001/tr/review/input/task.json"
+    ]
+  },
+  "live_writer_output": {
+    "path": "../../output/headword_000001_entry.json"
+  },
+  "writer_validation": {
+    "command": [
+      "python3",
+      "v2/scripts/validate_agent_output.py",
+      "v2/work/entry_creation/headwords/headword_000001/tr/input/task.json"
+    ]
+  }
+}

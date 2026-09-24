@@ -33,6 +33,8 @@ from v2.scripts.render_occurrences import structured_occurrence_data
 FRAGMENT_SCHEMAS = {
     "root_writer": PROJECT / "v2/schema/fragments/root-writer.schema.json",
     "root_reviewer": PROJECT / "v2/schema/fragments/root-reviewer.schema.json",
+    "headword_writer": PROJECT / "v2/schema/fragments/headword-writer.schema.json",
+    "headword_reviewer": PROJECT / "v2/schema/fragments/headword-reviewer.schema.json",
     "branch_writer": PROJECT / "v2/schema/fragments/branch-writer.schema.json",
     "root_profile_writer": PROJECT / "v2/schema/fragments/root-profile.schema.json",
 }

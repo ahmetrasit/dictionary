@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 import tempfile
 from pathlib import Path
@@ -50,7 +51,10 @@ PROTECTED_NAME_POLICY_DIR = PROJECT / "v2/policy/protected_names"
 PROMPTS = {
     "root_writer": PROJECT / "v2/prompts/root-writer.md",
     "root_reviewer": PROJECT / "v2/prompts/root-reviewer.md",
+    "headword_writer": PROJECT / "v2/prompts/headword-writer.md",
+    "headword_reviewer": PROJECT / "v2/prompts/headword-reviewer.md",
 }
+SUPPLEMENTAL_GENERATOR = "v2/scripts/prepare_supplemental_entry.py"
 
 
 def json_content(value: Any) -> str:
@@ -126,16 +130,66 @@ def task_bindings(value: Any) -> list[dict]:
     return result
 
 
+def _verify_supplemental_registry_binding(task: dict, binding: dict, path: Path) -> None:
+    """Keep the selected intake sealed while permitting unrelated registry rows."""
+    expected_path = (PROJECT / "data/supplemental/registry.v1.json").resolve()
+    meta = task.get("supplementalIntake")
+    kind = task["entryKind"]
+    ident = task.get("headwordId" if kind == "grammatical_headword" else "root_envelope_id")
+    intake_path = f"data/supplemental/entries/{ident}.json"
+    if (path != expected_path or not isinstance(meta, dict)
+            or meta.get("registryPath") != "data/supplemental/registry.v1.json"
+            or meta.get("registrySha256") != binding.get("sha256")
+            or not isinstance(binding.get("sha256"), str)
+            or not re.fullmatch(r"[0-9a-f]{64}", binding["sha256"])
+            or meta.get("intakePath") != intake_path
+            or not isinstance(meta.get("intakeSha256"), str)
+            or not re.fullmatch(r"[0-9a-f]{64}", meta["intakeSha256"])):
+        raise ContractError("Supplemental task has an invalid historical registry binding")
+    registry = load_json(path)
+    if (not isinstance(registry, dict)
+            or registry.get("schemaVersion") != "dictionary-supplemental-registry-v1"
+            or not isinstance(registry.get("entries"), list)):
+        raise ContractError("Current supplemental registry is invalid")
+    rows = [row for row in registry["entries"]
+            if isinstance(row, dict) and row.get("id") == ident]
+    if len(rows) != 1 or any(
+        rows[0].get(field) != value for field, value in {
+            "id": ident,
+            "kind": kind,
+            "intakePath": f"entries/{ident}.json",
+            "intakeSha256": meta["intakeSha256"],
+        }.items()
+    ):
+        raise ContractError(f"Current supplemental registry changed selected intake ownership: {ident}")
+    current_intake = PROJECT / intake_path
+    if not current_intake.is_file() or sha256_file(current_intake) != meta["intakeSha256"]:
+        raise ContractError(f"Current supplemental intake differs from sealed task: {ident}")
+
+
 def verify_task_bindings(task: dict, base_dir: Path = PROJECT) -> None:
-    if task.get("format") != TASK_FORMAT or task.get("generated_by") != GENERATOR:
+    generator = task.get("generated_by")
+    if task.get("format") != TASK_FORMAT or generator not in {GENERATOR, SUPPLEMENTAL_GENERATOR}:
         raise ContractError(
             "Stale or unrecognized agent task; prepare it again with "
             "v2/scripts/create_entry.py"
         )
+    if generator == SUPPLEMENTAL_GENERATOR and task.get("entryKind") not in {
+        "lexical_root", "grammatical_headword"
+    }:
+        raise ContractError("Supplemental task has no explicit entry kind")
+    registry_binding = (
+        task.get("coordinator", {}).get("registry")
+        if generator == SUPPLEMENTAL_GENERATOR and isinstance(task.get("coordinator"), dict)
+        else None
+    )
     for item in task_bindings(task):
         path = binding_path(item["path"], base_dir)
         if not path.is_file():
             raise ContractError(f"Task input is missing: {path}")
+        if item is registry_binding:
+            _verify_supplemental_registry_binding(task, item, path)
+            continue
         actual = sha256_file(path)
         if actual != item["sha256"]:
             raise ContractError(
@@ -147,7 +201,7 @@ def verify_task_bindings(task: dict, base_dir: Path = PROJECT) -> None:
 def write_task(path: Path, task: dict) -> None:
     if path.exists():
         current = load_json(path)
-        if current.get("generated_by") != GENERATOR:
+        if current.get("generated_by") != task.get("generated_by"):
             raise ContractError(f"Refusing to replace unmarked task: {path}")
     atomic_write(path, json_content(task))
 
@@ -185,14 +239,15 @@ def ensure_rendering_policy(path: Path, envelope: str, packages: list[dict]) -> 
     atomic_write(path, json_content(fallback_rendering_policy(envelope, packages)))
 
 
-def common_task(role: str, envelope: str, language: str) -> dict:
+def common_task(role: str, envelope: str, language: str,
+                *, prompt_path: Path | None = None) -> dict:
     return {
         "format": TASK_FORMAT,
         "generated_by": GENERATOR,
         "role": role,
         "root_envelope_id": envelope,
         "language": language,
-        "prompt": binding(PROMPTS[role]),
+        "prompt": binding(prompt_path or PROMPTS[role]),
         "response_schema": binding(FRAGMENT_SCHEMAS[role]),
     }
 

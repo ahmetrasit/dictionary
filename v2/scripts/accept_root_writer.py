@@ -33,14 +33,17 @@ from v2.scripts.validate_entry import ContractError, load_json
 
 
 def validate_identity(response: dict, task: dict) -> None:
-    branches = response.get("branches")
-    if not isinstance(branches, list):
-        raise ContractError("root_writer: branches must be an array")
-    actual = [row.get("branch_ref") for row in branches if isinstance(row, dict)]
-    expected = task.get("branch_roster")
+    headword = task.get("entryKind") == "grammatical_headword"
+    collection = "senses" if headword else "branches"
+    ref_key = "sense_ref" if headword else "branch_ref"
+    rows = response.get(collection)
+    if not isinstance(rows, list):
+        raise ContractError(f"{task.get('role', 'root_writer')}: {collection} must be an array")
+    actual = [row.get(ref_key) for row in rows if isinstance(row, dict)]
+    expected = task.get("sense_roster" if headword else "branch_roster")
     if actual != expected:
         raise ContractError(
-            f"root_writer: branch roster/order mismatch: expected {expected}, got {actual}"
+            f"{task.get('role', 'root_writer')}: {collection} roster/order mismatch: expected {expected}, got {actual}"
         )
 
 
@@ -67,16 +70,24 @@ def _claim_coverage(source: dict) -> list[str]:
 
 
 def validate_semantic_contract(response: dict, task: dict) -> None:
+    """Apply the same claim, gloss, neighbor and rendering checks to either kind."""
+    headword = task.get("entryKind") == "grammatical_headword"
+    collection = "senses" if headword else "branches"
+    ref_key = "sense_ref" if headword else "branch_ref"
     evidence = load_json(binding_path(task["evidence"]["path"]))
-    if evidence.get("format") != ROOT_EVIDENCE_FORMAT:
+    expected_format = (
+        "dictionary-v2-agent-headword-evidence-v1"
+        if headword else ROOT_EVIDENCE_FORMAT
+    )
+    if evidence.get("format") != expected_format:
         raise ContractError(
-            f"root_writer: expected evidence format {ROOT_EVIDENCE_FORMAT!r}"
+            f"{task.get('role', 'root_writer')}: expected evidence format {expected_format!r}"
         )
-    evidence_by_ref = {row["branch_ref"]: row for row in evidence["branches"]}
+    evidence_by_ref = {row[ref_key]: row for row in evidence[collection]}
     neighbor_refs = {row["neighbor_ref"] for row in evidence["neighbor_registry"]}
-    for branch_index, branch in enumerate(response["branches"]):
-        path = f"$.branches[{branch_index}]"
-        branch_ref = branch["branch_ref"]
+    for branch_index, branch in enumerate(response[collection]):
+        path = f"$.{collection}[{branch_index}]"
+        branch_ref = branch[ref_key]
         supplied = evidence_by_ref[branch_ref]
         expected_claims = [row["claim_id"] for row in supplied["branch_claims"]]
         expected_set = set(expected_claims)
@@ -134,7 +145,7 @@ def validate_semantic_contract(response: dict, task: dict) -> None:
             if len(source_ids) != 1:
                 raise ContractError(
                     f"{path}.source_synthesis.source_details[{detail_index}]: "
-                    "source detail must resolve to exactly one dictionary"
+                    "source detail must resolve to exactly one cited work"
                 )
 
         facets = branch["concept_map"]["facets"]
@@ -250,10 +261,12 @@ def validate_repair_preservation(
     editable_branch_indexes: set[int],
     editable_branch_fields: dict[int, set[str]] | None = None,
     root_editable: bool,
+    collection: str = "branches",
+    profile_key: str = "root_profile",
 ) -> None:
     editable_branch_fields = editable_branch_fields or {}
-    previous_branches = previous.get("branches", [])
-    candidate_branches = candidate.get("branches", [])
+    previous_branches = previous.get(collection, [])
+    candidate_branches = candidate.get(collection, [])
     if len(previous_branches) != len(candidate_branches):
         raise ContractError("repair changed the branch roster")
     for index, (before, after) in enumerate(zip(previous_branches, candidate_branches)):
@@ -266,8 +279,9 @@ def validate_repair_preservation(
                     raise ContractError(
                         f"repair changed protected branch index {index} field {field}"
                     )
-    if not root_editable and previous.get("root_profile") != candidate.get("root_profile"):
-        raise ContractError("repair changed the protected root profile")
+    if not root_editable and previous.get(profile_key) != candidate.get(profile_key):
+        label = "root profile" if profile_key == "root_profile" else "headword profile"
+        raise ContractError(f"repair changed the protected {label}")
 
 
 def response_body(path: Path) -> dict:

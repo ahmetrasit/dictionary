@@ -1,0 +1,41 @@
+{
+  "format": 4,
+  "generated_by": "v2/scripts/prepare_supplemental_entry.py",
+  "role": "root_writer",
+  "root_envelope_id": "root_900003",
+  "language": "tr",
+  "prompt": {
+    "path": "prompt.md",
+    "sha256": "8a3166aab39e1df4f25f3d86c9e6b404bffb17eff17ec793c976ebd82866a957"
+  },
+  "response_schema": {
+    "path": "response.schema.json",
+    "sha256": "3f39124253b10f598f196bdd44d3c9d6071d9be1ee1f6428052288f812e044b1"
+  },
+  "entryKind": "lexical_root",
+  "evidence": {
+    "path": "evidence.json",
+    "sha256": "11cd8ba45a7c789e3c1e71e420319f8d24b96bca5797d3644f10a2e3707fcfa4"
+  },
+  "supplementalIntake": {
+    "registryPath": "data/supplemental/registry.v1.json",
+    "registrySha256": "f1dd33df0ed475eb05d44cfb47f55d2f8c372622106196525342dad4d4086fd5",
+    "intakePath": "data/supplemental/entries/root_900003.json",
+    "intakeSha256": "024c4daa1f2bc6cce0d7efb06fce128b66cce38d5517b607c09e37eea7173606"
+  },
+  "branch_roster": [
+    "root_900003/B001",
+    "root_900003/B002"
+  ],
+  "canonical_task_sha256": "4f591ce049c1e84995489d311f91075be099b4a555509423856544dfe67197ad",
+  "output": {
+    "path": "../output/root_900003_entry.json"
+  },
+  "validation": {
+    "command": [
+      "python3",
+      "v2/scripts/validate_agent_output.py",
+      "v2/work/entry_creation/root_900003/tr/input/task.json"
+    ]
+  }
+}

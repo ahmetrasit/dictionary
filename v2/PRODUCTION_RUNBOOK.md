@@ -3,6 +3,11 @@
 This runbook covers the authored-and-reviewed workflow for Quranic roots. Run
 controller commands from the repository root.
 
+For a reviewed supplemental identity absent from the frozen Furuq packet
+index, use [SUPPLEMENTAL_RUNBOOK.md](SUPPLEMENTAL_RUNBOOK.md). Its registry
+owns the supplemental IDs, and its preparer seals the current QAC selector
+without reconstructing a Furuq packet.
+
 The workflow is deliberately small:
 
 ```text
