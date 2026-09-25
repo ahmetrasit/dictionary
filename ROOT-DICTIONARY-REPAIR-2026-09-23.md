@@ -705,3 +705,17 @@ remain unapproved; no canonical source, export or live release changed.
 Detailed reasoning, raw outputs, adjudications, and the English hold list are
 in dictionary's root `S1-LUNA-BLIND-COMPARISON-2026-09-24.md` and
 `v2/audits/s001-luna-blind-2026-09-24/`.
+
+### Full audit plan recorded, execution pending — September 24
+
+The dictionary root `DICTIONARY-AUDIT-PLAN.md` now records the pending
+full-corpus audit, bounded repair and English-definition work. The user added
+Luna as an independent parallel checker and required Max reasoning for every
+agent. Sol remains the main screener and English author/reviewer; the union of
+Sol/Luna flags receives Sol investigation and difficult cases receive Astra
+adjudication. The shared worker cap remains eight. The plan preserves root
+ambiguity, existing source anchoring and sealed production history, and names
+the pending audit-revision and English-export adapters rather than assuming
+those contracts already exist. The quran-data README links to the plan and
+marks it pending. Its root-entry count is corrected to 1,700 plus two separate
+headwords. No campaign, source repair or release was started by this doc change.
