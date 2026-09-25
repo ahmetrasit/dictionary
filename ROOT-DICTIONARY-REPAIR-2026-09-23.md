@@ -666,3 +666,21 @@ navigation `1:1 → 2:28 → 1:1` displayed the كَيْفَ headword and then r
 only those two اسم roots, including after settling. There were no page errors
 or failed responses. The local report is
 `.scratch/six-live/2026-09-24T21-22-14-436Z-e1a23ed4-delayed-tm-report.json`.
+
+### S1 sampling audit after publication — September 24
+
+At the user's request, GPT-6 Sol Max screened all 157 branches of the 19
+existing root entries linked from S1, including both اسم alternatives.
+Separate deeper checks retained nine branches for surgical correction and
+dismissed ten initial flags. The 157 source anchors and the exported authored
+fields matched their dictionary originals. Findings therefore concern existing
+authored wording, not this transfer. No canonical data or CDN release changed.
+148 English definition drafts were saved separately; nine remain pending.
+
+The earlier broad audit recommendation is narrowed: the original mapping and
+new-draft problems did not establish widespread semantic errors in existing
+entries. This targeted sample provides concrete findings, not a corpus error
+rate. Continue compact screening then deeper review only of flags, preserving
+root ambiguity and existing source anchoring. Detailed rationale and proposed
+repairs are in dictionary's root `S1-DICTIONARY-AUDIT-2026-09-24.md` and
+`v2/audits/s001-2026-09-24/`. The nine proposals have not been applied.
