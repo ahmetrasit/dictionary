@@ -53,3 +53,14 @@ Fuller evidence expressly supports the tax/pledge analogy, the sign of the appro
 ## Scope correction to the earlier audit recommendation
 
 The earlier repair-session recommendation was broader than the demonstrated semantic evidence warranted. Newly produced drafts were corrected during their normal writer/reviewer cycle, and mapping, transfer, runtime and badge problems were separate causes. Those observations alone did not establish widespread errors in existing definitions. This user-requested sample now provides concrete examples in existing entries, but its deliberately selected roots cannot support a corpus-wide error-rate estimate. The agreed approach remains compact screening followed by extensive review of flagged cases; it does not reopen all source anchoring or use Quran context to choose roots.
+
+## Follow-up: blind Luna comparison
+
+The subsequent [blind Luna comparison](S1-LUNA-BLIND-COMPARISON-2026-09-24.md)
+found two additional bounded wording issues (`root_001525/B008` and
+`root_000355/B002`) and one unresolved precision concern (`root_001273/B021`).
+Thus this report's original counts describe the first audit stage, not the
+final combined repair queue: eleven confirmed branches now await repair.
+Previous English drafts for those three branches are held for reconsideration.
+Luna passed six of the original nine problem branches. No canonical entry or
+live data changed during either audit.

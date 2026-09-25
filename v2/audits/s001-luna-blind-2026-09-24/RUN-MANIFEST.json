@@ -1,0 +1,89 @@
+{
+  "started_at_utc": "2026-09-25T01:50:46.214959+00:00",
+  "model": "gpt-6-luna",
+  "reasoning_effort": "max",
+  "input_files": [
+    {
+      "file": "batch-01.json",
+      "sha256": "4474f4b62925948a8a9ac315987dd6413ee3e6f9fc15e3b7346e4c811b660e3d"
+    },
+    {
+      "file": "batch-02.json",
+      "sha256": "556f6319ff88a1c52ecec67389e295a557adf76b9e957dcc4a563e01749d7019"
+    },
+    {
+      "file": "batch-03.json",
+      "sha256": "7ac9e9a224d5a2233c5a4e4e25a51b8ac7566f36e7a4738da20106e9ca48f6bf"
+    },
+    {
+      "file": "batch-04.json",
+      "sha256": "4e93490791f19af15eed2b1d7929e402984f61778f66ce4bfe76544a698a3c34"
+    },
+    {
+      "file": "batch-05.json",
+      "sha256": "46c55b8c59415059a05f9744c055ba56e50a4f0d743e146d456b55437d327385"
+    },
+    {
+      "file": "batch-06.json",
+      "sha256": "ab8e71d14e61e94e12ae61025245ef128bdd821d417f965925429ead9f14f5fc"
+    },
+    {
+      "file": "batch-07.json",
+      "sha256": "d6090b955633e46a21059f33292f296412597677a1082d8b325299111f9a1f18"
+    },
+    {
+      "file": "batch-08.json",
+      "sha256": "59e8755f8afd7d90c8521e8eb9a8f41e4605fed7190074dbf3f63041cee67c97"
+    }
+  ],
+  "instructions_delta": "Only GPT-6 Sol Max/gpt-6-sol replaced with GPT-6 Luna Max/gpt-6-luna.",
+  "blindness": "Fresh agents with no conversation fork, assigned instruction and batch only. No previous outputs or findings supplied. Shared filesystem restriction is instruction enforced, not OS isolation.",
+  "comparison_plan": "Validate all157 outputs; compare branch referral and issue-specific capture of earlier retained findings; investigate additional flags with full existing evidence; compare English on same deterministic sample where both generated it. Prior Sol findings are reference findings, not exhaustive ground truth.",
+  "completed_at_utc": "2026-09-25T02:03:26.072360+00:00",
+  "raw_outputs": [
+    {
+      "file": "batch-01.json",
+      "sha256": "9e89317554970b99b06735809b67237317580240dbb267a1682700a817d0f809"
+    },
+    {
+      "file": "batch-02.json",
+      "sha256": "890c1cdaf4e0f12f01183b581181936b902fa2b15d4c685f63027b4d2d989db6"
+    },
+    {
+      "file": "batch-03.json",
+      "sha256": "ee054c25d5d951546aef9dd1e52b8d340de7a4724ac86c0147cb4912f4241877"
+    },
+    {
+      "file": "batch-04.json",
+      "sha256": "0740e6ed81039f537a700b99d8f5dc4285ed7ba2779f488482f6589597e33447"
+    },
+    {
+      "file": "batch-05.json",
+      "sha256": "b7098b4f1a32849cd994ddf33a8361960f837584450eb31d571696fa9abb5117"
+    },
+    {
+      "file": "batch-06.json",
+      "sha256": "2619a903d95c12777e02cf0852921c922e9f4b2bdb2d33cae9a4615ddcb64f0c"
+    },
+    {
+      "file": "batch-07.json",
+      "sha256": "3ad69bbcd42b709561852a940e6f492f8349bbb1445efb82d669772c7567c89f"
+    },
+    {
+      "file": "batch-08.json",
+      "sha256": "259eca24c33c593142fc4d77f68c5a58215132062ceec1c772c270717d20eae6"
+    }
+  ],
+  "structural_repairs": [
+    {
+      "branch_ref": "root_001444/B002",
+      "field": "definition_en",
+      "change": "non-null to null as required for flagged branch"
+    },
+    {
+      "branch_ref": "root_000973/B004",
+      "field": "three issues[].anchor_ar",
+      "change": "restored exact original verb \u0639\u0628\u062f\u062a instead of \u0639\u0628\u062f; no semantic change"
+    }
+  ]
+}

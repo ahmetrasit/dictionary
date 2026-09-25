@@ -1,0 +1,807 @@
+{
+  "schema": "s1-blind-model-comparison-v1",
+  "baseline_dictionary_audit_commit": "d503c52db",
+  "branches": 157,
+  "roots": 19,
+  "models": {
+    "sol": "gpt-6-sol/max",
+    "luna": "gpt-6-luna/max"
+  },
+  "sol_initial_referred": 19,
+  "luna_initial_referred": 14,
+  "prior_retained_findings": 9,
+  "prior_retained_branches_referred_by_luna": 3,
+  "prior_retained_branches_passed_by_luna": 6,
+  "prior_retained_specific_problems_explicitly_identified_by_luna": 0,
+  "additional_confirmed_findings": 2,
+  "additional_unresolved_concerns": 1,
+  "literal_luna_flags_dismissed": 11,
+  "prior_findings_comparison": [
+    {
+      "branch_ref": "root_000532/B005",
+      "luna_referred": true,
+      "specific_prior_problem_explicitly_identified": false,
+      "note": "Luna questioned whether the animal/mate sense exists; fuller evidence attests it, while the retained problem is participant scope."
+    },
+    {
+      "branch_ref": "root_000532/B007",
+      "luna_referred": true,
+      "specific_prior_problem_explicitly_identified": false,
+      "note": "Luna questioned whether the animal/mate sense exists; fuller evidence attests it, while the retained problem is participant scope."
+    },
+    {
+      "branch_ref": "root_000532/B012",
+      "luna_referred": false,
+      "specific_prior_problem_explicitly_identified": false,
+      "note": "Luna returned no_flag."
+    },
+    {
+      "branch_ref": "root_000532/B013",
+      "luna_referred": false,
+      "specific_prior_problem_explicitly_identified": false,
+      "note": "Luna returned no_flag."
+    },
+    {
+      "branch_ref": "root_001583/B009",
+      "luna_referred": false,
+      "specific_prior_problem_explicitly_identified": false,
+      "note": "Luna returned no_flag."
+    },
+    {
+      "branch_ref": "root_000913/B003",
+      "luna_referred": false,
+      "specific_prior_problem_explicitly_identified": false,
+      "note": "Luna returned no_flag."
+    },
+    {
+      "branch_ref": "root_000973/B003",
+      "luna_referred": true,
+      "specific_prior_problem_explicitly_identified": false,
+      "note": "Luna questioned false-divine-power usages; fuller evidence supports those. It did not flag worship being required for human-directed humbling."
+    },
+    {
+      "branch_ref": "root_000355/B005",
+      "luna_referred": false,
+      "specific_prior_problem_explicitly_identified": false,
+      "note": "Luna returned no_flag."
+    },
+    {
+      "branch_ref": "root_001092/B004",
+      "luna_referred": false,
+      "specific_prior_problem_explicitly_identified": false,
+      "note": "Luna returned no_flag."
+    }
+  ],
+  "flag_reviews": [
+    {
+      "branch_ref": "root_001273/B021",
+      "luna_verdict": "needs_review",
+      "luna_issues": [
+        {
+          "field": "definition_tr",
+          "kind": "unsupported_restriction",
+          "reason": "The source specifies loss of sight while the pupil remains sound; 'the eye's visible structure' adds an intact-structure condition beyond what the anchor states.",
+          "anchor_ar": "ذهب بصرها والحدقة صحيحة",
+          "text_tr": "göz bebeği ve gözün görünür yapısı sağlam kaldığı halde"
+        }
+      ],
+      "literal_flag_disposition": "unresolved",
+      "review": {
+        "branch_ref": "root_001273/B021",
+        "disposition": "unresolved",
+        "reason": "The existing evidence states loss of sight with an intact الحدقة and calls the eye قائمة. It does not separately enumerate all visible eye structures. The Turkish conjunction in “Göz bebeği ve gözün görünür yapısı sağlam” can therefore sound like an added anatomical condition, especially where the rationale calls structural integrity a constitutive boundary. However, the initial review assumes without warrant that الحدقة means only the pupil in the narrow modern anatomical sense. A targeted reading of Lisān al-ʿArab, حدق, distinguishes the larger dark region from الناظر and also reports an exterior/interior description. In combination with عين قائمة, an intact-looking-eye paraphrase is reasonable; a definite substantive error is not established by these passages. The contextual “gözü sağlam görünse de artık görmeyen” is particularly defensible. This is an editorial precision concern, not a confirmed lexical scope violation.",
+        "evidence": [
+          {
+            "path_or_url": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_001273/branches/root_001273--B021.json",
+            "quote_ar": "عين قائمة ذهب بصرها والحدقة صحيحة"
+          },
+          {
+            "path_or_url": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_001273/branches/root_001273--B021.json",
+            "quote_ar": "العين القائمة : أن يذهب بصرها والحدقة صحيحة"
+          },
+          {
+            "path_or_url": "https://www.islamweb.net/amp/ar/library/content/122/1649/حدق",
+            "quote_ar": "السواد الأعظم في العين هو الحدقة والأصغر هو الناظر"
+          }
+        ],
+        "recommended_action": "Do not automatically apply the proposed pupil-only replacement: it risks newly narrowing الحدقة to göz bebeği. Retain as unresolved editorial precision. If revised, remove the suggestion that two independently defined anatomical conditions are being asserted, and use a wording such as “Gözün hadakası sağlam kaldığı halde görme yetisinin kaybolduğu durum”, with hadaka explained using the primary lexical evidence. Do not present a modern anatomical equivalence as settled."
+      },
+      "also_contains_prior_retained_issue": false
+    },
+    {
+      "branch_ref": "root_001525/B008",
+      "luna_verdict": "needs_review",
+      "luna_issues": [
+        {
+          "field": "definition_tr",
+          "kind": "unsupported_restriction",
+          "reason": "The source supports a group's dispersing or departing and continuing its journey, but does not specify that this happens rapidly; 'hızla' adds an unsupported tempo restriction.",
+          "anchor_ar": "إذا تفرقوا",
+          "text_tr": "hızla dağılıp ayrılması"
+        }
+      ],
+      "literal_flag_disposition": "confirmed_issue",
+      "review": {
+        "branch_ref": "root_001525/B008",
+        "disposition": "confirmed_issue",
+        "reason": "A limited problem survives independent review in concept_map.definition: “hızla dağılıp ayrılması” directly modifies the first alternative, dispersal/departure. The later comma and “veya” do not make speed a universal condition on journeying or loss of power, and the branch facets, synthesis, rationale and lexical glosses already preserve the variant structure. Therefore the initial criticism must not be expanded into a branch-wide universal-speed claim. Nonetheless the definition fails to give the unqualified dispersal alternative attested in Maqāyīs. Tahdhīb explicitly supports rapid departure for both خفت نعامتهم and شالت نعامتهم, but separately gives continuing travel, fragmentation of common purpose, and loss of prestige. The source diversity supports retaining rapid departure as an attested variant while allowing dispersal without a speed requirement.",
+        "evidence": [
+          {
+            "path_or_url": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_001525/branches/root_001525--B008.json",
+            "quote_ar": "شالت نعامتهم إذا تفرقوا"
+          },
+          {
+            "path_or_url": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_001525/branches/root_001525--B008.json",
+            "quote_ar": "وتقول العرب للقوم إذا ظعنوا مسرعين : خفت نعامتهم ، وشالت نعامتهم"
+          },
+          {
+            "path_or_url": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_001525/branches/root_001525--B008.json",
+            "quote_ar": "خفت نعامتهم أي استمر بهم السير"
+          },
+          {
+            "path_or_url": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_001525/branches/root_001525--B008.json",
+            "quote_ar": "شالت نعامتهم إذا تفرقت كلمتهم"
+          }
+        ],
+        "recommended_action": "Make only the definition’s speed scope explicit. Suggested wording: “Belirli kuş imgeli sözlerde bir topluluğun dağılıp ayrılması, yol alması veya birliğini ya da gücünü yitirmesidir; bazı kullanımlarda hızlı ayrılış anlatılır.” Retain the attested rapid-departure lexical rendering. The reviewer’s proposed fix does not introduce a speed narrowing, but replacing yol alması with yola koyulması can newly narrow استمر بهم السير to the onset of travel; prefer retaining yol alması. This correction does not require deleting speed from the branch."
+      },
+      "also_contains_prior_retained_issue": false
+    },
+    {
+      "branch_ref": "root_000973/B003",
+      "luna_verdict": "needs_review",
+      "luna_issues": [
+        {
+          "field": "definition_tr",
+          "kind": "unsupported_addition",
+          "reason": "The supplied excerpt describes submission to a man, but does not identify any object as a false divine power; that category is added to the definition.",
+          "anchor_ar": "تعبدت للرجل إذا تذللت له",
+          "text_tr": "bazı özel söz öbekleri ise sahte tanrısal güçlere yönelir."
+        },
+        {
+          "field": "contextual_glosses[0].error_profile.loses",
+          "kind": "unsupported_addition",
+          "reason": "The source attests a man-directed submission use, not a separate class of false divine powers.",
+          "anchor_ar": "تعبدت للرجل إذا تذللت له",
+          "text_tr": "sahte tanrısal güce yönelen özel itaat kullanımlarını"
+        },
+        {
+          "field": "contextual_glosses[1].applicability",
+          "kind": "unsupported_addition",
+          "reason": "The source specifies submission to a man; the added reference to a false power is not supported by this excerpt.",
+          "anchor_ar": "تعبدت للرجل إذا تذللت له",
+          "text_tr": "sahte güç karşısındaki alçaltıcı itaati"
+        }
+      ],
+      "literal_flag_disposition": "dismissed",
+      "review": {
+        "reason": "False-power usages exist; retained worship/human-directed-humbling distinction was not flagged.",
+        "prior_review": "../s001-2026-09-24/deep/batch-04.json"
+      },
+      "also_contains_prior_retained_issue": true
+    },
+    {
+      "branch_ref": "root_000973/B004",
+      "luna_verdict": "needs_review",
+      "luna_issues": [
+        {
+          "field": "definition_tr",
+          "kind": "unsupported_addition",
+          "reason": "The Arabic excerpts support taking someone as a slave or subduing them, but do not specify compelling a free person to work like a slave.",
+          "anchor_ar": "عبدت الرجل إذا ذللته",
+          "text_tr": "özgür olsa bile köle gibi çalışacak ölçüde"
+        },
+        {
+          "field": "concept_gloss[0].applicability",
+          "kind": "unsupported_addition",
+          "reason": "The gloss applicability adds slave-like forced labor, which is not stated in the supplied source wording.",
+          "anchor_ar": "عبدت الرجل إذا ذللته",
+          "text_tr": "özgür kişiyi köle gibi çalıştıracak ölçüde ezmeyi"
+        },
+        {
+          "field": "contextual_glosses[1].text",
+          "kind": "unsupported_addition",
+          "reason": "The source supports subjugating or enslaving a person, but does not specify work as the means or result.",
+          "anchor_ar": "عبدت الرجل إذا ذللته",
+          "text_tr": "köle gibi ezip çalıştırmak"
+        }
+      ],
+      "literal_flag_disposition": "dismissed",
+      "review": {
+        "reason": "Full source explicitly supports free-person slave-like work.",
+        "prior_review": "../s001-2026-09-24/deep/batch-04.json"
+      },
+      "also_contains_prior_retained_issue": false
+    },
+    {
+      "branch_ref": "root_000973/B005",
+      "luna_verdict": "needs_review",
+      "luna_issues": [
+        {
+          "field": "definition_tr",
+          "kind": "unsupported_addition",
+          "reason": "The ship expression is described as pitch/tar-coated; the excerpt does not support oil or an unrestricted similar coating material.",
+          "anchor_ar": "السفينة المقيرة",
+          "text_tr": "geminin katran, yağ ya da benzeri bir maddeyle kaplanması"
+        },
+        {
+          "field": "contextual_glosses[2].applicability",
+          "kind": "unsupported_addition",
+          "reason": "The source specifies a pitch/tar-coated ship, not coating with any similar material.",
+          "anchor_ar": "السفينة المقيرة",
+          "text_tr": "katran veya benzeri bir maddeyle kaplandığı"
+        }
+      ],
+      "literal_flag_disposition": "dismissed",
+      "review": {
+        "reason": "Full source explicitly supports oil/fat coatings.",
+        "prior_review": "../s001-2026-09-24/deep/batch-04.json"
+      },
+      "also_contains_prior_retained_issue": false
+    },
+    {
+      "branch_ref": "root_000355/B002",
+      "luna_verdict": "needs_review",
+      "luna_issues": [
+        {
+          "field": "definition_tr",
+          "kind": "unsupported_restriction",
+          "reason": "The source equates the expression with finding someone praiseworthy; it does not make prior experience a condition.",
+          "anchor_ar": "إذا وجدته محمودا",
+          "text_tr": "deneyimden sonra"
+        },
+        {
+          "field": "concept_gloss[0].text",
+          "kind": "unsupported_restriction",
+          "reason": "The source says to find someone praiseworthy, without specifying that this must follow a test or experience.",
+          "anchor_ar": "إذا وجدته محمودا",
+          "text_tr": "deneyip övülesi ya da uygun bulma"
+        },
+        {
+          "field": "contextual_glosses[0].applicability",
+          "kind": "unsupported_restriction",
+          "reason": "Testing or prior experience is not specified in the supplied equivalence.",
+          "anchor_ar": "إذا وجدته محمودا",
+          "text_tr": "davranışını sınama veya deneyim sonrasında"
+        }
+      ],
+      "literal_flag_disposition": "confirmed_issue",
+      "review": {
+        "branch_ref": "root_000355/B002",
+        "disposition": "confirmed_issue",
+        "reason": "Confirmed narrowly as overstatement of a necessary prior-experience/testing condition, not as an unsupported association between experience and positive evaluation. Al-ʿAyn explicitly supplies بلوته فأحمدته, and Tahdhīb supplies a visit followed by a finding; “deneyimden sonra” is therefore reasonable for those examples and can loosely describe coming to a positive judgment. However, the Turkish branch repeatedly elevates that sequence into an invariant: the core facet says “deneyim veya sınama sonrasında”, the ordinary person gloss says “birini deneyip”, the concept gloss expressly preserves “deneyim koşulunu”, and a neighbor distinction makes a prior testing process decisive. Maqāyīs instead defines the verb through finding a quality and explicitly compares it with finding someone miserly or incapable, calling this a productive pattern across attributes. Tahdhīb and al-Ṣiḥāḥ also gloss the finding without a testing prerequisite. These sources do not prove experience is absent in actual uses, but they do not license a separate obligatory prior trial. The curated Arabic what_is_ar already contains بعد تجربة; the Turkish repetition is thus partly inherited from the generated branch frame, rather than invented without any upstream basis. That generated frame is not an additional primary attestation. The reviewer’s blanket “Belirli söz kalıplarında” would introduce a different narrowing: the branch is mixed_non_bare and the person-finding usage is not demonstrated to require a fixed phrase.",
+        "evidence": [
+          {
+            "path_or_url": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_000355/branches/root_000355--B002.json",
+            "quote_ar": "وجدته محمودا كما يقال أبخلته إذا وجدته بخيلا وأعجزته إذا وجدته ~~عاجزا | وهذا قياس مطرد في سائر الصفات"
+          },
+          {
+            "path_or_url": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_000355/branches/root_000355--B002.json",
+            "quote_ar": "يقال بلوته فأحمدته أي وجدته حميدا محمود الفعال"
+          },
+          {
+            "path_or_url": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_000355/branches/root_000355--B002.json",
+            "quote_ar": "وقال الليث : أحمدت الرجل : وجدته محمودا"
+          },
+          {
+            "path_or_url": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_000355/branches/root_000355--B002.json",
+            "quote_ar": "أتينا فلانا فأحمدناه وأذممناه أي وجدناه محمودا أو مذموما"
+          },
+          {
+            "path_or_url": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_000355/branches/root_000355--B002.json",
+            "quote_ar": "وأحمدته: وجدته محمودا."
+          },
+          {
+            "path_or_url": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_000355/branches/root_000355--B002.json",
+            "quote_ar": "ويقال : هل تحمد لي هذا الأمر أي هل ترضاه لي ."
+          }
+        ],
+        "recommended_action": "Remove mandatory prior testing from the definition, core person facet, ordinary person gloss and any boundaries that expressly require it; retain the documented testing example as a narrower contextual rendering. Suggested definition: “Bir kişiyi övülesi bulmak; ilgili yer ve iş kullanımlarında bir yeri yerleşmeye veya otlatmaya elverişli, bir işi de biri için uygun bulmaktır. Kişi kullanımı, sınama sonrasında övülesi bulma örneğinde de görülür.” Suggested ordinary person gloss: “birini övgüye değer bulmak”. Keep “deneyip beğenmek” with its explicit testing-context applicability. Do not apply “Belirli söz kalıplarında” to the entire branch or infer that all positive judgment occurs without experience. This is a bounded scope correction; no canonical edits made."
+      },
+      "also_contains_prior_retained_issue": false
+    },
+    {
+      "branch_ref": "root_000745/B001",
+      "luna_verdict": "needs_review",
+      "luna_issues": [
+        {
+          "field": "definition_tr",
+          "kind": "unsupported_addition",
+          "reason": "The source supports physical elevation and social elevation, but does not mention raising one's gaze; this adds a distinct action to the branch definition.",
+          "anchor_ar": "أصل يدل على العلو",
+          "text_tr": "Bakışın yukarı kaldırılması bu hareketin özel bir uygulamasıdır."
+        },
+        {
+          "field": "contextual_glosses/2",
+          "kind": "unsupported_addition",
+          "reason": "The supplied source does not attest a gaze-raising use.",
+          "anchor_ar": "أصل يدل على العلو",
+          "text_tr": "bakışını yukarı kaldırmak"
+        }
+      ],
+      "literal_flag_disposition": "dismissed",
+      "review": {
+        "branch_ref": "root_000745/B001",
+        "disposition": "dismissed",
+        "reason": "Kısa kaynak alıntısında atlanan bakış kullanımı özgün kanıtta açıkça vardır. Türkçe tanım ve bağlamsal karşılık bunu genel yükselmenin özel bir kullanımı olarak veriyor.",
+        "evidence": [
+          {
+            "path": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_000745/branches/root_000745--B001.json",
+            "quote_ar": "وسما بصره علا"
+          },
+          {
+            "path": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_000745/branches/root_000745--B001.json",
+            "quote_ar": "إذا رفعت بصرك إلى الشيء قلت سما إليه بصري"
+          }
+        ],
+        "proposed_fix_tr": null
+      },
+      "also_contains_prior_retained_issue": false
+    },
+    {
+      "branch_ref": "root_000745/B004",
+      "luna_verdict": "needs_review",
+      "luna_issues": [
+        {
+          "field": "definition_tr",
+          "kind": "unsupported_addition",
+          "reason": "The source attests that vegetation is called by this name, but does not specify that it is rain-grown or rising; those qualifications add unsupported conditions.",
+          "anchor_ar": "سمي النبات سماء",
+          "text_tr": "yağmurla çıkan veya yükselen bitkiye"
+        },
+        {
+          "field": "contextual_glosses/2",
+          "kind": "unsupported_restriction",
+          "reason": "The source gives the vegetation name without restricting it to plants emerging through rain.",
+          "anchor_ar": "سمي النبات سماء",
+          "text_tr": "yağmurla çıkan bitki"
+        }
+      ],
+      "literal_flag_disposition": "dismissed",
+      "review": {
+        "branch_ref": "root_000745/B004",
+        "disposition": "dismissed",
+        "reason": "Özgün kanıt bitkinin bu adla anılmasını yağmurdan gelmesi veya yerden yükselmesiyle açıklar. Tanımdaki iki seçenek bu kaynak ayrımını koruyor; yağmurla çıkan bitki bağlamsal karşılığı ise seçeneklerden yalnız birine uygulanıyor.",
+        "evidence": [
+          {
+            "path": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_000745/branches/root_000745--B004.json",
+            "quote_ar": "وسمي النبات سماء إما لكونه من المطر الذي هو سماء وإما لارتفاعه عن الأرض"
+          }
+        ],
+        "proposed_fix_tr": null
+      },
+      "also_contains_prior_retained_issue": false
+    },
+    {
+      "branch_ref": "root_000745/B006",
+      "luna_verdict": "needs_review",
+      "luna_issues": [
+        {
+          "field": "definition_tr",
+          "kind": "unsupported_addition",
+          "reason": "The source only identifies this as the hunter's sock; it does not state that it protects against hot ground or is worn while waiting.",
+          "anchor_ar": "المسماة جورب الصياد",
+          "text_tr": "avcının sıcak zeminde beklerken giydiği koruyucu çorap"
+        },
+        {
+          "field": "contextual_glosses/3",
+          "kind": "unsupported_addition",
+          "reason": "The source says 'the hunter's sock' but does not give heat protection as its function.",
+          "anchor_ar": "جورب الصياد",
+          "text_tr": "avcının sıcaktan koruyan çorabı"
+        }
+      ],
+      "literal_flag_disposition": "dismissed",
+      "review": {
+        "branch_ref": "root_000745/B006",
+        "disposition": "dismissed",
+        "reason": "Özgün kanıt avcı çorabının sıcak zeminden korunmak için, ceylanları beklerken giyildiğini açıkça söylüyor. İşlev ve bekleme bilgisi kısa alıntıdan çıkarılmış, Türkçe daldan eklenmiş değil.",
+        "evidence": [
+          {
+            "path": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_000745/branches/root_000745--B006.json",
+            "quote_ar": "المسماة جورب الصياد يلبسها لتقيه حر الرمضاء إذا أراد أن يتربص الظباء"
+          }
+        ],
+        "proposed_fix_tr": null
+      },
+      "also_contains_prior_retained_issue": false
+    },
+    {
+      "branch_ref": "root_001064/B002",
+      "luna_verdict": "needs_review",
+      "luna_issues": [
+        {
+          "field": "definition_tr",
+          "kind": "unsupported_addition",
+          "reason": "The source describes a middle-aged woman and a woman advanced in age, but does not support the added implication of having been married.",
+          "anchor_ar": "ويقال للمرأة النصف عوان",
+          "text_tr": "evlenmiş olmayı"
+        }
+      ],
+      "literal_flag_disposition": "dismissed",
+      "review": {
+        "branch_ref": "root_001064/B002",
+        "disposition": "dismissed",
+        "reason": "Kadın için özgün kanıtta ثيب tanıklığı bulunuyor; evlenmiş olma çağrışımı buradan geliyor. Ayrı kaynakta yaşlı kadın kinayesi de var. Türkçe tanım bu farklı kullanımları kesin ve ortak koşul olarak değil, bağlama göre değişebilen seçenekler olarak nitelendiriyor.",
+        "evidence": [
+          {
+            "path": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_001064/branches/root_001064--B002.json",
+            "quote_ar": "العوان من النساء الثيب"
+          },
+          {
+            "path": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_001064/branches/root_001064--B002.json",
+            "quote_ar": "جعل كناية عن المسنة من النساء"
+          }
+        ],
+        "proposed_fix_tr": null
+      },
+      "also_contains_prior_retained_issue": false
+    },
+    {
+      "branch_ref": "root_001444/B001",
+      "luna_verdict": "insufficient_evidence",
+      "luna_issues": [
+        {
+          "field": "definition_tr",
+          "kind": "insufficient_evidence",
+          "reason": "The supplied Arabic excerpt supports firmness and cohesion in dough, a shoot, and a wall, but gives no person or self-restraint example; that personal use cannot be verified from this anchor.",
+          "anchor_ar": "أصل صحيح يدل على قوة في الشيء وصحة",
+          "text_tr": "Kişide bu iç tutarlılık, düşmekten ya da düşünmeden konuşmaktan kendini alıkoyma biçiminde görünür."
+        }
+      ],
+      "literal_flag_disposition": "dismissed",
+      "review": {
+        "branch_ref": "root_001444/B001",
+        "disposition": "dismissed",
+        "reason": "Kısa kaynak alıntısı kişinin kendini tutmasına ilişkin kullanımı atlamış. Tam üretim kanıtındaki تمالك örnekleri, kişinin bir duruma düşmekten veya bir sözü söylemekten kendini alıkoymasını açıkça gösteriyor; tanım bu kullanımı maddi sağlamlıkla aynı dalda, kişiye özgü bir gerçekleşme olarak sunuyor.",
+        "evidence": [
+          {
+            "path": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_001444/branches/root_001444--B001.json",
+            "quote_ar": "ما تمالك فلان أن وقع في كذا إذا لم يستطع أن يحبس نفسه"
+          },
+          {
+            "path": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_001444/branches/root_001444--B001.json",
+            "quote_ar": "ما تمالك أن قال ذلك"
+          }
+        ],
+        "proposed_fix_tr": null
+      },
+      "also_contains_prior_retained_issue": false
+    },
+    {
+      "branch_ref": "root_001444/B002",
+      "luna_verdict": "insufficient_evidence",
+      "luna_issues": [
+        {
+          "field": "definition_tr",
+          "kind": "insufficient_evidence",
+          "reason": "The excerpt identifies the historical referent as an enslaved person, but does not establish a separate usage concerning conduct toward such people.",
+          "anchor_ar": "المملوك يختص في التعارف بالرقيق من الأملاك",
+          "text_tr": "ve onlara ilişkin davranışı"
+        }
+      ],
+      "literal_flag_disposition": "dismissed",
+      "review": {
+        "branch_ref": "root_001444/B002",
+        "disposition": "dismissed",
+        "reason": "Kısa alıntı yalnızca المملوك sözcüğünün tarihsel göndergesini veriyor. Tam üretim kanıtındaki حسن الملكة kalıbı ise köleleştirilmiş kişilere iyi davranmayı ayrıca kaydediyor. Türkçe tanımdaki 'onlara ilişkin davranış' ifadesi bu kalıba bağlı, nitelikli bir özettir.",
+        "evidence": [
+          {
+            "path": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_001444/branches/root_001444--B002.json",
+            "quote_ar": "المملوك يختص في التعارف بالرقيق من الأملاك"
+          },
+          {
+            "path": "/Volumes/OZTURK/_projects/dictionary/v2/output/branch_evidence/root_001444/branches/root_001444--B002.json",
+            "quote_ar": "فلان حسن الملكة إذا كان حسن الصنع إلى مماليكه"
+          }
+        ],
+        "proposed_fix_tr": null
+      },
+      "also_contains_prior_retained_issue": false
+    },
+    {
+      "branch_ref": "root_000532/B005",
+      "luna_verdict": "needs_review",
+      "luna_issues": [
+        {
+          "field": "definition_tr",
+          "kind": "unsupported_addition",
+          "reason": "The source supports a stepchild, a stepparent who undertakes care of the child, and a female caregiver, but it does not mention a female animal kept indoors for milk or connect such an animal to this family-care relation.",
+          "anchor_ar": "الربيبة: الحاضنة",
+          "text_tr": "evde beslenen dişi hayvan da aynı bakım bağıyla adlandırılır"
+        }
+      ],
+      "literal_flag_disposition": "dismissed",
+      "review": {
+        "reason": "Animal sense exists; retained participant-scope issue was not explicitly flagged.",
+        "prior_review": "../s001-2026-09-24/deep/batch-01.json"
+      },
+      "also_contains_prior_retained_issue": true
+    },
+    {
+      "branch_ref": "root_000532/B007",
+      "luna_verdict": "needs_review",
+      "luna_issues": [
+        {
+          "field": "definition_tr",
+          "kind": "unsupported_addition",
+          "reason": "The source refers to the place or station where a camel stays; it does not say that an animal is tied to a mate.",
+          "anchor_ar": "مرب الإبل حيث لزمته",
+          "text_tr": "Hayvanın bir eşe bağlanması"
+        }
+      ],
+      "literal_flag_disposition": "dismissed",
+      "review": {
+        "reason": "Mate attachment exists; retained she-camel/male-camel distinction was not explicitly flagged.",
+        "prior_review": "../s001-2026-09-24/deep/batch-01.json"
+      },
+      "also_contains_prior_retained_issue": true
+    }
+  ],
+  "english_paired_sample": 22,
+  "english_counts": {
+    "sol": {
+      "acceptable_draft": 22,
+      "minor_error": 0,
+      "material_error": 0
+    },
+    "luna": {
+      "acceptable_draft": 16,
+      "minor_error": 5,
+      "material_error": 1
+    }
+  },
+  "english_reviews": [
+    {
+      "branch_ref": "root_000552/B004",
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves the affected beings, womb symptoms, postpartum qualification, and retained fetal membrane."
+      },
+      "luna": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves the affected beings, womb symptoms, postpartum qualification, and sheep's retained afterbirth."
+      }
+    },
+    {
+      "branch_ref": "root_001273/B001",
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves the male core sense, kin and supporters, and secondary inclusion and extension."
+      },
+      "luna": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves the male core sense, kin and followers, and secondary inclusion and extension."
+      }
+    },
+    {
+      "branch_ref": "root_001273/B013",
+      "luna": {
+        "verdict": "minor_error",
+        "reason": "Adds 'before God,' a detail absent from the Turkish definition."
+      },
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves the final hour, resurrection, and standing for judgment."
+      }
+    },
+    {
+      "branch_ref": "root_000913/B005",
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves separation from the owner, unknown ownership, camel emphasis, and both sexes."
+      },
+      "luna": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves the lost animal with unknown owner, camel emphasis, and both sexes."
+      }
+    },
+    {
+      "branch_ref": "root_001583/B001",
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves gentle guidance, acceptance of the shown direction, and divine aid."
+      },
+      "luna": {
+        "verdict": "minor_error",
+        "reason": "Omits the gentle or subtle manner and folds accepting guidance into the guide's purpose instead of stating it as a distinct sense."
+      }
+    },
+    {
+      "branch_ref": "root_001583/B008",
+      "luna": {
+        "verdict": "minor_error",
+        "reason": "'Heavily burdened camels' adds a load that the Turkish 'heavy camels' does not specify."
+      },
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves side-to-side walking, the weak person's reliance on two people, and both examples."
+      }
+    },
+    {
+      "branch_ref": "root_000858/B003",
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves the effective sword, cutting movement into the target, and the blow context."
+      },
+      "luna": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves a sword that cuts and advances into the target during a stroke."
+      }
+    },
+    {
+      "branch_ref": "root_000973/B001",
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves the person's lack of freedom, ownership status, and sale under an earlier legal order."
+      },
+      "luna": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves the person's lack of freedom, ownership status, and sale under a former legal order."
+      }
+    },
+    {
+      "branch_ref": "root_000973/B012",
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves the stone or mortar used to crush and mix fragrant materials."
+      },
+      "luna": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves the stone or mortar used to crush and mix fragrant materials."
+      }
+    },
+    {
+      "branch_ref": "root_000532/B001",
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves ownership, superior authority, governing, and the qualified use outside reference to God."
+      },
+      "luna": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves ownership, superior authority, governing, and the qualified use outside reference to God."
+      }
+    },
+    {
+      "branch_ref": "root_000532/B015",
+      "luna": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves the small-number function, possible following verb, and approach to occasional occurrence."
+      },
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves the small-number function, possible following verb, and approach to occasional occurrence."
+      }
+    },
+    {
+      "branch_ref": "root_001040/B007",
+      "luna": {
+        "verdict": "acceptable_draft",
+        "reason": "Correctly identifies a simple animal name for a male hyena."
+      },
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Correctly identifies a simple animal name for a male hyena."
+      }
+    },
+    {
+      "branch_ref": "root_001119/B005",
+      "luna": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves difference or contrariety and the exclusion, negation, and comparison uses."
+      },
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves difference or contrariety and the exclusion, negation, and comparison uses."
+      }
+    },
+    {
+      "branch_ref": "root_001525/B001",
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves the favorable life state and benefit reaching the person or being conveyed to another."
+      },
+      "luna": {
+        "verdict": "minor_error",
+        "reason": "Narrows the benefit conveyed to another person to 'kindness,' while the Turkish allows a benefit conveyed as a gift, aid, or kindness."
+      }
+    },
+    {
+      "branch_ref": "root_001525/B010",
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves increase in quantity and taking an action beyond its prior degree."
+      },
+      "luna": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves increase in quantity and taking an action beyond its prior degree."
+      }
+    },
+    {
+      "branch_ref": "root_001092/B001",
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves surging displeasure toward revenge, habitual or quick anger, and punishment in divine use."
+      },
+      "luna": {
+        "verdict": "material_error",
+        "reason": "'A consequence of punishment' reverses the divine-use relation: punishment is the result expressed by this anger, not its cause."
+      }
+    },
+    {
+      "branch_ref": "root_001092/B008",
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves certain animal skins and the folded camel-hide piece resembling a shield."
+      },
+      "luna": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves certain animal hides and the folded camel-hide piece resembling a shield."
+      }
+    },
+    {
+      "branch_ref": "root_000047/B002",
+      "luna": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves the Creator's proper name and its address, prayer, exclamation, oath, and shortening forms."
+      },
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves the Creator's proper name and its address, supplication, exclamation, oath, and shortening forms."
+      }
+    },
+    {
+      "branch_ref": "root_000504/B001",
+      "luna": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves submission, obedience, continued adherence, and religious applications."
+      },
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves submission, obedience, continued adherence, and religious applications."
+      }
+    },
+    {
+      "branch_ref": "root_001650/B001",
+      "luna": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves the physical identifying mark, its methods, the resulting mark, and the heated tool."
+      },
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves the physical identifying mark, its methods, the resulting mark, and the heated tool."
+      }
+    },
+    {
+      "branch_ref": "root_001064/B003",
+      "luna": {
+        "verdict": "minor_error",
+        "reason": "'By extension' presents the not-first-or-new conclusion as a separate derived sense; the Turkish states it as the result of an earlier or repeated war."
+      },
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves the earlier-war or repeated-fighting conditions and their not-first-or-new conclusion."
+      }
+    },
+    {
+      "branch_ref": "root_001700/B005",
+      "luna": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves the context-linked day construction, its temporal meaning, and both grammatical forms."
+      },
+      "sol": {
+        "verdict": "acceptable_draft",
+        "reason": "Preserves the context-linked day construction, its temporal meaning, and both grammatical forms."
+      }
+    }
+  ],
+  "canonical_entries_modified": false,
+  "published": false,
+  "limitations": [
+    "One run per model, not a corpus-wide accuracy benchmark.",
+    "Initial nine findings are reviewed references, not exhaustive ground truth.",
+    "Shared filesystem blindness was enforced by instructions and fresh contexts, not OS isolation.",
+    "English sample was fixed from previous Sol no_flag branches; two of 24 lacked a Luna draft and were excluded from pairing.",
+    "Raw Luna outputs retained; structural-only corrections separately recorded."
+  ]
+}
